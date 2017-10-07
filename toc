@@ -1,0 +1,33 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+IBM Bluemix Container Registry
+
+    {: .navgroup id="learn"}
+    index.md
+    registry_overview.md
+    registry_images_ibm.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    registry_cli_reference.md
+    rellinks.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    registry_setup_cli_namespace.md
+    registry_ui.md
+    registry_quota.md
+    registry_images_.md
+    registry_tokens.md
+    [Managing image security with Vulnerability Advisor](../va/va_index.html)
+      [About Vulnerability Advisor](../va/va_index.html#about)
+      [Reviewing image security by using the CLI](../va/va_index.html#va_registry_cli)
+      [Resolving problems](../va/va_index.html#va_report)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    ts_index.md
+    {: .navgroup-end}
+
