@@ -1,0 +1,133 @@
+---
+
+copyright:
+  years: 2017
+lastupdated: "2017-10-06"
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip} 
+{:download: .download}
+
+
+# Getting started with {{site.data.keyword.registrylong_notm}}
+{: #index}
+
+{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to safely store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
+{:shortdesc}
+
+The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Viewing information about images in the {{site.data.keyword.Bluemix_notm}} console](registry_ui.html).
+
+
+## Install the {{site.data.keyword.registrylong_notm}} CLI
+{: #registry_cli_install}
+
+1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}}bx commands.
+2.  Install the container-registry plug-in:
+
+    ```
+    bx plugin install container-registry -r {{site.data.keyword.Bluemix_notm}}
+    ```
+    {: pre}
+
+3.  [Install the Docker CLI](https://www.docker.com/community-edition#/download). For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://www.docker.com/products/docker-toolbox) instead.
+
+## Set up a namespace
+{: #registry_namespace_add}
+
+1.  Log in to {{site.data.keyword.Bluemix_notm}}.
+
+    ```
+    bx login
+    ```
+    {: pre}
+
+2.  Add a namespace to create your own image repository. Replace _&lt;my_namespace&gt;_ with your preferred namespace.
+
+    ```
+    bx cr namespace-add <em><my_namespace></em>
+    ```
+    {: pre}
+
+
+## Pull images from another registry to your local machine to use them in {{site.data.keyword.registrylong_notm}}
+{: #registry_images_pulling}
+
+1.  Log in to the CLI:
+
+    ```
+    bx cr login
+    ```
+    {: pre}
+
+    **Note:** You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
+
+2.  Download (_pull_) the image to your local machine. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, e.g., _latest_.
+
+    ```
+    docker pull <em><source_image></em>:<em><tag></em>
+    ```
+    {: pre}
+
+    Example:
+
+    ```
+    docker pull hello-world:latest
+    ```
+    {: pre}
+
+3.  Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
+
+    ```
+    docker tag <em><source_image></em>:<em><tag></em> registry.<em><region></em>.bluemix.net/<em><my_namespace></em>/<em><new_image_repo></em>:<em><new_tag></em>
+    ```
+    {: pre}
+
+    Example:
+
+    ```
+    docker tag hello-world:latest registry.<em><region></em>.bluemix.net/<em>my_namespace</em>/<em>hw_repo</em>:<em>1</em>
+    ```
+    {: pre}
+
+
+## Push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}
+{: #registry_images_pushing}
+
+1.  Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace where you want to upload your image, and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
+
+    ```
+    docker push registry.<em><region></em>.bluemix.net/<em><my_namespace></em>/<em><image_repo></em>:<em><tag></em>
+    ```
+    {: pre}
+
+    Example:
+
+    ```
+    docker push registry.<em><region></em>.bluemix.net/<em><my_namespace></em>/<em>hw_repo</em>:<em>1</em>
+    ```
+    {: pre}
+
+2.  Verify that the image was pushed successfully by running the following command.
+
+    ```
+    bx cr image-list
+    ```
+    {: pre}
+
+
+Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
+
+**What's next?**
+
+-   [Managing image security with Vulnerability Advisor](../va/va_index.html).
+-   [Review your service plans and usage](registry_overview.html#registry_plans)
+-   [Store and manage more images in your namespace](registry_images_.html).
+-   [Create and deploy a container from your image to a Kubernetes cluster](../../containers/cs_cluster.html).
+
