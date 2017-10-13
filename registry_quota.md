@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-10-13"
 
 ---
 
@@ -16,14 +16,14 @@ lastupdated: "2017-10-09"
 {:download: .download}
 
 
-# Managing quota limits for storage and pull traffic in {{site.data.keyword.registrylong_notm}}
+# Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
 You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.Bluemix_notm}}® account by setting and managing custom quota limits.
 {:shortdesc}
 
 
-## Setting quota limits for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}
+## Setting quota limits for storing and pulling images
 {: #registry_quota_set}
 
 You can limit the amount of storage and pull traffic to your private images by setting your own quota limits.
@@ -79,7 +79,7 @@ To set a quota:
     {: pre}
 
 
-## Reviewing quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}
+## Reviewing quota limits and usage for storing and pulling images
 {: #registry_quota_get}
 
 You can review your quota limits and check your current storage and pull traffic usage for your account.
@@ -113,7 +113,7 @@ You can review your quota limits and check your current storage and pull traffic
     {: screen}
 
 
-## Freeing up used storage and changing service plans or quota limits to stay within given quota limits in {{site.data.keyword.registrylong_notm}}
+## Freeing up used storage and changing service plans or quota limits to stay within given quota limits
 {: #registry_quota_freeup}
 
 If you exceeded your quota limits that are set for your {{site.data.keyword.Bluemix_notm}} account, you can free up storage and change your service plan or quota limits to continue pushing and pulling images to and from your namespace.
