@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-06"
+lastupdated: "2017-10-24"
 
 ---
 
@@ -15,6 +15,10 @@ lastupdated: "2017-10-06"
 {:tip: .tip}
 {:download: .download}
 
+
+
+
+<production>
 
 # Automating access to your namespaces in {{site.data.keyword.registrylong_notm}} by using tokens
 {: #registry_tokens}
@@ -150,3 +154,5 @@ Remove a token when you do not need it anymore.
     bx cr token-rm <token_id>
     ```
     {: pre}
+
+</production>
