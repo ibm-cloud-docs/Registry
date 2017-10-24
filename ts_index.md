@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-10"
+lastupdated: "2017-10-19"
 
 ---
 
@@ -59,6 +59,31 @@ You can fix this problem in the following ways:
 -   Upgrade to the most recent version of the {{site.data.keyword.registryshort_notm}} plug-in, see [Updating the {{site.data.keyword.registrylong_notm}} (`bx cr`) plug-in](registry_setup_cli_namespace.html#registry_cli_update).
 -   Ensure that Docker is installed on your machine. If it is already installed, restart the Docker daemon.
 -   Rerun the `bx login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
+
+
+## Logging in to {{site.data.keyword.registrylong_notm}} fails with the error message `bx cr login 'cr' is not a registered command. See 'bx help'. `
+{: #ts_login_error}
+
+You cannot log in to {{site.data.keyword.registrylong_notm}} because `bx cr` is not a registered command.
+
+{: tsSymptoms}
+You see the following error message: 
+
+```
+bx cr login 
+'cr' is not a registered command. See 'bx help'. 
+```
+{: pre}
+
+{: tsCauses}
+-   The container-registry plug-in is not installed.
+
+
+{: tsResolve}
+You can fix this problem in the following way:
+
+-   Install the container-registry plug-in, see [Installing the {{site.data.keyword.registryshort_notm}} CLI (bx cr) plug-in](registry_setup_cli_namespace.html#registry_cli_install).
+
 
 ## Setting up a namespace fails
 {: #ts_problem}
