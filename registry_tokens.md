@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-06"
+lastupdated: "2017-10-25"
 
 ---
 
@@ -23,23 +23,23 @@ lastupdated: "2017-10-06"
 # Automating access to your namespaces in {{site.data.keyword.registrylong_notm}} by using tokens
 {: #registry_tokens}
 
-You can use tokens to automate the pushing and pulling of Docker images to and from your namespace.
+You can use tokens to automate the pushing and pulling of Docker images to and from your namespaces.
 {:shortdesc}
 
 Before you begin, [install the {{site.data.keyword.registrylong}} and Docker CLI](registry_setup_cli_namespace.html#registry_cli_install).
 
-A security token allows everyone in possession of the token to access secured information. Tokens are used in a similar way to API keys. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a {{site.data.keyword.Bluemix_notm}} region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
+A security token allows everyone in possession of the token to access secured information. Tokens are used in a similar way to API keys. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 
 
-## Creating a {{site.data.keyword.registrylong_notm}} token for your {{site.data.keyword.Bluemix_notm}} account
+## Creating an {{site.data.keyword.registrylong_notm}} token for your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_create}
 
-You can create a token to grant access to all your namespaces of a {{site.data.keyword.Bluemix_notm}} region.
+You can create a token to grant access to all your namespaces of a region.
 {:shortdesc}
 
-1.  Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a {{site.data.keyword.Bluemix_notm}} region.
+1.  Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
     ```
     bx cr token-add --description "This is a token" --non-expiring --readwrite
@@ -82,10 +82,10 @@ You can create a token to grant access to all your namespaces of a {{site.data.k
     {: pre}
 
 
-## Using a token to automate access to a namespace in {{site.data.keyword.registrylong_notm}}
+## Using a token to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}
 {: #registry_tokens_use}
 
-You can use a token in your Docker login command to automate access to a namespace. Depending on whether you set read-only or read-write access for your token, users can push and pull images to and from your namespace.
+You can use a token in your `docker login` command to automate access to your namespaces. Depending on whether you set read-only or read-write access for your token, users can push and pull images to and from your namespaces.
 {:shortdesc}
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
@@ -95,7 +95,7 @@ You can use a token in your Docker login command to automate access to a namespa
     ```
     {: pre}
 
-2.  List all tokens in your account and note the token ID that you want to use.
+2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to use.
 
     ```
     bx cr token-list
@@ -109,9 +109,9 @@ You can use a token in your Docker login command to automate access to a namespa
     ```
     {: pre}
 
-    Your token value is displayed in **Token** of your CLI output.
+    Your token value is displayed in **Token** in your CLI output.
 
-4.  Use the token as part of your Docker login. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespace is set up.
+4.  Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
     -   For namespaces set up in US-South: registry.ng.bluemix.net
     -   For namespaces set up in UK-South: registry.eu-gb.bluemix.net
@@ -123,10 +123,10 @@ You can use a token in your Docker login command to automate access to a namespa
     ```
     {: pre}
 
-    After you log in to Docker by using the token, you can push or pull images to and from your namespace.
+    After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
 
-## Removing a {{site.data.keyword.registrylong_notm}} token from a {{site.data.keyword.Bluemix_notm}} account
+## Removing an {{site.data.keyword.registrylong_notm}} token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
 Remove a token when you do not need it anymore.
@@ -141,7 +141,7 @@ Remove a token when you do not need it anymore.
     ```
     {: pre}
 
-2.  List all tokens in your account and note the token ID that you want to remove.
+2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to remove.
 
     ```
     bx cr token-list
