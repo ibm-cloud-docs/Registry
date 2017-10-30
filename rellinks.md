@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-10"
+lastupdated: "2017-10-30"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-10-10"
 
 # Related links
 
-You can use the following related links to become more familiar with the service.
+You can use the following related links to become more familiar with {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 ## Docker
@@ -26,10 +26,10 @@ You can use the following related links to become more familiar with the service
 {: #registry}
 
 <ul>
-<li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>
+<li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>
 </ul>
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-* [{{site.data.keyword.containerlong}} documentation](../../containers/container_index.html)
+* [{{site.data.keyword.containerlong_notm}} documentation](../../containers/container_index.html)
