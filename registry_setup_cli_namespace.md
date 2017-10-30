@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-10"
+lastupdated: "2017-10-26"
 
 ---
 
@@ -50,7 +50,7 @@ You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodi
 2.  Update the container-registry plug-in.
 
     ```
-    bx plugin update container-registry -r {{site.data.keyword.Bluemix_notm}}
+    bx plugin update container-registry -r Bluemix
     ```
     {: pre}
 
