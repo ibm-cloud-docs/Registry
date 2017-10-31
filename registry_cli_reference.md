@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-10-26"
 
 ---
 
@@ -26,7 +26,7 @@ You can use the container-registry plug-in to set up your own image namespace in
 ## bx cr commands
 {: #registry_cli_reference_bxcr}
 
-Run bx cr commands in the {{site.data.keyword.registryshort}} CLI.
+Run bx cr commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
 
 For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli).
