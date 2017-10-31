@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-13"
+lastupdated: "2017-10-26"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2017-10-13"
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
-You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.Bluemix_notm}}® account by setting and managing custom quota limits.
+You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.Bluemix}} account by setting and managing custom quota limits.
 {:shortdesc}
 
 
@@ -31,7 +31,7 @@ You can limit the amount of storage and pull traffic to your private images by s
 
 Before you begin, make sure that you are the [owner or billing manager for the {{site.data.keyword.Bluemix_notm}} account](../../iam/users_roles.html#userroles) where you want to set the quota.
 
-When you upgrade to the IBM® {{site.data.keyword.registryshort_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all namespaces that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
+When you upgrade to the {{site.data.keyword.registryshort_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all namespaces that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
 
 To set a quota:
 
