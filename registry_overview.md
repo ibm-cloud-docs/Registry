@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-10-30"
 
 ---
 
@@ -158,7 +158,7 @@ If you want to find out what service plan you have, run the `bx cr plan` command
     ```
     {: pre}
 
-    **Note**: If you have a federated ID, use `bx login --sso` to log in to the Bluemix CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    **Note**: If you have a federated ID, use `bx login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
 
 2.  Upgrade to the standard plan.
 
@@ -167,7 +167,7 @@ If you want to find out what service plan you have, run the `bx cr plan` command
     ```
     {: pre}
 
-    **Note:** If you have a {{site.data.keyword.Bluemix_notm}} Trial account, you must upgrade to a {{site.data.keyword.Bluemix_notm}} Standard account before running bx cr plan-upgrade.
+    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Trial account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Standard account before running `bx cr plan-upgrade`.
 
 
 ## Learning the basics
@@ -228,7 +228,7 @@ To work with the IBM-provided public images only, you do not need to set up a na
 
 Consider the following rules when you choose a namespace:
 
--   Your namespace must be unique in a {{site.data.keyword.Bluemix_notm}} region.
+-   Your namespace must be unique in an {{site.data.keyword.Bluemix_notm}} region.
 -   Your namespace must be 4 - 30 characters long.
 -   Your namespace must start with at least one letter or number.
 -   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
