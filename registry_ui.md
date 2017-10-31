@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-09"
+lastupdated: "2017-10-31"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2017-10-09"
 # Viewing information about images
 {: #registry_ui}
 
-You can view information about potential vulnerabilities, and the security of images in the public and private repositories by using the {{site.data.keyword.Bluemix_notm}} console.
+You can view information about potential vulnerabilities, and the security of images in the {{site.data.keyword.registrylong}} public and private repositories by using the {{site.data.keyword.Bluemix_notm}} console.
 {:shortdesc}
 
 1.  Log into the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
