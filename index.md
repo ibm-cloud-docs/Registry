@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-13"
+lastupdated: "2017-10-31"
 
 ---
 
@@ -32,7 +32,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 2.  Install the container-registry plug-in:
 
     ```
-    bx plugin install container-registry -r {{site.data.keyword.Bluemix_notm}}
+    bx plugin install container-registry -r Bluemix
     ```
     {: pre}
 
