@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-13"
+lastupdated: "2017-10-31"
 
 ---
 
@@ -147,7 +147,7 @@ To build your own Docker image, complete the following steps:
     ```
     {: pre}
 
-    Example to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} (ibmliberty) image:
+    Example to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} WebSphere&reg; Application Server Liberty (ibmliberty) image:
 
     ```
     FROM registry.<region>.bluemix.net/ibmliberty:latest

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-24"
+lastupdated: "2017-10-30"
 
 ---
 
@@ -29,7 +29,7 @@ Here are the answers to common troubleshooting questions about using {{site.data
 ## Getting help and support for {{site.data.keyword.registrylong_notm}}
 {: #gettinghelp}
 
-If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open a {{site.data.keyword.Bluemix_notm}} support ticket.
+If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM_notm}} support ticket.
 
 When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
 
@@ -38,7 +38,7 @@ When you are using the forums to ask a question, tag your question so that it is
 
 See [Getting help](../../support/index.html#getting-help) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](../../support/index.html#contacting-support).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Contacting support](../../support/index.html#contacting-support).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
