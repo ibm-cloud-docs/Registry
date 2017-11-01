@@ -129,7 +129,7 @@ You can use a token in your `docker login` command to automate access to your na
 ## Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
-Remove a token when you do not need it anymore.
+Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
 {:shortdesc}
 
 **Note:** Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.

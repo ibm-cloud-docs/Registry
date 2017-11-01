@@ -102,7 +102,7 @@ You can review your quota limits and check your current storage and pull traffic
     Your output looks similar to the following.
 
     ```
-    Getting quotas and usage for the current month, for account '&lt;account_owner&gt; Account'...
+    Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   
