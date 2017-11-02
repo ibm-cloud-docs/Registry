@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-02"
 
 ---
 
@@ -235,7 +235,7 @@ Consider the following rules when you choose a namespace:
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
-## {{site.data.keyword.registrylong_notm}} regions
+## Regions
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
@@ -253,7 +253,7 @@ A region is a geographic area that is accessed by a dedicated endpoint. {{site.d
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `bx target` command with the `-r` flag, where _&lt;region&gt;_ is the name of the region (`us-south`, `eu-de`, `eu-gb`, or `au-syd`).
+If you want to use a region other than your local region, you can target the region that you want to access by running the `bx cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter. To run the command with parameters, replace _&lt;region&gt;_ with the name of the region (`us-south`, `eu-de`, `eu-gb`, or `au-syd`)
 
 ```
 bx target -r <region>
