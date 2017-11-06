@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-06"
 
 ---
 
@@ -235,7 +235,7 @@ Consider the following rules when you choose a namespace:
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
-## {{site.data.keyword.registrylong_notm}} regions
+## Regions
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
@@ -246,25 +246,45 @@ After you set your first namespace, you are assigned the free {{site.data.keywor
 
 A region is a geographic area that is accessed by a dedicated endpoint. {{site.data.keyword.registrylong_notm}} registries are available in the following regions:
 
--   AP South: `registry.au-syd.bluemix.net`
--   EU Central: `registry.eu-de.bluemix.net`
--   UK South: `registry.eu-gb.bluemix.net`
--   US South: `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `bx target` command with the `-r` flag, where _&lt;region&gt;_ is the name of the region (`us-south`, `eu-de`, `eu-gb`, or `au-syd`).
+If you want to use a region other than your local region, you can target the region that you want to access by running the `bx cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter. 
+
+To run the command with parameters, replace _&lt;region&gt;_ with the name of the region, for example, `eu-central`.
 
 ```
 bx target -r <region>
 ```
 {: pre}
 
-For example, to change to the EU Central region, run the following command:
+For example, to target the eu-central region, run the following command:
 
 ```
-bx target -r eu-de
+bx target -r eu-central
 ```
 {: pre}
 
+
+### International registry
+{: #registry_regions_global}
+
+An international registry is available globally and has no region included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry.
+
+You can target the international registry by running the `bx cr region-set` command.
+
+For example, to target the international registry, run the following command:
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
+After you have targeted the international registry, run the `bx cr login` command to log your local Docker daemon into the international registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
 
