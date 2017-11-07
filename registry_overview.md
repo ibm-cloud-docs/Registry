@@ -258,14 +258,14 @@ If you want to use a region other than your local region, you can target the reg
 To run the command with parameters, replace _&lt;region&gt;_ with the name of the region, for example, `eu-central`.
 
 ```
-bx target -r <region>
+bx cr region-set <region>
 ```
 {: pre}
 
 For example, to target the eu-central region, run the following command:
 
 ```
-bx target -r eu-central
+bx cr region-set eu-central
 ```
 {: pre}
 
