@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -16,27 +16,73 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# Automating access to {{site.data.keyword.registrylong_notm}}
+{: #registry_access}
 
-
-
-
-# Automating access to your namespaces in {{site.data.keyword.registrylong_notm}} by using tokens
-{: #registry_tokens}
-
-You can use tokens to automate the pushing and pulling of Docker images to and from your namespaces.
+You can use either registry tokens or an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your  {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images. 
 {:shortdesc}
+
+API keys are linked to your account and can be used across {{site.data.keyword.Bluemix_notm}} so that you don't need different credentials for each service. You can use the API key in the CLI or as part of automation to log in as your user identity.
+
+Registry tokens are scoped for {{site.data.keyword.registrylong_notm}} only. You can limit them to read-only access, and you can choose whether they are expiring or non-expiring.
+
+For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](../../iam/apikeys.html#manapikey).
 
 Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](registry_setup_cli_namespace.html#registry_cli_install).
 
-A security token allows everyone in possession of the token to access secured information. Tokens are used in a similar way to API keys. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
+
+## Automating access to your namespaces by using API keys
+{: #registry_api_key}
+
+You can use API keys to automate the pushing and pulling of Docker images to and from your namespaces.
+{:shortdesc}
+
+### Creating an API key
+{: #registry_api_key_create}
+
+You can create an API key that you can then use to log in to your registry. 
+{:shortdesc} 
+
+Create an IAM API key, see [Creating an API key](../../iam/userid_keys.html#creating-an-api-key). 
+
+### Using an API key to automate access
+{: #registry_api_key_use}
+
+You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. 
+{:shortdesc} 
+
+Use the API key to log in to your registry by running the following Docker command. Replace &lt;your_apikey&gt; with your API key, and replace &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+For reference information about the command, see [`bluemix iam api-key-create`](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+
+
+## Automating access to your namespaces by using tokens
+{: #registry_tokens}
+
+You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
+{:shortdesc}
+
+Everyone in possession of a registry token can access secured information. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in. 
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 
+Use the following tasks to manage your tokens:
 
-## Creating a token for your {{site.data.keyword.Bluemix_notm}} account
+-  [Creating a token for your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_create)
+-  [Using a token to automate access to your namespaces](#registry_tokens_use)
+-  [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
+
+
+### Creating a token for your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_create}
 
-You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces of a region.
+You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
 {:shortdesc}
 
 1.  Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
@@ -82,7 +128,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
     {: pre}
 
 
-## Using a token to automate access to your namespaces
+### Using a token to automate access to your namespaces 
 {: #registry_tokens_use}
 
 You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read-write access for your token, users can push and pull images to and from your namespaces.
@@ -126,7 +172,7 @@ You can use a token in your `docker login` command to automate access to your na
     After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
 
-## Removing a token from your {{site.data.keyword.Bluemix_notm}} account
+### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
 Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
@@ -154,5 +200,6 @@ Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it a
     bx cr token-rm <token_id>
     ```
     {: pre}
+    
 
 
