@@ -31,6 +31,8 @@ Every image that you want to add to your namespace must exist on your local mach
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+
+
 Before you begin:
 
 - [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
@@ -52,6 +54,8 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to securely store and share your image with other users.
 {:shortdesc}
+
+
 
 Before you begin:
 
@@ -90,6 +94,8 @@ After you push your image to your private registry, you can:
 
 You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
 {:shortdesc}
+
+
 
 Before you begin:
 
