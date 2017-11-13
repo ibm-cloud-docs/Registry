@@ -26,5 +26,12 @@ You can view information about potential vulnerabilities, and the security of im
 2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3.  Click **Catalog**.
 4.  Select the **Containers** category and click the **Container Registry** tile.
-5.  To view information about images in your private repositories, click **Private Repositories**. A list of images in your private repositories is displayed. 
+5.  To view information about images in your private repositories, click **Private Repositories**. A list of images in your private repositories is displayed.
+    
+    
+    
 6.  To view information about images in the public repositories, click **Public Repositories**. A list of images in the public repositories with a link to the documentation is displayed.
+    
+    
+
+
