@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
-IBM Bluemix Container Registry
+IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
@@ -25,8 +25,9 @@ IBM Bluemix Container Registry
     registry_tokens.md
     [Managing image security with Vulnerability Advisor](../va/va_index.html)
         [About Vulnerability Advisor](../va/va_index.html#about)
+        
         [Reviewing image security by using the CLI](../va/va_index.html#va_registry_cli)
-        [Resolving problems](../va/va_index.html#va_report)
+        [Resolving common problems](../va/va_index.html#va_report)
     {: .navgroup-end}
     
     {: .navgroup id="reference"}
