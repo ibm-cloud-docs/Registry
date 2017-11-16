@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-13"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -31,7 +31,7 @@ Every image that you want to add to your namespace must exist on your local mach
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
 
 Before you begin:
 
@@ -55,7 +55,7 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to securely store and share your image with other users.
 {:shortdesc}
 
-
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Push an image from your computer to your private registry."/>
 
 Before you begin:
 
@@ -95,7 +95,7 @@ After you push your image to your private registry, you can:
 You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
 {:shortdesc}
 
-
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copy an image from any  private or public registry to your private {{site.data.keyword.Bluemix_notm}} registry."/>
 
 Before you begin:
 
