@@ -31,9 +31,6 @@ To view the graphical user interface, use the following steps:
 3.  Click **Catalog**.
 4.  Select the **Containers** category and click the **Container Registry** tile.
 5.  To view information about images in your private repositories, click **Private Repositories**. A list of images in your private repositories is displayed.
-    
-    
-    
 6.  To view information about images in the public repositories, click **Public Repositories**. A list of images in the public repositories with a link to the documentation is displayed.
     
     
