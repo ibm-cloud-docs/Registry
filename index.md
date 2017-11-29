@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-10-31"
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to safely store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
 
-The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Viewing information about images in the {{site.data.keyword.Bluemix_notm}} console](registry_ui.html).
+The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Monitoring the vulnerability of images](registry_ui.html).
 
 
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
@@ -54,6 +54,13 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     ```
     {: pre}
 
+3.  To ensure that your namespace is created, run the `bx cr namespace-list` command.
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## Pull images from another registry to your local machine
 {: #registry_images_pulling}
@@ -76,24 +83,24 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     ```
     {: pre}
 
-    Example:
+    Example, where _&lt;source_image&gt;_ is `hello-world` and _&lt;tag&gt;_ is `latest`:
 
     ```
     docker pull hello-world:latest
     ```
     {: pre}
 
-4.  Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
+4.  Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Replace _&lt;region&gt;_ with the name of your [region](registry_overview.html#registry_regions). Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
 
-    Example:
+    Example, where _&lt;source_image&gt;_ is `hello-world`, _&lt;tag&gt;_ is `latest`, _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `Namespace1`, _&lt;new_image_repo&gt;_ is `hw_repo`, and _&lt;new_tag&gt;_ is `1`:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -101,17 +108,17 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
-1.  Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace where you want to upload your image, and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
+1.  Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](index.html#registry_namespace_add), and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    Example:
+    Example, where _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `Namespace1`, _&lt;image_repo&gt;_ is `hw_repo`, and _&lt;tag&gt;_ is `1`:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

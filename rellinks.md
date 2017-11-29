@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-15"
+lastupdated: "2017-11-16"
 
 ---
 
@@ -25,7 +25,7 @@ You can use the following related links to become more familiar with {{site.data
 {: #registry}
 
 <ul>
-<li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} CLI <img src="../../icons/launch-glyph.svg"></a>
+<li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a>
 <li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>
 </ul>
 
