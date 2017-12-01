@@ -1,0 +1,40 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+IBM Bluemix Container Registry
+
+    {: .navgroup id="learn"}
+    index.md
+    registry_overview.md
+    [Imágenes de IBM](../RegistryImages/index.html#ibm_images)
+        [imagen ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [imagen ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
+        [imagen ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
+        [imagen ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
+        [imagen ibmnode](../RegistryImages/ibmnode/index.html#getting_started_node)
+        [imagen ibm-node-strong-pm](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
+        [imagen ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    registry_setup_cli_namespace.md
+    registry_ui.md
+    registry_quota.md
+    registry_images_.md
+    registry_tokens.md
+    [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html)
+        [Acerca de Vulnerability Advisor](../va/va_index.html#about)
+        [Revisión de la seguridad de imágenes mediante la interfaz de línea de mandatos](../va/va_index.html#va_registry_cli)
+        [Resolución de problemas](../va/va_index.html#va_report)
+    {: .navgroup-end}
+    
+    {: .navgroup id="reference"}
+    registry_cli_reference.md
+    rellinks.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    ts_index.md
+    {: .navgroup-end}
+
