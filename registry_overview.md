@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-30"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -25,6 +25,10 @@ Use {{site.data.keyword.registrylong}} to safely store and access private Docker
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. You can use the private registry by setting up your own image namespace and pushing Docker images to your namespace.
 
 <a href="https://console.bluemix.net/docs/api/content/services/Registry/images/registry_architecture.png">![Figure 1. How Registry interacts with your Docker images](images/registry_architecture.png)</a>
+
+
+
+<a href="https://console.bluemix.net/docs/api/content/services/Registry/images/registry_architecture.png">![Figure 1. How Registry interacts with your Docker images](images/registry_architecture.png) alt="Image showing how IBM Cloud Container Registry interacts with Docker images. Container Registry has private and public repositories and an API. The repositories pull and push images to and from your local image store. The API interacts with the CLI to list images; and it also interects with the CLI to list, create, inspect, and remove images. Your local image store can also pull and push images to other registries."</a></staging>
 
 A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registrylong_notm}}, only users with access to your {{site.data.keyword.Bluemix_notm}} account can access your images.
 
