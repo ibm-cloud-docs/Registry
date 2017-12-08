@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-13"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -94,7 +94,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> Understanding this command's components</th>
+        <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Understanding this command's components</th>
         </thead>
         <tbody>
         <tr>
