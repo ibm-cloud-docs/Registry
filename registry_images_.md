@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-15"
+lastupdated: "2017-12-15"
 
 ---
 
@@ -209,6 +209,8 @@ To build your own Docker image, complete the following steps:
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
 
+
+
 ## Removing images from your private {{site.data.keyword.Bluemix_notm}} images registry
 {: #registry_images_remove}
 
@@ -239,3 +241,11 @@ Public {{site.data.keyword.IBM_notm}} images cannot be removed from your private
   bx cr image-list
   ```
   {: pre}
+  
+  
+
+
+
+
+
+
