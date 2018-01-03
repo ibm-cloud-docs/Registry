@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -25,6 +25,10 @@ e acessar as imagens privadas do Docker em uma arquitetura altamente disponível
 
 O {{site.data.keyword.registrylong_notm}} fornece um registro privado
 de imagem de múltiplos locatários, altamente disponível e escalável que é hospedado e gerenciado pela IBM. É possível usar o registro privado configurando o seu próprio namespace de imagem e enviando por push imagens do Docker para o seu namespace.
+
+<img src="images/registry_architecture.png" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém os repositórios público e privado e as APIs para interagir com o serviço. O cliente Docker local pode puxar e enviar por push as imagens para/de seus repositórios privados no registro e pode puxar os repositórios públicos. A UI da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente Docker local também pode puxar e enviar por push as imagens de seu armazenamento de imagem local para outros registros."/>
+
+**Figura 1. Como o {{site.data.keyword.registrylong_notm}} interage com as imagens do Docker**
 
 Uma imagem do Docker é a base para cada contêiner que você cria. Uma imagem é criada por meio
 de um Dockerfile, que é um arquivo que contém instruções para construir a imagem. Um Dockerfile pode
@@ -86,7 +90,7 @@ Localize informações e exemplos de como o processo de faturamento e limites de
 {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Cada imagem é construída por meio de uma série de camadas que representam, cada uma, uma mudança incremental da imagem base. Quando você enviar por push ou puxar uma imagem, a quantia de armazenamento e tráfego extraído necessária para cada camada será incluída em seu uso mensal. Camadas idênticas são compartilhadas automaticamente entre as imagens em sua conta do {{site.data.keyword.Bluemix_notm}} e serão reutilizadas ao criar outras imagens. O armazenamento para cada camada idêntica é cobrado somente uma vez, independentemente de quantas imagens em sua conta referenciam a camada. 
+Cada imagem é construída por meio de uma série de camadas que representam, cada uma, uma mudança incremental da imagem base. Quando você enviar por push ou puxar uma imagem, a quantia de armazenamento e tráfego extraído necessária para cada camada será incluída em seu uso mensal. Camadas idênticas são compartilhadas automaticamente entre as imagens em sua conta do {{site.data.keyword.Bluemix_notm}} e serão reutilizadas ao criar outras imagens. O armazenamento para cada camada idêntica é cobrado somente uma vez, independentemente de quantas imagens em sua conta referenciam a camada.
 
 Exemplo para enviar imagens por push:
 
@@ -241,7 +245,7 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
 </dl>
 
 <dl>
-  <dt>Imagem</dt>
+  <dt>Image</dt>
   <dd>Uma imagem do Docker é construída com base nas instruções fornecidas no Dockerfile e representa a base de um contêiner. Após a imagem do Docker ser construída, é possível usá-la para criar um contêiner para implementar seu app e suas dependências. As imagens são armazenadas em um registro. Os usuários com acesso à sua conta do {{site.data.keyword.Bluemix_notm}} podem acessar as suas imagens.</dd>
 </dl>
 
@@ -278,14 +282,14 @@ então já terá um namespace. É possível criar namespaces adicionais, mas nã
 
 Considere as regras a seguir ao escolher um namespace:
 
--   O namespace deve ser exclusivo em uma região do {{site.data.keyword.Bluemix_notm}}. 
+-   O namespace deve ser exclusivo em uma região do {{site.data.keyword.Bluemix_notm}}.
 -   O namespace deve ter de 4 a 30 caracteres de comprimento.
 -   O namespace deve iniciar com pelo menos uma letra ou um número.
 -   O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
 
 Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](#registry_plan_upgrade).
 
-## Regiões do {{site.data.keyword.registrylong_notm}}
+## Regiões
 {: #registry_regions}
 
 Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis em várias regiões.
@@ -296,25 +300,45 @@ Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis em v
 
 Uma região é uma área geográfica acessada por um terminal dedicado. Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis nas regiões a seguir:
 
--   Sul da AP: `registry.au-syd.bluemix.net`
--   Central da UE: `registry.eu-de.bluemix.net`
--   Sul do Reino Unido: `registry.eu-gb.bluemix.net`
--   Sul dos EUA: `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
 Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
 
-Se você deseja usar uma região diferente de sua região local, é possível ter como destino a região que deseja acessar executando o comando `bx target` com a sinalização `-r`, em que _&lt;region&gt;_ é o nome da região (`us-south`, `eu-de`, `eu-gb` ou `au-syd`).
+Se você deseja usar uma região diferente de sua região local, é possível ter como destino a região que deseja acessar executando o comando `bx cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro. 
+
+Para executar o comando com parâmetros, substitua _&lt;region&gt;_ pelo nome da região, por exemplo, `eu-central`.
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-Por exemplo, para mudar para a região Central da UE, execute o comando a seguir:
-
-```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+Por exemplo, para ter como destino a região eu-central, execute o comando a seguir:
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### Registro internacional
+{: #registry_regions_global}
+
+Um registro internacional está disponível globalmente e não tem região incluída em seu nome (`registry.bluemix.net`). Somente imagens públicas fornecidas pela IBM são hospedadas nesse registro.
+
+É possível ter como destino o registro internacional executando o comando `bx cr region-set`.
+
+Por exemplo, para ter como destino o registro internacional, execute o comando a seguir:
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+Para obter mais informações sobre o comando `bx cr region-set`, veja [CLI do {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
+Depois de ter como destino o registro internacional, execute o comando `bx cr login` para efetuar login de seu daemon do Docker local no registro internacional para que seja possível puxar imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
 

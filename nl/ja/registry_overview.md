@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -19,9 +19,14 @@ lastupdated: "2017-10-31"
 # {{site.data.keyword.registrylong_notm}} の概要
 {: #registry_overview}
 
-{{site.data.keyword.registrylong}} を使用して、可用性が高く、高度にスケーラブルなアーキテクチャーでプライベート Docker イメージを保管およびアクセスします。{:shortdesc}
+{{site.data.keyword.registrylong}} を使用して、可用性が高く、高度にスケーラブルなアーキテクチャーでプライベート Docker イメージを保管およびアクセスします。
+{:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} には、IBM によってホストおよび管理されている、マルチテナントで、可用性が高く、スケーラブルな専用イメージ・レジストリーが用意されています。専用レジストリーを使用し、独自のイメージ名前空間をセットアップして名前空間に Docker イメージをプッシュすることができます。
+
+<img src="images/registry_architecture.png" alt="IBM Cloud Container Registry との対話を示す図。Container Registry には、専用リポジトリーとパブリック・リポジトリーの両方、そしてサービスと対話するための API が含まれています。ローカルの Docker クライアントは、レジストリー内の専用リポジトリーとの間でイメージをプル、プッシュできます。また、パブリック・リポジトリーからプルできます。IBM Cloud の Web UI (コンソール) は Container Registry API と対話してイメージをリストします。Container Registry CLI は API と対話してイメージのリスト、作成、検査、削除、その他の管理機能を実行します。また、ローカルの Docker クライアントは、ローカル・イメージ・ストアと他のレジストリーの間でもイメージをプル、プッシュできます。"/>
+
+**図 1. {{site.data.keyword.registrylong_notm}} と Docker イメージの対話**
 
 Docker イメージは、作成するすべてのコンテナーの基礎となるものです。イメージは、Dockerfile (イメージをビルドするための指示が入ったファイル) から作成されます。Dockerfile の別個に保管されている指示の中で、ビルド成果物 (アプリ、アプリの構成、その従属関係) が参照されることもあります。イメージは通常、レジストリーに保管されます。だれでもアクセスできるレジストリー (パブリック・レジストリー) を使用することも、小さなグループのユーザーだけにアクセスを限定したレジストリー (専用レジストリー) をセットアップすることもできます。
 {{site.data.keyword.registrylong_notm}} を使用することにより、{{site.data.keyword.Bluemix_notm}} アカウントへのアクセス権を持つユーザーだけが、イメージにアクセスできます。
@@ -42,7 +47,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ## サービス・プラン
 {: #registry_plans}
 
-無料または標準の {{site.data.keyword.registrylong_notm}} サービス・プランを選択して Docker イメージを保管し、これらのイメージを {{site.data.keyword.Bluemix_notm}} アカウント内のユーザーが使用できるようにします。{:shortdesc}
+無料または標準の {{site.data.keyword.registrylong_notm}} サービス・プランを選択して Docker イメージを保管し、これらのイメージを {{site.data.keyword.Bluemix_notm}} アカウント内のユーザーが使用できるようにします。
+{:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} サービス・プランは、プライベート・イメージに使用できるストレージ量とプル・トラフィックを決定します。サービス・プランは、{{site.data.keyword.Bluemix_notm}} アカウントに関連付けられており、ストレージおよびイメージのプル・トラフィックの制限は、アカウント内にセットアップしているすべての名前空間に適用されます。
 
@@ -59,7 +65,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ## 割り当て量制限および請求処理
 {: #registry_plan_billing}
 
-{{site.data.keyword.registrylong_notm}} で請求処理と割り当て量制限がどのように機能しているかについての情報および例を示します。{:shortdesc}
+{{site.data.keyword.registrylong_notm}} で請求処理と割り当て量制限がどのように機能しているかについての情報および例を示します。
+{:shortdesc}
 
 すべてのイメージは、それぞれが基本イメージからの増分変更を表す多くのレイヤーから構築されます。イメージをプッシュまたはプルすると、各レイヤーに必要なストレージおよびプル・トラフィックの量が、月々の使用量に追加されます。同一レイヤーは、{{site.data.keyword.Bluemix_notm}} アカウント内のイメージ間で自動的に共有され、他のイメージを作成する際に再使用されます。
 同一のレイヤーのストレージに対する課金は、1 回のみ行われます。そのレイヤーを参照しているアカウント内のイメージ数は関係ありません。
@@ -73,7 +80,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ### ストレージおよびプル・トラフィックの請求処理
 {: #registry_billing_traffic}
 
-選択しているサービス・プランに応じて、1 カ月当たりに使用するストレージおよびプル・トラフィックに対して課金されます。{:shortdesc}
+選択しているサービス・プランに応じて、1 カ月当たりに使用するストレージおよびプル・トラフィックに対して課金されます。
+{:shortdesc}
 
 **ストレージ: **
 
@@ -104,7 +112,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ### ストレージおよびプル・トラフィックの割り当て量制限
 {: #registry_quota_limits}
 
-選択しているサービス・プランに応じて、プラン固有の割り当て量制限またはカスタム割り当て量制限に達するまで、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。{:shortdesc}
+選択しているサービス・プランに応じて、プラン固有の割り当て量制限またはカスタム割り当て量制限に達するまで、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
+{:shortdesc}
 
 **ストレージ: **
 
@@ -129,7 +138,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ### コストの見積もり
 {: #registry_estimating_costs}
 
-{{site.data.keyword.Bluemix_notm}} 料金カリキュレーターを使用して、プランのコストを見積もります。{:shortdesc}
+{{site.data.keyword.Bluemix_notm}} 料金カリキュレーターを使用して、プランのコストを見積もります。
+{:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} の料金カリキュレーターを使用して、アプリにかかる料金を調べることができます。
 
@@ -169,7 +179,8 @@ bx cr plan-upgrade standard```
 ## 基礎の学習
 {: #registry_planning}
 
-レジストリーの基礎を知ることで、{{site.data.keyword.registrylong_notm}} を使用して Docker イメージを安全に保管し共有できるようにします。{:shortdesc}
+レジストリーの基礎を知ることで、{{site.data.keyword.registrylong_notm}} を使用して Docker イメージを安全に保管し共有できるようにします。
+{:shortdesc}
 
 ### {{site.data.keyword.registrylong_notm}} で使用される用語の説明
 {: #terms}
@@ -224,7 +235,8 @@ Docker 固有の用語について詳しくは、[Docker 用語集を参照し�
 ### 名前空間の計画
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} には、IBM によってホストおよび管理されているマルチテナントの専用イメージ・レジストリーが用意されています。レジストリー名前空間をセットアップすることにより、このレジストリー内で Docker イメージを安全に保管および共有することができます。{:shortdesc}
+{{site.data.keyword.registrylong_notm}} には、IBM によってホストおよび管理されているマルチテナントの専用イメージ・レジストリーが用意されています。レジストリー名前空間をセットアップすることにより、このレジストリー内で Docker イメージを安全に保管および共有することができます。
+{:shortdesc}
 
 複数の名前空間をセットアップし、例えば、実動用とステージング環境用に別々のリポジトリーを用意することができます。レジストリーを複数の {{site.data.keyword.Bluemix_notm}} 領域で使用する場合は、領域ごとに名前空間をセットアップする必要があります。名前空間名は、それぞれの領域内で固有です。同じ名前空間名を各領域で使用できますが、別のユーザーが既にその名前で名前空間を設定している領域では使用できません。
 
@@ -243,7 +255,7 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 最初の名前空間を設定した後、無料の {{site.data.keyword.registrylong_notm}} サービス・プランが割り当てられます ([プランのアップグレード](#registry_plan_upgrade)をまだ実行していない場合)。
 
-## {{site.data.keyword.registrylong_notm}} 領域
+## 領域
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} レジストリーは、複数の領域で使用できます。
@@ -254,25 +266,45 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。{{site.data.keyword.registrylong_notm}} レジストリーは、以下の領域で使用できます。
 
--   南アジア太平洋: `registry.au-syd.bluemix.net`
--   EU 中央部: `registry.eu-de.bluemix.net`
--   英国南部: `registry.eu-gb.bluemix.net`
--   米国南部: `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
 すべてのレジストリー成果物は、現在使用している特定の領域レジストリーが範囲になります。例えば、名前空間、イメージ、トークン、割り当て量の設定、プランの設定はすべて、領域レジストリーごとに管理する必要があります。
 
-ローカル領域以外の領域を使用する場合は、次のように `-r` フラグを指定した `bx target` コマンドを実行して、アクセスする領域をターゲットにします。ここで _&lt;region&gt;_ は領域の名前 (`us-south`、`eu-de`、`eu-gb`、または `au-syd`) です。
+ローカル領域以外の領域を使用する場合は、`bx cr region-set` コマンドを実行して、アクセスしたい領域をターゲットにします。このコマンドをパラメーターなしで実行して使用可能な領域のリストを表示することも、パラメーターとして領域を指定することもできます。 
+
+パラメーターを指定してコマンドを実行する場合は、_&lt;region&gt;_ を例えば `eu-central` のような領域名に置き換えます。
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-例えば、EU 中央部の領域を変更するには、以下のコマンドを実行します。
-
-```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+例えば、eu-central 領域をターゲットにするには、以下のコマンドを実行します。
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### 国際レジストリー
+{: #registry_regions_global}
+
+国際レジストリーはグローバルに提供されているものであり、レジストリー名に領域は含まれていません (`registry.bluemix.net`)。このレジストリーでは、IBM 提供のパブリック・イメージのみがホストされます。
+
+`bx cr region-set` コマンドを実行して、国際レジストリーをターゲットにすることができます。
+
+例えば、以下のコマンドを実行して国際レジストリーをターゲットにすることができます。
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+`bx cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set) を参照してください。
+
+国際レジストリーをターゲットにした後に、`bx cr login` コマンドを実行してローカル Docker デーモンを国際レジストリーにログインさせ、{{site.data.keyword.IBM_notm}} 提供のパブリック・イメージをプルできるようにします。
 

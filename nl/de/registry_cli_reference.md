@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -26,7 +26,7 @@ Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Image-N
 ## bx cr-Befehle
 {: #registry_cli_reference_bxcr}
 
-Führen Sie bx cr-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
+Führen Sie die `bx cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
 {:shortdesc}
 
 Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](../../cli/plugins/registry/index.html#containerregcli).
@@ -46,13 +46,13 @@ Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei vers
 
 Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylong_notm}}-Befehlen verwenden. Klicken Sie auf einen Befehl, um eine Liste der verfügbaren Felder und ihrer Datentypen anzuzeigen.
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptionen verwenden können.
 
--   Führen Sie den folgenden Befehl aus, um Repository, Tag und Sicherheitsstatus aller Images anzuzeigen, die eine Größe von über 1 MB haben:
+-   Führen Sie den folgenden Befehl `bx cr image-list` aus, um Repository, Tag und Sicherheitsstatus aller Images anzuzeigen, die eine Größe von über 1 MB haben:
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -69,7 +69,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: screen}
 
--   Führen Sie den folgenden Befehl aus, um anzuzeigen, wo die IBM Dokumentation für ein angegebenes öffentliches IBM Image gehostet wird:
+-   Führen Sie den folgenden Befehl `bx cr image-inspect` aus, um anzuzeigen, wo die IBM Dokumentation für ein angegebenes öffentliches IBM Image gehostet wird:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -84,7 +84,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: screen}
 
--   Führen Sie den folgenden Befehl aus, um die verfügbaren Ports für ein angegebenes Image anzuzeigen:
+-   Führen Sie den folgenden Befehl `bx cr image-inspect` aus, um die verfügbaren Ports für ein angegebenes Image anzuzeigen:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -99,7 +99,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: screen}
 
--   Führen Sie den folgenden Befehl aus, um alle schreibgeschützten Tokens anzuzeigen:
+-   Führen Sie den folgenden Befehl `bx cr token-list` aus, um alle schreibgeschützten Tokens anzuzeigen:
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"

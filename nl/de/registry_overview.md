@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -24,6 +24,10 @@ Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch
 
 {{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Image-Namensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
 
+<img src="images/registry_architecture.png" alt="Veranschaulichung der Interaktion mit IBM Cloud Container Registry. Container Registry enthält sowohl private als auch öffentliche Repositorys sowie APIs für die Interaktion mit dem Service. Der lokale Docker-Client kann Images per Push- bzw. Pull-Operationen aus den privaten Repositiorys in die Registry laden und umgekehrt und er kann Pull-Operationen für öffentliche Repositorys ausführen. Die IBM Cloud-Web-UI (Konsole) interagiert mit der Container Registry-API zum Auflisten von Images. Die Container Registry-CLI interagiert mit der API zum Auflisten, Erstellen, Überprüfen und Entfernen von Images und zum Ausführen weiterer Verwaltungsfunktionen. Der lokale Docker-Client kann auch Images per Push- bzw. Pull-Operationen aus dem lokalen Imagespeicher in andere Registrys laden und umgekehrt."/>
+
+**Abbildung 1. Interaktion von {{site.data.keyword.registrylong_notm}} mit den Docker-Images**
+
 Jeder von Ihnen erstellte Container basiert auf einem Docker-Image. Ein Image wird aus einer Dockerfile erstellt, die Anweisungen zum Erstellen des Images enthält. Eine Dockerfile kann in ihren Anweisungen Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App). Images werden normalerweise in einer Registry gespeichert, die entweder öffentlich zugänglich ist (öffentliche Registry) oder mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert wird (private Registry). Wenn Sie {{site.data.keyword.registrylong_notm}} verwenden, können ausschließlich Benutzer mit Zugriff auf Ihr {{site.data.keyword.Bluemix_notm}}-Konto auf Ihre Images zugreifen.
 
 Wenn Sie Images mit einer Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen, profitieren Sie von den integrierten Vulnerability Advisor-Funktionen, die nach potenziellen Sicherheitsproblemen und Schwachstellen suchen. Vulnerability Advisor prüft auf gefährdete Pakete in bestimmten Basis-Docker-Images und bekannte Sicherheitslücken in App-Einstellungen. Werden Sicherheitslücken gefunden, so werden Informationen zu der Sicherheitslücke bereitgestellt. Sie können diese Informationen verwenden, um Sicherheitsprobleme zu beheben, sodass Container nicht über gefährdete Images bereitgestellt werden.
@@ -41,7 +45,8 @@ Die folgende Tabelle gibt eine Übersicht über den Nutzen der Verwendung von {{
 ## Servicepläne
 {: #registry_plans}
 
-Sie können zwischen einem kostenlosen Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung zu stellen.{:shortdesc}
+Sie können zwischen einem kostenlosen Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung zu stellen.
+{:shortdesc}
 
 Der Serviceplan von {{site.data.keyword.registrylong_notm}} legt die Speicherkapazität und den Umfang des Pull-Datenverkehrs fest, die/den Sie für Ihre privaten Images verwenden können. Der Serviceplan ist Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Die Begrenzungen für den Speicher und den Pull-Datenverkehr für Images gelten für alle Namensbereiche, die Sie in Ihrem Konto einrichten.
 
@@ -52,7 +57,7 @@ In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.key
 |Beschreibung|Bei diesem Serviceplan können Sie die private Registry in {{site.data.keyword.registrylong_notm}} ausprobieren, um Ihre Docker-Images sicher zu speichern und gemeinsam zu nutzen. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto.|
 |Speicherkapazität für Images|500 MB|Unbegrenzt|
 |Pull-Datenverkehr|5 GB pro Monat|Unbegrenzt|
-|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenlos. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pulloperationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenlos. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabelle 2. Pläne in {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Kontingente und Abrechnung
@@ -181,7 +186,7 @@ Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images 
 
 <dl>
   <dt>Registry</dt>
-  <dd>Eine Registry ist ein Service, der die Infrastruktur zur Speicherung von Docker-Images bereitstellt und auf den mithilfe der Registry-Host-URL und eines optionalen Ports zugegriffen werden kann. Registrys sind entweder öffentlich zugänglich (öffentliche Registry) oder werden mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert (private Registry).{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Image-Namensbereich einrichten und damit beginnen, Docker-Images mit Push-Operation an Ihren Namensbereich zu übertragen.</dd>
+  <dd>Eine Registry ist ein Service, der die Infrastruktur zur Speicherung von Docker-Images bereitstellt und auf den mithilfe der Registry-Host-URL und eines optionalen Ports zugegriffen werden kann. Registrys sind entweder öffentlich zugänglich (öffentliche Registry) oder werden mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert (private Registry). {{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Image-Namensbereich einrichten und damit beginnen, Docker-Images mit Push-Operation an Ihren Namensbereich zu übertragen.</dd>
 </dl>
 
 <dl>
@@ -193,7 +198,7 @@ Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images 
 
 <dl>
   <dt>Repository</dt>
-  <dd>Ein Image-Repository ist eine Sammlung von zugehörigen, mit Tags versehenen Images im Registry. Repository wird oft synonym für Image verwendet. Ein Repository enthält jedoch potenziell mehrere mit Tags versehene Varianten eines Images. </dd>
+  <dd>Ein Image-Repository ist eine Sammlung von zugehörigen, mit Tags versehenen Images im Registry. Repository wird oft synonym für Image verwendet. Ein Repository enthält jedoch potenziell mehrere mit Tags versehene Varianten eines Images.</dd>
 </dl>
 
 <dl>
@@ -234,7 +239,7 @@ Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Rege
 
 Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenlosen Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
 
-## {{site.data.keyword.registrylong_notm}}-Regionen
+## Regionen
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}}-Registrys sind in mehreren Regionen verfügbar.
@@ -245,25 +250,45 @@ Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kosten
 
 Eine Region ist ein geografischer Bereich, auf den über einen dedizierten Endpunkt zugegriffen wird. {{site.data.keyword.registrylong_notm}}-Registrys sind in den folgenden Regionen verfügbar:
 
--   Asien-Pazifik (Süden): `registry.au-syd.bluemix.net`
--   Zentraleuropa: `registry.eu-de.bluemix.net`
--   Großbritannien (Süden): `registry.eu-gb.bluemix.net`
--   Vereinigte Staaten (Süden): `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
 Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
 
-Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `bx target` mit dem Flag `-r` ausführen. Dabei steht _&lt;region&gt;_ für den Namen der Region (`us-south`, `eu-de`, `eu-gb` oder `au-syd`).
+Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `bx cr region-set` verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.  
+
+Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen Region, z. B. `eu-central`.
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-Wenn Sie beispielsweise zur Region 'Zentraleuropa' wechseln möchten, führen Sie den folgenden Befehl aus:
-
-```
-bx target -r eu-de
+bx cr region-set <Region>
 ```
 {: pre}
 
+Wenn Sie z. B. die Region 'eu-central' verwenden möchten, führen Sie den folgenden Befehl aus:
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### Internationale Registry
+{: #registry_regions_global}
+
+Eine internationale Registry ist global verfügbar; ihr Namen enthält keine Region (`registry.bluemix.net`). Nur von IBM bereitgestellte öffentliche Images befinden sich in dieser Registry.
+
+Sie können die internationale Registry als Ziel angeben, indem Sie den Befehl `bx cr region-set` ausführen.
+
+Beispiel: Wenn Sie die internationale Registry angeben möchten, führen Sie den folgenden Befehl aus:
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+Weitere Informationen zum Befehl `bx cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
+Nach der Angabe der internationalen Registry führen Sie den Befehl `bx cr login` aus, um den lokalen Docker-Dämon bei der internationalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images per Pull-Operation abgerufen werden können.
 

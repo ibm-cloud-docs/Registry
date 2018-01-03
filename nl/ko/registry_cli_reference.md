@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -20,13 +20,14 @@ lastupdated: "2017-10-26"
 명령
 {: #registry_cli_reference}
 
-container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} 계정의 모든 사용자와 Docker 이미지를 공유하고 안전하게 저장할 수 있는, IBM이 호스팅하고 관리하는 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정할 수 있습니다. {:shortdesc}
+container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} 계정의 모든 사용자와 Docker 이미지를 공유하고 안전하게 저장할 수 있는, IBM이 호스팅하고 관리하는 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정할 수 있습니다.
+{:shortdesc}
 
 
 ## bx cr 명령
 {: #registry_cli_reference_bxcr}
 
-{{site.data.keyword.registryshort_notm}} CLI에서 bx cr 명령을 실행하십시오.
+{{site.data.keyword.registryshort_notm}} CLI에서 `bx cr` 명령을 실행하십시오.
 {:shortdesc}
 
 지원되는 명령은 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)를 참조하십시오.
@@ -34,7 +35,8 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 ## {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링
 {: #registry_cli_listing}
 
-지원되는 {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력을 형식화하고 필터링할 수 있습니다. {:shortdesc}
+지원되는 {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력을 형식화하고 필터링할 수 있습니다.
+{:shortdesc}
 
 기본적으로 CLI 출력은 사람이 읽을 수 있는 형식으로 표시됩니다. 그러나 이 보기는 특히 명령이 프로그래밍 방식으로 실행되는 경우 출력 사용 기능을 제한할 수 있습니다. 예를 들어, `bx cr image-list` CLI 출력에서 숫자 크기별로 `Size` 필드를 정렬할 수 있지만 명령에서 크기의 문자열 설명을 리턴합니다. container-registry 플러그인은 Go 템플리트를 CLI 출력에 적용하기 위해 사용할 수 있는 형식화 옵션을 제공합니다. Go 템플리트는 CLI 출력을 사용자 정의할 수 있는 [Go 프로그래밍 언어](https://golang.org/pkg/text/template/)의 기능입니다. 
 
@@ -45,13 +47,13 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 
 다음 {{site.data.keyword.registrylong_notm}} 명령과 함께 형식화 옵션을 사용할 수 있습니다. 사용 가능한 필드와 해당 데이터 유형의 목록을 보려면 명령을 클릭하십시오. 
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list `](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 다음 코드 예제는 형식화 및 필터링 옵션을 어떻게 사용할 수 있는지 보여줍니다.
 
--   사이즈가 1MB가 넘는 모든 이미지의 저장소, 태그 및 취약성 상태를 표시하려면 다음 명령을 실행하십시오. 
+-   사이즈가 1MB가 넘는 모든 이미지의 저장소, 태그 및 취약성 상태를 표시하려면 다음 `bx cr image-list` 명령을 실행하십시오. 
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -68,7 +70,7 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
     ```
     {: screen}
 
--   지정된 IBM 공용 이미지에 대해 IBM 문서가 호스팅된 위치를 표시하려면 다음 명령을 실행하십시오. 
+-   지정된 IBM 공용 이미지에 대해 IBM 문서가 호스팅된 위치를 표시하려면 다음 `bx cr image-inspect` 명령을 실행하십시오. 
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -83,7 +85,7 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
     ```
     {: screen}
 
--   지정된 이미지에 대해 노출된 포트를 표시하려면 다음 명령을 실행하십시오. 
+-   지정된 이미지에 대한 노출된 포트를 표시하려면 다음 `bx cr image-inspect` 명령을 실행하십시오. 
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -98,7 +100,7 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
     ```
     {: screen}
 
--   모든 읽기 전용 토큰을 표시하려면 다음 명령을 실행하십시오. 
+-   모든 읽기 전용 토큰을 표시하려면 다음 `bx cr token-list` 명령을 실행하십시오. 
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
@@ -116,7 +118,8 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 ### `bx cr image-list` 명령의 Go 템플리트 옵션 및 데이터 유형
 {: #registry_cli_listing_imagelist}
 
-`bx cr image-list` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오. {:shortdesc}
+`bx cr image-list` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오.
+{:shortdesc}
 
 |필드|유형|설명|
 |-----|----|-----------|
@@ -132,7 +135,8 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 ### `bx cr image-inspect` 명령의 Go 템플리트 옵션 및 데이터 유형
 {: #registry_cli_listing_imageinspect}
 
-`bx cr image-inspect` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오. {:shortdesc}
+`bx cr image-inspect` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오.
+{:shortdesc}
 
 |필드|유형|설명|
 |-----|----|-----------|
@@ -153,7 +157,7 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 |`RootFS`|오브젝트|이미지에 대한 루트 파일 시스템을 설명하는 메타데이터를 표시합니다. [RootFS](registry_cli_reference.html#rootfs)의 필드 세부사항을 참조하십시오. |
 {: caption="표 2. bx cr image-inspect 명령에서 사용 가능한 필드 및 데이터 유형." caption-side="top"}
 
-#### Config
+#### 구성
 
 |필드|유형|설명|
 |-----|----|-----------|
@@ -206,7 +210,8 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 ### `bx cr token-list` 명령의 Go 템플리트 옵션 및 데이터 유형
 {: #registry_cli_listing_tokenlist}
 
-`bx cr token-list` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오. {:shortdesc}
+`bx cr token-list` 명령에 사용 가능한 Go 템플리트 옵션 및 데이터 유형을 찾으려면 다음 표를 검토하십시오.
+{:shortdesc}
 
 |필드|유형|설명|
 |-----|----|-----------|

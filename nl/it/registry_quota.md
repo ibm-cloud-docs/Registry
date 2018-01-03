@@ -64,7 +64,7 @@ sarà simile al seguente.
 
     QUOTA              LIMITE    UTILIZZATO
     Traffico di pull   5,1 GB    0 B
-    Archiviazione      512 MB    511 MB
+    Archiviazione      512 MB    511 MB   
 
     OK
     ```
@@ -122,7 +122,7 @@ sarà simile al seguente.
 
     QUOTA              LIMITE    UTILIZZATO
     Traffico di pull   5,1 GB    0 B
-    Archiviazione      512 MB    511 MB
+    Archiviazione      512 MB    511 MB   
 
     OK
     ```
@@ -163,7 +163,7 @@ _&lt;nome_immagine&gt;_ con il nome dell'immagine che vuoi rimuovere.
     ```
     {: pre}
 
-4. **Nota:** non puoi ridurre il tuo utilizzo di traffico di pull durante un periodo di fatturazione. 
+4. **Nota:** non puoi ridurre il tuo utilizzo di traffico di pull durante un periodo di fatturazione.
 
     Per continuare a eseguire il pull di immagini dai tuoi spazi dei nomi, scegli tra le seguenti opzioni.
 

@@ -71,13 +71,13 @@ Es wird eine Fehlernachricht ähnlich einer der folgenden Fehlernachrichten ange
 
 ```
 bx cr login
-'cr' ist kein registrierter Befehl. Siehe 'bx help'.
+'cr' ist kein registrierter Befehl. Siehe 'bx help'. 
 ```
 {: pre}
 
 ```
 bx cr namespace
-'cr' ist kein registrierter Befehl. Siehe 'bx help'.
+'cr' ist kein registrierter Befehl. Siehe 'bx help'. 
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -16,30 +16,73 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# Automatizando o acesso ao {{site.data.keyword.registrylong_notm}}
+{: #registry_access}
 
-
-
-
-# Automatizando o acesso aos seus namespaces no {{site.data.keyword.registrylong_notm}} usando tokens
-{: #registry_tokens}
-
-É possível usar tokens para automatizar o push e o pull de imagens do Docker para/de seus namespaces.
+É possível usar tokens de registro ou uma chave API do {{site.data.keyword.iamlong}} (IAM) para automatizar o acesso a seus namespaces do {{site.data.keyword.registrylong_notm}} de forma que possa enviar por push e puxar as imagens.
 {:shortdesc}
 
-Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}}
-e a CLI do Docker](registry_setup_cli_namespace.html#registry_cli_install).
+As chaves API são vinculadas à sua conta e podem ser usadas no {{site.data.keyword.Bluemix_notm}} para que você não precise de credenciais diferentes para cada serviço. É possível usar a chave API na CLI ou como parte de automação para efetuar login como sua identidade do usuário.
 
-Um token de segurança permite que todos que possuem o token acessem as informações protegidas. Os tokens
-são usados de maneira semelhante à chave API. Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}, é possível conceder acesso a todos os namespaces que você configurar em uma região para usuários fora de sua conta do {{site.data.keyword.Bluemix_notm}}. Cada usuário ou app com esse token poderá enviar imagens para seus namespaces e extrair deles sem instalar o plug-in de registro de contêiner.
+Os tokens de registro têm o escopo definido somente para {{site.data.keyword.registrylong_notm}}. É possível limitá-los ao acesso somente leitura e escolher se eles estão expirando ou não expirando.
 
-Ao criar um token para sua conta do {{site.data.keyword.Bluemix_notm}}, é possível decidir se esse token autoriza o acesso somente leitura (pull) ou de gravação (push e pull) para o registro. Também será possível especificar se um token é permanente ou se ele expirará após 24 horas. É possível criar e usar diversos tokens para controlar diferentes
-tipos de acesso.
+Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](../../iam/apikeys.html#manapikey).
+
+Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
 
-## Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}
+## Automatizando o acesso aos seus namespaces usando chaves API
+{: #registry_api_key}
+
+É possível usar as chaves API para automatizar o push e o pull de imagens do Docker para/de seus namespaces.
+{:shortdesc}
+
+### Criando uma chave API
+{: #registry_api_key_create}
+
+É possível criar uma chave API que pode então ser usada para efetuar login no seu registro.
+{:shortdesc} 
+
+Crie uma chave API do IAM, veja [Criando uma chave API](../../iam/userid_keys.html#creating-an-api-key). 
+
+### Usando uma chave API para automatizar o acesso
+{: #registry_api_key_use}
+
+É possível usar uma chave API para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}.
+{:shortdesc} 
+
+Use a chave API para efetuar login no seu registro executando o comando do Docker a seguir. Substitua &lt;your_apikey&gt; por sua chave API e substitua &lt;registry_url&gt; pela URL para o registro no qual seus namespaces estão configurados.
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+Para obter informações de referência sobre o comando, veja [Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+
+
+## Automatizando o acesso aos seus namespaces usando tokens
+{: #registry_tokens}
+
+É possível usar tokens para automatizar o push e o pull de imagens do Docker e de seus namespaces do {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
+
+Todos em posse de um token de registro podem acessar informações protegidas. Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}, é possível conceder acesso a todos os namespaces que você configurar em uma região para usuários fora de sua conta do {{site.data.keyword.Bluemix_notm}}. Cada usuário ou app com esse token poderá enviar imagens para seus namespaces e extrair deles sem instalar o plug-in de registro de contêiner. 
+
+Ao criar um token para sua conta do {{site.data.keyword.Bluemix_notm}}, é possível decidir se esse token autoriza o acesso somente leitura (pull) ou de gravação (push e pull) para o registro. Também será possível especificar se um token é permanente ou se ele expirará após 24 horas. É possível criar e usar diversos tokens para controlar diferentes tipos de acesso.
+
+Use as tarefas a seguir para gerenciar seus tokens:
+
+-  [Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}](#registry_tokens_create)
+-  [Usando um token para automatizar o acesso a seus namespaces](#registry_tokens_use)
+-  [Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
+
+
+### Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_create}
 
-É possível criar um token para conceder acesso a todos os seus namespaces do {{site.data.keyword.registrylong_notm}} de uma região.
+É possível criar um token para conceder acesso a todos os namespaces do {{site.data.keyword.registrylong_notm}} em uma região.
 {:shortdesc}
 
 1.  Crie um token. O exemplo a seguir cria um token sem expiração que tem acesso de leitura e de gravação a todos os namespaces configurados em uma região.
@@ -51,7 +94,7 @@ tipos de acesso.
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> Entendendo os componentes deste comando</th>
+        <th colspan=2><img src="images/idea.png" alt="ícone de lâmpada"/> Entendendo os componentes deste comando</th>
         </thead>
         <tbody>
         <tr>
@@ -85,7 +128,7 @@ tipos de acesso.
     {: pre}
 
 
-## Usando um token para automatizar o acesso a seus namespaces
+### Usando um token para automatizar o acesso a seus namespaces 
 {: #registry_tokens_use}
 
 É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo se você configurou o acesso somente leitura ou de leitura/gravação para o seu token, os usuários podem enviar por push e puxar imagens para/de seus namespaces.
@@ -130,7 +173,7 @@ tipos de acesso.
     Depois de efetuar login no Docker usando o token, é possível enviar por push ou puxar imagens para/de seus namespaces.
 
 
-## Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}}
+### Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_remove}
 
 Remova um token do {{site.data.keyword.registrylong_notm}} quando você não precisar mais dele.
@@ -158,5 +201,6 @@ Remova um token do {{site.data.keyword.registrylong_notm}} quando você não pre
     bx cr token-rm <token_id>
     ```
     {: pre}
+    
 
 

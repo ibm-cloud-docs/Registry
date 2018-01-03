@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -16,29 +16,74 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# 自动访问 {{site.data.keyword.registrylong_notm}}
+{: #registry_access}
 
-
-
-
-# 使用令牌自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间
-{: #registry_tokens}
-
-您可以使用令牌，将 Docker 映像自动推送至名称空间，以及从名称空间自动拉出 Docker 映像。
+您可以使用注册表令牌或 {{site.data.keyword.iamlong}} (IAM) API 密钥，自动访问 {{site.data.keyword.registrylong_notm}} 名称空间，以便可推送和拉出映像。
 {:shortdesc}
+
+API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中使用，从而不需要针对每种服务具有不同凭证。您可以在 CLI 中或者在自动化过程中使用 API 密钥，以使用您的用户身份登录。
+
+注册表令牌仅限定用于 {{site.data.keyword.registrylong_notm}}。您可以对其进行限制以仅具有只读访问权，可选择其是会过期还是不过期。
+
+有关 {{site.data.keyword.registrylong_notm}} API 密钥的更多信息，请参阅[使用 API 密钥](../../iam/apikeys.html#manapikey)。
 
 开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](registry_setup_cli_namespace.html#registry_cli_install)。
 
-安全性令牌允许拥有令牌的每个人访问安全信息。令牌的用法与 API 密钥类似。
-通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送至名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。
+
+## 使用 API 密钥自动访问名称空间
+{: #registry_api_key}
+
+您可以使用 API 密钥，将 Docker 映像自动推送至名称空间，以及从名称空间自动拉出 Docker 映像。
+{:shortdesc}
+
+### 创建 API 密钥
+{: #registry_api_key_create}
+
+您可以创建 API 密钥，然后用于登录到注册表。
+{:shortdesc} 
+
+创建 IAM API 密钥，请参阅[创建 API 密钥](../../iam/userid_keys.html#creating-an-api-key)。 
+
+### 使用 API 密钥自动访问
+{: #registry_api_key_use}
+
+您可以使用 API 密钥自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
+{:shortdesc} 
+
+通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 &lt;your_apikey&gt; 替换为 API 密钥，将 &lt;registry_url&gt; 替换为在其中设置名称空间的注册表的 URL。
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.Bluemix_notm}} 平台 API 密钥](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)。
+
+
+## 使用令牌自动访问名称空间
+{: #registry_tokens}
+
+您可以使用令牌，将 Docker 映像自动推送至 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
+{:shortdesc}
+
+拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送至名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。 
 
 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
 
 
+使用以下任务管理令牌：
 
-## 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌
+-  [为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌](#registry_tokens_create)
+-  [使用令牌自动访问名称空间](#registry_tokens_use)
+-  [从 {{site.data.keyword.Bluemix_notm}} 帐户除去令牌](#registry_tokens_remove)
+
+
+### 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌
 {: #registry_tokens_create}
 
-您可以创建令牌以授予对区域的所有 {{site.data.keyword.registrylong_notm}} 名称空间的访问权。
+您可以创建令牌，以授予对区域中所有 {{site.data.keyword.registrylong_notm}} 名称空间的访问权。
 {:shortdesc}
 
 1.  创建令牌。以下示例创建非到期令牌，其具有对区域中所设置的所有名称空间的读写访问权。
@@ -51,7 +96,7 @@ lastupdated: "2017-10-31"
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> 了解此命令的组成部分</th>
+        <th colspan=2><img src="images/idea.png" alt="灯泡图标"/> 了解此命令的组成部分</th>
         </thead>
         <tbody>
         <tr>
@@ -85,7 +130,7 @@ lastupdated: "2017-10-31"
     {: pre}
 
 
-## 使用令牌自动访问名称空间
+### 使用令牌自动访问名称空间 
 {: #registry_tokens_use}
 
 您可以在 `docker login` 命令中使用令牌，以自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
@@ -131,7 +176,7 @@ lastupdated: "2017-10-31"
     使用令牌登录到 Docker 后，就可以将映像推送至名称空间或从名称空间拉出映像。
 
 
-## 从 {{site.data.keyword.Bluemix_notm}} 帐户除去令牌
+### 从 {{site.data.keyword.Bluemix_notm}} 帐户除去令牌
 {: #registry_tokens_remove}
 
 不再需要 {{site.data.keyword.registrylong_notm}} 令牌时，请移除该令牌。
@@ -159,5 +204,6 @@ lastupdated: "2017-10-31"
     bx cr token-rm <token_id>
     ```
     {: pre}
+    
 
 

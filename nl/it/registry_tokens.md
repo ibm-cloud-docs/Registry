@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -16,31 +16,76 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# Automazione dell'accesso a {{site.data.keyword.registrylong_notm}}
+{: #registry_access}
 
-
-
-
-# Automazione dell'accesso agli spazi dei nomi in {{site.data.keyword.registrylong_notm}} utilizzando i token
-{: #registry_tokens}
-
-Puoi utilizzare i token per automatizzare l'esecuzione del push e del pull delle immagini Docker da e verso i tuoi spazi dei nomi.
+Puoi utilizzare i token del registro o una chiave API {{site.data.keyword.iamlong}} (IAM) per accedere ai tuoi spazi dei nomi  {{site.data.keyword.registrylong_notm}} in modo da poter ricevere o trasmettere le immagini.
 {:shortdesc}
+
+Le chiavi API sono collegate al tuo account e possono essere utilizzate in {{site.data.keyword.Bluemix_notm}} in modo che non hai bisogno di credenziali differenti per ogni servizio. Puoi utilizzare la chiave API nella CLI o come parte dell'automazione dell'accesso come tua identità utente.
+
+I token del registro sono applicabili solo a {{site.data.keyword.registrylong_notm}}. Puoi limitarli all'accesso in sola lettura e puoi scegliere se scadono o meno.
+
+Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](../../iam/apikeys.html#manapikey).
 
 Prima di iniziare, [installa la
 CLI {{site.data.keyword.registrylong_notm}} e Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
-Un token di sicurezza consente a tutti i possessori del token di accedere alle informazioni protette. I token
-vengono utilizzati in modo simile alle chiavi API. Creando un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi concedere l'accesso a tutti i tuoi spazi dei nomi configurati in una regione per gli utenti esterni al tuo account {{site.data.keyword.Bluemix_notm}}. Ogni utente o applicazione in possesso
-di questo token, può eseguire il push e il pull di immagini da e verso i tuoi spazi dei nomi senza dover installare il plug-in container-registry.
+
+## Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API 
+{: #registry_api_key}
+
+Puoi utilizzare le chiavi API per automatizzare l'esecuzione del push e del pull delle immagini Docker da e verso i tuoi spazi dei nomi.
+{:shortdesc}
+
+### Creazione di una chiave API
+{: #registry_api_key_create}
+
+Puoi creare una chiave API che puoi successivamente utilizzare per accedere al tuo registro.
+{:shortdesc} 
+
+Crea una chiave API IAM, consulta [Creazione di una chiave API](../../iam/userid_keys.html#creating-an-api-key). 
+
+### Utilizzo di una chiave API per automatizzare l'accesso
+{: #registry_api_key_use}
+
+Puoi utilizzare una chiave API per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}.
+{:shortdesc} 
+
+Utilizza la chiave API per accedere al tuo registro eseguendo il seguente comando Docker. Sostituisci &lt;your_apikey&gt; con la tua chiave API e &lt;registry_url&gt; con l'URL del registro in cui sono configurati gli spazi dei nomi.
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+Per le informazioni di riferimento sul comando, consulta [Crea una nuova chiave API della piattaforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+
+
+## Automazione dell'accesso agli spazi dei nomi utilizzando i token 
+{: #registry_tokens}
+
+Puoi utilizzare i token per automatizzare l'esecuzione del push e del pull delle immagini Docker da e verso i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
+
+Chiunque in possesso di un token del registro può accedere alle informazioni protette. Creando un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi concedere l'accesso a tutti i tuoi spazi dei nomi configurati in una regione per gli utenti esterni al tuo account {{site.data.keyword.Bluemix_notm}}. Ogni utente o applicazione in possesso
+di questo token, può eseguire il push e il pull di immagini da e verso i tuoi spazi dei nomi senza dover installare il plug-in container-registry. 
 
 Quando crei un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi decidere se tale token autorizza l'accesso in sola lettura (pull) o in scrittura (push e pull) al registro. Inoltre, puoi specificare se il token è permanente o se scade dopo 24 ore. Puoi creare
 e utilizzare più token per controllare i diversi tipi di accesso.
 
+Utilizza le seguenti attività per gestire i tuoi token:
 
-## Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}}
+-  [Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_create)
+-  [Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi](#registry_tokens_use)
+-  [Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_remove)
+
+
+### Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_create}
 
-Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}} di una regione.
+Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}} in una regione.
 {:shortdesc}
 
 1.  Crea un token. Nel seguente esempio viene creato un token senza scadenza che ha l'accesso in lettura e scrittura a tutti gli spazi dei nomi configurati in una regione.
@@ -52,7 +97,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> Descrizione dei componenti di questo comando</th>
+        <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descrizione dei componenti di questo comando</th>
         </thead>
         <tbody>
         <tr>
@@ -89,7 +134,7 @@ i tuoi spazi dei nomi. Se non specifichi questa opzione, il token può essere ut
     {: pre}
 
 
-## Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi
+### Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi 
 {: #registry_tokens_use}
 
 Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}. A seconda che l'accesso impostato per il token sia di sola lettura o di lettura-scrittura, gli utenti possono eseguire il push e il pull delle immagini da e verso i tuoi spazi dei nomi.
@@ -134,7 +179,7 @@ l'ID del token.
     Dopo aver effettuato l'accesso a Docker utilizzando il token, puoi eseguire il push o il pull delle immagini da e verso i tuoi spazi dei nomi.
 
 
-## Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}}
+### Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_remove}
 
 Rimuovi un token {{site.data.keyword.registrylong_notm}} quando non ne hai più bisogno.
@@ -162,5 +207,6 @@ Rimuovi un token {{site.data.keyword.registrylong_notm}} quando non ne hai più 
     bx cr token-rm <id_token>
     ```
     {: pre}
+    
 
 

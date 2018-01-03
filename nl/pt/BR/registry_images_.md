@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -35,6 +35,8 @@ um Dockerfile, usando o comando `build` do Docker. Para incluir uma imagem em se
 uso posterior no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Puxe uma imagem de seu registro público ou privado para seu computador."/>
+
 Antes de iniciar:
 
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
@@ -50,7 +52,7 @@ Faça download da imagem, veja [Puxar uma imagem](index.html#registry_images_pul
   **Dica:** se você obtém uma mensagem "desautorizado: autenticação necessária" ou "negado: o acesso solicitado ao recurso foi negado", execute o comando `bx cr login`.
 
 
-Depois de puxar uma imagem e identificá-la para o seu namespace, é possível fazer upload (enviar por push) da imagem de sua máquina local para o namespace. 
+Depois de puxar uma imagem e identificá-la para o seu namespace, é possível fazer upload (enviar por push) da imagem de sua máquina local para o namespace.
 
 ## Enviando por push imagens do Docker para seu namespace
 {: #registry_images_pushing}
@@ -58,6 +60,8 @@ Depois de puxar uma imagem e identificá-la para o seu namespace, é possível f
 É possível enviar por push (upload) uma imagem para seu namespace no {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar com segurança sua imagem
 com outros usuários.
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Envie por push uma imagem de seu computador para seu registro privado"/>
 
 Antes de iniciar:
 
@@ -70,7 +74,7 @@ login`, `docker pull` e `docker push` com `sudo`.
   Se você mudar as suas permissões para executar comandos do Docker sem privilégios de administrador, o comando `bx login` deverá ser executado novamente.
 
 
-Para fazer upload (enviar por push) de uma imagem, siga estas etapas. 
+Para fazer upload (enviar por push) de uma imagem, siga estas etapas.
 
 1. Efetue login na CLI:
 
@@ -99,6 +103,8 @@ para o cluster no {{site.data.keyword.containerlong_notm}}.
 É possível puxar uma imagem de um registro em uma região e enviá-la por push para um registro em outra região para que seja possível
 compartilhar a imagem com usuários em ambas as regiões.
 {:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copie uma imgem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.Bluemix_notm}}."/>
 
 Antes de iniciar:
 
@@ -210,7 +216,7 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
 
       em que _&lt;image_name&gt;_ é o nome de sua imagem e _&lt;directory&gt;_ é o caminho para o diretório.
 
-    2. Opcional: teste sua imagem na máquina local antes de enviá-la por push para o namespace. 
+    2. Opcional: teste sua imagem na máquina local antes de enviá-la por push para o namespace.
 
       ```
       docker run <image_name>

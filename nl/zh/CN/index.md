@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-10-31"
 {{site.data.keyword.registrylong}} 提供多租户专用映像注册表，可用于安全地存储 Docker 映像并与您 {{site.data.keyword.Bluemix_notm}} 帐户中的用户共享。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} 控制台中有简要的“快速入门”。要进一步了解如何使用 {{site.data.keyword.Bluemix_notm}} 控制台，请参阅[在 {{site.data.keyword.Bluemix_notm}} 控制台中查看有关映像的信息](registry_ui.html)。
+{{site.data.keyword.Bluemix_notm}} 控制台中有简要的“快速入门”。要了解有关如何使用 {{site.data.keyword.Bluemix_notm}} 控制台的更多信息，请参阅[监视映像的漏洞](registry_ui.html)。
 
 
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
@@ -54,6 +54,13 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
+3.  要确保创建了名称空间，请运行 `bx cr namespace-list` 命令。
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## 将映像从其他注册表拉出到本地计算机
 {: #registry_images_pulling}
@@ -76,25 +83,24 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
-    示例：
+    例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`：
 
     ```
     docker pull hello-world:latest
     ```
     {: pre}
 
-4.  标记映像。将 _&lt;source_image&gt;_ 替换为存储库，将 _&lt;tag&gt;_ 替换为之前拉出的本地映像的标记。
-通过替换 _&lt;new_image_repo&gt;_ 和 _&lt;new_tag&gt;_，定义要在名称空间中使用的映像的存储库和标记。
+4.  标记映像。将 _&lt;source_image&gt;_ 替换为存储库，将 _&lt;tag&gt;_ 替换为之前拉出的本地映像的标记。将 _&lt;region&gt;_ 替换为 [region](registry_overview.html#registry_regions) 的名称。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间。通过替换 _&lt;new_image_repo&gt;_ 和 _&lt;new_tag&gt;_，定义要在名称空间中使用的映像的存储库和标记。
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
 
-    示例：
+    例如，其中，_&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `Namespace1`，_&lt;new_image_repo&gt;_ 是 `hw_repo`，_&lt;new_tag&gt;_ 是 `1`：
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -102,7 +108,7 @@ lastupdated: "2017-10-31"
 ## 将 Docker 映像推送至名称空间
 {: #registry_images_pushing}
 
-1.  将映像上传（_推送_）至名称空间。将 _&lt;my_namespace&gt;_ 替换为要上传映像的名称空间，将 _&lt;image_repo&gt;_ 和 _&lt;tag&gt;_ 替换为标记映像时所选择的映像的存储库和标记。
+1.  将映像上传（_推送_）至名称空间。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间，将 _&lt;image_repo&gt;_ 和 _&lt;tag&gt;_ 替换为标记映像时所选择的映像的存储库和标记。
 
 
     ```
@@ -110,10 +116,10 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
-    示例：
+    例如，其中，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `Namespace1`，_&lt;image_repo&gt;_ 是 `hw_repo`，_&lt;tag&gt;_ 是 `1`：
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

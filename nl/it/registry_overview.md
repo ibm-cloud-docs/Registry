@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -25,6 +25,10 @@ in modo sicuro alle immagini Docker private in un'architettura scalabile e altam
 
 {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
 a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da IBM. Puoi utilizzare il registro privato configurando il tuo proprio spazio dei nomi di immagini ed eseguendo il push delle immagini Docker al tuo spazio dei nomi.
+
+<img src="images/registry_architecture.png" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. La IU web IBM Cloud (console) interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
+
+**Figura 1. Come {{site.data.keyword.registrylong_notm}} interagisce con le tue immagini Docker**
 
 Un'immagine Docker è la base per ogni contenitore che crei. Un'immagine viene creata da un
 Dockerfile, che è un file che contiene le istruzioni su come creare l'immagine. Nelle sue istruzioni, un Dockerfile
@@ -294,7 +298,7 @@ Quando scegli uno spazio dei nomi, considera le seguenti regole:
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
 gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
 
-## Regioni {{site.data.keyword.registrylong_notm}}
+## Regioni
 {: #registry_regions}
 
 I registri di {{site.data.keyword.registrylong_notm}} sono disponibili in diverse regioni.
@@ -305,25 +309,45 @@ I registri di {{site.data.keyword.registrylong_notm}} sono disponibili in divers
 
 Una regione è un'area geografica a cui si accede da un endpoint dedicato. I registri di {{site.data.keyword.registrylong_notm}} sono disponibili nelle seguenti regioni:
 
--   Asia Pacifico Sud: `registry.au-syd.bluemix.net`
--   Europa Centrale: `registry.eu-de.bluemix.net`
--   Regno Unito Sud: `registry.eu-gb.bluemix.net`
--   Stati Uniti Sud: `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
-Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale. 
+Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
 
-Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `bx target` con l'indicatore `-r`, dove _&lt;regione&gt;_ è il nome della regione (`us-south`, `eu-de`, `eu-gb` o `au-syd`).
+Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `bx cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro. 
 
-```
-bx target -r <regione>
-```
-{: pre}
-
-Ad esempio, per passare alla regione Europa Centrale, esegui questo comando:
+Per eseguire il comando con i parametri, sostituisci _&lt;region&gt;_ con il nome della regione, ad esempio, `eu-central`.
 
 ```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+Ad esempio, per scegliere la regione eu-central, immetti il seguente comando:
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### Registro internazionale
+{: #registry_regions_global}
+
+Un registro internazionale è disponibile globalmente e non ha regioni incluse nel suo nome (`registry.bluemix.net`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro.
+
+Puoi scegliere il registro internazionale eseguendo il comando `bx cr region-set`.
+
+Ad esempio, per scegliere il registro internazionale, immetti il seguente comando:
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+Per ulteriori informazioni sul comando `bx cr region-set`, consulta [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
+Dopo aver scelto il registro internazionale, esegui il comando `bx cr login` per registrare il tuo daemon Docker locale nel registro internazionale in modo da poter passare le immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
 

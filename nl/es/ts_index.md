@@ -74,18 +74,18 @@ Puede ver un error similar a uno de los mensajes de error siguientes:
 
 ```
 bx cr login
-'cr' no es un mandato registrado. Consulte 'bx help'.
+'cr' no es un mandato registrado. Consulte 'bx help'. 
 ```
 {: pre}
 
 ```
 bx cr namespace
-'cr' no es un mandato registrado. Consulte 'bx help'.
+'cr' no es un mandato registrado. Consulte 'bx help'. 
 ```
 {: pre}
 
 {: tsCauses}
--   El plug-in container-registry no está instalado. 
+-   El plug-in container-registry no está instalado.
 
 
 {: tsResolve}
@@ -151,7 +151,7 @@ denegado: se ha denegado el acceso al recurso
 {: tsResolve}
 Puede solucionar este problema de las siguientes maneras:
 
--   [Asegúrese de que Docker esté instalado en la máquina](index.html#registry_cli_install). 
+-   [Asegúrese de que Docker esté instalado en la máquina](index.html#registry_cli_install).
 -   Compruebe la vía de acceso de instalación de Docker.
 -   Inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato
 `bx login`. Luego inicie una sesión en la CLI de {{site.data.keyword.registrylong_notm}} con el mandato `bx cr

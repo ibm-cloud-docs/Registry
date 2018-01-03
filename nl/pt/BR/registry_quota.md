@@ -116,7 +116,7 @@ para a sua conta.
 saída é semelhante à mostrada a seguir.
 
     ```
-    Getting quotas and usage for the current month, for account '<account_owner> Account'...
+    Obtendo cotas e uso para o mês atual, para a conta 'Conta <account_owner>'...
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   

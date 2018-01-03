@@ -16,14 +16,14 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
-# Gestión de los límites de cuota para almacenamiento y tráfico de extracción 
+# Gestión de los límites de cuota para almacenamiento y tráfico de extracción
 {: #registry_quota}
 
 Puede limitar la cantidad de almacenamiento y de tráfico de extracción que se pueda utilizar en su cuenta de {{site.data.keyword.Bluemix}} estableciendo y gestionando límites de cuota personalizados.
 {:shortdesc}
 
 
-## Establecimiento de límites de cuota para almacenar y extraer imágenes 
+## Establecimiento de límites de cuota para almacenar y extraer imágenes
 {: #registry_quota_set}
 
 Puede limitar la cantidad de almacenamiento y de tráfico de extracción de sus imágenes privadas estableciendo sus propios límites de cuota.
@@ -57,7 +57,7 @@ Para establecer una cuota:
 
     CUOTA          LÍMITE    UTILIZADO
     Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB
+    Almacenamiento        512 MB   511 MB   
 
     OK
     ```
@@ -81,7 +81,7 @@ _&lt;traffic_quota&gt;_ por el valor en megabytes que desea establecer para la c
     {: pre}
 
 
-## Revisión de los límites de cuota y del uso para almacenar y extraer imágenes 
+## Revisión de los límites de cuota y del uso para almacenar y extraer imágenes
 {: #registry_quota_get}
 
 Puede revisar los límites de cuota y comprobar el almacenamiento actual y el uso de tráfico de extracción correspondiente a su cuenta.
@@ -108,20 +108,20 @@ Puede revisar los límites de cuota y comprobar el almacenamiento actual y el us
 
     CUOTA          LÍMITE    UTILIZADO
     Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB
+    Almacenamiento        512 MB   511 MB   
 
     OK
     ```
     {: screen}
 
 
-## Liberación de almacenamiento utilizado y cambio de planes de servicio o de límites de cuota para mantenerse dentro de los límites de cuota 
+## Liberación de almacenamiento utilizado y cambio de planes de servicio o de límites de cuota para mantenerse dentro de los límites de cuota
 {: #registry_quota_freeup}
 
 Si ha superado los límites de cuota establecidos para su cuenta de {{site.data.keyword.Bluemix_notm}}, puede liberar almacenamiento y cambiar el plan de servicio o los límites de cuota para seguir transfiriendo y extrayendo imágenes del espacio de nombres.
 {:shortdesc}
 
-Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Bluemix_notm}}: 
+Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Bluemix_notm}}:
 
 1.  Obtenga una lista de todas las imágenes de todos los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}.
 

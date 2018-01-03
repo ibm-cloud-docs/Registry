@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-10-31"
 {{site.data.keyword.registrylong}} 提供多方承租戶專用映像檔登錄，可用來安全地儲存 Docker 映像檔，並與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.Bluemix_notm}} 主控台的詳細資訊，請參閱[在 {{site.data.keyword.Bluemix_notm}} 主控台中檢視映像檔的相關資訊](registry_ui.html)。
+{{site.data.keyword.Bluemix_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.Bluemix_notm}} 主控台的詳細資訊，請參閱[監視映像檔的漏洞](registry_ui.html)。
 
 
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI
@@ -54,6 +54,13 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
+3.  若要確保已建立名稱空間，請執行 `bx cr namespace-list` 指令。
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## 將映像檔從另一個登錄取回到本端機器
 {: #registry_images_pulling}
@@ -76,24 +83,24 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
-    範例：
+    例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，而 _&lt;tag&gt;_ 是 `latest`：
 
     ```
     docker pull hello-world:latest
     ```
     {: pre}
 
-4.  標記映像檔。請將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義名稱空間中您要使用之映像檔的儲存庫及標籤。
+4.  標記映像檔。請將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。請將 _&lt;region&gt;_ 取代為您的 [region](registry_overview.html#registry_regions) 名稱。請將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間。取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義名稱空間中您要使用之映像檔的儲存庫及標籤。
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
 
-    範例：
+    例如，其中 _&lt;source_image&gt;_ 是 `hello-world`、_&lt;tag&gt;_ 是 `latest`、_&lt;region&gt;_ 是 `eu-gb`、_&lt;my_namespace&gt;_ 是 `Namespace1`、_&lt;new_image_repo&gt;_ 是 `hw_repo`，而 _&lt;new_tag&gt;_ 是 `1`：
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -101,17 +108,17 @@ lastupdated: "2017-10-31"
 ## 將 Docker 映像檔推送至名稱空間
 {: #registry_images_pushing}
 
-1.  將映像檔上傳（_推送_）至名稱空間。請將 _&lt;my_namespace&gt;_ 取代為您要上傳映像檔的名稱空間，並將 _&lt;image_repo&gt;_ 及 _&lt;tag&gt;_ 取代為您在標記映像檔時所選擇映像檔的儲存庫及標籤。
+1.  將映像檔上傳（_推送_）至名稱空間。請將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間，並將 _&lt;image_repo&gt;_ 及 _&lt;tag&gt;_ 取代為您在標記映像檔時所選擇映像檔的儲存庫及標籤。
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    範例：
+    例如，其中 _&lt;region&gt;_ 是 `eu-gb`、_&lt;my_namespace&gt;_ 是 `Namespace1`、_&lt;image_repo&gt;_ 是 `hw_repo`，而 _&lt;tag&gt;_ 是 `1`：
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

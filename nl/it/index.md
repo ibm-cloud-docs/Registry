@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -24,7 +24,7 @@ immagini privato a più tenant che puoi utilizzare per memorizzare e condividere
 nel tuo account {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La console {{site.data.keyword.Bluemix_notm}} include una una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Visualizzazione delle informazioni su immagini nella console {{site.data.keyword.Bluemix_notm}}](registry_ui.html).
+La console {{site.data.keyword.Bluemix_notm}} include una una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Monitoraggio della vulnerabilità delle immagini](registry_ui.html).
 
 
 ## Installa la CLI {{site.data.keyword.registrylong_notm}}
@@ -57,6 +57,13 @@ _&lt;mio_spazionomi&gt;_ con il tuo spazio dei nomi preferito.
     ```
     {: pre}
 
+3.  Per assicurati che il tuo spazio dei nomi sia stato creato, esegui il comando `bx cr namespace-list`.
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## Esegui il pull di immagini da un altro registro alla tua macchina locale
 {: #registry_images_pulling}
@@ -82,7 +89,7 @@ _latest_.
     ```
     {: pre}
 
-    Esempio:
+    Esempio, dove _&lt;source_image&gt;_ è `hello-world` e _&lt;tag&gt;_ è `latest`:
 
     ```
     docker pull hello-world:latest
@@ -90,7 +97,7 @@ _latest_.
     {: pre}
 
 4.  Contrassegna l'immagine con una tag. Sostituisci _&lt;immagine_di_origine&gt;_ con il repository e
-_&lt;tag&gt;_ con la tag della tua immagine locale di cui hai prima eseguito il pull. Definisci il
+_&lt;tag&gt;_ con la tag della tua immagine locale di cui hai prima eseguito il pull. Sostituisci _&lt;nome_immagine&gt;_ con il nome della tua [regione](registry_overview.html#registry_regions). Sostituisci _&lt;mio_spazionomi&gt;_ con lo spazio dei nomi che hai creato in [Configura uno spazio dei nomi](index.html#registry_namespace_add). Definisci il
 repository e la tag dell'immagine che vuoi utilizzare nel tuo spazio dei nomi sostituendo
 _&lt;nuovo_repo_immagine&gt;_ e _&lt;nuova_tag&gt;_.
 
@@ -99,10 +106,10 @@ _&lt;nuovo_repo_immagine&gt;_ e _&lt;nuova_tag&gt;_.
     ```
     {: pre}
 
-    Esempio:
+    Esempio, dove _&lt;source_image&gt;_ è `hello-world`, _&lt;tag&gt;_ è `latest`, _&lt;region&gt;_ è `eu-gb`, _&lt;my_namespace&gt;_ è `Namespace1`, _&lt;new_image_repo&gt;_ è `hw_repo` e _&lt;new_tag&gt;_ è `1`:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -111,8 +118,8 @@ _&lt;nuovo_repo_immagine&gt;_ e _&lt;nuova_tag&gt;_.
 {: #registry_images_pushing}
 
 1.  Carica (_push_) l'immagine nel tuo spazio dei nomi. Sostituisci
-_&lt;mio_spazionomi&gt;_ con lo spazio dei nomi in cui vuoi caricare la tua immagine e
-_&lt;repo_immagine&gt;_ e _&lt;tag&gt;_ con il repository e la tag
+_&lt;mio_spazionomi&gt;_ con lo spazio dei nomi che hai creato in [Configura uno spazio dei nomi](index.html#registry_namespace_add) e
+_&lt;image_repo&gt;_ e _&lt;tag&gt;_ con il repository e la tag
 dell'immagine che hai scelto quando hai contrassegnato con tag l'immagine.
 
     ```
@@ -120,10 +127,10 @@ dell'immagine che hai scelto quando hai contrassegnato con tag l'immagine.
     ```
     {: pre}
 
-    Esempio:
+    Esempio, dove _&lt;region&gt;_ è `eu-gb`, _&lt;my_namespace&gt;_ è `Namespace1`, _&lt;image_repo&gt;_ è `hw_repo` e _&lt;tag&gt;_ è `1`:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

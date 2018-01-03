@@ -22,25 +22,21 @@ lastupdated: "2017-10-30"
 # 문제점 해결
 {: #ts_index}
 
-{{site.data.keyword.registrylong}} 사용에 대한 공통 문제점 해결 질문에 대한 답변입니다.{:shortdesc}
+{{site.data.keyword.registrylong}} 사용에 대한 공통 문제점 해결 질문에 대한 답변입니다.
+{:shortdesc}
 
 
 ## {{site.data.keyword.registrylong_notm}}에 대한 도움 및 지원 받기
 {: #gettinghelp}
 
-{{site.data.keyword.registrylong_notm}}를 사용하는 중에
-문제점이나 질문이 있으면 정보를 검색하거나 포럼을 통해 질문을 함으로써 도움을 받을 수 있습니다. 또는 {{site.data.keyword.IBM_notm}} 지원 티켓을 열 수도 있습니다. 
+{{site.data.keyword.registrylong_notm}}를 사용하는 중에 문제점이나 질문이 있으면 정보를 검색하거나 포럼을 통해 질문을 함으로써 도움을 받을 수 있습니다. 또는 {{site.data.keyword.IBM_notm}} 지원 티켓을 열 수도 있습니다. 
 
 포럼을 사용하여 질문을 할 때는 {{site.data.keyword.registrylong_notm}} 개발 팀에서 볼 수 있도록 질문에 태그를 지정하십시오. 
 
--   {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우, [Stack
-Overflow](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 ibm-bluemix 및 container-registry로 질문에 태그를 지정하십시오.
--   서비스 및 시작하기 지시사항에 대한 질문의 경우에는
-[IBM
-developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. bluemix 및 container-registry 태그를 포함하십시오. 
+-   {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우, [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 `ibm-bluemix` 및 `container-registry`로 질문에 태그를 지정하십시오.
+-   서비스 및 시작하기 지시사항에 대한 질문의 경우에는 [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `bluemix` 및 `container-registry` 태그를 포함하십시오. 
 
-포럼 사용에 대한 세부사항은
-[도움 받기](../../support/index.html#getting-help)를 참조하십시오. 
+포럼 사용에 대한 세부사항은 [도움 받기](../../support/index.html#getting-help)를 참조하십시오. 
 
 {{site.data.keyword.IBM_notm}} 지원 티켓 열기에 대한 정보나 지원 레벨 및 티켓 심각도에 대한 정보는 [지원 문의](../../support/index.html#contacting-support)를 참조하십시오. 
 
@@ -65,7 +61,7 @@ developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-re
 -   `bx login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 신임 정보를 새로 고치십시오.
 
 
-## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'bx help'. `
+## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'bx help'`와 함께 실패 
 {: #ts_login_error}
 
 `cr`은 등록된 `bx` 명령이 아니므로 `bx cr` 명령을 실행할 수 없습니다.

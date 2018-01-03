@@ -30,7 +30,7 @@ lastupdated: "2017-10-26"
 {:shortdesc}
 
 1.  [安装 container-registry 插件。](index.html#registry_cli_install)
-2.  可选：[配置 Docker 客户机以在没有根权限的情况下运行命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `bx login`、`bx cr login`、`docker pull` 和 **docker push** 命令。
+2.  可选：[配置 Docker 客户机以在没有 root 许可权的情况下运行命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `bx login`、`bx cr login`、`docker pull` 和 **docker push** 命令。
 
 现在，您可以在 {{site.data.keyword.registrylong_notm}} 专用注册表中设置自己的名称空间。
 

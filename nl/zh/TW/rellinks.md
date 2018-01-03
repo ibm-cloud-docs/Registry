@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-11-16"
 
 ---
 
@@ -18,7 +18,6 @@ lastupdated: "2017-10-30"
 {: #docker}
 
 <ul>
-<li><a href="https://docs.docker.com/engine/" target="_blank">Docker 文件 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a>
 <li><a href="http://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile 參考資料 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a>
 </ul>
 
@@ -26,6 +25,7 @@ lastupdated: "2017-10-30"
 {: #registry}
 
 <ul>
+<li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a>
 <li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a>
 </ul>
 

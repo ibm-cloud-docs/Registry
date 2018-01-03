@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -24,7 +24,7 @@ de imagem de múltiplos locatários que é possível usar para armazenar e compa
 conta do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, veja [Visualizando informações sobre imagens no console do {{site.data.keyword.Bluemix_notm}}](registry_ui.html).
+O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, veja [Monitorando a vulnerabilidade de imagens](registry_ui.html).
 
 
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
@@ -56,6 +56,13 @@ O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação 
     ```
     {: pre}
 
+3.  Para assegurar que seu namespace seja criado, execute o comando `bx cr namespace-list`.
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## Puxar imagens de outro registro para sua máquina local
 {: #registry_images_pulling}
@@ -81,7 +88,7 @@ _latest_.
     ```
     {: pre}
 
-    Exemplo:
+    Exemplo, em que _&lt;source_image&gt;_ é `hello-world` e _&lt;tag&gt;_ é `latest`:
 
     ```
     docker pull hello-world:latest
@@ -89,7 +96,7 @@ _latest_.
     {: pre}
 
 4.  Identifique a imagem. Substitua _&lt;source_image&gt;_ pelo repositório e
-_&lt;tag&gt;_ pela tag de sua imagem local extraída anteriormente. Defina o repositório e identifique a imagem que você deseja usar
+_&lt;tag&gt;_ pela tag de sua imagem local extraída anteriormente. Substitua _&lt;region&gt;_ pelo nome de sua [região](registry_overview.html#registry_regions). Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](index.html#registry_namespace_add). Defina o repositório e identifique a imagem que você deseja usar
 em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
 
     ```
@@ -97,10 +104,10 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
     ```
     {: pre}
 
-    Exemplo:
+    Exemplo, em que _&lt;source_image&gt;_ é `hello-world`, _&lt;tag&gt;_ é `latest`, _&lt;region&gt;_ é `eu-gb`, _&lt;my_namespace&gt;_ é `Namespace1`, _&lt;new_image_repo&gt;_ é `hw_repo` e _&lt;new_tag&gt;_ é `1`:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -108,19 +115,17 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
 ## Enviar por push imagens do Docker para seu namespace
 {: #registry_images_pushing}
 
-1.  Faça upload (_enviar por push_) da imagem para seu namespace. Substitua _&lt;my_namespace&gt;_ pelo namespace no
-qual você deseja fazer upload de sua imagem e substitua _&lt;image_repo&gt;_ e _&lt;tag&gt;_ pelo repositório e pela tag da imagem
-que você escolheu quando identificou a imagem.
+1.  Faça upload (_enviar por push_) da imagem para seu namespace. Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](index.html#registry_namespace_add) e _&lt;image_repo&gt;_ e _&lt;tag&gt;_ pelo repositório e a tag da imagem que você escolheu quando identificou a imagem.
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    Exemplo:
+    Exemplo, em que _&lt;region&gt;_ é `eu-gb`, _&lt;my_namespace&gt;_ é `Namespace1`, _&lt;image_repo&gt;_ é `hw_repo` e _&lt;tag&gt;_ é `1`:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

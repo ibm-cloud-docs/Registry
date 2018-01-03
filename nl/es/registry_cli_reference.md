@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -26,7 +26,8 @@ Puede utilizar el plug-in container-registry para configurar su propio espacio d
 ## Mandatos bx cr
 {: #registry_cli_reference_bxcr}
 
-Ejecute los mandatos bx cr en la CLI de {{site.data.keyword.registryshort_notm}}.{:shortdesc}
+Ejecute los mandatos `bx cr` en la CLI de {{site.data.keyword.registryshort_notm}}.
+{:shortdesc}
 
 Para ver los mandatos admitidos, consulte la CLI de [{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
 
@@ -38,20 +39,20 @@ Puede formatear y filtrar la salida de la CLI soportados para los mandatos admit
 
 De forma predeterminada, la salida de la CLI se muestra en un formato legible para las personas. Sin embargo, esta vista puede limitar su capacidad de utilizar la salida, especialmente si el mandato se ejecuta mediante programación. Por ejemplo, en la salida de la CLI de `bx cr image-list`, es posible que desee clasificar el campo `Size` por tamaño numérico, pero el mandato devuelve una descripción del tamaño en formato de serie de caracteres. El plug-in container-registry proporciona la opción format, que puede utilizar para aplicar una plantilla de Go a la salida de la CLI. La plantilla de Go es una característica del [lenguaje de programación Go](https://golang.org/pkg/text/template/) que le permite personalizar la salida de la CLI.
 
-Puede modificar la salida de la CLI mediante la aplicación de la opción format de dos maneras:
+Puede modificar la salida de la CLI mediante la aplicación de la opción de formato de dos maneras:
 
 1.  Formatee los datos de la salida de la CLI. Por ejemplo, cambie la salida del campo `Created` de Unix time a hora estándar.
 2.  Filtre los datos en la salida de la CLI. Por ejemplo, filtre los detalles de la imagen para visualizar un subconjunto específicos de imágenes utilizando la condición `if gt` de la plantilla de Go.
 
-Puede utilizar la opción format con los siguientes mandatos de {{site.data.keyword.registrylong_notm}}. Pulse un mandato para ver una lista de los campos disponibles y sus tipos de datos.
+Puede utilizar la opción format con los siguientes mandatos de {{site.data.keyword.registrylong_notm}}. Pulse el mandato para visualizar una lista de campos disponibles y sus tipos de datos.
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 El código siguiente muestra cómo puede utilizar las opciones de formateo y de filtrado.
 
--   Ejecute el siguiente mandato para visualizar el repositorio, la etiqueta y el estado de vulnerabilidad de todas las imágenes con un tamaño superior a 1 MB:
+-   Ejecute el siguiente mandato `bx cr image-list` para visualizar el repositorio, la etiqueta y el estado de vulnerabilidad de todas las imágenes con un tamaño superior a 1 MB:
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -68,7 +69,7 @@ El código siguiente muestra cómo puede utilizar las opciones de formateo y de 
     ```
     {: screen}
 
--   Ejecute el siguiente mandato para ver dónde se encuentra la documentación de IBM correspondiente a una determinada imagen pública de IBM:
+-   Ejecute el siguiente mandato `bx cr image-inspect` para ver dónde se encuentra la documentación de IBM correspondiente a una determinada imagen pública de IBM:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -83,7 +84,7 @@ El código siguiente muestra cómo puede utilizar las opciones de formateo y de 
     ```
     {: screen}
 
--   Ejecute el siguiente mandato para ver los puertos expuestos para una determinada imagen:
+-   Ejecute el siguiente mandato `bx cr image-inspect` para ver los puertos expuestos para una determinada imagen:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -98,7 +99,7 @@ El código siguiente muestra cómo puede utilizar las opciones de formateo y de 
     ```
     {: screen}
 
--   Ejecute el siguiente mandato para ver todas las señales de solo lectura:
+-   Ejecute el siguiente mandato `bx cr token-list` para ver todas las señales de solo lectura: 
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
@@ -172,7 +173,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Env`|Matriz de series|Muestra la lista de variables de entorno en formato de pares clave-valor.|
 |`Cmd`|Matriz de series|Describe los mandatos y argumentos que se pasen a un contenedor para que se ejecuten cuando se inicie el contenedor.|
 |`Healthcheck`|Objeto|Describe cómo comprobar que el contenedor está en buen estado. Consulte los detalles del campo en [Healthcheck](registry_cli_reference.html#healthcheck).|
-|`ArgsEscaped`|Booleano|Muestra true si el mandato ya está entre caracteres de escape (específico de Windows). |
+|`ArgsEscaped`|Booleano|Muestra true si el mandato ya está entre caracteres de escape (específico de Windows).|
 |`Image`|Serie|Muestra el nombre de la imagen que se ha pasado el operador.|
 |`Volumes`|Correlación de clave-valor|Muestra la lista de montajes de volúmenes que se han montado en un contenedor.|
 |`WorkingDir`|Serie|Muestra el directorio de trabajo dentro del contenedor en el que se ejecutan los mandatos especificados.|

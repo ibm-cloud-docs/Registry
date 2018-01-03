@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -16,24 +16,70 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# {{site.data.keyword.registrylong_notm}}에 대한 액세스 자동화
+{: #registry_access}
 
-
-
-
-# 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스 자동화
-{: #registry_tokens}
-
-토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
+이미지를 푸시하고 가져올 수 있도록 레지스트리 토큰 또는 {{site.data.keyword.iamlong}}(IAM) API를 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 액세스를 자동화할 수 있습니다.
 {:shortdesc}
+
+API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사용할 수 있으므로 각 서비스에 대해 다른 신임 정보가 필요하지 않습니다. CLI에서 API 키를 사용하거나 사용자 ID로 로그인하기 위한 자동화의 일부로 API 키를 사용할 수 있습니다. 
+
+레지스트리 토큰의 범위는 {{site.data.keyword.registrylong_notm}}용으로만 지정됩니다. 레지스트리 토큰을 읽기 전용 액세스로 제한할 수 있으며 만료되는지 또는 만료되지 않는지 선택할 수 있습니다.
+
+{{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키로 작업](../../iam/apikeys.html#manapikey)을 참조하십시오.
 
 시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치하십시오](registry_setup_cli_namespace.html#registry_cli_install).
 
-보안 토큰은 토큰을 소유하고 있는 모든 사용자가 보안 정보에 액세스하도록 허용합니다. 토큰은 API 키와 유사한 방식으로 사용됩니다. {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성하여 지역에서 설정한 모든 네임스페이스에 대한 액세스 권한을 {{site.data.keyword.Bluemix_notm}} 계정 외부의 사용자에게 부여할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 container-registry 플러그인을 설치하지 않고 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다. 
+
+## API 키를 사용하여 네임스페이스에 대한 액세스 자동화
+{: #registry_api_key}
+
+API 키를 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
+{:shortdesc}
+
+### API 키 작성
+{: #registry_api_key_create}
+
+API 키를 작성한 후 레지스트리에 로그인하는 데 사용할 수 있습니다.
+{:shortdesc} 
+
+IAM API 키를 작성하려면 [API 키 작성](../../iam/userid_keys.html#creating-an-api-key)을 참조하십시오.  
+
+### API 키를 사용하여 액세스 자동화
+{: #registry_api_key_use}
+
+API 키를 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 액세스할 수 있습니다.
+{:shortdesc} 
+
+다음 Docker 명령을 실행하여 API 키로 레지스트리에 로그인하십시오. &lt;your_apikey&gt;를 API 키로 대체하고 &lt;registry_url&gt;을 네임스페이스가 설정된 레지스트리의 URL로 대체하십시오.
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+명령에 대한 참조 정보는 [새 {{site.data.keyword.Bluemix_notm}} 플랫폼 API 키 작성](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)을 참조하십시오.
+
+
+## 토큰을 사용하여 네임스페이스에 대한 액세스 자동화
+{: #registry_tokens}
+
+토큰을 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
+{:shortdesc}
+
+레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성하여 지역에서 설정한 모든 네임스페이스에 대한 액세스 권한을 {{site.data.keyword.Bluemix_notm}} 계정 외부의 사용자에게 부여할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 container-registry 플러그인을 설치하지 않고 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.  
 
 {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 때 해당 토큰이 레지스트리에 대한 읽기 전용(가져오기) 권한을 부여하는지 또는 쓰기(푸시 및 가져오기) 권한을 부여하는지 결정할 수 있습니다. 토큰이 영구적인지 또는 24시간 후에 만료되는지 여부를 지정할 수도 있습니다. 여러 토큰을 작성하고 사용하여 다양한 유형의 액세스를 제어할 수 있습니다. 
 
+토큰을 관리하려면 다음 태스크를 사용하십시오.
 
-## {{site.data.keyword.Bluemix_notm}} 계정의 토큰 작성
+-  [{{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰 작성](#registry_tokens_create)
+-  [토큰을 사용하여 네임스페이스에 대한 액세스 자동화](#registry_tokens_use)
+-  [{{site.data.keyword.Bluemix_notm}} 계정에서 토큰 제거](#registry_tokens_remove)
+
+
+### {{site.data.keyword.Bluemix_notm}} 계정의 토큰 작성
 {: #registry_tokens_create}
 
 지역의 모든 {{site.data.keyword.registrylong_notm}} 네임스페이스에 액세스 권한을 부여하기 위한 토큰을 작성할 수 있습니다.
@@ -48,7 +94,7 @@ lastupdated: "2017-10-31"
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> 이 명령의 컴포넌트 이해</th>
+        <th colspan=2><img src="images/idea.png" alt="전구 아이콘"/> 이 명령의 컴포넌트 이해</th>
         </thead>
         <tbody>
         <tr>
@@ -66,8 +112,7 @@ lastupdated: "2017-10-31"
         </tbody>
         </table>
 
-    CLI 출력은 다음 출력과 유사합니다.
-
+    CLI 출력은 다음 출력과 유사합니다. 
 
     ```
     Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
@@ -83,7 +128,7 @@ lastupdated: "2017-10-31"
     {: pre}
 
 
-## 토큰을 사용하여 네임스페이스에 대한 액세스 자동화
+### 토큰을 사용하여 네임스페이스에 대한 액세스 자동화 
 {: #registry_tokens_use}
 
 `docker login` 명령에서 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스를 자동화할 수 있습니다. 토큰에 대한 읽기 전용 또는 읽기-쓰기 액세스 권한 설정 여부에 따라서 사용자는 이미지를 네임스페이스에서 가져오고 이미지를 네임스페이스로 푸시할 수 있습니다.
@@ -124,10 +169,10 @@ lastupdated: "2017-10-31"
     ```
     {: pre}
 
-    토큰을 사용하여 Docker에 로그인한 후에 이미지를 네임스페이스로 푸시하거나 이지미를 네임스페이스에서 가져올 수 있습니다.
+    토큰을 사용하여 Docker에 로그인한 후에 이미지를 네임스페이스로 푸시하거나 이미지를 네임스페이스에서 가져올 수 있습니다.
 
 
-## {{site.data.keyword.Bluemix_notm}} 계정에서 토큰 제거
+### {{site.data.keyword.Bluemix_notm}} 계정에서 토큰 제거
 {: #registry_tokens_remove}
 
 토큰이 더 이상 필요하지 않은 경우 {{site.data.keyword.registrylong_notm}}를 제거합니다.
@@ -155,5 +200,6 @@ lastupdated: "2017-10-31"
     bx cr token-rm <token_id>
     ```
     {: pre}
+    
 
 

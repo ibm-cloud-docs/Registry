@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -19,19 +19,19 @@ lastupdated: "2017-10-31"
 # 네임스페이스에 이미지 추가
 {: #registry_images_}
 
-{{site.data.keyword.registrylong}}의 네임스페이스에 이미지를 추가하여 Docker 이미지를
-안전하게 저장하고 다른 사용자와 공유할 수 있습니다. {:shortdesc}
+{{site.data.keyword.registrylong}}의 네임스페이스에 이미지를 추가하여 Docker 이미지를 안전하게 저장하고 다른 사용자와 공유할 수 있습니다.
+{:shortdesc}
 
-네임스페이스에 추가하려는 모든 이미지가 로컬 시스템에 우선 있어야 합니다. 다른 저장소에서
-로컬 시스템으로 이미지를 다운로드(가져오기)하거나 Docker `build` 명령을 사용하여 Dockerfile에서 고유의 이미지를 빌드할 수 있습니다. 네임스페이스에
-이미지를 추가하려면 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 로컬 이미지를 업로드(푸시)해야 합니다. 
+네임스페이스에 추가하려는 모든 이미지가 로컬 시스템에 우선 있어야 합니다. 다른 저장소에서 로컬 시스템으로 이미지를 다운로드(가져오기)하거나 Docker `build` 명령을 사용하여 Dockerfile에서 고유의 이미지를 빌드할 수 있습니다. 네임스페이스에 이미지를 추가하려면 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 로컬 이미지를 업로드(푸시)해야 합니다. 
 
 
 ## 다른 레지스트리에서 이미지 가져오기
 {: #registry_images_pulling}
 
-사설 또는 공용 레지스트리 소스에서 이미지를 가져온(다운로드) 후에
-{{site.data.keyword.registrylong_notm}}에서 나중에 사용할 수 있도록 태그를 지정할 수 있습니다.{:shortdesc}
+사설 또는 공용 레지스트리 소스에서 이미지를 가져온(다운로드) 후에 {{site.data.keyword.registrylong_notm}}에서 나중에 사용할 수 있도록 태그를 지정할 수 있습니다.
+{:shortdesc}
+
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="사설 또는 공용 레지스트리에서 사용자의 컴퓨터로 이미지를 가져오십시오."/>
 
 시작하기 전에:
 
@@ -55,8 +55,10 @@ lastupdated: "2017-10-31"
 ## 네임스페이스에 Docker 이미지 푸시
 {: #registry_images_pushing}
 
-이미지를 안전하게 저장하고 다른 사용자와 공유하기 위해 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 이미지를
-푸시(업로드)할 수 있습니다. {:shortdesc}
+이미지를 안전하게 저장하고 다른 사용자와 공유하기 위해 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 이미지를 푸시(업로드)할 수 있습니다.
+{:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="사용자의 컴퓨터에서 사설 레지스트리로 이미지를 푸시하십시오."/>
 
 시작하기 전에:
 
@@ -98,17 +100,16 @@ lastupdated: "2017-10-31"
 ## 레지스트리 간에 이미지 복사
 {: #registry_images_copying}
 
-두 지역에 있는 사용자와 이미지를 공유할 수 있도록 한 지역의 레지스트리에서 이미지를 가져와
-다른 지역의 레지스트리에 푸시할 수 있습니다.{:shortdesc}
+두 지역에 있는 사용자와 이미지를 공유할 수 있도록 한 지역의 레지스트리에서 이미지를 가져와 다른 지역의 레지스트리에 푸시할 수 있습니다.
+{:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="사설 또는 공용 레지스트리에서 사설 {{site.data.keyword.Bluemix_notm}} 레지스트리로 이미지를 복사하십시오."/>
 
 시작하기 전에:
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치하십시오](registry_setup_cli_namespace.html#registry_cli_install). 
 - [{{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유 네임스페이스를 설정하십시오](registry_setup_cli_namespace.html#registry_namespace_add).
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 루트 권한이
-필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `bx login`,
-`bx cr login`, `docker pull` 및 `docker push`
-명령을 실행해야 합니다. 
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `bx login`, `bx cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다. 
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `bx login` 명령을 다시 실행해야 합니다.
 
@@ -121,8 +122,7 @@ lastupdated: "2017-10-31"
 이미지를 복사한 후에 다음을 수행할 수 있습니다. 
 
 - [취약성 어드바이저를 사용하여 보안을 관리](../va/va_index.html)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
-- [클러스터를 작성하고
-이 이미지를 사용하여 컨테이너](../../containers/container_index.html)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치하십시오.
+- [클러스터를 작성하고 이 이미지를 사용하여 컨테이너](../../containers/container_index.html)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치하십시오.
 
 ## 네임스페이스와 사용할 Docker 이미지 빌드
 {: #registry_images_creating}
@@ -134,10 +134,7 @@ lastupdated: "2017-10-31"
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치하십시오](registry_setup_cli_namespace.html#registry_cli_install). 
 - [{{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유 네임스페이스를 설정하십시오](registry_setup_cli_namespace.html#registry_namespace_add).
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 루트 권한이
-필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `bx login`,
-`bx cr login`, `docker pull` 및 `docker push`
-명령을 실행해야 합니다. 
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `bx login`, `bx cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다. 
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `bx login` 명령을 다시 실행해야 합니다.
 
@@ -157,11 +154,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
     ```
     {: pre}
 
-  2. 텍스트 편집기를 사용하여 Dockerfile을 여십시오.최소한, 이미지를 빌드하려면 기본 이미지를 추가해야 합니다. _&lt;source_image&gt;_ 및 _&lt;tag&gt;_를 사용하려는
-이미지 저장소 및 태그로 대체하십시오. 다른 개인용 레지스트리의 이미지를 사용하는 경우,
-이 개인용 레지스트리에서 이미지에 대한 전체 경로를 정의하십시오.
-
-
+  2. 텍스트 편집기를 사용하여 Dockerfile을 여십시오.최소한, 이미지를 빌드하려면 기본 이미지를 추가해야 합니다. _&lt;source_image&gt;_ 및 _&lt;tag&gt;_를 사용하려는 이미지 저장소 및 태그로 대체하십시오. 다른 개인용 레지스트리의 이미지를 사용하는 경우, 이 개인용 레지스트리에서 이미지에 대한 전체 경로를 정의하십시오. 
 
     ```
     FROM <source_image>:<tag>
@@ -177,9 +170,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
     ```
     {: pre}
 
-    이 예는 이미지 메타데이터에 레이블을 추가하고 포트 9080을 노출합니다. 사용할 수 있는 추가 Dockerfile
-지시사항은 [Dockerfile
-참조](https://docs.docker.com/engine/reference/builder/)를 참조하십시오. 
+    이 예는 이미지 메타데이터에 레이블을 추가하고 포트 9080을 노출합니다. 사용할 수 있는 추가 Dockerfile 지시사항은 [Dockerfile 참조](https://docs.docker.com/engine/reference/builder/)를 참조하십시오. 
 
 3. 이미지의 이름을 결정하십시오. 이미지 이름의 형식은 다음과 같아야 합니다.
 

@@ -19,26 +19,26 @@ lastupdated: "2017-10-26"
 # {{site.data.keyword.registrylong_notm}} CLI 및 레지스트리 네임스페이스 설정
 {: #registry_setup_cli_namespace}
 
-{{site.data.keyword.registrylong}}에 Docker 이미지를 저장하려면 우선 {{site.data.keyword.Bluemix_notm}} CLI 및 {{site.data.keyword.registrylong_notm}} 플러그인을 설치하고 {{site.data.keyword.registrylong_notm}}에서 고유한 이미지 저장소를 작성하기 위한 레지스트리 네임스페이스를 설정해야 합니다. {:shortdesc}
+{{site.data.keyword.registrylong}}에 Docker 이미지를 저장하려면 우선 {{site.data.keyword.Bluemix_notm}} CLI 및 {{site.data.keyword.registrylong_notm}} 플러그인을 설치하고 {{site.data.keyword.registrylong_notm}}에서 고유한 이미지 저장소를 작성하기 위한 레지스트리 네임스페이스를 설정해야 합니다.
+{:shortdesc}
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI(`bx cr`) 플러그인 설치
 {: #registry_cli_install}
 
-{{site.data.keyword.Bluemix_notm}} 개인용 레지스트리에서 Docker 이미지 및 네임스페이스를 관리하기 위해 명령행을 사용하도록 {{site.data.keyword.registrylong_notm}} CLI를
-설치합니다. {:shortdesc}
+{{site.data.keyword.Bluemix_notm}} 개인용 레지스트리에서 Docker 이미지 및 네임스페이스를 관리하기 위해 명령행을 사용하도록 {{site.data.keyword.registrylong_notm}} CLI를 설치합니다.
+{:shortdesc}
 
 1.  [container-registry 플러그인을 설치하십시오.](index.html#registry_cli_install)
-2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 이 단계를 수행하지 않은 경우 `sudo` 또는 root로 `bx login`, `bx cr login`, `docker pull`
-및 **docker push** 명령을 실행해야 합니다.
+2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 이 단계를 수행하지 않은 경우 `sudo` 또는 root로 `bx login`, `bx cr login`, `docker pull` 및 **docker push** 명령을 실행해야 합니다.
 
 이제 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 네임스페이스를 설정할 수 있습니다. 
 
-## {{site.data.keyword.registrylong_notm}}(`bx
-cr`) 플러그인 업데이트
+## {{site.data.keyword.registrylong_notm}}(`bx cr`) 플러그인 업데이트
 {: #registry_cli_update}
 
-새 기능을 사용하기 위해 {{site.data.keyword.registrylong_notm}} CLI를 주기적으로 업데이트하고자 할 수 있습니다. {:shortdesc}
+새 기능을 사용하기 위해 {{site.data.keyword.registrylong_notm}} CLI를 주기적으로 업데이트하고자 할 수 있습니다.
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
@@ -65,7 +65,8 @@ cr`) 플러그인 업데이트
 ## {{site.data.keyword.registrylong_notm}}(`bx cr`) 플러그인 설치 제거
 {: #registry_cli_uninstall}
 
-container-registry 플러그인이 더 이상 필요하지 않으면 설치 제거할 수 있습니다. {:shortdesc}
+container-registry 플러그인이 더 이상 필요하지 않으면 설치 제거할 수 있습니다.
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
@@ -94,7 +95,8 @@ container-registry 플러그인이 더 이상 필요하지 않으면 설치 제�
 ## 네임스페이스 설정
 {: #registry_namespace_add}
 
-Docker 이미지를 안전하게 저장하려면 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 네임스페이스를 작성해야 합니다. {:shortdesc}
+Docker 이미지를 안전하게 저장하려면 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 네임스페이스를 작성해야 합니다.
+{:shortdesc}
 
 시작하기 전에:
 

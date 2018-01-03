@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -20,7 +20,8 @@ lastupdated: "2017-10-31"
 {: #registry_images_}
 
 {{site.data.keyword.registrylong}} 内の名前空間にイメージを追加することで、
-安全に Docker イメージを保管して他のユーザーと共有することができます。{:shortdesc}
+安全に Docker イメージを保管して他のユーザーと共有することができます。
+{:shortdesc}
 
 名前空間に追加するすべてのイメージは、まずローカル・マシンに存在していなければなりません。
 別のリポジトリーからローカル・マシンにイメージをダウンロード (プル) するか、
@@ -31,7 +32,10 @@ lastupdated: "2017-10-31"
 ## 別のレジストリーからのイメージのプル
 {: #registry_images_pulling}
 
-専用レジストリーまたはパブリック・レジストリーのソースからイメージをプル (ダウンロード) してタグ付けし、後に {{site.data.keyword.registrylong_notm}} で使用することができます。{:shortdesc}
+専用レジストリーまたはパブリック・レジストリーのソースからイメージをプル (ダウンロード) してタグ付けし、後に {{site.data.keyword.registrylong_notm}} で使用することができます。
+{:shortdesc}
+
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="イメージを専用レジストリーまたはパブリック・レジストリーからコンピューターにプルします。"/>
 
 開始前に、以下のことを行います。
 
@@ -56,7 +60,10 @@ login`、`docker pull`、および `docker push` の各コマンドを
 ## Docker イメージの名前空間へのプッシュ
 {: #registry_images_pushing}
 
-イメージを {{site.data.keyword.registrylong_notm}} 内の名前空間にプッシュ (アップロード) して、安全にイメージを保管して他のユーザーと共有することができます。{:shortdesc}
+イメージを {{site.data.keyword.registrylong_notm}} 内の名前空間にプッシュ (アップロード) して、安全にイメージを保管して他のユーザーと共有することができます。
+{:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="イメージをコンピューターから専用レジストリーにプッシュします。"/>
 
 開始前に、以下のことを行います。
 
@@ -97,7 +104,10 @@ bx cr login```
 ## レジストリー間でのイメージのコピー
 {: #registry_images_copying}
 
-ある領域内のレジストリーからイメージをプルし、別の領域内のレジストリーにそれをプッシュすることで、両方の領域のユーザー間でそのイメージを共有することができます。{:shortdesc}
+ある領域内のレジストリーからイメージをプルし、別の領域内のレジストリーにそれをプッシュすることで、両方の領域のユーザー間でそのイメージを共有することができます。
+{:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="イメージを専用レジストリーまたはパブリック・レジストリーから専用 {{site.data.keyword.Bluemix_notm}} レジストリーにコピーします。"/>
 
 開始前に、以下のことを行います。
 

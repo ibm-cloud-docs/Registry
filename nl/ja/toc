@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
-IBM Bluemix Container Registry
+IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
@@ -25,8 +25,10 @@ IBM Bluemix Container Registry
     registry_tokens.md
     [脆弱性アドバイザーによるイメージのセキュリティーの管理](../va/va_index.html)
         [脆弱性アドバイザーの概要](../va/va_index.html#about)
-        [CLI を使用したイメージのセキュリティーの確認](../va/va_index.html#va_registry_cli) [問題の解決](../va/va_index.html#va_report)
-{: .navgroup-end}
+        [イメージの脆弱性レポートの確認](../va/va_index.html#va_reviewing)
+        [CLI を使用したイメージのセキュリティーの確認](../va/va_index.html#va_registry_cli)
+        [一般的な問題の解決](../va/va_index.html#va_report)
+    {: .navgroup-end}
     
     {: .navgroup id="reference"}
     registry_cli_reference.md

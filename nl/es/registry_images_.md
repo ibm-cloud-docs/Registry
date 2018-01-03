@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -31,6 +31,8 @@ Cada imagen que desea añadir a su espacio de nombres debe existir en su máquin
 Puede extraer (descargar) una imagen desde cualquier origen de registro privado o público, y, a continuación, etiquétela para utilizarla más adelante en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Extraiga una imagen desde un registro privado o público a su sistema."/>
+
 Antes de empezar:
 
 - [Instale la CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
@@ -45,13 +47,15 @@ Para descargar la imagen, consulte [Extraiga una imagen](index.html#registry_ima
   **Consejo:** Si obtiene el mensaje "No autorizado: se necesita autorización" o el mensaje "denegado: se ha denegado el acceso al recurso", ejecute el mandato `bx cr login`.
 
 
-Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen de la máquina local al espacio de nombres. 
+Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen de la máquina local al espacio de nombres.
 
-## Envío por push de imágenes de Docker a su espacio de nombres 
+## Envío por push de imágenes de Docker a su espacio de nombres
 {: #registry_images_pushing}
 
 Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data.keyword.registrylong_notm}} para almacenar y compartir con seguridad su imagen con otros usuarios.
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Envíe por push una imagen desde su sistema a su registro privado."/>
 
 Antes de empezar:
 
@@ -63,7 +67,7 @@ Antes de empezar:
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `bx login`.
 
 
-Para subir (enviar por push) una imagen, siga estos pasos. 
+Para subir (enviar por push) una imagen, siga estos pasos.
 
 1. Inicie la sesión en la CLI:
 
@@ -91,6 +95,8 @@ y utilice esta imagen para desplegar un contenedor](../../containers/container_i
 
 Puede extraer una imagen de un registro en una región y enviarla por push a un registro de otra región, de forma que puede compartir la imagen con usuarios de ambas regiones.
 {:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copie una imagen desde cualquier registro público a su registro privado de {{site.data.keyword.Bluemix_notm}}."/>
 
 Antes de empezar:
 
@@ -131,7 +137,7 @@ Una imagen de Docker es la base para todos los contenedores que cree. Una imagen
 
 Si desea sacar partido de los recursos informáticos de {{site.data.keyword.Bluemix_notm}} y no tiene instalado en su estación de trabajo la conexión a Internet o Docker, cree su imagen directamente en {{site.data.keyword.Bluemix_notm}}. Si durante la creación necesita acceder a los recursos que están en servidores detrás de su cortafuegos, cree la imagen localmente.
 
-Para crear su propia imagen de Docker, siga estos pasos: 
+Para crear su propia imagen de Docker, siga estos pasos:
 
 1. Cree un directorio local donde desea almacenar el contexto de construcción. El contexto de construcción contiene el Dockerfile y artefactos de compilación relacionados, como por ejemplo el código de la app. Navegue hasta este directorio en una ventana de línea de mandatos.
 2. Cree un Dockerfile.
@@ -170,7 +176,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
   donde _&lt;my_namespace&gt;_ es la información del espacio de nombres, _&lt;repo_name&gt;_ es el nombre del repositorio y _&lt;tag&gt;_ es la versión que desea utilizar para su imagen. Para encontrar el espacio de nombres, ejecute el mandato `bx cr namespace-list`.
 
 4. Anote la vía de acceso al directorio que contiene el Dockerfile. Si ejecuta los mandatos con los pasos siguientes mientras el directorio de trabajo está establecido donde está almacenado su contexto de construcción, puede sustituir _&lt;directory&gt;_ por un punto (.).
-5. Puede crear la imagen directamente en {{site.data.keyword.Bluemix_notm}} o puede crearla y probarla localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}. 
+5. Puede crear la imagen directamente en {{site.data.keyword.Bluemix_notm}} o puede crearla y probarla localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}.
   - Para crear una imagen directamente en {{site.data.keyword.Bluemix_notm}}, ejecute el mandato siguiente:
 
     ```
@@ -183,7 +189,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
     Para obtener más información sobre el mandato `bx cr build`, consulte la CLI de [{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
 
   - Para crear y probar su imagen localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}, siga estos pasos:
-    1. Cree la imagen del Dockerfile en la máquina local y etiquétela con el nombre de la imagen. 
+    1. Cree la imagen del Dockerfile en la máquina local y etiquétela con el nombre de la imagen.
 
       ```
       docker build -t <image_name> <directory>
@@ -192,7 +198,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
 
       donde _&lt;image_name&gt;_ es el nombre de su imagen y _&lt;directory&gt;_ es la vía de acceso al directorio.
 
-    2. Opcional: Pruebe la imagen en su máquina local antes de enviarla por push a su espacio de nombres. 
+    2. Opcional: Pruebe la imagen en su máquina local antes de enviarla por push a su espacio de nombres.
 
       ```
       docker run <image_name>
@@ -211,7 +217,7 @@ Puede utilizar Vulnerability Advisor para comprobar la seguridad de su imagen; c
 Puede eliminar las imágenes que no desea de su registro de imágenes privado.
 {:shortdesc}
 
-Antes de empezar, elimine todos los contenedores que utilicen la imagen. 
+Antes de empezar, elimine todos los contenedores que utilicen la imagen.
 
 Las imágenes públicas de {{site.data.keyword.IBM_notm}} no pueden eliminarse de su registro privado de {{site.data.keyword.Bluemix_notm}} y no cuentan para la cuota.
 
@@ -225,7 +231,7 @@ Las imágenes públicas de {{site.data.keyword.IBM_notm}} no pueden eliminarse d
 
   Donde _IMAGE_ es la vía de acceso completa del registro de {{site.data.keyword.Bluemix_notm}} para la imagen que desea eliminar, en el formato `namespace/image:tag`.
 
-  Si no se especifica ninguna etiqueta en la vía de acceso de imagen, de forma predeterminada se suprime la imagen etiquetada como `latest`. Puede suprimir varias imágenes creando una lista de cada vía de acceso privada al registro de {{site.data.keyword.Bluemix_notm}} en el mandato con un espacio entre cada vía de acceso. 
+  Si no se especifica ninguna etiqueta en la vía de acceso de imagen, de forma predeterminada se suprime la imagen etiquetada como `latest`. Puede suprimir varias imágenes creando una lista de cada vía de acceso privada al registro de {{site.data.keyword.Bluemix_notm}} en el mandato con un espacio entre cada vía de acceso.
 
   **Consejo:** Puede ejecutar el mandato `bx cr namespace-list` para recuperar el valor del espacio de nombres.
 

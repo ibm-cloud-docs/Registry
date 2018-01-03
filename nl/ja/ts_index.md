@@ -22,7 +22,8 @@ lastupdated: "2017-10-30"
 # トラブルシューティング
 {: #ts_index}
 
-ここでは、{{site.data.keyword.registrylong}} の使用に関する一般的なトラブルシューティングの質問への回答を示します。{:shortdesc}
+ここでは、{{site.data.keyword.registrylong}} の使用に関する一般的なトラブルシューティングの質問への回答を示します。
+{:shortdesc}
 
 
 ## {{site.data.keyword.registrylong_notm}} のヘルプとサポートの入手

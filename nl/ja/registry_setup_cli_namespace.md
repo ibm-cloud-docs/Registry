@@ -19,13 +19,15 @@ lastupdated: "2017-10-26"
 # {{site.data.keyword.registrylong_notm}} CLI およびレジストリー名前空間のセットアップ
 {: #registry_setup_cli_namespace}
 
-{{site.data.keyword.registrylong}} に Docker イメージを保管する前に、{{site.data.keyword.Bluemix_notm}} CLI と {{site.data.keyword.registrylong_notm}} プラグインをインストールしてから、レジストリー名前空間をセットアップして、{{site.data.keyword.registrylong_notm}} 内に独自のイメージ・リポジトリーを作成する必要があります。{:shortdesc}
+{{site.data.keyword.registrylong}} に Docker イメージを保管する前に、{{site.data.keyword.Bluemix_notm}} CLI と {{site.data.keyword.registrylong_notm}} プラグインをインストールしてから、レジストリー名前空間をセットアップして、{{site.data.keyword.registrylong_notm}} 内に独自のイメージ・リポジトリーを作成する必要があります。
+{:shortdesc}
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) プラグインのインストール
 {: #registry_cli_install}
 
-コマンド・ラインを使用して {{site.data.keyword.Bluemix_notm}} 専用レジストリーの名前空間および Docker イメージを管理するには、{{site.data.keyword.registrylong_notm}} CLI をインストールします。{:shortdesc}
+コマンド・ラインを使用して {{site.data.keyword.Bluemix_notm}} 専用レジストリーの名前空間および Docker イメージを管理するには、{{site.data.keyword.registrylong_notm}} CLI をインストールします。
+{:shortdesc}
 
 1.  [container-registry プラグインをインストールします。
 ](index.html#registry_cli_install)
@@ -36,7 +38,8 @@ lastupdated: "2017-10-26"
 ## {{site.data.keyword.registrylong_notm}} (`bx cr`) プラグインの更新
 {: #registry_cli_update}
 
-新しいフィーチャーを使用するために {{site.data.keyword.registrylong_notm}} CLI を定期的に更新することをお勧めします。{:shortdesc}
+新しいフィーチャーを使用するために {{site.data.keyword.registrylong_notm}} CLI を定期的に更新することをお勧めします。
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
@@ -60,7 +63,8 @@ bx plugin list```
 ## {{site.data.keyword.registrylong_notm}} (`bx cr`) プラグインのアンインストール
 {: #registry_cli_uninstall}
 
-container-registry プラグインは、もはや必要がない場合、アンインストールすることができます。{:shortdesc}
+container-registry プラグインは、もはや必要がない場合、アンインストールすることができます。
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
@@ -86,7 +90,8 @@ bx plugin list```
 ## 名前空間のセットアップ
 {: #registry_namespace_add}
 
-Docker イメージを安全に保管するには、{{site.data.keyword.registrylong_notm}} 専用レジストリー内に名前空間を作成する必要があります。{:shortdesc}
+Docker イメージを安全に保管するには、{{site.data.keyword.registrylong_notm}} 専用レジストリー内に名前空間を作成する必要があります。
+{:shortdesc}
 
 開始前に、以下のことを行います。
 
@@ -100,7 +105,8 @@ Docker イメージを安全に保管するには、{{site.data.keyword.registry
 ## 名前空間の削除
 {: #registry_remove}
 
-レジストリーの名前空間が不要になったら、{{site.data.keyword.Bluemix_notm}} アカウントからその名前空間を削除することができます。{:shortdesc}
+レジストリーの名前空間が不要になったら、{{site.data.keyword.Bluemix_notm}} アカウントからその名前空間を削除することができます。
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 

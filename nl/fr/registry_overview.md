@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -30,6 +30,10 @@ hautement disponible et
 un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par
 IBM. Vous pouvez utiliser le registre privé en configurant votre propre espace de nom d'images et en envoyant par push des images Docker vers votre
 espace de nom.
+
+<img src="images/registry_architecture.png" alt="Image décrivant comment vous pouvez interagir avec IBM Cloud Container Registry. Container Registry contient à la fois des référentiels privés et publics et des API pour interaction avec le service. Votre client Docker local peut envoyer et extraire des images vers et depuis vos référentiels privés dans le registre et extraire des images depuis les référentiels publics. L'interface utilisateur Web d'IBM Cloud (console) interagit avec l'API Container Registry pour recenser les images. L'interface de ligne de commande de Container Registry interagit avec l'API pour recenser, créer, inspecter et retirer des images, ainsi que pour d'autres fonctions d'administration. Votre client Docker local peut également envoyer et extraire des images depuis votre magasin d'images local vers d'autres registres."/>
+
+**Figure 1. Comment {{site.data.keyword.registrylong_notm}} interagit avec vos images Docker**
 
 Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un
 Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses
@@ -317,6 +321,7 @@ espace de nom.</dd>
   <dt>Espace de nom</dt>
   <dd>Les espaces de nom sont une façon d'organiser les référentiels de vos images dans {{site.data.keyword.registrylong_notm}}. L'espace de nom est associé à votre compte
 {{site.data.keyword.Bluemix_notm}}. Quand vous configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}, l'espace de nom est ajouté à l'URL du registre comme suit : <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
+
   Chaque utilisateur dans votre compte {{site.data.keyword.Bluemix_notm}} peut visualiser et utiliser les images stockées dans l'espace de nom de votre registre. Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
 environnement de transfert.</dd>
 </dl>
@@ -367,7 +372,7 @@ Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom 
 
 Après avoir configuré votre premier espace de nom, le plan de service {{site.data.keyword.registrylong_notm}} gratuit vous est affecté si vous n'avez pas encore [procédé à une mise à niveau de votre plan](#registry_plan_upgrade).
 
-## Régions {{site.data.keyword.registrylong_notm}}
+## Régions
 {: #registry_regions}
 
 Les registres {{site.data.keyword.registrylong_notm}} sont disponibles dans plusieurs régions.
@@ -378,25 +383,45 @@ Les registres {{site.data.keyword.registrylong_notm}} sont disponibles dans plus
 
 Une région est une zone géographique dont l'accès s'effectue par un noeud final dédié. Des registres {{site.data.keyword.registrylong_notm}} sont disponibles dans les régions suivantes :
 
--   Asie Pacifique Sud : `registry.au-syd.bluemix.net`
+-   Asie-Pacifique sud : `registry.au-syd.bluemix.net`
 -   Europe centrale : `registry.eu-de.bluemix.net`
--   Royaume-Uni Sud : `registry.eu-gb.bluemix.net`
--   Etats-Unis Sud : `registry.ng.bluemix.net`
+-   Sud du Royaume-Uni : `registry.eu-gb.bluemix.net`
+-   Sud des Etats-Unis : `registry.ng.bluemix.net`
 
 La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
 
-Si vous voulez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle vous voulez accéder en exécutant la commande `bx target` avec l'indicateur `-r`, où _&lt;region&gt;_ est le nom de la région (`us-south`, `eu-de`, `eu-gb` ou `au-syd`).
+Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `bx cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre. 
+
+Pour exécuter la commande avec des paramètres, remplacez _&lt;region&gt;_ par le nom de la région. Par exemple, `eu-central`.
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-Ainsi, pour passer à la région Europe centrale, exécutez la commande suivante :
-
-```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+Pour cibler, par exemple, la région eu-central (Europe centrale), exécutez la commande suivante :
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### Registre international
+{: #registry_regions_global}
+
+Un registre international est disponible globalement, sans région incluse dans son nom (`registry.bluemix.net`). Seules des images publiques fournies par IBM sont hébergées dans ce registre.
+
+Vous pouvez cibler le registre international en exécutant la commande `bx cr region-set`.
+
+Pour cibler le registre international, par exemple, exécutez la commande suivante :
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+Pour plus d'informations sur la commande `bx cr region-set`, voir [Interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
+Après avoir ciblé le registre international, exécutez la commande `bx cr login` afin de connecter votre démon Docker local au registre international pour pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -19,11 +19,14 @@ lastupdated: "2017-10-31"
 # {{site.data.keyword.registrylong_notm}} 정보
 {: #registry_overview}
 
-{{site.data.keyword.registrylong}}를 사용하여
-고가용성 및 확장 가능한 아키텍처의 개인용 Docker 이미지에 액세스하고 안전하게 저장합니다. {:shortdesc}
+{{site.data.keyword.registrylong}}를 사용하여 고가용성 및 확장 가능한 아키텍처의 개인용 Docker 이미지에 액세스하고 안전하게 저장합니다.
+{:shortdesc}
 
-{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트,
-고가용성 및 확장 가능한 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하고 네임스페이스에 Docker 이미지를 푸시하여 개인용 레지스트리를 사용할 수 있습니다. 
+{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트, 고가용성 및 확장 가능한 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하고 네임스페이스에 Docker 이미지를 푸시하여 개인용 레지스트리를 사용할 수 있습니다. 
+
+<img src="images/registry_architecture.png" alt="IBM Cloud Container Registry와 상호작용할 수 있는 방법을 표시하는 이미지. 컨테이너 레지스트리는 사설 및 공용 저장소를 둘 다 포함하며 서비스와 상호작용할 API를 포함합니다. 로컬 Docker 클라이언트는 레지스트리의 사설 저장소에 이미지를 푸시하고 가져올 수 있으며, 공용 저장소를 가져올 수 있습니다. IBM Cloud 웹 UI(콘솔)는 컨테이너 레지스트리 API와 상호작용하여 이미지를 나열합니다. 컨테이너 레지스트리 CLI는 API와 상호작용하여 기타 관리 기능 및 이미지를 나열, 작성, 검사 및 제거할 수 있습니다. 또한 로컬 Docker 클라이언트는 로컬 이미지 저장소에서 이미지를 가져와서 기타 레지스트리로 푸시할 수도 있습니다."/>
+
+**그림 1. {{site.data.keyword.registrylong_notm}}가 Docker 이미지와 상호작용하는 방법**
 
 Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이미지는 이미지를 빌드하는 지시사항이 포함된 파일인 Dockerfile에서 작성됩니다. Dockerfile은 앱, 해당 앱의 구성 및 그 종속 항목과 같이 개별적으로 저장되는 해당 지시사항의 빌드 아티팩트를 참조할 수 있습니다. 일반적으로 이미지는 공용으로 액세스 가능한 레지스트리(공용 레지스트리) 또는 소규모의 사용자 그룹에 대해
 제한된 액세스를 제공하는 레지스트리(개인용 레지스트리)에 저장됩니다. {{site.data.keyword.registrylong_notm}}를 사용하면 {{site.data.keyword.Bluemix_notm}} 계정에 대한 액세스 권한이 있는 사용자만 이미지에 액세스할 수 있습니다.
@@ -46,13 +49,10 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ## 서비스 플랜
 {: #registry_plans}
 
-무료 또는 표준 {{site.data.keyword.registrylong_notm}} 서비스 플랜을 선택하여 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자에게 이미지를
-제공할 수 있습니다. {:shortdesc}
+무료 또는 표준 {{site.data.keyword.registrylong_notm}} 서비스 플랜을 선택하여 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자에게 이미지를 제공할 수 있습니다.
+{:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 서비스 플랜은
-개인용 이미지를 위해 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 판별합니다. 서비스 플랜은
-{{site.data.keyword.Bluemix_notm}} 계정과 연관되어 있으며,
-사용자의 계정에서 설정한 모든 네임스페이스에 대한 스토리지 및 이미지 가져오기 트래픽 적용을 제한합니다. 
+{{site.data.keyword.registrylong_notm}} 서비스 플랜은 개인용 이미지를 위해 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 판별합니다. 서비스 플랜은 {{site.data.keyword.Bluemix_notm}} 계정과 연관되어 있으며, 사용자의 계정에서 설정한 모든 네임스페이스에 대한 스토리지 및 이미지 가져오기 트래픽 적용을 제한합니다. 
 
 다음 표에 사용 가능한 {{site.data.keyword.registrylong_notm}} 서비스 플랜 및 해당 특성이 표시됩니다.
 서비스 플랜 한계를 초과할 때 발생하는 문제와 비용 청구 방식에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계와 비용 청구](#registry_plan_billing)를 참조하십시오.
@@ -72,7 +72,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ## 할당량 한계 및 청구
 {: #registry_plan_billing}
 
-{{site.data.keyword.registrylong_notm}}의 청구 프로세스 및 할당량 한계 방식에 대한 정보와 예제를 설명합니다.{:shortdesc}
+{{site.data.keyword.registrylong_notm}}의 청구 프로세스 및 할당량 한계 방식에 대한 정보와 예제를 설명합니다.
+{:shortdesc}
 
 모든 이미지는 각각 기본 이미지의 증분 변경을 나타내는 다수의 계층에서 빌드됩니다. 이미지를 푸시하거나 가져올 때 각 계층에 필요한 스토리지 및 가져오기 트래픽의 양이 월별 사용량에 추가됩니다. 동일한 계층이 자동으로
 {{site.data.keyword.Bluemix_notm}} 계정의 이미지 간에 공유되며 다른 이미지를 작성하는 경우
@@ -87,7 +88,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 스토리지 및 가져오기 트래픽에 대한 청구
 {: #registry_billing_traffic}
 
-선택하는 서비스 플랜에 따라서 월별 사용하는 스토리지 및 가져오기 트래픽에 대해 비용이 부과됩니다. {:shortdesc}
+선택하는 서비스 플랜에 따라서 월별 사용하는 스토리지 및 가져오기 트래픽에 대해 비용이 부과됩니다.
+{:shortdesc}
 
 **스토리지: **
 
@@ -118,7 +120,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 스토리지 및 가져오기 트래픽에 대한 할당량 한계
 {: #registry_quota_limits}
 
-선택하는 서비스 플랜에 따라서 플랜별 또는 사용자 정의 할당량 한계에 도달할 때까지 네임스페이스에 이미지를 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다. {:shortdesc}
+선택하는 서비스 플랜에 따라서 플랜별 또는 사용자 정의 할당량 한계에 도달할 때까지 네임스페이스에 이미지를 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
+{:shortdesc}
 
 **스토리지: **
 
@@ -149,7 +152,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 비용 추정
 {: #registry_estimating_costs}
 
-{{site.data.keyword.Bluemix_notm}} 가격 책정 계산기를 사용하여 플랜의 비용을 추정하십시오.{:shortdesc}
+{{site.data.keyword.Bluemix_notm}} 가격 책정 계산기를 사용하여 플랜의 비용을 예상하십시오.
+{:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}}에서 제공한 비용 계산기를 사용하여 앱의 가격을 책정할 수 있습니다.
 
@@ -163,8 +167,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ## 서비스 플랜 업그레이드
 {: #registry_plan_upgrade}
 
-{{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한
-Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다. {:shortdesc}
+{{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다.
+{:shortdesc}
 
 사용 중인 서비스 플랜을 알아보려면 `bx cr plan` 명령을 실행하십시오.
 
@@ -190,8 +194,8 @@ Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오�
 ## 기본 사항 학습
 {: #registry_planning}
 
-레지스트리 기본 사항을 학습하여 {{site.data.keyword.registrylong_notm}}에
-Docker 이미지를 안전하게 저장하고 공유하도록 준비하십시오.{:shortdesc}
+레지스트리 기본 사항을 학습하여 {{site.data.keyword.registrylong_notm}}에 Docker 이미지를 안전하게 저장하고 공유하도록 준비하십시오.
+{:shortdesc}
 
 ### {{site.data.keyword.registrylong_notm}}에서 사용되는 용어의 이해
 {: #terms}
@@ -199,49 +203,32 @@ Docker 이미지를 안전하게 저장하고 공유하도록 준비하십시오
 
 <dl>
   <dt>레지스트리</dt>
-  <dd>레지스트리는 Docker 이미지를 저장할 인프라를 제공하고 레지스트리 호스트 URL과 선택적 포트를 사용하여 액세스할 수 있는 서비스입니다.
-레지스트리는 공용(공용 레지스트리)으로 액세스할 수 있거나 소규모 사용자 그룹(사설 레지스트리)에 대한 제한된 액세스를 설정할 수 있습니다.
-{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는
-멀티 테넌트의 고가용성 개인용 이미지 레지스트리를 제공합니다.
-고유의 이미지 네임스페이스를 설정하여
-개인용 레지스트리를 사용하고 네임스페이스에 Docker 이미지 푸시를 시작할 수 있습니다. </dd>
+  <dd>레지스트리는 Docker 이미지를 저장할 인프라를 제공하고 레지스트리 호스트 URL과 선택적 포트를 사용하여 액세스할 수 있는 서비스입니다. 레지스트리는 공용(공용 레지스트리)으로 액세스할 수 있거나 소규모 사용자 그룹(사설 레지스트리)에 대한 제한된 액세스를 설정할 수 있습니다. {{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트의 고가용성 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하여 개인용 레지스트리를 사용하고 네임스페이스에 Docker 이미지 푸시를 시작할 수 있습니다. </dd>
 </dl>
 
 <dl>
   <dt>네임스페이스</dt>
-  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다.
-네임스페이스는 {{site.data.keyword.Bluemix_notm}}
-계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
-
-  {{site.data.keyword.Bluemix_notm}} 계정의 모든 사용자가
-레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. </dd>
+  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.   {{site.data.keyword.Bluemix_notm}} 계정의 모든 사용자가 레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. </dd>
 </dl>
 
 <dl>
   <dt>저장소</dt>
-  <dd>이미지 저장소는 레지스트리에서 태그가 지정된 관련 이미지의 콜렉션입니다.
-저장소는 이미지와 서로 바꿔서 사용되는 경우가 많지만, 저장소는 잠재적으로 다양하게 태그 지정된 여러 이미지를 보유할 수 있습니다.</dd>
+  <dd>이미지 저장소는 레지스트리에서 태그가 지정된 관련 이미지의 콜렉션입니다. 저장소는 이미지와 서로 바꿔서 사용되는 경우가 많지만, 저장소는 잠재적으로 다양하게 태그 지정된 여러 이미지를 보유할 수 있습니다.</dd>
 </dl>
 
 <dl>
   <dt>이미지</dt>
-  <dd>Docker 이미지는 Dockerfile에 제공된 지시사항을 기반으로 빌드되며 컨테이너의 기초를 나타냅니다.
-Docker 이미지를 빌드한 다음, 앱과 해당 종속 항목을 배치하기 위해 해당 이미지를 사용하여 컨테이너를 작성할 수 있습니다. 이미지는 저장소에 저장됩니다.
-{{site.data.keyword.Bluemix_notm}} 계정에 대한 액세스 권한이 있는 사용자가 이미지에 액세스할 수 있습니다.</dd>
+  <dd>Docker 이미지는 Dockerfile에 제공된 지시사항을 기반으로 빌드되며 컨테이너의 기초를 나타냅니다. Docker 이미지를 빌드한 다음, 앱과 해당 종속 항목을 배치하기 위해 해당 이미지를 사용하여 컨테이너를 작성할 수 있습니다. 이미지는 저장소에 저장됩니다. {{site.data.keyword.Bluemix_notm}} 계정에 대한 액세스 권한이 있는 사용자가 이미지에 액세스할 수 있습니다.</dd>
 </dl>
 
 <dl>
   <dt>태그</dt>
-  <dd>태그는 저장소에 있는 이미지의 ID입니다. 태그를 사용하여 저장소에 있는 동일한 기본 이미지의 여러 다른 버전을 구분할 수 있습니다.
-Docker 명령을 실행할 때 저장소 이미지의 태그를 지정하지 않으면 <code>latest</code>로 태그가 지정된 이미지가 기본적으로 사용됩니다.</dd>
+  <dd>태그는 저장소에 있는 이미지의 ID입니다. 태그를 사용하여 저장소에 있는 동일한 기본 이미지의 여러 다른 버전을 구분할 수 있습니다. Docker 명령을 실행할 때 저장소 이미지의 태그를 지정하지 않으면 <code>latest</code>로 태그가 지정된 이미지가 기본적으로 사용됩니다.</dd>
 </dl>
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Dockerfile은 Docker 이미지를 빌드하기 위한 지시사항을 포함하는 텍스트 파일입니다. 일반적으로 이미지는 Ubuntu와 같은 기본 운영 체제를 포함하는 기본 이미지를 기반으로 빌드됩니다.
-Dockerfile 지시사항을 사용하여 기본 이미지를 점진적으로 변경하여 앱에서 실행해야 하는 환경을 정의할 수 있습니다.
-기본 이미지의 변경사항은 각각 새로운 이미지 계층을 설명하며 단일 Dockerfile 행에서 여러 사항을 변경할 수 있습니다.
-Dockerfile 앱의 지시사항은 앱, 앱의 구성 및 해당 종속 항목과 같이 개별적으로 저장되는 빌드 아티팩트도 참조할 수 있습니다.</dd>
+  <dd>Dockerfile은 Docker 이미지를 빌드하기 위한 지시사항을 포함하는 텍스트 파일입니다. 일반적으로 이미지는 Ubuntu와 같은 기본 운영 체제를 포함하는 기본 이미지를 기반으로 빌드됩니다. Dockerfile 지시사항을 사용하여 기본 이미지를 점진적으로 변경하여 앱에서 실행해야 하는 환경을 정의할 수 있습니다. 기본 이미지의 변경사항은 각각 새로운 이미지 계층을 설명하며 단일 Dockerfile 행에서 여러 사항을 변경할 수 있습니다. Dockerfile 앱의 지시사항은 앱, 앱의 구성 및 해당 종속 항목과 같이 개별적으로 저장되는 빌드 아티팩트도 참조할 수 있습니다.</dd>
 </dl>
 
 Docker 고유 용어에 대해 자세히 알아보려면 [Docker 용어집을 참조](https://docs.docker.com/glossary/)하십시오.
@@ -249,24 +236,16 @@ Docker 고유 용어에 대해 자세히 알아보려면 [Docker 용어집을 �
 ### 네임스페이스 계획
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트
-개인용 이미지 레지스트리를 제공합니다. 레지스트리 네임스페이스를 설정하여
-이 레지스트리에서 Docker 이미지를 안전하게 저장하고 공유할 수 있습니다. {:shortdesc}
+{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다. 레지스트리 네임스페이스를 설정하여 이 레지스트리에서 Docker 이미지를 안전하게 저장하고 공유할 수 있습니다.
+{:shortdesc}
 
-예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록
-여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.Bluemix_notm}} 지역에서 레지스트리를 사용하려는 경우,
-각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를
-설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
+예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.Bluemix_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
 
-IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지
-않아도 됩니다.
+IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지 않아도 됩니다.
 
-**참고:** 계정에 대해 네임스페이스가 이미 설정되었는지 확실하지 않은 경우 `bx cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오.
-[단일 및 확장 가능한 컨테이너 그룹](../../containers/cs_classic.html)을 사용하는 기존 {{site.data.keyword.containerlong_notm}} 고객인 경우
-이미 네임스페이스가 있습니다. 추가 네임스페이스를 작성할 수 있지만, 두 개 이상의 네임스페이스에 대해서는 `cf ic namespace set`를 실행할 수 없습니다.
+**참고:** 계정에 대해 네임스페이스가 이미 설정되었는지 확실하지 않은 경우 `bx cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오. [단일 및 확장 가능한 컨테이너 그룹](../../containers/cs_classic.html)을 사용하는 기존 {{site.data.keyword.containerlong_notm}} 고객인 경우 이미 네임스페이스가 있습니다. 추가 네임스페이스를 작성할 수 있지만, 두 개 이상의 네임스페이스에 대해서는 `cf ic namespace set`를 실행할 수 없습니다.
 
-네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
-
+네임스페이스를 선택할 때 다음 규칙을 고려하십시오. 
 
 -   네임스페이스는 {{site.data.keyword.Bluemix_notm}} 지역에서 고유해야 합니다.
 -   네임스페이스의 길이는 4 - 30자여야 합니다.
@@ -275,7 +254,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 아직 [플랜 업그레이드](#registry_plan_upgrade)를 수행하지 않은 경우 첫 번째 네임스페이스를 설정하고 나면 무료 {{site.data.keyword.registrylong_notm}} 서비스 플랜이 지정됩니다.
 
-## {{site.data.keyword.registrylong_notm}} 지역
+## 지역
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} 레지스트리는 여러 지역에서 사용할 수 있습니다.
@@ -286,25 +265,45 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. {{site.data.keyword.registrylong_notm}} 레지스트리는 다음 지역에서 사용할 수 있습니다.
 
--   AP 남부: `registry.au-syd.bluemix.net`
--   EU 중부: `registry.eu-de.bluemix.net`
--   UK 남부: `registry.eu-gb.bluemix.net`
--   US 남부: `registry.ng.bluemix.net`
+-   ap-south: `registry.au-syd.bluemix.net`
+-   eu-central: `registry.eu-de.bluemix.net`
+-   uk-south: `registry.eu-gb.bluemix.net`
+-   us-south: `registry.ng.bluemix.net`
 
 모든 레지스트리 아티팩트의 범위는 현재 작업 중인 특정 지역 레지스트리로 지정됩니다. 예를 들어, 네임스페이스, 이미지, 토큰, 할당량 설정 및 플랜 설정은 모두 각 지역 레지스트리에서 개별적으로 관리해야 합니다.
 
-로컬 지역 이외의 다른 지역을 사용하려면 `-r` 플래그와 함께 `bx target` 명령을 실행하여 액세스할 지역의 대상을 지정해야 합니다. 여기서 _&lt;region&gt;_은 지역의 이름입니다(`us-south`, `eu-de`, `eu-gb` 또는 `au-syd`).
+로컬 지역 이외의 다른 지역을 사용하려는 경우 `bx cr` 명령을 실행하여 액세스할 지역을 대상으로 지정할 수 있습니다. 매개변수 없이 명령을 실행하여 사용 가능한 지역의 목록을 가져오거나 지역을 매개변수로 지정할 수 있습니다. 
+
+매개변수를 사용하여 명령을 실행하려면 _&lt;region&gt;_을 지역 이름으로 대체하십시오(예: `eu-central`).
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-예를 들어, EU 중부 지역으로 변경하려면 다음 명령을 실행하십시오.
-
-```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+예를 들어, eu-central 지역을 대상으로 지정하려면 다음 명령을 실행하십시오.
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### 국제 레지스트리
+{: #registry_regions_global}
+
+국제 레지스트리는 전세계적으로 사용 가능하며 해당 이름(`registry.bluemix.net`)에 포함되어 있는 지역이 없습니다. IBM 제공 공용 이미지는 이 레지스트리에서 호스팅됩니다.
+
+`bx cr region-set` 명령을 실행하여 국제 레지스트리를 대상으로 지정할 수 있습니다.
+
+예를 들어, 국제 레지스트리를 대상으로 지정하려면 다음 명령을 실행하십시오.
+
+```
+bx cr region-set international 
+```
+{: pre}
+
+`bx cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set)를 참조하십시오.
+
+{{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 국제 레지스트리를 대상으로 지정한 후 `bx cr login` 명령을 실행하여 로컬 Docker 디먼을 국제 레지스트리에 로깅하십시오. 
 

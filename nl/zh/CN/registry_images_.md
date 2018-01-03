@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-10-31"
 您可以通过将映像添加到 {{site.data.keyword.registrylong}} 中的名称空间，安全地存储 Docker 映像并与其他用户共享。
 {:shortdesc}
 
-您要添加到名称空间的每个映像首先必须在您的本地计算机上存在。您可以将映像从其他存储库下载（拉出）到本地计算机，或者使用 Docker `build` 命令通过 Dockerfile 构建自己的映像。要将映像添加到名称空间，您必须将本地映像上传（推送）到 {{site.data.keyword.registrylong_notm}} 中的名称空间。
+您要添加到名称空间的每个映像首先必须在您的本地计算机上存在。您可以将映像从其他存储库下载（拉出）到本地计算机，或者使用 Docker `build` 命令通过 Dockerfile 构建自己的映像。要将映像添加到名称空间，必须将本地映像上传（推送）到 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 
 
 ## 从其他注册表拉出映像
@@ -31,14 +31,16 @@ lastupdated: "2017-10-31"
 您可以从任何专用或公共注册表源拉出（下载）映像，然后对其进行标记，以便稍后在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="将映像从专用或公共注册表拉到计算机。"/>
+
 开始之前：
 
 - [安装 CLI](registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么您必须以 `sudo`运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么您必须以 `sudo` 运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
 
-  如果您更改许可权以在没有 root 特权的情况下运行 Docker 命令，那么您必须重新运行 `bx login` 命令。
+  如果您更改许可权以在没有 root 特权的情况下运行 Docker 命令，那么必须重新运行 `bx login` 命令。
 
 
 下载映像；请参阅“入门”文档中的[拉出映像](index.html#registry_images_pulling)。
@@ -53,6 +55,8 @@ lastupdated: "2017-10-31"
 
 您可以将映像推送（上传）至 {{site.data.keyword.registrylong_notm}} 中的名称空间，以安全地存储映像并与其他用户共享。
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="将映像从计算机推送到专用注册表。"/>
 
 开始之前：
 
@@ -95,19 +99,21 @@ lastupdated: "2017-10-31"
 您可以从一个区域的注册表中拉出映像，并将其推送到另一个区域的注册表中，这样就可以在两个区域的用户之间共享该映像。
 {:shortdesc}
 
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="将映像从任何专用或公共注册表复制到您的专用 {{site.data.keyword.Bluemix_notm}} 注册表。"/>
+
 开始之前：
 
 - [安装 CLI](registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 专用注册表中设置自己的名称空间](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么您必须以 `sudo`运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么您必须以 `sudo` 运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
 
   如果您更改许可权以在没有 root 特权的情况下运行 Docker 命令，那么您必须重新运行 `bx login` 命令。
 
 
 要在两个注册表之间复制映像，请遵循以下步骤。
 
-1. [从注册表拉出映像](#registry_images_pulling).
+1. [从注册表拉出映像](#registry_images_pulling)。
 2. [将映像推送至另一个注册表](#registry_images_pushing)。确保为新目标区域使用正确的域名。
 
 复制映像后，您可以：
@@ -126,7 +132,7 @@ lastupdated: "2017-10-31"
 - [安装 CLI](registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 专用注册表中设置自己的名称空间](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么您必须以 `sudo`运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 许可权的情况下运行 Docker 命令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 许可权，那么必须以 `sudo` 运行 `bx login`、`bx cr login`、`docker pull` 和 `docker push` 命令。
 
   如果您更改许可权以在没有 root 特权的情况下运行 Docker 命令，那么您必须重新运行 `bx login` 命令。
 
@@ -176,7 +182,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
   其中，_&lt;my_namespace&gt;_ 是名称空间信息，_&lt;repo_name&gt;_ 是存储库的名称，_&lt;tag&gt;_ 是要用于映像的版本。要查找名称空间，请运行 `bx cr namespace-list` 命令。
 
-4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时，按以下步骤运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_。
+4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时，按以下步骤运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_.
 5. 选择直接在 {{site.data.keyword.Bluemix_notm}} 中构建映像，或者先在本地构建并测试映像，然后再将其推送至 {{site.data.keyword.Bluemix_notm}}。
   - 要直接在 {{site.data.keyword.Bluemix_notm}} 中构建映像，请运行以下命令：
 

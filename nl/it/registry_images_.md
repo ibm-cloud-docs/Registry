@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -36,6 +36,8 @@ Puoi eseguire il pull (scaricare) di un'immagine da una qualsiasi origine di reg
 per un uso successivo in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Passa un'immagine da un registro pubblico o privato al tuo computer."/>
+
 Prima di iniziare:
 
 - [Installa la CLI](registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
@@ -54,7 +56,7 @@ Scarica l'immagine; consulta [Esegui il pull di un'immagine](index.html#registry
   **Suggerimento:** se ricevi un messaggio del tipo "non autorizzato: autenticazione richiesta" o  "negato: l'accesso richiesto alla risorsa è stato negato", esegui il comando `bx cr login`.
 
 
-Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dalla tua macchina locale al tuo spazio dei nomi. 
+Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dalla tua macchina locale al tuo spazio dei nomi.
 
 ## Esecuzione del push di immagini Docker al tuo spazio dei nomi
 {: #registry_images_pushing}
@@ -62,6 +64,8 @@ Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag pe
 Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}} per memorizzare e condividere in modo sicuro la tua immagine
 con altri utenti.
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Trasmetti un'immagine dal tuo computer al tuo registro privato."/>
 
 Prima di iniziare:
 
@@ -107,6 +111,8 @@ e utilizzare questa immagine per distribuire un contenitore](../../containers/co
 Puoi eseguire il pull di un'immagine da un registro in una regione e trasmetterla a un registro in un'altra regione in modo da poter
 condividere l'immagine in entrambe le regioni.
 {:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copia un'immagine da un qualsiasi registro pubblico o privato al tuo registro {{site.data.keyword.Bluemix_notm}} privato."/>
 
 Prima di iniziare:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-30"
+lastupdated: "2017-11-16"
 
 ---
 
@@ -18,7 +18,6 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 {: #docker}
 
 <ul>
-<li><a href="https://docs.docker.com/engine/" target="_blank">Documentation Docker <img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>
 <li><a href="http://docs.docker.com/engine/reference/builder/" target="_blank">Référence Dockerfile<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>
 </ul>
 
@@ -26,6 +25,7 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 {: #registry}
 
 <ul>
+<li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} interface de ligne de commande</a>
 <li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">API REST {{site.data.keyword.registrylong_notm}}<img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>
 </ul>
 

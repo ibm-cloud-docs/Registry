@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -26,7 +26,7 @@ lastupdated: "2017-10-26"
 ## bx cr 命令
 {: #registry_cli_reference_bxcr}
 
-在 {{site.data.keyword.registryshort_notm}} CLI 中运行 bx cr 命令。
+在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `bx cr` 命令。
 {:shortdesc}
 
 有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)。
@@ -46,13 +46,13 @@ lastupdated: "2017-10-26"
 
 可以将 format 选项用于以下 {{site.data.keyword.registrylong_notm}} 命令。单击命令可查看可用字段及其数据类型的列表。
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 以下代码示例演示了可如何对选项进行格式设置和过滤。
 
--   运行以下命令以显示大小超过 1 MB 的所有映像的存储库、标记和漏洞状态：
+-   运行以下 `bx cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和漏洞状态：
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -69,7 +69,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   运行以下命令以显示指定 IBM 公共映像的 IBM 文档的托管位置：
+-   运行以下 `bx cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -84,7 +84,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   运行以下命令以显示指定映像的已公开端口：
+-   运行以下 `bx cr image-inspect` 命令，以显示指定映像的已公开端口：
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -99,7 +99,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   运行以下命令以显示所有只读令牌：
+-   运行以下 `bx cr token-list` 命令，以显示所有只读令牌：
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"

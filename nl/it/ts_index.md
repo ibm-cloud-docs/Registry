@@ -71,13 +71,13 @@ Vedi un messaggio di errore simile a uno dei seguenti:
 
 ```
 bx cr login
-'cr' non è un comando registrato. Vedi 'bx help'.
+'cr' non è un comando registrato. Vedi 'bx help'. 
 ```
 {: pre}
 
 ```
 bx cr namespace
-'cr' non è un comando registrato. Vedi 'bx help'.
+'cr' non è un comando registrato. Vedi 'bx help'. 
 ```
 {: pre}
 

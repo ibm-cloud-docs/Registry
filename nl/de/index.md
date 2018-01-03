@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-10-31"
 {{site.data.keyword.registrylong}} bietet eine private Multi-Tenant-Registry für Images, mit der Sie Ihre Docker-Images sicher speichern und mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam nutzen können.
 {:shortdesc}
 
-Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zur Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie im Abschnitt [Informationen zu Images in der {{site.data.keyword.Bluemix_notm}}-Konsole anzeigen](registry_ui.html).
+Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zu Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie in [Sicherheitslücken bei Images überwachen](registry_ui.html).
 
 
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
@@ -47,10 +47,17 @@ Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum
     ```
     {: pre}
 
-2.  Fügen Sie einen Namensbereich hinzu, um Ihr eigenes Image-Repository zu erstellen. Ersetzen Sie hierbei _&lt;eigener_namensbereich&gt;_ durch den gewünschten Namen für Ihren Namensbereich.
+2.  Fügen Sie einen Namensbereich hinzu, um Ihr eigenes Image-Repository zu erstellen. Ersetzen Sie hierbei _&lt;eigener Namensbereich&gt;_ durch den gewünschten Namen für Ihren Namensbereich.
 
     ```
-    bx cr namespace-add <eigener_namensbereich>
+    bx cr namespace-add <eigener Namensbereich>
+    ```
+    {: pre}
+
+3.  Führen Sie den Befehl `bx cr namespace-list` aus, um sicherzustellen, dass der Namensbereich erstellt wurde.
+
+    ```
+    bx cr namespace-list
     ```
     {: pre}
 
@@ -76,24 +83,24 @@ Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum
     ```
     {: pre}
 
-    Beispiel:
+    Beispiel, bei dem _&lt;Quellenimage&gt;_ `hello-world` und _&lt;Tag&gt;_ `latest` ist:
 
     ```
     docker pull hello-world:latest
     ```
     {: pre}
 
-4.  Kennzeichnen Sie das Image. Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository und _&lt;tag&gt;_ durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden wollen, indem Sie _&lt;neues_image-repository&gt;_ und _&lt;neuer_tag&gt;_ durch die entsprechenden Werte ersetzen.
+4.  Kennzeichnen Sie das Image. Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository und _&lt;tag&gt;_ durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen [Region](registry_overview.html#registry_regions). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich, den Sie in [Namensbereich einrichten](index.html#registry_namespace_add) erstellt haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden wollen, indem Sie _&lt;neues_image-repository&gt;_ und _&lt;neuer_tag&gt;_ durch die entsprechenden Werte ersetzen.
 
     ```
-    docker tag <quellenimage>:<tag> registry.<region>.bluemix.net/<eigener_namensbereich>/<neues_image_repository>:<neuer_tag>
+    docker tag <Quellenimage>:<Tag> registry.<Region>.bluemix.net/<eigener Namensbereich>/<neues Image-Repository>:<neuer Tag>
     ```
     {: pre}
 
-    Beispiel:
+    Beispiel, bei dem _&lt;Quellenimage&gt;_ `hello-world`, _&lt;Tag&gt;_ `latest`, _&lt;Region&gt;_ `eu-gb`, _&lt;eigener Namensbereich&gt;_ `Namespace1`, _&lt;neuer Imagebericht&gt;_ `hw_repo` und _&lt;neues Tag&gt;_ `1` ist:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/eigener_namensbereich/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -101,17 +108,18 @@ Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum
 ## Docker-Images mit Push-Operation in den eigenen Namensbereich übertragen
 {: #registry_images_pushing}
 
-1.  Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie _&lt;eigener_namensbereich&gt;_ durch den Namensbereich, in den Sie das Image hochladen wollen, sowie _&lt;image-repository&gt;_ und _&lt;tag&gt;_ durch das Repository bzw. den Tag des Images, die Sie beim Tagging des Images ausgewählt haben.
+1.  Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich,  den Sie in [Namensbereich einrichten](index.html#registry_namespace_add) erstellt haben, und _&lt;Imagebericht&gt;_ und _&lt;Tag&gt;_ durch das Repository und den Tag des Image, das Sie beim Tagging ausgewählt haben.
 
     ```
-    docker push registry.<region>.bluemix.net/<eigener_namensbereich>/<image_repository>:<tag>
+    docker push registry.<Region>.bluemix.net/<eigener Namensbereich>/<Image-Repository>:<tag>
     ```
     {: pre}
 
-    Beispiel:
+    Beispiel, bei dem _&lt;Region&gt;_ `eu-gb`, _&lt;eigener Namensbereich&gt;_ `Namespace1`,
+_&lt;Imagebericht&gt;_ `hw_repo` und _&lt;Tag&gt;_ `1` ist:
 
     ```
-    docker push registry.<region>.bluemix.net/<eigener_namensbereich>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -127,8 +135,8 @@ Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.re
 
 **Wie geht es weiter?**
 
--   [Verwalten Sie die Imagesicherheit mit Vulnerability Advisor](../va/va_index.html).
--   [Prüfen Sie Ihre Servicepläne und die Nutzung](registry_overview.html#registry_plans).
--   [Speichern und verwalten Sie weitere Images in Ihrem Namensbereich](registry_images_.html).
--   [Erstellen und implementieren Sie einen Container aus Ihrem Image in einen Kubernetes-Cluster](../../containers/cs_cluster.html).
+-   [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html).
+-   [Servicepläne und Nutzung überprüfen](registry_overview.html#registry_plans).
+-   [Weitere Images in Ihrem Namensbereich speichern und verwalten](registry_images_.html).
+-   [Container aus Ihrem Image erstellen und in einem Kubernetes-Cluster bereitstellen](../../containers/cs_cluster.html).
 

@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
-IBM Bluemix Container Registry
+IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
@@ -25,8 +25,9 @@ IBM Bluemix Container Registry
     registry_tokens.md
     [취약성 어드바이저로 이미지 보안 관리](../va/va_index.html)
         [취약성 어드바이저 정보](../va/va_index.html#about)
+        [이미지에 대한 취약성 보고서 검토](../va/va_index.html#va_reviewing)
         [CLI를 사용하여 이미지 보안 검토](../va/va_index.html#va_registry_cli)
-        [문제점 해결](../va/va_index.html#va_report)
+        [공통 문제점 해결](../va/va_index.html#va_report)
     {: .navgroup-end}
     
     {: .navgroup id="reference"}

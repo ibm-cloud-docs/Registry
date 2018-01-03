@@ -139,7 +139,7 @@ d'extraction (pull).
 
 
 ## Libération du stockage utilisé et modification des plans de service ou des
-limites de quota dans le but de rester dans les limites de quota données 
+limites de quota dans le but de rester dans les limites de quota données
 {: #registry_quota_freeup}
 
 Si vous dépassez les limites de quota définies pour votre compte

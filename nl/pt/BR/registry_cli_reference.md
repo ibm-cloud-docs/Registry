@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -28,7 +28,7 @@ de forma segura as imagens do Docker com todos os usuários em sua conta do {{si
 ## Comandos bx cr
 {: #registry_cli_reference_bxcr}
 
-Execute os comandos bx cr na CLI do {{site.data.keyword.registryshort_notm}}.
+Execute comandos `bx cr` na CLI do {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
 Para comandos suportados, veja [CLI do {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
@@ -46,15 +46,15 @@ Por padrão, a saída da CLI é exibida em um formato legível. No entanto, essa
 1.  Formatar dados em sua saída da CLI. Por exemplo, mude a saída de campo `Created` de horário UNIX para horário padrão.
 2.  Filtrar dados em sua saída da CLI. Por exemplo, filtre por detalhes da imagem para exibir um subconjunto específico de imagens usando a condição `if gt` do modelo Go.
 
-É possível usar a opção de formato com os comandos do {{site.data.keyword.registrylong_notm}} a seguir. Clique em um comando para visualizar uma lista de campos disponíveis e os seus tipos de dados.
+É possível usar a opção de formato com os comandos do {{site.data.keyword.registrylong_notm}} a seguir. Clique em um comando para visualizar uma lista de campos disponíveis e seus tipos de dados.
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Os exemplos de código a seguir demonstram como você pode usar as opções de formatação e filtragem.
 
--   Execute o comando a seguir para exibir o repositório, a tag e o status de vulnerabilidade de todas as imagens que tenham um tamanho acima de 1 MB:
+-   Execute o comando `bx cr image-list` a seguir para exibir o repositório, a tag e o status de vulnerabilidade de todas as imagens que tenham um tamanho acima de 1 MB:
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -71,7 +71,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     ```
     {: screen}
 
--   Execute o comando a seguir para exibir em que local a documentação da IBM está hospedada para uma imagem pública da IBM especificada:
+-   Execute o comando `bx cr image-inspect` a seguir para exibir onde a documentação IBM está hospedada para uma imagem pública da IBM especificada:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -86,7 +86,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     ```
     {: screen}
 
--   Execute o comando a seguir para exibir as portas expostas para uma imagem especificada:
+-   Execute o comando `bx cr image-inspect` a seguir para exibir as portas expostas para uma imagem especificada:
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -101,7 +101,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     ```
     {: screen}
 
--   Execute o comando a seguir para exibir todos os tokens somente leitura:
+-   Execute o comando `bx cr token-list` a seguir para exibir todos os tokens somente leitura:
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -26,8 +26,7 @@ lastupdated: "2017-10-26"
 ## bx cr 指令
 {: #registry_cli_reference_bxcr}
 
-在 {{site.data.keyword.registryshort_notm}} CLI 中執行 bx cr 指令。
-{:shortdesc}
+在 {{site.data.keyword.registryshort_notm}} CLI 中執行 `bx cr` 指令。{:shortdesc}
 
 如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)。
 
@@ -46,13 +45,13 @@ lastupdated: "2017-10-26"
 
 您可以搭配使用 format 選項與下列 {{site.data.keyword.registrylong_notm}} 指令。按一下指令，以檢視可用欄位及其資料類型的清單。
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 下列程式碼範例示範如何使用格式化及過濾選項。
 
--   執行下列指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及漏洞狀態：
+-   執行下列 `bx cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及漏洞狀態：
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -69,7 +68,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   執行下列指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
+-   執行下列 `bx cr image-inspect` 指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -84,7 +83,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   執行下列指令，以顯示所指定映像檔的公開埠：
+-   執行下列 `bx cr image-inspect` 指令，以顯示所指定映像檔的公開埠：
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -99,7 +98,7 @@ lastupdated: "2017-10-26"
     ```
     {: screen}
 
--   執行下列指令，以顯示所有唯讀記號：
+-   執行下列 `bx cr token-list` 指令，以顯示所有唯讀記號：
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
@@ -201,7 +200,7 @@ lastupdated: "2017-10-26"
 
 |選項|類型|說明|
 |------|----|-----------|
-|`類型`|字串|顯示檔案系統的類型。|
+|`Type`|字串|顯示檔案系統的類型。|
 |`Layers`|字串陣列|顯示每一個映像檔層的描述子。|
 |`BaseLayer`|字串|顯示映像檔中基礎層的描述子。|
 {: caption="表 5. RootFS 結構中的可用欄位及資料類型。" caption-side="top"}
@@ -217,5 +216,5 @@ lastupdated: "2017-10-26"
 |`ID`|字串|顯示記號的唯一 ID。|
 |`Expiry`|整數（64 位元）|顯示記號過期時的 [Unix 時間戳記](https://en.wikipedia.org/wiki/Unix_time)。|
 |`ReadOnly`|布林|只有在只取回映像檔時才會顯示 _true_，當您可以從名稱空間推送及取回映像檔時會顯示 _false_。|
-|`說明`|字串|顯示記號的說明。|
+|`Description`|字串|顯示記號的說明。|
 {: caption="表 6. bx cr token-list 指令中的可用欄位及資料類型。" caption-side="top"}

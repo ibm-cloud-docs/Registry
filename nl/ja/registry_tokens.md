@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -16,27 +16,75 @@ lastupdated: "2017-10-31"
 {:download: .download}
 
 
+# {{site.data.keyword.registrylong_notm}} へのアクセスの自動化
+{: #registry_access}
 
+レジストリー・トークンまたは {{site.data.keyword.iamlong}} (IAM) API キーを使用して、{{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを自動化し、イメージのプッシュとプルを可能にすることができます。
+{:shortdesc}
 
+API キーはアカウントにリンクされているので、{{site.data.keyword.Bluemix_notm}} 全体で使用できます。そのため、サービスごとに別の資格情報を使用する必要がありません。API キーを CLI または自動ログインの中でユーザー ID として使用できます。
 
+レジストリー・トークンの有効範囲は、{{site.data.keyword.registrylong_notm}} のみです。レジストリー・トークンは、読み取り専用アクセスに制限したり、有効期限の有無を設定したりできます。
 
-# トークンを使用した、{{site.data.keyword.registrylong_notm}} 内の名前空間へのアクセスの自動化
-{: #registry_tokens}
-
-トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化することができます。{:shortdesc}
+{{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](../../iam/apikeys.html#manapikey)を参照してください。
 
 始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 
-セキュリティー・トークンは、トークンを所有するすべてのユーザーが、保護された情報にアクセスすることを許可します。トークンは、API キーと同じような方法で使用されます。{{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成して、領域にセットアップしたすべての名前空間へのアクセスを、{{site.data.keyword.Bluemix_notm}} アカウント外部のユーザーに付与することができます。このトークンを所有するすべてのユーザーまたはアプリは、container-registry プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
+
+## API キーを使用した名前空間へのアクセスの自動化
+{: #registry_api_key}
+
+API キーを使用して、名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
+{:shortdesc}
+
+### API キーの作成
+{: #registry_api_key_create}
+
+レジストリーへのログインに使用する API キーを作成します。
+{:shortdesc} 
+
+IAM API キーを作成します。[API キーの作成](../../iam/userid_keys.html#creating-an-api-key)を参照してください。 
+
+### API キーを使用したアクセスの自動化
+{: #registry_api_key_use}
+
+API キーを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化できます。
+{:shortdesc} 
+
+次の Docker コマンドを実行して、API キーでレジストリーにログインします。&lt;your_apikey&gt; を API キーに置き換え、&lt;registry_url&gt; を名前空間がセットアップされているレジストリーの URL に置き換えてください。
+
+```
+docker login -u iamapikey -p <your_apikey> <registry_url>
+```
+{: pre}
+
+
+このコマンドの参照情報については、[新しい {{site.data.keyword.Bluemix_notm}} プラットフォーム API キーの作成](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)を参照してください。
+
+
+## トークンを使用した名前空間へのアクセスの自動化
+{: #registry_tokens}
+
+トークンを使用して、{{site.data.keyword.registrylong_notm}} 名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
+{:shortdesc}
+
+レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。{{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成して、領域にセットアップしたすべての名前空間へのアクセスを、{{site.data.keyword.Bluemix_notm}} アカウント外部のユーザーに付与することができます。このトークンを所有するすべてのユーザーまたはアプリは、container-registry プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。 
 
 {{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成する際に、そのトークンがレジストリーへの読み取り専用アクセス (プル) を許可するのか、それとも書き込みアクセス (プッシュおよびプル) を許可するのかを決定できます。
 また、トークンを永続的にするか、または 24 時間後に期限切れするかについても指定できます。複数のトークンを作成および使用して、さまざまなタイプのアクセスを制御することができます。
 
+以下のタスクを使用してトークンを管理します。
 
-## {{site.data.keyword.Bluemix_notm}} アカウント用のトークンの作成
+-  [{{site.data.keyword.Bluemix_notm}} アカウントのトークンの作成](#registry_tokens_create)
+-  [トークンを使用した名前空間へのアクセスの自動化](#registry_tokens_use)
+-  [{{site.data.keyword.Bluemix_notm}} アカウントのトークンの削除](#registry_tokens_remove)
+
+
+### {{site.data.keyword.Bluemix_notm}} アカウント用のトークンの作成
 {: #registry_tokens_create}
 
-領域のすべての {{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを付与するためのトークンを作成できます。{:shortdesc}
+領域内のすべての {{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを付与するトークンを作成できます。
+{:shortdesc}
 
 1.  トークンを作成します。以下の例は、領域内にセットアップされているすべての名前空間への読み取りおよび書き込みアクセスを持つ、有効期限がないトークンを作成します。
 
@@ -48,7 +96,7 @@ lastupdated: "2017-10-31"
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png"/> このコマンドの構成要素について</th>
+        <th colspan=2><img src="images/idea.png" alt="電球アイコン"/> このコマンドの構成要素の説明</th>
         </thead>
         <tbody>
         <tr>
@@ -81,10 +129,11 @@ bx cr token-list```
     {: pre}
 
 
-## トークンを使用した名前空間へのアクセスの自動化
+### トークンを使用した名前空間へのアクセスの自動化 
 {: #registry_tokens_use}
 
-`docker login` コマンドでトークンを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化することができます。トークンに読み取り専用アクセスを設定するか、または読み取り/書き込みアクセスを設定するかに応じて、ユーザーは、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。{:shortdesc}
+`docker login` コマンドでトークンを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化することができます。トークンに読み取り専用アクセスを設定するか、または読み取り/書き込みアクセスを設定するかに応じて、ユーザーは、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。
+{:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
@@ -123,10 +172,11 @@ bx cr token-list```
     トークンを使用して Docker にログインすると、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。
 
 
-## {{site.data.keyword.Bluemix_notm}} アカウントからのトークンの削除
+### {{site.data.keyword.Bluemix_notm}} アカウントからのトークンの削除
 {: #registry_tokens_remove}
 
-{{site.data.keyword.registrylong_notm}} トークンが不要になったら、削除します。{:shortdesc}
+{{site.data.keyword.registrylong_notm}} トークンが不要になったら、削除します。
+{:shortdesc}
 
 **注:** 有効期限が切れた {{site.data.keyword.registrylong_notm}} トークンは {{site.data.keyword.Bluemix_notm}} アカウントから自動的に削除されるため、手動で削除する必要はありません。
 
@@ -148,5 +198,6 @@ bx cr token-list```
     bx cr token-rm <token_id>
     ```
     {: pre}
+    
 
 

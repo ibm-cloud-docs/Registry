@@ -109,10 +109,11 @@ Para crear un espacio de nombres, consulte [Configure un espacio de nombres](ind
 
 Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en el registro de {{site.data.keyword.Bluemix_notm}}](registry_images_.html#registry_images_pushing) y compartir estas imágenes con otros usuarios en su cuenta.
 
-## Eliminación de espacios de nombres 
+## Eliminación de espacios de nombres
 {: #registry_remove}
 
-Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio de nombres de su cuenta de {{site.data.keyword.Bluemix_notm}}.{:shortdesc}
+Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio de nombres de su cuenta de {{site.data.keyword.Bluemix_notm}}.
+{:shortdesc}
 
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 

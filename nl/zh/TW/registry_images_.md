@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -31,6 +31,8 @@ lastupdated: "2017-10-31"
 您可以從任何專用或公用登錄來源中取回（下載）映像檔，然後將它加上標籤，以供稍後在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="從專用及公用登錄將映像檔取回至您的電腦。"/>
+
 開始之前：
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
@@ -52,6 +54,8 @@ lastupdated: "2017-10-31"
 
 您可以將映像檔推送（上傳）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間，以安全地儲存映像檔，並將其與其他使用者共用。
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="從您的電腦將映像檔推送至您的專用登錄。"/>
 
 開始之前：
 
@@ -90,6 +94,8 @@ lastupdated: "2017-10-31"
 
 您可以從一個地區的登錄取回映像檔，然後將它推送至另一個地區的登錄，以便您可以與兩個地區的使用者共用映像檔。
 {:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="從任何專用或公用登錄將映像檔複製到您的專用 {{site.data.keyword.Bluemix_notm}} 登錄。"/>
 
 開始之前：
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-26"
+lastupdated: "2017-11-10"
 
 ---
 
@@ -32,7 +32,8 @@ Docker avec tous les utilisateurs de votre compte
 ## Commandes bx cr
 {: #registry_cli_reference_bxcr}
 
-Exécutez les commandes bx cr dans l'interface de ligne de commande de {{site.data.keyword.registryshort_notm}}.
+Exécutez les commandes `bx cr` dans l'interface de ligne de
+commande d'{{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
 Pour connaître les commandes prises en charge, voir Interface de ligne de commande d'[{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli).
@@ -56,7 +57,7 @@ de programmation Go](https://golang.org/pkg/text/template/) qui vous permet de p
 de ligne de commande.
 
 Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant
-l'option format de deux façons différentes : 
+l'option format de deux façons différentes :
 
 1.  En formatant les données de la sortie de l'interface de ligne de commande. Ainsi, vous pouvez modifier la sortie de la zone `Created` du
 format de temps Unix en format de temps standard.
@@ -64,18 +65,16 @@ format de temps Unix en format de temps standard.
 pouvez, par exemple, filtrer les détails de l'image et afficher un sous-ensemble
 spécifique d'images à l'aide de la condition `if gt` du modèle Go.
 
-Vous pouvez utiliser l'option format avec les commandes {{site.data.keyword.registrylong_notm}} suivantes. Cliquez sur une commande pour afficher la liste de zones disponibles et des
-types de données associés.
+Vous pouvez utiliser l'option format avec les commandes {{site.data.keyword.registrylong_notm}} suivantes. Cliquez sur une commande pour afficher la liste de zones disponibles et des types de données associés. 
 
--   [bx cr image-list](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [bx cr image-inspect](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [bx cr token-list](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Les exemples de code suivants illustrent la manière dont vous pouvez utiliser les
 options de formatage et de filtrage.
 
--   Exécutez la commande suivante pour afficher le référentiel, l'étiquette et le statut
-de vulnérabilité de toutes les images d'une taille supérieure à 1 Mo :
+-   Exécutez la commande `bx cr image-list` suivante pour afficher le référentiel, l'étiquette et le statut de vulnérabilités de toutes les images d'une taille supérieure à 1 Mo :
 
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
@@ -92,8 +91,8 @@ de vulnérabilité de toutes les images d'une taille supérieure à 1 Mo :
     ```
     {: screen}
 
--   Exécutez la commande suivante pour afficher l'emplacement d'hébergement de la
-documentation IBM pour une image publique IBM donnée :
+-   Exécutez la commande `bx cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la
+documentation IBM pour une image publique IBM spécifique :
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -108,7 +107,7 @@ documentation IBM pour une image publique IBM donnée :
     ```
     {: screen}
 
--   Exécutez la commande suivante pour afficher les ports exposés d'une image donnée :
+-   Exécutez la commande `bx cr image-inspect` suivante pour afficher les ports exposés pour l'image spécifiée :
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -123,7 +122,7 @@ documentation IBM pour une image publique IBM donnée :
     ```
     {: screen}
 
--   Exécutez la commande suivante pour afficher tous les jeton en lecture seule :
+-   Exécutez la commande `bx cr token-list` suivante pour afficher tous les jetons en lecture seule :
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
@@ -216,7 +215,7 @@ exécutés au démarrage de ce dernier.|
 |`Healthcheck`|Objet|Décrit le mode du diagnostic d'intégrité du conteneur. Pour plus de
 détails sur cette zone, voir
 [Healthcheck](registry_cli_reference.html#healthcheck).|
-|`ArgsEscaped`|Booléen|Affiche true si la commande fait déjà l'objet d'un échappement (spécifique à Windows). |
+|`ArgsEscaped`|Booléen|Affiche true si la commande fait déjà l'objet d'un échappement (spécifique à Windows).|
 |`Image`|Chaîne|Affiche le nom de l'image transmise par l'opérateur.|
 |`Volumes`|Mappe de valeur de clé|Affiche la liste des montages de volume montés sur un conteneur.|
 |`WorkingDir`|Chaîne|Affiche le répertoire de travail au sein du conteneur dans lequel les commandes

@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
-IBM Bluemix Container Registry
+IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
@@ -25,8 +25,9 @@ IBM Bluemix Container Registry
     registry_tokens.md
     [使用漏洞警告器管理映像檔安全](../va/va_index.html)
         [關於漏洞警告器](../va/va_index.html#about)
+        [檢閱映像檔的漏洞報告](../va/va_index.html#va_reviewing)
         [使用 CLI 檢閱映像檔安全](../va/va_index.html#va_registry_cli)
-        [解決問題](../va/va_index.html#va_report)
+        [解決一般問題](../va/va_index.html#va_report)
     {: .navgroup-end}
     
     {: .navgroup id="reference"}

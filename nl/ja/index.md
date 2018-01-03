@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -19,9 +19,10 @@ lastupdated: "2017-10-31"
 # {{site.data.keyword.registrylong_notm}} の概説
 {: #index}
 
-{{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを安全に保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。{:shortdesc}
+{{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを安全に保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
+{:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。{{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[{{site.data.keyword.Bluemix_notm}} コンソールでのイメージ関連情報の表示](registry_ui.html)を参照してください。
+{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。{{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[イメージの脆弱性のモニタリング](registry_ui.html)を参照してください。
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
@@ -52,6 +53,12 @@ bx login```
     ```
     {: pre}
 
+3.  名前空間が作成されたことを確認するために、`bx cr namespace-list` コマンドを実行します。
+
+    ```
+bx cr namespace-list```
+    {: pre}
+
 
 ## 別のレジストリーからイメージをローカル・マシンにプルする
 {: #registry_images_pulling}
@@ -73,7 +80,7 @@ bx cr login```
     ```
     {: pre}
 
-    例: 
+    _&lt;source_image&gt;_ が `hello-world` で _&lt;tag&gt;_ が `latest` の場合の例:
 
     ```
 docker pull hello-world:latest```
@@ -81,7 +88,7 @@ docker pull hello-world:latest```
 
 4.  イメージにタグ付けします。_&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、
 _&lt;tag&gt;_ をそのイメージのタグに置き換えてください。
-_&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
+_&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。_&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。_&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
 名前空間で使用するイメージのリポジトリーとタグを定義します。
 
 
@@ -90,10 +97,10 @@ _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
     ```
     {: pre}
 
-    例: 
+    _&lt;source_image&gt;_ が `hello-world`、_&lt;tag&gt;_ が `latest`、_&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `Namespace1`、_&lt;new_image_repo&gt;_ が `hw_repo`、_&lt;new_tag&gt;_ が `1` の場合の例:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -101,18 +108,17 @@ _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
 ## Docker イメージを名前空間にプッシュする
 {: #registry_images_pushing}
 
-1.  イメージを名前空間にアップロード (_プッシュ_) します。_&lt;my_namespace&gt;_ をイメージのアップロード先の名前空間に、
-_&lt;image_repo&gt;_ と _&lt;tag&gt;_ を、イメージのタグ付け時に選択した、イメージのリポジトリーとタグに置き換えてください。
+1.  イメージを名前空間にアップロード (_プッシュ_) します。_&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換え、_&lt;image_repo&gt;_ と _&lt;tag&gt;_ をイメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えます。
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    例: 
+    _&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `Namespace1`、_&lt;image_repo&gt;_ が `hw_repo`、_&lt;tag&gt;_ が `1` の場合の例:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

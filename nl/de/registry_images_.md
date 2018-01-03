@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -31,6 +31,8 @@ Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf I
 Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryquelle mit einer Pull-Operation extrahieren (herunterladen) und es anschließend für die spätere Verwendung in {{site.data.keyword.registrylong_notm}} kennzeichnen.
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Image aus einer privaten oder öffentlichen Registry mit einer Pull-Operation auf den Computer übertragen."/>
+
 Führen Sie zuvor Folgendes aus:
 
 - [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
@@ -52,6 +54,8 @@ Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensb
 
 Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} übertragen (hochladen), um das Image sicher zu speichern und mit anderen Benutzern gemeinsam zu nutzen.
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Image vom Computer mit einer Push-Operation in die private Registry übertragen."/>
 
 Führen Sie zuvor Folgendes aus:
 
@@ -90,6 +94,8 @@ Nachdem Sie das Image mit einer Push-Operation in Ihre private Registry übertra
 
 Sie können ein Image mit einer Pull-Operation aus einer Registry in einer Region extrahieren und es in eine Registry in einer anderen Region mit einer Push-Operation übertragen, sodass Sie das Image mit Benutzern in beiden Regionen gemeinsam nutzen können.
 {:shortdesc}
+
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Image von einer privaten oder öffentlichen Registry in die private {{site.data.keyword.Bluemix_notm}}-Registry kopieren."/>
 
 Führen Sie zuvor Folgendes aus:
 

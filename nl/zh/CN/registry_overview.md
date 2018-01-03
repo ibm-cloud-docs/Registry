@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-12-08"
 
 ---
 
@@ -23,6 +23,10 @@ lastupdated: "2017-10-31"
 {:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} 提供由 IBM 托管和管理的具备高可用性和高可扩展性的多租户专用映像注册表。可以通过设置自己的映像名称空间，然后将 Docker 映像推送到自己的名称空间来使用专用注册表。
+
+<img src="images/registry_architecture.png" alt="此图像说明您可如何与 IBM Cloud Container Registry 交互。Container Registry 包含专用和公共存储库以及与服务交互的 API。您的本地 Docker 客户机可从注册表中专用存储库拉出映像或将映像推送到其中，还可拉出公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互以列出映像。Container Registry CLI 与 API 交互以列出、创建、检查和除去映像以及执行其他管理功能。本地 Docker 客户机还可将映像从本地映像存储器拉出以及推送到其他注册表。"/>
+
+**图 1. {{site.data.keyword.registrylong_notm}} 如何与 Docker 映像交互**
 
 Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfile 创建的，该文件包含构建映像的指令。Dockerfile 可能在其分开存储的指令中参考构建工件，如应用程序、应用程序的配置及其依赖关系。
 映像通常存储在可由公共（公共注册表）访问的注册表中，或者存储在针对一小组用户设置有限访问权（专用注册表）的注册表中。
@@ -251,7 +255,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 设置第一个名称空间后，如果您尚未[升级套餐](#registry_plan_upgrade)，那么为您分配的是免费的 {{site.data.keyword.registrylong_notm}} 服务套餐。
 
-## {{site.data.keyword.registrylong_notm}} 区域
+## 区域
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} 注册表在多个区域中可用。
@@ -262,25 +266,45 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 区域是指由专用端点访问的地理区域。{{site.data.keyword.registrylong_notm}} 注册表在以下区域中可用：
 
--   AP 南部：`registry.au-syd.bluemix.net`
--   欧洲中部：`registry.eu-de.bluemix.net`
--   英国南部：`registry.eu-gb.bluemix.net`
--   美国南部：`registry.ng.bluemix.net`
+-   ap-south：`registry.au-syd.bluemix.net`
+-   eu-central：`registry.eu-de.bluemix.net`
+-   uk-south：`registry.eu-gb.bluemix.net`
+-   us-south：`registry.ng.bluemix.net`
 
 所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
 
-如果要使用您本地区域以外的区域，可以通过运行带 `-r` 标志的 `bx target` 命令，将要访问的区域设定为目标，其中 _&lt;region&gt;_ 是区域的名称（`us-south`、`eu-de`、`eu-gb` 或 `au-syd`）。
+如果要使用您本地区域以外的区域，可以通过运行 `bx cr region-set` 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。 
+
+要带参数运行该命令，请将 _&lt;region&gt;_ 替换为区域的名称，例如 `eu-central`。
 
 ```
-bx target -r <region>
-```
-{: pre}
-
-例如，要切换到欧洲中部区域，请运行以下命令：
-
-```
-bx target -r eu-de
+bx cr region-set <region>
 ```
 {: pre}
 
+例如，要将 eu-central 区域设定为目标，请运行以下命令：
+
+```
+bx cr region-set eu-central
+```
+{: pre}
+
+
+### 国际注册表
+{: #registry_regions_global}
+
+国际注册表全球可用，在其名称中不包含任何区域 (`registry.bluemix.net`)。仅 IBM 提供的公共映像在此注册表中托管。
+
+您可以通过运行 `bx cr region-set` 命令将国际注册表设定为目标。
+
+例如，要将国际注册表设定为目标，请运行以下命令：
+
+```
+bx cr region-set international
+```
+{: pre}
+
+有关 `bx cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set)。
+
+将国际注册表设定为目标后，运行 `bx cr login` 命令以将本地 Docker 守护程序记录到国际注册表，从而可拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。
 

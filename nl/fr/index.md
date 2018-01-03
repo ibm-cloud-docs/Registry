@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -25,7 +25,7 @@ stocker et partager de manière sécurisée vos images Docker avec les utilisate
 votre compte {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Affichage d'informations sur les images dans la console {{site.data.keyword.Bluemix_notm}}](registry_ui.html).
+La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Surveillance de la vulnérabilité des images](registry_ui.html).
 
 
 ## Installez l'interface de ligne de commande (CLI) de {{site.data.keyword.registrylong_notm}}
@@ -59,6 +59,13 @@ _&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
     ```
     {: pre}
 
+3.  Pour vérifier que votre espace de nom a bien été créé, exécutez la commande `bx cr namespace-list`.
+
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
 
 ## Extrayez vers votre machine locale des images d'un autre registre
 {: #registry_images_pulling}
@@ -84,7 +91,7 @@ _&lt;tag&gt;_ par l'étiquette de l'image que vous désirez utiliser (par exempl
     ```
     {: pre}
 
-    Exemple :
+    Exemple, où _&lt;source_image&gt;_ correspond à `hello-world` et _&lt;tag&gt;_ à `latest` :
 
     ```
     docker pull hello-world:latest
@@ -92,7 +99,7 @@ _&lt;tag&gt;_ par l'étiquette de l'image que vous désirez utiliser (par exempl
     {: pre}
 
 4.  Attribuez une étiquette à l'image. Remplacez _&lt;source_image&gt;_ par le référentiel et
-_&lt;tag&gt;_ par celle de l'image locale extraite auparavant. Définissez le référentiel et l'étiquette de l'image que vous désirez utiliser dans votre espace de nom en remplaçant
+_&lt;tag&gt;_ par celle de l'image locale extraite auparavant. Remplacez _&lt;region&gt;_ par le nom de votre [région](registry_overview.html#registry_regions). Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](index.html#registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous désirez utiliser dans votre espace de nom en remplaçant
 _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
 
     ```
@@ -100,10 +107,10 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
     ```
     {: pre}
 
-    Exemple :
+    Exemple, où _&lt;source_image&gt;_ correspond à `hello-world`, _&lt;tag&gt;_ à `latest`, _&lt;region&gt;_ à `eu-gb`, _&lt;my_namespace&gt;_ à `Namespace1`, _&lt;new_image_repo&gt;_ à `hw_repo` et _&lt;new_tag&gt;_ à `1`:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -111,18 +118,17 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
 ## Transférez (par commande Push) des images Docker vers votre espace de nom
 {: #registry_images_pushing}
 
-1.  Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez
-_&lt;my_namespace&gt;_ par l'espace de nom où vous désirez télécharger l'image et _&lt;image_repo&gt;_ et _&lt;tag&gt;_ par le référentiel et l'étiquette de l'image choisis lorsque vous lui avez attribué une étiquette.
+1.  Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](index.html#registry_namespace_add) et _&lt;image_repo&gt;_ et _&lt;tag&gt;_ par le référentiel et l'étiquette de l'image choisie lorsque vous l'avez libellée.
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    Exemple :
+    Exemple, où _&lt;region&gt;_ correspond à `eu-gb`, _&lt;my_namespace&gt;_ à `Namespace1`, _&lt;image_repo&gt;_ à `hw_repo` et _&lt;tag&gt;_ à `1`:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-10-31"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -34,6 +34,8 @@ Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à vo
 Vous pouvez extraire (par commande pull) une image depuis n'importe quelle source de registre privé ou public, puis lui attribuer une étiquette pour son utilisation ultérieure dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Extraction d'une image depuis un registre privé ou public vers votre ordinateur."/>
+
 Avant de commencer :
 
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
@@ -51,13 +53,15 @@ Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](i
 
 
 Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer
-(par commande push) depuis votre machine locale vers votre espace de nom. 
+(par commande push) depuis votre machine locale vers votre espace de nom.
 
 ## Envoi par commande push d'images Docker à votre espace de nom
 {: #registry_images_pushing}
 
 Vous pouvez transférer par commande push une image à votre espace de nom dans {{site.data.keyword.registrylong_notm}} pour la stocker et la partager de manière sécurisée avec d'autres utilisateurs.
 {:shortdesc}
+
+<img src="images/images_push.png" width="800" style="width:800px;" alt="Envoi d'une image depuis votre ordinateur vers votre registre privé."/>
 
 Avant de commencer :
 
@@ -71,7 +75,7 @@ Docker est configuré pour exiger des autorisations root, vous devez exécuter l
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges de l'utilisateur root, vous devez exécuter à nouveau la commande `bx login`.
 
 
-Pour télécharger (par push) une image, procédez comme suit. 
+Pour télécharger (par push) une image, procédez comme suit.
 
 1. Connectez-vous à l'interface de ligne de commande (CLI) :
 
@@ -100,6 +104,8 @@ cluster et utiliser cette image pour déployer un conteneur](../../containers/co
 Vous pouvez extraire une image depuis un registre dans une région donnée, puis la transférer par commande push vers une autre région afin de pouvoir partager l'image avec les utilisateurs dans les deux régions.
 {:shortdesc}
 
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copie d'une image depuis un registre privé ou public quelconque vers votre registre {{site.data.keyword.Bluemix_notm}} privé."/>
+
 Avant de commencer :
 
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
@@ -118,7 +124,7 @@ Pour copier une image entre deux registres, procédez comme suit.
 
 Après avoir copié l'image, vous pouvez :
 
-- [Gérer la sécurité des images avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels. 
+- [Gérer la sécurité des images avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
 cluster et utiliser cette image pour déployer un conteneur](../../containers/container_index.html) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
