@@ -15,6 +15,7 @@ IBM Cloud Container Registry
         [ibmnode image](../RegistryImages/ibmnode/index.html#getting_started_node)
         [ibm-node-strong-pm image](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
         [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [ibm-cluster-autoscaler image](../RegistryImages/ibm-cluster-autoscaler/index.html)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}

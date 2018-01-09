@@ -12,7 +12,7 @@ lastupdated: "2017-10-30"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -67,17 +67,17 @@ You can fix this problem in the following ways:
 You cannot run a `bx cr` command because `cr` is not a registered `bx` command.
 
 {: tsSymptoms}
-You see an error message similar to one of the following error messages: 
+You see an error message similar to one of the following error messages:
 
 ```
-bx cr login 
-'cr' is not a registered command. See 'bx help'. 
+bx cr login
+'cr' is not a registered command. See 'bx help'.
 ```
 {: pre}
 
 ```
-bx cr namespace 
-'cr' is not a registered command. See 'bx help'. 
+bx cr namespace
+'cr' is not a registered command. See 'bx help'.
 ```
 {: pre}
 
@@ -181,6 +181,15 @@ Open the following network groups in your customized firewall.
 2.  In your firewall, allow the following connections to and from your machine:
     -   For INBOUND connectivity to your machine, allow incoming network traffic from the following source network groups to the destination public IP address of your machine.
 
+        `registry.bluemix.net`:
+
+        ```
+        169.60.72.144/28
+        169.61.76.176/28
+        ```
+        {: codeblock}
+
+
         `registry.au-syd.bluemix.net`:
 
         ```
@@ -215,4 +224,3 @@ Open the following network groups in your customized firewall.
         {: codeblock}
 
     -   For OUTBOUND connectivity from your machine, use the same network groups and allow outgoing network traffic from the source public IP address of your machine to these network groups.
-
