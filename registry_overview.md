@@ -274,21 +274,21 @@ bx cr region-set eu-central
 {: pre}
 
 
-### International registry
+### Global registry
 {: #registry_regions_global}
 
-An international registry is available globally and has no region included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry.
+A global registry is available, which has no region included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry.
 
-You can target the international registry by running the `bx cr region-set` command.
+You can target the global registry by running the `bx cr region-set` command.
 
-For example, to target the international registry, run the following command:
+For example, to target the global registry, run the following command:
 
 ```
-bx cr region-set international 
+bx cr region-set global
 ```
 {: pre}
 
 For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
 
-After you have targeted the international registry, run the `bx cr login` command to log your local Docker daemon into the international registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
+After you have targeted the global registry, run the `bx cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
 
