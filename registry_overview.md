@@ -257,7 +257,7 @@ A region is a geographic area that is accessed by a dedicated endpoint. {{site.d
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `bx cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter. 
+If you want to use a region other than your local region, you can target the region that you want to access by running the `bx cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
 
 To run the command with parameters, replace _&lt;region&gt;_ with the name of the region, for example, `eu-central`.
 
@@ -277,7 +277,8 @@ bx cr region-set eu-central
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available, which has no region included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry.
+A global registry is available, which has no region that is included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
+{:shortdesc}
 
 You can target the global registry by running the `bx cr region-set` command.
 
@@ -291,4 +292,3 @@ bx cr region-set global
 For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
 
 After you have targeted the global registry, run the `bx cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
-
