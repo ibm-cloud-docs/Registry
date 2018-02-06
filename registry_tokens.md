@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2017-02-06"
 
 ---
 
@@ -19,8 +19,11 @@ lastupdated: "2017-12-08"
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
-You can use either registry tokens or an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your  {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images. 
+You can use either registry tokens or an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your  {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
 {:shortdesc}
+
+Are you trying to use your registry images in Kubernetes deployments? Check out [Accessing images in other Kubernetes namespaces, {{site.data.keyword.Bluemix_notm}} regions, and accounts](/docs/containers/cs_images.html#other).
+{: tip}
 
 API keys are linked to your account and can be used across {{site.data.keyword.Bluemix_notm}} so that you don't need different credentials for each service. You can use the API key in the CLI or as part of automation to log in as your user identity.
 
@@ -40,16 +43,16 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 ### Creating an API key
 {: #registry_api_key_create}
 
-You can create an API key that you can then use to log in to your registry. 
-{:shortdesc} 
+You can create an API key that you can then use to log in to your registry.
+{:shortdesc}
 
-Create an IAM API key, see [Creating an API key](../../iam/userid_keys.html#creating-an-api-key). 
+Create an IAM API key, see [Creating an API key](../../iam/userid_keys.html#creating-an-api-key).
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
 
-You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. 
-{:shortdesc} 
+You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 Use the API key to log in to your registry by running the following Docker command. Replace &lt;your_apikey&gt; with your API key, and replace &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
@@ -68,7 +71,7 @@ For reference information about the command, see [Create a new {{site.data.keywo
 You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
 {:shortdesc}
 
-Everyone in possession of a registry token can access secured information. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in. 
+Everyone in possession of a registry token can access secured information. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 
@@ -128,7 +131,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
     {: pre}
 
 
-### Using a token to automate access to your namespaces 
+### Using a token to automate access to your namespaces
 {: #registry_tokens_use}
 
 You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read-write access for your token, users can push and pull images to and from your namespaces.
@@ -200,6 +203,3 @@ Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it a
     bx cr token-rm <token_id>
     ```
     {: pre}
-    
-
-
