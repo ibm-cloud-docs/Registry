@@ -13,7 +13,6 @@ IBM Cloud Container Registry
         [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [ibm-mq image](../RegistryImages/ibm-mq/index.html#ibm_mq)
         [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
-        
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
