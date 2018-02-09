@@ -223,3 +223,5 @@ Open the following network groups in your customized firewall.
         {: codeblock}
 
     -   For OUTBOUND connectivity from your machine, use the same network groups and allow outgoing network traffic from the source public IP address of your machine to these network groups.
+
+
