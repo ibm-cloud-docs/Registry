@@ -36,9 +36,9 @@ When you are using the forums to ask a question, tag your question so that it is
 -   If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-bluemix` and `container-registry`.
 -   For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `bluemix` and `container-registry` tags.
 
-See [Getting help](../../support/index.html#getting-help) for more details about using the forums.
+See [Using the Support Center](../../get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Contacting support](../../support/index.html#contacting-support).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](../../get-support/howtogetsupport.html#open-ticket).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -223,3 +223,5 @@ Open the following network groups in your customized firewall.
         {: codeblock}
 
     -   For OUTBOUND connectivity from your machine, use the same network groups and allow outgoing network traffic from the source public IP address of your machine to these network groups.
+
+
