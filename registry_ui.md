@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-05"
 
 ---
@@ -27,7 +27,7 @@ The **SECURITY REPORT** column shows you the following information about the ima
 -   `Vulnerable` Security or configuration issues were found and must be addressed before you can deploy the image.
 -   `Incomplete` The scan is not complete. The scan might still be running or the image’s operating system might not be compatible. Wait and try the scan again. If the scan still does not complete, push the image again to start a new scan. Images with incomplete scans are not blocked for deployment.
 -   `Unsupported OS` The operating system in the image is not supported.
-    
+
 To view the graphical user interface, use the following steps:
 
 1.  Log into the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.

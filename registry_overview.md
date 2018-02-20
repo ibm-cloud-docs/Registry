@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-08"
 
 ---
@@ -273,6 +273,7 @@ bx cr region-set eu-central
 ```
 {: pre}
 
+After targeting a different region, log in to the registry again: `bx cr login`.
 
 ### Global registry
 {: #registry_regions_global}

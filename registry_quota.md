@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -54,9 +54,9 @@ To set a quota:
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
-    QUOTA          LIMIT    USED   
-    Pull traffic   5.1 GB   0 B   
-    Storage        512 MB   511 MB   
+    QUOTA          LIMIT    USED
+    Pull traffic   5.1 GB   0 B
+    Storage        512 MB   511 MB
 
     OK
     ```
@@ -104,9 +104,9 @@ You can review your quota limits and check your current storage and pull traffic
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
-    QUOTA          LIMIT    USED   
-    Pull traffic   5.1 GB   0 B   
-    Storage        512 MB   511 MB   
+    QUOTA          LIMIT    USED
+    Pull traffic   5.1 GB   0 B
+    Storage        512 MB   511 MB
 
     OK
     ```
