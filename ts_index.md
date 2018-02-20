@@ -291,7 +291,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
     * Windows directory: `%HOMEPATH%\.docker\trust\private` and `%HOMEPATH%\.docker\trust\tuf`
 
-    **Note**: Because the root key is affected, this step deletes all signing keys, including for other notary servers.
+    **Note**: Because the root key is affected, this step deletes all signing keys, including for other trust servers.
 
 3.  Generate trusted content repositories.
 
