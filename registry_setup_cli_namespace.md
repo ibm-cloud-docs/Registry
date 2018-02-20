@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-26"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -127,10 +127,10 @@ If you no longer require a registry namespace, you can remove the namespace from
     ```
     {: pre}
 
-3.  Remove a namespace. 
+3.  Remove a namespace.
 
     **Attention:** When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
-    
+
     Replace _&lt;my_namespace&gt;_ with the namespace that you want to remove.
 
     ```

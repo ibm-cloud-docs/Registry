@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-06"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,5 +23,3 @@ You can use {{site.data.keyword.IBM}} images to create containers in {{site.data
 {:shortdesc}
 
 To use the public images that {{site.data.keyword.IBM_notm}} provides, see [Public {{site.data.keyword.IBM_notm}} images for {{site.data.keyword.containerlong_notm}}](../../services/RegistryImages/index.html#ibm_images).
-
-

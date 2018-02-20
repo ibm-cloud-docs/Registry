@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-30"
 
 ---
@@ -36,9 +36,9 @@ When you are using the forums to ask a question, tag your question so that it is
 -   If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-bluemix` and `container-registry`.
 -   For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `bluemix` and `container-registry` tags.
 
-See [Getting help](../../support/index.html#getting-help) for more details about using the forums.
+See [Using the Support Center](../../get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Contacting support](../../support/index.html#contacting-support).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](../../get-support/howtogetsupport.html#open-ticket).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -223,3 +223,83 @@ Open the following network groups in your customized firewall.
         {: codeblock}
 
     -   For OUTBOUND connectivity from your machine, use the same network groups and allow outgoing network traffic from the source public IP address of your machine to these network groups.
+
+## Recovering lost or compromised keys
+{: #ts_recoveringtrustedcontent}
+
+{: tsSymptoms}
+When using [trusted content](registry_trusted_content.html), you can no longer manage trusted images because your signing keys are lost or compromised.
+
+{: tsCauses}
+Your repository or root key is lost or compromised.
+
+{: tsResolve}
+Your options for recovering lost or affected keys depend on the type of key: repository or root:
+
+*  For [repository keys](#trustedcontent_lostrepokey), you can generate a new set of signing keys for the repository.
+*  For [root keys](#trustedcontent_lostrootkey), you can request that the repository be deleted and create a new repository.
+
+### Repository keys
+{: #trustedcontent_lostrepokey}
+
+If your repository key is lost or compromised, generate a new set of signing keys for your repository.
+{:shortdesc}
+
+**Note**: The only signing role that you can rotate is `targets`, which is the repository admin. If other roles are affected, generate new keys for those roles, remove the old ones, and add the new ones as signers.
+
+Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](registry_trusted_content.html#trustedcontent_push).
+
+1.  Install the CLI version of [the Notary project](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+
+2.  [Set up your trusted content environment](registry_trusted_content.html#trustedcontent_setup).
+
+3.  Note the URL from the export command in the previous step. For example, `https://registry.ng.bluemix.net:4443`.
+
+4.  Generate a registry token.
+
+    ```
+    bx cr token-add --readwrite
+    ```
+    {: pre}
+
+5.	Rotate your keys so that content that was signed with those keys is no longer trusted. Replace _&lt;URL&gt;_ with the URL of the export command that you noted in Step 2, and _&lt;image&gt;_ with the image whose repository key is affected.
+
+    ```
+    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+    ```
+    {: pre}
+
+6.	If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
+
+7.	[Push a signed image](registry_trusted_content.html#trustedcontent_push) that uses the new signing keys.
+
+### Root keys
+{: #trustedcontent_lostrootkey}
+
+If your root key is lost or compromised, you cannot update any trusted content repositories that used that root key.
+{:shortdesc}
+
+You can [delete the namespaces](registry_setup_cli_namespace.html#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
+
+If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
+
+1.  [Contact {{site.data.keyword.Bluemix_notm}} support](../../get-support/howtogetsupport.html). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
+
+2.  After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local machine.
+
+    * Linux and Mac directory: `~/.docker/trust/private` and `~/.docker/trust/tuf`
+
+    * Windows directory: `%HOMEPATH%\.docker\trust\private` and `%HOMEPATH%\.docker\trust\tuf`
+
+    **Note**: Because the root key is affected, this step deletes all signing keys, including for other notary servers.
+
+3.  Generate trusted content repositories.
+
+    *  If you want to create new trusted content, [push new signed images](registry_trusted_content.html#trustedcontent_push).
+
+    *  If you don't want to change the previous trusted content, add a signature to the latest images in the registry.
+
+       ```
+       docker trust sign <image>:<tag>
+       ```
+       {: pre}

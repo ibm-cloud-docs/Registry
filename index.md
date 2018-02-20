@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-11-28"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -138,4 +138,3 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 -   [Review your service plans and usage](registry_overview.html#registry_plans)
 -   [Store and manage more images in your namespace](registry_images_.html).
 -   [Create and deploy a container from your image to a Kubernetes cluster](../../containers/cs_cluster.html).
-

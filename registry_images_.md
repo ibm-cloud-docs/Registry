@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-18"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-12-18"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -241,11 +241,7 @@ Public {{site.data.keyword.IBM_notm}} images cannot be removed from your private
   bx cr image-list
   ```
   {: pre}
+
   
-  
-
-
-
-
 
 
