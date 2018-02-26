@@ -24,6 +24,7 @@ IBM Cloud Container Registry
     registry_trusted_content.md
     [Managing image security with Vulnerability Advisor](../va/va_index.html)
         [About Vulnerability Advisor](../va/va_index.html#about)
+        [Types of vulnerabilities](../va/va_index.html#types)
         [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
         [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
         [Resolving common problems](../va/va_index.html#va_report)
