@@ -25,7 +25,12 @@ When you push your image with trusted content enabled, your Docker client also p
 
 An image name is made up of a repository and a tag. When using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content, so that you can verify that each image is produced by the appropriate team.
 
-A repository can contain both signed and unsigned content. If you push an update to a tag while trusted content is disabled and then pull it with trusted content enabled, Docker Content Trust uses a "trust on first use" model. The repository key is pulled from the trust server as well as the signed metadata the first time that you pull a repository. To ensure the security of your repository, ensure that you trust the signature of an image before you pull a signed image.
+A repository can contain both signed and unsigned content. If you have Docker Content Trust enabled, you can access the signed content in a repository, even if there is other unsigned content alongside it.
+
+Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
+
+For more information about the "trust on first use" security model, see [The Update Framework (TUF)](https://theupdateframework.github.io/) and [Survivable Key Compromise in Software Update Systems](https://isis.poly.edu/~jcappos/papers/samuel_tuf_ccs_2010.pdf). 
+
 
 ## Setting up your trusted content environment
 {: #trustedcontent_setup}
@@ -115,7 +120,7 @@ Before you begin, [set up your registry namespace](index.html#registry_namespace
 ## Pulling a signed image
 {: #trustedcontent_pull}
 
-The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. It does not pull unsigned images or untrusted content.
+The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. Unsigned images or untrusted content are not pulled.
 {:shortdesc}
 
 
