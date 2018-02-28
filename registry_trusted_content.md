@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-02-20"
+lastupdated: "2018-02-28"
 
 ---
 
@@ -198,3 +198,5 @@ When you first push a signed image to a new repository, Docker Content Trust cre
 You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](ts_index.html#ts_recoveringtrustedcontent) are limited.
 
 To back up your keys, consult the [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+
+
