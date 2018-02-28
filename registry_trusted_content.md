@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-02-20"
+lastupdated: "2018-02-28"
 
 ---
 
@@ -198,3 +198,81 @@ When you first push a signed image to a new repository, Docker Content Trust cre
 You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](ts_index.html#ts_recoveringtrustedcontent) are limited.
 
 To back up your keys, consult the [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+
+
+## Managing trusted signers
+{: #trustedcontent_signers}
+
+You can add and remove signers from signing images in a repository.
+{:shortdesc}
+
+### Adding signers to a trusted repository
+{: #trustedcontent_addsigners}
+
+To allow other users to sign images in a repository, add the signing keys for those users to that repository.
+{:shortdesc}
+
+Before you begin:
+- Image signers must have permission to push images to the namespace. 
+- Repository owners and additional signers must have Docker 17.12 or later installed.
+- Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to perform this task for you.
+- Note: When you add a signer, you can no longer use the repository admin key to sign images in that repository. You must hold the private key for one of the approved signers to sign. To retain the ability to sign images after adding a signer, follow these instructions again to generate and add a signer role for yourself.
+
+To share signing keys:
+
+1.  If the new signer signer has not generated a key pair yet, a key pair must be generated and loaded. 
+  
+    a. Generate the key. For the <em>NAME</em>, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+
+      ```
+      docker trust key generate <NAME>
+      ```
+      {: pre}
+  
+    b. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
+  
+    c. The new signer must send the repository owner the public key.
+
+2.  The repository owner must add the signer's key to the repository.
+
+    a. [Set up the trusted content environment](#trustedcontent_setup)
+    
+    b. Add the signer's key to the repository.
+
+      <pre class="pre">docker trust signer add -key &lt;NAME&gt;.pub &lt;NAME&gt; &lt;repository&gt;</pre>
+    
+
+3.  The signer can set up their environment and sign an image.
+
+    a. [Set up the trusted content environment](#trustedcontent_setup)
+    
+    b. The signer must sign an image. When prompted, enter the passphrase for the private key.
+
+      <pre class="pre">docker trust sign &lt;repository&gt;</pre>
+
+4.  To verify that the signer was added, see [Viewing signed images](#trustedcontent_viewsigned).
+
+
+
+### Removing a signer from a repository
+{: #trustedcontent_removesigner}
+
+If you no longer want a signer to be able to sign images in your repository, you can remove them as a signer.
+{:shortdesc}
+
+Before you begin:
+- Repository owners and additional signers must have Docker 17.12 or later installed.
+- Note: If you remove a signer, the trust server does not trust their signed versions of the image. To ensure that the image can be pulled after removing the signer, make sure that the signer has not signed the most recent version of the image before continuing. If the signer has signed the most recent version of the image, push an update to the image and sign it using your key before continuing.
+
+To remove a signer:
+
+1. [Set up your trusted content environment](#trustedcontent_setup).
+
+2. Remove the signer.
+
+    ```
+    docker trust signer remove <NAME> <repository>
+    ```
+    {: pre}
+    
+3. To verify that the signer was removed, view the trust data for the image and verify that the signer is no longer listed. For more information about viewing trust data, see [Viewing signed images](#trustedcontent_viewsigned).
