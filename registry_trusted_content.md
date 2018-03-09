@@ -240,7 +240,7 @@ To share signing keys:
     b. Add the signer's key to the repository.
 
       ```
-      docker trust signer add -key <NAME>.pub <NAME> <repository>
+      docker trust signer add --key <NAME>.pub <NAME> <repository>
       ```
       {: pre}
     
@@ -251,7 +251,7 @@ To share signing keys:
     b. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
       ```
-      docker trust sign <repository>
+      docker trust sign <repository>:<tag>
       ```
       {: pre}
 
