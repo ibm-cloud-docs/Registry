@@ -28,6 +28,7 @@ IBM Cloud Container Registry
         [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
         [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
         [Resolving common problems](../va/va_index.html#va_report)
+    registry_security_enforce.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
