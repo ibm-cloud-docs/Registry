@@ -33,6 +33,7 @@ Before you begin:
 * [Create](../../containers/cs_clusters.html#clusters_ui) or [update](../../containers/cs_cluster_update.html) the cluster that you want to use with **Kubernetes version 1.9 or later**.
 * [Target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
+Steps:
 1.  Install the <a href="https://docs.helm.sh/using_helm/#installing-helm" target="_blank">Helm CLI <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
 
 1.  Configure Helm in your cluster. Helm installs Tiller into your cluster if it is not installed already.
