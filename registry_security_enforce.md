@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-03-21"
 
 ---
 
@@ -29,7 +29,9 @@ Your {{site.data.keyword.containershort_notm}} cluster [autorecovery](../../cont
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
 
-Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster where you want to use a Helm chart.
+Before you begin:
+* [Create](../../containers/cs_clusters.html#clusters_ui) or [update](../../containers/cs_cluster_update.html) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+* [Target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 1.  Install the <a href="https://docs.helm.sh/using_helm/#installing-helm" target="_blank">Helm CLI <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
 
@@ -47,10 +49,10 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
     ```
     {: pre}
 
-1.  Install the IBM Container Image Security Enforcement Helm chart.
+1.  Install the IBM Container Image Security Enforcement Helm chart into your `ibm-system` cluster namespace. Give it a name such as `<cise>`.
 
     ```
-    helm install ibm-incubator/ibmcloud-image-enforcement
+    helm install --name=<cise> --namespace=ibm-system ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
@@ -195,6 +197,10 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
     ```
 
     <table>
+    <colgroup>
+      <col width="35%"/>
+      <col width="65%"/>
+    </colgroup>
     <caption>Table. Understanding this YAML components</caption>
     <thead>
     <th>Field</th>
@@ -253,7 +259,7 @@ To configure the policy to verify that an image is signed by a particular signer
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
 1.  Add the secret to the `signerSecrets` list for the repository in your policy.
-    ```
+    ```yaml
     - name: example
       policy:
         trust:
@@ -342,10 +348,10 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
 1.  Disable Container Image Security Enforcement.
 
     ```
-    kubectl delete MutatingWebhookConfiguration image-admission-config
-    kubectl delete ValidatingWebhookConfiguration image-admission-config
+    $ kubectl delete MutatingWebhookConfiguration image-admission-config
+    $ kubectl delete ValidatingWebhookConfiguration image-admission-config
     ```
-    {: pre}
+    {: codeblock}
 
 2.  Remove the resource definitions for your security policies. When you delete the resource definitions, your security policies are also deleted.
 

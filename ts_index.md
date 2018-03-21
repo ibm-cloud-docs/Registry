@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-30"
+lastupdated: "2018-03-21"
 
 ---
 
@@ -293,7 +293,13 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
     **Note**: Because the root key is affected, this step deletes all signing keys, including for other trust servers.
 
-3.  Generate trusted content repositories.
+3.  If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to perform a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](../../containers/cs_cli_install.html#cs_cli_configure) and modify the deployment.
+    ```
+    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
+    ```
+    {: pre}
+
+4.  Generate trusted content repositories.
 
     *  If you want to create new trusted content, [push new signed images](registry_trusted_content.html#trustedcontent_push).
 
