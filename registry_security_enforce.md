@@ -33,6 +33,7 @@ Before you begin:
 * [Create](../../containers/cs_clusters.html#clusters_ui) or [update](../../containers/cs_cluster_update.html) the cluster that you want to use with **Kubernetes version 1.9 or later**.
 * [Target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
+Steps:
 1.  Install the <a href="https://docs.helm.sh/using_helm/#installing-helm" target="_blank">Helm CLI <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>.
 
 1.  Configure Helm in your cluster. Helm installs Tiller into your cluster if it is not installed already.
@@ -197,10 +198,6 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
     ```
 
     <table>
-    <colgroup>
-      <col width="35%"/>
-      <col width="65%"/>
-    </colgroup>
     <caption>Table. Understanding this YAML components</caption>
     <thead>
     <th>Field</th>
@@ -220,19 +217,19 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
     <td>Specify the repositories to allow images from. Wildcards (`*`) are allowed in repository names. Repositories are denied unless a matching entry in `repositories` allows it or applies further verification. An empty `repositories` list blocks deployment of all images. To allow all images without verification of any policies, set the name to `*` and omit the policy subsections.</td>
     </tr>
     <tr>
-    <td><code>spec/repositories/name/policy</code></td>
+    <td><code>../../../policy</code></td>
     <td>Fill out the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each.</td>
     </tr>
     <tr>
-    <td><code>spec/repositories/name/policy/trust/enabled</code></td>
+    <td><code>../../../../trust/enabled</code></td>
     <td>Set as `true` to allow only images that are [signed for content trust](registry_trusted_content.html) to be deployed. Set as `false` to ignore whether images are signed.</td>
     </tr>
     <tr>
-    <td><code>spec/repositories/name/policy/trust/signerSecrets/name</code></td>
+    <td><code>../../../../trust/signerSecrets/name</code></td>
     <td>If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this section or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers).</td>
     </tr>
     <tr>
-    <td><code>spec/repositories/name/policy/va/enabled</code></td>
+    <td><code>../../../../va/enabled</code></td>
     <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](../va/va_index.html) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
     </tr>
     </tbody>
