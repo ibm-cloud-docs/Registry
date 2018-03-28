@@ -4,7 +4,7 @@
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
-    {: .navgroup id="learn"} 
+    {: .navgroup id="learn"}
     index.md
     registry_overview.md
     [IBM images](../RegistryImages/index.html#ibm_images)
