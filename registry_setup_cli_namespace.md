@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-26"
+lastupdated: "2018-11-04"
 
 ---
 
@@ -21,6 +21,8 @@ lastupdated: "2017-10-26"
 
 Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the {{site.data.keyword.registrylong_notm}} plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+
 
 
 ## Installing the {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) plug-in
