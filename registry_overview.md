@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-12-08"
+lastupdated: "2017-04-16"
 
 ---
 
@@ -218,6 +218,7 @@ Prepare to safely store and share your Docker images with {{site.data.keyword.re
 
 To learn more about Docker-specific terms, [consult the Docker glossary](https://docs.docker.com/glossary/).
 
+
 ### Planning Namespaces
 {: #registry_namespaces}
 
@@ -236,6 +237,8 @@ Consider the following rules when you choose a namespace:
 -   Your namespace must be 4 - 30 characters long.
 -   Your namespace must start with at least one letter or number.
 -   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
+
+
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
