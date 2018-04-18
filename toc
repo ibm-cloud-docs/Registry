@@ -4,7 +4,7 @@
 {: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
-    {: .navgroup id="learn"} 
+    {: .navgroup id="learn"}
     index.md
     registry_overview.md
     [IBM images](../RegistryImages/index.html#ibm_images)
@@ -22,6 +22,7 @@ IBM Cloud Container Registry
     registry_images_.md
     registry_tokens.md
     registry_trusted_content.md
+    registry_security_enforce.md
     [Managing image security with Vulnerability Advisor](../va/va_index.html)
         [About Vulnerability Advisor](../va/va_index.html#about)
         [Types of vulnerabilities](../va/va_index.html#types)
@@ -29,7 +30,6 @@ IBM Cloud Container Registry
         [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
         [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
         [Resolving common problems](../va/va_index.html#va_report)
-    registry_security_enforce.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
