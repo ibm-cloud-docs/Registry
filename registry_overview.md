@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-12-08"
+lastupdated: "2017-04-18"
 
 ---
 
@@ -40,7 +40,6 @@ Review the following table to find an overview of benefits for using {{site.data
 |Image security compliance with Vulnerability Advisor|<ul><li>Benefit from automatic scanning of images in your namespace.</li><li>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised.</li></ul>|
 |Quota limits for storage and pull traffic|<ul><li>Benefit from free storage and pull traffic to your private images until you reach your free quota.</li><li>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.</li></ul>|
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
-
 
 ## Service plans
 {: #registry_plans}
@@ -180,6 +179,8 @@ If you want to find out what service plan you have, run the `bx cr plan` command
 Prepare to safely store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
+
+
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
@@ -218,6 +219,7 @@ Prepare to safely store and share your Docker images with {{site.data.keyword.re
 
 To learn more about Docker-specific terms, [consult the Docker glossary](https://docs.docker.com/glossary/).
 
+
 ### Planning Namespaces
 {: #registry_namespaces}
 
@@ -236,6 +238,8 @@ Consider the following rules when you choose a namespace:
 -   Your namespace must be 4 - 30 characters long.
 -   Your namespace must start with at least one letter or number.
 -   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
+
+
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
