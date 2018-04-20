@@ -275,7 +275,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 4.  Generate a registry token.
 
     ```
-    bx cr token-add --readwrite
+    {[bxcr]} token-add --readwrite
     ```
     {: pre}
 

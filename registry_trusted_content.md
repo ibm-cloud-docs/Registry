@@ -57,23 +57,23 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
 2.  Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
 
     ```
-    bx login [--sso]
+    {[bx]} login [--sso]
     ```
     {: pre}
 
-    **Note:** If you have a federated ID, use `bx login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    **Note:** If you have a federated ID, use `{[bx]} login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
 
 3.  Target the region that you want to use. If you don't know the region name, you can run the command without the region and choose one.
 
     ```
-    bx cr region-set <region>
+    {[bxcr]} region-set <region>
     ```
     {: pre}
 
 4.  Log in to {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    {[bxcr]} login
     ```
     {: pre}
 
@@ -126,7 +126,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 1.  [Set up your trusted content environment](#trustedcontent_setup).
 
-2.  Pull your image. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `bx cr image-list`.
+2.  Pull your image. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `{[bxcr]} image-list`.
 
     ```
     docker pull <source_image>:<tag>
