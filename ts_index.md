@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-03-21"
+lastupdated: "2018-04-20"
 
 ---
 
@@ -59,6 +59,23 @@ You can fix this problem in the following ways:
 -   Upgrade to the most recent version of the {{site.data.keyword.registryshort_notm}} plug-in, see [Updating the {{site.data.keyword.registrylong_notm}} (`bx cr`) plug-in](registry_setup_cli_namespace.html#registry_cli_update).
 -   Ensure that Docker is installed on your machine. If it is already installed, restart the Docker daemon.
 -   Rerun the `bx login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
+  
+## Running any command for {{site.data.keyword.registrylong_notm}} fails with `FAILED You are not logged in to IBM Cloud. ` 
+{: #ts_login_cloud}
+
+You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.Bluemix_notm}}.
+
+{: tsSymptoms}
+All `bx cr` commands fail.
+
+{: tsCauses}
+-   The container-registry plug-in is out of date and needs updating.
+
+{: tsResolve}
+You can fix this problem in the following way:
+
+-   Upgrade to the most recent version of the {{site.data.keyword.registryshort_notm}} plug-in, see [Updating the {{site.data.keyword.registrylong_notm}} (`bx cr`) plug-in](registry_setup_cli_namespace.html#registry_cli_update).
+
 
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'bx help'. `
