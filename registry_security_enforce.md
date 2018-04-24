@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-03-21"
+lastupdated: "2018-04-24"
 
 ---
 
@@ -338,19 +338,12 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
 1.  Disable Container Image Security Enforcement.
 
     ```
-    $ kubectl delete MutatingWebhookConfiguration image-admission-config
-    $ kubectl delete ValidatingWebhookConfiguration image-admission-config
+    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
+    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
     ```
     {: codeblock}
 
-2.  Remove the resource definitions for your security policies. When you delete the resource definitions, your security policies are also deleted.
-
-    ```
-    kubectl delete crd clusterimagepolicies.securityenforcement.admission.cloud.ibm.com imagepolicies.securityenforcement.admission.cloud.ibm.com
-    ```
-    {: pre}
-
-3.  Remove the chart.
+2.  Remove the chart.
 
     ```
     helm delete --purge cise
