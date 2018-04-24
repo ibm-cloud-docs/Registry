@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-03-21"
+lastupdated: "2018-04-24"
 
 ---
 
@@ -23,8 +23,6 @@ With IBM Container Image Security Enforcement (beta), you can verify your contai
 
 IBM Container Image Security Enforcement gets the information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose whether to block or allow images from other registries in your policies, but you cannot use vulnerability or trust enforcement for these images.
 
-Your {{site.data.keyword.containershort_notm}} cluster [autorecovery](../../containers/cs_health.html#autorecovery) system might be affected by IBM Container Image Security Enforcement. For example, if a node goes down, then its workload is scheduled to a new node. If Vulnerability Advisor detects a new vulnerability since your image was first deployed, Security Enforcement prevents the scheduler from creating the new pod.
-{:tip}
 
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
@@ -338,19 +336,12 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
 1.  Disable Container Image Security Enforcement.
 
     ```
-    $ kubectl delete MutatingWebhookConfiguration image-admission-config
-    $ kubectl delete ValidatingWebhookConfiguration image-admission-config
+    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
+    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
     ```
     {: codeblock}
 
-2.  Remove the resource definitions for your security policies. When you delete the resource definitions, your security policies are also deleted.
-
-    ```
-    kubectl delete crd clusterimagepolicies.securityenforcement.admission.cloud.ibm.com imagepolicies.securityenforcement.admission.cloud.ibm.com
-    ```
-    {: pre}
-
-3.  Remove the chart.
+2.  Remove the chart.
 
     ```
     helm delete --purge cise
