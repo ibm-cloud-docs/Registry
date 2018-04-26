@@ -351,3 +351,4 @@ Remove the remaining Kubenetes jobs by running the following command:
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
