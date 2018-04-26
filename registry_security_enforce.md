@@ -56,8 +56,8 @@ IBM Container Image Security Enforcement is now installed, and is applying the [
 IBM Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
 {:shortdesc}
 
-To override these policies:
-* Write a new policy document and apply it to your cluster by using `kubectl apply`, or
+To override these policies, use one of the following options:
+* Write a new policy document and apply it to your cluster by using `kubectl apply`
 * Edit the default policy by using `kubectl edit`
 
 For more information about writing security policies, see [Customizing policies](#customize_policies).
