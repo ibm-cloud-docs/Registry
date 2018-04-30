@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-19"
+lastupdated: "2018-04-30"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2018-04-19"
 
 The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Monitoring the vulnerability of images](registry_ui.html).
 
-Do not put personal information in your container images, image names, namespace names, or any description fields; for example, in registry tokens.
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
 
