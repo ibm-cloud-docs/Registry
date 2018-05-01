@@ -25,7 +25,7 @@ You can use the following related links to become more familiar with {{site.data
 {: #registry}
 
 <ul>
-<li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a>
+<li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a>
 <li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>
 </ul>
 

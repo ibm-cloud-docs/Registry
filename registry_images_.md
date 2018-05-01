@@ -187,7 +187,7 @@ To build your own Docker image, complete the following steps:
 
     where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
 
-    For more information about the `bx cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli).
+    For more information about the `bx cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
 
   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
     1. Build the image from your Dockerfile on your local machine and tag it with your image name.
