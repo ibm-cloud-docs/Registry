@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-30"
+lastupdated: "2018-05-1"
 
 ---
 
@@ -25,8 +25,7 @@ You can securely store and share Docker images with other users by adding images
 Every image that you want to add to your namespace must exist on your local machine first. You can either download (pull) an image from another repository to your local machine, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
 
-Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
-{:tip}
+**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 
 
 ## Pulling images from another registry
