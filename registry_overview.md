@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-30"
+lastupdated: "2018-05-1"
 
 ---
 
@@ -179,8 +179,8 @@ If you want to find out what service plan you have, run the `bx cr plan` command
 Prepare to safely store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
-Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
-{:tip}
+**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+
 
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
