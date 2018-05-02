@@ -24,8 +24,9 @@ You can use the following related links to become more familiar with {{site.data
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-<ul><li><a href="../../cli/plugins/registry/index.html#containerregcli" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a>
-<li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a>
+<ul>
+  <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
+<li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a></li>
 </ul>
 
 ## {{site.data.keyword.containerlong_notm}}
