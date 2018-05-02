@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-19"
+lastupdated: "2018-05-1"
 
 ---
 
@@ -23,8 +23,7 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 {:shortdesc}
 
 
-Do not put personal information in your container images, image names, namespace names, or any description fields; for example, in registry tokens.
-{:tip}
+**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 
 
 ## Installing the {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) plug-in

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-04-19"
+lastupdated: "2018-05-2"
 
 ---
 
@@ -179,8 +179,8 @@ If you want to find out what service plan you have, run the `bx cr plan` command
 Prepare to safely store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
-Do not put personal information in your container images, image names, namespace names, or any description fields; for example, in registry tokens.
-{:tip}
+**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+
 
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -297,5 +297,6 @@ bx cr region-set global
 {: pre}
 
 For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+
 
 After you have targeted the global registry, run the `bx cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
