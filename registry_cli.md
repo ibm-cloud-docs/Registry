@@ -26,7 +26,7 @@ The {{site.data.keyword.registrylong}} CLI is a plug-in to manage your registry 
 * Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}}
  with the `bx login` command to generate an access token and authenticate your session.
 
-To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](../../../services/Registry/index.html).
+To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](index.html).
 
 **Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 
@@ -141,7 +141,7 @@ bx cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>--format FORMAT</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 <dt>IMAGE</dt>
@@ -172,7 +172,7 @@ Displays all images in your {{site.data.keyword.Bluemix_notm}} account.
 <dt>--format FORMAT</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 <dt>-q, --quiet</dt>
@@ -284,7 +284,7 @@ bx cr plan
 
 Upgrades you to the standard plan.
 
-For information about plans, see [Registry plans](../../../services/Registry/registry_overview.html#registry_plans).
+For information about plans, see [Registry plans](registry_overview.html#registry_plans).
 
 ```
 bx cr plan-upgrade [PLAN]
@@ -298,6 +298,35 @@ bx cr plan-upgrade [PLAN]
 </dl>
 
 
+## bx cr quota
+{: #bx_cr_quota}
+
+Displays your current quotas for traffic and storage, and usage information against those quotas.
+
+```
+bx cr quota
+```
+{: codeblock}
+
+
+## bx cr quota-set
+{: #bx_cr_quota_set}
+
+Modify the specified quota.
+
+```
+bx cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>--traffic TRAFFIC</dt>
+<dd>(Optional) Changes your traffic quota to the specified value in megabytes. The operation fails if you are not authorized to set traffic, or if you set a value that exceeds your current pricing plan.</dd>
+<dt>--storage STORAGE</dt>
+<dd>(Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.</dd>
+</dl>
+
 
 ## bx cr region
 {: #bx_cr_region}
@@ -309,7 +338,7 @@ bx cr region
 ```
 {: codeblock}
 
-For more information, see [Regions](../../../services/Registry/registry_overview.html#registry_regions).
+For more information, see [Regions](registry_overview.html#registry_regions).
 
 
 ## bx cr region-set
@@ -327,7 +356,7 @@ bx cr region-set [REGION]
 <dt>REGION</dt>
 <dd>(Optional) The name of your target region, for example, `us-south`.
 
-For more information, see [Regions](../../../services/Registry/registry_overview.html#registry_regions).
+For more information, see [Regions](registry_overview.html#registry_regions).
 
 </dd>
 </dl>
@@ -397,7 +426,7 @@ bx cr token-list --format FORMAT
 <dt>--format FORMAT</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 </dl>
@@ -450,7 +479,7 @@ bx cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--con
 
 </p>
 
-For more information, see [Managing image security with Vulnerability Advisor](../../../services/va/va_index.html).
+For more information, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
 
 </dd>
 <dt>--output FORMAT, -o FORMAT</dt>
