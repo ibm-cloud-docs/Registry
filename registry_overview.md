@@ -231,7 +231,7 @@ You can set up multiple namespaces, for example, to have separate repositories f
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-**Note:** If you are unsure whether a namespace is already set for your account, run the `bx cr namespace-list` command to retrieve existing namespace information. If you are an existing {{site.data.keyword.containerlong_notm}} customer that uses [single and scalable container groups](../../containers/cs_classic.html), you already have a namespace. You can create additional namespaces, but cannot run `cf ic namespace set` for more than one namespace.
+**Note**: If you are unsure whether a namespace is already set for your account, run the `bx cr namespace-list` command to retrieve existing namespace information. If you are an existing {{site.data.keyword.containerlong_notm}} customer that uses [single and scalable container groups](../../containers/cs_classic.html), you already have a namespace. You can create additional namespaces, but cannot run `cf ic namespace set` for more than one namespace.
 
 Consider the following rules when you choose a namespace:
 
@@ -240,8 +240,7 @@ Consider the following rules when you choose a namespace:
 -   Your namespace must start with at least one letter or number.
 -   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
 
-Do not put personal information in your namespace names.
-{:tip}
+**Note**: Do not put personal information in your namespace names.
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
