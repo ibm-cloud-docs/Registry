@@ -295,7 +295,6 @@ bx cr region-set global
 ```
 {: pre}
 
-For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
-
+For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
 
 After you have targeted the global registry, run the `bx cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
