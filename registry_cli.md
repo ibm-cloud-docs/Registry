@@ -6,7 +6,7 @@ copyright:
 
   years: 2017, 2018
 
-lastupdated: "2018-05-01"
+lastupdated: "2018-05-04"
 
 
 ---
@@ -296,6 +296,8 @@ bx cr plan-upgrade [PLAN]
 <dt>PLAN</dt>
 <dd>The name of the pricing plan that you want to upgrade to. If PLAN is not specified, the default is `standard`.</dd>
 </dl>
+
+
 
 
 ## bx cr quota
