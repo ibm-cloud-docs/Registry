@@ -65,6 +65,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     {: pre}
 
 
+
 ## Pull images from another registry to your local machine
 {: #registry_images_pulling}
 
@@ -108,6 +109,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     {: pre}
 
 
+
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
@@ -134,6 +136,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 
 
 Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
+
 
 **What's next?**
 
