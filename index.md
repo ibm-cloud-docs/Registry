@@ -145,3 +145,4 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 -   [Store and manage more images in your namespace](registry_images_.html).
 -   [Create and deploy a container from your image to a Kubernetes cluster](../../containers/cs_clusters.html).
 
+
