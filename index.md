@@ -16,6 +16,7 @@ lastupdated: "2018-05-07"
 {:download: .download}
 
 
+
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #index}
 
