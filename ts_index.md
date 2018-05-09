@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-4-26"
+lastupdated: "2018-05-09"
 
 ---
 
@@ -37,7 +37,6 @@ When you are using the forums to ask a question, tag your question so that it is
 -   For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `bluemix` and `container-registry` tags.
 
 See [Using the Support Center](../../get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
-
 For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](../../get-support/howtogetsupport.html#open-ticket).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
