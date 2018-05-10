@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-05-10"
 
 ---
 
@@ -29,7 +29,7 @@ A repository can contain both signed and unsigned content. If you have Docker Co
 
 Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
-For more information about the "trust on first use" security model, see [The Update Framework (TUF)](https://theupdateframework.github.io/) and [Survivable Key Compromise in Software Update Systems](https://isis.poly.edu/~jcappos/papers/samuel_tuf_ccs_2010.pdf). 
+For more information about the "trust on first use" security model, see [The Update Framework (TUF)](https://theupdateframework.github.io/). 
 
 
 ## Setting up your trusted content environment

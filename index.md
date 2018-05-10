@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-05-07"
 
 ---
 
@@ -14,6 +14,7 @@ lastupdated: "2018-05-2"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+
 
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
@@ -65,6 +66,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     {: pre}
 
 
+
 ## Pull images from another registry to your local machine
 {: #registry_images_pulling}
 
@@ -108,6 +110,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     {: pre}
 
 
+
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
@@ -135,9 +138,12 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 
 Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
 
+
 **What's next?**
 
 -   [Managing image security with Vulnerability Advisor](../va/va_index.html).
 -   [Review your service plans and usage](registry_overview.html#registry_plans)
 -   [Store and manage more images in your namespace](registry_images_.html).
 -   [Create and deploy a container from your image to a Kubernetes cluster](../../containers/cs_clusters.html).
+
+

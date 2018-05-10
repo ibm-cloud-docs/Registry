@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-11-10"
+lastupdated: "2018-05-10"
 
 ---
 
@@ -128,7 +128,7 @@ Review the following table to find available Go template options and data types 
 |`Repository`|String|Displays the repository of the image.|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
-|`Vulnerable`|String|Displays the vulnerability status for the image. The possible statuses are described in [Managing image security with Vulnerability Advisor](../va/va_index.html).|
+|`Vulnerable`|String|Displays the vulnerability status for the image. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli).|
 {: caption="Table 1. Available fields and data types in the bx cr image-list command." caption-side="top"}
 
 ### Go template options and data types in the `bx cr image-inspect` command
