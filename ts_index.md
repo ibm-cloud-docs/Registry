@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-05-29"
 
 ---
 
@@ -180,6 +180,8 @@ The `latest` tag is applied by default to reference an image when you run Docker
 
 {: tsResolve}
 It is generally better to explicitly define a different sequential tag for your images every time, and not rely on the `latest` tag.
+
+
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
