@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -50,10 +50,9 @@ You can use the format option with the following {{site.data.keyword.registrylon
 -   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
 -   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
-The following code examples demonstrate how you might use the formatting and filtering options.
-
--   Run the following `bx cr image-list` command to display repository, tag, and vulnerability status of all images that have a size over 1 MB:
-
+The following code examples demonstrate how you might use the formatting and filtering options.vulnerability status of all images that have a size over 1 MB:
+    
+    
     ```
     bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
     ```
@@ -68,6 +67,7 @@ The following code examples demonstrate how you might use the formatting and fil
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
     ```
     {: screen}
+
 
 -   Run the following `bx cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
 
