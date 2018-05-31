@@ -3,10 +3,8 @@
 
 
 copyright:
-
   years: 2017, 2018
-
-lastupdated: "2018-05-04"
+lastupdated: "2018-05-31"
 
 
 ---
@@ -55,20 +53,18 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
  <tr>
  <td>[bx cr plan](#bx_cr_plan)</td>
  <td>[bx cr plan-upgrade](#bx_cr_plan_upgrade)</td>
- 
+ <td>[bx cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
  <td>[bx cr quota](#bx_cr_quota)</td>
  <td>[bx cr quota-set](#bx_cr_quota_set)</td>
- <td>[bx cr region](#bx_cr_region)</td>
  </tr>
  <tr>
-
+ <td>[bx cr region](#bx_cr_region)</td>
  <td>[bx cr region-set](#bx_cr_region_set)</td>
  <td>[bx cr token-add](#bx_cr_token_add)</td>
  <td>[bx cr token-get](#bx_cr_token_get)</td>
  <td>[bx cr token-list (bx cr tokens)](#bx_cr_token_list)</td>
- <td>[bx cr token-rm](#bx_cr_token_rm)</td>
  </tr><tr>
-
+ <td>[bx cr token-rm](#bx_cr_token_rm)</td>
  <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
@@ -298,6 +294,32 @@ bx cr plan-upgrade [PLAN]
 </dl>
 
 
+## bx cr ppa-archive-load
+{: #bx_cr_ppa_archive_load}
+
+Imports IBM software that is downloaded from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
+
+Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
+
+**Example command**:
+```
+bx cr ppa-archive-load --archive FILE --namespace NAMESPACE
+```
+{: codeblock}
+
+**Parameters**:
+<dl>
+  <dt>--archive FILE</dt>
+  <dd>The path to the compressed file that is downloaded from IBM Passport Advantage.</dd>
+  <dt>--namespace NAMESPACE</dt>
+  <dd>One of your namespaces. Container images from the compressed file are pushed to this namespace. To list namespaces, run `bx cr namespace-list`.</dd>
+  <dt>--chartmuseum-uri URI</dt>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) unique resource identifier.</dd>
+  <dt>--chartmuseum-user USER</dt>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) user name.</dd>
+  <dt>--chartmuseum-password PASSWORD</dt>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) password.</dd>
+</dl>
 
 
 ## bx cr quota

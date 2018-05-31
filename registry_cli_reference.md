@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-05-31"
 
 ---
 
@@ -52,22 +52,23 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
--   Run the following `bx cr image-list` command to display repository, tag, and vulnerability status of all images that have a size over 1 MB:
+-   Run the following `bx cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     Example output:
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   Run the following `bx cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
 
@@ -128,7 +129,7 @@ Review the following table to find available Go template options and data types 
 |`Repository`|String|Displays the repository of the image.|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
-|`Vulnerable`|String|Displays the vulnerability status for the image. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli).|
+|`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli).|
 {: caption="Table 1. Available fields and data types in the bx cr image-list command." caption-side="top"}
 
 ### Go template options and data types in the `bx cr image-inspect` command
