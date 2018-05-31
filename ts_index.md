@@ -182,6 +182,87 @@ The `latest` tag is applied by default to reference an image when you run Docker
 It is generally better to explicitly define a different sequential tag for your images every time, and not rely on the `latest` tag.
 
 
+## Unable to add other IBM images to the registry
+{: #ts_ppa}
+
+
+{: tsSymptoms}
+When you try to import content that you used in other IBM products, such as {{site.data.keyword.Bluemix_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/index.html) in the registry.
+
+{: tsCauses}
+Software packages such as images and Helm charts from IBM Passport Advantage must be imported to the registry with the `bx cr ppa-archive-load` command.
+
+{: tsResolve}
+Before you begin:
+* Log in to {{site.data.keyword.Bluemix_notm}} by running `bx login [--sso]`.
+* Log in to {{site.data.keyword.registrylong_notm}} by running `bx cr login`.
+* [Target the `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to your cluster.
+* If you have not already set up Helm in your cluster, [set up Helm in your cluster now](../../containers/cs_integrations.html#helm).
+* If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).
+
+### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
+
+1.  Obtain the compressed file that you want to import from [IBM Passport Advantage![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/index.html).
+
+2.  Target the region that you want to use. If you don't know the region name, run the command without the region and then choose a region.
+
+    ```
+    bx cr region-set <region>
+    ```
+    {: pre}
+
+3.  Import the compressed archive file. Specify the path to the compressed file and the registry namespace that you want to push the images to.
+
+    ```
+    bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
+    ```
+    {: pre}
+
+    This command expands the compressed file, loads any contained images into your local Docker client, and then pushes the images to the namespace in your registry.
+    
+    If you want to upload Helm charts from the IBM Passport Advantage archive to a chart museum, include the following options in the command: `bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    {: tip}
+
+    **Example output**:
+    ```
+    user:~ user$ bx cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+    Found 1 image(s) and 1 chart(s) to import.
+    Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+    Loaded image: iib-prod:10.0.0.10
+    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
+    1ecda25d51a8: Preparing
+    369bf331939e: Preparing
+    ...
+    369bf331939e: Pushed
+    1ecda25d51a8: Pushed
+    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+
+    Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
+
+    OK
+    ```
+    {: screen}
+
+4.  If the compressed files contain Helm charts, these charts are placed in an archive directory called `ppa-import` that is created in your current working directory. Open the directory to get the name of the Helm chart, `<helm_chart>`, and then inspect its values.
+
+    ```
+    helm inspect values ppa-import/charts/<helm_chart>.tgz
+    ```
+    {: pre}
+    
+    If you uploaded charts to a chart museum in the previous step, you can use `helm inspect` to inspect the chart in chart museum.
+    {: tip}
+
+5.  Configure the Helm chart,`<helm_chart>`, according to the values that are output by the `helm inspect values` command.
+
+6.  Deploy the Helm chart, `<helm_chart>`, by using the `helm install` command. You can override values in the chart as required by using the `--set` option.
+
+    ```
+    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
+    ```
+    {: pre}
+
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
