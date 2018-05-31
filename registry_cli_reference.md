@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-05-31"
 
 ---
 
@@ -50,7 +50,7 @@ You can use the format option with the following {{site.data.keyword.registrylon
 -   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
 -   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
-The following code examples demonstrate how you might use the formatting and filtering options.vulnerability status of all images that have a size over 1 MB:
+The following code examples demonstrate how you might use the formatting and filtering options. vulnerability status of all images that have a size over 1 MB:
     
     
     ```
