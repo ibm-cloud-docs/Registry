@@ -3,10 +3,8 @@
 
 
 copyright:
-
   years: 2017, 2018
-
-lastupdated: "2018-05-04"
+lastupdated: "2018-05-31"
 
 
 ---
@@ -55,20 +53,18 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
  <tr>
  <td>[bx cr plan](#bx_cr_plan)</td>
  <td>[bx cr plan-upgrade](#bx_cr_plan_upgrade)</td>
- 
+ <td></td>
  <td>[bx cr quota](#bx_cr_quota)</td>
  <td>[bx cr quota-set](#bx_cr_quota_set)</td>
- <td>[bx cr region](#bx_cr_region)</td>
  </tr>
  <tr>
-
+ <td>[bx cr region](#bx_cr_region)</td>
  <td>[bx cr region-set](#bx_cr_region_set)</td>
  <td>[bx cr token-add](#bx_cr_token_add)</td>
  <td>[bx cr token-get](#bx_cr_token_get)</td>
  <td>[bx cr token-list (bx cr tokens)](#bx_cr_token_list)</td>
- <td>[bx cr token-rm](#bx_cr_token_rm)</td>
  </tr><tr>
-
+ <td>[bx cr token-rm](#bx_cr_token_rm)</td>
  <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
@@ -296,8 +292,6 @@ bx cr plan-upgrade [PLAN]
 <dt>PLAN</dt>
 <dd>The name of the pricing plan that you want to upgrade to. If PLAN is not specified, the default is `standard`.</dd>
 </dl>
-
-
 
 ## bx cr quota
 {: #bx_cr_quota}
