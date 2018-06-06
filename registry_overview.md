@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-06-06"
 
 ---
 
@@ -170,7 +170,7 @@ If you want to find out what service plan you have, run the `bx cr plan` command
     ```
     {: pre}
 
-    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Trial account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Standard account before running `bx cr plan-upgrade`.
+    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `bx cr plan-upgrade`.
 
 
 ## Learning the basics
