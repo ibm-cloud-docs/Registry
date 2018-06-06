@@ -105,7 +105,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
-1.  Run the `bx cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}.
+1.  Run the `bx cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
     ```
     bx cr login
