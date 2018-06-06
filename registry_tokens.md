@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-06-06"
 
 ---
 
@@ -170,6 +170,9 @@ You can use a token in your `docker login` command to automate access to your na
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    For the `-u` parameter, ensure that you type in the string `token`, not the token ID.
+    {: tip}
 
     After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
