@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-06-07"
 
 ---
 
@@ -93,10 +93,10 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     ```
     {: pre}
 
-    Example, where _&lt;source_image&gt;_ is `hello-world`, _&lt;tag&gt;_ is `latest`, _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `Namespace1`, _&lt;new_image_repo&gt;_ is `hw_repo`, and _&lt;new_tag&gt;_ is `1`:
+    Example, where _&lt;source_image&gt;_ is `hello-world`, _&lt;tag&gt;_ is `latest`, _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `namespace1`, _&lt;new_image_repo&gt;_ is `hw_repo`, and _&lt;new_tag&gt;_ is `1`:
 
     ```
-    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -119,10 +119,10 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
     ```
     {: pre}
 
-    Example, where _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `Namespace1`, _&lt;image_repo&gt;_ is `hw_repo`, and _&lt;tag&gt;_ is `1`:
+    Example, where _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `namespace1`, _&lt;image_repo&gt;_ is `hw_repo`, and _&lt;tag&gt;_ is `1`:
 
     ```
-    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
     {: pre}
 
