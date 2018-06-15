@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,6 +23,9 @@ l'espace de nom du registre
 
 Pour pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong}}, vous devez installer l'interface de ligne de commande (CLI) de {{site.data.keyword.Bluemix_notm}} et le plug-in {{site.data.keyword.registrylong_notm}}, puis configurer un espace de nom de registre afin de créer votre propre registre d'images dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+
+**Remarque** : Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 
 
 ## Installation du plug-in (`bx cr`) de l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}
@@ -135,10 +138,10 @@ Si vous n'avez plus besoin d'un espace de nom de registre, vous pouvez le retire
     ```
     {: pre}
 
-3.  Supprimez un espace de nom. 
+3.  Supprimez un espace de nom.
 
     **Attention :** quand vous retirez un espace de nom, les images qui y étaient stockées sont également supprimées. Cette action est irréversible.
-    
+
     Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous désirez supprimer.
 
     ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2017-02-06"
 
 ---
 
@@ -19,10 +19,13 @@ lastupdated: "2017-12-08"
 # Automatización del acceso a {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
-Puede utilizar elementos de registro o una clave API (IAM) de {{site.data.keyword.iamlong}} para automatizar el acceso a sus nombres de espacios de {{site.data.keyword.registrylong_notm}} para poder enviar por push y extraer imágenes.
+Puede utilizar elementos de registro o una clave API (IAM) de {{site.data.keyword.iamlong}} para automatizar el acceso a sus espacios de nombres de {{site.data.keyword.registrylong_notm}} para poder enviar por push y extraer imágenes.
 {:shortdesc}
 
-Las claves API están enlazadas a su cuenta y pueden utilizarse en {{site.data.keyword.Bluemix_notm}} sin que necesite distintas credenciales para cada servicio. Puede utilizar la clave de API en el CLI o como parte de la automatización para iniciar sesión como su identidad de usuario.
+¿Está intentando utilizar las imágenes de registro en despliegues de Kubernetes? Consulte [Acceso a imágenes en otros espacios de nombres de Kubernetes, regiones de {{site.data.keyword.Bluemix_notm}} y cuentas](/docs/containers/cs_images.html#other).
+{: tip}
+
+Las claves API están enlazadas a su cuenta y pueden utilizarse en {{site.data.keyword.Bluemix_notm}} sin que necesite distintas credenciales para cada servicio. Puede utilizar la clave de API en la CLI o como parte de la automatización para iniciar sesión como su identidad de usuario.
 
 Los elementos de registro solo abarcan {{site.data.keyword.registrylong_notm}}. Puede limitarlos a un acceso de sólo lectura y puede seleccionar si caducan o no caducan.
 
@@ -41,48 +44,49 @@ Puede utilizar claves API para automatizar el envío por push y la extracción d
 {: #registry_api_key_create}
 
 Puede crear un clave API que puede utilizar para iniciar sesión en su registro.
-{:shortdesc} 
+{:shortdesc}
 
-Cree una clave API IAM. consulte  [Creación de una clave API](../../iam/userid_keys.html#creating-an-api-key). 
+Cree una clave API IAM, consulte [Creación de una clave API](../../iam/userid_keys.html#creating-an-api-key).
 
 ### Utilización de una clave API para automatizar el acceso
 {: #registry_api_key_use}
 
 Puede utilizar una clave API para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}.
-{:shortdesc} 
+{:shortdesc}
 
-Utilice la clave API para iniciar sesión en su registro mediante la ejecución del siguiente mandato Docker. Substituya &lt;your_apikey&gt; por su clave API, y sustituya &lt;registry_url&gt; con la URL del registro en el que está configurado sus espacios de nombres.
+Utilice la clave API para iniciar sesión en su registro mediante la ejecución del siguiente mandato Docker. Substituya &lt;your_apikey&gt; por su clave API, y sustituya &lt;registry_url&gt; por el URL del registro en el que está configurado sus espacios de nombres.
 
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-
 Para obtener información acerca del mandato, consulte [Cree una nueva clave API de plataforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
 
 
-## Automatizando acceso a sus nombres de espacios utilizando señales
+## Automatizando acceso a sus espacios de nombres utilizando señales
 {: #registry_tokens}
 
-Puede utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres {{site.data.keyword.registrylong_notm}}.{:shortdesc}
+Puede utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
-Cualquiera que tenga una señal de registro puede acceder a la información protegida. Mediante la creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}, se puede otorgar acceso a todos los espacios de nombres que ha configurado en una región para los usuarios fuera de su cuenta de {{site.data.keyword.Bluemix_notm}}. Cada usuario o app en posesión de esta señal puede enviar por push o extraer imágenes a espacios de nombres sin tener que instalar el plug-in container-registry. 
+Cualquiera que tenga una señal de registro puede acceder a la información protegida. Mediante la creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}, se puede otorgar acceso a todos los espacios de nombres que ha configurado en una región para los usuarios fuera de su cuenta de {{site.data.keyword.Bluemix_notm}}. Cada usuario o app en posesión de esta señal puede enviar por push o extraer imágenes a espacios de nombres sin tener que instalar el plug-in container-registry.
 
 Cuando crea una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}, puede decidir si dicha señal autoriza el acceso de sólo lectura (extraer) o el acceso de escritura (enviar por push y extraer) para el
 registro. También puede especificar si una señal es permanente o si ésta caduca después de 24 horas. Puede crear y utilizar varias señales para controlar los diferentes tipos de acceso.
 
 Utilice las siguientes tareas para gestionar sus señales:
 
--  [Creación de una señal para su cuenta{{site.data.keyword.Bluemix_notm}} ](#registry_tokens_create)
+-  [Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}](#registry_tokens_create)
 -  [Utilización de una señal para automatizar el acceso a su espacio de nombres ](#registry_tokens_use)
--  [Eliminación de una señal desde su cuenta {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
+-  [Eliminación de una señal desde su cuenta de {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
 
 
 ### Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_create}
 
-Puede crear una señal para otorgar acceso a todos los espacios de nombres {{site.data.keyword.registrylong_notm}} en una región. {:shortdesc}
+Puede crear una señal para otorgar acceso a todos los espacios de nombres {{site.data.keyword.registrylong_notm}} en una región.
+{:shortdesc}
 
 1.  Cree una señal. En el ejemplo siguiente se crea una señal que no caduca que tiene acceso de lectura y escritura a todos los espacios de nombres que se encuentran configurados en una región.
 
@@ -93,7 +97,7 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
 
     <table>
         <thead>
-        <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descripción de los componentes de este mandato </th>
+        <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descripción de los componentes de este mandato</th>
         </thead>
         <tbody>
         <tr>
@@ -114,8 +118,8 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
     Su salida de CLI tiene un aspecto similar a la salida siguiente:
 
     ```
-    Identificador de la señal   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-    Señal              <token_value>
+    Identificador de la señal   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
+    Señal                       <token_value>
     ```
     {: screen}
 
@@ -127,7 +131,7 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
     {: pre}
 
 
-### Utilización de una señal para automatizar el acceso a su espacio de nombres 
+### Utilización de una señal para automatizar el acceso a su espacio de nombres
 {: #registry_tokens_use}
 
 Puede utilizar una señal en su mandato `login docker` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de sólo escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
@@ -199,6 +203,3 @@ Elimina una señal de {{site.data.keyword.registrylong_notm}} cuando ya no se ne
     bx cr token-rm <token_id>
     ```
     {: pre}
-    
-
-

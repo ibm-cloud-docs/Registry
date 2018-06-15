@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2017-11-10"
 # {{site.data.keyword.registrylong_notm}}-Befehle (`bx cr`) zum Verwalten von Docker-Images im Namensbereich
 {: #registry_cli_reference}
 
-Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Image-Namensbereich in einer von IBM gehosteten und verwalteten privaten Registry einzurichten, in der Sie Docker-Images sicher speichern und gemeinsam mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto nutzen können.
+Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten Registry einzurichten, in der Sie Docker-Images sicher speichern und gemeinsam mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto nutzen können.
 {:shortdesc}
 
 
@@ -28,8 +28,8 @@ Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Image-N
 
 Führen Sie die `bx cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
 {:shortdesc}
-
-Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](../../cli/plugins/registry/index.html#containerregcli).
+  
+Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html).
 
 ## CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern
 {: #registry_cli_listing}
@@ -52,22 +52,23 @@ Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylo
 
 Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptionen verwenden können.
 
--   Führen Sie den folgenden Befehl `bx cr image-list` aus, um Repository, Tag und Sicherheitsstatus aller Images anzuzeigen, die eine Größe von über 1 MB haben:
+-   Führen Sie den folgenden Befehl `bx cr image-list` aus, um Repository, Tag und Sicherheitsstatus aller Images mit einer Größe von über 1 MB anzuzeigen:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     Beispielausgabe:
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   Führen Sie den folgenden Befehl `bx cr image-inspect` aus, um anzuzeigen, wo die IBM Dokumentation für ein angegebenes öffentliches IBM Image gehostet wird:
 
@@ -128,7 +129,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Repository`|Zeichenfolge|Zeigt das Repository des Image an.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
-|`Vulnerable`|Zeichenfolge|Zeigt den Sicherheitsstatus für das Image an. Die möglichen Statuszustände sind im Abschnitt [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html) beschrieben.|
+|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status  `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli) beschrieben.|
 {: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl 'bx cr image-list'." caption-side="top"}
 
 ### Go-Vorlagenoptionen und Datentypen im Befehl `bx cr image-inspect`

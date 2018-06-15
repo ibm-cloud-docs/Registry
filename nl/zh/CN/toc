@@ -9,12 +9,12 @@ IBM Cloud Container Registry
     registry_overview.md
     [IBM 映像](../RegistryImages/index.html#ibm_images)
         [ibm-backup-restore 映像](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [ibm-integration-bus 映像](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty 映像](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [ibm-mq 映像](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibmnode 映像](../RegistryImages/ibmnode/index.html#getting_started_node)
-        [ibm-node-strong-pm 映像](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
-        [ibm-websphere-extreme-scale映像](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [ibm-websphere-extreme-scale 映像](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -23,13 +23,17 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_trusted_content.md
+    registry_security_enforce.md
     [使用漏洞顾问程序管理映像安全性](../va/va_index.html)
         [关于漏洞顾问程序](../va/va_index.html#about)
-        [复查映像的漏洞报告](../va/va_index.html#va_reviewing)
-        [使用 CLI 复查映像安全性](../va/va_index.html#va_registry_cli)
+        [漏洞类型](../va/va_index.html#types)
+        [安装容器扫描程序](../va/va_index.html#va_install_livescan)
+        [查看漏洞报告](../va/va_index.html#va_reviewing)
+        [使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)
         [解决常见问题](../va/va_index.html#va_report)
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     registry_cli_reference.md
     rellinks.md
@@ -38,4 +42,3 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     {: .navgroup-end}
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,6 +23,9 @@ lastupdated: "2017-10-26"
 {:shortdesc}
 
 
+**注**: コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+
+
 ## {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) プラグインのインストール
 {: #registry_cli_install}
 
@@ -31,7 +34,7 @@ lastupdated: "2017-10-26"
 
 1.  [container-registry プラグインをインストールします。
 ](index.html#registry_cli_install)
-2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。このステップを実行しない場合は、`bx login`、`bx cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用するか root として実行する必要があります。
+2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 このステップを実行しない場合は、`bx login`、`bx cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用するか root として実行する必要があります。
 
 これで、{{site.data.keyword.registrylong_notm}} 専用レジストリーに固有の名前空間をセットアップできます。
 
@@ -44,19 +47,22 @@ lastupdated: "2017-10-26"
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-bx login```
+    bx login
+    ```
     {: pre}
 
 2.  container-registry プラグインを更新します。
 
     ```
-bx plugin update container-registry -r Bluemix```
+    bx plugin update container-registry -r Bluemix
+    ```
     {: pre}
 
 3.  プラグインが正常に更新されたことを確認します。
 
     ```
-bx plugin list```
+    bx plugin list
+    ```
      {: pre}
 
 
@@ -69,19 +75,22 @@ container-registry プラグインは、もはや必要がない場合、アン�
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-bx login```
+    bx login
+    ```
     {: pre}
 
 2.  container-registry プラグインをアンインストールします。
 
     ```
-bx plugin uninstall container-registry```
+    bx plugin uninstall container-registry
+    ```
     {: pre}
 
 3.  プラグインが正常にアンインストールされたことを確認します。
 
     ```
-bx plugin list```
+    bx plugin list
+    ```
     {: pre}
 
     container-registry プラグインは結果に表示されません。
@@ -111,21 +120,22 @@ Docker イメージを安全に保管するには、{{site.data.keyword.registry
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-bx login```
+    bx login
+    ```
     {: pre}
 
 2.  使用可能な名前空間をリストします。
 
     ```
-bx cr namespace-list```
+    bx cr namespace-list
+    ```
     {: pre}
 
-3.  名前空間を削除します。 
+3.  名前空間を削除します。
 
-    **注意:** 名前空間を削除すると、その名前空間に保管されているイメージもすべて削除されます。このアクションは元に戻せません。
-    
+    **注意:** 名前空間を削除すると、その名前空間に保管されているイメージもすべて削除されます。 このアクションは元に戻せません。
+
     _&lt;my_namespace&gt;_ を、削除する名前空間に置換します。
-
 
     ```
     bx cr namespace-rm <my_namespace>

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-28"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # 開始使用 {{site.data.keyword.registrylong_notm}}
@@ -23,6 +24,9 @@ lastupdated: "2017-11-28"
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.Bluemix_notm}} 主控台的詳細資訊，請參閱[監視映像檔的漏洞](registry_ui.html)。
+
+**附註**：請勿將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+
 
 
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI
@@ -54,12 +58,13 @@ lastupdated: "2017-11-28"
     ```
     {: pre}
 
-3.  若要確保已建立名稱空間，請執行 `bx cr namespace-list` 指令。
+3.  若要確定已建立名稱空間，請執行 `bx cr namespace-list` 指令。
 
     ```
     bx cr namespace-list
     ```
     {: pre}
+
 
 
 ## 將映像檔從另一個登錄取回到本端機器
@@ -90,7 +95,7 @@ lastupdated: "2017-11-28"
     ```
     {: pre}
 
-4.  標記映像檔。請將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。請將 _&lt;region&gt;_ 取代為您的 [region](registry_overview.html#registry_regions) 名稱。請將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間。取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義名稱空間中您要使用之映像檔的儲存庫及標籤。
+4.  標記映像檔。請將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。請將 _&lt;region&gt;_ 取代為您的 [region](registry_overview.html#registry_regions) 名稱。請將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間。請取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義名稱空間中您要使用之映像檔的儲存庫及標籤。
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -103,6 +108,7 @@ lastupdated: "2017-11-28"
     docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
+
 
 
 ## 將 Docker 映像檔推送至名稱空間
@@ -132,10 +138,12 @@ lastupdated: "2017-11-28"
 
 做得好！您已在 {{site.data.keyword.registrylong_notm}} 中設定名稱空間，並將您的第一個映像檔推送至名稱空間。
 
+
 **下一步為何？**
 
 -   [使用漏洞警告器管理映像檔安全](../va/va_index.html)。
 -   [檢閱服務方案及用量](registry_overview.html#registry_plans)。
 -   [儲存及管理名稱空間中的其他映像檔](registry_images_.html)。
--   [從映像檔建立容器，並將其部署至 Kubernetes 叢集](../../containers/cs_cluster.html)。
+-   [從映像檔建立容器，並將其部署至 Kubernetes 叢集](../../containers/cs_clusters.html)。
+
 

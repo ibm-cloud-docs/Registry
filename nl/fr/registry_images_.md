@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -26,6 +26,9 @@ Chaque image que vous désirez ajouter à votre espace de nom doit d'abord exist
 vers votre machine locale (par commande pull) une image depuis un autre référentiel, soit générer votre propre image depuis un
 Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger
 (par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
+
+
+**Remarque** : Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 
 
 ## Extraction d'images depuis un autre registre
@@ -149,7 +152,7 @@ Une image Docker est la base de chaque conteneur que vous créez. L'image est cr
 Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses
 instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances.
 
-Si vous voulez tirer profit des ressources de calcul de {{site.data.keyword.Bluemix_notm}} ou d'une connexion internet ou si Docker n'est pas installé sur votre votre poste de travail, générez votre image directement sous {{site.data.keyword.Bluemix_notm}}. Si vous avez besoin d'accéder aux ressources de votre génération figurant sur des serveurs en dehors de votre pare-feu, générez votre image localement.
+Si vous voulez tirer profit des ressources de calcul de {{site.data.keyword.Bluemix_notm}} ou d'une connexion internet ou si Docker n'est pas installé sur votre poste de travail, générez votre image directement sous {{site.data.keyword.Bluemix_notm}}. Si vous avez besoin d'accéder aux ressources de votre génération figurant sur des serveurs en dehors de votre pare-feu, générez votre image localement.
 
 Pour générer votre propre image Docker, procédez comme suit :
 
@@ -203,8 +206,8 @@ que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https
     {: pre}
 
     où _&lt;image_name&gt;_ est le nom de votre image et _&lt;directory&gt;_ le chemin d'accès au répertoire.
-
-    Pour plus d'informations sur la commande `bx cr build`, voir la rubrique relative à l'[interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+   
+   Pour plus d'informations sur la commande `bx cr build`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Pour générer et tester votre image localement avant de la transférer par push à {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
     1. Générez l'image depuis votre fichier Dockerfile sur votre machine locale et balisez-la avec votre nom d'image.
@@ -230,6 +233,8 @@ pour votre espace de nom, [vous pouvez l'envoyer
 par commande push dans votre registre privé d'espace de nom](#registry_images_pushing).
 
 Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image, voir [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
+
+
 
 ## Retrait d'images de votre registre d'images {{site.data.keyword.Bluemix_notm}} privées
 {: #registry_images_remove}
@@ -262,3 +267,7 @@ celle associée à la balise `latest` (dernière) est supprimée par défaut. Vo
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

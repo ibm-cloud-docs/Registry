@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,6 +23,9 @@ Wenn Sie Images zu Ihrem eigenen Namensbereich in {{site.data.keyword.registrylo
 {:shortdesc}
 
 Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf Ihrer lokalen Maschine vorhanden sein. Sie können entweder ein Image aus einem anderen Repository auf Ihre lokale Maschine herunterladen (Pull-Operation) oder mit dem Docker-Befehl `build` Ihr eigenes Image aus einer Dockerfile erstellen. Um ein Image zu Ihrem Namensbereich hinzuzufügen, müssen Sie das lokale Image in Ihren Namensbereich von {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
+
+
+**Hinweis**: Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 
 
 ## Images aus einer anderen Registry mit Pull-Operation extrahieren
@@ -76,7 +79,7 @@ Führen Sie die folgenden Schritte aus, um ein Image hochzuladen (Push-Operation
   ```
   {: pre}
 
-  **Hinweis:** Sie müssen sich anmelden, wenn Sie ein Image aus Ihrer privaten {{site.data.keyword.registrylong_notm}} extrahieren.
+  **Hinweis:** Sie müssen sich anmelden, wenn Sie ein Image aus Ihrer privaten {{site.data.keyword.registrylong_notm}} mit Pull-Operation extrahieren.
 
 2. Führen Sie den Befehl `bx cr namespace-list` aus, um alle Namensbereiche anzuzeigen, die in Ihrem Konto verfügbar sind.
 3. [Laden Sie das Image in Ihren Namensbereich hoch. ](index.html#registry_images_pushing)
@@ -183,8 +186,8 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
     {: pre}
 
     Dabei ist _&lt;imagename&gt;_ der Name Ihres Images und _&lt;verzeichnis&gt;_ der Pfad zum Verzeichnis.
-
-    Weitere Informationen zum Befehl `bx cr build` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](../../cli/plugins/registry/index.html#containerregcli).
+   
+   Weitere Informationen zum Befehl `bx cr build` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html).
 
   - Führen Sie die folgenden Schritte aus, um Ihr Image zunächst lokal zu erstellen und zu testen, bevor Sie es mit einer Push-Operation in {{site.data.keyword.Bluemix_notm}} übertragen:
     1. Erstellen Sie das Image aus Ihrer Dockerfile auf der lokalen Maschine und kennzeichnen Sie es mit dem Imagenamen.
@@ -208,6 +211,8 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
     3. Nachdem Sie das Image erstellt und für Ihren Namensbereich gekennzeichnet haben, [können Sie das Image mit einer Push-Operation in die private Registry des Namensbereichs übertragen](#registry_images_pushing).
 
 Informationen zur Verwendung von Vulnerability Advisor zum Überprüfen der Sicherheit Ihres Images finden Sie im Abschnitt [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html).
+
+
 
 ## Images aus der privaten {{site.data.keyword.Bluemix_notm}}-Image-Registry entfernen
 {: #registry_images_remove}
@@ -239,3 +244,7 @@ Entfernen Sie zuerst alle Container, die das Image verwenden.
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

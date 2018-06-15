@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-06"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,5 +23,3 @@ lastupdated: "2017-10-06"
 {:shortdesc}
 
 若要使用 {{site.data.keyword.IBM_notm}} 提供的公用映像檔，請參閱 [{{site.data.keyword.containerlong_notm}} 的公用 {{site.data.keyword.IBM_notm}} 映像檔](../../services/RegistryImages/index.html#ibm_images)。
-
-

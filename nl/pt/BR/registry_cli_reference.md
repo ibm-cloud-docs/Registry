@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -30,8 +30,8 @@ de forma segura as imagens do Docker com todos os usuários em sua conta do {{si
 
 Execute comandos `bx cr` na CLI do {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
-
-Para comandos suportados, veja [CLI do {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+  
+Para comandos suportados, consulte [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
 
 ## Formatando e filtrando a saída da CLI para comandos do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -54,22 +54,23 @@ Por padrão, a saída da CLI é exibida em um formato legível. No entanto, essa
 
 Os exemplos de código a seguir demonstram como você pode usar as opções de formatação e filtragem.
 
--   Execute o comando `bx cr image-list` a seguir para exibir o repositório, a tag e o status de vulnerabilidade de todas as imagens que tenham um tamanho acima de 1 MB:
+-   Execute o comando `bx cr image-list` a seguir para exibir o repositório, a tag e o status de segurança de todas as imagens que tenham um tamanho acima de 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     Saída de exemplo:
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   Execute o comando `bx cr image-inspect` a seguir para exibir onde a documentação IBM está hospedada para uma imagem pública da IBM especificada:
 
@@ -131,7 +132,7 @@ comando `bx cr image-list`.
 |`Repository`|Sequência de Caracteres|Exibe o repositório da imagem.|
 |`Size`|Número Inteiro (64 bits)|Exibe o tamanho da imagem em bytes.|
 |`Tag`|Sequência de Caracteres|Exibe a tag para a imagem.|
-|`Vulnerable`|Sequência de Caracteres|Exibe o status de vulnerabilidade para a imagem. Os status possíveis são descritos em [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).|
+|`SecurityStatus`|Estrut.|Exibe o status de vulnerabilidade para a imagem. É possível filtrar e formatar os valores a seguir: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Os status possíveis são descritos em [Revisando um relatório de vulnerabilidade usando a CLI](../va/va_index.html#va_registry_cli).|
 {: caption="Tabela 1. Campos e tipos de dados disponíveis no comando bx cr image-list." caption-side="top"}
 
 ### Opções e tipos de dados do modelo Go no comando `bx cr image-inspect`

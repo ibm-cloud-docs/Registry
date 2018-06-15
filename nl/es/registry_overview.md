@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -24,7 +24,7 @@ Utilice {{site.data.keyword.registrylong}} para almacenar de forma segura y acce
 
 {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que IBM aloja y gestiona. Puede utilizar el registro privado configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
 
-<img src="images/registry_architecture.png" alt="Imagen que muestra cómo interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios públicos y privados, y APIs para interactuar con el servicio. Su cliente Docker local puede extraer y enviar por push imágenes desde y hacia sus repositorios  privados en el registro, y puede extraer repositorios públicos. La IU de la web de IBM Cloud (consola) interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. Su cliente Docker local también puede extraer y enviar por push imágenes desde su almacén de imágenes local a otros registros."/>
+<img src="images/registry_architecture.png" alt="Imagen que muestra cómo interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios públicos y privados, y API para interactuar con el servicio. Su cliente Docker local puede extraer y enviar por push imágenes desde y hacia sus repositorios privados en el registro, y puede extraer repositorios públicos. La IU de la web de IBM Cloud (consola) interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. Su cliente Docker local también puede extraer y enviar por push imágenes desde su almacén de imágenes local a otros registros."/>
 
 **Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker **
 
@@ -40,7 +40,6 @@ Revise la siguiente tabla para ver una visión general de las ventajas de utiliz
 |Conformidad con la seguridad de imágenes con Vulnerability Advisor|<ul><li>Benefíciese de la exploración automática de imágenes en el espacio de nombres.</li><li>Revise las recomendaciones específicas del sistema operativo para solucionar posibles vulnerabilidades y proteger la seguridad de los contenedores.</li></ul>|
 |Límites de almacenamiento para almacenamiento y tráfico de extracción|<ul><li>Aproveche las ventajas del almacenamiento gratuito y del tráfico de extracción de sus imágenes privadas hasta alcanzar su cuota gratuita.</li><li>Configure límites de cuota personalizados para la cantidad de almacenamiento y tráfico de extracción mensual para no superar el nivel de pago elegido.</li></ul>|
 {: caption="Tabla 1. Ventajas de {{site.data.keyword.registrylong_notm}}" caption-side="top"}
-
 
 ## Planes de servicio
 {: #registry_plans}
@@ -128,9 +127,11 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
 
   Ejemplo para el plan estándar:
 
-  > En el mes, el límite de cuota para el tráfico de extracción está establecido en 5 GB. Ya ha extraído imágenes de los espacios de nombres y ha utilizado 4,5 GB de este tráfico de extracción. Tiene 0,5 GB de tráfico de extracción disponible hasta alcanzar el límite de cuota. Un usuario desea extraer una imagen de 1 GB del espacio de nombres. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario extraiga esta imagen.
+  > En el mes, el límite de cuota para el tráfico de extracción está establecido en 5 GB. Ya ha extraído imágenes de los espacios de nombres y ha utilizado
+4,5 GB de este tráfico de extracción. Tiene 0,5 GB de tráfico de extracción disponible hasta alcanzar el límite de cuota. Un usuario desea extraer una imagen de 1 GB del espacio de nombres. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario extraiga esta imagen.
   >
-  > Una vez extraída la imagen, {{site.data.keyword.registrylong_notm}} determina el ancho de banda que ha utilizado durante la extracción y comprueba si se ha alcanzado el límite del tráfico de extracción. En este ejemplo, el uso del tráfico de extracción ha aumentado de 4,5 GB a 5,2 GB. Como el límite de cuota actual está establecido en 5 GB, {{site.data.keyword.registrylong_notm}} le impide extraer imágenes del espacio de nombres.
+  > Una vez extraída la imagen, {{site.data.keyword.registrylong_notm}} determina el ancho de banda que ha utilizado durante la extracción y comprueba si se ha alcanzado el límite del tráfico de extracción. En este ejemplo, el uso del tráfico de extracción ha aumentado de
+4,5 GB a 5,2 GB. Como el límite de cuota actual está establecido en 5 GB, {{site.data.keyword.registrylong_notm}} le impide extraer imágenes del espacio de nombres.
 
 ### Estimación de costes
 {: #registry_estimating_costs}
@@ -180,6 +181,9 @@ Si desea conocer el plan de servicio que tiene, ejecute el mandato `bx cr plan`.
 Prepárese para almacenar y compartir de forma segura sus imágenes de Docker con {{site.data.keyword.registrylong_notm}} aprendiendo los conceptos básicos del registro.
 {:shortdesc}
 
+**Nota**: No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
+
+
 ### Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
@@ -202,7 +206,7 @@ Prepárese para almacenar y compartir de forma segura sus imágenes de Docker co
 </dl>
 
 <dl>
-  <dt>Imagen</dt>
+  <dt>Image</dt>
   <dd>Una imagen de Docker se crea según las instrucciones proporcionadas en el archivo Dockerfile y representa la base de un contenedor. Una vez creada la imagen de Docker, puede utilizarla para crear un contenedor para desplegar su app y sus dependencias. Las imágenes se almacenan en un registro. Los usuarios con acceso a su cuenta de {{site.data.keyword.Bluemix_notm}} pueden acceder a sus imágenes.</dd>
 </dl>
 
@@ -218,6 +222,7 @@ Prepárese para almacenar y compartir de forma segura sus imágenes de Docker co
 
 Para obtener más información sobre los términos específicos de Docker, [consulte el glosario de Docker](https://docs.docker.com/glossary/).
 
+
 ### Planificación de espacios de nombres
 {: #registry_namespaces}
 
@@ -228,7 +233,7 @@ Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes 
 
 Para trabajar sólo con imágenes públicas proporcionadas por IBM, no tiene que volver a configurar un espacio de nombres.
 
-**Nota:** Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `bx cr namespace-list` para recuperar la información de espacio de nombres existente. Si es un cliente de {{site.data.keyword.containerlong_notm}} existente que utiliza [contenedores únicos o grupos de contenedores escalables](../../containers/cs_classic.html), ya tiene un espacio de nombres. Puede crear espacios de nombres adicionales, pero no puede ejecutar `cf ic namespace set` para más de un espacio de nombres.
+**Nota**: Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `bx cr namespace-list` para recuperar la información de espacio de nombres existente. Si es un cliente de {{site.data.keyword.containerlong_notm}} existente que utiliza [contenedores únicos o grupos de contenedores escalables](../../containers/cs_classic.html), ya tiene un espacio de nombres. Puede crear espacios de nombres adicionales, pero no puede ejecutar `cf ic namespace set` para más de un espacio de nombres.
 
 Considere las reglas siguientes al elegir un espacio de nombres:
 
@@ -236,6 +241,8 @@ Considere las reglas siguientes al elegir un espacio de nombres:
 -   Su espacio de nombres debe tener entre 4 y 30 caracteres.
 -   El espacio de nombres debe empezar por al menos una letra o un número.
 -   Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.
+
+**Nota**: No coloque información personal en los nombres del espacio de nombres.
 
 Después de establecer su primer espacio de nombres, se le asigna el plan de servicio gratuito de {{site.data.keyword.registrylong_notm}} si todavía no ha [actualizado su plan](#registry_plan_upgrade).
 
@@ -257,7 +264,7 @@ Una región es un área geográfica a la que se accede mediante un punto final d
 
 Todos los artefactos de registro abarcan el registro regional específico con el que está trabajando actualmente. Por ejemplo, espacios de nombres, imágenes, señales, valores de cuota y valores de plan deben ser gestionados independientemente para cada registro regional.
 
-Si desea utilizar una región diferente a su región local, puede acceder a la región que desea, si ejecuta el mandato `bx cr region-set`. Puede ejecutar el mandato sin parámetros para obtener una lista de regiones disponibles, o puede especificar la región como un parámetro. 
+Si desea utilizar una región diferente a su región local, puede acceder a la región que desea, si ejecuta el mandato `bx cr region-set`. Puede ejecutar el mandato sin parámetros para obtener una lista de regiones disponibles, o puede especificar la región como un parámetro.
 
 Para ejecutar el mandato con parámetros, substituya _&lt;region&gt;_ con el nombre de la región, por ejemplo, `eu-central`.
 
@@ -273,22 +280,23 @@ bx cr region-set eu-central
 ```
 {: pre}
 
+Después de elegir una región distinta, inicie sesión en el registro de nuevo: `bx cr login`.
 
-### Registro internacional
+### Registro global
 {: #registry_regions_global}
 
-El registro internacional está disponible de forma global y no incluye ninguna región en su nombre(`registry.bluemix.net`). En este registro se alojan únicamente las imágenes públicas proporcionadas por IBM.
+Hay disponible un registro global, que no tiene ninguna región incluida en su nombre (`registry.bluemix.net`). En este registro se alojan únicamente las imágenes públicas proporcionadas por IBM. Para gestionar sus propias imágenes como por ejemplo estableciendo espacios de nombres o etiquetando y enviando imágenes a un registro, utilice un [registro regional local](#registry_regions_local).
+{:shortdesc}
 
-Puede acceder al registro internacional ejecutando el mandato `bx cr region-set`.
+Puede acceder al registro global ejecutando el mandato `bx cr region-set`.
 
-Por ejemplo, para acceder al registro internaciona, ejecute el mandato siguiente:
+Por ejemplo, para acceder al registro global, ejecute el mandato siguiente:
 
 ```
-bx cr region-set international 
+bx cr region-set global
 ```
 {: pre}
 
-Para obtener más información acerca del mandato `bx cr region-set`, consulte [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+Para obtener más información acerca del mandato `bx cr region-set`, consulte [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
 
-Después de haber accedido al registro internacional, ejecute el mandato `bx cr login` para registrar su Docker daemon local en el registro internaciona para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.
-
+Después de haber accedido al registro global, ejecute el mandato `bx cr login` para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.

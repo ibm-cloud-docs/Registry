@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -57,7 +57,7 @@ Para establecer una cuota:
 
     CUOTA          LÍMITE    UTILIZADO
     Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB   
+    Almacenamiento        512 MB   511 MB
 
     OK
     ```
@@ -108,7 +108,7 @@ Puede revisar los límites de cuota y comprobar el almacenamiento actual y el us
 
     CUOTA          LÍMITE    UTILIZADO
     Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB   
+    Almacenamiento        512 MB   511 MB
 
     OK
     ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -22,6 +22,9 @@ o seu namespace de registro
 
 Antes de poder armazenar as imagens do Docker no {{site.data.keyword.registrylong}}, deve-se instalar a CLI do {{site.data.keyword.Bluemix_notm}} e o plug-in do {{site.data.keyword.registrylong_notm}} e, depois, configurar um namespace de registro para criar seu próprio repositório de imagem no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+
+**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
 
 
 ## Instalando o plug-in da CLI do {{site.data.keyword.registrylong_notm}} (`bx cr`)
@@ -131,10 +134,10 @@ Se um namespace de registro não é mais requerido, é possível remover o names
     ```
     {: pre}
 
-3.  Remover um namespace. 
+3.  Remover um namespace.
 
     **Atenção:** quando você remove um namespace, qualquer imagem armazenada nesse namespace também é excluída. Esta ação não pode ser desfeita.
-    
+
     Substitua _&lt;my_namespace&gt;_ pelo
 namespace que você deseja remover.
 

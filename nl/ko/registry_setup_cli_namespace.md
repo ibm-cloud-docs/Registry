@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -21,6 +21,9 @@ lastupdated: "2017-10-26"
 
 {{site.data.keyword.registrylong}}에 Docker 이미지를 저장하려면 우선 {{site.data.keyword.Bluemix_notm}} CLI 및 {{site.data.keyword.registrylong_notm}} 플러그인을 설치하고 {{site.data.keyword.registrylong_notm}}에서 고유한 이미지 저장소를 작성하기 위한 레지스트리 네임스페이스를 설정해야 합니다.
 {:shortdesc}
+
+
+**참고**: 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI(`bx cr`) 플러그인 설치
@@ -32,7 +35,7 @@ lastupdated: "2017-10-26"
 1.  [container-registry 플러그인을 설치하십시오.](index.html#registry_cli_install)
 2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성하십시오](https://docs.docker.com/engine/installation/linux/linux-postinstall). 이 단계를 수행하지 않은 경우 `sudo` 또는 root로 `bx login`, `bx cr login`, `docker pull` 및 **docker push** 명령을 실행해야 합니다.
 
-이제 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 네임스페이스를 설정할 수 있습니다. 
+이제 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 네임스페이스를 설정할 수 있습니다.
 
 ## {{site.data.keyword.registrylong_notm}}(`bx cr`) 플러그인 업데이트
 {: #registry_cli_update}
@@ -43,21 +46,21 @@ lastupdated: "2017-10-26"
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
-2.  container-registry 플러그인을 업데이트하십시오. 
+2.  container-registry 플러그인을 업데이트하십시오.
 
     ```
-    bx plugin update container-registry -r Bluemix
+        bx plugin update container-registry -r Bluemix
     ```
     {: pre}
 
-3.  플러그인이 업데이트되었는지 확인하십시오. 
+3.  플러그인이 업데이트되었는지 확인하십시오.
 
     ```
-    bx plugin list
+        bx plugin list
     ```
      {: pre}
 
@@ -71,25 +74,25 @@ container-registry 플러그인이 더 이상 필요하지 않으면 설치 제�
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
-2.  container-registry 플러그인을 설치 제거하십시오. 
+2.  container-registry 플러그인을 설치 제거하십시오.
 
     ```
-    bx plugin uninstall container-registry
-    ```
-    {: pre}
-
-3.  플러그인이 설치 제거되었는지 확인하십시오. 
-
-    ```
-    bx plugin list
+        bx plugin uninstall container-registry
     ```
     {: pre}
 
-    container-registry 플러그인이 결과에 표시되지 않습니다. 
+3.  플러그인이 설치 제거되었는지 확인하십시오.
+
+    ```
+        bx plugin list
+    ```
+    {: pre}
+
+    container-registry 플러그인이 결과에 표시되지 않습니다.
 
 
 ## 네임스페이스 설정
@@ -116,26 +119,26 @@ Docker 이미지를 안전하게 저장하려면 {{site.data.keyword.registrylon
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
-2.  사용 가능한 네임스페이스를 나열하십시오. 
+2.  사용 가능한 네임스페이스를 나열하십시오.
 
     ```
-    bx cr namespace-list
-    ```
-    {: pre}
-
-3.  네임스페이스를 제거하십시오.  
-
-    **주의:** 네임스페이스를 제거하면 해당 네임스페이스에 저장된 이미지도 삭제됩니다. 이 조치는 실행 취소할 수 없습니다. 
-    
-    _&lt;my_namespace&gt;_를 제거하려는 네임스페이스로 대체하십시오. 
-
-    ```
-    bx cr namespace-rm <my_namespace>
+        bx cr namespace-list
     ```
     {: pre}
 
-    네임스페이스를 삭제한 후에는 저장된 이미지의 수에 따라서 그 네임스페이스를 다시 재사용할 수 있게 되려면 몇 분이 걸릴 수 있습니다. 
+3.  네임스페이스를 제거하십시오.
+
+    **주의:** 네임스페이스를 제거하면 해당 네임스페이스에 저장된 이미지도 삭제됩니다. 이 조치는 실행 취소할 수 없습니다.
+
+    _&lt;my_namespace&gt;_를 제거하려는 네임스페이스로 대체하십시오.
+
+    ```
+        bx cr namespace-rm <my_namespace>
+    ```
+    {: pre}
+
+    네임스페이스를 삭제한 후에는 저장된 이미지의 수에 따라서 그 네임스페이스를 다시 재사용할 수 있게 되려면 몇 분이 걸릴 수 있습니다.

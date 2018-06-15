@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -28,8 +28,8 @@ lastupdated: "2017-11-10"
 
 在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `bx cr` 命令。
 {:shortdesc}
-
-有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)。
+  
+有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
 
 ## 对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤
 {: #registry_cli_listing}
@@ -52,35 +52,38 @@ lastupdated: "2017-11-10"
 
 以下代码示例演示了可如何对选项进行格式设置和过滤。
 
--   运行以下 `bx cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和漏洞状态：
+-   运行以下 `bx cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和安全状态：
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     示例输出：
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   运行以下 `bx cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
 
     ```
     bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
+    
+
     ```
     {: pre}
 
     示例输出：
 
     ```
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+        map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
     ```
     {: screen}
 
@@ -89,13 +92,15 @@ lastupdated: "2017-11-10"
     ```
     bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
+    
+
     ```
     {: pre}
 
     示例输出：
 
     ```
-    map[9080/tcp: 9443/tcp:]
+        map[9080/tcp: 9443/tcp:]
     ```
     {: screen}
 
@@ -109,7 +114,7 @@ lastupdated: "2017-11-10"
     示例输出：
 
     ```
-    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+        0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
     ```
     {: screen}
 
@@ -128,7 +133,7 @@ lastupdated: "2017-11-10"
 |`Repository`|字符串|显示映像的存储库。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`Tag`|字符串|显示映像的标记。|
-|`Vulnerable`|字符串|显示映像的漏洞状态。可能的状态在[使用漏洞顾问程序管理映像安全性](../va/va_index.html)中进行了描述。|
+|`SecurityStatus`|结构体|显示映像的漏洞状态。您可以对以下值进行过滤并设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。可能的状态在[使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)中进行了描述。|
 {: caption="表 1. bx cr image-list 命令中的可用字段和数据类型" caption-side="top"}
 
 ### `bx cr image-inspect` 命令中的 Go 模板选项和数据类型

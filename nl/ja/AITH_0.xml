@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="images/images_copy.ai">
+<text>ローカル・コンピューター</text>
+<text>プライベート IBM Cloud レジストリー</text>
+<text>その他のプライベート・リポジトリーまたはパブリック・リポジトリー</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/images_pull.ai">
+<text>ローカル・コンピューター</text>
+<text>プライベート IBM Cloud レジストリー</text>
+<text>その他のプライベート・リポジトリーまたはパブリック・リポジトリー</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/images_push.ai">
+<text>ローカル・コンピューター</text>
+<text>プライベート IBM Cloud レジストリー</text>
+<text>その他のプライベート・リポジトリーまたはパブリック・リポジトリー</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/registry_architecture.ai">
+<text>プル</text>
+<text>プッシュ</text>
+<text>プル</text>
+<text>$</text>
+<text>Docker ハブ
+およびその他のレジストリー</text>
+<text>IBM 提供の
+パブリック・
+リポジトリーの
+イメージ。</text>
+<text>リスト、詳細表示、削除</text>
+<text>名前空間の作成</text>
+<text>名前空間の
+作成</text>
+<text>プライベート・リポジトリー
+ユーザー独自のイメージ。</text>
+<text>Docker</text>
+<text>CLI</text>
+<text>プル</text>
+<text>プッシュ</text>
+<text>Docker ハブ
+その他のレジストリー</text>
+<text>プッシュ</text>
+<text>GUI</text>
+<text>プライベート・リポジトリー</text>
+<text>プル</text>
+<text>プッシュ</text>
+<text>ローカル・イメージ・ストア</text>
+<text>GUI</text>
+<text>リスト</text>
+<text>IBM イメージ</text>
+<text>イメージ</text>
+<text>$</text>
+<text>プル</text>
+<text>パブリック・リポジトリー</text>
+<text>CLI</text>
+<text>プル</text>
+<text>その他のプロバイダー</text>
+<text>IBM Cloud Container Registry および脆弱性アドバイザー</text>
+<text>リスト、詳細表示、
+削除</text>
+<text>リスト</text>
+<text>パブリック・リポジトリー</text>
+<text>プライベート・リポジトリー</text>
+<text>ローカル・イメージ・
+ストア</text>
+<text>Docker</text>
+<text>プッシュ</text>
+<text>プル</text>
+<text>プッシュ</text>
+<text>プル</text>
+<text>プル</text>
+<text>リスト、
+詳細表示、
+削除</text>
+<text>名前空間の
+作成</text>
+<text>リスト</text>
+<text>CLI</text>
+<text>Docker ハブ
+その他のレジストリー</text>
+<text>その他のプロバイダー</text>
+<text>GUI</text>
+<text>IBM Cloud Container Registry および脆弱性アドバイザー</text>
+<text>IBM イメージ</text>
+<text>イメージ</text>
+<text>$</text>
+</ExtractedAITH>
+</ExtractedAITHs>

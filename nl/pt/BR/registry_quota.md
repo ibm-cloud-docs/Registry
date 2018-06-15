@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -63,7 +63,7 @@ saída é semelhante à mostrada a seguir.
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   
-    Storage        512 MB   511 MB   
+    Storage        512 MB   511 MB
 
     Ok
     ```
@@ -120,7 +120,7 @@ saída é semelhante à mostrada a seguir.
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   
-    Storage        512 MB   511 MB   
+    Storage        512 MB   511 MB
 
     Ok
     ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -21,6 +21,9 @@ lastupdated: "2017-10-26"
 
 必须在 {{site.data.keyword.registrylong}} 中安装 {{site.data.keyword.Bluemix_notm}} CLI 和 {{site.data.keyword.registrylong_notm}} 插件，并设置注册表名称空间以创建自己的映像存储库，然后才能在 {{site.data.keyword.registrylong_notm}} 中存储 Docker 映像。
 {:shortdesc}
+
+
+**注**：不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌中）或任何映像配置数据（例如，映像名称或映像标签）中。
 
 
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) 插件
@@ -43,21 +46,21 @@ lastupdated: "2017-10-26"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  更新 container-registry 插件。
 
     ```
-    bx plugin update container-registry -r Bluemix
+        bx plugin update container-registry -r Bluemix
     ```
     {: pre}
 
 3.  验证插件是否已成功更新。
 
     ```
-    bx plugin list
+        bx plugin list
     ```
      {: pre}
 
@@ -71,21 +74,21 @@ lastupdated: "2017-10-26"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  卸载 container-registry 插件。
 
     ```
-    bx plugin uninstall container-registry
+        bx plugin uninstall container-registry
     ```
     {: pre}
 
 3.  验证插件是否已成功卸载。
 
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: pre}
 
@@ -117,26 +120,26 @@ lastupdated: "2017-10-26"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  列出可用的名称空间。
 
     ```
-    bx cr namespace-list
+        bx cr namespace-list
     ```
     {: pre}
 
-3.  除去名称空间。 
+3.  除去名称空间。
 
     **注意：**除去名称空间时，还会删除存储在该名称空间中的所有映像。此操作无法撤销。
-    
+
     将 _&lt;my_namespace&gt;_ 替换为要除去的名称空间。
 
 
     ```
-    bx cr namespace-rm <my_namespace>
+        bx cr namespace-rm <my_namespace>
     ```
     {: pre}
 

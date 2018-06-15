@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -27,6 +27,9 @@ Ogni immagine che vuoi aggiungere al tuo spazio dei nomi deve essere innanzitutt
 scaricare (pull) un'immagine da un altro repository alla tua macchina locale o puoi creare la tua propria
 immagine da un Dockerfile utilizzando il comando `build` di Docker. Per aggiungere un'immagine al tuo
 spazio dei nomi, devi caricare (push) l'immagine locale nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
+
+
+**Nota**: non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 
 
 ## Esecuzione del pull di immagini da un altro registro
@@ -218,8 +221,8 @@ Dockerfile](https://docs.docker.com/engine/reference/builder/).
     {: pre}
 
     dove _&lt;nome_immagine&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory.
-
-    Per ulteriori informazioni sul comando `bx cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+   
+   Per ulteriori informazioni sul comando `bx cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Per creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura:
     1. Crea l'immagine dal Dockerfile sulla tua macchina locale e contrassegnala tramite tag con il tuo nome immagine.
@@ -244,6 +247,8 @@ Dockerfile](https://docs.docker.com/engine/reference/builder/).
 [puoi eseguire il push dell'immagine al tuo registro privato dello spazio dei nomi](#registry_images_pushing).
 
 Per utilizzare il Controllo vulnerabilità per verificare la sicurezza della tua immagine, vedi [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).
+
+
 
 ## Rimozione di immagini dal tuo registro delle immagini {{site.data.keyword.Bluemix_notm}} privato
 {: #registry_images_remove}
@@ -275,3 +280,7 @@ Le immagini {{site.data.keyword.IBM_notm}} pubbliche non possono essere rimosse 
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

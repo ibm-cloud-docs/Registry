@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-06"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,5 +23,3 @@ lastupdated: "2017-10-06"
 {:shortdesc}
 
 {{site.data.keyword.IBM_notm}} が提供するパブリック・イメージを使用する場合は、[{{site.data.keyword.containerlong_notm}} のパブリック {{site.data.keyword.IBM_notm}} イメージ](../../services/RegistryImages/index.html#ibm_images)を参照してください。
-
-

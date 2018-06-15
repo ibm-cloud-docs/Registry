@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-30"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-30"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -36,9 +36,8 @@ Se utilizzi i forum per fare una domanda, contrassegna la tua domanda con una ta
 -   Se hai domande tecniche sullo sviluppo o sulla distribuzione di un'applicazione con {{site.data.keyword.registrylong_notm}}, inserisci la tua domanda in [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) e contrassegnala con le tag `ibm-bluemix` e `container-registry`.
 -   Per domande sul servizio e sulle istruzioni per l'utilizzo iniziale, utilizza il forum [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Includi le tag `bluemix` e `container-registry`.
 
-Consulta [Come ottenere supporto](../../support/index.html#getting-help) per ulteriori dettagli sull'utilizzo dei forum.
-
-Per informazioni su come aprire un ticket di supporto {{site.data.keyword.IBM_notm}} o sui livelli di supporto e sulla gravità dei ticket, vedi [Come contattare il supporto](../../support/index.html#contacting-support).
+Vedi [Utilizzo del Centro di supporto](../../get-support/howtogetsupport.html#using-avatar) per ulteriori dettagli sull'utilizzo dei forum.
+Per informazioni su come aprire un ticket di supporto {{site.data.keyword.IBM_notm}} o sui livelli di supporto e sulla gravità dei ticket, vedi [Apertura di un ticket di supporto](../../get-support/howtogetsupport.html#open-ticket).
 
 ## Accesso a {{site.data.keyword.registrylong_notm}} non riuscito
 {: #ts_login}
@@ -59,6 +58,23 @@ Puoi risolvere questo problema nei seguenti modi:
 -   Esegui l'aggiornamento alla versione più recente del plug-in {{site.data.keyword.registryshort_notm}}; vedi [Aggiornamento del plug-in {{site.data.keyword.registrylong_notm}} (`bx cr`)](registry_setup_cli_namespace.html#registry_cli_update).
 -   Assicurati che Docker sia installato sulla tua macchina. Se è già installato, riavvia il daemon Docker.
 -   Riesegui il comando `bx login` per aggiornare le tue credenziali di accesso {{site.data.keyword.Bluemix_notm}}.
+  
+## L'esecuzione di qualsiasi comando per {{site.data.keyword.registrylong_notm}} non riesce e restituisce l'errore `FAILED You are not logged in to IBM Cloud. ` 
+{: #ts_login_cloud}
+
+Non riesci ad eseguire alcun comando in {{site.data.keyword.registrylong_notm}}, anche se hai eseguito l'accesso a {{site.data.keyword.Bluemix_notm}}.
+
+{: tsSymptoms}
+Tutti i comandi `bx cr` hanno esito negativo.
+
+{: tsCauses}
+-   Il plug-in container-registry non è aggiornato e deve esserlo.
+
+{: tsResolve}
+Puoi correggere questo problema nel seguente modo:
+
+-   Esegui l'aggiornamento alla versione più recente del plug-in {{site.data.keyword.registryshort_notm}}; vedi [Aggiornamento del plug-in {{site.data.keyword.registrylong_notm}} (`bx cr`)](registry_setup_cli_namespace.html#registry_cli_update).
+
 
 
 ## I comandi {{site.data.keyword.registrylong_notm}} hanno esito negativo con `'cr' non è un comando registrato. Vedi 'bx help'. `
@@ -67,17 +83,17 @@ Puoi risolvere questo problema nei seguenti modi:
 Non puoi eseguire un comando `bx cr` perché `cr` non è un comando `bx` registrato.
 
 {: tsSymptoms}
-Vedi un messaggio di errore simile a uno dei seguenti: 
+Vedi un messaggio di errore simile a uno dei seguenti:
 
 ```
 bx cr login
-'cr' non è un comando registrato. Vedi 'bx help'. 
+'cr' non è un comando registrato. Vedi 'bx help'.
 ```
 {: pre}
 
 ```
 bx cr namespace
-'cr' non è un comando registrato. Vedi 'bx help'. 
+'cr' non è un comando registrato. Vedi 'bx help'.
 ```
 {: pre}
 
@@ -176,6 +192,89 @@ che non è la più recente.
 In genere, è meglio definire ogni volta una tag sequenziale diversa per le tue immagini in modo esplicito
 anziché affidarsi alla tag `latest`.
 
+
+## Impossibile aggiungere altre immagini IBM al registro
+{: #ts_ppa}
+
+
+{: tsSymptoms}
+Quando tenti di importare il contenuto utilizzato in altri prodotti IBM, ad esempio {{site.data.keyword.Bluemix_notm}} Private, non riesci a memorizzare le tue immagini e altri software concessi in licenza da [IBM Passport Advantage ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www-01.ibm.com/software/passportadvantage/index.html) nel registro.
+
+{: tsCauses}
+I pacchetti software come immagini e grafici Helm forniti da IBM Passport Advantage devono essere importati nel registro con il comando `bx cr ppa-archive-load`.
+
+{: tsResolve}
+Prima di iniziare:
+* Accedi a {{site.data.keyword.Bluemix_notm}} eseguendo `bx login [--sso]`.
+* Accedi a {{site.data.keyword.registrylong_notm}} eseguendo `bx cr login`.
+* [Indirizza la CLI `kubectl`](../../containers/cs_cli_install.html#cs_cli_configure) al tuo cluster.
+* Se non hai ancora configurato Helm nel tuo cluster, [configura Helm nel cluster ora](../../containers/cs_integrations.html#helm).
+* Se vuoi condividere i grafici all'interno della tua organizzazione, puoi installare il [progetto open source Chart Museum ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).
+
+### Importazione dei prodotti IBM Passport Advantage per l'utilizzo in {{site.data.keyword.Bluemix_notm}}
+
+1.  Ottieni il file compresso che vuoi importare da [IBM Passport Advantage![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www-01.ibm.com/software/passportadvantage/index.html).
+
+2.  Specifica la regione che vuoi utilizzare come destinazione. Se non conosci il nome della regione, esegui il comando senza la regione e scegline una.
+
+    ```
+    bx cr region-set <region>
+    ```
+    {: pre}
+
+3.  Importa il file di archivio compresso. Specifica il percorso del file compresso e lo spazio dei nomi del registro in cui vuoi eseguire il push delle immagini.
+
+    ```
+    bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
+    ```
+    {: pre}
+
+    Questo comando espande il file compresso, carica qualsiasi immagine contenuta nel tuo client Docker locale, quindi esegue il push delle immagini allo spazio dei nomi nel tuo registro.
+    
+    Se vuoi caricare i grafici Helm dall'archivio di IBM Passport Advantage in un chart museum, includi le seguenti opzioni nel comando: `bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    {: tip}
+
+    **Output di esempio**:
+    ```
+    user:~ user$ bx cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+    Found 1 image(s) and 1 chart(s) to import.
+    Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+    Loaded image: iib-prod:10.0.0.10
+    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
+    1ecda25d51a8: Preparing
+    369bf331939e: Preparing
+    ...
+    369bf331939e: Pushed
+    1ecda25d51a8: Pushed
+    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+
+    Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
+
+    OK
+    ```
+    {: screen}
+
+4.  Se i file compressi contengono i grafici Helm, questi grafici vengono collocati in una directory di archivio chiamata `ppa-import` che viene creata nella tua directory di lavoro corrente. Apri la directory per ottenere il nome del grafico Helm, `<helm_chart>`, quindi controlla i suoi valori.
+
+    ```
+    helm inspect values ppa-import/charts/<helm_chart>.tgz
+    ```
+    {: pre}
+    
+    Se hai caricato i grafici in un chart museum nel passo precedente, puoi utilizzare `helm inspect` per controllare il grafico in chart museum.
+    {: tip}
+
+5.  Configura il grafico Helm,`<helm_chart>`, in base ai valori emessi dal comando `helm inspect values`.
+
+6.  Distribuisci il grafico Helm, `<helm_chart>`, utilizzando il comando `helm install`. Puoi sovrascrivere i valori nel grafico come richiesto utilizzando l'opzione `--set`.
+
+    ```
+    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
+    ```
+    {: pre}
+
+
 ## Accesso al registro con un firewall personalizzato non riuscito
 {: #ts_firewall}
 
@@ -195,6 +294,14 @@ utilizza l'indirizzo IP pubblico del tuo nodo di lavoro. Richiama l'indirizzo IP
 2.  Nel tuo firewall, consenti i seguenti collegamenti in entrata e uscita dalla tua macchina:
     -   Per la connettività IN ENTRATA alla tua macchina, consenti il traffico di rete in entrata dai seguenti gruppi di rete di origine
 all'indirizzo IP pubblico di destinazione della tua macchina.
+
+        `registry.bluemix.net`:
+
+        ```
+        169.60.72.144/28
+        169.61.76.176/28
+        ```
+        {: codeblock}
 
         `registry.au-syd.bluemix.net`:
 
@@ -232,3 +339,113 @@ all'indirizzo IP pubblico di destinazione della tua macchina.
     -   Per la connettività IN USCITA dalla tua macchina, utilizza gli stessi gruppi di rete e consenti il traffico di rete in uscita
 dall'indirizzo IP pubblico di origine della tua macchina a tali gruppi di rete.
 
+## Ripristino di chiavi perse o compromesse
+{: #ts_recoveringtrustedcontent}
+
+{: tsSymptoms}
+Quando utilizzi i [contenuti attendibili](registry_trusted_content.html), non puoi più gestire le immagini attendibili perché le tue chiavi di firma sono perse o compromesse.
+
+{: tsCauses}
+La tua chiave di repository o root è persa o compromessa.
+
+{: tsResolve}
+Le opzioni per il ripristino delle chiavi perse o interessate dipendono dal tipo di chiave: repository o root:
+
+*  Per le [chiavi di repository](#trustedcontent_lostrepokey), puoi generare una nuova serie di chiavi di firma per il repository.
+*  Per le [chiavi root](#trustedcontent_lostrootkey), puoi richiedere che il repository venga eliminato e creare un nuovo repository.
+
+### Chiavi di repository
+{: #trustedcontent_lostrepokey}
+
+Se la tua chiave di repository viene persa o compromessa, genera una nuova serie di chiavi di firma per il tuo repository.
+{:shortdesc}
+
+**Nota**: l'unico ruolo di firma che puoi ruotare è `targets`, che è l'amministratore del repository. Se sono interessati altri ruoli, genera nuove chiavi per tali ruoli, rimuovi quelli vecchi e aggiungine di nuovi come firmatari.
+
+Prima di iniziare, richiama la passphrase della chiave root che hai creato quando hai [eseguito il push di un'immagine firmata](registry_trusted_content.html#trustedcontent_push).
+
+1.  Installa la versione della CLI del [progetto Notary](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+
+2.  [Configura il tuo ambiente di contenuti attendibili](registry_trusted_content.html#trustedcontent_setup).
+
+3.  Annota l'URL dal comando di esportazione nel passo precedente. Ed esempio, `https://registry.ng.bluemix.net:4443`.
+
+4.  Genera un token di registro.
+
+    ```
+    bx cr token-add --readwrite
+    ```
+    {: pre}
+
+5.	Ruota le tue chiavi in modo che il contenuto firmato con quelle chiavi non sia più attendibile. Sostituisci _&lt;URL&gt;_ con l'URL del comando di esportazione che hai annotato nel passo 2 e _&lt;image&gt;_ con l'immagine la cui chiave di repository è interessata.
+
+    ```
+    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+    ```
+    {: pre}
+
+6.	Se richiesto, immetti la passphrase della chiave root. Quindi, immetti una nuova passphrase della chiave root per la nuova chiave di repository quando viene richiesto.
+
+7.	[Esegui il push di un'immagine firmata](registry_trusted_content.html#trustedcontent_push) che utilizza le nuovi chiavi di firma.
+
+### Chiavi root
+{: #trustedcontent_lostrootkey}
+
+Se la tua chiave root viene persa o compromessa, non puoi aggiornare alcun repository di contenuti attendibili che utilizzava tale chiave root.
+{:shortdesc}
+
+Puoi [eliminare gli spazi dei nomi](registry_setup_cli_namespace.html#registry_remove) con i repository che utilizzano la chiave root interessata, il che elimina le tue immagini e dati di attendibilità.
+
+Se lo spazio dei nomi contiene repository con chiavi root non interessate, ad esempio uno spazio dei nomi per le immagini di produzione, potresti voler eliminare solo i dati di attendibilità associati alla chiave root interessata. Apri un ticket di supporto.
+
+1.  [Contatta il supporto {{site.data.keyword.Bluemix_notm}}](../../get-support/howtogetsupport.html). Includi una breve descrizione del problema, l'ID account e un elenco degli spazi dei nomi che contengono i repository di immagini con le chiavi root interessate.
+
+2.  Dopo che {{site.data.keyword.Bluemix_notm}} ha risolto il problema, elimina il repository Docker Content Trust dalla tua macchina locale.
+
+    * Directory Linux e Mac: `~/.docker/trust/private` e `~/.docker/trust/tuf`
+
+    * Directory Windows: `%HOMEPATH%\.docker\trust\private` e `%HOMEPATH%\.docker\trust\tuf`
+
+    **Nota**: poiché la chiave root è interessata, questo passo elimina tutte le chiavi di firma, anche per altri server di attendibilità.
+
+3.  Se utilizzi [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) nel tuo cluster {{site.data.keyword.containershort_notm}}, riavvia ogni pod di applicazione delle immagini. Per far sì che Kubernetes esegua automaticamente un riavvio progressivo dei pod, puoi modificare alcuni metadati sul pod. Ad esempio, [indirizza la CLI Kubernetes al tuo cluster](../../containers/cs_cli_install.html#cs_cli_configure) e modifica la distribuzione.
+    ```
+    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
+    ```
+    {: pre}
+
+4.  Genera repository di contenuti attendibili.
+
+    *  Se vuoi creare nuovi contenuti attendibili, [esegui il push di nuove immagini firmate](registry_trusted_content.html#trustedcontent_push).
+
+    *  Se non vuoi modificare i contenuti attendibili precedenti, aggiungi una firma alle immagini più recenti nel registro.
+
+       ```
+       docker trust sign <image>:<tag>
+       ```
+       {: pre}
+       
+
+## L'installazione di Container Image Security Enforcement non riesce e restituisce l'errore `helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`
+{: #ts_install_cise_fail}
+
+
+{: tsSymptoms}
+La tua installazione di Container Image Security Enforcement non è riuscita e hai ricevuto il seguente messaggio:
+
+```
+helm install ibm-incubator/ibmcloud-image-enforcement --name cise 
+Error: jobs.batch "create-crds" already exists
+```
+{: screen}
+
+{: tsCauses}
+L'installazione precedente non è riuscita e la successiva disinstallazione non ha rimosso tutti i lavori di Kubernetes associati all'installazione.
+
+{: tsResolve}
+Rimuovi i restanti lavori di Kubernetes immettendo il seguente comando:
+
+```
+kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
+```
+{: pre}

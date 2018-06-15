@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -29,8 +29,8 @@ Puoi utilizzare il plug-in container-registry per configurare lo spazio dei nomi
 
 Esegui i comandi `bx cr` nella CLI di {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
-
-Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+  
+Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
 ## Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -45,32 +45,33 @@ Puoi modificare l'output della CLI applicando l'opzione formato in due modi dive
 1.  Formatta i dati nel tuo output della CLI. Ad esempio, modifica l'output del campo `Created` dall'ora Unix all'ora standard.
 2.  Filtra i dati nel tuo output della CLI. Ad esempio, filtra in base ai dettagli dell'immagine per visualizzare un sottoinsieme specifico di immagini utilizzando la condizione `if gt` del template Go.
 
-Puoi utilizzare l'opzione formato con i seguenti comandi {{site.data.keyword.registrylong_notm}}. Fai clic su un comando per visualizzare un elenco di campi disponibili e i relativi tipi di dati. 
+Puoi utilizzare l'opzione formato con i seguenti comandi {{site.data.keyword.registrylong_notm}}. Fai clic su un comando per visualizzare un elenco di campi disponibili e i relativi tipi di dati.
 
--   [`    bx cr image-list
-    ](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`  bx cr image-list
+  ](registry_cli_reference.html#registry_cli_listing_imagelist)
 -   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
 -   [`    bx cr token-list
     ](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazione e di filtro.
 
--   Esegui il seguente comando `bx cr image-list` per visualizzare il repository, la tag e lo stato di vulnerabilità di tutte le immagini che hanno una dimensione superiore a 1 MB:
+-   Esegui il comando `bx cr image-list` per visualizzare il repository, la tag e lo stato di sicurezza di tutte le immagini che hanno una dimensione superiore a 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     Output di esempio:
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   Esegui il seguente comando `bx cr image-inspect` per visualizzare dove è ospitata la documentazione IBM per un'immagine pubblica IBM specificata:
 
@@ -132,7 +133,7 @@ comando `bx cr image-list`.
 |`Repository`|Stringa|Visualizza il repository dell'immagine.|
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`Tag`|Stringa|Visualizza la tag dell'immagine.|
-|`Vulnerable`|Stringa|Visualizza lo stato di vulnerabilità per l'immagine. Gli stati possibili sono descritti in [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).|
+|`SecurityStatus`|Struct|Visualizza lo stato di vulnerabilità per l'immagine. Puoi filtrare e formattare i seguenti valori: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Gli stati possibili sono descritti in [Revisione di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli).|
 {: caption="Tabella 1. Campi e tipi di dati disponibili nel comando bx cr image-list." caption-side="top"}
 
 ### Opzioni e tipi di dati del template Go nel comando

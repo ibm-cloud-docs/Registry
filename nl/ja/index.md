@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-28"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # {{site.data.keyword.registrylong_notm}} の概説
@@ -22,7 +23,10 @@ lastupdated: "2017-11-28"
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを安全に保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。{{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[イメージの脆弱性のモニタリング](registry_ui.html)を参照してください。
+{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[イメージの脆弱性のモニタリング](registry_ui.html)を参照してください。
+
+**注**: コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
@@ -43,10 +47,11 @@ lastupdated: "2017-11-28"
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-bx login```
+    bx login
+    ```
     {: pre}
 
-2.  名前空間を追加して、独自のイメージ・リポジトリーを作成します。_&lt;my_namespace&gt;_ を、使用したい名前空間に置換します。
+2.  名前空間を追加して、独自のイメージ・リポジトリーを作成します。 _&lt;my_namespace&gt;_ を、使用したい名前空間に置換します。
 
     ```
     bx cr namespace-add <my_namespace>
@@ -56,24 +61,27 @@ bx login```
 3.  名前空間が作成されたことを確認するために、`bx cr namespace-list` コマンドを実行します。
 
     ```
-bx cr namespace-list```
+    bx cr namespace-list
+    ```
     {: pre}
+
 
 
 ## 別のレジストリーからイメージをローカル・マシンにプルする
 {: #registry_images_pulling}
 
-1.  [Docker CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/community-edition#/download) をインストールします。Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-toolbox) をインストールします。
+1.  [Docker CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/community-edition#/download) をインストールします。 Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-toolbox) をインストールします。
 
 2.  CLI にログインします。
 
     ```
-bx cr login```
+    bx cr login
+    ```
     {: pre}
 
     **注:** 専用 {{site.data.keyword.registrylong_notm}} からイメージをプルする場合は、ログインする必要があります。
 
-3.  イメージをローカル・マシンにダウンロード (_プル_) します。_&lt;source_image&gt;_ をイメージのリポジトリーに置き換え、_&lt;tag&gt;_ をイメージに使用するタグ (例: _latest_) に置き換えてください。
+3.  イメージをローカル・マシンにダウンロード (_プル_) します。 _&lt;source_image&gt;_ をイメージのリポジトリーに置き換え、_&lt;tag&gt;_ をイメージに使用するタグ (例: _latest_) に置き換えてください。
 
     ```
     docker pull <source_image>:<tag>
@@ -83,14 +91,13 @@ bx cr login```
     _&lt;source_image&gt;_ が `hello-world` で _&lt;tag&gt;_ が `latest` の場合の例:
 
     ```
-docker pull hello-world:latest```
+    docker pull hello-world:latest
+    ```
     {: pre}
 
-4.  イメージにタグ付けします。_&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、
-_&lt;tag&gt;_ をそのイメージのタグに置き換えてください。
-_&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。_&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。_&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
+4.  イメージにタグ付けします。 _&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、
+_&lt;tag&gt;_ をそのイメージのタグに置き換えてください。 _&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。 _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
 名前空間で使用するイメージのリポジトリーとタグを定義します。
-
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -105,10 +112,11 @@ _&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前�
     {: pre}
 
 
+
 ## Docker イメージを名前空間にプッシュする
 {: #registry_images_pushing}
 
-1.  イメージを名前空間にアップロード (_プッシュ_) します。_&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換え、_&lt;image_repo&gt;_ と _&lt;tag&gt;_ をイメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えます。
+1.  イメージを名前空間にアップロード (_プッシュ_) します。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換え、_&lt;image_repo&gt;_ と _&lt;tag&gt;_ をイメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えます。
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -124,19 +132,20 @@ _&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前�
 
 2.  次のコマンドを実行して、イメージが正常にプッシュされたことを確認します。
 
-
     ```
-bx cr image-list```
+    bx cr image-list
+    ```
     {: pre}
 
 
-おつかれさまでした。これで、{{site.data.keyword.registrylong_notm}} 内に名前空間がセットアップされ、最初のイメージが名前空間にプッシュされました。
+おつかれさまでした。 これで、{{site.data.keyword.registrylong_notm}} 内に名前空間がセットアップされ、最初のイメージが名前空間にプッシュされました。
+
 
 **次の作業**
 
 -   [脆弱性アドバイザーでイメージのセキュリティーを管理します](../va/va_index.html)。
 -   [サービス・プランと使用量を確認します](registry_overview.html#registry_plans)
 -   [名前空間で追加のイメージを保管および管理します](registry_images_.html)。
--   [イメージからコンテナーを作成し、Kubernetes クラスターにデプロイします](../../containers/cs_cluster.html)。
+-   [イメージからコンテナーを作成し、Kubernetes クラスターにデプロイします](../../containers/cs_clusters.html)。
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -26,7 +26,7 @@ e acessar as imagens privadas do Docker em uma arquitetura altamente disponível
 O {{site.data.keyword.registrylong_notm}} fornece um registro privado
 de imagem de múltiplos locatários, altamente disponível e escalável que é hospedado e gerenciado pela IBM. É possível usar o registro privado configurando o seu próprio namespace de imagem e enviando por push imagens do Docker para o seu namespace.
 
-<img src="images/registry_architecture.png" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém os repositórios público e privado e as APIs para interagir com o serviço. O cliente Docker local pode puxar e enviar por push as imagens para/de seus repositórios privados no registro e pode puxar os repositórios públicos. A UI da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente Docker local também pode puxar e enviar por push as imagens de seu armazenamento de imagem local para outros registros."/>
+<img src="images/registry_architecture.png" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém os repositórios público e privado e as APIs para interagir com o serviço. O cliente Docker local pode fazer pull e enviar por push as imagens para/de seus repositórios privados no registro e pode fazer pull dos repositórios públicos. A UI da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente Docker local também pode fazer pull e enviar por push as imagens de seu armazenamento de imagem local para outros registros."/>
 
 **Figura 1. Como o {{site.data.keyword.registrylong_notm}} interage com as imagens do Docker**
 
@@ -55,7 +55,6 @@ vulnerabilidades e proteger os seus contêineres de serem comprometidos.</li></u
 cota grátis.</li><li>Configure os limites de cota customizados para a quantia de armazenamento e de tráfego extraído por mês para evitar exceder
 o seu nível de pagamento preferencial.</li></ul>|
 {: caption="Tabela 1. Benefícios do {{site.data.keyword.registrylong_notm}}" caption-side="top"}
-
 
 ## Planos de serviço
 {: #registry_plans}
@@ -219,6 +218,9 @@ Prepare-se para armazenar e compartilhar suas imagens do Docker com o {{site.dat
 aprendendo noções básicas de registro.
 {:shortdesc}
 
+**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
+
+
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
@@ -261,6 +263,7 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
 
 Para saber mais sobre termos específicos do Docker, [consulte o glossário do Docker](https://docs.docker.com/glossary/).
 
+
 ### Planejando namespaces
 {: #registry_namespaces}
 
@@ -277,7 +280,7 @@ alguém já tenha um namespace com esse nome configurado nessa região.
 Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
 namespace.
 
-**Nota:** se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `bx cr namespace-list` para recuperar as informações de namespaces existentes. Se você for um cliente existente do {{site.data.keyword.containerlong_notm}} que usa [grupos de contêineres únicos e escaláveis](../../containers/cs_classic.html),
+**Nota**: se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `bx cr namespace-list` para recuperar informações de namespace existentes. Se você for um cliente existente do {{site.data.keyword.containerlong_notm}} que usa [grupos de contêineres únicos e escaláveis](../../containers/cs_classic.html),
 então já terá um namespace. É possível criar namespaces adicionais, mas não é possível executar `cf ic namespace set` para mais de um namespace.
 
 Considere as regras a seguir ao escolher um namespace:
@@ -286,6 +289,8 @@ Considere as regras a seguir ao escolher um namespace:
 -   O namespace deve ter de 4 a 30 caracteres de comprimento.
 -   O namespace deve iniciar com pelo menos uma letra ou um número.
 -   O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
+
+**Nota**: não coloque informações pessoais nos nomes de namespace.
 
 Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](#registry_plan_upgrade).
 
@@ -307,7 +312,7 @@ Uma região é uma área geográfica acessada por um terminal dedicado. Os regis
 
 Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
 
-Se você deseja usar uma região diferente de sua região local, é possível ter como destino a região que deseja acessar executando o comando `bx cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro. 
+Se você deseja usar uma região diferente de sua região local, é possível ter como destino a região que deseja acessar executando o comando `bx cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
 
 Para executar o comando com parâmetros, substitua _&lt;region&gt;_ pelo nome da região, por exemplo, `eu-central`.
 
@@ -323,22 +328,23 @@ bx cr region-set eu-central
 ```
 {: pre}
 
+Depois de ter como destino uma região diferente, efetue login no registro novamente: `bx cr login`.
 
-### Registro internacional
+### Registro Global
 {: #registry_regions_global}
 
-Um registro internacional está disponível globalmente e não tem região incluída em seu nome (`registry.bluemix.net`). Somente imagens públicas fornecidas pela IBM são hospedadas nesse registro.
+Está disponível um registro global que não tem nenhuma região incluída em seu nome (`registry.bluemix.net`). Somente imagens públicas fornecidas pela IBM são hospedadas nesse registro. Para gerenciar suas próprias imagens, por exemplo, ao configurar namespaces ou identificar e enviar imagens por push para um registro, use um [registro regional local](#registry_regions_local).
+{:shortdesc}
 
-É possível ter como destino o registro internacional executando o comando `bx cr region-set`.
+É possível ter como destino o registro global executando o comando `bx cr region-set`.
 
-Por exemplo, para ter como destino o registro internacional, execute o comando a seguir:
+Por exemplo, para ter como destino o registro global, execute o comando a seguir:
 
 ```
-bx cr region-set international 
+Bx cr region-set global
 ```
 {: pre}
 
-Para obter mais informações sobre o comando `bx cr region-set`, veja [CLI do {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#bx_cr_region_set).
+Para obter mais informações sobre o comando `bx cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
 
-Depois de ter como destino o registro internacional, execute o comando `bx cr login` para efetuar login de seu daemon do Docker local no registro internacional para que seja possível puxar imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
-
+Depois de ter como destino o registro global, execute o comando `bx cr login` para registrar o daemon local do Docker no registro global para que você possa puxar imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.

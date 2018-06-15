@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2017-02-06"
 
 ---
 
@@ -21,6 +21,9 @@ lastupdated: "2017-12-08"
 
 Vous pouvez utiliser des jetons de registre ou bien une clé d'API {{site.data.keyword.iamlong}} (IAM) pour automatiser l'accès à vos espaces de nom {{site.data.keyword.registrylong_notm}} pour pouvoir y transférer ou en extraire des images.
 {:shortdesc}
+
+Essayez-vous d'utiliser vos images de registre dans des déploiements Kubernetes ? Consultez la rubrique [Accès aux images dans d'autres espaces de nom Kubernetes, régions et comptes {{site.data.keyword.Bluemix_notm}}](/docs/containers/cs_images.html#other).
+{: tip}
 
 Les clés d'API sont liées à votre compte et peuvent être utilisées à travers {{site.data.keyword.Bluemix_notm}} de sorte que vous n'avez pas besoin de données d'identification différentes pour chaque service. Vous pouvez utiliser la clé d'API dans l'interface de ligne de commande ou dans le cadre de l'automatisation pour vous connecter sous votre identité utilisateur.
 
@@ -41,15 +44,15 @@ Vous pouvez utiliser des clés d'API pour automatiser l'envoi et l'extraction d'
 {: #registry_api_key_create}
 
 Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre.
-{:shortdesc} 
+{:shortdesc}
 
-Créez une clé d'API IAM. Voir [Création de clés d'API](../../iam/userid_keys.html#creating-an-api-key). 
+Créez une clé d'API IAM. Voir [Création de clés d'API](../../iam/userid_keys.html#creating-an-api-key).
 
 ### Utilisation d'une clé d'API pour automatiser les accès
 {: #registry_api_key_use}
 
 Vous pouvez utiliser une clé d'API pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}.
-{:shortdesc} 
+{:shortdesc}
 
 Utilisez la clé d'API pour vous connecter à votre registre en exécutant la commande Docker suivante. Remplacez &lt;your_apikey&gt; par votre clé d'API et &lt;registry_url&gt; par l'URL du registre où sont définis vos espaces de nom.
 
@@ -57,7 +60,6 @@ Utilisez la clé d'API pour vous connecter à votre registre en exécutant la co
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
-
 
 Pour les informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
 
@@ -68,7 +70,7 @@ Pour les informations de référence sur la commande, voir [Créer une nouvelle 
 Vous pouvez utiliser des jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. En créant un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez accorder un accès à tous vos espaces de nom configurés dans une région à des utilisateurs ne faisant pas partie de votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in container-registry. 
+Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. En créant un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez accorder un accès à tous vos espaces de nom configurés dans une région à des utilisateurs ne faisant pas partie de votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in container-registry.
 
 Quand vous créez un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez décider s'il octroie un accès en lecture seule (pull) ou en écriture (push et pull) au registre. Vous pouvez également spécifier s'il doit être permanent ou expirer au bout de 24 heures. Pour pouvez créer et utiliser plusieurs jetons destinés à des types d'accès différents.
 
@@ -128,7 +130,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
     {: pre}
 
 
-### Utilisation d'un jeton pour automatiser l'accès à vos espaces de nom 
+### Utilisation d'un jeton pour automatiser l'accès à vos espaces de nom
 {: #registry_tokens_use}
 
 Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}. Selon que vous avez affecté un accès en lecture seule ou en lecture/écriture à votre jeton, les utilisateurs peuvent extraire (par pull) des images de vos espaces de nom ou bien en envoyer et en extraire (push et pull).
@@ -200,6 +202,3 @@ Retirez un jeton {{site.data.keyword.registrylong_notm}} quand vous n'en n'avez 
     bx cr token-rm <token_id>
     ```
     {: pre}
-    
-
-

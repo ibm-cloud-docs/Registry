@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -64,7 +64,7 @@ sarà simile al seguente.
 
     QUOTA              LIMITE    UTILIZZATO
     Traffico di pull   5,1 GB    0 B
-    Archiviazione      512 MB    511 MB   
+    Archiviazione      512 MB    511 MB
 
     OK
     ```
@@ -122,7 +122,7 @@ sarà simile al seguente.
 
     QUOTA              LIMITE    UTILIZZATO
     Traffico di pull   5,1 GB    0 B
-    Archiviazione      512 MB    511 MB   
+    Archiviazione      512 MB    511 MB
 
     OK
     ```

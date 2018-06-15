@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-05"
 
 ---
@@ -28,7 +28,7 @@ lastupdated: "2017-12-05"
 -   `未完成` 扫描未完成。扫描可能仍在运行，或者映像的操作系统可能不兼容。等待然后再次尝试扫描。如果扫描仍未完成，请重新推送映像以启动新的扫描。不会阻止部署未完成扫描的映像。
 
 -   `不受支持的操作系统` 映像中的操作系统不受支持。
-    
+
 要查看图形用户界面，请使用以下步骤：
 
 1.  使用 IBM 标识登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ([https://console.bluemix.net](https://console.bluemix.net))。

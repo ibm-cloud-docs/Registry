@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-05"
 
 ---
@@ -28,7 +28,7 @@ La colonne **Rapport de sécurité** présente les informations suivantes sur l'
 -   `Incomplet` L'analyse n'est pas terminée. Il se peut que l'analyse soit encore en cours ou que le système d'exploitation soit de l'image ne soit pas compatible. Patientez et relancez l'analyse. Si l'analyse est toujours incomplète, transférez à nouveau l'image pour lancer une nouvelle analyse. Le déploiement
 des images dont l'analyse est incomplète n'est pas bloqué.
 -   `Système d'exploitation non pris en charge` Le système d'exploitation dans l'image n'est pas pris en charge.
-    
+
 Pour afficher l'interface graphique, procédez comme suit :
 
 1.  Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.

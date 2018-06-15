@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -31,32 +31,36 @@ lastupdated: "2017-10-31"
 
 開始之前，請確定您是要設定配額的 [{{site.data.keyword.Bluemix_notm}} 帳戶的擁有者或帳單管理員](../../iam/users_roles.html#userroles)。
 
-當您升級至 {{site.data.keyword.registryshort_notm}} 標準方案時，可以受益於專用映像檔的無限制儲存空間量及取回資料流量。若要避免超出偏好的付款層次，您可以設定儲存空間量及取回資料流量的個別配額。配額限制會套用至您在 {{site.data.keyword.registrylong_notm}} 中設定的所有名稱空間。如果您使用的是免費服務方案，則也可以設定免費儲存空間量及取回資料流量內的自訂配額。
+當您升級至 {{site.data.keyword.registryshort_notm}} 標準方案時，可以受益於專用映像檔的無限制儲存空間量及取回資料流量。若要避免超出偏好的付費等級，您可以設定儲存空間量及取回資料流量的個別配額。配額限制會套用至您在 {{site.data.keyword.registrylong_notm}} 中設定的所有名稱空間。如果您使用的是免費服務方案，則也可以設定免費儲存空間量及取回資料流量內的自訂配額。
 
 若要設定配額，請執行下列動作：
 
 1.  登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  檢閱儲存空間及取回資料流量的現行配額限制。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 
     您的輸出會與下列內容類似。
 
     ```
-    Getting quotas and usage for the current month, for account '<account_owner> Account'...
+        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+
+    
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   
     Storage        512 MB   511 MB   
+
+    
 
     OK
     ```
@@ -67,14 +71,14 @@ lastupdated: "2017-10-31"
     **附註：**如果您使用免費方案，則無法將配額設為超出免費方案的數量。儲存空間的免費層額度是 512 MB，而資料流量是 5120 MB。
 
     ```
-    bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+        bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
     將儲存空間的配額限制設為 600 MB 並將取回資料流量設為 7000 GB 的範例：
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+        bx cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -88,25 +92,29 @@ lastupdated: "2017-10-31"
 1.  登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  檢閱儲存空間及取回資料流量的現行配額限制。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 
     您的輸出會與下列內容類似。
 
     ```
-    Getting quotas and usage for the current month, for account '<account_owner> Account'...
+        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+
+    
 
     QUOTA          LIMIT    USED   
     Pull traffic   5.1 GB   0 B   
     Storage        512 MB   511 MB   
+
+    
 
     OK
     ```
@@ -124,23 +132,23 @@ lastupdated: "2017-10-31"
 1.  列出 {{site.data.keyword.Bluemix_notm}} 帳戶的所有名稱空間中的所有映像檔。
 
     ```
-    bx cr images
+        bx cr images
     ```
     {: pre}
 
 2.  移除名稱空間中的映像檔。請將 _&lt;image_name&gt;_ 取代為您要移除的映像檔名稱。
 
     ```
-    bx cr image-rm <image_name>
+        bx cr image-rm <image_name>
     ```
     {: pre}
 
-    **附註：**根據映像檔大小，可能需要一些時間，才能移除映像檔，以及使用儲存空間。
+    **附註：**根據映像檔大小，可能需要一些時間，才能移除映像檔，並且儲存空間變為可用。
 
 3.  檢閱儲存空間配額用量。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 

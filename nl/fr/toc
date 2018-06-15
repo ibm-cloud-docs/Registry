@@ -9,11 +9,11 @@ IBM Cloud Container Registry
     registry_overview.md
     [Images IBM](../RegistryImages/index.html#ibm_images)
         [Image ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [Image ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [Image ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [Image ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
         [Image ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [Image ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [Image ibmnode](../RegistryImages/ibmnode/index.html#getting_started_node)
-        [Image ibm-node-strong-pm](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
         [Image ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
@@ -23,13 +23,17 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_trusted_content.md
+    registry_security_enforce.md
     [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html)
         [A propos de Vulnerability Advisor](../va/va_index.html#about)
-        [Examen d'un rapport de vulnérabilité pour votre image](../va/va_index.html#va_reviewing)
-        [Examen de la sécurité de l'image à l'aide de l'interface de ligne de commande](../va/va_index.html#va_registry_cli)
-        [Résolution de problèmes courants](../va/va_index.html#va_report)
+        [Types de vulnérabilités](../va/va_index.html#types)
+        [Installation du scanner de conteneur](../va/va_index.html#va_install_livescan)
+        [Examen d'un rapport de vulnérabilité](../va/va_index.html#va_reviewing)
+        [Examen d'un rapport de vulnérabilité via l'interface CLI](../va/va_index.html#va_registry_cli)
+        [Résolution des problèmes courants](../va/va_index.html#va_report)
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     registry_cli_reference.md
     rellinks.md
@@ -38,4 +42,3 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     {: .navgroup-end}
-

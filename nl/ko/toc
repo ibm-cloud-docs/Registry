@@ -9,11 +9,11 @@ IBM Cloud Container Registry
     registry_overview.md
     [IBM 이미지](../RegistryImages/index.html#ibm_images)
         [ibm-backup-restore 이미지](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [ibm-integration-bus 이미지](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty 이미지](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [ibm-mq 이미지](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibmnode 이미지](../RegistryImages/ibmnode/index.html#getting_started_node)
-        [ibm-node-strong-pm 이미지](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
         [ibm-websphere-extreme-scale 이미지](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
@@ -23,13 +23,17 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
-    [취약성 어드바이저로 이미지 보안 관리](../va/va_index.html)
-        [취약성 어드바이저 정보](../va/va_index.html#about)
-        [이미지에 대한 취약성 보고서 검토](../va/va_index.html#va_reviewing)
-        [CLI를 사용하여 이미지 보안 검토](../va/va_index.html#va_registry_cli)
+    registry_trusted_content.md
+    registry_security_enforce.md
+    [Vulnerability Advisor를 사용하여 이미지 보안 관리](../va/va_index.html)
+        [Vulnerability Advisor 정보](../va/va_index.html#about)
+        [취약성 유형](../va/va_index.html#types)
+        [컨테이너 스캐너 설치](../va/va_index.html#va_install_livescan)
+        [취약성 보고서 검토](../va/va_index.html#va_reviewing)
+        [CLI를 사용하여 취약성 보고서 검토](../va/va_index.html#va_registry_cli)
         [공통 문제점 해결](../va/va_index.html#va_report)
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     registry_cli_reference.md
     rellinks.md
@@ -38,4 +42,3 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     {: .navgroup-end}
-

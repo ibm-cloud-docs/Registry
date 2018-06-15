@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-30"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-30"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -36,9 +36,8 @@ lastupdated: "2017-10-30"
 -   如果有使用 {{site.data.keyword.registrylong_notm}} 开发或部署应用程序相关的技术问题，请在 [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) 上发布问题，并使用 `ibm-bluemix` 和 `container-registry` 标记您的问题。
 -   有关服务和入门指示信息的问题，请使用 [IBM developerWorks dWAnswers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 论坛。请包含 `bluemix` 和 `container-registry` 标记。
 
-有关使用论坛的更多详细信息，请参阅[获取帮助](../../support/index.html#getting-help)。
-
-有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[联系支持人员](../../support/index.html#contacting-support)。
+有关使用论坛的更多详细信息，请参阅[使用支持中心](../../get-support/howtogetsupport.html#using-avatar)。
+有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[开具支持凭单](../../get-support/howtogetsupport.html#open-ticket)。
 
 ## 登录 {{site.data.keyword.registrylong_notm}} 失败
 {: #ts_login}
@@ -59,6 +58,23 @@ lastupdated: "2017-10-30"
 -   升级到 {{site.data.keyword.registryshort_notm}} 插件的最新版本；请参阅[更新 {{site.data.keyword.registrylong_notm}} (`bx cr`) 插件](registry_setup_cli_namespace.html#registry_cli_update)。
 -   确保 Docker 安装在您的机器上。如果已安装，请重新启动 Docker 守护程序。
 -   重新运行 `bx login` 命令以刷新 {{site.data.keyword.Bluemix_notm}} 登录凭证。
+  
+## 对 {{site.data.keyword.registrylong_notm}} 运行任何命令失败，消息为：`FAILED You are not logged in to IBM Cloud. ` 
+{: #ts_login_cloud}
+
+即使您已登录到 {{site.data.keyword.Bluemix_notm}}，也无法在 {{site.data.keyword.registrylong_notm}} 中运行任何命令。
+
+{: tsSymptoms}
+所有 `bx cr` 命令都会失败。
+
+{: tsCauses}
+-   容器注册表插件不是最新的，需要更新。
+
+{: tsResolve}
+可以通过以下方式来解决此问题：
+
+-   升级到 {{site.data.keyword.registryshort_notm}} 插件的最新版本；请参阅[更新 {{site.data.keyword.registrylong_notm}} (`bx cr`) 插件](registry_setup_cli_namespace.html#registry_cli_update)。
+
 
 
 ## {{site.data.keyword.registrylong_notm}} 命令失败，消息为：`'cr' is not a registered command. See 'bx help'. `
@@ -67,7 +83,7 @@ lastupdated: "2017-10-30"
 无法运行`bx cr` 命令，因为 `cr` 不是注册的 `bx` 命令。
 
 {: tsSymptoms}
-您看到的错误消息类似于下列其中一个错误消息： 
+您看到的错误消息类似于下列其中一个错误消息：
 
 ```
 bx cr login
@@ -166,6 +182,89 @@ denied: requested access to the resource is denied
 {: tsResolve}
 一般情况下，最好每次都为映像显式定义不同的顺序标记，而不要依赖于 `latest` 标记。
 
+
+## 无法将其他 IBM 映像添加到注册表
+{: #ts_ppa}
+
+
+{: tsSymptoms}
+尝试导入其他 IBM 产品（例如，{{site.data.keyword.Bluemix_notm}} Private）中使用的内容时，无法在注册表中存储来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www-01.ibm.com/software/passportadvantage/index.html) 的映像和其他许可的软件。
+
+{: tsCauses}
+来自 IBM Passport Advantage 的软件包（例如，映像和 Helm 图表）必须通过 `bx cr ppa-archive-load` 命令导入到注册表中。
+
+{: tsResolve}
+开始之前：
+* 通过运行 `bx login [--sso]` 登录到 {{site.data.keyword.Bluemix_notm}}。
+* 通过运行 `bx cr login` 登录到 {{site.data.keyword.registrylong_notm}}。
+* [设定 `kubectl` CLI 的目标](../../containers/cs_cli_install.html#cs_cli_configure)为集群。
+* 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](../../containers/cs_integrations.html#helm)。
+* 如果要在组织内共享图表，那么可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)。
+
+### 导入 IBM Passport Advantage 产品以供在 {{site.data.keyword.Bluemix_notm}} 中使用
+
+1.  从 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www-01.ibm.com/software/passportadvantage/index.html) 获取要导入的压缩文件。
+
+2.  将要使用的区域设定为目标。如果您不知道区域名称，请运行不带区域的命令，然后选择区域。
+
+    ```
+    bx cr region-set <region>
+```
+    {: pre}
+
+3.  导入压缩归档文件。指定压缩文件的路径以及要将映像推送到的注册表空间。
+
+    ```
+    bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
+    ```
+    {: pre}
+
+    此命令会对压缩文件解压缩，将所有包含的映像装入到本地 Docker 客户机，然后将映像推送到注册表中的名称空间。
+    
+    如果要将 IBM Passport Advantage 归档中的 Helm 图表上传到 Chart Museum，请在命令中包含以下选项：`bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    {: tip}
+
+    **示例输出**：
+    ```
+    user:~ user$ bx cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+    Found 1 image(s) and 1 chart(s) to import.
+    Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+    Loaded image: iib-prod:10.0.0.10
+    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
+    1ecda25d51a8: Preparing
+    369bf331939e: Preparing
+    ...
+    369bf331939e: Pushed
+    1ecda25d51a8: Pushed
+    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+
+    Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
+
+    OK
+    ```
+    {: screen}
+
+4.  如果压缩文件包含 Helm 图表，那么这些图表会放置在当前工作目录中创建的名为 `ppa-import` 的归档目录中。打开该目录可获取 Helm 图表的名称 `<helm_chart>`，然后检查其值。
+
+    ```
+    helm inspect values ppa-import/charts/<helm_chart>.tgz
+    ```
+    {: pre}
+    
+    如果您在先前步骤中已将图表上传到 Chart Museum，那么可以使用 `helm inspect` 在 Chart Museum 中检查该图表。
+    {: tip}
+
+5.  根据作为 `helm inspect values` 命令输出的值来配置 Helm 图表 `<helm_chart>`。
+
+6.  使用 `helm install` 命令来部署 Helm 图表 `<helm_chart>`。可以根据需要使用 `--set` 选项来覆盖图表中的值。
+
+    ```
+    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
+    ```
+    {: pre}
+
+
 ## 使用定制防火墙访问注册表失败
 {: #ts_firewall}
 
@@ -186,10 +285,18 @@ denied: requested access to the resource is denied
     -   对于指向机器的 INBOUND 连接，允许入局网络流量从以下源网络组流向机器的公共 IP 地址。
 
 
+        `registry.bluemix.net`：
+
+        ```
+        169.60.72.144/28
+        169.61.76.176/28
+        ```
+        {: codeblock}
+
         `registry.au-syd.bluemix.net`：
 
         ```
-        168.1.45.160/27
+                168.1.45.160/27
         168.1.139.32/27
         ```
         {: codeblock}
@@ -197,7 +304,7 @@ denied: requested access to the resource is denied
         `registry.eu-de.bluemix.net`：
 
         ```
-        169.50.56.144/28
+                169.50.56.144/28
         159.8.73.80/28
         ```
         {: codeblock}
@@ -205,7 +312,7 @@ denied: requested access to the resource is denied
         `registry.eu-gb.bluemix.net`：
 
         ```
-        159.8.188.160/27
+                159.8.188.160/27
         169.50.153.64/27
         ```
         {: codeblock}
@@ -213,7 +320,7 @@ denied: requested access to the resource is denied
         `registry.ng.bluemix.net`：
 
         ```
-        169.55.39.112/28
+                169.55.39.112/28
         169.46.9.0/27
         169.55.211.0/27
         ```
@@ -222,3 +329,113 @@ denied: requested access to the resource is denied
     -   对于来自机器的 OUTBOUND 连接，使用相同的网络组并允许出局网络流量从机器的源公共 IP 地址流向这些网络组。
 
 
+## 恢复丢失或遭到破坏的密钥
+{: #ts_recoveringtrustedcontent}
+
+{: tsSymptoms}
+使用[可信内容](registry_trusted_content.html)时，由于签名密钥丢失或遭到破坏，而无法再管理可信映像。
+
+{: tsCauses}
+您的存储库密钥或根密钥已丢失或遭到破坏。
+
+{: tsResolve}
+用于恢复丢失或受影响密钥的选项取决于密钥的类型：存储库密钥或根密钥。
+
+*  对于[存储库密钥](#trustedcontent_lostrepokey)，可以为存储库生成一组新的签名密钥。
+*  对于[根密钥](#trustedcontent_lostrootkey)，可以请求删除存储库并创建新的存储库。
+
+### 存储库密钥
+{: #trustedcontent_lostrepokey}
+
+如果存储库密钥丢失或遭到破坏，请生成一组新的存储库签名密钥。
+{:shortdesc}
+
+**注**：可以轮换的唯一签名角色是 `targets`，即存储库管理员。如果其他角色受到影响，请为这些角色生成新密钥，除去旧密钥，然后将新密钥添加为签署者。
+
+开始之前，请先检索首次[推送签名的映像](registry_trusted_content.html#trustedcontent_push)时创建的根密钥口令。
+
+1.  安装 [Notary 项目](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli)的 CLI 版本。
+
+2.  [设置可信内容环境](registry_trusted_content.html#trustedcontent_setup)。
+
+3.  记下先前步骤中 export 命令中的 URL。例如，`https://registry.ng.bluemix.net:4443`。
+
+4.  生成注册表令牌。
+
+    ```
+    bx cr token-add --readwrite
+    ```
+    {: pre}
+
+5.	轮换密钥，以便不再信任已使用这些密钥签名的内容。将 _&lt;URL&gt;_ 替换为在步骤 2 中记录的 export 命令的 URL，并将 _&lt;image&gt;_ 替换为其存储库密钥受影响的映像。
+
+    ```
+    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+    ```
+    {: pre}
+
+6.	如果出现提示，请输入根密钥口令。然后，在提示时，输入新的根密钥口令用于新的存储库密钥。
+
+7.	[推送签名的映像](registry_trusted_content.html#trustedcontent_push)，此映像将使用新的签名密钥。
+
+### 根密钥
+{: #trustedcontent_lostrootkey}
+
+如果根密钥丢失或遭到破坏，您将无法更新使用该根密钥的任何可信内容存储库。
+{:shortdesc}
+
+可以[删除名称空间](registry_setup_cli_namespace.html#registry_remove)，即具有使用受影响根密钥的存储库的名称空间，这将删除映像和信任数据。
+
+如果名称空间包含使用不受影响根密钥的存储库（例如，生产映像的名称空间），那么您可能希望仅删除与受影响的根密钥相关联的信任数据。请开具支持凭单。
+
+1.  [联系 {{site.data.keyword.Bluemix_notm}} 支持](../../get-support/howtogetsupport.html)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
+
+2.  {{site.data.keyword.Bluemix_notm}} 解决此问题后，请删除本地计算机上的 Docker Content Trust 存储库。
+
+    * Linux 和 Mac 目录：`~/.docker/trust/private` 和 `~/.docker/trust/tuf`
+
+    * Windows 目录：`%HOMEPATH%\.docker\trust\private` 和 `%HOMEPATH%\.docker\trust\tuf`
+
+    **注**：因为根密钥受到影响，所以此步骤将删除所有签名密钥，包括其他信任服务器的签名密钥。
+
+3.  如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](../../containers/cs_cli_install.html#cs_cli_configure)，然后修改部署。
+    ```
+    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
+    ```
+    {: pre}
+
+4.  生成可信内容存储库。
+
+    *  如果要创建新的可信内容，请[推送新的签名映像](registry_trusted_content.html#trustedcontent_push)。
+
+    *  如果不想更改先前的可信内容，请将签名添加到注册表中的最新映像。
+
+       ```
+       docker trust sign <image>:<tag>
+       ```
+       {: pre}
+       
+
+## Container Image Security Enforcement 安装失败，消息为：`helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`
+{: #ts_install_cise_fail}
+
+
+{: tsSymptoms}
+Container Image Security Enforcement 安装失败，并收到以下消息：
+
+```
+helm install ibm-incubator/ibmcloud-image-enforcement --name cise 
+Error: jobs.batch "create-crds" already exists
+```
+{: screen}
+
+{: tsCauses}
+先前安装失败，后续卸载未除去与安装关联的所有 Kubernetes 作业。
+
+{: tsResolve}
+通过运行以下命令，除去剩余的 Kubernetes 作业：
+
+```
+kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
+```
+{: pre}

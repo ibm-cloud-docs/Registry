@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2017-02-06"
 
 ---
 
@@ -21,6 +21,9 @@ lastupdated: "2017-12-08"
 
 您可以使用注册表令牌或 {{site.data.keyword.iamlong}} (IAM) API 密钥，自动访问 {{site.data.keyword.registrylong_notm}} 名称空间，以便可推送和拉出映像。
 {:shortdesc}
+
+要尝试在 Kubernetes 部署中使用注册表映像吗？请查看[访问其他 Kubernetes 名称空间、{{site.data.keyword.Bluemix_notm}} 区域和帐户中的映像](/docs/containers/cs_images.html#other)。
+{: tip}
 
 API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中使用，从而不需要针对每种服务具有不同凭证。您可以在 CLI 中或者在自动化过程中使用 API 密钥，以使用您的用户身份登录。
 
@@ -41,15 +44,15 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 {: #registry_api_key_create}
 
 您可以创建 API 密钥，然后用于登录到注册表。
-{:shortdesc} 
+{:shortdesc}
 
-创建 IAM API 密钥，请参阅[创建 API 密钥](../../iam/userid_keys.html#creating-an-api-key)。 
+创建 IAM API 密钥，请参阅[创建 API 密钥](../../iam/userid_keys.html#creating-an-api-key)。
 
 ### 使用 API 密钥自动访问
 {: #registry_api_key_use}
 
 您可以使用 API 密钥自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
-{:shortdesc} 
+{:shortdesc}
 
 通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 &lt;your_apikey&gt; 替换为 API 密钥，将 &lt;registry_url&gt; 替换为在其中设置名称空间的注册表的 URL。
 
@@ -57,7 +60,6 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
-
 
 有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.Bluemix_notm}} 平台 API 密钥](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)。
 
@@ -68,7 +70,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 您可以使用令牌，将 Docker 映像自动推送至 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
 {:shortdesc}
 
-拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送至名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。 
+拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送至名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。
 
 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
 
@@ -90,7 +92,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+        bx cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -118,6 +120,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
     ```
     Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
+   
     Token              <token_value>
     ```
     {: screen}
@@ -125,12 +128,12 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 2.  验证已创建令牌。
 
     ```
-    bx cr token-list
+        bx cr token-list
     ```
     {: pre}
 
 
-### 使用令牌自动访问名称空间 
+### 使用令牌自动访问名称空间
 {: #registry_tokens_use}
 
 您可以在 `docker login` 命令中使用令牌，以自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
@@ -140,14 +143,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要使用的令牌标识。
 
     ```
-    bx cr token-list
+        bx cr token-list
     ```
     {: pre}
 
@@ -155,7 +158,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 
     ```
-    bx cr token-get <token_id>
+        bx cr token-get <token_id>
     ```
     {: pre}
 
@@ -169,7 +172,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     -   对于在亚太南部设置的名称空间：registry.au-syd.bluemix.net
 
     ```
-    docker login -u token -p <token_value> <registry_url>
+        docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
 
@@ -187,23 +190,20 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要除去的令牌标识。
 
     ```
-    bx cr token-list
+        bx cr token-list
     ```
     {: pre}
 
 3.  除去令牌。
 
     ```
-    bx cr token-rm <token_id>
+        bx cr token-rm <token_id>
     ```
     {: pre}
-    
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-28"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # Introdução ao {{site.data.keyword.registrylong_notm}}
@@ -25,6 +26,9 @@ conta do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, veja [Monitorando a vulnerabilidade de imagens](registry_ui.html).
+
+**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
+
 
 
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
@@ -62,6 +66,7 @@ O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação 
     bx cr namespace-list
     ```
     {: pre}
+
 
 
 ## Puxar imagens de outro registro para sua máquina local
@@ -112,6 +117,7 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
     {: pre}
 
 
+
 ## Enviar por push imagens do Docker para seu namespace
 {: #registry_images_pushing}
 
@@ -139,11 +145,13 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
 
 Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_notm}} e enviou sua primeira imagem para o seu namespace.
 
+
 **O que Vem a Seguir?**
 
 -   [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).
 -   [Revisar seus planos de serviço e uso](registry_overview.html#registry_plans)
 -   [Armazenar e gerenciar mais imagens em seu namespace](registry_images_.html).
 -   [Criar e implementar um
-contêiner de sua imagem para um cluster do Kubernetes](../../containers/cs_cluster.html).
+contêiner de sua imagem para um cluster do Kubernetes](../../containers/cs_clusters.html).
+
 

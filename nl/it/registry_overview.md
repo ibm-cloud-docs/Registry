@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -54,7 +54,6 @@ evitare che i tuoi contenitori vengano compromessi.</li></ul>|
 della tua quota gratuita.</li><li>Imposta limiti di quota personalizzati per la quantità mensile di archiviazione e di traffico di pull per evitare di superare
 il tuo livello di pagamento preferito.</li></ul>|
 {: caption="Tabella 1. Vantaggi di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
-
 
 ## Piani di servizio
 {: #registry_plans}
@@ -223,6 +222,9 @@ Preparati per archiviare in sicurezza e condividere le tue immagini Docker con {
 apprendendo le basi del registro.
 {:shortdesc}
 
+**Nota**: non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
+
+
 ### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
@@ -268,6 +270,7 @@ ambienti di produzione e di preparazione.</dd>
 
 Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario Docker](https://docs.docker.com/glossary/).
 
+
 ### Pianificazione degli spazi dei nomi
 {: #registry_namespaces}
 
@@ -278,13 +281,13 @@ in questo registro configurando uno spazio dei nomi del registro.
 
 Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
 ambienti di produzione e di preparazione. Se vuoi utilizzare il registro in più regioni {{site.data.keyword.Bluemix_notm}}, devi configurare uno spazio dei nomi per
-ogni regione. I nome degli spazi dei nomi sono univoci nelle regioni. Puoi utilizzare lo stesso nome dello spazio dei nomi per ogni regione, a meno che
+ogni regione. I nomi degli spazi dei nomi sono univoci nelle regioni. Puoi utilizzare lo stesso nome dello spazio dei nomi per ogni regione, a meno che
 qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale regione.
 
 Per lavorare solo con le immagini pubbliche fornite da IBM, non hai bisogno di configurare uno
 spazio dei nomi.
 
-**Nota:** se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `bx cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti. Se sei già un cliente di {{site.data.keyword.containerlong_notm}} esistente che utilizza
+**Note**: se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `bx cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti. Se sei già un cliente di {{site.data.keyword.containerlong_notm}} esistente che utilizza
 [gruppi di contenitori singoli e scalabili](../../containers/cs_classic.html),
 già disponi di uno spazio dei nomi. Puoi creare ulteriori spazi dei nomi, ma non puoi eseguire `cf ic namespace set` per più di uno.
 
@@ -294,6 +297,8 @@ Quando scegli uno spazio dei nomi, considera le seguenti regole:
 -   Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
 -   Il tuo spazio dei nomi deve iniziare con almeno una lettera o un numero.
 -   Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri o caratteri di sottolineatura (_).
+
+**Nota**: non inserire informazioni personali nei nomi degli spazi dei nomi.
 
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
 gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
@@ -316,7 +321,7 @@ Una regione è un'area geografica a cui si accede da un endpoint dedicato. I reg
 
 Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
 
-Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `bx cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro. 
+Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `bx cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
 
 Per eseguire il comando con i parametri, sostituisci _&lt;region&gt;_ con il nome della regione, ad esempio, `eu-central`.
 
@@ -332,22 +337,23 @@ bx cr region-set eu-central
 ```
 {: pre}
 
+Dopo aver specificato una diversa regione di destinazione, accedi di nuovo al registro: `bx cr login`.
 
-### Registro internazionale
+### Registro globale
 {: #registry_regions_global}
 
-Un registro internazionale è disponibile globalmente e non ha regioni incluse nel suo nome (`registry.bluemix.net`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro.
+È disponibile un registro globale, che non ha alcuna regione inclusa nel suo nome (`registry.bluemix.net`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro. Per gestire le tue immagini, ad esempio configurando gli spazi dei nomi o inserendo tag e trasmettendo le immagini a un registro, utilizza un [registro regionale locale](#registry_regions_local).
+{:shortdesc}
 
-Puoi scegliere il registro internazionale eseguendo il comando `bx cr region-set`.
+Puoi indicare come destinazione il registro locale eseguendo il comando `bx cr region-set`.
 
-Ad esempio, per scegliere il registro internazionale, immetti il seguente comando:
+Ad esempio, per specificare il registro globale, immetti il seguente comando:
 
 ```
-bx cr region-set international 
+bx cr region-set global
 ```
 {: pre}
 
-Per ulteriori informazioni sul comando `bx cr region-set`, consulta [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set).
+Per ulteriori informazioni sul comando `bx cr region-set`, consulta [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
 
-Dopo aver scelto il registro internazionale, esegui il comando `bx cr login` per registrare il tuo daemon Docker locale nel registro internazionale in modo da poter passare le immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
-
+Dopo aver specificato come destinazione il registro globale, esegui il comando `bx cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.

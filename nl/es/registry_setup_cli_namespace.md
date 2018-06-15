@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -21,6 +21,9 @@ lastupdated: "2017-10-26"
 
 Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe instalar la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in de {{site.data.keyword.registrylong_notm}} y, a continuación, configurar un espacio de nombres de registro para crear su propio repositorio de imágenes en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+
+**Nota**: No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 
 
 ## Instalación del plug-in de CLI de {{site.data.keyword.registrylong_notm}} (`bx cr`)
@@ -129,11 +132,11 @@ Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio d
     ```
     {: pre}
 
-3.  Elimine un espacio de nombres. 
+3.  Elimine un espacio de nombres.
 
     **Atención:** Al eliminar un espacio de nombres, cualquier imagen almacenada en dicho espacio de nombres también se suprimirá. Esta acción no se puede deshacer.
-    
-    Sustituya _&lt;mi_espaciodenombres&gt;_ por el espacio de nombres que desea eliminar.
+
+    Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que desea eliminar.
 
     ```
     bx cr namespace-rm <my_namespace>

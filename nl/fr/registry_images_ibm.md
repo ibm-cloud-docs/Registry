@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-06"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,5 +23,3 @@ Vous pouvez utiliser des images {{site.data.keyword.IBM}} pour créer des conten
 {:shortdesc}
 
 Pour utiliser les images publiques fournies par {{site.data.keyword.IBM_notm}}, voir la rubrique relative aux [images {{site.data.keyword.IBM_notm}} publiques pour {{site.data.keyword.containerlong_notm}}](../../services/RegistryImages/index.html#ibm_images).
-
-

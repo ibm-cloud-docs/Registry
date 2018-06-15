@@ -9,11 +9,11 @@ IBM Cloud Container Registry
     registry_overview.md
     [Immagini IBM](../RegistryImages/index.html#ibm_images)
         [Immagine ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [Immagine ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
         [Immagine ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [Immagine ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [Immagine ibmnode](../RegistryImages/ibmnode/index.html#getting_started_node)
-        [Immagine ibm-node-strong-pm](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
         [Immagine ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
@@ -23,13 +23,17 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_trusted_content.md
+    registry_security_enforce.md
     [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html)
         [Informazioni su Controllo vulnerabilità](../va/va_index.html#about)
-        [Controllo di un report di vulnerabilità dell'immagine](../va/va_index.html#va_reviewing)
-        [Riesame della sicurezza delle immagini mediante la CLI](../va/va_index.html#va_registry_cli)
+        [Tipi di vulnerabilità](../va/va_index.html#types)
+        [Installazione dello scanner del contenitore](../va/va_index.html#va_install_livescan)
+        [Revisione di un report di vulnerabilità](../va/va_index.html#va_reviewing)
+        [Revisione di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli)
         [Risoluzione dei problemi comuni](../va/va_index.html#va_report)
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     registry_cli_reference.md
     rellinks.md
@@ -38,4 +42,3 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     {: .navgroup-end}
-

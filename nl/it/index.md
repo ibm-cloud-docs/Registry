@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-28"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # Introduzione a {{site.data.keyword.registrylong_notm}}
@@ -25,6 +26,9 @@ nel tuo account {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 La console {{site.data.keyword.Bluemix_notm}} include una una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Monitoraggio della vulnerabilità delle immagini](registry_ui.html).
+
+**Nota**: non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
+
 
 
 ## Installa la CLI {{site.data.keyword.registrylong_notm}}
@@ -63,6 +67,7 @@ _&lt;mio_spazionomi&gt;_ con il tuo spazio dei nomi preferito.
     bx cr namespace-list
     ```
     {: pre}
+
 
 
 ## Esegui il pull di immagini da un altro registro alla tua macchina locale
@@ -114,6 +119,7 @@ _&lt;nuovo_repo_immagine&gt;_ e _&lt;nuova_tag&gt;_.
     {: pre}
 
 
+
 ## Esegui il push delle immagini Docker nel tuo spazio dei nomi
 {: #registry_images_pushing}
 
@@ -145,11 +151,13 @@ dell'immagine che hai scelto quando hai contrassegnato con tag l'immagine.
 Ottimo lavoro! Hai configurato uno spazio dei nomi in {{site.data.keyword.registrylong_notm}} e hai eseguito il push della tua prima immagine allo
 spazio dei nomi.
 
+
 **Operazioni successive**
 
 -   [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).
 -   [Riesamina il tuo utilizzo e i tuoi piani del servizio](registry_overview.html#registry_plans)
 -   [Memorizza e gestisci altre immagini nel tuo spazio dei nomi](registry_images_.html).
 -   [Crea e distribuisci un
-contenitore dalla tua immagine a un cluster Kubernetes](../../containers/cs_cluster.html).
+contenitore dalla tua immagine a un cluster Kubernetes](../../containers/cs_clusters.html).
+
 

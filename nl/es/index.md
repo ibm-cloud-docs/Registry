@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-31"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-10-31"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # Iniciación a {{site.data.keyword.registrylong_notm}}
@@ -22,7 +23,10 @@ lastupdated: "2017-10-31"
 {{site.data.keyword.registrylong}} proporciona un registro de imágenes privado multiarrendatario que puede utilizar para almacenar y compartir de forma segura sus imágenes de Docker con usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información sobre cómo utilizar la consola de {{site.data.keyword.Bluemix_notm}}, consulte [Visualización de información sobre imágenes en la consola de {{site.data.keyword.Bluemix_notm}}](registry_ui.html).
+La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información para utilizar la consola {{site.data.keyword.Bluemix_notm}}, consulte la [Supervisión de la vulnerabilidad de las imágenes](registry_ui.html).
+
+**Nota**: No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
+
 
 
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
@@ -47,15 +51,23 @@ La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inic
     ```
     {: pre}
 
-2.  Añada un espacio de nombres para crear su propio repositorio de imágenes. Sustituya _&lt;mi_espaciodenombres&gt;_ por el espacio de nombres preferido.
+2.  Añada un espacio de nombres para crear su propio repositorio de imágenes. Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres preferido.
 
     ```
     bx cr namespace-add <my_namespace>
     ```
     {: pre}
 
+3.  Para asegurar que se ha creado su espacio de nombre, ejecute el mandato `bx cr namespace-list`.
 
-## Extraiga imágenes de otro registro a su máquina local 
+    ```
+    bx cr namespace-list
+    ```
+    {: pre}
+
+
+
+## Extraiga imágenes de otro registro a su máquina local
 {: #registry_images_pulling}
 
 1.  [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/products/docker-toolbox).
@@ -69,49 +81,50 @@ La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inic
 
     **Nota:** Debe iniciar la sesión si extrae una imagen desde su {{site.data.keyword.registrylong_notm}} privado.
 
-3.  Descargue (_pull_) la imagen en su máquina local. Sustituya _&lt;imagen_fuente&gt;_ por el repositorio de la imagen y _&lt;etiqueta&gt;_ por la etiqueta de la imagen que desea utilizar, por ejemplo, _latest_.
+3.  Descargue (_pull_) la imagen en su máquina local. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, por ejemplo, _latest_.
 
     ```
     docker pull <source_image>:<tag>
     ```
     {: pre}
 
-    Ejemplo:
+    Ejemplo, donde _&lt;source_image&gt;_ es `hello-world` y _&lt;tag&gt;_ es `latest`:
 
     ```
     docker pull hello-world:latest
     ```
     {: pre}
 
-4.  Etiquete la imagen. Sustituya _&lt;imagen_fuente&gt;_ por el repositorio y _&lt;etiqueta&gt;_ por la etiqueta de la imagen local que ha extraído anteriormente. Defina el repositorio y etiquete la imagen que desea utilizar en el espacio de nombres sustituyendo _&lt;nuevo_repo_imagen&gt;_ y _&lt;nueva_etiqueta&gt;_.
+4.  Etiquete la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio y _&lt;tag&gt;_ por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya _&lt;region&gt;_ por el nombre de su [región](registry_overview.html#registry_regions). Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que ha creado en [Configure un espacio de nombres](index.html#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en el espacio de nombres sustituyendo _&lt;new_image_repo&gt;_ y _&lt;new_tag&gt;_.
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
 
-    Ejemplo:
+    Ejemplo, donde _&lt;source_image&gt;_ es `hello-world`, _&lt;tag&gt;_ es `latest`, _&lt;region&gt;_ es `eu-gb`, _&lt;my_namespace&gt;_ es `Namespace1`, _&lt;new_image_repo&gt;_ es `hw_repo` y _&lt;new_tag&gt;_ es `1`:
 
     ```
-    docker tag hello-world:latest registry.<region>.bluemix.net/my_namespace/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
 
-## Envíe por push de imágenes de Docker a su espacio de nombres 
+
+## Envíe por push de imágenes de Docker a su espacio de nombres
 {: #registry_images_pushing}
 
-1.  Cargue (_push_) la imagen a su espacio de nombres. Sustituya _&lt;mi_espaciodenombres&gt;_ por el espacio de nombres al que desea subir la imagen, y _&lt;repo_imagen&gt;_ y _&lt;etiqueta&gt;_ por el repositorio y la etiqueta de la imagen que ha elegido cuando se ha etiquetado la imagen.
+1.  Cargue (_push_) la imagen a su espacio de nombres. Sustituya _&lt;my_namespace&gt;_ con el nombre del espacio que ha creado en [Configure un espacio de nombres](index.html#registry_namespace_add), y _&lt;image_repo&gt;_ y _&lt;tag&gt;_ con el repositorio y etiquete la imagen que ha elegido cuando ha etiquetado la imagen.
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    Ejemplo:
+    Ejemplo, donde _&lt;region&gt;_ es `eu-gb`, _&lt;my_namespace&gt;_ es `Namespace1`, _&lt;image_repo&gt;_ es `hw_repo`, y _&lt;tag&gt;_ es `1`:
 
     ```
-    docker push registry.<region>.bluemix.net/<my_namespace>/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -125,6 +138,7 @@ La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inic
 
 Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registrylong_notm}} y ha transmitido su primera imagen al espacio de nombres.
 
+
 **Qué hacer a continuación
 **
 
@@ -132,5 +146,6 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 -   [Revise sus planes de servicio y el uso de los mismos](registry_overview.html#registry_plans)
 -   [Almacene y gestione más imágenes en el espacio de nombres](registry_images_.html).
 -   [Cree y despliegue un
-contenedor a partir de la imagen en un clúster Kubernetes](../../containers/cs_cluster.html).
+contenedor a partir de la imagen en un clúster Kubernetes](../../containers/cs_clusters.html).
+
 

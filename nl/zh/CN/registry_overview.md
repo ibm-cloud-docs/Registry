@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-12-08"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -32,7 +32,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 映像通常存储在可由公共（公共注册表）访问的注册表中，或者存储在针对一小组用户设置有限访问权（专用注册表）的注册表中。
 通过使用 {{site.data.keyword.registrylong_notm}}，只有那些有权访问 {{site.data.keyword.Bluemix_notm}} 帐户的用户才能访问您的映像。
 
-将映像推送到 {{site.data.keyword.registrylong_notm}} 时，可以利用内置的漏洞顾问程序功能部件来扫描潜在的安全问题和漏洞。漏洞顾问程序会检查特定 Docker 基本映像中是否存在有漏洞的包，以及在应用程序配置设置中是否存在已知漏洞。找到漏洞时，会提供有关该漏洞的信息。可以使用此信息来解决安全问题，以避免基于有漏洞的映像部署容器。
+将映像推送到 {{site.data.keyword.registrylong_notm}} 时，可以利用内置的漏洞顾问程序功能部件来扫描潜在的安全问题和漏洞。漏洞顾问程序会检查特定 Docker 基本映像中是否存在易受攻击的软件包，以及在应用程序配置设置中是否存在已知漏洞。找到漏洞时，会提供有关该漏洞的信息。可以使用此信息来解决安全问题，以避免基于有漏洞的映像部署容器。
 
 查看下表以了解有关使用 {{site.data.keyword.registrylong_notm}} 的优点概述。
 
@@ -42,7 +42,6 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 |使用漏洞顾问程序保障映像安全性合规|<ul><li>受益于对名称空间中映像的自动扫描。</li><li>查看特定于操作系统的建议，以修订潜在漏洞并保护容器免受破坏。</li></ul>|
 |存储量和拉出流量的配额限制|<ul><li>享受专用映像的不超过免费配额的免费存储量和拉出流量。</li><li>设置存储量和拉出流量的每月定制配额限制，以避免超过首选支付级别。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 优点" caption-side="top"}
-
 
 ## 服务套餐
 {: #registry_plans}
@@ -168,7 +167,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
@@ -177,7 +176,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 2.  升级到标准套餐。
 
     ```
-    bx cr plan-upgrade standard
+        bx cr plan-upgrade standard
     ```
     {: pre}
 
@@ -189,6 +188,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 通过了解注册表基本信息，准备好使用 {{site.data.keyword.registrylong_notm}} 安全地存储和共享 Docker 映像。
 {:shortdesc}
+
+**注**：不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌中）或任何映像配置数据（例如，映像名称或映像标签）中。
+
 
 ### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
 {: #terms}
@@ -202,7 +204,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 <dl>
   <dt>名称空间</dt>
-  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.Bluemix_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>。  {{site.data.keyword.Bluemix_notm}} 帐户中的每位用户都可以查看和使用存储在注册表名称空间中的映像。例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
+  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.Bluemix_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>。
+
+  {{site.data.keyword.Bluemix_notm}} 帐户中的每位用户都可以查看和使用存储在注册表名称空间中的映像。例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
 </dd>
 </dl>
 
@@ -229,6 +233,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要了解有关 Docker 特定术语的更多信息，请[查询 Docker 词汇表](https://docs.docker.com/glossary/)。
 
+
 ### 规划名称空间
 {: #registry_namespaces}
 
@@ -242,7 +247,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要仅使用 IBM 提供的公共映像，您无需设置名称空间。
 
-**注：**如果您不确定是否已为帐户设置名称空间，请运行 `bx cr namespace-list` 命令以检索现有名称空间信息。如果您是使用[单个容器和可扩展容器组](../../containers/cs_classic.html)的现有 {{site.data.keyword.containerlong_notm}} 客户，那么您已经拥有名称空间了。
+**注**：如果您不确定是否已为帐户设置名称空间，请运行 `bx cr namespace-list` 命令以检索现有名称空间信息。如果您是使用[单个容器和可扩展容器组](../../containers/cs_classic.html)的现有 {{site.data.keyword.containerlong_notm}} 客户，那么您已经拥有名称空间了。
 您可以创建其他名称空间，但是不能对超过一个名称空间运行 `cf ic namespace set`。
 
 选择名称空间时，请考虑以下规则：
@@ -252,6 +257,8 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 -   名称空间的长度必须为 4 - 30 个字符。
 -   名称空间必须至少以一个字母或数字开头。
 -   名称空间必须只包含小写字母、数字或下划线 (_)。
+
+**注**：不要将个人信息放入名称空间名称中。
 
 设置第一个名称空间后，如果您尚未[升级套餐](#registry_plan_upgrade)，那么为您分配的是免费的 {{site.data.keyword.registrylong_notm}} 服务套餐。
 
@@ -273,7 +280,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
 
-如果要使用您本地区域以外的区域，可以通过运行 `bx cr region-set` 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。 
+如果要使用您本地区域以外的区域，可以通过运行 `bx cr region-set` 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。
 
 要带参数运行该命令，请将 _&lt;region&gt;_ 替换为区域的名称，例如 `eu-central`。
 
@@ -289,22 +296,23 @@ bx cr region-set eu-central
 ```
 {: pre}
 
+将其他区域设定为目标后，请再次登录到注册表：`bx cr login`。
 
-### 国际注册表
+### 全局注册表
 {: #registry_regions_global}
 
-国际注册表全球可用，在其名称中不包含任何区域 (`registry.bluemix.net`)。仅 IBM 提供的公共映像在此注册表中托管。
+提供了全局注册表，该注册表的名称 (`registry.bluemix.net`) 中不包含区域。仅 IBM 提供的公共映像在此注册表中托管。要管理您自己的映像（例如，通过设置名称空间，或通过标记映像并将其推送到注册表），请使用[本地区域注册表](#registry_regions_local)。
+{:shortdesc}
 
-您可以通过运行 `bx cr region-set` 命令将国际注册表设定为目标。
+您可以通过运行 `bx cr region-set` 命令将全局注册表设定为目标。
 
-例如，要将国际注册表设定为目标，请运行以下命令：
+例如，要将全局注册表设定为目标，请运行以下命令：
 
 ```
-bx cr region-set international
+bx cr region-set global
 ```
 {: pre}
 
-有关 `bx cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#bx_cr_region_set)。
+有关 `bx cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)。
 
-将国际注册表设定为目标后，运行 `bx cr login` 命令以将本地 Docker 守护程序记录到国际注册表，从而可拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。
-
+将全局注册表设定为目标后，运行 `bx cr login` 命令以将本地 Docker 守护程序记录到全局注册表，从而可拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。

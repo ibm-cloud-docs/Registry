@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -16,19 +16,20 @@ lastupdated: "2017-11-10"
 {:download: .download}
 
 
-# 管理名稱空間中 Docker 映像檔的 {{site.data.keyword.registrylong_notm}} (`bx cr`) 指令
+# 用於管理名稱空間中 Docker 映像檔的 {{site.data.keyword.registrylong_notm}} (`bx cr`) 指令
 {: #registry_cli_reference}
 
-您可以使用 container-registry 外掛程式，在 IBM 所管理專用登錄中設定自己的映像檔名稱空間，而在此專用登錄中，您可以安全地儲存 Docker 映像檔，並將其與 {{site.data.keyword.Bluemix}} 帳戶中的所有使用者共用。
+您可以使用 container-registry 外掛程式，在 IBM 所管理的專用登錄中設定自己的映像檔名稱空間，而在此專用登錄中，您可以安全地儲存 Docker 映像檔，並將其與 {{site.data.keyword.Bluemix}} 帳戶中的所有使用者共用。
 {:shortdesc}
 
 
 ## bx cr 指令
 {: #registry_cli_reference_bxcr}
 
-在 {{site.data.keyword.registryshort_notm}} CLI 中執行 `bx cr` 指令。{:shortdesc}
-
-如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)。
+在 {{site.data.keyword.registryshort_notm}} CLI 中執行 `bx cr` 指令。
+{:shortdesc}
+  
+如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
 
 ## 格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出
 {: #registry_cli_listing}
@@ -51,22 +52,23 @@ lastupdated: "2017-11-10"
 
 下列程式碼範例示範如何使用格式化及過濾選項。
 
--   執行下列 `bx cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及漏洞狀態：
+-   執行下列 `bx cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及安全狀態：
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     輸出範例：
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   執行下列 `bx cr image-inspect` 指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
 
@@ -127,7 +129,7 @@ lastupdated: "2017-11-10"
 |`Repository`|字串|顯示映像檔的儲存庫。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`Tag`|字串|顯示映像檔的標籤。|
-|`Vulnerable`|字串|顯示映像檔的漏洞狀態。[使用漏洞警告器管理映像檔安全](../va/va_index.html)中會說明可能的狀態。|
+|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](../va/va_index.html#va_registry_cli)中會說明可能的狀態。|
 {: caption="表 1. bx cr image-list 指令中的可用欄位及資料類型。" caption-side="top"}
 
 ### `bx cr image-inspect` 指令中的 Go 範本選項及資料類型
@@ -214,7 +216,7 @@ lastupdated: "2017-11-10"
 |欄位|類型|說明|
 |-----|----|-----------|
 |`ID`|字串|顯示記號的唯一 ID。|
-|`Expiry`|整數（64 位元）|顯示記號過期時的 [Unix 時間戳記](https://en.wikipedia.org/wiki/Unix_time)。|
-|`ReadOnly`|布林|只有在只取回映像檔時才會顯示 _true_，當您可以從名稱空間推送及取回映像檔時會顯示 _false_。|
+|`Expiry`|整數（64 位元）|顯示記號到期時的 [Unix 時間戳記](https://en.wikipedia.org/wiki/Unix_time)。|
+|`ReadOnly`|布林|當您只可以取回映像檔時會顯示 _true_，當您可以推送映像檔至名稱空間以及從名稱空間取回映像檔時會顯示 _false_。|
 |`Description`|字串|顯示記號的說明。|
 {: caption="表 6. bx cr token-list 指令中的可用欄位及資料類型。" caption-side="top"}

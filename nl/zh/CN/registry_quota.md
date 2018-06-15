@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-31"
 
 ---
@@ -38,14 +38,14 @@ lastupdated: "2017-10-31"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  查看存储量和拉出流量的当前配额限制。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 
@@ -53,11 +53,15 @@ lastupdated: "2017-10-31"
 
 
     ```
-    Getting quotas and usage for the current month, for account '<account_owner> Account'...
+        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+
+    
 
     QUOTA          LIMIT    USED
     Pull traffic   5.1 GB   0 B
     Storage        512 MB   511 MB
+
+    
 
     OK
     ```
@@ -69,7 +73,7 @@ lastupdated: "2017-10-31"
     **注：**如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
 
     ```
-    bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+        bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
@@ -77,7 +81,7 @@ lastupdated: "2017-10-31"
 
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+        bx cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -91,14 +95,14 @@ lastupdated: "2017-10-31"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  查看存储量和拉出流量的当前配额限制。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 
@@ -106,11 +110,15 @@ lastupdated: "2017-10-31"
 
 
     ```
-    Getting quotas and usage for the current month, for account '<account_owner> Account'...
+        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+
+    
 
     QUOTA          LIMIT    USED
     Pull traffic   5.1 GB   0 B
     Storage        512 MB   511 MB
+
+    
 
     OK
     ```
@@ -128,7 +136,7 @@ lastupdated: "2017-10-31"
 1.  列出 {{site.data.keyword.Bluemix_notm}} 帐户的所有名称空间中的所有映像。
 
     ```
-    bx cr images
+        bx cr images
     ```
     {: pre}
 
@@ -136,7 +144,7 @@ lastupdated: "2017-10-31"
 
 
     ```
-    bx cr image-rm <image_name>
+        bx cr image-rm <image_name>
     ```
     {: pre}
 
@@ -145,7 +153,7 @@ lastupdated: "2017-10-31"
 3.  查看存储量配额使用情况。
 
     ```
-    bx cr quota
+        bx cr quota
     ```
     {: pre}
 

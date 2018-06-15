@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -21,6 +21,9 @@ lastupdated: "2017-10-26"
 
 您必須安裝 {{site.data.keyword.Bluemix_notm}} CLI 及 {{site.data.keyword.registrylong}}，然後在 {{site.data.keyword.registrylong_notm}} 中設定登錄名稱空間來建立自己的映像檔儲存庫，才能在 {{site.data.keyword.registrylong_notm}} 中儲存 Docker 映像檔。
 {:shortdesc}
+
+
+**附註**：請勿將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 
 
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) 外掛程式
@@ -43,21 +46,21 @@ lastupdated: "2017-10-26"
 1.  登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  更新 container-registry 外掛程式。
 
     ```
-    bx plugin update container-registry -r Bluemix
+        bx plugin update container-registry -r Bluemix
     ```
     {: pre}
 
 3.  驗證已順利更新外掛程式。
 
     ```
-    bx plugin list
+        bx plugin list
     ```
      {: pre}
 
@@ -71,21 +74,21 @@ lastupdated: "2017-10-26"
 1.  登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  解除安裝 container-registry 外掛程式。
 
     ```
-    bx plugin uninstall container-registry
+        bx plugin uninstall container-registry
     ```
     {: pre}
 
 3.  驗證已順利解除安裝外掛程式。
 
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: pre}
 
@@ -116,25 +119,25 @@ lastupdated: "2017-10-26"
 1.  登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-    bx login
+        bx login
     ```
     {: pre}
 
 2.  列出可用的名稱空間。
 
     ```
-    bx cr namespace-list
+        bx cr namespace-list
     ```
     {: pre}
 
-3.  移除名稱空間。 
+3.  移除名稱空間。
 
     **注意：**當您移除名稱空間時，也會刪除該名稱空間中所儲存的任何映像檔。此動作將無法復原。
-    
+
     請將 _&lt;my_namespace&gt;_ 取代為您要移除的名稱空間。
 
     ```
-    bx cr namespace-rm <my_namespace>
+        bx cr namespace-rm <my_namespace>
     ```
     {: pre}
 

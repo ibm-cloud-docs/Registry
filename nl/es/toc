@@ -8,13 +8,13 @@ IBM Cloud Container Registry
     index.md
     registry_overview.md
     [Imágenes de IBM](../RegistryImages/index.html#ibm_images)
-        [imagen ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
-        [imagen ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
-        [imagen ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [imagen ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [imagen ibmnode](../RegistryImages/ibmnode/index.html#getting_started_node)
-        [imagen ibm-node-strong-pm](../RegistryImages/ibm-node-strong-pm/index.html#getting_started_node_strong)
-        [imagen ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
+        [ibm-integration-bus image](../RegistryImages/ibm-integration-bus/index.html#iib)
+        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
+        [ibm-mq image](../RegistryImages/ibm-mq/index.html#ibm_mq)
+        [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -23,11 +23,17 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
-    [Gestión de la seguridad de las imágenes con Vulnerability Advisor](../va/va_index.html) [Acerca de Vulnerability Advisor](../va/va_index.html#about)
-        [Revisión de un informe de vulnerabilidad para su imagen](../va/va_index.html#va_reviewing)
-        [Revisión de la seguridad de imágenes mediante la CLI](../va/va_index.html#va_registry_cli) [Solución de problemas comunes](../va/va_index.html#va_report)
+    registry_trusted_content.md
+    registry_security_enforce.md
+    [Gestión de la seguridad de las imágenes con Vulnerability Advisor](../va/va_index.html)
+        [Acerca de Vulnerability Advisor](../va/va_index.html#about)
+        [Tipos de vulnerabilidades](../va/va_index.html#types)
+        [Instalación del explorador de contenedores](../va/va_index.html#va_install_livescan)
+        [Revisión de un informe de vulnerabilidad](../va/va_index.html#va_reviewing)
+        [Revisión de un informe de vulnerabilidad mediante la CLI](../va/va_index.html#va_registry_cli)
+        [Solución de problemas comunes](../va/va_index.html#va_report)
     {: .navgroup-end}
-    
+
     {: .navgroup id="reference"}
     registry_cli_reference.md
     rellinks.md
@@ -36,4 +42,3 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     {: .navgroup-end}
-

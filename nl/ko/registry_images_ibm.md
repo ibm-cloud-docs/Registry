@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-10-06"
 
 ---
@@ -12,7 +12,7 @@ lastupdated: "2017-10-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,5 +23,3 @@ lastupdated: "2017-10-06"
 {:shortdesc}
 
 {{site.data.keyword.IBM_notm}}에서 제공하는 공용 이미지를 사용하려면 [{{site.data.keyword.containerlong_notm}}의 공용 {{site.data.keyword.IBM_notm}} 이미지](../../services/RegistryImages/index.html#ibm_images)를 참조하십시오.
-
-

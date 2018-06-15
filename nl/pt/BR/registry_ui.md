@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-05"
 
 ---
@@ -28,14 +28,14 @@ A coluna **RELATÓRIO DE SEGURANÇA** mostra as informações sobre a imagem a s
 -   `Incomplete` A varredura não está completa. A varredura ainda pode estar em execução ou o sistema operacional da imagem pode não ser compatível. Aguarde e tente a varredura novamente. Se a varredura ainda não tiver sido concluída, envie a imagem por push novamente para iniciar uma nova varredura. As
 imagens com varreduras incompletas não são bloqueadas para implementação.
 -   `S.O. não suportado` O sistema operacional na imagem não é suportado.
-    
+
 Para visualizar a interface gráfica com o usuário, use as etapas a seguir:
 
 1.  Efetue login no console do {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) com seu IBMid.
 2.  Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
 3.  Clique em **Catálogo**.
 4.  Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.
-5.  Para visualizar informações sobre imagens em seus repositórios privados, clique em **Repositórios privados**. Uma lista de imagens em seus repositórios privados e o status do relatório de segurança para cada imagem é exibida. Para descobrir mais informações sobre as vulnerabilidades em potencial, incluindo as tags e a compilação de imagem, clique na linha na tabela.
-6.  Para visualizar informações sobre imagens nos repositórios públicos, clique em **Repositórios públicos**. Uma lista de imagens nos repositórios públicos com um link para a documentação e o relatório de segurança para cada imagem é exibida. Para descobrir mais informações sobre as vulnerabilidades em potencial, incluindo as tags e a compilação de imagem, clique na linha na tabela.
+5.  Para visualizar informações sobre imagens em seus repositórios privados, clique em **Repositórios privados**. Uma lista de imagens em seus repositórios privados e o status do relatório de segurança para cada imagem são exibidos. Para descobrir mais informações sobre as vulnerabilidades em potencial, incluindo as tags e a compilação de imagem, clique na linha na tabela.
+6.  Para visualizar informações sobre imagens nos repositórios públicos, clique em **Repositórios públicos**. Uma lista de imagens nos repositórios públicos com um link para a documentação e o relatório de segurança para cada imagem são exibidos. Para descobrir mais informações sobre as vulnerabilidades em potencial, incluindo as tags e a compilação de imagem, clique na linha na tabela.
 
 Para saber mais sobre o significado das informações no relatório de segurança, veja [Gerenciando a segurança de imagem com o Vulnerability Advisor](../va/va_index.html).

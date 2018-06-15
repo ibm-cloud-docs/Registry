@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -28,6 +28,9 @@ um Dockerfile, usando o comando `build` do Docker. Para incluir uma imagem em se
 {{site.data.keyword.registrylong_notm}}.
 
 
+**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
+
+
 ## Puxando imagens de outro registro
 {: #registry_images_pulling}
 
@@ -35,7 +38,7 @@ um Dockerfile, usando o comando `build` do Docker. Para incluir uma imagem em se
 uso posterior no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Puxe uma imagem de seu registro público ou privado para seu computador."/>
+<img src="images/images_pull.png" width="800" style="width:800px;" alt="Faça pull de uma imagem de um registro público ou privado para seu computador."/>
 
 Antes de iniciar:
 
@@ -104,7 +107,7 @@ para o cluster no {{site.data.keyword.containerlong_notm}}.
 compartilhar a imagem com usuários em ambas as regiões.
 {:shortdesc}
 
-<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copie uma imgem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.Bluemix_notm}}."/>
+<img src="images/images_copy.png" width="800" style="width:800px;" alt="Copie uma imagem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.Bluemix_notm}}."/>
 
 Antes de iniciar:
 
@@ -203,8 +206,8 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
     {: pre}
 
     em que _&lt;image_name&gt;_ é o nome de sua imagem e _&lt;directory&gt;_ é o caminho para o diretório.
-
-    Para obter mais informações sobre o comando `bx cr build`, veja [CLI do {{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+   
+   Para obter mais informações sobre o comando `bx cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Para construir e testar sua imagem localmente antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
     1. Construa a imagem de seu Dockerfile na máquina local e identifique-a com o nome da imagem.
@@ -228,6 +231,8 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
     3. Após criar a imagem e identificá-la para o seu namespace, [será possível enviar a imagem para o registro privado do seu namespace](#registry_images_pushing).
 
 Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, veja [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).
+
+
 
 ## Removendo imagens de seu registro de imagens privadas do {{site.data.keyword.Bluemix_notm}}
 {: #registry_images_remove}
@@ -259,3 +264,7 @@ As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser removidas 
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

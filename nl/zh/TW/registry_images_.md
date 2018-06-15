@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -25,10 +25,13 @@ lastupdated: "2017-11-15"
 您要新增至名稱空間的每個映像檔都必須先存在於本端機器上。您可以將映像檔從另一個儲存庫下載（取回）至本端機器，或使用 Docker `build` 指令，以從 Dockerfile 建置自己的映像檔。若要將映像檔新增至名稱空間，您必須將本端映像檔上傳（推送）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間。
 
 
+**附註**：請勿將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+
+
 ## 從另一個登錄取回映像檔
 {: #registry_images_pulling}
 
-您可以從任何專用或公用登錄來源中取回（下載）映像檔，然後將它加上標籤，以供稍後在 {{site.data.keyword.registrylong_notm}} 中使用。
+您可以從任何專用或公用登錄來源中取回（下載）映像檔，然後標記它，以供稍後在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
 
 <img src="images/images_pull.png" width="800" style="width:800px;" alt="從專用及公用登錄將映像檔取回至您的電腦。"/>
@@ -37,9 +40,9 @@ lastupdated: "2017-11-15"
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須以 `sudo` 身分來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
 
-  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令時，則必須再次執行 `bx login`。
+  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `bx login`。
 
 
 下載映像檔，請參閱「開始使用」文件中的[取回映像檔](index.html#registry_images_pulling)。
@@ -61,10 +64,10 @@ lastupdated: "2017-11-15"
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
-- 在本端機器上[取回](#registry_images_pulling)或[建置](#registry_images_creating)映像檔，並將映像檔標上名稱空間資訊。
-- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須以 `sudo` 身分來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
+- 在本端機器上[取回](#registry_images_pulling)或[建置](#registry_images_creating)映像檔，並以名稱空間資訊標記映像檔。
+- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
 
-  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令時，則必須再次執行 `bx login`。
+  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `bx login`。
 
 
 若要上傳（推送）映像檔，請遵循下列步驟。
@@ -101,9 +104,9 @@ lastupdated: "2017-11-15"
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須以 `sudo` 身分來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
 
-  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令時，則必須再次執行 `bx login`。
+  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `bx login`。
 
 
 若要在兩個登錄之間複製映像檔，請遵循下列步驟。
@@ -126,9 +129,9 @@ lastupdated: "2017-11-15"
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須以 `sudo` 身分來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 許可權的情況下執行 Docker 指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `bx login`、`bx cr login`、`docker pull` 及 `docker push` 指令。
 
-  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令時，則必須再次執行 `bx login`。
+  如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `bx login`。
 
 
 Docker 映像檔是每個您建立的容器的基準。從 Dockerfile 建立映像檔，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照分開儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。
@@ -137,26 +140,26 @@ Docker 映像檔是每個您建立的容器的基準。從 Dockerfile 建立映�
 
 若要建置自己的 Docker 映像檔，請完成下列步驟：
 
-1. 建立您要儲存建置環境定義的本端目錄。建置環境定義包含您的 Dockerfile 及相關建置構件（例如應用程式碼）。在指令行視窗這導覽至此目錄。
+1. 建立您要儲存建置環境定義的本端目錄。建置環境定義包含您的 Dockerfile 及相關建置構件（例如應用程式碼）。在指令行視窗中導覽至此目錄。
 2. 建立 Dockerfile。
   1. 在本端目錄中建立 Dockerfile。
 
     ```
-    touch Dockerfile
+        touch Dockerfile
     ```
     {: pre}
 
-  2. 使用文字編輯器來開啟 Dockerfile。您至少必須新增從中建置映像檔的基礎映像檔。請將 _&lt;source_image&gt;_ 及 _&lt;tag&gt;_ 取代為您要使用的映像檔儲存庫及標籤。如果您要使用另一個專用登錄中的映像檔，請定義此專用登錄中映像檔的完整路徑。
+  2. 使用文字編輯器來開啟 Dockerfile。您至少必須新增基礎映像檔，以便從基礎映像檔建置映像檔。請將 _&lt;source_image&gt;_ 及 _&lt;tag&gt;_ 取代為您要使用的映像檔儲存庫及標籤。如果您要使用另一個專用登錄中的映像檔，請定義此專用登錄中映像檔的完整路徑。
 
     ```
-    FROM <source_image>:<tag>
+        FROM <source_image>:<tag>
     ```
     {: pre}
 
     建立根據公用 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) 映像檔之 Dockerfile 的範例：
 
     ```
-    FROM registry.<region>.bluemix.net/ibmliberty:latest
+        FROM registry.<region>.bluemix.net/ibmliberty:latest
     LABEL description="This is my test Dockerfile"
     EXPOSE 9080
     ```
@@ -178,28 +181,28 @@ Docker 映像檔是每個您建立的容器的基準。從 Dockerfile 建立映�
   - 若要直接在 {{site.data.keyword.Bluemix_notm}} 中建置映像檔，請執行下列指令：
 
     ```
-    bx cr build -t <image_name> <directory>
+        bx cr build -t <image_name> <directory>
     ```
     {: pre}
 
     其中 _&lt;image_name&gt;_ 是您映像檔的名稱，而 _&lt;directory&gt;_ 是目錄的路徑。
-
-    如需 `bx cr build` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](../../cli/plugins/registry/index.html#containerregcli)。
+   
+   如需 `bx cr build` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
 
   - 若要先在本端建置及測試映像檔，然後再將它推送至 {{site.data.keyword.Bluemix_notm}}，請完成下列步驟：
-    1. 在本端機器上從 Dockerfile 建置映像檔，並使用映像檔名稱將它加上標籤。
+    1. 在本端機器上從 Dockerfile 建置映像檔，並以映像檔名稱來標記它。
 
       ```
-      docker build -t <image_name> <directory>
+            docker build -t <image_name> <directory>
       ```
       {: pre}
 
       其中 _&lt;image_name&gt;_ 是您映像檔的名稱，而 _&lt;directory&gt;_ 是目錄的路徑。
 
-    2. 選用項目：先測試本端機器上的映像檔，再將它推送至名稱空間。
+    2. 選用項目：先在本端機器上測試映像檔，再將它推送至名稱空間。
 
       ```
-      docker run <image_name>
+            docker run <image_name>
       ```
       {: pre}
 
@@ -209,13 +212,15 @@ Docker 映像檔是每個您建立的容器的基準。從 Dockerfile 建立映�
 
 若要使用「漏洞警告器」來檢查映像檔的安全，請參閱[使用漏洞警告器管理映像檔安全](../va/va_index.html)。
 
+
+
 ## 從專用 {{site.data.keyword.Bluemix_notm}} 映像檔登錄移除映像檔
 {: #registry_images_remove}
 
 您可以從專用映像檔登錄移除不想要的映像檔。
 {:shortdesc}
 
-開始之前，請移除任何正在使用映像檔的容器。
+開始之前，請移除任何正在使用該映像檔的容器。
 
 無法從您的專用 {{site.data.keyword.Bluemix_notm}} 登錄移除公用 {{site.data.keyword.IBM_notm}} 映像檔，也不會計入您的配額。
 
@@ -239,3 +244,7 @@ Docker 映像檔是每個您建立的容器的基準。從 Dockerfile 建立映�
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

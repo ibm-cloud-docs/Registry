@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="images/images_copy.ai">
+<text>로컬 컴퓨터</text>
+<text>개인용 IBM Cloud 레지스트리</text>
+<text>다른 모든 개인용 또는 공용 저장소</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/images_pull.ai">
+<text>로컬 컴퓨터</text>
+<text>개인용 IBM Cloud 레지스트리</text>
+<text>다른 모든 개인용 또는 공용 저장소</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/images_push.ai">
+<text>로컬 컴퓨터</text>
+<text>개인용 IBM Cloud 레지스트리</text>
+<text>다른 모든 개인용 또는 공용 저장소</text>
+</ExtractedAITH>
+<ExtractedAITH file="images/registry_architecture.ai">
+<text>가져오기</text>
+<text>푸시</text>
+<text>가져오기</text>
+<text>$</text>
+<text>Docker 허브 및
+기타 레지스트리</text>
+<text>공용
+저장소
+IBM에서 제공하는
+이미지.</text>
+<text>나열, 검사, 제거</text>
+<text>네임스페이스 작성</text>
+<text>네임스페이스
+작성</text>
+<text>개인 저장소
+고유 이미지.</text>
+<text>Docker</text>
+<text>CLI</text>
+<text>가져오기</text>
+<text>푸시</text>
+<text>Docker 허브
+기타 레지스트리</text>
+<text>푸시</text>
+<text>GUI</text>
+<text>개인용 저장소</text>
+<text>가져오기</text>
+<text>푸시</text>
+<text>로컬 이미지 저장소</text>
+<text>GUI</text>
+<text>나열</text>
+<text>IBM 이미지</text>
+<text>이미지</text>
+<text>$</text>
+<text>가져오기</text>
+<text>공용 저장소</text>
+<text>CLI</text>
+<text>가져오기</text>
+<text>기타 제공자</text>
+<text>IBM Cloud Container Registry 및 Vulnerability Advisor</text>
+<text>나열, 검사,
+제거</text>
+<text>나열</text>
+<text>공용 저장소</text>
+<text>개인용 저장소</text>
+<text>로컬 이미지
+저장소</text>
+<text>Docker</text>
+<text>푸시</text>
+<text>가져오기</text>
+<text>푸시</text>
+<text>가져오기</text>
+<text>가져오기</text>
+<text>나열,
+검사,
+제거</text>
+<text>네임스페이스
+작성</text>
+<text>나열</text>
+<text>CLI</text>
+<text>Docker 허브
+기타 레지스트리</text>
+<text>기타 제공자</text>
+<text>GUI</text>
+<text>IBM Cloud Container Registry 및 Vulnerability Advisor</text>
+<text>IBM 이미지</text>
+<text>이미지</text>
+<text>$</text>
+</ExtractedAITH>
+</ExtractedAITHs>

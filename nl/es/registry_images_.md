@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-15"
+  years: 2017, 2018
+lastupdated: "2018-05-2"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-11-15"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,6 +23,9 @@ Puede almacenar y compartir de forma segura imágenes de Docker con otros usuari
 {:shortdesc}
 
 Cada imagen que desea añadir a su espacio de nombres debe existir en su máquina local en primer lugar. Puede descargar (extraer) una imagen desde otro repositorio a la máquina local, o crear su propia imagen de un Dockerfile utilizando el mandato de Docker `build`. Para añadir una imagen a su espacio de nombres, debe subir (enviar por push) la imagen local a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
+
+
+**Nota**: No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 
 
 ## Extracción de imágenes de otro registro
@@ -148,7 +151,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
     ```
     {: pre}
 
-  2. Utilice un editor de texto para abrir el Dockerfile. Como mínimo, debe añadir la imagen base para crear su imagen. Sustituya _&lt;imagen_fuente&gt;_ y _&lt;etiqueta&gt;_ por el repositorio de la imagen y etiquételo como que desea utilizarlo. Si está utilizando una imagen desde otro registro privado, defina la vía de acceso completa a la imagen en este registro privado.
+  2. Utilice un editor de texto para abrir el Dockerfile. Como mínimo, debe añadir la imagen base para crear su imagen. Sustituya _&lt;source_image&gt;_ y _&lt;tag&gt;_ por el repositorio de la imagen y etiquételo como que desea utilizarlo. Si está utilizando una imagen desde otro registro privado, defina la vía de acceso completa a la imagen en este registro privado.
 
     ```
     FROM <source_image>:<tag>
@@ -185,8 +188,8 @@ Para crear su propia imagen de Docker, siga estos pasos:
     {: pre}
 
     donde _&lt;image_name&gt;_ es el nombre de su imagen y _&lt;directory&gt;_ es la vía de acceso al directorio.
-
-    Para obtener más información sobre el mandato `bx cr build`, consulte la CLI de [{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+   
+   Para obtener más información sobre el mandato `bx cr build`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Para crear y probar su imagen localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}, siga estos pasos:
     1. Cree la imagen del Dockerfile en la máquina local y etiquétela con el nombre de la imagen.
@@ -210,6 +213,8 @@ Para crear su propia imagen de Docker, siga estos pasos:
     3. Después de crear la imagen y etiquetarla para su espacio de nombres, [puede enviarla por push al registro privado de su espacio de nombres](#registry_images_pushing).
 
 Puede utilizar Vulnerability Advisor para comprobar la seguridad de su imagen; consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html).
+
+
 
 ## Eliminación de imágenes del registro de imágenes privado de {{site.data.keyword.Bluemix_notm}}
 {: #registry_images_remove}
@@ -241,3 +246,7 @@ Las imágenes públicas de {{site.data.keyword.IBM_notm}} no pueden eliminarse d
   bx cr image-list
   ```
   {: pre}
+
+  
+
+

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -23,6 +23,9 @@ del tuo spazio dei nomi del registro
 Prima di poter memorizzare le tue immagini Docker in {{site.data.keyword.registrylong}}, devi installare la CLI {{site.data.keyword.Bluemix_notm}} e il plugin {{site.data.keyword.registrylong_notm}}
 e configurare uno spazio dei nomi del registro per creare il tuo proprio repository di immagini in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+
+**Nota**: non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 
 
 ## Installazione del plug-in CLI di {{site.data.keyword.registrylong_notm}} (`bx cr`)
@@ -134,10 +137,10 @@ Se non hai più bisogno di uno spazio dei nomi del registro, puoi rimuoverlo dal
     ```
     {: pre}
 
-3.  Rimuovi uno spazio dei nomi. 
+3.  Rimuovi uno spazio dei nomi.
 
     **Attenzione:** quando rimuovi uno spazio dei nomi, vengono eliminate anche tutte le immagini memorizzate in tale spazio dei nomi. Questa azione non può essere annullata.
-    
+
     Sostituisci _&lt;mio_spazionomi&gt;_ con lo spazio dei
 nomi che vuoi rimuovere.
 

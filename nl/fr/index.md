@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-28"
+  years: 2017, 2018
+lastupdated: "2018-05-07"
 
 ---
 
@@ -12,8 +12,9 @@ lastupdated: "2017-11-28"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
+
 
 
 # Initiation à {{site.data.keyword.registrylong_notm}}
@@ -26,6 +27,9 @@ votre compte {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Surveillance de la vulnérabilité des images](registry_ui.html).
+
+**Remarque** : Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+
 
 
 ## Installez l'interface de ligne de commande (CLI) de {{site.data.keyword.registrylong_notm}}
@@ -65,6 +69,7 @@ _&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
     bx cr namespace-list
     ```
     {: pre}
+
 
 
 ## Extrayez vers votre machine locale des images d'un autre registre
@@ -115,6 +120,7 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
     {: pre}
 
 
+
 ## Transférez (par commande Push) des images Docker vers votre espace de nom
 {: #registry_images_pushing}
 
@@ -144,10 +150,12 @@ Bien joué ! Vous avez configuré un espace de nom dans
 {{site.data.keyword.registrylong_notm}} et avez
 envoyé par commande push votre première image vers votre espace de nom.
 
+
 **Etape suivante ?**
 
 -   [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
 -   [Examinez vos plans de service et leur utilisation](registry_overview.html#registry_plans)
 -   [Stockez et gérez davantage d'images dans votre espace de nom](registry_images_.html).
--   [Créez et déployez un conteneur vers un cluster Kubernetes à partir de votre image](../../containers/cs_cluster.html).
+-   [Créez et déployez un conteneur vers un cluster Kubernetes à partir de votre image](../../containers/cs_clusters.html).
+
 

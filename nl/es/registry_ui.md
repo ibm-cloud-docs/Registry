@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-12-05"
 
 ---
@@ -27,10 +27,10 @@ La columna **INFORME DE SEGURIDAD** muestra la siguiente información acerca de 
 -   `Vulnerable` Se han encontrado problemas de seguridad o de configuración y deben corregirse antes de que pueda desplegar la imagen.
 -   `Incompleto` La exploración no se ha completado. Es posible que la exploración todavía se esté ejecutando o que el sistema operativo de la imagen no sea compatible. Espere y vuelva a intentar realizar la exploración. Si la exploración no se ha completado aún, envíe por push la imagen de nuevo para iniciar una nueva exploración. Las imágenes con exploraciones incompletas no se bloquean para el despliegue.
 -   `SO no soportado` El sistema operativo en la imagen no está soportado.
-    
+
 Para visualizar la interfaz gráfica de usuario, siga los siguientes pasos:
 
-1.  Inicie la sesión en la consola de {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con su ID de IBM.
+1.  Inicie la sesión en la consola de {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con su IBMid.
 2.  Si tiene varias cuentas de {{site.data.keyword.Bluemix_notm}}, seleccione la cuenta y región que desea utilizar desde el menú de la cuenta.
 3.  Pulse **Catálogo**.
 4.  Seleccione la categoría **Contenedores** y pulse el mosaico **Container Registry**.

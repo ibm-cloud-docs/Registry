@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-26"
+  years: 2017, 2018
+lastupdated: "2018-05-1"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-10-26"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
-{:tip: .tip} 
+{:tip: .tip}
 {:download: .download}
 
 
@@ -21,6 +21,9 @@ lastupdated: "2017-10-26"
 
 Bevor Sie die Docker-Images in {{site.data.keyword.registrylong}} speichern können, müssen Sie die {{site.data.keyword.Bluemix_notm}}-CLI und das {{site.data.keyword.registrylong_notm}}-Plug-in installieren und anschließend einen Registry-Namensbereich einrichten, um ein eigenes Image-Repository in {{site.data.keyword.registrylong_notm}} zu erstellen.
 {:shortdesc}
+
+
+**Hinweis**: Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 
 
 ## CLI-Plug-in (`bx cr`) für {{site.data.keyword.registrylong_notm}} installieren
@@ -127,10 +130,10 @@ Falls Sie einen Registry-Namensbereich nicht mehr benötigen, können Sie ihn au
     ```
     {: pre}
 
-3.  Entfernen Sie einen Namensbereich. 
+3.  Entfernen Sie einen Namensbereich.
 
     **Achtung:** Wenn Sie einen Namensbereich entfernen, werden alle in diesem Namensbereich gespeicherten Images ebenfalls gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.
-    
+
     Ersetzen Sie im entsprechenden Befehl _&lt;eigener_namensbereich&gt;_ durch den Namensbereich, den Sie entfernen wollen.
 
     ```

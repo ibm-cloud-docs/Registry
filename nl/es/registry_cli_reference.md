@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-10"
+  years: 2017, 2018
+lastupdated: "2018-05-31"
 
 ---
 
@@ -28,8 +28,8 @@ Puede utilizar el plug-in container-registry para configurar su propio espacio d
 
 Ejecute los mandatos `bx cr` en la CLI de {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
-
-Para ver los mandatos admitidos, consulte la CLI de [{{site.data.keyword.registrylong_notm}}](../../cli/plugins/registry/index.html#containerregcli).
+  
+Para ver los mandatos soportados, consulte [CLI de {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
 ## Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -52,22 +52,23 @@ Puede utilizar la opción format con los siguientes mandatos de {{site.data.keyw
 
 El código siguiente muestra cómo puede utilizar las opciones de formateo y de filtrado.
 
--   Ejecute el siguiente mandato `bx cr image-list` para visualizar el repositorio, la etiqueta y el estado de vulnerabilidad de todas las imágenes con un tamaño superior a 1 MB:
+-   Ejecute el siguiente mandato `bx cr image-list` para visualizar el repositorio, la etiqueta y el estado de seguridad de todas las imágenes que tienen un tamaño de más de 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .Vulnerable }}{{end}}"
+    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     Salida de ejemplo:
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest OK
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 Vulnerable
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 Vulnerable
+    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
     {: screen}
+
 
 -   Ejecute el siguiente mandato `bx cr image-inspect` para ver dónde se encuentra la documentación de IBM correspondiente a una determinada imagen pública de IBM:
 
@@ -99,7 +100,7 @@ El código siguiente muestra cómo puede utilizar las opciones de formateo y de 
     ```
     {: screen}
 
--   Ejecute el siguiente mandato `bx cr token-list` para ver todas las señales de solo lectura: 
+-   Ejecute el siguiente mandato `bx cr token-list` para ver todas las señales de solo lectura:
 
     ```
     bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
@@ -128,7 +129,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Repository`|Serie|Muestra el repositorio de la imagen.|
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`Tag`|Serie|Muestra la etiqueta de la imagen.|
-|`Vulnerable`|Serie|Muestra el estado de vulnerabilidad de la imagen. Los estados posibles se describen en [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html).|
+|`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](../va/va_index.html#va_registry_cli).|
 {: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato bx cr image-list." caption-side="top"}
 
 ### Opciones de plantilla de Go y tipos de datos en el mandato `bx cr image-inspect`
