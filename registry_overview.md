@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-06-14"
 
 ---
 
@@ -129,7 +129,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 
   > In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
   >
-  > After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.2 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
+  > After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
 ### Estimating costs
 {: #registry_estimating_costs}
@@ -170,7 +170,7 @@ If you want to find out what service plan you have, run the `bx cr plan` command
     ```
     {: pre}
 
-    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Trial account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Standard account before running `bx cr plan-upgrade`.
+    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `bx cr plan-upgrade`.
 
 
 ## Learning the basics

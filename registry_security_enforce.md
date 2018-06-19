@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-4-26"
+lastupdated: "2018-06-13"
 
 ---
 
@@ -18,10 +18,10 @@ lastupdated: "2018-4-26"
 # Enforcing container image security (beta)
 {: #security_enforce}
 
-With IBM Container Image Security Enforcement (beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](registry_trusted_content.html) is properly applied to the image. If a pod does not meet your policy requirements, your cluster is not modified.
+With IBM Container Image Security Enforcement (beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](registry_trusted_content.html) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
-IBM Container Image Security Enforcement gets the information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose whether to block or allow images from other registries in your policies, but you cannot use vulnerability or trust enforcement for these images.
+IBM Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow deployments for images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
 
 
 ## Installing Container Image Security Enforcement in your cluster
@@ -34,21 +34,21 @@ Before you begin:
 Steps:
 1.  [Set up Helm in your cluster](../../containers/cs_integrations.html#helm).
 
-1.  Add the IBM chart repository to your Helm.
+2.  Add the IBM chart repo as a Helm repo.
 
     ```
     helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
     ```
     {: pre}
 
-1.  Install the IBM Container Image Security Enforcement Helm chart into your `ibm-system` cluster namespace. Give it a name such as `<cise>`.
+3.  Install the IBM Container Image Security Enforcement Helm chart into your `kube-system` cluster namespace. Give it a name such as `mychart`.
 
     ```
-    helm install --name=<cise> --namespace=ibm-system ibm-incubator/ibmcloud-image-enforcement
+    helm install --name=mychart --namespace=kube-system ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-IBM Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
+IBM Container Image Security Enforcement is now installed, and applies the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
 ## Default policies
 {: #default_policies}
@@ -110,7 +110,7 @@ spec:
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
     - name: "*"
       policy:
-    # These policies allow all IBM Cloud Container Service images from the global and all regional registries to deploy in this namespace.
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -140,7 +140,7 @@ spec:
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
     - name: "*"
       policy:
-    # These policies allow all IBM Cloud Container Service images from the global and all regional registries to deploy in this namespace.
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -259,7 +259,7 @@ To configure the policy to verify that an image is signed by a particular signer
 ## Controlling who can customize policies
 {: #assign_user_policy}
 
-If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the IBM Cloud Container Service docs](../../containers/cs_users.html#rbac).
+If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](../../containers/cs_users.html#rbac).
 {:shortdesc}
 
 In your role, add a rule for security policies:

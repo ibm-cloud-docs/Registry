@@ -29,7 +29,7 @@ IBM Cloud Container Registry
         [About Vulnerability Advisor](../va/va_index.html#about)
         [Types of vulnerabilities](../va/va_index.html#types)
         [Installing the container scanner](../va/va_index.html#va_install_livescan)
-        [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
+        [Reviewing a vulnerability report by using the GUI](../va/va_index.html#va_reviewing)
         [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
         [Resolving common problems](../va/va_index.html#va_report)
     {: .navgroup-end}
