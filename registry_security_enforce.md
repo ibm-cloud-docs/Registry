@@ -295,33 +295,35 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 *  If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: 
-   Deny, no image policies or cluster polices for <image-name>
+   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
    {: screen}
 
 *  If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
 
    ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: 
-   The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. 
-   Refer to your image vulnerability report for more details by using the command `bx cr va`.
+   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: The Vulnerability Advisor image scan assessment found 
+   issues with the container image that are not exempted. Refer to your image 
+   vulnerability report for more details by using the command `bx cr va`.
    ```
    {: screen}
 
 *  If your image matches a policy but does not satisfy that policy's trust requirements.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: 
-   Deny, failed to get content trust information: No valid trust data for latest
+   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: Deny, failed to get content trust information: 
+   No valid trust data for latest
    ```
    {: screen}
 
 *  If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: 
-   Trust is not supported for images from this registry
+   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: Trust is not supported for images from this registry
    ```
    {: screen}
 
