@@ -327,8 +327,10 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 *  If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Trust is not supported for images from this registry
+   admission webhook 
+   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: Trust is not supported for images 
+   from this registry
    ```
    {: screen}
 
