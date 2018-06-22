@@ -31,6 +31,7 @@ IBM Cloud Container Registry
         [Installing the container scanner](../va/va_index.html#va_install_container_scanner)
         [Reviewing a vulnerability report by using the GUI](../va/va_index.html#va_reviewing)
         [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
+        [Reviewing a container report](../va/va_index.html#va_reviewing_container)
         [Resolving common problems](../va/va_index.html#va_report)
     {: .navgroup-end}
 
