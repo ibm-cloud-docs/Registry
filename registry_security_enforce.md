@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -295,25 +295,30 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 *  If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Deny, no image policies or cluster polices for <image-name>
+   admission webhook 
+   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: Deny, no image policies or cluster 
+   polices for <image-name>
    ```
    {: screen}
 
 *  If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
 
    ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: The Vulnerability Advisor image scan assessment found 
-   issues with the container image that are not exempted. Refer to your image 
-   vulnerability report for more details by using the command `bx cr va`.
+   admission webhook 
+   "va.hooks.securityenforcement.admission.cloud.ibm.com" 
+   denied the request: The Vulnerability Advisor image scan 
+   assessment found issues with the container image that 
+   are not exempted. Refer to your image vulnerability report 
+   for more details by using the command `bx cr va`.
    ```
    {: screen}
 
 *  If your image matches a policy but does not satisfy that policy's trust requirements.
 
    ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
+   admission webhook 
+   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
    denied the request: Deny, failed to get content trust information: 
    No valid trust data for latest
    ```
