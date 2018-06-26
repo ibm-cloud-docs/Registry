@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-22"
+lastupdated: "2018-06-26"
 
 ---
 
@@ -93,7 +93,7 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 ### Kube-system policy
 {: #kube-system}
 
-By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement. It also allows repositories used to configure your cluster.
+By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement. It also allows repositories that are used to configure your cluster.
 {:shortdesc}
 
 **Default `kube-system` policy `.yaml` file**:
