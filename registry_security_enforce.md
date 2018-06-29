@@ -93,7 +93,7 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 ### Kube-system policy
 {: #kube-system}
 
-By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement. It also allows images from certain repositories that are used to configure your cluster.
+By default, a namespace-wide policy is installed for the `kube-system` namespace.  This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy in the `.yaml` file. The default policy also includes certain repositories that you must leave in the `.yaml` file so that your cluster is configured correctly.
 {:shortdesc}
 
 **Default `kube-system` policy `.yaml` file**:
@@ -123,7 +123,7 @@ spec:
 ### IBM-system policy
 {: #ibm-system}
 
-By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement. It also allows images from certain repositories that are used to configure your cluster, and to install or upgrade Image Security Enforcement.
+By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy in the `.yaml` file. The default policy also includes certain repositories that you must leave in the `.yaml` file so that your cluster is configured correctly and can install or upgrade Image Security Enforcement.
 {:shortdesc}
 
 **Default `ibm-system` policy `.yaml` file**:
