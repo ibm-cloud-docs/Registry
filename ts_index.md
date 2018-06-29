@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-13"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -199,7 +199,7 @@ Before you begin:
 * Log in to {{site.data.keyword.registrylong_notm}} by running `bx cr login`.
 * [Target the `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to your cluster.
 * If you have not already set up Helm in your cluster, [set up Helm in your cluster now](../../containers/cs_integrations.html#helm).
-* If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).
+* If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
 
