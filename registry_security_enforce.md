@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-07-18"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-06-29"
 With IBM Container Image Security Enforcement (beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](registry_trusted_content.html) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
-IBM Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow deployments for images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
+IBM Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow  deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
 
 
 ## Installing Container Image Security Enforcement in your cluster
@@ -34,21 +34,21 @@ Before you begin:
 Steps:
 1.  [Set up Helm in your cluster](../../containers/cs_integrations.html#helm).
 
-2.  Add the IBM chart repo as a Helm repo.
+2.  Add the IBM chart repository to your Helm client.
 
     ```
     helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
     ```
     {: pre}
 
-3.  Install the IBM Container Image Security Enforcement Helm chart into your `kube-system` cluster namespace. Give it a name such as `mychart`.
+3.  Install the IBM Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
     ```
-    helm install --name=mychart --namespace=kube-system ibm-incubator/ibmcloud-image-enforcement
+    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-IBM Container Image Security Enforcement is now installed, and applies the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
+IBM Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster . For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
 ## Default policies
 {: #default_policies}
@@ -93,7 +93,7 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 ### Kube-system policy
 {: #kube-system}
 
-By default, a namespace-wide policy is installed for the `kube-system` namespace.  This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy in the `.yaml` file. The default policy also includes certain repositories that you must leave in the `.yaml` file so that your cluster is configured correctly.
+By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
 {:shortdesc}
 
 **Default `kube-system` policy `.yaml` file**:
@@ -123,7 +123,7 @@ spec:
 ### IBM-system policy
 {: #ibm-system}
 
-By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy in the `.yaml` file. The default policy also includes certain repositories that you must leave in the `.yaml` file so that your cluster is configured correctly and can install or upgrade Image Security Enforcement.
+By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Image Security Enforcement.
 {:shortdesc}
 
 **Default `ibm-system` policy `.yaml` file**:
@@ -350,8 +350,8 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
 1.  Disable Container Image Security Enforcement.
 
     ```
-    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
+    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
     ```
     {: codeblock}
 
