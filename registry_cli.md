@@ -138,7 +138,7 @@ bx cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 **Parameters**
 <dl>
 <dt>--scope SCOPE</dt>
-<dd>To set your account as the scope, use `*` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 <dt>--issue-type ISSUE_TYPE</dt>
 <dd>The type of security issue that you want to exempt. To find valid issue types, run `bx cr exemption-types`.
@@ -180,7 +180,7 @@ bx cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 **Parameters**
 <dl>
 <dt>--scope SCOPE</dt>
-<dd>To set your account as the scope, use `*` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 <dt>--issue-type ISSUE_TYPE</dt>
 <dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `bx cr exemption-list`.
