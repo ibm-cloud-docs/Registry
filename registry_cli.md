@@ -1,10 +1,8 @@
 ---
 
-
-
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-07-18"
 
 
 ---
@@ -39,33 +37,38 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
  <tr>
  <td>[bx cr api](#bx_cr_api)</td>
  <td>[bx cr build](#bx_cr_build)</td>
+ <td>[bx cr exemption-add](#bx_cr_exemption_add)</td>
+ <td>[bx cr exemption-list (bx cr exemptions)](#bx_cr_exemption_list)</td>
+ <td>[bx cr exemption-rm](#bx_cr_exemption_rm)</td>
+ </tr>
+ <tr>
+ <td>[bx cr exemption-types](#bx_cr_exemption_types)</td>
  <td>[bx cr info](#bx_cr_info)</td>
  <td>[bx cr image-inspect](#bx_cr_image_inspect)</td>
  <td>[bx cr image-list (bx cr images)](#bx_cr_image_list)</td>
- </tr>
- <tr>
  <td>[bx cr image-rm](#bx_cr_image_rm)</td>
+  </tr>
+ <tr>
  <td>[bx cr login](#bx_cr_login)</td>
  <td>[bx cr namespace-add](#bx_cr_namespace_add)</td>
  <td>[bx cr namespace-list (bx cr namespaces)](#bx_cr_namespace_list)</td>
  <td>[bx cr namespace-rm](#bx_cr_namespace_rm)</td>
+ <td>[bx cr plan](#bx_cr_plan)</td>
  </tr>
  <tr>
- <td>[bx cr plan](#bx_cr_plan)</td>
  <td>[bx cr plan-upgrade](#bx_cr_plan_upgrade)</td>
  <td>[bx cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
  <td>[bx cr quota](#bx_cr_quota)</td>
  <td>[bx cr quota-set](#bx_cr_quota_set)</td>
- </tr>
- <tr>
  <td>[bx cr region](#bx_cr_region)</td>
+ </tr><tr>
  <td>[bx cr region-set](#bx_cr_region_set)</td>
  <td>[bx cr token-add](#bx_cr_token_add)</td>
  <td>[bx cr token-get](#bx_cr_token_get)</td>
  <td>[bx cr token-list (bx cr tokens)](#bx_cr_token_list)</td>
- </tr><tr>
  <td>[bx cr token-rm](#bx_cr_token_rm)</td>
- <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
+  </tr><tr>
+  <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
 
@@ -118,6 +121,83 @@ Displays the name and the account of the registry that you are logged in to.
 
 ```
 bx cr info
+```
+{: codeblock}
+
+
+## bx cr exemption-add
+{: #bx_cr_exemption_add}
+
+Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, or tag. 
+
+```
+bx cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+</dd>
+<dt>--issue-type ISSUE_TYPE</dt>
+<dd>The type of security issue that you want to exempt. To find valid issue types, run `bx cr exemption-types`.
+</dd>
+<dt>--issue-id ISSUE_ID</dt>
+<dd>The ID of the security issue that you want to exempt. To find an issue ID, run `bx cr va <image>`, where *&lt;image&gt;* is the name of your image, and use the relevant value from either the **Vulnerability ID** or **Configuration Issue ID** column.
+</dd>
+</dl>
+
+
+## bx cr exemption-list (bx cr exemptions)
+{: #bx_cr_exemption_list}
+
+List your exemptions for security issues. 
+
+```
+bx cr exemption-list [--scope SCOPE]
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+</dd>
+</dl>
+
+
+## bx cr exemption-rm
+{: #bx_cr_exemption_rm}
+
+Delete an exemption for a security issue. To view your existing exemptions, run `bx cr exemption-list`.
+
+```
+bx cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+</dd>
+<dt>--issue-type ISSUE_TYPE</dt>
+<dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `bx cr exemption-list`.
+</dd>
+<dt>--issue-id ISSUE_ID</dt>
+<dd>The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run `bx cr exemption-list`.
+</dd>
+</dl>
+
+
+## bx cr exemption-types
+{: #bx_cr_exemption_types}
+
+Lists the types of security issues that you can exempt.
+
+```
+bx cr exemption-types
 ```
 {: codeblock}
 
