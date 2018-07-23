@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -90,7 +90,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 1.  Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +125,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 2.  Verify that the token was created.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -139,21 +139,21 @@ You can use a token in your `docker login` command to automate access to your na
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to use.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Retrieve the token value for the token. Replace &lt;token_id&gt; with the ID of the token.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -183,25 +183,26 @@ You can use a token in your `docker login` command to automate access to your na
 Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
 {:shortdesc}
 
-**Note:** Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.
+Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.
+{:tip}
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to remove.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Remove the token.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}
