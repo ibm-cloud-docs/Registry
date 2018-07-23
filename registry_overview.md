@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-14"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -152,25 +152,27 @@ Your estimated costs are displayed in the calculator.
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
 
-If you want to find out what service plan you have, run the `bx cr plan` command.
+If you want to find out what service plan you have, run the `ibmcloud cr plan` command.
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
-    **Note**: If you have a federated ID, use `bx login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    {:tip}
 
 2.  Upgrade to the standard plan.
 
     ```
-    bx cr plan-upgrade standard
+    ibmcloud cr plan-upgrade standard
     ```
     {: pre}
 
-    **Note:** If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `bx cr plan-upgrade`.
+    If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
+    {:tip}
 
 
 ## Learning the basics
@@ -179,7 +181,8 @@ If you want to find out what service plan you have, run the `bx cr plan` command
 Prepare to safely store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
-**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+{:tip}
 
 
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
@@ -231,7 +234,8 @@ You can set up multiple namespaces, for example, to have separate repositories f
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-**Note**: If you are unsure whether a namespace is already set for your account, run the `bx cr namespace-list` command to retrieve existing namespace information. If you are an existing {{site.data.keyword.containerlong_notm}} customer that uses [single and scalable container groups](../../containers/cs_classic.html), you already have a namespace. You can create additional namespaces, but cannot run `cf ic namespace set` for more than one namespace.
+If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command to retrieve existing namespace information. If you are an existing {{site.data.keyword.containerlong_notm}} customer that uses [single and scalable container groups](../../containers/cs_classic.html), you already have a namespace. You can create additional namespaces, but cannot run `cf ic namespace set` for more than one namespace.
+{:tip}
 
 Consider the following rules when you choose a namespace:
 
@@ -240,7 +244,8 @@ Consider the following rules when you choose a namespace:
 -   Your namespace must start with at least one letter or number.
 -   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
 
-**Note**: Do not put personal information in your namespace names.
+Do not put personal information in your namespace names.
+{:tip}
 
 After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
@@ -262,23 +267,23 @@ A region is a geographic area that is accessed by a dedicated endpoint. {{site.d
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `bx cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+If you want to use a region other than your local region, you can target the region that you want to access by running the `ibmcloud cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
 
 To run the command with parameters, replace _&lt;region&gt;_ with the name of the region, for example, `eu-central`.
 
 ```
-bx cr region-set <region>
+ibmcloud cr region-set <region>
 ```
 {: pre}
 
 For example, to target the eu-central region, run the following command:
 
 ```
-bx cr region-set eu-central
+ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-After targeting a different region, log in to the registry again: `bx cr login`.
+After targeting a different region, log in to the registry again: `ibmcloud cr login`.
 
 ### Global registry
 {: #registry_regions_global}
@@ -286,15 +291,15 @@ After targeting a different region, log in to the registry again: `bx cr login`.
 A global registry is available, which has no region that is included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-You can target the global registry by running the `bx cr region-set` command.
+You can target the global registry by running the `ibmcloud cr region-set` command.
 
 For example, to target the global registry, run the following command:
 
 ```
-bx cr region-set global
+ibmcloud cr region-set global
 ```
 {: pre}
 
-For more information about the `bx cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
+For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
 
-After you have targeted the global registry, run the `bx cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
+After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
