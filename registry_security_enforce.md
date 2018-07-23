@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-18"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -280,7 +280,8 @@ Users who have access to delete custom resource definitions (CRDs) can delete th
   verbs: ["delete"]
 ```
 
-**Note**: Users and ServiceAccounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
+Users and ServiceAccounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
+{:tip}
 
 ## Deploying container images with enforced security
 {: #deploy_containers}
@@ -310,7 +311,7 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
    denied the request: The Vulnerability Advisor image scan 
    assessment found issues with the container image that 
    are not exempted. Refer to your image vulnerability report 
-   for more details by using the command `bx cr va`.
+   for more details by using the command `ibmcloud cr va`.
    ```
    {: screen}
 
