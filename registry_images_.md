@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -25,7 +25,8 @@ You can securely store and share Docker images with other users by adding images
 Every image that you want to add to your namespace must exist on your local machine first. You can either download (pull) an image from another repository to your local machine, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
 
-**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+{:tip}
 
 
 ## Pulling images from another registry
@@ -47,7 +48,8 @@ Before you begin:
 
 Download the image, see [Pull an image](index.html#registry_images_pulling) in the Getting Started documentation.
 
-  **Tip:** If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `bx cr login` command.
+If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `bx cr login` command.
+{:tip}
 
 
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local machine to your namespace.
@@ -79,12 +81,14 @@ To upload (push) an image, follow these steps.
   ```
   {: pre}
 
-  **Note:** You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
+  You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
+  {:tip}
 
 2. To view all namespaces that are available in your account, run the `bx cr namespace-list` command.
 3. [Upload the image to your namespace.](index.html#registry_images_pushing)
 
-  **Tip:** If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `bx cr login` command.
+  If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `bx cr login` command.
+  {:tip}
 
 
 After you push your image to your private registry, you can:
@@ -213,38 +217,91 @@ To build your own Docker image, complete the following steps:
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
 
 
-
-## Removing images from your private {{site.data.keyword.Bluemix_notm}} images registry
+## Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository
 {: #registry_images_remove}
 
-You can remove unwanted images from your private image registry.
+You can delete unwanted images from your private repository by using either the graphical user interface (GUI) or the CLI.
 {:shortdesc}
 
-Before you begin, remove any containers that are using the image.
+If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
-Public {{site.data.keyword.IBM_notm}} images cannot be removed from your private {{site.data.keyword.Bluemix_notm}} registry, and do not count towards your quota.
+Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.Bluemix_notm}} repository, and do not count towards your quota.
 
-1. Log in to {{site.data.keyword.Bluemix_notm}} by running the `bx login` command.
-2. To remove an image, run the following command:
+Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{:tip}
+
+
+### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the CLI
+{: #registry_images_remove_cli}
+
+You can delete unwanted images from your private repository by using the CLI.
+{:shortdesc}
+
+Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{:tip}
+
+To delete an image by using the CLI, complete the following steps:
+
+1.  Log in to {{site.data.keyword.Bluemix_notm}} by running the `bx login` command.
+2.  To delete an image, run the following command:
 
   ```
   bx cr image-rm IMAGE
   ```
   {: pre}
 
-  Where _IMAGE_ is the full {{site.data.keyword.Bluemix_notm}} registry path to the image that you want to remove, in the format `namespace/image:tag`.
+  Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
 
-  If a tag is not specified in the image path, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
+  If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
 
-  **Tip:** You can run the `bx cr namespace-list` command to retrieve your namespace value.
+ To find the names of your images, run `bx cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
+ {:tip}
 
-3. Verify that the image was removed by running the following command, and check that the image does not appear in the list.
+3.  Verify that the image was deleted by running the following command, and check that the image does not show in the list.
 
   ```
   bx cr image-list
   ```
   {: pre}
 
-  
 
+### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the GUI
+{: #registry_images_remove_gui}
+
+You can delete unwanted images from your private image repository by using the graphical user interface (GUI).
+{:shortdesc}
+
+Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{:tip}
+
+To delete an image by using the GUI, complete the following steps:
+
+1.  Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+3.  Click **Catalog**.
+4.  Select the **Containers** category and click the **Container Registry** tile.
+5.  Click **Private Repositories**. A list of your private repositories is displayed.
+6.  Click the row that contains the repository that contains the image that you want to delete.
+7.  In the row that contains the image that you want to delete, click the **open and close list of options** icon, select **Delete Image**. Ensure that you've selected the correct image because this action can't be undone. Click **Delete**.
+
+
+## Deleting a private repository and any associated images
+{: #registry_repo_remove}
+
+You can delete private repositories that are no longer required, and any associated images, by using the graphical user interface (GUI).
+{:shortdesc}
+
+When you delete a repository, all images in that repository are deleted. This action can't be undone.
+{:tip}
+
+Before you begin, back up any images that you want to keep.
+
+To delete a repository by using the GUI, complete the following steps:
+
+1.  Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+3.  Click **Catalog**.
+4.  Select the **Containers** category and click the **Container Registry** tile.
+5.  Click **Private Repositories**. A list of your private repositories is displayed.
+6.  In the row that contains the private repository that you want to delete, click the **open and close list of options** icon, select **Delete Repository**. Ensure that you've selected the correct repository because this action can't be undone. Click **Delete**.
 
