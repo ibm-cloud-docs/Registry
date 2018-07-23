@@ -19,15 +19,16 @@ lastupdated: "2018-07-23"
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
 
-Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the {{site.data.keyword.registrylong_notm}} plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
+Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
-
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
+Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
 
-## Installing the {{site.data.keyword.registrylong_notm}} CLI (`ibmcloud cr`) plug-in
+
+## Installing the {{site.data.keyword.registrylong_notm}} CLI (container-registry plug-in)
 {: #registry_cli_install}
 
 Install the {{site.data.keyword.registrylong_notm}} CLI to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
@@ -38,7 +39,7 @@ Install the {{site.data.keyword.registrylong_notm}} CLI to use the command line 
 
 You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 
-## Updating the {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) plug-in
+## Updating the container-registry plug-in
 {: #registry_cli_update}
 
 You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodically to use new features.
@@ -66,7 +67,7 @@ You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodi
      {: pre}
 
 
-## Uninstalling the {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) plug-in
+## Uninstalling the container-registry plug-in
 {: #registry_cli_uninstall}
 
 If you no longer need the container-registry plug-in, you can uninstall it.
