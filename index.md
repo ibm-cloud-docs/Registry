@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-07"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -25,18 +25,19 @@ lastupdated: "2018-06-07"
 
 The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Monitoring the vulnerability of images](registry_ui.html).
 
-**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+{:tip}
 
 
 
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} **bx** commands.
+1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} **ibmcloud** commands.
 2.  Install the container-registry plug-in:
 
     ```
-    bx plugin install container-registry -r Bluemix
+    ibmcloud plugin install container-registry -r Bluemix
     ```
     {: pre}
 
@@ -47,21 +48,21 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Add a namespace to create your own image repository. Replace _&lt;my_namespace&gt;_ with your preferred namespace.
 
     ```
-    bx cr namespace-add <my_namespace>
+    ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
 
-3.  To ensure that your namespace is created, run the `bx cr namespace-list` command.
+3.  To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
     ```
-    bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -105,10 +106,10 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
-1.  Run the `bx cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
+1.  Run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
@@ -129,7 +130,7 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 3.  Verify that the image was pushed successfully by running the following command.
 
     ```
-    bx cr image-list
+    ibmcloud cr image-list
     ```
     {: pre}
 
