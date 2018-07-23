@@ -15,7 +15,7 @@ lastupdated: "2018-07-23"
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-The {{site.data.keyword.registrylong}} CLI is a plug-in to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
+You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the container-registry plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
 {: shortdesc}
 
 **Prerequisites**
