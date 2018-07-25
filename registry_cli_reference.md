@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,17 +16,17 @@ lastupdated: "2018-06-06"
 {:download: .download}
 
 
-# {{site.data.keyword.registrylong_notm}} (`bx cr`) commands for managing Docker images in your namespace
+# {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) commands for managing Docker images in your namespace
 {: #registry_cli_reference}
 
 You can use the container-registry plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can securely store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
 {:shortdesc}
 
 
-## bx cr commands
+## ibmcloud cr commands
 {: #registry_cli_reference_bxcr}
 
-Run `bx cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
+Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
   
 For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
@@ -37,7 +37,7 @@ For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](regist
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `bx cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The container-registry plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that lets you customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The container-registry plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that lets you customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
@@ -46,16 +46,16 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
--   Run the following `bx cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
+-   Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
@@ -70,10 +70,10 @@ The following code examples demonstrate how you might use the formatting and fil
     {: screen}
 
 
--   Run the following `bx cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
+-   Run the following `ibmcloud cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -85,10 +85,10 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
--   Run the following `bx cr image-inspect` command to display the exposed ports for a specified image:
+-   Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -100,10 +100,10 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
--   Run the following `bx cr token-list` command to display all read-only tokens:
+-   Run the following `ibmcloud cr token-list` command to display all read-only tokens:
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
@@ -115,10 +115,10 @@ The following code examples demonstrate how you might use the formatting and fil
     {: screen}
 
 
-### Go template options and data types in the `bx cr image-list` command
+### Go template options and data types in the `ibmcloud cr image-list` command
 {: #registry_cli_listing_imagelist}
 
-Review the following table to find available Go template options and data types for the `bx cr image-list` command.
+Review the following table to find available Go template options and data types for the `ibmcloud cr image-list` command.
 {:shortdesc}
 
 |Field|Type|Description|
@@ -130,12 +130,12 @@ Review the following table to find available Go template options and data types 
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
 |`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Table 1. Available fields and data types in the bx cr image-list command." caption-side="top"}
+{: caption="Table 1. Available fields and data types in the ibmcloud cr image-list command." caption-side="top"}
 
-### Go template options and data types in the `bx cr image-inspect` command
+### Go template options and data types in the `ibmcloud cr image-inspect` command
 {: #registry_cli_listing_imageinspect}
 
-Review the following table to find available Go template options and data types for the `bx cr image-inspect` command.
+Review the following table to find available Go template options and data types for the `ibmcloud cr image-inspect` command.
 {:shortdesc}
 
 |Field|Type|Description|
@@ -155,7 +155,7 @@ Review the following table to find available Go template options and data types 
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`VirtualSize`|Integer (64 bit)|Displays the sum of the size of each layer in the image in bytes.|
 |`RootFS`|Object|Displays metadata that describe the root file system for the image. See field details in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Table 2. Available fields and data types in the bx cr image-inspect command." caption-side="top"}
+{: caption="Table 2. Available fields and data types in the ibmcloud cr image-inspect command." caption-side="top"}
 
 #### Config
 
@@ -207,10 +207,10 @@ Review the following table to find available Go template options and data types 
 |`BaseLayer`|String|Displays the descriptor for the base layer in the image.|
 {: caption="Table 5. Available fields and data types in the RootFS struct." caption-side="top"}
 
-### Go template options and data types in the `bx cr token-list` command
+### Go template options and data types in the `ibmcloud cr token-list` command
 {: #registry_cli_listing_tokenlist}
 
-Review the following table to find available Go template options and data types for the `bx cr token-list` command.
+Review the following table to find available Go template options and data types for the `ibmcloud cr token-list` command.
 {:shortdesc}
 
 |Field|Type|Description|
@@ -219,4 +219,4 @@ Review the following table to find available Go template options and data types 
 |`Expiry`|Integer (64 bit)|Displays [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
 |`ReadOnly`|Boolean|Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 |`Description`|String|Displays the description of the token.|
-{: caption="Table 6. Available fields and data types in the bx cr token-list command." caption-side="top"}
+{: caption="Table 6. Available fields and data types in the ibmcloud cr token-list command." caption-side="top"}

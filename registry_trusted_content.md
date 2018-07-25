@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -57,30 +57,31 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
 2.  Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Note:** If you have a federated ID, use `bx login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+    {:tip}
 
 3.  Target the region that you want to use. If you don't know the region name, you can run the command without the region and choose one.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  Log in to {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     The output instructs you to export the Docker Content Trust environment variable. For example:
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -126,7 +127,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 1.  [Set up your trusted content environment](#trustedcontent_setup).
 
-2.  Pull your image. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `bx cr image-list`.
+2.  Pull your image. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
 
     ```
     docker pull <source_image>:<tag>
@@ -216,7 +217,9 @@ Before you begin:
 - Image signers must have permission to push images to the namespace. 
 - Repository owners and additional signers must have Docker 17.12 or later installed.
 - Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to perform this task for you.
-- Note: When you add a signer, you can no longer use the repository admin key to sign images in that repository. You must hold the private key for one of the approved signers to sign. To retain the ability to sign images after adding a signer, follow these instructions again to generate and add a signer role for yourself.
+
+When you add a signer, you can no longer use the repository admin key to sign images in that repository. You must hold the private key for one of the approved signers to sign. To retain the ability to sign images after adding a signer, follow these instructions again to generate and add a signer role for yourself.
+{:tip}
 
 To share signing keys:
 
@@ -267,7 +270,9 @@ If you no longer want a signer to be able to sign images in your repository, you
 
 Before you begin:
 - Repository owners and additional signers must have Docker 17.12 or later installed.
-- Note: If you remove a signer, the trust server does not trust their signed versions of the image. To ensure that the image can be pulled after removing the signer, make sure that the signer has not signed the most recent version of the image before continuing. If the signer has signed the most recent version of the image, push an update to the image and sign it using your key before continuing.
+
+If you remove a signer, the trust server does not trust their signed versions of the image. To ensure that the image can be pulled after removing the signer, make sure that the signer has not signed the most recent version of the image before continuing. If the signer has signed the most recent version of the image, push an update to the image and sign it using your key before continuing.
+{:tip}
 
 To remove a signer:
 

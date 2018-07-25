@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -19,25 +19,27 @@ lastupdated: "2018-06-06"
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
 
-Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the {{site.data.keyword.registrylong_notm}} plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
+Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+{:tip}
 
-**Note**: Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
 
 
-## Installing the {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) plug-in
+## Installing the {{site.data.keyword.registrylong_notm}} CLI (container-registry plug-in)
 {: #registry_cli_install}
 
 Install the {{site.data.keyword.registrylong_notm}} CLI to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
 {:shortdesc}
 
 1.  [Install the container-registry plug-in.](index.html#registry_cli_install)
-2.  Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not perform this step, you must run `bx login`, `bx cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
+2.  Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not perform this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
 You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 
-## Updating the {{site.data.keyword.registrylong_notm}} (`bx cr`) plug-in
+## Updating the container-registry plug-in
 {: #registry_cli_update}
 
 You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodically to use new features.
@@ -46,26 +48,26 @@ You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodi
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Update the container-registry plug-in.
 
     ```
-    bx plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
 3.  Verify that the plug-in is updated successfully.
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
      {: pre}
 
 
-## Uninstalling the {{site.data.keyword.registrylong_notm}} (`bx cr`) plug-in
+## Uninstalling the container-registry plug-in
 {: #registry_cli_uninstall}
 
 If you no longer need the container-registry plug-in, you can uninstall it.
@@ -74,21 +76,21 @@ If you no longer need the container-registry plug-in, you can uninstall it.
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Uninstall the container-registry plug-in.
 
     ```
-    bx plugin uninstall container-registry
+    ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
 3.  Verify that the plug-in was uninstalled successfully.
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: pre}
 
@@ -119,14 +121,14 @@ If you no longer require a registry namespace, you can remove the namespace from
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  List available namespaces.
 
     ```
-    bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -137,7 +139,7 @@ If you no longer require a registry namespace, you can remove the namespace from
     Replace _&lt;my_namespace&gt;_ with the namespace that you want to remove.
 
     ```
-    bx cr namespace-rm <my_namespace>
+    ibmcloud cr namespace-rm <my_namespace>
     ```
     {: pre}
 
