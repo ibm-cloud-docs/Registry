@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -208,7 +208,7 @@ Do not put personal information in your container images, namespace names, descr
 
 <dl>
   <dt>Image</dt>
-  <dd>A Docker image is built based on the instructions given in the Dockerfile and represents the basis of a container. After the Docker image is built, you can use it to create a container to deploy your app and its dependencies. Images are stored in a registry. Users with access to your {{site.data.keyword.Bluemix_notm}} account can access your images.</dd>
+  <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the image is built by successive updates. The image does not retain state as the container executes.</dd>
 </dl>
 
 <dl>
