@@ -11,6 +11,7 @@ IBM Cloud Container Registry
         [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
+        [iccs-cluster-autoscaler image](../RegistryImages/ibm-cluster-autoscaler/index.html)
         [ibm-integration-bus image](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
         [ibm-mq image](../RegistryImages/ibm-mq/index.html#ibm_mq)
