@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
@@ -27,8 +27,8 @@ IBM Cloud Container Registry
         [Types of vulnerabilities](../va/va_index.html#types)
         [Installing the container scanner](../va/va_index.html#va_install_container_scanner)
         [Running the container scanner from behind a firewall](../va/va_index.html#va_firewall)
-        [Reviewing a vulnerability report by using the GUI](../va/va_index.html#va_reviewing)
-        [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
+        [Setting organizational exemption policies](../va/va_index.html#va_managing_policy)
+        [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
         [Reviewing a container report](../va/va_index.html#va_reviewing_container)
         [Resolving common problems](../va/va_index.html#va_report)
     {: .navgroup-end}
