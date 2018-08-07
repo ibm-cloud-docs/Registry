@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_iam_api_key_create).
+For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automating access to your namespaces by using tokens
