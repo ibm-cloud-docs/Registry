@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-08"
 
 ---
 
@@ -29,7 +29,7 @@ API keys are linked to your account and can be used across {{site.data.keyword.B
 
 Registry tokens are scoped for {{site.data.keyword.registrylong_notm}} only. You can limit them to read-only access, and you can choose whether they are expiring or non-expiring.
 
-For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](../../iam/apikeys.html#manapikey).
+For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam/apikeys.html#manapikey).
 
 Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 You can create an API key that you can then use to log in to your registry.
 {:shortdesc}
 
-Create an IAM API key, see [Creating an API key](../../iam/userid_keys.html#creating-an-api-key).
+Create an IAM API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
