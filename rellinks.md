@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-09"
 
 
 ---
@@ -34,4 +34,4 @@ You can use the following related links to become more familiar with {{site.data
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-* [{{site.data.keyword.containerlong_notm}} documentation](../../containers/container_index.html)
+* [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers/container_index.html#container_index)
