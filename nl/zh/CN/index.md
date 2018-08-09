@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-07"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -25,18 +25,19 @@ lastupdated: "2018-05-07"
 
 {{site.data.keyword.Bluemix_notm}} 控制台中有简要的“快速入门”。要了解有关如何使用 {{site.data.keyword.Bluemix_notm}} 控制台的更多信息，请参阅[监视映像的漏洞](registry_ui.html)。
 
-**注**：不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌中）或任何映像配置数据（例如，映像名称或映像标签）中。
+不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
+{:tip}
 
 
 
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1.  安装 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://clis.ng.bluemix.net/ui/home.html)，以便可以运行 {{site.data.keyword.Bluemix_notm}} **bx** 命令。
+1.  安装 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://clis.ng.bluemix.net/ui/home.html)，以便可以运行 {{site.data.keyword.Bluemix_notm}} **ibmcloud** 命令。
 2.  安装 container-registry 插件：
 
     ```
-        bx plugin install container-registry -r Bluemix
+    ibmcloud plugin install container-registry -r Bluemix
     ```
     {: pre}
 
@@ -47,21 +48,21 @@ lastupdated: "2018-05-07"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  添加名称空间以创建自己的映像存储库。将 _&lt;my_namespace&gt;_ 替换为首选名称空间。
 
     ```
-        bx cr namespace-add <my_namespace>
+    ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
 
-3.  要确保创建了名称空间，请运行 `bx cr namespace-list` 命令。
+3.  要确保创建了名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 
     ```
-        bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -72,40 +73,31 @@ lastupdated: "2018-05-07"
 
 1.  [安装 Docker CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/community-edition#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/products/docker-toolbox)。
 
-2.  登录到 CLI：
+2.  将映像下载（_拉出_）到本地计算机。将 _&lt;source_image&gt;_ 替换为映像的存储库，将 _&lt;tag&gt;_ 替换为要使用的映像标记，如 _latest_。 
 
     ```
-        bx cr login
-    ```
-    {: pre}
-
-    **注：**必须登录才能从专用 {{site.data.keyword.registrylong_notm}} 拉出映像。
-
-3.  将映像下载（_拉出_）到本地计算机。将 _&lt;source_image&gt;_ 替换为映像的存储库，将 _&lt;tag&gt;_ 替换为要使用的映像标记，如 _latest_。 
-
-    ```
-        docker pull <source_image>:<tag>
+    docker pull <source_image>:<tag>
     ```
     {: pre}
 
     例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`：
 
     ```
-        docker pull hello-world:latest
+    docker pull hello-world:latest
     ```
     {: pre}
 
-4.  标记映像。将 _&lt;source_image&gt;_ 替换为存储库，将 _&lt;tag&gt;_ 替换为之前拉出的本地映像的标记。将 _&lt;region&gt;_ 替换为 [region](registry_overview.html#registry_regions) 的名称。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间。通过替换 _&lt;new_image_repo&gt;_ 和 _&lt;new_tag&gt;_，定义要在名称空间中使用的映像的存储库和标记。
+3.  标记映像。将 _&lt;source_image&gt;_ 替换为存储库，将 _&lt;tag&gt;_ 替换为之前拉出的本地映像的标记。将 _&lt;region&gt;_ 替换为 [region](registry_overview.html#registry_regions) 的名称。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间。通过替换 _&lt;new_image_repo&gt;_ 和 _&lt;new_tag&gt;_，定义要在名称空间中使用的映像的存储库和标记。
 
     ```
-        docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
+    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
 
-    例如，其中，_&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `Namespace1`，_&lt;new_image_repo&gt;_ 是 `hw_repo`，_&lt;new_tag&gt;_ 是 `1`：
+    例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `namespace1`，_&lt;new_image_repo&gt;_ 是 `hw_repo`，_&lt;new_tag&gt;_ 是 `1`：
 
     ```
-        docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -114,25 +106,32 @@ lastupdated: "2018-05-07"
 ## 将 Docker 映像推送至名称空间
 {: #registry_images_pushing}
 
-1.  将映像上传（_推送_）至名称空间。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间，将 _&lt;image_repo&gt;_ 和 _&lt;tag&gt;_ 替换为标记映像时所选择的映像的存储库和标记。
-
-
-    ```
-        docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-    ```
-    {: pre}
-
-    例如，其中，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `Namespace1`，_&lt;image_repo&gt;_ 是 `hw_repo`，_&lt;tag&gt;_ 是 `1`：
+1.  运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到 {{site.data.keyword.registrylong_notm}}。
 
     ```
-        docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    ibmcloud cr login
     ```
     {: pre}
 
-2.  通过运行以下命令，验证已成功推送映像。
+2.  将映像上传（_推送_）至名称空间。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](index.html#registry_namespace_add)中创建的名称空间，将 _&lt;image_repo&gt;_ 和 _&lt;tag&gt;_ 替换为标记映像时所选择的映像的存储库和标记。
+
 
     ```
-        bx cr image-list
+    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
+    ```
+    {: pre}
+
+    例如，其中 _&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `namespace1`，_&lt;image_repo&gt;_ 是 `hw_repo`，_&lt;tag&gt;_ 是 `1`：
+
+    ```
+    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+    ```
+    {: pre}
+
+3.  通过运行以下命令，验证已成功推送映像。
+
+    ```
+    ibmcloud cr image-list
     ```
     {: pre}
 

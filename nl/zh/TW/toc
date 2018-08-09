@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [ibm-websphere-extreme-scale 映像檔](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -28,9 +29,11 @@ IBM Cloud Container Registry
     [使用漏洞警告器管理映像檔安全](../va/va_index.html)
         [關於漏洞警告器](../va/va_index.html#about)
         [漏洞類型](../va/va_index.html#types)
-        [安裝容器掃描器](../va/va_index.html#va_install_livescan)
-        [檢閱漏洞報告](../va/va_index.html#va_reviewing)
+        [安裝容器掃描器](../va/va_index.html#va_install_container_scanner)
+        [在受防火牆保護的情況下執行容器掃描器](../va/va_index.html#va_firewall)
+        [使用 GUI 檢閱漏洞報告](../va/va_index.html#va_reviewing)
         [使用 CLI 檢閱漏洞報告](../va/va_index.html#va_registry_cli)
+        [檢閱容器報告](../va/va_index.html#va_reviewing_container)
         [解決一般問題](../va/va_index.html#va_report)
     {: .navgroup-end}
 

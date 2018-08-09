@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-1"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -19,14 +19,16 @@ lastupdated: "2018-05-1"
 # {{site.data.keyword.registrylong_notm}} CLI およびレジストリー名前空間のセットアップ
 {: #registry_setup_cli_namespace}
 
-{{site.data.keyword.registrylong}} に Docker イメージを保管する前に、{{site.data.keyword.Bluemix_notm}} CLI と {{site.data.keyword.registrylong_notm}} プラグインをインストールしてから、レジストリー名前空間をセットアップして、{{site.data.keyword.registrylong_notm}} 内に独自のイメージ・リポジトリーを作成する必要があります。
+{{site.data.keyword.registrylong}} に Docker イメージを保管する前に、{{site.data.keyword.Bluemix_notm}} CLI と container-registry プラグインをインストールしてから、レジストリー名前空間をセットアップして、{{site.data.keyword.registrylong_notm}} 内に独自のイメージ・リポジトリーを作成する必要があります。
 {:shortdesc}
 
+コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+{:tip}
 
-**注**: コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+始めに、[{{site.data.keyword.Bluemix_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://clis.ng.bluemix.net/ui/home.html) をインストールします。
 
 
-## {{site.data.keyword.registrylong_notm}} CLI (`bx cr`) プラグインのインストール
+## {{site.data.keyword.registrylong_notm}} CLI (container-registry プラグイン) のインストール
 {: #registry_cli_install}
 
 コマンド・ラインを使用して {{site.data.keyword.Bluemix_notm}} 専用レジストリーの名前空間および Docker イメージを管理するには、{{site.data.keyword.registrylong_notm}} CLI をインストールします。
@@ -34,11 +36,11 @@ lastupdated: "2018-05-1"
 
 1.  [container-registry プラグインをインストールします。
 ](index.html#registry_cli_install)
-2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 このステップを実行しない場合は、`bx login`、`bx cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用するか root として実行する必要があります。
+2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 このステップを実行しない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用するか root として実行する必要があります。
 
 これで、{{site.data.keyword.registrylong_notm}} 専用レジストリーに固有の名前空間をセットアップできます。
 
-## {{site.data.keyword.registrylong_notm}} (`bx cr`) プラグインの更新
+## container-registry プラグインの更新
 {: #registry_cli_update}
 
 新しいフィーチャーを使用するために {{site.data.keyword.registrylong_notm}} CLI を定期的に更新することをお勧めします。
@@ -47,26 +49,26 @@ lastupdated: "2018-05-1"
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  container-registry プラグインを更新します。
 
     ```
-    bx plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
 3.  プラグインが正常に更新されたことを確認します。
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
      {: pre}
 
 
-## {{site.data.keyword.registrylong_notm}} (`bx cr`) プラグインのアンインストール
+## container-registry プラグインのアンインストール
 {: #registry_cli_uninstall}
 
 container-registry プラグインは、もはや必要がない場合、アンインストールすることができます。
@@ -75,21 +77,21 @@ container-registry プラグインは、もはや必要がない場合、アン�
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  container-registry プラグインをアンインストールします。
 
     ```
-    bx plugin uninstall container-registry
+    ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
 3.  プラグインが正常にアンインストールされたことを確認します。
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: pre}
 
@@ -120,14 +122,14 @@ Docker イメージを安全に保管するには、{{site.data.keyword.registry
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  使用可能な名前空間をリストします。
 
     ```
-    bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -138,7 +140,7 @@ Docker イメージを安全に保管するには、{{site.data.keyword.registry
     _&lt;my_namespace&gt;_ を、削除する名前空間に置換します。
 
     ```
-    bx cr namespace-rm <my_namespace>
+    ibmcloud cr namespace-rm <my_namespace>
     ```
     {: pre}
 

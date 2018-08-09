@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-07-24"
+
 
 ---
 
@@ -51,7 +52,7 @@ Pour définir un quota, procédez comme suit :
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
@@ -59,7 +60,7 @@ Pour définir un quota, procédez comme suit :
 d'extraction (pull).
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -84,12 +85,13 @@ stockage de votre compte, indiquez l'option **storage** et
 remplacez _&lt;quota_stockage&gt;_ par la valeur en mégaoctets que vous
 voulez définir.
 
-    **Remarque :** si vous bénéficiez du plan gratuit, vous ne pouvez pas définir comme quota une
+    Si vous bénéficiez du plan gratuit, vous ne pouvez pas définir comme quota une
 quantité qui dépasse le niveau gratuit. La franchise du niveau gratuit pour le stockage
 est de 512 Mo et le trafic est de 5120 Mo.
+    {:tip}
 
     ```
-    bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
@@ -97,7 +99,7 @@ est de 512 Mo et le trafic est de 5120 Mo.
 d'extraction de 7000 mégaoctets :
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+    ibmcloud cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -112,7 +114,7 @@ stockage actuel et du trafic d'extraction (pull) pour votre compte.
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
@@ -120,7 +122,7 @@ stockage actuel et du trafic d'extraction (pull) pour votre compte.
 d'extraction (pull).
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -154,29 +156,29 @@ Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix
 1.  Répertoriez toutes les images de tous vos espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx cr images
+    ibmcloud cr images
     ```
     {: pre}
 
 2.  Retirez une image de votre espace de nom. Remplacez _&lt;image_name&gt;_ par le nom de l'image que vous voulez supprimer.
 
     ```
-    bx cr image-rm <image_name>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 
-    **Remarque :** en fonction de la taille de l'image, le retrait de cette dernière ainsi que la mise à disposition du
-stockage peuvent prendre un certain temps.
+    En fonction de la taille de l'image, le retrait de cette dernière ainsi que la mise à disposition du
+stockage peuvent prendre un certain temps.{:tip}
 
 3.  Examinez votre utilisation du quota de stockage.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
-4. **Remarque :** vous ne pouvez pas réduire votre utilisation du trafic d'extraction (pull)
-dans une période de facturation.
+4. Vous ne pouvez pas réduire votre utilisation du trafic d'extraction (pull)
+dans une période de facturation.{:tip}
 
     Pour continuer à extraire des images de vos espaces de nom, sélectionnez l'une des options suivantes.
 

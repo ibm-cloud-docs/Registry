@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [Immagine ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -28,9 +29,11 @@ IBM Cloud Container Registry
     [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html)
         [Informazioni su Controllo vulnerabilità](../va/va_index.html#about)
         [Tipi di vulnerabilità](../va/va_index.html#types)
-        [Installazione dello scanner del contenitore](../va/va_index.html#va_install_livescan)
-        [Revisione di un report di vulnerabilità](../va/va_index.html#va_reviewing)
-        [Revisione di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli)
+        [Installazione dello scanner contenitori](../va/va_index.html#va_install_container_scanner)
+        [Esecuzione dello scanner contenitori da dietro un firewall](../va/va_index.html#va_firewall)
+        [Riesame di un report di vulnerabilità utilizzando la GUI](../va/va_index.html#va_reviewing)
+        [Riesame di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli)
+        [Riesame di un report del contenitore](../va/va_index.html#va_reviewing_container)
         [Risoluzione dei problemi comuni](../va/va_index.html#va_report)
     {: .navgroup-end}
 

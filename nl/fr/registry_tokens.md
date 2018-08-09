@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -90,7 +90,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 1.  Créez un jeton. L'exemple suivant créé un jeton n'expirant pas et doté d'un accès en lecture et écriture à tous les espaces de nom configurés dans une région.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +125,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 2.  Vérifiez que le jeton a été créé.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -139,21 +139,21 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Extrayez la valeur de jeton de ce jeton. Remplacez &lt;token_id&gt; par l'ID du jeton concerné.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -170,6 +170,9 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    Pour le paramètre `-u`, prenez soin de taper la chaîne `token` et non l'ID de jeton.
+    {: tip}
 
     Une fois que vous vous êtes connecté à Docker en utilisant le jeton, vous pouvez transférer dans vos espaces de nom des images (push) ou en extraire (pull).
 
@@ -180,25 +183,25 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 Retirez un jeton {{site.data.keyword.registrylong_notm}} quand vous n'en n'avez plus besoin.
 {:shortdesc}
 
-**Remarque :** les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, vous n'avez pas besoin de les retirer manuellement.
+Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.{:tip}
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Supprimez le jeton.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

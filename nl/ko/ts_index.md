@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -37,6 +37,7 @@ lastupdated: "2018-05-31"
 -   서비스 및 시작하기 지시사항에 대한 질문의 경우에는 [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `bluemix` 및 `container-registry` 태그를 포함하십시오.
 
 포럼 사용에 대한 세부사항은 [지원 센터 사용](../../get-support/howtogetsupport.html#using-avatar)을 참조하십시오.
+
 {{site.data.keyword.IBM_notm}} 지원 티켓 열기 또는 지원 레벨 및 티켓 심각도에 대한 정보는 [지원 티켓 열기](../../get-support/howtogetsupport.html#open-ticket)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}}에 로그인 실패
@@ -45,7 +46,7 @@ lastupdated: "2018-05-31"
 {{site.data.keyword.registrylong_notm}}에 로그인할 수 없습니다.
 
 {: tsSymptoms}
-`bx cr login` 명령이 실패합니다.
+`ibmcloud cr login` 명령이 실패합니다. 
 
 {: tsCauses}
 -   container-registry 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
@@ -55,9 +56,9 @@ lastupdated: "2018-05-31"
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
--   최신 버전의 {{site.data.keyword.registryshort_notm}} 플러그인으로 업그레이드하려면 [{{site.data.keyword.registrylong_notm}}(`bx cr`) 플러그인](registry_setup_cli_namespace.html#registry_cli_update)을 참조하십시오.
+-   최신 버전의 container-registry 플러그인으로 업그레이드하십시오. [container-registry 플러그인 업데이트](registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오. 
 -   Docker가 시스템에 설치되어 있는지 확인하십시오. 이미 설치된 경우 Docker 디먼을 다시 시작하십시오.
--   `bx login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 신임 정보를 새로 고치십시오.
+-   `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 신임 정보를 새로 고치십시오. 
   
 ## {{site.data.keyword.registrylong_notm}}에 대한 명령 실행이 실패하며 `FAILED You are not logged in to IBM Cloud.`가 나타남 
 {: #ts_login_cloud}
@@ -65,7 +66,7 @@ lastupdated: "2018-05-31"
 {{site.data.keyword.Bluemix_notm}}에 로그인된 경우에도 {{site.data.keyword.registrylong_notm}}에서 명령을 실행할 수 없습니다.
 
 {: tsSymptoms}
-모든 `bx cr` 명령이 실패합니다.
+모든 `ibmcloud cr` 명령이 실패합니다. 
 
 {: tsCauses}
 -   container-registry 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
@@ -73,27 +74,27 @@ lastupdated: "2018-05-31"
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
--   최신 버전의 {{site.data.keyword.registryshort_notm}} 플러그인으로 업그레이드하려면 [{{site.data.keyword.registrylong_notm}}(`bx cr`) 플러그인](registry_setup_cli_namespace.html#registry_cli_update)을 참조하십시오.
+-   최신 버전의 container-registry 플러그인으로 업그레이드하십시오. [container-registry 플러그인 업데이트](registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오. 
 
 
 
-## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'bx help'`와 함께 실패
+## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'ibmcloud help'.`라는 메시지가 출력되며 실패함
 {: #ts_login_error}
 
-`cr`은 등록된 `bx` 명령이 아니므로 `bx cr` 명령을 실행할 수 없습니다.
+`cr`은 등록된 `ibmcloud` 명령이 아니므로 `ibmcloud cr` 명령을 실행할 수 없습니다. 
 
 {: tsSymptoms}
 다음 오류 메시지 중 하나와 비슷한 오류 메시지가 표시됩니다.
 
 ```
-bx cr login 
-'cr' is not a registered command. See 'bx help'.
+ibmcloud cr login
+'cr' is not a registered command. See 'ibmcloud help'.
 ```
 {: pre}
 
 ```
-bx cr namespace 
-'cr' is not a registered command. See 'bx help'.
+ibmcloud cr namespace
+'cr' is not a registered command. See 'ibmcloud help'.
 ```
 {: pre}
 
@@ -104,14 +105,14 @@ bx cr namespace
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
--   container-registry 플러그인을 설치하려면 [{{site.data.keyword.registryshort_notm}} CLI(bx cr) 플러그인 설치](registry_setup_cli_namespace.html#registry_cli_install)를 참조하십시오.
+-   container-registry 플러그인을 설치하십시오. [{{site.data.keyword.registryshort_notm}} CLI(container-registry 플러그인) 설치](registry_setup_cli_namespace.html#registry_cli_install)를 참조하십시오. 
 
 
 ## 네임스페이스 설정 실패
 {: #ts_problem}
 
 {: tsSymptoms}
-`bx cr namespace-add`를 실행하면 입력한 값을 네임스페이스로 설정할 수 없습니다.
+`ibmcloud cr namespace-add`를 실행할 때 입력한 값을 네임스페이스로 설정할 수 없습니다. 
 
 {: tsCauses}
 -   다른 {{site.data.keyword.Bluemix_notm}} 조직에서 이미 사용 중인 네임스페이스 값을 입력했습니다.
@@ -166,10 +167,10 @@ denied: requested access to the resource is denied
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
--   [Docker가 사용자의 시스템에 설치되어 있는지 확인하십시오](index.html#registry_cli_install).
+-   [Docker가 사용자의 시스템에 설치되어 있는지 확인](index.html#registry_cli_install)하십시오.
 -   Docker 설치 경로를 확인하십시오.
--   `bx login`을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 그리고 나서 `bx cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오.
--   [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토하십시오](registry_quota.html#registry_quota_get).
+-   `ibmcloud login`을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 그 후 `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오. 
+-   [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토](registry_quota.html#registry_quota_get)하십시오.
 
 ## latest 태그를 사용하여 최신 이미지를 가져올 수 없음
 {: #ts_docker_latest}
@@ -192,15 +193,15 @@ denied: requested access to the resource is denied
 다른 IBM 제품(예: {{site.data.keyword.Bluemix_notm}} 프라이빗)에서 사용한 컨텐츠를 가져오려는 경우, 레지스트리의 [IBM Passport Advantage ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www-01.ibm.com/software/passportadvantage/index.html)에서 이미지 및 기타 라이센스 부여된 소프트웨어를 저장할 수 없습니다.
 
 {: tsCauses}
-`bx cr ppa-archive-load` 명령을 사용하여 IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 패키지를 레지스트리로 가져와야 합니다.
+IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 패키지는 `ibmcloud cr ppa-archive-load` 명령을 사용하여 레지스트리로 가져와야 합니다. 
 
 {: tsResolve}
 시작하기 전에:
-* `bx login [--sso]`를 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
-* `bx cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
+* `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 
+* `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오. 
 * 대상 클러스터에 [`kubectl` CLI를 지정](../../containers/cs_cli_install.html#cs_cli_configure)하십시오.
 * 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](../../containers/cs_integrations.html#helm)하십시오.
-* 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다.
+* 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오. 
 
 ### {{site.data.keyword.Bluemix_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
 
@@ -209,25 +210,25 @@ denied: requested access to the resource is denied
 2.  사용할 지역을 대상으로 지정하십시오. 지역 이름을 모르는 경우 지역 없이 명령을 실행한 다음 지역을 선택하십시오.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 3.  압축된 아카이브 파일을 가져오십시오. 압축 파일의 경로 및 이미지를 푸시할 레지스트리 네임스페이스를 지정하십시오.
 
     ```
-    bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
+    ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
     ```
     {: pre}
 
     이 명령은 압축 파일을 확장하고 포함된 이미지를 로컬 Docker 클라이언트로 로드한 다음 레지스트리의 네임스페이스로 이미지를 푸시합니다.
     
-    IBM Passport Advantage 아카이브의 Helm 차트를 Chart Museum에 업로드하려는 경우 명령에 다음 옵션을 포함하십시오. `bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    IBM Passport Advantage 아카이브의 Helm 차트를 Chart Museum에 업로드하려는 경우에는 명령에 다음 옵션을 포함하십시오. `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
     **출력 예**:
     ```
-    user:~ user$ bx cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
     Found 1 image(s) and 1 chart(s) to import.
     Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
@@ -249,7 +250,7 @@ denied: requested access to the resource is denied
 4.  압축 파일에 Helm 차트가 있는 경우 이러한 차트는 현재 작업 디렉토리에 작성된 아카이브 디렉토리 `ppa-import`에 배치됩니다. 디렉토리를 열어 Helm 차트 `<helm_chart>`의 이름을 가져온 다음 해당 값을 검사하십시오.
 
     ```
-    helm inspect values ppa-import/charts/<helm_chart>.tgz
+helm inspect values ppa-import/charts/<helm_chart>.tgz
     ```
     {: pre}
     
@@ -261,7 +262,7 @@ denied: requested access to the resource is denied
 6.  `helm install` 명령을 사용하여 Helm 차트 `<helm_chart>`를 배치하십시오. `--set` 옵션을 사용하여 필요에 따라 차트에서 값을 대체할 수 있습니다.
 
     ```
-    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
+helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
     ```
     {: pre}
 
@@ -278,14 +279,14 @@ denied: requested access to the resource is denied
 {: tsResolve}
 사용자 정의된 방화벽에서 다음 네트워크 그룹을 여십시오.
 
-1.  {{site.data.keyword.registrylong_notm}}에 연결하는 데 사용하려는 시스템의 공인 IP 주소를 참고하십시오. Kubernetes를 사용 중인 경우 작업자 노드의 공인 IP 주소를 사용하십시오. `bx cs workers <cluster_name_or_id>`를 실행하여 작업자 노드의 공인 IP 주소를 검색하십시오. 여기서 *&lt;cluster_name_or_id&gt;*는 클러스터의 ID 또는 이름입니다.
+1.  {{site.data.keyword.registrylong_notm}}에 연결하는 데 사용하려는 시스템의 공인 IP 주소를 참고하십시오. Kubernetes를 사용 중인 경우 작업자 노드의 공인 IP 주소를 사용하십시오. `ibmcloud ks workers <cluster_name_or_id>`를 실행하여 작업자 노드의 공인 IP 주소를 검색하십시오. 여기서 *&lt;cluster_name_or_id&gt;*는 클러스터의 이름 또는 ID입니다. 
 2.  방화벽에서 시스템과의 다음 연결을 허용하십시오.
     -   시스템에 대한 INBOUND 연결의 경우 다음 소스 네트워크 그룹에서 시스템의 대상 공인 IP 주소로 수신 네트워크 트래픽을 허용하십시오.
 
         `registry.bluemix.net`:
 
         ```
-        169.60.72.144/28
+169.60.72.144/28
         169.61.76.176/28
         ```
         {: codeblock}
@@ -293,7 +294,7 @@ denied: requested access to the resource is denied
         `registry.au-syd.bluemix.net`:
 
         ```
-                168.1.45.160/27
+        168.1.45.160/27
         168.1.139.32/27
         ```
         {: codeblock}
@@ -301,7 +302,7 @@ denied: requested access to the resource is denied
         `registry.eu-de.bluemix.net`:
 
         ```
-        169.50.56.144/28
+169.50.56.144/28
         159.8.73.80/28
         ```
         {: codeblock}
@@ -309,7 +310,7 @@ denied: requested access to the resource is denied
         `registry.eu-gb.bluemix.net`:
 
         ```
-        159.8.188.160/27
+159.8.188.160/27
         169.50.153.64/27
         ```
         {: codeblock}
@@ -317,7 +318,7 @@ denied: requested access to the resource is denied
         `registry.ng.bluemix.net`:
 
         ```
-        169.55.39.112/28
+169.55.39.112/28
         169.46.9.0/27
         169.55.211.0/27
         ```
@@ -346,7 +347,8 @@ denied: requested access to the resource is denied
 저장소 키가 누락되었거나 손상된 경우 저장소의 새 서명 키 세트를 생성하십시오.
 {:shortdesc}
 
-**참고**: 순환시킬 수 있는 유일한 서명 역할은 `targets`이며 이는 저장소 관리자입니다. 다른 역할이 손상된 경우 이 역할에 대해 새 키를 생성하고 이전 키를 제거한 다음 새 키를 서명자로 추가하십시오.
+순환시킬 수 있는 유일한 서명 역할은 `targets`이며 이는 저장소 관리자입니다. 다른 역할이 손상된 경우 이 역할에 대해 새 키를 생성하고 이전 키를 제거한 다음 새 키를 서명자로 추가하십시오.
+{:tip}
 
 시작하기 전에 처음 [서명된 이미지를 푸시](registry_trusted_content.html#trustedcontent_push)할 때 작성한 루트 키 비밀번호 문구를 검색하십시오.
 
@@ -359,14 +361,14 @@ denied: requested access to the resource is denied
 4.  레지스트리 토큰을 생성하십시오.
 
     ```
-    bx cr token-add --readwrite
+    ibmcloud cr token-add --readwrite
     ```
     {: pre}
 
 5.	이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. _&lt;URL&gt;_을 2단계에서 기록한 내보내기 명령의 URL로 바꾸고 _&lt;image&gt;_를 저장소 키가 손상된 이미지로 바꾸십시오.
 
     ```
-    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+notary -s <URL> -d ~/.docker/trust key rotate <image> targets
     ```
     {: pre}
 
@@ -392,7 +394,8 @@ denied: requested access to the resource is denied
 
     * Windows 디렉토리: `%HOMEPATH%\.docker\trust\private` 및 `%HOMEPATH%\.docker\trust\tuf`
 
-    **참고**: 루트 키가 손상되었으므로 이 단계에서는 다른 신뢰 서버의 서명 키를 포함한 모든 서명 키를 삭제합니다.
+    루트 키가 손상되었으므로, 이 단계는 다른 신뢰 서버의 서명 키를 포함한 모든 서명 키를 삭제합니다.
+    {:tip}
 
 3.  {{site.data.keyword.containershort_notm}} 클러스터에서 [{{site.data.keyword.Bluemix_notm}} 이미지 적용](registry_security_enforce.html)을 사용하는 경우, 각 이미지 적용 팟(Pod)을 다시 시작하십시오. Kubernetes를 트리거하여 팟(Pod)의 롤링 다시 시작을 자동으로 수행하기 위해 팟(Pod)에서 일부 메타데이터를 변경할 수 있습니다. 예를 들어, [대상 클러스터에 Kubernetes CLI를 지정](../../containers/cs_cli_install.html#cs_cli_configure)하고 배치를 수정하십시오.
     ```
@@ -407,7 +410,7 @@ denied: requested access to the resource is denied
     *  이전 신뢰할 수 있는 컨텐츠를 변경하지 않으려면 레지스트리의 최신 이미지에 서명을 추가하십시오.
 
        ```
-       docker trust sign <image>:<tag>
+docker trust sign <image>:<tag>
        ```
        {: pre}
        

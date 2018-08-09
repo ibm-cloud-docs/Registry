@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -31,7 +31,7 @@ API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사�
 
 {{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키로 작업](../../iam/apikeys.html#manapikey)을 참조하십시오.
 
-시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치하십시오](registry_setup_cli_namespace.html#registry_cli_install).
+시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](registry_setup_cli_namespace.html#registry_cli_install)하십시오.
 
 
 ## API 키를 사용하여 네임스페이스에 대한 액세스 자동화
@@ -90,7 +90,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  토큰을 작성하십시오. 다음 예는 지역에 설정된 모든 네임스페이스에 읽기 및 쓰기 액세스 권한이 있는 만료되지 않는 토큰을 작성합니다.
 
     ```
-        bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -117,7 +117,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     CLI 출력은 다음 출력과 유사합니다.
 
     ```
-    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
+Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
 Token              <token_value>
     ```
     {: screen}
@@ -125,7 +125,7 @@ Token              <token_value>
 2.  토큰이 작성되었는지 확인하십시오.
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -139,21 +139,21 @@ Token              <token_value>
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  {{site.data.keyword.Bluemix_notm}} 계정의 모든 토큰을 나열하고 사용하려는 토큰 ID를 기록해 놓으십시오.
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  토큰에 대한 토큰 값을 검색하십시오. &lt;token_id&gt;를 토큰의 ID로 대체하십시오.
 
     ```
-        bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -167,9 +167,12 @@ Token              <token_value>
     -   AP 남부의 네임스페이스 설정의 경우: registry.au-syd.bluemix.net
 
     ```
-        docker login -u token -p <token_value> <registry_url>
+    docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    `-u` 매개변수의 경우에는 토큰 ID가 아니라 문자열 `token`을 입력했는지 확인하십시오.
+    {: tip}
 
     토큰을 사용하여 Docker에 로그인한 후에 이미지를 네임스페이스로 푸시하거나 이미지를 네임스페이스에서 가져올 수 있습니다.
 
@@ -180,25 +183,26 @@ Token              <token_value>
 토큰이 더 이상 필요하지 않은 경우 {{site.data.keyword.registrylong_notm}}를 제거합니다.
 {:shortdesc}
 
-**참고:** 만료된 {{site.data.keyword.registrylong_notm}} 토큰은 {{site.data.keyword.Bluemix_notm}} 계정에서 자동으로 제거되며 수동으로 제거할 필요가 없습니다.
+만료된 {{site.data.keyword.registrylong_notm}} 토큰은 {{site.data.keyword.Bluemix_notm}} 계정에서 자동으로 제거되며 수동으로 제거할 필요가 없습니다.
+{:tip}
 
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  {{site.data.keyword.Bluemix_notm}} 계정의 모든 토큰을 나열하고 제거하려는 토큰 ID를 기록해 놓으십시오.
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  토큰을 제거하십시오.
 
     ```
-        bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

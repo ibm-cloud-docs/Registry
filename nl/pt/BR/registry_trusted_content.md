@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -57,30 +57,31 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
 2.  Efetue login na CLI do {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login [--sso]
+    ibmcloud login [ -- sso ]
     ```
     {: pre}
 
-    **Nota:** se você tiver um ID federado, use `bx login --sso` para efetuar login. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+    Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+    {:tip}
 
 3.  Tenha como destino a região que você deseja usar. Se você não souber o nome da região, execute o comando sem a região e escolha uma.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  Efetue login no {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     A saída instrui você a exportar a variável de ambiente do Docker Content Trust. Por exemplo:
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -126,7 +127,7 @@ A primeira vez que você puxa uma imagem assinada com o Docker Content Trust ati
 
 1.  [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2.  Puxe sua imagem. Substitua _&lt;source_image&gt;_ pelo repositório da imagem e _&lt;tag&gt;_ pela tag da imagem que você deseja usar, como _mais recente_. Para listar as imagens disponíveis a serem puxadas, execute `bx cr image-list`.
+2.  Puxe sua imagem. Substitua _&lt;source_image&gt;_ pelo repositório da imagem e _&lt;tag&gt;_ pela tag da imagem que você deseja usar, como _mais recente_. Para listar imagens disponíveis a serem puxadas, execute `ibmcloud cr image-list`.
 
     ```
     docker pull <source_image>:<tag>
@@ -216,7 +217,9 @@ Antes de iniciar:
 - Os assinantes de imagem devem ter permissão para enviar imagens por push para o namespace. 
 - Os proprietários do repositório e os assinantes adicionais devem ter o Docker 17.12 ou mais recente instalado.
 - Crie um repositório de conteúdo confiável [enviando uma imagem assinada por push](#trustedcontent_push). Os proprietários do repositório devem ter as chaves de administrador de repositório para o repositório disponível na pasta de confiança do Docker na máquina local. Se você não tiver a chave de administrador do repositório, entre em contato com o proprietário para executar esta tarefa para você.
-- Nota: depois de incluir um assinante, não é mais possível usar a chave de administrador de repositório para assinar imagens nesse repositório. Deve-se manter a chave privada para um dos assinantes aprovados assinar. Para reter a capacidade de assinar imagens depois de incluir um assinante, siga estas instruções novamente para gerar e incluir uma função de assinante para si mesmo.
+
+Ao incluir um assinante, não é mais possível usar a chave de administrador do repositório para assinar imagens nesse repositório. Deve-se manter a chave privada para um dos assinantes aprovados assinar. Para reter a capacidade de assinar imagens depois de incluir um assinante, siga estas instruções novamente para gerar e incluir uma função de assinante para si mesmo.
+{:tip}
 
 Para compartilhar chaves de assinatura:
 
@@ -267,7 +270,9 @@ Se não desejar mais que um assinante possa assinar imagens em seu repositório,
 
 Antes de iniciar:
 - Os proprietários do repositório e os assinantes adicionais devem ter o Docker 17.12 ou mais recente instalado.
-- Nota: se você remover um assinante, o servidor de confiança não confiará em suas versões assinadas da imagem. Para garantir que a imagem possa ser puxada após a remoção do assinante, certifique-se de que o assinante não tenha assinado a versão mais recente da imagem antes de continuar. Se o assinante tiver assinado a versão mais recente da imagem, envie uma atualização por push para a imagem e assine-a usando sua chave antes de continuar.
+
+Se você remover um assinante, o servidor de confiança não confiará em suas versões assinadas da imagem. Para garantir que a imagem possa ser puxada após a remoção do assinante, certifique-se de que o assinante não tenha assinado a versão mais recente da imagem antes de continuar. Se o assinante tiver assinado a versão mais recente da imagem, envie uma atualização por push para a imagem e assine-a usando sua chave antes de continuar.
+{:tip}
 
 Para remover um assinante:
 

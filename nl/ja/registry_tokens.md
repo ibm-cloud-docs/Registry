@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -22,7 +22,8 @@ lastupdated: "2017-02-06"
 レジストリー・トークンまたは {{site.data.keyword.iamlong}} (IAM) API キーを使用して、{{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを自動化し、イメージのプッシュとプルを可能にすることができます。
 {:shortdesc}
 
-Kubernetes デプロイメントでレジストリーのイメージを使用しようとしていますか? [他の Kubernetes 名前空間、{{site.data.keyword.Bluemix_notm}} 地域、アカウント内のイメージへのアクセス](/docs/containers/cs_images.html#other)を確認してください。{: tip}
+Kubernetes デプロイメントでレジストリーのイメージを使用しようとしていますか? [他の Kubernetes 名前空間、{{site.data.keyword.Bluemix_notm}} 地域、アカウント内のイメージへのアクセス](/docs/containers/cs_images.html#other)を確認してください。
+{: tip}
 
 API キーはアカウントにリンクされているので、{{site.data.keyword.Bluemix_notm}} 全体で使用できます。そのため、サービスごとに別の資格情報を使用する必要がありません。 API キーを CLI または自動ログインの中でユーザー ID として使用できます。
 
@@ -89,7 +90,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  トークンを作成します。 以下の例は、領域内にセットアップされているすべての名前空間への読み取りおよび書き込みアクセスを持つ、有効期限がないトークンを作成します。
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -124,7 +125,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 2.  トークンが作成されたことを確認します。
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -138,21 +139,21 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  {{site.data.keyword.Bluemix_notm}} アカウント内のすべてのトークンをリストし、使用するトークン ID をメモします。
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  トークンのトークン値を取得します。 &lt;token_id&gt; は、トークンの ID に置換してください。
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -169,6 +170,9 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    `-u` パラメーターの場合、トークン ID ではなくストリング `token` を入力してください。
+    {: tip}
 
     トークンを使用して Docker にログインすると、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。
 
@@ -179,25 +183,26 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 {{site.data.keyword.registrylong_notm}} トークンが不要になったら、削除します。
 {:shortdesc}
 
-**注:** 有効期限が切れた {{site.data.keyword.registrylong_notm}} トークンは {{site.data.keyword.Bluemix_notm}} アカウントから自動的に削除されるため、手動で削除する必要はありません。
+有効期限が切れた {{site.data.keyword.registrylong_notm}} トークンは {{site.data.keyword.Bluemix_notm}} アカウントから自動的に削除されるため、手動で削除する必要はありません。
+{:tip}
 
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  {{site.data.keyword.Bluemix_notm}} アカウント内のすべてのトークンをリストし、削除するトークン ID をメモします。
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  トークンを削除します。
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

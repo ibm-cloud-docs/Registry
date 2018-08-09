@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,18 +16,17 @@ lastupdated: "2018-05-31"
 {:download: .download}
 
 
-# Commandes {{site.data.keyword.registrylong_notm}} (`bx cr`) pour la gestion des images Docker dans votre espace de nom
+# Commandes {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) pour la gestion des images Docker dans votre espace de nom
 {: #registry_cli_reference}
 
 Vous pouvez utiliser le plug-in container-registry pour configurer votre propre espace de nom d'images dans un registre privé, hébergé et géré par IBM, dans lequel vous pouvez stocker et partager de manière sécurisée des images Docker avec tous les utilisateurs de votre compte {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 
-## Commandes bx cr
+## Commandes ibmcloud cr
 {: #registry_cli_reference_bxcr}
 
-Exécutez les commandes `bx cr` dans l'interface de ligne de
-commande d'{{site.data.keyword.registryshort_notm}}.
+Exécutez les commandes `ibmcloud cr` dans l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
   
 Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html).
@@ -38,7 +37,7 @@ Pour connaître les commandes prises en charge, voir [Interface de ligne de comm
 Vous pouvez formater et filtrer la sortie de l'interface de ligne de commande des commandes {{site.data.keyword.registrylong_notm}} prises en charge.
 {:shortdesc}
 
-Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un format lisible par l'utilisateur. Cependant, cette vue risque de limiter votre capacité à utiliser la sortie, particulièrement si la commande est exécutée à l'aide d'un programme. Ainsi, dans la sortie de l'interface de ligne de commande `bx cr image-list`, vous pouvez vouloir trier la zone `Size` par ordre de taille numérique, mais la commande renvoie une description de la taille sous forme de chaîne. Le plug-in container-registry fournit l'option format qui vous permet d'appliquer un modèle Go à la sortie de l'interface de ligne de commande. Le modèle Go est une fonction du [langage de programmation Go](https://golang.org/pkg/text/template/) qui vous permet de personnaliser la sortie de l'interface
+Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un format lisible par l'utilisateur. Cependant, cette vue risque de limiter votre capacité à utiliser la sortie, particulièrement si la commande est exécutée à l'aide d'un programme. Ainsi, dans la sortie de l'interface de ligne de commande `ibmcloud cr image-list`, vous souhaiterez peut-être trier la zone `Size` par ordre de taille numérique, mais la commande renvoie une description de la taille sous forme de chaîne. Le plug-in container-registry fournit l'option format qui vous permet d'appliquer un modèle Go à la sortie de l'interface de ligne de commande. Le modèle Go est une fonction du [langage de programmation Go](https://golang.org/pkg/text/template/) qui vous permet de personnaliser la sortie de l'interface
 de ligne de commande.
 
 Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant l'option format de deux façons différentes :
@@ -48,16 +47,16 @@ Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant
 
 Vous pouvez utiliser l'option format avec les commandes {{site.data.keyword.registrylong_notm}} suivantes. Cliquez sur une commande pour afficher la liste de zones disponibles et des types de données associés.
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Les exemples de code suivants illustrent la manière dont vous pouvez utiliser les options de formatage et de filtrage.
 
--   Exécutez la commande `bx cr image-list` suivante pour afficher le référentiel, l'étiquette et le statut de sécurité de toutes les images dont la taille dépasse 1 Mo :
+-   Exécutez la commande `ibmcloud cr image-list` suivante pour afficher le référentiel, l'étiquette et le statut de sécurité de toutes les images dont la taille dépasse 1 Mo :
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
@@ -72,10 +71,10 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
     {: screen}
 
 
--   Exécutez la commande `bx cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la documentation IBM pour une image publique IBM spécifique :
+-   Exécutez la commande `ibmcloud cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la documentation IBM pour une image publique IBM spécifique :
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -87,10 +86,10 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
     ```
     {: screen}
 
--   Exécutez la commande `bx cr image-inspect` suivante pour afficher les ports exposés pour l'image spécifiée :
+-   Exécutez la commande `ibmcloud cr image-inspect` suivante afin d'afficher les ports exposés pour une image spécifiée :
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -102,10 +101,10 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
     ```
     {: screen}
 
--   Exécutez la commande `bx cr token-list` suivante pour afficher tous les jetons en lecture seule :
+-   Exécutez la commande `ibmcloud cr token-list` suivante pour afficher tous les jetons en lecture seule :
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
@@ -117,10 +116,10 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
     {: screen}
 
 
-### Options du modèle Go et types de données dans la commande `bx cr image-list`
+### Options du modèle Go et types de données dans la commande `ibmcloud cr image-list`
 {: #registry_cli_listing_imagelist}
 
-Consultez le tableau suivant pour trouver les options du modèle Go et les types de données disponibles pour la commande `bx cr image-list`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr image-list`.
 {:shortdesc}
 
 |Zone|Type|Description|
@@ -132,12 +131,12 @@ Consultez le tableau suivant pour trouver les options du modèle Go et les types
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`Tag`|Chaîne|Affiche l'étiquette de l'image.|
 |`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : Status  `string`, IssueCount  `int` et ExemptionCount  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tableau 1. Zones et types de données disponibles dans la commande bx cr image-list." caption-side="top"}
+{: caption="Tableau 1. Zones et types de données disponibles dans la commande ibmcloud cr image-list." caption-side="top"}
 
-### Options du modèle Go et types de données dans la commande `bx cr image-inspect`
+### Options du modèle Go et types de données dans la commande `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
 
-Consultez le tableau suivant pour trouver les options du modèle Go et les types de données disponibles pour la commande `bx cr image-inspect`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr image-inspect`.
 {:shortdesc}
 
 |Zone|Type|Description|
@@ -158,7 +157,7 @@ Consultez le tableau suivant pour trouver les options du modèle Go et les types
 |`VirtualSize`|Entier (64 bits)|Affiche la somme des tailles de chaque couche de l'image en octets.|
 |`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir
 [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tableau 2. Zones et types de données disponibles dans la commande bx cr image-inspect." caption-side="top"}
+{: caption="Tableau 2. Zones et types de données disponibles dans la commande ibmcloud cr image-inspect." caption-side="top"}
 
 #### Config
 
@@ -210,10 +209,10 @@ Consultez le tableau suivant pour trouver les options du modèle Go et les types
 |`BaseLayer`|Chaîne|Affiche le descripteur de la couche de base de l'image.|
 {: caption="Tableau 5. Zones et types de données disponibles dans RootFS struct." caption-side="top"}
 
-### Options du modèle Go et types de données dans la commande `bx cr token-list`
+### Options du modèle Go et types de données dans la commande `ibmcloud cr token-list`
 {: #registry_cli_listing_tokenlist}
 
-Consultez le tableau suivant pour trouver les options du modèle Go et les types de données disponibles pour la commande `bx cr token-list`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr token-list`.
 {:shortdesc}
 
 |Zone|Type|Description|
@@ -222,4 +221,4 @@ Consultez le tableau suivant pour trouver les options du modèle Go et les types
 |`Expiry`|Entier (64 bits)|Affiche l'[horodatage Unix](https://en.wikipedia.org/wiki/Unix_time) à l'expiration du jeton.|
 |`ReadOnly`|Booléen|Affiche _true_ lorsque vous pouvez uniquement extraire des images, et _false_ lorsque vous pouvez envoyer des images par commande push et en extraire vers et depuis votre espace de nom.|
 |`Description`|Chaîne|Affiche la description du jeton.|
-{: caption="Tableau 6. Zones et types de données disponibles dans la commande bx cr token-list." caption-side="top"}
+{: caption="Tableau 6. Zones et types de données disponibles dans la commande ibmcloud cr token-list." caption-side="top"}

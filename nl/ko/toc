@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [ibm-websphere-extreme-scale 이미지](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -28,9 +29,11 @@ IBM Cloud Container Registry
     [Vulnerability Advisor를 사용하여 이미지 보안 관리](../va/va_index.html)
         [Vulnerability Advisor 정보](../va/va_index.html#about)
         [취약성 유형](../va/va_index.html#types)
-        [컨테이너 스캐너 설치](../va/va_index.html#va_install_livescan)
-        [취약성 보고서 검토](../va/va_index.html#va_reviewing)
+        [컨테이너 스캐너 설치](../va/va_index.html#va_install_container_scanner)
+        [방화벽 뒤에서 컨테이너 스캐너 실행](../va/va_index.html#va_firewall)
+        [GUI를 사용하여 취약성 보고서 검토](../va/va_index.html#va_reviewing)
         [CLI를 사용하여 취약성 보고서 검토](../va/va_index.html#va_registry_cli)
+        [컨테이너 보고서 검토](../va/va_index.html#va_reviewing_container)
         [공통 문제점 해결](../va/va_index.html#va_report)
     {: .navgroup-end}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -90,7 +90,7 @@ Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keywor
 1.  Erstellen Sie ein Token. Im folgenden Beispiel wird ein nicht ablaufendes Token erstellt, das über Lese- und Schreibzugriff auf alle Namensbereiche verfügt, die in einer Region eingerichtet wurden.
 
     ```
-    bx cr token-add --description "Dies ist ein Token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +125,7 @@ Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keywor
 2.  Überprüfen Sie, ob das Token erstellt wurde.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -139,21 +139,21 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 1.  Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Listen Sie alle Tokens in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie verwenden möchten.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Rufen Sie den Tokenwert für das Token ab. Ersetzen Sie im folgenden Befehl &lt;token-id&gt; durch die ID des Tokens.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token-id>
     ```
     {: pre}
 
@@ -170,6 +170,9 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
     docker login -u token -p <tokenwert> <registry_url>
     ```
     {: pre}
+    
+    Stellen Sie für den Parameter `-u` sicher, dass Sie die Zeichenfolge `token` eingeben und nicht die Token-ID.
+    {: tip}
 
     Nachdem Sie sich unter Verwendung des Tokens bei Docker angemeldet haben, können Sie Push- oder Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
 
@@ -180,25 +183,26 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nicht mehr benötigen.
 {:shortdesc}
 
-**Hinweis:** Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
+Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
+{:tip}
 
 1.  Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Listen Sie alle Tokens in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie entfernen möchten.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Entfernen Sie das Token.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token-id>
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -28,7 +28,9 @@ um Dockerfile, usando o comando `build` do Docker. Para incluir uma imagem em se
 {{site.data.keyword.registrylong_notm}}.
 
 
-**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
+Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
+exemplo, nomes ou rótulos de imagem).
+{:tip}
 
 
 ## Puxando imagens de outro registro
@@ -44,15 +46,17 @@ Antes de iniciar:
 
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se o cliente Docker está configurado para requerer permissões raiz, deve-se executar os comandos `bx login`, `bx cr
-login`, `docker pull` e `docker push` com `sudo`.
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+`ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
-  Se você mudar as suas permissões para executar comandos do Docker sem privilégios de administrador, o comando `bx login` deverá ser executado novamente.
+  Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
+deve-se executar o comando `ibmcloud login` novamente.
 
 
 Faça download da imagem, veja [Puxar uma imagem](index.html#registry_images_pulling) na documentação de Introdução.
 
-  **Dica:** se você obtém uma mensagem "desautorizado: autenticação necessária" ou "negado: o acesso solicitado ao recurso foi negado", execute o comando `bx cr login`.
+Se você receber uma mensagem "não autorizado: autenticação requerida" ou "negado: acesso solicitado ao recurso negado", execute o comando `ibmcloud cr login`.
+{:tip}
 
 
 Depois de puxar uma imagem e identificá-la para o seu namespace, é possível fazer upload (enviar por push) da imagem de sua máquina local para o namespace.
@@ -71,10 +75,11 @@ Antes de iniciar:
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no registro privado do {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Extraia](#registry_images_pulling) ou [construa](#registry_images_creating) uma imagem em sua máquina local e identifique a imagem com informações do seu namespace.
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se o cliente Docker está configurado para requerer permissões raiz, deve-se executar os comandos `bx login`, `bx cr
-login`, `docker pull` e `docker push` com `sudo`.
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+`ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
-  Se você mudar as suas permissões para executar comandos do Docker sem privilégios de administrador, o comando `bx login` deverá ser executado novamente.
+  Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
+deve-se executar o comando `ibmcloud login` novamente.
 
 
 Para fazer upload (enviar por push) de uma imagem, siga estas etapas.
@@ -82,16 +87,18 @@ Para fazer upload (enviar por push) de uma imagem, siga estas etapas.
 1. Efetue login na CLI:
 
   ```
-  bx cr login
+  ibmcloud cr login
   ```
   {: pre}
 
-  **Nota:** deve-se efetuar login se você puxa uma imagem de seu {{site.data.keyword.registrylong_notm}} privado.
+  Deve-se efetuar login se você puxa uma imagem de seu {{site.data.keyword.registrylong_notm}} privado.
+  {:tip}
 
-2. Para visualizar todos os namespaces que estão disponíveis em sua conta, execute o comando `bx cr namespace-list`.
+2. Para visualizar todos os namespaces disponíveis em sua conta, execute o comando `ibmcloud cr namespace-list`.
 3. [Faça upload da imagem para seu namespace.](index.html#registry_images_pushing)
 
-  **Dica:** se você obtém uma mensagem "desautorizado: autenticação necessária" ou "negado: o acesso solicitado ao recurso foi negado", execute o comando `bx cr login`.
+  Se você receber uma mensagem "não autorizado: autenticação requerida" ou "negado: acesso solicitado ao recurso negado", execute o comando `ibmcloud cr login`.
+  {:tip}
 
 
 Após enviar sua imagem por push para seu registro privado, será possível:
@@ -113,10 +120,11 @@ Antes de iniciar:
 
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no registro privado do {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se o cliente Docker está configurado para requerer permissões raiz, deve-se executar os comandos `bx login`, `bx cr
-login`, `docker pull` e `docker push` com `sudo`.
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+`ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
-  Se você mudar as suas permissões para executar comandos do Docker sem privilégios de administrador, o comando `bx login` deverá ser executado novamente.
+  Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
+deve-se executar o comando `ibmcloud login` novamente.
 
 
 Para copiar uma imagem entre dois registros, siga estas etapas.
@@ -140,10 +148,11 @@ Antes de iniciar:
 
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no registro privado do {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se o cliente Docker está configurado para requerer permissões raiz, deve-se executar os comandos `bx login`, `bx cr
-login`, `docker pull` e `docker push` com `sudo`.
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+`ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
-  Se você mudar as suas permissões para executar comandos do Docker sem privilégios de administrador, o comando `bx login` deverá ser executado novamente.
+  Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
+deve-se executar o comando `ibmcloud login` novamente.
 
 
 Uma imagem do Docker é a base para cada contêiner que você cria. Uma imagem é criada por meio
@@ -193,7 +202,7 @@ privado.
   ```
   {: pre}
 
-  em que _&lt;my_namespace&gt;_ é sua informação de namespace, _&lt;repo_name&gt;_ é o nome de seu repositório e _&lt;tag&gt;_ é a versão que você deseja usar para sua imagem. Para localizar seu namespace, execute o comando `bx cr namespace-list`.
+  em que _&lt;my_namespace&gt;_ é sua informação de namespace, _&lt;repo_name&gt;_ é o nome de seu repositório e _&lt;tag&gt;_ é a versão que você deseja usar para sua imagem. Para localizar seu namespace, execute o comando `ibmcloud cr namespace-list`.
 
 4. Anote o caminho para o diretório que contém o Dockerfile. Se você executa os comandos nas etapas a seguir enquanto seu diretório ativo está configurado para onde o contexto de compilação é armazenado, é possível substituir _&lt;directory&gt;_ por um ponto (.).
 5. Escolha construir a imagem diretamente no {{site.data.keyword.Bluemix_notm}} ou construir e testar a imagem localmente
@@ -201,13 +210,13 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
   - Para construir a imagem diretamente no {{site.data.keyword.Bluemix_notm}}, execute o comando a seguir:
 
     ```
-    bx cr build -t <image_name> <directory>
+    ibmcloud cr build -t <image_name> <directory>
     ```
     {: pre}
 
     em que _&lt;image_name&gt;_ é o nome de sua imagem e _&lt;directory&gt;_ é o caminho para o diretório.
    
-   Para obter mais informações sobre o comando `bx cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html).
+   Para obter mais informações sobre o comando `ibmcloud cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Para construir e testar sua imagem localmente antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
     1. Construa a imagem de seu Dockerfile na máquina local e identifique-a com o nome da imagem.
@@ -233,38 +242,93 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
 Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, veja [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).
 
 
-
-## Removendo imagens de seu registro de imagens privadas do {{site.data.keyword.Bluemix_notm}}
+## Excluindo imagens de seu repositório privado do  {{site.data.keyword.Bluemix_notm}}
 {: #registry_images_remove}
 
-É possível remover imagens indesejadas de seu registro de imagem privada.
+É possível excluir imagens indesejadas de seu repositório privado usando a interface gráfica com o usuário (GUI) ou a CLI.
 {:shortdesc}
 
-Antes de iniciar, remova quaisquer contêineres que estejam usando a imagem.
+Se desejar excluir um repositório privado e suas imagens associadas, consulte [Excluindo um repositório privado e quaisquer imagens associadas](#registry_repo_remove).
 
-As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser removidas de seu registro privado do {{site.data.keyword.Bluemix_notm}} e não contam para sua cota.
+As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas de seu repositório privado do {{site.data.keyword.Bluemix_notm}} e não são consideradas para sua cota.
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}} executando o comando `bx login`.
-2. Para remover uma imagem, execute o comando a seguir:
+A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
+{:tip}
+
+
+### Excluindo imagens de seu repositório privado do {{site.data.keyword.Bluemix_notm}} usando a CLI
+{: #registry_images_remove_cli}
+
+É possível excluir imagens indesejadas de seu repositório privado usando a CLI.
+{:shortdesc}
+
+A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
+{:tip}
+
+Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
+
+1.  Efetue login no {{site.data.keyword.Bluemix_notm}} executando o comando `ibmcloud login`.
+2.  Para excluir uma imagem, execute o comando a seguir:
 
   ```
-  bx cr image-rm IMAGE
+  ibmcloud cr image-rm IMAGE
   ```
   {: pre}
 
-  Em que _IMAGE_ é o caminho completo do registro do {{site.data.keyword.Bluemix_notm}} para a imagem que você deseja remover, no formato `namespace/image:tag`.
+  Em que _IMAGE_ é o nome da imagem que você deseja remover, no formato `repository:tag`.
 
-  Se uma tag não for especificada no caminho da imagem, a imagem identificada como `latest` será excluída por padrão. É possível excluir múltiplas imagens listando cada caminho de registro privado do {{site.data.keyword.Bluemix_notm}} no comando com um espaço entre cada caminho.
+  Se uma tag não for especificada no nome da imagem, a imagem identificada por último (`latest`) será excluída, por padrão. É possível excluir múltiplas imagens listando cada caminho de registro privado do {{site.data.keyword.Bluemix_notm}} no comando com um espaço entre cada caminho.
 
-  **Dica:** é possível executar o comando `bx cr namespace-list` para recuperar seu valor de namespace.
+ Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas Repositório e Tag para criar o nome da imagem no formato `repository:tag`.
+ {:tip}
 
-3. Verifique se a imagem foi removida executando o comando a seguir e verifique se a imagem não aparece na lista.
+3.  Execute o comando a seguir para ver se a imagem foi excluída e verifique se ela não é mostrada na lista.
 
   ```
-  bx cr image-list
+  ibmcloud cr image-list
   ```
   {: pre}
 
-  
 
+### Excluindo imagens de seu repositório privado do {{site.data.keyword.Bluemix_notm}} usando a GUI
+{: #registry_images_remove_gui}
+
+É possível excluir imagens indesejadas de seu repositório de imagem privada usando a interface gráfica com o usuário (GUI).
+{:shortdesc}
+
+A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
+{:tip}
+
+Para excluir uma imagem usando a GUI, conclua as etapas a seguir:
+
+1.  Efetue login no console do {{site.data.keyword.Bluemix_notm}}
+([https://console.bluemix.net](https://console.bluemix.net)) com seu IBMid.
+2.  Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
+3.  Clique em **Catálogo**.
+4.  Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.
+5.  Clique em **Repositórios privados**. Uma lista de seus repositórios privados é exibida.
+6.  Clique na linha que contém o repositório que contém a imagem que você deseja excluir.
+7.  Na linha que contém a imagem que você deseja excluir, clique no ícone para **abrir e fechar a lista de opções** e selecione **Excluir imagem**. Assegure-se de selecionar a imagem correta, porque essa ação não pode ser desfeita. Clique em  ** Excluir **.
+
+
+## Excluindo um repositório privado e quaisquer imagens associadas
+{: #registry_repo_remove}
+
+É possível excluir repositórios privados que não são mais necessários e quaisquer imagens associadas usando a interface gráfica com o usuário (GUI).
+{:shortdesc}
+
+Quando você exclui um repositório, todas as imagens nesse repositório são excluídas. Essa ação não pode ser desfeita.
+{:tip}
+
+Antes de iniciar, faça backup de todas as imagens que você deseja manter.
+
+Para excluir um repositório usando a GUI, conclua as etapas a seguir:
+
+1.  Efetue login no console do {{site.data.keyword.Bluemix_notm}}
+([https://console.bluemix.net](https://console.bluemix.net)) com seu IBMid.
+2.  Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
+3.  Clique em **Catálogo**.
+4.  Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.
+5.  Clique em **Repositórios privados**. Uma lista de seus repositórios privados é exibida.
+6.  Na linha que contém o repositório privado que você deseja excluir, clique no ícone para **abrir e fechar a lista de opções** e selecione **Excluir repositório**. Assegure-se de que tenha selecionado o repositório correto, porque essa ação não pode ser desfeita. Clique em  ** Excluir **.
 

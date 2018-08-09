@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -154,7 +154,7 @@ l'utilisateur à extraire cette image par commande pull.
   > Une fois l'image extraite,
 {{site.data.keyword.registrylong_notm}} détermine la
 bande passante que vous avez utilisée lors de l'extraction (pull) et vérifie si la limite
-du trafic d'extraction (pull) est atteinte. Dans cet exemple, l'utilisation du trafic d'extraction (pull) passe de 4,5 Go à 5,2 Go. Votre limite de quota en cours étant définie sur 5
+du trafic d'extraction (pull) est atteinte. Dans cet exemple, l'utilisation du trafic d'extraction (pull) passe de 4,5 Go à 5,5 Go. Votre limite de quota en cours étant définie sur 5
 Go, {{site.data.keyword.registrylong_notm}}
 vous empêche d'extraire des images par commande pull à partir de votre espace de nom.
 
@@ -182,27 +182,27 @@ pour gérer les images Docker de tous les espaces de nom dans votre compte
 {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-Si vous ne connaissez pas le plan de service dont
-vous disposez, exécutez la commande `bx cr plan`.
+Si vous ne connaissez pas le plan de service dont vous disposez, exécutez la commande `ibmcloud cr plan`.
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
-    **Remarque** : si vous disposez d'un ID fédéré, utilisez `bx login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
+    Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
 et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
+    {:tip}
 
 2.  Effectuez une mise à niveau vers le plan standard.
 
     ```
-    bx cr plan-upgrade standard
+    ibmcloud cr plan-upgrade standard
     ```
     {: pre}
 
-    **Remarque :** si vous disposez d'un compte d'essai {{site.data.keyword.Bluemix_notm}}, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} Standard avant d'exécuter la commande `bx cr plan-upgrade`.
+    Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.{:tip}
 
 
 ## Notions élémentaires
@@ -211,7 +211,7 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 Préparez-vous à stocker en sécurité et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
 {:shortdesc}
 
-**Remarque** : Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
 
 
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
@@ -243,7 +243,7 @@ environnement de transfert.</dd>
 
 <dl>
   <dt>Image</dt>
-  <dd>Une image Docker est construite d'après les instructions spécifiées dans le Dockerfile et constitue la base d'un conteneur. Une fois l'image Docker construite, vous pouvez l'utiliser pour créer un conteneur afin de déployer votre application et ses dépendances. Les images sont stockées dans un registre. Les utilisateurs ayant accès à votre compte {{site.data.keyword.Bluemix_notm}} peuvent accéder à vos images.</dd>
+  <dd>Il s'agit d'un système de fichiers et des paramètres d'exécution correspondants qui sont utilisés dans un module d'exécution de conteneur pour créer un conteneur. Le système de fichiers se compose d'une série de couches, combinées lors de l'exécution, qui sont créées à mesure que l'image est générée par des mises à jour successives. L'image ne conserve pas l'état lors de l'exécution du conteneur. </dd>
 </dl>
 
 <dl>
@@ -271,8 +271,9 @@ environnement de transfert. Si vous désirez utiliser le registre dans plusieurs
 
 Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
 
-**Remarque** : Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `bx cr namespace-list` afin d'extraire les informations sur les espaces de nom existants. Si vous êtes un client existant d'{{site.data.keyword.containerlong_notm}}  qui utilise des [groupes de conteneurs uniques et évolutifs](../../containers/cs_classic.html),
+Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants. Si vous êtes un client existant d'{{site.data.keyword.containerlong_notm}}  qui utilise des [groupes de conteneurs uniques et évolutifs](../../containers/cs_classic.html),
 vous disposez déjà d'un espace de nom. Vous pouvez en créer d'autres, mais vous ne pouvez exécuter la commande `cf ic namespace set` que pour un seul espace de nom à la fois.
+{:tip}
 
 Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
 
@@ -281,7 +282,8 @@ Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom 
 -   Votre espace de nom doit débuter par au moins une lettre ou un nombre.
 -   Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
 
-**Remarque** : Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
+Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
+{:tip}
 
 Après avoir configuré votre premier espace de nom, le plan de service {{site.data.keyword.registrylong_notm}} gratuit vous est affecté si vous n'avez pas encore [procédé à une mise à niveau de votre plan](#registry_plan_upgrade).
 
@@ -303,39 +305,39 @@ Une région est une zone géographique dont l'accès s'effectue par un noeud fin
 
 La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
 
-Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `bx cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
+Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `ibmcloud cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
 
 Pour exécuter la commande avec des paramètres, remplacez _&lt;region&gt;_ par le nom de la région. Par exemple, `eu-central`.
 
 ```
-bx cr region-set <region>
+ibmcloud cr region-set <region>
 ```
 {: pre}
 
 Pour cibler, par exemple, la région eu-central (Europe centrale), exécutez la commande suivante :
 
 ```
-bx cr region-set eu-central
+ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-Après avoir ciblé une région différente, connectez-vous à nouveau au registre : `bx cr login`.
+Après avoir ciblé une région différente, connectez-vous à nouveau au registre : `ibmcloud cr login`.
 
-### Registre global
+### Base de registre globale
 {: #registry_regions_global}
 
 Une base de registre globale est disponible, qui ne comporte aucune région dans son nom (`registry.bluemix.net`). Seules des images publiques fournies par IBM sont hébergées dans ce registre. Pour gérer vos propres images, par exemple pour définir des espaces de nom ou baliser et envoyer des images par commande push à un registre, utilisez un [registre régional local](#registry_regions_local).
 {:shortdesc}
 
-Vous pouvez cibler la base de registre globale en exécutant la commande `bx cr region-set`.
+Vous pouvez cibler la base de registre globale en exécutant la commande `ibmcloud cr region-set`.
 
 Ainsi, pour cibler la base de registre globale, exécutez la commande suivante :
 
 ```
-bx cr region-set global
+ibmcloud cr region-set global
 ```
 {: pre}
 
-Pour plus d'informations sur la commande `bx cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
+Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
 
-Une fois la base de registre globale ciblée, exécutez la commande `bx cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
+Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.

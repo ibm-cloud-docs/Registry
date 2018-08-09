@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -28,9 +29,11 @@ IBM Cloud Container Registry
     [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html)
         [Informationen zu Vulnerability Advisor](../va/va_index.html#about)
         [Schwachstellentypen](../va/va_index.html#types)
-        [Container-Scanner installieren](../va/va_index.html#va_install_livescan)
-        [Sicherheitslückenbericht prüfen](../va/va_index.html#va_reviewing)
+        [Container-Scanner installieren](../va/va_index.html#va_install_container_scanner)
+        [Container-Scanner hinter einer Firewall ausführen](../va/va_index.html#va_firewall)
+        [Sicherheitslückenbericht mittels GUI prüfen](../va/va_index.html#va_reviewing)
         [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli)
+        [Containerbericht prüfen](../va/va_index.html#va_reviewing_container)
         [Häufige Probleme lösen](../va/va_index.html#va_report)
     {: .navgroup-end}
 

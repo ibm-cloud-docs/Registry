@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-4-26"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -18,10 +18,10 @@ lastupdated: "2018-4-26"
 # Imposición de seguridad de imagen de contenedor (beta)
 {: #security_enforce}
 
-Con IBM Container Image Security Enforcement (beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](registry_trusted_content.html) esté aplicado correctamente a la imagen. Si un pod no cumple los requisitos la política, el clúster no se modificará.
+Con IBM Container Image Security Enforcement (beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](registry_trusted_content.html) esté aplicado correctamente a la imagen. Si una imagen no cumple con los requisitos de una política, el pod no se desplegará en el clúster ni se actualizará.
 {:shortdesc}
 
-IBM Container Image Security Enforcement obtiene la información sobre la confianza del contenido de las imágenes y las vulnerabilidades desde {{site.data.keyword.registrylong}}. Puede elegir si desea bloquear o permitir imágenes de otros registros en las políticas, pero no puede utilizar la imposición de la vulnerabilidad ni de la confianza para estas imágenes.
+IBM Container Image Security Enforcement recupera la información sobre la confianza del contenido de las imágenes y las vulnerabilidades desde {{site.data.keyword.registrylong}}. Puede optar por bloquear o permitir el despliegue de imágenes que se almacenan en otros registros, pero no puede utilizar el cumplimiento de confianza o vulnerabilidades para dichas imágenes.
 
 
 ## Instalación de Container Image Security Enforcement en el clúster
@@ -32,19 +32,19 @@ Antes de empezar:
 * [Establezca la CLI de `kubectl`](../../containers/cs_cli_install.html#cs_cli_configure) en el clúster.
 
 Pasos:
-1.  [Configure Helm en el clúster](../../containers/cs_integrations.html#helm).
+1.  [Configure Helm en su clúster](../../containers/cs_integrations.html#helm).
 
-1.  Añada el repositorio de gráficas de IBM en Helm.
+2.  Añada el repositorio de gráficas de IBM a su cliente de Helm.
 
     ```
     helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
     ```
     {: pre}
 
-1.  Instale la gráfica de Helm de IBM Container Image Security Enforcement en el espacio de nombres del clúster `ibm-system`. Asígnele un nombre como `<cise>`.
+3.  Instale la gráfica de Helm de IBM Container Image Security Enforcement en el clúster. Dele un nombre como, por ejemplo, `cise`.
 
     ```
-    helm install --name=<cise> --namespace=ibm-system ibm-incubator/ibmcloud-image-enforcement
+    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
@@ -93,7 +93,7 @@ Al establecer `va` o `trust` en `enabled: true` para un registro de contenedor q
 ### Política de sistema kube
 {: #kube-system}
 
-De forma predeterminada, hay instalada una política de todo el espacio de nombres para el espacio de nombres de `kube-system`. Esta política permite que se desplieguen todas las imágenes de cualquier registro de contenedores en el `kube-system` sin imposición. También permite los repositorios utilizados para configurar el clúster.
+De forma predeterminada, hay instalada una política de todo el espacio de nombres para el espacio de nombres de `kube-system`. Esta política permite que se desplieguen sin imposición todas las imágenes de cualquier registro de contenedores en el `kube-system`, sin embargo, es posible cambiar esta parte de la política. La política predeterminada también incluye determinados repositorios que debe dejar en su lugar para que el clúster esté configurado correctamente.
 {:shortdesc}
 
 **Archivo `.yaml` de política `kube-system` predeterminado**:
@@ -110,7 +110,7 @@ spec:
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
     - name: "*"
       policy:
-    # These policies allow all IBM Cloud Container Service images from the global and all regional registries to deploy in this namespace.
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -123,7 +123,7 @@ spec:
 ### Política de sistema IBM
 {: #ibm-system}
 
-De forma predeterminada, hay instalada una política de todo el espacio de nombres para el espacio de nombres `ibm-system`. Esta política permite que se desplieguen todas las imágenes de cualquier registro de contenedores en `ibm-system` sin imposición. También permite los repositorios utilizados para configurar el clúster, e instalar o actualizar Image Security Enforcement.
+De forma predeterminada, hay instalada una política de todo el espacio de nombres para el espacio de nombres `ibm-system`. Esta política permite que se desplieguen sin imposición todas las imágenes de cualquier registro de contenedores en el `ibm-system`, sin embargo, es posible cambiar esta parte de la política. La política predeterminada también incluye determinados repositorios que debe dejar en su lugar para que el clúster esté configurado correctamente y poder instalar y configurar Image Security Enforcement.
 {:shortdesc}
 
 **Archivo `.yaml` de la política `ibm-system` predeterminado**:
@@ -140,7 +140,7 @@ spec:
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
     - name: "*"
       policy:
-    # These policies allow all IBM Cloud Container Service images from the global and all regional registries to deploy in this namespace.
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -259,7 +259,7 @@ Para configurar la política para verificar que una imagen esté firmada por un 
 ## Cómo controlar quién puede personalizar las políticas
 {: #assign_user_policy}
 
-Si tiene el control de acceso basado en roles (RBAC) habilitado en el clúster de Kubernetes, puede crear un rol para controlar quién tiene la capacidad para administrar políticas de seguridad en el clúster. Para obtener más información sobre cómo aplicar reglas de RBAC al clúster, consulte [la documentación de IBM Cloud Container Service](../../containers/cs_users.html#rbac).
+Si tiene el control de acceso basado en roles (RBAC) habilitado en el clúster de Kubernetes, puede crear un rol para controlar quién tiene la capacidad para administrar políticas de seguridad en el clúster. Para obtener más información sobre cómo aplicar reglas de RBAC al clúster, consulte la [Documentación de {{site.data.keyword.containerlong_notm}}](../../containers/cs_users.html#rbac).
 {:shortdesc}
 
 En el rol, añada una regla para las políticas de seguridad:
@@ -280,7 +280,8 @@ Los usuarios que tienen acceso para suprimir definiciones de recursos personaliz
   verbs: ["delete"]
 ```
 
-**Nota**: Los usuarios y ServiceAccounts con el rol `cluster-admin` tienen acceso a todos los recursos. El rol cluster-admin otorga acceso para administrar políticas de seguridad, incluso aunque no edite el rol. Asegúrese de controlar quién tiene el rol `cluster-admin`, y otorgue acceso solo a las personas a las que desee permitir la modificación de las políticas de seguridad.
+Los usuarios y ServiceAccounts con el rol `cluster-admin` tienen acceso a todos los recursos. El rol cluster-admin otorga acceso para administrar políticas de seguridad, incluso aunque no edite el rol. Asegúrese de controlar quién tiene el rol `cluster-admin`, y otorgue acceso solo a las personas a las que desee permitir la modificación de las políticas de seguridad.
+{:tip}
 
 ## Despliegue de imágenes de contenedor con seguridad impuesta
 {: #deploy_containers}
@@ -302,7 +303,8 @@ Si Container Image Security Enforcement deniega un Despliegue, este se creará, 
 *  Si la imagen coincide con una política pero no satisface los requisitos de Vulnerability Advisor de dicha política.
 
    ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report for more details by using the command `bx cr va`.
+   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
+   for more details by using the command `ibmcloud cr va`.
    ```
    {: screen}
 
@@ -337,7 +339,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](../../containers/cs_cli_insta
 
     ```
     $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
+    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
     ```
     {: codeblock}
 

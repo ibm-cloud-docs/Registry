@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -91,7 +91,7 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
 1.  Cree una señal. En el ejemplo siguiente se crea una señal que no caduca que tiene acceso de lectura y escritura a todos los espacios de nombres que se encuentran configurados en una región.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -126,7 +126,7 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
 2.  Verifique que la señal se ha creado.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -140,21 +140,21 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Enumere todas las señales de la cuenta de {{site.data.keyword.Bluemix_notm}} y tenga en cuenta el ID de señal que desea utilizar.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Recupere el valor de la señal para la señal. Sustituya &lt;id_señal&gt; con el ID de la señal.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -171,6 +171,9 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    Para el parámetro `-u`, asegúrese de que escribe la serie `token` y no el ID de la señal.
+    {: tip}
 
     Después de que haya iniciado una sesión en Docker utilizando la señal, puede enviar por push o extraer imágenes a y desde el espacio de nombres.
 
@@ -181,25 +184,26 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 Elimina una señal de {{site.data.keyword.registrylong_notm}} cuando ya no se necesita.
 {:shortdesc}
 
-**Nota: Las señales ** caducadas {{site.data.keyword.registrylong_notm}} se eliminan automáticamente desde su cuenta de {{site.data.keyword.Bluemix_notm}} y no es necesario eliminarlas manualmente.
+Las señales caducadas de {{site.data.keyword.registrylong_notm}} se eliminan automáticamente desde su cuenta de {{site.data.keyword.Bluemix_notm}} y no es necesario eliminarlas manualmente.
+{:tip}
 
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Enumere todas las señales de la cuenta de {{site.data.keyword.Bluemix_notm}} y tenga en cuenta el ID de señal que desea eliminar.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Eliminar la señal.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

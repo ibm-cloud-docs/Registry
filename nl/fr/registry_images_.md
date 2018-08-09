@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -28,7 +28,7 @@ Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à vo
 (par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 
 
-**Remarque** : Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
 
 
 ## Extraction d'images depuis un autre registre
@@ -44,15 +44,15 @@ Avant de commencer :
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
-Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `bx login`,
-`bx cr login`, `docker pull` et `docker push` avec l'option `sudo`.
+Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
+`ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
-  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges de l'utilisateur root, vous devez exécuter à nouveau la commande `bx login`.
+  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
 
 Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](index.html#registry_images_pulling) dans le guide de mise en route.
 
-  **Conseil :** si vous rencontrez le message Non autorisé : authentification requise ou Refusé : l'accès demandé à la ressource a été refusé, exécutez la commande `bx cr login`.
+Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.{:tip}
 
 
 Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer
@@ -72,10 +72,10 @@ Avant de commencer :
 - [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Extrayez par commande pull](#registry_images_pulling) ou [générez](#registry_images_creating) une image sur votre machine locale et balisez-la avec vos informations d'espace de nom.
 - [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
-Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `bx login`,
-`bx cr login`, `docker pull` et `docker push` avec l'option `sudo`.
+Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
+`ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
-  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges de l'utilisateur root, vous devez exécuter à nouveau la commande `bx login`.
+  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
 
 Pour télécharger (par push) une image, procédez comme suit.
@@ -83,16 +83,16 @@ Pour télécharger (par push) une image, procédez comme suit.
 1. Connectez-vous à l'interface de ligne de commande (CLI) :
 
   ```
-  bx cr login
+  ibmcloud cr login
   ```
   {: pre}
 
-  **Remarque :** vous devez vous connecter si vous extrayez une image depuis votre registre {{site.data.keyword.registrylong_notm}} privé.
+  Vous devez vous connecter si vous extrayez une image depuis votre registre {{site.data.keyword.registrylong_notm}} privé.{:tip}
 
-2. Si vous désirez répertorier tous les espaces de nom disponibles dans votre compte, exécutez la commande `bx cr namespace-list`.
+2. Si vous désirez afficher tous les espaces de nom disponibles dans votre compte, exécutez la commande `ibmcloud cr namespace-list`.
 3. [Téléchargez l'image par commande push vers votre espace de nom.](index.html#registry_images_pushing)
 
-  **Conseil :** si vous rencontrez le message Non autorisé : authentification requise ou Refusé : l'accès demandé à la ressource a été refusé, exécutez la commande `bx cr login`.
+  Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.{:tip}
 
 
 Après avoir envoyé à votre registre privé l'image par commande push, vous pouvez :
@@ -114,10 +114,10 @@ Avant de commencer :
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
-Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `bx login`,
-`bx cr login`, `docker pull` et `docker push` avec l'option `sudo`.
+Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
+`ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
-  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges de l'utilisateur root, vous devez exécuter à nouveau la commande `bx login`.
+  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
 
 Pour copier une image entre deux registres, procédez comme suit.
@@ -142,10 +142,10 @@ Avant de commencer :
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
-Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `bx login`,
-`bx cr login`, `docker pull` et `docker push` avec l'option `sudo`.
+Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
+`ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
-  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges de l'utilisateur root, vous devez exécuter à nouveau la commande `bx login`.
+  Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
 
 Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un
@@ -192,7 +192,7 @@ que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https
   ```
   {: pre}
 
-  où _&lt;my_namespace&gt;_ est votre espace de nom, _&lt;repo_name&gt;_, le nom de votre référentiel, et _&lt;tag&gt;_, la version que vous voulez utiliser pour votre image. Pour identifier votre espace de nom, exécutez la commande `bx cr namespace-list`.
+  où _&lt;my_namespace&gt;_ est votre espace de nom, _&lt;repo_name&gt;_, le nom de votre référentiel, et _&lt;tag&gt;_, la version que vous voulez utiliser pour votre image. Pour identifier votre espace de nom, exécutez la commande `ibmcloud cr namespace-list`.
 
 4. Prenez note du chemin d'accès au répertoire qui contient votre fichier Dockerfile. Si vous exécutez les commandes des procédures suivantes alors que votre répertoire de travail est défini sur l'emplacement où est stocké votre contexte de génération, vous pensez remplacer _&lt;directory&gt;_ par un point (.).
 5. Vous pouvez générer directement votre image dans
@@ -201,13 +201,13 @@ que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https
   - Pour générer l'image dans {{site.data.keyword.Bluemix_notm}}, exécutez la commande suivante :
 
     ```
-    bx cr build -t <image_name> <directory>
+    ibmcloud cr build -t <image_name> <directory>
     ```
     {: pre}
 
     où _&lt;image_name&gt;_ est le nom de votre image et _&lt;directory&gt;_ le chemin d'accès au répertoire.
    
-   Pour plus d'informations sur la commande `bx cr build`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html).
+   Pour plus d'informations sur la commande `ibmcloud cr build`, voir [Interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Pour générer et tester votre image localement avant de la transférer par push à {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
     1. Générez l'image depuis votre fichier Dockerfile sur votre machine locale et balisez-la avec votre nom d'image.
@@ -235,39 +235,91 @@ par commande push dans votre registre privé d'espace de nom](#registry_images_p
 Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image, voir [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
 
 
-
-## Retrait d'images de votre registre d'images {{site.data.keyword.Bluemix_notm}} privées
+## Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé
 {: #registry_images_remove}
 
-Vous pouvez retirer de votre registre d'images privées des images dont vous ne voulez plus.
+Vous pouvez supprimer des images non désirées de votre référentiel privé en utilisant l'interface graphique ou l'interface de ligne de commande.
 {:shortdesc}
 
-Avant de commencer, supprimez les conteneurs éventuels qui utilisent l'image.
+Si vous souhaitez supprimer un référentiel privé et les pages qui lui sont associées, voir [Suppression d'un référentiel privé et des pages qui lui sont associées](#registry_repo_remove).
 
-Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être retirées de votre registre {{site.data.keyword.Bluemix_notm}} privé, et elles ne sont pas décomptées dans votre quota.
+Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.Bluemix_notm}} privé, et elles ne sont pas décomptées de votre quota.
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant la commande `bx login`.
-2. Pour retirer une image, exécutez la commande suivante :
+La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
+{:tip}
+
+
+### Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé à l'aide de l'interface de ligne de commande
+{: #registry_images_remove_cli}
+
+Vous pouvez supprimer des images non désirées de votre référentiel privé en utilisant l'interface de ligne de commande.
+{:shortdesc}
+
+La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
+{:tip}
+
+Pour supprimer une image à l'aide de l'interface de ligne de commande, procédez comme suit :
+
+1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant la commande `ibmcloud login`.
+2.  Pour supprimer une image, exécutez la commande suivante :
 
   ```
-  bx cr image-rm IMAGE
+  ibmcloud cr image-rm IMAGE
   ```
   {: pre}
 
-  Où _IMAGE_ est le chemin d'accès {{site.data.keyword.Bluemix_notm}} complet à l'image que vous voulez retirer, dans le format `namespace/image:tag`.
+  Où _IMAGE_ est le nom de l'image que vous souhaitez retirer, au format `repository:tag`.
 
-  Si une balise n'est pas spécifiée dans le chemin de l'image,
-celle associée à la balise `latest` (dernière) est supprimée par défaut. Vous pouvez supprimer plusieurs images en listant dans la commande chaque chemin de registre {{site.data.keyword.Bluemix_notm}} privé et en les séparant par un espace.
+  Si aucune étiquette n'est spécifiée dans le nom de l'image, l'image associée à l'étiquette `latest` est supprimée par défaut. Vous pouvez supprimer plusieurs images en listant dans la commande chaque chemin de registre {{site.data.keyword.Bluemix_notm}} privé et en les séparant par un espace.
 
-  **Conseil :** vous pouvez exécuter la commande `bx cr namespace-list` pour extraire votre valeur namespace.
+ Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes Repository et Tag pour créer le nom de l'image au format `repository:tag`.
+ {:tip}
 
-3. Vérifiez que l'image a bien été retirée en exécutant la commande ci-après puis contrôlez que l'image n'apparaît pas dans la liste.
+3.  Vérifiez que l'image a bien été supprimée en exécutant la commande suivant, puis assurez-vous que l'image n'apparaît pas dans la liste :
 
   ```
-  bx cr image-list
+  ibmcloud cr image-list
   ```
   {: pre}
 
-  
 
+### Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé à l'aide de l'interface graphique
+{: #registry_images_remove_gui}
+
+Vous pouvez supprimer des images non désirées de votre référentiel d'images privé en utilisant l'interface graphique.
+{:shortdesc}
+
+La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
+{:tip}
+
+Pour supprimer une image à l'aide de l'interface graphique, procédez comme suit :
+
+1.  Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.
+2.  Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
+3.  Cliquez sur **Catalogue**.
+4.  Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
+5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche. 
+6.  Cliquez sur la ligne contenant le référentiel qui contient l'image que vous souhaitez supprimer. 
+7.  Sur la ligne qui contient l'image à supprimer, cliquez sur l'icône **Ouvrir et fermer la liste des options**, sélectionnez **Supprimer l'image**. Cette action ne peut pas être annulée, par conséquent, vérifiez que l'image sélectionnée est bien celle que vous souhaitez supprimer. Cliquez sur **Supprimer**.
+
+
+## Suppression d'un référentiel privé et des images qui lui sont associées
+{: #registry_repo_remove}
+
+Vous pouvez supprimer les référentiels privés dont vous n'avez plus besoin, ainsi que les images qui leur sont associées, en utilisant l'interface graphique.
+{:shortdesc}
+
+Lorsque vous supprimez un référentiel, toutes les images qu'il contient sont également supprimées. Cette action est irréversible.
+{:tip}
+
+Avant de commencer, sauvegardez les images que vous souhaitez conserver. 
+
+Pour supprimer un référentiel à l'aide de l'interface graphique, procédez comme suit :
+
+1.  Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.
+2.  Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
+3.  Cliquez sur **Catalogue**.
+4.  Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
+5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche. 
+6.  Sur la ligne qui contient le référentiel privé à supprimer, cliquez sur l'icône **Ouvrir et fermer la liste des options**, sélectionnez **Supprimer le référentiel**. Cette action ne peut pas être annulée, par conséquent, vérifiez que le référentiel sélectionné est bien celui que vous souhaitez supprimer. Cliquez sur **Supprimer**.
 

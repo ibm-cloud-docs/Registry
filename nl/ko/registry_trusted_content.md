@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -43,44 +43,45 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
     Linux 또는 Mac의 경우:
 
     ```
-    export DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=1
     ```
     {: codeblock}
 
     Windows의 경우:
 
     ```
-    set DOCKER_CONTENT_TRUST=1
+set DOCKER_CONTENT_TRUST=1
     ```
     {: codeblock}
 
 2.  {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **참고:** 연합 ID가 있는 경우 `bx login --sso`를 사용하여 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
+    연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
+    {:tip}
 
 3.  사용할 지역을 대상으로 지정하십시오. 지역 이름을 모르는 경우 지역 없이 명령을 실행한 다음 지역을 선택할 수 있습니다.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     출력에서는 Docker Content Trust 환경 변수를 내보내도록 지시합니다. 예를 들어, 다음과 같습니다.
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -92,7 +93,7 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
 5.  터미널에서 환경 변수 명령을 복사하고 붙여넣으십시오. 예를 들어, 다음과 같습니다.
 
     ```
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
     ```
     {: pre}
 
@@ -126,10 +127,10 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 1.  [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2.  이미지를 가져오십시오. _&lt;source_image&gt;_를 이미지의 저장소로 바꾸고 _&lt;tag&gt;_는 사용할 이미지의 태그(예: _latest_)로 바꾸십시오. 가져올 사용 가능한 이미지를 나열하려면 `bx cr image-list`를 실행하십시오.
+2.  이미지를 가져오십시오. _&lt;source_image&gt;_를 이미지의 저장소로 바꾸고 _&lt;tag&gt;_는 사용할 이미지의 태그(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오. 
 
     ```
-        docker pull <source_image>:<tag>
+    docker pull <source_image>:<tag>
     ```
     {: pre}
 
@@ -153,7 +154,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 2.  각 이미지의 태그, 요약 및 서명자 정보를 검토하십시오. **선택사항**: 이미지 버전에 대한 정보를 보려면 _&lt;tag&gt;_를 지정하십시오.
 
     ```
-    docker trust view <image>:<tag>
+docker trust view <image>:<tag>
     ```
     {: pre}
 
@@ -170,14 +171,14 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 2.  이미지 저장소에 대한 신뢰할 수 있는 모든 메타데이터를 제거하십시오. 프롬프트가 표시되면 저장소 키 비밀번호 문구를 입력하십시오. **선택사항**: 이 버전의 이미지에 대한 신뢰할 수 있는 메타데이터를 철회하려면 태그를 지정하십시오.
 
     ```
-    docker trust revoke <image>:<tag>
+docker trust revoke <image>:<tag>
     ```
     {: pre}
 
 3.  신뢰할 수 있는 컨텐츠의 목록에서 신뢰가 철회되었는지 확인하십시오. **선택사항**: 태그 지정된 이미지에 대한 철회된 컨텐츠를 확인하려면 태그를 포함하십시오.
 
     ```
-    $ docker trust view <image>:<tag>
+$ docker trust view <image>:<tag>
 
     No signatures for <image>:<tag>
     ```
@@ -216,7 +217,9 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 - 이미지 서명자에게 네임스페이스에 이미지를 푸시하는 권한이 있어야 합니다. 
 - 저장소 소유자 및 추가 서명자의 경우 Docker 17.12 이상이 설치되어 있어야 합니다.
 - [서명된 이미지를 푸시](#trustedcontent_push)하여 신뢰할 수 있는 컨텐츠 저장소를 작성하십시오. 저장소 소유자에게 로컬 시스템의 Docker 신뢰 폴더에서 사용 가능한 저장소의 저장소 관리 키가 있어야 합니다. 저장소 관리 키가 없는 경우 이 태스크를 수행하려면 소유자에게 문의하십시오.
-- 참고: 서명자를 추가하는 경우 이 저장소의 이미지에 서명하는 데 저장소 관리 키를 더 이상 사용할 수 없습니다. 승인된 서명자 중 하나가 서명할 개인 키를 보유하고 있어야 합니다. 서명자 추가 후 이미지에 서명하는 기능을 유지하려면 다시 다음 지시사항에 따라 직접 서명자 역할을 생성하고 추가하십시오.
+
+서명자를 추가하는 경우 이 저장소의 이미지에 서명하는 데 저장소 관리 키를 더 이상 사용할 수 없습니다. 승인된 서명자 중 하나가 서명할 개인 키를 보유하고 있어야 합니다. 서명자 추가 후 이미지에 서명하는 기능을 유지하려면 다시 다음 지시사항에 따라 직접 서명자 역할을 생성하고 추가하십시오.
+{:tip}
 
 서명 키를 공유하려면 다음을 수행하십시오.
 
@@ -225,7 +228,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
     a. 키를 생성하십시오. <em>NAME</em>에 대해 임의의 이름을 입력할 수 있지만 다른 사용자가 저장소에서 신뢰를 검사할 때 선택한 이름이 표시됩니다. 저장소 소유자와 함께 작업하여 조직이 사용할 수 있는 이름 지정 규칙을 충족시키고 이 서명자에 대해 식별 가능한 이름을 선택하십시오.
 
       ```
-      docker trust key generate <NAME>
+docker trust key generate <NAME>
       ```
       {: pre}
   
@@ -240,7 +243,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
     b. 저장소에 서명자의 키를 추가하십시오.
 
       ```
-      docker trust signer add --key <NAME>.pub <NAME> <repository>
+docker trust signer add --key <NAME>.pub <NAME> <repository>
       ```
       {: pre}
     
@@ -251,7 +254,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
     b. 서명자는 이미지에 서명해야 합니다. 프롬프트가 표시되면 개인 키의 비밀번호 문구를 입력하십시오.
 
       ```
-      docker trust sign <repository>:<tag>
+docker trust sign <repository>:<tag>
       ```
       {: pre}
 
@@ -267,7 +270,9 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 시작하기 전에:
 - 저장소 소유자 및 추가 서명자의 경우 Docker 17.12 이상이 설치되어 있어야 합니다.
-- 참고: 서명자를 제거하면 신뢰 서버가 이미지의 서명된 버전을 신뢰하지 않습니다. 서명자를 제거한 후 이미지를 가져올 수 있게 하려면 계속하기 전에 서명자가 최신 버전의 이미지에 서명하지 않아야 합니다. 서명자가 최신 버전의 이미지에 서명한 경우 이미지에 업데이트를 푸시하고 계속하기 전에 키를 사용하여 이 이미지에 서명하십시오.
+
+서명자를 제거하면 신뢰 서버가 이미지의 서명된 버전을 신뢰하지 않습니다. 서명자를 제거한 후 이미지를 가져올 수 있게 하려면 계속하기 전에 서명자가 최신 버전의 이미지에 서명하지 않아야 합니다. 서명자가 최신 버전의 이미지에 서명한 경우 이미지에 업데이트를 푸시하고 계속하기 전에 키를 사용하여 이 이미지에 서명하십시오.
+{:tip}
 
 서명자를 제거하려면 다음을 수행하십시오.
 
@@ -276,7 +281,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 2. 서명자를 제거하십시오.
 
     ```
-    docker trust signer remove <NAME> <repository>
+docker trust signer remove <NAME> <repository>
     ```
     {: pre}
     

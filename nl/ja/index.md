@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-07"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -25,18 +25,19 @@ lastupdated: "2018-05-07"
 
 {{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[イメージの脆弱性のモニタリング](registry_ui.html)を参照してください。
 
-**注**: コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+{:tip}
 
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
 {: #registry_cli_install}
 
-1.  {{site.data.keyword.Bluemix_notm}} **bx** コマンドを実行できるように、 [{{site.data.keyword.Bluemix_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://clis.ng.bluemix.net/ui/home.html)をインストールします。
+1.  {{site.data.keyword.Bluemix_notm}} **ibmcloud** コマンドを実行できるように、 [{{site.data.keyword.Bluemix_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://clis.ng.bluemix.net/ui/home.html)をインストールします。
 2.  以下のようにして、container-registry プラグインをインストールします。
 
     ```
-    bx plugin install container-registry -r Bluemix
+    ibmcloud plugin install container-registry -r Bluemix
     ```
     {: pre}
 
@@ -47,21 +48,21 @@ lastupdated: "2018-05-07"
 1.  {{site.data.keyword.Bluemix_notm}} にログインします。
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  名前空間を追加して、独自のイメージ・リポジトリーを作成します。 _&lt;my_namespace&gt;_ を、使用したい名前空間に置換します。
 
     ```
-    bx cr namespace-add <my_namespace>
+    ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
 
-3.  名前空間が作成されたことを確認するために、`bx cr namespace-list` コマンドを実行します。
+3.  名前空間が作成されたことを確認するために、`ibmcloud cr namespace-list` コマンドを実行します。
 
     ```
-    bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -72,16 +73,7 @@ lastupdated: "2018-05-07"
 
 1.  [Docker CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/community-edition#/download) をインストールします。 Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-toolbox) をインストールします。
 
-2.  CLI にログインします。
-
-    ```
-    bx cr login
-    ```
-    {: pre}
-
-    **注:** 専用 {{site.data.keyword.registrylong_notm}} からイメージをプルする場合は、ログインする必要があります。
-
-3.  イメージをローカル・マシンにダウンロード (_プル_) します。 _&lt;source_image&gt;_ をイメージのリポジトリーに置き換え、_&lt;tag&gt;_ をイメージに使用するタグ (例: _latest_) に置き換えてください。
+2.  イメージをローカル・マシンにダウンロード (_プル_) します。 _&lt;source_image&gt;_ をイメージのリポジトリーに置き換え、_&lt;tag&gt;_ をイメージに使用するタグ (例: _latest_) に置き換えてください。
 
     ```
     docker pull <source_image>:<tag>
@@ -95,7 +87,7 @@ lastupdated: "2018-05-07"
     ```
     {: pre}
 
-4.  イメージにタグ付けします。 _&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、
+3.  イメージにタグ付けします。 _&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、
 _&lt;tag&gt;_ をそのイメージのタグに置き換えてください。 _&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。 _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、
 名前空間で使用するイメージのリポジトリーとタグを定義します。
 
@@ -104,10 +96,10 @@ _&lt;tag&gt;_ をそのイメージのタグに置き換えてください。 _&
     ```
     {: pre}
 
-    _&lt;source_image&gt;_ が `hello-world`、_&lt;tag&gt;_ が `latest`、_&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `Namespace1`、_&lt;new_image_repo&gt;_ が `hw_repo`、_&lt;new_tag&gt;_ が `1` の場合の例:
+    _&lt;source_image&gt;_ が `hello-world`、_&lt;tag&gt;_ が `latest`、_&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `namespace1`、_&lt;new_image_repo&gt;_ が `hw_repo`、_&lt;new_tag&gt;_ が `1` の場合の例:
 
     ```
-    docker tag hello-world:latest registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
     {: pre}
 
@@ -116,24 +108,31 @@ _&lt;tag&gt;_ をそのイメージのタグに置き換えてください。 _&
 ## Docker イメージを名前空間にプッシュする
 {: #registry_images_pushing}
 
-1.  イメージを名前空間にアップロード (_プッシュ_) します。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換え、_&lt;image_repo&gt;_ と _&lt;tag&gt;_ をイメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えます。
+1.  `ibmcloud cr login` コマンドを実行してローカル Docker デーモンを {{site.data.keyword.registrylong_notm}} にログインさせます。
+
+    ```
+    ibmcloud cr login
+    ```
+    {: pre}
+
+2.  イメージを名前空間にアップロード (_プッシュ_) します。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換え、_&lt;image_repo&gt;_ と _&lt;tag&gt;_ をイメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えます。
 
     ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
-    _&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `Namespace1`、_&lt;image_repo&gt;_ が `hw_repo`、_&lt;tag&gt;_ が `1` の場合の例:
+    _&lt;region&gt;_ が `eu-gb`、_&lt;my_namespace&gt;_ が `namespace1`、_&lt;image_repo&gt;_ が `hw_repo`、_&lt;tag&gt;_ が `1` の場合の例:
 
     ```
-    docker push registry.eu-gb.bluemix.net/Namespace1/hw_repo:1
+    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
     {: pre}
 
-2.  次のコマンドを実行して、イメージが正常にプッシュされたことを確認します。
+3.  次のコマンドを実行して、イメージが正常にプッシュされたことを確認します。
 
     ```
-    bx cr image-list
+    ibmcloud cr image-list
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -54,34 +54,35 @@ Per impostazione predefinita, Docker Content Trust è disabilitato. Abilita l'am
     ```
     {: codeblock}
 
-2.  Accedi alla CLI di {{site.data.keyword.Bluemix_notm}}.
+2.  Effettua l'accesso alla CLI di {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Nota:** se hai un ID federato, utilizza `bx login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
+    Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
 l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+    {:tip}
 
 3.  Specifica la regione che vuoi utilizzare come destinazione. Se non conosci il nome della regione, puoi eseguire il comando senza la regione e sceglierne una.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
-4.  Accedi a {{site.data.keyword.registrylong_notm}}.
+4.  Effettua l'accesso a {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     L'output ti indica di esportare la variabile di ambiente Docker Content Trust. Ad esempio:
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -127,10 +128,10 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 
 1.  [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2.  Esegui il pull della tua immagine. Sostituisci _&lt;immagine_di_origine&gt;_ con il repository dell'immagine e _&lt;tag&gt;_ con la tag dell'immagine che vuoi utilizzare, ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `bx cr image-list`.
+2.  Esegui il pull della tua immagine. Sostituisci _&lt;source_image&gt;_ con il repository dell'immagine e _&lt;tag&gt;_ con la tag dell'immagine che vuoi utilizzare, ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
 
     ```
-    docker pull <immagine_di_origine>:<tag>
+    docker pull <source_image>:<tag>
     ```
     {: pre}
 
@@ -217,7 +218,9 @@ Prima di iniziare:
 - I firmatari di immagini devono disporre dell'autorizzazione per eseguire il push delle immagini nello spazio dei nomi. 
 - I proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 17.12 o successive.
 - Crea un repository di contenuti attendibili [eseguendo il push di un'immagine firmata](#trustedcontent_push). I proprietari del repository devono disporre delle chiavi di amministratore del repository disponibili nella cartella di attendibilità Docker sulla propria macchina locale. Se non disponi della chiave di amministratore del repository, contatta il proprietario affinché esegua questa attività.
-- Nota: quando aggiungi un firmatario, non puoi più utilizzare la chiave di amministratore del repository per firmare le immagini in tale repository. Devi mantenere la chiave privata affinché uno dei firmatari approvati possa firmare. Per conservare la possibilità di firmare le immagini dopo aver aggiunto un firmatario, segui di nuovo queste istruzioni per generare e aggiungere un ruolo di firmatario per te stesso.
+
+Quando aggiungi un firmatario, non puoi più utilizzare la chiave di amministratore del repository per firmare le immagini in tale repository. Devi mantenere la chiave privata affinché uno dei firmatari approvati possa firmare. Per conservare la possibilità di firmare le immagini dopo aver aggiunto un firmatario, segui di nuovo queste istruzioni per generare e aggiungere un ruolo di firmatario per te stesso.
+{:tip}
 
 Per condividere le chiavi di firma:
 
@@ -268,7 +271,9 @@ Se non vuoi più che un firmatario sia in grado di firmare le immagini nel tuo r
 
 Prima di iniziare:
 - I proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 17.12 o successive.
-- Nota: se rimuovi un firmatario, il server di attendibilità non ritiene attendibili le sue versioni firmate dell'immagine. Per garantire di poter eseguire il pull dell'immagine dopo la rimozione del firmatario, assicurati che il firmatario non abbia firmato la versione più recente dell'immagine. Se il firmatario ha firmato la versione più recente dell'immagine, invia un aggiornamento all'immagine e firmala utilizzando la chiave prima di continuare.
+
+Se rimuovi un firmatario, il server di attendibilità non ritiene attendibili le sue versioni firmate dell'immagine. Per garantire di poter eseguire il pull dell'immagine dopo la rimozione del firmatario, assicurati che il firmatario non abbia firmato la versione più recente dell'immagine. Se il firmatario ha firmato la versione più recente dell'immagine, invia un aggiornamento all'immagine e firmala utilizzando la chiave prima di continuare.
+{:tip}
 
 Per rimuovere un firmatario:
 

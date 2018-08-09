@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,8 +16,7 @@ lastupdated: "2018-05-31"
 {:download: .download}
 
 
-# Comandos do {{site.data.keyword.registrylong_notm}} (`bx cr`)
-para gerenciar imagens do Docker em seu namespace
+# Comandos do {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) para gerenciar imagens do Docker em seu namespace
 {: #registry_cli_reference}
 
 É possível usar o plug-in de registro de contêiner para configurar seu próprio namespace de imagem em um registro privado hospedado e gerenciado pela IBM, no qual é possível armazenar e compartilhar
@@ -25,10 +24,10 @@ de forma segura as imagens do Docker com todos os usuários em sua conta do {{si
 {:shortdesc}
 
 
-## Comandos bx cr
+## Comandos ibmcloud cr
 {: #registry_cli_reference_bxcr}
 
-Execute comandos `bx cr` na CLI do {{site.data.keyword.registryshort_notm}}.
+Execute comandos `ibmcloud cr` na CLI do {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
   
 Para comandos suportados, consulte [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
@@ -39,7 +38,7 @@ Para comandos suportados, consulte [{{site.data.keyword.registrylong_notm}} CLI]
 É possível formatar e filtrar a saída da CLI para comandos suportados do {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Por padrão, a saída da CLI é exibida em um formato legível. No entanto, essa visualização poderá limitar a sua capacidade de usar a saída, especialmente se o comando for executado programaticamente. Por exemplo, na saída da CLI `bx cr image-list`, você pode desejar classificar o campo `Size` por tamanho numérico, mas o comando retorna uma descrição de sequência do tamanho. O plug-in de registro de contêiner fornece a opção de formato que pode ser usada para aplicar um modelo Go à saída da CLI. O modelo Go é um recurso da [linguagem de programação Go](https://golang.org/pkg/text/template/) que permite customizar a saída da CLI.
+Por padrão, a saída da CLI é exibida em um formato legível. No entanto, essa visualização poderá limitar a sua capacidade de usar a saída, especialmente se o comando for executado programaticamente. Por exemplo, na saída da CLI `ibmcloud cr image-list`, talvez você queira classificar o campo `Size` pelo tamanho numérico, mas o comando retorna uma descrição de sequência do tamanho. O plug-in de registro de contêiner fornece a opção de formato que pode ser usada para aplicar um modelo Go à saída da CLI. O modelo Go é um recurso da [linguagem de programação Go](https://golang.org/pkg/text/template/) que permite customizar a saída da CLI.
 
 É possível alterar a saída da CLI aplicando a opção de formato de duas maneiras diferentes:
 
@@ -48,16 +47,16 @@ Por padrão, a saída da CLI é exibida em um formato legível. No entanto, essa
 
 É possível usar a opção de formato com os comandos do {{site.data.keyword.registrylong_notm}} a seguir. Clique em um comando para visualizar uma lista de campos disponíveis e seus tipos de dados.
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [ ` ibmcloud cr image-list ` ](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [ ` Imagem do ibmcloud cr-inspecionar ` ](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [ ` ibmcloud cr token-list ` ](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Os exemplos de código a seguir demonstram como você pode usar as opções de formatação e filtragem.
 
--   Execute o comando `bx cr image-list` a seguir para exibir o repositório, a tag e o status de segurança de todas as imagens que tenham um tamanho acima de 1 MB:
+-   Execute o comando `ibmcloud cr image-list` a seguir para exibir o repositório, a tag e o status de segurança de todas as imagens com tamanho acima de 1 MB:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list -- format "{{se gt. Tamanho 1000000 }} {{.Repository }}: {{.Tag }} {{.SecurityStatus.Status }} {{end}}"
     ```
     {: pre}
 
@@ -72,10 +71,10 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     {: screen}
 
 
--   Execute o comando `bx cr image-inspect` a seguir para exibir onde a documentação IBM está hospedada para uma imagem pública da IBM especificada:
+-   Execute o comando `ibmcloud cr image-inspect` a seguir para exibir onde a documentação da IBM está hospedada para uma imagem pública IBM especificada:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -87,10 +86,10 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     ```
     {: screen}
 
--   Execute o comando `bx cr image-inspect` a seguir para exibir as portas expostas para uma imagem especificada:
+-   Execute o comando `ibmcloud cr image-inspect` a seguir para exibir as portas expostas de uma imagem especificada:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -102,10 +101,10 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     ```
     {: screen}
 
--   Execute o comando `bx cr token-list` a seguir para exibir todos os tokens somente leitura:
+-   Execute o comando `ibmcloud cr token-list` a seguir para exibir todos os tokens somente leitura:
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
@@ -117,11 +116,10 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
     {: screen}
 
 
-### Opções e tipos de dados do modelo Go no comando `bx cr image-list`
+### Opções de modelo e tipos de dados de Go no comando `ibmcloud cr image-list`
 {: #registry_cli_listing_imagelist}
 
-Revise a tabela a seguir para localizar as opções os tipos de dados do modelo Go disponíveis para o
-comando `bx cr image-list`.
+Revise a tabela a seguir para localizar opções de modelo e tipos de dados de Go disponíveis para o comando `ibmcloud cr image-list`.
 {:shortdesc}
 
 |Campo|Type|descrição|
@@ -133,13 +131,12 @@ comando `bx cr image-list`.
 |`Size`|Número Inteiro (64 bits)|Exibe o tamanho da imagem em bytes.|
 |`Tag`|Sequência de Caracteres|Exibe a tag para a imagem.|
 |`SecurityStatus`|Estrut.|Exibe o status de vulnerabilidade para a imagem. É possível filtrar e formatar os valores a seguir: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Os status possíveis são descritos em [Revisando um relatório de vulnerabilidade usando a CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando bx cr image-list." caption-side="top"}
+{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando ibmcloud cr image-list." caption-side="top"}
 
-### Opções e tipos de dados do modelo Go no comando `bx cr image-inspect`
+### Opções de modelo e tipos de dados de Go no comando `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
 
-Revise a tabela a seguir para localizar as opções os tipos de dados do modelo Go disponíveis para o
-comando `bx cr image-inspect`.
+Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr image-inspect`.
 {:shortdesc}
 
 |Campo|Type|descrição|
@@ -159,7 +156,7 @@ comando `bx cr image-inspect`.
 |`Size`|Número Inteiro (64 bits)|Exibe o tamanho da imagem em bytes.|
 |`VirtualSize`|Número Inteiro (64 bits)|Exibe a soma do tamanho de cada camada na imagem em bytes.|
 |`RootFS`|Objeto|Exibe os metadados que descrevem o sistema de arquivos raiz para a imagem. Veja detalhes do campo em [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando bx cr image-inspect." caption-side="top"}
+{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando ibmcloud cr image-inspect." caption-side="top"}
 
 #### Config
 
@@ -211,11 +208,10 @@ comando `bx cr image-inspect`.
 |`BaseLayer`|Sequência de Caracteres|Exibe o descritor para a camada base na imagem.|
 {: caption="Tabela 5. Campos e tipos de dados disponíveis na estrutura RootFS." caption-side="top"}
 
-### Opções e tipos de dados do modelo Go no comando `bx cr token-list`
+### Opções de modelo e tipos de dados de Go no comando `ibmcloud cr token-list`
 {: #registry_cli_listing_tokenlist}
 
-Revise a tabela a seguir para localizar as opções os tipos de dados do modelo Go disponíveis para o
-comando `bx cr token-list`.
+Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr token-list`.
 {:shortdesc}
 
 |Campo|Type|descrição|
@@ -225,4 +221,4 @@ comando `bx cr token-list`.
 |`ReadOnly`|Booleano|Exibe _true_ quando é possível puxar imagens apenas e _false_ quando é possível
 enviar por push e puxar imagens para e do seu namespace.|
 |`Description`|Sequência de Caracteres|Exibe a descrição do token.|
-{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando bx cr token-list." caption-side="top"}
+{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando ibmcloud cr token-list." caption-side="top"}

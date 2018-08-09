@@ -1,10 +1,8 @@
 ---
 
-
-
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 
 ---
@@ -17,15 +15,16 @@ lastupdated: "2018-05-31"
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-Die {{site.data.keyword.registrylong}}-CLI ist ein Plug-in, mit dem Ihre Registry und deren Ressourcen für Ihr {{site.data.keyword.Bluemix_notm}}-Konto verwaltet werden.
+Sie können die {{site.data.keyword.registrylong}}-CLI, die im Container-Registry-Plug-in bereitgestellt wird, verwenden, um Ihre Registry und die zugehörigen Ressourcen für Ihr {{site.data.keyword.Bluemix_notm}}-Konto zu verwalten.
 {: shortdesc}
 
 **Voraussetzungen**
-* Bevor Sie die Registry-Befehle ausführen, melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, wobei Sie den Befehl `bx login` verwenden, um ein Zugriffstoken zu generieren und Ihre Sitzung zu authentifizieren.
+* Bevor Sie die Registry-Befehle ausführen, melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, wobei Sie den Befehl `ibmcloud login` verwenden, um ein Zugriffstoken zu generieren und Ihre Sitzung zu authentifizieren.
 
 Informationen zur Verwendung der {{site.data.keyword.registrylong_notm}}-CLI finden Sie unter [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](index.html).
 
-**Hinweis**: Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+{:tip}
 
 
 <table summary="{{site.data.keyword.registrylong_notm}}"> verwalten
@@ -36,58 +35,63 @@ Informationen zur Verwendung der {{site.data.keyword.registrylong_notm}}-CLI fin
  </thead>
  <tbody>
  <tr>
- <td>[bx cr api](#bx_cr_api)</td>
- <td>[bx cr build](#bx_cr_build)</td>
- <td>[bx cr info](#bx_cr_info)</td>
- <td>[bx cr image-inspect](#bx_cr_image_inspect)</td>
- <td>[bx cr image-list (bx cr images)](#bx_cr_image_list)</td>
+ <td>[ibmcloud cr api](#bx_cr_api)</td>
+ <td>[ibmcloud cr build](#bx_cr_build)</td>
+ <td>[ibmcloud cr exemption-add](#bx_cr_exemption_add)</td>
+ <td>[ibmcloud cr exemption-list (ibmcloud cr exemptions)](#bx_cr_exemption_list)</td>
+ <td>[ibmcloud cr exemption-rm](#bx_cr_exemption_rm)</td>
  </tr>
  <tr>
- <td>[bx cr image-rm](#bx_cr_image_rm)</td>
- <td>[bx cr login](#bx_cr_login)</td>
- <td>[bx cr namespace-add](#bx_cr_namespace_add)</td>
- <td>[bx cr namespace-list (bx cr namespaces)](#bx_cr_namespace_list)</td>
- <td>[bx cr namespace-rm](#bx_cr_namespace_rm)</td>
+ <td>[ibmcloud cr exemption-types](#bx_cr_exemption_types)</td>
+ <td>[ibmcloud cr info](#bx_cr_info)</td>
+ <td>[ibmcloud cr image-inspect](#bx_cr_image_inspect)</td>
+ <td>[ibmcloud cr image-list (ibmcloud cr images)](#bx_cr_image_list)</td>
+ <td>[ibmcloud cr image-rm](#bx_cr_image_rm)</td>
+  </tr>
+ <tr>
+ <td>[ibmcloud cr login](#bx_cr_login)</td>
+ <td>[ibmcloud cr namespace-add](#bx_cr_namespace_add)</td>
+ <td>[ibmcloud cr namespace-list (ibmcloud cr namespaces)](#bx_cr_namespace_list)</td>
+ <td>[ibmcloud cr namespace-rm](#bx_cr_namespace_rm)</td>
+ <td>[ibmcloud cr plan](#bx_cr_plan)</td>
  </tr>
  <tr>
- <td>[bx cr plan](#bx_cr_plan)</td>
- <td>[bx cr plan-upgrade](#bx_cr_plan_upgrade)</td>
- <td>[bx cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
- <td>[bx cr quota](#bx_cr_quota)</td>
- <td>[bx cr quota-set](#bx_cr_quota_set)</td>
- </tr>
- <tr>
- <td>[bx cr region](#bx_cr_region)</td>
- <td>[bx cr region-set](#bx_cr_region_set)</td>
- <td>[bx cr token-add](#bx_cr_token_add)</td>
- <td>[bx cr token-get](#bx_cr_token_get)</td>
- <td>[bx cr token-list (bx cr tokens)](#bx_cr_token_list)</td>
+ <td>[ibmcloud cr plan-upgrade](#bx_cr_plan_upgrade)</td>
+ <td>[ibmcloud cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
+ <td>[ibmcloud cr quota](#bx_cr_quota)</td>
+ <td>[ibmcloud cr quota-set](#bx_cr_quota_set)</td>
+ <td>[ibmcloud cr region](#bx_cr_region)</td>
  </tr><tr>
- <td>[bx cr token-rm](#bx_cr_token_rm)</td>
- <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
+ <td>[ibmcloud cr region-set](#bx_cr_region_set)</td>
+ <td>[ibmcloud cr token-add](#bx_cr_token_add)</td>
+ <td>[ibmcloud cr token-get](#bx_cr_token_get)</td>
+ <td>[ibmcloud cr token-list (ibmcloud cr tokens)](#bx_cr_token_list)</td>
+ <td>[ibmcloud cr token-rm](#bx_cr_token_rm)</td>
+  </tr><tr>
+  <td>[ibmcloud cr vulnerability-assessment (ibmcloud cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
 
 
 
-## bx cr api
+## ibmcloud cr api
 {: #bx_cr_api}
 
 Gibt die Details zum Registry-API-Endpunkt zurück, für den die Befehle ausgeführt werden.
 
 ```
-bx cr api
+ibmcloud cr api
 ```
 {: codeblock}
 
 
-## bx cr build
+## ibmcloud cr build
 {: #bx_cr_build}
 
 Erstellt ein Docker-Image in {{site.data.keyword.registrylong_notm}}.
 
 ```
-bx cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
+ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
 ```
 {: codeblock}
 
@@ -110,24 +114,101 @@ bx cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--
 </dl>
 
 
-## bx cr info
+## ibmcloud cr info
 {: #bx_cr_info}
 
 Zeigt den Namen und das Konto der Registry an, bei der Sie angemeldet sind.
 
 ```
-bx cr info
+ibmcloud cr info
 ```
 {: codeblock}
 
 
-## bx cr image-inspect
+## ibmcloud cr exemption-add
+{: #bx_cr_exemption_add}
+
+Erstellt eine Freistellung für ein Sicherheitsproblem. Sie können eine Freistellung für ein Sicherheitsproblem erstellen, das für verschiedene Bereiche gilt. Der Bereich kann das Konto, der Namensbereich, das Repository oder der Tag sein. 
+
+```
+ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
+```
+{: codeblock}
+
+**Parameter**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>Um Ihr Konto als Bereich zu definieren, verwenden Sie `"*"` als Wert. Um einen Namensbereich, ein Repository oder Tag als Bereich festzulegen, geben Sie den Wert in einem der folgenden Formate ein: `namespace`, `namespace/repository`, `namespace/repository:tag`.
+</dd>
+<dt>--issue-type ISSUE_TYPE</dt>
+<dd>Der Typ des Sicherheitsproblems, das Sie freistellen möchten. Um nach gültigen Problemtypen zu suchen, führen Sie den Befehl `ibmcloud cr exemption-types` aus.
+</dd>
+<dt>--issue-id ISSUE_ID</dt>
+<dd>Die ID des Sicherheitsproblems, das Sie freistellen möchten. Um nach einer Problem-ID zu suchen, führen Sie den Befehl `ibmcloud cr va <image>`, wobei *&lt;image&gt;* der Name des Image ist. Verwenden Sie dabei den entsprechenden Wert aus der Spalte mit der **Schwachstellen-ID** oder der Spalte mit der **Konfigurationsproblem-ID**.
+</dd>
+</dl>
+
+
+## ibmcloud cr exemption-list (ibmcloud cr exemptions)
+{: #bx_cr_exemption_list}
+
+Listet die Freistellungen für Sicherheitsprobleme auf. 
+
+```
+ibmcloud cr exemption-list [--scope SCOPE]
+```
+{: codeblock}
+
+**Parameter**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>(Optional) Listet nur die Freistellungen auf, die für diesen Bereich gelten. Um einen Namensbereich, ein Repository oder Tag als Bereich festzulegen, geben Sie den Wert in einem der folgenden Formate ein: `namespace`, `namespace/repository`, `namespace/repository:tag`.
+</dd>
+</dl>
+
+
+## ibmcloud cr exemption-rm
+{: #bx_cr_exemption_rm}
+
+Löscht eine Freistellung für ein Sicherheitsproblem. Um Ihre vorhandenen Freistellungen anzuzeigen, führen Sie den Befehl `ibmcloud cr exemption-list` aus.
+
+```
+ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
+```
+{: codeblock}
+
+**Parameter**
+<dl>
+<dt>--scope SCOPE</dt>
+<dd>Um Ihr Konto als Bereich zu definieren, verwenden Sie `"*"` als Wert. Um einen Namensbereich, ein Repository oder Tag als Bereich festzulegen, geben Sie den Wert in einem der folgenden Formate ein: `namespace`, `namespace/repository`, `namespace/repository:tag`.
+</dd>
+<dt>--issue-type ISSUE_TYPE</dt>
+<dd>Der Problemtyp der Freistellung für das Sicherheitsproblem, das Sie entfernen möchten. Um nach den Problemtyp für Ihre Freistellungen zu suchen, führen Sie den Befehl `ibmcloud cr exemption-list` aus.
+</dd>
+<dt>--issue-id ISSUE_ID</dt>
+<dd>Die ID der Freistellung für das Sicherheitsproblem, das Sie entfernen möchten. Um nach den Problem-IDs für Ihre Freistellungen zu suchen, geben Sie den Befehl `ibmcloud cr exemption-list` ein.
+</dd>
+</dl>
+
+
+## ibmcloud cr exemption-types
+{: #bx_cr_exemption_types}
+
+Listet die Typen der Sicherheitsprobleme auf, die Sie freistellen können.
+
+```
+ibmcloud cr exemption-types
+```
+{: codeblock}
+
+
+## ibmcloud cr image-inspect
 {: #bx_cr_image_inspect}
 
 Zeigt Details zu einem bestimmten Image an.
 
 ```
-bx cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
+ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -142,21 +223,22 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 <dt>IMAGE</dt>
 <dd>Der Name des Image, für das ein Bericht erstellt werden soll. Sie können mehrere Images untersuchen, indem Sie die einzelnen Images im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten.
 
-<p>Um die Namen Ihrer Images zu finden, führen Sie den Befehl `bx cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, wird das Image mit dem Tag `latest` untersucht. </p>
+<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, wird das Image mit dem Tag `latest` untersucht. </p>
 
 </dd>
 </dl>
 
 
-## bx cr image-list (bx cr images)
+## ibmcloud cr image-list (ibmcloud cr images)
 {: #bx_cr_image_list}
 
 Zeigt alle Images in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
 
-<p>**Hinweis:** Der Imagename ist eine Kombination aus dem Inhalt des Repositorys und der Tagspalten im Format `repository:tag`. </p>
+Der Imagename ist die Kombination aus dem Inhalt der Spalten 'Repository' und 'Tag' im Format `repository:tag`.
+{:tip}
 
 ```
- bx cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -180,13 +262,13 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 
 
 
-## bx cr image-rm
+## ibmcloud cr image-rm
 {: #bx_cr_image_rm}
 
 Löscht ein oder mehrere angegebene Images aus Ihrer Registry.
 
 ```
-bx cr image-rm IMAGE [IMAGE...]
+ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -195,30 +277,30 @@ bx cr image-rm IMAGE [IMAGE...]
 <dt>IMAGE</dt>
 <dd>Der Name des Image, für das ein Bericht erstellt werden soll. Sie können mehrere Images gleichzeitig löschen, indem Sie jedes Image im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten.
 
-<p>Um die Namen Ihrer Images zu finden, führen Sie den Befehl `bx cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, wird das Image mit dem Tag `latest` gelöscht.</p>
+<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, wird das Image mit dem Tag `latest` gelöscht.</p>
 
 </dd>
 </dl>
 
 
-## bx cr login
+## ibmcloud cr login
 {: #bx_cr_login}
 
-Dieser Befehl führt den Befehl `docker login` für die Registry aus. Der Befehl `docker login` muss den Befehl `docker push` oder `docker pull` für die Registry ausführen können. Dieser Befehl muss keine anderen `bx cr`-Befehle ausführen. Wenn Docker nicht installiert ist, gibt dieser Befehl eine Fehlernachricht zurück.
+Dieser Befehl führt den Befehl `docker login` für die Registry aus. Der Befehl `docker login` muss den Befehl `docker push` oder `docker pull` für die Registry ausführen können. Dieser Befehl ist nicht erforderlich, um andere `ibmcloud cr`-Befehle auszuführen. Wenn Docker nicht installiert ist, gibt dieser Befehl eine Fehlernachricht zurück.
 
 ```
-bx cr login
+ibmcloud cr login
 ```
 {: codeblock}
 
 
-## bx cr namespace-add
+## ibmcloud cr namespace-add
 {: #bx_cr_namespace_add}
 
 Fügt Ihrem {{site.data.keyword.Bluemix_notm}}-Konto einen Namensbereich hinzu.
 
 ```
-bx cr namespace-add NAMESPACE
+ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
@@ -228,30 +310,30 @@ bx cr namespace-add NAMESPACE
 <dd>Der hinzuzufügende Namensbereich. Der Namensbereich muss in allen {{site.data.keyword.Bluemix_notm}}-Konten derselben Region eindeutig sein.
   
 <p>  
-<strong>Hinweis</strong>: Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.</p>
+<strong>Tipp</strong>: Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.</p>
   
 </dd>
 </dl>
 
 
-## bx cr namespace-list (bx cr namespaces)
+## ibmcloud cr namespace-list (ibmcloud cr namespaces)
 {: #bx_cr_namespace_list}
 
 Zeigt alle Namensbereiche an, die Ihrem {{site.data.keyword.Bluemix_notm}}-Konto eigen sind.
 
 ```
-bx cr namespace-list
+ibmcloud cr namespace-list
 ```
 {: codeblock}
 
 
-## bx cr namespace-rm
+## ibmcloud cr namespace-rm
 {: #bx_cr_namespace_rm}
 
 Entfernt einen Namensbereich aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto. Images in diesem Namensbereich werden gelöscht, wenn der Namensbereich entfernt wird.
 
 ```
-bx cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE
 ```
 {: codeblock}
 
@@ -262,18 +344,18 @@ bx cr namespace-rm NAMESPACE
 </dl>
 
 
-## bx cr plan
+## ibmcloud cr plan
 {: #bx_cr_plan}
 
 Zeigt Ihren Preistarif an.
 
 ```
-bx cr plan
+ibmcloud cr plan
 ```
 {: codeblock}
 
 
-## bx cr plan-upgrade
+## ibmcloud cr plan-upgrade
 {: #bx_cr_plan_upgrade}
 
 Führt ein Upgrade auf den Standardplan durch.
@@ -281,7 +363,7 @@ Führt ein Upgrade auf den Standardplan durch.
 Informationen zu den Plänen finden Sie unter [Registry-Pläne](registry_overview.html#registry_plans).
 
 ```
-bx cr plan-upgrade [PLAN]
+ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
@@ -292,7 +374,7 @@ bx cr plan-upgrade [PLAN]
 </dl>
 
 
-## bx cr ppa-archive-load
+## ibmcloud cr ppa-archive-load
 {: #bx_cr_ppa_archive_load}
 
 Importiert IBM Software, die von [IBM Passport Advantage ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www-01.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und für die Verwendung mit Helm paketiert wurde, in den Namensbereich Ihrer privaten Registry.
@@ -301,7 +383,7 @@ Container-Images werden mit Push-Operation in Ihren privaten {{site.data.keyword
 
 **Beispielbefehl**:
 ```
-bx cr ppa-archive-load --archive FILE --namespace NAMESPACE
+ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
@@ -310,7 +392,7 @@ bx cr ppa-archive-load --archive FILE --namespace NAMESPACE
   <dt>--archive FILE</dt>
   <dd>Der Pfad zu der komprimierten Datei, die von IBM Passport Advantage heruntergeladen wird.</dd>
   <dt>--namespace NAMESPACE</dt>
-  <dd>Einer Ihrer Namensbereiche. Container-Images aus der komprimierten Datei werden mit Push-Operation in diesen Namensbereich übertragen. Zum Auflisten von Namensbereichen führen Sie den Befehl `bx cr namespace-list` aus.</dd>
+  <dd>Einer Ihrer Namensbereiche. Container-Images aus der komprimierten Datei werden mit Push-Operation in diesen Namensbereich übertragen. Zum Auflisten von Namensbereichen führen Sie den Befehl `ibmcloud cr namespace-list` aus.</dd>
   <dt>--chartmuseum-uri URI</dt>
   <dd>(Optional) Die eindeutige Ressourcen-ID für Ihr [ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).</dd>
   <dt>--chartmuseum-user USER</dt>
@@ -320,24 +402,24 @@ bx cr ppa-archive-load --archive FILE --namespace NAMESPACE
 </dl>
 
 
-## bx cr quota
+## ibmcloud cr quota
 {: #bx_cr_quota}
 
 Zeigt Ihre aktuellen Kontingente für Datenverkehr und Speicher sowie Informationen zu diesen Kontingenten an.
 
 ```
-bx cr quota
+ibmcloud cr quota
 ```
 {: codeblock}
 
 
-## bx cr quota-set
+## ibmcloud cr quota-set
 {: #bx_cr_quota_set}
 
 Modifiziert das angegebene Kontingent.
 
 ```
-bx cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
+ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
@@ -350,26 +432,26 @@ bx cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 </dl>
 
 
-## bx cr region
+## ibmcloud cr region
 {: #bx_cr_region}
 
 Zeigt die als Ziel gewählte Region und Registry an.
 
 ```
-bx cr region
+ibmcloud cr region
 ```
 {: codeblock}
 
 Weitere Informationen finden Sie unter [Regionen](registry_overview.html#registry_regions).
 
 
-## bx cr region-set
+## ibmcloud cr region-set
 {: #bx_cr_region_set}
 
 Legt eine Zielregion für die {{site.data.keyword.registrylong_notm}}-Befehle fest. Um die verfügbaren Regionen aufzulisten, führen Sie den Befehl ohne Parameter aus.
 
 ```
-bx cr region-set [REGION]
+ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
@@ -384,13 +466,13 @@ Weitere Informationen finden Sie unter [Regionen](registry_overview.html#registr
 </dl>
 
 
-## bx cr token-add
+## ibmcloud cr token-add
 {: #bx_cr_token_add}
 
 Fügt ein Token hinzu, mit dem Sie den Zugriff auf eine Registry kontrollieren können.
 
 ```
-bx cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
 ```
 
 {: codeblock}
@@ -399,10 +481,10 @@ bx cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--re
 **Parameter**
 <dl>
 <dt>--description DESCRIPTION</dt>
-<dd>(Optional) Gibt den Wert als Beschreibung für das Token an, das angezeigt wird, wenn Sie `bx cr token-list` ausführen. Wenn Ihr Token automatisch von {{site.data.keyword.containerlong_notm}} erstellt wird, wird die Beschreibung auf den Namen Ihres Kubernetes-Clusters festgelegt. In diesem Fall wird das Token automatisch entfernt, wenn Ihr Cluster entfernt wird.
+<dd>(Optional) Gibt den Wert als Beschreibung für das Token an, das angezeigt wird, wenn Sie `ibmcloud cr token-list` ausführen. Wenn Ihr Token automatisch von {{site.data.keyword.containerlong_notm}} erstellt wird, wird die Beschreibung auf den Namen Ihres Kubernetes-Clusters festgelegt. In diesem Fall wird das Token automatisch entfernt, wenn Ihr Cluster entfernt wird.
   
 <p> 
-  <strong>Hinweis</strong>: Beziehen Sie keine personenbezogenen Daten in Ihre Tokenbeschreibung ein.
+  <strong>Tipp</strong>: Beziehen Sie keine personenbezogenen Daten in Ihre Tokenbeschreibung ein.
 </p>
 
   </dd>
@@ -415,13 +497,13 @@ bx cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--re
 </dl>
 
 
-## bx cr token-get
+## ibmcloud cr token-get
 {: #bx_cr_token_get}
 
 Ruft das angegebene Token aus der Registry ab.
 
 ```
-bx cr token-get TOKEN
+ibmcloud cr token-get TOKEN
 ```
 
 {: codeblock}
@@ -433,13 +515,13 @@ bx cr token-get TOKEN
 </dl>
 
 
-## bx cr token-list (bx cr tokens)
+## ibmcloud cr token-list (ibmcloud cr tokens)
 {: #bx_cr_token_list}
 
 Zeigt alle Tokens an, die für Ihr {{site.data.keyword.Bluemix_notm}}-Konto vorhanden sind.
 
 ```
-bx cr token-list --format FORMAT
+ibmcloud cr token-list --format FORMAT
 ```
 {: codeblock}
 
@@ -454,30 +536,30 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 </dl>
 
 
-## bx cr token-rm
+## ibmcloud cr token-rm
 {: #bx_cr_token_rm}
 
 Entfernt ein oder mehrere angegebene Tokens.
 
 ```
-bx cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...]
 ```
 {: codeblock}
 
 **Parameter**
 <dl>
 <dt>TOKEN</dt>
-<dd>(Optional) TOKEN kann entweder das Token selbst oder die eindeutige Kennung des Tokens sein, wie in `bx cr token-list` gezeigt. Mehrere Tokens können angegeben werden, wobei sie durch ein Leerzeichen getrennt sein müssen.</dd>
+<dd>(Optional) TOKEN kann entweder das Token selbst oder die eindeutige Kennung des Tokens sein, wie in `ibmcloud cr token-list` dargestellt. Mehrere Tokens können angegeben werden, wobei sie durch ein Leerzeichen getrennt sein müssen.</dd>
 </dl>
 
 
-## bx cr vulnerability-assessment (bx cr va)
+## ibmcloud cr vulnerability-assessment (ibmcloud cr va)
 {: #bx_cr_va}
 
 Zeigt einen Schwachstellenanalysebericht für Ihre Images an.
 
 ```
-bx cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
+ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -486,7 +568,7 @@ bx cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--con
 <dt>IMAGE</dt>
 <dd>Der Name des Image, für das ein Bericht erstellt werden soll. Der Bericht enthält Informationen darüber, ob das Image-Paket bekannte Sicherheitslücken aufweist. Sie können Berichte für mehrere Images gleichzeitig anfordern, indem Sie jedes Image im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten.
 
-<p>Um die Namen Ihrer Images zu finden, führen Sie den Befehl `bx cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, beurteilt der Bericht das Image mit dem Tag `latest`. </p>
+<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden. Wenn im Imagenamen kein Tag angegeben ist, beurteilt der Bericht das Image mit dem Tag `latest`. </p>
 
 <p>Folgende Betriebssysteme werden unterstützt:
 

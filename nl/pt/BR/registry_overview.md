@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -164,8 +164,7 @@ cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite
 que o usuário puxe essa imagem.
   >
   > Após a imagem ser puxada, o {{site.data.keyword.registrylong_notm}} determina a largura da banda que você usou
-durante a extração e verifica se o limite para o tráfego extraído é atingido. Neste exemplo, o uso
-de tráfego extraído aumenta de 4,5 GB para 5,2 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do
+durante a extração e verifica se o limite para o tráfego extraído é atingido. Nesse exemplo, o uso do tráfego de extração aumenta de 4,5 GB para 5,5 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do
 seu namespace.
 
 ### Estimando custos
@@ -190,25 +189,27 @@ Seus custos estimados são exibidos na calculadora.
 as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-Se deseja saber qual plano de serviço você tem, execute o comando `bx cr plan`.
+Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmcloud cr plan`.
 
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
-    **Nota**: se você tem um ID federado, use `bx login --sso` para efetuar login na CLI do {{site.data.keyword.Bluemix_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+    Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.Bluemix_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+    {:tip}
 
 2.  Faça upgrade para o plano padrão.
 
     ```
-    bx cr plan-upgrade standard
+    ibmcloud cr plan-upgrade standard
     ```
     {: pre}
 
-    **Nota:** se você tem uma conta para Teste do {{site.data.keyword.Bluemix_notm}}, deve-se fazer upgrade para uma conta Padrão do {{site.data.keyword.Bluemix_notm}} antes de executar `bx cr plan-upgrade`.
+    Quando você tem uma conta Lite do {{site.data.keyword.Bluemix_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.Bluemix_notm}} antes de executar `ibmcloud cr plan-upgrade`.
+    {:tip}
 
 
 ## Aprendendo o básico
@@ -218,7 +219,9 @@ Prepare-se para armazenar e compartilhar suas imagens do Docker com o {{site.dat
 aprendendo noções básicas de registro.
 {:shortdesc}
 
-**Nota**: não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
+Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
+exemplo, nomes ou rótulos de imagem).
+{:tip}
 
 
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
@@ -248,7 +251,7 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
 
 <dl>
   <dt>Image</dt>
-  <dd>Uma imagem do Docker é construída com base nas instruções fornecidas no Dockerfile e representa a base de um contêiner. Após a imagem do Docker ser construída, é possível usá-la para criar um contêiner para implementar seu app e suas dependências. As imagens são armazenadas em um registro. Os usuários com acesso à sua conta do {{site.data.keyword.Bluemix_notm}} podem acessar as suas imagens.</dd>
+  <dd>Um sistema de arquivos e seus parâmetros de execução usados dentro de um tempo de execução do contêiner para criar um contêiner. O sistema de arquivos consiste em uma série de camadas, combinadas no tempo de execução, criadas à medida que a imagem é construída por atualizações sucessivas. A imagem não retém o estado à medida que o contêiner é executado.</dd>
 </dl>
 
 <dl>
@@ -280,8 +283,9 @@ alguém já tenha um namespace com esse nome configurado nessa região.
 Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
 namespace.
 
-**Nota**: se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `bx cr namespace-list` para recuperar informações de namespace existentes. Se você for um cliente existente do {{site.data.keyword.containerlong_notm}} que usa [grupos de contêineres únicos e escaláveis](../../containers/cs_classic.html),
+Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace. Se você for um cliente existente do {{site.data.keyword.containerlong_notm}} que usa [grupos de contêineres únicos e escaláveis](../../containers/cs_classic.html),
 então já terá um namespace. É possível criar namespaces adicionais, mas não é possível executar `cf ic namespace set` para mais de um namespace.
+{:tip}
 
 Considere as regras a seguir ao escolher um namespace:
 
@@ -290,7 +294,8 @@ Considere as regras a seguir ao escolher um namespace:
 -   O namespace deve iniciar com pelo menos uma letra ou um número.
 -   O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
 
-**Nota**: não coloque informações pessoais nos nomes de namespace.
+Não coloque informações pessoais nos nomes de namespace.
+{:tip}
 
 Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](#registry_plan_upgrade).
 
@@ -312,23 +317,23 @@ Uma região é uma área geográfica acessada por um terminal dedicado. Os regis
 
 Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
 
-Se você deseja usar uma região diferente de sua região local, é possível ter como destino a região que deseja acessar executando o comando `bx cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
+Se desejar usar uma região diferente de sua região local, será possível destinar a região que você deseja acessar executando o comando `ibmcloud cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
 
 Para executar o comando com parâmetros, substitua _&lt;region&gt;_ pelo nome da região, por exemplo, `eu-central`.
 
 ```
-bx cr region-set <region>
+ibmcloud cr region-set <region>
 ```
 {: pre}
 
 Por exemplo, para ter como destino a região eu-central, execute o comando a seguir:
 
 ```
-bx cr region-set eu-central
+ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-Depois de ter como destino uma região diferente, efetue login no registro novamente: `bx cr login`.
+Depois de destinar uma região diferente, efetue login no registro novamente: `ibmcloud cr login`.
 
 ### Registro Global
 {: #registry_regions_global}
@@ -336,15 +341,15 @@ Depois de ter como destino uma região diferente, efetue login no registro novam
 Está disponível um registro global que não tem nenhuma região incluída em seu nome (`registry.bluemix.net`). Somente imagens públicas fornecidas pela IBM são hospedadas nesse registro. Para gerenciar suas próprias imagens, por exemplo, ao configurar namespaces ou identificar e enviar imagens por push para um registro, use um [registro regional local](#registry_regions_local).
 {:shortdesc}
 
-É possível ter como destino o registro global executando o comando `bx cr region-set`.
+É possível destinar o registro global executando o comando `ibmcloud cr region-set`.
 
 Por exemplo, para ter como destino o registro global, execute o comando a seguir:
 
 ```
-Bx cr region-set global
+ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obter mais informações sobre o comando `bx cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
+Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
 
-Depois de ter como destino o registro global, execute o comando `bx cr login` para registrar o daemon local do Docker no registro global para que você possa puxar imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
+Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.

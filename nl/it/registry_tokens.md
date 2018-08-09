@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -90,7 +90,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 1.  Crea un token. Nel seguente esempio viene creato un token senza scadenza che ha l'accesso in lettura e scrittura a tutti gli spazi dei nomi configurati in una regione.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +125,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 2.  Verifica che il token sia stato creato.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -136,24 +136,24 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}. A seconda che l'accesso impostato per il token sia di sola lettura o di lettura-scrittura, gli utenti possono eseguire il push e il pull delle immagini da e verso i tuoi spazi dei nomi.
 {:shortdesc}
 
-1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
+1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi utilizzare.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Richiama il valore per il token. Sostituisci &lt;id_token&gt; con l'ID del token.
 
     ```
-    bx cr token-get <id_token>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -170,6 +170,9 @@ Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'acce
     docker login -u token -p <valore_token> <url_registro>
     ```
     {: pre}
+    
+    Per il parametro `-u`, assicurati di immettere la stringa `token`, non l'ID token.
+    {: tip}
 
     Dopo aver effettuato l'accesso a Docker utilizzando il token, puoi eseguire il push o il pull delle immagini da e verso i tuoi spazi dei nomi.
 
@@ -180,25 +183,26 @@ Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'acce
 Rimuovi un token {{site.data.keyword.registrylong_notm}} quando non ne hai più bisogno.
 {:shortdesc}
 
-**Nota:** i token {{site.data.keyword.registrylong_notm}} scaduti vengono rimossi automaticamente dal tuo account {{site.data.keyword.Bluemix_notm}} e non è necessario rimuoverli manualmente.
+I token {{site.data.keyword.registrylong_notm}} scaduti vengono rimossi automaticamente dal tuo account {{site.data.keyword.Bluemix_notm}} e non è necessario rimuoverli manualmente.
+{:tip}
 
-1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
+1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi rimuovere.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Rimuovi il token.
 
     ```
-    bx cr token-rm <id_token>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

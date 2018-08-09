@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,17 +16,17 @@ lastupdated: "2018-05-31"
 {:download: .download}
 
 
-# {{site.data.keyword.registrylong_notm}}-Befehle (`bx cr`) zum Verwalten von Docker-Images im Namensbereich
+# {{site.data.keyword.registrylong_notm}}-Befehle (`ibmcloud cr`) zum Verwalten von Docker-Images im Namensbereich
 {: #registry_cli_reference}
 
 Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten Registry einzurichten, in der Sie Docker-Images sicher speichern und gemeinsam mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto nutzen können.
 {:shortdesc}
 
 
-## bx cr-Befehle
+## ibmcloud cr-Befehle
 {: #registry_cli_reference_bxcr}
 
-Führen Sie die `bx cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
+Führen Sie die `ibmcloud cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
 {:shortdesc}
   
 Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html).
@@ -37,7 +37,7 @@ Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keywo
 Sie können die CLI-Ausgabe für unterstützte {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern.
 {:shortdesc}
 
-Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `bx cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das Container-Registry-Plug-in stellt die Option 'format' bereit, mit der Sie eine Go-Vorlage auf die CLI-Ausgabe anwenden können. Die Go-Vorlage ist eine Komponente der [Programmiersprache Go](https://golang.org/pkg/text/template/), mit der Sie die CLI-Ausgabe anpassen können.
+Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das Container-Registry-Plug-in stellt die Option 'format' bereit, mit der Sie eine Go-Vorlage auf die CLI-Ausgabe anwenden können. Die Go-Vorlage ist eine Komponente der [Programmiersprache Go](https://golang.org/pkg/text/template/), mit der Sie die CLI-Ausgabe anpassen können.
 
 Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei verschiedene Arten anwenden:
 
@@ -46,16 +46,16 @@ Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei vers
 
 Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylong_notm}}-Befehlen verwenden. Klicken Sie auf einen Befehl, um eine Liste der verfügbaren Felder und ihrer Datentypen anzuzeigen.
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptionen verwenden können.
 
--   Führen Sie den folgenden Befehl `bx cr image-list` aus, um Repository, Tag und Sicherheitsstatus aller Images mit einer Größe von über 1 MB anzuzeigen:
+-   Führen Sie den folgenden Befehl `ibmcloud cr image-list` aus, um Repository, Tag und Sicherheitsstatus aller Images mit einer Größe von über 1 MB anzuzeigen:
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
@@ -70,10 +70,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     {: screen}
 
 
--   Führen Sie den folgenden Befehl `bx cr image-inspect` aus, um anzuzeigen, wo die IBM Dokumentation für ein angegebenes öffentliches IBM Image gehostet wird:
+-   Führen Sie den folgenden Befehl `ibmcloud cr image-inspect` aus, um anzuzeigen, wo die IBM Dokumentation für ein angegebenes öffentliches IBM Image gehostet wird:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -85,10 +85,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: screen}
 
--   Führen Sie den folgenden Befehl `bx cr image-inspect` aus, um die verfügbaren Ports für ein angegebenes Image anzuzeigen:
+-   Führen Sie den folgenden Befehl `ibmcloud cr image-inspect` aus, um die verfügbaren Ports für ein angegebenes Image anzuzeigen:
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -100,10 +100,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: screen}
 
--   Führen Sie den folgenden Befehl `bx cr token-list` aus, um alle schreibgeschützten Tokens anzuzeigen:
+-   Führen Sie den folgenden Befehl `ibmcloud cr token-list` aus, um alle schreibgeschützten Tokens anzuzeigen:
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
@@ -115,10 +115,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     {: screen}
 
 
-### Go-Vorlagenoptionen und Datentypen im Befehl `bx cr image-list`
+### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-list`
 {: #registry_cli_listing_imagelist}
 
-In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `bx cr image-list`.
+In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `ibmcloud cr image-list`.
 {:shortdesc}
 
 |Feld|Typ|Beschreibung|
@@ -130,12 +130,12 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
 |`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status  `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli) beschrieben.|
-{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl 'bx cr image-list'." caption-side="top"}
+{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr image-list'." caption-side="top"}
 
-### Go-Vorlagenoptionen und Datentypen im Befehl `bx cr image-inspect`
+### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
 
-In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `bx cr image-inspect`.
+In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `ibmcloud cr image-inspect`.
 {:shortdesc}
 
 |Feld|Typ|Beschreibung|
@@ -155,7 +155,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
 |`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl 'bx cr image-inspect'." caption-side="top"}
+{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr image-inspect'." caption-side="top"}
 
 #### Config
 
@@ -207,10 +207,10 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`BaseLayer`|Zeichenfolge|Zeigt den Deskriptor für die Basisebene im Image an.|
 {: caption="Tabelle 5. Verfügbare Felder und Datentypen im RootFS-Struct." caption-side="top"}
 
-### Go-Vorlagenoptionen und Datentypen im Befehl `bx cr token-list`
+### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr token-list`
 {: #registry_cli_listing_tokenlist}
 
-In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `bx cr token-list`.
+In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Datentypen für den Befehl `ibmcloud cr token-list`.
 {:shortdesc}
 
 |Feld|Typ|Beschreibung|
@@ -219,4 +219,4 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke](https://en.wikipedia.org/wiki/Unix_time) des Zeitpunkts an, an dem das Token abläuft.|
 |`ReadOnly`|Boolesch|Zeigt _true_ an, wenn für Images nur Pull-Operationen durchgeführt werden können, und _false_, wenn für Images Push- und Pull-Operationen in und aus Ihrem Namensbereich durchgeführt werden können.|
 |`Beschreibung`|Zeichenfolge|Zeigt die Beschreibung des Tokens an.|
-{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl 'bx cr token-list'." caption-side="top"}
+{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr token-list'." caption-side="top"}

@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [ibm-websphere-extreme-scale イメージ](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -28,8 +29,11 @@ IBM Cloud Container Registry
     [脆弱性アドバイザーによるイメージのセキュリティーの管理](../va/va_index.html)
         [脆弱性アドバイザーの概要](../va/va_index.html#about)
         [脆弱性のタイプ](../va/va_index.html#types)
-        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_livescan)                [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
+        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_container_scanner)
+        [ファイアウォールの背後からのコンテナー・スキャナーの実行](../va/va_index.html#va_firewall)
+        [GUI を使用した脆弱性レポートの検討](../va/va_index.html#va_reviewing)
         [CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)
+        [コンテナー・レポートの検討](../va/va_index.html#va_reviewing_container)
         [一般的な問題の解決](../va/va_index.html#va_report)
     {: .navgroup-end}
 

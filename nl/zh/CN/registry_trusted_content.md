@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -18,18 +18,18 @@ lastupdated: "2018-05-10"
 # 对映像签名以实现可信内容
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} 提供可信内容技术，以便您可以对映像签名，以确保注册表名称空间中映像的完整性。通过拉出和推送签名的映像，可以验证映像是否由正确的参与方（例如，连续集成 (CI) 工具）所推送。要使用此功能，您必须具有 Docker V1.11 或更高版本。您可以通过查看 [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) 和 [Notary 项目](https://github.com/theupdateframework/notary)文档来了解更多信息。
+{{site.data.keyword.registrylong}} 提供可信内容技术，以便您可以对映像签名，以确保注册表名称空间中映像的完整性。通过拉出和推送签名的映像，可以验证映像是否由正确的参与方（例如，连续集成 (CI) 工具）推送。要使用此功能，您必须具有 Docker V1.11 或更高版本。您可以通过查看 [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) 和 [Notary 项目](https://github.com/theupdateframework/notary)文档来了解更多信息。
 {:shortdesc}
 
 在启用了可信内容的情况下推送映像时，Docker 客户机还会将签名的元数据对象也推送到 {{site.data.keyword.Bluemix_notm}} 信任服务器中。在启用了 Docker Content Trust 的情况下拉出标记的映像时，Docker 客户机会联系信任服务器，以确定所请求标记的最新签名版本，验证内容签名，然后下载签名的映像。
 
-映像名称由存储库和标记组成。使用可信内容时，每个存储库都使用唯一的签名密钥。存储库中的每个标记都会使用属于该存储库的密钥。如果您有多个团队在发布内容，每个团队将内容发布到 {{site.data.keyword.registrylong_notm}} 名称空间内其自己的存储库，那么每个团队可以使用自己的密钥来对其内容进行签名，以便您可以验证各个映像是否由相应的团队所生成。
+映像名称由存储库和标记组成。使用可信内容时，每个存储库都使用唯一的签名密钥。存储库中的每个标记都会使用属于该存储库的密钥。如果您有多个团队在发布内容，每个团队将内容发布到 {{site.data.keyword.registrylong_notm}} 名称空间内其自己的存储库，那么每个团队可以使用自己的密钥来对其内容进行签名，以便您可以验证各个映像是否由相应的团队生成。
 
 存储库可以包含签名的内容和未签名的内容。如果启用了 Docker Content Trust，那么可以访问存储库中签名的内容，即使同时存在其他未签名的内容也不例外。
 
 Docker Content Trust 使用“首次使用时信任”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
 
-有关“首先使用时信任”安全模型的更多信息，请参阅 [The Update Framework (TUF)](https://theupdateframework.github.io/)。 
+有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework (TUF)](https://theupdateframework.github.io/)。 
 
 
 ## 设置可信内容环境
@@ -43,45 +43,45 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
     对于 Linux 或 Mac：
 
     ```
-    export DOCKER_CONTENT_TRUST=1
+export DOCKER_CONTENT_TRUST=1
     ```
     {: codeblock}
 
     对于 Windows：
 
     ```
-    set DOCKER_CONTENT_TRUST=1
+set DOCKER_CONTENT_TRUST=1
     ```
     {: codeblock}
 
 2.  登录到 {{site.data.keyword.Bluemix_notm}} CLI。
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **注**：如果您具有联合标识，请使用 `bx login --sso` 登录。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+    如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+    {:tip}
 
 3.  将要使用的区域设定为目标。如果您不知道区域名称，可以运行不带区域的命令，然后选择区域。
 
     ```
-    bx cr region-set <region>
-```
+    ibmcloud cr region-set <region>
+    ```
     {: pre}
 
 4.  登录到 {{site.data.keyword.registrylong_notm}}。
 
     ```
-      bx cr login
-  ```
+    ibmcloud cr login
+    ```
     {: pre}
 
     输出会指示您导出 Docker Content Trust 环境变量。例如：
 
-
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -93,7 +93,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 5.  在终端中复制并粘贴该环境变量命令。例如：
 
     ```
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
     ```
     {: pre}
 
@@ -106,7 +106,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 ## 推送签名的映像
 {: #trustedcontent_push}
 
-首次推送签名的映像时，Docker 会自动创建一对签名密钥：根密钥和存储库密钥。要对之前已推送签名映像的存储库中的映像签名，必须在要推送映像的机器上装入正确的存储库签名密钥。
+首次推送签名的映像时，Docker 会自动创建一对签名密钥：根密钥和存储库密钥。要对之前已推送签名映像的存储库中的映像签名，必须在要推送该映像的机器上装入正确的存储库签名密钥。
 {:shortdesc}
 
 开始之前，请[设置注册表名称空间](index.html#registry_namespace_add)。
@@ -127,10 +127,10 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 
 1.  [设置可信内容环境](#trustedcontent_setup)。
 
-2.  拉出映像。将 _&lt;source_image&gt;_ 替换为映像的存储库，将 _&lt;tag&gt;_ 替换为要使用的映像标记，如 _latest_。要列出可拉出的可用映像，请运行 `bx cr image-list`。
+2.  拉出映像。将 _&lt;source_image&gt;_ 替换为映像的存储库，将 _&lt;tag&gt;_ 替换为要使用的映像标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
 
     ```
-        docker pull <source_image>:<tag>
+    docker pull <source_image>:<tag>
     ```
     {: pre}
 
@@ -154,7 +154,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 2.  查看每个映像的标记、摘要和签署者信息。**可选**：指定 _&lt;tag&gt;_ 以查看该版本映像的信息。
 
     ```
-    docker trust view <image>:<tag>
+docker trust view <image>:<tag>
     ```
     {: pre}
 
@@ -171,14 +171,14 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 2.  除去映像存储库的所有可信元数据。在提示时输入存储库密钥口令。**可选**：指定标记以仅撤销该版本映像的可信元数据。
 
     ```
-    docker trust revoke <image>:<tag>
+docker trust revoke <image>:<tag>
     ```
     {: pre}
 
 3.  验证可信内容列表中信任是否已撤销。**可选**：如果要验证所标记映像的已撤销内容，请包含此标记。
 
     ```
-    $ docker trust view <image>:<tag>
+$ docker trust view <image>:<tag>
 
     No signatures for <image>:<tag>
     ```
@@ -187,7 +187,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 ## 备份签名密钥
 {: #trustedcontent_backupkeys}
 
-将签名的映像推送到新存储库时，Docker Content Trust 会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机上：
+首次将签名的映像推送到新存储库时，Docker Content Trust 会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机上：
 
 *  Linux 和 Mac 目录：`~/.docker/trust/private`
 
@@ -217,7 +217,9 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 - 映像签署者必须具有将映像推送到名称空间的许可权。 
 - 存储库所有者和其他签署者必须安装了 Docker 17.12 或更高版本。
 - 通过[推送签名的映像](#trustedcontent_push)来创建可信内容存储库。存储库所有者必须具有用于其本地计算机上 Docker 信任文件夹中可用存储库的存储库管理密钥。如果您没有存储库管理密钥，请与所有者联系以执行此任务。
-- 注：添加签署者后，您不能再使用存储库管理密钥来对该存储库中的映像签名。您必须持有其中一个已核准签署者的专用密钥才能签名。要在添加签署者后保留对映像签名的能力，请再次遵循上述指示信息来为自己生成并添加签署者角色。
+
+添加签署者后，您不能再使用存储库管理密钥来对该存储库中的映像签名。您必须持有其中一个已核准签署者的专用密钥才能签名。要在添加签署者后保留对映像签名的能力，请再次遵循上述指示信息来为自己生成并添加签署者角色。
+{:tip}
 
 要共享签名密钥，请执行以下操作：
 
@@ -226,7 +228,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
     a. 生成密钥。对于 <em>NAME</em>，可以输入任何名称，但是，您选择的名称在有人检查对存储库的信任时会显示。与存储库所有者合作，以满足组织可能使用的任何命名约定，并选择可识别该签署者的名称。
 
       ```
-      docker trust key generate <NAME>
+docker trust key generate <NAME>
       ```
       {: pre}
   
@@ -241,7 +243,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
     b. 将签署者的密钥添加到存储库。
 
       ```
-      docker trust signer add --key <NAME>.pub <NAME> <repository>
+docker trust signer add --key <NAME>.pub <NAME> <repository>
       ```
       {: pre}
     
@@ -252,7 +254,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
     b. 签署者必须对映像签名。提示时，输入专用密钥的口令。
 
       ```
-      docker trust sign <repository>:<tag>
+docker trust sign <repository>:<tag>
       ```
       {: pre}
 
@@ -268,7 +270,9 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 
 开始之前：
 - 存储库所有者和其他签署者必须安装了 Docker 17.12 或更高版本。
-- 注：如果除去签署者，那么信任服务器不会再信任其所签名的映像版本。要确保在除去签署者之后可以拉出该映像，请确保签署者未对最新版本的映像签名，然后再继续操作。如果签署者已对最新版本的映像签名，请将更新推送到该映像，使用您的密钥对其签名，然后再继续操作。
+
+如果除去签署者，那么信任服务器不会再信任其所签名的映像版本。要确保在除去签署者之后可以拉出该映像，请确保签署者未对最新版本的映像签名，然后再继续操作。如果签署者已对最新版本的映像签名，请将更新推送到该映像，使用您的密钥对其签名，然后再继续操作。
+{:tip}
 
 要除去签署者，请执行以下操作：
 
@@ -277,7 +281,7 @@ Docker Content Trust 使用“首次使用时信任”安全模型。首次从�
 2. 除去签署者。
 
     ```
-    docker trust signer remove <NAME> <repository>
+docker trust signer remove <NAME> <repository>
     ```
     {: pre}
     

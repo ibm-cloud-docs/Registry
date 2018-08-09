@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-11-16"
+lastupdated: "2018-07-24"
+
 
 ---
 
@@ -11,7 +12,7 @@ lastupdated: "2017-11-16"
 
 # 관련 링크
 
-다음 관련 링크를 사용하여 {{site.data.keyword.registrylong}}를 학습할 수 있습니다.
+다음 관련 링크를 사용하여 {{site.data.keyword.registrylong}}에 대해 학습할 수 있습니다.
 {: shortdesc}
 
 ## Docker

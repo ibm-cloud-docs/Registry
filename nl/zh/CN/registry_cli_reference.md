@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,17 +16,17 @@ lastupdated: "2018-05-31"
 {:download: .download}
 
 
-# 用于管理名称空间中 Docker 映像的 {{site.data.keyword.registrylong_notm}} (`bx cr`) 命令
+# 用于管理名称空间中 Docker 映像的 {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) 命令
 {: #registry_cli_reference}
 
 可以使用 container-registry 插件在 IBM 托管和管理的专用注册表中设置自己的映像名称空间，在此名称空间中可以安全地存储 Docker 映像，并与您 {{site.data.keyword.Bluemix}} 帐户中的所有用户共享这些映像。
 {:shortdesc}
 
 
-## bx cr 命令
+## ibmcloud cr 命令
 {: #registry_cli_reference_bxcr}
 
-在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `bx cr` 命令。
+在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `ibmcloud cr` 命令。
 {:shortdesc}
   
 有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
@@ -37,7 +37,7 @@ lastupdated: "2018-05-31"
 可以对支持的 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤。
 {:shortdesc}
 
-缺省情况下，CLI 输出会以人类可读的格式显示。但是，此视图可能会限制您使用输出的能力，尤其是在以编程方式运行命令的情况下。例如，在 `bx cr image-list` CLI 输出中，您可能希望按数字大小对 `Size` 字段排序，但命令返回的是对大小的字符串描述。container-registry 插件提供了 format 选项，可用于将 Go 模板应用于 CLI 输出。Go 模板是 [Go 编程语言](https://golang.org/pkg/text/template/)的一项功能部件，支持您定制 CLI 输出。
+缺省情况下，CLI 输出会以人类可读的格式显示。但是，此视图可能会限制您使用输出的能力，尤其是在以编程方式运行命令的情况下。例如，在 `ibmcloud cr image-list` CLI 输出中，您可能希望按数字大小对 `Size` 字段排序，但命令返回的是对大小的字符串描述。container-registry 插件提供了 format 选项，可用于将 Go 模板应用于 CLI 输出。Go 模板是 [Go 编程语言](https://golang.org/pkg/text/template/)的一项功能部件，支持您定制 CLI 输出。
 
 可以通过两种不同方式应用 format 选项来变更 CLI 输出：
 
@@ -46,23 +46,23 @@ lastupdated: "2018-05-31"
 
 可以将 format 选项用于以下 {{site.data.keyword.registrylong_notm}} 命令。单击命令可查看可用字段及其数据类型的列表。
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 以下代码示例演示了可如何对选项进行格式设置和过滤。
 
--   运行以下 `bx cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和安全状态：
+-   运行以下 `ibmcloud cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和安全状态：
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
     示例输出：
 
     ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
@@ -70,12 +70,10 @@ lastupdated: "2018-05-31"
     {: screen}
 
 
--   运行以下 `bx cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
+-   运行以下 `ibmcloud cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
-
-    
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -83,16 +81,14 @@ lastupdated: "2018-05-31"
     示例输出：
 
     ```
-        map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
     ```
     {: screen}
 
--   运行以下 `bx cr image-inspect` 命令，以显示指定映像的已公开端口：
+-   运行以下 `ibmcloud cr image-inspect` 命令，以显示指定映像的已公开端口：
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-
-    
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -100,29 +96,29 @@ lastupdated: "2018-05-31"
     示例输出：
 
     ```
-        map[9080/tcp: 9443/tcp:]
+    map[9080/tcp: 9443/tcp:]
     ```
     {: screen}
 
--   运行以下 `bx cr token-list` 命令，以显示所有只读令牌：
+-   运行以下 `ibmcloud cr token-list` 命令，以显示所有只读令牌：
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
     示例输出：
 
     ```
-        0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
     ```
     {: screen}
 
 
-### `bx cr image-list` 命令中的 Go 模板选项和数据类型
+### `ibmcloud cr image-list` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_listing_imagelist}
 
-查看下表以了解 `bx cr image-list` 命令的可用 Go 模板选项和数据类型。
+查看下表以查找 `ibmcloud cr image-list` 命令的可用 Go 模板选项和数据类型。
 {:shortdesc}
 
 |字段|类型|描述|
@@ -133,13 +129,13 @@ lastupdated: "2018-05-31"
 |`Repository`|字符串|显示映像的存储库。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`Tag`|字符串|显示映像的标记。|
-|`SecurityStatus`|结构体|显示映像的漏洞状态。您可以对以下值进行过滤并设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。可能的状态在[使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)中进行了描述。|
-{: caption="表 1. bx cr image-list 命令中的可用字段和数据类型" caption-side="top"}
+|`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)。|
+{: caption="表 1. ibmcloud cr image-list 命令中的可用字段和数据类型" caption-side="top"}
 
-### `bx cr image-inspect` 命令中的 Go 模板选项和数据类型
+### `ibmcloud cr image-inspect` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_listing_imageinspect}
 
-查看下表以查找 `bx cr image-inspect` 命令的可用 Go 模板选项和数据类型。
+查看下表以查找 `ibmcloud cr image-inspect` 命令的可用 Go 模板选项和数据类型。
 {:shortdesc}
 
 |字段|类型|描述|
@@ -159,7 +155,7 @@ lastupdated: "2018-05-31"
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`VirtualSize`|整数（64 位）|显示映像中每层大小的总和（以字节为单位）。|
 |`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [RootFS](registry_cli_reference.html#rootfs) 中的字段详细信息。|
-{: caption="表 2. bx cr image-inspect 命令中的可用字段和数据类型" caption-side="top"}
+{: caption="表 2. ibmcloud cr image-inspect 命令中的可用字段和数据类型" caption-side="top"}
 
 #### Config
 
@@ -211,10 +207,10 @@ lastupdated: "2018-05-31"
 |`BaseLayer`|字符串|显示映像中基本层的描述符。|
 {: caption="表 5. RootFS 结构中的可用字段和数据类型" caption-side="top"}
 
-### `bx cr token-list` 命令中的 Go 模板选项和数据类型
+### `ibmcloud cr token-list` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_listing_tokenlist}
 
-查看下表以了解 `bx cr token-list` 命令的可用 Go 模板选项和数据类型。
+查看下表以查找 `ibmcloud cr token-list` 命令的可用 Go 模板选项和数据类型。
 {:shortdesc}
 
 |字段|类型|描述|
@@ -223,4 +219,4 @@ lastupdated: "2018-05-31"
 |`Expiry`|整数（64 位）|显示令牌到期时间的 [Unix 时间戳记](https://en.wikipedia.org/wiki/Unix_time)。|
 |`ReadOnly`|布尔值|只能拉出映像时显示 _true_，可以向名称空间推送映像以及从名称空间中拉出映像时显示 _false_。|
 |`描述`|字符串|显示令牌的描述。|
-{: caption="表 6. bx cr token-list 命令中的可用字段和数据类型" caption-side="top"}
+{: caption="表 6. ibmcloud cr token-list 命令中的可用字段和数据类型" caption-side="top"}

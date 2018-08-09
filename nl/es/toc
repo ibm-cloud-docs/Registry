@@ -17,6 +17,7 @@ IBM Cloud Container Registry
         [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
+
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
     registry_ui.md
@@ -25,13 +26,15 @@ IBM Cloud Container Registry
     registry_tokens.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [Gestión de la seguridad de las imágenes con Vulnerability Advisor](../va/va_index.html)
+    [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html)
         [Acerca de Vulnerability Advisor](../va/va_index.html#about)
         [Tipos de vulnerabilidades](../va/va_index.html#types)
-        [Instalación del explorador de contenedores](../va/va_index.html#va_install_livescan)
-        [Revisión de un informe de vulnerabilidad](../va/va_index.html#va_reviewing)
-        [Revisión de un informe de vulnerabilidad mediante la CLI](../va/va_index.html#va_registry_cli)
-        [Solución de problemas comunes](../va/va_index.html#va_report)
+        [Instalación del escáner de contenedores](../va/va_index.html#va_install_container_scanner)
+        [Ejecución del escáner de contenedores desde detrás de un cortafuegos](../va/va_index.html#va_firewall)
+        [Revisión de un informe de vulnerabilidad utilizando la interfaz gráfica de usuario](../va/va_index.html#va_reviewing)
+        [Revisión de un informe de vulnerabilidad utilizando la CLI](../va/va_index.html#va_registry_cli)
+        [Revisión de un informe de contenedor](../va/va_index.html#va_reviewing_container)
+        [Resolución de problemas comunes](../va/va_index.html#va_report)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -92,7 +92,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 
     ```
-        bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -119,7 +119,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     您的 CLI 输出看起来与以下输出类似：
 
     ```
-    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
+Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
    
     Token              <token_value>
     ```
@@ -128,7 +128,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 2.  验证已创建令牌。
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -143,14 +143,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要使用的令牌标识。
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -158,7 +158,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 
     ```
-        bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -172,9 +172,12 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     -   对于在亚太南部设置的名称空间：registry.au-syd.bluemix.net
 
     ```
-        docker login -u token -p <token_value> <registry_url>
+    docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    对于 `-u` 参数，请确保输入的是字符串 `token`，而不是令牌标识。
+    {: tip}
 
     使用令牌登录到 Docker 后，就可以将映像推送至名称空间或从名称空间拉出映像。
 
@@ -185,25 +188,26 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 不再需要 {{site.data.keyword.registrylong_notm}} 令牌时，请移除该令牌。
 {:shortdesc}
 
-**注：**到期的 {{site.data.keyword.registrylong_notm}} 令牌会自动从 {{site.data.keyword.Bluemix_notm}} 帐户除去，而无需手动除去。
+到期的 {{site.data.keyword.registrylong_notm}} 令牌会自动从 {{site.data.keyword.Bluemix_notm}} 帐户除去，而无需手动除去。
+{:tip}
 
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要除去的令牌标识。
 
     ```
-        bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  除去令牌。
 
     ```
-        bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

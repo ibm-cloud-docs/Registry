@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -90,7 +90,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 1.  Crie um token. O exemplo a seguir cria um token sem expiração que tem acesso de leitura e de gravação a todos os namespaces configurados em uma região.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +125,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 2.  Verifique se o token foi criado.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -139,14 +139,14 @@ Use as tarefas a seguir para gerenciar seus tokens:
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Liste todos os tokens em sua conta do {{site.data.keyword.Bluemix_notm}} e anote o ID de token que você deseja usar.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -154,7 +154,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 &lt;token_id&gt; pelo ID do token.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -171,6 +171,9 @@ Use as tarefas a seguir para gerenciar seus tokens:
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    Para o parâmetro `-u`, assegure-se de digitar a sequência `token`, não o ID do token.
+    {: tip}
 
     Depois de efetuar login no Docker usando o token, é possível enviar por push ou puxar imagens para/de seus namespaces.
 
@@ -181,25 +184,26 @@ Use as tarefas a seguir para gerenciar seus tokens:
 Remova um token do {{site.data.keyword.registrylong_notm}} quando você não precisar mais dele.
 {:shortdesc}
 
-**Nota:** Os tokens do {{site.data.keyword.registrylong_notm}} expirados são removidos automaticamente da sua conta do {{site.data.keyword.Bluemix_notm}} e não precisam ser removidos manualmente.
+Os tokens expirados do {{site.data.keyword.registrylong_notm}} são removidos automaticamente de sua conta do {{site.data.keyword.Bluemix_notm}} e não precisam ser removidos manualmente.
+{:tip}
 
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Liste todos os tokens em sua conta do {{site.data.keyword.Bluemix_notm}} e anote o ID de token que você deseja remover.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Remova o token.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}

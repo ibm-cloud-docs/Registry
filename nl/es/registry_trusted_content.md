@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -57,30 +57,31 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
 2.  Inicie la sesión en la CLI de {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Nota:** Si tiene un ID federado, utilice `bx login --sso` para iniciar sesión. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
+    Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar la sesión. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
+    {:tip}
 
 3.  Establezca la región que desee utilizar. Si no conoce el nombre de la región, puede ejecutar el mandato sin la región y elegir uno.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  Inicie una sesión en {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     La salida le indica que exporte la variable de entorno de Docker Content Trust. Por ejemplo:
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -126,7 +127,7 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 
 1.  [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2.  Extraiga la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `bx cr image-list`.
+2.  Extraiga la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
 
     ```
     docker pull <source_image>:<tag>
@@ -216,7 +217,9 @@ Antes de empezar:
 - Los firmantes de imágenes deben tener permiso para enviar imágenes al espacio de nombres. 
 - Los propietarios del repositorio y los firmantes adicionales deben tener Docker 17.12 o posterior instalado.
 - Cree un repositorio de contenido de confianza [enviando una imagen firmada](#trustedcontent_push). Los propietarios del repositorio deben tener las claves de administración del repositorio para el repositorio disponibles en la carpeta de confianza de Docker en su máquina local. Si no tiene la clave admin de repositorio, póngase en contacto con el propietario para que realice esta tarea.
-- Nota: Al añadir un firmante, ya no podrá utilizar la clave admin del repositorio para firmar imágenes en dicho repositorio. Debe contener la clave privada para que la firme uno de los firmantes aprobados. Para conservar la posibilidad de firmar imágenes tras añadir un firmante, siga estas instrucciones de nuevo para generar y añadir un rol de firmante para sí mismo.
+
+Al añadir un firmante, ya no podrá utilizar la clave admin del repositorio para firmar imágenes en dicho repositorio. Debe contener la clave privada para que la firme uno de los firmantes aprobados. Para conservar la posibilidad de firmar imágenes tras añadir un firmante, siga estas instrucciones de nuevo para generar y añadir un rol de firmante para sí mismo.
+{:tip}
 
 Para compartir las claves de firma:
 
@@ -267,7 +270,9 @@ Si ya no desea que un firmante pueda firmar imágenes en el repositorio, puede e
 
 Antes de empezar:
 - Los propietarios del repositorio y los firmantes adicionales deben tener Docker 17.12 o posterior instalado.
-- Nota: Si elimina un firmante, el servidor de confianza no confía en sus versiones firmadas de la imagen. Para asegurarse de que la imagen se pueda extraer tras eliminar el firmante, asegúrese de que el firmante no haya firmado la versión más reciente de la imagen antes de continuar. Si el firmante ha firmado la versión más reciente de la imagen, envíe una actualización a la imagen y fírmela con la clave antes de continuar.
+
+Si elimina un firmante, el servidor de confianza no confía en sus versiones firmadas de la imagen. Para asegurarse de que la imagen se pueda extraer tras eliminar el firmante, asegúrese de que el firmante no haya firmado la versión más reciente de la imagen antes de continuar. Si el firmante ha firmado la versión más reciente de la imagen, envíe una actualización a la imagen y fírmela con la clave antes de continuar.
+{:tip}
 
 Para eliminar un firmante:
 

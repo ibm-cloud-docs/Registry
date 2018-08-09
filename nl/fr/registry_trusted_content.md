@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -25,7 +25,7 @@ Lorsque vous envoyez par commande push votre image avec le contenu sécurisé ac
 
 Un nom d'image est composé d'un référentiel et d'une étiquette. Lors de l'utilisation de contenu sécurisé, chaque référentiel utilise une clé de signature unique. Chaque étiquette d'un référentiel utilise la clé appartenant au référentiel. Si plusieurs équipes publient du contenu, chacun sur leur propre référentiel au sein de vos espaces de nom {{site.data.keyword.registrylong_notm}}, chaque équipe peut utiliser ses propres clés pour signer son contenu, ce qui vous permet de vérifier que chaque image est produite par l'équipe appropriée.
 
-Un référentiel peut comporter du contenu signé et du contenu non signé. Si Docker Content Trust est activé, vous pouvez accéder au contenu signé d'un référentiel, même si ce dernier contient également du contenu non signé. 
+Un référentiel peut comporter du contenu signé et du contenu non signé. Si Docker Content Trust est activé, vous pouvez accéder au contenu signé d'un référentiel, même si ce dernier contient également du contenu non signé.
 
 Docker Content Trust utilise un modèle de sécurité de type "approuver à la première utilisation". La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
 
@@ -57,31 +57,32 @@ Par défaut, Docker Content Trust est désactivé. Activez l'environnement Conte
 2.  Connectez-vous à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Remarque :** Si vous disposez d'un ID fédéré, utilisez `bx login --sso` pour vous connecter. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
+    Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
 et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
+    {:tip}
 
 3.  Ciblez la région à utiliser. Si vous ne connaissez pas le nom de la région, vous pouvez exécuter la commande sans la région puis en sélectionner une.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  Connectez-vous à {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
     La sortie vous explique comment exporter la variable d'environnement Docker Content Trust. Par exemple :
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -127,14 +128,15 @@ La première fois que vous extrayez une image signée avec Docker Content Trust 
 
 1.  [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2.  Extrayez votre image. Remplacez _&lt;source_image&gt;_ par le référentiel de l'image et _&lt;tag&gt;_ par l'étiquette de l'image à utiliser, par exemple _dernier_. Pour répertorier les images disponibles pour extraction, exécutez `bx cr image-list`.
+2.  Extrayez votre image. Remplacez _&lt;source_image&gt;_ par le référentiel de l'image et _&lt;tag&gt;_ par l'étiquette de l'image à utiliser, par exemple _dernier_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
 
     ```
     docker pull <source_image>:<tag>
     ```
     {: pre}
 
-    Spécifiez l'étiquette lorsque vous extrayez ou envoyez par commande push une image signée. L'étiquette `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.{: tip}
+    Spécifiez l'étiquette lorsque vous extrayez ou envoyez par commande push une image signée. L'étiquette `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.
+    {: tip}
 
 ## Gestion du contenu sécurisé
 {: #trustedcontent_managetrust}
@@ -174,7 +176,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
     ```
     {: pre}
 
-3.  Vérifiez que l'approbation a été révoquée dans la liste du contenu sécurisé. **Facultatif** : Incluez l'étiquette si vous souhaitez vérifier le contenu révoqué pour une image étiquetée. 
+3.  Vérifiez que l'approbation a été révoquée dans la liste du contenu sécurisé. **Facultatif** : Incluez l'étiquette si vous souhaitez vérifier le contenu révoqué pour une image étiquetée.
 
     ```
     $ docker trust view <image>:<tag>
@@ -186,7 +188,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
 ## Sauvegarde de clés de signature
 {: #trustedcontent_backupkeys}
 
-Lorsque vous envoyez une image signée à un nouveau référentiel pour la première fois, Docker Content Trust crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale : 
+Lorsque vous envoyez une image signée à un nouveau référentiel pour la première fois, Docker Content Trust crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale :
 
 *  Répertoire Linux et Mac : `~/.docker/trust/private`
 
@@ -216,7 +218,9 @@ Avant de commencer :
 - Les signataires d'image doivent disposer du droit d'envoi par commande push d'images à l'espace de nom. 
 - Les propriétaires de référentiel et autres signataires doivent disposer de Docker version 17.12 ou ultérieure.
 - Créez un référentiel de contenu sécurisé en [envoyant par commande push une image signée](#trustedcontent_push). Les propriétaires de référentiel doivent posséder des clés d'administrateur du référentiel disponibles dans le dossier Docker trust sur leur machine locale. Si vous ne disposez pas de clé admin du référentiel, contactez le propriétaire pour qu'il effectue cette tâche pour vous.
-- Remarque : Lorsque vous ajoutez un signataire, vous ne pouvez plus utiliser la clé d'administrateur de référentiel pour signer des images dans ce référentiel. Vous devez suspendre la clé privée pour que l'un des signataires approuvés puisse signer. Pour conserver la possibilité de signer des images après l'ajout d'un signataire, suivez les instructions ci-après pour générer et ajouter un rôle signataire pour vous-même.
+
+Lorsque vous ajoutez un signataire, vous ne pouvez plus utiliser la clé d'administrateur de référentiel pour signer des images dans ce référentiel. Vous devez suspendre la clé privée pour que l'un des signataires approuvés puisse signer. Pour conserver la possibilité de signer des images après l'ajout d'un signataire, suivez les instructions ci-après pour générer et ajouter un rôle signataire pour vous-même.
+{:tip}
 
 Pour partager des clés de signature :
 
@@ -267,7 +271,9 @@ Si vous ne souhaitez plus qu'un signataire puisse signer des images dans votre r
 
 Avant de commencer :
 - Les propriétaires de référentiel et autres signataires doivent disposer de Docker version 17.12 ou ultérieure.
-- Remarque : Si vous retirez un signataire, le serveur d'accréditation n'approuve pas ses versions signées de l'image. Pour s'assurer que l'image peut être extraite après le retrait du signataire, vérifiez que ce dernier n'a pas signé la version la plus récente de l'image avant de poursuivre. Si le signataire à signa la version la plus récente, envoyez par commande push une mise à jour de l'image et signez-la avec votre clé avant de poursuivre.
+
+Si vous retirez un signataire, le serveur d'accréditation n'approuve pas ses versions signées de l'image. Pour s'assurer que l'image peut être extraite après le retrait du signataire, vérifiez que ce dernier n'a pas signé la version la plus récente de l'image avant de poursuivre. Si le signataire à signa la version la plus récente, envoyez par commande push une mise à jour de l'image et signez-la avec votre clé avant de poursuivre.
+{:tip}
 
 Pour retirer un signataire :
 

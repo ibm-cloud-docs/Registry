@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-07-23"
 
 ---
 
@@ -16,17 +16,17 @@ lastupdated: "2018-05-31"
 {:download: .download}
 
 
-# 名前空間内で Docker イメージを管理するための {{site.data.keyword.registrylong_notm}} (`bx cr`) コマンド
+# 名前空間内で Docker イメージを管理するための {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) コマンド
 {: #registry_cli_reference}
 
 container-registry プラグインを使用して、IBM によってホストおよび管理されている専用レジストリー内に、Docker イメージを安全に保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
 {:shortdesc}
 
 
-## bx cr コマンド
+## ibmcloud cr コマンド
 {: #registry_cli_reference_bxcr}
 
-{{site.data.keyword.registryshort_notm}} CLI で `bx cr` コマンドを実行します。
+{{site.data.keyword.registryshort_notm}} CLI で `ibmcloud cr` コマンドを実行します。
 {:shortdesc}
   
 サポートされているコマンドについては、[{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html) を参照してください。
@@ -37,7 +37,7 @@ container-registry プラグインを使用して、IBM によってホストお
 サポートされている {{site.data.keyword.registrylong_notm}} コマンドの CLI 出力をフォーマット設定およびフィルター操作することができます。
 {:shortdesc}
 
-デフォルトで、CLI 出力は、人間が読める形式で表示されます。 ただし、このビューでは、特にコマンドがプログラマチックに実行される場合、出力の使用能力が制限される可能性があります。 例えば、`bx cr image-list` の CLI 出力で、`Size` フィールドを数値サイズでソートしたいかもしれませんが、コマンドから返されるのは文字列表記のサイズです。 container-registry プラグインには、Go テンプレートを CLI 出力に適用するために使用できる format オプションが用意されています。 Go テンプレートは、CLI 出力のカスタマイズを可能にする [Go プログラミング言語](https://golang.org/pkg/text/template/)のフィーチャーの 1 つです。
+デフォルトで、CLI 出力は、人間が読める形式で表示されます。 ただし、このビューでは、特にコマンドがプログラマチックに実行される場合、出力の使用能力が制限される可能性があります。 例えば、`ibmcloud cr image-list` の CLI 出力で、`Size` フィールドを数値サイズでソートしたいかもしれませんが、コマンドから返されるのは文字列表記のサイズです。 container-registry プラグインには、Go テンプレートを CLI 出力に適用するために使用できる format オプションが用意されています。 Go テンプレートは、CLI 出力のカスタマイズを可能にする [Go プログラミング言語](https://golang.org/pkg/text/template/)のフィーチャーの 1 つです。
 
 format オプションを次の 2 つの異なる方法で適用して、CLI 出力を変更できます。
 
@@ -46,16 +46,16 @@ format オプションを次の 2 つの異なる方法で適用して、CLI 出
 
 format オプションは、次の {{site.data.keyword.registrylong_notm}} コマンドで使用できます。 コマンドをクリックすると、使用可能なフィールドとそれらのデータ・タイプのリストが表示されます。
 
--   [`bx cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`bx cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`bx cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+-   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+-   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+-   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 次のサンプル・コードは、フォーマット設定オプションとフィルター操作オプションの使用方法を示しています。
 
--   次の `bx cr image-list` コマンドを実行すると、サイズが 1 MB を超えるすべてのイメージのリポジトリー、タグ、およびセキュリティー状況が表示されます。
+-   次の `ibmcloud cr image-list` コマンドを実行すると、サイズが 1 MB を超えるすべてのイメージのリポジトリー、タグ、およびセキュリティー状況が表示されます。
 
     ```
-    bx cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
@@ -70,10 +70,10 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
     {: screen}
 
 
--   次の `bx cr image-inspect` コマンドを実行すると、指定された IBM パブリック・イメージについて IBM 文書がホストされている場所が表示されます。
+-   次の `ibmcloud cr image-inspect` コマンドを実行すると、指定された IBM パブリック・イメージについて IBM 文書がホストされている場所が表示されます。
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
 
     ```
     {: pre}
@@ -85,10 +85,10 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
     ```
     {: screen}
 
--   次の `bx cr image-inspect` コマンドを実行すると、指定されたイメージについて公開されているポートが表示されます。
+-   次の `ibmcloud cr image-inspect` コマンドを実行すると、指定されたイメージについて公開されているポートが表示されます。
 
     ```
-    bx cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
 
     ```
     {: pre}
@@ -100,10 +100,10 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
     ```
     {: screen}
 
--   次の `bx cr token-list` コマンドを実行すると、すべての読み取り専用のトークンが表示されます。
+-   次の `ibmcloud cr token-list` コマンドを実行すると、すべての読み取り専用のトークンが表示されます。
 
     ```
-    bx cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
     {: pre}
 
@@ -115,10 +115,10 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
     {: screen}
 
 
-### `bx cr image-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
+### `ibmcloud cr image-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_imagelist}
 
-以下の表を検討して、`bx cr image-list` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
+以下の表を検討して、`ibmcloud cr image-list` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
 {:shortdesc}
 
 |フィールド|タイプ|説明|
@@ -129,13 +129,13 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Repository`|文字列|イメージのリポジトリーを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`Tag`|文字列|イメージのタグを表示します。|
-|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。状況の種類については、[CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)に記載しています。|
-{: caption="表 1. bx cr image-list コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)に記載しています。|
+{: caption="表 1. ibmcloud cr image-list コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
-### `bx cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
+### `ibmcloud cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_imageinspect}
 
-以下の表を検討して、`bx cr image-inspect` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
+以下の表を検討して、`ibmcloud cr image-inspect` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
 {:shortdesc}
 
 |フィールド|タイプ|説明|
@@ -155,7 +155,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`VirtualSize`|整数 (64 ビット)|イメージ内の各レイヤーのサイズの合計をバイト単位で表示します。|
 |`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [RootFS](registry_cli_reference.html#rootfs) でフィールド詳細を参照してください。|
-{: caption="表 2. bx cr image-inspect コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 2. ibmcloud cr image-inspect コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 #### Config
 
@@ -207,10 +207,10 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`BaseLayer`|文字列|イメージ内の基本レイヤーの記述子を表示します。|
 {: caption="表 5. RootFS 構造体で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
-### `bx cr token-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
+### `ibmcloud cr token-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_tokenlist}
 
-以下の表を検討して、`bx cr token-list` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
+以下の表を検討して、`ibmcloud cr token-list` コマンドで使用可能な、Go テンプレートのオプションおよびデータ・タイプを見つけてください。
 {:shortdesc}
 
 |フィールド|タイプ|説明|
@@ -219,4 +219,4 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Expiry`|整数 (64 ビット)|トークンが期限切れになる時刻の [UNIX タイム・スタンプ](https://en.wikipedia.org/wiki/Unix_time)を表示します。|
 |`ReadOnly`|ブール|イメージのプルのみを実行できる場合は _true_ を表示し、名前空間へのイメージのプッシュ、および名前空間からのイメージのプルを実行できる場合は _false_ を表示します。|
 |`Description`|文字列|トークンの説明を表示します。|
-{: caption="表 6. bx cr token-list コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 6. ibmcloud cr token-list コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}

@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-07-24"
+
 
 ---
 
@@ -44,14 +45,14 @@ Para configurar uma cota:
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
 
     ```
-    Cota cr bx
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -76,17 +77,18 @@ de tráfego extraído. Se você deseja mudar a quantia de armazenamento em sua c
 opção **armazenamento** e substitua _&lt;storage_quota&gt;_ pelo
 valor em megabytes que você deseja configurar.
 
-    **Nota:** se você estiver no plano grátis, não será possível configurar sua cota para uma quantia que excede a camada grátis. O abono da camada grátis para armazenamento é de 512 MB e o tráfego é de 5120 MB.
+    Se você estiver no plano grátis, não será possível configurar sua cota para uma quantia que excede a camada grátis. O abono da camada grátis para armazenamento é de 512 MB e o tráfego é de 5120 MB.
+    {:tip}
 
     ```
-    bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
     Exemplo para configurar seu limite de cota de armazenamento para 600 megabytes e o tráfego extraído para 7.000 megabytes:
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+    ibmcloud cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -101,14 +103,14 @@ para a sua conta.
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
 
     ```
-    Cota cr bx
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -140,7 +142,7 @@ Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluem
 1.  Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx cr images
+    imagens ibmcloud cr
     ```
     {: pre}
 
@@ -148,20 +150,23 @@ Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluem
 _&lt;image_name&gt;_ pelo nome da imagem que você deseja remover.
 
     ```
-    bx cr image-rm <image_name>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 
-    **Nota:** dependendo do tamanho da imagem, pode demorar um pouco para a imagem ser removida e para o armazenamento ficar disponível.
+    Dependendo do tamanho
+da imagem, pode demorar um pouco para a imagem ser removida e para o armazenamento ficar disponível.
+    {:tip}
 
 3.  Revise o uso de sua cota de armazenamento.
 
     ```
-    Cota cr bx
+    ibmcloud cr quota
     ```
     {: pre}
 
-4. **Nota:** não é possível reduzir seu uso de tráfego de pull em um período de faturamento.
+4. Não é possível reduzir o uso de seu tráfego extraído em um período de faturamento.
+   {:tip}
 
     Para continuar a puxar imagens de seus namespaces, escolha entre as opções a seguir.
 
