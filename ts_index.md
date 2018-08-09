@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-08"
 
 ---
 
@@ -36,9 +36,9 @@ When you are using the forums to ask a question, tag your question so that it is
 -   If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-bluemix` and `container-registry`.
 -   For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `bluemix` and `container-registry` tags.
 
-See [Using the Support Center](../../get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
+See [Using the Support Center](/docs/get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](../../get-support/howtogetsupport.html#open-ticket).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](/docs/get-support/howtogetsupport.html#open-ticket).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -384,7 +384,7 @@ You can [delete the namespaces](registry_setup_cli_namespace.html#registry_remov
 
 If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
 
-1.  [Contact {{site.data.keyword.Bluemix_notm}} support](../../get-support/howtogetsupport.html). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
+1.  [Contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
 
 2.  After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local machine.
 
