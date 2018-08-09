@@ -121,7 +121,7 @@ To copy an image between two registries, follow these steps.
 After you copied your image, you can:
 
 - [Managing image security with Vulnerability Advisor](../va/va_index.html) to find information about potential security issues and vulnerabilities.
-- [Create a cluster and use this image to deploy a container](../../containers/container_index.html) to the cluster in {{site.data.keyword.containerlong_notm}}.
+- [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
