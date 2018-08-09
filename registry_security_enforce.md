@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-09"
 
 ---
 
@@ -28,11 +28,11 @@ IBM Container Image Security Enforcement retrieves information about image conte
 {: #sec_enforce_install}
 
 Before you begin:
-* [Create](../../containers/cs_clusters.html#clusters_ui) or [update](../../containers/cs_cluster_update.html) the cluster that you want to use with **Kubernetes version 1.9 or later**.
-* [Target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+* [Create](/docs/containers/cs_clusters.html#clusters_ui) or [update](/docs/containers/cs_cluster_update.html#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+* [Target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 Steps:
-1.  [Set up Helm in your cluster](../../containers/cs_integrations.html#helm).
+1.  [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
 
 2.  Add the IBM chart repository to your Helm client.
 
@@ -167,7 +167,7 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
-Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 1.  Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
 
@@ -221,7 +221,7 @@ Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.ht
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](../va/va_index.html) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
+    <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va/va_index.html) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
     </tr>
     </tbody>
     </table>
@@ -259,7 +259,7 @@ To configure the policy to verify that an image is signed by a particular signer
 ## Controlling who can customize policies
 {: #assign_user_policy}
 
-If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](../../containers/cs_users.html#rbac).
+If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](/docs/containers/cs_users.html#rbac).
 {:shortdesc}
 
 In your role, add a rule for security policies:
@@ -344,7 +344,7 @@ A deployment is allowed only if all images pass the IBM Container Image Security
 ## Removing Container Image Security Enforcement
 {: #remove}
 
-Before you begin, [target your `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 
 
