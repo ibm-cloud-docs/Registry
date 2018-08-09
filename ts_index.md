@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-09"
 
 ---
 
@@ -197,8 +197,8 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
 Before you begin:
 * Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login [--sso]`.
 * Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
-* [Target the `kubectl` CLI](../../containers/cs_cli_install.html#cs_cli_configure) to your cluster.
-* If you have not already set up Helm in your cluster, [set up Helm in your cluster now](../../containers/cs_integrations.html#helm).
+* [Target the `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to your cluster.
+* If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers/cs_integrations.html#helm).
 * If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
@@ -395,7 +395,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
     Because the root key is affected, this step deletes all signing keys, including for other trust servers.
     {:tip}
 
-3.  If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to perform a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](../../containers/cs_cli_install.html#cs_cli_configure) and modify the deployment.
+3.  If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to perform a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) and modify the deployment.
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
