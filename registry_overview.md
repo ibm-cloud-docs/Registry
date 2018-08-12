@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -234,7 +234,7 @@ You can set up multiple namespaces, for example, to have separate repositories f
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command to retrieve existing namespace information. If you are an existing {{site.data.keyword.containerlong_notm}} customer that uses [single and scalable container groups](/docs/containers/cs_classic.html), you already have a namespace. You can create additional namespaces, but cannot run `cf ic namespace set` for more than one namespace.
+If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command to retrieve existing namespace information.
 {:tip}
 
 Consider the following rules when you choose a namespace:
