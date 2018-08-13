@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-13"
 
 ---
 
@@ -415,7 +415,6 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 ## The installation of Container Image Security Enforcement fails with `helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`
 {: #ts_install_cise_fail}
-
 
 {: tsSymptoms}
 Your installation of Container Image Security Enforcement failed and you received the following message:
