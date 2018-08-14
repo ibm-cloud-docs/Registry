@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-13"
+lastupdated: "2018-08-14"
 
 ---
 
@@ -435,3 +435,73 @@ Remove the remaining Kubenetes jobs by running the following command:
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+
+## Pods do not restart after all your workers have been down
+{: #ts_pods}
+
+
+{: tsSymptoms}
+Pods do not restart after all your cluster workers have been down. Container Image Security Enforcement is deployed. The cluster workers are showing as healthy, but nothing is scheduled.
+
+{: tsCauses}
+By default, Container Image Security Enforcement adds a fail closed admission webhook. If all Container Image Security Enforcement pods are down, the pods are not available to approve their own recovery.
+
+{: tsResolve}
+To recover the cluster when it's in this state, you must change the webhook configuration to make it fail open instead of closed. 
+
+You must have sufficient role-based access control (RBAC) privileges to use the following verbs:
+*  `GET`
+*  `PATCH`
+
+on these resources:
+*  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
+*  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
+
+For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers/cs_users.html#rbac) and [Kubernetes: Using RBAC Authorization
+![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+
+Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
+
+1.  Run the following command:
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+2.  Change `failurePolicy` to `Ignore`, save and close.
+
+3.  Run the following command:
+
+    ````
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+4.  Change `failurePolicy` to `Ignore`, save and close.
+
+5.  Wait for some Container Image Security Enforcement pods to start. You can check whether the pods have started by running the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
+
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
+
+6.  When at least one Container Image Security Enforcement pod is running, run the following command:
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+7.  Change `failurePolicy` to `Fail`, save and close.
+
+8.  Run the following command:
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+9. Change `failurePolicy` to `Fail`, save and close.
