@@ -470,38 +470,38 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-2.  Change `failurePolicy` to `Ignore`, save and close.
+    Change `failurePolicy` to `Ignore`, save and close.
 
-3.  Update `ValidatingWebhookConfiguration` by running the following command:
+2.  Update `ValidatingWebhookConfiguration` by running the following command:
 
     ````
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-4.  Change `failurePolicy` to `Ignore`, save and close.
+    Change `failurePolicy` to `Ignore`, save and close.
 
-5.  Wait for some Container Image Security Enforcement pods to start. You can check whether the pods have started by running the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
+3.  Wait for some Container Image Security Enforcement pods to start. You can check whether the pods have started by running the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
 
     ```
     kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
     ```
     {: pre}
 
-6.  When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command:
+4.  When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command:
 
     ```
     kubectl edit MutatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-7.  Change `failurePolicy` to `Fail`, save and close.
+    Change `failurePolicy` to `Fail`, save and close.
 
-8.  Update `ValidatingWebhookConfiguration` by running the following command:
+5.  Update `ValidatingWebhookConfiguration` by running the following command:
 
     ```
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-9. Change `failurePolicy` to `Fail`, save and close.
+    Change `failurePolicy` to `Fail`, save and close.
