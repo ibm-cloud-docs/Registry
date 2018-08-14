@@ -463,7 +463,7 @@ For more information about RBAC, see [Authorizing users with custom Kubernetes R
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
 
-1.  Run the following command:
+1.  Update `MutatingWebhookConfiguration` by running the following command:
 
     ```
     kubectl edit MutatingWebhookConfiguration image-admission-config
@@ -472,7 +472,7 @@ Complete the following steps to change the webhook configuration to make it fail
 
 2.  Change `failurePolicy` to `Ignore`, save and close.
 
-3.  Run the following command:
+3.  Update `ValidatingWebhookConfiguration` by running the following command:
 
     ````
     kubectl edit ValidatingWebhookConfiguration image-admission-config
@@ -488,7 +488,7 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-6.  When at least one Container Image Security Enforcement pod is running, run the following command:
+6.  When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command:
 
     ```
     kubectl edit MutatingWebhookConfiguration image-admission-config
@@ -497,7 +497,7 @@ Complete the following steps to change the webhook configuration to make it fail
 
 7.  Change `failurePolicy` to `Fail`, save and close.
 
-8.  Run the following command:
+8.  Update `ValidatingWebhookConfiguration` by running the following command:
 
     ```
     kubectl edit ValidatingWebhookConfiguration image-admission-config
