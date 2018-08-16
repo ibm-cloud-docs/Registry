@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-16"
 
 
 ---
@@ -31,7 +31,7 @@ The **SECURITY REPORT** column shows you the following information about the ima
 
 To view the graphical user interface, use the following steps:
 
-1.  Log into the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+1.  Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
 2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3.  Click **Catalog**.
 4.  Select the **Containers** category and click the **Container Registry** tile.
