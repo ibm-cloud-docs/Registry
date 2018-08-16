@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-16"
 
 ---
 
@@ -209,7 +209,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     </tr>
     <tr>
     <td><code>../../../policy</code></td>
-    <td>Fill out the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each.</td>
+    <td>Complete the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>

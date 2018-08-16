@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-16"
 
 ---
 
@@ -133,7 +133,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 ### Using a token to automate access to your namespaces
 {: #registry_tokens_use}
 
-You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read-write access for your token, users can push and pull images to and from your namespaces.
+You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
 {:shortdesc}
 
 1.  Log in to {{site.data.keyword.Bluemix_notm}}.
