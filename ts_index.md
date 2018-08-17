@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-14"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -188,7 +188,7 @@ It is generally better to explicitly define a different sequential tag for your 
 
 
 {: tsSymptoms}
-When you try to import content that you used in other IBM products, such as {{site.data.keyword.Bluemix_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/index.html) in the registry.
+When you try to import content that you used in other IBM products, such as {{site.data.keyword.Bluemix_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html) in the registry.
 
 {: tsCauses}
 Software packages such as images and Helm charts from IBM Passport Advantage must be imported to the registry with the `ibmcloud cr ppa-archive-load` command.
@@ -203,7 +203,7 @@ Before you begin:
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
 
-1.  Obtain the compressed file that you want to import from [IBM Passport Advantage![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/index.html).
+1.  Obtain the compressed file that you want to import from [IBM Passport Advantage![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
 
 2.  Target the region that you want to use. If you don't know the region name, run the command without the region and then choose a region.
 
@@ -470,7 +470,7 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-    Change `failurePolicy` to `Ignore`, save and close.
+    Change `failurePolicy` to `Ignore`, save, and close.
 
 2.  Update `ValidatingWebhookConfiguration` by running the following command:
 
@@ -479,7 +479,7 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-    Change `failurePolicy` to `Ignore`, save and close.
+    Change `failurePolicy` to `Ignore`, save, and close.
 
 3.  Wait for some Container Image Security Enforcement pods to start. You can check whether the pods have started by running the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
 
@@ -495,7 +495,7 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-    Change `failurePolicy` to `Fail`, save and close.
+    Change `failurePolicy` to `Fail`, save, and close.
 
 5.  Update `ValidatingWebhookConfiguration` by running the following command:
 
@@ -504,4 +504,4 @@ Complete the following steps to change the webhook configuration to make it fail
     ```
     {: pre}
 
-    Change `failurePolicy` to `Fail`, save and close.
+    Change `failurePolicy` to `Fail`, save, and close.

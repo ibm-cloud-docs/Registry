@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 
 ---
@@ -379,7 +379,7 @@ ibmcloud cr plan-upgrade [PLAN]
 ## ibmcloud cr ppa-archive-load
 {: #bx_cr_ppa_archive_load}
 
-Imports IBM software that is downloaded from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
+Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
