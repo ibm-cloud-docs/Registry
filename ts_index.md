@@ -170,14 +170,14 @@ You can fix this problem in the following ways:
 -   Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
 -   [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
 
-## Unable to pull the latest image using the latest tag
+## Unable to pull the most recent image using the `latest` tag
 {: #ts_docker_latest}
 
 {: tsSymptoms}
-You are trying to run the command `docker pull`, but it returned a version of your image that is not the latest version built.
+You are trying to run the command `docker pull`, but it returned a version of your image that is not the most recent version built.
 
 {: tsCauses}
-The `latest` tag is applied by default to reference an image when you run Docker commands without specifying the tag value. The `latest` tag is applied to the latest `docker build` or `docker tag` command that was run without a tag value explicitly set. Therefore, it's possible to run `docker` commands out-of-order or to explicitly set tags on some images, and the `latest` tag to refer to a build which is not the most recent.
+The `latest` tag is applied by default to reference an image when you run Docker commands without specifying the tag value. The `latest` tag is applied to the most recent `docker build` or `docker tag` command that was run without a tag value explicitly set. Therefore, it's possible to run `docker` commands out-of-order or to explicitly set tags on some images, and the `latest` tag to refer to a build which is not the most recent.
 
 {: tsResolve}
 It is generally better to explicitly define a different sequential tag for your images every time, and not rely on the `latest` tag.
@@ -405,7 +405,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
     *  If you want to create new trusted content, [push new signed images](registry_trusted_content.html#trustedcontent_push).
 
-    *  If you don't want to change the previous trusted content, add a signature to the latest images in the registry.
+    *  If you don't want to change the previous trusted content, add a signature to the most recent images in the registry.
 
        ```
        docker trust sign <image>:<tag>
