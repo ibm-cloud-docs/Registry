@@ -173,7 +173,7 @@ Review the following table to find available Go template options and data types 
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
 |`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
-|`Healthcheck`|Object|Describes how to check that the container is healthy. See field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Object|Describes how to check that the container is working correctly. See field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
 |`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
@@ -195,7 +195,7 @@ Review the following table to find available Go template options and data types 
 |`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>{}: inherit the health check</li><li>{"NONE"}: the health check is disabled</li><li>{"CMD", args...}: exec arguments directly</li><li>{"CMD-SHELL", command}: run the command with the system's default shell</li></ul>|
 |`Interval`|Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds.|
 |`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
-|`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as unhealthy.|
+|`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
 {: caption="Table 4. Available fields and data types in the Healthcheck struct." caption-side="top"}
 
 #### RootFS
