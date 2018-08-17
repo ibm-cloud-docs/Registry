@@ -140,7 +140,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 ## Managing trusted content
 {: #trustedcontent_managetrust}
 
-Using `docker trust` commands, you can view who signed images, as well as revoke trust content status. To run `docker trust` commands, you need Docker 17.12 or later.
+By using `docker trust` commands, you can view who signed images and revoke trust content status. To run `docker trust` commands, you need Docker 17.12 or later.
 {:shortdesc}
 
 ### Viewing signed images
