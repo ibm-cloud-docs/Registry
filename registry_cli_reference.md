@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -37,7 +37,7 @@ For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](regist
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The container-registry plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that lets you customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The container-registry plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
@@ -172,13 +172,13 @@ Review the following table to find available Go template options and data types 
 |`OpenStdin`|Boolean|Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed.|
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
-|`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to be executed when the container is started.|
-|`Healthcheck`|Object|Describes how to check that the container is healthy. See field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
+|`Healthcheck`|Object|Describes how to check that the container is working correctly. See field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
 |`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
-|`WorkingDir`|String|Displays the working directory inside the container where specified commands are executed.|
-|`Entrypoint`|Array of strings|Describes the command that is executed when the container starts.|
+|`WorkingDir`|String|Displays the working directory inside the container where specified commands are run.|
+|`Entrypoint`|Array of strings|Describes the command that is run when the container starts.|
 |`NetworkDisabled`|Boolean|Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container.|
 |`MacAddress`|String|Displays the MAC address that is assigned to the container.|
 |`OnBuild`|Array of strings|Displays the ONBUILD metadata that were defined on the image Dockerfile.|
@@ -192,10 +192,10 @@ Review the following table to find available Go template options and data types 
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`Test`|Array of strings|Displays how to perform the health check test. Available options are:<ul><li>{}: inherit the health check</li><li>{"NONE"}: the health check is disabled</li><li>{"CMD", args...}: exec arguments directly</li><li>{"CMD-SHELL", command}: run the command with the system's default shell</li></ul>|
+|`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>{}: inherit the health check</li><li>{"NONE"}: the health check is disabled</li><li>{"CMD", args...}: exec arguments directly</li><li>{"CMD-SHELL", command}: run the command with the system's default shell</li></ul>|
 |`Interval`|Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds.|
 |`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
-|`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as unhealthy.|
+|`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
 {: caption="Table 4. Available fields and data types in the Healthcheck struct." caption-side="top"}
 
 #### RootFS

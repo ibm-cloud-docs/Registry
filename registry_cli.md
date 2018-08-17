@@ -585,7 +585,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 </p>
 
-For more information, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
+For more information, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 
 </dd>
 <dt>--output FORMAT, -o FORMAT</dt>

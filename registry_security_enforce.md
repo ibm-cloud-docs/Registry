@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-16"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -236,7 +236,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
 ### Specifying trusted content signers in custom policies
 {: #signers}
 
-If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the latest signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](registry_trusted_content.html#trustedcontent_signers).
+If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 To configure the policy to verify that an image is signed by a particular signer:

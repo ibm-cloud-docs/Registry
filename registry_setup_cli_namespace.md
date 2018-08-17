@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -35,7 +35,7 @@ Install the {{site.data.keyword.registrylong_notm}} CLI to use the command line 
 {:shortdesc}
 
 1.  [Install the container-registry plug-in.](index.html#registry_cli_install)
-2.  Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not perform this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
+2.  Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
 You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 
