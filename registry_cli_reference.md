@@ -172,13 +172,13 @@ Review the following table to find available Go template options and data types 
 |`OpenStdin`|Boolean|Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed.|
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
-|`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to be executed when the container is started.|
+|`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
 |`Healthcheck`|Object|Describes how to check that the container is healthy. See field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
 |`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
-|`WorkingDir`|String|Displays the working directory inside the container where specified commands are executed.|
-|`Entrypoint`|Array of strings|Describes the command that is executed when the container starts.|
+|`WorkingDir`|String|Displays the working directory inside the container where specified commands are run.|
+|`Entrypoint`|Array of strings|Describes the command that is run when the container starts.|
 |`NetworkDisabled`|Boolean|Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container.|
 |`MacAddress`|String|Displays the MAC address that is assigned to the container.|
 |`OnBuild`|Array of strings|Displays the ONBUILD metadata that were defined on the image Dockerfile.|
