@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-16"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -100,7 +100,7 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
 
 Now you are ready to push, pull, and manage trusted, signed images.
 
-During your session with Docker Content Trust enabled, if you want to perform an operation with trusted content disabled (such as to pull an unsigned image), use the `--disable-content-trust` flag with the command.
+During your session with Docker Content Trust enabled, if you want to do an operation with trusted content disabled (such as to pull an unsigned image), use the `--disable-content-trust` flag with the command.
 {: tip}
 
 ## Pushing a signed image
@@ -216,7 +216,7 @@ To allow other users to sign images in a repository, add the signing keys for th
 Before you begin:
 - Image signers must have permission to push images to the namespace. 
 - Repository owners and additional signers must have Docker 17.12 or later installed.
-- Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to perform this task for you.
+- Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to do this task for you.
 
 When you add a signer, you can no longer use the repository admin key to sign images in that repository. You must hold the private key for one of the approved signers to sign. To retain the ability to sign images after adding a signer, follow these instructions again to generate and add a signer role for yourself.
 {:tip}
