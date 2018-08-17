@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-08-09"
 You can securely store and share Docker images with other users by adding images to your namespace in {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
-Every image that you want to add to your namespace must exist on your local machine first. You can either download (pull) an image from another repository to your local machine, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
+Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
@@ -52,7 +52,7 @@ If you get an "unauthorized: authentication required" or a "denied: requested ac
 {:tip}
 
 
-After you pull an image and tag it for your namespace, you can upload (push) the image from your local machine to your namespace.
+After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
 
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing}
@@ -66,7 +66,7 @@ Before you begin:
 
 - [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Pull](#registry_images_pulling) or [build](#registry_images_creating) an image on your local machine and tag the image with your namespace information.
+- [Pull](#registry_images_pulling) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -126,7 +126,7 @@ After you copied your image, you can:
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
 
-You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or create your own Docker image on your local machine and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
+You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Before you begin:
@@ -194,7 +194,7 @@ To build your own Docker image, complete the following steps:
    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
 
   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
-    1. Build the image from your Dockerfile on your local machine and tag it with your image name.
+    1. Build the image from your Dockerfile on your local computer and tag it with your image name.
 
       ```
       docker build -t <image_name> <directory>
@@ -203,7 +203,7 @@ To build your own Docker image, complete the following steps:
 
       where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
 
-    2. Optional: Test your image on your local machine before you push it to your namespace.
+    2. Optional: Test your image on your local computer before you push it to your namespace.
 
       ```
       docker run <image_name>
