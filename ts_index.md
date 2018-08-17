@@ -50,14 +50,14 @@ The `ibmcloud cr login` command fails.
 
 {: tsCauses}
 -   The container-registry plug-in is out of date and needs updating.
--   Docker is not installed on your local machine, or is not running.
+-   Docker is not installed on your local computer, or is not running.
 -   Your {{site.data.keyword.Bluemix_notm}} login credentials have expired.
 
 {: tsResolve}
 You can fix this problem in the following ways:
 
 -   Upgrade to the most recent version of the container-registry plug-in, see [Updating the container-registry plug-in](registry_setup_cli_namespace.html#registry_cli_update).
--   Ensure that Docker is installed on your machine. If it is already installed, restart the Docker daemon.
+-   Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 -   Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
   
 ## Running any command for {{site.data.keyword.registrylong_notm}} fails with `FAILED You are not logged in to IBM Cloud. ` 
@@ -165,7 +165,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 You can fix this problem in the following ways:
 
--   [Ensure that Docker is installed on your machine](index.html#registry_cli_install).
+-   [Ensure that Docker is installed on your computer](index.html#registry_cli_install).
 -   Check your Docker installation path.
 -   Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
 -   [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
@@ -277,9 +277,9 @@ Your custom firewall requires certain network groups to be opened for inbound an
 {: tsResolve}
 Open the following network groups in your customized firewall.
 
-1.  Note the public IP address of the machine that you want to use to connect to {{site.data.keyword.registrylong_notm}}. If you are using Kubernetes, use the public IP address of your worker node. Retrieve the public IP address of your worker node by running `ibmcloud ks workers <cluster_name_or_id>`, where *&lt;cluster_name_or_id&gt;* is the name or ID of your cluster.
-2.  In your firewall, allow the following connections to and from your machine:
-    -   For INBOUND connectivity to your machine, allow incoming network traffic from the following source network groups to the destination public IP address of your machine.
+1.  Note the public IP address of the computer that you want to use to connect to {{site.data.keyword.registrylong_notm}}. If you are using Kubernetes, use the public IP address of your worker node. Retrieve the public IP address of your worker node by running `ibmcloud ks workers <cluster_name_or_id>`, where *&lt;cluster_name_or_id&gt;* is the name or ID of your cluster.
+2.  In your firewall, allow the following connections to and from your computer:
+    -   For INBOUND connectivity to your computer, allow incoming network traffic from the following source network groups to the destination public IP address of your computer.
 
         `registry.bluemix.net`:
 
@@ -322,7 +322,7 @@ Open the following network groups in your customized firewall.
         ```
         {: codeblock}
 
-    -   For OUTBOUND connectivity from your machine, use the same network groups and allow outgoing network traffic from the source public IP address of your machine to these network groups.
+    -   For OUTBOUND connectivity from your computer, use the same network groups and allow outgoing network traffic from the source public IP address of your computer to these network groups.
 
 ## Recovering lost or compromised keys
 {: #ts_recoveringtrustedcontent}
@@ -386,7 +386,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 1.  [Contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
 
-2.  After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local machine.
+2.  After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
 
     * Linux and Mac directory: `~/.docker/trust/private` and `~/.docker/trust/tuf`
 
