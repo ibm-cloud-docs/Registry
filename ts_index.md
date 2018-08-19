@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-19"
 
 ---
 
@@ -225,6 +225,7 @@ Before you begin:
     {: tip}
 
     **Example output**:
+    
     ```
     user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
@@ -323,6 +324,7 @@ Open the following network groups in your customized firewall.
         {: codeblock}
 
     -   For OUTBOUND connectivity from your computer, use the same network groups and allow outgoing network traffic from the source public IP address of your computer to these network groups.
+
 
 ## Recovering lost or compromised keys
 {: #ts_recoveringtrustedcontent}
