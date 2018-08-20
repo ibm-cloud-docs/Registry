@@ -224,7 +224,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected. </p>
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected. </p>
 
 </dd>
 </dl>
@@ -235,7 +235,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 
 Displays all images in your {{site.data.keyword.Bluemix_notm}} account.
 
-The image name is the combination of the content of the Repository and Tag columns in the format `repository:tag`.
+The image name is the combination of the content of the <strong>Repository</strong> and <strong>Tag</strong> columns in the format `repository:tag`.
 {:tip}
 
 ```
