@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-08-17"
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools. To use this feature, you must have Docker version 1.11 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) and [the Notary project](https://github.com/theupdateframework/notary) documentation.
+{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools. To use this feature, you must have Docker version 1.11 or later. You can learn more by reviewing the [Docker Content Trust ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/content_trust/) and [the Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary) documentation.
 {:shortdesc}
 
 When you push your image with trusted content enabled, your Docker client also pushes a signed metadata object into the {{site.data.keyword.Bluemix_notm}} trust server. When pulling a tagged image with Docker Content Trust enabled, your Docker client contacts the trust server to establish the latest signed version of the tag that you requested, verifies the content signature, and downloads the signed image.
@@ -29,7 +29,7 @@ A repository can contain both signed and unsigned content. If you have Docker Co
 
 Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
-For more information about the "trust on first use" security model, see [The Update Framework (TUF)](https://theupdateframework.github.io/). 
+For more information about the "trust on first use" security model, see [The Update Framework (TUF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://theupdateframework.github.io/). 
 
 
 ## Setting up your trusted content environment
@@ -184,6 +184,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
     ```
     {: codeblock}
 
+
 ## Backing up signing keys
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +199,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
 
 You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](ts_index.html#ts_recoveringtrustedcontent) are limited.
 
-To back up your keys, consult the [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+To back up your keys, consult the [Docker Content Trust documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Managing trusted signers
