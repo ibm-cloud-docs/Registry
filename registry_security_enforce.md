@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -15,13 +15,13 @@ lastupdated: "2018-08-17"
 {:tip: .tip}
 {:download: .download}
 
-# Enforcing container image security (beta)
+# Enforcing container image security (Beta)
 {: #security_enforce}
 
-With IBM Container Image Security Enforcement (beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](registry_trusted_content.html) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
+With Container Image Security Enforcement (Beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](registry_trusted_content.html) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
-IBM Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow  deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
+Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow  deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
 
 
 ## Installing Container Image Security Enforcement in your cluster
@@ -41,19 +41,19 @@ Steps:
     ```
     {: pre}
 
-3.  Install the IBM Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
+3.  Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
     ```
     helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-IBM Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
+Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
 ## Default policies
 {: #default_policies}
 
-IBM Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
+Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
 {:shortdesc}
 
 To override these policies, use one of the following options:
@@ -68,7 +68,7 @@ For more information about writing security policies, see [Customizing policies]
 By default, a cluster-wide policy enforces that all images in all registries have trust information and have no reported vulnerabilities in Vulnerability Advisor.
 {:shortdesc}
 
-**Default cluster-wide policy `.yaml` file**:
+**Default cluster-wide policy `.yaml` file**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -96,7 +96,7 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
 {:shortdesc}
 
-**Default `kube-system` policy `.yaml` file**:
+**Default `kube-system` policy `.yaml` file**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -123,10 +123,10 @@ spec:
 ### IBM-system policy
 {: #ibm-system}
 
-By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Image Security Enforcement.
+By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Container Image Security Enforcement.
 {:shortdesc}
 
-**Default `ibm-system` policy `.yaml` file**:
+**Default `ibm-system` policy `.yaml` file**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -148,10 +148,10 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
-    # This policy allows Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Image Security Enforcement.
+    # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
     - name: quay.io/coreos/hyperkube
       policies:
 ```
@@ -159,10 +159,10 @@ spec:
 ## Customizing policies
 {: #customize_policies}
 
-You can change the policy that IBM Container Image Security Enforcement uses to permit images, either at the cluster or Kubernetes namespace level. In the policy, you can specify different enforcement rules for different images.
+You can change the policy that Container Image Security Enforcement uses to permit images, either at the cluster or Kubernetes namespace level. In the policy, you can specify different enforcement rules for different images.
 {:shortdesc}
 
-You must have some policy set. Otherwise, deployments to your cluster fail. If you do not want any image security policies enforced, [remove security enforcement](#remove).
+You must have some policy set. Otherwise, deployments to your cluster fail. If you do not want any image security policies enforced, [remove Container Image Security Enforcement](#remove).
 {:tip}
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
@@ -291,7 +291,7 @@ When a policy is applied, you can deploy content to your cluster normally. Your 
 
 If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 
-**Sample error messages**:
+**Sample error messages**
 
 *  If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
@@ -337,9 +337,9 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 
 You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
 
-You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. IBM Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](registry_trusted_content.html).
+You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](registry_trusted_content.html).
 
-A deployment is allowed only if all images pass the IBM Container Image Security Enforcement checks.
+A deployment is allowed only if all images pass the Container Image Security Enforcement checks.
 
 ## Removing Container Image Security Enforcement
 {: #remove}
