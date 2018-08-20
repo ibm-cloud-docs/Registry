@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-16"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -161,10 +161,10 @@ You can use a token in your `docker login` command to automate access to your na
 
 4.  Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
-    -   For namespaces set up in US-South: registry.ng.bluemix.net
-    -   For namespaces set up in UK-South: registry.eu-gb.bluemix.net
-    -   For namespaces set up in EU-Central: registry.eu-de.bluemix.net
-    -   For namespaces set up in AP-South: registry.au-syd.bluemix.net
+    -   For namespaces set up in US-South: `registry.ng.bluemix.net`
+    -   For namespaces set up in UK-South: `registry.eu-gb.bluemix.net`
+    -   For namespaces set up in EU-Central: `registry.eu-de.bluemix.net`
+    -   For namespaces set up in AP-South: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>
