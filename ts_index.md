@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-19"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -78,7 +78,7 @@ You can fix this problem in the following way:
 
 
 
-## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'. `
+## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
 
 You cannot run a `ibmcloud cr` command because `cr` is not a registered `ibmcloud` command.
@@ -130,6 +130,7 @@ You can fix this problem in the following ways:
 -   Choose a different value for your namespace.
 -   If you are re-creating a namespace that was deleted, and it contained many images, try again later.
 
+
 ## Push or pull of a Docker image fails
 {: #ts_pushpull}
 
@@ -137,12 +138,14 @@ You can fix this problem in the following ways:
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. Potential error messages might be:
 
 ```
-You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan
+You have exceeded your storage quota. Delete one or more images, 
+or review your storage quota and pricing plan
 ```
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. Review your pull traffic quota and pricing plan
+You have exceeded your pull traffic quota for the current month. 
+Review your pull traffic quota and pricing plan
 ```
 {: screen}
 
@@ -169,6 +172,7 @@ You can fix this problem in the following ways:
 -   Check your Docker installation path.
 -   Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
 -   [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
+
 
 ## Unable to pull the most recent image using the `latest` tag
 {: #ts_docker_latest}
@@ -201,6 +205,7 @@ Before you begin:
 * If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers/cs_integrations.html#helm).
 * If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
+
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
 
 1.  Obtain the compressed file that you want to import from [IBM Passport Advantage![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
@@ -224,7 +229,7 @@ Before you begin:
     If you want to upload Helm charts from the IBM Passport Advantage archive to a chart museum, include the following options in the command: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
-    **Example output**:
+    **Example output**
     
     ```
     user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
@@ -341,6 +346,7 @@ Your options for recovering lost or affected keys depend on the type of key: rep
 *  For [repository keys](#trustedcontent_lostrepokey), you can generate a new set of signing keys for the repository.
 *  For [root keys](#trustedcontent_lostrootkey), you can request that the repository be deleted and create a new repository.
 
+
 ### Repository keys
 {: #trustedcontent_lostrepokey}
 
@@ -352,7 +358,7 @@ The only signing role that you can rotate is `targets`, which is the repository 
 
 Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](registry_trusted_content.html#trustedcontent_push).
 
-1.  Install the CLI version of [the Notary project](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+1.  Install the CLI version of [the Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
 2.  [Set up your trusted content environment](registry_trusted_content.html#trustedcontent_setup).
 
@@ -376,6 +382,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 7.	[Push a signed image](registry_trusted_content.html#trustedcontent_push) that uses the new signing keys.
 
+
 ### Root keys
 {: #trustedcontent_lostrootkey}
 
@@ -398,6 +405,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
     {:tip}
 
 3.  If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) and modify the deployment.
+
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
