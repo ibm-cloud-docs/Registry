@@ -78,14 +78,17 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
     ```
     {: pre}
 
-    The output instructs you to export the Docker Content Trust environment variable. For example:
+    The output instructs you to export the Docker Content Trust environment variable. 
+    
+    **Example**
 
     ```
     user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
-    To set up your Docker client with content trust, export the following environment variable:
+    To set up your Docker client with content trust, 
+    export the following environment variable:
     export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
     ```
     {: screen}
@@ -151,7 +154,9 @@ You can review signed versions of an image repository or tag, including informat
 
 1.  [Set up your trusted content environment](#trustedcontent_setup).
 
-2.  Review the tag, digest, and signer information for each image. **Optional**: Specify the _&lt;tag&gt;_ to see information for that version of the image.
+2.  Review the tag, digest, and signer information for each image. 
+
+    (Optional) Specify the tag, _&lt;tag&gt;_, to see information for that version of the image.
 
     ```
     docker trust view <image>:<tag>
