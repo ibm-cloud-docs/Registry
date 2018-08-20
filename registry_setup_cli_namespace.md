@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -103,7 +103,7 @@ If you no longer need the container-registry plug-in, you can uninstall it.
 To securely store your Docker images, you must create a namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 {:shortdesc}
 
-Before you begin:
+**Before you begin**
 
 -   [Install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in](#registry_cli_install).
 -   [Plan how to use and name your registry namespaces](registry_overview.html#registry_namespaces).
