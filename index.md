@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -144,6 +144,6 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 -   [Managing image security with Vulnerability Advisor](../va/va_index.html).
 -   [Review your service plans and usage](registry_overview.html#registry_plans)
 -   [Store and manage more images in your namespace](registry_images_.html).
--   [Create and deploy a container from your image to a Kubernetes cluster](/docs/containers/cs_clusters.html#clusters).
+-   [Setting up clusters and worker nodes](/docs/containers/cs_clusters.html#clusters).
 
 
