@@ -27,11 +27,12 @@ Container Image Security Enforcement retrieves information about image content t
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
 
-Before you begin:
+**Before you begin**
+
 * [Create](/docs/containers/cs_clusters.html#clusters_ui) or [update](/docs/containers/cs_cluster_update.html#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
 * [Target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
-Steps:
+Complete the following steps:
 1.  [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
 
 2.  Add the IBM chart repository to your Helm client.
@@ -86,6 +87,7 @@ spec:
         va:
           enabled: true
 ```
+{: codeblock}
 
 When you set `va` or `trust` to `enabled: true` for a container registry other than {{site.data.keyword.registrylong_notm}}, any attempts to deploy pods from images in that registry are denied. If you want to deploy images from other registries, remove the `va` and `trust` policies.
 {:tip}
@@ -119,6 +121,7 @@ spec:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
 ```
+{: codeblock}
 
 ### IBM-system policy
 {: #ibm-system}
@@ -155,6 +158,7 @@ spec:
     - name: quay.io/coreos/hyperkube
       policies:
 ```
+{: codeblock}
 
 ## Customizing policies
 {: #customize_policies}
@@ -167,7 +171,7 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
-Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. Then complete the following steps:
 
 1.  Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
 
@@ -187,6 +191,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
             va:
               enabled: <true_or_false>
     ```
+    {: codeblock}
 
     <table>
     <caption>Table. Understanding this YAML components</caption>
@@ -243,10 +248,14 @@ To configure the policy to verify that an image is signed by a particular signer
 
 1.  Get the signer name (the name that was used in `docker trust signer add`), and the signer's public key.
 1.  Generate a Kubernetes secret with the signer name and their public key.
+
     ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
+    {: pre}
+    
 1.  Add the secret to the `signerSecrets` list for the repository in your policy.
+
     ```yaml
     - name: example
       policy:
@@ -255,6 +264,7 @@ To configure the policy to verify that an image is signed by a particular signer
           signerSecrets:
           - name: <secret_name>
     ```
+    {: codeblock}
 
 ## Controlling who can customize policies
 {: #assign_user_policy}
@@ -263,11 +273,13 @@ If you have role-based access control (RBAC) enabled on your Kubernetes cluster,
 {:shortdesc}
 
 In your role, add a rule for security policies:
+
 ```yaml
 - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
 ```
+{: codeblock}
 
 You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
 {:tip}
@@ -279,6 +291,7 @@ Users who have access to delete custom resource definitions (CRDs) can delete th
   resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
 ```
+{: codeblock}
 
 Users and ServiceAccounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
 {:tip}
