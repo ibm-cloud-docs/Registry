@@ -2,12 +2,19 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-08-21"
 
 
 ---
 
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Related links
@@ -24,6 +31,8 @@ You can use the following related links to become more familiar with {{site.data
 
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
+
+
 
 <ul>
   <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
