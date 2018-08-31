@@ -39,4 +39,5 @@ IBM Cloud Container Registry
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}
