@@ -24,7 +24,7 @@ lastupdated: "2018-08-31"
 ## How do I list public images?
 {: #faq_list_public_images}
 
-To list public images, run the following `ibmcloud` commands to target the global registry and then list the IBM-provided public images:
+To list public images, run the following `ibmcloud` commands to target the global registry and list the IBM-provided public images:
 
 ```
 ibmcloud cr region-set global
