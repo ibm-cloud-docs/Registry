@@ -30,8 +30,6 @@ You can limit the amount of storage and pull traffic that can be used in your {{
 You can limit the amount of storage and pull traffic to your private images by setting your own quota limits.
 {:shortdesc}
 
-Before you begin, you must be a member of the account where you want to set the quota. 
-
 When you upgrade to the {{site.data.keyword.registryshort_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all namespaces that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
 
 To set a quota:
