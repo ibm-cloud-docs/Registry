@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-08-31"
+lastupdated: "2018-09-03"
 
 
 ---
@@ -32,7 +32,7 @@ ibmcloud cr region-set global
 {: pre}
 
 ```
-ibmcloud cr --include-ibm
+ibmcloud cr images --include-ibm
 ```
 {: pre}
 
