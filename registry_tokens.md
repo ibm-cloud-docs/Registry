@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-03"
 
 ---
 
@@ -43,10 +43,14 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 ### Creating an API key
 {: #registry_api_key_create}
 
-You can create an API key that you can then use to log in to your registry.
+You can create an API key that you can then use to log in to your registry. 
 {:shortdesc}
 
-Create an IAM API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
+You can create both user API keys and service ID API keys.
+
+-  To create a service ID API key, see [Creating an API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+-  To create a user API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
+
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
