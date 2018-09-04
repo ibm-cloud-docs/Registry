@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -188,10 +188,14 @@ Do not put personal information in your container images, namespace names, descr
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies.</dd>
+</dl>
 
 <dl>
-  <dt>Registry</dt>
-  <dd>A registry is a service that provides the infrastructure to store Docker images and that can be accessed by using the registry host URL and an optional port. Registries can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available private image registry that is hosted and managed by IBM. You can use the private registry by setting up your own image namespace and start pushing Docker images to your namespace.</dd>
+  <dt>Image</dt>
+  <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the image is built by successive updates. The image does not retain state as the container executes.</dd>
 </dl>
 
 <dl>
@@ -202,13 +206,13 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 <dl>
-  <dt>Repository</dt>
-  <dd>An image repository is a collection of related, tagged images in the registry. Repository is often used interchangeably with image, but a repository potentially holds multiple tagged variants of an image.</dd>
+  <dt>Registry</dt>
+  <dd>A registry is a service that provides storage for OCI images (also known as Docker images). OCI images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
 </dl>
 
 <dl>
-  <dt>Image</dt>
-  <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the image is built by successive updates. The image does not retain state as the container executes.</dd>
+  <dt>Repository</dt>
+  <dd>An image repository is a collection of related, tagged images in the registry. Repository is often used interchangeably with image, but a repository potentially holds multiple tagged variants of an image.</dd>
 </dl>
 
 <dl>
@@ -216,12 +220,8 @@ Do not put personal information in your container images, namespace names, descr
   <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies.</dd>
-</dl>
 
-To learn more about Docker-specific terms, [consult the Docker glossary](https://docs.docker.com/glossary/).
+To learn more about Docker-specific terms, [consult the Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
 
 
 ### Planning Namespaces
