@@ -221,7 +221,7 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 
-To learn more about Docker-specific terms, [consult the Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://docs.docker.com/glossary/).
+To learn more about Docker-specific terms, [consult the Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
 
 
 ### Planning Namespaces
