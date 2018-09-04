@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -191,7 +191,7 @@ Do not put personal information in your container images, namespace names, descr
 
 <dl>
   <dt>Registry</dt>
-  <dd>A registry is a service that provides the infrastructure to store Docker images and that can be accessed by using the registry host URL and an optional port. Registries can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available private image registry that is hosted and managed by IBM. You can use the private registry by setting up your own image namespace and start pushing Docker images to your namespace.</dd>
+  <dd>A registry is a service that provides storage for OCI images (also known as Docker images). OCI images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.ibm_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
 </dl>
 
 <dl>
