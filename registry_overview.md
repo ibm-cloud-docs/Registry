@@ -206,11 +206,6 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 <dl>
-  <dt>OCI container images</dt>
-  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec).</dd>
-</dl>
-
-<dl>
   <dt>Registry</dt>
   <dd>A registry is a service that provides storage for OCI images (also known as Docker images). OCI images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.ibm_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
 </dl>
