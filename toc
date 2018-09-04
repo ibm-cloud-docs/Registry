@@ -34,6 +34,7 @@ IBM Cloud Container Registry
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
