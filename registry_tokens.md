@@ -210,3 +210,32 @@ Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## Authentication options for all clients
+{: #registry_authentication}
+
+You can authenticate by using the `docker login` command or other registry clients. 
+{:shortdesc}
+
+Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a user name and password. In {{site.data.keyword.registrylong_notm}}, the user name indicates the type of secret that is presented in the password.
+
+The following user names are valid:
+
+-  `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
+-  `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
+-  `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
+-  `token` The password is a registry token. You can use this user name for automation.
+
+You do not have to use the docker command to authenticate with the registry. For example, you can run the following `ibmcloud cf push` command that authenticates and authorizes a pull from the registry by using an IAM API key:
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Replace _&lt;apikey&gt;_ with your API key, _&lt;region&gt;_ with the name of your [region](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ with your namespace, and _&lt;image_repo&gt;_ with the repository.
+
+For more information, see [Using a private image registry](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
