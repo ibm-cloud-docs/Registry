@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -203,6 +203,11 @@ Do not put personal information in your container images, namespace names, descr
   <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.Bluemix_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
 
   Every user in your {{site.data.keyword.Bluemix_notm}} account can view and work with images that are stored in your registry namespace. You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments.</dd>
+</dl>
+
+<dl>
+  <dt>OCI container images</dt>
+  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
