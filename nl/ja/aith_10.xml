@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="/images/images_pull.ai">
+<text>ローカル・コンピューター</text>
+<text>プライベート IBM Cloud レジストリー</text>
+<text>その他のプライベート・リポジトリーまたはパブリック・リポジトリー</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/images_push.ai">
+<text>ローカル・コンピューター</text>
+<text>プライベート IBM Cloud レジストリー</text>
+<text>その他のプライベート・リポジトリーまたは</text>
+<text>パブリック・リポジトリー</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/registry_architecture.ai">
+<text>IBM Cloud Container Registry および脆弱性アドバイザー</text>
+<text>プル</text>
+<text>Docker</text>
+<text>プライベート・リポジトリー</text>
+<text>プッシュ</text>
+<text>プル</text>
+<text>リスト、
+詳細表示、
+削除</text>
+<text>プッシュ</text>
+<text>プル</text>
+<text>ローカル・イメージ・
+ストア</text>
+<text>$</text>
+<text>　パブリック・リポジトリー</text>
+<text>プル</text>
+<text>名前空間の
+作成</text>
+<text>CLI</text>
+<text>IBM Cloud
+Kubernetes Service</text>
+<text>GUI</text>
+<text>Docker ハブ
+その他のレジストリー</text>
+<text>プル</text>
+<text>リスト</text>
+<text>api</text>
+<text>IBM イメージ</text>
+<text>プル</text>
+<text>イメージ</text>
+</ExtractedAITH>
+</ExtractedAITHs>

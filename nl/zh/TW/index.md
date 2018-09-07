@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -33,7 +33,7 @@ lastupdated: "2018-07-23"
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1.  安裝 [{{site.data.keyword.Bluemix_notm}} CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://clis.ng.bluemix.net/ui/home.html)，讓您可以執行 {{site.data.keyword.Bluemix_notm}} **ibmcloud** 指令。
+1.  安裝 [{{site.data.keyword.Bluemix_notm}} CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://clis.ng.bluemix.net/ui/home.html)，讓您可以執行 {{site.data.keyword.Bluemix_notm}} `ibmcloud` 指令。
 2.  安裝 container-registry 外掛程式：
 
     ```
@@ -68,10 +68,11 @@ lastupdated: "2018-07-23"
 
 
 
+
 ## 將映像檔從另一個登錄取回到本端機器
 {: #registry_images_pulling}
 
-1.  [安裝 Docker CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/community-edition#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/products/docker-toolbox)。
+1.  [安裝 Docker CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/community-edition#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/toolbox/)。
 
 2.  將映像檔下載（_取回_）至本端機器。將 _&lt;source_image&gt;_ 取代為映像檔的儲存庫，並將 _&lt;tag&gt;_ 取代為您要使用之映像檔的標籤，例如 _latest_。
 
@@ -87,7 +88,7 @@ docker pull hello-world:latest
     ```
     {: pre}
 
-3.  標記映像檔。將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。將 _&lt;region&gt;_ 取代為您的 [region](registry_overview.html#registry_regions) 名稱。將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間。取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義您要在名稱空間中使用之映像檔的儲存庫及標籤。
+3.  標記映像檔。將 _&lt;source_image&gt;_ 取代為儲存庫，並將 _&lt;tag&gt;_ 取代為您先前取回之本端映像檔的標籤。將 _&lt;region&gt;_ 取代為您的[地區](registry_overview.html#registry_regions)名稱。將 _&lt;my_namespace&gt;_ 取代為您在[設定名稱空間](index.html#registry_namespace_add)中建立的名稱空間。取代 _&lt;new_image_repo&gt;_ 及 _&lt;new_tag&gt;_，以定義您要在名稱空間中使用之映像檔的儲存庫及標籤。
 
     ```
 docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -106,7 +107,7 @@ docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<ne
 ## 將 Docker 映像檔推送至名稱空間
 {: #registry_images_pushing}
 
-1.  執行 `ibmcloud cr login` 指令，以將本端 Docker 常駐程式登入 {{site.data.keyword.registrylong_notm}}。
+1.  執行 `ibmcloud cr login` 指令，以讓本端 Docker 常駐程式登入 {{site.data.keyword.registrylong_notm}}。
 
     ```
     ibmcloud cr login
@@ -143,6 +144,6 @@ docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
 -   [使用漏洞警告器管理映像檔安全](../va/va_index.html)。
 -   [檢閱服務方案及用量](registry_overview.html#registry_plans)。
 -   [儲存及管理名稱空間中的其他映像檔](registry_images_.html)。
--   [從映像檔建立容器，並將其部署至 Kubernetes 叢集](../../containers/cs_clusters.html)。
+-   [設定叢集與工作者節點](/docs/containers/cs_clusters.html#clusters)。
 
 

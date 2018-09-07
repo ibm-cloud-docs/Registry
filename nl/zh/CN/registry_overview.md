@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -250,8 +250,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要仅使用 IBM 提供的公共映像，您无需设置名称空间。
 
-如果您不确定是否已为帐户设置名称空间，请运行 `ibmcloud cr namespace-list` 命令以检索现有名称空间信息。如果您是使用[单个容器和可扩展容器组](../../containers/cs_classic.html)的现有 {{site.data.keyword.containerlong_notm}} 客户，那么您已经拥有名称空间了。
-您可以创建其他名称空间，但是不能对超过一个名称空间运行 `cf ic namespace set`。
+如果您不确定是否已为帐户设置名称空间，请运行 `ibmcloud cr namespace-list` 命令以检索现有名称空间信息。
 {:tip}
 
 选择名称空间时，请考虑以下规则：

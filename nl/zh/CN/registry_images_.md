@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -97,7 +97,7 @@ lastupdated: "2018-07-23"
 将映像推送至专用注册表后，您可以：
 
 - [使用漏洞顾问程序管理安全性](../va/va_index.html)，以查找潜在安全问题和漏洞的相关信息。
-- [创建集群并使用此映像部署容器](../../containers/container_index.html)至 {{site.data.keyword.containerlong_notm}} 中的集群。
+- [创建集群并使用此映像部署容器](/docs/containers/container_index.html#container_index)至 {{site.data.keyword.containerlong_notm}} 中的集群。
 
 ## 在注册表之间复制映像
 {: #registry_images_copying}
@@ -125,7 +125,7 @@ lastupdated: "2018-07-23"
 复制映像后，您可以：
 
 - [使用漏洞顾问程序管理映像安全性](../va/va_index.html)，以查找潜在安全问题和漏洞的相关信息。
-- [创建集群并使用此映像部署容器](../../containers/container_index.html)至 {{site.data.keyword.containerlong_notm}} 中的集群。
+- [创建集群并使用此映像部署容器](/docs/containers/container_index.html#container_index)至 {{site.data.keyword.containerlong_notm}} 中的集群。
 
 ## 构建 Docker 映像以用于名称空间
 {: #registry_images_creating}

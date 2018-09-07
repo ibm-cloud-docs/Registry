@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,42 +18,43 @@ lastupdated: "2018-07-23"
 # 컨테이너 이미지 보안 적용(베타)
 {: #security_enforce}
 
-IBM Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](registry_trusted_content.html)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
+Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](registry_trusted_content.html)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
 {:shortdesc}
 
-IBM Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서 이미지 컨텐츠 신뢰 및 취약성에 대한 정보를 검색합니다. 사용자는 다른 레지스트리에 저장된 이미지의 배치를 차단하거나 허용하도록 선택할 수 있지만, 이러한 이미지에 대해 취약성 또는 신뢰 적용을 사용할 수는 없습니다. 
+Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서 이미지 컨텐츠 신뢰 및 취약성에 대한 정보를 검색합니다. 사용자는 다른 레지스트리에 저장된 이미지의 배치를 차단하거나 허용하도록 선택할 수 있지만, 이러한 이미지에 대해 취약성 또는 신뢰 적용을 사용할 수는 없습니다.
 
 
 ## 클러스터에 Container Image Security Enforcement 설치
 {: #sec_enforce_install}
 
-시작하기 전에:
-* **Kubernetes 버전 1.9 이상**에서 사용할 클러스터를 [작성](../../containers/cs_clusters.html#clusters_ui)하거나 [업데이트](../../containers/cs_cluster_update.html)하십시오.
-* 대상 클러스터에 [`kubectl` CLI를 지정](../../containers/cs_cli_install.html#cs_cli_configure)하십시오.
+**시작하기 전에**
 
-단계:
-1.  [클러스터에서 Helm을 설정](../../containers/cs_integrations.html#helm)하십시오.
+* **Kubernetes 버전 1.9 이상**에서 사용할 클러스터를 [작성](/docs/containers/cs_clusters.html#clusters_ui)하거나 [업데이트](/docs/containers/cs_cluster_update.html#update)하십시오.
+* 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 
 
-2.  Helm 클라이언트에 IBM 차트 저장소를 추가하십시오. 
+다음 단계를 완료하십시오. 
+1.  [클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
+
+2.  Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
 
     ```
 helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
     ```
     {: pre}
 
-3.  클러스터에 IBM Container Image Security Enforcement Helm 차트를 설치하십시오. 이 차트에 `cise`와 같은 이름을 지정하십시오. 
+3.  클러스터에 Container Image Security Enforcement Helm 차트를 설치하십시오. 이 차트에 `cise`와 같은 이름을 지정하십시오.
 
     ```
     helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-이제 IBM Container Image Security Enforcement가 설치되고 클러스터의 모든 Kubernetes 네임스페이스에 [기본 보안 정책](#default_policies)을 적용합니다. 사용자 클러스터 또는 클러스터 전체에서 Kubernetes 네임스페이스의 보안 정책 사용자 정의에 대한 정보는 [정책 사용자 정의](#customize_policies)를 참조하십시오.
+Container Image Security Enforcement가 설치되었으며 클러스터의 모든 Kubernetes 네임스페이스에 [기본 보안 정책](#default_policies)을 적용합니다. 사용자 클러스터 또는 클러스터 전체에서 Kubernetes 네임스페이스의 보안 정책 사용자 정의에 대한 정보는 [정책 사용자 정의](#customize_policies)를 참조하십시오.
 
 ## 기본 정책
 {: #default_policies}
 
-IBM Container Image Security Enforcement는 기본적으로 보안 정책 빌드를 위한 시작점을 제공하기 위해 몇 가지 정책을 설치합니다.
+Container Image Security Enforcement는 보안 정책 빌드를 위한 시작점을 제공하기 위해 기본적으로 몇 가지 정책을 설치합니다.
 {:shortdesc}
 
 이러한 정책을 대체하려면 다음 옵션 중 하나를 사용하십시오.
@@ -68,7 +69,7 @@ IBM Container Image Security Enforcement는 기본적으로 보안 정책 빌드
 기본적으로 클러스터 범위 정책은 모든 레지스트리의 모든 이미지가 신뢰 정보를 포함하고 Vulnerability Advisor의 보고된 취약성은 포함하지 않도록 합니다.
 {:shortdesc}
 
-**기본 클러스터 범위 정책 `.yaml` 파일**:
+**기본 클러스터 범위 정책 `.yaml` 파일**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -86,6 +87,7 @@ spec:
         va:
           enabled: true
 ```
+{: codeblock}
 
 {{site.data.keyword.registrylong_notm}}가 아닌 컨테이너 레지스트리에서 `va` 또는 `trust`를 `enabled: true`로 설정한 경우 이 레지스트리에 있는 이미지의 팟(Pod)을 배치하려는 시도가 거부됩니다. 다른 레지스트리의 이미지를 배치하려는 경우 `va` 및 `trust` 정책을 제거하십시오.
 {:tip}
@@ -96,7 +98,7 @@ spec:
 기본적으로 네임스페이스 범위 정책이 `kube-system` 네임스페이스에 대해 설치됩니다. 이 정책을 사용하면 적용 없이 컨테이너 레지스트리의 모든 이미지를 `kube-system`에 배치할 수 있지만, 사용자는 이 정책 부분을 변경할 수 있습니다. 기본 정책은 클러스터를 올바르게 구성하기 위해 있어야 하는 특정 저장소 또한 포함하고 있습니다.
 {:shortdesc}
 
-**기본 `kube-system` 정책 `.yaml` 파일**:
+**기본 `kube-system` 정책 `.yaml` 파일**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -119,14 +121,15 @@ spec:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
 ```
+{: codeblock}
 
 ### IBM-system 정책
 {: #ibm-system}
 
-기본적으로 네임스페이스 범위 정책이 `ibm-system` 네임스페이스에 대해 설치됩니다. 이 정책을 사용하면 적용 없이 컨테이너 레지스트리의 모든 이미지를 `ibm-system`에 배치할 수 있지만, 사용자는 이 정책 부분을 변경할 수 있습니다. 기본 정책은 클러스터를 올바르게 구성하고 Image Security Enforcement를 설치하거나 업그레이드하기 위해 있어야 하는 특정 저장소 또한 포함하고 있습니다.
+기본적으로 네임스페이스 범위 정책이 `ibm-system` 네임스페이스에 대해 설치됩니다. 이 정책을 사용하면 적용 없이 컨테이너 레지스트리의 모든 이미지를 `ibm-system`에 배치할 수 있지만, 사용자는 이 정책 부분을 변경할 수 있습니다. 기본 정책은 클러스터를 올바르게 구성하고 Container Image Security Enforcement를 설치하거나 업그레이드하기 위해 있어야 하는 특정 저장소 또한 포함하고 있습니다.
 {:shortdesc}
 
-**기본 `ibm-system` 정책 `.yaml` 파일**:
+**기본 `ibm-system` 정책 `.yaml` 파일**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -148,26 +151,27 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
-    # This policy allows Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Image Security Enforcement.
+    # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
     - name: quay.io/coreos/hyperkube
       policies:
 ```
+{: codeblock}
 
 ## 정책 사용자 정의
 {: #customize_policies}
 
-클러스터 또는 Kubernetes 네임스페이스 레벨에서 IBM Container Image Security Enforcement가 이미지를 허용하는 데 사용하는 정책을 변경할 수 있습니다. 정책에서 여러 이미지에 서로 다른 적용 규칙을 지정할 수 있습니다.
+클러스터 또는 Kubernetes 네임스페이스 레벨에서 Container Image Security Enforcement가 이미지를 허용하는 데 사용하는 정책을 변경할 수 있습니다. 정책에서 여러 이미지에 서로 다른 적용 규칙을 지정할 수 있습니다.
 {:shortdesc}
 
-몇 가지 정책을 설정해야 합니다. 그렇지 않으면 클러스터에 대한 배치에 실패합니다. 이미지 보안 정책이 적용되지 않도록 하려면 [보안 적용을 제거](#remove)하십시오.
+몇 가지 정책을 설정해야 합니다. 그렇지 않으면 클러스터에 대한 배치에 실패합니다. 이미지 보안 정책이 적용되지 않도록 하려면 [Container Image Security Enforcement를 제거](#remove)하십시오.
 {:tip}
 
 배치를 적용할 때 Container Image Security Enforcement에서 사용자가 배치하는 Kubernetes 네임스페이스에 적용할 정책이 있는지 여부를 확인합니다. 없는 경우 Container Image Security Enforcement가 클러스터 범위 정책을 사용합니다. 네임스페이스 또는 클러스터 범위 정책이 없는 경우 배치가 거부됩니다.
 
-시작하기 전에 대상 클러스터에 [`kubectl` CLI를 지정](../../containers/cs_cli_install.html#cs_cli_configure)하십시오.
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그 후 다음 단계를 완료하십시오. 
 
 1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
 
@@ -187,6 +191,7 @@ spec:
             va:
               enabled: <true_or_false>
     ```
+    {: codeblock}
 
     <table>
     <caption>표. 이 YAML 컴포넌트 이해</caption>
@@ -209,7 +214,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../policy</code></td>
-    <td>`trust` 및 `va` 적용을 위해 하위 섹션을 채우십시오. 정책 하위 섹션을 생략하면 각각에 `enabled: false`를 지정하는 경우와 같습니다.</td>
+    <td>`trust` 및 `va` 적용에 대한 하위 섹션을 완료하십시오. 정책 하위 섹션을 생략하면 각각에 `enabled: false`를 지정하는 경우와 같습니다.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
@@ -221,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>[Vulnerability Advisor](../va/va_index.html) 스캔을 통과한 이미지만 허용하려면 `true`로 설정하십시오. Vulnerability Advisor 스캔을 무시하려면 `false`로 설정하십시오.</td>
+    <td>[Vulnerability Advisor](/docs/services/va/va_index.html) 스캔을 통과한 이미지만 허용하려면 `true`로 설정하십시오. Vulnerability Advisor 스캔을 무시하려면 `false`로 설정하십시오.</td>
     </tr>
     </tbody>
     </table>
@@ -243,10 +248,14 @@ kubectl apply -f <filepath>
 
 1.  서명자 이름(`docker trust signer add`에 사용된 이름) 및 서명자의 공개 키를 가져오십시오.
 1.  서명자 이름과 공개 키가 있는 Kubernetes 시크릿을 생성하십시오.
+
     ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
+    {: pre}
+    
 1.  정책의 저장소에 대한 `signerSecrets` 목록에 시크릿을 추가하십시오.
+
     ```yaml
     - name: example
       policy:
@@ -255,19 +264,22 @@ kubectl apply -f <filepath>
           signerSecrets:
           - name: <secret_name>
     ```
+    {: codeblock}
 
 ## 정책을 사용자 정의할 수 있는 사용자 제어
 {: #assign_user_policy}
 
-Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하는 경우 역할을 작성하여 클러스터에서 보안 정책을 관리하는 기능을 가진 사용자를 통제할 수 있습니다. 클러스터에 RBAC 규칙을 적용하는 데 대한 자세한 정보는 [{{site.data.keyword.containerlong_notm}} 문서](../../containers/cs_users.html#rbac)를 참조하십시오.
+Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하는 경우 역할을 작성하여 클러스터에서 보안 정책을 관리하는 기능을 가진 사용자를 통제할 수 있습니다. 클러스터에 RBAC 규칙을 적용하는 데 대한 자세한 정보는 [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers/cs_users.html#rbac)를 참조하십시오.
 {:shortdesc}
 
 역할에서 보안 정책에 대한 규칙을 추가하십시오.
+
 ```yaml
 - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
 ```
+{: codeblock}
 
 여러 역할을 작성하여 사용자가 수행할 수 있는 조치를 제어할 수 있습니다. 예를 들어, 일부 사용자가 `get` 또는 `list` 정책만 사용할 수 있도록 `verbs`를 변경하십시오. 또는 `resources` 목록에서 `clusterimagepolicies`를 생략하여 Kubernetes 네임스페이스 정책에 대한 액세스 권한만 부여할 수 있습니다.
 {:tip}
@@ -279,6 +291,7 @@ Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하�
   resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
 ```
+{: codeblock}
 
 `cluster-admin` 역할을 가진 ServiceAccount 및 사용자에게는 모든 리소스에 대한 액세스 권한이 있습니다. 역할을 편집하지 않는 경우에도 cluster-admin 역할은 보안 정책을 관리할 수 있는 액세스 권한을 부여합니다. `cluster-admin` 역할을 가진 사용자를 제어하고 보안 정책을 수정할 수 있도록 허용할 사용자에게만 액세스 권한을 부여하십시오.
 {:tip}
@@ -291,7 +304,7 @@ Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하�
 
 Container Image Security Enforcement가 배치를 거부하면, 배치가 작성되어도 이 배치로 작성된 ReplicaSet은 확장에 실패하고 팟(Pod)이 작성되지 않습니다. `kubectl describe deployment <deployment-name>`을 실행하여 ReplicaSet을 찾은 다음 `kubectl describe rs <replicaset-name>`을 실행하여 배치가 거부된 이유를 확인할 수 있습니다.
 
-**샘플 오류 메시지**:
+**샘플 오류 메시지**
 
 *  이미지가 정책과 일치하지 않거나 네임스페이스 또는 클러스터에 정책이 없는 경우.
 
@@ -324,14 +337,14 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
 
 정책에 `va` 옵션을 사용하여 이미지를 배치하기 전에 Vulnerability Advisor가 수행되도록 할 수 있습니다. Vulnerability Advisor가 지원하지 않는 이미지가 허용됩니다.
 
-정책에서 `trust` 옵션을 사용하여 컨텐츠 신뢰를 적용할 수 있습니다. `signerSecrets`를 지정하지 않으면 어떤 사용자가 이미지에 서명해도 배치가 허용됩니다. `signerSecrets`를 지정하면 최근에 서명된 버전의 이미지가 지정된 모든 사용자에 의해 서명되어 있어야 합니다. IBM Container Image Security Enforcement는 제공된 공개 키가 서명자에게 속하는지 확인합니다. 컨텐츠 신뢰에 대한 자세한 정보는 [신뢰할 수 있는 컨텐츠의 이미지에 서명](registry_trusted_content.html)을 참조하십시오.
+정책에서 `trust` 옵션을 사용하여 컨텐츠 신뢰를 적용할 수 있습니다. `signerSecrets`를 지정하지 않으면 어떤 사용자가 이미지에 서명해도 배치가 허용됩니다. `signerSecrets`를 지정하면 최근에 서명된 버전의 이미지가 지정된 모든 사용자에 의해 서명되어 있어야 합니다. Container Image Security Enforcement는 제공된 공개 키가 서명자에게 속하는지 확인합니다. 컨텐츠 신뢰에 대한 자세한 정보는 [신뢰할 수 있는 컨텐츠의 이미지에 서명](registry_trusted_content.html)을 참조하십시오.
 
-모든 이미지가 IBM Container Image Security Enforcement 검사를 통과한 경우에만 배치가 허용됩니다.
+모든 이미지가 Container Image Security Enforcement 검사를 통과한 경우에만 배치가 허용됩니다. 
 
 ## Container Image Security Enforcement 제거
 {: #remove}
 
-시작하기 전에 대상 클러스터에 [`kubectl` CLI를 지정](../../containers/cs_cli_install.html#cs_cli_configure)하십시오.
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 
 
 
 

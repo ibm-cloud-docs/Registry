@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ Les clés d'API sont liées à votre compte et peuvent être utilisées à trave
 
 La portée des jetons du registre est limitée à {{site.data.keyword.registrylong_notm}}. Vous pouvez les limiter à un accès en lecture seule et spécifier s'ils doivent expirer ou non.
 
-Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](../../iam/apikeys.html#manapikey).
+Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](/docs/iam/apikeys.html#manapikey).
 
 Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ Vous pouvez utiliser des clés d'API pour automatiser l'envoi et l'extraction d'
 Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre.
 {:shortdesc}
 
-Créez une clé d'API IAM. Voir [Création de clés d'API](../../iam/userid_keys.html#creating-an-api-key).
+Créez une clé d'API IAM. Voir [Création de clés d'API](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Utilisation d'une clé d'API pour automatiser les accès
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Pour les informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Pour des informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automatisation de l'accès à vos espaces de nom à l'aide de jetons
@@ -114,7 +114,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
         </tbody>
         </table>
 
-    Votre sortie CLI sera similaire à ceci :
+    Votre sortie d'interface de ligne de commande sera similaire à l'exemple suivant : 
 
     ```
     Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
@@ -133,7 +133,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 ### Utilisation d'un jeton pour automatiser l'accès à vos espaces de nom
 {: #registry_tokens_use}
 
-Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}. Selon que vous avez affecté un accès en lecture seule ou en lecture/écriture à votre jeton, les utilisateurs peuvent extraire (par pull) des images de vos espaces de nom ou bien en envoyer et en extraire (push et pull).
+Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}. Selon que vous avez affecté un accès en lecture seule ou en lecture/écriture à votre jeton, les utilisateurs peuvent extraire des images de vos espaces de nom ou envoyer des images dans vos espaces de nom.
 {:shortdesc}
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
@@ -161,10 +161,10 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 
 4.  Utilisez le jeton avec votre commande `docker login`. Remplacez la valeur de &lt;token_value&gt; par la valeur de jeton que vous avez extraite à l'étape précédente et la valeur de &lt;registry_url&gt; par l'URL du registre où sont configurés vos espaces de nom.
 
-    -   Pour les espaces de nom définis sur la région Sud des Etats-Unis : registry.ng.bluemix.net
-    -   Pour les espaces de nom définis sur la région Sud du Royaume-Uni : registry.eu-gb.bluemix.net
-    -   Pour les espaces de nom définis sur la région Centre Europe : registry.eu-de.bluemix.net
-    -   Pour les espaces de nom définis sur la région Asie-Pacifique sud : registry.au-syd.bluemix.net
+    -   Pour les espaces de nom définis pour la région Sud des Etats-Unis : `registry.ng.bluemix.net`
+    -   Pour les espaces de nom définis pour la région Sud du Royaume-Uni : `registry.eu-gb.bluemix.net` 
+    -   Pour les espaces de nom définis pour la région Centre Europe : `registry.eu-de.bluemix.net` egistry.eu-de.bluemix.net
+    -   Pour les espaces de nom définis pour la région Sud de l'Asie Pacifique : `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>
@@ -183,7 +183,8 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 Retirez un jeton {{site.data.keyword.registrylong_notm}} quand vous n'en n'avez plus besoin.
 {:shortdesc}
 
-Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.{:tip}
+Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.
+{:tip}
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # 对映像签名以实现可信内容
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} 提供可信内容技术，以便您可以对映像签名，以确保注册表名称空间中映像的完整性。通过拉出和推送签名的映像，可以验证映像是否由正确的参与方（例如，连续集成 (CI) 工具）推送。要使用此功能，您必须具有 Docker V1.11 或更高版本。您可以通过查看 [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) 和 [Notary 项目](https://github.com/theupdateframework/notary)文档来了解更多信息。
+{{site.data.keyword.registrylong}} 提供可信内容技术，以便您可以对映像签名，以确保注册表名称空间中映像的完整性。通过拉出和推送签名的映像，可以验证映像是否由正确的参与方（例如，连续集成 (CI) 工具）推送。要使用此功能，您必须具有 Docker V1.11 或更高版本。您可以通过查看 [Docker Content Trust ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/security/trust/content_trust/) 和 [Notary 项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/theupdateframework/notary) 文档来了解更多信息。
 {:shortdesc}
 
 在启用了可信内容的情况下推送映像时，Docker 客户机还会将签名的元数据对象也推送到 {{site.data.keyword.Bluemix_notm}} 信任服务器中。在启用了 Docker Content Trust 的情况下拉出标记的映像时，Docker 客户机会联系信任服务器，以确定所请求标记的最新签名版本，验证内容签名，然后下载签名的映像。
@@ -29,7 +29,7 @@ lastupdated: "2018-07-23"
 
 Docker Content Trust 使用“首次使用时信任”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
 
-有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework (TUF)](https://theupdateframework.github.io/)。 
+有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework (TUF) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://theupdateframework.github.io/)。 
 
 
 ## 设置可信内容环境
@@ -78,7 +78,9 @@ set DOCKER_CONTENT_TRUST=1
     ```
     {: pre}
 
-    输出会指示您导出 Docker Content Trust 环境变量。例如：
+    输出会指示您导出 Docker Content Trust 环境变量。 
+    
+    **示例**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -140,7 +142,7 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 ## 管理可信内容
 {: #trustedcontent_managetrust}
 
-通过使用 `docker trust` 命令，可以查看映像的签署者以及撤销信任内容状态。要运行 `docker trust` 命令，需要 Docker 17.12 或更高版本。
+通过使用 `docker trust` 命令，可以查看映像的签署者和撤销信任内容状态。要运行 `docker trust` 命令，需要 Docker 17.12 或更高版本。
 {:shortdesc}
 
 ### 查看签名的映像
@@ -151,7 +153,9 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 1.  [设置可信内容环境](#trustedcontent_setup)。
 
-2.  查看每个映像的标记、摘要和签署者信息。**可选**：指定 _&lt;tag&gt;_ 以查看该版本映像的信息。
+2.  查看每个映像的标记、摘要和签署者信息。 
+
+    （可选）指定标记 _&lt;tag&gt;_ 以查看该版本映像的信息。
 
     ```
 docker trust view <image>:<tag>
@@ -184,6 +188,7 @@ $ docker trust view <image>:<tag>
     ```
     {: codeblock}
 
+
 ## 备份签名密钥
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +203,7 @@ $ docker trust view <image>:<tag>
 
 您必须备份所有密钥，尤其是根密钥。如果密钥丢失或遭到破坏，[恢复选项](ts_index.html#ts_recoveringtrustedcontent)会受到限制。
 
-要备份密钥，请参阅 [Docker Content Trust 文档](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
+要备份密钥，请参阅 [Docker Content Trust 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 
 
 ## 管理可信签署者

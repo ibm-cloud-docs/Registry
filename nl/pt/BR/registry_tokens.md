@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ As chaves API são vinculadas à sua conta e podem ser usadas no {{site.data.key
 
 Os tokens de registro têm o escopo definido somente para {{site.data.keyword.registrylong_notm}}. É possível limitá-los ao acesso somente leitura e escolher se eles estão expirando ou não expirando.
 
-Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](../../iam/apikeys.html#manapikey).
+Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](/docs/iam/apikeys.html#manapikey).
 
 Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 É possível criar uma chave API que pode então ser usada para efetuar login no seu registro.
 {:shortdesc}
 
-Crie uma chave API do IAM, veja [Criando uma chave API](../../iam/userid_keys.html#creating-an-api-key).
+Crie uma chave API do IAM, veja [Criando uma chave API](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Usando uma chave API para automatizar o acesso
 {: #registry_api_key_use}
@@ -61,7 +61,8 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Para obter informações de referência sobre o comando, veja [Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Para obter informações de referência sobre o comando, consulte
+[Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automatizando o acesso aos seus namespaces usando tokens
@@ -133,7 +134,8 @@ Use as tarefas a seguir para gerenciar seus tokens:
 ### Usando um token para automatizar o acesso a seus namespaces
 {: #registry_tokens_use}
 
-É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo se você configurou o acesso somente leitura ou de leitura/gravação para o seu token, os usuários podem enviar por push e puxar imagens para/de seus namespaces.
+É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo do acesso configurado para o token, somente leitura ou leitura/gravação, os usuários poderão enviar por push e puxar as
+imagens para e dos namespaces.
 {:shortdesc}
 
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
@@ -162,10 +164,10 @@ Use as tarefas a seguir para gerenciar seus tokens:
 
 4.  Use o token como parte de seu comando `docker login`. Substitua &lt;token_value&gt; pelo valor do token que você recuperou na etapa anterior e &lt;registry_url&gt; pela URL para o registro no qual seus namespaces estão configurados.
 
-    -   Para namespaces configurados no sul dos EUA: registry.ng.bluemix.net
-    -   Para namespaces configurados no Sul do Reino Unido: registry.eu-gb.bluemix.net
-    -   Para namespaces configurados no Centro da Europa: registry.eu-de.bluemix.net
-    -   Para namespaces configurados no Sul da Ásia-Pacífico: registry.au-syd.bluemix.net
+    -   Para os namespaces configurados no sul dos EUA: `registry.ng.bluemix.net`
+    -   Para os namespaces configurados no sul do Reino Unido: `registry.eu-gb.bluemix.net`
+    -   Para os namespaces configurados no centro da UE: `registry.eu-de.bluemix.net`
+    -   Para os namespaces configurados no sul da AP: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>

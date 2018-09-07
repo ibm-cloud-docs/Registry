@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -38,8 +38,7 @@ utilizzare la riga di comando per gestire i tuoi spazi dei nomi e le tue immagin
 {:shortdesc}
 
 1.  [Installa il plug-in container-registry. ](index.html#registry_cli_install)
-2.  Facoltativo: [configura il tuo client Docker per eseguire i comandi senza autorizzazioni root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se non effettui questo passo, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr
-login`, `docker pull` e `docker push` con **sudo** o come root.
+2.  Facoltativo: [configura il tuo client Docker per eseguire i comandi senza autorizzazioni root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se non effettui questo passo, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con **sudo** o come root.
 
 Puoi ora configurare il tuo proprio spazio dei nomi nel registro privato {{site.data.keyword.registrylong_notm}}.
 
@@ -50,7 +49,7 @@ Per utilizzare le nuove funzioni, ti consigliamo di aggiornare periodicamente la
 {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -78,7 +77,7 @@ Per utilizzare le nuove funzioni, ti consigliamo di aggiornare periodicamente la
 Se non hai più bisogno del plug-in container-registry, puoi disinstallarlo.
 {:shortdesc}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -108,7 +107,7 @@ Se non hai più bisogno del plug-in container-registry, puoi disinstallarlo.
 Per memorizzare in modo sicuro le tue immagini Docker, devi creare uno spazio dei nomi nel registro privato {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Prima di iniziare:
+**Prima di iniziare**
 
 -   [Installa la CLI {{site.data.keyword.Bluemix_notm}} e il plugin container-registry](#registry_cli_install).
 -   [Pianifica come utilizzare e denominare i tuoi spazi dei nomi del registro](registry_overview.html#registry_namespaces).
@@ -123,7 +122,7 @@ Puoi ora [eseguire il push delle immagini Docker al tuo spazio dei nomi nel regi
 Se non hai più bisogno di uno spazio dei nomi del registro, puoi rimuoverlo dal tuo account {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login

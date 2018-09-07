@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ Le chiavi API sono collegate al tuo account e possono essere utilizzate in {{sit
 
 I token del registro sono applicabili solo a {{site.data.keyword.registrylong_notm}}. Puoi limitarli all'accesso in sola lettura e puoi scegliere se scadono o meno.
 
-Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](../../iam/apikeys.html#manapikey).
+Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](/docs/iam/apikeys.html#manapikey).
 
 Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ Puoi utilizzare le chiavi API per automatizzare l'esecuzione del push e del pull
 Puoi creare una chiave API che puoi successivamente utilizzare per accedere al tuo registro.
 {:shortdesc}
 
-Crea una chiave API IAM, consulta [Creazione di una chiave API](../../iam/userid_keys.html#creating-an-api-key).
+Crea una chiave API IAM, consulta [Creazione di una chiave API](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Utilizzo di una chiave API per automatizzare l'accesso
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Per le informazioni di riferimento sul comando, consulta [Crea una nuova chiave API della piattaforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Per le informazioni di riferimento sul comando, consulta [Crea una nuova chiave API della piattaforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automazione dell'accesso agli spazi dei nomi utilizzando i token
@@ -133,10 +133,10 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 ### Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi
 {: #registry_tokens_use}
 
-Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}. A seconda che l'accesso impostato per il token sia di sola lettura o di lettura-scrittura, gli utenti possono eseguire il push e il pull delle immagini da e verso i tuoi spazi dei nomi.
+Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}. A seconda che l'accesso impostato per il token sia di sola lettura o di lettura/scrittura, gli utenti possono eseguire il push e il pull delle immagini da e verso i tuoi spazi dei nomi.
 {:shortdesc}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -161,10 +161,10 @@ Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'acce
 
 4.  Utilizza il token come parte del tuo comando `docker login`. Sostituisci &lt;valore_token&gt; con il valore del token richiamato nel passo precedente e &lt;url_registro&gt; con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
 
-    -   Per gli spazi dei nomi configurati in Stati Uniti Sud: registry.ng.bluemix.net
-    -   Per gli spazi dei nomi configurati in Regno Unito Sud: registry.eu-gb.bluemix.net
-    -   Per gli spazi dei nomi configurati in Europa centrale: registry.eu-de.bluemix.net
-    -   Per gli spazi dei nomi configurati in AP del sud: registry.au-syd.bluemix.net
+    -   Per gli spazi dei nomi configurati in Stati Uniti Sud: `registry.ng.bluemix.net`
+    -   Per gli spazi dei nomi configurati in Regno Unito Sud: `registry.eu-gb.bluemix.net`
+    -   Per gli spazi dei nomi configurati in Europa centrale: `registry.eu-de.bluemix.net`
+    -   Per gli spazi dei nomi configurati in AP del sud: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <valore_token> <url_registro>
@@ -186,7 +186,7 @@ Rimuovi un token {{site.data.keyword.registrylong_notm}} quando non ne hai più 
 I token {{site.data.keyword.registrylong_notm}} scaduti vengono rimossi automaticamente dal tuo account {{site.data.keyword.Bluemix_notm}} e non è necessario rimuoverli manualmente.
 {:tip}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login

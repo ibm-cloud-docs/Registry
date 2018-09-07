@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -103,7 +103,7 @@ Wenn Sie das Container-Registry-Plug-in nicht mehr benötigen, können Sie es de
 Um Ihre Docker-Images sicher zu speichern, müssen Sie in der privaten {{site.data.keyword.registrylong_notm}}-Registry einen Namensbereich erstellen.
 {:shortdesc}
 
-Führen Sie zuvor Folgendes aus:
+**Vorbereitung**
 
 -   [Installieren Sie die {{site.data.keyword.Bluemix_notm}}-CLI und das Container-Registry-Plug-in](#registry_cli_install).
 -   [Planen Sie, wie Sie Ihre Registry-Namensbereiche verwenden und benennen](registry_overview.html#registry_namespaces).

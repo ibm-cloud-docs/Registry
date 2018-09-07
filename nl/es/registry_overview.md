@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -87,7 +87,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 
   > Utiliza 5 GB para exactamente la mitad del mes y entonces envía por push varias imágenes a su espacio de nombres y utiliza 10 GB el resto del mes. El uso mensual se calcula del siguiente modo:
   >
-  > [5 GB x 0,5 (meses)] + [10 GB x 0,5 (meses)] = 2,5 + 5 = 7,5 GB-mes
+  > (5 GB x 0,5 (meses)) + (10 GB x 0,5 (meses)) = 2,5 + 5 = 7,5 GB-mes
   >
   > En el plan estándar, los primeros 0,5 GB-mes son gratuitos, de modo que se le facturan 7 GB-mes (7,5 GB-mes - 0,5 GB-mes).
 
@@ -235,7 +235,7 @@ Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes 
 
 Para trabajar sólo con imágenes públicas proporcionadas por IBM, no tiene que volver a configurar un espacio de nombres.
 
-Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `ibmcloud cr namespace-list` para recuperar la información de espacio de nombres existente. Si es un cliente de {{site.data.keyword.containerlong_notm}} existente que utiliza [contenedores únicos o grupos de contenedores escalables](../../containers/cs_classic.html), ya tiene un espacio de nombres. Puede crear espacios de nombres adicionales, pero no puede ejecutar `cf ic namespace set` para más de un espacio de nombres.
+Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `ibmcloud cr namespace-list` para recuperar la información de espacio de nombres existente.
 {:tip}
 
 Considere las reglas siguientes al elegir un espacio de nombres:

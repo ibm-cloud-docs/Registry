@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -30,7 +30,7 @@ lastupdated: "2018-07-24"
 可以通过设置自己的配额限制，从而限制专用映像的存储量和拉出流量。
 {:shortdesc}
 
-开始之前，请确保您是要在其中设置配额的 [{{site.data.keyword.Bluemix_notm}} 帐户的所有者或记帐管理员](../../iam/users_roles.html#userroles)。
+开始之前，请确保您是要在其中设置配额的 [{{site.data.keyword.Bluemix_notm}} 帐户的所有者或记帐管理员](/docs/iam/users_roles.html#userroles)。
 
 升级到 {{site.data.keyword.registryshort_notm}} 标准套餐后，可以享受无限的专用映像存储量和拉出流量。为了避免超过首选支付级别，可以分别为存储量和拉出流量设置配额。配额限制会应用于在 {{site.data.keyword.registrylong_notm}} 中设置的所有名称空间。如果使用的是免费服务套餐，那么还可以将定制配额设置为在免费存储量和拉出流量范围内。
 

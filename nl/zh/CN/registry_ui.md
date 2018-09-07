@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-20"
 
 
 ---
@@ -32,7 +32,7 @@ lastupdated: "2018-07-24"
 
 要查看图形用户界面，请使用以下步骤：
 
-1.  使用 IBM 标识登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ([https://console.bluemix.net](https://console.bluemix.net))。
+1.  使用 IBM 标识登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ([https://console.bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net))。
 2.  如果有多个 {{site.data.keyword.Bluemix_notm}} 帐户，请从帐户菜单中选择您要使用的帐户和区域。
 3.  单击**目录**。
 4.  选择**容器**类别，然后单击**容器注册表**磁贴。

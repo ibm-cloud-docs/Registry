@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ API キーはアカウントにリンクされているので、{{site.data.keyw
 
 レジストリー・トークンの有効範囲は、{{site.data.keyword.registrylong_notm}} のみです。 レジストリー・トークンは、読み取り専用アクセスに制限したり、有効期限の有無を設定したりできます。
 
-{{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](../../iam/apikeys.html#manapikey)を参照してください。
+{{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](/docs/iam/apikeys.html#manapikey)を参照してください。
 
 始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 
@@ -46,7 +46,7 @@ API キーを使用して、名前空間との間で行う Docker イメージ�
 レジストリーへのログインに使用する API キーを作成します。
 {:shortdesc}
 
-IAM API キーを作成します。[API キーの作成](../../iam/userid_keys.html#creating-an-api-key)を参照してください。
+IAM API キーを作成します。[API キーの作成](/docs/iam/userid_keys.html#creating-an-api-key)を参照してください。
 
 ### API キーを使用したアクセスの自動化
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-このコマンドの参照情報については、[新しい {{site.data.keyword.Bluemix_notm}} プラットフォーム API キーの作成](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)を参照してください。
+このコマンドの参照情報については、[新しい {{site.data.keyword.Bluemix_notm}} プラットフォーム API キーの作成](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create)を参照してください。
 
 
 ## トークンを使用した名前空間へのアクセスの自動化
@@ -161,10 +161,10 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 4.  トークンを `docker login` コマンドの一部として使用します。 &lt;token_value&gt; を、前の手順で取得したトークン値に置換し、&lt;registry_url&gt; を、名前空間がセットアップされているレジストリーの URL に置換します。
 
-    -   米国南部でセットアップされている名前空間の場合: registry.ng.bluemix.net
-    -   英国南部でセットアップされている名前空間の場合: registry.eu-gb.bluemix.net
-    -   EU 中央部でセットアップされている名前空間の場合: registry.eu-de.bluemix.net
-    -   アジア太平洋南地域でセットアップされている名前空間の場合: registry.au-syd.bluemix.net
+    -   米国南部でセットアップされている名前空間の場合: `registry.ng.bluemix.net`
+    -   英国南部でセットアップされている名前空間の場合: `registry.eu-gb.bluemix.net`
+    -   EU 中央部でセットアップされている名前空間の場合: `registry.eu-de.bluemix.net`
+    -   アジア太平洋南地域でセットアップされている名前空間の場合: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>

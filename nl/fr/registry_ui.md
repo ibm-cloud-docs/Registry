@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-20"
 
 
 ---
@@ -32,7 +32,7 @@ des images dont l'analyse est incomplète n'est pas bloqué.
 
 Pour afficher l'interface graphique, procédez comme suit :
 
-1.  Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.
+1.  Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net)) avec votre IBMid.
 2.  Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3.  Cliquez sur **Catalogue**.
 4.  Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.

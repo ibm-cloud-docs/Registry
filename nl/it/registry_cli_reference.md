@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -23,7 +23,7 @@ Puoi utilizzare il plug-in container-registry per configurare lo spazio dei nomi
 {:shortdesc}
 
 
-## Comandi ibmcloud cr
+## Comandi `ibmcloud cr` 
 {: #registry_cli_reference_bxcr}
 
 Esegui i comandi `ibmcloud cr` nella CLI di {{site.data.keyword.registryshort_notm}}.
@@ -37,11 +37,11 @@ Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](
 Puoi formattare e filtrare l'output della CLI per i comandi {{site.data.keyword.registrylong_notm}} supportati.
 {:shortdesc}
 
-Per impostazione predefinita, l'output della CLI viene visualizzato in un formato leggibile. Tuttavia, questa vista potrebbe limitare la tua capacità di utilizzare l'output, in particolare se il comando viene eseguito a livello di programmazione. Ad esempio, nell'output della CLI `ibmcloud cr image-list`, potresti voler ordinare il campo `Size` per dimensione numerica, ma il comando restituisce una descrizione della dimensione in formato stringa. Il plug-in container-registry fornisce l'opzione formato che puoi utilizzare per applicare un template Go all'output della CLI. Il template Go è una funzione del [linguaggio di programmazione Go](https://golang.org/pkg/text/template/) che ti consente di personalizzare l'output della CLI.
+Per impostazione predefinita, l'output della CLI viene visualizzato in un formato leggibile. Tuttavia, questa vista potrebbe limitare la tua capacità di utilizzare l'output, in particolare se il comando viene eseguito a livello di programmazione. Ad esempio, nell'output della CLI `ibmcloud cr image-list`, potresti voler ordinare il campo `Size` per dimensione numerica, ma il comando restituisce una descrizione della dimensione in formato stringa. Il plug-in container-registry fornisce l'opzione formato che puoi utilizzare per applicare un template Go all'output della CLI. Il template Go è una funzione del [linguaggio di programmazione Go](https://golang.org/pkg/text/template/) che puoi utilizzare per personalizzare l'output della CLI.
 
 Puoi modificare l'output della CLI applicando l'opzione formato in due modi diversi:
 
-1.  Formatta i dati nel tuo output della CLI. Ad esempio, modifica l'output del campo `Created` dall'ora Unix all'ora standard.
+1.  Formatta i dati nel tuo output della CLI. Ad esempio, modifica l'output del campo `Created` dall'ora UNIX all'ora standard.
 2.  Filtra i dati nel tuo output della CLI. Ad esempio, filtra in base ai dettagli dell'immagine per visualizzare un sottoinsieme specifico di immagini utilizzando la condizione `if gt` del template Go.
 
 Puoi utilizzare l'opzione formato con i seguenti comandi {{site.data.keyword.registrylong_notm}}. Fai clic su un comando per visualizzare un elenco di campi disponibili e i relativi tipi di dati.
@@ -59,7 +59,7 @@ I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazio
     ```
     {: pre}
 
-    Output di esempio:
+    **Output di esempio**
 
     ```
     example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
@@ -78,7 +78,7 @@ I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazio
     ```
     {: pre}
 
-    Output di esempio:
+    **Output di esempio**
 
     ```
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
@@ -89,11 +89,10 @@ I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazio
 
     ```
     ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-
     ```
     {: pre}
 
-    Output di esempio:
+    **Output di esempio**
 
     ```
     map[9080/tcp: 9443/tcp:]
@@ -107,7 +106,7 @@ I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazio
     ```
     {: pre}
 
-    Output di esempio:
+    **Output di esempio**
 
     ```
     0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
@@ -123,14 +122,15 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 
 |Campo|Tipo|Descrizione|
 |-----|----|-----------|
-|`Created`|Numero intero (64 bit)|Visualizza quando è stata creata l'immagine, espresso in numero di secondi in [ora Unix](https://en.wikipedia.org/wiki/Unix_time).|
+|`Created`|Numero intero (64 bit)|Visualizza quando è stata creata l'immagine, espresso in numero di secondi in [ora
+UNIX](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|Stringa|Visualizza l'identificativo univoco per un'immagine.|
 |`Spazio dei nomi `|Stringa|Visualizza lo spazio dei nomi in cui è memorizzata l'immagine.|
 |`Repository`|Stringa|Visualizza il repository dell'immagine.|
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`Tag`|Stringa|Visualizza la tag dell'immagine.|
 |`SecurityStatus`|Struct|Visualizza lo stato di vulnerabilità per l'immagine. Puoi filtrare e formattare i seguenti valori: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Gli stati possibili sono descritti in [Revisione di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tabella 1. Campi e tipi di dati disponibili nel comando ibmcloud cr image-list." caption-side="top"}
+{: caption="Tabella 1. Campi e tipi di dati disponibili nel comando <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Opzioni e tipi di dati del template Go nel comando `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -143,7 +143,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`ID`|Stringa|Visualizza l'identificativo univoco per un'immagine.|
 |`Parent`|Stringa|Visualizza l'ID dell'immagine principale utilizzata per creare questa immagine.|
 |`Comment`|Stringa|Visualizza la descrizione dell'immagine.|
-|`Created`|Stringa|Visualizza la [data/ora Unix](https://en.wikipedia.org/wiki/Unix_time) in cui è stata creata l'immagine.|
+|`Created`|Stringa|Visualizza la [data/ora UNIX](https://en.wikipedia.org/wiki/Unix_time) in cui è stata creata l'immagine.|
 |`Container`|Stringa|Visualizza l'ID del contenitore che ha creato l'immagine.|
 |`ContainerConfig`|Oggetto|Visualizza la configurazione predefinita per i contenitori avviati da questa immagine. Vedi i dettagli del campo in [Config](registry_cli_reference.html#config).|
 |`DockerVersion`|Stringa|Visualizza la versione Docker utilizzata per creare questa immagine.|
@@ -155,7 +155,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`VirtualSize`|Numero intero (64 bit)|Visualizza la somma delle dimensioni di ogni livello nell'immagine in byte.|
 |`RootFS`|Oggetto|Visualizza i metadati che descrivono il file system root per l'immagine. Vedi i dettagli del campo in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabella 2. Campi e tipi di dati disponibili nel comando ibmcloud cr image-inspect." caption-side="top"}
+{: caption="Tabella 2. Campi e tipi di dati disponibili nel comando <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
 
@@ -173,7 +173,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`StdinOnce`|Booleano|Visualizza _true_ se il flusso di input standard viene chiuso dopo che il client collegato si disconnette e _false_ se il flusso di input standard rimane aperto.|
 |`Env`|Array di stringhe|Visualizza l'elenco di variabili di ambiente in forma di coppie chiave-valore.|
 |`Cmd`|Array di stringhe|Descrive i comandi e gli argomenti passati a un contenitore che devono essere eseguiti all'avvio del contenitore.|
-|`Healthcheck`|Oggetto|Descrive come controllare l'integrità del contenitore. Vedi i dettagli del campo in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Oggetto|Descrive come controllare che il contenitore sta funzionando correttamente. Vedi i dettagli del campo in [Healthcheck](registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Booleano|Visualizza true se il comando è già con escape (specifico di Windows).|
 |`Immagine`|Stringa|Visualizza il nome dell'immagine che è stata passata dall'operatore.|
 |`Volumes`|Associazione chiave-valore|Visualizza l'elenco di montaggi di volume che sono montati in un contenitore.|
@@ -186,7 +186,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`StopSignal`|Stringa|Descrive il segnale di arresto UNIX da inviare all'arresto del contenitore.|
 |`StopTimeout`|Numero intero|Visualizza il timeout in secondi per arrestare un contenitore.|
 |`Shell`|Array di stringhe|Visualizza il formato shell di RUN, CMD, ENTRYPOINT.|
-{: caption="Tabella. " caption-side="top"}
+{: caption="Tabella 3. Campi e tipi di dati disponibili in Config. " caption-side="top"}
 
 #### Healthcheck
 
@@ -195,7 +195,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`Test`|Array di stringhe|Visualizza come eseguire il test del controllo di integrità. Le opzioni disponibili sono:<ul><li>{}: ereditare il controllo di integrità</li><li>{"NONE"}: il controllo di integrità è disabilitato</li><li>{"CMD", args...}: eseguire gli argomenti direttamente</li><li>{"CMD-SHELL", command}: eseguire il comando con la shell predefinita del sistema</li></ul>|
 |`Interval`|Numero intero (64 bit)|Visualizza il tempo di attesa tra due controlli di integrità in nanosecondi.|
 |`Timeout`|Numero intero (64 bit)|Visualizza il tempo di attesa prima di considerare come non riuscito il controllo di integrità in nanosecondi.|
-|`Retries`|Numero intero|Visualizza il numero di errori consecutivi necessari per considerare un contenitore come non integro.|
+|`Retries`|Numero intero|Visualizza il numero di errori consecutivi necessari per considerare un contenitore come non funzionante correttamente.|
 {: caption="Tabella 4. Campi e tipi di dati disponibili nella struttura Healthcheck." caption-side="top"}
 
 #### RootFS
@@ -216,8 +216,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |Campo|Tipo|Descrizione|
 |-----|----|-----------|
 |`ID`|Stringa|Visualizza l'identificativo univoco per un token.|
-|`Expiry`|Numero intero (64 bit)|Visualizza la [data/ora Unix](https://en.wikipedia.org/wiki/Unix_time) in cui scade il token.|
-|`ReadOnly`|Booleano|Visualizza _true_ quando puoi eseguire solo il pull delle immagini e _false_ quando puoi
- eseguire il push e il pull di immagini da e verso il tuo spazio dei nomi.|
+|`Expiry`|Numero intero (64 bit)|Visualizza la [data/ora UNIX](https://en.wikipedia.org/wiki/Unix_time) in cui scade il token.|
+|`ReadOnly`|Booleano|Visualizza _true_ quando puoi eseguire solo il pull delle immagini e _false_ quando puoi eseguire il push e il pull di immagini da e verso il tuo spazio dei nomi.|
 |`Descrizione`|Stringa|Visualizza la descrizione del token.|
-{: caption="Tabella 6. Campi e tipi di dati disponibili nel comando ibmcloud cr token-list." caption-side="top"}
+{: caption="Tabella 6. Campi e tipi di dati disponibili nel comando <codeibmcloud cr token-list</code>." caption-side="top"}>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -36,7 +36,7 @@ lastupdated: "2018-07-23"
 
 1.  [container-registry プラグインをインストールします。
 ](index.html#registry_cli_install)
-2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 このステップを実行しない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用するか root として実行する必要があります。
+2.  オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 この手順を行わない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用して実行するか root として実行する必要があります。
 
 これで、{{site.data.keyword.registrylong_notm}} 専用レジストリーに固有の名前空間をセットアップできます。
 
@@ -104,7 +104,7 @@ container-registry プラグインは、もはや必要がない場合、アン�
 Docker イメージを安全に保管するには、{{site.data.keyword.registrylong_notm}} 専用レジストリー内に名前空間を作成する必要があります。
 {:shortdesc}
 
-開始前に、以下のことを行います。
+**始めに**
 
 -   [{{site.data.keyword.Bluemix_notm}} CLI と container-registry プラグインをインストールします](#registry_cli_install)。
 -   [レジストリー名前空間の使用方法と命名について計画します](registry_overview.html#registry_namespaces)。

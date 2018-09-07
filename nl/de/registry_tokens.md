@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ API-Schlüssel sind mit Ihrem Konto verknüpft und können im gesamten {{site.da
 
 Registry-Tokens sind ausschließlich für {{site.data.keyword.registrylong_notm}} bereichsorientiert festgelegt. Sie können sie auf Lesezugriff begrenzen und Sie können auswählen, ob ein Ablaufdatum gelten soll.
 
-Weitere Informationen zu API-Schlüsseln für {{site.data.keyword.registrylong_notm}} finden Sie in [Mit API-Schlüsseln arbeiten](../../iam/apikeys.html#manapikey).
+Weitere Informationen zu API-Schlüsseln für {{site.data.keyword.registrylong_notm}} finden Sie in [Mit API-Schlüsseln arbeiten](/docs/iam/apikeys.html#manapikey).
 
 Bevor Sie anfangen, müssen Sie zunächst [{{site.data.keyword.registrylong_notm}} und die Docker-CLI installieren](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ Durch die Verwendung von API-Schlüsseln können Sie Push- und Pull-Operationen 
 Sie können einen API-Schlüssel erstellen, mit dem Sie sich dann bei Ihrer Registry anmelden können.
 {:shortdesc}
 
-Informationen zum Erstellen eines IAM-API-Schlüssels finden Sie in [API-Schlüssel erstellen](../../iam/userid_keys.html#creating-an-api-key).
+Informationen zum Erstellen eines IAM-API-Schlüssels finden Sie in [API-Schlüssel erstellen](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Zugriff mithilfe eines API-Schlüssels automatisieren
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <eigener API-Schlüssel> <Registry-URL>
 ```
 {: pre}
 
-Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.Bluemix_notm}}-Plattform erstellen](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.Bluemix_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Zugriff auf eigene Namensbereiche durch Tokens automatisieren
@@ -161,10 +161,10 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 
 4.  Verwenden Sie das Token als Bestandteil des Befehls `docker login`. Ersetzen Sie &lt;tokenwert&gt; durch den im vorherigen Schritt abgerufenen Tokenwert und &lt;registry_url&gt; durch die URL der Registry, in der Ihre Namensbereiche eingerichtet wurden.
 
-    -   Namensbereiche in der Region 'Vereinigte Staaten (Süden)': registry.ng.bluemix.net
-    -   Namensbereiche in der Region 'Großbritannien (Süden)': registry.eu-gb.bluemix.net
-    -   Namensbereiche in der Region 'Zentraleuropa': registry.eu-de.bluemix.net
-    -   Namensbereiche in der Region 'Asien-Pazifik (Süden)': registry.au-syd.bluemix.net
+    -   Namensbereiche in der Region 'Vereinigte Staaten (Süden)': `registry.ng.bluemix.net`
+    -   Namensbereiche in der Region 'Großbritannien (Süden)': `registry.eu-gb.bluemix.net`
+    -   Namensbereiche in der Region 'Mitteleuropa': `registry.eu-de.bluemix.net`
+    -   Namensbereiche in der Region 'Asien-Pazifik (Süden)': `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <tokenwert> <registry_url>

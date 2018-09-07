@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -103,7 +103,7 @@ Si ya no necesita el plug-in container-registry, puede desinstalarlo.
 Para almacenar de forma segura las imágenes de Docker, debe crear un espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Antes de empezar:
+**Antes de empezar**
 
 -   [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in container-registry](#registry_cli_install).
 -   [Planifique cómo utilizar y denominar los espacios de nombres de su registro](registry_overview.html#registry_namespaces).

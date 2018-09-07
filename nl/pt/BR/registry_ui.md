@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-20"
 
 
 ---
@@ -32,7 +32,9 @@ imagens com varreduras incompletas não são bloqueadas para implementação.
 
 Para visualizar a interface gráfica com o usuário, use as etapas a seguir:
 
-1.  Efetue login no console do {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) com seu IBMid.
+1.  Efetue login no console do {{site.data.keyword.Bluemix_notm}}
+([https://console.bluemix.net ![Ícone de link externo](../../icons/launch-glyph.svg "Íconede link externo")](https://console.bluemix.net)) com o IBMid.
+
 2.  Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
 3.  Clique em **Catálogo**.
 4.  Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.

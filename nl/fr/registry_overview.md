@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -202,7 +202,8 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
     ```
     {: pre}
 
-    Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.{:tip}
+    Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
+    {:tip}
 
 
 ## Notions élémentaires
@@ -211,7 +212,8 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 Préparez-vous à stocker en sécurité et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
 {:shortdesc}
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+{:tip}
 
 
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
@@ -243,7 +245,7 @@ environnement de transfert.</dd>
 
 <dl>
   <dt>Image</dt>
-  <dd>Il s'agit d'un système de fichiers et des paramètres d'exécution correspondants qui sont utilisés dans un module d'exécution de conteneur pour créer un conteneur. Le système de fichiers se compose d'une série de couches, combinées lors de l'exécution, qui sont créées à mesure que l'image est générée par des mises à jour successives. L'image ne conserve pas l'état lors de l'exécution du conteneur. </dd>
+  <dd>Il s'agit d'un système de fichiers et des paramètres d'exécution correspondants qui sont utilisés dans un module d'exécution de conteneur pour créer un conteneur. Le système de fichiers se compose d'une série de couches, combinées lors de l'exécution, qui sont créées à mesure que l'image est générée par des mises à jour successives. L'image ne conserve pas l'état lors de l'exécution du conteneur.</dd>
 </dl>
 
 <dl>
@@ -271,8 +273,7 @@ environnement de transfert. Si vous désirez utiliser le registre dans plusieurs
 
 Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
 
-Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants. Si vous êtes un client existant d'{{site.data.keyword.containerlong_notm}}  qui utilise des [groupes de conteneurs uniques et évolutifs](../../containers/cs_classic.html),
-vous disposez déjà d'un espace de nom. Vous pouvez en créer d'autres, mais vous ne pouvez exécuter la commande `cf ic namespace set` que pour un seul espace de nom à la fois.
+Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants.
 {:tip}
 
 Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :

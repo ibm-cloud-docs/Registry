@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -33,7 +33,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1.  Instale la CLI de [{{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} **ibmcloud**.
+1.  Instale la CLI de [{{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} `ibmcloud`.
 2.  Instale el plug-in container-registry:
 
     ```
@@ -68,10 +68,11 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 
 
+
 ## Extraiga imágenes de otro registro a su máquina local
 {: #registry_images_pulling}
 
-1.  [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/products/docker-toolbox).
+1.  [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/).
 
 2.  Descargue (_pull_) la imagen en su máquina local. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, por ejemplo, _latest_.
 
@@ -144,7 +145,6 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 -   [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html).
 -   [Revise sus planes de servicio y el uso de los mismos](registry_overview.html#registry_plans)
 -   [Almacene y gestione más imágenes en el espacio de nombres](registry_images_.html).
--   [Cree y despliegue un
-contenedor a partir de la imagen en un clúster Kubernetes](../../containers/cs_clusters.html).
+-   [Configuración de clústeres y nodos de trabajador](/docs/containers/cs_clusters.html#clusters).
 
 

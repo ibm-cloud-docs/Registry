@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -22,13 +22,12 @@ lastupdated: "2018-07-23"
 Vous pouvez stocker et partager de manière sécurisée des images Docker avec d'autres utilisateurs en ajoutant ces images à votre espace de nom dans {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
-Chaque image que vous désirez ajouter à votre espace de nom doit d'abord exister sur votre machine locale. Vous pouvez soit télécharger
-vers votre machine locale (par commande pull) une image depuis un autre référentiel, soit générer votre propre image depuis un
-Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger
+Chaque image que vous voulez ajouter à votre espace de nom doit d'abord exister sur votre ordinateur local. Vous pouvez télécharger une image sur votre ordinateur local (par commande pull) depuis un autre référentiel ou générer votre propre image depuis un fichier Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger
 (par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+{:tip}
 
 
 ## Extraction d'images depuis un autre registre
@@ -52,11 +51,11 @@ Docker est configuré pour exiger des autorisations root, vous devez exécuter l
 
 Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](index.html#registry_images_pulling) dans le guide de mise en route.
 
-Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.{:tip}
+Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.
+{:tip}
 
 
-Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer
-(par commande push) depuis votre machine locale vers votre espace de nom.
+Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer (par commande push) depuis votre ordinateur local vers votre espace de nom.
 
 ## Envoi par commande push d'images Docker à votre espace de nom
 {: #registry_images_pushing}
@@ -70,7 +69,7 @@ Avant de commencer :
 
 - [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Extrayez par commande pull](#registry_images_pulling) ou [générez](#registry_images_creating) une image sur votre machine locale et balisez-la avec vos informations d'espace de nom.
+- [Extrayez par commande pull](#registry_images_pulling) ou [générez](#registry_images_creating) une image sur votre ordinateur local et étiquetez-la avec vos informations d'espace de nom.
 - [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
 Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
 `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
@@ -80,26 +79,28 @@ Docker est configuré pour exiger des autorisations root, vous devez exécuter l
 
 Pour télécharger (par push) une image, procédez comme suit.
 
-1. Connectez-vous à l'interface de ligne de commande (CLI) :
+1. Connectez-vous à l'interface de ligne de commande :
 
   ```
   ibmcloud cr login
   ```
   {: pre}
 
-  Vous devez vous connecter si vous extrayez une image depuis votre registre {{site.data.keyword.registrylong_notm}} privé.{:tip}
+  Vous devez vous connecter si vous extrayez une image depuis votre registre {{site.data.keyword.registrylong_notm}} privé.
+  {:tip}
 
 2. Si vous désirez afficher tous les espaces de nom disponibles dans votre compte, exécutez la commande `ibmcloud cr namespace-list`.
 3. [Téléchargez l'image par commande push vers votre espace de nom.](index.html#registry_images_pushing)
 
-  Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.{:tip}
+  Si vous rencontrez le message "Non autorisé : authentification requise" ou "Refusé : l'accès demandé à la ressource a été refusé", exécutez la commande `ibmcloud cr login`.
+  {:tip}
 
 
 Après avoir envoyé à votre registre privé l'image par commande push, vous pouvez :
 
 - [Gérer la sécurité avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
-cluster et utiliser cette image pour déployer un conteneur](../../containers/container_index.html) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+cluster et utiliser cette image pour déployer un conteneur](/docs/containers/container_index.html#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Copie d'images entre registres
 {: #registry_images_copying}
@@ -129,12 +130,12 @@ Après avoir copié l'image, vous pouvez :
 
 - [Gérer la sécurité des images avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
-cluster et utiliser cette image pour déployer un conteneur](../../containers/container_index.html) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+cluster et utiliser cette image pour déployer un conteneur](/docs/containers/container_index.html#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Génération d'images Docker pour les utiliser avec votre espace de nom
 {: #registry_images_creating}
 
-Vous pouvez générer une image Docker directement dans {{site.data.keyword.Bluemix_notm}} ou créer votre propre image Docker sur votre machine locale et la télécharger (par push) dans votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
+Vous pouvez générer une image Docker directement dans {{site.data.keyword.Bluemix_notm}} ou créer votre propre image Docker sur votre ordinateur local et la télécharger (par commande push) dans votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Avant de commencer :
@@ -210,7 +211,7 @@ que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https
    Pour plus d'informations sur la commande `ibmcloud cr build`, voir [Interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Pour générer et tester votre image localement avant de la transférer par push à {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
-    1. Générez l'image depuis votre fichier Dockerfile sur votre machine locale et balisez-la avec votre nom d'image.
+    1. Générez l'image depuis votre fichier Dockerfile sur votre ordinateur local et étiquetez-la avec votre nom d'image.
 
       ```
       docker build -t <image_name> <directory>
@@ -219,7 +220,7 @@ que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https
 
       où _&lt;image_name&gt;_ est le nom de votre image et _&lt;directory&gt;_ le chemin d'accès au répertoire.
 
-    2. Facultatif : testez votre image sur votre machine locale avant de la transférer par push vers votre espace de nom.
+    2. Facultatif : testez votre image sur votre ordinateur local avant de la transférer par commande push vers votre espace de nom.
 
       ```
       docker run <image_name>
@@ -298,8 +299,8 @@ Pour supprimer une image à l'aide de l'interface graphique, procédez comme sui
 2.  Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3.  Cliquez sur **Catalogue**.
 4.  Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
-5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche. 
-6.  Cliquez sur la ligne contenant le référentiel qui contient l'image que vous souhaitez supprimer. 
+5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche.
+6.  Cliquez sur la ligne contenant le référentiel qui contient l'image que vous souhaitez supprimer.
 7.  Sur la ligne qui contient l'image à supprimer, cliquez sur l'icône **Ouvrir et fermer la liste des options**, sélectionnez **Supprimer l'image**. Cette action ne peut pas être annulée, par conséquent, vérifiez que l'image sélectionnée est bien celle que vous souhaitez supprimer. Cliquez sur **Supprimer**.
 
 
@@ -312,7 +313,7 @@ Vous pouvez supprimer les référentiels privés dont vous n'avez plus besoin, a
 Lorsque vous supprimez un référentiel, toutes les images qu'il contient sont également supprimées. Cette action est irréversible.
 {:tip}
 
-Avant de commencer, sauvegardez les images que vous souhaitez conserver. 
+Avant de commencer, sauvegardez les images que vous souhaitez conserver.
 
 Pour supprimer un référentiel à l'aide de l'interface graphique, procédez comme suit :
 
@@ -320,6 +321,6 @@ Pour supprimer un référentiel à l'aide de l'interface graphique, procédez co
 2.  Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3.  Cliquez sur **Catalogue**.
 4.  Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
-5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche. 
+5.  Cliquez sur **Référentiels privés**. La liste de vos référentiels privés s'affiche.
 6.  Sur la ligne qui contient le référentiel privé à supprimer, cliquez sur l'icône **Ouvrir et fermer la liste des options**, sélectionnez **Supprimer le référentiel**. Cette action ne peut pas être annulée, par conséquent, vérifiez que le référentiel sélectionné est bien celui que vous souhaitez supprimer. Cliquez sur **Supprimer**.
 

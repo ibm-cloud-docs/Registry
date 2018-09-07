@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -34,8 +34,7 @@ Vous pouvez limiter le volume de stockage et de trafic d'extraction (pull)
 de vos images privées en définissant vos propres limites de quota.
 {:shortdesc}
 
-Avant de commencer, vérifiez que vous êtes le [propriétaire
-ou le responsable de la facturation pour le compte {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) dans lequel vous voulez définir le quota.
+Avant de commencer, vérifiez que vous êtes le [propriétaire ou le responsable de la facturation pour le compte {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) pour lequel vous voulez définir le quota.
 
 Lorsque vous procédez à la mise à niveau vers le plan standard
 d'{{site.data.keyword.registryshort_notm}}, vous
@@ -168,7 +167,8 @@ Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix
     {: pre}
 
     En fonction de la taille de l'image, le retrait de cette dernière ainsi que la mise à disposition du
-stockage peuvent prendre un certain temps.{:tip}
+stockage peuvent prendre un certain temps.
+    {:tip}
 
 3.  Examinez votre utilisation du quota de stockage.
 
@@ -178,7 +178,8 @@ stockage peuvent prendre un certain temps.{:tip}
     {: pre}
 
 4. Vous ne pouvez pas réduire votre utilisation du trafic d'extraction (pull)
-dans une période de facturation.{:tip}
+dans une période de facturation.
+   {:tip}
 
     Pour continuer à extraire des images de vos espaces de nom, sélectionnez l'une des options suivantes.
 

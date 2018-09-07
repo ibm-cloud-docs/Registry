@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -38,7 +38,7 @@ imagens do Docker no registro privado do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 1.  [Instale o plug-in de registro de contêiner.](index.html#registry_cli_install)
-2.  Opcional: [configure o cliente Docker para executar comandos sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Quando essa etapa não é executada, deve-se executar os comandos `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com **sudo** ou como raiz.
+2.  Opcional: [configure o cliente Docker para executar comandos sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se você não realizar essa etapa, deverá executar os comandos `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com **sudo** ou como raiz.
 
 Agora é possível configurar seu próprio namespace no registro privado do {{site.data.keyword.registrylong_notm}}.
 
@@ -107,7 +107,7 @@ Se você não precisar mais do plug-in de registro de contêiner, será possíve
 Para armazenar com segurança as suas imagens do Docker, deve-se criar um namespace no registro privado do {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Antes de iniciar:
+**Antes de iniciar**
 
 -   [Instale a CLI do {{site.data.keyword.Bluemix_notm}} e o plug-in de registro de contêiner](#registry_cli_install).
 -   [Planeje como usar e nomear seus namespaces de registro](registry_overview.html#registry_namespaces).

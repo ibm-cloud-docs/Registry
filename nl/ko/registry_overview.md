@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -55,7 +55,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 다음 표에 사용 가능한 {{site.data.keyword.registrylong_notm}} 서비스 플랜 및 해당 특성이 표시됩니다. 서비스 플랜 한계를 초과할 때 발생하는 문제와 비용 청구 방식에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계와 비용 청구](#registry_plan_billing)를 참조하십시오.
 
-|특성           |무료|표준    |
+|특성|무료|표준|
 |---------------|----|--------|
 |설명|Docker 이미지를 안전하게 저장하고 공유하도록 {{site.data.keyword.registrylong_notm}}의 개인용 지스트리를 사용해 보십시오. 이 플랜은 {{site.data.keyword.registrylong_notm}}에서 첫 번째 네임스페이스를 설정할 때 기본으로 적용되는 서비스 플랜입니다.|무제한의 스토리지 및 가져오기 트래픽 사용량으로 {{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하십시오.|
 |이미지의 스토리지 양|500MB|무제한|
@@ -163,7 +163,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 {{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다.
 {:shortdesc}
 
-사용 중인 서비스 플랜을 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오. 
+사용 중인 서비스 플랜을 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오.
 
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
@@ -219,7 +219,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>이미지</dt>
-  <dd>컨테이너를 작성하기 위해 컨테이너 런타임 내에서 사용되는 파일 시스템 및 해당 실행 매개변수입니다. 이 파일 시스템은 이미지가 연속적인 업데이트를 통해 빌드되면서 작성된, 런타임 시에 결합되는 일련의 계층으로 구성되어 있습니다. 이미지는 컨테이너 실행 상태를 보존하지 않습니다. </dd>
+  <dd>컨테이너를 작성하기 위해 컨테이너 런타임 내에서 사용되는 파일 시스템 및 해당 실행 매개변수입니다. 이 파일 시스템은 이미지가 연속적인 업데이트를 통해 빌드되면서 작성된, 런타임 시에 결합되는 일련의 계층으로 구성되어 있습니다. 이미지는 컨테이너 실행 상태를 보존하지 않습니다.</dd>
 </dl>
 
 <dl>
@@ -245,7 +245,7 @@ Docker 고유 용어에 대해 자세히 알아보려면 [Docker 용어집을 �
 
 IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지 않아도 됩니다.
 
-계정에 대한 네임스페이스 설정 여부가 확실하지 않은 경우에는 `ibmcloud cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오. [단일 및 확장 가능한 컨테이너 그룹](../../containers/cs_classic.html)을 사용하는 기존 {{site.data.keyword.containerlong_notm}} 고객인 경우 이미 네임스페이스가 있습니다. 추가 네임스페이스를 작성할 수 있지만, 두 개 이상의 네임스페이스에 대해서는 `cf ic namespace set`를 실행할 수 없습니다.
+계정에 대한 네임스페이스 설정 여부가 확실하지 않은 경우에는 `ibmcloud cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오.
 {:tip}
 
 네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
@@ -294,7 +294,7 @@ ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-다른 지역을 대상으로 지정한 후 `ibmcloud cr login` 명령을 실행하여 레지스트리에 다시 로그인하십시오. 
+다른 지역을 대상으로 지정한 후 `ibmcloud cr login` 명령을 실행하여 레지스트리에 다시 로그인하십시오.
 
 ### 글로벌 레지스트리
 {: #registry_regions_global}
@@ -302,7 +302,7 @@ ibmcloud cr region-set eu-central
 글로벌 레지스트리가 사용 가능하며, 해당 이름(`registry.bluemix.net`)에 있는 지역은 포함하지 않습니다. IBM 제공 공용 이미지는 이 레지스트리에서 호스팅됩니다. 네임스페이스를 설정하거나 이미지에 태그를 지정하고 이 이미지를 레지스트리로 푸시하여 고유 이미지를 관리하려면 [로컬 지역 레지스트리](#registry_regions_local)를 사용하십시오.
 {:shortdesc}
 
-`ibmcloud cr region-set` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정할 수 있습니다. 
+`ibmcloud cr region-set` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정할 수 있습니다.
 
 예를 들어, 글로벌 레지스트리를 대상으로 지정하려면 다음 명령을 실행하십시오.
 
@@ -311,6 +311,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)를 참조하십시오. 
+`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)를 참조하십시오.
 
-글로벌 레지스트리를 대상으로 지정한 후에는 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 `ibmcloud cr login` 명령을 실행하여 로컬 Docker 디먼을 글로벌 레지스트리에 로그인시키십시오. 
+글로벌 레지스트리를 대상으로 지정한 후에는 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 `ibmcloud cr login` 명령을 실행하여 로컬 Docker 디먼을 글로벌 레지스트리에 로그인시키십시오.

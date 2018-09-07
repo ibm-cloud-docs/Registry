@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -36,7 +36,9 @@ exemplo, nomes ou rótulos de imagem).
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1.  Instale a [CLI do {{site.data.keyword.Bluemix_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://clis.ng.bluemix.net/ui/home.html) para que seja possível executar os comandos **ibmcloud** do {{site.data.keyword.Bluemix_notm}}.
+1.  Instale a CLI do [{{site.data.keyword.Bluemix_notm}}
+![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://clis.ng.bluemix.net/ui/home.html) para que os
+comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados.
 2.  Instale o plug-in de registro de contêiner:
 
     ```
@@ -71,10 +73,11 @@ exemplo, nomes ou rótulos de imagem).
 
 
 
+
 ## Puxar imagens de outro registro para sua máquina local
 {: #registry_images_pulling}
 
-1.  [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/products/docker-toolbox).
+1.  [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/).
 
 2.  Faça download (_puxe_) da imagem para sua máquina local. Substitua
 _&lt;source_image&gt;_ pelo repositório da imagem e
@@ -151,7 +154,6 @@ Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_
 -   [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).
 -   [Revisar seus planos de serviço e uso](registry_overview.html#registry_plans)
 -   [Armazenar e gerenciar mais imagens em seu namespace](registry_images_.html).
--   [Criar e implementar um
-contêiner de sua imagem para um cluster do Kubernetes](../../containers/cs_clusters.html).
+-   [Configurando os clusters e os nós do trabalhador](/docs/containers/cs_clusters.html#clusters).
 
 

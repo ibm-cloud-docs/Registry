@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -19,16 +19,16 @@ lastupdated: "2018-07-25"
 # 關於 {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-使用 {{site.data.keyword.registrylong}} 在高可用性且可擴充的架構中，安全地儲存及存取專用 Docker 映像檔。
+使用 {{site.data.keyword.registrylong}}，在高可用性且可擴充的架構中，安全地儲存及存取專用 Docker 映像檔。
 {:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶、高可用性且可擴充的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用專用登錄。
 
-<img src="images/registry_architecture.png" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 同時包含專用和公用登錄，以及用來與服務互動的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔以及將映像檔推送至其中，也可以取回公用儲存庫。IBM Cloud Web 使用者介面（主控台）可與 Container Registry API 互動，以列出映像檔。Container Registry CLI 可與 API 互動，以列出、建立、檢查及移除映像檔，以及其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫中取回映像檔，並將其推送至其他儲存庫。"/>
+<img src="images/registry_architecture.png" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 同時包含專用和公用登錄，以及用來與服務互動的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔以及將映像檔推送至其中，也可以取回公用儲存庫。IBM Cloud Web 使用者介面（主控台）可與 Container Registry API 互動，以列出映像檔。Container Registry CLI 可與 API 互動，以列出、建立、檢查及移除映像檔，以及其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫中取回映像檔，並將其推送至其他登錄。"/>
 
 **圖 1. {{site.data.keyword.registrylong_notm}} 如何與您的 Docker 映像檔互動**
 
-Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfile 建立的，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。映像檔一般儲存在登錄中，而登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。使用 {{site.data.keyword.registrylong_notm}}，只有具有 {{site.data.keyword.Bluemix_notm}} 帳戶存取權的使用者才能存取映像檔。
+Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfile 建立，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。映像檔一般儲存在登錄中，而登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。使用 {{site.data.keyword.registrylong_notm}} 時，只有具有 {{site.data.keyword.Bluemix_notm}} 帳戶存取權的使用者才能存取映像檔。
 
 將映像檔推送至 {{site.data.keyword.registrylong_notm}} 時，您可以受益於內建的「漏洞警告器」特性，它們會掃描潛在的安全問題及漏洞。「漏洞警告器」會檢查特定 Docker 基礎映像檔以尋找有漏洞的套件，以及應用程式配置設定中的已知漏洞。發現漏洞時，會提供漏洞的相關資訊。您可以使用此資訊來解決安全問題，以避免從有漏洞的映像檔部署容器。
 
@@ -37,8 +37,8 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 |好處|說明|
 |-------|-----------|
 |高可用性且可擴充的專用登錄|<ul><li>在 IBM 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>安全地儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。</li></ul>|
-|漏洞警告器的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統的特定建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
-|儲存空間及取回資料流量的配額限制|<ul><li>受益於專用映像檔的免費儲存空間及取回資料流量，直到達到免費配額。</li><li>設定每個月的儲存空間量及取回資料流量的自訂配額限制，以避免超出偏好的付費等級。</li></ul>|
+|漏洞警告器的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統特有的建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
+|儲存空間及取回資料流量的配額限制|<ul><li>受益於專用映像檔的免費儲存空間及取回資料流量，直到達到免費配額為止。</li><li>設定每個月的儲存空間量及取回資料流量的自訂配額限制，以避免超出偏好的付費等級。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 的好處" caption-side="top"}
 
 ## 服務方案
@@ -71,7 +71,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 > 您將映像檔推送至以 Ubuntu 映像檔為其礎的名稱空間。Ubuntu 映像檔包含數層。因為您的帳戶中還沒有這些層，所以會將這些層所需的儲存空間量加到您的每月用量。
 >
-> 之後，您會建立第二個以 Ubuntu 映像檔為其礎的映像檔。例如，藉由將其他指令或檔案新增至 Dockerfile，來變更 Ubuntu 基礎映像檔。每一個變更都代表新的映像檔層。當您推送第二個映像檔時，{{site.data.keyword.registrylong_notm}} 認識到基礎 Ubuntu 映像檔的所有層都已儲存在帳戶中。第二次儲存這些層時不會向您收費，即使您已將映像檔推送至另一個名稱空間。{{site.data.keyword.registrylong_notm}} 會判斷所有新層的大小，並將儲存空間量加到您的每月用量。
+> 後來，您建立了第二個以 Ubuntu 映像檔為其礎的映像檔。您變更 Ubuntu 基礎映像檔，例如，藉由將其他指令或檔案新增至 Dockerfile 來變更。每一個變更都代表新的映像檔層。當您推送第二個映像檔時，{{site.data.keyword.registrylong_notm}} 會認出基礎 Ubuntu 映像檔的所有層都已儲存在帳戶中。第二次儲存這些層時不會向您收費，即使您已將映像檔推送至另一個名稱空間。{{site.data.keyword.registrylong_notm}} 會判斷所有新層的大小，並將儲存空間量加到您的每月用量。
 
 ### 儲存空間及取回資料流量的計費
 {: #registry_billing_traffic}
@@ -81,7 +81,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 **儲存空間：**
 
-  每個 {{site.data.keyword.registrylong_notm}} 服務方案都會隨附特定儲存空間量，可用來將 Docker 映像檔安全地儲存至 {{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是一個月（730 小時）1GB 儲存空間的平均值。
+  每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔安全地儲存在 {{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是一個月（730 小時）1GB 儲存空間的平均值。
 
   標準方案的範例：
 
@@ -95,11 +95,11 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 **取回資料流量：**
 
-  每個 {{site.data.keyword.registrylong_notm}} 服務方案都包括特定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
+  每個 {{site.data.keyword.registrylong_notm}} 服務方案都包含一定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
 
   標準方案的範例：
 
-  > 在該月，您已取回包含總大小 14 GB 之層的映像檔。您的每月用量計算如下：
+  > 在該月，您已取回包含大小總計 14 GB 之層的映像檔。您的每月用量計算如下：
   >
   > 在標準方案中，每個月的前 5 GB 免費，因此會向您收取 9 GB (14 GB - 5 GB) 的費用。
 
@@ -108,12 +108,12 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 ### 儲存空間及取回資料流量的配額限制
 {: #registry_quota_limits}
 
-取決於選擇的服務方案而定，則在達到方案特定或自訂配額限制之前，可以將映像檔推送至名稱空間以及從中取回映像檔。
+視您選擇的服務方案而定，在達到方案特定或自訂配額限制之前，可以將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
 **儲存空間：**
 
-  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](registry_quota.html#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，則同時可以[增加此配額限制](registry_quota.html#registry_quota_set)，以重新啟用新映像檔的推送。
+  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](registry_quota.html#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](registry_quota.html#registry_quota_set)，以重新啟用新映像檔的推送。
 
   標準方案的範例：
 
@@ -161,7 +161,8 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
     ```
     {: pre}
 
-    如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.Bluemix_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。{:tip}
+    如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.Bluemix_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
+    {:tip}
 
 2.  升級為標準方案。
 
@@ -170,7 +171,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
     ```
     {: pre}
 
-    如果您有 {{site.data.keyword.Bluemix_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.Bluemix_notm}} 隨收隨付制或訂閱帳戶，再執行 `ibmcloud cr plan-upgrade`。
+    如果您有 {{site.data.keyword.Bluemix_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.Bluemix_notm}} 隨收隨付制或訂閱帳戶，然後才執行 `ibmcloud cr plan-upgrade`。
     {:tip}
 
 
@@ -209,17 +210,17 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 <dl>
   <dt>映像檔 (Image)</dt>
-  <dd>容器運行環境內用來建立容器的檔案系統及其執行參數。檔案系統包含一系列已建立的層（在執行時結合），因為映像檔是透過連續更新項目所建置。在容器執行時，映像檔不會保留狀態。</dd>
+  <dd>容器運行環境內用來建立容器的檔案系統及其執行參數。檔案系統包含一系列已建立的層（在執行時結合），這些層是隨著連續更新建置映像檔而建立。在容器執行時，映像檔不會保留狀態。</dd>
 </dl>
 
 <dl>
   <dt>標籤 (Tag)</dt>
-  <dd>標籤是儲存庫內映像檔的 ID。您可以使用標籤來識別儲存庫內相同基礎映像檔的不同版本。當您執行 Docker 指令、但未指定儲存庫映像檔的標籤時，依預設會使用以 <code>latest</code> 標記的映像檔。</dd>
+  <dd>標籤是儲存庫內映像檔的 ID。您可以使用標籤來識別儲存庫內相同基礎映像檔的不同版本。當您執行 Docker 指令但未指定儲存庫映像檔的標籤時，依預設會使用以 <code>latest</code> 標記的映像檔。</dd>
 </dl>
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。</dd>
+  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，而基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。</dd>
 </dl>
 
 若要進一步瞭解 Docker 特有術語，[請參閱 Docker 名詞解釋](https://docs.docker.com/glossary/)。
@@ -231,11 +232,12 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 {{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中安全地儲存及共用 Docker 映像檔。
 {:shortdesc}
 
-例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.Bluemix_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了該名稱的名稱空間。
+例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.Bluemix_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
 
 若只要使用 IBM 提供的公用映像檔，您不需要設定名稱空間。
 
-如果您不確定是否已為您的帳戶設定名稱空間，請執行 `ibmcloud cr namespace-list` 指令來擷取現有名稱空間資訊。如果您是使用[單一及可擴充容器群組](../../containers/cs_classic.html)的現有 {{site.data.keyword.containerlong_notm}} 客戶，則已設定名稱空間。您可以建立其他名稱空間，但無法對多個名稱空間執行 `cf ic namespace set`。{:tip}
+如果您不確定是否已為您的帳戶設定名稱空間，請執行 `ibmcloud cr namespace-list` 指令來擷取現有名稱空間資訊。
+{:tip}
 
 當您選擇名稱空間時，請考量下列規則：
 
@@ -244,7 +246,8 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 -   名稱空間的開頭必須至少使用一個字母或數字。
 -   名稱空間只能包含小寫字母、數字或底線 (_)。
 
-請不要將個人資訊放在名稱空間名稱中。{:tip}
+請不要將個人資訊放在名稱空間名稱中。
+{:tip}
 
 在設定第一個名稱空間之後，您會獲指派免費 {{site.data.keyword.registrylong_notm}} 服務方案（如果您尚未[升級方案](#registry_plan_upgrade)的話）。
 
@@ -266,7 +269,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 所有登錄構件的範圍設定為您目前使用中的特定地區登錄。例如，名稱空間、映像檔、記號、配額設定及方案設定必須全都針對每一個地區登錄個別管理。
 
-如果您要使用非當地地區的地區，則可以執行 `ibmcloud cr region-set` 指令，將目標設定為您要存取的地區。您可以在不含任何參數的情況下執行指令來取得可用地區的清單，也可以將地區指定為參數。
+如果您要使用非本端地區的地區，則可以執行 `ibmcloud cr region-set` 指令，將目標設定為您要存取的地區。您可以在不含任何參數的情況下執行指令來取得可用地區的清單，也可以將地區指定為參數。
 
 若要搭配參數執行指令，請將 _&lt;region&gt;_ 取代為地區的名稱，例如 `eu-central`。
 
@@ -301,4 +304,4 @@ ibmcloud cr region-set global
 
 如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)。
 
-將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，因此您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。
+將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，以便您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。

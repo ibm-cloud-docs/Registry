@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -32,7 +32,7 @@ Puoi limitare la quantità di archiviazione e di traffico di pull per le tue imm
 i tuoi propri limiti di quota.
 {:shortdesc}
 
-Prima di iniziare, assicurati di essere il [proprietario o il gestore fatturazione per l'account {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) in cui vuoi impostare la quota.
+Prima di iniziare, assicurati di essere il [proprietario o il gestore fatturazione per l'account {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) in cui vuoi impostare la quota.
 
 Quando esegui l'upgrade al piano standard {{site.data.keyword.registryshort_notm}},
 puoi beneficiare di quantità illimitate di archiviazione e traffico di pull per le tue immagini
@@ -43,7 +43,7 @@ servizio gratuito, puoi anche impostare quote personalizzate all'interno della t
 
 Per impostare una quota:
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -102,7 +102,7 @@ Puoi riesaminare i tuoi limiti di quota e controllare il tuo utilizzo corrente d
 per il tuo account.
 {:shortdesc}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login

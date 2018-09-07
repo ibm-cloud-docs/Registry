@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # Firma de imágenes para contenido de confianza
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} proporciona tecnología de contenido de confianza para que pueda firmar imágenes para asegurar la integridad de las imágenes en el espacio de nombres de registro. Al extraer y enviar imágenes firmadas, puede verificar que las imágenes las ha enviado la parte correcta, como el conjunto de herramientas de integración continua (CI). Para utilizar esta característica, debe tener Docker versión 1.11 o posterior. Puede obtener más información revisando la documentación de [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) y del [proyecto de Notary](https://github.com/theupdateframework/notary).
+{{site.data.keyword.registrylong}} proporciona tecnología de contenido de confianza para que pueda firmar imágenes para asegurar la integridad de las imágenes en el espacio de nombres de registro. Al extraer y enviar imágenes firmadas, puede verificar que las imágenes las ha enviado la parte correcta, como las herramientas de integración continua (CI). Para utilizar esta característica, debe tener Docker versión 1.11 o posterior. Puede obtener más información revisando la documentación de [Docker Content Trust ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/security/trust/content_trust/) y del [proyecto de Notary ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
 Al enviar la imagen con el contenido de confianza habilitado, el cliente de Docker también envía un objeto de metadatos firmado al servidor de confianza de {{site.data.keyword.Bluemix_notm}}. Al extraer una imagen etiquetada con Docker Content Trust habilitado, el cliente de Docker contacta con el servidor de confianza para establecer la última versión firmada de la etiqueta que ha solicitado, verifica la firma del contenido y descarga la imagen firmada.
@@ -29,7 +29,7 @@ Un repositorio puede contener contenido firmado y no firmado. Si tiene Docker Co
 
 Docker Content Trust utiliza un modelo de seguridad "trust on first use" ("confianza en el primer uso"). La clave de repositorio se extrae del servidor de confianza al extraer una imagen firmada de un repositorio por primera vez, y dicha clave se utiliza para verificar imágenes de ese repositorio en el futuro. Debe verificar que confíe en el servidor de confianza o en la imagen y su editor antes de extraer el repositorio por primera vez. Si la información de confianza del servidor está en peligro y no ha extraído una imagen del repositorio antes, el cliente de Docker podría extraer la información en peligro del servidor de confianza. Si los datos de confianza están en peligro después de extraer la imagen por primera vez, en extracciones posteriores, el cliente de Docker no podrá verificar los datos en peligro y no extraerá la imagen. Para obtener más información sobre cómo inspeccionar datos de confianza para una imagen, consulte [Visualización de imágenes firmadas](#trustedcontent_viewsigned).
 
-Para obtener más información sobre el modelo de seguridad "trust on first use" ("confianza en el primer uso"), consulte [The Update Framework (TUF)](https://theupdateframework.github.io/). 
+Para obtener más información sobre el modelo de seguridad "trust on first use" ("confianza en el primer uso"), consulte [The Update Framework (TUF) ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://theupdateframework.github.io/). 
 
 
 ## Configuración del entorno de contenido de confianza
@@ -78,7 +78,9 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
     ```
     {: pre}
 
-    La salida le indica que exporte la variable de entorno de Docker Content Trust. Por ejemplo:
+    La salida le indica que exporte la variable de entorno de Docker Content Trust. 
+    
+    **Ejemplo**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -100,7 +102,7 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
 
 Ahora está listo para enviar, extraer y gestionar imágenes firmadas de confianza.
 
-Durante la sesión con Docker Content Trust habilitado, si desea realizar una operación con el contenido de confianza habilitado (como extraer una imagen no firmada), utilice el distintivo `--disable-content-trust` con el mandato.
+Durante la sesión con Docker Content Trust habilitado, si desea realizar una operación con el contenido de confianza inhabilitado (como extraer una imagen no firmada), utilice el distintivo `--disable-content-trust` con el mandato.
 {: tip}
 
 ## Envío de una imagen firmada
@@ -140,7 +142,7 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 ## Gestión de contenido de confianza
 {: #trustedcontent_managetrust}
 
-Mediante los mandatos `docker trust`, puede ver quién ha firmado las imágenes, así como también revocar el estado del contenido de confianza. Para ejecutar los mandatos `docker trust`, necesita Docker 17.12 o posterior.
+Mediante los mandatos `docker trust`, puede ver quién ha firmado las imágenes y revocar el estado del contenido de confianza. Para ejecutar los mandatos `docker trust`, necesita Docker 17.12 o posterior.
 {:shortdesc}
 
 ### Visualización de imágenes firmadas
@@ -151,7 +153,9 @@ Puede revisar versiones firmadas de un repositorio de imágenes o de una etiquet
 
 1.  [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2.  Revise la información de la etiqueta, del resumen y del firmante para cada imagen. **Opcional**: Especifique la etiqueta _&lt;tag&gt;_ para ver información para dicha versión de la imagen.
+2.  Revise la información de la etiqueta, del resumen y del firmante para cada imagen. 
+
+    (Opcional) Especifique la etiqueta, _&lt;tag&gt;_, para ver información para dicha versión de la imagen.
 
     ```
     docker trust view <image>:<tag>
@@ -184,6 +188,7 @@ Antes de empezar, recupere la frase de contraseña de clave de repositorio que h
     ```
     {: codeblock}
 
+
 ## Copia de seguridad de claves de firma
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +203,7 @@ Al enviar por primera vez una imagen firmada a un repositorio nuevo, Docker Cont
 
 Debe realizar copia de seguridad de todas sus claves, y especialmente de la clave raíz. Si una clave se pierde o está en peligro, las [opciones de recuperación](ts_index.html#ts_recoveringtrustedcontent) estarán limitadas.
 
-Para hacer copia de seguridad de sus claves, consulte la [documentación de Docker Content Trust](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Para hacer copia de seguridad de sus claves, consulte la [documentación de Docker Content Trust ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Gestión de firmantes de confianza

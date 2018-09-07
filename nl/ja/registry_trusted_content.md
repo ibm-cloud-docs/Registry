@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # 信頼できるコンテンツのイメージへの署名
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} は、信頼できるコンテンツのテクノロジーを備えているので、レジストリー名前空間内のイメージに署名してイメージの完全性を保証できます。 署名付きのイメージをプル/プッシュすることで、イメージをプッシュしたのが継続的統合 (CI) ツールなどの正当なパーティーであることを検証できます。 この機能を使用するには、Docker バージョン 1.11 以降が必要です。 詳しくは、[Docker のコンテント・トラスト](https://docs.docker.com/engine/security/trust/content_trust/)および [Notary プロジェクト](https://github.com/theupdateframework/notary)の資料を参照してください。
+{{site.data.keyword.registrylong}} は、信頼できるコンテンツのテクノロジーを備えているので、レジストリー名前空間内のイメージに署名してイメージの完全性を保証できます。 署名付きのイメージをプル/プッシュすることで、イメージをプッシュしたのが継続的統合 (CI) ツールなどの正当なパーティーであることを検証できます。この機能を使用するには、Docker バージョン 1.11 以降が必要です。 詳しくは、[Docker のコンテント・トラスト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/content_trust/) および [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")<](https://github.com/theupdateframework/notary) の資料を参照してください。
 {:shortdesc}
 
 信頼できるコンテンツを有効にしてイメージをプッシュすると、Docker クライアントが、署名付きのメタデータ・オブジェクトも {{site.data.keyword.Bluemix_notm}} トラスト・サーバーにプッシュします。 Docker コンテント・トラストを有効にしてタグ付きのイメージをプルしようとすると、Docker クライアントが、要求されたタグの署名付きの最新バージョンをトラスト・サーバーに確認し、コンテンツの署名を検証し、署名付きのイメージをダウンロードします。
@@ -29,7 +29,7 @@ lastupdated: "2018-07-23"
 
 Docker コンテント・トラストでは、「Trust on first use」セキュリティー・モデルが使用されます。 リポジトリーから初めて署名付きのイメージをプルするときに、リポジトリーの鍵がトラスト・サーバーからプルされ、それ以降はその鍵がそのリポジトリーのイメージの検証に使用されます。 初めてリポジトリーをプルする前に、トラスト・サーバー、またはイメージとそのパブリッシャーを信頼することをユーザーが確認する必要があります。 サーバー内のトラスト情報が改ざんされている場合、まだそのリポジトリーからイメージをプルしたことがなければ、Docker クライアントは改ざんされた情報をトラスト・サーバーからプルする可能性があります。 初めてイメージをプルした後にトラスト・データが改ざんされた場合、それ以降のプルでは、Docker クライアントは、改ざんされたデータを検証できないので、イメージをプルしません。 イメージのトラスト・データの詳細を表示する方法について詳しくは、[署名付きのイメージを表示する](#trustedcontent_viewsigned)を参照してください。
 
-「trust on first use」セキュリティー・モデルについて詳しくは、[The Update Framework (TUF)](https://theupdateframework.github.io/) を参照してください。 
+「trust on first use」セキュリティー・モデルについて詳しくは、[The Update Framework (TUF) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://theupdateframework.github.io/) を参照してください。 
 
 
 ## 信頼できるコンテンツ環境をセットアップする
@@ -78,14 +78,17 @@ Docker コンテント・トラストでは、「Trust on first use」セキュ�
     ```
     {: pre}
 
-    出力で、Docker コンテント・トラスト環境変数をエクスポートするように指示されます。 以下に例を示します。
+    出力で、Docker コンテント・トラスト環境変数をエクスポートするように指示されます。 
+    
+    **例**
 
     ```
     user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
-    To set up your Docker client with content trust, export the following environment variable:
+    To set up your Docker client with content trust,
+    export the following environment variable:
     export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
     ```
     {: screen}
@@ -100,7 +103,7 @@ Docker コンテント・トラストでは、「Trust on first use」セキュ�
 
 これで、信頼できる署名付きのイメージをプッシュ、プル、管理する準備ができました。
 
-Docker コンテント・トラストを有効にしたセッションで、信頼できるコンテンツを無効にした操作 (署名なしのイメージをプルするなど) を実行する場合は、コマンドで `--disable-content-trust` フラグを使用してください。
+Docker コンテント・トラストを有効にしたセッションで、信頼できるコンテンツを無効にした操作 (未署名のイメージをプルするなど) を実行する場合は、コマンドで `--disable-content-trust` フラグを使用してください。
 {: tip}
 
 ## 署名付きのイメージをプッシュする
@@ -140,7 +143,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 ## 信頼できるコンテンツを管理する
 {: #trustedcontent_managetrust}
 
-`docker trust` コマンドを使用して、イメージの署名者を確認したり、トラスト・コンテンツ状況を取り消したりできます。 `docker trust` コマンドを実行するには、Docker 17.12 以降が必要です。
+`docker trust` コマンドを使用して、イメージの署名者を確認したり、トラスト・コンテンツ状況を取り消したりできます。`docker trust` コマンドを実行するには、Docker 17.12 以降が必要です。
 {:shortdesc}
 
 ### 署名付きのイメージを表示する
@@ -151,7 +154,9 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
 1.  [信頼できるコンテンツの環境をセットアップします](#trustedcontent_setup)。
 
-2.  各イメージのタグ、ダイジェスト、署名者情報を参照します。 **オプション**: _&lt;tag&gt;_ を指定すると、そのバージョンのイメージに関する情報を表示できます。
+2.  各イメージのタグ、ダイジェスト、署名者情報を参照します。 
+
+    オプション: タグ _&lt;tag&gt;_ を指定すると、そのバージョンのイメージに関する情報を表示できます。
 
     ```
     docker trust view <image>:<tag>
@@ -184,6 +189,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
     ```
     {: codeblock}
 
+
 ## 署名鍵をバックアップする
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +204,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
 すべての鍵、特にルート鍵をバックアップする必要があります。 鍵が失われたり改ざんされたりした場合、[リカバリー方法](ts_index.html#ts_recoveringtrustedcontent)は限られています。
 
-鍵をバックアップするには、[Docker コンテント・トラストの資料](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)を参照してください。
+鍵をバックアップするには、[Docker コンテント・トラストの資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys) を参照してください。
 
 
 ## 信頼できる署名者の管理

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -33,7 +33,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #registry_cli_install}
 
-1.  Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-CLI, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html) um die **ibmcloud**-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen zu können.
+1.  Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können.
 2.  Installieren Sie das Container-Registry-Plug-in:
 
     ```
@@ -68,10 +68,11 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 
 
+
 ## Images mit einer Pull-Operation aus einer anderen Registry auf die lokale Maschine mit Pull-Operation extrahieren
 {: #registry_images_pulling}
 
-1.  [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/products/docker-toolbox).
+1.  [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/).
 
 2.  Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository des Images und _&lt;tag&gt;_ durch den Tag des Images, das Sie verwenden möchten, z. B. _latest_.
 
@@ -143,6 +144,6 @@ Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.re
 -   [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html).
 -   [Servicepläne und Nutzung überprüfen](registry_overview.html#registry_plans).
 -   [Weitere Images in Ihrem Namensbereich speichern und verwalten](registry_images_.html).
--   [Container aus Ihrem Image erstellen und in einem Kubernetes-Cluster bereitstellen](../../containers/cs_clusters.html).
+-   [Cluster und Workerknoten einrichten](/docs/containers/cs_clusters.html#clusters).
 
 

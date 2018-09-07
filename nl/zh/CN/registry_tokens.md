@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 
 注册表令牌仅限定用于 {{site.data.keyword.registrylong_notm}}。您可以对其进行限制以仅具有只读访问权，可选择其是会过期还是不过期。
 
-有关 {{site.data.keyword.registrylong_notm}} API 密钥的更多信息，请参阅[使用 API 密钥](../../iam/apikeys.html#manapikey)。
+有关 {{site.data.keyword.registrylong_notm}} API 密钥的更多信息，请参阅[使用 API 密钥](/docs/iam/apikeys.html#manapikey)。
 
 开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](registry_setup_cli_namespace.html#registry_cli_install)。
 
@@ -46,7 +46,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 您可以创建 API 密钥，然后用于登录到注册表。
 {:shortdesc}
 
-创建 IAM API 密钥，请参阅[创建 API 密钥](../../iam/userid_keys.html#creating-an-api-key)。
+创建 IAM API 密钥，请参阅[创建 API 密钥](/docs/iam/userid_keys.html#creating-an-api-key)。
 
 ### 使用 API 密钥自动访问
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.Bluemix_notm}} 平台 API 密钥](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)。
+有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.Bluemix_notm}} 平台 API 密钥](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create)。
 
 
 ## 使用令牌自动访问名称空间
@@ -137,7 +137,7 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
 {: #registry_tokens_use}
 
 您可以在 `docker login` 命令中使用令牌，以自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
-根据您为令牌设置的是只读还是读写访问权，用户可以将映像推送至名称空间，以及从名称空间拉出映像。
+根据您为令牌设置的是只读还是读/写访问权，用户可以将映像推送至名称空间，以及从名称空间拉出映像。
 {:shortdesc}
 
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
@@ -166,10 +166,10 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
 
 4.  将令牌用作 `docker login` 命令的一部分。将 &lt;token_value&gt; 替换为在上一步中检索到的令牌值，将 &lt;registry_url&gt; 替换为设置名称空间的注册表的 URL。
 
-    -   对于在美国南部设置的名称空间：registry.ng.bluemix.net
-    -   对于在英国南部设置的名称空间：registry.eu-gb.bluemix.net
-    -   对于在欧洲中部设置的名称空间：registry.eu-de.bluemix.net
-    -   对于在亚太南部设置的名称空间：registry.au-syd.bluemix.net
+    -   对于在美国南部设置的名称空间：`registry.ng.bluemix.net`
+    -   对于在英国南部设置的名称空间：`registry.eu-gb.bluemix.net`
+    -   对于在欧洲中部设置的名称空间：`registry.eu-de.bluemix.net`
+    -   对于在亚太南部设置的名称空间：`registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>

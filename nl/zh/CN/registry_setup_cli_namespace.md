@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -103,7 +103,7 @@ lastupdated: "2018-07-23"
 要安全地存储 Docker 映像，您必须在 {{site.data.keyword.registrylong_notm}} 专用注册表中创建名称空间。
 {:shortdesc}
 
-开始之前：
+**开始之前**
 
 -   [安装 {{site.data.keyword.Bluemix_notm}} CLI 和容器注册表插件](#registry_cli_install)。
 -   [规划如何使用注册表名称空间并为其命名](registry_overview.html#registry_namespaces)。

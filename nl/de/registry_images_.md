@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-07-23"
 Wenn Sie Images zu Ihrem eigenen Namensbereich in {{site.data.keyword.registrylong}} hinzufügen, können Sie Docker-Images sicher speichern und mit anderen Benutzern gemeinsam nutzen.
 {:shortdesc}
 
-Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf Ihrer lokalen Maschine vorhanden sein. Sie können entweder ein Image aus einem anderen Repository auf Ihre lokale Maschine herunterladen (Pull-Operation) oder mit dem Docker-Befehl `build` Ihr eigenes Image aus einer Dockerfile erstellen. Um ein Image zu Ihrem Namensbereich hinzuzufügen, müssen Sie das lokale Image in Ihren Namensbereich von {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
+Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf Ihrem lokalen Computer vorhanden sein. Sie können entweder ein Image aus einem anderen Repository auf Ihren lokalen Computer herunterladen (Pull-Operation) oder mit dem Docker-Befehl `build` Ihr eigenes Image aus einer Dockerfile erstellen. Um ein Image zu Ihrem Namensbereich hinzuzufügen, müssen Sie das lokale Image in Ihren Namensbereich von {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
@@ -52,7 +52,7 @@ Wenn die Nachricht "Berechtigung nicht vorhanden: Authentifizierung erforderlich
 {:tip}
 
 
-Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensbereich gekennzeichnet haben, können Sie das Image aus Ihrer lokalen Maschine in Ihren Namensbereich hochladen (Push-Operation).
+Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensbereich gekennzeichnet haben, können Sie das Image aus Ihrem lokalen Computer in Ihren Namensbereich hochladen (Push-Operation).
 
 ## Docker-Images mit Push-Operation in eigenen Namensbereich übertragen
 {: #registry_images_pushing}
@@ -66,7 +66,7 @@ Führen Sie zuvor Folgendes aus:
 
 - [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in der privaten Registry von {{site.data.keyword.registrylong_notm}} ein](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Führen Sie eine Pull-Operation für ein Image durch](#registry_images_pulling) oder [erstellen Sie ein Image](#registry_images_creating) auf Ihrer lokalen Maschine und kennzeichnen Sie das Image mit den Informationen zu Ihrem Namensbereich.
+- [Führen Sie eine Pull-Operation für ein Image durch](#registry_images_pulling) oder [erstellen Sie ein Image](#registry_images_creating) auf Ihrem lokalen Computer und kennzeichnen Sie das Image mit den Informationen zu Ihrem Namensbereich.
 - [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
@@ -94,7 +94,7 @@ Führen Sie die folgenden Schritte aus, um ein Image hochzuladen (Push-Operation
 Nachdem Sie das Image mit einer Push-Operation in Ihre private Registry übertragen haben, können Sie Folgendes ausführen:
 
 - [Verwalten Sie die Sicherheit mit Vulnerability Advisor](../va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
-- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](../../containers/container_index.html) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
+- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers/container_index.html#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
 
 ## Images zwischen Registrys kopieren
 {: #registry_images_copying}
@@ -121,12 +121,12 @@ Führen Sie die folgenden Schritte aus, um ein Image zwischen zwei Registrys zu 
 Nachdem Sie das Image kopiert haben, können Sie Folgendes ausführen:
 
 - [Verwalten Sie die Imagesicherheit mit Vulnerability Advisor](../va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
-- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](../../containers/container_index.html) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
+- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers/container_index.html#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
 
 ## Docker-Images für die Verwendung mit dem eigenen Namensbereich erstellen
 {: #registry_images_creating}
 
-Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstellen oder ein eigenes Docker-Image auf Ihrer lokalen Maschine erstellen und es in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
+Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstellen oder ein eigenes Docker-Image auf Ihrem lokalen Computer erstellen und es in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 {:shortdesc}
 
 Führen Sie zuvor Folgendes aus:
@@ -194,7 +194,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
    Weitere Informationen zum Befehl `ibmcloud cr build` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html).
 
   - Führen Sie die folgenden Schritte aus, um Ihr Image zunächst lokal zu erstellen und zu testen, bevor Sie es mit einer Push-Operation in {{site.data.keyword.Bluemix_notm}} übertragen:
-    1. Erstellen Sie das Image aus Ihrer Dockerfile auf der lokalen Maschine und kennzeichnen Sie es mit dem Imagenamen.
+    1. Erstellen Sie das Image aus Ihrer Dockerfile auf dem lokalen Computer und kennzeichnen Sie es mit dem Imagenamen.
 
       ```
       docker build -t <imagename> <verzeichnis>
@@ -203,7 +203,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
 
       Dabei ist _&lt;imagename&gt;_ der Name Ihres Images und _&lt;verzeichnis&gt;_ der Pfad zum Verzeichnis.
 
-    2. Optional: Testen Sie Ihr Image auf Ihrer lokalen Maschine, bevor Sie es mit einer Push-Operation in Ihren Namensbereich übertragen.
+    2. Optional: Testen Sie Ihr Image auf dem lokalen Computer, bevor Sie es mit einer Push-Operation in Ihren Namensbereich übertragen.
 
       ```
       docker run <imagename>
@@ -227,7 +227,8 @@ Wenn Sie ein privates Repository und die zugehörigen Images löschen möchten, 
 
 Öffentliche {{site.data.keyword.IBM_notm}}-Images können nicht aus Ihrem privaten {{site.data.keyword.Bluemix_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
 
-Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.{:tip}
+Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
+{:tip}
 
 
 ### Images aus dem privaten {{site.data.keyword.Bluemix_notm}}-Repository mithilfe der CLI löschen

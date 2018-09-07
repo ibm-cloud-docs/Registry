@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-07-23"
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {:tip}
 
-시작하기 전에 [{{site.data.keyword.Bluemix_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://clis.ng.bluemix.net/ui/home.html)를 설치하십시오. 
+시작하기 전에 [{{site.data.keyword.Bluemix_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://clis.ng.bluemix.net/ui/home.html)를 설치하십시오.
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI(container-registry 플러그인) 설치
@@ -35,7 +35,7 @@ lastupdated: "2018-07-23"
 {:shortdesc}
 
 1.  [container-registry 플러그인을 설치](index.html#registry_cli_install)하십시오.
-2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 이 단계를 수행하지 않은 경우 `sudo`를 사용하여, 또는 root로 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 **docker push** 명령을 실행해야 합니다. 
+2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 이 단계를 수행하지 않은 경우에는 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 **docker push** 명령을 `sudo`를 사용하여 실행하거나 루트로서 실행해야 합니다. 
 
 이제 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 네임스페이스를 설정할 수 있습니다.
 
@@ -103,7 +103,7 @@ container-registry 플러그인이 더 이상 필요하지 않으면 설치 제�
 Docker 이미지를 안전하게 저장하려면 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 네임스페이스를 작성해야 합니다.
 {:shortdesc}
 
-시작하기 전에:
+**시작하기 전에**
 
 -   [{{site.data.keyword.Bluemix_notm}} CLI 및 container-registry 플러그인을 설치](#registry_cli_install)하십시오.
 -   [레지스트리 네임스페이스의 사용 방법 및 이름 지정 방법을 계획](registry_overview.html#registry_namespaces)하십시오.

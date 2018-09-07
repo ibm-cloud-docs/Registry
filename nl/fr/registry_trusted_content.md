@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # Signature d'images pour du contenu sécurisé
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} fournit une technologie de contenu sécurisé pour vous permettre de signer des images et garantir l'intégrité des images de votre espace de nom de registre. En extrayant et en transférant des images signées, vous pouvez vérifier que vos images ont été envoyées par la partie appropriée, comme les outils d'intégration continue. Pour utiliser cette fonction, vous devez disposer de Docker version 1.11 ou ultérieure. Pour en savoir plus, consultez la documentation [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) et sur le [projet Notary](https://github.com/theupdateframework/notary).
+{{site.data.keyword.registrylong}} fournit une technologie de contenu sécurisé pour vous permettre de signer des images et garantir l'intégrité des images de votre espace de nom de registre. En extrayant et en transférant des images signées, vous pouvez vérifier que vos images ont été envoyées par la partie appropriée, comme les outils d'intégration continue. Pour utiliser cette fonction, vous devez disposer de Docker version 1.11 ou ultérieure. Pour en savoir plus, consultez la documentation de [Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/content_trust/) et du [projet Notary ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
 Lorsque vous envoyez par commande push votre image avec le contenu sécurisé activé, votre client Docker envoie également un objet métadonnées signé au serveur d'accréditation {{site.data.keyword.Bluemix_notm}}. Lors de l'extraction d'une image étiquetée avec Docker Content Trust activé, votre client Docker contacte le serveur d'accréditation afin d'établir la version signée la plus récente de l'étiquette demandée, vérifie la signature du contenu puis télécharge l'image signée.
@@ -29,7 +29,7 @@ Un référentiel peut comporter du contenu signé et du contenu non signé. Si D
 
 Docker Content Trust utilise un modèle de sécurité de type "approuver à la première utilisation". La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
 
-Pour plus d'informations sur le modèle de sécurité "approuver à la première utilisation", voir [The Update Framework (TUF)](https://theupdateframework.github.io/). 
+Pour plus d'informations sur le modèle de sécurité "approuver à la première utilisation", voir [The Update Framework (TUF) ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://theupdateframework.github.io/). 
 
 
 ## Configuration de votre environnement de contenu sécurisé
@@ -79,7 +79,9 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
     ```
     {: pre}
 
-    La sortie vous explique comment exporter la variable d'environnement Docker Content Trust. Par exemple :
+    La sortie vous explique comment exporter la variable d'environnement Docker Content Trust. 
+    
+    **Exemple**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -101,7 +103,7 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 
 Vous êtes à présent prêt à envoyer, extraire et gérer des images signées sécurisées.
 
-Durant votre session avec Docker Content Trust activé, si vous souhaitez effectuer une opération avec du contenu sécurisé désactivé (par exemple, extraire une image non signée), utilisez la balise `--disable-content-trust` avec la commande.
+Au cours de votre session avec Docker Content Trust activé, si vous voulez effectuer une opération avec du contenu sécurisé désactivé (par exemple, extraire une image non signée), utilisez la balise `--disable-content-trust` avec la commande.
 {: tip}
 
 ## Envoi d'une image signée
@@ -141,7 +143,7 @@ La première fois que vous extrayez une image signée avec Docker Content Trust 
 ## Gestion du contenu sécurisé
 {: #trustedcontent_managetrust}
 
-A l'aide de commandes `docker trust`, vous pouvez afficher qui a signé des images, ainsi que révoquer le statut de contenu sécurisé. Pour exécuter des commandes `docker trust`, vous avez besoin de Docker version 17.12 ou ultérieure.
+A l'aide de commandes `docker trust`, vous pouvez voir qui a signé des images et révoquer le statut de contenu sécurisé. Pour exécuter des commandes `docker trust`, vous avez besoin de Docker version 17.12 ou ultérieure.
 {:shortdesc}
 
 ### Affichage d'images signées
@@ -152,7 +154,9 @@ Vous pouvez vérifier les versions signées du référentiel ou de l'étiquette 
 
 1.  [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2.  Vérifiez les informations d'étiquette, d'historique et de signataire pour chaque image. **Facultatif** : Spécifiez l'_&lt;étiquette&gt;_ pour afficher les informations pour cette version de l'image.
+2.  Vérifiez les informations d'étiquette, d'historique et de signataire pour chaque image. 
+
+    (Facultatif) Spécifiez l'étiquette _&lt;tag&gt;_ afin d'afficher des informations pour cette version de l'image. 
 
     ```
     docker trust view <image>:<tag>
@@ -185,6 +189,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
     ```
     {: codeblock}
 
+
 ## Sauvegarde de clés de signature
 {: #trustedcontent_backupkeys}
 
@@ -199,7 +204,7 @@ Lorsque vous envoyez une image signée à un nouveau référentiel pour la premi
 
 Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](ts_index.html#ts_recoveringtrustedcontent) sont limitées.
 
-Pour sauvegarder vos clés, consultez la [documentation Docker Content Trust](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Pour sauvegarder vos clés, consultez la [documentation Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Gestion des signataires de confiance
@@ -217,9 +222,9 @@ Pour autoriser d'autres utilisateurs à signer des images d'un référentiel, aj
 Avant de commencer :
 - Les signataires d'image doivent disposer du droit d'envoi par commande push d'images à l'espace de nom. 
 - Les propriétaires de référentiel et autres signataires doivent disposer de Docker version 17.12 ou ultérieure.
-- Créez un référentiel de contenu sécurisé en [envoyant par commande push une image signée](#trustedcontent_push). Les propriétaires de référentiel doivent posséder des clés d'administrateur du référentiel disponibles dans le dossier Docker trust sur leur machine locale. Si vous ne disposez pas de clé admin du référentiel, contactez le propriétaire pour qu'il effectue cette tâche pour vous.
+- Créez un référentiel de contenu sécurisé en [envoyant par commande push une image signée](#trustedcontent_push). Les propriétaires de référentiel doivent posséder des clés d'administrateur du référentiel disponibles dans le dossier Docker trust sur leur machine locale. Si vous ne disposez pas de la clé d'administrateur du référentiel, contactez le propriétaire afin qu'il effectue cette tâche pour vous.
 
-Lorsque vous ajoutez un signataire, vous ne pouvez plus utiliser la clé d'administrateur de référentiel pour signer des images dans ce référentiel. Vous devez suspendre la clé privée pour que l'un des signataires approuvés puisse signer. Pour conserver la possibilité de signer des images après l'ajout d'un signataire, suivez les instructions ci-après pour générer et ajouter un rôle signataire pour vous-même.
+Lorsque vous ajoutez un signataire, vous ne pouvez plus utiliser la clé d'administrateur du référentiel pour signer des images dans ce référentiel. Vous devez suspendre la clé privée pour que l'un des signataires approuvés puisse signer. Pour conserver la possibilité de signer des images après l'ajout d'un signataire, suivez les instructions ci-après pour générer et ajouter un rôle signataire pour vous-même.
 {:tip}
 
 Pour partager des clés de signature :

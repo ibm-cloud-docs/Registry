@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-07-23"
 {:shortdesc}
 
 1.  [安裝 container-registry 外掛程式。](index.html#registry_cli_install)
-2.  選用項目：[配置 Docker 用戶端在沒有 root 許可權的情況下執行指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您未執行此步驟，則必須使用 `sudo` 或以 root 使用者身分來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 **docker push** 指令。
+2.  選用項目：[配置 Docker 用戶端在沒有 root 許可權的情況下執行指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您未執行此步驟，則必須使用 **sudo** 或以 root 使用者身分來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
 您現在可以在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間。
 
@@ -103,7 +103,7 @@ lastupdated: "2018-07-23"
 若要安全地儲存 Docker 映像檔，您必須在 {{site.data.keyword.registrylong_notm}} 專用登錄中建立名稱空間。
 {:shortdesc}
 
-開始之前：
+**開始之前**
 
 -   [安裝 {{site.data.keyword.Bluemix_notm}} CLI 及 container-registry 外掛程式](#registry_cli_install)。
 -   [計劃如何使用及命名您的登錄名稱空間](registry_overview.html#registry_namespaces)。
@@ -143,4 +143,4 @@ lastupdated: "2018-07-23"
     ```
     {: pre}
 
-    在您刪除名稱空間之後，取決於所儲存映像檔的數目，在該名稱空間再次變成可供重複使用之前，可能需要一些時間。
+    在您刪除名稱空間之後，視已儲存的映像檔數目而定，可能需要一些時間，該名稱空間才會再次變成可供重複使用。

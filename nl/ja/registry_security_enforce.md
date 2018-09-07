@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -15,24 +15,25 @@ lastupdated: "2018-07-23"
 {:tip: .tip}
 {:download: .download}
 
-# コンテナー・イメージ・セキュリティーの実施 (ベータ)
+# コンテナー・イメージ・セキュリティーの適用 (ベータ)
 {: #security_enforce}
 
-IBM Container Image Security Enforcement (ベータ) を使用すると、コンテナー・イメージを {{site.data.keyword.containerlong}} のクラスターにデプロイする前に検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
-IBM Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
+Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
 
 
 ## クラスターへの Container Image Security Enforcement のインストール
 {: #sec_enforce_install}
 
-開始前に、以下のことを行います。
-* **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](../../containers/cs_clusters.html#clusters_ui)または[更新](../../containers/cs_cluster_update.html)します。
-* そのクラスターを [`kubectl` CLI のターゲットとして設定します](../../containers/cs_cli_install.html#cs_cli_configure)。
+**始めに**
 
-手順:
-1.  [クラスターに Helm をセットアップします](../../containers/cs_integrations.html#helm)。
+* **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](/docs/containers/cs_clusters.html#clusters_ui)または[更新](/docs/containers/cs_cluster_update.html#update)します。
+* クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers/cs_cli_install.html#cs_cli_configure)。
+
+以下の手順を実行してください。
+1.  [クラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
 
 2.  IBM のチャート・リポジトリーを Helm クライアントに追加します。
 
@@ -41,19 +42,19 @@ IBM Container Image Security Enforcement は、イメージ・コンテンツの
     ```
     {: pre}
 
-3.  IBM Container Image Security Enforcement の Helm チャートをクラスターにインストールします。 `cise` などの名前を指定します。
+3.  Container Image Security Enforcement の Helm チャートをクラスターにインストールします。`cise` などの名前を指定します。
 
     ```
     helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-これで、IBM Container Image Security Enforcement がインストールされ、クラスター内のすべての Kubernetes 名前空間に[デフォルトのセキュリティー・ポリシー](#default_policies)が適用されました。 クラスター内の Kubernetes 名前空間またはクラスター全体のセキュリティー・ポリシーをカスタマイズする方法については、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
+これで、Container Image Security Enforcement がインストールされ、クラスター内のすべての Kubernetes 名前空間に[デフォルトのセキュリティー・ポリシー](#default_policies)が適用されました。クラスター内の Kubernetes 名前空間またはクラスター全体のセキュリティー・ポリシーをカスタマイズする方法については、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
 
 ## デフォルトのポリシー
 {: #default_policies}
 
-IBM Container Image Security Enforcement は、セキュリティー・ポリシーを作成するための開始点として使用できるように、いくつかのポリシーをデフォルトでインストールします。
+Container Image Security Enforcement は、セキュリティー・ポリシーを作成するための開始点として使用できるように、いくつかのポリシーをデフォルトでインストールします。
 {:shortdesc}
 
 これらのポリシーをオーバーライドする方法としては、以下の選択肢があります。
@@ -68,7 +69,7 @@ IBM Container Image Security Enforcement は、セキュリティー・ポリシ
 デフォルトでは、クラスター規模のポリシーにより、すべてのレジストリー内のすべてのイメージに、トラスト情報を保持していること、および脆弱性アドバイザーで脆弱性が報告されていないことが求められます。
 {:shortdesc}
 
-**デフォルトのクラスター規模のポリシーの `.yaml` ファイル**
+**クラスター規模のデフォルトのポリシー `.yaml` ファイル**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -86,6 +87,7 @@ spec:
         va:
           enabled: true
 ```
+{: codeblock}
 
 {{site.data.keyword.registrylong_notm}} 以外のコンテナー・レジストリーに対して `va` または `trust` を `enabled: true` に設定した場合、そのレジストリー内のイメージからポッドをデプロイしようとすると拒否されます。 他のレジストリーからイメージをデプロイする場合は、`va` ポリシーと `trust` ポリシーを削除してください。
 {:tip}
@@ -93,8 +95,7 @@ spec:
 ### kube-system ポリシー
 {: #kube-system}
 
-デフォルトでは、`kube-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `kube-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。
-デフォルト・ポリシーに含まれるいくつかのリポジトリーは、クラスターが正しく構成されるようにするために残しておく必要があります。
+デフォルトでは、`kube-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `kube-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。 デフォルト・ポリシーに含まれるいくつかのリポジトリーは、クラスターが正しく構成されるようにするために残しておく必要があります。
 {:shortdesc}
 
 **デフォルトの `kube-system` ポリシーの `.yaml` ファイル**
@@ -120,15 +121,15 @@ spec:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
 ```
+{: codeblock}
 
 ### ibm-system ポリシー
 {: #ibm-system}
 
-デフォルトでは、`ibm-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `ibm-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。
-デフォルト・ポリシーの中には、クラスターを正しく構成し、Image Security Enforcement をインストールまたはアップグレードできるようにするために残しておく必要のあるリポジトリーもいくつか含まれています。
+デフォルトでは、`ibm-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `ibm-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。 デフォルト・ポリシーの中には、クラスターを正しく構成し、Container Image Security Enforcement をインストールまたはアップグレードできるようにするために残しておく必要のあるリポジトリーもいくつか含まれています。
 {:shortdesc}
 
-**デフォルトの `ibm-system` ポリシーの `.yaml` ファイル**
+**デフォルトの `ibm-system` ポリシー `.yaml` ファイル**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -150,26 +151,27 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
-    # This policy allows Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Image Security Enforcement.
+    # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
     - name: quay.io/coreos/hyperkube
       policies:
 ```
+{: codeblock}
 
 ## ポリシーのカスタマイズ
 {: #customize_policies}
 
-イメージを許可するために IBM Container Image Security Enforcement で使用されるポリシーは、ユーザーがクラスター・レベルまたは Kubernetes 名前空間レベルで変更できます。 ポリシーには、さまざまなイメージに対するさまざまな制約ルールを指定できます。
+イメージを許可するために Container Image Security Enforcement で使用されるポリシーは、ユーザーがクラスター・レベルまたは Kubernetes 名前空間レベルで変更できます。ポリシーには、さまざまなイメージに対するさまざまな制約ルールを指定できます。
 {:shortdesc}
 
-何らかのポリシーを設定する必要があります。 そうしないと、クラスターへのデプロイメントは失敗します。 イメージのセキュリティー・ポリシーを一切適用しない場合は、[セキュリティー制約を削除](#remove)してください。
+何らかのポリシーを設定する必要があります。 そうしないと、クラスターへのデプロイメントは失敗します。 イメージのセキュリティー・ポリシーを一切適用しない場合は、[Container Image Security Enforcement を削除](#remove)してください。
 {:tip}
 
 デプロイメントを行うと、Container Image Security Enforcement が、デプロイ先の Kubernetes 名前空間に適用すべきポリシーがあるかどうかを検査します。 ない場合、Container Image Security Enforcement はクラスター規模のポリシーを使用します。 名前空間規模のポリシーもクラスター規模のポリシーも存在しない場合、デプロイメントは拒否されます。
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](../../containers/cs_cli_install.html#cs_cli_configure)してください。
+始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。その後、以下の手順を実行します。
 
 1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
 
@@ -189,6 +191,7 @@ spec:
             va:
               enabled: <true_or_false>
     ```
+    {: codeblock}
 
     <table>
     <caption>表。 この YAML の構成要素についての説明</caption>
@@ -211,7 +214,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../policy</code></td>
-    <td>`trust` 制約と `va` 制約のサブセクションを入力します。 policy サブセクションを省略すると、どちらにも `enabled: false` を指定したことになります。</td>
+    <td>`trust` 制約と `va` 制約のサブセクションを入力します。policy サブセクションを省略すると、どちらにも `enabled: false` を指定したことになります。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
@@ -219,11 +222,11 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
-    <td>特定のユーザーの署名があるイメージだけを許可する場合は、署名者の名前の Kubernetes シークレットを指定します。 特定の署名者に限定せずに、イメージに署名があることを確認する場合は、このセクションを省略するか空のままにしてください。 詳しくは、[信頼できるコンテンツの署名者をカスタム・ポリシーで指定する](#signers)を参照してください。</td>
+    <td>特定のユーザーの署名があるイメージだけを許可する場合は、署名者の名前の Kubernetes シークレットを指定します。特定の署名者に限定せずに、イメージに署名があることを確認する場合は、このセクションを省略するか空のままにしてください。 詳しくは、[信頼できるコンテンツの署名者をカスタム・ポリシーで指定する](#signers)を参照してください。</td>
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>[脆弱性アドバイザー](../va/va_index.html)のスキャンに合格したイメージだけを許可する場合は、`true` に設定します。 脆弱性アドバイザーのスキャンを無視する場合は、`false` に設定します。</td>
+    <td>[脆弱性アドバイザー](/docs/services/va/va_index.html)のスキャンに合格したイメージだけを許可する場合は、`true` に設定します。 脆弱性アドバイザーのスキャンを無視する場合は、`false` に設定します。</td>
     </tr>
     </tbody>
     </table>
@@ -238,17 +241,21 @@ spec:
 ### 信頼できるコンテンツの署名者をカスタム・ポリシーに指定する
 {: #signers}
 
-コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](registry_trusted_content.html#trustedcontent_signers)を参照してください。
+コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。署名者をリポジトリーに追加するには、[信頼できる署名者の管理](registry_trusted_content.html#trustedcontent_signers)を参照してください。
 {:shortdesc}
 
 イメージに特定の署名者の署名があることを検証するようにポリシーを構成するには、以下のようにします。
 
 1.  署名者の名前 (`docker trust signer add` で使用された名前) と公開鍵を取得します。
-1.  署名者の名前と公開鍵を使用して Kubernetes シークレットを生成します。
+1.  署名者の名前と公開鍵を使用して、Kubernetes シークレットを生成します。
+
     ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
+    {: pre}
+    
 1.  ポリシーのリポジトリーの `signerSecrets` リストにシークレットを追加します。
+
     ```yaml
     - name: example
       policy:
@@ -257,19 +264,22 @@ spec:
           signerSecrets:
           - name: <secret_name>
     ```
+    {: codeblock}
 
 ## ポリシーをカスタマイズできるユーザーの制御
 {: #assign_user_policy}
 
-Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有効にしている場合は、役割を作成して、クラスターのセキュリティー・ポリシーを管理できるユーザーを制御できます。 クラスターに RBAC ルールを適用する方法について詳しくは、[{{site.data.keyword.containerlong_notm}} の資料](../../containers/cs_users.html#rbac)を参照してください。
+Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有効にしている場合は、役割を作成して、クラスターのセキュリティー・ポリシーを管理できるユーザーを制御できます。 クラスターに RBAC ルールを適用する方法について詳しくは、[{{site.data.keyword.containerlong_notm}} の資料](/docs/containers/cs_users.html#rbac)を参照してください。
 {:shortdesc}
 
 役割にセキュリティー・ポリシーのルールを追加します。
+
 ```yaml
 - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
 ```
+{: codeblock}
 
 複数の役割を作成して、ユーザーが実行できるアクションを制御できます。 例えば、`verbs` を変更して、一部のユーザーはポリシーの `get` または `list` だけを実行できるようにしたりします。 また、`resources` リストから `clusterimagepolicies` を省いて、Kubernetes 名前空間ポリシーへのアクセスだけを付与することもできます。
 {:tip}
@@ -281,6 +291,7 @@ Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有�
   resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
 ```
+{: codeblock}
 
 `cluster-admin` 役割を持つユーザーおよび ServiceAccount は、すべてのリソースにアクセスできます。 cluster-admin 役割は、編集を行わなくても、セキュリティー・ポリシーを管理する権限を付与します。 `cluster-admin` 役割を持つユーザーの制御を必ず行い、セキュリティー・ポリシーの変更を許可するユーザーだけにアクセス権限を付与するようにしてください。
 {:tip}
@@ -293,7 +304,7 @@ Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有�
 
 Container Image Security Enforcement がデプロイメントを拒否した場合、デプロイメントは作成されますが、そのデプロイメントによって作成された ReplicaSet はスケールアップできず、ポッドは作成されません。 `kubectl describe deployment <deployment-name>` を実行することで ReplicaSet を見つけられます。また `kubectl describe rs<replicaset-name>` を実行することでデプロイメントが拒否された理由を確認できます。
 
-**エラー・メッセージの例**を以下に示します。
+**エラー・メッセージの例**
 
 *  イメージがどのポリシーにも一致しない場合、または名前空間にもクラスターにもポリシーがない場合。
 
@@ -339,14 +350,14 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
 
-ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 IBM Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](registry_trusted_content.html)を参照してください。
+ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](registry_trusted_content.html)を参照してください。
 
-すべてのイメージが IBM Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
+すべてのイメージが Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
 
 ## Container Image Security Enforcement の削除
 {: #remove}
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](../../containers/cs_cli_install.html#cs_cli_configure)してください。
+始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。
 
 
 

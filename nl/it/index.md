@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -25,7 +25,7 @@ immagini privato a più tenant che puoi utilizzare per memorizzare e condividere
 nel tuo account {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La console {{site.data.keyword.Bluemix_notm}} include una una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Monitoraggio della vulnerabilità delle immagini](registry_ui.html).
+La console {{site.data.keyword.Bluemix_notm}} include una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Monitoraggio della vulnerabilità delle immagini](registry_ui.html).
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {:tip}
@@ -35,7 +35,7 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 ## Installa la CLI {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1.  Installa la CLI di [{{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://clis.ng.bluemix.net/ui/home.html) in modo da poter eseguire i comandi {{site.data.keyword.Bluemix_notm}} **ibmcloud**.
+1.  Installa la CLI di [{{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://clis.ng.bluemix.net/ui/home.html) in modo da poter eseguire i comandi {{site.data.keyword.Bluemix_notm}} `ibmcloud`.
 2.  Installa il plug-in container-registry:
 
     ```
@@ -47,7 +47,7 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 ## Configura uno spazio dei nomi
 {: #registry_namespace_add}
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -71,10 +71,11 @@ _&lt;mio_spazionomi&gt;_ con il tuo spazio dei nomi preferito.
 
 
 
+
 ## Esegui il pull di immagini da un altro registro alla tua macchina locale
 {: #registry_images_pulling}
 
-1.  [Installa la CLI Docker ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.docker.com/community-edition#/download). Per Windows 8 o per OS X Yosemite 10.10.x o versioni precedenti, installa invece [Docker Toolbox ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.docker.com/products/docker-toolbox).
+1.  [Installa la CLI Docker ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.docker.com/community-edition#/download). Per Windows 8 o per OS X Yosemite 10.10.x o versioni precedenti, installa invece [Docker Toolbox ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/toolbox/).
 
 2.  Scarica (_pull_) l'immagine nella tua macchina locale. Sostituisci _&lt;source_image&gt;_ con il
 repository dell'immagine e _&lt;tag&gt;_ con la tag dell'immagine che vuoi
@@ -93,7 +94,7 @@ _latest_.
     ```
     {: pre}
 
-3.  Contrassegna l'immagine con una tag. Sostituisci _&lt;source_image&gt;_ con il repository e
+3.  Contrassegna l'immagine con una tag. Sostituisci _&lt;immagine_di_origine&gt;_ con il repository e
 _&lt;tag&gt;_ con la tag della tua immagine locale di cui hai prima eseguito il pull. Sostituisci _&lt;image_name&gt;_ con il nome della tua [regione](registry_overview.html#registry_regions). Sostituisci _&lt;mio_spazionomi&gt;_ con lo spazio dei nomi che hai creato in [Configura uno spazio dei nomi](index.html#registry_namespace_add). Definisci il
 repository e la tag dell'immagine che vuoi utilizzare nel tuo spazio dei nomi sostituendo
 _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
@@ -156,7 +157,6 @@ spazio dei nomi.
 -   [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).
 -   [Riesamina il tuo utilizzo e i tuoi piani del servizio](registry_overview.html#registry_plans)
 -   [Memorizza e gestisci altre immagini nel tuo spazio dei nomi](registry_images_.html).
--   [Crea e distribuisci un
-contenitore dalla tua immagine a un cluster Kubernetes](../../containers/cs_clusters.html).
+-   [Configurazione dei cluster e dei nodi di lavoro](/docs/containers/cs_clusters.html#clusters).
 
 

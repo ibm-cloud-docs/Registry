@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사�
 
 레지스트리 토큰의 범위는 {{site.data.keyword.registrylong_notm}}용으로만 지정됩니다. 레지스트리 토큰을 읽기 전용 액세스로 제한할 수 있으며 만료되는지 또는 만료되지 않는지 선택할 수 있습니다.
 
-{{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키로 작업](../../iam/apikeys.html#manapikey)을 참조하십시오.
+{{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키로 작업](/docs/iam/apikeys.html#manapikey)을 참조하십시오.
 
 시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](registry_setup_cli_namespace.html#registry_cli_install)하십시오.
 
@@ -46,7 +46,7 @@ API 키를 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 
 API 키를 작성한 후 레지스트리에 로그인하는 데 사용할 수 있습니다.
 {:shortdesc}
 
-IAM API 키를 작성하려면 [API 키 작성](../../iam/userid_keys.html#creating-an-api-key)을 참조하십시오.
+IAM API 키를 작성하려면 [API 키 작성](/docs/iam/userid_keys.html#creating-an-api-key)을 참조하십시오.
 
 ### API 키를 사용하여 액세스 자동화
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-명령에 대한 참조 정보는 [새 {{site.data.keyword.Bluemix_notm}} 플랫폼 API 키 작성](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create)을 참조하십시오.
+명령에 대한 참조 정보는 [새 {{site.data.keyword.Bluemix_notm}} 플랫폼 API 키 작성](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create)을 참조하십시오.
 
 
 ## 토큰을 사용하여 네임스페이스에 대한 액세스 자동화
@@ -133,7 +133,7 @@ Token              <token_value>
 ### 토큰을 사용하여 네임스페이스에 대한 액세스 자동화
 {: #registry_tokens_use}
 
-`docker login` 명령에서 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스를 자동화할 수 있습니다. 토큰에 대한 읽기 전용 또는 읽기-쓰기 액세스 권한 설정 여부에 따라서 사용자는 이미지를 네임스페이스에서 가져오고 이미지를 네임스페이스로 푸시할 수 있습니다.
+`docker login` 명령에서 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스를 자동화할 수 있습니다. 토큰에 대한 읽기 전용 또는 읽기/쓰기 액세스 권한 설정 여부에 따라, 사용자는 이미지를 네임스페이스에서 가져오고 이미지를 네임스페이스로 푸시할 수 있습니다.
 {:shortdesc}
 
 1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
@@ -161,10 +161,10 @@ Token              <token_value>
 
 4.  `docker login` 명령의 일부로 토큰을 사용하십시오. &lt;token_value&gt;는 이전 단계에서 검색한 토큰 값으로 대체하고 &lt;registry_url&gt;은 네임스페이스가 설정된 레지스트리에 대한 URL로 대체하십시오.
 
-    -   미국 남부의 네임스페이스 설정의 경우: registry.ng.bluemix.net
-    -   영국 남부의 네임스페이스 설정의 경우: registry.eu-gb.bluemix.net
-    -   중앙 유럽의 네임스페이스 설정의 경우: registry.eu-de.bluemix.net
-    -   AP 남부의 네임스페이스 설정의 경우: registry.au-syd.bluemix.net
+    -   미국 남부의 네임스페이스 설정의 경우: `registry.ng.bluemix.net`
+    -   영국 남부의 네임스페이스 설정의 경우: `registry.eu-gb.bluemix.net`
+    -   유럽 연합 중부의 네임스페이스 설정의 경우: `registry.eu-de.bluemix.net`
+    -   아시아/태평양 남부의 네임스페이스 설정의 경우: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -29,7 +29,7 @@ Las claves API están enlazadas a su cuenta y pueden utilizarse en {{site.data.k
 
 Los elementos de registro solo abarcan {{site.data.keyword.registrylong_notm}}. Puede limitarlos a un acceso de sólo lectura y puede seleccionar si caducan o no caducan.
 
-Para obtener más información acerca de las claves de API de {{site.data.keyword.registrylong_notm}}, consulte [Trabajar con claves API](../../iam/apikeys.html#manapikey).
+Para obtener más información acerca de las claves de API de {{site.data.keyword.registrylong_notm}}, consulte [Trabajar con claves API](/docs/iam/apikeys.html#manapikey).
 
 Antes de empezar, [instale {{site.data.keyword.registrylong_notm}} y la CLI de Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -46,7 +46,7 @@ Puede utilizar claves API para automatizar el envío por push y la extracción d
 Puede crear un clave API que puede utilizar para iniciar sesión en su registro.
 {:shortdesc}
 
-Cree una clave API IAM, consulte [Creación de una clave API](../../iam/userid_keys.html#creating-an-api-key).
+Cree una clave API IAM, consulte [Creación de una clave API](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Utilización de una clave API para automatizar el acceso
 {: #registry_api_key_use}
@@ -61,7 +61,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Para obtener información acerca del mandato, consulte [Cree una nueva clave API de plataforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Para obtener información acerca del mandato, consulte [Cree una nueva clave API de plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automatizando acceso a sus espacios de nombres utilizando señales
@@ -134,7 +134,7 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
 ### Utilización de una señal para automatizar el acceso a su espacio de nombres
 {: #registry_tokens_use}
 
-Puede utilizar una señal en su mandato `login docker` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de sólo escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
+Puede utilizar una señal en su mandato `login docker` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de lectura/escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
 {:shortdesc}
 
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
@@ -162,10 +162,10 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 
 4.  Utilice la señal como parte del mandato `docker login`. Sustituya &lt;valor_señal&gt; por el valor de la señal que ha recuperado en el paso anterior y &lt;url_registro&gt; por el URL en el registro donde los espacios de nombres está configurado.
 
-    -   Para espacios de nombres configurados en EE.UU. Sur: registry.ng.bluemix.net
-    -   Para espacios de nombres configurados en UK-Sur: registry.eu-gb.bluemix.net
-    -   Para espacios de nombres configurados en EU-Central: registry.eu-de.bluemix.net
-    -   Para espacios de nombres configurados en AP Sur: registry.au-syd.bluemix.net
+    -   Para espacios de nombres configurados en US-South: `registry.ng.bluemix.net`
+    -   Para espacios de nombres configurados en UK-South: `registry.eu-gb.bluemix.net`
+    -   Para espacios de nombres configurados en EU-Central: `registry.eu-de.bluemix.net`
+    -   Para espacios de nombres configurados en AP-South: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>

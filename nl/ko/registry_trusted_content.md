@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # 신뢰할 수 있는 컨텐츠의 이미지에 서명
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}}에서는 사용자가 이미지에 서명하여 레지스트리 네임스페이스에서 이미지의 무결성을 보장할 수 있도록 신뢰할 수 있는 컨텐츠 기술을 제공합니다. 서명된 이미지를 가져와 푸시하여 지속적 통합(CI) 도구와 같이 올바른 당사자가 이미지를 푸시했는지 확인할 수 있습니다. 이 기능을 사용하려면 Docker 버전 1.11 이상이 있어야 합니다. [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) 및 [Notary 프로젝트](https://github.com/theupdateframework/notary) 문서를 검토하여 자세한 사항을 알아볼 수 있습니다.
+{{site.data.keyword.registrylong}}에서는 사용자가 이미지에 서명하여 레지스트리 네임스페이스에서 이미지의 무결성을 보장할 수 있도록 신뢰할 수 있는 컨텐츠 기술을 제공합니다. 서명된 이미지를 가져오고 푸시하여 CI(Continuous Integration) 도구와 같이 올바른 당사자가 이미지를 푸시했는지 확인할 수 있습니다. 이 기능을 사용하려면 Docker 버전 1.11 이상이 있어야 합니다. [Docker Content Trust ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/content_trust/) 및 [Notary 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/theupdateframework/notary) 문서를 검토하여 더 자세히 알아볼 수 있습니다.
 {:shortdesc}
 
 사용자가 신뢰할 수 있는 컨텐츠가 사용되는 이미지를 푸시할 때 Docker 클라이언트도 {{site.data.keyword.Bluemix_notm}} 신뢰 서버에 서명된 메타데이터 오브젝트를 푸시합니다. Docker Content Trust가 사용되는 태그 지정된 이미지를 가져올 때 Docker 클라이언트는 신뢰 서버에 접속하여 사용자가 요청한 태그의 서명된 최신 버전을 확립하고 컨텐츠 서명을 확인하고 서명된 이미지를 다운로드합니다.
@@ -29,7 +29,7 @@ lastupdated: "2018-07-23"
 
 Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
 
-"trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework)](https://theupdateframework.github.io/)를 참조하십시오. 
+"trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.  
 
 
 ## 신뢰할 수 있는 컨텐츠 환경 설정
@@ -78,7 +78,9 @@ set DOCKER_CONTENT_TRUST=1
     ```
     {: pre}
 
-    출력에서는 Docker Content Trust 환경 변수를 내보내도록 지시합니다. 예를 들어, 다음과 같습니다.
+    출력에서는 Docker Content Trust 환경 변수를 내보내도록 지시합니다. 
+    
+    **예**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -100,7 +102,7 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 이제 신뢰할 수 있고 서명된 이미지를 푸시하고 가져오고 관리할 수 있습니다.
 
-Docker Content Trust가 사용되는 세션 중에 신뢰할 수 있는 컨텐츠를 사용하지 않는 조작을 수행하려는 경우(예: 서명되지 않은 이미지 가져오기) 명령과 함께 `--disable-content-trust` 플래그를 사용하십시오.
+Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있는 컨텐츠를 사용 안함으로 설정하여 조작을 수행하려는 경우(예: 서명되지 않은 이미지 가져오기) 명령과 함께 `--disable-content-trust` 플래그를 사용하십시오.
 {: tip}
 
 ## 서명된 이미지 푸시
@@ -127,7 +129,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 1.  [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2.  이미지를 가져오십시오. _&lt;source_image&gt;_를 이미지의 저장소로 바꾸고 _&lt;tag&gt;_는 사용할 이미지의 태그(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오. 
+2.  이미지를 가져오십시오. _&lt;source_image&gt;_를 이미지의 저장소로 바꾸고 _&lt;tag&gt;_는 사용할 이미지의 태그(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오.
 
     ```
     docker pull <source_image>:<tag>
@@ -140,7 +142,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 ## 신뢰할 수 있는 컨텐츠 관리
 {: #trustedcontent_managetrust}
 
-`docker trust` 명령을 사용하면 신뢰 컨텐츠 상태를 철회하고 이미지에 서명한 사용자를 볼 수 있습니다. `docker trust` 명령을 실행하려면 Docker 17.12 이상이 필요합니다.
+`docker trust` 명령을 사용하면 이미지에 서명한 사용자를 볼 수 있으며 신뢰 컨텐츠 상태를 철회할 수 있습니다. `docker trust` 명령을 실행하려면 Docker 17.12 이상이 필요합니다.
 {:shortdesc}
 
 ### 서명된 이미지 보기
@@ -151,7 +153,9 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 1.  [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2.  각 이미지의 태그, 요약 및 서명자 정보를 검토하십시오. **선택사항**: 이미지 버전에 대한 정보를 보려면 _&lt;tag&gt;_를 지정하십시오.
+2.  각 이미지의 태그, 요약 및 서명자 정보를 검토하십시오. 
+
+    (선택사항) 해당 이미지 버전에 대한 정보를 보려면 태그 _&lt;tag&gt;_를 지정하십시오. 
 
     ```
 docker trust view <image>:<tag>
@@ -184,6 +188,7 @@ $ docker trust view <image>:<tag>
     ```
     {: codeblock}
 
+
 ## 서명 키 백업
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +203,7 @@ $ docker trust view <image>:<tag>
 
 모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](ts_index.html#ts_recoveringtrustedcontent)이 제한됩니다.
 
-키를 백업하려면 [Docker Content Trust 문서](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오.
+키를 백업하려는 경우에는 [Docker Content Trust 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오. 
 
 
 ## 신뢰할 수 있는 서명자 관리
@@ -216,7 +221,7 @@ $ docker trust view <image>:<tag>
 시작하기 전에:
 - 이미지 서명자에게 네임스페이스에 이미지를 푸시하는 권한이 있어야 합니다. 
 - 저장소 소유자 및 추가 서명자의 경우 Docker 17.12 이상이 설치되어 있어야 합니다.
-- [서명된 이미지를 푸시](#trustedcontent_push)하여 신뢰할 수 있는 컨텐츠 저장소를 작성하십시오. 저장소 소유자에게 로컬 시스템의 Docker 신뢰 폴더에서 사용 가능한 저장소의 저장소 관리 키가 있어야 합니다. 저장소 관리 키가 없는 경우 이 태스크를 수행하려면 소유자에게 문의하십시오.
+- [서명된 이미지를 푸시](#trustedcontent_push)하여 신뢰할 수 있는 컨텐츠 저장소를 작성하십시오. 저장소 소유자에게 로컬 시스템의 Docker 신뢰 폴더에서 사용 가능한 저장소의 저장소 관리 키가 있어야 합니다. 저장소 관리 키가 없는 경우에는 이 태스크를 대신 수행하도록 소유자에게 요청하십시오. 
 
 서명자를 추가하는 경우 이 저장소의 이미지에 서명하는 데 저장소 관리 키를 더 이상 사용할 수 없습니다. 승인된 서명자 중 하나가 서명할 개인 키를 보유하고 있어야 합니다. 서명자 추가 후 이미지에 서명하는 기능을 유지하려면 다시 다음 지시사항에 따라 직접 서명자 역할을 생성하고 추가하십시오.
 {:tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -23,7 +23,7 @@ Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Imagena
 {:shortdesc}
 
 
-## ibmcloud cr-Befehle
+## `ibmcloud cr`-Befehle
 {: #registry_cli_reference_bxcr}
 
 Führen Sie die `ibmcloud cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
@@ -37,11 +37,11 @@ Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keywo
 Sie können die CLI-Ausgabe für unterstützte {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern.
 {:shortdesc}
 
-Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das Container-Registry-Plug-in stellt die Option 'format' bereit, mit der Sie eine Go-Vorlage auf die CLI-Ausgabe anwenden können. Die Go-Vorlage ist eine Komponente der [Programmiersprache Go](https://golang.org/pkg/text/template/), mit der Sie die CLI-Ausgabe anpassen können.
+Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das Container-Registry-Plug-in stellt die Option 'format' bereit, mit der Sie eine Go-Vorlage auf die CLI-Ausgabe anwenden können. Die Go-Vorlage ist eine Komponente der [Programmiersprache Go](https://golang.org/pkg/text/template/), mit der Sie die Ausgabe der Befehlszeilenschnittstelle anpassen können.
 
 Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei verschiedene Arten anwenden:
 
-1.  Formatieren von Daten in Ihrer CLI-Ausgabe. Ändern Sie beispielsweise die Ausgabe des Feldes `Created` von Unix-Zeit in Standardzeit.
+1.  Formatieren von Daten in Ihrer CLI-Ausgabe. Ändern Sie beispielsweise die Ausgabe des Feldes `Created` von UNIX-Zeit in Standardzeit.
 2.  Filtern von Daten in Ihrer CLI-Ausgabe. Filtern Sie beispielsweise nach Details zum Image, um eine bestimmte Untergruppe von Images mithilfe der Bedingung `if gt` der Go-Vorlagendatei anzuzeigen.
 
 Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylong_notm}}-Befehlen verwenden. Klicken Sie auf einen Befehl, um eine Liste der verfügbaren Felder und ihrer Datentypen anzuzeigen.
@@ -59,7 +59,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: pre}
 
-    Beispielausgabe:
+    **Beispielausgabe**
 
     ```
     example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
@@ -78,7 +78,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: pre}
 
-    Beispielausgabe:
+    **Beispielausgabe**
 
     ```
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
@@ -89,11 +89,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
 
     ```
     ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-
     ```
     {: pre}
 
-    Beispielausgabe:
+    **Beispielausgabe**
 
     ```
     map[9080/tcp: 9443/tcp:]
@@ -107,7 +106,7 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
     ```
     {: pre}
 
-    Beispielausgabe:
+    **Beispielausgabe**
 
     ```
     0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
@@ -130,7 +129,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
 |`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status  `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli) beschrieben.|
-{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr image-list'." caption-side="top"}
+{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -155,7 +154,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
 |`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr image-inspect'." caption-side="top"}
+{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
 
@@ -173,11 +172,11 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`StdinOnce`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom nach dem Trennen des angefügten Clients geschlossen wird, und _false_, wenn er geöffnet bleibt.|
 |`Env`|Array von Zeichenfolgen|Zeigt die Liste der Umgebungsvariablen in Form von Schlüssel-Wert-Paaren an.|
 |`Cmd`|Array von Zeichenfolgen|Beschreibt die Befehle und Argumente, die an einen Container übergeben werden, um beim Starten des Containers ausgeführt zu werden.|
-|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container in einwandfreiem Zustand ist. Siehe Felddetails in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolesch|Zeigt 'true' an, wenn der Befehl bereits mit Escapezeichen versehen ist (Windows-spezifisch).|
 |`Image`|Zeichenfolge|Zeigt den Namen des Image an, das vom Operator übergeben wurde.|
 |`Volumes`|Schlüssel-Wert-Zuordnung|Zeigt die Liste der Datenträgermounts an, die an einen Container angehängt sind.|
-|`WorkingDir`|Zeichenfolge|Zeigt das Arbeitsverzeichnis in dem Container an, wo angegebene Befehle ausgeführt werden.|
+|`WorkingDir`|Zeichenfolge|Zeigt das Arbeitsverzeichnis in dem Container an, in dem angegebene Befehle ausgeführt werden.|
 |`Entrypoint`|Array von Zeichenfolgen|Beschreibt den Befehl, der beim Starten des Containers ausgeführt wird.|
 |`NetworkDisabled`|Boolesch|Zeigt _true_ an, wenn Netzbetrieb für den Container inaktiviert ist, und _false_, wenn Netzbetrieb für den Container aktiviert ist.|
 |`MacAddress`|Zeichenfolge|Zeigt die MAC-Adresse an, die dem Container zugeordnet ist.|
@@ -186,7 +185,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`StopSignal`|Zeichenfolge|Beschreibt das UNIX-Stoppsignal, das zu senden ist, wenn der Container gestoppt werden soll.|
 |`StopTimeout`|Ganzzahl|Zeigt das Zeitlimit in Sekunden an, innerhalb dessen ein Container gestoppt werden soll.|
 |`Shell`|Array von Zeichenfolgen|Zeigt die Shell-Formen RUN, CMD und ENTRYPOINT an.|
-{: caption="Tabelle. " caption-side="top"}
+{: caption="Tabelle 3. Verfügbare Felder und Datentypen in 'Config'. " caption-side="top"}
 
 #### Healthcheck
 
@@ -195,7 +194,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Test`|Array von Zeichenfolgen|Zeigt an, wie die Statusprüfung ausgeführt wird. Verfügbare Optionen:<ul><li>{}: Statusprüfung übernehmen</li><li>{"NONE"}: Statusprüfung ist inaktiviert</li><li>{"CMD", args...}: Argumente direkt ausführen</li><li>{"CMD-SHELL", command}: den Befehl mit der Standard-Shell des Systems ausführen</li></ul>|
 |`Interval`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die zwischen zwei Statusprüfungen gewartet werden soll.|
 |`Timeout`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die gewartet werden soll, bevor die Statusprüfung als fehlgeschlagen eingestuft wird.|
-|`Retries`|Ganzzahl|Zeigt die Anzahl der aufeinanderfolgenden Fehlversuche an, die erforderlich sind, damit der Status eines Containers als gestört betrachtet wird.|
+|`Retries`|Ganzzahl|Zeigt die Anzahl der aufeinanderfolgenden Fehlversuche an, die erforderlich sind, damit die Ausführung eines Containers als nicht korrekt eingestuft wird.|
 {: caption="Tabelle 4. Verfügbare Felder und Datentypen im Healthcheck-Struct." caption-side="top"}
 
 #### RootFS
@@ -219,4 +218,4 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke](https://en.wikipedia.org/wiki/Unix_time) des Zeitpunkts an, an dem das Token abläuft.|
 |`ReadOnly`|Boolesch|Zeigt _true_ an, wenn für Images nur Pull-Operationen durchgeführt werden können, und _false_, wenn für Images Push- und Pull-Operationen in und aus Ihrem Namensbereich durchgeführt werden können.|
 |`Beschreibung`|Zeichenfolge|Zeigt die Beschreibung des Tokens an.|
-{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl 'ibmcloud cr token-list'." caption-side="top"}
+{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr token-list</code>." caption-side="top"}>

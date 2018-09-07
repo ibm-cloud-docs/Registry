@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -36,9 +36,9 @@ lastupdated: "2018-07-23"
 -   如果有使用 {{site.data.keyword.registrylong_notm}} 开发或部署应用程序相关的技术问题，请在 [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) 上发布问题，并使用 `ibm-bluemix` 和 `container-registry` 标记您的问题。
 -   有关服务和入门指示信息的问题，请使用 [IBM developerWorks dWAnswers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 论坛。请包含 `bluemix` 和 `container-registry` 标记。
 
-有关使用论坛的更多详细信息，请参阅[使用支持中心](../../get-support/howtogetsupport.html#using-avatar)。
+有关使用论坛的更多详细信息，请参阅[使用支持中心](/docs/get-support/howtogetsupport.html#using-avatar)。
 
-有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[开具支持凭单](../../get-support/howtogetsupport.html#open-ticket)。
+有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[开具支持凭单](/docs/get-support/howtogetsupport.html#open-ticket)。
 
 ## 登录 {{site.data.keyword.registrylong_notm}} 失败
 {: #ts_login}
@@ -57,7 +57,7 @@ lastupdated: "2018-07-23"
 可以通过以下方式来解决此问题：
 
 -   升级到 container-registry 插件的最新版本；请参阅[更新 container-registry 插件](registry_setup_cli_namespace.html#registry_cli_update)。
--   确保 Docker 安装在您的机器上。如果已安装，请重新启动 Docker 守护程序。
+-   确保 Docker 安装在您的计算机上。如果已安装，请重新启动 Docker 守护程序。
 -   重新运行 `ibmcloud login` 命令以刷新 {{site.data.keyword.Bluemix_notm}} 登录凭证。
   
 ## 无法运行任何 {{site.data.keyword.registrylong_notm}} 命令，消息为：`失败 您未登录到 IBM Cloud。` 
@@ -130,6 +130,7 @@ ibmcloud cr namespace
 -   为名称空间选择其他值。
 -   如果要重新创建已删除的名称空间，而该名称空间含有大量映像，请稍后重试。
 
+
 ## 推送或拉出 Docker 映像失败
 {: #ts_pushpull}
 
@@ -171,7 +172,8 @@ denied: requested access to the resource is denied
 -   通过运行 `ibmcloud login` 登录到 {{site.data.keyword.Bluemix_notm}}。然后，通过运行 `ibmcloud cr login` 登录到 {{site.data.keyword.registrylong_notm}} CLI。
 -   [查看在 {{site.data.keyword.registrylong_notm}} 中存储和拉出 Docker 映像的配额限制和使用量](registry_quota.html#registry_quota_get)。
 
-## 无法使用 latest 标记拉出最新的映像
+
+## 无法使用 `latest` 标记拉出最新的映像
 {: #ts_docker_latest}
 
 {: tsSymptoms}
@@ -189,7 +191,7 @@ denied: requested access to the resource is denied
 
 
 {: tsSymptoms}
-尝试导入您在其他 IBM 产品（例如，{{site.data.keyword.Bluemix_notm}} Private）中使用的内容时，无法将您的映像以及其他来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www-01.ibm.com/software/passportadvantage/index.html) 的许可软件存储在注册表中。
+尝试导入您在其他 IBM 产品（例如，{{site.data.keyword.Bluemix_notm}} Private）中使用的内容时，无法将您的映像以及其他来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 的许可软件存储在注册表中。
 
 {: tsCauses}
 对于来自 IBM Passport Advantage 的软件包（例如，映像和 Helm 图表），必须使用 `ibmcloud cr ppa-archive-load` 命令将它们导入到注册表中。
@@ -198,13 +200,14 @@ denied: requested access to the resource is denied
 开始之前：
 * 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.Bluemix_notm}}。
 * 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.registrylong_notm}}。
-* [将 `kubectl` CLI 的目标设定为集群](../../containers/cs_cli_install.html#cs_cli_configure)。
-* 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](../../containers/cs_integrations.html#helm)。
+* [将 `kubectl` CLI 的目标设定为集群](/docs/containers/cs_cli_install.html#cs_cli_configure)。
+* 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers/cs_integrations.html#helm)。
 * 如果要在组织内共享图表，可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)。有关指示信息，请参阅此 [developerWorks 诀窍 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
+
 
 ### 导入 IBM Passport Advantage 产品以在 {{site.data.keyword.Bluemix_notm}} 中使用
 
-1.  从 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www-01.ibm.com/software/passportadvantage/index.html) 获取要导入的压缩文件。
+1.  从 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 获取要导入的压缩文件。
 
 2.  将要使用的区域设定为目标。如果您不知道区域名称，请运行不带区域的命令，然后选择区域。
 
@@ -225,9 +228,10 @@ denied: requested access to the resource is denied
     如果要将 IBM Passport Advantage 归档中的 Helm 图表上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
-    **示例输出**：
+    **示例输出**
+    
     ```
-    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
     Found 1 image(s) and 1 chart(s) to import.
     Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
@@ -280,10 +284,10 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 {: tsResolve}
 在定制防火墙中打开以下网络组。
 
-1.  记下要用于连接 {{site.data.keyword.registrylong_notm}} 的机器的公共 IP 地址。如果您使用 Kubernetes，请使用工作程序节点的公共 IP 地址。
+1.  记下要用于连接 {{site.data.keyword.registrylong_notm}} 的计算机的公共 IP 地址。如果您使用 Kubernetes，请使用工作程序节点的公共 IP 地址。
 通过运行 `ibmcloud ks workers <cluster_name_or_id>`，检索工作程序节点的公共 IP 地址；其中，*&lt;cluster_name_or_id&gt;* 是集群的名称或标识。
-2.  在防火墙中，允许与机器进行以下连接：
-    -   对于指向机器的 INBOUND 连接，允许入局网络流量从以下源网络组流向机器的公共 IP 地址。
+2.  在防火墙中，允许与计算机进行以下连接：
+    -   对于指向计算机的 INBOUND 连接，允许入局网络流量从以下源网络组流向计算机的目标公共 IP 地址。
 
 
         `registry.bluemix.net`：
@@ -327,7 +331,8 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
         ```
         {: codeblock}
 
-    -   对于来自机器的 OUTBOUND 连接，使用相同的网络组并允许出局网络流量从机器的源公共 IP 地址流向这些网络组。
+    -   对于来自计算机的 OUTBOUND 连接，使用相同的网络组并允许出局网络流量从计算机的源公共 IP 地址流向这些网络组。
+
 
 
 ## 恢复丢失或遭到破坏的密钥
@@ -345,6 +350,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 *  对于[存储库密钥](#trustedcontent_lostrepokey)，可以为存储库生成一组新的签名密钥。
 *  对于[根密钥](#trustedcontent_lostrootkey)，可以请求删除存储库并创建新的存储库。
 
+
 ### 存储库密钥
 {: #trustedcontent_lostrepokey}
 
@@ -356,7 +362,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 开始之前，请先检索首次[推送签名的映像](registry_trusted_content.html#trustedcontent_push)时创建的根密钥口令。
 
-1.  安装 [Notary 项目](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli)的 CLI 版本。
+1.  安装 [Notary 项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli) 的 CLI 版本。
 
 2.  [设置可信内容环境](registry_trusted_content.html#trustedcontent_setup)。
 
@@ -380,6 +386,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 
 7.	[推送签名的映像](registry_trusted_content.html#trustedcontent_push)，此映像将使用新的签名密钥。
 
+
 ### 根密钥
 {: #trustedcontent_lostrootkey}
 
@@ -390,7 +397,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 
 如果名称空间包含使用不受影响的根密钥的存储库（例如，生产映像的名称空间），那么您可能希望仅删除与受影响的根密钥相关联的信任数据。请开具支持凭单。
 
-1.  [联系 {{site.data.keyword.Bluemix_notm}} 支持](../../get-support/howtogetsupport.html)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
+1.  [联系 {{site.data.keyword.Bluemix_notm}} 支持](/docs/get-support/howtogetsupport.html#getting-customer-support)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
 
 2.  {{site.data.keyword.Bluemix_notm}} 解决此问题后，请删除本地计算机上的 Docker Content Trust 存储库。
 
@@ -401,7 +408,9 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
     因为根密钥受到影响，所以此步骤将删除所有签名密钥，包括其他信任服务器的签名密钥。
     {:tip}
 
-3.  如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](../../containers/cs_cli_install.html#cs_cli_configure)，然后修改部署。
+3.  如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](/docs/containers/cs_cli_install.html#cs_cli_configure)，然后修改部署。
+    
+
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
@@ -422,7 +431,6 @@ docker trust sign <image>:<tag>
 ## Container Image Security Enforcement 安装失败，消息为：`helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`
 {: #ts_install_cise_fail}
 
-
 {: tsSymptoms}
 Container Image Security Enforcement 安装失败，并收到以下消息：
 
@@ -442,3 +450,72 @@ Error: jobs.batch "create-crds" already exists
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+
+## 在所有工作程序停机后，Pod 不会重新启动
+{: #ts_pods}
+
+
+{: tsSymptoms}
+在所有集群工作程序停机后，Pod 不会重新启动。部署 Container Image Security Enforcement。集群工作程序显示为正常运行，但是未安排任何项。
+
+{: tsCauses}
+缺省情况下，Container Image Security Enforcement 添加故障时关闭许可 Webhook。如果所有 Container Image Security Enforcement pod 停机，那么 pod 不可用于核准其自己的恢复。
+
+{: tsResolve}
+要恢复处于此状态的集群，必须更改 Webhook 配置以使其在发生故障时打开而不是关闭。 
+
+您必须具有足够的基于角色的访问控制 (RBAC) 特权才能使用以下动词：
+*  `GET`
+*  `PATCH`
+
+在以下资源上：
+*  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
+*  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
+
+有关 RBAC 的更多信息，请参阅[使用定制 Kubernetes RBAC 角色授权用户](/docs/containers/cs_users.html#rbac)和 [Kubernetes：使用 RBAC 授权 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
+
+完成以下步骤以更改 Webhook 配置，从而使其在发生故障时打开而不是关闭，然后，在至少有一个 Container Image Security Enforcement pod 运行时，复原 Webhook 配置，从而使其在发生故障时关闭：
+
+1.  通过运行以下命令更新 `MutatingWebhookConfiguration`：
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    将 `failurePolicy` 更改为 `Ignore`，保存并关闭。
+
+2.  通过运行以下命令更新 `ValidatingWebhookConfiguration`：
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    将 `failurePolicy` 更改为 `Ignore`，保存并关闭。
+
+3.  等待一些 Container Image Security Enforcement pod 启动。您可以通过运行以下命令检查 pod 是否已启动，直至看到至少一个 pod 的**状态**列显示 `Running`：
+
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
+
+4.  在至少有一个 Container Image Security Enforcement pod 运行时，通过运行以下命令更新 `MutatingWebhookConfiguration`：
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    将 `failurePolicy` 更改为 `Fail`，保存并关闭。
+
+5.  通过运行以下命令更新 `ValidatingWebhookConfiguration`：
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    将 `failurePolicy` 更改为 `Fail`，保存并关闭。

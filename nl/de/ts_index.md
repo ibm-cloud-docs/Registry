@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -36,9 +36,9 @@ Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass 
 -   Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-bluemix` und `container-registry`.
 -   Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `bluemix` und `container-registry` dabei ein.
 
-Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](../../get-support/howtogetsupport.html#using-avatar).
+Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support/howtogetsupport.html#using-avatar).
 
-Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Support-Ticket öffnen](../../get-support/howtogetsupport.html#open-ticket).
+Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Support-Ticket öffnen](/docs/get-support/howtogetsupport.html#open-ticket).
 
 ## Anmeldung bei {{site.data.keyword.registrylong_notm}} fehlgeschlagen
 {: #ts_login}
@@ -50,14 +50,14 @@ Der Befehl `ibmcloud cr login` schlägt fehl.
 
 {: tsCauses}
 -   Das Container-Registry-Plug-in ist veraltet und muss aktualisiert werden.
--   Docker ist auf Ihrer lokalen Maschine nicht installiert oder wird nicht ausgeführt.
+-   Docker ist auf dem lokalen Computer nicht installiert oder wird nicht ausgeführt.
 -   Ihre {{site.data.keyword.Bluemix_notm}}-Anmeldeberechtigungsnachweise sind abgelaufen.
 
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
 -   Führen Sie ein Upgrade auf die neueste Version des Container-Registry-Plug-ins durch. Informationen hierzu finden Sie im Abschnitt [Container-Registry-Plug-in aktualisieren](registry_setup_cli_namespace.html#registry_cli_update).
--   Stellen Sie sicher, dass Docker auf Ihrer Maschine installiert ist. Wenn das Programm bereits installiert ist, starten Sie den Docker-Dämon erneut.
+-   Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist. Wenn das Programm bereits installiert ist, starten Sie den Docker-Dämon erneut.
 -   Führen Sie den Befehl `ibmcloud login` erneut aus, um Ihre {{site.data.keyword.Bluemix_notm}}-Anmeldeberechtigungsnachweise zu aktualisieren.
   
 ## Die Ausführung jedes Befehls für {{site.data.keyword.registrylong_notm}} schlägt fehl mit der Meldung `FAILED You are not logged in to IBM Cloud. ` (FEHLGESCHLAGEN Sie sind nicht bei der IBM Cloud angemeldet). 
@@ -130,6 +130,7 @@ Sie können dieses Problem wie folgt beheben:
 -   Wählen Sie einen anderen Wert für Ihren Namensbereich.
 -   Wenn Sie einen Namensbereich, der viele Images enthielt und gelöscht wurde, neu erstellen, versuchen Sie es zu einem späteren Zeitpunkt erneut.
 
+
 ## Push- oder Pull-Operation für ein Docker-Image schlägt fehl
 {: #ts_pushpull}
 
@@ -137,12 +138,13 @@ Sie können dieses Problem wie folgt beheben:
 Wenn Sie Befehle für Push- oder Pull-Operationen für Docker-Images ausführen, erhalten Sie eine Fehlernachricht. Der Inhalt der Fehlernachricht richtet sich nach der Ursache. Mögliche Fehlernachrichten können sein:
 
 ```
-Sie haben Ihr Speicherkontingent überschritten. Löschen Sie mindestens ein Image oder prüfen Sie Ihr Kontingent und Ihren Preistarif
+Sie haben Ihr Speicherkontingent überschritten. Löschen Sie mindestens ein Image oder prüfen Sie Ihr Kontingent und Ihren Preisstrukturplan.
 ```
 {: screen}
 
 ```
-Sie haben Ihr Pull-Datenverkehrkontingent für den aktuellen Monat überschritten. Prüfen Sie Ihr Pull-Datenverkehrkontingent und den Preistarif
+Sie haben Ihr Pull-Datenverkehrkontingent für den aktuellen Monat überschritten. 
+Prüfen Sie Ihr Pull-Datenverkehrkontingent und den Preisstrukturplan.
 ```
 {: screen}
 
@@ -165,19 +167,20 @@ Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
--   [Stellen Sie sicher, dass Docker auf Ihrer Maschine installiert ist](index.html#registry_cli_install).
+-   [Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist](index.html#registry_cli_install).
 -   Prüfen Sie Ihren Docker-Installationspfad.
 -   Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, indem Sie den Befehl `ibmcloud login` ausführen. Melden Sie sich anschließend bei der {{site.data.keyword.registrylong_notm}}-CLI an, indem Sie `ibmcloud cr login` ausführen.
 -   [Überprüfen Sie Kontingente und Nutzung zum Speichern und für Pull-Operationen von Docker-Images in {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
 
-## Das neueste Image kann nicht mit dem neuesten Tag mit Pull-Operation extrahiert werden
+
+## Das neueste Image kann nicht mit dem Tag `latest` abgerufen werden
 {: #ts_docker_latest}
 
 {: tsSymptoms}
 Sie versuchen, den Befehl `docker pull` auszuführen, aber er gibt eine Version Ihres Image zurück, die nicht die zuletzt erstellte Version darstellt.
 
 {: tsCauses}
-Der Tag `latest` wird standardmäßig für den Verweis auf ein Image angewandt, wenn Sie Docker-Befehle ausführen, ohne einen Tagwert anzugeben. Der Tag `latest` wird auf den letzten `docker build`- oder `docker tag`-Befehl angewandt, der ausgeführt wurde, ohne dass ein Tag explizit festgelegt wurde. Daher ist es möglich, `docker`-Befehle in falscher Reihenfolge auszuführen oder Tags für einige Images explizit festzulegen, und der Tag `latest` kann ein Build angeben, das nicht das aktuellste ist.
+Der Tag `latest` wird standardmäßig für den Verweis auf ein Image angewandt, wenn Sie Docker-Befehle ausführen, ohne einen Tagwert anzugeben. Der Tag `latest` wird auf den `docker build`- oder `docker tag`-Befehl angewandt, der zuletzt ausgeführt wurde, ohne dass ein Tag explizit festgelegt wurde. Daher ist es möglich, `docker`-Befehle in falscher Reihenfolge auszuführen oder Tags für einige Images explizit festzulegen, und der Tag `latest` kann ein Build angeben, das nicht das aktuellste ist.
 
 {: tsResolve}
 In der Regel ist es besser, jedes Mal explizit einen anderen sequenziellen Tag für Ihre Images zu definieren und sich nicht auf den Tag `latest` zu verlassen.
@@ -188,22 +191,23 @@ In der Regel ist es besser, jedes Mal explizit einen anderen sequenziellen Tag f
 
 
 {: tsSymptoms}
-Wenn Sie versuchen, Inhalt zu importieren, den Sie in anderen IBM Produkten verwendet haben, z. B. {{site.data.keyword.Bluemix_notm}} Private, können Sie Ihre Images und andere lizenzierte Software nicht von [IBM Passport Advantage ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www-01.ibm.com/software/passportadvantage/index.html) in der Registry speichern.
+Wenn Sie versuchen, Inhalt zu importieren, den Sie in anderen IBM Produkten verwendet haben, z. B. {{site.data.keyword.Bluemix_notm}} Private, können Sie Ihre Images und andere lizenzierte Software nicht von [IBM Passport Advantage ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/index.html) in der Registry speichern.
 
 {: tsCauses}
-Softwarepakete wie Images und Helm Charts von IBM Passport Advantage müssen mit dem Befehl `ibmcloud cr ppa-archive-load` in die Registry importiert werden.
+Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen mit dem Befehl `ibmcloud cr ppa-archive-load` in die Registry importiert werden.
 
 {: tsResolve}
 Führen Sie zuvor Folgendes aus:
 * Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, indem Sie den Befehl `ibmcloud login [--sso]` ausführen.
 * Melden Sie sich bei {{site.data.keyword.registrylong_notm}} an, indem Sie den Befehl `ibmcloud cr login` ausführen.
-* [Wählen Sie die `kubectl`-CLI](../../containers/cs_cli_install.html#cs_cli_configure) als Ziel für Ihren Cluster aus.
-* Wenn Sie Helm noch nicht in Ihrem Cluster eingerichtet haben, [richten Sie Helm jetzt in Ihrem Cluster ein](../../containers/cs_integrations.html#helm).
+* [Wählen Sie die `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für Ihren Cluster aus.
+* Wenn Sie Helm noch nicht in Ihrem Cluster eingerichtet haben, [richten Sie Helm jetzt in Ihrem Cluster ein](/docs/containers/cs_integrations.html#helm).
 * Wenn Sie die Charts innerhalb Ihrer Organisation gemeinsam nutzen möchten, können Sie das [Open-Source-Projekt ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) installieren. Anweisungen hierzu finden Sie in dieser [developerWorks-Anleitung ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+
 
 ### IBM Passport Advantage-Produkte für die Verwendung in {{site.data.keyword.Bluemix_notm}} importieren
 
-1.  Rufen Sie die komprimierte Datei ab, die Sie von [IBM Passport Advantage![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www-01.ibm.com/software/passportadvantage/index.html) importieren möchten.
+1.  Rufen Sie die komprimierte Datei ab, die Sie von [IBM Passport Advantage![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/index.html) importieren möchten.
 
 2.  Wählen Sie die Region aus, die Sie als Ziel verwenden möchten. Wenn Sie den Regionsnamen nicht kennen, führen Sie den Befehl ohne die Region aus und wählen Sie danach eine Region.
 
@@ -221,10 +225,11 @@ Führen Sie zuvor Folgendes aus:
 
     Dieser Befehl erweitert die komprimierte Datei, lädt enthaltene Images in Ihren lokalen Docker-Client und überträgt die Images dann mit Push-Operation an den Namensbereich in Ihrer Registry.
     
-    Wenn Sie die Helm Charts vom IBM Passport Advantage-Archiv in ein ChartMuseum hochladen möchten, schließen Sie die folgenden Optionen in den Befehl ein: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    Wenn Sie die Helm-Diagramme vom IBM Passport Advantage-Archiv in ein ChartMuseum hochladen möchten, schließen Sie die folgenden Optionen in den Befehl ein: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
-    **Beispielausgabe**:
+    **Beispielausgabe**
+    
     ```
     user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
@@ -245,7 +250,7 @@ Führen Sie zuvor Folgendes aus:
     ```
     {: screen}
 
-4.  Wenn die komprimierte Datei Helm Charts enthält, werden diese Charts in einem Archivverzeichnis mit dem Namen `ppa-import` angeordnet, das in Ihrem aktuellen Arbeitsverzeichnis erstellt wird. Öffnen Sie das Verzeichnis, um den Namen des Helm-Diagramms, `<helm_chart>`, abzurufen, und überprüfen Sie dann seine Werte.
+4.  Wenn die komprimierte Datei Helm-Diagramme enthält, werden diese Diagramme in einem Archivverzeichnis mit dem Namen `ppa-import` angeordnet, das in Ihrem aktuellen Arbeitsverzeichnis erstellt wird. Öffnen Sie das Verzeichnis, um den Namen des Helm-Diagramms, `<helm_chart>`, abzurufen, und überprüfen Sie dann seine Werte.
 
     ```
     helm inspect values ppa-import/charts/<helm_chart>.tgz
@@ -255,9 +260,9 @@ Führen Sie zuvor Folgendes aus:
     Wenn Sie im vorherigen Schritt Charts in ein ChartMuseum hochgeladen haben, können Sie `helm inspect` zum Prüfen des Charts im ChartMuseum verwenden.
     {: tip}
 
-5.  Konfigurieren Sie den Helm Chart `<helm_chart>` entsprechend den Werten, die von dem Befehl `helm inspect values` ausgegeben werden.
+5.  Konfigurieren Sie das Helm-Diagramm `<helm_chart>` entsprechend den Werten, die von dem Befehl `helm inspect values` ausgegeben werden.
 
-6.  Implementieren Sie den Helm Chart `<helm_chart>`, indem Sie den Befehl `helm install` verwenden. Bei Bedarf können Sie Werte im Chart überschreiben, indem Sie die Option `--set` verwenden.
+6.  Implementieren Sie das Helm-Diagramm `<helm_chart>`, indem Sie den Befehl `helm install` verwenden. Bei Bedarf können Sie Werte im Chart überschreiben, indem Sie die Option `--set` verwenden.
 
     ```
     helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
@@ -277,9 +282,9 @@ Für die angepasste Firewall ist es erforderlich, dass bestimmte Netzgruppen fü
 {: tsResolve}
 Öffnen Sie die folgenden Netzgruppen in der angepassten Firewall.
 
-1.  Notieren Sie sich die öffentliche IP-Adresse der Maschine, die für die Verbindung zu {{site.data.keyword.registrylong_notm}} verwendet werden soll. Wenn Sie Kubernetes nutzen, verwenden Sie die öffentliche IP-Adresse des Workerknotens. Rufen Sie die öffentliche IP-Adresse des Workerknotens ab, indem Sie `ibmcloud ks workers <cluster_name_or_id>` ausführen. Dabei steht *&lt;cluster_name_or_id&gt;* für den Namen oder die ID Ihres Clusters.
-2.  Lassen Sie in der Firewall die folgenden Verbindungen zu und von der verwendeten Maschine zu:
-    -   Für die Konnektivität der bei Ihrer Maschine ankommenden Daten lassen Sie den ankommenden Netzdatenverkehr von den folgenden Quellennetzgruppen zur öffentlichen Ziel-IP-Adresse Ihrer Maschine zu.
+1.  Notieren Sie sich die öffentliche IP-Adresse des Computers, der für die Verbindung zu {{site.data.keyword.registrylong_notm}} verwendet werden soll. Wenn Sie Kubernetes nutzen, verwenden Sie die öffentliche IP-Adresse des Workerknotens. Rufen Sie die öffentliche IP-Adresse des Workerknotens ab, indem Sie `ibmcloud ks workers <cluster_name_or_id>` ausführen. Dabei steht *&lt;cluster_name_or_id&gt;* für den Namen oder die ID Ihres Clusters.
+2.  Lassen Sie in der Firewall die folgenden Verbindungen zum und vom verwendeten Computer zu:
+    -   Für die Konnektivität der bei Ihrem Computer ankommenden Daten lassen Sie den ankommenden Netzdatenverkehr von den folgenden Quellennetzgruppen zur öffentlichen Ziel-IP-Adresse Ihres Computers zu.
 
         `registry.bluemix.net`:
 
@@ -322,7 +327,8 @@ Für die angepasste Firewall ist es erforderlich, dass bestimmte Netzgruppen fü
         ```
         {: codeblock}
 
-    -   Für die Konnektivität der von Ihrer Maschine abgehenden Daten verwenden Sie dieselben Netzgruppen und lassen Sie den abgehenden Netzdatenverkehr von der öffentlichen Quellen-IP-Adresse Ihrer Maschine zu diesen Netzgruppen zu.
+    -   Für die Konnektivität der von Ihrem Computer abgehenden Daten verwenden Sie dieselben Netzgruppen und lassen Sie den abgehenden Netzdatenverkehr von der öffentlichen Quellen-IP-Adresse Ihres Computers zu diesen Netzgruppen zu.
+
 
 ## Verlorene oder beeinträchtigte Schlüssel wiederherstellen
 {: #ts_recoveringtrustedcontent}
@@ -339,6 +345,7 @@ Ihre Optionen für die Wiederherstellung von verlorenen oder beeinträchtigten S
 *  Bei [Repository-Schlüsseln](#trustedcontent_lostrepokey) können Sie einen neuen Satz von Signierschlüsseln für das Repository generieren.
 *  Bei [Rootschlüsseln](#trustedcontent_lostrootkey) können Sie die Löschung des Repositorys anfordern und ein neues Repository erstellen.
 
+
 ### Repository-Schlüssel
 {: #trustedcontent_lostrepokey}
 
@@ -350,7 +357,7 @@ Die einzige Signierrolle, die Sie turnusmäßig wechseln können, ist `targets`,
 
 Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt haben, als Sie erstmalig [ein signiertes Image mit Push-Operation übertragen](registry_trusted_content.html#trustedcontent_push) haben.
 
-1.  Installieren Sie die CLI-Version des [Notary-Projekts](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+1.  Installieren Sie die Befehlszeilenschnittstellenversion von [Notary Project ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
 2.  [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](registry_trusted_content.html#trustedcontent_setup).
 
@@ -374,6 +381,7 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
 
 7.	[Übertragen Sie mit Push-Operation ein signiertes Image](registry_trusted_content.html#trustedcontent_push), das die neuen Signierschlüssel verwendet.
 
+
 ### Rootschlüssel
 {: #trustedcontent_lostrootkey}
 
@@ -384,9 +392,9 @@ Sie können [Namensbereiche löschen](registry_setup_cli_namespace.html#registry
 
 Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z. B. ein Namensbereich für Produktions-Images, kann es sinnvoll sein, nur diejenigen Trust-Daten zu löschen, die dem betroffenen Rootschlüssel zugehörig sind. Öffnen Sie ein Support-Ticket.
 
-1.  [Wenden Sie sich an den {{site.data.keyword.Bluemix_notm}} Support](../../get-support/howtogetsupport.html). Schließen Sie eine Kurzbeschreibung Ihres Problems, die Konto-ID und eine Liste der Namensbereiche ein, die die Image-Repositorys mit den betroffenen Rootschlüsseln enthalten.
+1.  [Wenden Sie sich an den {{site.data.keyword.Bluemix_notm}} Support](/docs/get-support/howtogetsupport.html#getting-customer-support). Schließen Sie eine Kurzbeschreibung Ihres Problems, die Konto-ID und eine Liste der Namensbereiche ein, die die Image-Repositorys mit den betroffenen Rootschlüsseln enthalten.
 
-2.  Nachdem sich {{site.data.keyword.Bluemix_notm}} mit dem Problem befasst hat, löschen Sie das Docker Content Trust-Repository in Ihrem lokalen System.
+2.  Nachdem sich {{site.data.keyword.Bluemix_notm}} mit dem Problem befasst hat, löschen Sie das Docker Content Trust-Repository auf Ihrem lokalen Computer.
 
     * Linux- oder Mac-Verzeichnis: `~/.docker/trust/private` und `~/.docker/trust/tuf`
 
@@ -395,7 +403,8 @@ Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z.
     Da der Rootschlüssel betroffen ist, werden mit diesem Schritt alle Signierschlüssel, auch die für andere Trust-Server, gelöscht.
     {:tip}
 
-3.  Wenn Sie [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in Ihrem {{site.data.keyword.containershort_notm}}-Cluster verwenden, starten Sie jeden Image Enforcement-Pod neu. Um Kubernetes zu veranlassen, automatisch einen sequenziellen Neustart der Pods durchzuführen, können Sie einige Metadaten am Pod ändern. Zum Beispiel [wählen Sie Ihre Kubernetes-CLI als Ziel für Ihren Cluster](../../containers/cs_cli_install.html#cs_cli_configure) aus und modifizieren Sie die Implementierung.
+3.  Wenn Sie [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) in Ihrem {{site.data.keyword.containershort_notm}}-Cluster verwenden, starten Sie jeden Image Enforcement-Pod neu. Um Kubernetes zu veranlassen, automatisch einen sequenziellen Neustart der Pods durchzuführen, können Sie einige Metadaten am Pod ändern. Zum Beispiel [wählen Sie Ihre Kubernetes-CLI als Ziel für Ihren Cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) aus und modifizieren Sie die Implementierung.
+
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
@@ -405,7 +414,7 @@ Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z.
 
     *  Wenn Sie neue vertrauenswürdige Inhalte erstellen möchten, [übertragen Sie die neuen signierten Images mit Push-Operation](registry_trusted_content.html#trustedcontent_push).
 
-    *  Wenn Sie die vorherigen vertrauenswürdigen Inhalte nicht ändern möchten, fügen Sie den aktuellsten Images in der Registry eine Signatur hinzu.
+    *  Wenn Sie die vorherigen vertrauenswürdigen Inhalte nicht ändern möchten, fügen Sie den neuesten Images in der Registry eine Signatur hinzu.
 
        ```
        docker trust sign <image>:<tag>
@@ -415,7 +424,6 @@ Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z.
 
 ## Die Installation von Container Image Security Enforcement schlägt mit `helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists` fehl.
 {: #ts_install_cise_fail}
-
 
 {: tsSymptoms}
 Ihre Installation von Container Image Security Enforcement ist fehlgeschlagen und Sie haben die folgende Nachricht erhalten:
@@ -436,3 +444,72 @@ Entfernen Sie die verbleibenden Kubenetes-Jobs mit dem folgenden Befehl:
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+
+## Pods können nicht erneut gestartet werden, nachdem alle Worker inaktiv waren
+{: #ts_pods}
+
+
+{: tsSymptoms}
+Pods können nicht erneut gestartet werden, nachdem alle Cluster-Worker inaktiv waren. Container Image Security Enforcement ist bereitgestellt. Der Status der Cluster-Worker wird als einwandfrei angezeigt, es findet jedoch keine Planung statt.
+
+{: tsCauses}
+Standardmäßig fügt Container Image Security Enforcement einen Zugangswebhook 'fail closed' hinzu. Wenn alle Container Image Security Enforcement-Pods inaktiv sind, stehen die Pods nicht für die Bestätigung der eigenen Wiederherstellung zur Verfügung.
+
+{: tsResolve}
+Damit der Cluster wiederhergestellt werden kann, wenn er sich in diesem Status befindet, müssen Sie die Webhookkonfiguration von 'fail closed' in 'fail open' ändern. 
+
+Sie benötigen ausreichende RBAC-Berechtigungen (RBAC = Role-Based Access Control, rollenbasierte Zugriffssteuerung) für die Verwendung der folgenden Verben:
+*  `GET`
+*  `PATCH`
+
+Für die folgenden Ressourcen:
+*  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
+*  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
+
+Weitere Informationen zu RBAC finden Sie in [Benutzern Berechtigungen mithilfe angepasster Kubernetes-RBAC-Rollen zuweisen](/docs/containers/cs_users.html#rbac) und [Kubernetes: RBAC-Berechtigung verwenden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+
+Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail closed' in 'fail open' zu ändern und sie dann, wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, wieder auf 'fail closed' zurückzusetzen:
+
+1.  Aktualisieren Sie `MutatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Ändern Sie `failurePolicy` in `Ignore`, speichern Sie die Einstellung und schließen Sie sie.
+
+2.  Aktualisieren Sie `ValidatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
+
+    ``>
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Ändern Sie `failurePolicy` in `Ignore`, speichern Sie die Einstellung und schließen Sie sie.
+
+3.  Warten Sie, bis einige Container Image Security Enforcement-Pods gestartet werden. Sie können überprüfen, ob die Pods gestartet wurden, indem Sie den folgenden Befehl ausführen, bis in der Spalte **Status** für mindestens einen Pod `Running` angezeigt wird:
+
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
+
+4.  Wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, aktualisieren Sie `MutatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Ändern Sie `failurePolicy` in `Fail`, speichern Sie die Einstellung und schließen Sie sie.
+
+5.  Aktualisieren Sie `ValidatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Ändern Sie `failurePolicy` in `Fail`, speichern Sie die Einstellung und schließen Sie sie.

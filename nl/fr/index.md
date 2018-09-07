@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -28,14 +28,15 @@ votre compte {{site.data.keyword.Bluemix_notm}}.
 
 La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Surveillance de la vulnérabilité des images](registry_ui.html).
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+{:tip}
 
 
 
-## Installez l'interface de ligne de commande (CLI) de {{site.data.keyword.registrylong_notm}}
+## Installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1.  Installez l'interface de ligne de commande d'[{{site.data.keyword.Bluemix_notm}}![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) afin de pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} **ibmcloud**. 
+1.  Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. 
 2.  Installez le plug-in container-registry :
 
     ```
@@ -71,11 +72,12 @@ _&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
 
 
 
+
 ## Extrayez vers votre machine locale des images d'un autre registre
 {: #registry_images_pulling}
 
 1.  [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si
-vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/products/docker-toolbox) à la place.
+vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place.
 
 2.  Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez
 _&lt;source_image&gt;_ par le référentiel de l'image et
@@ -111,7 +113,7 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
 
 
 
-## Transférez (par commande Push) des images Docker vers votre espace de nom
+## Transférez (par commande push) des images Docker vers votre espace de nom
 {: #registry_images_pushing}
 
 1.  Exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à {{site.data.keyword.registrylong_notm}}.
@@ -150,9 +152,9 @@ envoyé par commande push votre première image vers votre espace de nom.
 
 **Etape suivante ?**
 
--   [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
+-   [Gérez la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
 -   [Examinez vos plans de service et leur utilisation](registry_overview.html#registry_plans)
 -   [Stockez et gérez davantage d'images dans votre espace de nom](registry_images_.html).
--   [Créez et déployez un conteneur vers un cluster Kubernetes à partir de votre image](../../containers/cs_clusters.html).
+-   [Configurez des clusters et des noeuds worker](/docs/containers/cs_clusters.html#clusters).
 
 

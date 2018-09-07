@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -32,7 +32,8 @@ de cota customizados.
 os seus próprios limites de cota.
 {:shortdesc}
 
-Antes de iniciar, certifique-se de que você seja o [proprietário ou gerenciador de faturamento para a conta do {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) na qual deseja configurar a cota.
+Antes de iniciar, certifique-se de que você seja o [proprietário ou
+gerente de faturamento para a conta do {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) na qual deseja configurar a cota.
 
 Ao fazer upgrade para o plano padrão do {{site.data.keyword.registryshort_notm}}, você se beneficiará de
 uma quantia ilimitada de armazenamento e de tráfego extraído para as suas imagens privadas. Para evitar exceder o seu nível de pagamento preferencial, será possível configurar cotas individuais para a

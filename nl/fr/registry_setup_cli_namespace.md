@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -24,7 +24,8 @@ l'espace de nom du registre
 Pour pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong}}, vous devez installer l'interface de ligne de commande de {{site.data.keyword.Bluemix_notm}} et le plug-in container-registry, puis configurer un espace de nom de registre afin de créer votre propre référentiel d'images dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).{:tip}
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+{:tip}
 
 Avant de commencer, installez l'interface de ligne de commande d'[{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html).
 
@@ -110,9 +111,9 @@ espace de nom dans le registre
 {{site.data.keyword.registrylong_notm}} privé.
 {:shortdesc}
 
-Avant de commencer :
+**Avant de commencer**
 
--   [Installez l'interface de ligne de commande (CLI) de {{site.data.keyword.Bluemix_notm}} et le plug-in container-registry](#registry_cli_install).
+-   [Installez l'interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} et le plug-in container-registry](#registry_cli_install).
 -   [Planifiez comment utiliser et nommer vos espaces de nom du registre](registry_overview.html#registry_namespaces).
 
 Créez un espace de nom, voir [Configurez un espace de nom](index.html#registry_namespace_add) dans la documentation Initiation.

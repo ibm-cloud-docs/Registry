@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-07-23"
 # Imagens de assinatura para conteúdo confiável
 {: #registry_trustedcontent}
 
-O {{site.data.keyword.registrylong}} fornece tecnologia de conteúdo confiável para que você possa assinar imagens para assegurar a integridade de imagens no namespace de registro. Ao puxar e enviar imagens assinadas por push, é possível verificar se elas foram enviadas por push pela parte correta, como seu conjunto de ferramentas de integração contínua (CI). Para usar esse recurso, deve-se ter o Docker versão 1.11 ou mais recente. É possível saber mais revisando a documentação do [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) e do [projeto Notary](https://github.com/theupdateframework/notary).
+O {{site.data.keyword.registrylong}} fornece tecnologia de conteúdo confiável para que você possa assinar imagens para assegurar a integridade de imagens no namespace de registro. Ao puxar e enviar por push as imagens assinadas, é possível verificar se elas foram enviadas por push pela parte correta, como as ferramentas de integração contínua (CI). Para usar esse recurso, deve-se ter o Docker versão 1.11 ou mais recente. Revise a documentação do [Docker Content Trust![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/security/trust/content_trust/) e do [projeto Notary ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/theupdateframework/notary) para saber mais.
 {:shortdesc}
 
 Quando você envia a imagem por push com conteúdo confiável ativado, o cliente Docker também envia por push um objeto de metadados assinado para o servidor de confiança do {{site.data.keyword.Bluemix_notm}}. Ao puxar uma imagem identificada com o Docker Content Trust ativado, o cliente Docker entra em contato com o servidor de confiança para estabelecer a versão assinada mais recente da tag solicitada, verifica a assinatura de conteúdo e faz download da imagem assinada.
@@ -29,7 +29,8 @@ Um repositório pode conter tanto conteúdo assinado quanto não assinado. Quand
 
 O Docker Content Trust usa um modelo de segurança "confiança no primeiro uso". A chave do repositório é puxada do servidor de confiança ao puxar uma imagem assinada de um repositório pela primeira vez e essa chave é usada para verificar imagens desse repositório no futuro. Deve-se verificar se você confia no servidor de confiança ou na imagem e em seu publicador antes de puxar o repositório pela primeira vez. Se as informações de confiança no servidor estiverem comprometidas e você não tiver puxado uma imagem do repositório antes, seu cliente Docker poderá puxar as informações comprometidas do servidor de confiança. Se os dados de confiança estiverem comprometidos depois que você puxar a imagem pela primeira vez, nos pulls subsequentes, o cliente Docker não verificará os dados comprometidos e não puxará a imagem. Para obter mais informações sobre como inspecionar dados de confiança para uma imagem, consulte [Visualizando imagens assinadas](#trustedcontent_viewsigned).
 
-Para obter mais informações sobre o modelo de segurança "confiança no primeiro uso", consulte [The Update Framework (TUF)](https://theupdateframework.github.io/). 
+Para obter mais informações sobre o modelo de segurança "confiança no primeiro uso", consulte
+[The Update Framework (TUF) ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://theupdateframework.github.io/). 
 
 
 ## Configurando seu ambiente de conteúdo confiável
@@ -78,7 +79,9 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
     ```
     {: pre}
 
-    A saída instrui você a exportar a variável de ambiente do Docker Content Trust. Por exemplo:
+    A saída instrui você a exportar a variável de ambiente do Docker Content Trust. 
+    
+    **Exemplo**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -100,7 +103,8 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
 
 Agora você está pronto para enviar por push, puxar e gerenciar imagens assinadas confiáveis.
 
-Durante sua sessão com o Docker Content Trust ativado, se desejar executar uma operação com conteúdo confiável desativado (como puxar uma imagem não assinada), use a sinalização `--disable-content-trust` com o comando.
+Durante a sessão com o Docker Content Trust ativado, se você desejar executar uma operação com conteúdo confiável desativado
+(como puxar uma imagem não assinada), use a sinalização `--disable-content-trust` com o comando.
 {: tip}
 
 ## Enviando uma imagem assinada
@@ -140,7 +144,8 @@ A primeira vez que você puxa uma imagem assinada com o Docker Content Trust ati
 ## Gerenciando conteúdo confiável
 {: #trustedcontent_managetrust}
 
-Ao usar comandos `docker trust`, é possível visualizar quem assinou as imagens, bem como revogar o status de conteúdo de confiança. Para executar comandos `docker trust`, é necessário o Docker 17.12 ou mais recente.
+Usando os comandos `docker trust`, é possível visualizar quem assinou as imagens e revogar o status do
+conteúdo de confiança. Para executar comandos `docker trust`, é necessário o Docker 17.12 ou mais recente.
 {:shortdesc}
 
 ### Visualizando as imagens assinadas
@@ -151,7 +156,9 @@ Ao usar comandos `docker trust`, é possível visualizar quem assinou as imagens
 
 1.  [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2.  Revise a tag, a compilação e as informações de assinante de cada imagem. **Opcional**: especifique a _&lt;tag&gt;_ para ver informações para essa versão da imagem.
+2.  Revise a tag, a compilação e as informações de assinante de cada imagem. 
+
+    (Opcional) Especifique a tag, _&lt;tag&gt;_, para ver as informações para essa versão da imagem.
 
     ```
     docker trust view <image>:<tag>
@@ -184,6 +191,7 @@ Antes de iniciar, recupere a passphrase da chave de repositório salva quando [e
     ```
     {: codeblock}
 
+
 ## Fazendo Backup de chaves de assinatura
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +206,9 @@ Ao enviar uma imagem assinada por push pela primeira vez para um novo repositór
 
 Deve-se fazer backup de todas as chaves, especialmente da chave raiz. Se uma chave for perdida ou comprometida, as [opções de recuperação](ts_index.html#ts_recoveringtrustedcontent) serão limitadas.
 
-Para fazer backup das chaves, consulte a [documentação do Docker Content Trust](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Para fazer backup de suas chaves, consulte a
+[documentação do Docker Content Trust
+![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Gerenciando assinantes confiáveis
@@ -216,7 +226,7 @@ Para permitir que outros usuários assinem imagens em um repositório, inclua as
 Antes de iniciar:
 - Os assinantes de imagem devem ter permissão para enviar imagens por push para o namespace. 
 - Os proprietários do repositório e os assinantes adicionais devem ter o Docker 17.12 ou mais recente instalado.
-- Crie um repositório de conteúdo confiável [enviando uma imagem assinada por push](#trustedcontent_push). Os proprietários do repositório devem ter as chaves de administrador de repositório para o repositório disponível na pasta de confiança do Docker na máquina local. Se você não tiver a chave de administrador do repositório, entre em contato com o proprietário para executar esta tarefa para você.
+- Crie um repositório de conteúdo confiável [enviando uma imagem assinada por push](#trustedcontent_push). Os proprietários do repositório devem ter as chaves de administrador de repositório para o repositório disponível na pasta de confiança do Docker na máquina local. Se você não tiver a chave de administrador do repositório, entre em contato com o proprietário para executar essa tarefa para você.
 
 Ao incluir um assinante, não é mais possível usar a chave de administrador do repositório para assinar imagens nesse repositório. Deve-se manter a chave privada para um dos assinantes aprovados assinar. Para reter a capacidade de assinar imagens depois de incluir um assinante, siga estas instruções novamente para gerar e incluir uma função de assinante para si mesmo.
 {:tip}

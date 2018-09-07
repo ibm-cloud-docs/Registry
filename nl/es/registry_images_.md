@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-07-23"
 Puede almacenar y compartir de forma segura imágenes de Docker con otros usuarios añadiendo imágenes a su espacio de nombres en {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
-Cada imagen que desea añadir a su espacio de nombres debe existir en su máquina local en primer lugar. Puede descargar (extraer) una imagen desde otro repositorio a la máquina local, o crear su propia imagen de un Dockerfile utilizando el mandato de Docker `build`. Para añadir una imagen a su espacio de nombres, debe subir (enviar por push) la imagen local a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
+Cada imagen que desea añadir a su espacio de nombres debe existir en su sistema local en primer lugar. Puede descargar (extraer) una imagen desde otro repositorio al sistema local, o crear su propia imagen de un Dockerfile utilizando el mandato de Docker `build`. Para añadir una imagen a su espacio de nombres, debe subir (enviar por push) la imagen local a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
@@ -52,7 +52,7 @@ Si obtiene el mensaje "No autorizado: se necesita autorización" o el mensaje "d
 {:tip}
 
 
-Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen de la máquina local al espacio de nombres.
+Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen del sistema local al espacio de nombres.
 
 ## Envío por push de imágenes de Docker a su espacio de nombres
 {: #registry_images_pushing}
@@ -66,7 +66,7 @@ Antes de empezar:
 
 - [Instale la CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Extraiga](#registry_images_pulling) o [cree](#registry_images_creating) una imagen en la máquina local y etiquetar la imagen con la información de espacio de nombres.
+- [Extraiga](#registry_images_pulling) o [cree](#registry_images_creating) una imagen en el sistema local y etiquetar la imagen con la información de espacio de nombres.
 - [Asegúrese de que puede ejecutar mandatos Docker sin permisos root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
@@ -95,7 +95,7 @@ Después de enviar por push la imagen al registro privado, puede:
 
 - [Gestionar la seguridad con Vulnerability Advisor](../va/va_index.html) para encontrar información sobre potenciales problemas de seguridad y vulnerabilidades.
 - [Cree un clúster
-y utilice esta imagen para desplegar un contenedor](../../containers/container_index.html) al clúster en {{site.data.keyword.containerlong_notm}}.
+y utilice esta imagen para desplegar un contenedor](/docs/containers/container_index.html#container_index) al clúster en {{site.data.keyword.containerlong_notm}}.
 
 ## Copia de imágenes entre registros
 {: #registry_images_copying}
@@ -123,12 +123,12 @@ Después de haber copiado la imagen, puede:
 
 - [Gestionar la seguridad con Vulnerability Advisor](../va/va_index.html) para encontrar información sobre potenciales problemas de seguridad y vulnerabilidades.
 - [Cree un clúster
-y utilice esta imagen para desplegar un contenedor](../../containers/container_index.html) al clúster en {{site.data.keyword.containerlong_notm}}.
+y utilice esta imagen para desplegar un contenedor](/docs/containers/container_index.html#container_index) al clúster en {{site.data.keyword.containerlong_notm}}.
 
 ## Compilar imágenes de Docker para utilizarlas con su espacio de nombres
 {: #registry_images_creating}
 
-Puede crear una imagen de Docker directamente en {{site.data.keyword.Bluemix_notm}} o crear su propia imagen de Docker en su máquina local y subirla (enviar por push) a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
+Puede crear una imagen de Docker directamente en {{site.data.keyword.Bluemix_notm}} o crear su propia imagen de Docker en su sistema local y subirla (enviar por push) a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Antes de empezar:
@@ -196,7 +196,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
    Para obtener más información sobre el mandato `ibmcloud cr build`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Para crear y probar su imagen localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}, siga estos pasos:
-    1. Cree la imagen del Dockerfile en la máquina local y etiquétela con el nombre de la imagen.
+    1. Cree la imagen del Dockerfile en el sistema local y etiquétela con el nombre de la imagen.
 
       ```
       docker build -t <image_name> <directory>
@@ -205,7 +205,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
 
       donde _&lt;image_name&gt;_ es el nombre de su imagen y _&lt;directory&gt;_ es la vía de acceso al directorio.
 
-    2. Opcional: Pruebe la imagen en su máquina local antes de enviarla por push a su espacio de nombres.
+    2. Opcional: Pruebe la imagen en su sistema local antes de enviarla por push a su espacio de nombres.
 
       ```
       docker run <image_name>

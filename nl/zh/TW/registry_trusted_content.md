@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,18 +18,18 @@ lastupdated: "2018-07-23"
 # 簽署受信任內容的映像檔
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} 提供受信任內容技術，讓您可以簽署映像檔，以確保映像檔在登錄名稱空間中的完整性。透過取回及推送已簽署的映像檔，您可以驗證映像檔已由正確的參與方推送，例如您的持續整合 (CI) 工具。若要使用此功能，您必須具有 Docker 1.11 版或更新版本。您可以藉由檢閱 [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) 及 [Notary 專案](https://github.com/theupdateframework/notary)文件，進一步瞭解。
+{{site.data.keyword.registrylong}} 提供受信任內容技術，讓您可以簽署映像檔，以確保登錄名稱空間中之映像檔的完整性。透過取回及推送已簽署的映像檔，您可以驗證映像檔已由正確的參與方推送，例如您的持續整合 (CI) 工具。若要使用此功能，您必須具有 Docker 1.11 版或更新版本。您可以藉由檢閱 [Docker Content Trust ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/security/trust/content_trust/) 及 [Notary 專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/theupdateframework/notary) 文件，進一步瞭解。
 {:shortdesc}
 
-當您推送映像檔並啟用受信任內容時，您的 Docker 用戶端也會將已簽署的 meta 資料物件推送至 {{site.data.keyword.Bluemix_notm}} 信任伺服器。當您取回已標示標籤的映像檔並啟用 Docker Content Trust 時，您的 Docker 用戶端會與信任伺服器聯絡，以建立您所要求標籤的最新簽署版本、驗證內容簽章，並下載已簽署的映像檔。
+當您推送映像檔並啟用受信任內容時，您的 Docker 用戶端也會將已簽署的 meta 資料物件推送至 {{site.data.keyword.Bluemix_notm}} 信任伺服器。當您取回已標記的映像檔並啟用 Docker Content Trust 時，您的 Docker 用戶端會與信任伺服器聯絡，以建立您所要求標籤的最新簽署版本、驗證內容簽章，並下載已簽署的映像檔。
 
 映像檔名稱由儲存庫及標籤組成。使用受信任內容時，每一個儲存庫都使用唯一的簽署金鑰。儲存庫中的每一個標籤都使用屬於該儲存庫的金鑰。如果您有多個團隊在發佈內容，每一個團隊都發佈到 {{site.data.keyword.registrylong_notm}} 名稱空間內自己的儲存庫，則每一個團隊可以使用自己的金鑰來簽署他們的內容，如此您就可以驗證每一個映像檔都是由適當的團隊產生。
 
-儲存庫可以包含已簽署及未簽署的內容。如果已啟用 Docker Content Trust，您可以存取儲存庫中已簽署的內容，即使它還有其他未簽署的內容。
+儲存庫可以包含已簽署及未簽署的內容。如果已啟用 Docker Content Trust，您可以存取儲存庫中已簽署的內容，即使一旁還有其他未簽署的內容。
 
-Docker Content Trust 使用「首次使用時信任」的安全模型。第一次從儲存庫取回已簽署的映像檔時，會從信任伺服器取回儲存庫金鑰，並在未來使用該金鑰來驗證來自該儲存庫的映像檔。第一次取回儲存庫之前，您必須先驗證您信任該信任伺服器，或是信任映像檔及其發佈者。如果伺服器中的信任資訊已洩漏，且您之前未曾從儲存庫取回映像檔，則 Docker 用戶端可能會從信任伺服器取回已洩漏的資訊。如果信任資料在您第一次取回映像檔之後洩漏，則在後續取回時，您的 Docker 用戶端將無法驗證已洩漏的資料，而不會取回映像檔。如需如何檢查映像檔信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。
+Docker Content Trust 使用「首次使用時信任」的安全模型。第一次從儲存庫取回已簽署的映像檔時，會從信任伺服器取回儲存庫金鑰，並在未來使用該金鑰來驗證來自該儲存庫的映像檔。第一次取回儲存庫之前，您必須先驗證您信任信任伺服器，或是信任映像檔及其發佈者。如果伺服器中的信任資訊已洩漏，且您之前未曾從儲存庫取回映像檔，則 Docker 用戶端可能會從信任伺服器取回已洩漏的資訊。如果信任資料在您第一次取回映像檔之後洩漏，則在後續取回時，您的 Docker 用戶端將無法驗證已洩漏的資料，而不會取回映像檔。如需如何檢查映像檔信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。
 
-如需「首次使用時信任」安全模型的相關資訊，請參閱 [The Update Framework (TUF)](https://theupdateframework.github.io/)。 
+如需「首次使用時信任」安全模型的相關資訊，請參閱 [The Update Framework (TUF) ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://theupdateframework.github.io/)。 
 
 
 ## 設定受信任內容環境
@@ -61,7 +61,8 @@ set DOCKER_CONTENT_TRUST=1
     ```
     {: pre}
 
-    如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。{:tip}
+    如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
+    {:tip}
 
 3.  將目標設為您要使用的地區。如果您不知道地區名稱，則可以執行不含地區的指令，然後選擇地區。
 
@@ -77,7 +78,9 @@ set DOCKER_CONTENT_TRUST=1
     ```
     {: pre}
 
-    輸出會指示您匯出 Docker Content Trust 環境變數。例如：
+    輸出會指示您匯出 Docker Content Trust 環境變數。 
+    
+    **範例**
 
     ```
     user:~ user$ ibmcloud cr login
@@ -150,7 +153,9 @@ docker pull <source_image>:<tag>
 
 1.  [設定受信任內容環境](#trustedcontent_setup)。
 
-2.  檢閱每一個映像檔的標籤、摘要及簽章者資訊。**選用**：指定 _&lt;tag&gt;_ 可查看該映像檔版本的資訊。
+2.  檢閱每一個映像檔的標籤、摘要及簽章者資訊。 
+
+    （選用）指定標籤 _&lt;tag&gt;_ 以查看該映像檔版本的資訊。
 
     ```
 docker trust view <image>:<tag>
@@ -183,6 +188,7 @@ $ docker trust view <image>:<tag>
     ```
     {: codeblock}
 
+
 ## 備份簽署金鑰
 {: #trustedcontent_backupkeys}
 
@@ -197,7 +203,7 @@ $ docker trust view <image>:<tag>
 
 您必須備份所有金鑰，尤其是主要金鑰。如果金鑰遺失或洩漏，您的[回復選項](ts_index.html#ts_recoveringtrustedcontent)會受到限制。
 
-若要備份您的金鑰，請參閱 [Docker Content Trust 文件](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
+若要備份您的金鑰，請參閱 [Docker Content Trust 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 
 
 ## 管理受信任的簽章者
@@ -206,7 +212,7 @@ $ docker trust view <image>:<tag>
 您可以在儲存庫中，新增及移除簽署映像檔的簽章者。
 {:shortdesc}
 
-### 將簽章者新增至受信信的儲存庫
+### 將簽章者新增至受信任的儲存庫
 {: #trustedcontent_addsigners}
 
 若要容許其他使用者在儲存庫中簽署映像檔，請將那些使用者的簽署金鑰新增至該儲存庫。
@@ -217,7 +223,8 @@ $ docker trust view <image>:<tag>
 - 儲存庫擁有者及其他簽章者必須已安裝 Docker 17.12 或更新版本。
 - 藉由[推送已簽署的映像檔](#trustedcontent_push)來建立受信任內容儲存庫。儲存庫擁有者在其本端機器上的 Docker 信任資料夾中，必須有儲存庫的儲存庫管理金鑰可用。如果您沒有儲存庫管理金鑰，請與擁有者聯絡，以為您執行這項作業。
 
-新增簽章者時，您無法再使用儲存庫管理金鑰來簽署該儲存庫中的映像檔。您必須持有其中一位已核准簽章者的私密金鑰才能簽署。新增簽章者之後，若要保留簽署映像檔的能力，請再次遵循這些指示，以產生並新增您自己的簽章者角色。{:tip}
+新增簽章者時，您無法再使用儲存庫管理金鑰來簽署該儲存庫中的映像檔。您必須持有其中一位已核准簽章者的私密金鑰才能簽署。新增簽章者之後，若要保留簽署映像檔的能力，請再次遵循這些指示，以產生並新增您自己的簽章者角色。
+{:tip}
 
 若要共用簽署金鑰，請執行下列動作：
 
@@ -226,7 +233,7 @@ $ docker trust view <image>:<tag>
     a. 產生金鑰。在 <em>NAME</em> 中，您可以輸入任何名稱，不過，當有人對儲存庫檢查信任時，會看見您選取的名稱。請與儲存庫擁有者合作，以符合組織可能使用的任何命名慣例，並選取該簽章者可識別的名稱。
 
       ```
-docker trust key generate <NAME>
+      docker trust key generate <NAME>
       ```
       {: pre}
   
@@ -241,7 +248,7 @@ docker trust key generate <NAME>
     b. 將簽章者的金鑰新增至儲存庫。
 
       ```
-docker trust signer add --key <NAME>.pub <NAME> <repository>
+      docker trust signer add --key <NAME>.pub <NAME> <repository>
       ```
       {: pre}
     
@@ -252,7 +259,7 @@ docker trust signer add --key <NAME>.pub <NAME> <repository>
     b. 簽章者必須簽署映像檔。系統提示時，請輸入私密金鑰的通行詞組。
 
       ```
-docker trust sign <repository>:<tag>
+      docker trust sign <repository>:<tag>
       ```
       {: pre}
 
@@ -269,7 +276,8 @@ docker trust sign <repository>:<tag>
 開始之前：
 - 儲存庫擁有者及其他簽章者必須已安裝 Docker 17.12 或更新版本。
 
-如果您移除簽章者，則信任伺服器不會信任其已簽署的映像檔版本。若要確保在移除簽章者之後可以取回映像檔，在繼續之前，請確定簽章者未簽署映像檔的最新版本。如果簽章者已簽署映像檔的最新版本，請先推送映像檔的更新，並用您的金鑰進行簽署，然後再繼續。{:tip}
+如果您移除簽章者，則信任伺服器不會信任其已簽署的映像檔版本。若要確保在移除簽章者之後可以取回映像檔，在繼續之前，請先確定簽章者未簽署映像檔的最新版本。如果簽章者已簽署映像檔的最新版本，請先推送映像檔的更新，並用您的金鑰進行簽署，然後再繼續。
+{:tip}
 
 若要移除簽章者，請執行下列動作：
 
@@ -278,7 +286,7 @@ docker trust sign <repository>:<tag>
 2. 移除簽章者。
 
     ```
-docker trust signer remove <NAME> <repository>
+    docker trust signer remove <NAME> <repository>
     ```
     {: pre}
     

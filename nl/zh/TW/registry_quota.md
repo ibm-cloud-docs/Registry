@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -20,19 +20,19 @@ lastupdated: "2018-07-24"
 # 管理儲存空間及取回資料流量的配額限制
 {: #registry_quota}
 
-您可以藉由設定及管理自訂配額限制，來限制可在 {{site.data.keyword.Bluemix}} 帳戶中使用的儲存空間量及取回資料流量。
+您可以藉由設定及管理自訂配額限制，來限制可在 {{site.data.keyword.Bluemix}} 帳戶中使用的儲存空間及取回資料流量的數量。
 {:shortdesc}
 
 
 ## 設定儲存及取回映像檔的配額限制
 {: #registry_quota_set}
 
-您可以藉由設定自己的配額限制，來限制專用映像檔的儲存空間量及取回資料流量。
+您可以藉由設定自己的配額限制，來限制專用映像檔的儲存空間及取回資料流量的數量。
 {:shortdesc}
 
-開始之前，請確定您是要設定配額的 [{{site.data.keyword.Bluemix_notm}} 帳戶的擁有者或帳單管理員](../../iam/users_roles.html#userroles)。
+開始之前，請確定您是要設定配額之 [{{site.data.keyword.Bluemix_notm}} 帳戶的擁有者或帳單管理員](/docs/iam/users_roles.html#userroles)。
 
-當您升級至 {{site.data.keyword.registryshort_notm}} 標準方案時，可以受益於專用映像檔的無限制儲存空間量及取回資料流量。若要避免超出偏好的付費等級，您可以設定儲存空間量及取回資料流量的個別配額。配額限制會套用至您在 {{site.data.keyword.registrylong_notm}} 中設定的所有名稱空間。如果您使用的是免費服務方案，也可以設定免費儲存空間量及取回資料流量內的自訂配額。
+當您升級至 {{site.data.keyword.registryshort_notm}} 標準方案時，可以受益於專用映像檔儲存空間及取回資料流量的無限制數量。若要避免超出偏好的付費等級，您可以為儲存空間及取回資料流量的數量設定個別配額。配額限制會套用至您在 {{site.data.keyword.registrylong_notm}} 中設定的所有名稱空間。如果您使用的是免費服務方案，也可以在免費儲存空間及取回資料流量的數量內設定自訂配額。
 
 若要設定配額，請執行下列動作：
 
@@ -65,14 +65,15 @@ lastupdated: "2018-07-24"
 
 3.  變更儲存空間及取回資料流量的配額限制。若要變更取回資料流量用量，請指定 **traffic** 選項，並將 _&lt;traffic_quota&gt;_ 取代為您要針對取回資料流量配額設定的值 (MB)。如果您要變更帳戶中的儲存空間量，請指定 **storage** 選項，並將 _&lt;storage_quota&gt;_ 取代為您要設定的值 (MB)。
 
-    如果您使用免費方案，則無法將配額設為超出免費層的數量。儲存空間的免費層額度是 512 MB，而資料流量是 5120 MB。{:tip}
+    如果您使用免費方案，則無法將配額設為超出免費層的數量。儲存空間的免費層額度是 512 MB，而資料流量的免費層額度是 5120 MB。
+    {:tip}
 
     ```
     ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
-    將儲存空間的配額限制設為 600 MB，並將取回資料流量設為 7000 MB 的範例：
+    將儲存空間的配額限制設為 600 MB，並將取回資料流量的配額限制設為 7000 MB 的範例：
 
     ```
     ibmcloud cr quota-set --storage 600 --traffic 7000
@@ -117,7 +118,7 @@ lastupdated: "2018-07-24"
 ## 釋放已使用的儲存空間，並且變更服務方案或配額限制，以保持在給定配額限制內
 {: #registry_quota_freeup}
 
-如果您已超出針對 {{site.data.keyword.Bluemix_notm}} 帳戶所設定的配額限制，則可以釋放儲存空間，並變更服務方案或配額限制，以繼續將映像檔推送至名稱空間以及從中取回映像檔。
+如果您已超出針對 {{site.data.keyword.Bluemix_notm}} 帳戶所設定的配額限制，可以釋放儲存空間，並變更服務方案或配額限制，以繼續將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
 若要釋放 {{site.data.keyword.Bluemix_notm}} 帳戶中的映像檔儲存空間，請執行下列動作：
@@ -146,7 +147,7 @@ lastupdated: "2018-07-24"
     ```
     {: pre}
 
-4. 您無法減少計費期間中的取回資料流量用量。
+4. 您無法在計費期間中減少取回資料流量用量。
    {:tip}
 
     若要繼續從名稱空間取回映像檔，請在下列選項之間進行選擇：

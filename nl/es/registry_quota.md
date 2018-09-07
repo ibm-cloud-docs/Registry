@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-24"
+lastupdated: "2018-08-08"
 
 
 ---
@@ -30,7 +30,7 @@ Puede limitar la cantidad de almacenamiento y de tráfico de extracción que se 
 Puede limitar la cantidad de almacenamiento y de tráfico de extracción de sus imágenes privadas estableciendo sus propios límites de cuota.
 {:shortdesc}
 
-Antes de empezar, asegúrese de que es el [propietario o gestor de facturación de la cuenta de {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) en la que desea establecer la cuota.
+Antes de empezar, asegúrese de que es el [propietario o gestor de facturación de la cuenta de {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) en la que desea establecer la cuota.
 
 Cuando actualice al plan estándar de {{site.data.keyword.registryshort_notm}},
 benefíciese de una cantidad ilimitada de almacenamiento y tráfico de extracción para sus imágenes privadas. Para no superar el nivel de pago que elija, puede establecer cuotas individuales para la cantidad de almacenamiento y el tráfico de extracción. Los límites de cuota se aplican a todos los espacios de nombres que haya configurado en {{site.data.keyword.registrylong_notm}}. Si utiliza el plan de servicio gratuito, también puede establecer cuotas personalizadas dentro de la cantidad gratuita de almacenamiento y tráfico de extracción.

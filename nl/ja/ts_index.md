@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -36,9 +36,9 @@ lastupdated: "2018-07-23"
 -   {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー](http://stackoverflow.com/search?q=+ibm-bluemix)で質問を投稿し、質問に `ibm-bluemix` および `container-registry` のタグを付けてください。
 -   サービスおよび概説の指示に関する質問については、[IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) フォーラムを使用してください。 `bluemix` タグと `container-registry` タグを含めてください。
 
-フォーラムの使用について詳しくは、[サポート・センターの使用](../../get-support/howtogetsupport.html#using-avatar)を参照してください。
+フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support/howtogetsupport.html#using-avatar)を参照してください。
 
-{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポート・チケットのオープン](../../get-support/howtogetsupport.html#open-ticket)を参照してください。
+{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポート・チケットのオープン](/docs/get-support/howtogetsupport.html#open-ticket)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} へのログインが失敗する
 {: #ts_login}
@@ -50,14 +50,14 @@ lastupdated: "2018-07-23"
 
 {: tsCauses}
 -   container-registry プラグインが古いため、更新する必要がある。
--   Docker がローカル・マシンにインストールされていないか、稼働していない。
+-   Docker がローカル・コンピューターにインストールされていないか、稼働していない。
 -   {{site.data.keyword.Bluemix_notm}} ログイン資格情報の有効期限が切れている。
 
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
 -   container-registry プラグインの最新バージョンにアップグレードします。[container-registry プラグインの更新](registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
--   Docker がマシンにインストールされていることを確認します。 既にインストールされている場合、Docker デーモンを再始動します。
+-   Docker がコンピューターにインストールされていることを確認します。既にインストールされている場合、Docker デーモンを再始動します。
 -   `ibmcloud login` コマンドを再実行して、{{site.data.keyword.Bluemix_notm}} ログイン資格情報をリフレッシュします。
   
 ## {{site.data.keyword.registrylong_notm}} に対してコマンドを実行すると`「FAILED You are not logged in to IBM Cloud.」`で失敗する 
@@ -78,7 +78,7 @@ lastupdated: "2018-07-23"
 
 
 
-## {{site.data.keyword.registrylong_notm}} コマンドが失敗し、`'cr' is not a registered command. See 'ibmcloud help'`と表示される。
+## {{site.data.keyword.registrylong_notm}} コマンドが「`'cr' is not a registered command. See 'ibmcloud help'`」で失敗する
 {: #ts_login_error}
 
 `cr` は登録された `ibmcloud` コマンドではないため、`ibmcloud cr` コマンドを実行できません。
@@ -130,6 +130,7 @@ ibmcloud cr namespace
 -   名前空間に別の値を選択します。
 -   削除された名前空間を再作成しており、その名前空間に多くのイメージが含まれていた場合は、後で再試行してください。
 
+
 ## Docker イメージのプッシュまたはプルが失敗する
 {: #ts_pushpull}
 
@@ -137,12 +138,14 @@ ibmcloud cr namespace
 Docker イメージをプッシュまたはプルするコマンドを実行すると、エラー・メッセージを受け取る。 このエラー・メッセージは、根本原因によって異なります。 受け取る可能のあるエラー・メッセージとしては、以下のようなものがあります。
 
 ```
-You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan
+You have exceeded your storage quota. Delete one or more images,
+or review your storage quota and pricing plan
 ```
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. Review your pull traffic quota and pricing plan
+You have exceeded your pull traffic quota for the current month.
+Review your pull traffic quota and pricing plan
 ```
 {: screen}
 
@@ -165,19 +168,20 @@ denied: requested access to the resource is denied
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
--   [Docker がマシンにインストールされていることを確認します](index.html#registry_cli_install)。
+-   [Docker がコンピューターにインストールされていることを確認します](index.html#registry_cli_install)。
 -   Docker のインストール・パスを確認します。
 -   `ibmcloud login` を実行して {{site.data.keyword.Bluemix_notm}} にログインします。 次に、`ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} CLI にログインします。
 -   [{{site.data.keyword.registrylong_notm}} で Docker イメージを保管およびプルするための割り当て量制限と使用量を検討します](registry_quota.html#registry_quota_get)。
 
-## latest タグを使用して最新イメージをプルできない
+
+## `latest` タグを使用して最新イメージをプルできない
 {: #ts_docker_latest}
 
 {: tsSymptoms}
-コマンド `docker pull` を実行しようとしているが、最新バージョンのビルドではないイメージのバージョンが返される。
+コマンド `docker pull` を実行しているのに、最新バージョンのビルドではないイメージのバージョンが返されます。
 
 {: tsCauses}
-タグ値を指定せずに Docker コマンドを実行すると、デフォルトでは、イメージを参照するために `latest` タグが適用されます。 `latest` タグは、タグ値を明示的に設定せずに実行された最新の `docker build` コマンドまたは `docker tag` コマンドに適用されます。 したがって、`docker` コマンドの実行順序が適切でなかったり、一部のイメージに対してタグが明示的に設定されたり、`latest` タグが、最新でないビルドを参照する可能性があります。
+タグ値を指定せずに Docker コマンドを実行すると、デフォルトでは、イメージを参照するために `latest` タグが適用されます。 `latest` タグは、タグ値を明示的に設定せずに実行された最新の `docker build` コマンドまたは `docker tag` コマンドに適用されます。したがって、`docker` コマンドの実行順序が適切でなかったり、一部のイメージに対してタグが明示的に設定されたり、`latest` タグが、最新でないビルドを参照する可能性があります。
 
 {: tsResolve}
 通常は、`latest` タグに頼らずに、イメージに毎回別の順次タグを明示的に定義する方が得策です。
@@ -188,7 +192,7 @@ denied: requested access to the resource is denied
 
 
 {: tsSymptoms}
-他の IBM 製品 ({{site.data.keyword.Bluemix_notm}} Private など) で使用したコンテンツをインポートしようとすると、自分のイメージや、[IBM パスポート・アドバンテージ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www-01.ibm.com/software/passportadvantage/index.html) から入手したその他のライセンス適用済みのソフトウェアをレジストリーに保管できません。
+他の IBM 製品 ({{site.data.keyword.Bluemix_notm}} Private など) で使用したコンテンツをインポートしようとすると、自分のイメージや、[IBM パスポート・アドバンテージ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/index.html) から入手したその他のライセンス適用済みのソフトウェアをレジストリーに保管できません。
 
 {: tsCauses}
 イメージや IBM パスポート・アドバンテージから取得した Helm チャートなどのソフトウェア・パッケージは、`ibmcloud cr ppa-archive-load` コマンドを使用してレジストリーにインポートする必要があります。
@@ -197,13 +201,14 @@ denied: requested access to the resource is denied
 開始前に、以下のことを行います。
 * `ibmcloud login [--sso]` を実行して {{site.data.keyword.Bluemix_notm}} にログインします。
 * `ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} にログインします。
-* クラスターを [`kubectl` CLI のターゲットとして設定](../../containers/cs_cli_install.html#cs_cli_configure)します。
-* クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](../../containers/cs_integrations.html#helm)。
+* クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)します。
+* クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
 * 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
+
 
 ### {{site.data.keyword.Bluemix_notm}} で使用するための IBM パスポート・アドバンテージ製品のインポート
 
-1.  インポートする圧縮ファイルを [IBM パスポート・アドバンテージ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www-01.ibm.com/software/passportadvantage/index.html) から入手します。
+1.  インポートする圧縮ファイルを [IBM パスポート・アドバンテージ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/index.html) から入手します。
 
 2.  使用する地域をターゲットにします。 地域名がわからない場合は、地域を指定せずにコマンドを実行してから、地域を選択します。
 
@@ -224,7 +229,8 @@ denied: requested access to the resource is denied
     IBM パスポート・アドバンテージ・アーカイブの Helm チャートを Chart Museum にアップロードする場合は、コマンドに次のオプションを含めます: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
-    **出力例**:
+    **出力例**
+    
     ```
     user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
@@ -277,9 +283,9 @@ denied: requested access to the resource is denied
 {: tsResolve}
 カスタマイズしたファイアウォールで次のネットワーク・グループを開きます。
 
-1.  {{site.data.keyword.registrylong_notm}} に接続するために使用するマシンのパブリック IP アドレスをメモしておいてください。 Kubernetes を使用する場合、ワーカー・ノードのパブリック IP アドレスを使用します。 `ibmcloud ks workers <cluster_name_or_id>` を実行して、ワーカー・ノードのパブリック IP アドレスを取得します。*&lt;cluster_name_or_id&gt;* はクラスターの名前または ID です。
-2.  ファイアウォールで、マシンとの間の次の接続を許可します。
-    -   マシンへの INBOUND 接続については、次のソース・ネットワーク・グループからマシンの宛先パブリック IP アドレスへの着信ネットワーク・トラフィックを許可します。
+1.  {{site.data.keyword.registrylong_notm}} に接続するために使用するコンピューターのパブリック IP アドレスをメモしておいてください。Kubernetes を使用する場合、ワーカー・ノードのパブリック IP アドレスを使用します。 `ibmcloud ks workers <cluster_name_or_id>` を実行して、ワーカー・ノードのパブリック IP アドレスを取得します。*&lt;cluster_name_or_id&gt;* はクラスターの名前または ID です。
+2.  ファイアウォールで、コンピューターとの間の次の接続を許可します。
+    -   コンピューターへのインバウンド接続については、次のソース・ネットワーク・グループからコンピューターの宛先パブリック IP アドレスへの着信ネットワーク・トラフィックを許可します。
 
         `registry.bluemix.net`:
 
@@ -322,7 +328,8 @@ denied: requested access to the resource is denied
         ```
         {: codeblock}
 
-    -   マシンからの OUTBOUND 接続については、同じネットワーク・グループを使用し、マシンの送信元パブリック IP アドレスからこれらのネットワーク・グループへの発信ネットワーク・トラフィックを許可します。
+    -   コンピューターからのアウトバウンド接続については、同じネットワーク・グループを使用し、コンピューターの送信元パブリック IP アドレスからこれらのネットワーク・グループへの発信ネットワーク・トラフィックを許可します。
+
 
 ## 失われた鍵または改ざんされた鍵のリカバリー
 {: #ts_recoveringtrustedcontent}
@@ -339,6 +346,7 @@ denied: requested access to the resource is denied
 *  [リポジトリー鍵](#trustedcontent_lostrepokey)の場合は、リポジトリーの署名鍵のセットを新たに生成できます。
 *  [ルート鍵](#trustedcontent_lostrootkey)の場合は、リポジトリーの削除を要求してから、新規リポジトリーを作成できます。
 
+
 ### リポジトリー鍵
 {: #trustedcontent_lostrepokey}
 
@@ -350,7 +358,7 @@ denied: requested access to the resource is denied
 
 始める前に、[署名付きのイメージを初めてプッシュ](registry_trusted_content.html#trustedcontent_push)したときに作成したルート鍵のパスフレーズを取得しておいてください。
 
-1.  [Notary プロジェクト](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli)の CLI バージョンをインストールします。
+1.  [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli) の CLI バージョンをインストールします。
 
 2.  [信頼できるコンテンツ環境をセットアップします](registry_trusted_content.html#trustedcontent_setup)。
 
@@ -374,6 +382,7 @@ denied: requested access to the resource is denied
 
 7.	新しい署名鍵を使用する[署名付きのイメージをプッシュ](registry_trusted_content.html#trustedcontent_push)します。
 
+
 ### ルート鍵
 {: #trustedcontent_lostrootkey}
 
@@ -384,9 +393,9 @@ denied: requested access to the resource is denied
 
 実動イメージ用の名前空間のように、ルート鍵が影響を受けていないリポジトリーが名前空間に含まれている場合、影響を受けたルート鍵に関連付けられているトラスト・データだけを削除する必要があります。 サポート・チケットをオープンしてください。
 
-1.  [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](../../get-support/howtogetsupport.html)。 問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
+1.  [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
 
-2.  {{site.data.keyword.Bluemix_notm}} で問題が解決されたら、ローカル・マシン上の Docker コンテント・トラストのリポジトリーを削除します。
+2.  {{site.data.keyword.Bluemix_notm}} で問題が解決されたら、ローカル・コンピューター上の Docker コンテント・トラストのリポジトリーを削除します。
 
     * Linux および Mac ディレクトリー: `~/.docker/trust/private` および `~/.docker/trust/tuf`
 
@@ -395,7 +404,8 @@ denied: requested access to the resource is denied
     ルート鍵が影響を受けたため、この手順では、他のトラスト・サーバーのものを含め、すべての署名鍵を削除します。
     {:tip}
 
-3.  {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動実行させるには、ポッド上の一部のメタデータを変更します。 例えば、[クラスターを Kubernetes CLI のターゲットとして設定](../../containers/cs_cli_install.html#cs_cli_configure)し、デプロイメントを変更します。
+3.  {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動開始させるには、ポッド上の一部のメタデータを変更します。例えば、[クラスターを Kubernetes CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)し、デプロイメントを変更します。
+
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
@@ -416,7 +426,6 @@ denied: requested access to the resource is denied
 ## Container Image Security Enforcement のインストールが、`「helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists」`で失敗する
 {: #ts_install_cise_fail}
 
-
 {: tsSymptoms}
 Container Image Security Enforcement のインストールが失敗し、以下のメッセージを受け取りました。
 
@@ -436,3 +445,73 @@ Error: jobs.batch "create-crds" already exists
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+
+## すべてのワーカーが停止した後にポッドが再始動しない
+{: #ts_pods}
+
+
+{: tsSymptoms}
+すべてのクラスター・ワーカーが停止した後にポッドが再始動しなくなりました。Container Image Security Enforcement はデプロイされています。クラスター・ワーカーは正常と表示されるのに、何もスケジュールされません。
+
+{: tsCauses}
+デフォルトでは、Container Image Security Enforcement により、エラー時にクローズする承認 Web フックが追加されます。Container Image Security Enforcement のすべてのポッドが停止した場合、それらのポッド自体のリカバリーを承認するポッドがありません。
+
+{: tsResolve}
+クラスターがこの状態になった場合にリカバリーするには、Web フックの構成を変更して、エラー時にクローズするのではなくオープンするように設定する必要があります。 
+
+以下の verb を使用するための十分な役割ベース・アクセス制御 (RBAC) 特権が必要です。
+*  `GET`
+*  `PATCH`
+
+以下のリソースに対して必要です。
+*  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
+*  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
+
+RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers/cs_users.html#rbac)と、[Kubernetes: RBAC 許可の使用
+![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) を参照してください。
+
+以下の手順を実行して、エラー時にクローズするのではなくオープンするように Web フックの構成を変更した後、少なくとも 1 つの Container Image Security Enforcement ポッドが稼働中になったら、障害時にクローズするように Web フックの構成を元に戻します。
+
+1.  次のコマンドを実行して、`MutatingWebhookConfiguration` を更新します。
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    `failurePolicy` を `Ignore` に変更し、保存して閉じます。
+
+2.  次のコマンドを実行して、`ValidatingWebhookConfiguration` を更新します。
+
+    ``>
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    `failurePolicy` を `Ignore` に変更し、保存して閉じます。
+
+3.  Container Image Security Enforcement ポッドが開始するまで待機します。少なくとも 1 つのポッドの **STATUS** 列に `Running` と表示されるまで、次のコマンドを実行して、ポッドが開始したかどうかを確認します。
+
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
+
+4.  少なくとも 1 つの Container Image Security Enforcement ポッドが稼働中になったら、次のコマンドを実行して `MutatingWebhookConfiguration` を更新します。
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    `failurePolicy` を `Fail` に変更し、保存して閉じます。
+
+5.  次のコマンドを実行して、`ValidatingWebhookConfiguration` を更新します。
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    `failurePolicy` を `Fail` に変更し、保存して閉じます。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -283,8 +283,7 @@ alguém já tenha um namespace com esse nome configurado nessa região.
 Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
 namespace.
 
-Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace. Se você for um cliente existente do {{site.data.keyword.containerlong_notm}} que usa [grupos de contêineres únicos e escaláveis](../../containers/cs_classic.html),
-então já terá um namespace. É possível criar namespaces adicionais, mas não é possível executar `cf ic namespace set` para mais de um namespace.
+Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace.
 {:tip}
 
 Considere as regras a seguir ao escolher um namespace:

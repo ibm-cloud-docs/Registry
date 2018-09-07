@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -234,7 +234,7 @@ Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produ
 
 Wenn Sie ausschließlich mit den von IBM bereitgestellten öffentlichen Images arbeiten möchten, ist die Einrichtung eines Namensbereichs nicht erforderlich.
 
-Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `ibmcloud cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen. Wenn Sie bereits {{site.data.keyword.containerlong_notm}}-Kunde sind und [ einzelne oder skalierbare Containergruppen verwenden](../../containers/cs_classic.html), verfügen Sie bereits über einen Namensbereich. Sie können zusätzliche Namensbereiche erstellen, aber den Befehl `cf ic namespace set` für mehr als einen Namensbereich nicht ausführen.
+Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `ibmcloud cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen.
 {:tip}
 
 Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:

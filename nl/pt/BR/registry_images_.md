@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-23"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -23,8 +23,8 @@ lastupdated: "2018-07-23"
 {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
-Cada imagem que você deseja incluir em seu namespace deve primeiro existir em sua máquina local. Também é possível fazer download de (extrair) uma imagem de outro repositório para sua máquina local ou construir sua própria imagem de
-um Dockerfile, usando o comando `build` do Docker. Para incluir uma imagem em seu namespace, deve-se fazer upload da (enviar por push) imagem local para seu namespace no
+Todas as imagens que desejar incluir no namespace deverão existir primeiro no computador local. É possível fazer download
+(puxar) de uma imagem de outro repositório para o computador local ou construir a sua própria imagem de um Dockerfile usando o comando `build` do Docker. Para incluir uma imagem em seu namespace, deve-se fazer upload da (enviar por push) imagem local para seu namespace no
 {{site.data.keyword.registrylong_notm}}.
 
 
@@ -59,7 +59,8 @@ Se você receber uma mensagem "não autorizado: autenticação requerida" ou "ne
 {:tip}
 
 
-Depois de puxar uma imagem e identificá-la para o seu namespace, é possível fazer upload (enviar por push) da imagem de sua máquina local para o namespace.
+Depois de puxar uma imagem e identificá-la para o namespace, é possível fazer upload (enviar por
+push) da imagem do computador local para o namespace.
 
 ## Enviando por push imagens do Docker para seu namespace
 {: #registry_images_pushing}
@@ -74,7 +75,8 @@ Antes de iniciar:
 
 - [Instale a CLI](registry_setup_cli_namespace.html#registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no registro privado do {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Extraia](#registry_images_pulling) ou [construa](#registry_images_creating) uma imagem em sua máquina local e identifique a imagem com informações do seu namespace.
+- [Puxe](#registry_images_pulling) ou [construa](#registry_images_creating) uma imagem no
+computador local e identifique-a com as informações do namespace.
 - [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
 `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
@@ -104,7 +106,7 @@ Para fazer upload (enviar por push) de uma imagem, siga estas etapas.
 Após enviar sua imagem por push para seu registro privado, será possível:
 
 - [Gerenciar a segurança com o Vulnerability Advisor](../va/va_index.html) para localizar informações sobre possíveis problemas e vulnerabilidade de segurança.
-- [Criar um cluster e usar essa imagem para implementar um contêiner](../../containers/container_index.html)
+- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers/container_index.html#container_index)
 para o cluster no {{site.data.keyword.containerlong_notm}}.
 
 ## Copiando imagens entre registros
@@ -135,13 +137,14 @@ Para copiar uma imagem entre dois registros, siga estas etapas.
 Após copiar sua imagem, será possível:
 
 - [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html) para localizar informações sobre potenciais problemas e vulnerabilidades de segurança.
-- [Criar um cluster e usar essa imagem para implementar um contêiner](../../containers/container_index.html)
+- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers/container_index.html#container_index)
 para o cluster no {{site.data.keyword.containerlong_notm}}.
 
 ## Construindo imagens do Docker para usá-las com seu namespace
 {: #registry_images_creating}
 
-É possível construir uma imagem do Docker diretamente no {{site.data.keyword.Bluemix_notm}} ou criar sua própria imagem do Docker na máquina local e fazer upload dela (enviá-la por push) para o namespace no {{site.data.keyword.registrylong_notm}}.
+É possível construir uma imagem Docker diretamente no {{site.data.keyword.Bluemix_notm}} ou criar uma imagem Docker
+própria no computador local e transferi-la por upload (enviar por push) para o namespace no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Antes de iniciar:
@@ -219,7 +222,7 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
    Para obter mais informações sobre o comando `ibmcloud cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html).
 
   - Para construir e testar sua imagem localmente antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
-    1. Construa a imagem de seu Dockerfile na máquina local e identifique-a com o nome da imagem.
+    1. Construa a imagem do Dockerfile no computador local e identifique-a com o nome da imagem.
 
       ```
       docker build -t <image_name> <directory>
@@ -228,7 +231,7 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
 
       em que _&lt;image_name&gt;_ é o nome de sua imagem e _&lt;directory&gt;_ é o caminho para o diretório.
 
-    2. Opcional: teste sua imagem na máquina local antes de enviá-la por push para o namespace.
+    2. Opcional: teste a imagem no computador local antes de enviá-la por push para o namespace.
 
       ```
       docker run <image_name>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-12"
 
 ---
 
@@ -161,8 +161,7 @@ di quota per il traffico di pull](registry_quota.html#registry_quota_set).
 
   > Nel mese, il
 tuo limite di quota per il traffico di pull è impostato su 5 GB. Hai già eseguito il pull di immagini dai tuoi spazi dei nomi e hai utilizzato
-4,5 GB di questo traffico di pull. Hai a disposizione 0,5 GB di traffico di pull fino al raggiungimento del tuo limite di
- quota. Un utente vuole eseguire il pull di un'immagine con una dimensione di 1 GB dal tuo spazio dei nomi. Poiché il limite di
+4,5 GB di questo traffico di pull. Hai a disposizione 0,5 GB di traffico di pull fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il pull di un'immagine con una dimensione di 1 GB dal tuo spazio dei nomi. Poiché il limite di
 quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente
 all'utente di eseguire il pull di questa immagine.
   >
@@ -194,7 +193,7 @@ archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli
 
 Se desideri conoscere qual è il piano dei servizi di cui disponi, esegui il comando `ibmcloud cr plan`.
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}}.
+1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
@@ -289,9 +288,7 @@ qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale r
 Per lavorare solo con le immagini pubbliche fornite da IBM, non hai bisogno di configurare uno
 spazio dei nomi.
 
-Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `ibmcloud cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti. Se sei già un cliente di {{site.data.keyword.containerlong_notm}} esistente che utilizza
-[gruppi di contenitori singoli e scalabili](../../containers/cs_classic.html),
-già disponi di uno spazio dei nomi. Puoi creare ulteriori spazi dei nomi, ma non puoi eseguire `cf ic namespace set` per più di uno.
+Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `ibmcloud cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti.
 {:tip}
 
 Quando scegli uno spazio dei nomi, considera le seguenti regole:
@@ -305,7 +302,7 @@ Non inserire informazioni personali nei tuoi nomi di spazio dei nomi.
 {:tip}
 
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
-gratuito se non hai già [eseguito l'upgrade del tuo piano](#registry_plan_upgrade).
+gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
 
 ## Regioni
 {: #registry_regions}
