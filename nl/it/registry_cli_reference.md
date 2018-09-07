@@ -23,7 +23,7 @@ Puoi utilizzare il plug-in container-registry per configurare lo spazio dei nomi
 {:shortdesc}
 
 
-## Comandi `ibmcloud cr` 
+## Comandi `ibmcloud cr`
 {: #registry_cli_reference_bxcr}
 
 Esegui i comandi `ibmcloud cr` nella CLI di {{site.data.keyword.registryshort_notm}}.

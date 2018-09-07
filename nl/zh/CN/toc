@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
@@ -11,12 +11,8 @@ IBM Cloud Container Registry
         [ibm-backup-restore 映像](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibm-integration-bus 映像](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty 映像](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [ibm-mq 映像](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibm-websphere-extreme-scale 映像](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
-
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
@@ -31,10 +27,9 @@ IBM Cloud Container Registry
         [漏洞类型](../va/va_index.html#types)
         [安装容器扫描程序](../va/va_index.html#va_install_container_scanner)
         [从防火墙后运行容器扫描程序](../va/va_index.html#va_firewall)
-        [使用 GUI 查看漏洞报告](../va/va_index.html#va_reviewing)
-        [使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)
+        [设置组织豁免策略](../va/va_index.html#va_managing_policy)
+        [查看漏洞报告](../va/va_index.html#va_reviewing)
         [查看容器报告](../va/va_index.html#va_reviewing_container)
-        [解决常见问题](../va/va_index.html#va_report)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

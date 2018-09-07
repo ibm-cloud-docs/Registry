@@ -110,7 +110,7 @@ lastupdated: "2018-08-20"
 
 创建名称空间；请参阅“入门”文档中的[设置名称空间](index.html#registry_namespace_add)。
 
-现在，您可以[将 Docker 映像推送至 {{site.data.keyword.Bluemix_notm}} 注册表中的名称空间](registry_images_.html#registry_images_pushing)，并与帐户中的其他用户共享这些映像。
+现在，您可以[将 Docker 映像推送到 {{site.data.keyword.Bluemix_notm}} 注册表中的名称空间](registry_images_.html#registry_images_pushing)，并与帐户中的其他用户共享这些映像。
 
 
 ## 除去名称空间

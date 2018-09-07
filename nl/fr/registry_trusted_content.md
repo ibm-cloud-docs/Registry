@@ -156,7 +156,7 @@ Vous pouvez vérifier les versions signées du référentiel ou de l'étiquette 
 
 2.  Vérifiez les informations d'étiquette, d'historique et de signataire pour chaque image. 
 
-    (Facultatif) Spécifiez l'étiquette _&lt;tag&gt;_ afin d'afficher des informations pour cette version de l'image. 
+    (Facultatif) Spécifiez l'étiquette _&lt;tag&gt;_ afin d'afficher des informations pour cette version de l'image.
 
     ```
     docker trust view <image>:<tag>

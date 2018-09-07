@@ -57,7 +57,7 @@ lastupdated: "2018-08-20"
 この問題は、以下の方法で修正できます。
 
 -   container-registry プラグインの最新バージョンにアップグレードします。[container-registry プラグインの更新](registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
--   Docker がコンピューターにインストールされていることを確認します。既にインストールされている場合、Docker デーモンを再始動します。
+-   Docker がコンピューターにインストールされていることを確認します。 既にインストールされている場合、Docker デーモンを再始動します。
 -   `ibmcloud login` コマンドを再実行して、{{site.data.keyword.Bluemix_notm}} ログイン資格情報をリフレッシュします。
   
 ## {{site.data.keyword.registrylong_notm}} に対してコマンドを実行すると`「FAILED You are not logged in to IBM Cloud.」`で失敗する 
@@ -144,7 +144,7 @@ or review your storage quota and pricing plan
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month.
+You have exceeded your pull traffic quota for the current month. 
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
@@ -181,7 +181,7 @@ denied: requested access to the resource is denied
 コマンド `docker pull` を実行しているのに、最新バージョンのビルドではないイメージのバージョンが返されます。
 
 {: tsCauses}
-タグ値を指定せずに Docker コマンドを実行すると、デフォルトでは、イメージを参照するために `latest` タグが適用されます。 `latest` タグは、タグ値を明示的に設定せずに実行された最新の `docker build` コマンドまたは `docker tag` コマンドに適用されます。したがって、`docker` コマンドの実行順序が適切でなかったり、一部のイメージに対してタグが明示的に設定されたり、`latest` タグが、最新でないビルドを参照する可能性があります。
+タグ値を指定せずに Docker コマンドを実行すると、デフォルトでは、イメージを参照するために `latest` タグが適用されます。 `latest` タグは、タグ値を明示的に設定せずに実行された最新の `docker build` コマンドまたは `docker tag` コマンドに適用されます。 したがって、`docker` コマンドの実行順序が適切でなかったり、一部のイメージに対してタグが明示的に設定されたり、`latest` タグが、最新でないビルドを参照する可能性があります。
 
 {: tsResolve}
 通常は、`latest` タグに頼らずに、イメージに毎回別の順次タグを明示的に定義する方が得策です。
@@ -283,7 +283,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 カスタマイズしたファイアウォールで次のネットワーク・グループを開きます。
 
-1.  {{site.data.keyword.registrylong_notm}} に接続するために使用するコンピューターのパブリック IP アドレスをメモしておいてください。Kubernetes を使用する場合、ワーカー・ノードのパブリック IP アドレスを使用します。 `ibmcloud ks workers <cluster_name_or_id>` を実行して、ワーカー・ノードのパブリック IP アドレスを取得します。*&lt;cluster_name_or_id&gt;* はクラスターの名前または ID です。
+1.  {{site.data.keyword.registrylong_notm}} に接続するために使用するコンピューターのパブリック IP アドレスをメモしておいてください。 Kubernetes を使用する場合、ワーカー・ノードのパブリック IP アドレスを使用します。 `ibmcloud ks workers <cluster_name_or_id>` を実行して、ワーカー・ノードのパブリック IP アドレスを取得します。*&lt;cluster_name_or_id&gt;* はクラスターの名前または ID です。
 2.  ファイアウォールで、コンピューターとの間の次の接続を許可します。
     -   コンピューターへのインバウンド接続については、次のソース・ネットワーク・グループからコンピューターの宛先パブリック IP アドレスへの着信ネットワーク・トラフィックを許可します。
 
@@ -393,7 +393,7 @@ denied: requested access to the resource is denied
 
 実動イメージ用の名前空間のように、ルート鍵が影響を受けていないリポジトリーが名前空間に含まれている場合、影響を受けたルート鍵に関連付けられているトラスト・データだけを削除する必要があります。 サポート・チケットをオープンしてください。
 
-1.  [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
+1.  [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。 問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
 
 2.  {{site.data.keyword.Bluemix_notm}} で問題が解決されたら、ローカル・コンピューター上の Docker コンテント・トラストのリポジトリーを削除します。
 
@@ -404,7 +404,7 @@ denied: requested access to the resource is denied
     ルート鍵が影響を受けたため、この手順では、他のトラスト・サーバーのものを含め、すべての署名鍵を削除します。
     {:tip}
 
-3.  {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動開始させるには、ポッド上の一部のメタデータを変更します。例えば、[クラスターを Kubernetes CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)し、デプロイメントを変更します。
+3.  {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動開始させるには、ポッド上の一部のメタデータを変更します。 例えば、[クラスターを Kubernetes CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)し、デプロイメントを変更します。
 
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -452,10 +452,10 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 
 
 {: tsSymptoms}
-すべてのクラスター・ワーカーが停止した後にポッドが再始動しなくなりました。Container Image Security Enforcement はデプロイされています。クラスター・ワーカーは正常と表示されるのに、何もスケジュールされません。
+すべてのクラスター・ワーカーが停止した後にポッドが再始動しなくなりました。 Container Image Security Enforcement はデプロイされています。 クラスター・ワーカーは正常と表示されるのに、何もスケジュールされません。
 
 {: tsCauses}
-デフォルトでは、Container Image Security Enforcement により、エラー時にクローズする承認 Web フックが追加されます。Container Image Security Enforcement のすべてのポッドが停止した場合、それらのポッド自体のリカバリーを承認するポッドがありません。
+デフォルトでは、Container Image Security Enforcement により、エラー時にクローズする承認 Web フックが追加されます。 Container Image Security Enforcement のすべてのポッドが停止した場合、それらのポッド自体のリカバリーを承認するポッドがありません。
 
 {: tsResolve}
 クラスターがこの状態になった場合にリカバリーするには、Web フックの構成を変更して、エラー時にクローズするのではなくオープンするように設定する必要があります。 
@@ -491,7 +491,7 @@ RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユ
 
     `failurePolicy` を `Ignore` に変更し、保存して閉じます。
 
-3.  Container Image Security Enforcement ポッドが開始するまで待機します。少なくとも 1 つのポッドの **STATUS** 列に `Running` と表示されるまで、次のコマンドを実行して、ポッドが開始したかどうかを確認します。
+3.  Container Image Security Enforcement ポッドが開始するまで待機します。 少なくとも 1 つのポッドの **STATUS** 列に `Running` と表示されるまで、次のコマンドを実行して、ポッドが開始したかどうかを確認します。
 
     ```
     kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement

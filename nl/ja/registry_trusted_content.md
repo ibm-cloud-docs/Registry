@@ -18,7 +18,7 @@ lastupdated: "2018-08-20"
 # 信頼できるコンテンツのイメージへの署名
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} は、信頼できるコンテンツのテクノロジーを備えているので、レジストリー名前空間内のイメージに署名してイメージの完全性を保証できます。 署名付きのイメージをプル/プッシュすることで、イメージをプッシュしたのが継続的統合 (CI) ツールなどの正当なパーティーであることを検証できます。この機能を使用するには、Docker バージョン 1.11 以降が必要です。 詳しくは、[Docker のコンテント・トラスト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/content_trust/) および [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")<](https://github.com/theupdateframework/notary) の資料を参照してください。
+{{site.data.keyword.registrylong}} は、信頼できるコンテンツのテクノロジーを備えているので、レジストリー名前空間内のイメージに署名してイメージの完全性を保証できます。 署名付きのイメージをプル/プッシュすることで、イメージをプッシュしたのが継続的統合 (CI) ツールなどの正当なパーティーであることを検証できます。 この機能を使用するには、Docker バージョン 1.11 以降が必要です。 詳しくは、[Docker のコンテント・トラスト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/content_trust/) および [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")<](https://github.com/theupdateframework/notary) の資料を参照してください。
 {:shortdesc}
 
 信頼できるコンテンツを有効にしてイメージをプッシュすると、Docker クライアントが、署名付きのメタデータ・オブジェクトも {{site.data.keyword.Bluemix_notm}} トラスト・サーバーにプッシュします。 Docker コンテント・トラストを有効にしてタグ付きのイメージをプルしようとすると、Docker クライアントが、要求されたタグの署名付きの最新バージョンをトラスト・サーバーに確認し、コンテンツの署名を検証し、署名付きのイメージをダウンロードします。
@@ -143,7 +143,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 ## 信頼できるコンテンツを管理する
 {: #trustedcontent_managetrust}
 
-`docker trust` コマンドを使用して、イメージの署名者を確認したり、トラスト・コンテンツ状況を取り消したりできます。`docker trust` コマンドを実行するには、Docker 17.12 以降が必要です。
+`docker trust` コマンドを使用して、イメージの署名者を確認したり、トラスト・コンテンツ状況を取り消したりできます。 `docker trust` コマンドを実行するには、Docker 17.12 以降が必要です。
 {:shortdesc}
 
 ### 署名付きのイメージを表示する

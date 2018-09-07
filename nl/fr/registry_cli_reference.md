@@ -23,7 +23,7 @@ Vous pouvez utiliser le plug-in container-registry pour configurer votre propre 
 {:shortdesc}
 
 
-## Commandes `ibmcloud cr` 
+## Commandes `ibmcloud cr`
 {: #registry_cli_reference_bxcr}
 
 Exécutez les commandes `ibmcloud cr` dans l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}}.
@@ -129,7 +129,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`Tag`|Chaîne|Affiche l'étiquette de l'image.|
 |`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : Status  `string`, IssueCount  `int` et ExemptionCount  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface de ligne de commande](../va/va_index.html#va_registry_cli).|
-{: caption="Tableau 1. Zones et types de données disponibles dans la commande <code>ibmcloud cr image-list</code>." caption-side="top"}
+{: caption="Tableau 1. Zones et types de données disponibles dans la commande <codeibmcloud cr image-list</code>." caption-side="top"}
 
 ### Options du modèle Go et types de données dans la commande `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -154,7 +154,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`VirtualSize`|Entier (64 bits)|Affiche la somme des tailles de chaque couche de l'image en octets.|
 |`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tableau 2. Zones et types de données disponibles dans la commande <code>ibmcloud cr image-inspect</code>." caption-side="top"}
+{: caption="Tableau 2. Zones et types de données disponibles dans la commande <codeibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
 
@@ -194,7 +194,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Test`|Tableau de chaînes|Affiche le mode d'exécution du diagnostic d'intégrité. Options disponibles :<ul><li>{} : hérite du diagnostic d'intégrité</li><li>{"NONE"} : le diagnostic d'intégrité est désactivé</li><li>{"CMD", args...} : arguments exec directement</li><li>{"CMD-SHELL", command} : exécute la commande avec le shell par défaut du système</li></ul>|
 |`Interval`|Entier (64 bits)|Affiche la durée d'attente entre deux diagnostics d'intégrité en nanosecondes.|
 |`Timeout`|Entier (64 bits)|Affiche la durée d'attente avant que le diagnostic d'intégrité ne soit considéré comme ayant échoué en nanosecondes.|
-|`Retries`|Entier|Affiche le nombre d'échecs consécutifs à prendre en compte pour déterminer qu'un conteneur ne fonctionne pas correctement. |
+|`Retries`|Entier|Affiche le nombre d'échecs consécutifs à prendre en compte pour déterminer qu'un conteneur ne fonctionne pas correctement.|
 {: caption="Tableau 4. Zones et types de données disponibles dans Healthcheck struct." caption-side="top"}
 
 #### RootFS
@@ -218,4 +218,4 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Expiry`|Entier (64 bits)|Affiche l'[horodatage UNIX](https://en.wikipedia.org/wiki/Unix_time) de l'expiration du jeton.|
 |`ReadOnly`|Booléen|Affiche _true_ lorsque vous pouvez uniquement extraire des images, et _false_ lorsque vous pouvez envoyer des images par commande push et en extraire vers et depuis votre espace de nom.|
 |`Description`|Chaîne|Affiche la description du jeton.|
-{: caption="Tableau 6. Zones et types de données disponibles dans la commande <code>ibmcloud cr token-list</code>." caption-side="top"}
+{: caption="Tableau 6. Zones et types de données disponibles dans la commande <codeibmcloud cr token-list</code>." caption-side="top"}

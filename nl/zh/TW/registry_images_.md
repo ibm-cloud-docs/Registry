@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-24"
 
 ---
 
@@ -37,7 +37,7 @@ lastupdated: "2018-08-17"
 
 <img src="images/images_pull.png" width="800" style="width:800px;" alt="從專用及公用登錄將映像檔取回至您的電腦。"/>
 
-開始之前：
+**開始之前**
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
@@ -54,6 +54,7 @@ lastupdated: "2018-08-17"
 
 在您取回映像檔並針對名稱空間標記它之後，可以將映像檔從本端電腦上傳（推送）至名稱空間。
 
+
 ## 將 Docker 映像檔推送至名稱空間
 {: #registry_images_pushing}
 
@@ -62,7 +63,7 @@ lastupdated: "2018-08-17"
 
 <img src="images/images_push.png" width="800" style="width:800px;" alt="從您的電腦將映像檔推送至您的專用登錄。"/>
 
-開始之前：
+**開始之前**
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
@@ -72,29 +73,30 @@ lastupdated: "2018-08-17"
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
 
-若要上傳（推送）映像檔，請遵循下列步驟。
+若要上傳（推送）映像檔，請完成下列步驟：
 
-1. 登入 CLI：
+1. 登入 CLI。
 
-  ```
+   ```
   ibmcloud cr login
   ```
-  {: pre}
+   {: pre}
 
-  如果您從專用 {{site.data.keyword.registrylong_notm}} 取回映像檔，則必須登入。
+   如果您從專用 {{site.data.keyword.registrylong_notm}} 取回映像檔，則必須登入。
   {:tip}
 
 2. 若要檢視帳戶中可用的所有名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
 3. [將映像檔上傳至名稱空間。](index.html#registry_images_pushing)
 
-  如果您收到 "unauthorized: authentication required" 或 "denied: requested access to the resource is denied" 訊息，請執行 `ibmcloud cr login` 指令。
+   如果您收到 `unauthorized: authentication required` 或 `denied: requested access to the resource is denied` 訊息，請執行 `ibmcloud cr login` 指令。
   {:tip}
 
 
-在將映像檔推送至專用登錄之後，您可以：
+在將映像檔推送至專用登錄之後，您可以執行下列其中一項作業：
 
 - [使用漏洞警告器管理安全](../va/va_index.html)，以尋找潛在安全問題及漏洞的相關資訊。
 - [建立叢集以及使用此映像檔來部署容器](/docs/containers/container_index.html#container_index)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
+
 
 ## 在登錄之間複製映像檔
 {: #registry_images_copying}
@@ -102,9 +104,9 @@ lastupdated: "2018-08-17"
 您可以從某個地區的登錄取回映像檔，然後將它推送至另一個地區的登錄，即可與這兩個地區的使用者共用映像檔。
 {:shortdesc}
 
-<img src="images/images_copy.png" width="800" style="width:800px;" alt="從任何專用或公用登錄將映像檔複製到您的專用 {{site.data.keyword.Bluemix_notm}} 登錄。"/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="從任何專用或公用登錄複製映像檔到您的專用 {{site.data.keyword.Bluemix_notm}} 登錄。"/>
 
-開始之前：
+**開始之前**
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
@@ -113,15 +115,16 @@ lastupdated: "2018-08-17"
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
 
-若要在兩個登錄之間複製映像檔，請遵循下列步驟。
+若要在兩個登錄之間複製映像檔，請完成下列步驟：
 
 1. [從登錄取回映像檔](#registry_images_pulling)。
 2. [將映像檔推送至另一個登錄](#registry_images_pushing)。請確定您針對目標新地區使用正確的網域名稱。
 
-在複製映像檔之後，您可以：
+複製映像檔之後，您可以執行下列其中一項作業：
 
 - [使用漏洞警告器管理映像檔安全](../va/va_index.html)，以尋找潛在安全問題及漏洞的相關資訊。
 - [建立叢集以及使用此映像檔來部署容器](/docs/containers/container_index.html#container_index)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
+
 
 ## 建置 Docker 映像檔，以與名稱空間搭配使用
 {: #registry_images_creating}
@@ -129,7 +132,7 @@ lastupdated: "2018-08-17"
 您可以直接在 {{site.data.keyword.Bluemix_notm}} 建置 Docker 映像檔，或在本端電腦上建立自己的 Docker 映像檔，並將它上傳（推送）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間。
 {:shortdesc}
 
-開始之前：
+**開始之前**
 
 - [安裝 CLI](registry_setup_cli_namespace.html#registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 專用登錄中設定自己的名稱空間](registry_setup_cli_namespace.html#registry_namespace_add)。
@@ -148,37 +151,38 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 2. 建立 Dockerfile。
   1. 在本端目錄中建立 Dockerfile。
 
-    ```
+     ```
     touch Dockerfile
     ```
-    {: pre}
+     {: pre}
 
   2. 使用文字編輯器來開啟 Dockerfile。您至少必須新增基礎映像檔，以根據它建置映像檔。請將 _&lt;source_image&gt;_ 及 _&lt;tag&gt;_ 取代為您要使用的映像檔儲存庫及標籤。如果您要使用另一個專用登錄中的映像檔，請定義此專用登錄中映像檔的完整路徑。
 
-    ```
+     ```
     FROM <source_image>:<tag>
     ```
-    {: pre}
+     {: pre}
 
-    建立以公用 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) 映像檔為基礎之 Dockerfile 的範例：
+     **範例**
+     若要建立以公用 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) 映像檔為基礎之 Dockerfile 的範例，請使用下列程式碼：
 
-    ```
+     ```
     FROM registry.<region>.bluemix.net/ibmliberty:latest
     LABEL description="This is my test Dockerfile"
     EXPOSE 9080
     ```
-    {: pre}
+     {: pre}
 
-    此範例會將標籤新增至映像檔 meta 資料，並公開埠 9080。如需您可以使用的其他 Dockerfile 指示，請參閱 [Dockerfile 參考資料](https://docs.docker.com/engine/reference/builder/)。
+     此範例會將標籤新增至映像檔 meta 資料，並公開埠 9080。如需您可以使用的其他 Dockerfile 指示，請參閱 [Dockerfile 參考資料](https://docs.docker.com/engine/reference/builder/)。
 
 3. 決定映像檔的名稱。映像檔名稱必須為下列格式：
 
-  ```
-  registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
-  ```
-  {: pre}
+   ```
+   registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
+   ```
+   {: pre}
 
-  其中 _&lt;my_namespace&gt;_ 是您的名稱空間資訊、_&lt;repo_name&gt;_ 是儲存庫名稱，而 _&lt;tag&gt;_ 是您要用於映像檔的版本。若要尋找名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
+   其中 _&lt;my_namespace&gt;_ 是您的名稱空間資訊、_&lt;repo_name&gt;_ 是儲存庫名稱，而 _&lt;tag&gt;_ 是您要用於映像檔的版本。若要尋找名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
 
 4. 記下包含 Dockerfile 的目錄路徑。如果您在下列步驟中執行指令，而工作目錄設為儲存建置環境定義之處，則可以將 _&lt;directory&gt;_ 取代為句號 (.)。
 5. 選擇直接在 {{site.data.keyword.Bluemix_notm}} 中建置映像檔，或先在本端建置並測試映像檔，再將它推送至 {{site.data.keyword.Bluemix_notm}}。
@@ -196,21 +200,21 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
   - 若要先在本端建置並測試映像檔，再將它推送至 {{site.data.keyword.Bluemix_notm}}，請完成下列步驟：
     1. 在本端電腦上從 Dockerfile 建置映像檔，並以映像檔名稱來標記它。
 
-      ```
-      docker build -t <image_name> <directory>
-      ```
-      {: pre}
+       ```
+       docker build -t <image_name> <directory>
+       ```
+       {: pre}
 
-      其中 _&lt;image_name&gt;_ 是您映像檔的名稱，而 _&lt;directory&gt;_ 是目錄的路徑。
+       其中 _&lt;image_name&gt;_ 是您映像檔的名稱，而 _&lt;directory&gt;_ 是目錄的路徑。
 
     2. 選用項目：先在本端電腦上測試映像檔，再將它推送至名稱空間。
 
-      ```
-      docker run <image_name>
-      ```
-      {: pre}
+       ```
+       docker run <image_name>
+       ```
+       {: pre}
 
-      將 _&lt;image_name&gt;_ 取代為您的映像檔名稱。
+       將 _&lt;image_name&gt;_ 取代為您的映像檔名稱。
 
     3. 在您建立映像檔並針對名稱空間標記它之後，[可以將映像檔推送至名稱空間專用登錄](#registry_images_pushing)。
 
@@ -245,24 +249,24 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 1.  執行 `ibmcloud login` 指令，以登入 {{site.data.keyword.Bluemix_notm}}。
 2.  若要刪除映像檔，請執行下列指令：
 
-  ```
-  ibmcloud cr image-rm IMAGE
-  ```
-  {: pre}
+    ```
+    ibmcloud cr image-rm IMAGE
+    ```
+    {: pre}
 
-  其中 _IMAGE_ 是您要移除之映像檔的名稱，格式為 `repository:tag`。
+    其中 _IMAGE_ 是您要移除之映像檔的名稱，格式為 `repository:tag`。
 
-  如果映像檔名稱中未指定標籤，則依預設會刪除以 `latest` 標記的映像檔。您可以藉由在指令中列出每一個專用 {{site.data.keyword.Bluemix_notm}} 登錄路徑，並以空格隔開每一個路徑，來刪除多個映像檔。
+    如果映像檔名稱中未指定標籤，則依預設會刪除以 `latest` 標記的映像檔。您可以藉由在指令中列出每一個專用 {{site.data.keyword.Bluemix_notm}} 登錄路徑，並以空格隔開每一個路徑，來刪除多個映像檔。
 
- 若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 Repository 及 Tag 直欄的內容，以建立映像檔名稱。
+    若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 Repository 及 Tag 直欄的內容，以建立映像檔名稱。
  {:tip}
 
 3.  執行下列指令，驗證已刪除映像檔，並確認映像檔未顯示在清單中。
 
-  ```
-  ibmcloud cr image-list
-  ```
-  {: pre}
+    ```
+    ibmcloud cr image-list
+    ```
+    {: pre}
 
 
 ### 使用 GUI 刪除專用 {{site.data.keyword.Bluemix_notm}} 儲存庫中的映像檔

@@ -69,7 +69,7 @@ Pour plus d'informations sur l'écriture de règles de sécurité, voir [Personn
 Par défaut, une règle à l'échelle du cluster est appliquée à l'ensemble des images de tous les registres comportant des informations de confiance et pour lesquels aucune vulnérabilité n'a été signalée dans Vulnerability Advisor.
 {:shortdesc}
 
-**Fichier `.yaml` de règle à l'échelle du cluster** 
+**Fichier `.yaml` de règle à l'échelle du cluster**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -98,7 +98,7 @@ Lorsque vous définissez `va` ou `trust` sur `enabled: true` pour un registre de
 Par défaut, une règle à l'échelle de l'espace de nom est installée pour l'espace de nom `kube-system`. Elle permet à toutes les images d'un registre de conteneur d'être déployées sur le `kube-system` sans contrôle, mais vous pouvez modifier cette partie de la règle. La règle par défaut inclut également certains référentiels que vous devez conserver pour que votre cluster puisse être correctement configuré.
 {:shortdesc}
 
-**Fichier `.yaml` de règle `kube-system`** 
+**Fichier `.yaml` de règle `kube-system`**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -129,7 +129,7 @@ spec:
 Par défaut, une règle à l'échelle de l'espace de nom est installée pour l'espace de nom `ibm-system`. Elle permet à toutes les images d'un registre de conteneur d'être déployées sur le `ibm-system` sans contrôle, mais vous pouvez modifier cette partie de la règle. La règle par défaut inclut également certains référentiels que vous devez conserver pour que votre cluster puisse être correctement configuré et puisse installer ou mettre à niveau Container Image Security Enforcement.
 {:shortdesc}
 
-**Fichier `.yaml` de règle `ibm-system`** 
+**Fichier `.yaml` de règle `ibm-system`**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -344,7 +344,7 @@ Un déploiement est autorisé uniquement si toutes les images réussissent les v
 ## Retrait de Container Image Security Enforcement
 {: #remove}
 
-Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. 
+Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 
 

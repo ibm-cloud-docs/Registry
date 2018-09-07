@@ -29,7 +29,7 @@ lastupdated: "2018-08-20"
 
 Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
 
-"trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.  
+"trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오. 
 
 
 ## 신뢰할 수 있는 컨텐츠 환경 설정
@@ -155,7 +155,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 2.  각 이미지의 태그, 요약 및 서명자 정보를 검토하십시오. 
 
-    (선택사항) 해당 이미지 버전에 대한 정보를 보려면 태그 _&lt;tag&gt;_를 지정하십시오. 
+    (선택사항) 해당 이미지 버전에 대한 정보를 보려면 태그 _&lt;tag&gt;_를 지정하십시오.
 
     ```
 docker trust view <image>:<tag>
@@ -203,7 +203,7 @@ $ docker trust view <image>:<tag>
 
 모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](ts_index.html#ts_recoveringtrustedcontent)이 제한됩니다.
 
-키를 백업하려는 경우에는 [Docker Content Trust 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오. 
+키를 백업하려는 경우에는 [Docker Content Trust 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오.
 
 
 ## 신뢰할 수 있는 서명자 관리
@@ -221,7 +221,7 @@ $ docker trust view <image>:<tag>
 시작하기 전에:
 - 이미지 서명자에게 네임스페이스에 이미지를 푸시하는 권한이 있어야 합니다. 
 - 저장소 소유자 및 추가 서명자의 경우 Docker 17.12 이상이 설치되어 있어야 합니다.
-- [서명된 이미지를 푸시](#trustedcontent_push)하여 신뢰할 수 있는 컨텐츠 저장소를 작성하십시오. 저장소 소유자에게 로컬 시스템의 Docker 신뢰 폴더에서 사용 가능한 저장소의 저장소 관리 키가 있어야 합니다. 저장소 관리 키가 없는 경우에는 이 태스크를 대신 수행하도록 소유자에게 요청하십시오. 
+- [서명된 이미지를 푸시](#trustedcontent_push)하여 신뢰할 수 있는 컨텐츠 저장소를 작성하십시오. 저장소 소유자에게 로컬 시스템의 Docker 신뢰 폴더에서 사용 가능한 저장소의 저장소 관리 키가 있어야 합니다. 저장소 관리 키가 없는 경우에는 이 태스크를 대신 수행하도록 소유자에게 요청하십시오.
 
 서명자를 추가하는 경우 이 저장소의 이미지에 서명하는 데 저장소 관리 키를 더 이상 사용할 수 없습니다. 승인된 서명자 중 하나가 서명할 개인 키를 보유하고 있어야 합니다. 서명자 추가 후 이미지에 서명하는 기능을 유지하려면 다시 다음 지시사항에 따라 직접 서명자 역할을 생성하고 추가하십시오.
 {:tip}

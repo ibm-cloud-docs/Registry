@@ -18,10 +18,10 @@ lastupdated: "2018-08-20"
 # コンテナー・イメージ・セキュリティーの適用 (ベータ)
 {: #security_enforce}
 
-Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
-Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
+Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
 
 
 ## クラスターへの Container Image Security Enforcement のインストール
@@ -42,14 +42,14 @@ Container Image Security Enforcement は、イメージ・コンテンツの信�
     ```
     {: pre}
 
-3.  Container Image Security Enforcement の Helm チャートをクラスターにインストールします。`cise` などの名前を指定します。
+3.  Container Image Security Enforcement の Helm チャートをクラスターにインストールします。 `cise` などの名前を指定します。
 
     ```
     helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-これで、Container Image Security Enforcement がインストールされ、クラスター内のすべての Kubernetes 名前空間に[デフォルトのセキュリティー・ポリシー](#default_policies)が適用されました。クラスター内の Kubernetes 名前空間またはクラスター全体のセキュリティー・ポリシーをカスタマイズする方法については、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
+これで、Container Image Security Enforcement がインストールされ、クラスター内のすべての Kubernetes 名前空間に[デフォルトのセキュリティー・ポリシー](#default_policies)が適用されました。 クラスター内の Kubernetes 名前空間またはクラスター全体のセキュリティー・ポリシーをカスタマイズする方法については、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
 
 ## デフォルトのポリシー
 {: #default_policies}
@@ -163,7 +163,7 @@ spec:
 ## ポリシーのカスタマイズ
 {: #customize_policies}
 
-イメージを許可するために Container Image Security Enforcement で使用されるポリシーは、ユーザーがクラスター・レベルまたは Kubernetes 名前空間レベルで変更できます。ポリシーには、さまざまなイメージに対するさまざまな制約ルールを指定できます。
+イメージを許可するために Container Image Security Enforcement で使用されるポリシーは、ユーザーがクラスター・レベルまたは Kubernetes 名前空間レベルで変更できます。 ポリシーには、さまざまなイメージに対するさまざまな制約ルールを指定できます。
 {:shortdesc}
 
 何らかのポリシーを設定する必要があります。 そうしないと、クラスターへのデプロイメントは失敗します。 イメージのセキュリティー・ポリシーを一切適用しない場合は、[Container Image Security Enforcement を削除](#remove)してください。
@@ -171,7 +171,7 @@ spec:
 
 デプロイメントを行うと、Container Image Security Enforcement が、デプロイ先の Kubernetes 名前空間に適用すべきポリシーがあるかどうかを検査します。 ない場合、Container Image Security Enforcement はクラスター規模のポリシーを使用します。 名前空間規模のポリシーもクラスター規模のポリシーも存在しない場合、デプロイメントは拒否されます。
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。その後、以下の手順を実行します。
+始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。 その後、以下の手順を実行します。
 
 1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
 
@@ -214,7 +214,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../policy</code></td>
-    <td>`trust` 制約と `va` 制約のサブセクションを入力します。policy サブセクションを省略すると、どちらにも `enabled: false` を指定したことになります。</td>
+    <td>`trust` 制約と `va` 制約のサブセクションを入力します。 policy サブセクションを省略すると、どちらにも `enabled: false` を指定したことになります。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
@@ -222,7 +222,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
-    <td>特定のユーザーの署名があるイメージだけを許可する場合は、署名者の名前の Kubernetes シークレットを指定します。特定の署名者に限定せずに、イメージに署名があることを確認する場合は、このセクションを省略するか空のままにしてください。 詳しくは、[信頼できるコンテンツの署名者をカスタム・ポリシーで指定する](#signers)を参照してください。</td>
+    <td>特定のユーザーの署名があるイメージだけを許可する場合は、署名者の名前の Kubernetes シークレットを指定します。 特定の署名者に限定せずに、イメージに署名があることを確認する場合は、このセクションを省略するか空のままにしてください。 詳しくは、[信頼できるコンテンツの署名者をカスタム・ポリシーで指定する](#signers)を参照してください。</td>
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
@@ -241,7 +241,7 @@ spec:
 ### 信頼できるコンテンツの署名者をカスタム・ポリシーに指定する
 {: #signers}
 
-コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。署名者をリポジトリーに追加するには、[信頼できる署名者の管理](registry_trusted_content.html#trustedcontent_signers)を参照してください。
+コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](registry_trusted_content.html#trustedcontent_signers)を参照してください。
 {:shortdesc}
 
 イメージに特定の署名者の署名があることを検証するようにポリシーを構成するには、以下のようにします。
@@ -350,7 +350,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
 
-ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](registry_trusted_content.html)を参照してください。
+ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](registry_trusted_content.html)を参照してください。
 
 すべてのイメージが Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
 

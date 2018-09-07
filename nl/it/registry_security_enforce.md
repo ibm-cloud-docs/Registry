@@ -344,7 +344,7 @@ Una distribuzione viene consentita solo se tutte le immagini superano i controll
 ## Rimozione di Container Image Security Enforcement
 {: #remove}
 
-Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster. 
+Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster.
 
 
 

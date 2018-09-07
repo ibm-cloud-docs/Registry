@@ -175,7 +175,7 @@ Puoi risolvere questo problema nei seguenti modi:
 -   [Riesamina i limiti e l'utilizzo della quota per l'archiviazione e il pull delle immagini Docker in {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
 
 
-## Impossibile eseguire il pull dell'immagine più recente utilizzando la tag `latest` 
+## Impossibile eseguire il pull dell'immagine più recente utilizzando la tag `latest`
 {: #ts_docker_latest}
 
 {: tsSymptoms}

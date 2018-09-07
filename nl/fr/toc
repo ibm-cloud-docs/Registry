@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
@@ -9,14 +9,10 @@ IBM Cloud Container Registry
     registry_overview.md
     [Images IBM](../RegistryImages/index.html#ibm_images)
         [Image ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
-        [Image ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [Image ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [Image ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
+        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
+        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [Image ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [Image ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [Image ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
-
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
@@ -29,12 +25,11 @@ IBM Cloud Container Registry
     [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html)
         [A propos de Vulnerability Advisor](../va/va_index.html#about)
         [Types de vulnérabilités](../va/va_index.html#types)
-        [Installion du scanner de conteneur](../va/va_index.html#va_install_container_scanner)
+        [Installation du scanner de conteneur](../va/va_index.html#va_install_container_scanner)
         [Exécution d'un scanner de conteneur au travers d'un pare-feu](../va/va_index.html#va_firewall)
-        [Examen d'un rapport de vulnérabilité à l'aide de l'interface graphique](../va/va_index.html#va_reviewing)
-        [Examen d'un rapport de vulnérabilité à l'aide de l'interface de ligne de commande](../va/va_index.html#va_registry_cli)
+        [Définition de règles d'exemption de l'organisation](../va/va_index.html#va_managing_policy)
+        [Examen d'un rapport de vulnérabilité](../va/va_index.html#va_reviewing)
         [Examen d'un rapport de conteneur](../va/va_index.html#va_reviewing_container)
-        [Résolution des problèmes courants](../va/va_index.html#va_report)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

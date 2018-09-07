@@ -37,7 +37,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 ## 使用 API 密钥自动访问名称空间
 {: #registry_api_key}
 
-您可以使用 API 密钥，将 Docker 映像自动推送至名称空间，以及从名称空间自动拉出 Docker 映像。
+您可以使用 API 密钥，将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。
 {:shortdesc}
 
 ### 创建 API 密钥
@@ -67,10 +67,10 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ## 使用令牌自动访问名称空间
 {: #registry_tokens}
 
-您可以使用令牌，将 Docker 映像自动推送至 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
+您可以使用令牌，将 Docker 映像自动推送到 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
 {:shortdesc}
 
-拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送至名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。
+拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。
 
 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
 
@@ -111,7 +111,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
         </tr>
         <tr>
         <td>`--readwrite`</td>
-        <td>可选。使用此选项，可以创建令牌，以允许用户将映像推送至名称空间，以及从名称空间拉出映像。如果您未指定此选项，那么令牌仅可用于拉出映像。</td>
+        <td>可选。使用此选项，可以创建令牌，以允许用户将映像推送到名称空间，以及从名称空间拉出映像。如果您未指定此选项，那么令牌仅可用于拉出映像。</td>
         </tr>
         </tbody>
         </table>
@@ -137,7 +137,7 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
 {: #registry_tokens_use}
 
 您可以在 `docker login` 命令中使用令牌，以自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
-根据您为令牌设置的是只读还是读/写访问权，用户可以将映像推送至名称空间，以及从名称空间拉出映像。
+根据您为令牌设置的是只读还是读/写访问权，用户可以将映像推送到名称空间，以及从名称空间拉出映像。
 {:shortdesc}
 
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
@@ -179,7 +179,7 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
     对于 `-u` 参数，请确保输入的是字符串 `token`，而不是令牌标识。
     {: tip}
 
-    使用令牌登录到 Docker 后，就可以将映像推送至名称空间或从名称空间拉出映像。
+    使用令牌登录到 Docker 后，就可以将映像推送到名称空间或从名称空间拉出映像。
 
 
 ### 从 {{site.data.keyword.Bluemix_notm}} 帐户除去令牌

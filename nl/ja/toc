@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
@@ -11,12 +11,8 @@ IBM Cloud Container Registry
         [ibm-backup-restore イメージ](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibm-integration-bus イメージ](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty イメージ](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [ibm-mq イメージ](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibm-websphere-extreme-scale イメージ](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
-
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
@@ -26,15 +22,14 @@ IBM Cloud Container Registry
     registry_tokens.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [脆弱性アドバイザーによるイメージのセキュリティーの管理](../va/va_index.html)
+    [脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](../va/va_index.html)
         [脆弱性アドバイザーの概要](../va/va_index.html#about)
         [脆弱性のタイプ](../va/va_index.html#types)
-        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_container_scanner)
-        [ファイアウォールの背後からのコンテナー・スキャナーの実行](../va/va_index.html#va_firewall)
-        [GUI を使用した脆弱性レポートの検討](../va/va_index.html#va_reviewing)
-        [CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)
+        [Container Scanner のインストール](../va/va_index.html#va_install_container_scanner)
+        [ファイアウォールの内側からの Container Scanner の実行](../va/va_index.html#va_firewall)
+        [組織の適用除外項目ポリシーの設定](../va/va_index.html#va_managing_policy)
+        [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
         [コンテナー・レポートの検討](../va/va_index.html#va_reviewing_container)
-        [一般的な問題の解決](../va/va_index.html#va_report)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

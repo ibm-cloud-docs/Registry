@@ -482,7 +482,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 
 2.  執行下列指令，以更新 `ValidatingWebhookConfiguration`：
 
-    ````
+    ```
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

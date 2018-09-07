@@ -381,14 +381,14 @@ ibmcloud cr plan-upgrade [PLAN]
 **매개변수**
 <dl>
 <dt>`PLAN`</dt>
-<dd>업그레이드할 가격 책정 플랜의 이름입니다. `PLAN`을 지정하지 않은 경우 기본값은 `standard`입니다. </dd>
+<dd>업그레이드할 가격 책정 플랜의 이름입니다. `PLAN`을 지정하지 않은 경우 기본값은 `standard`입니다.</dd>
 </dl>
 
 
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-[IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 개인용 레지스트리 네임스페이스로 가져옵니다. 
+[IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 개인용 레지스트리 네임스페이스로 가져옵니다.
 
 컨테이너 이미지가 개인용 {{site.data.keyword.registryshort_notm}} 네임스페이스로 푸시됩니다. Helm 차트는 명령을 실행하는 디렉토리에 작성된 `ppa-import` 디렉토리에 기록됩니다. 선택적으로 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)를 사용하여 helm 차트를 호스팅할 수 있습니다.
 

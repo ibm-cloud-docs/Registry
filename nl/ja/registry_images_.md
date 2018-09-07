@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-24"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-08-17"
 {{site.data.keyword.registrylong}} 内の名前空間にイメージを追加することで、安全に Docker イメージを保管して他のユーザーと共有することができます。
 {:shortdesc}
 
-名前空間に追加するすべてのイメージは、まずローカル・コンピューターに存在していなければなりません。別のリポジトリーからローカル・コンピューターにイメージをダウンロード (プル) するか、または Docker `build` コマンドを使用して Dockerfile から独自のイメージをビルドすることができます。名前空間にイメージを追加するには、{{site.data.keyword.registrylong_notm}} 内の名前空間にローカル・イメージをアップロード (プッシュ) する必要があります。
+名前空間に追加するすべてのイメージは、まずローカル・コンピューターに存在していなければなりません。 別のリポジトリーからローカル・コンピューターにイメージをダウンロード (プル) するか、または Docker `build` コマンドを使用して Dockerfile から独自のイメージをビルドすることができます。 名前空間にイメージを追加するには、{{site.data.keyword.registrylong_notm}} 内の名前空間にローカル・イメージをアップロード (プッシュ) する必要があります。
 
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
@@ -37,7 +37,7 @@ lastupdated: "2018-08-17"
 
 <img src="images/images_pull.png" width="800" style="width:800px;" alt="イメージを専用レジストリーまたはパブリック・レジストリーからコンピューターにプルします。"/>
 
-開始前に、以下のことを行います。
+**始めに**
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](registry_setup_cli_namespace.html#registry_namespace_add)。
@@ -54,6 +54,7 @@ lastupdated: "2018-08-17"
 
 イメージをプルして名前空間のタグを付けたら、イメージをローカル・コンピューターから名前空間にアップロード (プッシュ) できます。
 
+
 ## Docker イメージの名前空間へのプッシュ
 {: #registry_images_pushing}
 
@@ -62,7 +63,7 @@ lastupdated: "2018-08-17"
 
 <img src="images/images_push.png" width="800" style="width:800px;" alt="イメージをコンピューターから専用レジストリーにプッシュします。"/>
 
-開始前に、以下のことを行います。
+**始めに**
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
@@ -72,29 +73,30 @@ lastupdated: "2018-08-17"
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
 
-イメージをアップロード (プッシュ) するには、以下の手順に従います。
+イメージをアップロード (プッシュ) するには、以下の手順を実行します。
 
 1. CLI にログインします。
 
-  ```
-  ibmcloud cr login
-  ```
-  {: pre}
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
 
-  専用 {{site.data.keyword.registrylong_notm}} からイメージをプルする場合、ログインする必要があります。
+   専用 {{site.data.keyword.registrylong_notm}} からイメージをプルする場合、ログインする必要があります。
   {:tip}
 
 2. ご使用のアカウントで利用できるすべての名前空間を表示するには、`ibmcloud cr namespace-list` コマンドを実行します。
 3. [イメージを名前空間にアップロードします。](index.html#registry_images_pushing)
 
-  「unauthorized: authentication required」または「denied: requested access to the resource is denied」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行します。
-  {:tip}
+   `unauthorized: authentication required` または `denied: requested access to the resource is denied` というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行します。
+   {:tip}
 
 
-イメージを専用レジストリーにプッシュしたら、以下を行えます。
+イメージを専用レジストリーにプッシュしたら、以下のいずれかのタスクを行えます。
 
 - [脆弱性アドバイザーでセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を探します。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
+
 
 ## レジストリー間でのイメージのコピー
 {: #registry_images_copying}
@@ -102,9 +104,9 @@ lastupdated: "2018-08-17"
 ある領域内のレジストリーからイメージをプルし、別の領域内のレジストリーにそれをプッシュすることで、両方の領域のユーザー間でそのイメージを共有することができます。
 {:shortdesc}
 
-<img src="images/images_copy.png" width="800" style="width:800px;" alt="イメージを専用レジストリーまたはパブリック・レジストリーから専用 {{site.data.keyword.Bluemix_notm}} レジストリーにコピーします。"/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="専用レジストリーまたはパブリック・レジストリーから専用 {{site.data.keyword.Bluemix_notm}} レジストリーにイメージをコピーします。"/>
 
-開始前に、以下のことを行います。
+**始めに**
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
@@ -113,15 +115,16 @@ lastupdated: "2018-08-17"
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
 
-2 つのレジストリー間でイメージをコピーするには、以下のステップを実行してください。
+2 つのレジストリー間でイメージをコピーするには、以下の手順を実行します。
 
 1. [レジストリーからイメージをプルします](#registry_images_pulling)。
 2. [イメージを別のレジストリーにプッシュします](#registry_images_pushing)。 対象となる新しい領域について、正しいドメイン・ネームを使用していることを確認してください。
 
-イメージをコピーした後、以下を行えます。
+イメージをコピーしたら、以下のいずれかのタスクを行えます。
 
 - [脆弱性アドバイザーでイメージのセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を見つけます。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
+
 
 ## 名前空間で使用する Docker イメージのビルド
 {: #registry_images_creating}
@@ -129,7 +132,7 @@ lastupdated: "2018-08-17"
 {{site.data.keyword.Bluemix_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
 {:shortdesc}
 
-開始前に、以下のことを行います。
+**始めに**
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
@@ -150,37 +153,38 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 2. Dockerfile を作成します。
   1. ローカル・ディレクトリーに Dockerfile を作成します。
 
-    ```
-    touch Dockerfile
-    ```
-    {: pre}
+     ```
+     touch Dockerfile
+     ```
+     {: pre}
 
   2. テキスト・エディターを使用して Dockerfile を開きます。 少なくとも、イメージをビルドする元の基本イメージを追加する必要があります。 _&lt;source_image&gt;_ と _&lt;tag&gt;_ を、使用するイメージ・リポジトリーとタグに置き換えてください。 別の専用レジストリーのイメージを使用する場合は、この専用レジストリーのイメージに対する絶対パスを定義します。
 
-    ```
-    FROM <source_image>:<tag>
-    ```
-    {: pre}
+     ```
+     FROM <source_image>:<tag>
+     ```
+     {: pre}
 
-    パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile の作成例:
+     **例**
+     パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile を作成するには、以下のコードを使用します。
 
-    ```
-    FROM registry.<region>.bluemix.net/ibmliberty:latest
+     ```
+     FROM registry.<region>.bluemix.net/ibmliberty:latest
     LABEL description="This is my test Dockerfile"
     EXPOSE 9080
-    ```
-    {: pre}
+      ```
+     {: pre}
 
-    この例では、イメージ・メタデータにラベルを追加し、ポート 9080 を公開します。 使用できる Dockerfile 指示の詳細については、[Dockerfile リファレンス](https://docs.docker.com/engine/reference/builder/)を参照してください。
+     この例では、イメージ・メタデータにラベルを追加し、ポート 9080 を公開します。 使用できる Dockerfile 指示の詳細については、[Dockerfile リファレンス](https://docs.docker.com/engine/reference/builder/)を参照してください。
 
 3. イメージの名前を決めます。 イメージ名は以下の形式でなければなりません。
 
-  ```
-  registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
-  ```
-  {: pre}
+   ```
+   registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
+   ```
+   {: pre}
 
-  _&lt;my_namespace&gt;_ は名前空間の情報、_&lt;repo_name&gt;_ はリポジトリーの名前、_&lt;tag&gt;_ はイメージに使用するバージョンです。 名前空間を見つけるには、`ibmcloud cr namespace-list` コマンドを実行します。
+   _&lt;my_namespace&gt;_ は名前空間の情報、_&lt;repo_name&gt;_ はリポジトリーの名前、_&lt;tag&gt;_ はイメージに使用するバージョンです。 名前空間を見つけるには、`ibmcloud cr namespace-list` コマンドを実行します。
 
 4. Dockerfile を含むディレクトリーのパスをメモします。 作業ディレクトリーをビルド・コンテキストの保管場所に設定した状態で以下の手順のコマンドを実行する場合は、_&lt;directory&gt;_ をピリオド (.) に置換できます。
 5. {{site.data.keyword.Bluemix_notm}} でイメージを直接ビルドするか、それとも、イメージをローカルでビルドしてテストしてから {{site.data.keyword.Bluemix_notm}} にプッシュするかを選択します。
@@ -198,21 +202,21 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
   - イメージをローカルでビルドしてテストしてから {{site.data.keyword.Bluemix_notm}} にプッシュする場合は、以下の手順を実行します。
     1. ローカル・コンピューターで Dockerfile からイメージをビルドし、イメージ名のタグを付けます。
 
-      ```
-      docker build -t <image_name> <directory>
-      ```
-      {: pre}
+       ```
+       docker build -t <image_name> <directory>
+       ```
+       {: pre}
 
-      _&lt;image_name&gt;_ はイメージの名前、_&lt;directory&gt;_ はディレクトリーのパスです。
+       _&lt;image_name&gt;_ はイメージの名前、_&lt;directory&gt;_ はディレクトリーのパスです。
 
     2. オプション: イメージを名前空間にプッシュする前に、ローカル・コンピューターでテストします。
 
-      ```
-      docker run <image_name>
-      ```
-      {: pre}
+       ```
+       docker run <image_name>
+       ```
+       {: pre}
 
-      _&lt;image_name&gt;_ をイメージの名前に置き換えます。
+       _&lt;image_name&gt;_ をイメージの名前に置き換えます。
 
     3. イメージを作成して名前空間用にタグ付けしたら、[名前空間専用レジストリーにイメージをプッシュできます](#registry_images_pushing)。
 
@@ -247,24 +251,24 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 1.  `ibmcloud login` コマンドを実行して {{site.data.keyword.Bluemix_notm}} にログインします。
 2.  イメージを削除するには、次のコマンドを実行します。
 
-  ```
-  ibmcloud cr image-rm IMAGE
-  ```
-  {: pre}
+    ```
+    ibmcloud cr image-rm IMAGE
+    ```
+    {: pre}
 
-  _IMAGE_ は、削除するイメージの名前 (形式は `repository:tag`) です。
+    _IMAGE_ は、削除するイメージの名前 (形式は `repository:tag`) です。
 
-  イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.Bluemix_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
+    イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.Bluemix_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
- イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
+    イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
  {:tip}
 
 3.  以下のコマンドを実行し、リスト中にイメージが表示されないことを確認して、イメージが削除されたことを検証します。
 
-  ```
-  ibmcloud cr image-list
-  ```
-  {: pre}
+    ```
+    ibmcloud cr image-list
+    ```
+    {: pre}
 
 
 ### GUI を使用した、プライベート {{site.data.keyword.Bluemix_notm}} リポジトリーからのイメージの削除

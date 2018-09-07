@@ -56,7 +56,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
 -   Execute o comando `ibmcloud cr image-list` a seguir para exibir o repositório, a tag e o status de segurança de todas as imagens com tamanho acima de 1 MB:
 
     ```
-    ibmcloud cr image-list -- format "{{se gt. Tamanho 1000000 }} {{.Repository }}: {{.Tag }} {{.SecurityStatus.Status }} {{end}}"
+    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
 
@@ -121,7 +121,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados de Go disponíveis para o comando `ibmcloud cr image-list`.
 {:shortdesc}
 
-|Campo|Type|descrição|
+|Campo|Tipo|Descrição|
 |-----|----|-----------|
 |`Created`|Número Inteiro (64 bits)|Exibe quando a imagem foi criada, expresso em número de segundos no [horário do UNIX](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|Sequência de Caracteres|Exibe o identificador exclusivo para uma imagem.|
@@ -138,7 +138,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados de G
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr image-inspect`.
 {:shortdesc}
 
-|Campo|Type|descrição|
+|Campo|Tipo|Descrição|
 |-----|----|-----------|
 |`ID`|Sequência de Caracteres|Exibe o identificador exclusivo para uma imagem.|
 |`Parent`|Sequência de Caracteres|Exibe o ID da imagem pai que foi usada para construir essa imagem.|
@@ -148,8 +148,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados disp
 |`ContainerConfig`|Objeto|Exibe a configuração padrão para contêineres que são iniciados por meio dessa imagem. Consulte os detalhes do campo em [Configuração](registry_cli_reference.html#config).|
 |`DockerVersion`|Sequência de Caracteres|Exibe a versão do Docker que foi usada para construir essa imagem.|
 |`Autor`|Sequência de Caracteres|Exibe o autor da imagem.|
-|`Config`|Objeto|Exibe os metadados de configuração para a imagem. Consulte os detalhes do campo em
-[Configuração](registry_cli_reference.html#config).|
+|`Config`|Objeto|Exibe os metadados de configuração para a imagem. Consulte os detalhes do campo em [Configuração](registry_cli_reference.html#config).|
 |`Architecture`|Sequência de Caracteres|Exibe a arquitetura do processador que foi usada para construir essa imagem e que é necessária para executar a imagem.|
 |`S.O.`|Sequência de Caracteres|Exibe a família do sistema operacional que foi usada para construir essa imagem e que é necessária para executar a imagem.|
 |`OsVersion`|Sequência de Caracteres|Exibe a versão do sistema operacional que foi usada para construir essa imagem.|
@@ -161,7 +160,7 @@ campo em [RootFS](registry_cli_reference.html#rootfs).|
 
 #### Config
 
-|Campo|Type|descrição|
+|Campo|Tipo|Descrição|
 |-----|----|-----------|
 |`Hostname`|Sequência de Caracteres|Exibe o nome do host do contêiner.|
 |`Domainname`|Sequência de Caracteres|Exibe o nome completo do domínio do contêiner.|
@@ -195,7 +194,7 @@ são executados.|
 
 #### Verificação de funcionamento
 
-|Campo|Type|descrição|
+|Campo|Tipo|Descrição|
 |-----|----|-----------|
 |`Test`|Matriz de sequências|Exibe como executar o teste de verificação de funcionamento. As opções disponíveis são:<ul><li>{}: herdam a verificação de funcionamento</li><li>{"NONE"}: a verificação de funcionamento é desativada</li><li>{"CMD", args...}: argumentos exec diretamente</li><li>{"CMD-SHELL", command}: execute o comando com o shell padrão do sistema</li></ul>|
 |`Interval`|Número Inteiro (64 bits)|Exibe o tempo para esperar entre as verificações de funcionamento em nanossegundos.|
@@ -206,7 +205,7 @@ contêiner seja considerado incorreto.|
 
 #### RootFS
 
-|Opção|Type|descrição|
+|Opção|Tipo|Descrição|
 |------|----|-----------|
 |`Type`|Sequência de Caracteres|Exibe o tipo de sistema de arquivo.|
 |`Layers`|Matriz de sequências|Exibe os descritores de cada camada de imagem.|
@@ -219,7 +218,7 @@ contêiner seja considerado incorreto.|
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr token-list`.
 {:shortdesc}
 
-|Campo|Type|descrição|
+|Campo|Tipo|Descrição|
 |-----|----|-----------|
 |`ID`|Sequência de Caracteres|Exibe o identificador exclusivo para um token.|
 |`Expiry`|Número Inteiro (64 bits)|Exibe o [Registro de data e

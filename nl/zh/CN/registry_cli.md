@@ -144,7 +144,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 **参数**
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>要将帐户设置为作用域，请使用“`*`”作为值。要将名称空间、存储库或标记设置为作用域，请输入以下其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
+<dd>要将帐户设置为作用域，请使用“`*`”作为值。要将名称空间、存储库或标记设置为作用域，请输入下列其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>要豁免的安全问题的类型。要查找有效的问题类型，请运行 `ibmcloud cr exemption-types`。
@@ -168,7 +168,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 **参数**
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>（可选）仅列出应用于此作用域的豁免。 要将名称空间、存储库或标记设置为作用域，请输入以下其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
+<dd>（可选）仅列出应用于此作用域的豁免。 要将名称空间、存储库或标记设置为作用域，请输入下列其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
 </dd>
 </dl>
 
@@ -186,7 +186,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 **参数**
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>要将帐户设置为作用域，请使用“`*`”作为值。要将名称空间、存储库或标记设置为作用域，请输入以下其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
+<dd>要将帐户设置为作用域，请使用“`*`”作为值。要将名称空间、存储库或标记设置为作用域，请输入下列其中一种格式的值：`namespace`、`namespace/repository` 或 `namespace/repository:tag`
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>要除去的安全问题豁免的问题类型。要查找豁免的问题类型，请运行 `ibmcloud cr exemption-list`。</dd>

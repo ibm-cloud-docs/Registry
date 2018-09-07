@@ -114,7 +114,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
         </tbody>
         </table>
 
-    Votre sortie d'interface de ligne de commande sera similaire à l'exemple suivant : 
+    Votre sortie d'interface de ligne de commande sera similaire à l'exemple suivant :
 
     ```
     Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
@@ -162,7 +162,7 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 4.  Utilisez le jeton avec votre commande `docker login`. Remplacez la valeur de &lt;token_value&gt; par la valeur de jeton que vous avez extraite à l'étape précédente et la valeur de &lt;registry_url&gt; par l'URL du registre où sont configurés vos espaces de nom.
 
     -   Pour les espaces de nom définis pour la région Sud des Etats-Unis : `registry.ng.bluemix.net`
-    -   Pour les espaces de nom définis pour la région Sud du Royaume-Uni : `registry.eu-gb.bluemix.net` 
+    -   Pour les espaces de nom définis pour la région Sud du Royaume-Uni : `registry.eu-gb.bluemix.net`
     -   Pour les espaces de nom définis pour la région Centre Europe : `registry.eu-de.bluemix.net` egistry.eu-de.bluemix.net
     -   Pour les espaces de nom définis pour la région Sud de l'Asie Pacifique : `registry.au-syd.bluemix.net`
 

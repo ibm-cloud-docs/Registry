@@ -30,9 +30,9 @@ Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서
 **시작하기 전에**
 
 * **Kubernetes 버전 1.9 이상**에서 사용할 클러스터를 [작성](/docs/containers/cs_clusters.html#clusters_ui)하거나 [업데이트](/docs/containers/cs_cluster_update.html#update)하십시오.
-* 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 
+* 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
 
-다음 단계를 완료하십시오. 
+다음 단계를 완료하십시오.
 1.  [클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
 
 2.  Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
@@ -171,7 +171,7 @@ spec:
 
 배치를 적용할 때 Container Image Security Enforcement에서 사용자가 배치하는 Kubernetes 네임스페이스에 적용할 정책이 있는지 여부를 확인합니다. 없는 경우 Container Image Security Enforcement가 클러스터 범위 정책을 사용합니다. 네임스페이스 또는 클러스터 범위 정책이 없는 경우 배치가 거부됩니다.
 
-시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그 후 다음 단계를 완료하십시오. 
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그 후 다음 단계를 완료하십시오.
 
 1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
 
@@ -339,12 +339,12 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
 
 정책에서 `trust` 옵션을 사용하여 컨텐츠 신뢰를 적용할 수 있습니다. `signerSecrets`를 지정하지 않으면 어떤 사용자가 이미지에 서명해도 배치가 허용됩니다. `signerSecrets`를 지정하면 최근에 서명된 버전의 이미지가 지정된 모든 사용자에 의해 서명되어 있어야 합니다. Container Image Security Enforcement는 제공된 공개 키가 서명자에게 속하는지 확인합니다. 컨텐츠 신뢰에 대한 자세한 정보는 [신뢰할 수 있는 컨텐츠의 이미지에 서명](registry_trusted_content.html)을 참조하십시오.
 
-모든 이미지가 Container Image Security Enforcement 검사를 통과한 경우에만 배치가 허용됩니다. 
+모든 이미지가 Container Image Security Enforcement 검사를 통과한 경우에만 배치가 허용됩니다.
 
 ## Container Image Security Enforcement 제거
 {: #remove}
 
-시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
 
 
 

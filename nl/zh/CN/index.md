@@ -104,7 +104,7 @@ lastupdated: "2018-08-20"
 
 
 
-## 将 Docker 映像推送至名称空间
+## 将 Docker 映像推送到名称空间
 {: #registry_images_pushing}
 
 1.  运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到 {{site.data.keyword.registrylong_notm}}。

@@ -35,7 +35,7 @@ lastupdated: "2018-08-20"
 {:shortdesc}
 
 1.  [container-registry 플러그인을 설치](index.html#registry_cli_install)하십시오.
-2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 이 단계를 수행하지 않은 경우에는 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 **docker push** 명령을 `sudo`를 사용하여 실행하거나 루트로서 실행해야 합니다. 
+2.  선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 이 단계를 수행하지 않은 경우에는 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 **docker push** 명령을 `sudo`를 사용하여 실행하거나 루트로서 실행해야 합니다.
 
 이제 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 네임스페이스를 설정할 수 있습니다.
 

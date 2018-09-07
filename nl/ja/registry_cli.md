@@ -223,7 +223,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>`IMAGE`</dt>
 <dd>レポートを取得するイメージの名前。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージの詳細を表示できます。
 
-<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージの詳細が表示されます。 </p>
+<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージの詳細が表示されます。 </p>
 
 </dd>
 </dl>
@@ -277,7 +277,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 <dt>`IMAGE`</dt>
 <dd>レポートを取得するイメージの名前。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージを同時に削除できます。
 
-<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージがデフォルトで削除されます。</p>
+<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージがデフォルトで削除されます。</p>
 
 </dd>
 </dl>
@@ -568,7 +568,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 <dt>`IMAGE`</dt>
 <dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージ脆弱性がイメージにあるかどうかがわかります。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
 
-<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。 </p>
+<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。 </p>
 
 <p>以下のオペレーティング・システムがサポートされています。
 

@@ -88,7 +88,7 @@ lastupdated: "2018-08-20"
     ```
     {: pre}
 
-3.  イメージにタグ付けします。 _&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、_&lt;tag&gt;_ をそのイメージのタグに置き換えてください。_&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。 _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
+3.  イメージにタグ付けします。 _&lt;source_image&gt;_ を先ほどプルしたローカル・イメージのリポジトリーに、_&lt;tag&gt;_ をそのイメージのタグに置き換えてください。 _&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に置き換えます。 _&lt;my_namespace&gt;_ を[名前空間のセットアップ](index.html#registry_namespace_add)で作成した名前空間に置き換えます。 _&lt;new_image_repo&gt;_ と _&lt;new_tag&gt;_ を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
 
     ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>

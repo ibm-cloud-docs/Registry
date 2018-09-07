@@ -37,11 +37,11 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 지원되는 {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력을 형식화하고 필터링할 수 있습니다.
 {:shortdesc}
 
-기본적으로 CLI 출력은 사람이 읽을 수 있는 형식으로 표시됩니다. 그러나 이 보기는 특히 명령이 프로그래밍 방식으로 실행되는 경우 출력 사용 기능을 제한할 수 있습니다. 예를 들어, `ibmcloud cr image-list` CLI 출력에서 사용자는 숫자 크기에 따라 `Size` 필드를 정렬하려 할 수 있지만 이 명령은 크기에 대한 문자열 설명을 리턴합니다. container-registry 플러그인은 Go 템플리트를 CLI 출력에 적용하기 위해 사용할 수 있는 형식화 옵션을 제공합니다. Go 템플리트는 CLI 출력을 사용자 정의하는 데 사용할 수 있는 [Go 프로그래밍 언어](https://golang.org/pkg/text/template/)의 기능입니다. 
+기본적으로 CLI 출력은 사람이 읽을 수 있는 형식으로 표시됩니다. 그러나 이 보기는 특히 명령이 프로그래밍 방식으로 실행되는 경우 출력 사용 기능을 제한할 수 있습니다. 예를 들어, `ibmcloud cr image-list` CLI 출력에서 사용자는 숫자 크기에 따라 `Size` 필드를 정렬하려 할 수 있지만 이 명령은 크기에 대한 문자열 설명을 리턴합니다. container-registry 플러그인은 Go 템플리트를 CLI 출력에 적용하기 위해 사용할 수 있는 형식화 옵션을 제공합니다. Go 템플리트는 CLI 출력을 사용자 정의하는 데 사용할 수 있는 [Go 프로그래밍 언어](https://golang.org/pkg/text/template/)의 기능입니다.
 
 다음 두 가지 방법으로 형식화 옵션을 적용하여 CLI 출력을 변경할 수 있습니다.
 
-1.  CLI 출력에서 데이터를 형식화하십시오. 예를 들면, `Created` 필드 출력을 UNIX 시간에서 표준 시간으로 변경하십시오. 
+1.  CLI 출력에서 데이터를 형식화하십시오. 예를 들면, `Created` 필드 출력을 UNIX 시간에서 표준 시간으로 변경하십시오.
 2.  CLI 출력에서 데이터를 필터링하십시오. 예를 들어, Go 템플리트 `if gt` 조건을 사용하여 이미지의 특정 서브세트를 표시하려면 이미지 세부사항별로 필터링하십시오.
 
 다음 {{site.data.keyword.registrylong_notm}} 명령과 함께 형식화 옵션을 사용할 수 있습니다. 사용 가능한 필드와 해당 데이터 유형의 목록을 보려면 명령을 클릭하십시오.
@@ -185,7 +185,7 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`StopSignal`|문자열|컨테이너를 중지하려고 할 때 보내는 UNIX 중지 신호에 대해 설명합니다.|
 |`StopTimeout`|정수|컨테이너를 중지하기 위한 제한시간을 초 단위로 표시합니다.|
 |`Shell`|문자열의 배열|RUN, CMD, ENTRYPOINT의 쉘 형식을 표시합니다.|
-{: caption="표 3. Config에서 사용 가능한 필드 및 데이터 유형" caption-side="top"}
+{: caption="표 3. Config에서 사용 가능한 필드 및 데이터 유형 " caption-side="top"}
 
 #### Healthcheck
 

@@ -234,7 +234,8 @@ Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interfac
 
 Affiche toutes les images de votre compte {{site.data.keyword.Bluemix_notm}}.
 
-Le nom de l'image est la combinaison du contenu des colonnes <strong>Repository</strong> et <strong>Tag</strong> au format `repository:tag`. {:tip}
+Le nom de l'image est la combinaison du contenu des colonnes <strong>Repository</strong> et <strong>Tag</strong> au format `repository:tag`.
+{:tip}
 
 ```
  ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]

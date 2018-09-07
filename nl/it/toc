@@ -1,22 +1,18 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
     [Immagini IBM](../RegistryImages/index.html#ibm_images)
-        [Immagine ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [Immagine ibm-integration-bus](../RegistryImages/ibm-integration-bus/index.html#iib)
-        [Immagine ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [Immagine ibm-mq](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [Immagine ibm-websphere-extreme-scale](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
     {: .navgroup-end}
-
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
@@ -29,12 +25,11 @@ IBM Cloud Container Registry
     [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html)
         [Informazioni su Controllo vulnerabilità](../va/va_index.html#about)
         [Tipi di vulnerabilità](../va/va_index.html#types)
-        [Installazione dello scanner contenitori](../va/va_index.html#va_install_container_scanner)
-        [Esecuzione dello scanner contenitori da dietro un firewall](../va/va_index.html#va_firewall)
-        [Riesame di un report di vulnerabilità utilizzando la GUI](../va/va_index.html#va_reviewing)
-        [Riesame di un report di vulnerabilità utilizzando la CLI](../va/va_index.html#va_registry_cli)
+        [Installazione dello Scanner contenitori](../va/va_index.html#va_install_container_scanner)
+        [Esecuzione dello Scanner contenitori da dietro un firewall](../va/va_index.html#va_firewall)
+        [Configurazione delle politiche di esenzione organizzative](../va/va_index.html#va_managing_policy)
+        [Riesame di un report di vulnerabilità](../va/va_index.html#va_reviewing)
         [Riesame di un report del contenitore](../va/va_index.html#va_reviewing_container)
-        [Risoluzione dei problemi comuni](../va/va_index.html#va_report)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

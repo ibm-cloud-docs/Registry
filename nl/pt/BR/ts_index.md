@@ -247,7 +247,7 @@ Antes de iniciar:
 
     Extraindo gráfico 'charts/ibm-integration-bus-prod-1.0.0.tgz' para '/Users/user/Downloads/ppa-import/charts'.
 
-    OK
+    Ok
     ```
     {: screen}
 

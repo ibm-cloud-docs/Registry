@@ -36,7 +36,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1.  Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. 
+1.  Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`.
 2.  Installez le plug-in container-registry :
 
     ```

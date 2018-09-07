@@ -1,4 +1,4 @@
----
+﻿---
 
 copyright:
   years: 2017, 2018
@@ -50,7 +50,7 @@ La commande `ibmcloud cr login` échoue.
 
 {: tsCauses}
 -   Le plug-in container-registry est périmé et doit être mis à jour.
--   Docker n'est pas installé ou n'est pas en cours d'exécution sur votre ordinateur local. 
+-   Docker n'est pas installé ou n'est pas en cours d'exécution sur votre ordinateur local.
 -   Vos données d'identification {{site.data.keyword.Bluemix_notm}} ont expiré.
 
 {: tsResolve}
@@ -115,8 +115,8 @@ Vous pouvez corriger ce problème en procédant ainsi :
 Lorsque vous exécutez `ibmcloud cr namespace-add`, vous ne parvenez pas à définir la valeur que vous avez entrée en tant qu'espace de nom.
 
 {: tsCauses}
--   Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autreorganisation {{site.data.keyword.Bluemix_notm}}.
--   Un espace de nom a récemment été supprimé et vous réutilisez son nom. Si l'espace de nom supprimé contenait de nombreuses ressources, la suppression n'a peut-être pas étéentièrement traitée par {{site.data.keyword.registrylong_notm}}.
+-   Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autre organisation {{site.data.keyword.Bluemix_notm}}.
+-   Un espace de nom a récemment été supprimé et vous réutilisez son nom. Si l'espace de nom supprimé contenait de nombreuses ressources, la suppression n'a peut-être pas été entièrement traitée par {{site.data.keyword.registrylong_notm}}.
 -   Vous avez utilisé des caractères non valides dans la valeur de l'espace de nom.
 
 {: tsResolve}
@@ -143,17 +143,18 @@ You have exceeded your storage quota. Delete one or more images, or review your 
 {: screen}
 
 ```
-Vous avez dépassé votre quota de trafic d'extraction (pull) pour le mois en cours. Consultez votre quota de trafic d'extraction (pull) et votre plan de tarification.
+You have exceeded your pull traffic quota for the current month. 
+Review your pull traffic quota and pricing plan
 ```
 {: screen}
 
 ```
-Non autorisé : authentification requise
+unauthorized: authentication required
 ```
 {: screen}
 
 ```
-Refusé : l'accès demandé à la ressource a été refusé
+denied: requested access to the resource is denied
 ```
 {: screen}
 
@@ -172,7 +173,7 @@ Vous pouvez corriger ce problème en procédant ainsi :
 -   [Examinez les limites de quota et l'utilisation du stockage et de l'extraction des images Docker dans {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
 
 
-## Impossible d'extraire l'image la plus récente avec l'étiquette `latest` 
+## Impossible d'extraire l'image la plus récente avec l'étiquette `latest`
 {: #ts_docker_latest}
 
 {: tsSymptoms}
@@ -224,7 +225,7 @@ Avant de commencer :
 
     Cette commande développe le fichier compressé, charge les images contenues dans votre client Docker local puis envoie par commande push les images à l'espace de nom de votre registre.
     
-    Si vous souhaitez télécharger des chartes Helm depuis l'archive IBM Passport Advantage dans un chart museum, incluez les options suivantes dans la commande : `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    Si vous souhaitez télécharger des chartes Helm depuis l'archive IBM Passport Advantage dans un référentiel de type chartmuseum, incluez les options suivantes dans la commande : `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
     **Exemple de sortie**
@@ -256,7 +257,7 @@ Avant de commencer :
     ```
     {: pre}
     
-    Si vous avez téléchargé des chartes dans un chart museum à l'étape précédente, vous pouvez utiliser `helm inspect` pour inspecter la charte dans le chart museum.
+    Si vous avez téléchargé des chartes dans un référentiel de type chartmuseum à l'étape précédente, vous pouvez utiliser `helm inspect` pour inspecter la charte dans le référentiel de type chartmuseum.
     {: tip}
 
 5.  Configurez la charte Helm, `<helm_chart>`, en fonction des valeurs générées par la commande `helm inspect values`.
@@ -282,8 +283,8 @@ Votre pare-feu personnalisé requiert que certains groupes réseau soient ouvert
 Ouvrez les groupes réseau suivants dans votre pare-feu personnalisé.
 
 1.  Notez l'adresse IP publique de l'ordinateur à utiliser pour vous connecter à {{site.data.keyword.registrylong_notm}}. Si vous utilisez Kubernetes, utilisez l'adresse IP publique de votre noeud worker. Extrayez l'adresse IP publique de votre noeud worker en exécutant la commande `ibmcloud ks workers <cluster_name_or_id>`, où *&lt;cluster_name_or_id&gt;* est le nom ou l'ID de votre cluster.
-2.  Dans votre pare-feu, autorisez les connexions suivantes vers et depuis votre ordinateur : 
-    -   Pour la connectivité ENTRANTE vers votre ordinateur, autorisez le trafic réseau entrant depuis les groupes réseau source suivants vers l'adresse IP publique de destination de votre ordinateur. 
+2.  Dans votre pare-feu, autorisez les connexions suivantes vers et depuis votre ordinateur :
+    -   Pour la connectivité ENTRANTE vers votre ordinateur, autorisez le trafic réseau entrant depuis les groupes réseau source suivants vers l'adresse IP publique de destination de votre ordinateur.
 
         `registry.bluemix.net`:
 
@@ -393,7 +394,7 @@ Si l'espace de nom contient des référentiels dont les clés racine ne sont pas
 
 1.  [Contactez le support {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support). Incluez une brève description de votre problème, l'ID compte, ainsi que la liste des espaces de nom contenant les référentiels d'images avec les clés racine affectées.
 
-2.  Une fois qu'{{site.data.keyword.Bluemix_notm}} a traité le problème, supprimez le référentiel Docker Content Trust sur votre ordinateur local. 
+2.  Une fois qu'{{site.data.keyword.Bluemix_notm}} a traité le problème, supprimez le référentiel Docker Content Trust sur votre ordinateur local.
 
     * Répertoire Linux et Mac : `~/.docker/trust/private` et `~/.docker/trust/tuf`
 
@@ -445,31 +446,31 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 {: pre}
 
 
-## Les pods ne redémarrent pas si tous vos agents se sont arrêtés 
+## Les pods ne redémarrent pas si tous vos agents se sont arrêtés
 {: #ts_pods}
 
 
 {: tsSymptoms}
-Les pods ne redémarrent pas si tous vos agents de cluster se sont arrêtés. Container Image Security Enforcement est déployé. Les agents de cluster sont sains mais rien n'est planifié. 
+Les pods ne redémarrent pas si tous vos agents de cluster se sont arrêtés. Container Image Security Enforcement est déployé. Les agents de cluster sont sains mais rien n'est planifié.
 
 {: tsCauses}
-Par défaut, Container Image Security Enforcement ajoute un webhook d'admission pour la fermeture en cas d'échec (fail closed). Si tous les pods Container Image Security Enforcement sont arrêtés, ils ne sont pas disponibles pour approuver leur propre reprise. 
+Par défaut, Container Image Security Enforcement ajoute un webhook d'admission pour la fermeture en cas d'échec (fail closed). Si tous les pods Container Image Security Enforcement sont arrêtés, ils ne sont pas disponibles pour approuver leur propre reprise.
 
 {: tsResolve}
-Pour reprendre le cluster alors qu'il se trouve dans cet état, vous devez changer la configuration de webhook pour ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed).  
+Pour reprendre le cluster alors qu'il se trouve dans cet état, vous devez changer la configuration de webhook pour ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed). 
 
-Vous devez disposer de privilèges de contrôle d'accès à base de rôles suffisants pour pouvoir utiliser les instructions suivantes : 
+Vous devez disposer de privilèges de contrôle d'accès à base de rôles suffisants pour pouvoir utiliser les instructions suivantes :
 *  `GET`
 *  `PATCH`
 
-sur les ressources suivantes : 
+sur les ressources suivantes :
 *  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 *  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
 
 Pour plus d'informations sur le contrôle d'accès à base de rôles, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers/cs_users.html#rbac) et [Kubernetes: Using RBAC Authorization
 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
-Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed) ; puis, lorsqu'au moins un pod Container Image Security Enforcement est en cours d'exécution, restaurez la configuration de webhook pour une fermeture en cas d'échec : 
+Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed) ; puis, lorsqu'au moins un pod Container Image Security Enforcement est en cours d'exécution, restaurez la configuration de webhook pour une fermeture en cas d'échec :
 
 1.  Mettez à jour `MutatingWebhookConfiguration` avec la commande suivante :
 
@@ -478,38 +479,38 @@ Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'�
     ```
     {: pre}
 
-    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez. 
+    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez.
 
-2.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante : 
+2.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante ::
 
-    ``>
+    ````
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez. 
+    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez.
 
-3.  Attendez que des pods Container Image Security Enforcement démarrent. Vous pouvez vérifier que les pods ont démarré avec la commande suivante jusqu'à ce que la colonne **STATUS** affiche `Running` pour une colonne au moins : 
+3.  Attendez que des pods Container Image Security Enforcement démarrent. Vous pouvez vérifier que les pods ont démarré avec la commande suivante jusqu'à ce que la colonne **STATUS** affiche `Running` pour une colonne au moins :
 
     ```
     kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
     ```
     {: pre}
 
-4.  Lorsqu'un pod Container Image Security Enforcement au moins est en cours d'exécution, mettez à jour `MutatingWebhookConfiguration` avec la commande suivante : 
+4.  Lorsqu'un pod Container Image Security Enforcement au moins est en cours d'exécution, mettez à jour `MutatingWebhookConfiguration` avec la commande suivante :
 
     ```
     kubectl edit MutatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez. 
+    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez.
 
-5.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante : 
+5.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante :
 
     ```
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}
 
-    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez. 
+    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez.
