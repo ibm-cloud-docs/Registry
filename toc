@@ -7,6 +7,7 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
+    registry_ha.md
 
     [IBM images](../RegistryImages/index.html#ibm_images)
         [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
