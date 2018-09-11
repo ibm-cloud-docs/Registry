@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ When you are using the forums to ask a question, tag your question so that it is
 
 See [Using the Support Center](/docs/get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Opening a support ticket](/docs/get-support/howtogetsupport.html#open-ticket).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
