@@ -51,9 +51,7 @@ Download the image, see [Pull an image](index.html#registry_images_pulling) in t
 If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `ibmcloud cr login` command.
 {:tip}
 
-
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
-
 
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing}
