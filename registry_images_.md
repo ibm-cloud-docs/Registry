@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ Do not put personal information in your container images, namespace names, descr
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
 
 **Before you begin**
 
@@ -51,9 +51,7 @@ Download the image, see [Pull an image](index.html#registry_images_pulling) in t
 If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `ibmcloud cr login` command.
 {:tip}
 
-
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
-
 
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to securely store and share your image with other users.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Push an image from your computer to your private registry."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Push an image from your computer to your private registry."/>
 
 **Before you begin**
 

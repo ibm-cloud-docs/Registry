@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -34,11 +34,11 @@ The following table lists the API methods that generate an event when they are c
 	  <th>Description</th>
   </tr>
   <tr>
-    <td>container-registry.exemption.create</td>
+    <td>`container-registry.exemption.create`</td>
 	  <td>Create a Vulnerability Advisor exemption.</td>
   </tr>
   <tr>
-    <td>container-registry.exemption.delete</td>
+    <td>`container-registry.exemption.delete`</td>
 	  <td>Delete a Vulnerability Advisor exemption.</td>
   </tr>
  </table>
