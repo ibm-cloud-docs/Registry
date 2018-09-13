@@ -10,10 +10,6 @@ IBM Cloud Container Registry
     registry_ha.md
 
     [IBM images](../RegistryImages/index.html#ibm_images)
-        [datashield-barbican image](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
-        [datashield-mysql image](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
-        [datashield-nginx image](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
-        [datashield-vault image](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
         [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
