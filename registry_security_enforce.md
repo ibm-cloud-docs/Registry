@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -38,14 +38,14 @@ Complete the following steps:
 2.  Add the IBM chart repository to your Helm client.
 
     ```
-    helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
+    helm repo add ibm https://registry.bluemix.net/helm/ibm
     ```
     {: pre}
 
 3.  Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
     ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
+    helm install --name cise ibm/ibmcloud-image-enforcement
     ```
     {: pre}
 
