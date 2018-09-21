@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-20"
 
 フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support/howtogetsupport.html#using-avatar)を参照してください。
 
-{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポート・チケットのオープン](/docs/get-support/howtogetsupport.html#open-ticket)を参照してください。
+{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポートへのお問い合わせ](/docs/get-support/howtogetsupport.html#getting-customer-support)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} へのログインが失敗する
 {: #ts_login}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-21"
+lastupdated: "2018-09-03"
 
 
 ---
@@ -36,11 +36,11 @@ lastupdated: "2018-08-21"
 
 <ul>
   <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">{{site.data.keyword.registrylong_notm}} REST API の脆弱性アドバイザー<img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン "></a></li>
 </ul>
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-* [{{site.data.keyword.containerlong_notm}} の資料](/docs/containers/container_index.html#container_index)
+* [{{site.data.keyword.containerlong_notm}} 資料](/docs/containers/container_index.html#container_index)

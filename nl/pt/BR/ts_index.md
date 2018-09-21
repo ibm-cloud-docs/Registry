@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ Quando você estiver usando os fóruns para fazer uma pergunta, marque a sua per
 
 Consulte [Usando o centro de suporte](/docs/get-support/howtogetsupport.html#using-avatar) para obter mais detalhes sobre o uso dos fóruns.
 
-Para obter informações sobre como abrir um chamado de suporte da {{site.data.keyword.IBM_notm}} ou sobre os níveis de suporte e severidades dos chamados, consulte [Abrindo um chamado de suporte](/docs/get-support/howtogetsupport.html#open-ticket).
+Para obter informações sobre como abrir um chamado de suporte da {{site.data.keyword.IBM_notm}} ou sobre os níveis de suporte e as severidades dos chamados, consulte [Como obter o suporte necessário?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## O login no {{site.data.keyword.registrylong_notm}} falha
 {: #ts_login}

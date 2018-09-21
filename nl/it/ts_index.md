@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ Se utilizzi i forum per fare una domanda, contrassegna la tua domanda con una ta
 
 Vedi [Utilizzo del Centro di supporto](/docs/get-support/howtogetsupport.html#using-avatar) per ulteriori dettagli sull'utilizzo dei forum.
 
-Per informazioni su come aprire un ticket di supporto {{site.data.keyword.IBM_notm}} o sui livelli di supporto e sulla gravità dei ticket, vedi [Apertura di un ticket di supporto](/docs/get-support/howtogetsupport.html#open-ticket).
+Per informazioni su come aprire un ticket di supporto {{site.data.keyword.IBM_notm}} o sui livelli di supporto e sulla gravità dei ticket, vedi [Come posso ottenere il supporto di cui ho bisogno?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Accesso a {{site.data.keyword.registrylong_notm}} non riuscito
 {: #ts_login}

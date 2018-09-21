@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -43,10 +43,14 @@ API キーを使用して、名前空間との間で行う Docker イメージ�
 ### API キーの作成
 {: #registry_api_key_create}
 
-レジストリーへのログインに使用する API キーを作成します。
+レジストリーへのログインに使用する API キーを作成します。 
 {:shortdesc}
 
-IAM API キーを作成します。[API キーの作成](/docs/iam/userid_keys.html#creating-an-api-key)を参照してください。
+ユーザー API キーとサービス ID API キーの両方を作成できます。
+
+-  サービス ID API キーを作成するには、[サービス ID の API キーの作成](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id)を参照してください。
+-  ユーザー API キーを作成するには、[API キーの作成](/docs/iam/userid_keys.html#creating-an-api-key)を参照してください。
+
 
 ### API キーを使用したアクセスの自動化
 {: #registry_api_key_use}
@@ -206,3 +210,32 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## すべてのクライアントに対する認証オプション
+{: #registry_authentication}
+
+`docker login` コマンドまたは他のレジストリー・クライアントを使用した認証が可能です。
+{:shortdesc}
+
+ほとんどのユーザーは、`docker login` をシンプルにするために `ibmcloud cr login` コマンドを使用できますが、自動化を実装している場合や別のクライアントを使用している場合は、手動で認証を行う必要があります。ユーザー名とパスワードを提示する必要があります。{{site.data.keyword.registrylong_notm}} では、ユーザー名は、パスワードで提示するシークレットのタイプを示します。
+
+次のユーザー名が有効です。
+
+-  `iambearer`: パスワードには IAM アクセス・トークンが含まれています。このタイプの認証は、存続時間は短いですが、あらゆるタイプの IAM ID から利用できます。
+-  `iamrefresh`: パスワードには、IAM アクセス・トークンを生成して更新するために内部的に使用される IAM リフレッシュ・トークンが含まれている必要があります。このタイプの認証は、存続時間が長く、`ibmcloud cr login` コマンドで使用されます。
+-  `iamapikey`: パスワードは IAM API キーです。このタイプの認証は、自動化に推奨されるタイプです。ユーザー API キーまたはサービス ID API キーのどちらでも使用できます。[API キーの作成](#registry_api_key_create)を参照してください。
+-  `token`: パスワードはレジストリー・トークンです。このユーザー名は自動化に使用できます。
+
+レジストリーから認証を受けるために docker コマンドを使用する必要はありません。例えば、以下の `ibmcloud cf push` コマンドを実行すると、IAM API キーを使用して認証を受け、レジストリーからのプルを許可されることができます。
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+_&lt;apikey&gt;_ を API キーに、_&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に、_&lt;my_namespace&gt;_ を名前空間に、_&lt;image_repo&gt;_ をリポジトリーに置き換えてください。
+
+詳しくは、[プライベート・イメージ・レジストリーの使用](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)を参照してください。

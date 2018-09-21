@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -141,9 +141,9 @@ Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.re
 
 **Wie geht es weiter?**
 
--   [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html).
+-   [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html)
 -   [Servicepläne und Nutzung überprüfen](registry_overview.html#registry_plans).
--   [Weitere Images in Ihrem Namensbereich speichern und verwalten](registry_images_.html).
--   [Cluster und Workerknoten einrichten](/docs/containers/cs_clusters.html#clusters).
+-   [Weitere Images in Ihrem Namensbereich speichern und verwalten](registry_images_.html)
+-   [Cluster und Workerknoten einrichten](/docs/containers/cs_clusters.html#clusters)
 
 

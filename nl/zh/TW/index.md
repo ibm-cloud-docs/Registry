@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -141,9 +141,9 @@ docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
 
 **下一步為何？**
 
--   [使用漏洞警告器管理映像檔安全](../va/va_index.html)。
--   [檢閱服務方案及用量](registry_overview.html#registry_plans)。
--   [儲存及管理名稱空間中的其他映像檔](registry_images_.html)。
--   [設定叢集與工作者節點](/docs/containers/cs_clusters.html#clusters)。
+-   [使用漏洞警告器管理映像檔安全](../va/va_index.html)
+-   [檢閱服務方案及用量](registry_overview.html#registry_plans)
+-   [儲存及管理名稱空間中的其他映像檔](registry_images_.html)
+-   [設定叢集與工作者節點](/docs/containers/cs_clusters.html#clusters)
 
 

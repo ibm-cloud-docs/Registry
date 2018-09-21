@@ -1,8 +1,8 @@
-﻿---
+---
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ Lorsque vous posez une question sur un forum, marquez votre question à l'aide d
 
 Voir [Utilisation du centre de support](/docs/get-support/howtogetsupport.html#using-avatar) pour plus de détails sur l'utilisation des forums.
 
-Pour des informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}}, ou sur les niveaux de support et les degrés de gravité des tickets, voir [Ouverture d'un ticket de demande de service](/docs/get-support/howtogetsupport.html#open-ticket).
+Pour des informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}} ou sur les niveaux de support et les degrés de gravité des tickets, voir [Comment obtenir l'aide dont j'ai besoin ?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## La connexion à {{site.data.keyword.registrylong_notm}} échoue
 {: #ts_login}
@@ -481,9 +481,9 @@ Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'�
 
     Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez.
 
-2.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante ::
+2.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante :
 
-    ````
+    ``>
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -24,7 +24,7 @@ Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker priv�
 
 {{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par IBM. Vous pouvez utiliser le registre privé en configurant votre propre espace de nom d'images et en envoyant par push des images Docker vers votre espace de nom.
 
-<img src="images/registry_architecture.png" alt="Image décrivant comment vous pouvez interagir avec IBM Cloud Container Registry. Container Registry contient à la fois des référentiels privés et publics et des API pour interaction avec le service. Votre client Docker local peut envoyer et extraire des images vers et depuis vos référentiels privés dans le registre et extraire des images depuis les référentiels publics. L'interface utilisateur Web d'IBM Cloud (console) interagit avec l'API Container Registry pour recenser les images. L'interface de ligne de commande de Container Registry interagit avec l'API pour recenser, créer, inspecter et retirer des images, ainsi que pour d'autres fonctions d'administration. Votre client Docker local peut également envoyer et extraire des images depuis votre magasin d'images local vers d'autres registres."/>
+<img src="images/registry_architecture1.svg" alt="Image décrivant comment vous pouvez interagir avec IBM Cloud Container Registry. Container Registry contient à la fois des référentiels privés et publics et des API pour interaction avec le service. peut envoyer et extraire des images vers et depuis vos référentiels privés dans le registre et extraire des images depuis les référentiels publics. L'interface utilisateur Web d'IBM Cloud (console) interagit avec l'API Container Registry pour recenser les images. L'interface de ligne de commande de Container Registry interagit avec l'API pour recenser, créer, inspecter et retirer des images, ainsi que pour d'autres fonctions d'administration. Votre client Docker local peut également envoyer et extraire des images depuis votre magasin d'images local vers d'autres registres."/>
 
 **Figure 1. Comment {{site.data.keyword.registrylong_notm}} interagit avec vos images Docker**
 
@@ -219,14 +219,14 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Un Dockerfile est un fichier texte contenant des instructions pour la construction d'une image Docker. Généralement, l'image est construite à partir d'une image de base contenant un système d'exploitation de base, comme Ubuntu. Vous pouvez modifier incrémentiellement l'image de base avec des instructions Dockerfile définissant l'environnement où doit s'exécuter l'application. Chaque modification de l'image de base décrit une nouvelle couche de l'image et vous pouvez apporter plusieurs modifications au même fichier Dockerfile. Les instructions dans un Dockerfile peuvent également référencer des artefacts de construction qui sont stockés séparément, tels qu'une application, sa configuration, et ses dépendances.</dd>
+</dl>
 
 <dl>
-  <dt>Registre</dt>
-  <dd>Un registre est un service qui fournit l'infrastructure où seront stockées des images Docker et qui sera accessible via l'URL de l'hôte du registre et un port facultatif. Les registres peuvent être soit accessibles au public (registre public), soit configurés de sorte que l'accès soit limité à un petit groupe d'utilisateurs (registre privé). {{site.data.keyword.registrylong_notm}} fournit
-un registre d'images privé à service partagé, hautement disponible, hébergé et géré par
-IBM. Vous pouvez utiliser le registre privé en configurant votre propre espace de
-nom d'images et commencer à envoyer par commande push des images Docker vers votre
-espace de nom.</dd>
+  <dt>Image</dt>
+  <dd>Il s'agit d'un système de fichiers et des paramètres d'exécution correspondants qui sont utilisés dans un module d'exécution de conteneur pour créer un conteneur. Le système de fichiers se compose d'une série de couches, combinées lors de l'exécution, qui sont créées à mesure que l'image est générée par des mises à jour successives. L'image ne conserve pas l'état lors de l'exécution du conteneur.</dd>
 </dl>
 
 <dl>
@@ -239,13 +239,18 @@ environnement de transfert.</dd>
 </dl>
 
 <dl>
-  <dt>Référentiel</dt>
-  <dd>Un référentiel d'images est une collection d'images associées et étiquetées dans le registre. Les termes "référentiel" et "image" sont souvent utilisés pour exprimer la même notion mais un référentiel peut héberger plusieurs variantes étiquetées d'une même image.</dd>
+  <dt>Images de conteneur OCI</dt>
+  <dd>Images de conteneur conformes à la [Spécification de format d'image OCI ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
-  <dt>Image</dt>
-  <dd>Il s'agit d'un système de fichiers et des paramètres d'exécution correspondants qui sont utilisés dans un module d'exécution de conteneur pour créer un conteneur. Le système de fichiers se compose d'une série de couches, combinées lors de l'exécution, qui sont créées à mesure que l'image est générée par des mises à jour successives. L'image ne conserve pas l'état lors de l'exécution du conteneur.</dd>
+  <dt>Registre</dt>
+  <dd>Un registre est un service qui fournit un espace de stockage pour des images OCI (également appelées images Docker). Les images OCI peuvent être accédées ou "extraites" (commande pull) par des clients OCI qui utilisent le nom de domaine de registre approprié. Les images sont accessibles à tous (images publiques) ou réservées à un groupe (images privées). {{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser le registre en ajoutant un espace de nom privé pour votre compte, puis envoyer (par commande push) des images à votre espace de nom.</dd>
+</dl>
+
+<dl>
+  <dt>Référentiel</dt>
+  <dd>Un référentiel d'images est une collection d'images associées et étiquetées dans le registre. Les termes "référentiel" et "image" sont souvent utilisés pour exprimer la même notion mais un référentiel peut héberger plusieurs variantes étiquetées d'une même image.</dd>
 </dl>
 
 <dl>
@@ -253,12 +258,8 @@ environnement de transfert.</dd>
   <dd>Une étiquette est l'identificateur d'une image dans le référentiel. Vous pouvez utiliser des étiquettes pour différencier plusieurs versions d'une même image de base dans un référentiel. Lorsque vous exécutez une commande Docker sans spécifier l'étiquette d'une image du référentiel, celle associée à l'étiquette <code>latest</code> (dernière) est utilisée par défaut.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Un Dockerfile est un fichier texte contenant des instructions pour la construction d'une image Docker. Généralement, l'image est construite à partir d'une image de base contenant un système d'exploitation de base, comme Ubuntu. Vous pouvez modifier incrémentiellement l'image de base avec des instructions Dockerfile définissant l'environnement où doit s'exécuter l'application. Chaque modification de l'image de base décrit une nouvelle couche de l'image et vous pouvez apporter plusieurs modifications au même fichier Dockerfile. Les instructions dans un Dockerfile peuvent également référencer des artefacts de construction qui sont stockés séparément, tels qu'une application, sa configuration, et ses dépendances.</dd>
-</dl>
 
-Pour en savoir plus sur des termes spécifiques à Docker, consultez le [Glossaire Docker](https://docs.docker.com/glossary/).
+Pour en savoir plus sur des termes spécifiques à Docker, consultez le [glossaire Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/glossary/).
 
 
 ### Planification d'espaces de nom

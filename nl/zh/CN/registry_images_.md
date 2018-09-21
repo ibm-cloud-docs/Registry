@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-08-24"
 您可以从任何专用或公共注册表源拉出（下载）映像，然后对其进行标记，以便稍后在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="将映像从专用或公共注册表拉到计算机。"/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="将映像从专用或公共注册表拉出到您的计算机。"/>
 
 **开始之前**
 
@@ -52,9 +52,7 @@ lastupdated: "2018-08-24"
 如果您收到“未获授权：需要认证”或者“被拒绝：请求的资源访问权被拒绝”消息，请运行 `ibmcloud cr login` 命令。
 {:tip}
 
-
 拉出映像并针对名称空间对其进行标记后，可以将该映像从本地计算机上传（推送）至名称空间。
-
 
 ## 将 Docker 映像推送到名称空间
 {: #registry_images_pushing}
@@ -62,7 +60,7 @@ lastupdated: "2018-08-24"
 您可以将映像推送（上传）至 {{site.data.keyword.registrylong_notm}} 中的名称空间，以安全地存储映像并与其他用户共享。
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="将映像从计算机推送到专用注册表。"/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="将映像从您的计算机推送到您的专用注册表。"/>
 
 **开始之前**
 

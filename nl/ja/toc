@@ -7,6 +7,8 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
+    registry_ha.md
+
     [IBM イメージ](../RegistryImages/index.html#ibm_images)
         [ibm-backup-restore イメージ](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
@@ -25,8 +27,8 @@ IBM Cloud Container Registry
     [脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](../va/va_index.html)
         [脆弱性アドバイザーの概要](../va/va_index.html#about)
         [脆弱性のタイプ](../va/va_index.html#types)
-        [Container Scanner のインストール](../va/va_index.html#va_install_container_scanner)
-        [ファイアウォールの内側からの Container Scanner の実行](../va/va_index.html#va_firewall)
+        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_container_scanner)
+        [ファイアウォールの内側からのコンテナー・スキャナーの実行](../va/va_index.html#va_firewall)
         [組織の適用除外項目ポリシーの設定](../va/va_index.html#va_managing_policy)
         [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
         [コンテナー・レポートの検討](../va/va_index.html#va_reviewing_container)
@@ -34,9 +36,11 @@ IBM Cloud Container Registry
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}

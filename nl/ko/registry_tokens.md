@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -43,10 +43,14 @@ API 키를 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 
 ### API 키 작성
 {: #registry_api_key_create}
 
-API 키를 작성한 후 레지스트리에 로그인하는 데 사용할 수 있습니다.
+API 키를 작성한 후 레지스트리에 로그인하는 데 사용할 수 있습니다. 
 {:shortdesc}
 
-IAM API 키를 작성하려면 [API 키 작성](/docs/iam/userid_keys.html#creating-an-api-key)을 참조하십시오.
+사용자 API 키와 서비스 ID API 키를 둘 다 작성할 수 있습니다. 
+
+-  서비스 ID API 키를 작성하려면 [서비스 ID의 API 키 작성](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id)을 참조하십시오.
+-  사용자 API 키를 작성하려면 [API 키 작성](/docs/iam/userid_keys.html#creating-an-api-key)을 참조하십시오. 
+
 
 ### API 키를 사용하여 액세스 자동화
 {: #registry_api_key_use}
@@ -206,3 +210,32 @@ Token              <token_value>
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## 모든 클라이언트에 대한 인증 옵션
+{: #registry_authentication}
+
+`docker login` 명령이나 기타 레지스트리 클라이언트를 사용하여 인증할 수 있습니다.
+{:shortdesc}
+
+대부분의 사용자는 `ibmcloud cr login` 명령을 사용하여 `docker login`을 단순화하지만, 자동화를 구현 중이거나 다른 클라이언트를 사용 중이면 수동 인증을 원할 수 있습니다. 사용자 이름과 비밀번호를 제시해야 합니다. {{site.data.keyword.registrylong_notm}}에서 사용자 이름은 비밀번호에서 제시된 시크릿의 유형을 표시합니다. 
+
+다음의 사용자 이름이 유효합니다. 
+
+-  `iambearer`: 비밀번호에 IAM 액세스 토큰이 포함됩니다. 이 인증 유형은 단기간 유효하지만, 모든 유형의 IAM ID에서 파생될 수 있습니다. 
+-  `iamrefresh`: 비밀번호에 IAM 액세스 토큰을 생성하고 새로 고치기 위해 내부적으로 사용되는 IAM 새로 고치기 토큰이 포함되어야 합니다. 이 인증 유형은 더 오래 사용되며 `ibmcloud cr login` 명령에 의해 사용됩니다. 
+-  `iamapikey`: 비밀번호가 IAM API 키입니다. 이 인증 유형은 자동화에 선호되는 유형입니다. 사용자 또는 서비스 ID API 키를 사용할 수 있습니다. [API 키 작성](#registry_api_key_create)을 참조하십시오. 
+-  `token`: 비밀번호가 레지스트리 토큰입니다. 자동화에 이 사용자 이름을 사용할 수 있습니다. 
+
+docker 명령을 사용하여 레지스트리를 인증할 필요는 없습니다. 예를 들어, IAM API 키를 사용하여 레지스트리에서의 가져오기를 인증하고 권한 부여하는 다음 `ibmcloud cf push` 명령을 실행할 수 있습니다. 
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+_&lt;apikey&gt;_를 API 키로, _&lt;region&gt;_을 [지역](registry_overview.html#registry_regions) 이름으로, _&lt;my_namespace&gt;_를 네임스페이스로, 그리고 _&lt;image_repo&gt;_를 저장소로 대체하십시오. 
+
+자세한 정보는 [개인용 이미지 레지스트리 사용](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)을 참조하십시오. 

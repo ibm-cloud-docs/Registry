@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -46,7 +46,11 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 您可以创建 API 密钥，然后用于登录到注册表。
 {:shortdesc}
 
-创建 IAM API 密钥，请参阅[创建 API 密钥](/docs/iam/userid_keys.html#creating-an-api-key)。
+您可以创建用户 API 密钥和服务标识 API 密钥。
+
+-  要创建服务标识 API 密钥，请参阅[为服务标识创建 API 密钥](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id)。
+-  要创建用户 API 密钥，请参阅[创建 API 密钥](/docs/iam/userid_keys.html#creating-an-api-key)。
+
 
 ### 使用 API 密钥自动访问
 {: #registry_api_key_use}
@@ -211,3 +215,32 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## 所有客户机的认证选项
+{: #registry_authentication}
+
+您可以使用 `docker login` 命令或其他注册表客户机进行认证。
+{:shortdesc}
+
+大多数用户可使用 `ibmcloud cr login` 命令简化 `docker login`，但如果您要实施自动化或者使用不同的客户机，那么您可能想要手动认证。您必须提供用户名和密码。在 {{site.data.keyword.registrylong_notm}} 中，用户名指示密码中提供的私钥类型。
+
+以下用户名有效：
+
+-  `iambearer` 密码包含 IAM 访问令牌。此类型认证存在时间较短，但可从所有类型的 IAM 身份派生。
+-  `iamrefresh` 密码必须包含在内部用于生成和刷新 IAM 访问令牌的 IAM 刷新令牌。此类型认证存在时间较长，由 `ibmcloud cr login` 命令使用。
+-  `iamapikey` 密码是 IAM API 密钥。此类型认证是实现自动化的首选类型。您可以使用用户或服务标识 API 密钥，请参阅[创建 API 密钥](#registry_api_key_create)。
+-  `token` 密码是注册表令牌。您可以使用此用户名实现自动化。
+
+您无需使用 Docker 命令来向注册表进行认证。例如，您可以运行以下 `ibmcloud cf push` 命令，通过使用 IAM API 密钥来认证和授权从注册表进行的拉出：
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+将 _&lt;apikey&gt;_、_&lt;region&gt;_、_&lt;my_namespace&gt;_ 和 _&lt;image_repo&gt;_ 分别替换为您的 API 密钥、[区域](registry_overview.html#registry_regions)的名称、您的名称空间以及存储库。
+
+有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)。

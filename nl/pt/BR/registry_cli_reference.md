@@ -121,7 +121,7 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados de Go disponíveis para o comando `ibmcloud cr image-list`.
 {:shortdesc}
 
-|Campo|Tipo|Descrição|
+|Campo|Tipo|descrição|
 |-----|----|-----------|
 |`Created`|Número Inteiro (64 bits)|Exibe quando a imagem foi criada, expresso em número de segundos no [horário do UNIX](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|Sequência de Caracteres|Exibe o identificador exclusivo para uma imagem.|
@@ -130,7 +130,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados de G
 |`Size`|Número Inteiro (64 bits)|Exibe o tamanho da imagem em bytes.|
 |`Tag`|Sequência de Caracteres|Exibe a tag para a imagem.|
 |`SecurityStatus`|Estrut.|Exibe o status de vulnerabilidade para a imagem. É possível filtrar e formatar os valores a seguir: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Os status possíveis são descritos em [Revisando um relatório de vulnerabilidade usando a CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr image-list</code>." caption-side="top"}
+{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando <codeibmcloud cr image-list</code>." caption-side="top"}
 
 ### Opções de modelo e tipos de dados de Go no comando `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -138,7 +138,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados de G
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr image-inspect`.
 {:shortdesc}
 
-|Campo|Tipo|Descrição|
+|Campo|Tipo|descrição|
 |-----|----|-----------|
 |`ID`|Sequência de Caracteres|Exibe o identificador exclusivo para uma imagem.|
 |`Parent`|Sequência de Caracteres|Exibe o ID da imagem pai que foi usada para construir essa imagem.|
@@ -156,11 +156,11 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados disp
 |`VirtualSize`|Número Inteiro (64 bits)|Exibe a soma do tamanho de cada camada na imagem em bytes.|
 |`RootFS`|Objeto|Exibe os metadados que descrevem o sistema de arquivos raiz para a imagem. Consulte os detalhes do
 campo em [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr image-inspect</code>." caption-side="top"}
+{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando <codeibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
 
-|Campo|Tipo|Descrição|
+|Campo|Tipo|descrição|
 |-----|----|-----------|
 |`Hostname`|Sequência de Caracteres|Exibe o nome do host do contêiner.|
 |`Domainname`|Sequência de Caracteres|Exibe o nome completo do domínio do contêiner.|
@@ -194,7 +194,7 @@ são executados.|
 
 #### Verificação de funcionamento
 
-|Campo|Tipo|Descrição|
+|Campo|Tipo|descrição|
 |-----|----|-----------|
 |`Test`|Matriz de sequências|Exibe como executar o teste de verificação de funcionamento. As opções disponíveis são:<ul><li>{}: herdam a verificação de funcionamento</li><li>{"NONE"}: a verificação de funcionamento é desativada</li><li>{"CMD", args...}: argumentos exec diretamente</li><li>{"CMD-SHELL", command}: execute o comando com o shell padrão do sistema</li></ul>|
 |`Interval`|Número Inteiro (64 bits)|Exibe o tempo para esperar entre as verificações de funcionamento em nanossegundos.|
@@ -205,7 +205,7 @@ contêiner seja considerado incorreto.|
 
 #### RootFS
 
-|Opção|Tipo|Descrição|
+|Opção|Tipo|descrição|
 |------|----|-----------|
 |`Type`|Sequência de Caracteres|Exibe o tipo de sistema de arquivo.|
 |`Layers`|Matriz de sequências|Exibe os descritores de cada camada de imagem.|
@@ -218,7 +218,7 @@ contêiner seja considerado incorreto.|
 Revise a tabela a seguir para localizar opções de modelo e tipos de dados disponíveis de Go para o comando `ibmcloud cr token-list`.
 {:shortdesc}
 
-|Campo|Tipo|Descrição|
+|Campo|Tipo|descrição|
 |-----|----|-----------|
 |`ID`|Sequência de Caracteres|Exibe o identificador exclusivo para um token.|
 |`Expiry`|Número Inteiro (64 bits)|Exibe o [Registro de data e
@@ -226,4 +226,4 @@ hora do UNIX](https://en.wikipedia.org/wiki/Unix_time) quando o token expira.|
 |`ReadOnly`|Booleano|Exibe _true_ quando é possível puxar imagens apenas e _false_ quando é possível
 enviar por push e puxar imagens para e do seu namespace.|
 |`Description`|Sequência de Caracteres|Exibe a descrição do token.|
-{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr token-list</code>." caption-side="top"}
+{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando <codeibmcloud cr token-list</code>." caption-side="top"}

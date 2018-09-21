@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryquelle mit einer Pull-Operation extrahieren (herunterladen) und es anschließend für die spätere Verwendung in {{site.data.keyword.registrylong_notm}} kennzeichnen.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Image aus einer privaten oder öffentlichen Registry mit einer Pull-Operation auf den Computer übertragen."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Rufen Sie ein Image mit einer Pull-Operation aus einer privaten oder öffentlichen Registry auf Ihren Computer ab."/>
 
 **Vorbereitung**
 
@@ -51,9 +51,7 @@ Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image 
 Wenn die Nachricht "Berechtigung nicht vorhanden: Authentifizierung erforderlich" oder "Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert" ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
 {:tip}
 
-
 Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensbereich gekennzeichnet haben, können Sie das Image aus Ihrem lokalen Computer in Ihren Namensbereich hochladen (Push-Operation).
-
 
 ## Docker-Images mit Push-Operation in eigenen Namensbereich übertragen
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensb
 Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} übertragen (hochladen), um das Image sicher zu speichern und mit anderen Benutzern gemeinsam zu nutzen.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Image vom Computer mit einer Push-Operation in die private Registry übertragen."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Übertragen Sie ein Image mit einer Push-Operation an Ihre private Registry."/>
 
 **Vorbereitung**
 

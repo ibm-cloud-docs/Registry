@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -142,9 +142,9 @@ lastupdated: "2018-08-20"
 
 **后续步骤**
 
--   [使用漏洞顾问程序管理映像安全性](../va/va_index.html)。
+-   [使用漏洞顾问程序管理映像安全性](../va/va_index.html)
 -   [查看服务套餐和使用情况](registry_overview.html#registry_plans)
--   [在名称空间中存储和管理更多映像](registry_images_.html)。
--   [设置集群和工作程序节点](/docs/containers/cs_clusters.html#clusters)。
+-   [在名称空间中存储和管理更多映像](registry_images_.html)
+-   [设置集群和工作程序节点](/docs/containers/cs_clusters.html#clusters)
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -43,10 +43,14 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 ### Criando uma chave API
 {: #registry_api_key_create}
 
-É possível criar uma chave API que pode então ser usada para efetuar login no seu registro.
+É possível criar uma chave API que pode então ser usada para efetuar login no seu registro. 
 {:shortdesc}
 
-Crie uma chave API do IAM, veja [Criando uma chave API](/docs/iam/userid_keys.html#creating-an-api-key).
+É possível criar tanto chaves API do usuário quanto chaves API do ID de serviço.
+
+-  Para criar uma chave API do ID de serviço, consulte [Criando uma chave API para um ID de serviço](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+-  Para criar uma chave API do usuário, consulte [Criando uma chave API](/docs/iam/userid_keys.html#creating-an-api-key).
+
 
 ### Usando uma chave API para automatizar o acesso
 {: #registry_api_key_use}
@@ -209,3 +213,32 @@ Os tokens expirados do {{site.data.keyword.registrylong_notm}} são removidos au
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## Opções de autenticação para todos os clientes
+{: #registry_authentication}
+
+É possível autenticar usando o comando `docker login` ou outros clientes de registro.
+{:shortdesc}
+
+A maioria dos usuários pode usar o comando `ibmcloud cr login` para simplificar o `docker login`, mas, se você estiver implementando a automação ou estiver usando um cliente diferente, talvez queira autenticar manualmente. Deve-se apresentar um nome de usuário e uma senha. No {{site.data.keyword.registrylong_notm}}, o nome do usuário indica o tipo de segredo que é apresentado na senha.
+
+Os nomes de usuário a seguir são válidos:
+
+-  `iambearer` A senha contém um token de acesso do IAM. Esse tipo de autenticação é de curta duração, mas pode ser derivada de todos os tipos de identidade do IAM.
+-  `iamrefresh` A senha deve conter um token de atualização do IAM que é usado internamente para gerar e atualizar um token de acesso do IAM. Esse tipo de autenticação é mais duradouro e é usado pelo comando `ibmcloud cr login`.
+-  `iamapikey` A senha é uma chave API do IAM. Esse tipo de autenticação é o tipo preferencial para automação. É possível usar uma chave API do ID de usuário ou de serviço. Consulte [Criando uma chave API](#registry_api_key_create).
+-  `token` A senha é um token de registro. É possível usar esse nome de usuário para automação.
+
+Não é necessário usar o comando do Docker para autenticar com o registro. Por exemplo, é possível executar o comando `ibmcloud cf push` a seguir, que autentica e autoriza um pull do registro usando uma chave API do IAM:
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Substitua _&lt;apikey&gt;_ pela sua chave API, _&lt;region&gt;_ pelo nome de sua [região](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ pelo seu namespace e _&lt;image_repo&gt;_ pelo repositório.
+
+Para obter mais informações, consulte [Usando um registro de imagem privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

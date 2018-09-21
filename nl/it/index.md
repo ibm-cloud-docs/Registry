@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -154,9 +154,9 @@ spazio dei nomi.
 
 **Operazioni successive**
 
--   [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).
+-   [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html)
 -   [Riesamina il tuo utilizzo e i tuoi piani del servizio](registry_overview.html#registry_plans)
--   [Memorizza e gestisci altre immagini nel tuo spazio dei nomi](registry_images_.html).
--   [Configurazione dei cluster e dei nodi di lavoro](/docs/containers/cs_clusters.html#clusters).
+-   [Memorizza e gestisci altre immagini nel tuo spazio dei nomi](registry_images_.html)
+-   [Configurazione dei cluster e dei nodi di lavoro](/docs/containers/cs_clusters.html#clusters)
 
 

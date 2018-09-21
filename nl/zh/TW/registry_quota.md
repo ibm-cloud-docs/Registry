@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-31"
 
 
 ---
@@ -29,8 +29,6 @@ lastupdated: "2018-08-08"
 
 您可以藉由設定自己的配額限制，來限制專用映像檔的儲存空間及取回資料流量的數量。
 {:shortdesc}
-
-開始之前，請確定您是要設定配額之 [{{site.data.keyword.Bluemix_notm}} 帳戶的擁有者或帳單管理員](/docs/iam/users_roles.html#userroles)。
 
 當您升級至 {{site.data.keyword.registryshort_notm}} 標準方案時，可以受益於專用映像檔儲存空間及取回資料流量的無限制數量。若要避免超出偏好的付費等級，您可以為儲存空間及取回資料流量的數量設定個別配額。配額限制會套用至您在 {{site.data.keyword.registrylong_notm}} 中設定的所有名稱空間。如果您使用的是免費服務方案，也可以在免費儲存空間及取回資料流量的數量內設定自訂配額。
 

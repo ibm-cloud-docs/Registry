@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-20"
 
 포럼 사용에 대한 세부사항은 [지원 센터 사용](/docs/get-support/howtogetsupport.html#using-avatar)을 참조하십시오.
 
-{{site.data.keyword.IBM_notm}} 지원 티켓 열기 또는 지원 레벨 및 티켓 심각도에 대한 정보는 [지원 티켓 열기](/docs/get-support/howtogetsupport.html#open-ticket)를 참조하십시오.
+{{site.data.keyword.IBM_notm}} 지원 티켓 열기에 대한 정보나 지원 레벨 및 티켓 심각도에 대한 정보는 [필요한 지원은 어떻게 받습니까?](/docs/get-support/howtogetsupport.html#getting-customer-support)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}}에 로그인 실패
 {: #ts_login}

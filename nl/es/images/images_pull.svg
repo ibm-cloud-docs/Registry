@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-200 152 831 257" style="enable-background:new -200 152 831 257;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#6AA4D9;}
+	.st1{fill:#87C3EB;}
+	.st2{fill:#394B54;}
+	.st3{fill:#4278BD;}
+	.st4{fill:none;stroke:#394B54;stroke-miterlimit:10;}
+	.st5{enable-background:new    ;}
+	.st6{font-family:'HelvNeueRomanforIBM';}
+	.st7{font-size:14px;}
+	.st8{font-family:'IBMPlexSans';}
+	.st9{fill:none;}
+	.st10{fill:#87C3EB;stroke:#152935;stroke-width:11;stroke-miterlimit:10;}
+	.st11{fill:none;stroke:#152935;stroke-width:11;stroke-miterlimit:10;}
+	.st12{fill:#060707;}
+	.st13{fill:#FFFFFF;}
+	.st14{fill:#8C9BA5;}
+	.st15{fill:none;stroke:#152935;stroke-width:3;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#152935;stroke-width:6;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#152935;stroke-width:2;stroke-miterlimit:10;}
+	.st18{fill:#152935;}
+</style>
+<path id="XMLID_32_" class="st0" d="M57,152h317v23.3H57V152z"/>
+<path id="XMLID_35_" class="st1" d="M374,152h257v23.3H374V152z"/>
+<g id="XMLID_166_">
+	<path id="XMLID_171_" class="st2" d="M195.2,258.2l4.1,6.8l4.1-6.8H195.2z"/>
+</g>
+<path id="XMLID_271_" class="st3" d="M-200,152H58v23.3h-258V152z"/>
+<path id="XMLID_96_" class="st4" d="M-68,234h267.5"/>
+<text id="XMLID_36_" transform="matrix(1 0 0 1 438.9675 195.927)" class="st5"><tspan x="0" y="0" class="st6 st7">Otro repositorio público</tspan><tspan x="0" y="16.8" class="st6 st7">o privado</tspan></text>
+<text id="XMLID_301_" transform="matrix(1 0 0 1 -152.8709 195.9268)" class="st8 st7">Registro de IBM Cloud privado</text>
+<text id="XMLID_300_" transform="matrix(1 0 0 1 152.557 195.9265)" class="st8 st7">Su sistema local</text>
+<path id="XMLID_7_" class="st4" d="M501.8,234v23"/>
+<path id="XMLID_8_" class="st4" d="M-68,234.3v23"/>
+<g id="XMLID_2_">
+	<path id="XMLID_3_" class="st2" d="M226.9,257.7l4.1,6.8l4.1-6.8H226.9z"/>
+</g>
+<path id="XMLID_1_" class="st4" d="M231,233.8v23"/>
+<path id="XMLID_4_" class="st4" d="M199.3,233.5v23"/>
+<path id="XMLID_5_" class="st4" d="M231,234h271.3"/>
+<rect x="199.5" y="223.5" class="st9" width="15.5" height="19.5"/>
+<path id="XMLID_390_" class="st10" d="M-18.2,297.1c-2.4,0-4.8,0.2-7.1,0.7c-9.3-11.7-23.5-19.1-39.3-19.1
+	c-18.4,0-34.6,10.1-43.5,25.2c-2.4-0.5-4.8-0.7-7.3-0.7c-21.5,0-38.9,17.9-38.9,40c0,21,15.8,38.3,35.8,39.9l100.1,0.1
+	c0,0,0.1,0,0.2,0c21.9,0,39.7-19.3,39.7-43.1C21.6,316.4,3.8,297.1-18.2,297.1z"/>
+<path id="XMLID_6_" class="st11" d="M550.5,297.1c-2.4,0-4.8,0.2-7.1,0.7c-9.3-11.7-23.5-19.1-39.3-19.1
+	c-18.4,0-34.6,10.1-43.5,25.2c-2.4-0.5-4.8-0.7-7.3-0.7c-21.5,0-38.9,17.9-38.9,40c0,21,15.8,38.3,35.8,39.9l100.1,0.1
+	c0,0,0.1,0,0.2,0c21.9,0,39.7-19.3,39.7-43.1C590.2,316.4,572.4,297.1,550.5,297.1z"/>
+<g>
+	<rect id="XMLID_606_" x="152.8" y="278" class="st12" width="124.5" height="90.7"/>
+	<g id="XMLID_601_">
+		<rect id="XMLID_605_" x="161.9" y="289.3" class="st13" width="106.2" height="77.4"/>
+		<path id="XMLID_602_" class="st13" d="M270.3,368.9H159.7v-81.8h110.6V368.9z M164.1,364.5h101.8v-73H164.1V364.5z"/>
+	</g>
+	<rect id="XMLID_600_" x="142.6" y="368.3" class="st12" width="144.8" height="22.9"/>
+	<path id="XMLID_599_" class="st14" d="M240.1,382.7h-50.2c-2.3,0-4.2-1.9-4.2-4.2v-1.3c0-2.3,1.9-4.2,4.2-4.2h50.2
+		c2.3,0,4.2,1.9,4.2,4.2v1.3C244.3,380.8,242.4,382.7,240.1,382.7z"/>
+</g>
+<g>
+	<rect x="472.7" y="325.3" class="st15" width="63.5" height="33.9"/>
+	<line class="st16" x1="476.3" y1="322.1" x2="532.5" y2="322.1"/>
+	<rect x="482" y="317.1" class="st17" width="44.7" height="5"/>
+	<path class="st18" d="M511.7,342.2H499v-2.1h-2.1v4.2h16.9v-4.2h-2.1V342.2z"/>
+</g>
+<g>
+	<rect x="-98.1" y="325.3" class="st15" width="63.5" height="33.9"/>
+	<line class="st16" x1="-94.5" y1="322.1" x2="-38.3" y2="322.1"/>
+	<rect x="-88.8" y="317.1" class="st17" width="44.7" height="5"/>
+	<path class="st18" d="M-59.1,342.2h-12.7v-2.1h-2.1v4.2H-57v-4.2h-2.1V342.2z"/>
+</g>
+</svg>

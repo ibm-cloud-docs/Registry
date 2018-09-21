@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -152,9 +152,9 @@ envoyé par commande push votre première image vers votre espace de nom.
 
 **Etape suivante ?**
 
--   [Gérez la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
+-   [Gérez la sécurité des images avec Vulnerability Advisor](../va/va_index.html)
 -   [Examinez vos plans de service et leur utilisation](registry_overview.html#registry_plans)
--   [Stockez et gérez davantage d'images dans votre espace de nom](registry_images_.html).
--   [Configurez des clusters et des noeuds worker](/docs/containers/cs_clusters.html#clusters).
+-   [Stockez et gérez davantage d'images dans votre espace de nom](registry_images_.html)
+-   [Configurez des clusters et des noeuds worker](/docs/containers/cs_clusters.html#clusters)
 
 

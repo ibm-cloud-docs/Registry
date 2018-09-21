@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -26,7 +26,7 @@ in modo sicuro alle immagini Docker private in un'architettura scalabile e altam
 {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
 a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da IBM. Puoi utilizzare il registro privato configurando il tuo proprio spazio dei nomi di immagini ed eseguendo il push delle immagini Docker al tuo spazio dei nomi.
 
-<img src="images/registry_architecture.png" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. La IU web IBM Cloud (console) interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
+<img src="images/registry_architecture1.svg" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. La IU web IBM Cloud (console) interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
 
 **Figura 1. Come {{site.data.keyword.registrylong_notm}} interagisce con le tue immagini Docker**
 
@@ -229,14 +229,14 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 ### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Un Dockerfile è un file di testo che contiene le istruzioni per creare un'immagine Docker. Normalmente, un'immagine viene creata basandosi su un'immagine che contiene un sistema operativo di base, come ad esempio Ubuntu. Puoi modificare in modo incrementale l'immagine di base con le tue istruzioni del Dockerfile per definire l'ambiente in cui deve essere eseguita l'applicazione. Ogni modifica all'immagine di base descrive un nuovo livello dell'immagine e puoi effettuare più modifiche in una sola riga del Dockerfile. Le istruzioni in un Dockerfile potrebbero inoltre fare riferimento alle risorse utente di build archiviate separatamente, come un'applicazione, la configurazione dell'applicazione e le sue dipendenze.</dd>
+</dl>
 
 <dl>
-  <dt>Registro</dt>
-  <dd>Un registro è un servizio che fornisce l'infrastruttura per archiviare le immagini Docker e a cui è possibile accedere utilizzando l'URL dell'host del registro e una porta facoltativa. I registri possono essere accessibili al pubblico (registro
-pubblico) o configurati con un accesso limitato per un piccolo gruppo di utenti (registro privato). {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
-a più tenant altamente disponibile che viene ospitato e gestito da IBM. Puoi utilizzare il
-registro privato configurando il tuo proprio spazio dei nomi di immagini e iniziare a eseguire il push delle immagini Docker al tuo
-spazio dei nomi.</dd>
+  <dt>Immagine</dt>
+  <dd>Un file system e i relativi parametri di esecuzione utilizzati all'interno di un runtime del contenitore per creare un contenitore. Il file system è costituito da una serie di livelli, combinati al runtime, che vengono creati mentre l'immagine viene creata da aggiornamenti successivi. L'immagine non conserva lo stato mentre il contenitore viene eseguito.</dd>
 </dl>
 
 <dl>
@@ -250,13 +250,18 @@ ambienti di produzione e di preparazione.</dd>
 </dl>
 
 <dl>
-  <dt>Repository</dt>
-  <dd>Un repository di immagini è una raccolta di immagini correlate, contrassegnate con tag nel registro. Il repository viene spesso utilizzato in modo intercambiabile con l'immagine, ma un repository potenzialmente contiene più varianti di un'immagine con tag.</dd>
+  <dt>Immagini contenitore OCI </dt>
+  <dd>Le immagini del contenitore che sono conformi a [OCI Image Format Specification ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
-  <dt>Immagine</dt>
-  <dd>Un file system e i relativi parametri di esecuzione utilizzati all'interno di un runtime del contenitore per creare un contenitore. Il file system è costituito da una serie di livelli, combinati al runtime, che vengono creati mentre l'immagine viene creata da aggiornamenti successivi. L'immagine non conserva lo stato mentre il contenitore viene eseguito.</dd>
+  <dt>Registro</dt>
+  <dd>Un registro è un servizio che fornisce l'archiviazione per le immagini OCI (conosciute anche come immagini Docker). I client OCI possono accedere o "passare" le immagini OCI che utilizzano un nome del dominio del registro appropriato. Le immagini possono essere accessibili a chiunque (immagini pubbliche) oppure l'accesso può essere limitato a un gruppo (immagini private). {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato a più tenant altamente disponibile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}. Puoi utilizzare il registro per aggiungere uno spazio dei nomi al tuo account e poi passare le immagini al tuo spazio dei nomi. </dd>
+</dl>
+
+<dl>
+  <dt>Repository</dt>
+  <dd>Un repository di immagini è una raccolta di immagini correlate, contrassegnate con tag nel registro. Il repository viene spesso utilizzato in modo intercambiabile con l'immagine, ma un repository potenzialmente contiene più varianti di un'immagine con tag.</dd>
 </dl>
 
 <dl>
@@ -264,12 +269,8 @@ ambienti di produzione e di preparazione.</dd>
   <dd>Una tag è un identificativo di un'immagine in un repository. Puoi utilizzare le tag per distinguere diverse versioni della stessa immagine di base in un repository. Quando esegui un comando Docker e non specifichi una tag di una immagine del repository, viene utilizzata per impostazione predefinita l'immagine contrassegnata con <code>ultima</code>.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Un Dockerfile è un file di testo che contiene le istruzioni per creare un'immagine Docker. Normalmente, un'immagine viene creata basandosi su un'immagine che contiene un sistema operativo di base, come ad esempio Ubuntu. Puoi modificare in modo incrementale l'immagine di base con le tue istruzioni del Dockerfile per definire l'ambiente in cui deve essere eseguita l'applicazione. Ogni modifica all'immagine di base descrive un nuovo livello dell'immagine e puoi effettuare più modifiche in una sola riga del Dockerfile. Le istruzioni in un Dockerfile potrebbero inoltre fare riferimento alle risorse utente di build archiviate separatamente, come un'applicazione, la configurazione dell'applicazione e le sue dipendenze.</dd>
-</dl>
 
-Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario Docker](https://docs.docker.com/glossary/).
+Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario Docker ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/glossary/).
 
 
 ### Pianificazione degli spazi dei nomi
@@ -302,7 +303,7 @@ Non inserire informazioni personali nei tuoi nomi di spazio dei nomi.
 {:tip}
 
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
-gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
+gratuito se non hai già [eseguito l'upgrade del tuo piano](#registry_plan_upgrade).
 
 ## Regioni
 {: #registry_regions}

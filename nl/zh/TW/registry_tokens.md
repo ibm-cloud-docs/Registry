@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -46,7 +46,11 @@ API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.Bluemix_notm}} 使�
 您可以建立 API 金鑰，之後就可以用來登入您的登錄。
 {:shortdesc}
 
-若要建立 IAM API 金鑰，請參閱[建立 API 金鑰](/docs/iam/userid_keys.html#creating-an-api-key)。
+您可以建立使用者 API 金鑰及服務 ID API 金鑰。
+
+-  若要建立服務 ID API 金鑰，請參閱[建立服務 ID 的 API 金鑰](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id)。
+-  若要建立使用者 API 金鑰，請參閱[建立 API 金鑰](/docs/iam/userid_keys.html#creating-an-api-key)。
+
 
 ### 使用 API 金鑰以自動化存取
 {: #registry_api_key_use}
@@ -167,7 +171,7 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
     -   針對亞太地區南部中所設定的名稱空間：`registry.au-syd.bluemix.net`
 
     ```
-    docker login -u token -p <token_value> <registry_url>
+docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
     
@@ -206,3 +210,32 @@ Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## 所有用戶端的鑑別選項
+{: #registry_authentication}
+
+您可以使用 `docker login` 指令或其他登錄用戶端來進行鑑別。
+{:shortdesc}
+
+大部分使用者可以使用 `ibmcloud cr login` 指令，以簡化 `docker login`，但如果您實作自動化，或是您使用不同的用戶端，則建議您進行手動鑑別。您必須提出使用者名稱及密碼。在 {{site.data.keyword.registrylong_notm}} 中，使用者名稱指出在密碼 (password) 中所呈現的密碼 (secret) 類型。
+
+以下是有效的使用者名稱：
+
+-  `iambearer` 密碼包含 IAM 存取記號。這種鑑別存在時間很短，但可以從所有類型的 IAM 身分衍生。
+-  `iamrefresh` 密碼必須包含 IAM 重新整理記號，其在內部用來產生及重新整理 IAM 存取記號。這種鑑別存在時間較長，並且由 `ibmcloud cr login` 指令使用。
+-  `iamapikey` 密碼是一個 IAM API 金鑰。這種鑑別是自動化的偏好類型。您可以使用使用者或服務 ID API 金鑰，請參閱[建立 API 金鑰](#registry_api_key_create)。
+-  `token` 密碼是一個登錄記號。您可以將這個使用者名稱用於自動化。
+
+您不必使用 docker 指令即可向登錄進行鑑別。例如，您可以執行下列 `ibmcloud cf push` 指令，使用 IAM API 金鑰來鑑別並授權從登錄取回。
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+請將 _&lt;apikey&gt;_ 取代為您的 API 金鑰、將 _&lt;region&gt;_ 取代為[地區](registry_overview.html#registry_regions)的名稱、將 _&lt;my_namespace&gt;_ 取代為名稱空間，以及將 _&lt;image_repo&gt;_ 取代為儲存庫。
+
+如需相關資訊，請參閱[使用專用映像檔登錄](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)。

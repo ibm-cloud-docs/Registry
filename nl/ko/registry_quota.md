@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-31"
 
 
 ---
@@ -29,8 +29,6 @@ lastupdated: "2018-08-08"
 
 고유의 할당량 한계를 설정하여 개인용 이미지에 대한 스토리지 및 가져오기 트래픽의 양을 제한할 수 있습니다.
 {:shortdesc}
-
-시작하기 전에, 사용자가 할당량을 설정할 [{{site.data.keyword.Bluemix_notm}} 계정의 소유자 또는 비용 청구 관리자](/docs/iam/users_roles.html#userroles)인지 확인하십시오.
 
 {{site.data.keyword.registryshort_notm}}
 표준 플랜으로 업그레이드하면 개인용 이미지에 대한 무제한의 스토리지 및 가져오기 트래픽 양을 활용할 수 있습니다. 선호하는 결제 레벨을 초과하지 않도록, 스토리지 및 가져오기 트래픽 양에 대한 개별 할당량을 설정할 수 있습니다. 할당량 한계는

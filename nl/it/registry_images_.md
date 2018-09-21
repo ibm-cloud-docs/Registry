@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -40,7 +40,7 @@ Puoi eseguire il pull (scaricare) di un'immagine da una qualsiasi origine di reg
 per un uso successivo in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Passa un'immagine da un registro pubblico o privato al tuo computer."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Passa un'immagine da un registro pubblico o privato al tuo computer."/>
 
 **Prima di iniziare**
 
@@ -59,9 +59,7 @@ Scarica l'immagine; consulta [Esegui il pull di un'immagine](index.html#registry
 Se ricevi un messaggio del tipo "non autorizzato: autenticazione richiesta" o "negato: l'accesso richiesto alla risorsa è stato negato", esegui il comando `ibmcloud cr login`.
 {:tip}
 
-
 Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dal tuo computer locale al tuo spazio dei nomi.
-
 
 ## Esecuzione del push di immagini Docker al tuo spazio dei nomi
 {: #registry_images_pushing}
@@ -70,7 +68,7 @@ Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{sit
 con altri utenti.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Trasmetti un'immagine dal tuo computer al tuo registro privato."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Trasmetti un'immagine dal tuo computer al tuo registro privato."/>
 
 **Prima di iniziare**
 
@@ -86,7 +84,7 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
 Per caricare (push) un'immagine, completa le seguenti istruzioni:
 
-1. Accedi alla CLI. 
+1. Accedi alla CLI.
 
    ```
    ibmcloud cr login
@@ -103,7 +101,7 @@ Per caricare (push) un'immagine, completa le seguenti istruzioni:
    {:tip}
 
 
-Dopo aver eseguito il push dell'immagine al tuo registro privato, puoi effettuare una delle seguenti azioni: 
+Dopo aver eseguito il push dell'immagine al tuo registro privato, puoi effettuare una delle seguenti azioni:
 
 - [Gestisci la sicurezza con il Controllo vulnerabilità](../va/va_index.html) per trovare informazioni su possibili vulnerabilità e problemi di sicurezza.
 - [Creare un cluster
@@ -130,7 +128,7 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
 
-Per copiare un'immagine tra due registri, completa le seguenti istruzioni: 
+Per copiare un'immagine tra due registri, completa le seguenti istruzioni:
 
 1. [Esegui il pull di un'immagine da un registro](#registry_images_pulling).
 2. [Esegui il push dell'immagine a un altro

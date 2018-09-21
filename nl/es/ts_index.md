@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ Cuando utilice los foros para formular una pregunta, etiquete la pregunta de man
 
 Consulte [Utilización del Centro de soporte](/docs/get-support/howtogetsupport.html#using-avatar) para obtener más detalles sobre el uso de los foros.
 
-Para obtener información sobre cómo abrir una incidencia de soporte de {{site.data.keyword.IBM_notm}}, o sobre los niveles de soporte y las gravedades de las incidencias, consulte [Apertura de una incidencia de soporte](/docs/get-support/howtogetsupport.html#open-ticket).
+Para obtener información sobre cómo abrir una incidencia de soporte de {{site.data.keyword.IBM_notm}} o sobre los niveles de soporte y las gravedades de las incidencias, consulte [¿Cómo puedo obtener la ayuda que necesito?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Falla el inicio de sesión en {{site.data.keyword.registrylong_notm}}
 {: #ts_login}
@@ -488,7 +488,7 @@ Complete los pasos siguientes para cambiar la configuración de webhook para dej
 
 2.  Actualice `ValidatingWebhookConfiguration` ejecutando el mandato siguiente:
 
-    ```
+    ``>
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

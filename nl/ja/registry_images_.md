@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-08-24"
 専用レジストリーまたはパブリック・レジストリーのソースからイメージをプル (ダウンロード) してタグ付けし、後に {{site.data.keyword.registrylong_notm}} で使用することができます。
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="イメージを専用レジストリーまたはパブリック・レジストリーからコンピューターにプルします。"/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="プライベート・レジストリーまたはパブリック・レジストリーからコンピューターにイメージをプルします。"/>
 
 **始めに**
 
@@ -51,9 +51,7 @@ lastupdated: "2018-08-24"
 「unauthorized: authentication required」または「denied: requested access to the resource is denied」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行します。
 {:tip}
 
-
 イメージをプルして名前空間のタグを付けたら、イメージをローカル・コンピューターから名前空間にアップロード (プッシュ) できます。
-
 
 ## Docker イメージの名前空間へのプッシュ
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ lastupdated: "2018-08-24"
 イメージを {{site.data.keyword.registrylong_notm}} 内の名前空間にプッシュ (アップロード) して、安全にイメージを保管して他のユーザーと共有することができます。
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="イメージをコンピューターから専用レジストリーにプッシュします。"/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="コンピューターからプライベート・レジストリーにイメージをプッシュします。"/>
 
 **始めに**
 
@@ -88,11 +86,11 @@ lastupdated: "2018-08-24"
 2. ご使用のアカウントで利用できるすべての名前空間を表示するには、`ibmcloud cr namespace-list` コマンドを実行します。
 3. [イメージを名前空間にアップロードします。](index.html#registry_images_pushing)
 
-   `unauthorized: authentication required` または `denied: requested access to the resource is denied` というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行します。
-   {:tip}
+   「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
+{:tip}
 
 
-イメージを専用レジストリーにプッシュしたら、以下のいずれかのタスクを行えます。
+イメージをプライベート・レジストリーにプッシュしたら、以下のいずれかのタスクを実行できます。
 
 - [脆弱性アドバイザーでセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を探します。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
@@ -104,7 +102,7 @@ lastupdated: "2018-08-24"
 ある領域内のレジストリーからイメージをプルし、別の領域内のレジストリーにそれをプッシュすることで、両方の領域のユーザー間でそのイメージを共有することができます。
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="専用レジストリーまたはパブリック・レジストリーから専用 {{site.data.keyword.Bluemix_notm}} レジストリーにイメージをコピーします。"/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="任意のプライベート・レジストリーまたはパブリック・レジストリーから {{site.data.keyword.Bluemix_notm}} プライベート・レジストリーにイメージをコピーします。"/>
 
 **始めに**
 
@@ -115,12 +113,12 @@ lastupdated: "2018-08-24"
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
 
-2 つのレジストリー間でイメージをコピーするには、以下の手順を実行します。
+2 つのレジストリー間でイメージをコピーするには、次の手順を実行します。
 
 1. [レジストリーからイメージをプルします](#registry_images_pulling)。
 2. [イメージを別のレジストリーにプッシュします](#registry_images_pushing)。 対象となる新しい領域について、正しいドメイン・ネームを使用していることを確認してください。
 
-イメージをコピーしたら、以下のいずれかのタスクを行えます。
+イメージをコピーした後、以下のいずれかのタスクを実行できます。
 
 - [脆弱性アドバイザーでイメージのセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を見つけます。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
@@ -166,7 +164,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
      {: pre}
 
      **例**
-     パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile を作成するには、以下のコードを使用します。
+     パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile を作成するには、次のコードを使用してください。
 
      ```
      FROM registry.<region>.bluemix.net/ibmliberty:latest
@@ -260,7 +258,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 
     イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.Bluemix_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
-    イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
+イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
  {:tip}
 
 3.  以下のコマンドを実行し、リスト中にイメージが表示されないことを確認して、イメージが削除されたことを検証します。

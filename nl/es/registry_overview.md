@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -24,7 +24,7 @@ Utilice {{site.data.keyword.registrylong}} para almacenar de forma segura y acce
 
 {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que IBM aloja y gestiona. Puede utilizar el registro privado configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
 
-<img src="images/registry_architecture.png" alt="Imagen que muestra cómo interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios públicos y privados, y API para interactuar con el servicio. Su cliente Docker local puede extraer y enviar por push imágenes desde y hacia sus repositorios privados en el registro, y puede extraer repositorios públicos. La IU de la web de IBM Cloud (consola) interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. Su cliente Docker local también puede extraer y enviar por push imágenes desde su almacén de imágenes local a otros registros."/>
+<img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios públicos y privados, y API para interactuar con el servicio. Su cliente Docker local puede extraer y enviar por push imágenes desde y hacia sus repositorios privados en el registro, y puede extraer repositorios públicos. La IU de la web de IBM Cloud (consola) interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. Su cliente Docker local también puede extraer y enviar por push imágenes desde su almacén de imágenes local a otros registros."/>
 
 **Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker **
 
@@ -189,10 +189,14 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ### Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Un Dockerfile es un archivo de texto que contiene instrucciones sobre cómo crear una imagen de Docker. Típicamente, una imagen se crea sobre una imagen base que contiene un sistema operativo base, como Ubuntu. Puede cambiar esta imagen base incrementalmente con las instrucciones del Dockerfile para definir el entorno en que la app necesita ejecutarse. Cada cambio de la imagen base describe una nueva capa de la imagen, y puede realizar varios cambios en una sola línea de Dockerfile. Las instrucciones de un Dockerfile también podrían hacer referencia a los artefactos de compilación que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias.</dd>
+</dl>
 
 <dl>
-  <dt>Registro</dt>
-  <dd>Un registro es un servicio que proporciona la infraestructura para almacenar imágenes de Docker y al que se puede acceder utilizando el URL de host de registro y un puerto opcional. Los registros pueden estar accesibles para el público (registro público) o configurados con acceso limitado para un pequeño grupo de usuarios (registro privado). {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado, multiarrendatario y de alta disponibilidad que IBM aloja y gestiona. Puede utilizar el registro privado configurando su propio espacio de nombres de imágenes y empezar a transmitir imágenes de Docker imágenes a su espacio de nombres.</dd>
+  <dt>Image</dt>
+  <dd>Sistema de archivos y sus parámetros de ejecución que se utilizan dentro de un tiempo de ejecución de contenedor para crear un contenedor. El sistema de archivos consta de una serie de capas, combinadas en tiempo de ejecución, que se crean a medida que la imagen se construye mediante actualizaciones sucesivas. La imagen no conserva el estado cuando se ejecuta el contenedor.</dd>
 </dl>
 
 <dl>
@@ -203,13 +207,18 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 </dl>
 
 <dl>
-  <dt>Repositorio</dt>
-  <dd>Un repositorio de imágenes es un conjunto de imágenes etiquetadas relacionadas en el registro. Repositorio se utiliza a menudo de forma intercambiable con imagen, pero potencialmente un repositorio contiene varias variantes etiquetadas de una imagen.</dd>
+  <dt>Imágenes de contenedor OCI</dt>
+  <dd>Las imágenes de contenedor que son compatibles con la [Especificación de formato de imágenes de OCI ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
-  <dt>Image</dt>
-  <dd>Sistema de archivos y sus parámetros de ejecución que se utilizan dentro de un tiempo de ejecución de contenedor para crear un contenedor. El sistema de archivos consta de una serie de capas, combinadas en tiempo de ejecución, que se crean a medida que la imagen se construye mediante actualizaciones sucesivas. La imagen no conserva el estado cuando se ejecuta el contenedor.</dd>
+  <dt>Registro</dt>
+  <dd>Un registro es un servicio que proporciona almacenamiento para imágenes OCI (también conocidas como imágenes Docker). Los clientes de OCI que utilizan el nombre de dominio de registro apropiado pueden acceder a las imágenes OCI o "extraerlas". Las imágenes pueden ser accedidas por cualquier persona (imágenes públicas) o el acceso puede estar limitado a un grupo (imágenes privadas). {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado, multiarrendatario y de alta disponibilidad que {{site.data.keyword.IBM_notm}} aloja y gestiona. Puede utilizar el registro añadiendo un espacio de nombres privado a su cuenta y luego enviar por push imágenes a su espacio de nombres.</dd>
+</dl>
+
+<dl>
+  <dt>Repositorio</dt>
+  <dd>Un repositorio de imágenes es un conjunto de imágenes etiquetadas relacionadas en el registro. Repositorio se utiliza a menudo de forma intercambiable con imagen, pero potencialmente un repositorio contiene varias variantes etiquetadas de una imagen.</dd>
 </dl>
 
 <dl>
@@ -217,12 +226,8 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
   <dd>Una etiqueta es un identificador de una imagen dentro de un repositorio. Puede utilizar etiquetas para distinguir entre distintas versiones de la misma imagen base dentro de un repositorio. Cuando ejecuta un mandato de Docker y no especifica la etiqueta de una imagen del repositorio, se utilizará de forma predeterminada la imagen con la etiqueta <code>latest</code>.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Un Dockerfile es un archivo de texto que contiene instrucciones sobre cómo crear una imagen de Docker. Típicamente, una imagen se crea sobre una imagen base que contiene un sistema operativo base, como Ubuntu. Puede cambiar esta imagen base incrementalmente con las instrucciones del Dockerfile para definir el entorno en que la app necesita ejecutarse. Cada cambio de la imagen base describe una nueva capa de la imagen, y puede realizar varios cambios en una sola línea de Dockerfile. Las instrucciones de un Dockerfile también podrían hacer referencia a los artefactos de compilación que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias.</dd>
-</dl>
 
-Para obtener más información sobre los términos específicos de Docker, [consulte el glosario de Docker](https://docs.docker.com/glossary/).
+Para obtener más información sobre los términos específicos de Docker, [consulte el glosario de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/glossary/).
 
 
 ### Planificación de espacios de nombres
@@ -277,7 +282,7 @@ ibmcloud cr region-set <region>
 ```
 {: pre}
 
-Por ejemplo, para acceder a la región de UE Central, ejecute el mandato siguiente:
+Por ejemplo, para acceder a la región de UE central, ejecute el mandato siguiente:
 
 ```
 ibmcloud cr region-set eu-central

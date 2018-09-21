@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-31"
 
 
 ---
@@ -33,8 +33,6 @@ définissant et en gérant des limites de quota personnalisées.
 Vous pouvez limiter le volume de stockage et de trafic d'extraction (pull)
 de vos images privées en définissant vos propres limites de quota.
 {:shortdesc}
-
-Avant de commencer, vérifiez que vous êtes le [propriétaire ou le responsable de la facturation pour le compte {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) pour lequel vous voulez définir le quota.
 
 Lorsque vous procédez à la mise à niveau vers le plan standard
 d'{{site.data.keyword.registryshort_notm}}, vous

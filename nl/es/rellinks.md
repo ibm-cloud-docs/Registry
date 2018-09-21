@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-21"
+lastupdated: "2018-09-03"
 
 
 ---
@@ -36,7 +36,7 @@ Puede utilizar los siguientes enlaces relacionados para familiarizarse con {{sit
 
 <ul>
   <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/registry" target="_blank">{{site.data.keyword.registrylong_notm}} API REST <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} API REST <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
 <li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">API REST de Vulnerability Advisor para {{site.data.keyword.registrylong_notm}} <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
 </ul>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 Puede extraer (descargar) una imagen desde cualquier origen de registro privado o público, y, a continuación, etiquétela para utilizarla más adelante en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Extraiga una imagen desde un registro privado o público a su sistema."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Extraiga una imagen desde un registro privado o público a su sistema."/>
 
 **Antes de empezar**
 
@@ -51,9 +51,7 @@ Para descargar la imagen, consulte [Extraiga una imagen](index.html#registry_ima
 Si obtiene el mensaje "No autorizado: se necesita autorización" o el mensaje "denegado: se ha denegado el acceso al recurso", ejecute el mandato `ibmcloud cr login`.
 {:tip}
 
-
 Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen del sistema local al espacio de nombres.
-
 
 ## Envío por push de imágenes de Docker a su espacio de nombres
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ Después de extraer una imagen y de etiquetarla para su espacio de nombres, pued
 Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data.keyword.registrylong_notm}} para almacenar y compartir con seguridad su imagen con otros usuarios.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Envíe por push una imagen desde su sistema a su registro privado."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Envíe por push una imagen desde su sistema a su registro privado."/>
 
 **Antes de empezar**
 
@@ -172,7 +170,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
      FROM registry.<region>.bluemix.net/ibmliberty:latest
      LABEL description="Es mi prueba Dockerfile"
      EXPOSE 9080
-    ```
+      ```
      {: pre}
 
      Este ejemplo añade una etiqueta a los metadatos de imagen y expone el puerto 9080. Para obtener más instrucciones acerca de Dockerfile que puede utilizar, consulte la [Referencia de Dockerfile](https://docs.docker.com/engine/reference/builder/).

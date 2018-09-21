@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -43,10 +43,14 @@ Vous pouvez utiliser des clés d'API pour automatiser l'envoi et l'extraction d'
 ### Création d'une clé d'API
 {: #registry_api_key_create}
 
-Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre.
+Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre. 
 {:shortdesc}
 
-Créez une clé d'API IAM. Voir [Création de clés d'API](/docs/iam/userid_keys.html#creating-an-api-key).
+Vous pouvez créer des clés d'API d'utilisateur et des clés d'API d'ID de service.
+
+-  Pour créer une clé d'API d'ID de service, voir [Création d'une clé d'API pour un ID de service](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+-  Pour créer une clé d'API d'utilisateur, voir [Création d'une clé d'API](/docs/iam/userid_keys.html#creating-an-api-key).
+
 
 ### Utilisation d'une clé d'API pour automatiser les accès
 {: #registry_api_key_use}
@@ -206,3 +210,32 @@ Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont r
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## Options d'authentification pour tous les clients
+{: #registry_authentication}
+
+Vous pouvez authentifier à l'aide de la commande `docker login` ou d'autres clients de registre.
+{:shortdesc}
+
+La plupart des utilisateurs peuvent appliquer la commande `ibmcloud cr login` afin de simplifier `docker login`, mais si vous implémentez l'automatisation ou si vous utilisez un autre client, vous voudrez certainement effectuer une authentification manuelle. Vous devez fournir un nom d'utilisateur et un mot de passe. Dans {{site.data.keyword.registrylong_notm}}, le nom d'utilisateur indique le type de valeur confidentielle présentée dans le mot de passe.
+
+Les noms d'utilisateur valides sont les suivants :
+
+-  `iambearer` Le mot de passe contient un jeton d'accès IAM. Ce type d'authentification a une courte durée de vie, mais peut être issue de tous types d'identité IAM.
+-  `iamrefresh` Le mot de passe doit contenir un jeton d'actualisation IAM utilisé en interne pour générer et actualiser un jeton d'accès IAM. Ce type d'authentification a une durée de vie plus longue et est utilisé par la commande `ibmcloud cr login`.
+-  `iamapikey` Le mot de passe est une clé d'API IAM. Ce type d'authentification est celui privilégié pour l'automatisation. Vous pouvez utiliser une clé d'API d'utilisateur ou d'ID de service (voir [Création d'une clé d'API](#registry_api_key_create).
+-  `token` Le mot de passe est un jeton de registre. Vous pouvez utiliser ce nom d'utilisateur pour l'automatisation.
+
+Vous n'avez pas besoin d'utiliser la commande docker pour l'authentification avec le registry. Par exemple, vous pouvez exécuter la commande `ibmcloud cf push` qui authentifie et autorise une extraction (par commande pull) du registre à l'aide d'une clé d'API IAM :
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Remplacez _&lt;apikey&gt;_ par votre clé d'API, _&lt;region&gt;_ par le nom de votre [région](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ par votre espace de nom et _&lt;image_repo&gt;_ par le référentiel.
+
+Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

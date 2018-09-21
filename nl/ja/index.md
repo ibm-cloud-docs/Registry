@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -141,9 +141,9 @@ lastupdated: "2018-08-20"
 
 **次の作業**
 
--   [脆弱性アドバイザーでイメージのセキュリティーを管理します](../va/va_index.html)。
+-   [脆弱性アドバイザーでのイメージ・セキュリティーの管理](../va/va_index.html)
 -   [サービス・プランと使用量を確認します](registry_overview.html#registry_plans)
--   [名前空間で追加のイメージを保管および管理します](registry_images_.html)。
--   [クラスターとワーカー・ノードを設定します](/docs/containers/cs_clusters.html#clusters)。
+-   [名前空間で追加のイメージを保管および管理します](registry_images_.html)
+-   [クラスターとワーカー・ノードを設定します](/docs/containers/cs_clusters.html#clusters)
 
 

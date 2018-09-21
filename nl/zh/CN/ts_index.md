@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ lastupdated: "2018-08-20"
 
 有关使用论坛的更多详细信息，请参阅[使用支持中心](/docs/get-support/howtogetsupport.html#using-avatar)。
 
-有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[开具支持凭单](/docs/get-support/howtogetsupport.html#open-ticket)。
+有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[如何获得所需的支持？](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 ## 登录 {{site.data.keyword.registrylong_notm}} 失败
 {: #ts_login}

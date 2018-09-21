@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -36,7 +36,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 Vous pouvez extraire (par commande pull) une image depuis n'importe quelle source de registre privé ou public, puis lui attribuer une étiquette pour son utilisation ultérieure dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Extraction d'une image depuis un registre privé ou public vers votre ordinateur."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Extraction d'une image depuis un registre privé ou public vers votre ordinateur."/>
 
 **Avant de commencer**
 
@@ -54,9 +54,7 @@ Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](i
 Si le message "unauthorized: authentication required" ou "denied: requested access to the resource is denied" s'affiche, exécutez la commande `ibmcloud cr login`.
 {:tip}
 
-
 Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer (par commande push) depuis votre ordinateur local vers votre espace de nom.
-
 
 ## Envoi par commande push d'images Docker à votre espace de nom
 {: #registry_images_pushing}
@@ -64,7 +62,7 @@ Après avoir extrait une image et lui avoir attribué une étiquette pour votre 
 Vous pouvez transférer par commande push une image à votre espace de nom dans {{site.data.keyword.registrylong_notm}} pour la stocker et la partager de manière sécurisée avec d'autres utilisateurs.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Envoi d'une image depuis votre ordinateur vers votre registre privé."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Envoi d'une image depuis votre ordinateur vers votre registre privé."/>
 
 **Avant de commencer**
 

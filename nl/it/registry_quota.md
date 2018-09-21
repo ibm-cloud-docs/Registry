@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-31"
 
 
 ---
@@ -32,9 +32,7 @@ Puoi limitare la quantità di archiviazione e di traffico di pull per le tue imm
 i tuoi propri limiti di quota.
 {:shortdesc}
 
-Prima di iniziare, assicurati di essere il [proprietario o il gestore fatturazione per l'account {{site.data.keyword.Bluemix_notm}}](/docs/iam/users_roles.html#userroles) in cui vuoi impostare la quota.
-
-Quando esegui l'upgrade al piano standard {{site.data.keyword.registryshort_notm}},
+Quando esegui l'aggiornamento al piano standard {{site.data.keyword.registryshort_notm}},
 puoi beneficiare di quantità illimitate di archiviazione e traffico di pull per le tue immagini
 private. Per evitare di superare il tuo livello di pagamento preferito, puoi impostare delle quote individuali per la
 quantità di archiviazione e traffico di pull. I limiti di quota vengono applicati a tutti gli spazi dei nomi che hai configurato

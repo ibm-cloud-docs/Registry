@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-08-24"
 您可以從任何專用或公用登錄來源中取回（下載）映像檔，然後標記它，以供稍後在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="從專用及公用登錄將映像檔取回至您的電腦。"/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="將映像檔從專用或公用登錄取回至您的電腦。"/>
 
 **開始之前**
 
@@ -51,9 +51,7 @@ lastupdated: "2018-08-24"
 如果您收到 "unauthorized: authentication required" 或 "denied: requested access to the resource is denied" 訊息，請執行 `ibmcloud cr login` 指令。
 {:tip}
 
-
 在您取回映像檔並針對名稱空間標記它之後，可以將映像檔從本端電腦上傳（推送）至名稱空間。
-
 
 ## 將 Docker 映像檔推送至名稱空間
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ lastupdated: "2018-08-24"
 您可以將映像檔推送（上傳）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間，以安全地儲存映像檔，並將它與其他使用者共用。
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="從您的電腦將映像檔推送至您的專用登錄。"/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="將映像檔從您的電腦推送至專用登錄。"/>
 
 **開始之前**
 

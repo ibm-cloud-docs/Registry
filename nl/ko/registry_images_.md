@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -35,7 +35,7 @@ lastupdated: "2018-08-24"
 개인용 또는 공용 레지스트리 소스에서 이미지를 가져온(다운로드) 후에 {{site.data.keyword.registrylong_notm}}에서 나중에 사용할 수 있도록 태그를 지정할 수 있습니다.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리에서 사용자의 컴퓨터로 이미지를 가져옵니다."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리의 이미지를 컴퓨터로 가져옵니다."/>
 
 **시작하기 전에**
 
@@ -51,9 +51,7 @@ lastupdated: "2018-08-24"
 "unauthorized: authentication required" 또는 "denied: requested access to the resource is denied" 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
 {:tip}
 
-
 이미지를 가져와 네임스페이스에 대한 태그를 지정한 후에는 로컬 컴퓨터에서 네임스페이스로 이미지를 업로드(푸시)할 수 있습니다.
-
 
 ## 네임스페이스에 Docker 이미지 푸시
 {: #registry_images_pushing}
@@ -61,7 +59,7 @@ lastupdated: "2018-08-24"
 이미지를 안전하게 저장하고 다른 사용자와 공유하기 위해 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 이미지를 푸시(업로드)할 수 있습니다.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="사용자의 컴퓨터에서 개인용 레지스트리로 이미지를 푸시합니다."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="컴퓨터의 이미지를 개인용 레지스트리로 푸시합니다."/>
 
 **시작하기 전에**
 

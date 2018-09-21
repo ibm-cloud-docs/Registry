@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -26,7 +26,7 @@ e acessar as imagens privadas do Docker em uma arquitetura altamente disponível
 O {{site.data.keyword.registrylong_notm}} fornece um registro privado
 de imagem de múltiplos locatários, altamente disponível e escalável que é hospedado e gerenciado pela IBM. É possível usar o registro privado configurando o seu próprio namespace de imagem e enviando por push imagens do Docker para o seu namespace.
 
-<img src="images/registry_architecture.png" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém os repositórios público e privado e as APIs para interagir com o serviço. O cliente Docker local pode fazer pull e enviar por push as imagens para/de seus repositórios privados no registro e pode fazer pull dos repositórios públicos. A UI da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente Docker local também pode fazer pull e enviar por push as imagens de seu armazenamento de imagem local para outros registros."/>
+<img src="images/registry_architecture1.svg" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém repositórios privados e públicos e APIs para interagir com o serviço. Seu cliente do Docker local pode puxar e enviar por push imagens de seus repositórios privados no registro e pode puxar repositórios públicos. A IU da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. O seu cliente do Docker local também pode puxar e enviar por push imagens do armazenamento local de imagens para outros registros."/>
 
 **Figura 1. Como o {{site.data.keyword.registrylong_notm}} interage com as imagens do Docker**
 
@@ -227,12 +227,14 @@ exemplo, nomes ou rótulos de imagem).
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Um Dockerfile é um arquivo de texto que contém instruções para construir uma imagem do Docker. Geralmente, uma imagem é construída sobre uma imagem base que contém um sistema operacional de base, como Ubuntu. É possível mudar incrementalmente a imagem base com suas instruções do Dockerfile para definir o ambiente que o app precisa executar. Cada mudança na imagem base descreve uma nova camada da imagem. É possível fazer múltiplas mudanças em uma única linha do Dockerfile. As instruções em um Dockerfile também podem referenciar os artefatos de construção que são armazenados separadamente, como um app, a configuração do app e suas dependências.</dd>
+</dl>
 
 <dl>
-  <dt>Registro</dt>
-  <dd>Um registro é um serviço que fornece a infraestrutura para armazenar imagens do Docker e que pode ser acessado usando a URL do host de registro e uma porta opcional. Os registros podem ser acessados pelo público (registro público) ou configurados com acesso limitado para um pequeno grupo de usuários (registro privado). O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagens, altamente disponível e com diversos locatários, que é hospedado e gerenciado pela IBM. É possível usar
-o registro privado configurando o seu próprio namespace de imagem e começar a enviar por push imagens do Docker para o seu
-namespace.</dd>
+  <dt>Image</dt>
+  <dd>Um sistema de arquivos e seus parâmetros de execução usados dentro de um tempo de execução do contêiner para criar um contêiner. O sistema de arquivos consiste em uma série de camadas, combinadas no tempo de execução, criadas à medida que a imagem é construída por atualizações sucessivas. A imagem não retém o estado à medida que o contêiner é executado.</dd>
 </dl>
 
 <dl>
@@ -245,13 +247,18 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
 </dl>
 
 <dl>
-  <dt>Repositório</dt>
-  <dd>Um repositório de imagem é uma coleção de imagens identificadas e relacionadas no registro. O repositório é geralmente usado de forma intercambiável com a imagem, mas um repositório retém potencialmente múltiplas variantes identificadas de uma imagem.</dd>
+  <dt>Imagens do contêiner do OCI</dt>
+  <dd>Imagens de contêiner que são compatíveis com a [Especificação de formato de imagem do OCI![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
-  <dt>Image</dt>
-  <dd>Um sistema de arquivos e seus parâmetros de execução usados dentro de um tempo de execução do contêiner para criar um contêiner. O sistema de arquivos consiste em uma série de camadas, combinadas no tempo de execução, criadas à medida que a imagem é construída por atualizações sucessivas. A imagem não retém o estado à medida que o contêiner é executado.</dd>
+  <dt>Registro</dt>
+  <dd>Um registro é um serviço que fornece armazenamento para imagens do OCI (também conhecidas como imagens do Docker). As imagens do OCI podem ser acessadas ou "puxadas" por clientes do OCI que usam o nome de domínio de registro apropriado. As imagens podem ser acessadas por qualquer pessoa (imagens públicas) ou o acesso pode ser limitado a um grupo (imagens privadas). O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagens, altamente disponível e com diversos locatários, que é hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}. É possível usar o registro incluindo um namespace que é privado em sua conta e, em seguida, enviando por push imagens para o namespace.</dd>
+</dl>
+
+<dl>
+  <dt>Repositório</dt>
+  <dd>Um repositório de imagem é uma coleção de imagens identificadas e relacionadas no registro. O repositório é geralmente usado de forma intercambiável com a imagem, mas um repositório retém potencialmente múltiplas variantes identificadas de uma imagem.</dd>
 </dl>
 
 <dl>
@@ -259,12 +266,8 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
   <dd>Uma tag é um identificador de uma imagem em um repositório. É possível usar tags para distinguir diferentes versões da mesma imagem base em um repositório. Quando você executa um comando do Docker e não especifica a tag de uma imagem do repositório, a imagem identificada como <code>latest</code> é usada por padrão.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Um Dockerfile é um arquivo de texto que contém instruções para construir uma imagem do Docker. Geralmente, uma imagem é construída sobre uma imagem base que contém um sistema operacional de base, como Ubuntu. É possível mudar incrementalmente a imagem base com suas instruções do Dockerfile para definir o ambiente que o app precisa executar. Cada mudança na imagem base descreve uma nova camada da imagem. É possível fazer múltiplas mudanças em uma única linha do Dockerfile. As instruções em um Dockerfile também podem referenciar os artefatos de construção que são armazenados separadamente, como um app, a configuração do app e suas dependências.</dd>
-</dl>
 
-Para saber mais sobre termos específicos do Docker, [consulte o glossário do Docker](https://docs.docker.com/glossary/).
+Para saber mais sobre os termos específicos do Docker, [consulte o glossário do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/glossary/).
 
 
 ### Planejando namespaces

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-21"
+lastupdated: "2018-09-03"
 
 
 ---
@@ -36,8 +36,8 @@ Puoi utilizzare i seguenti link correlati per acquisire maggiore familiarità co
 
 <ul>
   <li><a href="registry_cli.html" target="_blank">CLI {{site.data.keyword.registrylong_notm}}</a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="External link icon"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a></li>
 </ul>
 
 ## {{site.data.keyword.containerlong_notm}}

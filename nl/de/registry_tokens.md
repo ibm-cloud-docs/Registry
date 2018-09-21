@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -43,10 +43,14 @@ Durch die Verwendung von API-Schlüsseln können Sie Push- und Pull-Operationen 
 ### API-Schlüssel erstellen
 {: #registry_api_key_create}
 
-Sie können einen API-Schlüssel erstellen, mit dem Sie sich dann bei Ihrer Registry anmelden können.
+Sie können einen API-Schlüssel erstellen, mit dem Sie sich dann bei Ihrer Registry anmelden können. 
 {:shortdesc}
 
-Informationen zum Erstellen eines IAM-API-Schlüssels finden Sie in [API-Schlüssel erstellen](/docs/iam/userid_keys.html#creating-an-api-key).
+Sie können API-Schlüssel für Benutzer und API-Schlüssel für Service-IDs erstellen. 
+
+-  Informationen zum Erstellen eines API-Schlüssels für Service-IDs finden Sie unter [API-Schlüssel für Service-ID erstellen](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id). 
+-  Informationen zum Erstellen eines API-Schlüssels für Benutzer finden Sie unter [API-Schlüssel erstellen](/docs/iam/userid_keys.html#creating-an-api-key). 
+
 
 ### Zugriff mithilfe eines API-Schlüssels automatisieren
 {: #registry_api_key_use}
@@ -206,3 +210,33 @@ Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch au
     ibmcloud cr token-rm <token-id>
     ```
     {: pre}
+    
+    
+## Authentifizierungsoptionen für alle Clients
+{: #registry_authentication}
+
+Sie können die Authentifizierung mit dem Befehl `docker login` oder mit anderen Registry-Clients durchführen.
+{:shortdesc}
+
+Die meisten Benutzer können den Befehl `ibmcloud cr login` verwenden, um den Befehl `docker login` zu vereinfachen; wenn Sie jedoch Automatisierung implementieren oder einen anderen Client verwenden, ist es möglicherweise empfehlenswert, die Authentifizierung manuell durchzuführen. Sie müssen einen Benutzernamen und ein Kennwort angeben. In {{site.data.keyword.registrylong_notm}} gibt der Benutzername den Typ des geheimen Schlüssels an, der im Kennwort angegeben wird. 
+
+Die folgenden Benutzernamen sind gültig: 
+
+-  `iambearer`: Das Kennwort enthält ein IAM-Zugriffstoken. Diese Art der Authentifizierung ist nur kurze Zeit gültig, kann aber aus allen Typen der IAM-Identität abgeleitet werden. 
+-  `iamrefresh`: Das Kennwort muss ein IAM-Aktualisierungstoken enthalten, das intern verwendet wird, um ein IAM-Zugriffstoken zu generieren und zu aktualisieren. Diese Art der Authentifizierung ist länger gültig und wird vom Befehl `ibmcloud cr login` verwendet. 
+-  `iamapikey`: Das Kennwort ist ein IAM-API-Schlüssel. Diese Art der Authentifizierung wird für die Automatisierung bevorzugt. Sie können einen API-Schlüssel für Benutzer oder für Service-IDs verwenden; weitere Informationen finden Sie unter [API-Schlüssel erstellen](#registry_api_key_create). 
+-  `token`: Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden. 
+
+Für die Authentifizierung bei der Registry muss nicht der Docker-Befehl verwendet werden. Sie können beispielsweise den folgenden `ibmcloud cf push`-Befehl ausführen, der eine Pull-Operation aus der Registry mithilfe eines IAM-API-Schlüssels authentifiziert und autorisiert: 
+
+
+```
+export CF_DOCKER_PASSWORD=<api-schlüssel>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<eigener_namensbereich>/<image-repository> --docker-username iamapikey
+```
+{: pre}
+
+Ersetzen Sie _&lt;api-schlüssel&gt;_ durch Ihren API-Schlüssel, _&lt;region&gt;_ durch den Namen Ihrer
+[Region](registry_overview.html#registry_regions), _&lt;eigener_namensbereich&gt;_ durch Ihren Namensbereich und _&lt;image-repository&gt;_ durch das Repository. 
+
+Weitere Informationen finden Sie unter [Private Image-Registry verwenden](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry). 

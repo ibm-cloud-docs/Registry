@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-21"
+lastupdated: "2018-09-03"
 
 
 ---
@@ -36,7 +36,7 @@ lastupdated: "2018-08-21"
 
 <ul>
   <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} REST API <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a></li>
 <li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">{{site.data.keyword.registrylong_notm}} REST API 的漏洞顾问程序 <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a></li>
 </ul>
 

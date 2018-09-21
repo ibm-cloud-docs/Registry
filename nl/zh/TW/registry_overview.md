@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2018-08-24"
 
 {{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶、高可用性且可擴充的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用專用登錄。
 
-<img src="images/registry_architecture.png" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 同時包含專用和公用登錄，以及用來與服務互動的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔以及將映像檔推送至其中，也可以取回公用儲存庫。IBM Cloud Web 使用者介面（主控台）可與 Container Registry API 互動，以列出映像檔。Container Registry CLI 可與 API 互動，以列出、建立、檢查及移除映像檔，以及其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫中取回映像檔，並將其推送至其他登錄。"/>
+<img src="images/registry_architecture1.svg" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 包含專用及公用儲存庫，以及與服務互動用的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔，以及將映像檔推送到其中。IBM Cloud Web UI（主控台）會與 Container Registry API 互動以便列出映像檔。Container Registry CLI 會與 API 互動以便列出、建立、檢查和移除映像檔，也能執行其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫取回映像檔，以及將映像檔推送至其他登錄。"/>
 
 **圖 1. {{site.data.keyword.registrylong_notm}} 如何與您的 Docker 映像檔互動**
 
@@ -188,10 +188,14 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 瞭解 {{site.data.keyword.registrylong_notm}} 中使用的術語
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，而基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。</dd>
+</dl>
 
 <dl>
-  <dt>登錄 (Registry)</dt>
-  <dd>登錄是一項服務，它提供基礎架構來儲存 Docker 映像檔，且可以使用登錄主機 URL 及選用埠來進行存取。登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶、高可用性的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間來使用專用登錄，並開始將 Docker 映像檔推送至名稱空間。</dd>
+  <dt>映像檔 (Image)</dt>
+  <dd>容器運行環境內用來建立容器的檔案系統及其執行參數。檔案系統包含一系列已建立的層（在執行時結合），這些層是隨著連續更新建置映像檔而建立。在容器執行時，映像檔不會保留狀態。</dd>
 </dl>
 
 <dl>
@@ -204,13 +208,18 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 </dl>
 
 <dl>
-  <dt>儲存庫 (Repository)</dt>
-  <dd>映像檔儲存庫是登錄中已標記且相關之映像檔的集合。儲存庫經常與映像檔互換使用，但儲存庫可能會存放映像檔的多個已標記變式。</dd>
+  <dt>OCI 容器映像檔 (OCI container images)</dt>
+  <dd>遵登 [OCI 映像檔格式規格 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/opencontainers/image-spec) 的容器映像檔。</dd>
 </dl>
 
 <dl>
-  <dt>映像檔 (Image)</dt>
-  <dd>容器運行環境內用來建立容器的檔案系統及其執行參數。檔案系統包含一系列已建立的層（在執行時結合），這些層是隨著連續更新建置映像檔而建立。在容器執行時，映像檔不會保留狀態。</dd>
+  <dt>登錄 (Registry)</dt>
+  <dd>登錄是為 OCI 映像檔（也稱為 Docker 映像檔）提供儲存空間的服務。OCI 映像檔可以由使用適當登錄網域名稱的 OCI 用戶端存取或「取回」。映像檔可以由任何人存取（公用映像檔），或是可以將存取權限制為一個群組（專用映像檔）。{{site.data.keyword.registrylong_notm}} 提供 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性的專用映像檔登錄。您可以藉由將帳戶專用的名稱空間新增至您的帳戶，然後推送映像檔至名稱空間，來使用登錄。</dd>
+</dl>
+
+<dl>
+  <dt>儲存庫 (Repository)</dt>
+  <dd>映像檔儲存庫是登錄中已標記且相關之映像檔的集合。儲存庫經常與映像檔互換使用，但儲存庫可能會存放映像檔的多個已標記變式。</dd>
 </dl>
 
 <dl>
@@ -218,12 +227,8 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   <dd>標籤是儲存庫內映像檔的 ID。您可以使用標籤來識別儲存庫內相同基礎映像檔的不同版本。當您執行 Docker 指令但未指定儲存庫映像檔的標籤時，依預設會使用以 <code>latest</code> 標記的映像檔。</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，而基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。</dd>
-</dl>
 
-若要進一步瞭解 Docker 特有術語，[請參閱 Docker 名詞解釋](https://docs.docker.com/glossary/)。
+若要進一步瞭解 Docker 特有術語，[請參閱 Docker 名詞解釋 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/glossary/)。
 
 
 ### 規劃名稱空間

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -40,7 +40,7 @@ exemplo, nomes ou rótulos de imagem).
 uso posterior no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.png" width="800" style="width:800px;" alt="Faça pull de uma imagem de um registro público ou privado para seu computador."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Puxe uma imagem de um registro privado ou público para o seu computador."/>
 
 **Antes de iniciar**
 
@@ -58,10 +58,8 @@ Faça download da imagem, veja [Puxar uma imagem](index.html#registry_images_pul
 Se você receber uma mensagem "não autorizado: autenticação requerida" ou "negado: acesso solicitado ao recurso negado", execute o comando `ibmcloud cr login`.
 {:tip}
 
-
 Depois de puxar uma imagem e identificá-la para o namespace, é possível fazer upload (enviar por
 push) da imagem do computador local para o namespace.
-
 
 ## Enviando por push imagens do Docker para seu namespace
 {: #registry_images_pushing}
@@ -70,7 +68,7 @@ push) da imagem do computador local para o namespace.
 com outros usuários.
 {:shortdesc}
 
-<img src="images/images_push.png" width="800" style="width:800px;" alt="Envie por push uma imagem de seu computador para seu registro privado"/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Envie uma imagem por push do seu computador para o seu registro privado."/>
 
 **Antes de iniciar**
 

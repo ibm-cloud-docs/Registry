@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -142,9 +142,9 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 **Qué hacer a continuación
 **
 
--   [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html).
+-   [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html)
 -   [Revise sus planes de servicio y el uso de los mismos](registry_overview.html#registry_plans)
--   [Almacene y gestione más imágenes en el espacio de nombres](registry_images_.html).
--   [Configuración de clústeres y nodos de trabajador](/docs/containers/cs_clusters.html#clusters).
+-   [Almacene y gestione más imágenes en el espacio de nombres](registry_images_.html)
+-   [Configuración de clústeres y nodos de trabajador](/docs/containers/cs_clusters.html#clusters)
 
 

@@ -7,11 +7,13 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
+    registry_ha.md
+
     [IBM 이미지](../RegistryImages/index.html#ibm_images)
-        [ibm-backup-restore 이미지](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty 이미지](../RegistryImages/ibmliberty/index.html#ibmliberty)
+        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -34,9 +36,11 @@ IBM Cloud Container Registry
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}

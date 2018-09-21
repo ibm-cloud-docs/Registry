@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-24"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2018-08-24"
 
 {{site.data.keyword.registrylong_notm}} 提供由 IBM 托管和管理的具备高可用性和高可扩展性的多租户专用映像注册表。可以通过设置自己的映像名称空间，然后将 Docker 映像推送到自己的名称空间来使用专用注册表。
 
-<img src="images/registry_architecture.png" alt="此图像说明您可如何与 IBM Cloud Container Registry 交互。Container Registry 包含专用和公共存储库以及与服务交互的 API。您的本地 Docker 客户机可从注册表中专用存储库拉出映像或将映像推送到其中，还可拉出公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互以列出映像。Container Registry CLI 与 API 交互以列出、创建、检查和除去映像以及执行其他管理功能。本地 Docker 客户机还可将映像从本地映像存储器拉出以及推送到其他注册表。"/>
+<img src="images/registry_architecture1.svg" alt="此图像说明您可如何与 IBM Cloud Container Registry 交互。Container Registry 包含专用和公共存储库以及与服务交互的 API。您的本地 Docker 客户机可从注册表中专用存储库拉出映像或将映像推送到其中，还可拉出公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互以列出映像。Container Registry CLI 与 API 交互以列出、创建、检查和除去映像以及执行其他管理功能。本地 Docker 客户机还可将映像从本地映像存储器拉出以及推送到其他注册表。"/>
 
 **图 1. {{site.data.keyword.registrylong_notm}} 如何与 Docker 映像交互**
 
@@ -198,11 +198,15 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Dockerfile 是一个文本文件，其中包含关于构建 Docker 映像的指示信息。通常情况下，映像是基于基本映像构建的，基本映像中包含基本操作系统（如 Ubuntu）。您可以利用 Dockerfile 指示信息以递增方式更改基本映像，以便定义出应用程序运行所需的环境。对基本映像的每个更改都描述了该映像的一个新层，您可以在 Dockerfile 的一行中进行多个更改。Dockerfile 中的指示信息也可能引用分开存储的构建工件，如应用程序、应用程序的配置及其依赖关系。
+</dd>
+</dl>
 
 <dl>
-  <dt>注册表</dt>
-  <dd>注册表是一种服务，它提供的基础架构用于存储 Docker 映像，可以使用注册表主机 URL 和可选端口对其进行访问。注册表既可以支持公众访问（公共注册表），也可以设置为限制只有一小部分用户有权访问（专用注册表）。
-{{site.data.keyword.registrylong_notm}} 提供由 IBM 托管和管理的具备高可用性的多租户专用映像注册表。可以通过设置自己的映像名称空间来使用专用注册表，然后开始将 Docker 映像推送到自己的名称空间。</dd>
+  <dt>映像</dt>
+  <dd>在容器运行时内用于创建容器的文件系统及其执行参数。文件系统由一系列在运行时组合的层组成，这些层在通过连续更新构建映像时创建。容器执行时，映像不会保留状态。</dd>
 </dl>
 
 <dl>
@@ -214,13 +218,18 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 </dl>
 
 <dl>
-  <dt>存储库</dt>
-  <dd>映像存储库是注册表中有标记的相关映像的集合。存储库与映像两个词在使用中通常可以互换，但存储库中一般有多个带标记的映像变体。</dd>
+  <dt>OCI 容器映像</dt>
+  <dd>符合 [OCI 映像格式规范 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/opencontainers/image-spec) 的容器映像。</dd>
 </dl>
 
 <dl>
-  <dt>映像</dt>
-  <dd>在容器运行时内用于创建容器的文件系统及其执行参数。文件系统由一系列在运行时组合的层组成，这些层在通过连续更新构建映像时创建。容器执行时，映像不会保留状态。</dd>
+  <dt>注册表</dt>
+  <dd>注册表是为 OCI 映像（也称为 Docker 映像）提供存储的服务。OCI 映像可由使用适当注册表域名的 OCI 客户机访问或“拉出”。映像可由任何人访问（公共映像），也可限制为分组访问（专用映像）。{{site.data.keyword.registrylong_notm}} 提供由 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性的多租户专用映像注册表。添加您的帐户专用的名称空间，然后将映像推送到您的名称空间，即可使用注册表。</dd>
+</dl>
+
+<dl>
+  <dt>存储库</dt>
+  <dd>映像存储库是注册表中有标记的相关映像的集合。存储库与映像两个词在使用中通常可以互换，但存储库中一般有多个带标记的映像变体。</dd>
 </dl>
 
 <dl>
@@ -228,13 +237,8 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   <dd>标记是存储库中映像的标识。您可以使用标记来区分存储库中同一个基本映像的不同版本。在运行 Docker 命令时，如果未指定存储库映像的标记，那么缺省情况下，会使用标记为 <code>latest</code> 的映像。</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Dockerfile 是一个文本文件，其中包含关于构建 Docker 映像的指示信息。通常情况下，映像是基于基本映像构建的，基本映像中包含基本操作系统（如 Ubuntu）。您可以利用 Dockerfile 指示信息以递增方式更改基本映像，以便定义出应用程序运行所需的环境。对基本映像的每个更改都描述了该映像的一个新层，您可以在 Dockerfile 的一行中进行多个更改。Dockerfile 中的指示信息也可能引用分开存储的构建工件，如应用程序、应用程序的配置及其依赖关系。
-</dd>
-</dl>
 
-要了解有关 Docker 特定术语的更多信息，请[查询 Docker 词汇表](https://docs.docker.com/glossary/)。
+要了解有关 Docker 特定术语的更多信息，请[查询 Docker 词汇表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/glossary/)。
 
 
 ### 规划名称空间

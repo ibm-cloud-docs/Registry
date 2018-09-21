@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -151,9 +151,9 @@ Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_
 
 **O que Vem a Seguir?**
 
--   [Gerenciando a segurança de imagens com o Vulnerability Advisor](../va/va_index.html).
+-   [Gerenciar segurança de imagem com o Vulnerability Advisor](../va/va_index.html)
 -   [Revisar seus planos de serviço e uso](registry_overview.html#registry_plans)
--   [Armazenar e gerenciar mais imagens em seu namespace](registry_images_.html).
--   [Configurando os clusters e os nós do trabalhador](/docs/containers/cs_clusters.html#clusters).
+-   [Armazenar e gerenciar mais imagens em seu namespace](registry_images_.html)
+-   [Configurar clusters e nós do trabalhador](/docs/containers/cs_clusters.html#clusters)
 
 

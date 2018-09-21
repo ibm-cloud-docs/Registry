@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -38,7 +38,7 @@ Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass 
 
 Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support/howtogetsupport.html#using-avatar).
 
-Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Support-Ticket öffnen](/docs/get-support/howtogetsupport.html#open-ticket).
+Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Benötigte Unterstützung anfordern](/docs/get-support/howtogetsupport.html#getting-customer-support). 
 
 ## Anmeldung bei {{site.data.keyword.registrylong_notm}} fehlgeschlagen
 {: #ts_login}
@@ -482,7 +482,7 @@ Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail cl
 
 2.  Aktualisieren Sie `ValidatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
 
-    ``>
+    ````
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-08"
+lastupdated: "2018-08-31"
 
 
 ---
@@ -29,8 +29,6 @@ Sie können den Speicherplatz und den Pull-Datenverkehr, den Sie in Ihrem {{site
 
 Sie können die Größe des Speichers und den Pull-Datenverkehr zu Ihren privaten Images begrenzen, indem Sie Ihre eigenen Kontingente festlegen.
 {:shortdesc}
-
-Bevor Sie beginnen, stellen Sie sicher, dass Sie der [Eigner oder Abrechnungsmanger für das {{site.data.keyword.Bluemix_notm}}-Konto](/docs/iam/users_roles.html#userroles) sind, für das das Kontingent festgelegt werden soll.
 
 Wenn Sie ein Upgrade auf den {{site.data.keyword.registryshort_notm}}-Standardplan durchführen, profitieren Sie von unbegrenztem Speicherplatz und Pull-Datenverkehr zu Ihren privaten Images. Um ein Überziehen Ihres bevorzugten Zahlungsbetrags zu vermeiden, können Sie die einzelnen Kontingente für den Speicherplatz und Pull-Datenverkehr festlegen. Die Kontingente werden auf alle Namensbereiche angewandt, die Sie in {{site.data.keyword.registrylong_notm}} einrichten. Wenn Sie den kostenlosen Serviceplan verwenden, können Sie auch die angepassten Kontingente innerhalb Ihres kostenlosen Speicherplatzes und Pull-Datenverkehrs festlegen.
 

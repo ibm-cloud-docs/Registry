@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -146,9 +146,9 @@ lastupdated: "2018-08-20"
 
 **다음 단계**
 
--   [Vulnerability Advisor를 사용하여 이미지 보안 관리](../va/va_index.html)
+-   [Vulnerability Advisor로 이미지 보안 관리](../va/va_index.html)
 -   [서비스 플랜 및 사용량 검토](registry_overview.html#registry_plans)
--   [네임스페이스에서 더 많은 이미지 저장 및 관리](registry_images_.html)
+-   [네임스페이스의 추가 이미지 저장 및 관리](registry_images_.html)
 -   [클러스터 및 작업자 노드 설정](/docs/containers/cs_clusters.html#clusters)
 
 
