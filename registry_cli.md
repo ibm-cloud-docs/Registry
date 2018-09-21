@@ -26,8 +26,6 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
-
-
 <table summary="Manage {{site.data.keyword.registrylong_notm}}">
 <caption>Table 1. Commands for managing {{site.data.keyword.registrylong_notm}}
 </caption>
@@ -48,7 +46,7 @@ Do not put personal information in your container images, namespace names, descr
  <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
  <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
  <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
-  </tr>
+ </tr>
  <tr>
  <td>[`ibmcloud cr login`](#bx_cr_login)</td>
  <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
@@ -68,8 +66,8 @@ Do not put personal information in your container images, namespace names, descr
  <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
  <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
  <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
-  </tr><tr>
-  <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
+ </tr><tr>
+ <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
 
