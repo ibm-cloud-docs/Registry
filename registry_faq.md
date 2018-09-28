@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-09-03"
+lastupdated: "2018-09-28"
 
 
 ---
@@ -17,7 +17,7 @@ lastupdated: "2018-09-03"
 {:download: .download}
 
 
-# FAQs
+# Frequently asked questions (FAQs)
 {: #registry_faq}
 
 
