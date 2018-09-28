@@ -71,8 +71,6 @@ Do not put personal information in your container images, namespace names, descr
  </tr>
  </tbody></table>
 
-
-
 ## `ibmcloud cr api`
 {: #bx_cr_api}
 
@@ -82,7 +80,6 @@ Returns the details about the registry API endpoint that the commands are run ag
 ibmcloud cr api
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr build`
 {: #bx_cr_build}
@@ -112,7 +109,6 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
 
-
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -122,7 +118,6 @@ Displays the name and the account of the registry that you are logged in to.
 ibmcloud cr info
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -147,7 +142,6 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 </dd>
 </dl>
 
-
 ## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
 
@@ -164,7 +158,6 @@ ibmcloud cr exemption-list [--scope SCOPE]
 <dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
-
 
 ## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
@@ -189,7 +182,6 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 </dd>
 </dl>
 
-
 ## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
@@ -199,7 +191,6 @@ Lists the types of security issues that you can exempt.
 ibmcloud cr exemption-types
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -226,7 +217,6 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 
 </dd>
 </dl>
-
 
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
@@ -288,7 +278,6 @@ This command runs the `docker login` command against the registry. The `docker l
 ibmcloud cr login
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
@@ -373,7 +362,7 @@ Imports IBM software that is downloaded from [IBM Passport Advantage Online for 
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
-**Example command**
+**Example**
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
@@ -554,14 +543,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 <p>The following operating systems are supported:
 
 <ul>
-
 <li>Alpine</li>
 <li>CentOS</li>
 <li>Debian</li>
 <li>Red Hat Enterprise Linux (RHEL)</li>
 <li>Ubuntu</li>
 </ul>
-
 </p>
 
 For more information, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
@@ -571,7 +558,6 @@ For more information, see [Managing image security with Vulnerability Advisor](/
 <dd>(Optional) The command output is returned in the chosen format. The default format is `text`. The following formats are supported:
 
 <ul>
-
 <li>`text`</li>
 <li>`json`</li>
 </ul>
