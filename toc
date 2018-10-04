@@ -8,7 +8,6 @@ IBM Cloud Container Registry
     index.md
     registry_overview.md
     registry_ha.md
-
     [IBM images](../RegistryImages/index.html#ibm_images)
         [datashield-barbican image](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
         [datashield-mysql image](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
@@ -17,7 +16,7 @@ IBM Cloud Container Registry
         [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
+        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}

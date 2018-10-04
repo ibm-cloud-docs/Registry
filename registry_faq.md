@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-09-03"
+lastupdated: "2018-10-01"
 
 
 ---
@@ -17,9 +17,11 @@ lastupdated: "2018-09-03"
 {:download: .download}
 
 
-# FAQs
+# Frequently asked questions (FAQs)
 {: #registry_faq}
 
+Frequently asked qustions about {{site.data.keyword.registrylong}}.
+{: shortdesc}
 
 ## How do I list public images?
 {: #faq_list_public_images}

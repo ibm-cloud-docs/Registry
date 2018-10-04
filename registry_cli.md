@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-10-04"
 
 
 ---
@@ -26,8 +26,6 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
-
-
 <table summary="Manage {{site.data.keyword.registrylong_notm}}">
 <caption>Table 1. Commands for managing {{site.data.keyword.registrylong_notm}}
 </caption>
@@ -48,7 +46,7 @@ Do not put personal information in your container images, namespace names, descr
  <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
  <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
  <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
-  </tr>
+ </tr>
  <tr>
  <td>[`ibmcloud cr login`](#bx_cr_login)</td>
  <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
@@ -68,12 +66,10 @@ Do not put personal information in your container images, namespace names, descr
  <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
  <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
  <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
-  </tr><tr>
-  <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
+ </tr><tr>
+ <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
-
-
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -84,7 +80,6 @@ Returns the details about the registry API endpoint that the commands are run ag
 ibmcloud cr api
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr build`
 {: #bx_cr_build}
@@ -114,7 +109,6 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
 
-
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -124,7 +118,6 @@ Displays the name and the account of the registry that you are logged in to.
 ibmcloud cr info
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -149,7 +142,6 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 </dd>
 </dl>
 
-
 ## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
 
@@ -166,7 +158,6 @@ ibmcloud cr exemption-list [--scope SCOPE]
 <dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
-
 
 ## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
@@ -191,7 +182,6 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 </dd>
 </dl>
 
-
 ## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
@@ -201,7 +191,6 @@ Lists the types of security issues that you can exempt.
 ibmcloud cr exemption-types
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -228,7 +217,6 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 
 </dd>
 </dl>
-
 
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
@@ -261,8 +249,6 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default private images only are listed.</dd>
 </dl>
 
-
-
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
@@ -283,7 +269,6 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dd>
 </dl>
 
-
 ## `ibmcloud cr login`
 {: #bx_cr_login}
 
@@ -293,7 +278,6 @@ This command runs the `docker login` command against the registry. The `docker l
 ibmcloud cr login
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
@@ -317,7 +301,6 @@ ibmcloud cr namespace-add NAMESPACE
 </dd>
 </dl>
 
-
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
@@ -327,7 +310,6 @@ Displays all namespaces that are owned by your {{site.data.keyword.Bluemix_notm}
 ibmcloud cr namespace-list
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -345,7 +327,6 @@ ibmcloud cr namespace-rm NAMESPACE
 <dd>The namespace that you want to remove.</dd>
 </dl>
 
-
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
@@ -355,7 +336,6 @@ Displays your pricing plan.
 ibmcloud cr plan
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -375,7 +355,6 @@ ibmcloud cr plan-upgrade [PLAN]
 <dd>The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
 </dl>
 
-
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
@@ -383,14 +362,14 @@ Imports IBM software that is downloaded from [IBM Passport Advantage Online for 
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
-**Example command**
+**Example**
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**Parameters**:
+**Parameters**
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>The path to the compressed file that is downloaded from IBM Passport Advantage.</dd>
@@ -404,7 +383,6 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
   <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) password.</dd>
 </dl>
 
-
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
@@ -414,7 +392,6 @@ Displays your current quotas for traffic and storage, and usage information agai
 ibmcloud cr quota
 ```
 {: codeblock}
-
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -434,7 +411,6 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 <dd>(Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.</dd>
 </dl>
 
-
 ## `ibmcloud cr region`
 {: #bx_cr_region}
 
@@ -446,7 +422,6 @@ ibmcloud cr region
 {: codeblock}
 
 For more information, see [Regions](registry_overview.html#registry_regions).
-
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -468,7 +443,6 @@ For more information, see [Regions](registry_overview.html#registry_regions).
 </dd>
 </dl>
 
-
 ## `ibmcloud cr token-add`
 {: #bx_cr_token_add}
 
@@ -478,7 +452,6 @@ Adds a token that you can use to control access to a registry.
 ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
-
 
 **Parameters**
 <dl>
@@ -498,7 +471,6 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 <dd>(Optional) Creates a token that grants read and write access. Without this option, access is read-only by default.</dd>
 </dl>
 
-
 ## `ibmcloud cr token-get`
 {: #bx_cr_token_get}
 
@@ -514,7 +486,6 @@ ibmcloud cr token-get TOKEN
 <dt>`TOKEN`</dt>
 <dd>(Optional) The unique identifier of the token that you want to retrieve.</dd>
 </dl>
-
 
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
@@ -536,7 +507,6 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 </dd>
 </dl>
 
-
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
@@ -552,7 +522,6 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 <dt>`TOKEN`</dt>
 <dd>(Optional) TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
 </dl>
-
 
 ## `ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)
 {: #bx_cr_va}
@@ -574,14 +543,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 <p>The following operating systems are supported:
 
 <ul>
-
 <li>Alpine</li>
 <li>CentOS</li>
 <li>Debian</li>
 <li>Red Hat Enterprise Linux (RHEL)</li>
 <li>Ubuntu</li>
 </ul>
-
 </p>
 
 For more information, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
@@ -591,7 +558,6 @@ For more information, see [Managing image security with Vulnerability Advisor](/
 <dd>(Optional) The command output is returned in the chosen format. The default format is `text`. The following formats are supported:
 
 <ul>
-
 <li>`text`</li>
 <li>`json`</li>
 </ul>

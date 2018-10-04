@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -33,13 +33,7 @@ Do not put personal information in your container images, namespace names, descr
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands.
-2.  Install the container-registry plug-in:
-
-    ```
-    ibmcloud plugin install container-registry -r Bluemix
-    ```
-    {: pre}
+1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 
 ## Set up a namespace
