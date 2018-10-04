@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-02"
+lastupdated: "2018-10-04"
 
 
 ---
@@ -91,7 +91,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`DIRECTORY`</dt>
 <dd>The location of your build context, which contains your Dockerfile and prerequisite files.</dd>
@@ -129,7 +129,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -152,7 +152,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -169,7 +169,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -202,7 +202,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
@@ -231,7 +231,7 @@ The image name is the combination of the content of the <strong>Repository</stro
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--no-trunc`</dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
@@ -259,7 +259,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can delete multiple images at the same time by listing each image in the command with a space between each name.
@@ -289,7 +289,7 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region.
@@ -321,7 +321,7 @@ ibmcloud cr namespace-rm NAMESPACE
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to remove.</dd>
@@ -349,7 +349,7 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`PLAN`</dt>
 <dd>The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
@@ -369,7 +369,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>The path to the compressed file that is downloaded from IBM Passport Advantage.</dd>
@@ -403,7 +403,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>(Optional) Changes your traffic quota to the specified value in megabytes. The operation fails if you are not authorized to set traffic, or if you set a value that exceeds your current pricing plan.</dd>
@@ -433,7 +433,7 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`REGION`</dt>
 <dd>(Optional) The name of your target region, for example, `us-south`.
@@ -453,7 +453,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--description DESCRIPTION`</dt>
 <dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `ibmcloud cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes cluster name. In this case, the token is removed automatically when your cluster is removed.
@@ -481,7 +481,7 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(Optional) The unique identifier of the token that you want to retrieve.</dd>
@@ -497,7 +497,7 @@ ibmcloud cr token-list --format FORMAT
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
@@ -517,7 +517,7 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(Optional) TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
@@ -533,7 +533,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**Command options**
+**Parameters**
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
