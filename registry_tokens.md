@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-10-04"
 
 ---
 
@@ -14,7 +14,6 @@ lastupdated: "2018-09-21"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
-
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -29,10 +28,11 @@ API keys are linked to your account and can be used across {{site.data.keyword.B
 
 Registry tokens are scoped for {{site.data.keyword.registrylong_notm}} only. You can limit them to read-only access, and you can choose whether they are expiring or non-expiring.
 
+If you use an API key, you can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
+
 For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam/apikeys.html#manapikey).
 
 Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](registry_setup_cli_namespace.html#registry_cli_install).
-
 
 ## Automating access to your namespaces by using API keys
 {: #registry_api_key}
@@ -51,7 +51,6 @@ You can create both user API keys and service ID API keys.
 -  To create a service ID API key, see [Creating an API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
 -  To create a user API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
 
-
 ### Using an API key to automate access
 {: #registry_api_key_use}
 
@@ -67,7 +66,6 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
-
 ## Automating access to your namespaces by using tokens
 {: #registry_tokens}
 
@@ -78,12 +76,13 @@ Everyone in possession of a registry token can access secured information. By cr
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 
+If you log in to {{site.data.keyword.registrylong_notm}} by using a registry token, your IAM access policies are not enforced. If you want to restrict access to one or more namespaces for an ID that is used in automation, consider using an IAM service ID API key instead of a registry token. For more information about creating an API key and using it with {{site.data.keyword.registrylong_notm}}, see [Automating access to your namespaces by using API keys](#registry_api_key).
+
 Use the following tasks to manage your tokens:
 
 -  [Creating a token for your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_create)
 -  [Using a token to automate access to your namespaces](#registry_tokens_use)
 -  [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
-
 
 ### Creating a token for your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_create}
@@ -121,7 +120,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
     Your CLI output looks similar to the following output:
 
     ```
-    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
+    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
     Token              <token_value>
     ```
     {: screen}
@@ -132,7 +131,6 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
     ibmcloud cr token-list
     ```
     {: pre}
-
 
 ### Using a token to automate access to your namespaces
 {: #registry_tokens_use}
@@ -180,7 +178,6 @@ You can use a token in your `docker login` command to automate access to your na
 
     After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
-
 ### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
@@ -210,8 +207,7 @@ Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically
     ibmcloud cr token-rm <token_id>
     ```
     {: pre}
-    
-    
+
 ## Authentication options for all clients
 {: #registry_authentication}
 
@@ -228,7 +224,6 @@ The following user names are valid:
 -  `token` The password is a registry token. You can use this user name for automation.
 
 You do not have to use the docker command to authenticate with the registry. For example, you can run the following `ibmcloud cf push` command that authenticates and authorizes a pull from the registry by using an IAM API key:
-
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>

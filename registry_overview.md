@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-10-04"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-21"
 {:tip: .tip}
 {:download: .download}
 
-
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -24,7 +23,7 @@ Use {{site.data.keyword.registrylong}} to safely store and access private Docker
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. You can use the private registry by setting up your own image namespace and pushing Docker images to your namespace.
 
-<img src="images/registry_architecture1.svg" alt="Image showing how you can interact with IBM Cloud Container Registry. Container Registry contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The IBM Cloud web UI (console) interacts with Container Registry API to list images. The Container Registry CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."/>
+<img src="images/registry_architecture1.svg" alt="Image showing how you can interact with IBM Cloud Container Registry. Container Registry contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The IBM Cloud web UI (console) interacts with the Container Registry API to list images. The Container Registry CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."/>
 
 **Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images**
 
@@ -174,7 +173,6 @@ If you want to find out what service plan you have, run the `ibmcloud cr plan` c
     If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
     {:tip}
 
-
 ## Learning the basics
 {: #registry_planning}
 
@@ -183,7 +181,6 @@ Prepare to safely store and share your Docker images with {{site.data.keyword.re
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
-
 
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -225,9 +222,7 @@ Do not put personal information in your container images, namespace names, descr
   <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
-
 To learn more about Docker-specific terms, [consult the Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
-
 
 ### Planning Namespaces
 {: #registry_namespaces}
@@ -236,6 +231,8 @@ To learn more about Docker-specific terms, [consult the Docker glossary ![Extern
 {:shortdesc}
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.Bluemix_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
+
+You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 

@@ -16,7 +16,11 @@ IBM Cloud Container Registry
         [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)    
+        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    
+    {: .topicgroup}
+    Tutorials
+        registry_tutorial_configure_iam.md 
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -25,6 +29,7 @@ IBM Cloud Container Registry
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
     [Managing image security with Vulnerability Advisor](../va/va_index.html)
@@ -39,6 +44,7 @@ IBM Cloud Container Registry
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    iam.md
     registry_at_events.md
     rellinks.md
     {: .navgroup-end}
