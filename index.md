@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-10-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-27"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #index}
 
@@ -28,13 +26,10 @@ The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
-
-
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
 1.  Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
-
 
 ## Set up a namespace
 {: #registry_namespace_add}
@@ -59,9 +54,6 @@ Do not put personal information in your container images, namespace names, descr
     ibmcloud cr namespace-list
     ```
     {: pre}
-
-
-
 
 ## Pull images from another registry to your local machine
 {: #registry_images_pulling}
@@ -96,8 +88,6 @@ Do not put personal information in your container images, namespace names, descr
     ```
     {: pre}
 
-
-
 ## Push Docker images to your namespace
 {: #registry_images_pushing}
 
@@ -129,15 +119,12 @@ Do not put personal information in your container images, namespace names, descr
     ```
     {: pre}
 
-
 Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
-
 
 **What's next?**
 
 -   [Managing image security with Vulnerability Advisor](../va/va_index.html)
 -   [Review your service plans and usage](registry_overview.html#registry_plans)
 -   [Store and manage more images in your namespace](registry_images_.html)
+-   [Defining user access role policies](/docs/services/Registry/registry_users.html#user)
 -   [Setting up clusters and worker nodes](/docs/containers/cs_clusters.html#clusters)
-
-
