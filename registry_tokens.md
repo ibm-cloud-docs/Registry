@@ -223,7 +223,7 @@ The following user names are valid:
 -  `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
 -  `token` The password is a registry token. You can use this user name for automation.
 
-You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
+You do not have to use the `docker` command to authenticate with the registry. For example, you can run the following `ibmcloud cf push` command that authenticates and authorizes a pull from the registry by using an IAM API key:
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
