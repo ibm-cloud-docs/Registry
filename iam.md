@@ -54,7 +54,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | |
 | Editor | Not supported | |
 | Operator | Not supported | |
-| Administrator | <ul><li>Configure access for other users</li><li> Configure registry tokens</li><li>Create clusters</li></ul> | <ul><li>For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam/mngiam.html#iammanidaccser).</li><li>Add, list, retrieve, and remove registry tokens</li><li>To create clusters in {{site.data.keyword.containerlong_notm}}, you must have the Administrator role for {{site.data.keyword.registrylong_notm}}, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
+| Administrator | <ul><li>Configure access for other users</li><li> Configure registry tokens</li><li>Create clusters</li></ul> | <ul><li>For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam/mngiam.html#iammanidaccser).</li><li>Add, list, retrieve, and remove registry tokens</li><li>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 For {{site.data.keyword.registrylong_notm}}, the following actions exist:
