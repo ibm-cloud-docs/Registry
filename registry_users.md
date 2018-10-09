@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-04"
+lastupdated: "2018-10-08"
 
 ---
 
@@ -39,7 +39,10 @@ If you want to grant access to everything, don't specify a resource type or a re
 
 - Decide what roles each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/services/Registry/iam.html#iam). Take into consideration that you can create multiple policies, for example, you can grant write access on a resource but only grant read access on another resource, and grant no access on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
 
-- [Invite users and assign access](/docs/iam/iamuserinv.html#iamuserinv).
+- [Invite users and assign access](/docs/iam/iamuserinv.html#iamuserinv). 
+
+  If you want users to be able to create clusters, ensure that you assign the Administrator role to those users, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).
+  {: tip}
 
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
 
