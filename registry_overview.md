@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-04"
+lastupdated: "2018-10-10"
 
 ---
 
@@ -80,7 +80,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 
 **Storage:**
 
-  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to safely store your Docker images in the namespaces of your {{site.data.keyword.Bluemix_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of one 1GB of storage for a month (730 hours).
+  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to safely store your Docker images in the namespaces of your {{site.data.keyword.Bluemix_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
 
   Example for the standard plan:
 
