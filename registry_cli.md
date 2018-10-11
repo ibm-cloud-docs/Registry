@@ -22,13 +22,22 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 {: shortdesc}
 
 **Prerequisites**
-* Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}}
- with the `ibmcloud login` command to generate an access token and authenticate your session.
 
-To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](index.html).
+* Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](docs/cli/index.html#overview). The prefix for running commands by using the {{site.data.keyword.Bluemix_notm}} CLI is `ibmcloud`.
+
+* Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
+
+In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
+
+If you want to view the current version of your {{site.data.keyword.registrylong}} CLI plug-in (`container-registry`), run `ibmcloud plugin list`.
+
+To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
+
+For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/services/Registry/iam.html#iam).
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
+
 <table summary="Manage {{site.data.keyword.registrylong_notm}}">
 <caption>Table 1. Commands for managing {{site.data.keyword.registrylong_notm}}
 </caption>
@@ -97,7 +106,11 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`DIRECTORY`</dt>
 <dd>The location of your build context, which contains your Dockerfile and prerequisite files.</dd>
@@ -135,7 +148,11 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -158,7 +175,11 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -175,7 +196,11 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -198,6 +223,10 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
@@ -207,6 +236,10 @@ If you are using IAM authentication, this command enables fine-grained authoriza
 ibmcloud cr iam-policies-enable
 ```
 {: codeblock}
+
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -218,12 +251,16 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -247,14 +284,18 @@ The image name is the combination of the content of the <strong>Repository</stro
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--no-trunc`</dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 <dt>`-q`, `--quiet`</dt>
@@ -275,7 +316,11 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can delete multiple images at the same time by listing each image in the command with a space between each name.
@@ -305,7 +350,11 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region.
@@ -327,6 +376,10 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
@@ -337,7 +390,11 @@ ibmcloud cr namespace-rm NAMESPACE
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to remove.</dd>
@@ -353,19 +410,27 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 Upgrades you to the standard plan.
 
-For information about plans, see [Registry plans](registry_overview.html#registry_plans).
+For information about plans, see [Registry plans](/docs/services/Registry/registry_overview.html#registry_plans).
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`PLAN`</dt>
 <dd>The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
@@ -385,7 +450,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**Parameters**
+**Command options**
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>The path to the compressed file that is downloaded from IBM Passport Advantage.</dd>
@@ -409,6 +474,10 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: Reader, Writer, or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
@@ -419,7 +488,11 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>(Optional) Changes your traffic quota to the specified value in megabytes. The operation fails if you are not authorized to set traffic, or if you set a value that exceeds your current pricing plan.</dd>
@@ -437,7 +510,7 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-For more information, see [Regions](registry_overview.html#registry_regions).
+For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -449,12 +522,12 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**Parameters**
+**Command options**
 <dl>
 <dt>`REGION`</dt>
 <dd>(Optional) The name of your target region, for example, `us-south`.
 
-For more information, see [Regions](registry_overview.html#registry_regions).
+For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
 </dd>
 </dl>
@@ -469,7 +542,11 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--description DESCRIPTION`</dt>
 <dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `ibmcloud cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes cluster name. In this case, the token is removed automatically when your cluster is removed.
@@ -497,7 +574,11 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(Optional) The unique identifier of the token that you want to retrieve.</dd>
@@ -513,12 +594,16 @@ ibmcloud cr token-list --format FORMAT
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](registry_cli_reference.html#registry_cli_listing).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 </dl>
@@ -533,7 +618,11 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(Optional) TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
@@ -549,7 +638,11 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**Parameters**
+**Prerequisites** 
+
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+
+**Command options**
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
