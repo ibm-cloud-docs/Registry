@@ -2,14 +2,18 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-04"
+lastupdated: "2018-10-11"
 
 ---
 
-{:codeblock: .codeblock}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
 {:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
