@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-09"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -125,7 +125,7 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | `container-registry.image.push` | `docker push` Push the image. | Writer, Manager |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) View a vulnerability assessment report for your image. | Reader, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Add a namespace. | Writer, Manager |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Remove a namespace. | Manager |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Remove a namespace. | Writer, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Display your namespaces. | Reader, Manager |
 | `container-registry.signature.create` | `docker trust sign` Sign the image. | Writer, Manager |
 | `container-registry.signature.delete` | `docker trust revoke` Delete the signature. | Writer, Manager |
