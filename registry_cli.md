@@ -97,6 +97,10 @@ ibmcloud cr api
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: None
+
 ## ibmcloud cr build
 {: #bx_cr_build}
 
@@ -331,6 +335,10 @@ ibmcloud cr info
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: None
+
 ## ibmcloud cr login
 {: #bx_cr_login}
 
@@ -340,6 +348,10 @@ This command runs the `docker login` command against the registry. The `docker l
 ibmcloud cr login
 ```
 {: codeblock}
+
+**Prerequisites** 
+
+Required permissions: None
 
 ## ibmcloud cr namespace-add
 {: #bx_cr_namespace_add}
@@ -393,7 +405,7 @@ ibmcloud cr namespace-rm NAMESPACE
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -448,6 +460,10 @@ Container images are pushed to your private {{site.data.keyword.registryshort_no
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
+
+**Prerequisites** 
+
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -509,6 +525,10 @@ ibmcloud cr region
 ```
 {: codeblock}
 
+**Prerequisites** 
+
+Required permissions: None
+
 For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
 ## ibmcloud cr region-set
@@ -520,6 +540,10 @@ Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To
 ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
+
+**Prerequisites** 
+
+Required permissions: None
 
 **Command options**
 <dl>
