@@ -114,7 +114,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 **Command options**
 <dl>
 <dt>`DIRECTORY`</dt>
-<dd>The location of your build context, which contains your Dockerfile and prerequisite files.</dd>
+<dd>The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).</dd>
 <dt>`--no-cache`</dt>
 <dd>(Optional)  If specified, cached image layers from previous builds are not used in this build.</dd>
 <dt>`--pull`</dt>
@@ -344,7 +344,7 @@ ibmcloud cr login
 ## ibmcloud cr namespace-add
 {: #bx_cr_namespace_add}
 
-Adds a namespace to your {{site.data.keyword.Bluemix_notm}} account.
+Choose a name for your namespace and add it to your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -443,8 +443,6 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
-
-**Example**
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
@@ -582,7 +580,7 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 **Command options**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>(Optional) The unique identifier of the token that you want to retrieve.</dd>
+<dd>(Optional) The unique identifier of the token that you want to retrieve. To list your tokens, run `ibmcloud cr token-list`.</dd>
 </dl>
 
 ## ibmcloud cr token-list (ibmcloud cr tokens)
