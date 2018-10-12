@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -191,7 +191,7 @@ To build your own Docker image, complete the following steps:
     ```
     {: pre}
 
-    where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
+    where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
    
    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
 
