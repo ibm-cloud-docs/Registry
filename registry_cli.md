@@ -27,7 +27,7 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 
 * Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
 
-In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
 
 If you want to view the current version of your {{site.data.keyword.registrylong}} CLI plug-in (`container-registry`), run `ibmcloud plugin list`.
 
