@@ -46,43 +46,43 @@ Do not put personal information in your container images, namespace names, descr
  </thead>
  <tbody>
  <tr>
- <td>[`ibmcloud cr api`](#bx_cr_api)</td>
- <td>[`ibmcloud cr build`](#bx_cr_build)</td>
- <td>[`ibmcloud cr exemption-add`](#bx_cr_exemption_add)</td>
- <td>[`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](#bx_cr_exemption_list)</td>
- <td>[`ibmcloud cr exemption-rm`](#bx_cr_exemption_rm)</td>
+ <td>[ibmcloud cr api](#bx_cr_api)</td>
+ <td>[ibmcloud cr build](#bx_cr_build)</td>
+ <td>[ibmcloud cr exemption-add](#bx_cr_exemption_add)</td>
+ <td>[ibmcloud cr exemption-list (ibmcloud cr exemptions)](#bx_cr_exemption_list)</td>
+ <td>[ibmcloud cr exemption-rm](#bx_cr_exemption_rm)</td>
  </tr>
  <tr>
- <td>[`ibmcloud cr exemption-types`](#bx_cr_exemption_types)</td>
- <td>[`ibmcloud cr iam-policies-enable`](#bx_cr_iam_policies_enable)</td>
- <td>[`ibmcloud cr info`](#bx_cr_info)</td>
- <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
- <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
+ <td>[ibmcloud cr exemption-types](#bx_cr_exemption_types)</td>
+ <td>[ibmcloud cr iam-policies-enable](#bx_cr_iam_policies_enable)</td>
+ <td>[ibmcloud cr info](#bx_cr_info)</td>
+ <td>[ibmcloud cr image-inspect](#bx_cr_image_inspect)</td>
+ <td>[ibmcloud cr image-list (ibmcloud cr images)](#bx_cr_image_list)</td>
  </tr>
  <tr>
- <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
- <td>[`ibmcloud cr login`](#bx_cr_login)</td>
- <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
- <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
- <td>[`ibmcloud cr namespace-rm`](#bx_cr_namespace_rm)</td>
+ <td>[ibmcloud cr image-rm](#bx_cr_image_rm)</td>
+ <td>[ibmcloud cr login](#bx_cr_login)</td>
+ <td>[ibmcloud cr namespace-add](#bx_cr_namespace_add)</td>
+ <td>[ibmcloud cr namespace-list (ibmcloud cr namespaces)](#bx_cr_namespace_list)</td>
+ <td>[ibmcloud cr namespace-rm](#bx_cr_namespace_rm)</td>
  </tr>
  <tr>
- <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
- <td>[`ibmcloud cr plan-upgrade`](#bx_cr_plan_upgrade)</td>
- <td>[`ibmcloud cr ppa-archive-load`](#bx_cr_ppa_archive_load)</td>
- <td>[`ibmcloud cr quota`](#bx_cr_quota)</td>
- <td>[`ibmcloud cr quota-set`](#bx_cr_quota_set)</td>
+ <td>[ibmcloud cr plan](#bx_cr_plan)</td>
+ <td>[ibmcloud cr plan-upgrade](#bx_cr_plan_upgrade)</td>
+ <td>[ibmcloud cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
+ <td>[ibmcloud cr quota](#bx_cr_quota)</td>
+ <td>[ibmcloud cr quota-set](#bx_cr_quota_set)</td>
  </tr>
  <tr>
- <td>[`ibmcloud cr region`](#bx_cr_region)</td>
- <td>[`ibmcloud cr region-set`](#bx_cr_region_set)</td>
- <td>[`ibmcloud cr token-add`](#bx_cr_token_add)</td>
- <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
- <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
+ <td>[ibmcloud cr region](#bx_cr_region)</td>
+ <td>[ibmcloud cr region-set](#bx_cr_region_set)</td>
+ <td>[ibmcloud cr token-add](#bx_cr_token_add)</td>
+ <td>[ibmcloud cr token-get](#bx_cr_token_get)</td>
+ <td>[ibmcloud cr token-list (ibmcloud cr tokens)](#bx_cr_token_list)</td>
  </tr>
  <tr>
- <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
- <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
+ <td>[ibmcloud cr token-rm](#bx_cr_token_rm)</td>
+ <td>[ibmcloud cr vulnerability-assessment (ibmcloud cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
 
