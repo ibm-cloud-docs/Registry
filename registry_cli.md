@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -23,7 +23,7 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 
 **Prerequisites**
 
-* Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../icons/launch-glyph.svg "External link icon")](docs/cli/index.html#overview). The prefix for running commands by using the {{site.data.keyword.Bluemix_notm}} CLI is `ibmcloud`.
+* Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](docs/cli/index.html#overview). The prefix for running commands by using the {{site.data.keyword.Bluemix_notm}} CLI is `ibmcloud`.
 
 * Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
 
@@ -108,7 +108,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **Prerequisites** 
 
-Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -150,7 +150,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -177,7 +177,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -198,7 +198,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -225,7 +225,7 @@ ibmcloud cr exemption-types
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
@@ -239,7 +239,7 @@ ibmcloud cr iam-policies-enable
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -253,7 +253,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **Prerequisites** 
 
-Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -286,7 +286,7 @@ The image name is the combination of the content of the <strong>Repository</stro
 
 **Prerequisites** 
 
-Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -318,7 +318,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 
 **Prerequisites** 
 
-Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -352,7 +352,7 @@ ibmcloud cr namespace-add NAMESPACE
 
 **Prerequisites** 
 
-Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -378,7 +378,7 @@ ibmcloud cr namespace-list
 
 **Prerequisites** 
 
-Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -392,7 +392,7 @@ ibmcloud cr namespace-rm NAMESPACE
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -412,7 +412,7 @@ ibmcloud cr plan
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -428,7 +428,7 @@ ibmcloud cr plan-upgrade [PLAN]
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -476,7 +476,7 @@ ibmcloud cr quota
 
 **Prerequisites** 
 
-Required permissions: Reader, Writer, or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Reader, Writer, or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -490,7 +490,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 
 **Prerequisites** 
 
-Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -544,7 +544,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 
 **Prerequisites** 
 
-Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -576,7 +576,7 @@ ibmcloud cr token-get TOKEN
 
 **Prerequisites** 
 
-Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -596,7 +596,7 @@ ibmcloud cr token-list --format FORMAT
 
 **Prerequisites** 
 
-Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -620,7 +620,7 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 
 **Prerequisites** 
 
-Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong}}
+Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
@@ -640,7 +640,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 **Prerequisites** 
 
-Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong}}
+Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
