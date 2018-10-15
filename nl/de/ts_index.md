@@ -482,7 +482,7 @@ Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail cl
 
 2.  Aktualisieren Sie `ValidatingWebhookConfiguration`, indem Sie den folgenden Befehl ausführen:
 
-    ````
+    ``>
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

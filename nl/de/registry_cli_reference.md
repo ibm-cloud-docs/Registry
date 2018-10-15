@@ -129,7 +129,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
 |`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status  `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli) beschrieben.|
-{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <code>ibmcloud cr image-list</code>." caption-side="top"}
+{: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -154,7 +154,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
 |`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <code>ibmcloud cr image-inspect</code>." caption-side="top"}
+{: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
 
@@ -218,4 +218,4 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke](https://en.wikipedia.org/wiki/Unix_time) des Zeitpunkts an, an dem das Token abläuft.|
 |`ReadOnly`|Boolesch|Zeigt _true_ an, wenn für Images nur Pull-Operationen durchgeführt werden können, und _false_, wenn für Images Push- und Pull-Operationen in und aus Ihrem Namensbereich durchgeführt werden können.|
 |`Beschreibung`|Zeichenfolge|Zeigt die Beschreibung des Tokens an.|
-{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl <code>ibmcloud cr token-list</code>." caption-side="top"}
+{: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr token-list</code>." caption-side="top"}>
