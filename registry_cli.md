@@ -99,7 +99,7 @@ ibmcloud cr api
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr build
 {: #bx_cr_build}
@@ -337,7 +337,7 @@ ibmcloud cr info
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr login
 {: #bx_cr_login}
@@ -351,7 +351,7 @@ ibmcloud cr login
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr namespace-add
 {: #bx_cr_namespace_add}
@@ -527,7 +527,7 @@ ibmcloud cr region
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
@@ -543,7 +543,7 @@ ibmcloud cr region-set [REGION]
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 **Command options**
 <dl>
