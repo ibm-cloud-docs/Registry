@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-15"
+lastupdated: "2018-10-16"
 
 ---
 
@@ -370,7 +370,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 **Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region.
+<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region. Namespaces must be between 4 and 30 characters long, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
   
 <p>  
 <strong>Tip</strong>: Do not put personal information in your namespace names.
