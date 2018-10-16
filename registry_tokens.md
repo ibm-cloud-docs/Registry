@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-08"
+lastupdated: "2018-10-16"
 
 ---
 
@@ -43,13 +43,13 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 ### Creating an API key
 {: #registry_api_key_create}
 
-You can create an API key that you can then use to log in to your registry. 
+You can create an API key that you can then use to log in to your registry.
 {:shortdesc}
 
 You can create both user API keys and service ID API keys.
 
--  To create a service ID API key, see [Creating an API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
--  To create a user API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
+- To create a service ID API key, see [Creating an API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+- To create a user API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
@@ -80,9 +80,9 @@ If you log in to {{site.data.keyword.registrylong_notm}} by using a registry tok
 
 Use the following tasks to manage your tokens:
 
--  [Creating a token for your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_create)
--  [Using a token to automate access to your namespaces](#registry_tokens_use)
--  [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
+- [Creating a token for your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_create)
+- [Using a token to automate access to your namespaces](#registry_tokens_use)
+- [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
 
 ### Creating a token for your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_create}
@@ -211,19 +211,19 @@ Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically
 ## Authentication options for all clients
 {: #registry_authentication}
 
-You can authenticate by using the `docker login` command or other registry clients. 
+You can authenticate by using the `docker login` command or other registry clients.
 {:shortdesc}
 
 Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a user name and password. In {{site.data.keyword.registrylong_notm}}, the user name indicates the type of secret that is presented in the password.
 
 The following user names are valid:
 
--  `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
--  `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
--  `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
--  `token` The password is a registry token. You can use this user name for automation.
+- `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
+- `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
+- `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
+- `token` The password is a registry token. You can use this user name for automation.
 
-You do not have to use the `docker` command to authenticate with the registry. For example, you can run the following `ibmcloud cf push` command that authenticates and authorizes a pull from the registry by using an IAM API key:
+You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
