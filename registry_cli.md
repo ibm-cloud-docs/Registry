@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-16"
 
 ---
 
@@ -99,7 +99,7 @@ ibmcloud cr api
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr build
 {: #bx_cr_build}
@@ -337,7 +337,7 @@ ibmcloud cr info
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr login
 {: #bx_cr_login}
@@ -351,7 +351,7 @@ ibmcloud cr login
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 ## ibmcloud cr namespace-add
 {: #bx_cr_namespace_add}
@@ -370,7 +370,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 **Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region.
+<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region. Namespaces must be between 4 and 30 characters long, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
   
 <p>  
 <strong>Tip</strong>: Do not put personal information in your namespace names.
@@ -527,7 +527,7 @@ ibmcloud cr region
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
@@ -543,7 +543,7 @@ ibmcloud cr region-set [REGION]
 
 **Prerequisites** 
 
-Required permissions: None
+None
 
 **Command options**
 <dl>
