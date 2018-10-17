@@ -20,7 +20,13 @@ IBM Cloud Container Registry
     
     {: .topicgroup}
     Tutorials
-        registry_tutorial_configure_iam.md 
+        registry_tutorial_configure_iam.md
+        [Tutorial: Scalable web application on Kubernetes](../tutorials/scalable-webapp-kubernetes.html?pos=2#scalable-web-application-on-kubernetes)
+        [Tutorial: Analyze logs and monitor the health of Kubernetes applications](../tutorials/kubernetes-log-analysis-kibana.html?pos=2#analyze-logs-and-monitor-the-health-of-kubernetes-applications)
+        [Tutorial: Moving a VM based app to Kubernetes](../tutorials/vm-to-containers-and-kubernetes.html?pos=2#moving-a-vm-based-app-to-kubernetes)
+        [Tutorial: Continuous Deployment to Kubernetes](../tutorials/continuous-deployment-to-kubernetes.html?pos=2#continuous-deployment-to-kubernetes)
+        [Tutorial: Resilient and secure multi-region Kubernetes clusters with Cloud Internet Services](../tutorials/multi-region-k8s-cis.html?pos=3#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
+        [Tutorial: Apply end to end security to a cloud application](../tutorials/cloud-e2e-security.html?pos=2#apply-end-to-end-security-to-a-cloud-application)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
