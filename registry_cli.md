@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-16"
+lastupdated: "2018-10-17"
 
 ---
 
@@ -126,7 +126,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) If specified, the build output is suppressed unless an error occurs.</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(Optional) Specify an additional build argument in the format 'KEY=VALUE'. Multiple build arguments can be specified by including this parameter multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
+<dd>(Optional) Specify an additional build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this parameter multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where PATH is the root of the build context.</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -136,7 +136,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 ## ibmcloud cr exemption-add
 {: #bx_cr_exemption_add}
 
-Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, or tag. 
+Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, or tag.
 
 ```
 ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
@@ -163,7 +163,7 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 ## ibmcloud cr exemption-list (ibmcloud cr exemptions)
 {: #bx_cr_exemption_list}
 
-List your exemptions for security issues. 
+List your exemptions for security issues.
 
 ```
 ibmcloud cr exemption-list [--scope SCOPE]
@@ -271,7 +271,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 
 Displays all images in your {{site.data.keyword.Bluemix_notm}} account.
 
-The image name is the combination of the content of the <strong>Repository</strong> and <strong>Tag</strong> columns in the format `repository:tag`.
+The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
 {:tip}
 
 ```
@@ -304,7 +304,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 ## ibmcloud cr image-rm
 {: #bx_cr_image_rm}
 
-Deletes one or more specified images from your registry.
+Delete one or more specified images from your registry.
 
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
@@ -558,7 +558,7 @@ For more information, see [Regions](/docs/services/Registry/registry_overview.ht
 ## ibmcloud cr token-add
 {: #bx_cr_token_add}
 
-Adds a token that you can use to control access to a registry.
+Add a token that you can use to control access to a registry.
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
