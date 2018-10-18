@@ -20,7 +20,7 @@ IBM Cloud Container Registry
     
     {: .topicgroup}
     Tutorials
-        registry_tutorial_configure_iam.md 
+        registry_tutorial_configure_iam.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
