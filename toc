@@ -7,7 +7,8 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md
+    registry_ha.md      
+    registry_public_images.md
     [IBM images](../RegistryImages/index.html#ibm_images)
         [datashield-barbican image](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
         [datashield-mysql image](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
