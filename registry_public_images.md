@@ -18,7 +18,7 @@ lastupdated: "2018-10-19"
 # Public {{site.data.keyword.IBM_notm}} images
 {: #public_images}
 
-You can no longer access public {{site.data.keyword.IBM}} images in the graphical user interface. However, you can still access the images by using the CLI.
+You can't access public {{site.data.keyword.IBM}} images in the graphical user interface anymore. However, you can still access the images by using the command line.
 {:shortdesc}
 
 ## Accessing the public IBM images by using the CLI
@@ -26,6 +26,22 @@ You can no longer access public {{site.data.keyword.IBM}} images in the graphica
 
 You can access the IBM public images by using the command line.
 {:shortdesc}
+
+**Before you begin**
+
+- Log in to [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login):
+
+  ```
+  ibmcloud login
+  ```
+  {: pre}
+
+- Log in to {{site.data.keyword.registrylong_notm}}:
+  
+  ```
+  ibmcloud cr login
+  ```
+  {: pre}
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the IBM-provided public images:
 
