@@ -43,14 +43,18 @@ You can access the public {{site.data.keyword.IBM_notm}} images by using the com
   ```
   {: pre}
 
-To list the public images, you must run the following `ibmcloud` commands to target the global registry and then list the {{site.data.keyword.IBM_notm}} public images:
+To list the public images, complete the following steps:
 
-```
-ibmcloud cr region-set global
-```
-{: pre}
+1. Target the global registry:
 
-```
-ibmcloud cr images --include-ibm
-```
-{: pre}
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. List the {{site.data.keyword.IBM_notm}} public images:
+
+   ```
+   ibmcloud cr images --include-ibm
+   ```
+   {: pre}
