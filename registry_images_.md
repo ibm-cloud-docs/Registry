@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-10-12"
 {:tip: .tip}
 {:download: .download}
 
-
 # Adding images to your namespace
 {: #registry_images_}
 
@@ -24,10 +23,8 @@ You can securely store and share Docker images with other users by adding images
 
 Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
-
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
-
 
 ## Pulling images from another registry
 {: #registry_images_pulling}
@@ -44,7 +41,6 @@ You can pull (download) an image from any private or public registry source, and
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
-
 
 Download the image, see [Pull an image](index.html#registry_images_pulling) in the Getting Started documentation.
 
@@ -70,7 +66,6 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-
 To upload (push) an image, complete the following steps:
 
 1. Log in to the CLI.
@@ -89,12 +84,10 @@ To upload (push) an image, complete the following steps:
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {:tip}
 
-
 After you push your image to your private registry, you can do one of the following tasks:
 
 - [Manage security with Vulnerability Advisor](../va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
-
 
 ## Copying images between registries
 {: #registry_images_copying}
@@ -112,7 +105,6 @@ You can pull an image from a registry in one region and push it to a registry in
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-
 To copy an image between two registries, complete the following steps:
 
 1. [Pull an image from a registry](#registry_images_pulling).
@@ -122,7 +114,6 @@ After you copy your image, you can do one of the following tasks:
 
 - [Managing image security with Vulnerability Advisor](../va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
-
 
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
@@ -137,7 +128,6 @@ You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or c
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
-
 
 A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
@@ -193,7 +183,7 @@ To build your own Docker image, complete the following steps:
 
     where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
    
-   For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
+    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
 
   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
     1. Build the image from your Dockerfile on your local computer and tag it with your image name.
@@ -218,7 +208,6 @@ To build your own Docker image, complete the following steps:
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
 
-
 ## Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository
 {: #registry_images_remove}
 
@@ -232,7 +221,6 @@ Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
 {:tip}
 
-
 ### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
 
@@ -244,8 +232,8 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 
 To delete an image by using the CLI, complete the following steps:
 
-1.  Log in to {{site.data.keyword.Bluemix_notm}} by running the `ibmcloud login` command.
-2.  To delete an image, run the following command:
+1. Log in to {{site.data.keyword.Bluemix_notm}} by running the `ibmcloud login` command.
+2. To delete an image, run the following command:
 
     ```
     ibmcloud cr image-rm IMAGE
@@ -257,15 +245,14 @@ To delete an image by using the CLI, complete the following steps:
     If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
 
     To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
- {:tip}
+    {:tip}
 
-3.  Verify that the image was deleted by running the following command, and check that the image does not show in the list.
+3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
 
     ```
     ibmcloud cr image-list
     ```
     {: pre}
-
 
 ### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
@@ -278,14 +265,17 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 
 To delete an image by using the GUI, complete the following steps:
 
-1.  Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
-2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
-3.  Click **Catalog**.
-4.  Select the **Containers** category and click the **Container Registry** tile.
-5.  Click **Private Repositories**. A list of your private repositories is displayed.
-6.  Click the row that contains the repository that contains the image that you want to delete.
-7.  In the row that contains the image that you want to delete, click the **open and close list of options** icon, select **Delete Image**. Ensure that you've selected the correct image because this action can't be undone. Click **Delete**.
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+3. Click **Catalog**.
+4. Select the **Containers** category and click the **Container Registry** tile.
+5. Click **Images**. A list of your images is displayed.
+6. In the row that contains the image that you want to delete, select the check box. 
 
+    Ensure that you've selected the correct image because this action can't be undone.
+    {: tip}
+
+7. Click **Delete Image**.
 
 ## Deleting a private repository and any associated images
 {: #registry_repo_remove}
@@ -296,14 +286,20 @@ You can delete private repositories that are no longer required, and any associa
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
 {:tip}
 
-Before you begin, back up any images that you want to keep.
+**Before you begin**
 
-To delete a repository by using the GUI, complete the following steps:
+You must back up any images that you want to keep.
 
-1.  Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
-2.  If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
-3.  Click **Catalog**.
-4.  Select the **Containers** category and click the **Container Registry** tile.
-5.  Click **Private Repositories**. A list of your private repositories is displayed.
-6.  In the row that contains the private repository that you want to delete, click the **open and close list of options** icon, select **Delete Repository**. Ensure that you've selected the correct repository because this action can't be undone. Click **Delete**.
+To delete a private repository by using the GUI, complete the following steps:
 
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+3. Click **Catalog**.
+4. Select the **Containers** category and click the **Container Registry** tile.
+5. Click **Repositories**. A list of your private repositories is displayed.
+6. In the row that contains the private repository that you want to delete, select the check box.
+
+    Ensure that you've selected the correct repository because this action can't be undone.
+    {: tip}
+
+7. Click **Delete Repository**.

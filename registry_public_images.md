@@ -36,13 +36,6 @@ You can access the public {{site.data.keyword.IBM_notm}} images by using the com
   ```
   {: pre}
 
-- Log in to {{site.data.keyword.registrylong_notm}}:
-  
-  ```
-  ibmcloud cr login
-  ```
-  {: pre}
-
 To list the public images, complete the following steps:
 
 1. Target the global registry:
