@@ -133,15 +133,6 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
 
-**Example**
-
-Build a Docker image that has no cache, the build output suppressed, the tag *`registry.ng.bluemix.net/bluebird/bird:1`*, and the directory is your working directory.
-
-```
-ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
-```
-{: pre}
-
 ## ibmcloud cr exemption-add
 {: #bx_cr_exemption_add}
 
