@@ -169,6 +169,29 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 </dd>
 </dl>
 
+**Examples**
+
+Create a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `registry.ng.bluemix.net/bluebird/bird` repository.
+
+```
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+Create an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
+
+```
+ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+Create a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the tag `registry.ng.bluemix.net/bluebird/bird:1`.
+
+```
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
+
 ## ibmcloud cr exemption-list (ibmcloud cr exemptions)
 {: #bx_cr_exemption_list}
 
@@ -189,6 +212,15 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 <dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
+
+**Example**
+
+List all your exemptions for security issues that apply to images in the *`bluebird/bird`* repository. The output includes exemptions that are account-wide, exemptions scoped to the *`bluebird`* namespace, and exemptions scoped to the *`bluebird/bird`* repository but not any scoped to specific tags within the *`bluebird/bird`* repository.
+
+```
+ibmcloud cr exemption-list --scope bluebird/bird
+```
+{: pre}
 
 ## ibmcloud cr exemption-rm
 {: #bx_cr_exemption_rm}
@@ -216,6 +248,29 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 <dd>The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run `ibmcloud cr exemption-list`.
 </dd>
 </dl>
+
+**Examples**
+
+Delete a CVE exemption for CVE with ID `CVE-2018-17929` for all images in the `registry.ng.bluemix.net/bluebird/bird` repository.
+
+```
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+Delete an account-wide CVE exemption for CVE with ID `CVE-2018-17929`.
+
+```
+ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+Delete a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the tag `registry.ng.bluemix.net/bluebird/bird:1`.
+
+```
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
 
 ## ibmcloud cr exemption-types
 {: #bx_cr_exemption_types}
@@ -712,3 +767,19 @@ For more information, see [Managing image security with Vulnerability Advisor](/
 <dd>(Optional) The command output shows additional information about fixes for vulnerable packages.</dd>
 
 </dl>
+
+**Examples**
+
+View a standard vulnerability assessment report for your image.
+
+```
+ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
+
+View a vulnerability assessment report for your image *`registry.ng.bluemix.net/bluebird/bird:1`* in JSON format, showing vulnerabilities only.
+
+```
+ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
