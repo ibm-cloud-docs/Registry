@@ -133,6 +133,15 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
 
+**Example**
+
+Build a Docker image without using a build cache, and with the build output suppressed, the tag *`registry.ng.bluemix.net/bluebird/bird:1`*, and the directory is your working directory.
+
+```
+ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
+```
+{: pre}
+
 ## ibmcloud cr exemption-add
 {: #bx_cr_exemption_add}
 
@@ -321,6 +330,15 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 </dd>
 </dl>
 
+**Example**
+
+Display details about the exposed ports for the image *`registry.ng.bluemix.net/bluebird/bird:1`*, by using the formatting directive *`"{{ .Config.ExposedPorts }}"`*.
+
+```
+ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
+
 ## ibmcloud cr image-list (ibmcloud cr images)
 {: #bx_cr_image_list}
 
@@ -356,6 +374,15 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default private images only are listed.</dd>
 </dl>
 
+**Example**
+
+Display the images in the *`bluebird`* namespace in the format `repository:tag`, without truncating the image digests.
+
+```
+ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
+```
+{: pre}
+
 ## ibmcloud cr image-rm
 {: #bx_cr_image_rm}
 
@@ -379,6 +406,15 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 </dd>
 </dl>
+
+**Example**
+
+Delete the image *`registry.ng.bluemix.net/bluebird/bird:1`*.
+
+```
+ibmcloud cr image-rm registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
 
 ## ibmcloud cr info
 {: #bx_cr_info}
@@ -434,6 +470,15 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 </dd>
 </dl>
 
+**Example**
+
+Create a namespace with the name *`bluebird`*.
+
+```
+ibmcloud cr namespace-add bluebird
+```
+{: pre}
+
 ## ibmcloud cr namespace-list (ibmcloud cr namespaces)
 {: #bx_cr_namespace_list}
 
@@ -467,6 +512,15 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to remove.</dd>
 </dl>
+
+**Example**
+
+Remove the namespace *`bluebird`*.
+
+```
+ibmcloud cr namespace-rm bluebird
+```
+{: pre}
 
 ## ibmcloud cr plan
 {: #bx_cr_plan}
@@ -504,10 +558,19 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 <dd>The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
 </dl>
 
+**Example**
+
+Upgrade to the standard pricing plan.
+
+```
+ibmcloud cr plan-upgrade standard
+```
+{: pre}
+
 ## ibmcloud cr ppa-archive-load
 {: #bx_cr_ppa_archive_load}
 
-Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
+Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
@@ -533,6 +596,15 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
   <dt>`--chartmuseum-password PASSWORD`</dt>
   <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) password.</dd>
 </dl>
+
+**Example**
+
+Import IBM software and package it for use with Helm in your private registry namespace *`bluebird`* where the path to the compressed file is *`downloads/compressed_file.tgz`*.
+
+```
+ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird
+```
+{: pre}
 
 ## ibmcloud cr quota
 {: #bx_cr_quota}
@@ -569,6 +641,15 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 <dt>`--storage STORAGE`</dt>
 <dd>(Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.</dd>
 </dl>
+
+**Example**
+
+Set your quota limit for pull traffic to *7000* megabytes and storage to *600* megabytes:
+
+```
+ibmcloud cr quota-set --traffic 7000 --storage 600
+```
+{: pre}
 
 ## ibmcloud cr region
 {: #bx_cr_region}
@@ -610,6 +691,15 @@ For more information, see [Regions](/docs/services/Registry/registry_overview.ht
 </dd>
 </dl>
 
+**Example**
+
+Target the US South region.
+
+```
+ibmcloud cr region-set us-south
+```
+{: pre}
+
 ## ibmcloud cr token-add
 {: #bx_cr_token_add}
 
@@ -642,6 +732,15 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 <dd>(Optional) Creates a token that grants read and write access. Without this option, access is read-only by default.</dd>
 </dl>
 
+**Example**
+
+Add a token with the description *Token for my account* that does not expire and has read/write access.
+
+```
+ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
+```
+{: pre}
+
 ## ibmcloud cr token-get
 {: #bx_cr_token_get}
 
@@ -661,6 +760,15 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 <dt>`TOKEN`</dt>
 <dd>(Optional) The unique identifier of the token that you want to retrieve. To list your tokens, run `ibmcloud cr token-list`.</dd>
 </dl>
+
+**Example**
+
+Retrieve the token *10101010-101x-1x10-x1xx-x10xx10xxx10*.
+
+```
+ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
+```
+{: pre}
 
 ## ibmcloud cr token-list (ibmcloud cr tokens)
 {: #bx_cr_token_list}
@@ -686,6 +794,22 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 </dd>
 </dl>
 
+**Example**
+
+Display all tokens that are read-only, by using the formatting directive *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`*.
+
+```
+ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+```
+{: pre}
+
+This example produces output in the following format:
+
+```
+10101010-101a-1a10-a1aa-a10aa10aaa10 - 1234567890 - true - demo
+```
+{: screen}
+
 ## ibmcloud cr token-rm
 {: #bx_cr_token_rm}
 
@@ -705,6 +829,15 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 <dt>`TOKEN`</dt>
 <dd>(Optional) TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
 </dl>
+
+**Example**
+
+Remove the token *10101010-101x-1x10-x1xx-x10xx10xxx10*.
+
+```
+ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
+```
+{: pre}
 
 ## ibmcloud cr vulnerability-assessment (ibmcloud cr va)
 {: #bx_cr_va}
