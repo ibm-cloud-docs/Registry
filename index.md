@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -17,7 +17,6 @@ lastupdated: "2018-10-29"
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #index}
-
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to safely store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
