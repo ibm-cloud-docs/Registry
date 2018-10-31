@@ -77,7 +77,7 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
    ```
    {: pre}
 
-   The output instructs you to export the Docker Content Trust environment variable. 
+   The output instructs you to export the Docker Content Trust environment variable.
 
    **Example**
 
@@ -86,7 +86,7 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
    Logging in to 'registry.ng.bluemix.net'...
    Logged in to 'registry.ng.bluemix.net'.
 
-   To set up your Docker client with content trust, 
+   To set up your Docker client with content trust,
    export the following environment variable:
    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
    ```
