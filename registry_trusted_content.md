@@ -169,19 +169,25 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. Remove all trusted metadata for the image repository. Enter your repository key passphrase when prompted. **Optional**: Specify a tag to revoke trusted metadata only for that version of the image.
+2. Remove all trusted metadata for the image repository. Enter your repository key passphrase when prompted.
+
+   (Optional) Specify a tag to revoke trusted metadata only for that version of the image.
 
    ```
    docker trust revoke <image>:<tag>
    ```
    {: pre}
 
-3. Verify that trust was revoked in the list of trusted content. **Optional**: If you want to verify revoked content for a tagged image, include the tag.
+3. Verify that trust was revoked in the list of trusted content.
+
+   (Optional) If you want to verify revoked content for a tagged image, include the tag.
 
    ```
    $ docker trust inspect --pretty <image>:<tag>
    ```
    {: pre}
+
+   Output from the previous command:
 
    ```
    No signatures or cannot access <image>:<tag>
@@ -230,10 +236,10 @@ To share signing keys:
   
     a. Generate the key. For the <em>NAME</em>, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
-       ```
-       docker trust key generate <NAME>
-       ```
-       {: pre}
+      ```
+      docker trust key generate <NAME>
+      ```
+      {: pre}
   
     b. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
   
@@ -245,10 +251,10 @@ To share signing keys:
 
     b. Add the signer's key to the repository.
 
-       ```
-       docker trust signer add --key <NAME>.pub <NAME> <repository>
-       ```
-       {: pre}
+      ```
+      docker trust signer add --key <NAME>.pub <NAME> <repository>
+      ```
+      {: pre}
 
 3. The signer can set up their environment and sign an image.
 
@@ -256,10 +262,10 @@ To share signing keys:
 
     b. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
-       ```
-       docker trust sign <repository>:<tag>
-       ```
-       {: pre}
+      ```
+      docker trust sign <repository>:<tag>
+      ```
+      {: pre}
 
 4. To verify that the signer was added, see [Viewing signed images](#trustedcontent_viewsigned).
 
