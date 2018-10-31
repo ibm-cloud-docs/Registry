@@ -234,12 +234,12 @@ To share signing keys:
 
 1. If the new signer signer has not generated a key pair yet, a key pair must be generated and loaded.
   
-    a. Generate the key. For the <em>NAME</em>, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+    a. Generate the key. For the _&lt;NAME&gt;_, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
-       ```
-       docker trust key generate <NAME>
-       ```
-       {: pre}
+    ```
+    docker trust key generate <NAME>
+    ```
+    {: pre}
   
     b. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
   
@@ -251,10 +251,10 @@ To share signing keys:
 
     b. Add the signer's key to the repository.
 
-       ```
-       docker trust signer add --key <NAME>.pub <NAME> <repository>
-       ```
-       {: pre}
+    ```
+    docker trust signer add --key <NAME>.pub <NAME> <repository>
+    ```
+    {: pre}
 
 3. The signer can set up their environment and sign an image.
 
@@ -262,10 +262,10 @@ To share signing keys:
 
     b. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
-       ```
-       docker trust sign <repository>:<tag>
-       ```
-       {: pre}
+    ```
+    docker trust sign <repository>:<tag>
+    ```
+    {: pre}
 
 4. To verify that the signer was added, see [Viewing signed images](#trustedcontent_viewsigned).
 
