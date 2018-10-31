@@ -234,7 +234,7 @@ To share signing keys:
 
 1. If the new signer signer has not generated a key pair yet, a key pair must be generated and loaded.
   
-    a. Generate the key. For the _&lt;NAME&gt;_, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+    a. Generate the key. For _&lt;NAME&gt;_, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
     ```
     docker trust key generate <NAME>
