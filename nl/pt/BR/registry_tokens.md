@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -29,7 +29,7 @@ As chaves API são vinculadas à sua conta e podem ser usadas no {{site.data.key
 
 Os tokens de registro têm o escopo definido somente para {{site.data.keyword.registrylong_notm}}. É possível limitá-los ao acesso somente leitura e escolher se eles estão expirando ou não expirando.
 
-Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](../../iam/apikeys.html#manapikey).
+Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](/docs/iam/apikeys.html#manapikey).
 
 Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -43,10 +43,14 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 ### Criando uma chave API
 {: #registry_api_key_create}
 
-É possível criar uma chave API que pode então ser usada para efetuar login no seu registro.
+É possível criar uma chave API que pode então ser usada para efetuar login no seu registro. 
 {:shortdesc}
 
-Crie uma chave API do IAM, veja [Criando uma chave API](../../iam/userid_keys.html#creating-an-api-key).
+É possível criar tanto chaves API do usuário quanto chaves API do ID de serviço.
+
+-  Para criar uma chave API do ID de serviço, consulte [Criando uma chave API para um ID de serviço](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+-  Para criar uma chave API do usuário, consulte [Criando uma chave API](/docs/iam/userid_keys.html#creating-an-api-key).
+
 
 ### Usando uma chave API para automatizar o acesso
 {: #registry_api_key_use}
@@ -61,7 +65,8 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Para obter informações de referência sobre o comando, veja [Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Para obter informações de referência sobre o comando, consulte
+[Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automatizando o acesso aos seus namespaces usando tokens
@@ -90,7 +95,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 1.  Crie um token. O exemplo a seguir cria um token sem expiração que tem acesso de leitura e de gravação a todos os namespaces configurados em uma região.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -125,7 +130,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 2.  Verifique se o token foi criado.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -133,20 +138,21 @@ Use as tarefas a seguir para gerenciar seus tokens:
 ### Usando um token para automatizar o acesso a seus namespaces
 {: #registry_tokens_use}
 
-É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo se você configurou o acesso somente leitura ou de leitura/gravação para o seu token, os usuários podem enviar por push e puxar imagens para/de seus namespaces.
+É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo do acesso configurado para o token, somente leitura ou leitura/gravação, os usuários poderão enviar por push e puxar as
+imagens para e dos namespaces.
 {:shortdesc}
 
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Liste todos os tokens em sua conta do {{site.data.keyword.Bluemix_notm}} e anote o ID de token que você deseja usar.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -154,7 +160,7 @@ Use as tarefas a seguir para gerenciar seus tokens:
 &lt;token_id&gt; pelo ID do token.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -162,15 +168,18 @@ Use as tarefas a seguir para gerenciar seus tokens:
 
 4.  Use o token como parte de seu comando `docker login`. Substitua &lt;token_value&gt; pelo valor do token que você recuperou na etapa anterior e &lt;registry_url&gt; pela URL para o registro no qual seus namespaces estão configurados.
 
-    -   Para namespaces configurados no sul dos EUA: registry.ng.bluemix.net
-    -   Para namespaces configurados no Sul do Reino Unido: registry.eu-gb.bluemix.net
-    -   Para namespaces configurados no Centro da Europa: registry.eu-de.bluemix.net
-    -   Para namespaces configurados no Sul da Ásia-Pacífico: registry.au-syd.bluemix.net
+    -   Para os namespaces configurados no sul dos EUA: `registry.ng.bluemix.net`
+    -   Para os namespaces configurados no sul do Reino Unido: `registry.eu-gb.bluemix.net`
+    -   Para os namespaces configurados no centro da UE: `registry.eu-de.bluemix.net`
+    -   Para os namespaces configurados no sul da AP: `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    Para o parâmetro `-u`, assegure-se de digitar a sequência `token`, não o ID do token.
+    {: tip}
 
     Depois de efetuar login no Docker usando o token, é possível enviar por push ou puxar imagens para/de seus namespaces.
 
@@ -181,25 +190,55 @@ Use as tarefas a seguir para gerenciar seus tokens:
 Remova um token do {{site.data.keyword.registrylong_notm}} quando você não precisar mais dele.
 {:shortdesc}
 
-**Nota:** Os tokens do {{site.data.keyword.registrylong_notm}} expirados são removidos automaticamente da sua conta do {{site.data.keyword.Bluemix_notm}} e não precisam ser removidos manualmente.
+Os tokens expirados do {{site.data.keyword.registrylong_notm}} são removidos automaticamente de sua conta do {{site.data.keyword.Bluemix_notm}} e não precisam ser removidos manualmente.
+{:tip}
 
 1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Liste todos os tokens em sua conta do {{site.data.keyword.Bluemix_notm}} e anote o ID de token que você deseja remover.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Remova o token.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## Opções de autenticação para todos os clientes
+{: #registry_authentication}
+
+É possível autenticar usando o comando `docker login` ou outros clientes de registro.
+{:shortdesc}
+
+A maioria dos usuários pode usar o comando `ibmcloud cr login` para simplificar o `docker login`, mas, se você estiver implementando a automação ou estiver usando um cliente diferente, talvez queira autenticar manualmente. Deve-se apresentar um nome de usuário e uma senha. No {{site.data.keyword.registrylong_notm}}, o nome do usuário indica o tipo de segredo que é apresentado na senha.
+
+Os nomes de usuário a seguir são válidos:
+
+-  `iambearer` A senha contém um token de acesso do IAM. Esse tipo de autenticação é de curta duração, mas pode ser derivada de todos os tipos de identidade do IAM.
+-  `iamrefresh` A senha deve conter um token de atualização do IAM que é usado internamente para gerar e atualizar um token de acesso do IAM. Esse tipo de autenticação é mais duradouro e é usado pelo comando `ibmcloud cr login`.
+-  `iamapikey` A senha é uma chave API do IAM. Esse tipo de autenticação é o tipo preferencial para automação. É possível usar uma chave API do ID de usuário ou de serviço. Consulte [Criando uma chave API](#registry_api_key_create).
+-  `token` A senha é um token de registro. É possível usar esse nome de usuário para automação.
+
+Não é necessário usar o comando do Docker para autenticar com o registro. Por exemplo, é possível executar o comando `ibmcloud cf push` a seguir, que autentica e autoriza um pull do registro usando uma chave API do IAM:
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Substitua _&lt;apikey&gt;_ pela sua chave API, _&lt;region&gt;_ pelo nome de sua [região](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ pelo seu namespace e _&lt;image_repo&gt;_ pelo repositório.
+
+Para obter mais informações, consulte [Usando um registro de imagem privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

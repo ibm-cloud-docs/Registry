@@ -1,20 +1,19 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    [IBM images](../RegistryImages/index.html#ibm_images)
-        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+    registry_ha.md
+
+    [Imagens da IBM](../RegistryImages/index.html#ibm_images)
+        [Imagem ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibm-integration-bus image](../RegistryImages/ibm-integration-bus/index.html#iib)
-        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [ibm-mq image](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [Imagem ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -25,20 +24,22 @@ IBM Cloud Container Registry
     registry_tokens.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [Managing image security with Vulnerability Advisor](../va/va_index.html)
-        [About Vulnerability Advisor](../va/va_index.html#about)
-        [Types of vulnerabilities](../va/va_index.html#types)
-        [Installing the container scanner](../va/va_index.html#va_install_livescan)
-        [Reviewing a vulnerability report](../va/va_index.html#va_reviewing)
-        [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli)
-        [Resolving common problems](../va/va_index.html#va_report)
+    [Gerenciando a segurança de imagem com o Vulnerability Advisor](../va/va_index.html)         [Sobre o Vulnerability Advisor](../va/va_index.html#about)
+        [Tipos de vulnerabilidades](../va/va_index.html#types)
+        [Instalando o Container Scanner](../va/va_index.html#va_install_container_scanner)
+        [Executando o Container Scanner por trás de um firewall](../va/va_index.html#va_firewall)
+        [Configurando políticas de isenção organizacional](../va/va_index.html#va_managing_policy)
+        [Revisando um relatório de vulnerabilidade](../va/va_index.html#va_reviewing)
+        [Revisando um relatório de contêiner](../va/va_index.html#va_reviewing_container)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}

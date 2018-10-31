@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-4-26"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,42 +18,43 @@ lastupdated: "2018-4-26"
 # Sicherheit des Container-Image durchsetzen (Beta)
 {: #security_enforce}
 
-Mit IBM Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](registry_trusted_content.html) korrekt auf das Image angewendet wird. Wenn ein Pod Ihre Richtlinienanforderungen nicht erfüllt, wird Ihr Cluster nicht geändert.
+Mit Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](registry_trusted_content.html) korrekt auf das Image angewendet wird. Wenn ein Image Ihre Richtlinienanforderungen nicht erfüllt, wird die Pod-Datei nicht in Ihrem Cluster implementiert oder aktualisiert.
 {:shortdesc}
 
-IBM Container Image Security Enforcement ruft die Informationen zu Content Trust für Images und zu Sicherheitslücken von {{site.data.keyword.registrylong}} ab. Sie können wählen, ob Images aus anderen Registrys in Ihren Richtlinien blockiert oder zugelassen werden, aber Sie können für diese Images keine Prüfung auf Sicherheitslücken oder Durchsetzung der Vertrauensbeziehung verwenden.
+Container Image Security Enforcement ruft die Informationen zu Content Trust für Images und zu Sicherheitslücken von {{site.data.keyword.registrylong}} ab. Sie können die Bereitstellung von Images, die in anderen Registrys gespeichert sind, blockieren oder zulassen. Für diese Images können Sie jedoch nicht die Prüfung auf Sicherheitslücken oder Durchsetzung der Vertrauensbeziehung verwenden.
 
 
 ## Container Image Security Enforcement in Ihrem Cluster
 {: #sec_enforce_install}
 
-Führen Sie zuvor Folgendes aus:
-* [Erstellen](../../containers/cs_clusters.html#clusters_ui) oder [aktualisieren](../../containers/cs_cluster_update.html) Sie den Cluster, den Sie mit **Kubernetes Version 1.9 oder höher** verwenden möchten.
-* [Wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
+**Vorbereitung**
 
-Schritte:
-1.  [Richten Sie Helm in Ihrem Cluster ein](../../containers/cs_integrations.html#helm).
+* [Erstellen](/docs/containers/cs_clusters.html#clusters_ui) oder [aktualisieren](/docs/containers/cs_cluster_update.html#update) Sie den Cluster, den Sie mit **Kubernetes Version 1.9 oder höher** verwenden möchten.
+* [Wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
 
-1.  Fügen Sie das IBM Chart-Repository für Ihr Helm-Tool ein.
+Führen Sie die folgenden Schritte aus:
+1.  [Richten Sie Helm in Ihrem Cluster ein](/docs/containers/cs_integrations.html#helm).
+
+2.  Fügen Sie das IBM Chart-Repository zu Ihrem Helm-Client hinzu.
 
     ```
     helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
     ```
     {: pre}
 
-1.  Installieren Sie den Helm Chart für IBM Container Image Security Enforcement in Ihrem `ibm-system`-Clusternamensbereich. Geben Sie ihm einen Namen wie z. B. `<cise>`.
+3.  Installieren Sie das Helm-Diagramm für Container Image Security Enforcement in Ihrem Cluster. Geben Sie ihm einen Namen wie `cise`.
 
     ```
-    helm install --name=<cise> --namespace=ibm-system ibm-incubator/ibmcloud-image-enforcement
+    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
     ```
     {: pre}
 
-IBM Container Image Security Enforcement ist jetzt installiert und wendet die [Standardsicherheitsrichtlinie](#default_policies) auf alle Kubernetes-Namensbereiche in Ihrem Cluster an. Informationen zur Anpassung der Sicherheitsrichtlinie für Kubernetes-Namensbereiche in Ihrem Cluster oder den Cluster insgesamt finden Sie unter [Richtlinien anpassen](#customize_policies).
+Container Image Security Enforcement ist jetzt installiert und wendet die [Standardsicherheitsrichtlinie](#default_policies) auf alle Kubernetes-Namensbereiche in Ihrem Cluster an. Informationen zur Anpassung der Sicherheitsrichtlinie für Kubernetes-Namensbereiche in Ihrem Cluster oder den Cluster insgesamt finden Sie unter [Richtlinien anpassen](#customize_policies).
 
 ## Standardrichtlinien
 {: #default_policies}
 
-IBM Container Image Security Enforcement installiert einige Richtlinien standardmäßig, um Ihnen einen Ausgangspunkt für das Erstellen Ihrer Sicherheitsrichtlinie zu geben.
+Container Image Security Enforcement installiert einige Richtlinien standardmäßig, um Ihnen einen Ausgangspunkt für das Erstellen Ihrer Sicherheitsrichtlinie zu geben.
 {:shortdesc}
 
 Diese Richtlinien können Sie mit einer der folgenden Optionen überschreiben:
@@ -68,7 +69,7 @@ Weitere Informationen zum Schreiben von Sicherheitsrichtlinien finden Sie unter 
 Standardmäßig erzwingt eine clusterweite Richtlinie, dass alle Images in allen Registrys über vertrauenswürdige Inhalte verfügen und dass Vulnerability Advisor für sie keine Sicherheitslücken berichtet.
 {:shortdesc}
 
-**Standardmäßige clusterweite `.yaml`-Richtliniendatei**:
+**Standardmäßige clusterweite `.yaml`-Richtliniendatei**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -86,6 +87,7 @@ spec:
         va:
           enabled: true
 ```
+{: codeblock}
 
 Wenn Sie `va` oder `trust` auf `enabled: true` für eine andere Container-Registry als {{site.data.keyword.registrylong_notm}} festlegen, wird jeder Versuch, Pods aus Images in dieser Registry bereitzustellen, abgelehnt. Wenn Sie Images aus anderen Registrys bereitstellen möchten, entfernen Sie die Richtlinien `va` und `trust`.
 {:tip}
@@ -93,10 +95,10 @@ Wenn Sie `va` oder `trust` auf `enabled: true` für eine andere Container-Regist
 ### Kube-Systemrichtlinie
 {: #kube-system}
 
-Standardmäßig ist für den `kube-system`-Namensbereich eine namensbereichsweite Richtlinie installiert. Diese Richtlinie lässt zu, dass alle Images aus einer Container-Registry ohne Durchsetzung im `kube-system` bereitgestellt werden. Überdies lässt sie Repositorys zu, mit denen Ihr Cluster konfiguriert wird.
+Standardmäßig ist für den `kube-system`-Namensbereich eine namensbereichsweite Richtlinie installiert. Mit dieser Richtlinie können alle Images aus einer beliebigen Container-Registry ohne Durchsetzung im `kube-system` bereitgestellt werden; diesen Teil der Richtlinie können Sie jedoch ändern. Die Standardrichtlinie umfasst auch bestimmte Repositorys, die Sie an ihrer Position belassen müssen, damit der Cluster ordnungsgemäß konfiguriert wird.
 {:shortdesc}
 
-**Standardmäßige `.yaml`-Richtliniendatei für `kube-system`**:
+**Standardmäßige `.yaml`-Richtliniendatei für `kube-system`**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -110,7 +112,7 @@ spec:
     # WICHTIG: Diese Richtlinie überprüfen und durch eine ersetzen, die Ihre Anforderungen erfüllt. Wenn Sie in diesem Namensbereich keine Anwendungen von anderen Anbietern ausführen, können Sie diese Richtlinie ganz entfernen.
     - name: "*"
       policy:
-    # Diese Richtlinien lassen die Bereitstellung aller IBM Cloud Container Service-Images aus der globalen und allen regionalen Registrys in diesem Namensbereich zu.
+    # Diese Richtlinien lassen die Bereitstellung aller IBM Cloud Kubernetes Service-Images aus der globalen und allen regionalen Registrys in diesem Namensbereich zu.
     # WICHTIG: Wenn Sie in diesem Namensbereich Ihre eigene Richtlinie erstellen, achten Sie darauf, diese Repositorys einzubeziehen. Wenn Sie dies nicht tun, funktioniert der Cluster u. U. nicht ordnungsgemäß.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -119,13 +121,15 @@ spec:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
 ```
+{: codeblock}
 
 ### Richtlinie für IBM-system
 {: #ibm-system}
 
-Standardmäßig ist für den `ibm-system`-Namensbereich eine namensbereichsweite Richtlinie installiert. Diese Richtlinie lässt zu, dass alle Images aus einer Container-Registry ohne Durchsetzung im `ibm-system` bereitgestellt werden. Überdies lässt sie Repositorys, mit denen Ihr Cluster konfiguriert wird, sowie die Installation oder Upgrades von Image Security Enforcement zu.{:shortdesc}
+Standardmäßig ist für den `ibm-system`-Namensbereich eine namensbereichsweite Richtlinie installiert. Mit dieser Richtlinie können alle Images aus einer beliebigen Container-Registry ohne Durchsetzung im `ibm-system` bereitgestellt werden; diesen Teil der Richtlinie können Sie jedoch ändern. Die Standardrichtlinie umfasst auch bestimmte Repositorys, die Sie an ihrer Position belassen müssen, damit der Cluster ordnungsgemäß konfiguriert wird und Sie Container Image Security Enforcement installieren oder konfigurieren können.
+{:shortdesc}
 
-**Standardmäßige `.yaml`-Richtliniendatei für `ibm-system`**:
+**Standardmäßige `.yaml`-Richtliniendatei für `ibm-system`**
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -139,7 +143,7 @@ spec:
     # WICHTIG: Diese Richtlinie überprüfen und durch eine ersetzen, die Ihre Anforderungen erfüllt. Wenn Sie in diesem Namensbereich keine Anwendungen von anderen Anbietern ausführen, können Sie diese Richtlinie ganz entfernen.
     - name: "*"
       policy:
-    # Diese Richtlinien lassen die Bereitstellung aller IBM Cloud Container Service-Images aus der globalen und allen regionalen Registrys in diesem Namensbereich zu.
+    # Diese Richtlinien lassen die Bereitstellung aller IBM Cloud Kubernetes Service-Images aus der globalen und allen regionalen Registrys in diesem Namensbereich zu.
     # WICHTIG: Wenn Sie in diesem Namensbereich Ihre eigene Richtlinie erstellen, achten Sie darauf, diese Repositorys einzubeziehen. Wenn Sie dies nicht tun, funktioniert der Cluster u. U. nicht ordnungsgemäß.
     - name: "registry*.bluemix.net/armada/*"
       policy:
@@ -147,26 +151,27 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # Diese Richtlinie hindert Image Security Enforcement daran, sich selbst zu blockieren
+    # Diese Richtlinie hindert Container Image Security Enforcement daran, sich selbst zu blockieren
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
-    # Diese Richtlinie lässt zu, dass Image Security Enforcement für die Konfiguration Ihres Clusters Hyperkube verwendet. Diese Richtlinie muss vorhanden sein, wenn Image Security Enforcement deinstalliert wird.
+    # Diese Richtlinie lässt zu, dass Container Image Security Enforcement für die Konfiguration Ihres Clusters Hyperkube verwendet. Diese Richtlinie muss vorhanden sein, wenn Container Image Security Enforcement deinstalliert wird.
     - name: quay.io/coreos/hyperkube
       policies:
 ```
+{: codeblock}
 
 ## Richtlinien anpassen
 {: #customize_policies}
 
-Sie können die Richtlinie, mit der IBM Container Image Security Enforcement Images erlaubt, entweder auf Clusterebene oder auf Ebene des Kubernetes-Namensbereichs ändern. In der Richtlinie können Sie verschiedene Durchsetzungsregeln für unterschiedliche Images angeben.
+Sie können die Richtlinie, mit der Container Image Security Enforcement Images erlaubt, entweder auf Clusterebene oder auf Ebene des Kubernetes-Namensbereichs ändern. In der Richtlinie können Sie verschiedene Durchsetzungsregeln für unterschiedliche Images angeben.
 {:shortdesc}
 
-Es muss eine Richtlinie festgelegt sein. Andernfalls schlagen Bereitstellungen auf Ihrem Cluster fehl. Wenn keinerlei Image-Sicherheitsrichtlinien durchgesetzt werden sollen, [entfernen Sie die Sicherheitsdurchsetzung](#remove).
+Es muss eine Richtlinie festgelegt sein. Andernfalls schlagen Bereitstellungen auf Ihrem Cluster fehl. Wenn keine Sicherheitsrichtlinien für Images durchgesetzt werden sollen, [entfernen Sie Container Image Security Enforcement](#remove).
 {:tip}
 
 Wenn Sie eine Bereitstellung anwenden, prüft Container Image Security Enforcement, ob der Kubernetes-Namensbereich, den Sie bereitstellen, eine anzuwendende Richtlinie besitzt. Ist dies nicht der Fall, verwendet Container Image Security Enforcement die clusterweite Richtlinie. Ihre Bereitstellung wird verweigert, wenn kein Namensbereich und keine clusterweite Richtlinie existieren.
 
-Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
+Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus. Führen Sie die dann folgenden Schritte aus:
 
 1.  Erstellen Sie eine `.yaml`-Datei für die Definition einer angepassten <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes-Ressource <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a>.
 
@@ -186,6 +191,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_ins
             va:
               enabled: <true_or_false>
     ```
+    {: codeblock}
 
     <table>
     <caption>Tabelle. Beschreibung der YAML-Komponenten</caption>
@@ -220,7 +226,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_ins
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Legen Sie dies mit `true` fest, um nur Images zuzulassen, die die [Vulnerability Advisor](../va/va_index.html)-Prüfung bestehen. Legen Sie `false` fest, um die Vulnerability Advisor-Prüfung zu ignorieren.</td>
+    <td>Legen Sie dies mit `true` fest, um nur Images zuzulassen, die die [Vulnerability Advisor](/docs/services/va/va_index.html)-Prüfung bestehen. Legen Sie `false` fest, um die Vulnerability Advisor-Prüfung zu ignorieren.</td>
     </tr>
     </tbody>
     </table>
@@ -235,17 +241,21 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_ins
 ### Unterzeichner für vertrauenswürdige Inhalte in angepassten Richtlinien angeben
 {: #signers}
 
-Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die letzte signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](registry_trusted_content.html#trustedcontent_signers).
+Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die neueste signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 Gehen Sie folgendermaßen vor, um die Richtlinie so zu konfigurieren, dass sie überprüft, ob ein Image von einem bestimmten Unterzeichner signiert wurde:
 
 1.  Rufen Sie den Unterzeichnernamen (der Name, der in `docker trust signer add` verwendet wurde) und den öffentlichen Schlüssel des Unterzeichners ab.
 1.  Generieren Sie einen geheimen Kubernetes-Schlüssel mit dem Namen und dem öffentlichen Schlüssel des Unterzeichners.
+
     ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
+    {: pre}
+    
 1.  Fügen Sie den geheimen Schlüssel zur Liste `signerSecrets` für das Repository in Ihrer Richtlinie hinzu.
+
     ```yaml
     - name: example
       policy:
@@ -254,19 +264,22 @@ Gehen Sie folgendermaßen vor, um die Richtlinie so zu konfigurieren, dass sie �
           signerSecrets:
           - name: <secret_name>
     ```
+    {: codeblock}
 
 ## Steuern, wer Richtlinien anpassen darf
 {: #assign_user_policy}
 
-Wenn in Ihrem Kubernetes-Cluster die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) aktiviert ist, können Sie eine Rolle erstellen, die regelt, wer Sicherheitsrichtlinien in Ihrem Cluster verwalten kann. Weitere Informationen zur Anwendung von RBAC-Regeln auf Ihren Cluster finden Sie in der Dokumentation zum [IBM Cloud Container Service](../../containers/cs_users.html#rbac).
+Wenn in Ihrem Kubernetes-Cluster die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) aktiviert ist, können Sie eine Rolle erstellen, die regelt, wer Sicherheitsrichtlinien in Ihrem Cluster verwalten kann. Weitere Informationen zur Anwendung von RBAC-Regeln auf Ihren Cluster finden Sie in der [Dokumentation zu {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
 {:shortdesc}
 
 Fügen Sie in Ihrer Rolle eine Regel für Sicherheitsrichtlinien hinzu:
+
 ```yaml
 - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
 ```
+{: codeblock}
 
 Sie können mehrere Rollen erstellen, um zu steuern, welche Aktionen ein Benutzer ausführen kann. Zum Beispiel können Sie `verbs` so ändern, dass einige Benutzer für Richtlinien nur die Aktionen `get` oder `list` ausführen können. Alternativ können Sie `clusterimagepolicies` aus der Liste `resources` auslassen, um nur auf Kubernetes-Namensbereichsrichtlinien Zugriff zu erteilen.
 {:tip}
@@ -278,8 +291,10 @@ Benutzer mit Zugriff für das Löschen angepasster Ressourcendefinitionen (Custo
   resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
 ```
+{: codeblock}
 
-**Hinweis**: Benutzer und Servicekonten mit der Rolle `cluster-admin` haben Zugriff auf alle Ressourcen. Die Cluster-Administratorrolle gewährt Zugriff für die Verwaltung der Sicherheitsrichtlinie, selbst wenn Sie die Rolle nicht bearbeiten. Achten Sie darauf, festzulegen, wer die Rolle `cluster-admin` besitzt, und erteilen Sie nur solchen Personen Zugriff, denen das Ändern von Sicherheitsrichtlinien erlaubt sein soll.
+Benutzer und Servicekonten mit der Rolle `cluster-admin` haben Zugriff auf alle Ressourcen. Die Cluster-Administratorrolle gewährt Zugriff für die Verwaltung der Sicherheitsrichtlinie, selbst wenn Sie die Rolle nicht bearbeiten. Achten Sie darauf, festzulegen, wer die Rolle `cluster-admin` besitzt, und erteilen Sie nur solchen Personen Zugriff, denen das Ändern von Sicherheitsrichtlinien erlaubt sein soll.
+{:tip}
 
 ## Container-Image mit erzwungener Sicherheit bereitstellen
 {: #deploy_containers}
@@ -289,7 +304,7 @@ Wenn eine Richtlinie angewendet wird, können Sie normal Inhalt auf Ihrem Cluste
 
 Wenn Container Image Security Enforcement eine Bereitstellung verweigert, wird die Bereitstellung erstellt, aber die von ihr erstellte Replikatgruppe kann nicht skaliert werden und es werden keine Pods erstellt. Sie finden die Replikatgruppe, indem Sie folgenden Befehl ausführen: `kubectl describe deployment <deployment-name>`. Daraufhin können Sie die Begründung für die Ablehnung mit folgendem Befehl anzeigen: `kubectl describe rs <replicaset-name>`.
 
-**Beispiele für Fehlernachrichten**:
+**Beispiele für Fehlernachrichten**
 
 *  Wenn Ihr Image mit keiner Richtlinie übereinstimmt oder wenn im Namensbereich oder im Cluster keine Richtlinien vorhanden sind.
 
@@ -301,7 +316,8 @@ Wenn Container Image Security Enforcement eine Bereitstellung verweigert, wird d
 *  Wenn Ihr Image mit einer Richtlinie übereinstimmt, aber nicht die Vulnerability Advisor-Anforderungen dieser Richtlinie erfüllt.
 
    ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report for more details by using the command `bx cr va`.
+   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
+   for more details by using the command `ibmcloud cr va`.
    ```
    {: screen}
 
@@ -321,14 +337,14 @@ Wenn Container Image Security Enforcement eine Bereitstellung verweigert, wird d
 
 Sie können die Option `va` in Ihrer Richtlinie aktivieren, um durchzusetzen, dass Vulnerability Advisor bestanden wird, bevor ein Image bereitgestellt werden kann. Images, die von Vulnerability Advisor nicht unterstützt werden, sind zulässig.
 
-Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. IBM Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](registry_trusted_content.html).
+Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](registry_trusted_content.html).
 
-Eine Bereitstellung ist nur dann zulässig, wenn alle Images die Prüfungen von IBM Container Image Security Enforcement bestehen.
+Eine Bereitstellung ist nur dann zulässig, wenn alle Images die Prüfungen von Container Image Security Enforcement bestehen.
 
 ## Container Image Security Enforcement entfernen
 {: #remove}
 
-Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
+Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
 
 
 
@@ -336,7 +352,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](../../containers/cs_cli_ins
 
     ```
     $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
+    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
     ```
     {: codeblock}
 

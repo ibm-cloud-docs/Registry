@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-1"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -19,26 +19,27 @@ lastupdated: "2018-05-1"
 # Configuración de la CLI de {{site.data.keyword.registrylong_notm}} y del espacio de nombres de registro
 {: #registry_setup_cli_namespace}
 
-Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe instalar la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in de {{site.data.keyword.registrylong_notm}} y, a continuación, configurar un espacio de nombres de registro para crear su propio repositorio de imágenes en {{site.data.keyword.registrylong_notm}}.
+Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe instalar la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in container-registry y, a continuación, configurar un espacio de nombres de registro para crear su propio repositorio de imágenes en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
+{:tip}
 
-**Nota**: No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
+Antes de empezar, instale [{{site.data.keyword.Bluemix_notm}} CLI ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html).
 
 
-## Instalación del plug-in de CLI de {{site.data.keyword.registrylong_notm}} (`bx cr`)
+## Instalación de {{site.data.keyword.registrylong_notm}} CLI (plug-in container-registry)
 {: #registry_cli_install}
 
 Instale la CLI de {{site.data.keyword.registrylong_notm}} para utilizar la línea de mandatos para gestionar los espacios de nombres y las imágenes de Docker en el registro privado de {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 1.  [Instale el plug-in container-registry.](index.html#registry_cli_install)
-2.  Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `bx login`, `bx cr login`, `docker pull`, y `docker push` con **sudo** o como usuario root.
+2.  Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con **sudo** o como root.
 
 Ahora puede configurar su propio espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}.
 
-## Actualización del plug-in de {{site.data.keyword.registrylong_notm}} (`bx
-cr`)
+## Actualización del plug-in container-registry
 {: #registry_cli_update}
 
 Puede que desee actualizar la CLI de {{site.data.keyword.registrylong_notm}} de forma periódica para utilizar nuevas características.
@@ -47,27 +48,26 @@ Puede que desee actualizar la CLI de {{site.data.keyword.registrylong_notm}} de 
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Actualice el plug-in container-registry.
 
     ```
-    bx plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
 3.  Verifique que el plug-in se ha actualizado correctamente.
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
      {: pre}
 
 
-## Desinstalación del plug-in de {{site.data.keyword.registrylong_notm}} (`bx
-cr`)
+## Desinstalación del plug-in container-registry
 {: #registry_cli_uninstall}
 
 Si ya no necesita el plug-in container-registry, puede desinstalarlo.
@@ -76,21 +76,21 @@ Si ya no necesita el plug-in container-registry, puede desinstalarlo.
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Desinstale el plug-in container-registry.
 
     ```
-    bx plugin uninstall container-registry
+    ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
 3.  Verifique que el plug-in se ha desinstalado correctamente.
 
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: pre}
 
@@ -103,7 +103,7 @@ Si ya no necesita el plug-in container-registry, puede desinstalarlo.
 Para almacenar de forma segura las imágenes de Docker, debe crear un espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Antes de empezar:
+**Antes de empezar**
 
 -   [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in container-registry](#registry_cli_install).
 -   [Planifique cómo utilizar y denominar los espacios de nombres de su registro](registry_overview.html#registry_namespaces).
@@ -121,14 +121,14 @@ Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio d
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Enumere espacios de nombres disponibles.
 
     ```
-    bx cr namespace-list
+    ibmcloud cr namespace-list
     ```
     {: pre}
 
@@ -139,7 +139,7 @@ Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio d
     Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que desea eliminar.
 
     ```
-    bx cr namespace-rm <my_namespace>
+    ibmcloud cr namespace-rm <my_namespace>
     ```
     {: pre}
 

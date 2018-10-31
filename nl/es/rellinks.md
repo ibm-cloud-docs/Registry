@@ -2,11 +2,19 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-11-16"
+lastupdated: "2018-09-03"
+
 
 ---
 
+{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Enlaces relacionados
@@ -24,12 +32,15 @@ Puede utilizar los siguientes enlaces relacionados para familiarizarse con {{sit
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
+
+
 <ul>
   <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
-<li><a href="https://registry.ng.bluemix.net/api/doc/" target="_blank">{{site.data.keyword.registrylong_notm}} API REST <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} API REST <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
+<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">API REST de Vulnerability Advisor para {{site.data.keyword.registrylong_notm}} <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a></li>
 </ul>
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-* [Documentación de {{site.data.keyword.containerlong_notm}}](../../containers/container_index.html)
+* [{{site.data.keyword.containerlong_notm}} documentación](/docs/containers/container_index.html#container_index)

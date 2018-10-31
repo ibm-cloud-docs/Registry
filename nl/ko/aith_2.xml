@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="/images/images_pull.ai">
+<text>로컬 컴퓨터</text>
+<text>개인용 IBM Cloud 레지스트리</text>
+<text>다른 모든 개인용 또는</text>
+<text>공용 저장소</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/images_push.ai">
+<text>로컬 컴퓨터</text>
+<text>개인용 IBM Cloud 레지스트리</text>
+<text>다른 모든 개인용 또는</text>
+<text>공용 저장소</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/registry_architecture.ai">
+<text>IBM Cloud Container Registry 및 Vulnerability Advisor</text>
+<text>가져오기</text>
+<text>Docker</text>
+<text>개인용 저장소</text>
+<text>푸시</text>
+<text>가져오기</text>
+<text>나열,
+검사,
+제거</text>
+<text>푸시</text>
+<text>가져오기</text>
+<text>로컬 이미지
+저장소</text>
+<text>$</text>
+<text>공용 저장소</text>
+<text>가져오기</text>
+<text>네임스페이스
+작성</text>
+<text>CLI</text>
+<text>IBM Cloud
+Kubernetes Service</text>
+<text>GUI</text>
+<text>Docker 허브
+기타 레지스트리</text>
+<text>가져오기</text>
+<text>나열</text>
+<text>api</text>
+<text>IBM 이미지</text>
+<text>가져오기</text>
+<text>이미지</text>
+</ExtractedAITH>
+</ExtractedAITHs>

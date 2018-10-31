@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-05-10"
 # Images für vertrauenswürdige Inhalte signieren
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} bietet eine Technologie für vertrauenswürdige Inhalte, sodass Sie Images signieren können, um die Integrität von Images in Ihrem Registry-Namensbereich sicherzustellen. Durch Extrahieren von signierten Images mit Pull-Operation und ihre Übertragung mit Push-Operation können Sie sicherstellen, dass Ihre Images vom richtigen Teilnehmer, z. B. Ihren Tools für kontinuierliche Integration (Continuous Integration, CI), mit Push-Operation übertragen wurden. Um diese Funktion verwenden zu können, müssen Sie über Docker Version 1.11 oder höher verfügen. Weitere Informationen finden Sie in der Dokumentation zu [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) und [dem Notary-Projekt](https://github.com/theupdateframework/notary).
+{{site.data.keyword.registrylong}} bietet eine Technologie für vertrauenswürdige Inhalte, sodass Sie Images signieren können, um die Integrität von Images in Ihrem Registry-Namensbereich sicherzustellen. Durch Extrahieren von signierten Images mit Pull-Operation und ihre Übertragung mit Push-Operation können Sie sicherstellen, dass Ihre Images vom richtigen Teilnehmer, z. B. Ihren Tools für kontinuierliche Integration (Continuous Integration, CI), mit Push-Operation übertragen wurden. Um diese Funktion verwenden zu können, müssen Sie über Docker Version 1.11 oder höher verfügen. Weitere Informationen finden Sie in der Dokumentation zu [Docker Content Trust ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/security/trust/content_trust/) und zum [Notary Project ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
 Wenn Sie Ihr Image mit Push-Operation und mit aktiviertem Content Trust übertragen, überträgt Ihr Docker-Client ebenfalls ein signiertes Metadatenobjekt mit Push-Operation an den {{site.data.keyword.Bluemix_notm}}-Trust-Server. Wird ein mit Tags versehenes Image bei aktiviertem Docker Content Trust mit Pull-Operation extrahiert, kontaktiert Ihr Docker-Client den Trust-Server, um die zuletzt signierte Version des von Ihnen angeforderten Tags festzustellen, überprüft die Inhaltssignatur und lädt das signierte Image herunter.
@@ -29,7 +29,7 @@ Ein Repository kann sowohl signierten als auch nicht signierten Inhalt enthalten
 
 Docker Content Trust verwendet ein "trust on first use"-Sicherheitsmodell ("Vertrauen bei erster Verwendung"). Der Repository-Schlüssel wird aus dem Trust-Server mit Pull-Operation extrahiert, wenn Sie erstmalig ein signiertes Image mit Pull-Operation aus einem Repository extrahieren, und dieser Schlüssel wird künftig verwendet, um Images aus diesem Repository zu überprüfen. Sie müssen darauf achten, entweder dem Trust-Server oder dem Image und seinem Veröffentlicher zu vertrauen, bevor Sie das Repository zum ersten Mal mit Pull-Operation extrahieren. Wenn die vertrauenswürdigen Informationen im Server beeinträchtigt sind und Sie vorher noch kein Image aus dem Repository mit Pull-Operation extrahiert haben, kann es sein, dass Ihr Docker-Client die beeinträchtigten Daten vom Trust-Server mit Pull-Operation extrahiert. Werden die Trust-Daten beschädigt, nachdem Sie das Image zum ersten Mal mit Pull-Operation extrahiert haben, kann Ihr Docker-Client bei späteren Extraktionen die beschädigten Daten nicht prüfen und extrahiert das Image nicht. Weitere Informationen dazu, wie Trust-Daten für ein Image untersucht werden, finden Sie unter [Signierte Images anzeigen](#trustedcontent_viewsigned).
 
-Weitere Informationen zum Sicherheitsmodell "trust on first use" finden Sie unter [Das Update-Framework (TUF)](https://theupdateframework.github.io/). 
+Weitere Informationen zum Sicherheitsmodell "trust on first use" finden Sie in [The Update Framework (TUF) ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://theupdateframework.github.io/). 
 
 
 ## Umgebung mit vertrauenswürdigen Inhalten einrichten
@@ -57,30 +57,33 @@ Standardmäßig ist Docker Content Trust inaktiviert. Aktivieren Sie die Content
 2.  Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-CLI an.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Note:** Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `bx login --sso` für die Anmeldung. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+    Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `ibmcloud login --sso`, um sich anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+    {:tip}
 
 3.  Wählen Sie die Region aus, die Sie als Ziel verwenden möchten. Wenn Sie den Regionsnamen nicht kennen, führen Sie den Befehl ohne die Region aus und wählen Sie danach eine Region.
 
     ```
-    bx cr region-set <Region>
+    ibmcloud cr region-set <Region>
     ```
     {: pre}
 
 4.  Melden Sie sich bei {{site.data.keyword.registrylong_notm}} an.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
-    Die Ausgabe weist Sie an, die Umgebungsvariable Docker Content Trust zu exportieren. Beispiel:
+    Die Ausgabe weist Sie an, die Umgebungsvariable Docker Content Trust zu exportieren. 
+    
+    **Beispiel**
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -112,7 +115,7 @@ Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](index.html#re
 
 1.  [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2.  [Übertragen Sie Ihr Image mit Push-Operation](index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: "Signing and pushing image metadata." (Image-Metadaten werden signiert und mit Push-Operation übertragen.) 
+2.  [Übertragen Sie Ihr Image mit Push-Operation](index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: "Signing and pushing image metadata." (Image-Metadaten werden signiert und mit Push-Operation übertragen.)
 
 3.  **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](ts_index.html#ts_recoveringtrustedcontent) begrenzt sind.
 
@@ -126,7 +129,7 @@ Beim erstmaligen Extrahieren eines signierten Image mit Pull-Operation bei aktiv
 
 1.  [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2.  Extrahieren Sie Ihr Image mit Pull-Operation. Ersetzen Sie _&lt;source_image&gt;_ durch das Repository des Image und _&lt;tag&gt;_ durch den zu verwendenden Tag des Image, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `bx cr image-list` aus.
+2.  Extrahieren Sie Ihr Image mit Pull-Operation. Ersetzen Sie _&lt;source_image&gt;_ durch das Repository des Image und _&lt;tag&gt;_ durch den zu verwendenden Tag des Image, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `ibmcloud cr image-list` aus.
 
     ```
     docker pull <quellenimage>:<tag>
@@ -150,7 +153,9 @@ Sie können signierte Versionen eines Image oder Tags und auch die Informationen
 
 1.  [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2.  Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image. **Optional**: Geben Sie den _&lt;tag&gt;_ an, um Informationen für diese Version des Image anzuzeigen.
+2.  Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image. 
+
+    (Optional) Geben Sie den Tag _&lt;tag&gt;_ an, um Informationen für diese Version des Images anzuzeigen.
 
     ```
     docker trust view <image>:<tag>
@@ -183,10 +188,11 @@ Bevor Sie anfangen, rufen Sie die Kennphrase des Repository-Schlüssels ab, die 
     ```
     {: codeblock}
 
+
 ## Signierschlüssel sichern
 {: #trustedcontent_backupkeys}
 
-Wenn Sie ein signiertes Image erstmalig mit Push-Operation an ein neues Repository übertragen, erstellt Docker Content Trust zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System: 
+Wenn Sie ein signiertes Image erstmalig mit Push-Operation an ein neues Repository übertragen, erstellt Docker Content Trust zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System:
 
 *  Linux- oder Mac-Verzeichnis: `~/.docker/trust/private`
 
@@ -197,7 +203,7 @@ Wenn Sie ein signiertes Image erstmalig mit Push-Operation an ein neues Reposito
 
 Sie müssen alle Ihre Schlüssel sichern, besonders den Rootschlüssel. Wenn ein Schlüssel verloren geht oder beeinträchtigt wird, sind Ihre [Wiederherstellungsoptionen](ts_index.html#ts_recoveringtrustedcontent) begrenzt.
 
-Hinweise zum Sichern Ihrer Schlüssel finden Sie in der [Dokumentation zu Docker Content Trust](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Hinweise zum Sichern Ihrer Schlüssel finden Sie in der Dokumentation zu [Docker Content Trust ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Vertrauenswürdige Unterzeichner verwalten
@@ -216,7 +222,9 @@ Führen Sie zuvor Folgendes aus:
 - Image-Unterzeichner müssen über die Berechtigung zum Übertragen von Images an den Namensbereich mit Push-Operation verfügen. 
 - Für Repository-Eigner und zusätzliche Unterzeichner muss Docker 17.12 oder höher installiert sein.
 - Erstellen Sie ein Repository für vertrauenswürdige Inhalte, indem Sie ein [signiertes Image mit Push-Operation übertragen](#trustedcontent_push). Repository-Eigner müssen über die Administratorschlüssel für das Repository verfügen, die im Docker-Vertrauensordner in ihrem lokalen System verfügbar sind. Wenn Sie nicht über den Administratorschlüssel für das Repository verfügen, kontaktieren Sie den Eigner, damit er diese Aufgabe für Sie durchführt.
-- Hinweis: Wenn Sie einen Unterzeichner hinzufügen, können Sie den Administratorschlüssel für das Repository nicht mehr zum Signieren von Images in diesem Repository verwenden. Sie müssen den privaten Schlüssel für einen der genehmigten Unterzeichner zum Signieren besitzen. Um die Fähigkeit zum Signieren von Images nach dem Hinzufügen eines Unterzeichners beizubehalten, folgen Sie diesen Anweisungen nochmals, um eine Unterzeichnerrolle für Sie selbst zu generieren und hinzuzufügen.
+
+Wenn Sie einen Unterzeichner hinzufügen, können Sie nicht mehr den Administratorschlüssel für das Repository verwenden, um Images in diesem Repository zu signieren. Sie müssen den privaten Schlüssel für einen der genehmigten Unterzeichner zum Signieren besitzen. Um die Fähigkeit zum Signieren von Images nach dem Hinzufügen eines Unterzeichners beizubehalten, folgen Sie diesen Anweisungen nochmals, um eine Unterzeichnerrolle für Sie selbst zu generieren und hinzuzufügen.
+{:tip}
 
 Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 
@@ -267,7 +275,9 @@ Wenn ein Unterzeichner nicht mehr in der Lage sein soll, Images in Ihrem Reposit
 
 Führen Sie zuvor Folgendes aus:
 - Für Repository-Eigner und zusätzliche Unterzeichner muss Docker 17.12 oder höher installiert sein.
-- Hinweis: Wenn Sie einen Unterzeichner entfernen, vertraut der Trust-Server seinen signierten Versionen des Image nicht mehr. Um sicherzustellen, dass das Image nach Entfernen des Unterzeichners noch mit Pull-Operation extrahiert werden kann, stellen Sie sicher, dass der Unterzeichner nicht die aktuellste Version des Image signiert hat, bevor Sie fortfahren. Hat der Unterzeichner die aktuellste Version des Image signiert, übertragen Sie eine Aktualisierung mit Push-Operation an das Image und signieren Sie es mit Ihrem Schlüssel, bevor Sie fortfahren.
+
+Wenn Sie einen Unterzeichner entfernen, vertraut der Trust-Server den signierten Versionen des Images nicht mehr. Um sicherzustellen, dass das Image nach Entfernen des Unterzeichners noch mit Pull-Operation extrahiert werden kann, stellen Sie sicher, dass der Unterzeichner nicht die aktuellste Version des Image signiert hat, bevor Sie fortfahren. Hat der Unterzeichner die aktuellste Version des Image signiert, übertragen Sie eine Aktualisierung mit Push-Operation an das Image und signieren Sie es mit Ihrem Schlüssel, bevor Sie fortfahren.
+{:tip}
 
 Zum Entfernen eines Unterzeichners gehen Sie folgendermaßen vor:
 

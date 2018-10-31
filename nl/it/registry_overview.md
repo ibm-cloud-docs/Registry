@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -26,7 +26,7 @@ in modo sicuro alle immagini Docker private in un'architettura scalabile e altam
 {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
 a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da IBM. Puoi utilizzare il registro privato configurando il tuo proprio spazio dei nomi di immagini ed eseguendo il push delle immagini Docker al tuo spazio dei nomi.
 
-<img src="images/registry_architecture.png" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. La IU web IBM Cloud (console) interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
+<img src="images/registry_architecture1.svg" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. La IU web IBM Cloud (console) interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
 
 **Figura 1. Come {{site.data.keyword.registrylong_notm}} interagisce con le tue immagini Docker**
 
@@ -142,7 +142,7 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
 
 **Archiviazione: **
 
-  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](registry_quota.html#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'aggiornamento al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](registry_quota.html#registry_quota_set) per riabilitare il push di nuove immagini.
+  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](registry_quota.html#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](registry_quota.html#registry_quota_set) per riabilitare il push di nuove immagini.
 
   Esempio per il piano standard:
 
@@ -154,21 +154,19 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
 
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il pull di alcuna immagine dagli
 spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}
-finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'aggiornamento al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
+finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'upgrade al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
 di quota per il traffico di pull](registry_quota.html#registry_quota_set).
 
   Esempio per il piano standard:
 
   > Nel mese, il
 tuo limite di quota per il traffico di pull è impostato su 5 GB. Hai già eseguito il pull di immagini dai tuoi spazi dei nomi e hai utilizzato
-4,5 GB di questo traffico di pull. Hai a disposizione 0,5 GB di traffico di pull fino al raggiungimento del tuo limite di
- quota. Un utente vuole eseguire il pull di un'immagine con una dimensione di 1 GB dal tuo spazio dei nomi. Poiché il limite di
+4,5 GB di questo traffico di pull. Hai a disposizione 0,5 GB di traffico di pull fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il pull di un'immagine con una dimensione di 1 GB dal tuo spazio dei nomi. Poiché il limite di
 quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente
 all'utente di eseguire il pull di questa immagine.
   >
   > Una volta eseguito il pull dell'immagine, {{site.data.keyword.registrylong_notm}} determina la larghezza di banda che hai utilizzato
-durante il pull e controlla se è stato raggiunto il limite per il traffico di pull. In questo esempio, l'utilizzo del traffico
-di pull aumenta da 4,5 GB a 5,2 GB. Con il tuo limite di quota corrente impostato su 5 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il pull delle immagini
+durante il pull e controlla se è stato raggiunto il limite per il traffico di pull. In questo esempio, l'utilizzo del traffico di pull aumenta da 4,5 GB a 5,5 GB. Con il tuo limite di quota corrente impostato su 5 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il pull delle immagini
 dal tuo spazio dei nomi.
 
 ### Stima dei costi
@@ -189,30 +187,32 @@ I tuoi costi stimati vengono visualizzati nel calcolatore.
 ## Aggiornamento del tuo piano di servizio
 {: #registry_plan_upgrade}
 
-Puoi aggiornare il tuo piano di servizio per beneficiare di un utilizzo illimitato di
+Puoi eseguire l'upgrade del tuo piano di servizio per beneficiare di un utilizzo illimitato di
 archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-Se desideri trovare di quale piano dei servizi disponi, esegui il comando `bx cr plan`.
+Se desideri conoscere qual è il piano dei servizi di cui disponi, esegui il comando `ibmcloud cr plan`.
 
 1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
-    **Nota**: se hai un ID federato, utilizza `bx login --sso` per accedere alla CLI di {{site.data.keyword.Bluemix_notm}}. Immetti il tuo nome utente e usa
+    Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso alla CLI {{site.data.keyword.Bluemix_notm}}. Immetti il tuo nome utente e usa
 l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+    {:tip}
 
-2.  Esegue l'aggiornamento al piano standard.
+2.  Esegue l'upgrade al piano standard.
 
     ```
-    bx cr plan-upgrade standard
+    ibmcloud cr plan-upgrade standard
     ```
     {: pre}
 
-    **Nota:** se disponi di un account di prova {{site.data.keyword.Bluemix_notm}}, devi eseguire l'aggiornamento a un account Standard {{site.data.keyword.Bluemix_notm}} prima di eseguire `bx cr plan-upgrade`.
+    Se hai un account {{site.data.keyword.Bluemix_notm}} Lite, devi eseguire l'upgrade a un account Pagamento a consumo o Sottoscrizione {{site.data.keyword.Bluemix_notm}} prima di eseguire `ibmcloud cr plan-upgrade`.
+    {:tip}
 
 
 ## Apprendimento delle nozioni di base
@@ -222,20 +222,21 @@ Preparati per archiviare in sicurezza e condividere le tue immagini Docker con {
 apprendendo le basi del registro.
 {:shortdesc}
 
-**Nota**: non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
+Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
+{:tip}
 
 
 ### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Un Dockerfile è un file di testo che contiene le istruzioni per creare un'immagine Docker. Normalmente, un'immagine viene creata basandosi su un'immagine che contiene un sistema operativo di base, come ad esempio Ubuntu. Puoi modificare in modo incrementale l'immagine di base con le tue istruzioni del Dockerfile per definire l'ambiente in cui deve essere eseguita l'applicazione. Ogni modifica all'immagine di base descrive un nuovo livello dell'immagine e puoi effettuare più modifiche in una sola riga del Dockerfile. Le istruzioni in un Dockerfile potrebbero inoltre fare riferimento alle risorse utente di build archiviate separatamente, come un'applicazione, la configurazione dell'applicazione e le sue dipendenze.</dd>
+</dl>
 
 <dl>
-  <dt>Registro</dt>
-  <dd>Un registro è un servizio che fornisce l'infrastruttura per archiviare le immagini Docker e a cui è possibile accedere utilizzando l'URL dell'host del registro e una porta facoltativa. I registri possono essere accessibili al pubblico (registro
-pubblico) o configurati con un accesso limitato per un piccolo gruppo di utenti (registro privato). {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
-a più tenant altamente disponibile che viene ospitato e gestito da IBM. Puoi utilizzare il
-registro privato configurando il tuo proprio spazio dei nomi di immagini e iniziare a eseguire il push delle immagini Docker al tuo
-spazio dei nomi.</dd>
+  <dt>Immagine</dt>
+  <dd>Un file system e i relativi parametri di esecuzione utilizzati all'interno di un runtime del contenitore per creare un contenitore. Il file system è costituito da una serie di livelli, combinati al runtime, che vengono creati mentre l'immagine viene creata da aggiornamenti successivi. L'immagine non conserva lo stato mentre il contenitore viene eseguito.</dd>
 </dl>
 
 <dl>
@@ -249,13 +250,18 @@ ambienti di produzione e di preparazione.</dd>
 </dl>
 
 <dl>
-  <dt>Repository</dt>
-  <dd>Un repository di immagini è una raccolta di immagini correlate, contrassegnate con tag nel registro. Il repository viene spesso utilizzato in modo intercambiabile con l'immagine, ma un repository potenzialmente contiene più varianti di un'immagine con tag.</dd>
+  <dt>Immagini contenitore OCI </dt>
+  <dd>Le immagini del contenitore che sono conformi a [OCI Image Format Specification ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/opencontainers/image-spec).</dd>
 </dl>
 
 <dl>
-  <dt>Immagine</dt>
-  <dd>Un'immagine Docker viene creata in base alle istruzioni fornite nel Dockerfile e rappresenta le basi di un contenitore. Dopo aver creato un'immagine Docker, puoi utilizzarla per creare un contenitore per distribuire la tua applicazione e le sue dipendenze. Le immagini sono archiviate nel registro. Gli utenti con accesso al tuo account {{site.data.keyword.Bluemix_notm}} possono accedere alle tue immagini.</dd>
+  <dt>Registro</dt>
+  <dd>Un registro è un servizio che fornisce l'archiviazione per le immagini OCI (conosciute anche come immagini Docker). I client OCI possono accedere o "passare" le immagini OCI che utilizzano un nome del dominio del registro appropriato. Le immagini possono essere accessibili a chiunque (immagini pubbliche) oppure l'accesso può essere limitato a un gruppo (immagini private). {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato a più tenant altamente disponibile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}. Puoi utilizzare il registro per aggiungere uno spazio dei nomi al tuo account e poi passare le immagini al tuo spazio dei nomi. </dd>
+</dl>
+
+<dl>
+  <dt>Repository</dt>
+  <dd>Un repository di immagini è una raccolta di immagini correlate, contrassegnate con tag nel registro. Il repository viene spesso utilizzato in modo intercambiabile con l'immagine, ma un repository potenzialmente contiene più varianti di un'immagine con tag.</dd>
 </dl>
 
 <dl>
@@ -263,12 +269,8 @@ ambienti di produzione e di preparazione.</dd>
   <dd>Una tag è un identificativo di un'immagine in un repository. Puoi utilizzare le tag per distinguere diverse versioni della stessa immagine di base in un repository. Quando esegui un comando Docker e non specifichi una tag di una immagine del repository, viene utilizzata per impostazione predefinita l'immagine contrassegnata con <code>ultima</code>.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Un Dockerfile è un file di testo che contiene le istruzioni per creare un'immagine Docker. Normalmente, un'immagine viene creata basandosi su un'immagine che contiene un sistema operativo di base, come ad esempio Ubuntu. Puoi modificare in modo incrementale l'immagine di base con le tue istruzioni del Dockerfile per definire l'ambiente in cui deve essere eseguita l'applicazione. Ogni modifica all'immagine di base descrive un nuovo livello dell'immagine e puoi effettuare più modifiche in una sola riga del Dockerfile. Le istruzioni in un Dockerfile potrebbero inoltre fare riferimento alle risorse utente di build archiviate separatamente, come un'applicazione, la configurazione dell'applicazione e le sue dipendenze.</dd>
-</dl>
 
-Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario Docker](https://docs.docker.com/glossary/).
+Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario Docker ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/glossary/).
 
 
 ### Pianificazione degli spazi dei nomi
@@ -287,9 +289,8 @@ qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale r
 Per lavorare solo con le immagini pubbliche fornite da IBM, non hai bisogno di configurare uno
 spazio dei nomi.
 
-**Note**: se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `bx cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti. Se sei già un cliente di {{site.data.keyword.containerlong_notm}} esistente che utilizza
-[gruppi di contenitori singoli e scalabili](../../containers/cs_classic.html),
-già disponi di uno spazio dei nomi. Puoi creare ulteriori spazi dei nomi, ma non puoi eseguire `cf ic namespace set` per più di uno.
+Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `ibmcloud cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti.
+{:tip}
 
 Quando scegli uno spazio dei nomi, considera le seguenti regole:
 
@@ -298,10 +299,11 @@ Quando scegli uno spazio dei nomi, considera le seguenti regole:
 -   Il tuo spazio dei nomi deve iniziare con almeno una lettera o un numero.
 -   Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri o caratteri di sottolineatura (_).
 
-**Nota**: non inserire informazioni personali nei nomi degli spazi dei nomi.
+Non inserire informazioni personali nei tuoi nomi di spazio dei nomi.
+{:tip}
 
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
-gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
+gratuito se non hai già [eseguito l'upgrade del tuo piano](#registry_plan_upgrade).
 
 ## Regioni
 {: #registry_regions}
@@ -321,23 +323,23 @@ Una regione è un'area geografica a cui si accede da un endpoint dedicato. I reg
 
 Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
 
-Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `bx cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
+Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `ibmcloud cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
 
 Per eseguire il comando con i parametri, sostituisci _&lt;region&gt;_ con il nome della regione, ad esempio, `eu-central`.
 
 ```
-bx cr region-set <region>
+ibmcloud cr region-set <region>
 ```
 {: pre}
 
 Ad esempio, per scegliere la regione eu-central, immetti il seguente comando:
 
 ```
-bx cr region-set eu-central
+ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-Dopo aver specificato una diversa regione di destinazione, accedi di nuovo al registro: `bx cr login`.
+Dopo aver specificato una diversa regione di destinazione, effettua nuovamente l'accesso al registro: `ibmcloud cr login`.
 
 ### Registro globale
 {: #registry_regions_global}
@@ -345,15 +347,15 @@ Dopo aver specificato una diversa regione di destinazione, accedi di nuovo al re
 È disponibile un registro globale, che non ha alcuna regione inclusa nel suo nome (`registry.bluemix.net`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro. Per gestire le tue immagini, ad esempio configurando gli spazi dei nomi o inserendo tag e trasmettendo le immagini a un registro, utilizza un [registro regionale locale](#registry_regions_local).
 {:shortdesc}
 
-Puoi indicare come destinazione il registro locale eseguendo il comando `bx cr region-set`.
+Puoi indicare come destinazione il registro locale eseguendo il comando `ibmcloud cr region-set`.
 
 Ad esempio, per specificare il registro globale, immetti il seguente comando:
 
 ```
-bx cr region-set global
+ibmcloud cr region-set global
 ```
 {: pre}
 
-Per ulteriori informazioni sul comando `bx cr region-set`, consulta [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
+Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
 
-Dopo aver specificato come destinazione il registro globale, esegui il comando `bx cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
+Dopo aver specificato come destinazione il registro globale, esegui il comando `ibmcloud cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.

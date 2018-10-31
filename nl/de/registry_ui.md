@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-08-20"
+
 
 ---
 
@@ -30,7 +31,7 @@ Die Spalte **Sicherheitsbericht** enthält die folgenden Informationen zum Image
 
 Führen Sie die folgenden Schritte aus, um die grafische Benutzerschnittstelle anzuzeigen:
 
-1.  Melden Sie sich an der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net](https://console.bluemix.net)) mit Ihrer IBMid an.
+1.  Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net)) mit Ihrer IBMid an.
 2.  Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3.  Klicken Sie auf **Katalog**.
 4.  Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-2"
+lastupdated: "2018-09-13"
 
 ---
 
@@ -24,7 +24,7 @@ Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch
 
 {{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
 
-<img src="images/registry_architecture.png" alt="Veranschaulichung der Interaktion mit IBM Cloud Container Registry. Container Registry enthält sowohl private als auch öffentliche Repositorys sowie APIs für die Interaktion mit dem Service. Der lokale Docker-Client kann Images mit Push- bzw. Pull-Operationen aus den privaten Repositiorys in die Registry laden und umgekehrt und er kann Pull-Operationen für öffentliche Repositorys ausführen. Die IBM Cloud-Web-UI (Konsole) interagiert mit der Container Registry-API zum Auflisten von Images. Die Container Registry-CLI interagiert mit der API zum Auflisten, Erstellen, Überprüfen und Entfernen von Images und zum Ausführen weiterer Verwaltungsfunktionen. Der lokale Docker-Client kann auch Images mit Push- bzw. Pull-Operationen aus dem lokalen Imagespeicher in andere Registrys laden und umgekehrt."/>
+<img src="images/registry_architecture1.svg" alt="Bild, das darstellt, wie Sie mit IBM Cloud Container Registry interagieren können. Container Registry enthält private und öffentliche Repositorys sowie APIs, die mit Service interagieren. Der lokale Docker-Client kann Images aus Ihren privaten Repositorys mit Push- und Pull-Operationen in die Registry übertragen oder aus ihr abrufen und kann Images mit Pull-Operationen aus öffentlichen Repositorys abrufen. Die IBM Cloud-Webschnittstelle (Konsole) interagiert mit der Container Registry-API, um die Images aufzulisten. Die Container Registry-CLI interagiert mit der API, um Images aufzulisten, zu erstellen, zu überprüfen und zu entfernen und weitere Verwaltungsfunktionen auszuführen. Der lokale Docker-Client kann darüber hinaus Images aus dem lokalen Imagespeicher mit Push- und Pull-Operationen in andere Registrys übertragen oder aus ihnen abrufen."/>
 
 **Abbildung 1. Interaktion von {{site.data.keyword.registrylong_notm}} mit den Docker-Images**
 
@@ -129,7 +129,7 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
   > In einem Monat ist Ihr Kontingent für Pull-Datenverkehr auf 5 GB festgelegt. Sie haben bereits Images mit Pull-Operation aus Ihren Namensbereichen übertragen und 4,5 GB dieses Pull-Datenverkehrs genutzt. Es stehen Ihnen 0,5 GB für den Pull-Datenverkehr zur Verfügung, bis das Kontingent ausgeschöpft ist. Ein Benutzer möchte ein Image aus Ihrem Namensbereich mit einer Größe von 1 GB mit Pull-Operation übertragen. Da die Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Pull-Operation überträgt.
   >
-  > Nachdem das Image mit Pull-Operation übertragen wurde, bestimmt {{site.data.keyword.registrylong_notm}} die Bandbreite, die Sie während der Pull-Operation verwendet haben, und prüft, ob der Grenzwert für den Pull-Datenverkehr erreicht ist. In diesem Beispiel erhöht sich der Pull-Datenverkehr von 4,5 GB auf 5,2 GB. Ist das aktuelle Kontingent auf 5 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Pull-Operation aus Ihrem Namensbereich für weitere Images.
+  > Nachdem das Image mit Pull-Operation übertragen wurde, bestimmt {{site.data.keyword.registrylong_notm}} die Bandbreite, die Sie während der Pull-Operation verwendet haben, und prüft, ob der Grenzwert für den Pull-Datenverkehr erreicht ist. In diesem Beispiel erhöht sich der Pull-Datenverkehr von 4,5 GB auf 5,5 GB. Ist das aktuelle Kontingent auf 5 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Pull-Operation aus Ihrem Namensbereich für weitere Images.
 
 ### Kosten schätzen
 {: #registry_estimating_costs}
@@ -152,25 +152,27 @@ Ihre geschätzten Kosten werden im Preisrechner angezeigt.
 Sie können ein Upgrade für Ihren Serviceplan durchführen, um von unbegrenztem Speicher und Pull-Datenverkehr zu profitieren und die Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zu verwalten.
 {:shortdesc}
 
-Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie den Befehl `bx cr plan` aus.
+Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie den Befehl `ibmcloud cr plan` aus.
 
 1.  Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
-    **Hinweis**: Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `bx login --sso` zum Anmelden bei der {{site.data.keyword.Bluemix_notm}}-CLI. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+    Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.Bluemix_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+    {:tip}
 
 2.  Führen Sie ein Upgrade auf den Standardplan durch.
 
     ```
-    bx cr plan-upgrade standard
+    ibmcloud cr plan-upgrade standard
     ```
     {: pre}
 
-    **Hinweis:** Wenn Sie über ein {{site.data.keyword.Bluemix_notm}}-Testkonto verfügen, müssen Sie zuerst ein Upgrade auf ein {{site.data.keyword.Bluemix_notm}}-Standardkonto durchführen, bevor Sie den Befehl `bx cr plan-upgrade` ausführen.
+    Wenn Sie über ein {{site.data.keyword.Bluemix_notm}} Lite-Konto verfügen, müssen Sie zuerst ein Upgrade auf ein nutzungsabhängiges {{site.data.keyword.Bluemix_notm}}-Konto oder Abonnementkonto durchführen, bevor Sie den Befehl `ibmcloud cr plan-upgrade` ausführen.
+    {:tip}
 
 
 ## Zentrale Aspekte
@@ -179,16 +181,21 @@ Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie d
 Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{site.data.keyword.registrylong_notm}} vor, indem Sie sich mit grundlegenden Registry-Informationen vertraut machen.
 {:shortdesc}
 
-**Hinweis**: Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+{:tip}
 
 
 ### Erläuterung zu den in {{site.data.keyword.registrylong_notm}} verwendeten Begriffen
 {: #terms}
 
+<dl>
+  <dt>Dockerfile</dt>
+  <dd>Eine Dockerfile ist eine Textdatei, die Anweisungen zur Erstellung eines Docker-Image enthält. Typiscerweise wird ein Image auf einem Basisimage erstellt, das ein Basisbetriebssystem, z. B. Ubuntu enthält. Sie können mit den Dockerfile-Anweisungen schrittweise das Basisimage ändern, um die Umgebung zu definieren, die die App für die Ausführung benötigt. Jede Änderung am Basisimage beschreibt eine neue Imageebene und Sie können mehrere Änderungen in einer einzelnen Dockerfilezeile vornehmen. Die Anweisungen in einer Dockerfile können Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App).</dd>
+</dl>
 
 <dl>
-  <dt>Registry</dt>
-  <dd>Eine Registry ist ein Service, der die Infrastruktur zur Speicherung von Docker-Images bereitstellt und auf den mithilfe der Registry-Host-URL und eines optionalen Ports zugegriffen werden kann. Registrys sind entweder öffentlich zugänglich (öffentliche Registry) oder werden mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert (private Registry). {{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und damit beginnen, Docker-Images mit Push-Operation an Ihren Namensbereich zu übertragen.</dd>
+  <dt>Image</dt>
+  <dd>Ein Dateisystem und seine Ausführungsparameter, die in einer Containerlaufzeit zum Erstellen eines Containers verwendet werden. Das Dateisystem besteht aus einer Reihe von Layern, die während der Laufzeit kombiniert werden, die erstellt werden, wenn das Image durch aufeinanderfolgende Aktualisierungen erstellt wird. Das Image behält den Status nicht bei, wenn der Container ausgeführt wird.</dd>
 </dl>
 
 <dl>
@@ -199,13 +206,18 @@ Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images 
 </dl>
 
 <dl>
-  <dt>Repository</dt>
-  <dd>Ein Image-Repository ist eine Sammlung von zugehörigen, mit Tags versehenen Images im Registry. Repository wird oft synonym für Image verwendet. Ein Repository enthält jedoch potenziell mehrere mit Tags versehene Varianten eines Images.</dd>
+  <dt>OCI-Container-Images</dt>
+  <dd>Container-Images, die der [OCI Image Format Specification ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/opencontainers/image-spec) entsprechen. </dd>
 </dl>
 
 <dl>
-  <dt>Image</dt>
-  <dd>Ein Docker-Image wird, basierend auf den Anweisungen, die in der Dockerfile angegeben sind, erstellt und stellt die Basis eines Containers dar. Nachdem das Docker-Image erstellt ist, können Sie es für die Erstellung eines Containers zur Bereitstellung Ihrer App und deren Abhängigkeiten verwenden. Images werden in einer Registry gespeichert. Benutzer mit Zugriff auf Ihr {{site.data.keyword.Bluemix_notm}}-Konto können auf Ihre Images zugreifen.</dd>
+  <dt>Registry</dt>
+  <dd>Eine Registry ist ein Service, der Speicher für OCI-Images (auch als 'Docker-Images' bezeichnet) bereitstellt. Auf OCI-Images kann von OCI-Clients zugegriffen werden (dies wird als 'Pull-Operation' bezeichnet), die die entsprechende Registrydomäne verwenden. Auf Images kann entweder von allen Benutzern zugegriffen werden (öffentliche Images) oder der Zugriff kann auf eine bestimmte Gruppe beschränkt werden (Private Images). {{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können die Registry verwenden, indem Sie einen privaten Namensbereich für Ihr Konto hinzufügen und dann Images mit Push-Operationen an Ihren Namensbereich übertragen. </dd>
+</dl>
+
+<dl>
+  <dt>Repository</dt>
+  <dd>Ein Image-Repository ist eine Sammlung von zugehörigen, mit Tags versehenen Images im Registry. Repository wird oft synonym für Image verwendet. Ein Repository enthält jedoch potenziell mehrere mit Tags versehene Varianten eines Images.</dd>
 </dl>
 
 <dl>
@@ -213,12 +225,8 @@ Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images 
   <dd>Bei einem Tag handelt es sich um eine Kennung für ein Image innerhalb eines Repositorys. Sie können Tags verwenden, um verschiedene Versionen desselben Basisimage innerhalb eines Repositorys zu unterscheiden. Wenn Sie einen Docker-Befehl ausführen und den Tag eines Repository-Image nicht angeben, wird das Image, das mit dem Tag <code>latest</code> versehen ist, standardmäßig verwendet.</dd>
 </dl>
 
-<dl>
-  <dt>Dockerfile</dt>
-  <dd>Eine Dockerfile ist eine Textdatei, die Anweisungen zur Erstellung eines Docker-Image enthält. Typiscerweise wird ein Image auf einem Basisimage erstellt, das ein Basisbetriebssystem, z. B. Ubuntu enthält. Sie können mit den Dockerfile-Anweisungen schrittweise das Basisimage ändern, um die Umgebung zu definieren, die die App für die Ausführung benötigt. Jede Änderung am Basisimage beschreibt eine neue Imageebene und Sie können mehrere Änderungen in einer einzelnen Dockerfilezeile vornehmen. Die Anweisungen in einer Dockerfile können Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App).</dd>
-</dl>
 
-Für weitere Informationen zu Docker-spezifischen Begriffen [ziehen Sie das Docker-Glossar zurate](https://docs.docker.com/glossary/).
+Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glossar ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/glossary/). 
 
 
 ### Namensbereiche planen
@@ -231,7 +239,8 @@ Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produ
 
 Wenn Sie ausschließlich mit den von IBM bereitgestellten öffentlichen Images arbeiten möchten, ist die Einrichtung eines Namensbereichs nicht erforderlich.
 
-**Hinweis**: Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `bx cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen. Wenn Sie bereits {{site.data.keyword.containerlong_notm}}-Kunde sind und [ einzelne oder skalierbare Containergruppen verwenden](../../containers/cs_classic.html), verfügen Sie bereits über einen Namensbereich. Sie können zusätzliche Namensbereiche erstellen, aber den Befehl `cf ic namespace set` für mehr als einen Namensbereich nicht ausführen.
+Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `ibmcloud cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen.
+{:tip}
 
 Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
 
@@ -240,7 +249,8 @@ Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Rege
 -   Der Name muss mit mindestens einem Buchstaben bzw. einer Ziffer beginnen.
 -   Der Name darf ausschließlich Kleinbuchstaben, Ziffern oder Unterstreichungszeichen (_) enthalten.
 
-**Hinweis**: Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
+{:tip}
 
 Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenlosen Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
 
@@ -262,23 +272,23 @@ Eine Region ist ein geografischer Bereich, auf den über einen dedizierten Endpu
 
 Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
 
-Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `bx cr region-set` verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.
+Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `ibmcloud cr region-set` verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.
 
 Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen Region, z. B. `eu-central`.
 
 ```
-bx cr region-set <Region>
+ibmcloud cr region-set <Region>
 ```
 {: pre}
 
 Wenn Sie z. B. die Region 'eu-central' verwenden möchten, führen Sie den folgenden Befehl aus:
 
 ```
-bx cr region-set eu-central
+ibmcloud cr region-set eu-central
 ```
 {: pre}
 
-Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Registry an: `bx cr login`.
+Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Registry an: `ibmcloud cr login`.
 
 ### Globale Registry
 {: #registry_regions_global}
@@ -286,15 +296,15 @@ Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Re
 Eine globale Registry ist verfügbar, in deren Namen keine Region eingeschlossen ist (`registry.bluemix.net`). Nur von IBM bereitgestellte öffentliche Images befinden sich in dieser Registry. Um Ihre eigenen Images zu verwalten, z. B. durch Festlegen von Namensbereichen, Taggen von Images und Übertragen an eine Registry mittels Push-Operation, verwenden Sie eine [lokale regionale Registry](#registry_regions_local).
 {:shortdesc}
 
-Sie können die globale Registry als Ziel angeben, indem Sie den Befehl `bx cr region-set` ausführen.
+Sie können die globale Registry als Ziel verwenden, indem Sie den Befehl `ibmcloud cr region-set` ausführen.
 
 Um z. B. die globale Registry als Ziel auszuwählen, führen Sie folgenden Befehl aus:
 
 ```
-bx cr region-set global
+ibmcloud cr region-set global
 ```
 {: pre}
 
-Weitere Informationen zum Befehl `bx cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html#bx_cr_region_set).
+Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](registry_cli.html#bx_cr_region_set).
 
-Nach der Angabe der globalen Registry führen Sie den Befehl `bx cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
+Nach der Angabe der globalen Registry führen Sie den Befehl `ibmcloud cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.

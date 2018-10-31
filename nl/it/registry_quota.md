@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-08-31"
+
 
 ---
 
@@ -31,8 +32,6 @@ Puoi limitare la quantità di archiviazione e di traffico di pull per le tue imm
 i tuoi propri limiti di quota.
 {:shortdesc}
 
-Prima di iniziare, assicurati di essere il [proprietario o il gestore fatturazione per l'account {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) in cui vuoi impostare la quota.
-
 Quando esegui l'aggiornamento al piano standard {{site.data.keyword.registryshort_notm}},
 puoi beneficiare di quantità illimitate di archiviazione e traffico di pull per le tue immagini
 private. Per evitare di superare il tuo livello di pagamento preferito, puoi impostare delle quote individuali per la
@@ -45,14 +44,14 @@ Per impostare una quota:
 1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Esamina i tuoi limiti di quota correnti per l'archiviazione e il traffico di pull.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -77,10 +76,11 @@ di pull. Se vuoi modificare la quantità di archiviazione nel tuo account, speci
 l'opzione **storage** e sostituisci _&lt;quota_archiviazione&gt;_ con il
 valore in megabyte da impostare.
 
-    **Nota:** se utilizzi il piano gratuito, non puoi impostare la tua quota su una quantità che superi il livello gratuito. Il livello gratuito permesso per l'archiviazione è 512 MB e per il traffico è 5120 MB.
+    Se utilizzi il piano gratuito, non puoi impostare la tua quota su una quantità che superi il livello gratuito. Il livello gratuito permesso per l'archiviazione è 512 MB e per il traffico è 5120 MB.
+    {:tip}
 
     ```
-    bx cr quota-set --traffic <quota_traffico> --storage <quota_archiviazione>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
@@ -88,7 +88,7 @@ valore in megabyte da impostare.
 per impostare il tuo limite di quota per l'archiviazione su 600 megabyte e il traffico di pull su 7000 megabyte:
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+    ibmcloud cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -103,14 +103,14 @@ per il tuo account.
 1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Esamina i tuoi limiti di quota correnti per l'archiviazione e il traffico di pull.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -142,7 +142,7 @@ Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.da
 1.  Elenca tutte le immagini di tutti gli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx cr images
+    ibmcloud cr images
     ```
     {: pre}
 
@@ -150,25 +150,27 @@ Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.da
 _&lt;nome_immagine&gt;_ con il nome dell'immagine che vuoi rimuovere.
 
     ```
-    bx cr image-rm <nome_immagine>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 
-    **Nota:** a seconda della dimensione dell'immagine, potrebbero essere richiesti alcuni minuti prima che l'immagine venga rimossa e l'archiviazione sia disponibile.
+    A seconda della dimensione dell'immagine, potrebbero essere richiesti alcuni minuti prima che l'immagine venga rimossa e l'archiviazione sia disponibile.
+    {:tip}
 
 3.  Riesamina il tuo utilizzo di quota di archiviazione.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
-4. **Nota:** non puoi ridurre il tuo utilizzo di traffico di pull durante un periodo di fatturazione.
+4. Non puoi ridurre il tuo utilizzo di traffico di pull in un periodo di fatturazione.
+   {:tip}
 
     Per continuare a eseguire il pull di immagini dai tuoi spazi dei nomi, scegli tra le seguenti opzioni.
 
     -   Attendi l'inizio del nuovo ciclo di fatturazione.
-    -   Se hai un piano gratuito, [esegui l'aggiornamento al piano di servizio
+    -   Se hai un piano gratuito, [esegui l'upgrade al piano di servizio
 standard](registry_overview.html#registry_plan_upgrade).
     -   Se hai già un piano standard, [imposta i nuovi limiti
 di quota per il traffico di pull](#registry_quota_set).

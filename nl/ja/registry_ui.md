@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-08-20"
+
 
 ---
 
@@ -30,7 +31,7 @@ lastupdated: "2017-12-05"
 
 グラフィカル・ユーザー・インターフェースを表示するには、以下の手順を使用します。
 
-1.  IBM ID を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([](https://console.bluemix.net)) にログインします。
+1.  IBMid を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([https://console.bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net)) にログインします。
 2.  複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
 3.  **「カタログ」**をクリックします。
 4.  **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。

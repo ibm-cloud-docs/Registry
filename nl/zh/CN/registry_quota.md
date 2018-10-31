@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-08-31"
+
 
 ---
 
@@ -29,8 +30,6 @@ lastupdated: "2017-10-31"
 可以通过设置自己的配额限制，从而限制专用映像的存储量和拉出流量。
 {:shortdesc}
 
-开始之前，请确保您是要在其中设置配额的 [{{site.data.keyword.Bluemix_notm}} 帐户的所有者或记帐管理员](../../iam/users_roles.html#userroles)。
-
 升级到 {{site.data.keyword.registryshort_notm}} 标准套餐后，可以享受无限的专用映像存储量和拉出流量。为了避免超过首选支付级别，可以分别为存储量和拉出流量设置配额。配额限制会应用于在 {{site.data.keyword.registrylong_notm}} 中设置的所有名称空间。如果使用的是免费服务套餐，那么还可以将定制配额设置为在免费存储量和拉出流量范围内。
 
 要设置配额，请执行以下操作：
@@ -38,14 +37,14 @@ lastupdated: "2017-10-31"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  查看存储量和拉出流量的当前配额限制。
 
     ```
-        bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -53,7 +52,7 @@ lastupdated: "2017-10-31"
 
 
     ```
-        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+    Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
     
 
@@ -70,10 +69,11 @@ lastupdated: "2017-10-31"
 3.  更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 _&lt;traffic_quota&gt;_ 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 _&lt;storage_quota&gt;_ 替换为要设置的值（以兆字节为单位）。
 
 
-    **注：**如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
+    如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
+    {:tip}
 
     ```
-        bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
@@ -81,7 +81,7 @@ lastupdated: "2017-10-31"
 
 
     ```
-        bx cr quota-set --storage 600 --traffic 7000
+    ibmcloud cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -95,14 +95,14 @@ lastupdated: "2017-10-31"
 1.  登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
-        bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  查看存储量和拉出流量的当前配额限制。
 
     ```
-        bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -110,7 +110,7 @@ lastupdated: "2017-10-31"
 
 
     ```
-        Getting quotas and usage for the current month, for account '<account_owner> Account'...
+    Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
     
 
@@ -136,7 +136,7 @@ lastupdated: "2017-10-31"
 1.  列出 {{site.data.keyword.Bluemix_notm}} 帐户的所有名称空间中的所有映像。
 
     ```
-        bx cr images
+    ibmcloud cr images
     ```
     {: pre}
 
@@ -144,20 +144,22 @@ lastupdated: "2017-10-31"
 
 
     ```
-        bx cr image-rm <image_name>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 
-    **注：**根据映像的大小，可能需要一些时间才能除去映像并使存储量可用。
+    根据映像的大小，可能需要一些时间才能除去映像并使存储量可用。
+    {:tip}
 
 3.  查看存储量配额使用情况。
 
     ```
-        bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
-4. **注：**在结算周期内，无法减少拉出流量使用量。
+4. 无法减少结算周期内的拉出流量使用量。
+    {:tip}
 
     要继续从名称空间中拉出映像，请在以下选项中进行选择。
 

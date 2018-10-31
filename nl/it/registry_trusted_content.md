@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-08-20"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-05-10"
 # Firma di immagini per contenuti attendibili
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} fornisce una tecnologia di contenuti attendibili che ti permette di firmare le immagini per garantirne l'integrità nel tuo spazio dei nomi del registro. Mediante l'esecuzione del pull e del push delle immagini firmate, puoi verificare che le tue immagini siano state trasmesse dalla parte giusta, come i tuoi strumenti di integrazione continua (CI). Per utilizzare questa funzione, devi avere Docker versione 1.11 o successive. Per ulteriori informazioni, consulta la documentazione di [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/) e del [progetto Notary](https://github.com/theupdateframework/notary).
+{{site.data.keyword.registrylong}} fornisce una tecnologia di contenuti attendibili che ti permette di firmare le immagini per garantirne l'integrità nel tuo spazio dei nomi del registro. Mediante l'esecuzione del pull e del push delle immagini firmate, puoi verificare che le tue immagini siano state trasmesse dalla parte giusta, come i tuoi strumenti di integrazione continua (CI). Per utilizzare questa funzione, devi avere Docker versione 1.11 o successive. Per ulteriori informazioni, consulta la documentazione di [Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/content_trust/) e del [progetto Notary ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
 Quando esegui il push della tua immagine con i contenuti attendibili abilitati, il tuo client Docker esegue anche il push di un oggetto di metadati firmato nel server di attendibilità {{site.data.keyword.Bluemix_notm}}. Quando esegui il pull di un'immagine con tag con il Docker Content Trust abilitato, il tuo client Docker contatta il server di attendibilità per stabilire l'ultima versione firmata della tag che hai richiesto, verifica la firma del contenuto e scarica l'immagine firmata.
@@ -29,7 +29,7 @@ Un repository può contenere sia contenuti firmati che non firmati. Se hai abili
 
 Docker Content Trust usa un modello di sicurezza di "attendibilità al primo utilizzo". La chiave di repository viene estratta dal server di attendibilità quando esegui per la prima volta il pull di un'immagine firmata da un repository e tale chiave viene utilizzata per verificare le immagini da quel repository in futuro. Devi verificare di considerare attendibile il server di attendibilità o l'immagine e il relativo editore prima di eseguire il pull dal repository per la prima volta. Se le informazioni sull'attendibilità nel server sono compromesse e non hai ancora eseguito il pull di un'immagine dal repository, il client Docker potrebbe estrarre le informazioni compromesse dal server di attendibilità. Se i dati di attendibilità vengono compromessi dopo che hai eseguito il pull dell'immagine per la prima volta, durante i pull successivi, il client Docker non riesce a verificare i dati compromessi e non esegue il pull dell'immagine. Per ulteriori informazioni su come controllare i dati di attendibilità per un'immagine, vedi [Visualizzazione delle immagini firmate](#trustedcontent_viewsigned).
 
-Per ulteriori informazioni sul modello di sicurezza di "attendibilità al primo utilizzo" vedi [The Update Framework (TUF)](https://theupdateframework.github.io/). 
+Per ulteriori informazioni sul modello di sicurezza di "attendibilità al primo utilizzo" vedi [The Update Framework (TUF) ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://theupdateframework.github.io/). 
 
 
 ## Configurazione del tuo ambiente di contenuti attendibili
@@ -57,31 +57,34 @@ Per impostazione predefinita, Docker Content Trust è disabilitato. Abilita l'am
 2.  Accedi alla CLI di {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login [--sso]
+    ibmcloud login [--sso]
     ```
     {: pre}
 
-    **Nota:** se hai un ID federato, utilizza `bx login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
+    Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
 l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+    {:tip}
 
 3.  Specifica la regione che vuoi utilizzare come destinazione. Se non conosci il nome della regione, puoi eseguire il comando senza la regione e sceglierne una.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4.  Accedi a {{site.data.keyword.registrylong_notm}}.
 
     ```
-    bx cr login
+    ibmcloud cr login
     ```
     {: pre}
 
-    L'output ti indica di esportare la variabile di ambiente Docker Content Trust. Ad esempio:
+    L'output ti indica di esportare la variabile di ambiente Docker Content Trust. 
+    
+    **Esempio**
 
     ```
-    user:~ user$ bx cr login
+    user:~ user$ ibmcloud cr login
     Logging in to 'registry.ng.bluemix.net'...
     Logged in to 'registry.ng.bluemix.net'.
 
@@ -127,10 +130,10 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 
 1.  [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2.  Esegui il pull della tua immagine. Sostituisci _&lt;immagine_di_origine&gt;_ con il repository dell'immagine e _&lt;tag&gt;_ con la tag dell'immagine che vuoi utilizzare, ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `bx cr image-list`.
+2.  Esegui il pull della tua immagine. Sostituisci _&lt;immagine_di_origine&gt;_ con il repository dell'immagine e _&lt;tag&gt;_ con la tag dell'immagine che vuoi utilizzare, ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
 
     ```
-    docker pull <immagine_di_origine>:<tag>
+    docker pull <source_image>:<tag>
     ```
     {: pre}
 
@@ -140,7 +143,7 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 ## Gestione dei contenuti attendibili
 {: #trustedcontent_managetrust}
 
-Utilizzando i comandi `docker trust`, puoi vedere chi ha firmato le immagini nonché revocare lo stato di contenuti attendibili. Per eseguire i comandi `docker trust`, hai bisogno di Docker 17.12 o superiore.
+Utilizzando i comandi `docker trust`, puoi vedere chi ha firmato le immagini e revocare lo stato di contenuti attendibili. Per eseguire i comandi `docker trust`, hai bisogno di Docker 17.12 o superiore.
 {:shortdesc}
 
 ### Visualizzazione delle immagini firmate
@@ -151,7 +154,9 @@ Puoi esaminare le versioni firmate di un repository o una tag di immagini, inclu
 
 1.  [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2.  Esamina le informazioni su tag, digest e firmatario per ciascuna immagine. **Facoltativo**: specifica la _&lt;tag&gt;_ per visualizzare informazioni per quella versione dell'immagine.
+2.  Esamina le informazioni su tag, digest e firmatario per ciascuna immagine. 
+
+    (Facoltativo) Specifica la tag, _&lt;tag&gt;_, per visualizzare informazioni per quella versione dell'immagine.
 
     ```
     docker trust view <image>:<tag>
@@ -184,6 +189,7 @@ Prima di iniziare, richiama la passphrase della chiave di repository che hai sal
     ```
     {: codeblock}
 
+
 ## Backup delle chiavi di firma
 {: #trustedcontent_backupkeys}
 
@@ -198,7 +204,7 @@ Quando esegui per la prima volta il push di un'immagine firmata in un nuovo repo
 
 Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](ts_index.html#ts_recoveringtrustedcontent) sono limitate.
 
-Per eseguire il backup delle tue chiavi, consulta la [documentazione di Docker Content Trust](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Per eseguire il backup delle tue chiavi, consulta la [documentazione Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 
 ## Gestione dei firmatari attendibili
@@ -217,7 +223,9 @@ Prima di iniziare:
 - I firmatari di immagini devono disporre dell'autorizzazione per eseguire il push delle immagini nello spazio dei nomi. 
 - I proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 17.12 o successive.
 - Crea un repository di contenuti attendibili [eseguendo il push di un'immagine firmata](#trustedcontent_push). I proprietari del repository devono disporre delle chiavi di amministratore del repository disponibili nella cartella di attendibilità Docker sulla propria macchina locale. Se non disponi della chiave di amministratore del repository, contatta il proprietario affinché esegua questa attività.
-- Nota: quando aggiungi un firmatario, non puoi più utilizzare la chiave di amministratore del repository per firmare le immagini in tale repository. Devi mantenere la chiave privata affinché uno dei firmatari approvati possa firmare. Per conservare la possibilità di firmare le immagini dopo aver aggiunto un firmatario, segui di nuovo queste istruzioni per generare e aggiungere un ruolo di firmatario per te stesso.
+
+Quando aggiungi un firmatario, non puoi più utilizzare la chiave di amministratore del repository per firmare le immagini in tale repository. Devi mantenere la chiave privata affinché uno dei firmatari approvati possa firmare. Per conservare la possibilità di firmare le immagini dopo aver aggiunto un firmatario, segui di nuovo queste istruzioni per generare e aggiungere un ruolo di firmatario per te stesso.
+{:tip}
 
 Per condividere le chiavi di firma:
 
@@ -268,7 +276,9 @@ Se non vuoi più che un firmatario sia in grado di firmare le immagini nel tuo r
 
 Prima di iniziare:
 - I proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 17.12 o successive.
-- Nota: se rimuovi un firmatario, il server di attendibilità non ritiene attendibili le sue versioni firmate dell'immagine. Per garantire di poter eseguire il pull dell'immagine dopo la rimozione del firmatario, assicurati che il firmatario non abbia firmato la versione più recente dell'immagine. Se il firmatario ha firmato la versione più recente dell'immagine, invia un aggiornamento all'immagine e firmala utilizzando la chiave prima di continuare.
+
+Se rimuovi un firmatario, il server di attendibilità non ritiene attendibili le sue versioni firmate dell'immagine. Per garantire di poter eseguire il pull dell'immagine dopo la rimozione del firmatario, assicurati che il firmatario non abbia firmato la versione più recente dell'immagine. Se il firmatario ha firmato la versione più recente dell'immagine, invia un aggiornamento all'immagine e firmala utilizzando la chiave prima di continuare.
+{:tip}
 
 Per rimuovere un firmatario:
 

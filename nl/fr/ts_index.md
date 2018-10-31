@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -22,30 +22,23 @@ lastupdated: "2018-05-31"
 # Traitement des incidents
 {: #ts_index}
 
-Vous trouverez ici les réponses aux questions fréquentes liées au traitement
-des incidents concernant l'utilisation d'{{site.data.keyword.registrylong}}.
+Vous trouverez ici les réponses aux questions fréquentes liées au traitement des incidents concernant l'utilisation d'{{site.data.keyword.registrylong}}.
 {:shortdesc}
 
 
 ## Aide et support pour {{site.data.keyword.registrylong_notm}}
 {: #gettinghelp}
 
-Si vous rencontrez des problèmes ou des questions lors de l'utilisation
-d'{{site.data.keyword.registrylong_notm}}, vous
-pouvez rechercher des informations ou poser des questions via un forum. Vous pouvez également ouvrir un ticket de demande de service {{site.data.keyword.IBM_notm}}.
+Si vous rencontrez des problèmes ou des questions lors de l'utilisation d'{{site.data.keyword.registrylong_notm}}, vous pouvez rechercher des informations ou poser des questions via un forum. Vous pouvez également ouvrir un ticket de demande de service {{site.data.keyword.IBM_notm}}.
 
-Lorsque vous posez une question sur un forum, marquez votre question à l'aide d'une
-étiquette pour qu'elle soit vue par l'équipe de développement d'{{site.data.keyword.registrylong_notm}}.
+Lorsque vous posez une question sur un forum, marquez votre question à l'aide d'une étiquette pour qu'elle soit vue par l'équipe de développement d'{{site.data.keyword.registrylong_notm}}.
 
--   Si vous avez des questions techniques sur le développement ou le déploiement d'une application avec
-{{site.data.keyword.registrylong_notm}}, publiez votre question sur
-[Stack
-Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) et marquez votre question avec les étiquettes ibm-bluemix et container-registry.
--   Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks - dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Ajoutez
-les étiquettes `bluemix` et `container-registry`.
+-   Si vous avez des questions techniques sur le développement ou le déploiement d'une application avec {{site.data.keyword.registrylong_notm}}, publiez votre question sur [Stack Overflow](http://stackoverflow.com/search?q=+ibm-bluemix) et marquez votre question avec les étiquettes `ibm-bluemix` et `container-registry`.
+-   Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks - dW Answers](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Ajoutez les étiquettes `bluemix` et `container-registry`.
 
-Voir [Utilisation du centre de support](../../get-support/howtogetsupport.html#using-avatar) pour plus de détails sur l'utilisation des forums.
-Pour des informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}}, ou sur les niveaux de support et les degrés de gravité des tickets, voir [Ouverture d'un ticket de demande de service](../../get-support/howtogetsupport.html#open-ticket).
+Voir [Utilisation du centre de support](/docs/get-support/howtogetsupport.html#using-avatar) pour plus de détails sur l'utilisation des forums.
+
+Pour des informations sur l'ouverture d'un ticket de demande de service {{site.data.keyword.IBM_notm}} ou sur les niveaux de support et les degrés de gravité des tickets, voir [Comment obtenir l'aide dont j'ai besoin ?](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## La connexion à {{site.data.keyword.registrylong_notm}} échoue
 {: #ts_login}
@@ -53,19 +46,19 @@ Pour des informations sur l'ouverture d'un ticket de demande de service {{site.d
 Vous ne parvenez pas à vous connecter à {{site.data.keyword.registrylong_notm}}.
 
 {: tsSymptoms}
-La commande `bx cr login` échoue.
+La commande `ibmcloud cr login` échoue.
 
 {: tsCauses}
 -   Le plug-in container-registry est périmé et doit être mis à jour.
--   Docker n'est pas installé ou n'est pas en exécution sur votre machine locale.
+-   Docker n'est pas installé ou n'est pas en cours d'exécution sur votre ordinateur local.
 -   Vos données d'identification {{site.data.keyword.Bluemix_notm}} ont expiré.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
--   Effectuez une mise à niveau vers la version la plus récente du plug-in {{site.data.keyword.registryshort_notm}}, voir [Mise à jour du plug-in {{site.data.keyword.registrylong_notm}} (`bx cr`)](registry_setup_cli_namespace.html#registry_cli_update).
--   Vérifiez que Docker est installé sur votre machine. S'il est déjà installé, redémarrez le démon Docker.
--   Exécutez à nouveau la commande `bx login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.Bluemix_notm}}.
+-   Effectuez une mise à niveau vers la version la plus récente du plug-in container-registry, voir [Mise à jour du plug-in container-registry](registry_setup_cli_namespace.html#registry_cli_update).
+-   Assurez-vous que Docker est installé sur votre ordinateur. S'il est déjà installé, redémarrez le démon Docker.
+-   Exécutez à nouveau la commande `ibmcloud login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.Bluemix_notm}}.
   
 ## L'exécution d'une commande pour {{site.data.keyword.registrylong_notm}} échoue avec `ECHEC Vous n'êtes pas connecté à IBM Cloud.` 
 {: #ts_login_cloud}
@@ -73,7 +66,7 @@ Vous pouvez corriger ce problème en procédant ainsi :
 Vous ne pouvez pas exécuter de commandes dans {{site.data.keyword.registrylong_notm}}, même si vous êtes connecté à {{site.data.keyword.Bluemix_notm}}.
 
 {: tsSymptoms}
-Toutes les commandes `bx cr` échouent.
+Toutes les commandes `ibmcloud cr` échouent.
 
 {: tsCauses}
 -   Le plug-in container-registry est périmé et doit être mis à jour.
@@ -81,27 +74,27 @@ Toutes les commandes `bx cr` échouent.
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
--   Effectuez une mise à niveau vers la version la plus récente du plug-in {{site.data.keyword.registryshort_notm}}, voir [Mise à jour du plug-in {{site.data.keyword.registrylong_notm}} (`bx cr`)](registry_setup_cli_namespace.html#registry_cli_update).
+-   Effectuez une mise à niveau vers la version la plus récente du plug-in container-registry, voir [Mise à jour du plug-in container-registry](registry_setup_cli_namespace.html#registry_cli_update).
 
 
 
-## Les commandes {{site.data.keyword.registrylong_notm}} échouent avec le message `'cr' is not a registered command. See 'bx help'. `
+## Les commandes {{site.data.keyword.registrylong_notm}} échouent avec le message `'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
 
-Vous ne pouvez pas exécuter une commande `bx cr`, car `cr` n'est pas une commande `bx` enregistrée.
+Vous ne pouvez pas exécuter une commande `ibmcloud cr` car `cr` n'est pas une commande `ibmcloud` enregistrée.
 
 {: tsSymptoms}
 Vous recevez un message d'erreur similaire à l'un des messages d'erreur suivants :
 
 ```
-bx cr login 
-'cr' is not a registered command. See 'bx help'.
+ibmcloud cr login
+'cr' is not a registered command. See 'ibmcloud help'.
 ```
 {: pre}
 
 ```
-bx cr namespace 
-'cr' is not a registered command. See 'bx help'.
+ibmcloud cr namespace
+'cr' is not a registered command. See 'ibmcloud help'.
 ```
 {: pre}
 
@@ -112,21 +105,18 @@ bx cr namespace
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
--   Installez le plug-in container-registry, voir [Installation du plug-in (bx cr) de {{site.data.keyword.registryshort_notm}}](registry_setup_cli_namespace.html#registry_cli_install).
+-   Installez le plug-in container-registry. Voir [Installation de l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}} (plug-in container-registry)](registry_setup_cli_namespace.html#registry_cli_install).
 
 
 ## Echec de la configuration d'un espace de nom
 {: #ts_problem}
 
 {: tsSymptoms}
-Quand vous exécutez `bx cr namespace-add`, vous ne parvenez pas à définir la valeur que vous avez entrée en tant qu'espace de nom.
+Lorsque vous exécutez `ibmcloud cr namespace-add`, vous ne parvenez pas à définir la valeur que vous avez entrée en tant qu'espace de nom.
 
 {: tsCauses}
--   Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autre
-organisation {{site.data.keyword.Bluemix_notm}}.
--   Un espace de nom a récemment été supprimé et vous réutilisez son nom. Si l'espace de
-nom supprimé contenait de nombreuses ressources, la suppression n'a peut-être pas été
-entièrement traitée par {{site.data.keyword.registrylong_notm}}.
+-   Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autre organisation {{site.data.keyword.Bluemix_notm}}.
+-   Un espace de nom a récemment été supprimé et vous réutilisez son nom. Si l'espace de nom supprimé contenait de nombreuses ressources, la suppression n'a peut-être pas été entièrement traitée par {{site.data.keyword.registrylong_notm}}.
 -   Vous avez utilisé des caractères non valides dans la valeur de l'espace de nom.
 
 {: tsResolve}
@@ -138,16 +128,14 @@ Vous pouvez corriger ce problème en procédant ainsi :
     -   Votre espace de nom doit débuter par au moins une lettre ou un nombre.
     -   Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
 -   Choisissez une autre valeur pour votre espace de nom.
--   Si vous recréez un espace de nom qui a été supprimé, et que ce dernier contenait de
-nombreuses images, faites une nouvelle tentative ultérieurement.
+-   Si vous recréez un espace de nom qui a été supprimé, et que ce dernier contenait de nombreuses images, faites une nouvelle tentative ultérieurement.
+
 
 ## Echec de l'envoi par commande push ou de l'extraction (pull) d'une image Docker
 {: #ts_pushpull}
 
 {: tsSymptoms}
-Lorsque vous exécutez des commandes pour transférer ou extraire des images Docker, vous rencontrez un message d'erreur. Le
-message d'erreur varie selon la cause première. Les messages d'erreur potentiels sont les
-suivants :
+Lorsque vous exécutez des commandes pour transférer ou extraire des images Docker, vous rencontrez un message d'erreur. Le message d'erreur varie selon la cause première. Les messages d'erreur potentiels sont les suivants :
 
 ```
 You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan
@@ -155,19 +143,18 @@ You have exceeded your storage quota. Delete one or more images, or review your 
 {: screen}
 
 ```
-Vous
-avez dépassé votre quota de trafic d'extraction (pull) pour le mois en cours. Consultez
-votre quota de trafic d'extraction (pull) et votre plan de tarification.
+You have exceeded your pull traffic quota for the current month. 
+Review your pull traffic quota and pricing plan
 ```
 {: screen}
 
 ```
-Non autorisé : authentification requise
+unauthorized: authentication required
 ```
 {: screen}
 
 ```
-Refusé : l'accès demandé à la ressource a été refusé
+denied: requested access to the resource is denied
 ```
 {: screen}
 
@@ -175,43 +162,28 @@ Refusé : l'accès demandé à la ressource a été refusé
 -   Docker n'est pas installé.
 -   Le client Docker n'est pas connecté à {{site.data.keyword.registrylong_notm}}.
 -   Il se peut que votre jeton d'accès {{site.data.keyword.Bluemix_notm}} ait expiré.
--   Vous avez dépassé la limite de quota pour le stockage ou le trafic d'extraction
-(pull) défini pour votre compte {{site.data.keyword.Bluemix_notm}}.
+-   Vous avez dépassé la limite de quota pour le stockage ou le trafic d'extraction (pull) défini pour votre compte {{site.data.keyword.Bluemix_notm}}.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
--   [Vérifiez que Docker est installé sur votre machine](index.html#registry_cli_install).
+-   [Assurez-vous que Docker est installé sur votre ordinateur](index.html#registry_cli_install).
 -   Vérifiez votre chemin d'installation Docker.
--   Connectez-vous à
-{{site.data.keyword.Bluemix_notm}} en exécutant `bx login`. Connectez-vous
-ensuite à l'interface de ligne de commande
-d'{{site.data.keyword.registrylong_notm}} en
-exécutant `bx cr login`.
--   [Examinez les limites de quota et l'utilisation du stockage et de
-l'extraction des images Docker dans {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
+-   Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `ibmcloud login`. Connectez-vous ensuite à l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
+-   [Examinez les limites de quota et l'utilisation du stockage et de l'extraction des images Docker dans {{site.data.keyword.registrylong_notm}}](registry_quota.html#registry_quota_get).
 
-## Impossible d'extraire l'image la plus récente avec l'étiquette latest
+
+## Impossible d'extraire l'image la plus récente avec l'étiquette `latest`
 {: #ts_docker_latest}
 
 {: tsSymptoms}
-Vous tentez d'exécuter la commande `docker pull`, mais celle-ci renvoie une
-version de l'image qui n'est pas la version la plus récente générée.
+Vous tentez d'exécuter la commande `docker pull`, mais celle-ci renvoie une version de l'image qui n'est pas la version la plus récente générée.
 
 {: tsCauses}
-L'étiquette
-`latest` est appliquée par défaut pour référencer une image lorsque vous
-exécutez des commandes Docker sans spécifier de valeur pour l'étiquette. L'étiquette `latest` est appliquée à la commande
-`docker build` ou `docker tag` la plus récente exécutée
-sans qu'une étiquette n'ait été spécifiée explicitement. Il est donc possible
-d'exécuter les commandes `docker` dans le désordre ou de définir des
-étiquettes de manière explicite sur certaines images, l'étiquette `latest`
-désignant une génération qui n'est pas la plus récente.
+L'étiquette `latest` est appliquée par défaut pour référencer une image lorsque vous exécutez des commandes Docker sans spécifier de valeur pour l'étiquette. L'étiquette `latest` est appliquée à la commande `docker build` ou `docker tag` la plus récente exécutée sans qu'une étiquette n'ait été spécifiée explicitement. Il est donc possible d'exécuter les commandes `docker` dans le désordre ou de définir des étiquettes de manière explicite sur certaines images, l'étiquette `latest` désignant une génération qui n'est pas la plus récente.
 
 {: tsResolve}
-En
-général, il est préférable de définir explicitement chaque fois une étiquette séquentielle différente pour vos images et de ne pas
-vous en remettre à l'étiquette `latest`.
+En général, il est préférable de définir explicitement chaque fois une étiquette séquentielle différente pour vos images et de ne pas vous en remettre à l'étiquette `latest`.
 
 
 ## Impossible d'ajouter d'autres images IBM au registre
@@ -219,45 +191,47 @@ vous en remettre à l'étiquette `latest`.
 
 
 {: tsSymptoms}
-Lorsque vous tentez d'importer du contenu que vous avez utilisé dans d'autres produits IBM tels que {{site.data.keyword.Bluemix_notm}} Private, vous ne parvenez pas à stocker vos images et autres logiciels sous licence depuis [IBM Passport Advantage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www-01.ibm.com/software/passportadvantage/index.html) dans le registre.
+Lorsque vous tentez d'importer du contenu que vous avez utilisé dans d'autres produits IBM tels que {{site.data.keyword.Bluemix_notm}} Private, vous ne parvenez pas à stocker vos images et autres logiciels sous licence depuis [IBM Passport Advantage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/index.html) dans le registre.
 
 {: tsCauses}
-Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport Advantage doivent être importés dans le registre à l'aide de la commande `bx cr ppa-archive-load`.
+Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport Advantage doivent être importés dans le registre à l'aide de la commande `ibmcloud cr ppa-archive-load`.
 
 {: tsResolve}
 Avant de commencer :
-* Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `bx login [--sso]`.
-* Connectez-vous à {{site.data.keyword.registrylong_notm}} en exécutant `bx cr login`.
-* [Ciblez l'interface CLI `kubectl`](../../containers/cs_cli_install.html#cs_cli_configure) sur votre cluster.
-* Si vous n'avez pas déjà configuré Helm dans votre cluster, [configurez Helm dans votre cluster maintenant](../../containers/cs_integrations.html#helm).
-* Si vous souhaitez partager les chartes au sein de votre organisation, vous pouvez installer le [projet open source Chart Museum ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).
+* Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `ibmcloud login [--sso]`.
+* Connectez-vous à {{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
+* [Ciblez l'interface de ligne de commande `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) sur votre cluster.
+* Si vous n'avez pas déjà configuré Helm dans votre cluster, [configurez Helm dans votre cluster maintenant](/docs/containers/cs_integrations.html#helm).
+* Si vous souhaitez partager les chartes au sein de votre organisation, vous pouvez installer le [projet open source Chart Museum ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). Pour obtenir des instructions, voir cette [recette developerWorks ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+
 
 ### Importation de produits IBM Passport Advantage à utiliser dans {{site.data.keyword.Bluemix_notm}}
 
-1.  Procurez-vous le fichier compressé à importer depuis [IBM Passport Advantage![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www-01.ibm.com/software/passportadvantage/index.html).
+1.  Procurez-vous le fichier compressé à importer depuis [IBM Passport Advantage![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/index.html).
 
 2.  Ciblez la région à utiliser. Si vous ne connaissez pas le nom de la région, exécutez la commande sans la région, puis sélectionnez-en une.
 
     ```
-    bx cr region-set <region>
+    ibmcloud cr region-set <region>
     ```
     {: pre}
 
-3.  Importez le fichier archive compressé. Indiquez le chemin d'accès au fichier compressé ainsi que l'espace de nom de registre auquel envoyer les images par commande push. 
+3.  Importez le fichier archive compressé. Indiquez le chemin d'accès au fichier compressé ainsi que l'espace de nom de registre auquel envoyer les images par commande push.
 
     ```
-    bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
+    ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
     ```
     {: pre}
 
     Cette commande développe le fichier compressé, charge les images contenues dans votre client Docker local puis envoie par commande push les images à l'espace de nom de votre registre.
     
-    Si vous souhaitez télécharger des chartes Helm depuis l'archive IBM Passport Advantage dans un chart museum, incluez les options suivantes dans la commande : `bx cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+    Si vous souhaitez télécharger des chartes Helm depuis l'archive IBM Passport Advantage dans un référentiel de type chartmuseum, incluez les options suivantes dans la commande : `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
     {: tip}
 
-    **Exemple de sortie** :
+    **Exemple de sortie**
+    
     ```
-    user:~ user$ bx cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
     Found 1 image(s) and 1 chart(s) to import.
     Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
@@ -283,7 +257,7 @@ Avant de commencer :
     ```
     {: pre}
     
-    Si vous avez téléchargé des chartes dans un chart museum à l'étape précédente, vous pouvez utiliser `helm inspect` pour inspecter la charte dans le chart museum.
+    Si vous avez téléchargé des chartes dans un référentiel de type chartmuseum à l'étape précédente, vous pouvez utiliser `helm inspect` pour inspecter la charte dans le référentiel de type chartmuseum.
     {: tip}
 
 5.  Configurez la charte Helm, `<helm_chart>`, en fonction des valeurs générées par la commande `helm inspect values`.
@@ -308,10 +282,9 @@ Votre pare-feu personnalisé requiert que certains groupes réseau soient ouvert
 {: tsResolve}
 Ouvrez les groupes réseau suivants dans votre pare-feu personnalisé.
 
-1.  Notez l'adresse IP publique de la machine que vous désirez utiliser pour vous connecter à {{site.data.keyword.registrylong_notm}}. Si vous utilisez Kubernetes, utilisez l'adresse
-IP publique de votre noeud d'agent. Extrayez l'adresse IP publique de votre noeud d'agent en exécutant la commande `bx cs workers <cluster_name_or_id>`, où *&lt;cluster_name_or_id&gt;* est le nom ou l'ID de votre cluster.
-2.  Dans votre pare-feu, autorisez les connexions suivantes vers et depuis votre machine :
-    -   Pour connectivité ENTRANTE vers votre machine, autorisez le trafic réseau depuis les groupes réseau source suivants vers l'adresse IP publique de destination de votre machine.
+1.  Notez l'adresse IP publique de l'ordinateur à utiliser pour vous connecter à {{site.data.keyword.registrylong_notm}}. Si vous utilisez Kubernetes, utilisez l'adresse IP publique de votre noeud worker. Extrayez l'adresse IP publique de votre noeud worker en exécutant la commande `ibmcloud ks workers <cluster_name_or_id>`, où *&lt;cluster_name_or_id&gt;* est le nom ou l'ID de votre cluster.
+2.  Dans votre pare-feu, autorisez les connexions suivantes vers et depuis votre ordinateur :
+    -   Pour la connectivité ENTRANTE vers votre ordinateur, autorisez le trafic réseau entrant depuis les groupes réseau source suivants vers l'adresse IP publique de destination de votre ordinateur.
 
         `registry.bluemix.net`:
 
@@ -354,7 +327,8 @@ IP publique de votre noeud d'agent. Extrayez l'adresse IP publique de votre noeu
         ```
         {: codeblock}
 
-    -   Pour connectivité SORTANTE depuis votre machine, utilisez les mêmes groupes réseau et autorisez le trafic réseau sortant depuis l'adresse IP publique source vers ces groupes réseau.
+    -   Pour la connectivité SORTANTE depuis votre ordinateur, utilisez les mêmes groupes réseau et autorisez le trafic réseau sortant depuis l'adresse IP publique source de votre ordinateur vers ces groupes réseau.
+
 
 ## Récupération de clés perdues ou compromises
 {: #ts_recoveringtrustedcontent}
@@ -371,17 +345,19 @@ Les options dont vous disposez pour récupérer des clés perdues ou compromises
 *  Pour des [clés de référentiel](#trustedcontent_lostrepokey), vous pouvez générer un nouvel ensemble de clés de signature pour le référentiel.
 *  Pour des [clés racine (root)](#trustedcontent_lostrootkey), vous pouvez demander la suppression du référentiel et la création d'un nouveau référentiel.
 
+
 ### Clés de référentiel
 {: #trustedcontent_lostrepokey}
 
 Si votre clé de référentiel est perdue ou compromise, générez un nouvel ensemble de clés de signature pour votre référentiel.
 {:shortdesc}
 
-**Remarque** : Le seul rôle de signature que vous pouvez faire pivoter est `targets`, c'est-à-dire l'administrateur du référentiel. Si d'autres rôles sont affectés, générez de nouvelles clés pour ces rôles, retirez les anciennes, puis ajoutez les nouvelles en tant que signataires.
+Le seul rôle de signature que vous pouvez faire pivoter est `targets`, c'est-à-dire l'administrateur du référentiel. Si d'autres rôles sont affectés, générez de nouvelles clés pour ces rôles, retirez les anciennes, puis ajoutez les nouvelles en tant que signataires.
+{:tip}
 
 Avant de commencer, récupérez la phrase passe de clé racine que vous avez créée la première fois que vous avez [envoyé par commande push une image signée](registry_trusted_content.html#trustedcontent_push).
 
-1.  Installez la version d'interface CLI du [projet Notary](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+1.  Installez la version d'interface de ligne de commande du [projet Notary ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
 2.  [Configurez votre environnement de contenu sécurisé](registry_trusted_content.html#trustedcontent_setup).
 
@@ -390,7 +366,7 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
 4.  Générez un jeton de registre.
 
     ```
-    bx cr token-add --readwrite
+    ibmcloud cr token-add --readwrite
     ```
     {: pre}
 
@@ -401,9 +377,10 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
     ```
     {: pre}
 
-6.	Si vous y êtes invité, entrez la phrase passe de clé racine. Entrez ensuite une nouvelle phrase passe pour la nouvelle clé de référentiel lorsque vous y êtes invité. 
+6.	Si vous y êtes invité, entrez la phrase passe de clé racine. Entrez ensuite une nouvelle phrase passe pour la nouvelle clé de référentiel lorsque vous y êtes invité.
 
 7.	[Envoyez par commande push une image signée](registry_trusted_content.html#trustedcontent_push) qui utilise les nouvelles clés de signature.
+
 
 ### Clés racine (root)
 {: #trustedcontent_lostrootkey}
@@ -415,17 +392,19 @@ Vous pouvez [supprimer les espaces de nom](registry_setup_cli_namespace.html#reg
 
 Si l'espace de nom contient des référentiels dont les clés racine ne sont pas affectées, comme un espace de nom pour des images de production, vous souhaiterez peut-être ne supprimer que les données sécurisées associées à la clé racine affectée. Ouvrez un ticket de demande de service.
 
-1.  [Contactez le support {{site.data.keyword.Bluemix_notm}}](../../get-support/howtogetsupport.html). Incluez une brève description de votre problème, l'ID compte, ainsi que la liste des espaces de nom contenant les référentiels d'images avec les clés racine affectées.
+1.  [Contactez le support {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support). Incluez une brève description de votre problème, l'ID compte, ainsi que la liste des espaces de nom contenant les référentiels d'images avec les clés racine affectées.
 
-2.  Après que {{site.data.keyword.Bluemix_notm}} a adressé le problème, supprimez le référentiel Docker Content Trust sur votre machine locale.
+2.  Une fois qu'{{site.data.keyword.Bluemix_notm}} a traité le problème, supprimez le référentiel Docker Content Trust sur votre ordinateur local.
 
     * Répertoire Linux et Mac : `~/.docker/trust/private` et `~/.docker/trust/tuf`
 
     * Répertoire Windows : `%HOMEPATH%\.docker\trust\private` et `%HOMEPATH%\.docker\trust\tuf`
 
-    **Remarque** : Parce que la clé racine est affectée, cette étape supprime toutes les clés de signature, y compris pour les autres serveurs d'accréditation.
+    Etant donné que la clé racine est affectée, cette étape supprime toutes les clés de signature, y compris pour les autres serveurs d'accréditation.
+    {:tip}
 
-3.  Si vous utilisez [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) dans votre cluster {{site.data.keyword.containershort_notm}}, redémarrez chaque pod de mise en application d'image. Pour déclencher Kubernetes pour effectuer automatiquement un redémarrage d'annulation des pods, vous pouvez changer certaines métadonnées sur le pod. Par exemple, [ciblez votre interface CLI Kubernetes sur votre cluster](../../containers/cs_cli_install.html#cs_cli_configure) et modifiez le déploiement.
+3.  Si vous utilisez [{{site.data.keyword.Bluemix_notm}} Image Enforcement](registry_security_enforce.html) dans votre cluster {{site.data.keyword.containershort_notm}}, redémarrez chaque pod de mise en application d'image. Pour déclencher Kubernetes afin d'effectuer automatiquement un redémarrage séquentiel des pods, vous pouvez changer certaines métadonnées sur le pod. Par exemple, [ciblez votre interface de ligne de commande Kubernetes sur votre cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) et modifiez le déploiement.
+
     ```
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
@@ -435,7 +414,7 @@ Si l'espace de nom contient des référentiels dont les clés racine ne sont pas
 
     *  Si vous souhaitez créer un nouveau contenu sécurisé, [envoyez par commande push de nouvelles images signées](registry_trusted_content.html#trustedcontent_push).
 
-    *  Si vous ne souhaitez pas changer le contenu sécurisé précédent, ajoutez une signature aux images les plus récentes du registre.
+    *  Si vous ne voulez pas changer le contenu sécurisé précédent, ajoutez une signature aux images les plus récentes du registre.
 
        ```
        docker trust sign <image>:<tag>
@@ -445,7 +424,6 @@ Si l'espace de nom contient des référentiels dont les clés racine ne sont pas
 
 ## L'installation de Container Image Security Enforcement échoue avec `helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`
 {: #ts_install_cise_fail}
-
 
 {: tsSymptoms}
 Votre installation de Container Image Security Enforcement a échoué et vous avez reçu le message suivant :
@@ -466,3 +444,73 @@ Retirez les travaux Kubernetes restants en exécutant la commande suivante :
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+
+## Les pods ne redémarrent pas si tous vos agents se sont arrêtés
+{: #ts_pods}
+
+
+{: tsSymptoms}
+Les pods ne redémarrent pas si tous vos agents de cluster se sont arrêtés. Container Image Security Enforcement est déployé. Les agents de cluster sont sains mais rien n'est planifié.
+
+{: tsCauses}
+Par défaut, Container Image Security Enforcement ajoute un webhook d'admission pour la fermeture en cas d'échec (fail closed). Si tous les pods Container Image Security Enforcement sont arrêtés, ils ne sont pas disponibles pour approuver leur propre reprise.
+
+{: tsResolve}
+Pour reprendre le cluster alors qu'il se trouve dans cet état, vous devez changer la configuration de webhook pour ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed). 
+
+Vous devez disposer de privilèges de contrôle d'accès à base de rôles suffisants pour pouvoir utiliser les instructions suivantes :
+*  `GET`
+*  `PATCH`
+
+sur les ressources suivantes :
+*  `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
+*  `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration` 
+
+Pour plus d'informations sur le contrôle d'accès à base de rôles, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers/cs_users.html#rbac) et [Kubernetes: Using RBAC Authorization
+![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+
+Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed) ; puis, lorsqu'au moins un pod Container Image Security Enforcement est en cours d'exécution, restaurez la configuration de webhook pour une fermeture en cas d'échec :
+
+1.  Mettez à jour `MutatingWebhookConfiguration` avec la commande suivante :
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez.
+
+2.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante :
+
+    ``>
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Pour `failurePolicy`, définissez `Ignore`, puis sauvegardez et fermez.
+
+3.  Attendez que des pods Container Image Security Enforcement démarrent. Vous pouvez vérifier que les pods ont démarré avec la commande suivante jusqu'à ce que la colonne **STATUS** affiche `Running` pour une colonne au moins :
+
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
+
+4.  Lorsqu'un pod Container Image Security Enforcement au moins est en cours d'exécution, mettez à jour `MutatingWebhookConfiguration` avec la commande suivante :
+
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez.
+
+5.  Mettez à jour `ValidatingWebhookConfiguration` avec la commande suivante :
+
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
+
+    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez.

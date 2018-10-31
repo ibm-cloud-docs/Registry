@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-02-06"
+lastupdated: "2018-09-06"
 
 ---
 
@@ -29,7 +29,7 @@ Les clés d'API sont liées à votre compte et peuvent être utilisées à trave
 
 La portée des jetons du registre est limitée à {{site.data.keyword.registrylong_notm}}. Vous pouvez les limiter à un accès en lecture seule et spécifier s'ils doivent expirer ou non.
 
-Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](../../iam/apikeys.html#manapikey).
+Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](/docs/iam/apikeys.html#manapikey).
 
 Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](registry_setup_cli_namespace.html#registry_cli_install).
 
@@ -43,10 +43,14 @@ Vous pouvez utiliser des clés d'API pour automatiser l'envoi et l'extraction d'
 ### Création d'une clé d'API
 {: #registry_api_key_create}
 
-Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre.
+Vous pouvez créer une clé d'API afin de l'utiliser pour vous connecter à votre registre. 
 {:shortdesc}
 
-Créez une clé d'API IAM. Voir [Création de clés d'API](../../iam/userid_keys.html#creating-an-api-key).
+Vous pouvez créer des clés d'API d'utilisateur et des clés d'API d'ID de service.
+
+-  Pour créer une clé d'API d'ID de service, voir [Création d'une clé d'API pour un ID de service](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+-  Pour créer une clé d'API d'utilisateur, voir [Création d'une clé d'API](/docs/iam/userid_keys.html#creating-an-api-key).
+
 
 ### Utilisation d'une clé d'API pour automatiser les accès
 {: #registry_api_key_use}
@@ -61,7 +65,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Pour les informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](../../cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create).
+Pour des informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
 
 ## Automatisation de l'accès à vos espaces de nom à l'aide de jetons
@@ -90,7 +94,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 1.  Créez un jeton. L'exemple suivant créé un jeton n'expirant pas et doté d'un accès en lecture et écriture à tous les espaces de nom configurés dans une région.
 
     ```
-    bx cr token-add --description "This is a token" --non-expiring --readwrite
+    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
     ```
     {: pre}
 
@@ -114,7 +118,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
         </tbody>
         </table>
 
-    Votre sortie CLI sera similaire à ceci :
+    Votre sortie d'interface de ligne de commande sera similaire à l'exemple suivant :
 
     ```
     Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
@@ -125,7 +129,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 2.  Vérifiez que le jeton a été créé.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
@@ -133,27 +137,27 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 ### Utilisation d'un jeton pour automatiser l'accès à vos espaces de nom
 {: #registry_tokens_use}
 
-Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}. Selon que vous avez affecté un accès en lecture seule ou en lecture/écriture à votre jeton, les utilisateurs peuvent extraire (par pull) des images de vos espaces de nom ou bien en envoyer et en extraire (push et pull).
+Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}. Selon que vous avez affecté un accès en lecture seule ou en lecture/écriture à votre jeton, les utilisateurs peuvent extraire des images de vos espaces de nom ou envoyer des images dans vos espaces de nom.
 {:shortdesc}
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Extrayez la valeur de jeton de ce jeton. Remplacez &lt;token_id&gt; par l'ID du jeton concerné.
 
     ```
-    bx cr token-get <token_id>
+    ibmcloud cr token-get <token_id>
     ```
     {: pre}
 
@@ -161,15 +165,18 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 
 4.  Utilisez le jeton avec votre commande `docker login`. Remplacez la valeur de &lt;token_value&gt; par la valeur de jeton que vous avez extraite à l'étape précédente et la valeur de &lt;registry_url&gt; par l'URL du registre où sont configurés vos espaces de nom.
 
-    -   Pour les espaces de nom définis sur la région Sud des Etats-Unis : registry.ng.bluemix.net
-    -   Pour les espaces de nom définis sur la région Sud du Royaume-Uni : registry.eu-gb.bluemix.net
-    -   Pour les espaces de nom définis sur la région Centre Europe : registry.eu-de.bluemix.net
-    -   Pour les espaces de nom définis sur la région Asie-Pacifique sud : registry.au-syd.bluemix.net
+    -   Pour les espaces de nom définis pour la région Sud des Etats-Unis : `registry.ng.bluemix.net`
+    -   Pour les espaces de nom définis pour la région Sud du Royaume-Uni : `registry.eu-gb.bluemix.net`
+    -   Pour les espaces de nom définis pour la région Centre Europe : `registry.eu-de.bluemix.net` egistry.eu-de.bluemix.net
+    -   Pour les espaces de nom définis pour la région Sud de l'Asie Pacifique : `registry.au-syd.bluemix.net`
 
     ```
     docker login -u token -p <token_value> <registry_url>
     ```
     {: pre}
+    
+    Pour le paramètre `-u`, prenez soin de taper la chaîne `token` et non l'ID de jeton.
+    {: tip}
 
     Une fois que vous vous êtes connecté à Docker en utilisant le jeton, vous pouvez transférer dans vos espaces de nom des images (push) ou en extraire (pull).
 
@@ -180,25 +187,55 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 Retirez un jeton {{site.data.keyword.registrylong_notm}} quand vous n'en n'avez plus besoin.
 {:shortdesc}
 
-**Remarque :** les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, vous n'avez pas besoin de les retirer manuellement.
+Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.
+{:tip}
 
 1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
     ```
-    bx cr token-list
+    ibmcloud cr token-list
     ```
     {: pre}
 
 3.  Supprimez le jeton.
 
     ```
-    bx cr token-rm <token_id>
+    ibmcloud cr token-rm <token_id>
     ```
     {: pre}
+    
+    
+## Options d'authentification pour tous les clients
+{: #registry_authentication}
+
+Vous pouvez authentifier à l'aide de la commande `docker login` ou d'autres clients de registre.
+{:shortdesc}
+
+La plupart des utilisateurs peuvent appliquer la commande `ibmcloud cr login` afin de simplifier `docker login`, mais si vous implémentez l'automatisation ou si vous utilisez un autre client, vous voudrez certainement effectuer une authentification manuelle. Vous devez fournir un nom d'utilisateur et un mot de passe. Dans {{site.data.keyword.registrylong_notm}}, le nom d'utilisateur indique le type de valeur confidentielle présentée dans le mot de passe.
+
+Les noms d'utilisateur valides sont les suivants :
+
+-  `iambearer` Le mot de passe contient un jeton d'accès IAM. Ce type d'authentification a une courte durée de vie, mais peut être issue de tous types d'identité IAM.
+-  `iamrefresh` Le mot de passe doit contenir un jeton d'actualisation IAM utilisé en interne pour générer et actualiser un jeton d'accès IAM. Ce type d'authentification a une durée de vie plus longue et est utilisé par la commande `ibmcloud cr login`.
+-  `iamapikey` Le mot de passe est une clé d'API IAM. Ce type d'authentification est celui privilégié pour l'automatisation. Vous pouvez utiliser une clé d'API d'utilisateur ou d'ID de service (voir [Création d'une clé d'API](#registry_api_key_create).
+-  `token` Le mot de passe est un jeton de registre. Vous pouvez utiliser ce nom d'utilisateur pour l'automatisation.
+
+Vous n'avez pas besoin d'utiliser la commande docker pour l'authentification avec le registry. Par exemple, vous pouvez exécuter la commande `ibmcloud cf push` qui authentifie et autorise une extraction (par commande pull) du registre à l'aide d'une clé d'API IAM :
+
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Remplacez _&lt;apikey&gt;_ par votre clé d'API, _&lt;region&gt;_ par le nom de votre [région](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ par votre espace de nom et _&lt;image_repo&gt;_ par le référentiel.
+
+Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

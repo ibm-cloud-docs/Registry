@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-08-20"
+
 
 ---
 
@@ -31,7 +32,7 @@ viene ancora completata, distribuisci nuovamente l'immagine e avvia una nuova sc
 
 Per visualizzare l'interfaccia utente grafica, utilizza la seguente procedura:
 
-1.  Accedi alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con il tuo ID IBM.
+1.  Accedi alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net)) con il tuo ID IBM.
 2.  Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
 3.  Fai clic su **Catalogo**.
 4.  Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.

@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2017-10-31"
+lastupdated: "2018-08-31"
+
 
 ---
 
@@ -29,8 +30,6 @@ Puede limitar la cantidad de almacenamiento y de tráfico de extracción que se 
 Puede limitar la cantidad de almacenamiento y de tráfico de extracción de sus imágenes privadas estableciendo sus propios límites de cuota.
 {:shortdesc}
 
-Antes de empezar, asegúrese de que es el [propietario o gestor de facturación de la cuenta de {{site.data.keyword.Bluemix_notm}}](../../iam/users_roles.html#userroles) en la que desea establecer la cuota.
-
 Cuando actualice al plan estándar de {{site.data.keyword.registryshort_notm}},
 benefíciese de una cantidad ilimitada de almacenamiento y tráfico de extracción para sus imágenes privadas. Para no superar el nivel de pago que elija, puede establecer cuotas individuales para la cantidad de almacenamiento y el tráfico de extracción. Los límites de cuota se aplican a todos los espacios de nombres que haya configurado en {{site.data.keyword.registrylong_notm}}. Si utiliza el plan de servicio gratuito, también puede establecer cuotas personalizadas dentro de la cantidad gratuita de almacenamiento y tráfico de extracción.
 
@@ -39,14 +38,14 @@ Para establecer una cuota:
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -66,17 +65,18 @@ Para establecer una cuota:
 3.  Cambie el límite de cuota para almacenamiento y tráfico de extracción. Para cambiar el uso de tráfico de extracción, especifique la opción **traffic** y sustituya
 _&lt;traffic_quota&gt;_ por el valor en megabytes que desea establecer para la cuota del tráfico de extracción. Si desea cambiar la cantidad de almacenamiento de su cuenta, especifique la opción **storage** y sustituya _&lt;storage_quota&gt;_ por el valor en megabytes que desea establecer.
 
-    **Nota:** Si tiene el plan gratuito, no puede establecer su cuota en una cantidad que supere el nivel gratuito. La concesión del nivel gratuito para el almacenamiento es de 512 MB y, para el tráfico, de 5120 MB.
+    Si tiene el plan gratuito, no puede establecer su cuota en una cantidad que supere el nivel gratuito. La concesión del nivel gratuito para el almacenamiento es de 512 MB y, para el tráfico, de 5120 MB.
+    {:tip}
 
     ```
-    bx cr quota-set --traffic <traffic_quota> --storage <storage_quota>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
     Ejemplo para establecer su límite de cuota para el almacenamiento en 600 megabytes y el tráfico de extracción en 7000 megabytes:
 
     ```
-    bx cr quota-set --storage 600 --traffic 7000
+    ibmcloud cr quota-set --storage 600 --traffic 7000
     ```
     {: pre}
 
@@ -90,14 +90,14 @@ Puede revisar los límites de cuota y comprobar el almacenamiento actual y el us
 1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx login
+    ibmcloud login
     ```
     {: pre}
 
 2.  Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
@@ -126,7 +126,7 @@ Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Blu
 1.  Obtenga una lista de todas las imágenes de todos los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    bx cr images
+    ibmcloud cr images
     ```
     {: pre}
 
@@ -134,20 +134,22 @@ Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Blu
 _&lt;image_name&gt;_ por el nombre de la imagen que desea eliminar.
 
     ```
-    bx cr image-rm <image_name>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 
-    **Nota:** En función del tamaño de la imagen, es posible que la imagen tarde un rato en eliminarse y en dejar almacenamiento disponible.
+    En función del tamaño de la imagen, es posible que la imagen tarde un rato en eliminarse y en dejar almacenamiento disponible.
+    {:tip}
 
 3.  Revise el uso de la cuota de almacenamiento.
 
     ```
-    bx cr quota
+    ibmcloud cr quota
     ```
     {: pre}
 
-4. **Nota:** No puede reducir el uso del tráfico de extracción en un periodo de facturación.
+4. No puede reducir el uso del tráfico de extracción en un periodo de facturación.
+   {:tip}
 
     Para seguir extrayendo imágenes de los espacios de nombres, elija una de las siguientes opciones.
 

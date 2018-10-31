@@ -1,20 +1,19 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
+    registry_ha.md
+
     [IBM Images](../RegistryImages/index.html#ibm_images)
-        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [Image 'ibm-backup-restore'](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibm-integration-bus image](../RegistryImages/ibm-integration-bus/index.html#iib)
-        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [ibm-mq image](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibm-websphere-extreme-scale image](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
+        [ibmcloud-secure-perimeter-network'](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
+        [Image 'ibmliberty'](../RegistryImages/ibmliberty/index.html#ibmliberty)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -27,18 +26,21 @@ IBM Cloud Container Registry
     registry_security_enforce.md
     [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html)
         [Informationen zu Vulnerability Advisor](../va/va_index.html#about)
-        [Schwachstellentypen](../va/va_index.html#types)
-        [Container-Scanner installieren](../va/va_index.html#va_install_livescan)
-        [Sicherheitslückenbericht prüfen](../va/va_index.html#va_reviewing)
-        [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli)
-        [Häufige Probleme lösen](../va/va_index.html#va_report)
+        [Sicherheitslückentypen](../va/va_index.html#types)
+        [Container Scanner installieren](../va/va_index.html#va_install_container_scanner)
+        [Container Scanner hinter einer Firewall ausführen](../va/va_index.html#va_firewall)
+        [Ausnahmen für Richtlinien für Organisationen festlegen](../va/va_index.html#va_managing_policy)
+        [Sicherheitslückenbericht überprüfen](../va/va_index.html#va_reviewing)
+        [Containerbericht überprüfen](../va/va_index.html#va_reviewing_container)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}

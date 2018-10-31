@@ -1,20 +1,19 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
+    registry_ha.md
+
     [IBM イメージ](../RegistryImages/index.html#ibm_images)
         [ibm-backup-restore イメージ](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibm-integration-bus イメージ](../RegistryImages/ibm-integration-bus/index.html#iib)
         [ibmliberty イメージ](../RegistryImages/ibmliberty/index.html#ibmliberty)
-        [ibm-mq イメージ](../RegistryImages/ibm-mq/index.html#ibm_mq)
-        [ibm-websphere-extreme-scale イメージ](../RegistryImages/ibm-websphere-extreme-scale/index.html#ibm-websphere-extreme-scale)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -25,19 +24,23 @@ IBM Cloud Container Registry
     registry_tokens.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [脆弱性アドバイザーによるイメージのセキュリティーの管理](../va/va_index.html)
+    [脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](../va/va_index.html)
         [脆弱性アドバイザーの概要](../va/va_index.html#about)
         [脆弱性のタイプ](../va/va_index.html#types)
-        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_livescan)                [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
-        [CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)
-        [一般的な問題の解決](../va/va_index.html#va_report)
+        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_container_scanner)
+        [ファイアウォールの内側からのコンテナー・スキャナーの実行](../va/va_index.html#va_firewall)
+        [組織の適用除外項目ポリシーの設定](../va/va_index.html#va_managing_policy)
+        [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
+        [コンテナー・レポートの検討](../va/va_index.html#va_reviewing_container)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    registry_at_events.md
     rellinks.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
+    registry_faq.md
     {: .navgroup-end}
