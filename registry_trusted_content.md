@@ -159,7 +159,7 @@ You can review signed versions of an image repository or tag, including informat
     (Optional) Specify the tag, _&lt;tag&gt;_, to see information for that version of the image.
 
     ```
-    docker trust view <image>:<tag>
+    docker trust inspect <image>:<tag>
     ```
     {: pre}
 
