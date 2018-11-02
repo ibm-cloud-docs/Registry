@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-09"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -41,7 +41,7 @@ If you want to grant access to everything, don't specify a resource type or a re
 
 - [Invite users and assign access](/docs/iam/iamuserinv.html#iamuserinv). 
 
-  If you want users to be able to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).
+  If you want users to be able to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users and do not assign a resource group, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).
   {: tip}
 
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
