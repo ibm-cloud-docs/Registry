@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-19"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -183,7 +183,7 @@ To build your own Docker image, complete the following steps:
 
     where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
    
-    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
+    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build).
 
   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
     1. Build the image from your Dockerfile on your local computer and tag it with your image name.
