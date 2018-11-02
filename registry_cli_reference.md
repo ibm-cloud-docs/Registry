@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -29,7 +29,7 @@ You can use the container-registry plug-in to set up your own image namespace in
 Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
   
-For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html).
+For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html).
 
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_listing}
