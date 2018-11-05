@@ -27,7 +27,7 @@ You can use the following related links to become more familiar with {{site.data
 
 - [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)
 - [{{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/container-registry)
-- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](/apidocs/container-registry/va)
+- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
