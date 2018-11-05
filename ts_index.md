@@ -120,7 +120,7 @@ When you run `ibmcloud cr namespace-add`, you are unable to set your entered val
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- Follow any instructions that appear in the returned error message.
+- Follow any instructions that are in the returned error message.
 - Check that you entered a valid namespace:
   - Your namespace must be 4 - 30 characters long.
   - Your namespace must start with at least one letter or number.
