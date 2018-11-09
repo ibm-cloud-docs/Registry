@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-11-07"
+lastupdated: "2018-11-09"
 
 
 ---
@@ -15,7 +15,7 @@ lastupdated: "2018-11-07"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
-{:faq: data-hd-content-type=‘faq’}
+{:faq: data-hd-content-type='faq'}
 
 # Frequently asked questions (FAQs)
 {: #registry_faq}
