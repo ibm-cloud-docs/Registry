@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-16"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -90,14 +90,14 @@ Use the following tasks to manage your tokens:
 You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
 {:shortdesc}
 
-1.  Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
+1. Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
-    ```
-    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
+   ```
+   {: pre}
 
-    <table>
+   <table>
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Understanding this command's components</th>
         </thead>
@@ -115,7 +115,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
         <td>Optional. Use this option to create a token that allows users to push and pull images to and from your namespaces. If you do not specify this option, the token can be used to pull images only.</td>
         </tr>
         </tbody>
-        </table>
+   </table>
 
     Your CLI output looks similar to the following output:
 
@@ -125,12 +125,12 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
     ```
     {: screen}
 
-2.  Verify that the token was created.
+2. Verify that the token was created.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
 ### Using a token to automate access to your namespaces
 {: #registry_tokens_use}
@@ -138,45 +138,45 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
 {:shortdesc}
 
-1.  Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to use.
+2. List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to use.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
-3.  Retrieve the token value for the token. Replace &lt;token_id&gt; with the ID of the token.
+3. Retrieve the token value for the token. Replace &lt;token_id&gt; with the ID of the token.
 
-    ```
-    ibmcloud cr token-get <token_id>
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-get <token_id>
+   ```
+   {: pre}
 
     Your token value is displayed in **Token** in your CLI output.
 
-4.  Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
+4. Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
-    -   For namespaces set up in US-South: `registry.ng.bluemix.net`
-    -   For namespaces set up in UK-South: `registry.eu-gb.bluemix.net`
-    -   For namespaces set up in EU-Central: `registry.eu-de.bluemix.net`
-    -   For namespaces set up in AP-South: `registry.au-syd.bluemix.net`
+   - For namespaces set up in US-South: `registry.ng.bluemix.net`
+   - For namespaces set up in UK-South: `registry.eu-gb.bluemix.net`
+   - For namespaces set up in EU-Central: `registry.eu-de.bluemix.net`
+   - For namespaces set up in AP-South: `registry.au-syd.bluemix.net`
 
-    ```
-    docker login -u token -p <token_value> <registry_url>
-    ```
-    {: pre}
-    
-    For the `-u` parameter, ensure that you type in the string `token`, not the token ID.
-    {: tip}
+   ```
+   docker login -u token -p <token_value> <registry_url>
+   ```
+   {: pre}
 
-    After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
+   For the `-u` parameter, ensure that you type in the string `token`, not the token ID.
+   {: tip}
+
+   After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
 ### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
@@ -187,26 +187,26 @@ Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it a
 Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.
 {:tip}
 
-1.  Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-2.  List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to remove.
+2. List all tokens in your {{site.data.keyword.Bluemix_notm}} account and note the token ID that you want to remove.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
-3.  Remove the token.
+3. Remove the token.
 
-    ```
-    ibmcloud cr token-rm <token_id>
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-rm <token_id>
+   ```
+   {: pre}
 
 ## Authentication options for all clients
 {: #registry_authentication}
