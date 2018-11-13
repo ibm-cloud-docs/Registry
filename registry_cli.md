@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -97,7 +97,7 @@ ibmcloud cr api
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 None
 
@@ -111,7 +111,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -152,7 +152,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -202,7 +202,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -232,7 +232,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -282,7 +282,7 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -296,7 +296,7 @@ ibmcloud cr iam-policies-enable
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -310,7 +310,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -352,7 +352,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -386,21 +386,21 @@ ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
 ## ibmcloud cr image-rm
 {: #bx_cr_image_rm}
 
-Delete one or more specified images from your registry.
+Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
 
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to get a report. You can delete multiple images at the same time by listing each image in the command with a space between each name.
+<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. IMAGE must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
 
 <p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
 
@@ -426,7 +426,7 @@ ibmcloud cr info
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 None
 
@@ -440,7 +440,7 @@ ibmcloud cr login
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 None
 
@@ -454,7 +454,7 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -489,7 +489,7 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -503,7 +503,7 @@ ibmcloud cr namespace-rm NAMESPACE
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -532,7 +532,7 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -548,7 +548,7 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -579,7 +579,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -616,7 +616,7 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Reader, Writer, or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -630,7 +630,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -661,7 +661,7 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 None
 
@@ -677,7 +677,7 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 None
 
@@ -710,7 +710,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
@@ -751,7 +751,7 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
@@ -780,7 +780,7 @@ ibmcloud cr token-list --format FORMAT
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
@@ -820,7 +820,7 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Administrator IAM platform role for {{site.data.keyword.registrylong_notm}}
 
@@ -849,7 +849,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**Prerequisites** 
+**Prerequisites**
 
 Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
@@ -858,7 +858,7 @@ Required permissions: Reader or Manager IAM service access role for {{site.data.
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`. </p>
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.</p>
 
 <p>The following operating systems are supported:
 

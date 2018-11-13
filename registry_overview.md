@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -138,10 +138,10 @@ Use the {{site.data.keyword.Bluemix_notm}} pricing calculator to estimate the co
 
 You can price your app by using the cost calculators that are provided by {{site.data.keyword.Bluemix_notm}}.
 
-1.  Open the pricing sheet, see [{{site.data.keyword.Bluemix_notm}} Pricing](https://www.ibm.com/cloud-computing/bluemix/pricing).
-2.  In the **Pay As You Go** section, click **Estimate your costs with our calculator**. The calculator opens.
-3.  Scroll to the **Container Registry** section in the **Container Charges** section.
-4.  Enter your storage and traffic estimates in the fields provided.
+1. Open the pricing sheet, see [{{site.data.keyword.Bluemix_notm}} Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/pricing).
+2. In the **Pay As You Go** section, click **Estimate your costs with our calculator**. The calculator opens.
+3. Scroll to the **Container Registry** section in the **Container Charges** section.
+4. Enter your storage and traffic estimates in the fields provided.
 
 Your estimated costs are displayed in the calculator.
 
@@ -153,25 +153,25 @@ You can upgrade your service plan to benefit from unlimited storage and pull tra
 
 If you want to find out what service plan you have, run the `ibmcloud cr plan` command.
 
-1.  Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+   If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {:tip}
 
-2.  Upgrade to the standard plan.
+2. Upgrade to the standard plan.
 
-    ```
-    ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   ibmcloud cr plan-upgrade standard
+   ```
+   {: pre}
 
-    If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
-    {:tip}
+   If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
+   {:tip}
 
 ## Learning the basics
 {: #registry_planning}
@@ -241,10 +241,10 @@ If you are unsure whether a namespace is already set for your account, run the `
 
 Consider the following rules when you choose a namespace:
 
--   Your namespace must be unique in an {{site.data.keyword.Bluemix_notm}} region.
--   Your namespace must be 4 - 30 characters long.
--   Your namespace must start with at least one letter or number.
--   Your namespace must contain lowercase letters, numbers, or underscores (_) only.
+- Your namespace must be unique in an {{site.data.keyword.Bluemix_notm}} region.
+- Your namespace must be 4 - 30 characters long.
+- Your namespace must start with at least one letter or number.
+- Your namespace must contain lowercase letters, numbers, or underscores (_) only.
 
 Do not put personal information in your namespace names.
 {:tip}
@@ -262,10 +262,10 @@ After you set your first namespace, you are assigned the free {{site.data.keywor
 
 A region is a geographic area that is accessed by a dedicated endpoint. {{site.data.keyword.registrylong_notm}} registries are available in the following regions:
 
--   ap-south: `registry.au-syd.bluemix.net`
--   eu-central: `registry.eu-de.bluemix.net`
--   uk-south: `registry.eu-gb.bluemix.net`
--   us-south: `registry.ng.bluemix.net`
+- ap-south: `registry.au-syd.bluemix.net`
+- eu-central: `registry.eu-de.bluemix.net`
+- uk-south: `registry.eu-gb.bluemix.net`
+- us-south: `registry.ng.bluemix.net`
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
