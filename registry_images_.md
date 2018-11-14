@@ -185,7 +185,7 @@ To build your own Docker image, complete the following steps:
   
      For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build).
 
-    - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
+   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
       1. Build the image from your Dockerfile on your local computer and tag it with your image name.
 
          ```

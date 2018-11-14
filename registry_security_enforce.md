@@ -58,8 +58,8 @@ Container Image Security Enforcement installs some policies by default to provid
 
 To override these policies, use one of the following options:
 
-- Write a new policy document and apply it to your cluster by using `kubectl apply`
-- Edit the default policy by using `kubectl edit`
+* Write a new policy document and apply it to your cluster by using `kubectl apply`
+* Edit the default policy by using `kubectl edit`
 
 For more information about writing security policies, see [Customizing policies](#customize_policies).
 
@@ -194,7 +194,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     {: codeblock}
 
     <table>
-    <caption>Table 1. Understanding this YAML components</caption>
+    <caption>Table 1. Understanding the YAML components</caption>
     <thead>
     <th>Field</th>
     <th>Description</th>
