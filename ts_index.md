@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-05"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -36,7 +36,7 @@ When you are using the forums to ask a question, tag your question so that it is
 
 See [Using the Support Center](/docs/get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support/howtogetsupport.html#getting-customer-support).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support/howtogetsupport.html#getting-customer-support)
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -178,7 +178,7 @@ You can fix this problem in the following ways:
 You are trying to run the command `docker pull`, but it returned a version of your image that is not the most recent version built.
 
 {: tsCauses}
-The `latest` tag is applied by default to reference an image when you run Docker commands without specifying the tag value. The `latest` tag is applied to the most recent `docker build` or `docker tag` command that was run without a tag value explicitly set. Therefore, it's possible to run `docker` commands out-of-order or to explicitly set tags on some images, and the `latest` tag to refer to a build which is not the most recent.
+The `latest` tag is applied by default to reference an image when you run Docker commands without specifying the tag value. The `latest` tag is applied to the most recent `docker build` or `docker tag` command that was run without a tag value explicitly set. Therefore, it's possible to run `docker` commands out-of-order or to explicitly set tags on some images, and the `latest` tag to refer to a build that is not the most recent.
 
 {: tsResolve}
 It is generally better to explicitly define a different sequential tag for your images every time, and not rely on the `latest` tag.
@@ -204,7 +204,7 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
 {: #ts_ppa_import}
 
-1. Obtain the compressed file that you want to import from [IBM Passport Advantage![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
+1. Obtain the compressed file that you want to import from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
 
 2. Target the region that you want to use. If you don't know the region name, run the command without the region and then choose a region.
 
@@ -296,7 +296,7 @@ Your repository or root key is lost or compromised.
 Your options for recovering lost or affected keys depend on the type of key: repository or root:
 
 - For [repository keys](#trustedcontent_lostrepokey), you can generate a new set of signing keys for the repository.
-- For [root keys](#trustedcontent_lostrootkey), you can request that the repository be deleted and create a new repository.
+- For [root keys](#trustedcontent_lostrootkey), you can request that the repository is deleted and create a new repository.
 
 ### Repository keys
 {: #trustedcontent_lostrepokey}
@@ -433,7 +433,7 @@ Complete the following steps to change the webhook configuration to make it fail
 
 2. Update `ValidatingWebhookConfiguration` by running the following command:
 
-   ````
+   ```
    kubectl edit ValidatingWebhookConfiguration image-admission-config
    ```
    {: pre}

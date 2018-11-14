@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -117,13 +117,13 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
         </tbody>
    </table>
 
-    Your CLI output looks similar to the following output:
+   Your CLI output looks similar to the following output:
 
-    ```
-    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-    Token              <token_value>
-    ```
-    {: screen}
+   ```
+   Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
+   Token              <token_value>
+   ```
+   {: screen}
 
 2. Verify that the token was created.
 
@@ -163,10 +163,10 @@ You can use a token in your `docker login` command to automate access to your na
 
 4. Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
-   - For namespaces set up in US-South: `registry.ng.bluemix.net`
-   - For namespaces set up in UK-South: `registry.eu-gb.bluemix.net`
-   - For namespaces set up in EU-Central: `registry.eu-de.bluemix.net`
-   - For namespaces set up in AP-South: `registry.au-syd.bluemix.net`
+   - For namespaces set up in US-South, use `registry.ng.bluemix.net`
+   - For namespaces set up in UK-South, use `registry.eu-gb.bluemix.net`
+   - For namespaces set up in EU-Central, use `registry.eu-de.bluemix.net`
+   - For namespaces set up in AP-South, use `registry.au-syd.bluemix.net`
 
    ```
    docker login -u token -p <token_value> <registry_url>
@@ -181,7 +181,7 @@ You can use a token in your `docker login` command to automate access to your na
 ### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
-Remove a {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
+Remove an {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
 {:shortdesc}
 
 Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.

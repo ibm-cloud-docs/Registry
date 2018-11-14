@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -29,13 +29,13 @@ For more information about IAM, see [IBM Cloud Access and Management](/docs/iam/
 
 For information about enabling policies for {{site.data.keyword.registrylong_notm}}, see [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
 
-Policies enable access to be granted at different levels. Some of the options include the following:
+Policies enable access to be granted at different levels. Some of the options include the following access levels:
 
 * Access to the service in your account
 * Access to a specific resource within the service
 * Access to all IAM-enabled services in your account
 
-After you define the scope of the access policy, you assign a role. Review the following tables which outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
+After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
 
 For information about managing user roles, see [Working with users](/docs/iam/iamusermanage.html#iamusermanage).
 
@@ -106,7 +106,7 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 ### Access roles for using {{site.data.keyword.registrylong_notm}}
 {: #access_roles_using}
 
-To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resource in the account. 
+To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resource in the account.
 
 **Example**
 
