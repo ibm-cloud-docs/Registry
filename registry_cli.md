@@ -46,48 +46,48 @@ Do not put personal information in your container images, namespace names, descr
  </thead>
  <tbody>
  <tr>
- <td>[ibmcloud cr api](#bx_cr_api)</td>
- <td>[ibmcloud cr build](#bx_cr_build)</td>
- <td>[ibmcloud cr exemption-add](#bx_cr_exemption_add)</td>
- <td>[ibmcloud cr exemption-list (ibmcloud cr exemptions)](#bx_cr_exemption_list)</td>
- <td>[ibmcloud cr exemption-rm](#bx_cr_exemption_rm)</td>
+ <td>[`ibmcloud cr api`](#bx_cr_api)</td>
+ <td>[`ibmcloud cr build`](#bx_cr_build)</td>
+ <td>[`ibmcloud cr exemption-add`](#bx_cr_exemption_add)</td>
+ <td>[`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](#bx_cr_exemption_list)</td>
+ <td>[`ibmcloud cr exemption-rm`](#bx_cr_exemption_rm)</td>
  </tr>
  <tr>
- <td>[ibmcloud cr exemption-types](#bx_cr_exemption_types)</td>
- <td>[ibmcloud cr iam-policies-enable](#bx_cr_iam_policies_enable)</td>
- <td>[ibmcloud cr image-inspect](#bx_cr_image_inspect)</td>
- <td>[ibmcloud cr image-list (ibmcloud cr images)](#bx_cr_image_list)</td>
- <td>[ibmcloud cr image-rm](#bx_cr_image_rm)</td>
+ <td>[`ibmcloud cr exemption-types`](#bx_cr_exemption_types)</td>
+ <td>[`ibmcloud cr iam-policies-enable`](#bx_cr_iam_policies_enable)</td>
+ <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
+ <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
+ <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
  </tr>
  <tr>
 
- <td>[ibmcloud cr info](#bx_cr_info)</td>
- <td>[ibmcloud cr login](#bx_cr_login)</td>
- <td>[ibmcloud cr namespace-add](#bx_cr_namespace_add)</td>
- <td>[ibmcloud cr namespace-list (ibmcloud cr namespaces)](#bx_cr_namespace_list)</td>
+ <td>[`ibmcloud cr info`](#bx_cr_info)</td>
+ <td>[`ibmcloud cr login`](#bx_cr_login)</td>
+ <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
+ <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
  <td>[ibmcloud cr namespace-rm](#bx_cr_namespace_rm)</td>
  </tr>
  <tr>
- <td>[ibmcloud cr plan](#bx_cr_plan)</td>
- <td>[ibmcloud cr plan-upgrade](#bx_cr_plan_upgrade)</td>
- <td>[ibmcloud cr ppa-archive-load](#bx_cr_ppa_archive_load)</td>
- <td>[ibmcloud cr quota](#bx_cr_quota)</td>
- <td>[ibmcloud cr quota-set](#bx_cr_quota_set)</td>
+ <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
+ <td>[`ibmcloud cr plan-upgrade`](#bx_cr_plan_upgrade)</td>
+ <td>[`ibmcloud cr ppa-archive-load`](#bx_cr_ppa_archive_load)</td>
+ <td>[`ibmcloud cr quota`](#bx_cr_quota)</td>
+ <td>[`ibmcloud cr quota-set`](#bx_cr_quota_set)</td>
  </tr>
  <tr>
- <td>[ibmcloud cr region](#bx_cr_region)</td>
- <td>[ibmcloud cr region-set](#bx_cr_region_set)</td>
- <td>[ibmcloud cr token-add](#bx_cr_token_add)</td>
- <td>[ibmcloud cr token-get](#bx_cr_token_get)</td>
- <td>[ibmcloud cr token-list (ibmcloud cr tokens)](#bx_cr_token_list)</td>
+ <td>[`ibmcloud cr region`](#bx_cr_region)</td>
+ <td>[`ibmcloud cr region-set`](#bx_cr_region_set)</td>
+ <td>[`ibmcloud cr token-add`](#bx_cr_token_add)</td>
+ <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
+ <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
  </tr>
  <tr>
- <td>[ibmcloud cr token-rm](#bx_cr_token_rm)</td>
- <td>[ibmcloud cr vulnerability-assessment (ibmcloud cr va)](#bx_cr_va)</td>
+ <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
+ <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
 
-## ibmcloud cr api
+## `ibmcloud cr api`
 {: #bx_cr_api}
 
 Returns the details about the registry API endpoint that the commands are run against.
@@ -101,7 +101,7 @@ ibmcloud cr api
 
 None
 
-## ibmcloud cr build
+## `ibmcloud cr build`
 {: #bx_cr_build}
 
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
@@ -142,7 +142,7 @@ ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird
 ```
 {: pre}
 
-## ibmcloud cr exemption-add
+## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
 
 Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, or tag.
@@ -192,7 +192,7 @@ ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird:1 --issu
 ```
 {: pre}
 
-## ibmcloud cr exemption-list (ibmcloud cr exemptions)
+## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
 
 List your exemptions for security issues.
@@ -222,7 +222,7 @@ ibmcloud cr exemption-list --scope bluebird/bird
 ```
 {: pre}
 
-## ibmcloud cr exemption-rm
+## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
 
 Delete an exemption for a security issue. To view your existing exemptions, run `ibmcloud cr exemption-list`.
@@ -272,7 +272,7 @@ ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird:1 --issue
 ```
 {: pre}
 
-## ibmcloud cr exemption-types
+## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
 Lists the types of security issues that you can exempt.
@@ -286,7 +286,7 @@ ibmcloud cr exemption-types
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
-## ibmcloud cr iam-policies-enable
+## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
 If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing user access with Identity and Access Management](/docs/services/Registry/iam.html#iam) and [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
@@ -300,7 +300,7 @@ ibmcloud cr iam-policies-enable
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
-## ibmcloud cr image-inspect
+## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
 
 Displays details about a specific image.
@@ -339,7 +339,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 ```
 {: pre}
 
-## ibmcloud cr image-list (ibmcloud cr images)
+## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
 Displays all images in your {{site.data.keyword.Bluemix_notm}} account.
@@ -383,7 +383,7 @@ ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
 ```
 {: pre}
 
-## ibmcloud cr image-rm
+## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
 Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
@@ -400,7 +400,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 **Command options**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. IMAGE must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
 
 <p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
 
@@ -416,7 +416,7 @@ ibmcloud cr image-rm registry.ng.bluemix.net/bluebird/bird:1
 ```
 {: pre}
 
-## ibmcloud cr info
+## `ibmcloud cr info`
 {: #bx_cr_info}
 
 Displays the name and the account of the registry that you are logged in to.
@@ -430,7 +430,7 @@ ibmcloud cr info
 
 None
 
-## ibmcloud cr login
+## `ibmcloud cr login`
 {: #bx_cr_login}
 
 This command runs the `docker login` command against the registry. The `docker login` command is required to be able to run the `docker push` or `docker pull` commands for the registry. This command is not required to run other `ibmcloud cr` commands. If Docker is not installed, this command returns an error message.
@@ -444,7 +444,7 @@ ibmcloud cr login
 
 None
 
-## ibmcloud cr namespace-add
+## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
 Choose a name for your namespace and add it to your {{site.data.keyword.Bluemix_notm}} account.
@@ -464,7 +464,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 <dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region. Namespaces must have 4-30 characters, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
   
 <p>  
-<strong>Tip</strong>: Do not put personal information in your namespace names.
+<strong>Tip</strong> Do not put personal information in your namespace names.
 </p>
   
 </dd>
@@ -479,7 +479,7 @@ ibmcloud cr namespace-add bluebird
 ```
 {: pre}
 
-## ibmcloud cr namespace-list (ibmcloud cr namespaces)
+## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
 Displays all namespaces that are owned by your {{site.data.keyword.Bluemix_notm}} account.
@@ -493,7 +493,7 @@ ibmcloud cr namespace-list
 
 Required permissions: Reader or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
-## ibmcloud cr namespace-rm
+## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
 Removes a namespace from your {{site.data.keyword.Bluemix_notm}} account. Images in this namespace are deleted when the namespace is removed.
@@ -522,7 +522,7 @@ ibmcloud cr namespace-rm bluebird
 ```
 {: pre}
 
-## ibmcloud cr plan
+## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
 Displays your pricing plan.
@@ -536,7 +536,7 @@ ibmcloud cr plan
 
 Required permissions: Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
-## ibmcloud cr plan-upgrade
+## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 Upgrades you to the standard plan.
@@ -567,7 +567,7 @@ ibmcloud cr plan-upgrade standard
 ```
 {: pre}
 
-## ibmcloud cr ppa-archive-load
+## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
 Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
@@ -599,14 +599,14 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 **Example**
 
-Import IBM software and package it for use with Helm in your private registry namespace *`bluebird`* where the path to the compressed file is *`downloads/compressed_file.tgz`*.
+Import IBM software and package it for use with Helm in your private registry namespace *`bluebird`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
 
 ```
 ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird
 ```
 {: pre}
 
-## ibmcloud cr quota
+## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
 Displays your current quotas for traffic and storage, and usage information against those quotas.
@@ -620,7 +620,7 @@ ibmcloud cr quota
 
 Required permissions: Reader, Writer, or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
-## ibmcloud cr quota-set
+## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
 Modify the specified quota.
@@ -644,14 +644,14 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 
 **Example**
 
-Set your quota limit for pull traffic to *7000* megabytes and storage to *600* megabytes:
+Set your quota limit for pull traffic to *7000* megabytes and storage to *600* megabytes.
 
 ```
 ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
 
-## ibmcloud cr region
+## `ibmcloud cr region`
 {: #bx_cr_region}
 
 Displays the targeted region and the registry.
@@ -667,7 +667,7 @@ None
 
 For more information, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
 
-## ibmcloud cr region-set
+## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
 
 Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no parameters.
@@ -700,7 +700,7 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## ibmcloud cr token-add
+## `ibmcloud cr token-add`
 {: #bx_cr_token_add}
 
 Add a token that you can use to control access to a registry.
@@ -720,7 +720,7 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 <dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `ibmcloud cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes cluster name. In this case, the token is removed automatically when your cluster is removed.
   
 <p> 
-  <strong>Tip</strong>: Do not put personal information in your token description.
+  <strong>Tip</strong> Do not put personal information in your token description.
 </p>
 
 </dd>
@@ -741,7 +741,7 @@ ibmcloud cr token-add --description "Token for my account" --non-expiring --read
 ```
 {: pre}
 
-## ibmcloud cr token-get
+## `ibmcloud cr token-get`
 {: #bx_cr_token_get}
 
 Retrieve the specified token from the registry.
@@ -770,7 +770,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ```
 {: pre}
 
-## ibmcloud cr token-list (ibmcloud cr tokens)
+## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
 Displays all tokens that exist for your {{site.data.keyword.Bluemix_notm}} account.
@@ -810,7 +810,7 @@ This example produces output in the following format:
 ```
 {: screen}
 
-## ibmcloud cr token-rm
+## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
 Remove one or more specified tokens.
@@ -839,7 +839,7 @@ ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
 ```
 {: pre}
 
-## ibmcloud cr vulnerability-assessment (ibmcloud cr va)
+## `ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)
 {: #bx_cr_va}
 
 View a vulnerability assessment report for your images.
