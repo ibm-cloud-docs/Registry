@@ -65,7 +65,7 @@ Do not put personal information in your container images, namespace names, descr
  <td>[`ibmcloud cr login`](#bx_cr_login)</td>
  <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
  <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
- <td>[ibmcloud cr namespace-rm](#bx_cr_namespace_rm)</td>
+ <td>[`ibmcloud cr namespace-rm`](#bx_cr_namespace_rm)</td>
  </tr>
  <tr>
  <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
