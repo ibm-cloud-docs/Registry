@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -23,7 +23,6 @@ With Container Image Security Enforcement (Beta), you can verify your container 
 
 Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow  deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
 
-
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
 
@@ -33,21 +32,21 @@ Container Image Security Enforcement retrieves information about image content t
 * [Target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 Complete the following steps:
-1.  [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
+1. [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
 
-2.  Add the IBM chart repository to your Helm client.
+2. Add the IBM chart repository to your Helm client.
 
-    ```
-    helm repo add ibm https://registry.bluemix.net/helm/ibm
-    ```
-    {: pre}
+   ```
+   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-3.  Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
+3. Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
-    ```
-    helm install --name cise ibm/ibmcloud-image-enforcement
-    ```
-    {: pre}
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
@@ -58,8 +57,9 @@ Container Image Security Enforcement installs some policies by default to provid
 {:shortdesc}
 
 To override these policies, use one of the following options:
-* Write a new policy document and apply it to your cluster by using `kubectl apply`
-* Edit the default policy by using `kubectl edit`
+
+- Write a new policy document and apply it to your cluster by using `kubectl apply`
+- Edit the default policy by using `kubectl edit`
 
 For more information about writing security policies, see [Customizing policies](#customize_policies).
 
@@ -171,9 +171,9 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
-Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. Then complete the following steps:
+Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. Then, complete the following steps:
 
-1.  Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
+1. Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +194,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     {: codeblock}
 
     <table>
-    <caption>Table. Understanding this YAML components</caption>
+    <caption>Table 1. Understanding this YAML components</caption>
     <thead>
     <th>Field</th>
     <th>Description</th>
@@ -231,12 +231,12 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     </tbody>
     </table>
 
-1.  Apply the `.yaml` file to your cluster.
+2. Apply the `.yaml` file to your cluster.
 
-    ```
-    kubectl apply -f <filepath>
-    ```
-    {: pre}
+   ```
+   kubectl apply -f <filepath>
+   ```
+   {: pre}
 
 ### Specifying trusted content signers in custom policies
 {: #signers}
@@ -246,25 +246,25 @@ If you use content trust, you can verify that images are signed by particular si
 
 To configure the policy to verify that an image is signed by a particular signer:
 
-1.  Get the signer name (the name that was used in `docker trust signer add`), and the signer's public key.
-1.  Generate a Kubernetes secret with the signer name and their public key.
+1. Get the signer name (the name that was used in `docker trust signer add`), and the signer's public key.
+2. Generate a Kubernetes secret with the signer name and their public key.
 
-    ```
-    kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
-    ```
-    {: pre}
-    
-1.  Add the secret to the `signerSecrets` list for the repository in your policy.
+   ```
+   kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
+   ```
+   {: pre}
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+3. Add the secret to the `signerSecrets` list for the repository in your policy.
+
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## Controlling who can customize policies
 {: #assign_user_policy}
@@ -281,7 +281,7 @@ In your role, add a rule for security policies:
 ```
 {: codeblock}
 
-You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
+You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only use the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
 {:tip}
 
 Users who have access to delete custom resource definitions (CRDs) can delete the resource definition for security policies, which also deletes your security policies. Make sure to control who is allowed to delete CRDs. To grant access to delete CRDs, add a rule:
@@ -306,39 +306,39 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 
 **Sample error messages**
 
-*  If your image does not match any policies, or there are no policies in the namespace or the cluster.
+* If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
    ```
-   admission webhook 
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Deny, no image policies or cluster 
+   admission webhook
+   "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+   denied the request: Deny, no image policies or cluster
    polices for <image-name>
    ```
    {: screen}
 
-*  If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
+* If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
 
    ```
-   admission webhook 
-   "va.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: The Vulnerability Advisor image scan 
-   assessment found issues with the container image that 
-   are not exempted. Refer to your image vulnerability report 
+   admission webhook
+   "va.hooks.securityenforcement.admission.cloud.ibm.com"
+   denied the request: The Vulnerability Advisor image scan
+   assessment found issues with the container image that
+   are not exempted. Refer to your image vulnerability report
    for more details by using the command `ibmcloud cr va`.
    ```
    {: screen}
 
-*  If your image matches a policy but does not satisfy that policy's trust requirements.
+* If your image matches a policy but does not satisfy that policy's trust requirements.
 
    ```
-   admission webhook 
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Deny, failed to get content trust information: 
+   admission webhook
+   "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+   denied the request: Deny, failed to get content trust information:
    No valid trust data for latest
    ```
    {: screen}
 
-*  If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
+* If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
    ```
    admission webhook 
@@ -361,17 +361,17 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
 
 
 
-1.  Disable Container Image Security Enforcement.
+1. Disable Container Image Security Enforcement.
 
-    ```
-    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
-    ```
-    {: codeblock}
+   ```
+   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+   $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   ```
+   {: codeblock}
 
-2.  Remove the chart.
+2. Remove the chart.
 
-    ```
-    helm delete --purge cise
-    ```
-    {: pre}
+   ```
+   helm delete --purge cise
+   ```
+   {: pre}

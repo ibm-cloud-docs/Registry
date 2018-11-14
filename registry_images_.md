@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -44,7 +44,7 @@ You can pull (download) an image from any private or public registry source, and
 
 Download the image, see [Pull an image](index.html#registry_images_pulling) in the Getting Started documentation.
 
-If you get an "unauthorized: authentication required" or a "denied: requested access to the resource is denied" message, run the `ibmcloud cr login` command.
+If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
 {:tip}
 
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
@@ -137,31 +137,31 @@ To build your own Docker image, complete the following steps:
 
 1. Create a local directory where you want to store the build context. The build context contains your Dockerfile and related build artifacts, such as the app code. Navigate to this directory in a command line window.
 2. Create a Dockerfile.
-  1. Create a Dockerfile in your local directory.
+    1. Create a Dockerfile in your local directory.
 
-     ```
-     touch Dockerfile
-     ```
-     {: pre}
+        ```
+        touch Dockerfile
+        ```
+        {: pre}
 
-  2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace _&lt;source_image&gt;_ and _&lt;tag&gt;_ with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in this private registry.
+    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace _&lt;source_image&gt;_ and _&lt;tag&gt;_ with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in this private registry.
 
-     ```
-     FROM <source_image>:<tag>
-     ```
-     {: pre}
+       ```
+       FROM <source_image>:<tag>
+       ```
+       {: pre}
 
-     **Example**
-     To create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following code:
+       **Example**
+       To create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following code:
 
-     ```
-     FROM registry.<region>.bluemix.net/ibmliberty:latest
-     LABEL description="This is my test Dockerfile"
-     EXPOSE 9080
-      ```
-     {: pre}
+       ```
+       FROM registry.<region>.bluemix.net/ibmliberty:latest
+       LABEL description="This is my test Dockerfile"
+       EXPOSE 9080
+       ```
+       {: pre}
 
-     This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/).
+       This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/).
 
 3. Decide on a name for your image. The image name must be in the following format:
 
@@ -174,37 +174,37 @@ To build your own Docker image, complete the following steps:
 
 4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
 5. Choose to either build your image directly in {{site.data.keyword.Bluemix_notm}} or build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}.
-  - To build the image directly in {{site.data.keyword.Bluemix_notm}}, run the following command:
+   - To build the image directly in {{site.data.keyword.Bluemix_notm}}, run the following command:
 
-    ```
-    ibmcloud cr build -t <image_name> <directory>
-    ```
-    {: pre}
+     ```
+     ibmcloud cr build -t <image_name> <directory>
+     ```
+     {: pre}
 
-    where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
-   
-    For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build).
+     where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
+  
+     For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build).
 
-  - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
-    1. Build the image from your Dockerfile on your local computer and tag it with your image name.
+    - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
+      1. Build the image from your Dockerfile on your local computer and tag it with your image name.
 
-       ```
-       docker build -t <image_name> <directory>
-       ```
-       {: pre}
+         ```
+         docker build -t <image_name> <directory>
+         ```
+         {: pre}
 
-       where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
+         where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
 
-    2. Optional: Test your image on your local computer before you push it to your namespace.
+      2. Optional: Test your image on your local computer before you push it to your namespace.
 
-       ```
-       docker run <image_name>
-       ```
-       {: pre}
+         ```
+         docker run <image_name>
+         ```
+         {: pre}
 
-       Replace _&lt;image_name&gt;_ with the name of your image.
+         Replace _&lt;image_name&gt;_ with the name of your image.
 
-    3. After you create your image and tag it for your namespace, [you can push your image to your namespace private registry](#registry_images_pushing).
+      3. After you create your image and tag it for your namespace, [you can push your image to your namespace private registry](#registry_images_pushing).
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
 
@@ -235,24 +235,24 @@ To delete an image by using the CLI, complete the following steps:
 1. Log in to {{site.data.keyword.Bluemix_notm}} by running the `ibmcloud login` command.
 2. To delete an image, run the following command:
 
-    ```
-    ibmcloud cr image-rm IMAGE
-    ```
-    {: pre}
+   ```
+   ibmcloud cr image-rm IMAGE
+   ```
+   {: pre}
 
-    Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
+   Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
 
-    If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
+   If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
-    {:tip}
+   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
+   {:tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
 
-    ```
-    ibmcloud cr image-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
 
 ### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
@@ -270,10 +270,10 @@ To delete an image by using the GUI, complete the following steps:
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Images**. A list of your images is displayed.
-6. In the row that contains the image that you want to delete, select the check box. 
+6. In the row that contains the image that you want to delete, select the check box.
 
-    Ensure that you've selected the correct image because this action can't be undone.
-    {: tip}
+   Ensure that you've selected the correct image because this action can't be undone.
+   {: tip}
 
 7. Click **Delete Image**.
 

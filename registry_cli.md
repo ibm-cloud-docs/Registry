@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-07"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -348,7 +348,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 {:tip}
 
 ```
- ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -461,7 +461,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 **Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region. Namespaces must be between 4 and 30 characters long, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
+<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region. Namespaces must have 4-30 characters, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
   
 <p>  
 <strong>Tip</strong>: Do not put personal information in your namespace names.

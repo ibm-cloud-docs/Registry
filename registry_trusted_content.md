@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-10-31"
 
 When you push your image with trusted content enabled, your Docker client also pushes a signed metadata object into the {{site.data.keyword.Bluemix_notm}} trust server. When pulling a tagged image with Docker Content Trust enabled, your Docker client contacts the trust server to establish the latest signed version of the tag that you requested, verifies the content signature, and downloads the signed image.
 
-An image name is made up of a repository and a tag. When using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content, so that you can verify that each image is produced by the appropriate team.
+An image name is made up of a repository and a tag. When using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content so that you can verify that each image is produced by the appropriate team.
 
 A repository can contain both signed and unsigned content. If you have Docker Content Trust enabled, you can access the signed content in a repository, even if there is other unsigned content alongside it.
 
@@ -223,6 +223,7 @@ To allow other users to sign images in a repository, add the signing keys for th
 {:shortdesc}
 
 **Before you begin**
+
 - Image signers must have permission to push images to the namespace.
 - Repository owners and additional signers must have Docker 18.03 or later installed.
 - Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to do this task for you.
@@ -232,14 +233,14 @@ When you add a signer, you can no longer use the repository admin key to sign im
 
 To share signing keys:
 
-1. If the new signer signer has not generated a key pair yet, a key pair must be generated and loaded.
+1. If the new signer has not generated a key pair yet, a key pair must be generated and loaded.
   
-    a. Generate the key. For _&lt;NAME&gt;_, you can enter any name, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+    a. Generate the key. You can enter any name for _&lt;NAME&gt;_, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
-    ```
-    docker trust key generate <NAME>
-    ```
-    {: pre}
+      ```
+      docker trust key generate <NAME>
+      ```
+      {: pre}
   
     b. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
   
@@ -251,10 +252,10 @@ To share signing keys:
 
     b. Add the signer's key to the repository.
 
-    ```
-    docker trust signer add --key <NAME>.pub <NAME> <repository>
-    ```
-    {: pre}
+      ```
+      docker trust signer add --key <NAME>.pub <NAME> <repository>
+      ```
+      {: pre}
 
 3. The signer can set up their environment and sign an image.
 
@@ -262,10 +263,10 @@ To share signing keys:
 
     b. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
-    ```
-    docker trust sign <repository>:<tag>
-    ```
-    {: pre}
+      ```
+      docker trust sign <repository>:<tag>
+      ```
+      {: pre}
 
 4. To verify that the signer was added, see [Viewing signed images](#trustedcontent_viewsigned).
 
