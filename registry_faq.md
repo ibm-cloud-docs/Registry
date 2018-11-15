@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-11-12"
 # Frequently asked questions (FAQs)
 {: #registry_faq}
 
-Frequently asked qustions about {{site.data.keyword.registrylong}}.
+Frequently asked questions about {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 ## How do I list public images?
