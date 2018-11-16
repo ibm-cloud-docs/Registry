@@ -28,7 +28,6 @@ IBM Cloud Container Registry
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
-    registry_ui.md
     registry_quota.md
     registry_images_.md
     registry_tokens.md
