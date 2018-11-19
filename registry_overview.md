@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-12"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -262,10 +262,10 @@ After you set your first namespace, you are assigned the free {{site.data.keywor
 
 A region is a geographic area that is accessed by a dedicated endpoint. {{site.data.keyword.registrylong_notm}} registries are available in the following regions:
 
-- ap-south: `registry.au-syd.bluemix.net`
-- eu-central: `registry.eu-de.bluemix.net`
-- uk-south: `registry.eu-gb.bluemix.net`
-- us-south: `registry.ng.bluemix.net`
+- `ap-south`: `registry.au-syd.bluemix.net`
+- `eu-central`: `registry.eu-de.bluemix.net`
+- `uk-south`: `registry.eu-gb.bluemix.net`
+- `us-south`: `registry.ng.bluemix.net`
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 

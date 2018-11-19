@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-11-14"
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to safely store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
 
-The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Monitoring the vulnerability of images](registry_ui.html).
+The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}

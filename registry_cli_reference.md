@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,20 +15,18 @@ lastupdated: "2018-11-02"
 {:tip: .tip}
 {:download: .download}
 
-
 # {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) commands for managing Docker images in your namespace
 {: #registry_cli_reference}
 
 You can use the container-registry plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can securely store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
 {:shortdesc}
 
-
 ## `ibmcloud cr` commands
 {: #registry_cli_reference_bxcr}
 
 Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
-  
+
 For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html).
 
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
@@ -41,78 +39,75 @@ By default, the CLI output is displayed in a human-readable format. However, thi
 
 You can alter the CLI output by applying the format option in two different ways:
 
-1.  Format data in your CLI output. For example, change the `Created` field output from UNIX time to standard time.
-2.  Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
+1. Format data in your CLI output. For example, change the `Created` field output from UNIX time to standard time.
+2. Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
--   Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
 
-    ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  ```
+  ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+  ```
+  {: pre}
 
-    **Example output**
+  **Example output**
 
-    ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
-    {: screen}
+  ```
+  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+  example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+  example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+  example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  ```
+  {: screen}
 
+- Run the following `ibmcloud cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
 
--   Run the following `ibmcloud cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
+  {: pre}
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  **Example output**
 
-    ```
-    {: pre}
+  ```
+  map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+  ```
+  {: screen}
 
-    **Example output**
+- Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image:
 
-    ```
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
+  {: pre}
 
--   Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image:
+  **Example output**
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  ```
+  map[9080/tcp: 9443/tcp:]
+  ```
+  {: screen}
 
-    **Example output**
+- Run the following `ibmcloud cr token-list` command to display all read-only tokens:
 
-    ```
-    map[9080/tcp: 9443/tcp:]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+  ```
+  {: pre}
 
--   Run the following `ibmcloud cr token-list` command to display all read-only tokens:
+  **Example output**
 
-    ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-    ```
-    {: screen}
-
+  ```
+  0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+  ```
+  {: screen}
 
 ### Go template options and data types in the `ibmcloud cr image-list` command
 {: #registry_cli_listing_imagelist}
@@ -167,7 +162,7 @@ Review the following table to find available Go template options and data types 
 |`AttachStdout`|Boolean|Displays _true_ if the standard output stream is attached to the container and _false_ if not.|
 |`AttachStderr`|Boolean|Displays _true_ if the standard error stream is attached to the container and _false_ if not.|
 |`ExposedPorts`|Key-value map|Displays the list of exposed ports in the format `[123:,456:]`.|
-|`Tty`|Boolean|Displays _true_ if a pseudo-tty is allocated to the container and _false_ if not.|
+|`Tty`|Boolean|Displays _true_ if a `pseudo-tty` is allocated to the container and _false_ if not.|
 |`OpenStdin`|Boolean|Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed.|
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|

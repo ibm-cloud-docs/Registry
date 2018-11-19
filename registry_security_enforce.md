@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -32,6 +32,7 @@ Container Image Security Enforcement retrieves information about image content t
 * [Target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
 
 Complete the following steps:
+
 1. [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
 
 2. Add the IBM chart repository to your Helm client.
@@ -293,7 +294,7 @@ Users who have access to delete custom resource definitions (CRDs) can delete th
 ```
 {: codeblock}
 
-Users and ServiceAccounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
+Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
 {:tip}
 
 ## Deploying container images with enforced security
