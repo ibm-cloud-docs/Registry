@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -124,7 +124,7 @@ Review the following table to find available Go template options and data types 
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
 |`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Table 1. Available fields and data types in the `ibmcloud cr image-list` command." caption-side="top"}
+{: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
 
 ### Go template options and data types in the `ibmcloud cr image-inspect` command
 {: #registry_cli_listing_imageinspect}
@@ -149,7 +149,7 @@ Review the following table to find available Go template options and data types 
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`VirtualSize`|Integer (64 bit)|Displays the sum of the size of each layer in the image in bytes.|
 |`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Table 2. Available fields and data types in the `ibmcloud cr image-inspect` command." caption-side="top"}
+{: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-inspect</code> command." caption-side="top"}
 
 #### Config
 
@@ -213,4 +213,4 @@ Review the following table to find available Go template options and data types 
 |`Expiry`|Integer (64 bit)|Displays [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
 |`ReadOnly`|Boolean|Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 |`Description`|String|Displays the description of the token.|
-{: caption="Table 6. Available fields and data types in the `ibmcloud cr token-list` command." caption-side="top"}
+{: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}
