@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-23"
 
 ---
 
@@ -135,7 +135,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 **Example**
 
-Build a Docker image without using a build cache, and with the build output suppressed, the tag *`registry.ng.bluemix.net/bluebird/bird:1`*, and the directory is your working directory.
+Build a Docker image that does’t use a build cache from previous builds, where the build output is suppressed, the tag is *`registry.ng.bluemix.net/bluebird/bird:1`*, and the directory is your working directory.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .

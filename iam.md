@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-11-23"
 
 ---
 
@@ -23,7 +23,7 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM user roles](/docs/iam/users_roles.html).
 
-IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that is used in automation, consider using an IAM Service ID instead of a registry token. For more information about Service IDs, see [Creating and working with Service IDs](/docs/iam/serviceid.html#serviceids).
+IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM Service ID instead of a registry token. For more information about Service IDs, see [Creating and working with Service IDs](/docs/iam/serviceid.html#serviceids).
 
 For more information about IAM, see [IBM Cloud Access and Management](/docs/iam/index.html#iamoverview).
 
@@ -54,7 +54,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | |
 | Editor | Not supported | |
 | Operator | Not supported | |
-| Administrator | <ul><li>Configure access for other users</li><li> Configure registry tokens</li><li>Create clusters</li></ul> | <ul><li>For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam/mngiam.html#iammanidaccser).</li><li>Add, list, retrieve, and remove registry tokens</li><li>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
+| Administrator | <ul><li>Configure access for other users</li><li>Configure registry tokens</li><li>Create clusters</li></ul> | <ul><li>For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam/mngiam.html#iammanidaccser).</li><li>Add, list, retrieve, and remove registry tokens</li><li>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 For {{site.data.keyword.registrylong_notm}}, the following actions exist:
