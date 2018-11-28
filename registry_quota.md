@@ -155,4 +155,4 @@ To free up image storage in your {{site.data.keyword.Bluemix_notm}} account:
     -   If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).
 
 
-[test link](http://abcd.test). 
+[test link](http://abcd.test2). 
