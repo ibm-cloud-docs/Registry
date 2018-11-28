@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-31"
+lastupdated: "2018-11-28"
 
 
 ---
@@ -153,3 +153,6 @@ To free up image storage in your {{site.data.keyword.Bluemix_notm}} account:
     -   Wait until the next billing cycle starts.
     -   If you have a free plan, [upgrade to the standard service plan](registry_overview.html#registry_plan_upgrade).
     -   If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).
+
+
+[test link](http://abcd.test). 
