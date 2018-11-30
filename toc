@@ -9,6 +9,7 @@ IBM Cloud Container Registry
     registry_overview.md
     registry_ha.md
     registry_public_images.md
+         /services/RegistryImages/toc
     [IBM images](../RegistryImages/index.html#ibm_images)
         [datashield-barbican image](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
         [datashield-mysql image](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
@@ -25,7 +26,6 @@ IBM Cloud Container Registry
         [Tutorial: Moving a VM based app to Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
         [Tutorial: Resilient and secure multi-region Kubernetes clusters with Cloud Internet Services](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     /services/va/toc
-    /services/RegistryImages/toc
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
