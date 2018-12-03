@@ -18,8 +18,7 @@ IBM Cloud Container Registry
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
-    {: .navgroup-end}
-
+    
     {: .topicgroup}
     Tutorials
         registry_tutorial_configure_iam.md
