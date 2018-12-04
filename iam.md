@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-23"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -36,8 +36,6 @@ Policies enable access to be granted at different levels. Some of the options in
 * Access to all IAM-enabled services in your account
 
 After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
-
-For information about managing user roles, see [Working with users](/docs/iam/iamusermanage.html#iamusermanage).
 
 For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam/mngiam.html#iammanidaccser).
 
