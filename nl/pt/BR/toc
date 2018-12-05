@@ -7,19 +7,18 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md      
-    registry_public_images.md
-    [Imagens da IBM](../RegistryImages/index.html#ibm_images)
-        [Imagem datashield-barbican](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
-        [Imagem datashield-mysql](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
-        [Imagem datashield-nginx](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
-        [Imagem datashield-vault](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
-        [Imagem ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [Imagem ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    registry_ha.md
+
+    {: .topicgroup}
+    Public images
+        registry_public_images.md
+        /services/RegistryImages/toc
     
     {: .topicgroup}
-    Tutoriais registry_tutorial_configure_iam.md  [Tutorial: movendo um app baseado em VM para Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)  [Tutorial: clusters de Kubernetes de várias regiões resilientes e seguras com o Cloud Internet Services](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
+    Tutoriais
+        registry_tutorial_configure_iam.md
+        [Tutorial: movendo um app baseado em VM para Kubernetes](tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [Tutorial: clusters de Kubernetes de várias regiões resilientes e seguras com o Cloud Internet Services](tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -30,13 +29,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [Gerenciando a segurança de imagem com o Vulnerability Advisor](../va/va_index.html)
-        [Sobre o Vulnerability Advisor](../va/va_index.html#about)
-        [Tipos de vulnerabilidades](../va/va_index.html#types)
-        [Instalando o Container Scanner](../va/va_index.html#va_install_container_scanner)
-        [Executando o Container Scanner de trás de um firewall](../va/va_index.html#va_firewall)
-        [Configurando políticas de isenção organizacional](../va/va_index.html#va_managing_policy) [Revisando um relatório de vulnerabilidade](../va/va_index.html#va_reviewing)
-        [Revisando um relatório de contêiner](../va/va_index.html#va_reviewing_container)
+    /services/va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
