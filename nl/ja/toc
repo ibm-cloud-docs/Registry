@@ -7,23 +7,18 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md      
-    registry_public_images.md
-    [IBM イメージ](../RegistryImages/index.html#ibm_images)
-        [datashield-barbican イメージ](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
-        [datashield-mysql イメージ](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
-        [datashield-nginx イメージ](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
-        [datashield-vault イメージ](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
-        [ibm-backup-restore イメージ](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
-        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty イメージ](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    registry_ha.md
+
+    {: .topicgroup}
+    Public images
+        registry_public_images.md
+        /services/RegistryImages/toc
     
     {: .topicgroup}
     チュートリアル
         registry_tutorial_configure_iam.md
-        [Tutorial: Moving a VM based app to Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
-        [Tutorial: Resilient and secure multi-region Kubernetes clusters with Cloud Internet Services](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
+        [Tutorial: Moving a VM based app to Kubernetes](tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [Tutorial: Resilient and secure multi-region Kubernetes clusters with Cloud Internet Services](tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -34,14 +29,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](../va/va_index.html)
-        [脆弱性アドバイザーの概要](../va/va_index.html#about)
-        [脆弱性のタイプ](../va/va_index.html#types)
-        [コンテナー・スキャナーのインストール](../va/va_index.html#va_install_container_scanner)
-        [ファイアウォールの内側からのコンテナー・スキャナーの実行](../va/va_index.html#va_firewall)
-        [組織の適用除外項目ポリシーの設定](../va/va_index.html#va_managing_policy)
-        [脆弱性レポートの検討](../va/va_index.html#va_reviewing)
-        [コンテナー・レポートの検討](../va/va_index.html#va_reviewing_container)
+    /services/va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
