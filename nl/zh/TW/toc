@@ -7,23 +7,18 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md      
-    registry_public_images.md
-    [IBM 映像檔](../RegistryImages/index.html#ibm_images)
-        [datashield-barbican 映像檔](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
-        [datashield-mysql 映像檔](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
-        [datashield-nginx 映像檔](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
-        [datashield-vault 映像檔](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
-        [ibm-backup-restore 映像檔](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
-        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty 映像檔](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    registry_ha.md
+
+    {: .topicgroup}
+    Public images
+        registry_public_images.md
+        /services/RegistryImages/toc
     
     {: .topicgroup}
     指導教學
         registry_tutorial_configure_iam.md
-        [指導教學：將 VM 型應用程式移至 Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
-        [指導教學：使用 Cloud Internet Services 的具復原力且安全的多地區 Kubernetes 叢集](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
+        [指導教學：將 VM 型應用程式移至 Kubernetes](tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [指導教學：使用 Cloud Internet Services 的具復原力且安全的多地區 Kubernetes 叢集](tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -34,14 +29,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [使用漏洞警告器管理映像檔安全](../va/va_index.html)
-        [關於漏洞警告器](../va/va_index.html#about)
-        [漏洞類型](../va/va_index.html#types)
-        [安裝容器掃描器](../va/va_index.html#va_install_container_scanner)
-        [在受防火牆保護的情況下執行容器掃描器](../va/va_index.html#va_firewall)
-        [設定組織豁免原則](../va/va_index.html#va_managing_policy)
-        [檢閱漏洞報告](../va/va_index.html#va_reviewing)
-        [檢閱容器報告](../va/va_index.html#va_reviewing_container)
+    /services/va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -55,3 +43,4 @@ IBM Cloud Container Registry
     ts_index.md
     registry_faq.md
     {: .navgroup-end}
+ 
