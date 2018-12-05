@@ -7,23 +7,18 @@ IBM Cloud Container Registry
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md      
-    registry_public_images.md
-    [IBM 映像](../RegistryImages/index.html#ibm_images)
-        [datashield-barbican 映像](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
-        [datashield-mysql 映像](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
-        [datashield-nginx 映像](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
-        [datashield-vault 映像](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
-        [ibm-backup-restore 映像](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
-        [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
-        [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty 映像](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    registry_ha.md
+
+    {: .topicgroup}
+    Public images
+        registry_public_images.md
+        /services/RegistryImages/toc
     
     {: .topicgroup}
     教程
         registry_tutorial_configure_iam.md
-        [教程：将基于 VM 的应用程序移至 Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
-        [教程：使用 Cloud Internet Services 的有弹性而安全的多区域 Kubernetes 集群](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
+        [教程：将基于 VM 的应用程序移至 Kubernetes](tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [教程：使用 Cloud Internet Services 的有弹性而安全的多区域 Kubernetes 集群](tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -34,14 +29,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    [使用漏洞顾问程序保护映像安全性](../va/va_index.html)
-        [关于漏洞顾问程序](../va/va_index.html#about)
-        [漏洞类型](../va/va_index.html#types)
-        [安装容器扫描程序](../va/va_index.html#va_install_container_scanner)
-        [从防火墙后运行容器扫描程序](../va/va_index.html#va_firewall)
-        [设置组织豁免策略](../va/va_index.html#va_managing_policy)
-        [查看漏洞报告](../va/va_index.html#va_reviewing)
-        [查看容器报告](../va/va_index.html#va_reviewing_container)
+    /services/va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
