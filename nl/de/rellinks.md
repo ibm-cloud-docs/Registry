@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-03"
-
+lastupdated: "2018-11-13"
 
 ---
 
@@ -16,31 +15,29 @@ lastupdated: "2018-09-03"
 {:tip: .tip}
 {:download: .download}
 
-
 # Zugehörige Links
+{: #links}
 
 Über die folgenden zugehörigen Links können Sie sich mit {{site.data.keyword.registrylong}} besser vertraut machen.
 {: shortdesc}
 
-## Docker
-{: #docker}
-
-<ul>
-<li><a href="http://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile - Referenz <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a>
-</ul>
-
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-
-
-<ul>
-  <li><a href="registry_cli.html" target="_blank">{{site.data.keyword.registrylong_notm}} CLI</a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry" target="_blank">{{site.data.keyword.registrylong_notm}} - REST-API <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a></li>
-<li><a href="https://console.bluemix.net/apidocs/container-registry/va" target="_blank">REST-API für Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a></li>
-</ul>
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)
+- [{{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/apidocs/container-registry)
+- [Vulnerability Advisor für {{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-* [Dokumentation zu {{site.data.keyword.containerlong_notm}}](/docs/containers/container_index.html#container_index)
+- [Dokumentation zu {{site.data.keyword.containerlong_notm}}](/docs/containers/container_index.html#container_index)
+- REST-API für Cluster. Siehe [Kubernetes Service API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://containers.bluemix.net/swagger-api/)
+- [REST-API-JSON für Cluster ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://containers.bluemix.net/swagger-api/swagger.json)
+- REST-API für die Protokollierung in Clustern. Siehe [IBM Cloud Container Service Logging API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://us-south.containers.bluemix.net/swagger-logging/)
+- REST-API für die Verwaltung von Lastausgleichsfunktionen für Ingress-Anwendungen in Clustern. Siehe [IBM Cloud Container Service ALB API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://us-south.containers.bluemix.net/swagger-alb-api/)
+
+## Docker
+{: #docker}
+
+- [Dockerfile - Referenz ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/builder/)

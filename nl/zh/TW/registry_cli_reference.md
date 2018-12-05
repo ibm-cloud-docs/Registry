@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,21 +15,19 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # 用於管理名稱空間中 Docker 映像檔的 {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) 指令
 {: #registry_cli_reference}
 
 您可以使用 container-registry 外掛程式，在 IBM 所管理的專用登錄中設定自己的映像檔名稱空間，而在此專用登錄中，您可以安全地儲存 Docker 映像檔，並將其與 {{site.data.keyword.Bluemix}} 帳戶中的所有使用者共用。
 {:shortdesc}
 
-
 ## `ibmcloud cr` 指令
 {: #registry_cli_reference_bxcr}
 
 在 {{site.data.keyword.registryshort_notm}} CLI 中，執行 `ibmcloud cr` 指令。
 {:shortdesc}
-  
-如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
+
+如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)。
 
 ## 格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出
 {: #registry_cli_listing}
@@ -41,78 +39,75 @@ lastupdated: "2018-08-20"
 
 您可以使用兩種不同方式套用 format 選項，以變更 CLI 輸出：
 
-1.  格式化 CLI 輸出中的資料。例如，將 `Created` 欄位輸出從 UNIX 時間變更為標準時間。
-2.  過濾 CLI 輸出中的資料。例如，依映像檔的詳細資料進行過濾，以使用 Go 範本 `if gt` 條件來顯示特定映像檔子集。
+1. 格式化 CLI 輸出中的資料。例如，將 `Created` 欄位輸出從 UNIX 時間變更為標準時間。
+2. 過濾 CLI 輸出中的資料。例如，依映像檔的詳細資料進行過濾，以使用 Go 範本 `if gt` 條件來顯示特定映像檔子集。
 
 您可以搭配使用 format 選項與下列 {{site.data.keyword.registrylong_notm}} 指令。按一下指令，以檢視可用欄位及其資料類型的清單。
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 下列程式碼範例示範如何使用格式化及過濾選項。
 
--   執行下列 `ibmcloud cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及安全狀態：
+- 執行下列 `ibmcloud cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及安全狀態：
 
+  ```
+ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  {: pre}
 
-    **輸出範例**
+  **輸出範例**
 
-    ```
+  ```
     example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
-    {: screen}
+  {: screen}
 
+- 執行下列 `ibmcloud cr image-inspect` 指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
 
--   執行下列 `ibmcloud cr image-inspect` 指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
-
+  ```
+ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
     ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  {: pre}
 
-    ```
-    {: pre}
+  **輸出範例**
 
-    **輸出範例**
-
-    ```
+  ```
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
     ```
-    {: screen}
+  {: screen}
 
--   執行下列 `ibmcloud cr image-inspect` 指令，以顯示所指定映像檔的公開埠：
+- 執行下列 `ibmcloud cr image-inspect` 指令，以顯示所指定映像檔的公開埠：
 
+  ```
+ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
     ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  {: pre}
 
-    **輸出範例**
+  **輸出範例**
 
-    ```
+  ```
     map[9080/tcp: 9443/tcp:]
     ```
-    {: screen}
+  {: screen}
 
--   執行下列 `ibmcloud cr token-list` 指令，以顯示所有唯讀記號：
+- 執行下列 `ibmcloud cr token-list` 指令，以顯示所有唯讀記號：
 
+  ```
+ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
+  {: pre}
 
-    **輸出範例**
+  **輸出範例**
 
-    ```
+  ```
     0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
     ```
-    {: screen}
-
+  {: screen}
 
 ### `ibmcloud cr image-list` 指令中的 Go 範本選項及資料類型
 {: #registry_cli_listing_imagelist}
@@ -167,7 +162,7 @@ lastupdated: "2018-08-20"
 |`AttachStdout`|布林|如果標準輸出串流連接至容器，會顯示 _true_，否則會顯示 _false_。|
 |`AttachStderr`|布林|如果標準錯誤串流連接至容器，會顯示 _true_，否則會顯示 _false_。|
 |`ExposedPorts`|鍵值對映|顯示已公開埠的清單，格式為 `[123:,456:]`。|
-|`Tty`|布林|如果虛擬 tty 連接至容器，會顯示 _true_，否則會顯示 _false_。|
+|`Tty`|布林|如果 `pseudo-tty` 配置給容器，會顯示 _true_，否則會顯示 _false_。|
 |`OpenStdin`|布林|如果標準輸入串流已開啟，會顯示 _true_，如果標準輸入串流已關閉，會顯示 _false_。|
 |`StdinOnce`|布林|如果在連接的用戶端中斷連線之後關閉標準輸入串流，會顯示 _true_，如果標準輸入串流保持開啟，會顯示 _false_。|
 |`Env`|字串陣列|以鍵值配對形式顯示環境變數清單。|

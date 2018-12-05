@@ -2,8 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-09-03"
-
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,16 +14,19 @@ lastupdated: "2018-09-03"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
-
-# 常见问题
+# 常见问题 (FAQ)
 {: #registry_faq}
 
+有关 {{site.data.keyword.registrylong}} 的常见问题。
+{: shortdesc}
 
 ## 如何列出公共映像？
 {: #faq_list_public_images}
+{: faq}
 
-要列出公共映像，请运行以下 `ibmcloud` 命令来将全局注册表设定为目标并列出 IBM 提供的公共映像：
+要列出公共映像，请运行以下 `ibmcloud` 命令来定位到全局注册表并列出 IBM 提供的公共映像：
 
 ```
 ibmcloud cr region-set global
@@ -36,8 +38,8 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-
-## 是否能使用非 Docker 工具构建映像并推送到注册表？
+## 是否可以使用非 Docker 工具来构建映像并将映像推送到注册表中？
 {: #faq_tools}
+{: faq}
 
-是，只要工具支持 OCI 图像格式和协议即可。
+可以，只要工具支持 OCI 图像格式和协议即可。

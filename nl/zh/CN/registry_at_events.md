@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -19,10 +19,10 @@ lastupdated: "2018-09-13"
 # {{site.data.keyword.cloudaccesstrailshort}} 事件  
 {: #at_events}
 
-使用 {{site.data.keyword.cloudaccesstrailfull}} 服务可跟踪 {{site.data.keyword.Bluemix}} 中用户和应用程序如何与 {{site.data.keyword.registrylong}} 服务进行交互。
+使用 {{site.data.keyword.cloudaccesstrailfull}} 服务可跟踪用户和应用程序如何与 {{site.data.keyword.Bluemix}} 中的 {{site.data.keyword.registrylong}} 服务进行交互。
 {:shortdesc}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} 服务会记录用户发起的更改 {{site.data.keyword.Bluemix_notm}} 中服务状态的活动。有关更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla)。 
+{{site.data.keyword.cloudaccesstrailfull_notm}} 服务会记录哪些用户发起的活动会更改 {{site.data.keyword.Bluemix_notm}} 中服务的状态。有关更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla)。 
 
 下表列出了在调用时生成事件的 API 方法：
 
@@ -47,9 +47,9 @@ lastupdated: "2018-09-13"
 ## 在何处查找事件
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} 事件位于生成事件的 {{site.data.keyword.Bluemix_notm}} 区域中提供的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中。
+{{site.data.keyword.cloudaccesstrailshort}} 事件可在事件生成所在 {{site.data.keyword.Bluemix_notm}} 区域中的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中进行查找。
 
-漏洞顾问程序事件所在的区域对应于提供资源（例如，映像或名称空间）的 {{site.data.keyword.registrylong_notm}} 区域。
+漏洞顾问程序事件所在的[区域](/docs/services/Registry/registry_overview.html#registry_regions)对应于映像或名称空间等资源所在的 {{site.data.keyword.registrylong_notm}} 区域。
 
 
 

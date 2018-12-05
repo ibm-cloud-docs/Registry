@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -23,7 +23,6 @@ lastupdated: "2018-08-20"
 
 Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} 擷取映像檔內容信任及漏洞的相關資訊。您可以選擇封鎖或容許部署儲存在其他登錄中的映像檔，但無法針對這些映像檔使用漏洞或信任強制執行。
 
-
 ## 在叢集中安裝 Container Image Security Enforcement
 {: #sec_enforce_install}
 
@@ -33,21 +32,22 @@ Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} �
 * [將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。
 
 請完成下列步驟：
-1.  [在叢集中設定 Helm](/docs/containers/cs_integrations.html#helm)。
 
-2.  將 IBM 圖表儲存庫新增至 Helm 用戶端。
+1. [在叢集中設定 Helm](/docs/containers/cs_integrations.html#helm)。
 
-    ```
-helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
-    ```
-    {: pre}
+2. 將 IBM 圖表儲存庫新增至 Helm 用戶端。
 
-3.  將 Container Image Security Enforcement Helm 圖表安裝至您的叢集。將它命名為例如 `cise`。
+   ```
+   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-    ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
-    ```
-    {: pre}
+3. 將 Container Image Security Enforcement Helm 圖表安裝至您的叢集。將它命名為例如 `cise`。
+
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 Container Image Security Enforcement 現在已安裝，並針對叢集中的所有 Kubernetes 名稱空間套用[預設安全原則](#default_policies)。如需為叢集中的 Kubernetes 名稱空間或叢集整體自訂安全原則的相關資訊，請參閱[自訂原則](#customize_policies)。
 
@@ -58,6 +58,7 @@ Container Image Security Enforcement 依預設會安裝部分原則，為您提�
 {:shortdesc}
 
 若要置換這些原則，請使用下列其中一個選項：
+
 * 撰寫新的原則文件，並使用 `kubectl apply` 將它套用至您的叢集
 * 使用 `kubectl edit` 編輯預設原則
 
@@ -171,9 +172,9 @@ spec:
 
 當您套用部署時，Container Image Security Enforcement 會檢查您正在部署至的 Kubernetes 名稱空間是否有原則可套用。如果沒有，Container Image Security Enforcement 會使用叢集層面原則。如果沒有任何名稱空間或叢集層面原則存在，即會拒絕您的部署。
 
-開始之前，請[將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。然後完成下列步驟：
+開始之前，請[將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。然後，請完成下列步驟：
 
-1.  建立 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 自訂資源定義 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a> `.yaml` 檔案。
+1. 建立 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 自訂資源定義 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a> `.yaml` 檔案。
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +195,7 @@ spec:
     {: codeblock}
 
     <table>
-    <caption>表. 瞭解這個 YAML 元件</caption>
+    <caption>表 1. 瞭解 YAML 元件</caption>
     <thead>
     <th>欄位</th>
     <th>說明</th>
@@ -210,7 +211,7 @@ spec:
     </tr>
     <tr>
     <td><code>spec/repositories/name</code></td>
-    <td>指定容許映像檔的來源儲存庫。儲存庫名稱接受萬用字元 (`*`)。除非 `repositories` 中有符合的項目允許，或是進一步套用驗證，否則會拒絕儲存庫。空的 `repositories` 清單會封鎖所有映像檔的部署。若要容許所有映像檔而不驗證任何原則，請將名稱設為 `*`，然後省略 policy 子區段。</td>
+    <td>指定容許映像檔的來源儲存庫。儲存庫名稱接受萬用字元 (`*`)。除非 `repositories` 中有符合的項目允許，或是套用進一步的驗證，否則會拒絕儲存庫。空的 `repositories` 清單會封鎖所有映像檔的部署。若要容許所有映像檔而不驗證任何原則，請將名稱設為 `*`，然後省略 policy 子區段。</td>
     </tr>
     <tr>
     <td><code>../../../policy</code></td>
@@ -222,7 +223,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
-    <td>如果您只要容許特定使用者簽署的映像檔，請指定具有簽章者名稱的 Kubernetes 密碼。省略此區段或將其保留空白，可驗證映像檔已簽署且不強制執行特定簽章者。如需相關資訊，請參閱[在自訂原則中指定受信任內容簽章者](#signers)。</td>
+    <td>如果您只要容許特定使用者簽署的映像檔，請指定具有簽章者名稱的 Kubernetes 密碼。省略此區段或將其保留空白，可驗證映像檔已簽署而不強制執行特定簽章者。如需相關資訊，請參閱[在自訂原則中指定受信任內容簽章者](#signers)。</td>
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
@@ -231,12 +232,12 @@ spec:
     </tbody>
     </table>
 
-1.  將 `.yaml` 檔案套用至您的叢集。
+2. 將 `.yaml` 檔案套用至您的叢集。
 
-    ```
+   ```
 kubectl apply -f <filepath>
     ```
-    {: pre}
+   {: pre}
 
 ### 在自訂原則中指定受信任內容簽章者
 {: #signers}
@@ -246,27 +247,27 @@ kubectl apply -f <filepath>
 
 若要配置原則來驗證映像檔已由特定的簽章者簽署，請執行下列動作：
 
-1.  取得簽章者名稱（在 `docker trust signer add` 中使用的名稱）及簽章者的公開金鑰。
-1.  使用簽章者名稱及其公開金鑰產生 Kubernetes 密碼。
+1. 取得簽章者名稱（在 `docker trust signer add` 中使用的名稱）及簽章者的公開金鑰。
+2. 使用簽章者名稱及其公開金鑰產生 Kubernetes 密碼。
     
 
-    ```
+   ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
-    {: pre}
-    
-1.  將密碼新增至原則中儲存庫的 `signerSecrets` 清單。
+   {: pre}
+
+3. 將密碼新增至原則中儲存庫的 `signerSecrets` 清單。
     
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## 控制可以自訂原則的人員
 {: #assign_user_policy}
@@ -283,7 +284,7 @@ kubectl apply -f <filepath>
 ```
 {: codeblock}
 
-您可以建立多個角色來控制使用者可以採取的動作。例如，變更 `verbs`，讓部分使用者只能 `get` 或 `list` 原則。或者，您也可以從 `resources` 清單中省略 `clusterimagepolicies`，只授與對 Kubbernetes 名稱空間原則的存取權。
+您可以建立多個角色來控制使用者可以採取的動作。例如，變更 `verbs`，讓部分使用者只能使用 `get` 或 `list` 原則。或者，您也可以從 `resources` 清單中省略 `clusterimagepolicies`，只授與對 Kubbernetes 名稱空間原則的存取權。
 {:tip}
 
 具有刪除自訂資源定義 (CRD) 之存取權的使用者，可以刪除安全原則的資源定義，這也會刪除您的安全原則。請務必控制被允許刪除 CRD 的人員。若要授與刪除 CRD 的存取權，請新增規則：
@@ -295,7 +296,7 @@ kubectl apply -f <filepath>
 ```
 {: codeblock}
 
-具有 `cluster-admin` 角色的使用者及服務帳戶都具有所有資源的存取權。即使您未編輯角色，cluster-admin 角色也會授與管理安全原則的存取權。請務必控制誰具有 `cluster-admin` 角色，並且只將存取權授與給您要容許修改安全原則的人員。
+具有 `cluster-admin` 角色的「使用者」及「服務帳戶」都具有所有資源的存取權。即使您未編輯角色，cluster-admin 角色也會授與管理安全原則的存取權。請務必控制誰具有 `cluster-admin` 角色，並且只將存取權授與給您要容許修改安全原則的人員。
 {:tip}
 
 ## 使用強制執行安全來部署容器映像檔
@@ -308,14 +309,14 @@ kubectl apply -f <filepath>
 
 **錯誤訊息範例**
 
-*  如果您的映像檔不符合任何原則，或名稱空間或叢集中沒有任何原則。
+* 如果您的映像檔不符合任何原則，或名稱空間或叢集中沒有任何原則。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
    {: screen}
 
-*  如果您的映像檔符合原則，但不滿足該原則的「漏洞警告器」需求。
+* 如果您的映像檔符合原則，但不滿足該原則的「漏洞警告器」需求。
 
    ```
    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
@@ -323,14 +324,14 @@ kubectl apply -f <filepath>
    ```
    {: screen}
 
-*  如果您的映像檔符合原則，但不滿足該原則的信任需求。
+* 如果您的映像檔符合原則，但不滿足該原則的信任需求。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
    ```
    {: screen}
 
-*  如果您的原則指定了映像檔的信任強制執行，但您的映像檔不是來自受支援的登錄。
+* 如果您的原則指定了映像檔的信任強制執行，但您的映像檔不是來自受支援的登錄。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
@@ -350,17 +351,17 @@ kubectl apply -f <filepath>
 
 
 
-1.  停用 Container Image Security Enforcement。
+1. 停用 Container Image Security Enforcement。
 
-    ```
+   ```
 $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
     $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
     ```
-    {: codeblock}
+   {: codeblock}
 
-2.  移除圖表。
+2. 移除圖表。
 
-    ```
+   ```
 helm delete --purge cise
     ```
-    {: pre}
+   {: pre}

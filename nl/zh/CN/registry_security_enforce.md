@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -23,7 +23,6 @@ lastupdated: "2018-08-20"
 
 Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检索有关映像内容信任和漏洞的信息。您可以选择是阻止还是允许部署存储在其他注册表中的映像，但不能对这些映像使用漏洞或信任强制实施。
 
-
 ## 在集群中安装 Container Image Security Enforcement
 {: #sec_enforce_install}
 
@@ -33,21 +32,22 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 * [设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。
 
 请完成以下步骤：
-1.  [在集群中设置 Helm](/docs/containers/cs_integrations.html#helm)。
 
-2.  将 IBM 图表存储库添加到 Helm 客户机。
+1. [在集群中设置 Helm](/docs/containers/cs_integrations.html#helm)。
 
-    ```
-helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
-    ```
-    {: pre}
+2. 将 IBM 图表存储库添加到 Helm 客户机。
 
-3.  将 Container Image Security Enforcement Helm 图表安装到集群中。为其提供名称，例如 `cise`。
+   ```
+   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-    ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
-    ```
-    {: pre}
+3. 将 Container Image Security Enforcement Helm 图表安装到集群中。为其提供名称，例如 `cise`。
+
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 现在，Container Image Security Enforcement 已安装，并会将[缺省安全策略](#default_policies)应用于集群中的所有 Kubernetes 名称空间。有关为集群中的 Kubernetes 名称空间或集群总体定制安全策略的信息，请参阅[定制策略](#customize_policies)。
 
@@ -58,6 +58,7 @@ helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
 {:shortdesc}
 
 要覆盖这些策略，请使用下列其中一个选项：
+
 * 编写新的策略文档，然后使用 `kubectl apply` 将其应用于集群
 * 使用 `kubectl edit` 编辑缺省策略
 
@@ -171,9 +172,9 @@ spec:
 
 应用部署时，Container Image Security Enforcement 会检查要部署到的 Kubernetes 名称空间是否具有要应用的策略。如果没有，Container Image Security Enforcement 会使用集群范围的策略。如果不存在名称空间或集群范围的策略，那么将拒绝部署。
 
-开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。然后执行以下步骤：
+开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。然后，完成以下步骤：
 
-1.  创建 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 定制资源定义 <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a> `.yaml` 文件。
+1. 创建 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 定制资源定义 <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a> `.yaml` 文件。
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +195,7 @@ spec:
     {: codeblock}
 
     <table>
-    <caption>表。了解此 YAML 的组成部分</caption>
+    <caption>表 1. 了解 YAML 的组成部分</caption>
     <thead>
     <th>字段</th>
     <th>描述</th>
@@ -231,12 +232,12 @@ spec:
     </tbody>
     </table>
 
-1.  将 `.yaml` 文件应用于集群。
+2. 将 `.yaml` 文件应用于集群。
 
-    ```
+   ```
 kubectl apply -f <filepath>
     ```
-    {: pre}
+   {: pre}
 
 ### 在定制策略中指定可信内容签署者
 {: #signers}
@@ -246,27 +247,27 @@ kubectl apply -f <filepath>
 
 要配置策略以验证映像是否由特定签署者签名，请执行以下操作：
 
-1.  获取签署者名称（在 `docker trust signer add` 中使用的名称）和签署者的公用密钥。
-1.  使用签署者名称及其公用密钥生成 Kubernetes 私钥。
+1. 获取签署者名称（在 `docker trust signer add` 中使用的名称）和签署者的公用密钥。
+2. 使用签署者名称及其公用密钥生成 Kubernetes 私钥。
     
 
-    ```
+   ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
     ```
-    {: pre}
-    
-1.  将该私钥添加到策略中存储库的 `signerSecrets` 列表。
+   {: pre}
+
+3. 将该私钥添加到策略中存储库的 `signerSecrets` 列表。
     
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## 控制可以定制策略的人员
 {: #assign_user_policy}
@@ -283,7 +284,7 @@ kubectl apply -f <filepath>
 ```
 {: codeblock}
 
-可以创建多个角色来控制用户可以执行的操作。例如，更改 `verbs`，使得某些用户只能对策略执行 `get` 或 `list` 操作。或者，可以省略 `resources` 列表中的 `clusterimagepolicies`，以仅授予对 Kubernetes 名称空间策略的访问权。
+可以创建多个角色来控制用户可以执行的操作。例如，更改 `verbs`，使得某些用户只能使用 `get` 或 `list` 策略。或者，可以省略 `resources` 列表中的 `clusterimagepolicies`，以仅授予对 Kubernetes 名称空间策略的访问权。
 {:tip}
 
 有权删除定制资源定义 (CRD) 的用户可以删除安全策略的资源定义，这样还会删除安全策略。确保控制允许谁来删除 CRD。要授予删除 CRD 的访问权，请添加规则：
@@ -295,7 +296,7 @@ kubectl apply -f <filepath>
 ```
 {: codeblock}
 
-具有 `cluster-admin` 角色的用户和 ServiceAccount 有权访问所有资源。即使您不编辑 cluster-admin 角色，该角色也会授予管理安全策略的访问权。确保控制谁具有 `cluster-admin` 角色，并仅向您希望允许其修改安全策略的人员授予访问权。
+具有 `cluster-admin` 角色的用户和服务帐户有权访问所有资源。即使您不编辑 cluster-admin 角色，该角色也会授予管理安全策略的访问权。确保控制谁具有 `cluster-admin` 角色，并仅向您希望允许其修改安全策略的人员授予访问权。
 {:tip}
 
 ## 部署强制实施了安全性的容器映像
@@ -308,14 +309,14 @@ kubectl apply -f <filepath>
 
 **样本错误消息**
 
-*  如果映像与任何策略都不匹配，或者名称空间或集群中没有任何策略。
+* 如果映像与任何策略都不匹配，或者名称空间或集群中没有任何策略。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
    {: screen}
 
-*  如果映像与策略相匹配，但不满足策略的漏洞顾问程序需求。
+* 如果映像与策略相匹配，但不满足策略的漏洞顾问程序需求。
 
    ```
    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
@@ -323,14 +324,14 @@ kubectl apply -f <filepath>
    ```
    {: screen}
 
-*  如果映像与策略相匹配，但不满足该策略的信任需求。
+* 如果映像与策略相匹配，但不满足该策略的信任需求。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
    ```
    {: screen}
 
-*  如果策略为映像指定了信任强制实施，但映像并不是来自支持的注册表。
+* 如果策略为映像指定了信任强制实施，但映像并不是来自支持的注册表。
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
@@ -350,17 +351,17 @@ kubectl apply -f <filepath>
 
 
 
-1.  禁用 Container Image Security Enforcement。
+1. 禁用 Container Image Security Enforcement。
 
-    ```
+   ```
 $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
     $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
     ```
-    {: codeblock}
+   {: codeblock}
 
-2.  除去图表。
+2. 除去图表。
 
-    ```
+   ```
 helm delete --purge cise
     ```
-    {: pre}
+   {: pre}

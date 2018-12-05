@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 {:download: .download}
 
-
 # 关于 {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -24,7 +23,7 @@ lastupdated: "2018-09-13"
 
 {{site.data.keyword.registrylong_notm}} 提供由 IBM 托管和管理的具备高可用性和高可扩展性的多租户专用映像注册表。可以通过设置自己的映像名称空间，然后将 Docker 映像推送到自己的名称空间来使用专用注册表。
 
-<img src="images/registry_architecture1.svg" alt="此图像说明您可如何与 IBM Cloud Container Registry 交互。Container Registry 包含专用和公共存储库以及与服务交互的 API。您的本地 Docker 客户机可从注册表中专用存储库拉出映像或将映像推送到其中，还可拉出公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互以列出映像。Container Registry CLI 与 API 交互以列出、创建、检查和除去映像以及执行其他管理功能。本地 Docker 客户机还可将映像从本地映像存储器拉出以及推送到其他注册表。"/>
+<img src="images/registry_architecture1.svg" alt="显示如何与 IBM Cloud Container Registry 进行交互的图像。Container Registry 包含专用和公共存储库以及与服务交互的 API。本地 Docker 客户机可以从注册表的专用存储库中拉出映像，也可以向注册表的专用存储库推送映像，另外还可以拉取公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互可列出映像。Container Registry CLI 与该 API 交互可列出、创建、检查和除去映像，也可执行其他管理功能。本地 Docker 客户机还可以从本地映像存储中拉取映像，然后将其推送到其他注册表。"/>
 
 **图 1. {{site.data.keyword.registrylong_notm}} 如何与 Docker 映像交互**
 
@@ -91,7 +90,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 **存储量：**
 
-  每种 {{site.data.keyword.registrylong_notm}} 服务套餐都随附特定存储量，可用于在您 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中安全地存储 Docker 映像。如果使用的是标准套餐，那么会按 GB-月使用量向您收费。第一个 0.5 GB-月免费。如果使用的是免费套餐，那么可以在 {{site.data.keyword.registrylong_notm}} 中免费存储的映像不超过免费套餐的配额限制。GB-月是一个月（730 小时）平均 1GB 的存储量。
+  每种 {{site.data.keyword.registrylong_notm}} 服务套餐都随附特定存储量，可用于在您 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中安全地存储 Docker 映像。如果使用的是标准套餐，那么会按 GB-月使用量向您收费。第一个 0.5 GB-月免费。如果使用的是免费套餐，那么可以在 {{site.data.keyword.registrylong_notm}} 中免费存储的映像不超过免费套餐的配额限制。GB-月是一个月（730 小时）平均 1 GB 的存储量。
 
   标准套餐示例：
 
@@ -149,10 +148,10 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 您可以使用由 {{site.data.keyword.Bluemix_notm}} 提供的成本计算器来计算应用程序价格。
 
-1.  打开价格表，请参阅 [{{site.data.keyword.Bluemix_notm}} 定价](https://www.ibm.com/cloud-computing/bluemix/pricing)。
-2.  在**现买现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
-3.  在**容器费用**部分中，滚动到**容器注册表**部分。
-4.  在提供的字段中输入估算的存储量和流量。
+1. 打开价格表，查看 [{{site.data.keyword.Bluemix_notm}} 定价 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/pricing)。
+2. 在**现买现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
+3. 在**容器费用**部分中，滚动到**容器注册表**部分。
+4. 在提供的字段中输入估算的存储量和流量。
 
 您的估算成本会显示在计算器中。
 
@@ -164,26 +163,26 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 如果想知道自己拥有的是哪种服务套餐，请运行 `ibmcloud cr plan` 命令。
 
-1.  登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.Bluemix_notm}}。
 
-    ```
+   ```
     ibmcloud login
     ```
-    {: pre}
+   {: pre}
 
-    如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.Bluemix_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.Bluemix_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+    
     {:tip}
 
-2.  升级到标准套餐。
+2. 升级到标准套餐。
 
-    ```
+   ```
     ibmcloud cr plan-upgrade standard
     ```
-    {: pre}
+   {: pre}
 
-    如果拥有的是 {{site.data.keyword.Bluemix_notm}} 轻量帐户，那么必须先升级到 {{site.data.keyword.Bluemix_notm}} 现买现付或预订帐户，然后才能运行 `ibmcloud cr plan-upgrade`。
+   如果拥有的是 {{site.data.keyword.Bluemix_notm}} 轻量帐户，那么必须先升级到 {{site.data.keyword.Bluemix_notm}} 现买现付或预订帐户，然后才能运行 `ibmcloud cr plan-upgrade`。
 {:tip}
-
 
 ## 了解基本信息
 {: #registry_planning}
@@ -193,7 +192,6 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {:tip}
-
 
 ### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
 {: #terms}
@@ -224,7 +222,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 <dl>
   <dt>注册表</dt>
-  <dd>注册表是为 OCI 映像（也称为 Docker 映像）提供存储的服务。OCI 映像可由使用适当注册表域名的 OCI 客户机访问或“拉出”。映像可由任何人访问（公共映像），也可限制为分组访问（专用映像）。{{site.data.keyword.registrylong_notm}} 提供由 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性的多租户专用映像注册表。添加您的帐户专用的名称空间，然后将映像推送到您的名称空间，即可使用注册表。</dd>
+  <dd>注册表是一种为 OCI 映像（也称为 Docker 映像）提供存储的服务。OCI 映像可由使用适当注册表域名的 OCI 客户机进行访问或“拉出”。公共映像可由任何人进行访问；专用映像只能由特定的组来进行访问。{{site.data.keyword.registrylong_notm}} 提供了由 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性的多租户专用映像注册表。要使用注册表，您可以添加您的帐户专用的名称空间，然后将映像推送到该名称空间中。</dd>
 </dl>
 
 <dl>
@@ -237,9 +235,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   <dd>标记是存储库中映像的标识。您可以使用标记来区分存储库中同一个基本映像的不同版本。在运行 Docker 命令时，如果未指定存储库映像的标记，那么缺省情况下，会使用标记为 <code>latest</code> 的映像。</dd>
 </dl>
 
-
 要了解有关 Docker 特定术语的更多信息，请[查询 Docker 词汇表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/glossary/)。
-
 
 ### 规划名称空间
 {: #registry_namespaces}
@@ -252,6 +248,8 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 如果要在多个 {{site.data.keyword.Bluemix_notm}} 区域中使用注册表，那么必须为每个区域设置名称空间。
 在区域中，名称空间名称是唯一的。您可以对每个区域使用相同的名称空间名称，除非别人已经在该区域中设置了使用该名称的名称空间。
 
+您可以使用 IAM 策略来控制对名称空间的访问权。有关更多信息，请参阅[定义用户访问角色策略](/docs/services/Registry/registry_users.html#user)。
+
 要仅使用 IBM 提供的公共映像，您无需设置名称空间。
 
 如果您不确定是否已为帐户设置名称空间，请运行 `ibmcloud cr namespace-list` 命令以检索现有名称空间信息。
@@ -260,10 +258,10 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 选择名称空间时，请考虑以下规则：
 
 
--   名称空间在 {{site.data.keyword.Bluemix_notm}} 区域中必须唯一。
--   名称空间的长度必须为 4 - 30 个字符。
--   名称空间必须至少以一个字母或数字开头。
--   名称空间必须只包含小写字母、数字或下划线 (_)。
+- 名称空间在 {{site.data.keyword.Bluemix_notm}} 区域中必须唯一。
+- 名称空间的长度必须为 4 - 30 个字符。
+- 名称空间必须至少以一个字母或数字开头。
+- 名称空间必须只包含小写字母、数字或下划线 (_)。
 
 不要将个人信息放入名称空间名称中。
 {:tip}
@@ -281,10 +279,10 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 区域是指由专用端点访问的地理区域。{{site.data.keyword.registrylong_notm}} 注册表在以下区域中可用：
 
--   ap-south：`registry.au-syd.bluemix.net`
--   eu-central：`registry.eu-de.bluemix.net`
--   uk-south：`registry.eu-gb.bluemix.net`
--   us-south：`registry.ng.bluemix.net`
+- `ap-south`：`registry.au-syd.bluemix.net`
+- `eu-central`：`registry.eu-de.bluemix.net`
+- `uk-south`：`registry.eu-gb.bluemix.net`
+- `us-south`：`registry.ng.bluemix.net`
 
 所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
 
@@ -321,6 +319,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)。
+有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set)。
 
 将全局注册表设定为目标后，运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到全局注册表，这样就可以拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。

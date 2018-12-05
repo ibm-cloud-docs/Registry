@@ -25,10 +25,10 @@ Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {:tip}
 
-Antes de empezar, instale [{{site.data.keyword.Bluemix_notm}} CLI ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html).
+Antes de empezar, instale la [CLI de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html).
 
 
-## Instalación de {{site.data.keyword.registrylong_notm}} CLI (plug-in container-registry)
+## Instalación de la CLI de {{site.data.keyword.registrylong_notm}} (plug-in container-registry)
 {: #registry_cli_install}
 
 Instale la CLI de {{site.data.keyword.registrylong_notm}} para utilizar la línea de mandatos para gestionar los espacios de nombres y las imágenes de Docker en el registro privado de {{site.data.keyword.Bluemix_notm}}.

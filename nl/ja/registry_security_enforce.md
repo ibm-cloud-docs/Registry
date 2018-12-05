@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -23,7 +23,6 @@ Container Image Security Enforcement (ベータ) を使用すると、{{site.dat
 
 Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
 
-
 ## クラスターへの Container Image Security Enforcement のインストール
 {: #sec_enforce_install}
 
@@ -33,21 +32,22 @@ Container Image Security Enforcement は、イメージ・コンテンツの信�
 * クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers/cs_cli_install.html#cs_cli_configure)。
 
 以下の手順を実行してください。
-1.  [クラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
 
-2.  IBM のチャート・リポジトリーを Helm クライアントに追加します。
+1. [クラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
 
-    ```
-    helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
-    ```
-    {: pre}
+2. IBM のチャート・リポジトリーを Helm クライアントに追加します。
 
-3.  Container Image Security Enforcement の Helm チャートをクラスターにインストールします。 `cise` などの名前を指定します。
+   ```
+   helm repo add ibm  https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-    ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
-    ```
-    {: pre}
+3. Container Image Security Enforcement の Helm チャートをクラスターにインストールします。 `cise` などの名前を指定します。
+
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 これで、Container Image Security Enforcement がインストールされ、クラスター内のすべての Kubernetes 名前空間に[デフォルトのセキュリティー・ポリシー](#default_policies)が適用されました。 クラスター内の Kubernetes 名前空間またはクラスター全体のセキュリティー・ポリシーをカスタマイズする方法については、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
 
@@ -58,6 +58,7 @@ Container Image Security Enforcement は、セキュリティー・ポリシー�
 {:shortdesc}
 
 これらのポリシーをオーバーライドする方法としては、以下の選択肢があります。
+
 * 新しいポリシー文書を作成し、`kubectl apply` を使用してクラスターに適用する。
 * `kubectl edit` を使用してデフォルトのポリシーを編集する。
 
@@ -171,9 +172,9 @@ spec:
 
 デプロイメントを行うと、Container Image Security Enforcement が、デプロイ先の Kubernetes 名前空間に適用すべきポリシーがあるかどうかを検査します。 ない場合、Container Image Security Enforcement はクラスター規模のポリシーを使用します。 名前空間規模のポリシーもクラスター規模のポリシーも存在しない場合、デプロイメントは拒否されます。
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。 その後、以下の手順を実行します。
+始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。 次に、以下の手順を実行します。
 
-1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
+1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +195,7 @@ spec:
     {: codeblock}
 
     <table>
-    <caption>表。 この YAML の構成要素についての説明</caption>
+    <caption>表 1. YAML コンポーネントについて</caption>
     <thead>
     <th>フィールド</th>
     <th>説明</th>
@@ -231,12 +232,12 @@ spec:
     </tbody>
     </table>
 
-1.  `.yaml` ファイルをクラスターに適用します。
+2. `.yaml` ファイルをクラスターに適用します。
 
-    ```
-    kubectl apply -f <filepath>
-    ```
-    {: pre}
+   ```
+   kubectl apply -f <filepath>
+   ```
+   {: pre}
 
 ### 信頼できるコンテンツの署名者をカスタム・ポリシーに指定する
 {: #signers}
@@ -246,25 +247,25 @@ spec:
 
 イメージに特定の署名者の署名があることを検証するようにポリシーを構成するには、以下のようにします。
 
-1.  署名者の名前 (`docker trust signer add` で使用された名前) と公開鍵を取得します。
-1.  署名者の名前と公開鍵を使用して、Kubernetes シークレットを生成します。
+1. 署名者の名前 (`docker trust signer add` で使用された名前) と公開鍵を取得します。
+2. 署名者の名前と公開鍵を使用して、Kubernetes シークレットを生成します。
 
-    ```
-    kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
-    ```
-    {: pre}
-    
-1.  ポリシーのリポジトリーの `signerSecrets` リストにシークレットを追加します。
+   ```
+   kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
+   ```
+   {: pre}
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+3. ポリシーのリポジトリーの `signerSecrets` リストにシークレットを追加します。
+
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## ポリシーをカスタマイズできるユーザーの制御
 {: #assign_user_policy}
@@ -281,7 +282,7 @@ Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有�
 ```
 {: codeblock}
 
-複数の役割を作成して、ユーザーが実行できるアクションを制御できます。 例えば、`verbs` を変更して、一部のユーザーはポリシーの `get` または `list` だけを実行できるようにしたりします。 また、`resources` リストから `clusterimagepolicies` を省いて、Kubernetes 名前空間ポリシーへのアクセスだけを付与することもできます。
+複数の役割を作成して、ユーザーが実行できるアクションを制御できます。 例えば、`verbs` を変更して、一部のユーザーが `get` または `list` ポリシーだけを使用できるようにしたりします。また、`resources` リストから `clusterimagepolicies` を省いて、Kubernetes 名前空間ポリシーへのアクセスだけを付与することもできます。
 {:tip}
 
 カスタム・リソース定義 (CRD) を削除する権限を持つユーザーは、セキュリティー・ポリシーのリソース定義を削除できます。これにより、セキュリティー・ポリシーも削除されます。 CRD を削除できるユーザーの制御は、必ず行ってください。 CRD を削除する権限を付与するには、以下のようにルールを追加します。
@@ -293,7 +294,7 @@ Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有�
 ```
 {: codeblock}
 
-`cluster-admin` 役割を持つユーザーおよび ServiceAccount は、すべてのリソースにアクセスできます。 cluster-admin 役割は、編集を行わなくても、セキュリティー・ポリシーを管理する権限を付与します。 `cluster-admin` 役割を持つユーザーの制御を必ず行い、セキュリティー・ポリシーの変更を許可するユーザーだけにアクセス権限を付与するようにしてください。
+`cluster-admin` 役割を持つユーザーおよびサービス・アカウントは、すべてのリソースにアクセスできます。 cluster-admin 役割は、編集を行わなくても、セキュリティー・ポリシーを管理する権限を付与します。 `cluster-admin` 役割を持つユーザーの制御を必ず行い、セキュリティー・ポリシーの変更を許可するユーザーだけにアクセス権限を付与するようにしてください。
 {:tip}
 
 ## セキュリティーを強化したコンテナー・イメージのデプロイ
@@ -306,7 +307,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 **エラー・メッセージの例**
 
-*  イメージがどのポリシーにも一致しない場合、または名前空間にもクラスターにもポリシーがない場合。
+* イメージがどのポリシーにも一致しない場合、または名前空間にもクラスターにもポリシーがない場合。
 
    ```
    admission webhook 
@@ -316,7 +317,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
    ```
    {: screen}
 
-*  イメージがポリシーに一致するが、そのポリシーの脆弱性アドバイザーの要件を満たしていない場合。
+* イメージがポリシーに一致するが、そのポリシーの脆弱性アドバイザーの要件を満たしていない場合。
 
    ```
    admission webhook 
@@ -328,7 +329,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
    ```
    {: screen}
 
-*  イメージがポリシーに一致するが、そのポリシーのトラスト要件を満たしていない場合。
+* イメージがポリシーに一致するが、そのポリシーのトラスト要件を満たしていない場合。
 
    ```
    admission webhook 
@@ -338,7 +339,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
    ```
    {: screen}
 
-*  イメージに対するトラスト制約がポリシーに指定されているが、イメージがサポート対象レジストリーからのものではない場合。
+* イメージに対するトラスト制約がポリシーに指定されているが、イメージがサポート対象レジストリーからのものではない場合。
 
    ```
    admission webhook 
@@ -361,17 +362,17 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 
 
-1.  Container Image Security Enforcement を無効にします。
+1. Container Image Security Enforcement を無効にします。
 
-    ```
-    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+   ```
+   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
     $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
-    ```
-    {: codeblock}
+   ```
+   {: codeblock}
 
-2.  チャートを削除します。
+2. チャートを削除します。
 
-    ```
-    helm delete --purge cise
-    ```
-    {: pre}
+   ```
+   helm delete --purge cise
+   ```
+   {: pre}

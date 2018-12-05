@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,21 +15,19 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # 用于管理名称空间中 Docker 映像的 {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) 命令
 {: #registry_cli_reference}
 
 可以使用 container-registry 插件在 IBM 托管和管理的专用注册表中设置自己的映像名称空间，在此名称空间中可以安全地存储 Docker 映像，并与您 {{site.data.keyword.Bluemix}} 帐户中的所有用户共享这些映像。
 {:shortdesc}
 
-
 ## `ibmcloud cr` 命令
 {: #registry_cli_reference_bxcr}
 
 在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `ibmcloud cr` 命令。
 {:shortdesc}
-  
-有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)。
+
+有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)。
 
 ## 对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤
 {: #registry_cli_listing}
@@ -41,78 +39,75 @@ lastupdated: "2018-08-20"
 
 可以通过两种不同方式应用 format 选项来变更 CLI 输出：
 
-1.  设置 CLI 输出中数据的格式。例如，将 `Created` 字段输出从 UNIX 时间更改为标准时间。
-2.  过滤 CLI 输出中的数据。例如，通过使用 Go 模板 `if gt` 条件，按映像详细信息进行过滤以显示特定映像子集。
+1. 设置 CLI 输出中数据的格式。例如，将 `Created` 字段输出从 UNIX 时间更改为标准时间。
+2. 过滤 CLI 输出中的数据。例如，通过使用 Go 模板 `if gt` 条件，按映像详细信息进行过滤以显示特定映像子集。
 
 可以将 format 选项用于以下 {{site.data.keyword.registrylong_notm}} 命令。单击命令可查看可用字段及其数据类型的列表。
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 以下代码示例演示了可如何对选项进行格式设置和过滤。
 
--   运行以下 `ibmcloud cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和安全状态：
+- 运行以下 `ibmcloud cr image-list` 命令，以显示大小超过 1 MB 的所有映像的存储库、标记和安全状态：
 
+  ```
+ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  {: pre}
 
-    **示例输出**
+  **示例输出**
 
-    ```
+  ```
 example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
     ```
-    {: screen}
+  {: screen}
 
+- 运行以下 `ibmcloud cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
 
--   运行以下 `ibmcloud cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
+  {: pre}
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  **示例输出**
 
-    ```
-    {: pre}
-
-    **示例输出**
-
-    ```
+  ```
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
     ```
-    {: screen}
+  {: screen}
 
--   运行以下 `ibmcloud cr image-inspect` 命令，以显示指定映像的已公开端口：
+- 运行以下 `ibmcloud cr image-inspect` 命令，以显示指定映像的已公开端口：
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
+  {: pre}
 
-    **示例输出**
+  **示例输出**
 
-    ```
+  ```
     map[9080/tcp: 9443/tcp:]
     ```
-    {: screen}
+  {: screen}
 
--   运行以下 `ibmcloud cr token-list` 命令，以显示所有只读令牌：
+- 运行以下 `ibmcloud cr token-list` 命令，以显示所有只读令牌：
 
+  ```
+ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
     ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
+  {: pre}
 
-    **示例输出**
+  **示例输出**
 
-    ```
+  ```
     0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
     ```
-    {: screen}
-
+  {: screen}
 
 ### `ibmcloud cr image-list` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_listing_imagelist}
@@ -129,7 +124,7 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`Tag`|字符串|显示映像的标记。|
 |`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](../va/va_index.html#va_registry_cli)。|
-{: caption="表 1. <codeibmcloud cr image-list</code> 命令中的可用字段和数据类型" caption-side="top"}
+{: caption="表 1. <code>ibmcloud cr image-list</code> 命令中的可用字段和数据类型" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_listing_imageinspect}
@@ -154,7 +149,7 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`VirtualSize`|整数（64 位）|显示映像中每层大小的总和（以字节为单位）。|
 |`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [RootFS](registry_cli_reference.html#rootfs) 中的字段详细信息。|
-{: caption="表 2. <codeibmcloud cr image-inspect</code> 命令中的可用字段和数据类型" caption-side="top"}
+{: caption="表 2. <code>ibmcloud cr image-inspect</code> 命令中的可用字段和数据类型" caption-side="top"}
 
 #### Config
 
@@ -167,7 +162,7 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`AttachStdout`|布尔值|如果标准输出流连接到容器，将显示 _true_；否则，将显示 _false_。|
 |`AttachStderr`|布尔值|如果标准错误流连接到容器，将显示 _true_；否则，将显示 _false_。|
 |`ExposedPorts`|键值映射|显示已公开端口的列表，格式为 `[123:,456:]`。|
-|`Tty`|布尔值|如果将伪 tty 分配给容器，将显示 _true_；否则，将显示 _false_。|
+|`Tty`|布尔值|如果将 `pseudo-tty` 分配给容器，将显示 _true_；否则，将显示 _false_。|
 |`OpenStdin`|布尔值|如果标准输入流已打开，将显示 _true_；如果标准输入流已关闭，将显示 _false_。|
 |`StdinOnce`|布尔值|如果标准输入流在所连接客户机断开连接后关闭，将显示 _true_；如果标准输入流保持打开，将显示 _false_。|
 |`Env`|字符串数组|显示环境变量的列表，格式为键值对。|
@@ -218,4 +213,4 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`Expiry`|整数（64 位）|显示令牌到期时的 [UNIX 时间戳记](https://en.wikipedia.org/wiki/Unix_time)。|
 |`ReadOnly`|布尔值|只能拉出映像时显示 _true_，可以向名称空间推送映像以及从名称空间中拉出映像时显示 _false_。|
 |`描述`|字符串|显示令牌的描述。|
-{: caption="表 6. <codeibmcloud cr token-list</code> 命令中的可用字段和数据类型" caption-side="top"}
+{: caption="表 6. <code>ibmcloud cr token-list</code> 命令中的可用字段和数据类型" caption-side="top"}

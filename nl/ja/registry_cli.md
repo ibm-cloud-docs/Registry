@@ -2,15 +2,18 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-21"
-
+lastupdated: "2018-11-14"
 
 ---
 
-{:codeblock: .codeblock}
-{:shortdesc: .shortdesc}
-{:tip: .tip}
 {:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
@@ -19,13 +22,21 @@ lastupdated: "2018-08-21"
 {: shortdesc}
 
 **前提条件**
+
+* [{{site.data.keyword.Bluemix_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/cli/index.html#overview) をインストールします。 {{site.data.keyword.Bluemix_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
+
 * レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
-{{site.data.keyword.registrylong_notm}} CLI の使用方法については、『[{{site.data.keyword.registrylong_notm}} の概説](index.html)』を参照してください。
+`ibmcloud` CLI およびプラグインの更新が使用可能になると、コマンド・ラインに通知が表示されます。 使用可能なすべてのコマンドとフラグを使用できるように、CLI を最新の状態に保つようにしてください。
+
+現行バージョンの {{site.data.keyword.registrylong}} CLI プラグイン (`container-registry`) を表示しようとしている場合は、`ibmcloud plugin list` を実行します。
+
+{{site.data.keyword.registrylong_notm}} CLI の使用方法については、『[{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry/index.html#index)』を参照してください。
+
+一部のコマンドにとって必要な IAM プラットフォームとサービス・アクセス役割について詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry/iam.html#iam)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {:tip}
-
 
 <table summary="{{site.data.keyword.registrylong_notm}} の管理">
 <caption>表 1. {{site.data.keyword.registrylong_notm}} を管理するためのコマンド
@@ -43,36 +54,38 @@ lastupdated: "2018-08-21"
  </tr>
  <tr>
  <td>[`ibmcloud cr exemption-types`](#bx_cr_exemption_types)</td>
- <td>[`ibmcloud cr info`](#bx_cr_info)</td>
+ <td>[`ibmcloud cr iam-policies-enable`](#bx_cr_iam_policies_enable)</td>
  <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
  <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
  <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
-  </tr>
+ </tr>
  <tr>
+
+ <td>[`ibmcloud cr info`](#bx_cr_info)</td>
  <td>[`ibmcloud cr login`](#bx_cr_login)</td>
  <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
  <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
  <td>[`ibmcloud cr namespace-rm`](#bx_cr_namespace_rm)</td>
- <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
  </tr>
  <tr>
+ <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
  <td>[`ibmcloud cr plan-upgrade`](#bx_cr_plan_upgrade)</td>
  <td>[`ibmcloud cr ppa-archive-load`](#bx_cr_ppa_archive_load)</td>
  <td>[`ibmcloud cr quota`](#bx_cr_quota)</td>
  <td>[`ibmcloud cr quota-set`](#bx_cr_quota_set)</td>
+ </tr>
+ <tr>
  <td>[`ibmcloud cr region`](#bx_cr_region)</td>
- </tr><tr>
  <td>[`ibmcloud cr region-set`](#bx_cr_region_set)</td>
  <td>[`ibmcloud cr token-add`](#bx_cr_token_add)</td>
  <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
  <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
+ </tr>
+ <tr>
  <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
-  </tr><tr>
-  <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
+ <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
-
-
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -84,6 +97,9 @@ ibmcloud cr api
 ```
 {: codeblock}
 
+**前提条件**
+
+なし
 
 ## `ibmcloud cr build`
 {: #bx_cr_build}
@@ -95,10 +111,14 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するライターまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`DIRECTORY`</dt>
-<dd>Dockerfile と前提条件ファイルが含まれているビルド・コンテキストの場所。</dd>
+<dd>Dockerfile と前提条件ファイルが含まれているビルド・コンテキストの場所。 作業ディレクトリーをビルド・コンテキストの保管場所に設定した状態でコマンドを実行する場合は、`DIRECTORY` をピリオド (.) に置換できます。</dd>
 <dt>`--no-cache`</dt>
 <dd>(オプション) 指定した場合、キャッシュされている前のビルドのイメージ・レイヤーはこのビルドに使用されません。</dd>
 <dt>`--pull`</dt>
@@ -106,36 +126,37 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dt>`--quiet`, `-q`</dt>
 <dd>(オプション) 指定されている場合、エラーが発生しない限り、ビルド出力は抑止されます。</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(オプション) 「KEY=VALUE」の形式で追加のビルド引数を指定します。 このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
+<dd>(オプション) 「``」の形式で追加のビルド引数を指定します。 このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(オプション) 複数のビルドのために複数の同じファイルを使用する場合は、別の Dockerfile のパスを選択できます。 ビルド・コンテキストに対する Dockerfile の相対位置を指定します。 指定しない場合、デフォルトは `PATH/Dockerfile` です。PATH は、ビルド・コンテキストのルートです。</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
 <dd>ビルドするイメージのフルネーム。これには、レジストリーの URL と名前空間が含まれます。</dd>
 </dl>
 
+**例**
 
-## `ibmcloud cr info`
-{: #bx_cr_info}
-
-ログインしているレジストリーの名前とアカウントを表示します。
+ビルド・キャッシュを使用せずに Docker イメージをビルドします。ビルド出力は抑止され、タグは *`registry.ng.bluemix.net/bluebird/bird:1`* で、ディレクトリーはご使用の作業ディレクトリーになります。
 
 ```
-ibmcloud cr info
+ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
 ```
-{: codeblock}
-
+{: pre}
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
 
-セキュリティー問題の免除を作成します。 異なるスコープに適用されるセキュリティー問題の免除を作成できます。 スコープは、アカウント、名前空間、リポジトリー、またはタグの中から選択できます。 
+セキュリティー問題の免除を作成します。 異なるスコープに適用されるセキュリティー問題の免除を作成できます。 スコープは、アカウント、名前空間、リポジトリー、またはタグの中から選択できます。
 
 ```
 ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>アカウントをスコープとして設定するには、`"*"` を値として使用します。 名前空間、リポジトリー、またはタグをスコープとして設定するには、次の形式のいずれかでその値を入力します: `namespace`、`namespace/repository`、`namespace/repository:tag`
@@ -148,24 +169,58 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 </dd>
 </dl>
 
+**例**
+
+`registry.ng.bluemix.net/bluebird/bird` リポジトリー内のすべてのイメージについて、ID が `CVE-2018-17929` の CVE に関する CVE 免除を作成します。
+
+```
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+ID が `CVE-2018-17929` の CVE に関するアカウント規模の CVE 免除を作成します。
+
+```
+ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+タグが `registry.ng.bluemix.net/bluebird/bird:1` の単一のイメージについて、問題 `application_configuration:nginx.ssl_protocols` に関する構成問題の免除を作成します。
+
+```
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
 
 ## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
 
-セキュリティー問題の免除をリストします。 
+セキュリティー問題の免除をリストします。
 
 ```
 ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>(オプション) このスコープに適用される免除のみをリストします。 名前空間、リポジトリー、またはタグをスコープとして設定するには、次の形式のいずれかでその値を入力します: `namespace`、`namespace/repository`、`namespace/repository:tag`
 </dd>
 </dl>
 
+**例**
+
+*`bluebird/bird`* リポジトリー内のイメージに適用するセキュリティー問題に関する免除をすべてリストします。出力には、アカウント規模の免除、*`bluebird`* 名前空間が適用範囲になる免除、*`bluebird/bird`* リポジトリーは適用範囲になるものの *`bluebird/bird`* リポジトリー内の特定のタグは適用範囲にならない免除が含まれます。
+
+```
+ibmcloud cr exemption-list --scope bluebird/bird
+```
+{: pre}
 
 ## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
@@ -177,7 +232,11 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>アカウントをスコープとして設定するには、`"*"` を値として使用します。 名前空間、リポジトリー、またはタグをスコープとして設定するには、次の形式のいずれかでその値を入力します: `namespace`、`namespace/repository`、`namespace/repository:tag`
@@ -190,6 +249,28 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 </dd>
 </dl>
 
+**例**
+
+`registry.ng.bluemix.net/bluebird/bird` リポジトリー内のすべてのイメージについて、ID が `CVE-2018-17929` の CVE に関する CVE 免除を削除します。
+
+```
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+ID が `CVE-2018-17929` の CVE に関するアカウント規模の CVE 免除を削除します。
+
+```
+ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
+```
+{: pre}
+
+タグが `registry.ng.bluemix.net/bluebird/bird:1` の単一のイメージについて、問題 `application_configuration:nginx.ssl_protocols` に関する構成問題の免除を削除します。
+
+```
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
 
 ## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
@@ -201,6 +282,23 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+## `ibmcloud cr iam-policies-enable`
+{: #bx_cr_iam_policies_enable}
+
+IAM 認証を使用している場合、このコマンドは微細化された許可を有効にします。詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry/iam.html#iam)と[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+
+```
+ibmcloud cr iam-policies-enable
+```
+{: codeblock}
+
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -212,12 +310,16 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するリーダーまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](registry_cli_reference.html#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)を参照してください。
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -228,28 +330,40 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 </dd>
 </dl>
 
+**例**
+
+フォーマット設定ディレクティブ *`"{{ .Config.ExposedPorts }}"`* を使用して、イメージ *`registry.ng.bluemix.net/bluebird/bird:1`* に関する公開されているポートの詳細を表示します。
+
+```
+ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
 
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
 {{site.data.keyword.Bluemix_notm}} アカウント内のすべてのイメージを表示します。
 
-イメージ名は、<strong>Repository</strong> 列と <strong>Tag</strong> 列の内容を `repository:tag` の形式で組み合わせたものです。
+イメージ名は、**Repository** 列と **Tag** 列の内容を `repository:tag` の形式で組み合わせたものです。
 {:tip}
 
 ```
- ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するリーダーまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--no-trunc`</dt>
 <dd>(オプション) イメージ・ダイジェストを切り捨てません。</dd>
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](registry_cli_reference.html#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)を参照してください。
 
 </dd>
 <dt>`-q`, `--quiet`</dt>
@@ -260,28 +374,61 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dd>(オプション) {{site.data.keyword.IBM_notm}} 提供のパブリック・イメージを出力に含めます。 このオプションを指定しない場合、デフォルトではプライベート・イメージのみがリストされます。</dd>
 </dl>
 
+**例**
 
+イメージ・ダイジェストを切り捨てずに、形式 `repository:tag` で *`bluebird`* 名前空間内のイメージを表示します。
+
+```
+ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
+```
+{: pre}
 
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
-指定した 1 つ以上のイメージをレジストリーから削除します。
+指定した 1 つ以上のイメージを {{site.data.keyword.registrylong_notm}} から削除します。
 
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するライターまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>レポートを取得するイメージの名前。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージを同時に削除できます。
+<dd>削除するイメージの名前。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージを同時に削除できます。 `IMAGE` は `repository:tag` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
 
 <p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージがデフォルトで削除されます。</p>
 
 </dd>
 </dl>
 
+**例**
+
+イメージ *`registry.ng.bluemix.net/bluebird/bird:1`* を削除します。
+
+```
+ibmcloud cr image-rm registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
+
+## `ibmcloud cr info`
+{: #bx_cr_info}
+
+ログインしているレジストリーの名前とアカウントを表示します。
+
+```
+ibmcloud cr info
+```
+{: codeblock}
+
+**前提条件**
+
+なし
 
 ## `ibmcloud cr login`
 {: #bx_cr_login}
@@ -293,21 +440,28 @@ ibmcloud cr login
 ```
 {: codeblock}
 
+**前提条件**
+
+なし
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-{{site.data.keyword.Bluemix_notm}} アカウントに名前空間を追加します。
+名前空間の名前を選択して、{{site.data.keyword.Bluemix_notm}} アカウントに追加します。
 
 ```
 ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するライターまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.Bluemix_notm}} アカウントにおいて固有でなければなりません。
+<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.Bluemix_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
 <strong>ヒント</strong>: 名前空間名に個人情報を含めないでください。
@@ -316,6 +470,14 @@ ibmcloud cr namespace-add NAMESPACE
 </dd>
 </dl>
 
+**例**
+
+*`bluebird`* という名前の名前空間を作成します。
+
+```
+ibmcloud cr namespace-add bluebird
+```
+{: pre}
 
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
@@ -327,6 +489,9 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するリーダーまたはマネージャーの IAM サービス・アクセス役割
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -338,12 +503,24 @@ ibmcloud cr namespace-rm NAMESPACE
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するライターまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>削除する名前空間。</dd>
 </dl>
 
+**例**
+
+名前空間 *`bluebird`* を削除します。
+
+```
+ibmcloud cr namespace-rm bluebird
+```
+{: pre}
 
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
@@ -355,41 +532,58 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 標準プランにアップグレードします。
 
-プランについて詳しくは、[レジストリーのプラン](registry_overview.html#registry_plans)を参照してください。
+プランについて詳しくは、[レジストリーのプラン](/docs/services/Registry/registry_overview.html#registry_plans)を参照してください。
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`PLAN`</dt>
 <dd>アップグレード先の価格プランの名前。 `PLAN` を指定しない場合、デフォルトは `standard` です。</dd>
 </dl>
 
+**例**
+
+標準価格プランにアップグレードします。
+
+```
+ibmcloud cr plan-upgrade standard
+```
+{: pre}
 
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-[IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、プライベート・レジストリー名前空間にインポートします。
+[IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された {{site.data.keyword.IBM_notm}} ソフトウェアを、プライベート・レジストリー名前空間にインポートします。
 
 コンテナー・イメージは、プライベート {{site.data.keyword.registryshort_notm}} 名前空間にプッシュされます。 Helm チャートは、このコマンドを実行したディレクトリー内に作成される `ppa-import` ディレクトリーに書き込まれます。 オプションで、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) を使用して helm チャートをホストできます。
-
-**コマンド例**
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**パラメーター**:
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するライターまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>IBM パスポート・アドバンテージからダウンロードした圧縮ファイルのパス。</dd>
@@ -403,6 +597,14 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
   <dd>(オプション) [Chart Museum ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) のパスワード。</dd>
 </dl>
 
+**例**
+
+IBM ソフトウェアをプライベート・レジストリー名前空間 *`bluebird`* 内にインポートし、Helm で使用できるようにパッケージ化します。圧縮ファイルへのパスは *`downloads/compressed_file.tgz`* です。
+
+```
+ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird
+```
+{: pre}
 
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
@@ -414,6 +616,9 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するリーダー、ライター、またはマネージャーの IAM サービス・アクセス役割
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -425,7 +630,11 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>(オプション) トラフィック割り当て量を、指定した値 (M バイト単位) に変更します。 トラフィックを設定する権限がない場合や現在の価格プランを超える値を設定した場合、操作は失敗します。</dd>
@@ -433,6 +642,14 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 <dd>(オプション) ストレージ割り当て量を、指定した値 (M バイト単位) に変更します。 ストレージ割り当て量を設定する権限がない場合や現在の価格プランを超える値を設定した場合、操作は失敗します。</dd>
 </dl>
 
+**例**
+
+プル・トラフィックに関する割り当て量の制限を *7000* M バイトに設定し、ストレージを *600* M バイトに設定します。
+
+```
+ibmcloud cr quota-set --traffic 7000 --storage 600
+```
+{: pre}
 
 ## `ibmcloud cr region`
 {: #bx_cr_region}
@@ -444,8 +661,11 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-詳しくは、[地域](registry_overview.html#registry_regions)を参照してください。
+**前提条件**
 
+なし
+
+詳しくは、[地域](/docs/services/Registry/registry_overview.html#registry_regions)を参照してください。
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -457,16 +677,28 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+なし
+
+**コマンド・オプション**
 <dl>
 <dt>`REGION`</dt>
 <dd>(オプション) ターゲット地域の名前。例えば、`us-south` などです。
 
-詳しくは、[地域](registry_overview.html#registry_regions)を参照してください。
+詳しくは、[地域](/docs/services/Registry/registry_overview.html#registry_regions)を参照してください。
 
 </dd>
 </dl>
 
+**例**
+
+米国南部の地域をターゲットにします。
+
+```
+ibmcloud cr region-set us-south
+```
+{: pre}
 
 ## `ibmcloud cr token-add`
 {: #bx_cr_token_add}
@@ -478,17 +710,20 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 ```
 {: codeblock}
 
+**前提条件**
 
-**パラメーター**
+必要な許可: {{site.data.keyword.registrylong_notm}} に関する管理者の IAM プラットフォーム役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--description DESCRIPTION`</dt>
 <dd>(オプション) トークンの説明としての値を指定します。これは、`ibmcloud cr token-list` を実行したときに表示されます。 {{site.data.keyword.containerlong_notm}} が自動的に作成するトークンの場合は、Kubernetes クラスター名が説明として設定されます。 この場合、クラスターが削除されると、トークンは自動的に削除されます。
   
 <p> 
-  <strong>ヒント</strong>: Do not put personal information in your token description.
+  <strong>ヒント</strong>: トークンの説明に個人情報を含めないでください。
 </p>
 
-  </dd>
+</dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>(オプション) 周囲のテキストを含めずに、トークンのみを表示します。</dd>
 <dt>`--non-expiring`</dt>
@@ -497,6 +732,14 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 <dd>(オプション) 読み取り権限および書き込み権限を付与するトークンを作成します。 このオプションを指定しないと、デフォルトでは、読み取り専用のアクセスになります。</dd>
 </dl>
 
+**例**
+
+トークンと説明 *Token for my account* を追加します。有効期限なしで、読み取り/書き込みアクセス権限があります。
+
+```
+ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
+```
+{: pre}
 
 ## `ibmcloud cr token-get`
 {: #bx_cr_token_get}
@@ -508,12 +751,24 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関する管理者の IAM プラットフォーム役割
+
+**コマンド・オプション**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>(オプション) 取得するトークンの固有 ID。</dd>
+<dd>(オプション) 取得するトークンの固有 ID。 トークンをリストするには、`ibmcloud cr token-list` を実行します。</dd>
 </dl>
 
+**例**
+
+トークン *10101010-101x-1x10-x1xx-x10xx10xxx10* を取得します。
+
+```
+ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
+```
+{: pre}
 
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
@@ -525,16 +780,35 @@ ibmcloud cr token-list --format FORMAT
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関する管理者の IAM プラットフォーム役割
+
+**コマンド・オプション**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](registry_cli_reference.html#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)を参照してください。
 
 </dd>
 </dl>
 
+**例**
+
+フォーマット設定ディレクティブ *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`* を使用して、読み取り専用のトークンをすべて表示します。
+
+```
+ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+```
+{: pre}
+
+この例は、次の形式で出力を生成します。
+
+```
+10101010-101a-1a10-a1aa-a10aa10aaa10 - 1234567890 - true - demo
+```
+{: screen}
 
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
@@ -546,12 +820,24 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関する管理者の IAM プラットフォーム役割
+
+**コマンド・オプション**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(オプション) TOKEN には、トークン自体を指定することもトークンの固有 ID (`ibmcloud cr token-list` で表示されます) を指定することもできます。 複数のトークンをスペースで区切って指定できます。</dd>
 </dl>
 
+**例**
+
+トークン *10101010-101x-1x10-x1xx-x10xx10xxx10* を削除します。
+
+```
+ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
+```
+{: pre}
 
 ## `ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)
 {: #bx_cr_va}
@@ -563,24 +849,26 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**パラメーター**
+**前提条件**
+
+必要な許可: {{site.data.keyword.registrylong_notm}} に関するリーダーまたはマネージャーの IAM サービス・アクセス役割
+
+**コマンド・オプション**
 <dl>
 <dt>`IMAGE`</dt>
 <dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージ脆弱性がイメージにあるかどうかがわかります。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
 
-<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。 </p>
+<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。</p>
 
 <p>以下のオペレーティング・システムがサポートされています。
 
 <ul>
-
 <li>Alpine</li>
 <li>CentOS</li>
 <li>Debian</li>
 <li>Red Hat Enterprise Linux (RHEL)</li>
 <li>Ubuntu</li>
 </ul>
-
 </p>
 
 詳しくは、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va/va_index.html)を参照してください。
@@ -590,7 +878,6 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 <dd>(オプション) 選択した形式でコマンド出力が返されます。 デフォルトの形式は `text` です。 以下の形式がサポートされています。
 
 <ul>
-
 <li>`text`</li>
 <li>`json`</li>
 </ul>
@@ -604,3 +891,19 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 <dd>(オプション) 脆弱なパッケージのフィックスについての追加情報をコマンド出力に表示します。</dd>
 
 </dl>
+
+**例**
+
+イメージの標準的な脆弱性評価レポートを表示します。
+
+```
+ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
+
+JSON 形式でイメージ *`registry.ng.bluemix.net/bluebird/bird:1`* の脆弱性評価レポートを表示します。脆弱性のみ表示されます。
+
+```
+ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}

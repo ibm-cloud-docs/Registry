@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -53,7 +53,7 @@ Os eventos do {{site.data.keyword.cloudaccesstrailshort}} estão disponíveis no
 {{site.data.keyword.cloudaccesstrailshort}} **domínio de contas** disponível na região do
 {{site.data.keyword.Bluemix_notm}} na qual eles são gerados.
 
-A região na qual um evento do Vulnerability Advisor está disponível corresponde à região do {{site.data.keyword.registrylong_notm}} na qual o recurso (por exemplo, a imagem ou o namespace) está disponível.
+A [região](/docs/services/Registry/registry_overview.html#registry_regions) na qual um evento do Vulnerability Advisor está disponível corresponde à região do {{site.data.keyword.registrylong_notm}} em que o recurso (por exemplo, a imagem ou namespace) está disponível.
 
 
 

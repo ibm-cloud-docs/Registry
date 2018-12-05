@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -23,7 +23,6 @@ Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미
 
 Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서 이미지 컨텐츠 신뢰 및 취약성에 대한 정보를 검색합니다. 사용자는 다른 레지스트리에 저장된 이미지의 배치를 차단하거나 허용하도록 선택할 수 있지만, 이러한 이미지에 대해 취약성 또는 신뢰 적용을 사용할 수는 없습니다.
 
-
 ## 클러스터에 Container Image Security Enforcement 설치
 {: #sec_enforce_install}
 
@@ -33,21 +32,22 @@ Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서
 * 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
 
 다음 단계를 완료하십시오.
-1.  [클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
 
-2.  Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
+1. [클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
 
-    ```
-helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
-    ```
-    {: pre}
+2. Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
 
-3.  클러스터에 Container Image Security Enforcement Helm 차트를 설치하십시오. 이 차트에 `cise`와 같은 이름을 지정하십시오.
+   ```
+   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-    ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
-    ```
-    {: pre}
+3. 클러스터에 Container Image Security Enforcement Helm 차트를 설치하십시오. 이 차트에 `cise`와 같은 이름을 지정하십시오.
+
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 Container Image Security Enforcement가 설치되었으며 클러스터의 모든 Kubernetes 네임스페이스에 [기본 보안 정책](#default_policies)을 적용합니다. 사용자 클러스터 또는 클러스터 전체에서 Kubernetes 네임스페이스의 보안 정책 사용자 정의에 대한 정보는 [정책 사용자 정의](#customize_policies)를 참조하십시오.
 
@@ -58,6 +58,7 @@ Container Image Security Enforcement는 보안 정책 빌드를 위한 시작점
 {:shortdesc}
 
 이러한 정책을 대체하려면 다음 옵션 중 하나를 사용하십시오.
+
 * 새 정책 문서 작성 후 `kubectl apply`를 사용하여 클러스터에 적용
 * `kubectl edit`를 사용하여 기본 정책 편집
 
@@ -171,9 +172,9 @@ spec:
 
 배치를 적용할 때 Container Image Security Enforcement에서 사용자가 배치하는 Kubernetes 네임스페이스에 적용할 정책이 있는지 여부를 확인합니다. 없는 경우 Container Image Security Enforcement가 클러스터 범위 정책을 사용합니다. 네임스페이스 또는 클러스터 범위 정책이 없는 경우 배치가 거부됩니다.
 
-시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그 후 다음 단계를 완료하십시오.
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그런 다음, 다음 단계를 완료하십시오.
 
-1.  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
+1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +195,7 @@ spec:
     {: codeblock}
 
     <table>
-    <caption>표. 이 YAML 컴포넌트 이해</caption>
+    <caption>표 1. YAML 컴포넌트 이해</caption>
     <thead>
     <th>필드</th>
     <th>설명</th>
@@ -231,12 +232,12 @@ spec:
     </tbody>
     </table>
 
-1.  클러스터에 `.yaml` 파일을 적용하십시오.
+2. 클러스터에 `.yaml` 파일을 적용하십시오.
 
-    ```
+   ```
 kubectl apply -f <filepath>
-    ```
-    {: pre}
+   ```
+   {: pre}
 
 ### 사용자 정의 정책에 신뢰할 수 있는 컨텐츠 서명자 지정
 {: #signers}
@@ -246,25 +247,25 @@ kubectl apply -f <filepath>
 
 특정 서명자가 이미지에 서명했는지 확인하도록 정책을 구성하려면 다음을 수행하십시오.
 
-1.  서명자 이름(`docker trust signer add`에 사용된 이름) 및 서명자의 공개 키를 가져오십시오.
-1.  서명자 이름과 공개 키가 있는 Kubernetes 시크릿을 생성하십시오.
+1. 서명자 이름(`docker trust signer add`에 사용된 이름) 및 서명자의 공개 키를 가져오십시오.
+2. 서명자 이름과 공개 키가 있는 Kubernetes 시크릿을 생성하십시오.
 
-    ```
+   ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
-    ```
-    {: pre}
-    
-1.  정책의 저장소에 대한 `signerSecrets` 목록에 시크릿을 추가하십시오.
+   ```
+   {: pre}
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+3. 정책의 저장소에 대한 `signerSecrets` 목록에 시크릿을 추가하십시오.
+
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## 정책을 사용자 정의할 수 있는 사용자 제어
 {: #assign_user_policy}
@@ -293,7 +294,7 @@ Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하�
 ```
 {: codeblock}
 
-`cluster-admin` 역할을 가진 ServiceAccount 및 사용자에게는 모든 리소스에 대한 액세스 권한이 있습니다. 역할을 편집하지 않는 경우에도 cluster-admin 역할은 보안 정책을 관리할 수 있는 액세스 권한을 부여합니다. `cluster-admin` 역할을 가진 사용자를 제어하고 보안 정책을 수정할 수 있도록 허용할 사용자에게만 액세스 권한을 부여하십시오.
+`cluster-admin` 역할이 있는 사용자 및 서비스 계정에는 모든 리소스에 대한 액세스 권한이 있습니다. 역할을 편집하지 않는 경우에도 cluster-admin 역할은 보안 정책을 관리할 수 있는 액세스 권한을 부여합니다. `cluster-admin` 역할을 가진 사용자를 제어하고 보안 정책을 수정할 수 있도록 허용할 사용자에게만 액세스 권한을 부여하십시오.
 {:tip}
 
 ## 보안이 적용되는 컨테이너 이미지 배치
@@ -306,14 +307,14 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
 
 **샘플 오류 메시지**
 
-*  이미지가 정책과 일치하지 않거나 네임스페이스 또는 클러스터에 정책이 없는 경우.
+* 이미지가 정책과 일치하지 않거나 네임스페이스 또는 클러스터에 정책이 없는 경우.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
    {: screen}
 
-*  이미지가 정책과 일치하지만 정책의 Vulnerability Advisor 요구사항을 충족하지 않는 경우.
+* 이미지가 정책과 일치하지만 정책의 Vulnerability Advisor 요구사항을 충족하지 않는 경우.
 
    ```
    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
@@ -321,14 +322,14 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
    ```
    {: screen}
 
-*  이미지가 정책과 일치하지만 정책의 신뢰 요구사항을 충족하지 않는 경우.
+* 이미지가 정책과 일치하지만 정책의 신뢰 요구사항을 충족하지 않는 경우.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
    ```
    {: screen}
 
-*  정책이 이미지에 신뢰 적용을 지정하지만 이미지를 지원되는 레지스트리에서 가져오지 않은 경우.
+* 정책이 이미지에 신뢰 적용을 지정하지만 이미지를 지원되는 레지스트리에서 가져오지 않은 경우.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
@@ -348,17 +349,17 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
 
 
 
-1.  Container Image Security Enforcement를 사용 안함으로 설정하십시오.
+1. Container Image Security Enforcement를 사용 안함으로 설정하십시오.
 
-    ```
+   ```
 $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
     $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
-    ```
-    {: codeblock}
+   ```
+   {: codeblock}
 
-2.  차트를 제거하십시오.
+2. 차트를 제거하십시오.
 
-    ```
+   ```
 helm delete --purge cise
-    ```
-    {: pre}
+   ```
+   {: pre}

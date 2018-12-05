@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -23,7 +23,6 @@ Con Container Image Security Enforcement (Beta), puoi verificare le tue immagini
 
 Container Image Security Enforcement richiama le informazioni sull'attendibilità dei contenuti e sulle vulnerabilità delle immagini da {{site.data.keyword.registrylong}}. Puoi scegliere di bloccare o di consentire la distribuzione di immagini memorizzate in altri registri ma non puoi utilizzare la vulnerabilità o l'applicazione dell'attendibilità per queste immagini.
 
-
 ## Installazione di Container Image Security Enforcement nel tuo cluster
 {: #sec_enforce_install}
 
@@ -33,21 +32,22 @@ Container Image Security Enforcement richiama le informazioni sull'attendibilit�
 * [Indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster.
 
 Completa la seguente procedura:
-1.  [Configura Helm nel tuo cluster](/docs/containers/cs_integrations.html#helm).
 
-2.  Aggiungi il repository di grafici IBM al tuo client Helm.
+1. [Configura Helm nel tuo cluster](/docs/containers/cs_integrations.html#helm).
 
-    ```
-    helm repo add ibm-incubator https://registry.bluemix.net/helm/ibm-incubator
-    ```
-    {: pre}
+2. Aggiungi il repository di grafici IBM al tuo client Helm.
 
-3.  Installa il grafico Container Image Security Enforcement Helm nel tuo cluster. Denominalo come `cise`.
+   ```
+   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   ```
+   {: pre}
 
-    ```
-    helm install --name cise ibm-incubator/ibmcloud-image-enforcement
-    ```
-    {: pre}
+3. Installa il grafico Container Image Security Enforcement Helm nel tuo cluster. Denominalo come `cise`.
+
+   ```
+   helm install --name cise ibm/ibmcloud-image-enforcement
+   ```
+   {: pre}
 
 Container Image Security Enforcement è ora installato e applica la [politica di sicurezza predefinita](#default_policies) per tutti gli spazi dei nomi Kubernetes nel tuo cluster. Per informazioni su come personalizzare la politica di sicurezza per gli spazi dei nomi Kubernetes nel tuo cluster o i cluster in generale, vedi [Personalizzazione delle politiche](#customize_policies).
 
@@ -58,6 +58,7 @@ Container Image Security Enforcement installa alcune politiche per impostazione 
 {:shortdesc}
 
 Per sovrascrivere queste politiche, utilizza una delle seguenti opzioni:
+
 * Scrivi un nuovo documento di politiche e applicalo al tuo cluster utilizzando `kubectl apply`
 * Modifica la politica predefinita utilizzando `kubectl edit`
 
@@ -173,7 +174,7 @@ Quando applichi una distribuzione, Container Image Security Enforcement verifica
 
 Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster. Successivamente, completa la seguente procedura:
 
-1.  Crea un file `.yaml` di <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definizione di risorsa personalizzata Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>.
+1. Crea un file `.yaml` di <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definizione di risorsa personalizzata Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -194,7 +195,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
     {: codeblock}
 
     <table>
-    <caption>Tabella. Descrizione dei componenti di questo YAML</caption>
+    <caption>Tabella 1. Descrizione dei componenti di YAML</caption>
     <thead>
     <th>Campo</th>
     <th>Descrizione</th>
@@ -231,12 +232,12 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
     </tbody>
     </table>
 
-1.  Applica il file `.yaml` al tuo cluster.
+2. Applica il file `.yaml` al tuo cluster.
 
-    ```
-    kubectl apply -f <filepath>
-    ```
-    {: pre}
+   ```
+   kubectl apply -f <filepath>
+   ```
+   {: pre}
 
 ### Specifica dei firmatari di contenuti attendibili nelle politiche personalizzate
 {: #signers}
@@ -246,25 +247,25 @@ Se utilizzi l'attendibilità dei contenuti, puoi verificare che le immagini sian
 
 Per configurare la politica per verificare che un'immagine sia firmata da un determinato firmatario:
 
-1.  Ottieni il nome firmatario (il nome che è stato utilizzato in `docker trust signer add`) e la chiave pubblica del firmatario.
-1.  Genera un segreto Kubernetes con il nome del firmatario e la sua chiave pubblica.
+1. Ottieni il nome firmatario (il nome che è stato utilizzato in `docker trust signer add`) e la chiave pubblica del firmatario.
+2. Genera un segreto Kubernetes con il nome del firmatario e la sua chiave pubblica.
 
-    ```
-    kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
-    ```
-    {: pre}
-    
-1.  Aggiungi il segreto all'elenco `signerSecrets` per il repository nella tua politica.
+   ```
+   kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
+   ```
+   {: pre}
 
-    ```yaml
-    - name: example
-      policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
-    ```
-    {: codeblock}
+3. Aggiungi il segreto all'elenco `signerSecrets` per il repository nella tua politica.
+
+   ```yaml
+   - name: example
+     policy:
+       trust:
+         enabled: true
+         signerSecrets:
+         - name: <secret_name>
+   ```
+   {: codeblock}
 
 ## Controllo di chi può personalizzare le politiche
 {: #assign_user_policy}
@@ -281,7 +282,7 @@ Nel tuo ruolo, aggiungi una regola per le politiche di sicurezza:
 ```
 {: codeblock}
 
-Puoi creare più ruoli per controllare quali azioni possono essere eseguite dagli utenti. Ad esempio, modifica i `verbs` in modo che alcuni utenti possano utilizzare solo `get` o `list` per le politiche. In alternativa, puoi omettere `clusterimagepolicies` dall'elenco `resources` per concedere l'accesso solo alle politiche degli spazi dei nomi Kubernetes.
+Puoi creare più ruoli per controllare quali azioni possono essere eseguite dagli utenti. Ad esempio, modifica i `verbs` in modo che alcuni utenti possano utilizzare solo le politiche `get` o `list`. In alternativa, puoi omettere `clusterimagepolicies` dall'elenco `resources` per concedere l'accesso solo alle politiche degli spazi dei nomi Kubernetes.
 {:tip}
 
 Gli utenti che hanno accesso per eliminare le definizioni di risorse personalizzate (CRD) possono eliminare la definizione di risorsa per le politiche di sicurezza, il che elimina anche le tue politiche di sicurezza. Assicurati di controllare chi è autorizzato a eliminare le CRD. Per concedere l'accesso per eliminare le CRD, aggiungi una regola:
@@ -293,7 +294,7 @@ Gli utenti che hanno accesso per eliminare le definizioni di risorse personalizz
 ```
 {: codeblock}
 
-Gli utenti e gli account di servizio con il ruolo `cluster-admin` hanno accesso a tutte le risorse. Il ruolo cluster-admin concede l'accesso per amministrare le politiche di sicurezza, anche se non modifichi il ruolo. Assicurati di controllare chi ha il ruolo `cluster-admin` e concedi l'accesso solo alle persone a cui desideri consentire di modificare le politiche di sicurezza.
+Gli utenti e gli account del servizio con il ruolo `cluster-admin` hanno accesso a tutte le risorse. Il ruolo cluster-admin concede l'accesso per amministrare le politiche di sicurezza, anche se non modifichi il ruolo. Assicurati di controllare chi ha il ruolo `cluster-admin` e concedi l'accesso solo alle persone a cui desideri consentire di modificare le politiche di sicurezza.
 {:tip}
 
 ## Distribuzione di immagini del contenitore con la sicurezza applicata
@@ -306,14 +307,14 @@ Se Container Image Security Enforcement nega una distribuzione, la distribuzione
 
 **Messaggi di errore di esempio**
 
-*  Se la tua immagine non corrisponde ad alcuna politica o non ci sono politiche nello spazio dei nomi o nel cluster.
+* Se la tua immagine non corrisponde ad alcuna politica o non ci sono politiche nello spazio dei nomi o nel cluster.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
    {: screen}
 
-*  Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di Controllo vulnerabilità di tale politica.
+* Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di Controllo vulnerabilità di tale politica.
 
    ```
    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report
@@ -321,14 +322,14 @@ Se Container Image Security Enforcement nega una distribuzione, la distribuzione
    ```
    {: screen}
 
-*  Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di attendibilità di tale politica.
+* Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di attendibilità di tale politica.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
    ```
    {: screen}
 
-*  Se la tua politica specifica l'applicazione dell'attendibilità per la tua immagine, ma l'immagine non proviene da un registro supportato.
+* Se la tua politica specifica l'applicazione dell'attendibilità per la tua immagine, ma l'immagine non proviene da un registro supportato.
 
    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
@@ -348,17 +349,17 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
 
 
 
-1.  Disabilita Container Image Security Enforcement.
+1. Disabilita Container Image Security Enforcement.
 
-    ```
-    $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
+   ```
+   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
     $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
-    ```
-    {: codeblock}
+   ```
+   {: codeblock}
 
-2.  Rimuovi il grafico.
+2. Rimuovi il grafico.
 
-    ```
-    helm delete --purge cise
-    ```
-    {: pre}
+   ```
+   helm delete --purge cise
+   ```
+   {: pre}

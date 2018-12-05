@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,21 +15,19 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # 名前空間内で Docker イメージを管理するための {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) コマンド
 {: #registry_cli_reference}
 
 container-registry プラグインを使用して、IBM によってホストおよび管理されている専用レジストリー内に、Docker イメージを安全に保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
 {:shortdesc}
 
-
 ## `ibmcloud cr` commands
 {: #registry_cli_reference_bxcr}
 
 {{site.data.keyword.registryshort_notm}} CLI で `ibmcloud cr` コマンドを実行します。
 {:shortdesc}
-  
-サポートされているコマンドについては、[{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html) を参照してください。
+
+サポートされているコマンドについては、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html) を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作
 {: #registry_cli_listing}
@@ -41,78 +39,75 @@ container-registry プラグインを使用して、IBM によってホストお
 
 format オプションを次の 2 つの異なる方法で適用して、CLI 出力を変更できます。
 
-1.  CLI 出力内のデータをフォーマット設定する。 例えば、`Created` フィールドの出力を UNIX 時刻から標準時刻に変更できます。
-2.  CLI 出力内のデータをフィルター操作する。 例えば、Go テンプレートの `if gt` 条件を使用することにより、イメージの詳細でフィルター操作してイメージの特定のサブセットを表示します。
+1. CLI 出力内のデータをフォーマット設定する。 例えば、`Created` フィールドの出力を UNIX 時刻から標準時刻に変更できます。
+2. CLI 出力内のデータをフィルター操作する。 例えば、Go テンプレートの `if gt` 条件を使用することにより、イメージの詳細でフィルター操作してイメージの特定のサブセットを表示します。
 
 format オプションは、次の {{site.data.keyword.registrylong_notm}} コマンドで使用できます。 コマンドをクリックすると、使用可能なフィールドとそれらのデータ・タイプのリストが表示されます。
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 次のサンプル・コードは、フォーマット設定オプションとフィルター操作オプションの使用方法を示しています。
 
--   次の `ibmcloud cr image-list` コマンドを実行すると、サイズが 1 MB を超えるすべてのイメージのリポジトリー、タグ、およびセキュリティー状況が表示されます。
+- 次の `ibmcloud cr image-list` コマンドを実行すると、サイズが 1 MB を超えるすべてのイメージのリポジトリー、タグ、およびセキュリティー状況が表示されます。
 
-    ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  ```
+  ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+  ```
+  {: pre}
 
-    **出力例**
+  **出力例**
 
-    ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+  ```
+  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
-    {: screen}
+  ```
+  {: screen}
 
+- 次の `ibmcloud cr image-inspect` コマンドを実行すると、指定された IBM パブリック・イメージについて IBM 文書がホストされている場所が表示されます。
 
--   次の `ibmcloud cr image-inspect` コマンドを実行すると、指定された IBM パブリック・イメージについて IBM 文書がホストされている場所が表示されます。
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
+  {: pre}
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  **出力例**
 
-    ```
-    {: pre}
+  ```
+  map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+  ```
+  {: screen}
 
-    **出力例**
+- 次の `ibmcloud cr image-inspect` コマンドを実行すると、指定されたイメージについて公開されているポートが表示されます。
 
-    ```
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
+  {: pre}
 
--   次の `ibmcloud cr image-inspect` コマンドを実行すると、指定されたイメージについて公開されているポートが表示されます。
+  **出力例**
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  ```
+  map[9080/tcp: 9443/tcp:]
+  ```
+  {: screen}
 
-    **出力例**
+- 次の `ibmcloud cr token-list` コマンドを実行すると、すべての読み取り専用のトークンが表示されます。
 
-    ```
-    map[9080/tcp: 9443/tcp:]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+  ```
+  {: pre}
 
--   次の `ibmcloud cr token-list` コマンドを実行すると、すべての読み取り専用のトークンが表示されます。
+  **出力例**
 
-    ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
-
-    **出力例**
-
-    ```
-    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-    ```
-    {: screen}
-
+  ```
+  0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+  ```
+  {: screen}
 
 ### `ibmcloud cr image-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_imagelist}
@@ -167,7 +162,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`AttachStdout`|ブール|標準出力ストリームがコンテナーに付加されている場合は _true_ を表示し、そうでない場合は _false_ を表示します。|
 |`AttachStderr`|ブール|標準エラー・ストリームがコンテナーに付加されている場合は _true_ を表示し、そうでない場合は _false_ を表示します。|
 |`ExposedPorts`|キーと値のマップ|公開されているポートのリストを `[123:,456:]` という形式で表示します。|
-|`Tty`|ブール|コンテナーに疑似 TTY が割り当てられている場合は _true_ を表示し、そうでない場合は _false_ を表示します。|
+|`Tty`|ブール|コンテナーに `疑似 TTY` が割り当てられている場合は _true_ を表示し、そうでない場合は _false_ を表示します。|
 |`OpenStdin`|ブール|標準入力ストリームがオープンしている場合は _true_ を表示し、標準入力ストリームがクローズしている場合は _false_ を表示します。|
 |`StdinOnce`|ブール|付加されたクライアントが切断した後に標準入力ストリームがクローズされた場合は _true_ を表示し、標準入力ストリームがオープンしたままの場合は _false_ を表示します。|
 |`Env`|文字列の配列|キーと値のペアの形式で環境変数のリストを表示します。|

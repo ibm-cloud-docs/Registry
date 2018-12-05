@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -49,7 +49,7 @@ lastupdated: "2018-09-13"
 
 {{site.data.keyword.cloudaccesstrailshort}} 事件位於 {{site.data.keyword.cloudaccesstrailshort}} **帳戶網域** 中，而此帳戶網域位於產生事件的 {{site.data.keyword.Bluemix_notm}} 地區中。
 
-提供漏洞警告器事件的地區，對應於提供資源（例如映像檔或名稱空間）的 {{site.data.keyword.registrylong_notm}} 地區。
+提供「漏洞警告器」事件的[地區](/docs/services/Registry/registry_overview.html#registry_regions)，對應於提供資源（例如映像檔或名稱空間）的 {{site.data.keyword.registrylong_notm}} 地區。
 
 
 

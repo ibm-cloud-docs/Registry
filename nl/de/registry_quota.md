@@ -61,7 +61,7 @@ Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
     ```
     {: screen}
 
-3.  Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie _&lt;datenverkehrkontingent&gt;_ durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrkontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie _&lt;speicherkontingent&gt;_ durch den Wert in Megabyte, den Sie festlegen möchten.
+3.  Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie _&lt;datenverkehrskontingent&gt;_ durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie _&lt;speicherkontingent&gt;_ durch den Wert in Megabyte, den Sie festlegen möchten.
 
     Bei der Verwendung des kostenfreien Plans können Sie das Kontingent nicht über die kostenfreie Stufe hinaus erhöhen. Die kostenfreie Stufe umfasst 512 MB an Speicher und 5120 MB an Datenverkehr.
     {:tip}

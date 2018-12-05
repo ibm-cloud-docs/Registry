@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 {:download: .download}
 
-
 # Acerca de {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -24,7 +23,7 @@ Utilice {{site.data.keyword.registrylong}} para almacenar de forma segura y acce
 
 {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que IBM aloja y gestiona. Puede utilizar el registro privado configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
 
-<img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios públicos y privados, y API para interactuar con el servicio. Su cliente Docker local puede extraer y enviar por push imágenes desde y hacia sus repositorios privados en el registro, y puede extraer repositorios públicos. La IU de la web de IBM Cloud (consola) interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. Su cliente Docker local también puede extraer y enviar por push imágenes desde su almacén de imágenes local a otros registros."/>
+<img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo puede interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios privados y públicos y API para interactuar con el servicio. El cliente Docker puede extraer y enviar imágenes a y desde los repositorios privados del registro y puede extraer repositorios públicos. La interfaz de usuario web (consola) de IBM Cloud interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. El cliente Docker local también puede extraer y enviar imágenes del almacén de imágenes local a otros registros."/>
 
 **Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker **
 
@@ -81,7 +80,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 
 **Almacenamiento: **
 
-  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar de forma segura las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento para un mes (730 horas).
+  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar de forma segura las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
 
   Ejemplo para el plan estándar:
 
@@ -140,10 +139,10 @@ Utilice la calculadora de tarifas de {{site.data.keyword.Bluemix_notm}} para est
 
 Puede establecer el precio de su app utilizando las calculadores de coste proporcionadas por {{site.data.keyword.Bluemix_notm}}.
 
-1.  Abra la hoja de precios. Consulte Tarifas de [{{site.data.keyword.Bluemix_notm}}](https://www.ibm.com/cloud-computing/bluemix/pricing).
-2.  En la sección **Pago según uso**, pulse **Calcule sus costes con nuestra calculadora**. Se abre la calculadora.
-3.  Desplácese hasta la sección **Container Registry** dentro de **Cargos por contenedor**.
-4.  Escriba las estimaciones de almacenamiento y de tráfico en los campos proporcionados.
+1. Abra la hoja de precios, consulte [Precios de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/pricing).
+2. En la sección **Pago según uso**, pulse **Calcule sus costes con nuestra calculadora**. Se abre la calculadora.
+3. Desplácese hasta la sección **Container Registry** dentro de **Cargos por contenedor**.
+4. Escriba las estimaciones de almacenamiento y de tráfico en los campos proporcionados.
 
 Los costes estimados se muestran en la calculadora.
 
@@ -155,26 +154,25 @@ Puede actualizar su plan de servicio para beneficiarse de un almacenamiento ilim
 
 Si desea conocer el plan de servicio que tiene, ejecute el mandato `ibmcloud cr plan`.
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.Bluemix_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
+   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.Bluemix_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
     {:tip}
 
-2.  Actualice al plan estándar.
+2. Actualice al plan estándar.
 
-    ```
-    ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   ibmcloud cr plan-upgrade standard
+   ```
+   {: pre}
 
-    Si tiene una cuenta Lite de {{site.data.keyword.Bluemix_notm}}, debe actualizar una cuenta de pago por uso o de suscripción de {{site.data.keyword.Bluemix_notm}} para poder ejecutar `ibmcloud cr plan-upgrade`.
-    {:tip}
-
+   Si tiene una cuenta Lite de {{site.data.keyword.Bluemix_notm}}, debe actualizar una cuenta de pago por uso o de suscripción de {{site.data.keyword.Bluemix_notm}} para poder ejecutar `ibmcloud cr plan-upgrade`.
+   {:tip}
 
 ## Conceptos básicos
 {: #registry_planning}
@@ -184,7 +182,6 @@ Prepárese para almacenar y compartir de forma segura sus imágenes de Docker co
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {:tip}
-
 
 ### Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -226,9 +223,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
   <dd>Una etiqueta es un identificador de una imagen dentro de un repositorio. Puede utilizar etiquetas para distinguir entre distintas versiones de la misma imagen base dentro de un repositorio. Cuando ejecuta un mandato de Docker y no especifica la etiqueta de una imagen del repositorio, se utilizará de forma predeterminada la imagen con la etiqueta <code>latest</code>.</dd>
 </dl>
 
-
 Para obtener más información sobre los términos específicos de Docker, [consulte el glosario de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/glossary/).
-
 
 ### Planificación de espacios de nombres
 {: #registry_namespaces}
@@ -238,6 +233,8 @@ Para obtener más información sobre los términos específicos de Docker, [cons
 
 Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia. Si desea utilizar el registro en varias regiones de {{site.data.keyword.Bluemix_notm}}, debe configurar un espacio de nombres para cada región. Los espacios de nombres son exclusivos dentro de las regiones. Puede utilizar el mismo espacio de nombres para cada región, a menos que otra persona ya tenga un espacio de nombres con ese nombre configurado en esa región.
 
+Puede controlar el acceso a los espacios de nombres utilizando políticas de IAM. Para obtener más información, consulte [Definición de políticas de rol de acceso de usuario](/docs/services/Registry/registry_users.html#user).
+
 Para trabajar sólo con imágenes públicas proporcionadas por IBM, no tiene que volver a configurar un espacio de nombres.
 
 Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `ibmcloud cr namespace-list` para recuperar la información de espacio de nombres existente.
@@ -245,10 +242,10 @@ Si no está seguro de si ya se ha establecido un espacio de nombres para su cuen
 
 Considere las reglas siguientes al elegir un espacio de nombres:
 
--   Su espacio de nombres debe ser exclusivo en una región de {{site.data.keyword.Bluemix_notm}}.
--   Su espacio de nombres debe tener entre 4 y 30 caracteres.
--   El espacio de nombres debe empezar por al menos una letra o un número.
--   Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.
+- Su espacio de nombres debe ser exclusivo en una región de {{site.data.keyword.Bluemix_notm}}.
+- Su espacio de nombres debe tener entre 4 y 30 caracteres.
+- El espacio de nombres debe empezar por al menos una letra o un número.
+- Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.
 
 No coloque información personal en los nombres del espacio de nombres.
 {:tip}
@@ -266,10 +263,10 @@ Los registros de {{site.data.keyword.registrylong_notm}} están disponibles en v
 
 Una región es un área geográfica a la que se accede mediante un punto final dedicado. Los registros de {{site.data.keyword.registrylong_notm}} están disponibles en las siguientes regiones:
 
--   ap-south: `registry.au-syd.bluemix.net`
--   eu-central: `registry.eu-de.bluemix.net`
--   uk-south: `registry.eu-gb.bluemix.net`
--   us-south: `registry.ng.bluemix.net`
+- `ap-south`: `registry.au-syd.bluemix.net`
+- `eu-central`: `registry.eu-de.bluemix.net`
+- `uk-south`: `registry.eu-gb.bluemix.net`
+- `us-south`: `registry.ng.bluemix.net`
 
 Todos los artefactos de registro abarcan el registro regional específico con el que está trabajando actualmente. Por ejemplo, espacios de nombres, imágenes, señales, valores de cuota y valores de plan deben ser gestionados independientemente para cada registro regional.
 
@@ -306,6 +303,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set).
+Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Después de haber accedido al registro global, ejecute el mandato `ibmcloud cr login` para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.

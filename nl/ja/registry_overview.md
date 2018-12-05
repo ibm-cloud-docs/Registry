@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -14,7 +14,6 @@ lastupdated: "2018-09-13"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
-
 
 # {{site.data.keyword.registrylong_notm}} の概要
 {: #registry_overview}
@@ -81,7 +80,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 **ストレージ: **
 
-  すべての {{site.data.keyword.registrylong_notm}} サービス・プランには、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間に Docker イメージを安全に保管するために使用できる一定量のストレージが付属しています。 標準プランを使用している場合は、1 カ月当たりの GB 使用量によって課金されます。 最初の 0.5 GB/月は無料です。 無料プランを使用している場合は、無料プランの割り当て量制限に達するまで、無料で {{site.data.keyword.registrylong_notm}} にイメージを保管できます。 GB/月 は、1 カ月間 (730 時間) での 1GB ストレージ 1 つの平均です。
+  すべての {{site.data.keyword.registrylong_notm}} サービス・プランには、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間に Docker イメージを安全に保管するために使用できる一定量のストレージが付属しています。 標準プランを使用している場合は、1 カ月当たりの GB 使用量によって課金されます。 最初の 0.5 GB/月は無料です。 無料プランを使用している場合は、無料プランの割り当て量制限に達するまで、無料で {{site.data.keyword.registrylong_notm}} にイメージを保管できます。 GB/月 は、1 カ月間 (730 時間) での 1 GB ストレージ 1 つの平均です。
 
   標準プランの例:
 
@@ -139,10 +138,10 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 {{site.data.keyword.Bluemix_notm}} の料金カリキュレーターを使用して、アプリにかかる料金を調べることができます。
 
-1.  料金シートを開きます。[{{site.data.keyword.Bluemix_notm}} の価格設定](https://www.ibm.com/cloud-computing/bluemix/pricing)を参照してください。
-2.  **「従量課金 (PAYG)」**セクションで、**「カリキュレーターを使用してコストを見積もる (Estimate your costs with our calculator)」**をクリックします。 カリキュレーターが開きます。
-3.  **「コンテナー料金」**セクションの**「Container Registry」**セクションまでスクロールします。
-4.  表示されたフィールドに、ストレージとトラフィックの見積もりを入力します。
+1. 料金シートを開きます。[{{site.data.keyword.Bluemix_notm}} の価格設定 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/cloud/pricing) を参照してください。
+2. **「従量課金 (PAYG)」**セクションで、**「カリキュレーターを使用してコストを見積もる (Estimate your costs with our calculator)」**をクリックします。 カリキュレーターが開きます。
+3. **「コンテナー料金」**セクションの**「Container Registry」**セクションまでスクロールします。
+4. 表示されたフィールドに、ストレージとトラフィックの見積もりを入力します。
 
 カリキュレーターに見積もりコストが表示されます。
 
@@ -154,26 +153,25 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 使用中のサービス・プランを確認するには、`ibmcloud cr plan` コマンドを実行します。
 
-1.  {{site.data.keyword.Bluemix_notm}} にログインします。
+1. {{site.data.keyword.Bluemix_notm}} にログインします。
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    フェデレーテッド ID がある場合は、`ibmcloud login --sso` を使用して、{{site.data.keyword.Bluemix_notm}} CLI にログインします。 ユーザー名を入力し、CLI 出力に示された URL を使用してワンタイム・パスコードを取得します。 `--sso` なしではログインに失敗し、`--sso` オプションを指定すると成功する場合、フェデレーテッド ID があることがわかります。
+   フェデレーテッド ID がある場合は、`ibmcloud login --sso` を使用して、{{site.data.keyword.Bluemix_notm}} CLI にログインします。 ユーザー名を入力し、CLI 出力に示された URL を使用してワンタイム・パスコードを取得します。 `--sso` なしではログインに失敗し、`--sso` オプションを指定すると成功する場合、フェデレーテッド ID があることがわかります。
     {:tip}
 
-2.  標準プランにアップグレードします。
+2. 標準プランにアップグレードします。
 
-    ```
-    ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   ibmcloud cr plan-upgrade standard
+   ```
+   {: pre}
 
-    {{site.data.keyword.Bluemix_notm}} Lite アカウントを使用している場合は、`ibmcloud cr plan-upgrade` を実行する前に、{{site.data.keyword.Bluemix_notm}} の従量課金 (PAYG) アカウントまたはサブスクリプション・アカウントにアップグレードする必要があります。
-    {:tip}
-
+   {{site.data.keyword.Bluemix_notm}} Lite アカウントを使用している場合は、`ibmcloud cr plan-upgrade` を実行する前に、{{site.data.keyword.Bluemix_notm}} の従量課金 (PAYG) アカウントまたはサブスクリプション・アカウントにアップグレードする必要があります。
+   {:tip}
 
 ## 基礎の学習
 {: #registry_planning}
@@ -183,7 +181,6 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {:tip}
-
 
 ### {{site.data.keyword.registrylong_notm}} で使用される用語の説明
 {: #terms}
@@ -212,7 +209,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 <dl>
   <dt>レジストリー</dt>
-  <dd>レジストリーとは、OCI イメージ (別名 Docker イメージ) のためのストレージを提供するサービスです。OCI イメージは、適切なレジストリー・ドメイン・ネームを使用した OCI クライアントから、取得 (プル) できます。イメージには、だれでも取得できるもの (パブリック・イメージ) と、特定のグループに取得が制限されたもの (プライベート・イメージ) があります。{{site.data.keyword.registrylong_notm}} は、{{site.data.keyword.IBM_notm}} がホストおよび管理する、可用性の高いマルチテナント型プライベート・イメージ・レジストリーを提供します。このレジストリーにアカウント専用の名前空間を追加し、イメージをその名前空間にプッシュすることができます。</dd>
+  <dd>レジストリーとは、OCI イメージ (別名 Docker イメージ) のためのストレージを提供するサービスです。 OCI イメージは、適切なレジストリー・ドメイン・ネームを使用した OCI クライアントから、取得 (プル) できます。 イメージには、だれでも取得できるもの (パブリック・イメージ) と、特定のグループに取得が制限されたもの (プライベート・イメージ) があります。 {{site.data.keyword.registrylong_notm}} は、{{site.data.keyword.IBM_notm}} がホストおよび管理する、可用性の高いマルチテナント型プライベート・イメージ・レジストリーを提供します。 このレジストリーにアカウント専用の名前空間を追加し、イメージをその名前空間にプッシュすることができます。</dd>
 </dl>
 
 <dl>
@@ -225,9 +222,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
   <dd>タグは、リポジトリー内にあるイメージの識別子です。 タグを使用して、リポジトリー内にある同じ基本イメージを持つさまざまなバージョンを区別できます。 リポジトリー・イメージのタグを指定しないで Docker コマンドを実行すると、<code>latest</code> タグの付いたイメージがデフォルトで使用されます。</dd>
 </dl>
 
-
 Docker 固有の用語について詳しくは、[Docker 用語集を参照してください![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/glossary/)。
-
 
 ### 名前空間の計画
 {: #registry_namespaces}
@@ -237,6 +232,8 @@ Docker 固有の用語について詳しくは、[Docker 用語集を参照し�
 
 複数の名前空間をセットアップし、例えば、実動用とステージング環境用に別々のリポジトリーを用意することができます。 レジストリーを複数の {{site.data.keyword.Bluemix_notm}} 領域で使用する場合は、領域ごとに名前空間をセットアップする必要があります。 名前空間名は、それぞれの領域内で固有です。 同じ名前空間名を各領域で使用できますが、別のユーザーが既にその名前で名前空間を設定している領域では使用できません。
 
+IAM ポリシーを使用して、名前空間へのアクセスを制御できます。詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+
 IBM 提供のパブリック・イメージのみを使用して作業する場合、名前空間をセットアップする必要はありません。
 
 アカウントに名前空間が既に設定されているかどうかが不明な場合は、`ibmcloud cr namespace-list` コマンドを実行して、既存の名前空間に関する情報を取得してください。
@@ -244,10 +241,10 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 名前空間を選択する際は、以下のルールを考慮してください。
 
--   名前空間は、{{site.data.keyword.Bluemix_notm}} 領域内で固有でなければなりません。
--   名前空間は、4 文字から 30 文字の長さでなければなりません。
--   名前空間は、文字または数字で始まる必要があります。
--   名前空間には、小文字、数字、またはアンダースコアー (_) のみを使用できます。
+- 名前空間は、{{site.data.keyword.Bluemix_notm}} 領域内で固有でなければなりません。
+- 名前空間は、4 文字から 30 文字の長さでなければなりません。
+- 名前空間は、文字または数字で始まる必要があります。
+- 名前空間には、小文字、数字、またはアンダースコアー (_) のみを使用できます。
 
 名前空間名に個人情報を含めないでください。
 {:tip}
@@ -265,10 +262,10 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。 {{site.data.keyword.registrylong_notm}} レジストリーは、以下の領域で使用できます。
 
--   ap-south: `registry.au-syd.bluemix.net`
--   eu-central: `registry.eu-de.bluemix.net`
--   uk-south: `registry.eu-gb.bluemix.net`
--   us-south: `registry.ng.bluemix.net`
+- `ap-south`: `registry.au-syd.bluemix.net`
+- `eu-central`: `registry.eu-de.bluemix.net`
+- `uk-south`: `registry.eu-gb.bluemix.net`
+- `us-south`: `registry.ng.bluemix.net`
 
 すべてのレジストリー成果物は、現在使用している特定の領域レジストリーが範囲になります。 例えば、名前空間、イメージ、トークン、割り当て量の設定、プランの設定はすべて、領域レジストリーごとに管理する必要があります。
 
@@ -305,6 +302,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set) を参照してください。
+`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set) を参照してください。
 
 グローバル・レジストリーをターゲットにした後に、`ibmcloud cr login` コマンドを実行してローカル Docker デーモンをグローバル・レジストリーにログインさせ、{{site.data.keyword.IBM_notm}} 提供のパブリック・イメージをプルできるようにします。

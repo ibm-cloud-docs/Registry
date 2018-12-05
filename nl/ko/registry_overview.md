@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 {:download: .download}
 
-
 # {{site.data.keyword.registrylong_notm}} 정보
 {: #registry_overview}
 
@@ -24,7 +23,7 @@ lastupdated: "2018-09-13"
 
 {{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트의 높은 가용성과 확장성을 갖춘 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하고 네임스페이스에 Docker 이미지를 푸시하여 개인용 레지스트리를 사용할 수 있습니다.
 
-<img src="images/registry_architecture1.svg" alt="IBM Cloud Container Registry와 상호작용할 수 있는 방법을 보여주는 이미지입니다. Container Registry에는 개인용 및 공용 저장소 둘 다, 그리고 서비스와 상호작용하기 위한 API가 포함되어 있습니다. 로컬 Docker 클라이언트는 레지스트리의 개인용 저장소와 양방향으로 이미지를 가져오고 푸시할 수 있으며, 공용 저장소를 가져올 수 있습니다. IBM Cloud 웹 UI(콘솔)는 Container Registry API와 상호작용하여 이미지를 나열합니다. Container Registry CLI는 기타 관리 기능은 물론 API와 상호작용하여 이미지를 나열, 작성, 검사하고 제거합니다. 로컬 Docker 클라이언트는 로컬 이미지 저장소에서 기타 레지스트리로 이미지를 가져오고 푸시할 수도 있습니다."/>
+<img src="images/registry_architecture1.svg" alt="IBM Cloud Container Registry와 상호작용할 수 있는 방법을 보여주는 이미지입니다. Container Registry에는 개인용 및 공용 저장소가 둘 다 포함되어 있으며 서비스와 상호작용하기 위한 API가 포함되어 있습니다. 로컬 Docker 클라이언트는 레지스트리의 개인용 저장소와 양방향으로 이미지를 가져오고 푸시할 수 있으며, 공용 저장소를 가져올 수 있습니다. IBM Cloud 웹 UI(콘솔)는 Container Registry API와 상호작용하여 이미지를 나열합니다. Container Registry CLI는 기타 관리 기능은 물론 API와 상호작용하여 이미지를 나열, 작성, 검사 및 제거합니다. 로컬 Docker 클라이언트는 로컬 이미지 저장소에서 기타 레지스트리로 이미지를 가져오고 푸시할 수도 있습니다."/>
 
 **그림 1. {{site.data.keyword.registrylong_notm}}가 Docker 이미지와 상호작용하는 방법**
 
@@ -150,10 +149,10 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 {{site.data.keyword.Bluemix_notm}}에서 제공한 비용 계산기를 사용하여 앱의 가격을 책정할 수 있습니다.
 
-1.  가격 책정 시트를 열고 [{{site.data.keyword.Bluemix_notm}} 가격 책정](https://www.ibm.com/cloud-computing/bluemix/pricing)을 확인하십시오.
-2.  **종량과금제(Pay As You Go)** 섹션에서 **계산기를 사용하여 비용 추정**을 클릭하십시오. 계산기가 열립니다.
-3.  **컨테이너 비용** 섹션의 **컨테이너 레지스트리** 섹션으로 화면이동하십시오.
-4.  제공된 필드에 스토리지와 트래픽 추정값을 입력하십시오.
+1. 가격 책정 시트를 열고 [{{site.data.keyword.Bluemix_notm}} 가격 책정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/cloud/pricing)을 확인하십시오.
+2. **종량과금제(Pay As You Go)** 섹션에서 **계산기를 사용하여 비용 추정**을 클릭하십시오. 계산기가 열립니다.
+3. **컨테이너 비용** 섹션의 **컨테이너 레지스트리** 섹션으로 화면이동하십시오.
+4. 제공된 필드에 스토리지와 트래픽 추정값을 입력하십시오.
 
 추정 비용이 계산기에 표시됩니다.
 
@@ -165,26 +164,25 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 사용 중인 서비스 플랜을 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오.
 
-1.  {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
-    ```
+   ```
     ibmcloud login
-    ```
-    {: pre}
+   ```
+   {: pre}
 
-    연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
+   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
     {:tip}
 
-2.  표준 플랜으로 업그레이드하십시오.
+2. 표준 플랜으로 업그레이드하십시오.
 
-    ```
+   ```
     ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   {: pre}
 
-    {{site.data.keyword.Bluemix_notm}} 라이트 계정이 있는 경우에는 `ibmcloud cr plan-upgrade`를 실행하기 전에 {{site.data.keyword.Bluemix_notm}} 종량과금제 또는 구독 계정으로 업그레이드해야 합니다.
-    {:tip}
-
+   {{site.data.keyword.Bluemix_notm}} 라이트 계정이 있는 경우에는 `ibmcloud cr plan-upgrade`를 실행하기 전에 {{site.data.keyword.Bluemix_notm}} 종량과금제 또는 구독 계정으로 업그레이드해야 합니다.
+   {:tip}
 
 ## 기본 사항 학습
 {: #registry_planning}
@@ -194,7 +192,6 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {:tip}
-
 
 ### {{site.data.keyword.registrylong_notm}}에서 사용되는 용어의 이해
 {: #terms}
@@ -218,12 +215,12 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>OCI 컨테이너 이미지</dt>
-  <dd>[OCI 이미지 형식 스펙 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/opencontainers/image-spec)을 준수하는 컨테이너 이미지입니다. </dd>
+  <dd>[OCI 이미지 형식 스펙 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/opencontainers/image-spec)을 준수하는 컨테이너 이미지입니다.</dd>
 </dl>
 
 <dl>
   <dt>레지스트리</dt>
-  <dd>레지스트리는 OCI 이미지(Docker 이미지라고도 함)의 스토리지를 제공하는 서비스입니다. 적합한 레지스트리 도메인 이름을 사용하는 OCI 클라이언트는 OCI 이미지에 액세스하거나 이를 "가져올" 수 있습니다. 누구나 이미지에 액세스할 수 있거나(공용 이미지), 액세스가 하나의 그룹으로 제한될 수 있습니다(개인용 이미지). {{site.data.keyword.registrylong_notm}}에서는 {{site.data.keyword.IBM_notm}}이 호스팅하고 관리하는 멀티 테넌트의 고가용성 개인용 이미지 레지스트리를 제공합니다. 사용자 계정 전용의 개인용 네임스페이스를 추가하여 레지스트리를 사용한 후에 이미지를 네임스페이스로 푸시할 수 있습니다. </dd>
+  <dd>레지스트리는 OCI 이미지(Docker 이미지라고도 함)의 스토리지를 제공하는 서비스입니다. 적합한 레지스트리 도메인 이름을 사용하는 OCI 클라이언트는 OCI 이미지에 액세스하거나 이를 "가져올" 수 있습니다. 누구나 이미지에 액세스할 수 있거나(공용 이미지), 액세스가 하나의 그룹으로 제한될 수 있습니다(개인용 이미지). {{site.data.keyword.registrylong_notm}}에서는 {{site.data.keyword.IBM_notm}}이 호스팅하고 관리하는 멀티 테넌트의 고가용성 개인용 이미지 레지스트리를 제공합니다. 사용자 계정 전용의 개인용 네임스페이스를 추가하여 레지스트리를 사용한 후에 이미지를 네임스페이스로 푸시할 수 있습니다.</dd>
 </dl>
 
 <dl>
@@ -236,9 +233,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   <dd>태그는 저장소에 있는 이미지의 ID입니다. 태그를 사용하여 저장소에 있는 동일한 기본 이미지의 여러 다른 버전을 구분할 수 있습니다. Docker 명령을 실행할 때 저장소 이미지의 태그를 지정하지 않으면 <code>latest</code>로 태그가 지정된 이미지가 기본적으로 사용됩니다.</dd>
 </dl>
 
-
-Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집을 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/glossary/)하십시오. 
-
+Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집을 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/glossary/)하십시오.
 
 ### 네임스페이스 계획
 {: #registry_namespaces}
@@ -248,6 +243,8 @@ Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집을 �
 
 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.Bluemix_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
 
+IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry/registry_users.html#user)를 참조하십시오.
+
 IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지 않아도 됩니다.
 
 계정에 대한 네임스페이스 설정 여부가 확실하지 않은 경우에는 `ibmcloud cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오.
@@ -255,10 +252,10 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
 
--   네임스페이스는 {{site.data.keyword.Bluemix_notm}} 지역에서 고유해야 합니다.
--   네임스페이스의 길이는 4 - 30자여야 합니다.
--   네임스페이스는 하나 이상의 문자 또는 숫자로 시작해야 합니다.
--   네임스페이스에는 소문자, 숫자 또는 밑줄(_)만 포함되어야 합니다.
+- 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 지역에서 고유해야 합니다.
+- 네임스페이스의 길이는 4 - 30자여야 합니다.
+- 네임스페이스는 하나 이상의 문자 또는 숫자로 시작해야 합니다.
+- 네임스페이스에는 소문자, 숫자 또는 밑줄(_)만 포함되어야 합니다.
 
 네임스페이스 이름에 개인 정보를 입력하지 마십시오.
 {:tip}
@@ -276,10 +273,10 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. {{site.data.keyword.registrylong_notm}} 레지스트리는 다음 지역에서 사용할 수 있습니다.
 
--   ap-south: `registry.au-syd.bluemix.net`
--   eu-central: `registry.eu-de.bluemix.net`
--   uk-south: `registry.eu-gb.bluemix.net`
--   us-south: `registry.ng.bluemix.net`
+- `ap-south`: `registry.au-syd.bluemix.net`
+- `eu-central`: `registry.eu-de.bluemix.net`
+- `uk-south`: `registry.eu-gb.bluemix.net`
+- `us-south`: `registry.ng.bluemix.net`
 
 모든 레지스트리 아티팩트의 범위는 현재 작업 중인 특정 지역 레지스트리로 지정됩니다. 예를 들어, 네임스페이스, 이미지, 토큰, 할당량 설정 및 플랜 설정은 모두 각 지역 레지스트리에서 개별적으로 관리해야 합니다.
 
@@ -316,6 +313,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html#bx_cr_region_set)를 참조하십시오.
+`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set)를 참조하십시오.
 
 글로벌 레지스트리를 대상으로 지정한 후에는 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 `ibmcloud cr login` 명령을 실행하여 로컬 Docker 디먼을 글로벌 레지스트리에 로그인시키십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,21 +15,19 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # Commandes {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) pour la gestion des images Docker dans votre espace de nom
 {: #registry_cli_reference}
 
 Vous pouvez utiliser le plug-in container-registry pour configurer votre propre espace de nom d'images dans un registre privé, hébergé et géré par IBM, dans lequel vous pouvez stocker et partager de manière sécurisée des images Docker avec tous les utilisateurs de votre compte {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
-
 ## Commandes `ibmcloud cr`
 {: #registry_cli_reference_bxcr}
 
 Exécutez les commandes `ibmcloud cr` dans l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
-  
-Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html).
+
+Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html).
 
 ## Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -41,78 +39,75 @@ Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un for
 
 Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant l'option format de deux façons différentes :
 
-1.  En formatant les données de la sortie de l'interface de ligne de commande. Ainsi, vous pouvez remplacer le format de temps UNIX de la sortie de la zone `Created` par le format de temps standard.
-2.  En filtrant les données de la sortie de l'interface de ligne de commande. Vous pouvez, par exemple, filtrer les détails de l'image et afficher un sous-ensemble spécifique d'images à l'aide de la condition `if gt` du modèle Go.
+1. En formatant les données de la sortie de l'interface de ligne de commande. Ainsi, vous pouvez remplacer le format de temps UNIX de la sortie de la zone `Created` par le format de temps standard.
+2. En filtrant les données de la sortie de l'interface de ligne de commande. Vous pouvez, par exemple, filtrer les détails de l'image et afficher un sous-ensemble spécifique d'images à l'aide de la condition `if gt` du modèle Go.
 
 Vous pouvez utiliser l'option format avec les commandes {{site.data.keyword.registrylong_notm}} suivantes. Cliquez sur une commande pour afficher la liste de zones disponibles et des types de données associés.
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Les exemples de code suivants illustrent la manière dont vous pouvez utiliser les options de formatage et de filtrage.
 
--   Exécutez la commande `ibmcloud cr image-list` suivante pour afficher le référentiel, l'étiquette et le statut de sécurité de toutes les images dont la taille dépasse 1 Mo :
+- Exécutez la commande `ibmcloud cr image-list` suivante pour afficher le référentiel, l'étiquette et le statut de sécurité de toutes les images dont la taille dépasse 1 Mo :
 
-    ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  ```
+  ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+  ```
+  {: pre}
 
-    **Exemple de sortie**
+  **Exemple de sortie**
 
-    ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+  ```
+  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
-    {: screen}
+  ```
+  {: screen}
 
+- Exécutez la commande `ibmcloud cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la documentation IBM pour une image publique IBM spécifique :
 
--   Exécutez la commande `ibmcloud cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la documentation IBM pour une image publique IBM spécifique :
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
+  {: pre}
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  **Exemple de sortie**
 
-    ```
-    {: pre}
+  ```
+  map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+  ```
+  {: screen}
 
-    **Exemple de sortie**
+- Exécutez la commande `ibmcloud cr image-inspect` suivante afin d'afficher les ports exposés pour une image spécifiée :
 
-    ```
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
+  {: pre}
 
--   Exécutez la commande `ibmcloud cr image-inspect` suivante afin d'afficher les ports exposés pour une image spécifiée :
+  **Exemple de sortie**
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  ```
+  map[9080/tcp: 9443/tcp:]
+  ```
+  {: screen}
 
-    **Exemple de sortie**
+- Exécutez la commande `ibmcloud cr token-list` suivante pour afficher tous les jetons en lecture seule :
 
-    ```
-    map[9080/tcp: 9443/tcp:]
-    ```
-    {: screen}
+  ```
+  ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+  ```
+  {: pre}
 
--   Exécutez la commande `ibmcloud cr token-list` suivante pour afficher tous les jetons en lecture seule :
+  **Exemple de sortie**
 
-    ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
-
-    **Exemple de sortie**
-
-    ```
-    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-    ```
-    {: screen}
-
+  ```
+  0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+  ```
+  {: screen}
 
 ### Options du modèle Go et types de données dans la commande `ibmcloud cr image-list`
 {: #registry_cli_listing_imagelist}
@@ -167,7 +162,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`AttachStdout`|Booléen|Affiche _true_ si le flux de sortie standard est associé au conteneur, et _false_ dans le cas contraire.|
 |`AttachStderr`|Booléen|Affiche _true_ si le flux d'erreur standard est associé au conteneur, et _false_ dans le cas contraire.|
 |`ExposedPorts`|Mappe de valeur de clé|Affiche la liste des ports exposés au format `[123:,456:]`.|
-|`Tty`|Booléen|Affiche _true_ si une unité pseudo-tty est allouée au conteneur, et _false_ dans le cas contraire.|
+|`Tty`|Booléen|Affiche _true_ si une unité `pseudo-tty` est allouée au conteneur, et _false_ dans le cas contraire.|
 |`OpenStdin`|Booléen|Affiche _true_ si le flux d'entrée standard est ouvert, et _false_ si le flux d'entrée standard est fermé.|
 |`StdinOnce`|Booléen|Affiche _true_ si le flux d'entrée standard est fermé après la déconnexion du client associé, et _false_ si le flux d'entrée standard reste ouvert.|
 |`Env`|Tableau de chaînes|Affiche la liste des variables d'environnement sous la forme de paires clé-valeur.|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-06"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -14,7 +14,6 @@ lastupdated: "2018-09-06"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
-
 
 # Automazione dell'accesso a {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -29,10 +28,11 @@ Le chiavi API sono collegate al tuo account e possono essere utilizzate in {{sit
 
 I token del registro sono applicabili solo a {{site.data.keyword.registrylong_notm}}. Puoi limitarli all'accesso in sola lettura e puoi scegliere se scadono o meno.
 
+Se utilizzi una chiave API, puoi controllare l'accesso ai tuoi spazi dei nomi utilizzando le politiche IAM. Per ulteriori informazioni, consulta [Definizione delle politiche del ruolo di accesso utente](/docs/services/Registry/registry_users.html#user).
+
 Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](/docs/iam/apikeys.html#manapikey).
 
 Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](registry_setup_cli_namespace.html#registry_cli_install).
-
 
 ## Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API
 {: #registry_api_key}
@@ -43,14 +43,13 @@ Puoi utilizzare le chiavi API per automatizzare l'esecuzione del push e del pull
 ### Creazione di una chiave API
 {: #registry_api_key_create}
 
-Puoi creare una chiave API che puoi successivamente utilizzare per accedere al tuo registro. 
+Puoi creare una chiave API che puoi successivamente utilizzare per accedere al tuo registro.
 {:shortdesc}
 
 Puoi creare sia le chiavi API dell'utente che le chiavi API dell'ID servizio.
 
--  Per creare una chiave API a, consulta [Creazione di una chiave API per un ID servizio](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
--  Per creare una chiave API a, consulta [Creazione di una chiave API](/docs/iam/userid_keys.html#creating-an-api-key).
-
+- Per creare una chiave API a, consulta [Creazione di una chiave API per un ID servizio](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
+- Per creare una chiave API a, consulta [Creazione di una chiave API](/docs/iam/userid_keys.html#creating-an-api-key).
 
 ### Utilizzo di una chiave API per automatizzare l'accesso
 {: #registry_api_key_use}
@@ -67,7 +66,6 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 Per le informazioni di riferimento sul comando, consulta [Crea una nuova chiave API della piattaforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
-
 ## Automazione dell'accesso agli spazi dei nomi utilizzando i token
 {: #registry_tokens}
 
@@ -78,12 +76,13 @@ Chiunque in possesso di un token del registro può accedere alle informazioni pr
 
 Quando crei un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi decidere se tale token autorizza l'accesso in sola lettura (pull) o in scrittura (push e pull) al registro. Inoltre, puoi specificare se il token è permanente o se scade dopo 24 ore. Puoi e utilizzare più token per controllare i diversi tipi di accesso.
 
+Se accedi a {{site.data.keyword.registrylong_notm}} utilizzando un token di registro, le tue politiche di accesso IAM non vengono applicate. Se desideri limitare l'accesso a uno o più spazi dei nomi per un ID che viene utilizzato nell'automazione, considera l'utilizzo di una chiave API dell'ID servizio IAM invece di un token di registro. Per ulteriori informazioni sulla creazione di una chiave API e il suo utilizzo con {{site.data.keyword.registrylong_notm}}, consulta [Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API](#registry_api_key).
+
 Utilizza le seguenti attività per gestire i tuoi token:
 
--  [Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_create)
--  [Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi](#registry_tokens_use)
--  [Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_remove)
-
+- [Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_create)
+- [Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi](#registry_tokens_use)
+- [Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}} ](#registry_tokens_remove)
 
 ### Creazione di un token per il tuo account {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_create}
@@ -91,14 +90,14 @@ Utilizza le seguenti attività per gestire i tuoi token:
 Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}} in una regione.
 {:shortdesc}
 
-1.  Crea un token. Nel seguente esempio viene creato un token senza scadenza che ha l'accesso in lettura e scrittura a tutti gli spazi dei nomi configurati in una regione.
+1. Crea un token. Nel seguente esempio viene creato un token senza scadenza che ha l'accesso in lettura e scrittura a tutti gli spazi dei nomi configurati in una regione.
 
-    ```
-    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
+   ```
+   {: pre}
 
-    <table>
+   <table>
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descrizione dei componenti di questo comando</th>
         </thead>
@@ -116,23 +115,22 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
         <td>Facoltativo. Utilizza questa opzione per creare un token che consenta agli utenti di eseguire il push e il pull di immagini da e verso i tuoi spazi dei nomi. Se non specifichi questa opzione, il token può essere utilizzato solo per eseguire il pull delle immagini.</td>
         </tr>
         </tbody>
-        </table>
+   </table>
 
-    L'output della CLI sarà simile al seguente:
+   L'output della CLI sarà simile al seguente:
 
-    ```
-    Identificativo token   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
-    Token              <valore_token>
-    ```
-    {: screen}
+   ```
+   Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
+   Token              <token_value>
+   ```
+   {: screen}
 
-2.  Verifica che il token sia stato creato.
+2. Verifica che il token sia stato creato.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
-
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
 ### Utilizzo di un token per automatizzare l'accesso ai tuoi spazi dei nomi
 {: #registry_tokens_use}
@@ -140,46 +138,45 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}. A seconda che l'accesso impostato per il token sia di sola lettura o di lettura/scrittura, gli utenti possono eseguire il push e il pull delle immagini da e verso i tuoi spazi dei nomi.
 {:shortdesc}
 
-1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
+1. Accedi a {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-2.  Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi utilizzare.
+2. Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi utilizzare.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
-3.  Richiama il valore per il token. Sostituisci &lt;id_token&gt; con l'ID del token.
+3. Richiama il valore per il token. Sostituisci &lt;token_id&gt; con l'ID del token.
 
-    ```
-    ibmcloud cr token-get <token_id>
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-get <token_id>
+   ```
+   {: pre}
 
     Il valore del token viene visualizzato in **Token** nell'output della CLI.
 
-4.  Utilizza il token come parte del tuo comando `docker login`. Sostituisci &lt;valore_token&gt; con il valore del token richiamato nel passo precedente e &lt;url_registro&gt; con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
+4. Utilizza il token come parte del tuo comando `docker login`. Sostituisci &lt;valore_token&gt; con il valore del token richiamato nel passo precedente e &lt;url_registro&gt; con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
 
-    -   Per gli spazi dei nomi configurati in Stati Uniti Sud: `registry.ng.bluemix.net`
-    -   Per gli spazi dei nomi configurati in Regno Unito Sud: `registry.eu-gb.bluemix.net`
-    -   Per gli spazi dei nomi configurati in Europa centrale: `registry.eu-de.bluemix.net`
-    -   Per gli spazi dei nomi configurati in AP del sud: `registry.au-syd.bluemix.net`
+   - Per gli spazi dei nomi configurati in Stati Uniti Sud, utilizza `registry.ng.bluemix.net`
+   - Per gli spazi dei nomi configurati in Regno Unito Sud, utilizza `registry.eu-gb.bluemix.net`
+   - Per gli spazi dei nomi configurati in Europa centrale, utilizza `registry.eu-de.bluemix.net`
+   - Per gli spazi dei nomi configurati in AP del sud, utilizza `registry.au-syd.bluemix.net`
 
-    ```
-    docker login -u token -p <valore_token> <url_registro>
-    ```
-    {: pre}
-    
-    Per il parametro `-u`, assicurati di immettere la stringa `token`, non l'ID token.
-    {: tip}
+   ```
+   docker login -u token -p <valore_token> <url_registro>
+   ```
+   {: pre}
 
-    Dopo aver effettuato l'accesso a Docker utilizzando il token, puoi eseguire il push o il pull delle immagini da e verso i tuoi spazi dei nomi.
+   Per il parametro `-u`, assicurati di immettere la stringa `token`, non l'ID token.
+   {: tip}
 
+   Dopo aver effettuato l'accesso a Docker utilizzando il token, puoi eseguire il push o il pull delle immagini da e verso i tuoi spazi dei nomi.
 
 ### Rimozione di un token dal tuo account {{site.data.keyword.Bluemix_notm}}
 {: #registry_tokens_remove}
@@ -190,28 +187,27 @@ Rimuovi un token {{site.data.keyword.registrylong_notm}} quando non ne hai più 
 I token {{site.data.keyword.registrylong_notm}} scaduti vengono rimossi automaticamente dal tuo account {{site.data.keyword.Bluemix_notm}} e non è necessario rimuoverli manualmente.
 {:tip}
 
-1.  Accedi a {{site.data.keyword.Bluemix_notm}}.
+1. Accedi a {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-2.  Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi rimuovere.
+2. Elenca tutti i token nel tuo account {{site.data.keyword.Bluemix_notm}} e prendi nota dell'ID token che vuoi rimuovere.
 
-    ```
-    ibmcloud cr token-list
-    ```
-    {: pre}
+   ```
+   ibmcloud cr token-list
+   ```
+   {: pre}
 
-3.  Rimuovi il token.
+3. Rimuovi il token.
 
-    ```
-    ibmcloud cr token-rm <token_id>
-    ```
-    {: pre}
-    
-    
+   ```
+   ibmcloud cr token-rm <token_id>
+   ```
+   {: pre}
+
 ## Opzioni di autenticazione per tutti i client
 {: #registry_authentication}
 
@@ -222,13 +218,12 @@ La maggior parte degli utenti possono utilizzare il comando `ibmcloud cr login` 
 
 I seguenti nomi utente sono validi:
 
--  `iambearer` la password contiene un token di accesso IAM. Questo tipo di autenticazione è di breve durata, ma può essere derivato da tutti i tipi di identità IAM.
--  `iamrefresh` la password deve contenere un token di aggiornamento IAM utilizzato internamente per generare e aggiornare un token di accesso IAM. Questo tipo di autenticazione non è più attivo e viene utilizzato dal comando `ibmcloud cr login`.
--  `iamapikey` la password è una chiave API IAM. Questo tipo di autenticazione è il tipo preferito per l'automazione. Puoi utilizzare sia una chiave API dell'ID servizio che dell'utente, consulta [Creazione di una chiave API](#registry_api_key_create).
--  `token` la password è un token del registro. Puoi utilizzare questo nome utente per l'automazione.
+- `iambearer` la password contiene un token di accesso IAM. Questo tipo di autenticazione è di breve durata, ma può essere derivato da tutti i tipi di identità IAM.
+- `iamrefresh` la password deve contenere un token di aggiornamento IAM utilizzato internamente per generare e aggiornare un token di accesso IAM. Questo tipo di autenticazione non è più attivo e viene utilizzato dal comando `ibmcloud cr login`.
+- `iamapikey` la password è una chiave API IAM. Questo tipo di autenticazione è il tipo preferito per l'automazione. Puoi utilizzare sia una chiave API dell'ID servizio che dell'utente, consulta [Creazione di una chiave API](#registry_api_key_create).
+- `token` la password è un token del registro. Puoi utilizzare questo nome utente per l'automazione.
 
-Non devi utilizzare il comando docker per l'autenticazione con il registro. Ad esempio, puoi immettere il seguente comando `ibmcloud cf push` che autentica e autorizza un pull dal registro utilizzando una chiave API IAM.
-
+Non devi utilizzare il comando `docker` per l'autenticazione con il registro. Ad esempio, puoi avviare le applicazioni Cloud Foundry dalle immagini nel registro utilizzando la CLI Cloud Foundry:
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>

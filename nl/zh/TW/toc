@@ -1,27 +1,37 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html" path="services/Registry"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md
-
+    registry_ha.md      
+    registry_public_images.md
     [IBM 映像檔](../RegistryImages/index.html#ibm_images)
+        [datashield-barbican 映像檔](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
+        [datashield-mysql 映像檔](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
+        [datashield-nginx 映像檔](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
+        [datashield-vault 映像檔](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
         [ibm-backup-restore 映像檔](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
         [ibmliberty 映像檔](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    
+    {: .topicgroup}
+    指導教學
+        registry_tutorial_configure_iam.md
+        [指導教學：將 VM 型應用程式移至 Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [指導教學：使用 Cloud Internet Services 的具復原力且安全的多地區 Kubernetes 叢集](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
-    registry_ui.md
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
     [使用漏洞警告器管理映像檔安全](../va/va_index.html)
@@ -36,6 +46,7 @@ IBM Cloud Container Registry
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    iam.md
     registry_at_events.md
     rellinks.md
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 {:download: .download}
 
-
 # Sobre o {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -26,7 +25,7 @@ e acessar as imagens privadas do Docker em uma arquitetura altamente disponível
 O {{site.data.keyword.registrylong_notm}} fornece um registro privado
 de imagem de múltiplos locatários, altamente disponível e escalável que é hospedado e gerenciado pela IBM. É possível usar o registro privado configurando o seu próprio namespace de imagem e enviando por push imagens do Docker para o seu namespace.
 
-<img src="images/registry_architecture1.svg" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém repositórios privados e públicos e APIs para interagir com o serviço. Seu cliente do Docker local pode puxar e enviar por push imagens de seus repositórios privados no registro e pode puxar repositórios públicos. A IU da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. O seu cliente do Docker local também pode puxar e enviar por push imagens do armazenamento local de imagens para outros registros."/>
+<img src="images/registry_architecture1.svg" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém repositórios privados e públicos e APIs para interagir com o serviço. Seu cliente local do Docker pode fazer pull de imagens e enviá-las por push para e por meio de seus repositórios particulares no registro e pode fazer pull de repositórios públicos. A IU da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente local do Docker também pode fazer pull e enviar por push imagens de seu armazenamento de imagem local para outros registros."/>
 
 **Figura 1. Como o {{site.data.keyword.registrylong_notm}} interage com as imagens do Docker**
 
@@ -106,7 +105,7 @@ extraído que usa por mês.
 
 **Armazenamento: **
 
-  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} é fornecido com uma determinada quantia de armazenamento que pode ser usada para armazenar com segurança as suas imagens do Docker nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB/mês é uma média de 1 GB de armazenamento para um mês (730 horas).
+  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} é fornecido com uma determinada quantia de armazenamento que pode ser usada para armazenar com segurança as suas imagens do Docker nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
 
   Exemplo para o plano padrão:
 
@@ -175,10 +174,10 @@ Use a calculadora de precificação do {{site.data.keyword.Bluemix_notm}} para e
 
 É possível precificar seu app usando as calculadoras de custo que são fornecidas pelo {{site.data.keyword.Bluemix_notm}}.
 
-1.  Abra a folha de precificação, veja [Precificação do {{site.data.keyword.Bluemix_notm}}](https://www.ibm.com/cloud-computing/bluemix/pricing).
-2.  Na seção **Pagar conforme o uso**, clique em **Estimar seus custos com a nossa calculadora**. A calculadora é aberta.
-3.  Role até a seção **Registro de contêiner** na seção **Encargos de contêiner**.
-4.  Insira suas estimativas de armazenamento e de tráfego nos campos fornecidos.
+1. Abra a planilha de precificação, consulte [{{site.data.keyword.Bluemix_notm}}Precificação![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ](https://www.ibm.com/cloud/pricing).
+2. Na seção **Pagar conforme o uso**, clique em **Estimar seus custos com a nossa calculadora**. A calculadora é aberta.
+3. Role até a seção **Registro de contêiner** na seção **Encargos de contêiner**.
+4. Insira suas estimativas de armazenamento e de tráfego nos campos fornecidos.
 
 Seus custos estimados são exibidos na calculadora.
 
@@ -191,26 +190,25 @@ as imagens do Docker para todos os namespaces na sua conta do {{site.data.keywor
 
 Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmcloud cr plan`.
 
-1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.Bluemix_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.Bluemix_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
     {:tip}
 
-2.  Faça upgrade para o plano padrão.
+2. Faça upgrade para o plano padrão.
 
-    ```
-    ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   ibmcloud cr plan-upgrade standard
+   ```
+   {: pre}
 
-    Quando você tem uma conta Lite do {{site.data.keyword.Bluemix_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.Bluemix_notm}} antes de executar `ibmcloud cr plan-upgrade`.
-    {:tip}
-
+   Quando você tem uma conta Lite do {{site.data.keyword.Bluemix_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.Bluemix_notm}} antes de executar `ibmcloud cr plan-upgrade`.
+   {:tip}
 
 ## Aprendendo o básico
 {: #registry_planning}
@@ -222,7 +220,6 @@ aprendendo noções básicas de registro.
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
 {:tip}
-
 
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -266,9 +263,7 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
   <dd>Uma tag é um identificador de uma imagem em um repositório. É possível usar tags para distinguir diferentes versões da mesma imagem base em um repositório. Quando você executa um comando do Docker e não especifica a tag de uma imagem do repositório, a imagem identificada como <code>latest</code> é usada por padrão.</dd>
 </dl>
 
-
 Para saber mais sobre os termos específicos do Docker, [consulte o glossário do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/glossary/).
-
 
 ### Planejando namespaces
 {: #registry_namespaces}
@@ -283,6 +278,8 @@ ambientes temporários e de produção. Se você deseja usar o registro em múlt
 cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que
 alguém já tenha um namespace com esse nome configurado nessa região.
 
+É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry/registry_users.html#user).
+
 Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
 namespace.
 
@@ -291,10 +288,10 @@ Se você não tiver certeza se um namespace já está configurado para sua conta
 
 Considere as regras a seguir ao escolher um namespace:
 
--   O namespace deve ser exclusivo em uma região do {{site.data.keyword.Bluemix_notm}}.
--   O namespace deve ter de 4 a 30 caracteres de comprimento.
--   O namespace deve iniciar com pelo menos uma letra ou um número.
--   O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
+- O namespace deve ser exclusivo em uma região do {{site.data.keyword.Bluemix_notm}}.
+- O namespace deve ter de 4 a 30 caracteres de comprimento.
+- O namespace deve iniciar com pelo menos uma letra ou um número.
+- O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
 
 Não coloque informações pessoais nos nomes de namespace.
 {:tip}
@@ -312,10 +309,10 @@ Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis em v
 
 Uma região é uma área geográfica acessada por um terminal dedicado. Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis nas regiões a seguir:
 
--   ap-south: `registry.au-syd.bluemix.net`
--   eu-central: `registry.eu-de.bluemix.net`
--   uk-south: `registry.eu-gb.bluemix.net`
--   us-south: `registry.ng.bluemix.net`
+- `ap-south`: `registry.au-syd.bluemix.net`
+- `eu-central`: `registry.eu-de.bluemix.net`
+- `uk-south`: `registry.eu-gb.bluemix.net`
+- `us-south`: `registry.ng.bluemix.net`
 
 Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
 
@@ -352,6 +349,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
+Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.

@@ -1,27 +1,37 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html" path="services/Registry"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
     index.md
     registry_overview.md
-    registry_ha.md
-
+    registry_ha.md      
+    registry_public_images.md
     [Immagini IBM](../RegistryImages/index.html#ibm_images)
-        [ibm-backup-restore image](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
+        [Immagine datashield-barbican](../RegistryImages/datashield-barbican/index.html#datashield-barbican_starter)
+        [Immagine datashield-mysql](../RegistryImages/datashield-mysql/index.html#datashield-mysql_starter)
+        [Immagine datashield-nginx](../RegistryImages/datashield-nginx/index.html#datashield-nginx_starter)
+        [Immagine datashield-vault](../RegistryImages/datashield-vault/index.html#datashield-vault_starter)
+        [Immagine ibm-backup-restore](../RegistryImages/ibm-backup-restore/index.html#ibmbackup_restore_starter)
         [ibmcloud-secure-perimeter-health](../RegistryImages/ibmcloud-secure-perimeter-health/index.html)
         [ibmcloud-secure-perimeter-network](../RegistryImages/ibmcloud-secure-perimeter-network/index.html)
-        [ibmliberty image](../RegistryImages/ibmliberty/index.html#ibmliberty)
+        [Immagine ibmliberty](../RegistryImages/ibmliberty/index.html#ibmliberty)
+    
+    {: .topicgroup}
+    Esercitazioni
+        registry_tutorial_configure_iam.md
+        [Esercitazione: spostamento di un'applicazione basata sulla VM a Kubernetes](../../tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
+        [Esercitazione: cluster Kubernetes a più regioni sicuri e resilienti con Cloud Internet Services](../../tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
-    registry_ui.md
     registry_quota.md
     registry_images_.md
     registry_tokens.md
+    registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
     [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html)
@@ -29,13 +39,14 @@ IBM Cloud Container Registry
         [Tipi di vulnerabilità](../va/va_index.html#types)
         [Installazione dello Scanner contenitori](../va/va_index.html#va_install_container_scanner)
         [Esecuzione dello Scanner contenitori da dietro un firewall](../va/va_index.html#va_firewall)
-        [Configurazione delle politiche di esenzione organizzative](../va/va_index.html#va_managing_policy)
+        [Impostazione delle politiche di esenzione organizzative](../va/va_index.html#va_managing_policy)
         [Riesame di un report di vulnerabilità](../va/va_index.html#va_reviewing)
         [Riesame di un report del contenitore](../va/va_index.html#va_reviewing_container)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     registry_cli_reference.md
+    iam.md
     registry_at_events.md
     rellinks.md
     {: .navgroup-end}

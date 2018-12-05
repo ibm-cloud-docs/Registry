@@ -20,15 +20,15 @@ lastupdated: "2018-09-11"
 # 高可用性和灾难恢复
 {: #ha-dr}
 
-{{site.data.keyword.registrylong}} 服务是高可用性区域服务。
+{{site.data.keyword.registrylong}} 服务是一种高度可用的区域性服务。
 {:shortdesc}
 
-* 在每个支持的区域中，流量在多个可用性区域的注册表基础结构之间负载均衡，不含单点故障。
+* 在每个受支持的区域中，流量会通过多个可用性区域 (zone) 在整个注册表基础架构中实现负载均衡，而没有单点故障。
 
-* {{site.data.keyword.registrylong_notm}} 中存储的数据将定期备份，以提供额外弹性。
+* 为了提供额外的弹性，会定期对 {{site.data.keyword.registrylong_notm}} 中存储的数据进行备份。
 
-* 如果担心当整个区域不可用时您的映像也不可用，那么可选择将映像推送到多个区域注册表。 
+* 如果您担心在整个区域不可用时无法使用您的映像，那么可以选择将映像推送到多个区域注册表中。 
   
-  您还可以选择将映像推送到多个注册表，以防意外删除或覆盖映像。
+  您还可以选择将映像推送到多个注册表中，以防意外删除或覆盖映像。
 
   有关区域的更多信息，请参阅[区域](/docs/services/Registry/registry_overview.html#registry_regions)。

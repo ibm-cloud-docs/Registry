@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -15,21 +15,19 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # 네임스페이스에서 Docker 이미지를 관리하기 위한 {{site.data.keyword.registrylong_notm}}(`ibmcloud cr`) 명령
 {: #registry_cli_reference}
 
 container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} 계정의 모든 사용자와 Docker 이미지를 공유하고 안전하게 저장할 수 있는, IBM이 호스팅하고 관리하는 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정할 수 있습니다.
 {:shortdesc}
 
-
 ## `ibmcloud cr` 명령
 {: #registry_cli_reference_bxcr}
 
 {{site.data.keyword.registryshort_notm}} CLI에서 `ibmcloud cr` 명령을 실행하십시오.
 {:shortdesc}
-  
-지원되는 명령은 [{{site.data.keyword.registrylong_notm}} CLI](registry_cli.html)를 참조하십시오.
+
+지원되는 명령은 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링
 {: #registry_cli_listing}
@@ -41,78 +39,75 @@ container-registry 플러그인을 사용하여 {{site.data.keyword.Bluemix}} �
 
 다음 두 가지 방법으로 형식화 옵션을 적용하여 CLI 출력을 변경할 수 있습니다.
 
-1.  CLI 출력에서 데이터를 형식화하십시오. 예를 들면, `Created` 필드 출력을 UNIX 시간에서 표준 시간으로 변경하십시오.
-2.  CLI 출력에서 데이터를 필터링하십시오. 예를 들어, Go 템플리트 `if gt` 조건을 사용하여 이미지의 특정 서브세트를 표시하려면 이미지 세부사항별로 필터링하십시오.
+1. CLI 출력에서 데이터를 형식화하십시오. 예를 들면, `Created` 필드 출력을 UNIX 시간에서 표준 시간으로 변경하십시오.
+2. CLI 출력에서 데이터를 필터링하십시오. 예를 들어, Go 템플리트 `if gt` 조건을 사용하여 이미지의 특정 서브세트를 표시하려면 이미지 세부사항별로 필터링하십시오.
 
 다음 {{site.data.keyword.registrylong_notm}} 명령과 함께 형식화 옵션을 사용할 수 있습니다. 사용 가능한 필드와 해당 데이터 유형의 목록을 보려면 명령을 클릭하십시오.
 
--   [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
--   [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
--   [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 다음 코드 예제는 형식화 및 필터링 옵션을 어떻게 사용할 수 있는지를 보여줍니다.
 
--   크기가 1MB가 넘는 모든 이미지의 저장소, 태그 및 보안 상태를 표시하려면 다음 `ibmcloud cr image-list` 명령을 실행하십시오.
+- 크기가 1MB가 넘는 모든 이미지의 저장소, 태그 및 보안 상태를 표시하려면 다음 `ibmcloud cr image-list` 명령을 실행하십시오.
 
-    ```
-    ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
-    {: pre}
+  ```
+ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+  ```
+  {: pre}
 
-    **출력 예**
+  **출력 예**
 
-    ```
+  ```
 example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
     example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
     example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
-    {: screen}
+  ```
+  {: screen}
 
+- 지정된 IBM 공용 이미지에 대해 IBM 문서가 호스팅된 위치를 표시하려면 다음 `ibmcloud cr image-inspect` 명령을 실행하십시오.
 
--   지정된 IBM 공용 이미지에 대해 IBM 문서가 호스팅된 위치를 표시하려면 다음 `ibmcloud cr image-inspect` 명령을 실행하십시오.
+  ```
+ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
+  {: pre}
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  **출력 예**
 
-    ```
-    {: pre}
-
-    **출력 예**
-
-    ```
+  ```
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
-    ```
-    {: screen}
+  ```
+  {: screen}
 
--   지정된 이미지의 노출된 포트를 표시하려면 다음 `ibmcloud cr image-inspect` 명령을 실행하십시오.
+- 지정된 이미지의 노출된 포트를 표시하려면 다음 `ibmcloud cr image-inspect` 명령을 실행하십시오.
 
-    ```
-    ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
-    {: pre}
+  ```
+ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
+  {: pre}
 
-    **출력 예**
+  **출력 예**
 
-    ```
+  ```
     map[9080/tcp: 9443/tcp:]
-    ```
-    {: screen}
+  ```
+  {: screen}
 
--   모든 읽기 전용 토큰을 표시하려면 다음 `ibmcloud cr token-list` 명령을 실행하십시오.
+- 모든 읽기 전용 토큰을 표시하려면 다음 `ibmcloud cr token-list` 명령을 실행하십시오.
 
-    ```
-    ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
-    {: pre}
+  ```
+ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+  ```
+  {: pre}
 
-    **출력 예**
+  **출력 예**
 
-    ```
+  ```
     0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-    ```
-    {: screen}
-
+  ```
+  {: screen}
 
 ### `ibmcloud cr image-list` 명령의 Go 템플리트 옵션 및 데이터 유형
 {: #registry_cli_listing_imagelist}
@@ -167,7 +162,7 @@ example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
 |`AttachStdout`|부울|표준 출력 스트림이 컨테이너에 첨부된 경우 _true_를 표시하고 그렇지 않은 경우 _false_를 표시합니다.|
 |`AttachStderr`|부울|표준 오류 스트림이 컨테이너에 첨부된 경우 _true_를 표시하고 그렇지 않은 경우 _false_를 표시합니다.|
 |`ExposedPorts`|키-값 맵핑|`[123:,456:]` 형식으로 노출된 포트의 목록을 표시합니다.|
-|`Tty`|부울|pseudo-tty가 컨테이너에 할당된 경우 _true_를 표시하고 그렇지 않은 경우 _false_를 표시합니다.|
+|`Tty`|부울|`pseudo-tty`가 컨테이너에 할당된 경우 _true_를 표시하고 그렇지 않은 경우 _false_를 표시합니다.|
 |`OpenStdin`|부울|표준 입력 스트림이 열린 경우 _true_를 표시하고 표준 입력 스트림이 닫힌 경우 _false_를 표시합니다.|
 |`StdinOnce`|부울|접속된 클라이언트 연결이 끊어진 후에 표준 입력 스트림이 닫힌 경우 _true_를 표시하고 표준 입력 스트림이 계속 열려 있는 경우 _false_를 표시합니다.|
 |`Env`|문자열의 배열|키-값 쌍의 형식으로 환경 변수의 목록을 표시합니다.|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-09-28"
 
 ---
 
@@ -19,13 +19,13 @@ lastupdated: "2018-09-13"
 # {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse  
 {: #at_events}
 
-Verwenden Sie den {{site.data.keyword.cloudaccesstrailfull}}-Service, um zu verfolgen, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.Bluemix}} interagieren.
+Verwenden Sie den {{site.data.keyword.cloudaccesstrailfull}}-Service, um zu verfolgen, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.Bluemix}} interagieren. 
 {:shortdesc}
 
-Der {{site.data.keyword.cloudaccesstrailfull_notm}} zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.Bluemix_notm}} ändern.
-Weitere Informationen finden Sie unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla).  
+Der {{site.data.keyword.cloudaccesstrailfull_notm}} zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.Bluemix_notm}} ändern. 
+Weitere Informationen finden Sie unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla). 
 
-In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis auslösen, wenn sie aufgerufen werden: 
+In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis auslösen, wenn sie aufgerufen werden:
 
 <table>
   <caption>Aktionen, die Ereignisse generieren</caption>
@@ -35,11 +35,11 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
   </tr>
   <tr>
     <td>`container-registry.exemption.create`</td>
-	  <td>Erstellt eine Ausnahme für Vulnerability Advisor. </td>
+	  <td>Erstellt eine Ausnahme für Vulnerability Advisor.</td>
   </tr>
   <tr>
     <td>`container-registry.exemption.delete`</td>
-	  <td>Löscht eine Ausnahme für Vulnerability Advisor. </td>
+	  <td>Löscht eine Ausnahme für Vulnerability Advisor.</td>
   </tr>
  </table>
 
@@ -48,9 +48,9 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
 ## Speicherposition der Ereignisse
 {: #ui}
 
-Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.Bluemix_notm}}-Region befindet, in der die Ereignisse generiert wurden. 
+Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.Bluemix_notm}}-Region befindet, in der die Ereignisse generiert wurden.
 
-Die Region, in der ein Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist. 
+Die [Region](/docs/services/Registry/registry_overview.html#registry_regions), in der ein Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist. 
 
 
 

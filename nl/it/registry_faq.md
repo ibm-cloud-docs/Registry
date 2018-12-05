@@ -2,8 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-09-03"
-
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,14 +14,17 @@ lastupdated: "2018-09-03"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
-
-# Domande frequenti (FAQ) 
+# Domande frequenti (FAQ)
 {: #registry_faq}
 
+Domande frequenti su {{site.data.keyword.registrylong}}.
+{: shortdesc}
 
-## Come elenco le immagini pubbliche? 
+## Come elenco le immagini pubbliche?
 {: #faq_list_public_images}
+{: faq}
 
 Per elencare le immagini pubbliche, immetti i seguenti comandi `ibmcloud` per selezionare il registro globale ed elencare le immagini pubbliche fornite da IBM.
 
@@ -36,8 +38,8 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-
 ## Posso utilizzare strumenti non docker per creare le mie immagini e passarle al registro?
 {: #faq_tools}
+{: faq}
 
 Sì, a condizione che lo strumento supporti il protocollo e il formato l'immagine OCI.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-13"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,7 +15,6 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 {:download: .download}
 
-
 # A propos d'{{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -24,7 +23,7 @@ Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker priv�
 
 {{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par IBM. Vous pouvez utiliser le registre privé en configurant votre propre espace de nom d'images et en envoyant par push des images Docker vers votre espace de nom.
 
-<img src="images/registry_architecture1.svg" alt="Image décrivant comment vous pouvez interagir avec IBM Cloud Container Registry. Container Registry contient à la fois des référentiels privés et publics et des API pour interaction avec le service. peut envoyer et extraire des images vers et depuis vos référentiels privés dans le registre et extraire des images depuis les référentiels publics. L'interface utilisateur Web d'IBM Cloud (console) interagit avec l'API Container Registry pour recenser les images. L'interface de ligne de commande de Container Registry interagit avec l'API pour recenser, créer, inspecter et retirer des images, ainsi que pour d'autres fonctions d'administration. Votre client Docker local peut également envoyer et extraire des images depuis votre magasin d'images local vers d'autres registres."/>
+<img src="images/registry_architecture1.svg" alt="Image montrant comment vous pouvez interagir avec IBM Cloud Container Registry. Un registre de conteneur contient des référentiels privés et publics et des API permettant d'interagir avec le service. Votre client Docker local peut extraire et envoyer des images depuis et vers vos référentiels privés dans le registre, et peuvent extraire des registres publics. L'interface utilisateur Web IBM Cloud (console) interagit avec l'API de registre de conteneur pour répertorier des images. L'interface de ligne de commande de registre de conteneur interagit avec l'API pour répertorier, créer, inspecter et retirer des images, mais aussi pour d'autres fonctions administratives. Votre client Docker local peut également extraire et envoyer des images depuis votre magasin d'images locales vers d'autres registres."/>
 
 **Figure 1. Comment {{site.data.keyword.registrylong_notm}} interagit avec vos images Docker**
 
@@ -166,10 +165,10 @@ Utilisez la calculatrice de prix {{site.data.keyword.Bluemix_notm}} pour estimer
 
 Vous pouvez estimer le coût de votre application à l'aide des calculatrices de prix fournies par {{site.data.keyword.Bluemix_notm}}.
 
-1.  Ouvrez la fiche de prix, voir la rubrique relative à la [tarification {{site.data.keyword.Bluemix_notm}}](https://www.ibm.com/cloud-computing/bluemix/pricing).
-2.  Dans la section **Paiement à la carte**, cliquez sur **Estimez vos coûts avec notre calculatrice**. La calculatrice s'ouvre.
-3.  Accédez à la section **Container Registry** sous **Prix des conteneurs**.
-4.  Entrez vos estimations de stockage et de trafic dans les zones à cet effet.
+1. Ouvrez la fiche de prix. Voir [{{site.data.keyword.Bluemix_notm}} Pricing ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/pricing).
+2. Dans la section **Paiement à la carte**, cliquez sur **Estimez vos coûts avec notre calculatrice**. La calculatrice s'ouvre.
+3. Accédez à la section **Container Registry** sous **Prix des conteneurs**.
+4. Entrez vos estimations de stockage et de trafic dans les zones à cet effet.
 
 L'estimation de vos coûts est affichée dans la calculatrice.
 
@@ -184,27 +183,26 @@ pour gérer les images Docker de tous les espaces de nom dans votre compte
 
 Si vous ne connaissez pas le plan de service dont vous disposez, exécutez la commande `ibmcloud cr plan`.
 
-1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
-    ```
-    ibmcloud login
-    ```
-    {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-    Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
+   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
 et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
     {:tip}
 
-2.  Effectuez une mise à niveau vers le plan standard.
+2. Effectuez une mise à niveau vers le plan standard.
 
-    ```
-    ibmcloud cr plan-upgrade standard
-    ```
-    {: pre}
+   ```
+   ibmcloud cr plan-upgrade standard
+   ```
+   {: pre}
 
-    Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
-    {:tip}
-
+   Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
+   {:tip}
 
 ## Notions élémentaires
 {: #registry_planning}
@@ -214,7 +212,6 @@ Préparez-vous à stocker en sécurité et à partager vos images Docker avec {{
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {:tip}
-
 
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -258,9 +255,7 @@ environnement de transfert.</dd>
   <dd>Une étiquette est l'identificateur d'une image dans le référentiel. Vous pouvez utiliser des étiquettes pour différencier plusieurs versions d'une même image de base dans un référentiel. Lorsque vous exécutez une commande Docker sans spécifier l'étiquette d'une image du référentiel, celle associée à l'étiquette <code>latest</code> (dernière) est utilisée par défaut.</dd>
 </dl>
 
-
 Pour en savoir plus sur des termes spécifiques à Docker, consultez le [glossaire Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/glossary/).
-
 
 ### Planification d'espaces de nom
 {: #registry_namespaces}
@@ -272,6 +267,8 @@ dans ce registre en configurant un espace de nom du registre.
 Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
 environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.Bluemix_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
 
+Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry/registry_users.html#user).
+
 Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
 
 Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants.
@@ -279,10 +276,10 @@ Si vous ne savez pas si un espace de nom a déjà été défini pour votre compt
 
 Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
 
--   Votre espace de nom doit être unique dans une région {{site.data.keyword.Bluemix_notm}}.
--   Votre espace de nom doit comporter de 4 à 30 caractères.
--   Votre espace de nom doit débuter par au moins une lettre ou un nombre.
--   Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
+- Votre espace de nom doit être unique dans une région {{site.data.keyword.Bluemix_notm}}.
+- Votre espace de nom doit comporter de 4 à 30 caractères.
+- Votre espace de nom doit débuter par au moins une lettre ou un nombre.
+- Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
 
 Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
 {:tip}
@@ -300,10 +297,10 @@ Les registres {{site.data.keyword.registrylong_notm}} sont disponibles dans plus
 
 Une région est une zone géographique dont l'accès s'effectue par un noeud final dédié. Des registres {{site.data.keyword.registrylong_notm}} sont disponibles dans les régions suivantes :
 
--   Sud de l'Asie Pacifique : `registry.au-syd.bluemix.net`
--   Europe centrale : `registry.eu-de.bluemix.net`
--   Sud du Royaume-Uni : `registry.eu-gb.bluemix.net`
--   Sud des Etats-Unis : `registry.ng.bluemix.net`
+- `ap-south` : `registry.au-syd.bluemix.net`
+- `eu-central` : `registry.eu-de.bluemix.net`
+- `uk-south` : `registry.eu-gb.bluemix.net`
+- `us-south` : `registry.ng.bluemix.net`
 
 La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
 
@@ -340,6 +337,6 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](registry_cli.html#bx_cr_region_set).
+Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.

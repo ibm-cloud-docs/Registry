@@ -2,8 +2,7 @@
 
 copyright:
   years: 2018, 
-lastupdated: "2018-09-03"
-
+lastupdated: "2018-11-15"
 
 ---
 
@@ -15,16 +14,19 @@ lastupdated: "2018-09-03"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:faq: data-hd-content-type='faq'}
 
-
-# FAQ
+# 자주 질문되는 내용(FAQ)
 {: #registry_faq}
 
+{{site.data.keyword.registrylong}}에 대한 자주 질문되는 내용(FAQ)입니다.
+{: shortdesc}
 
 ## 공용 이미지를 나열하는 방법은 무엇입니까?
 {: #faq_list_public_images}
+{: faq}
 
-공용 이미지를 나열하려면 다음 `ibmcloud` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정하고 IBM 제공 공용 이미지를 나열하십시오. 
+공용 이미지를 나열하려면 다음 `ibmcloud` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정하고 IBM 제공 공용 이미지를 나열하십시오.
 
 ```
 ibmcloud cr region-set global
@@ -36,8 +38,8 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-
-## docker 이외의 도구를 사용하여 내 이미지를 빌드하고 이를 레지스트리에 푸시할 수 있습니까? 
+## docker 이외의 도구를 사용하여 내 이미지를 빌드하고 이를 레지스트리에 푸시할 수 있습니까?
 {: #faq_tools}
+{: faq}
 
-예, 이는 도구에서 OCI 이미지 형식과 프로토콜을 지원하는 경우 가능합니다. 
+예, 이는 도구에서 OCI 이미지 형식과 프로토콜을 지원하는 경우 가능합니다.

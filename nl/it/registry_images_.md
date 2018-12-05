@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -14,7 +14,6 @@ lastupdated: "2018-09-11"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
-
 
 # Aggiunta di immagini al tuo spazio dei nomi
 {: #registry_images_}
@@ -28,10 +27,8 @@ scaricare (pull) un'immagine da un altro repository al tuo computer locale o puo
 immagine da un Dockerfile utilizzando il comando `build` di Docker. Per aggiungere un'immagine al tuo
 spazio dei nomi, devi caricare (push) l'immagine locale nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
 
-
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {:tip}
-
 
 ## Esecuzione del pull di immagini da un altro registro
 {: #registry_images_pulling}
@@ -53,10 +50,9 @@ con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-
 Scarica l'immagine; consulta [Esegui il pull di un'immagine](index.html#registry_images_pulling) nella documentazione introduttiva.
 
-Se ricevi un messaggio del tipo "non autorizzato: autenticazione richiesta" o "negato: l'accesso richiesto alla risorsa è stato negato", esegui il comando `ibmcloud cr login`.
+Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
 {:tip}
 
 Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dal tuo computer locale al tuo spazio dei nomi.
@@ -81,7 +77,6 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-
 Per caricare (push) un'immagine, completa le seguenti istruzioni:
 
 1. Accedi alla CLI.
@@ -100,13 +95,11 @@ Per caricare (push) un'immagine, completa le seguenti istruzioni:
    Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
    {:tip}
 
-
 Dopo aver eseguito il push dell'immagine al tuo registro privato, puoi effettuare una delle seguenti azioni:
 
 - [Gestisci la sicurezza con il Controllo vulnerabilità](../va/va_index.html) per trovare informazioni su possibili vulnerabilità e problemi di sicurezza.
 - [Creare un cluster
 e utilizzare questa immagine per distribuire un contenitore](/docs/containers/container_index.html#container_index) al cluster in {{site.data.keyword.containerlong_notm}}.
-
 
 ## Copia di immagini tra i registri
 {: #registry_images_copying}
@@ -127,7 +120,6 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-
 Per copiare un'immagine tra due registri, completa le seguenti istruzioni:
 
 1. [Esegui il pull di un'immagine da un registro](#registry_images_pulling).
@@ -139,7 +131,6 @@ Dopo aver copiato la tua immagine, puoi effettuare una delle seguenti attività:
 - [Gestire la sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html) per trovare informazioni su potenziali vulnerabilità e problemi di sicurezza.
 - [Creare un cluster
 e utilizzare questa immagine per distribuire un contenitore](/docs/containers/container_index.html#container_index) al cluster in {{site.data.keyword.containerlong_notm}}.
-
 
 ## Creazione di immagini Docker da utilizzare con il tuo spazio dei nomi
 {: #registry_images_creating}
@@ -157,7 +148,6 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-
 Un'immagine Docker è la base per ogni contenitore che crei. Un'immagine viene creata da un
 Dockerfile, che è un file che contiene le istruzioni su come creare l'immagine. Nelle sue istruzioni, un Dockerfile
 potrebbe fare riferimento alle risorse di build che vengono memorizzate separatamente, quali ad esempio un'applicazione, la configurazione
@@ -169,34 +159,34 @@ Per creare la tua immagine Docker, completa la seguente procedura:
 
 1. Crea una directory locale in cui memorizzare il contesto di build. Il contesto di build contiene il tuo Dockerfile e le risorse di build correlate, come il codice dell'applicazione. Passa a questa directory in una finestra della riga di comando.
 2. Crea un Dockerfile.
-  1. Crea un Dockerfile nella tua directory locale.
+    1. Crea un Dockerfile nella tua directory locale.
 
-     ```
-     touch Dockerfile
-     ```
-     {: pre}
+        ```
+        touch Dockerfile
+        ```
+        {: pre}
 
-  2. Utilizza un editor di testo per aprire il Dockerfile. Come minimo, devi aggiungere l'immagine di base da cui creare la tua immagine. Sostituisci
+    2. Utilizza un editor di testo per aprire il Dockerfile. Come minimo, devi aggiungere l'immagine di base da cui creare la tua immagine. Sostituisci
 _&lt;source_image&gt;_ e _&lt;tag&gt;_ con il repository di immagini e la
 tag che vuoi utilizzare. Se utilizzi l'immagine proveniente da un altro registro privato, definisci il percorso
 completo dell'immagine contenuta in questo registro privato.
 
-     ```
-     FROM <source_image>:<tag>
-     ```
-     {: pre}
+       ```
+       FROM <source_image>:<tag>
+       ```
+       {: pre}
 
-     **Esempio**
+       **Esempio**
      Per creare un Dockerfile basato sull'immagine pubblica {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilizza il seguente codice:
 
-     ```
-     FROM registry.<region>.bluemix.net/ibmliberty:latest
+       ```
+       FROM registry.<region>.bluemix.net/ibmliberty:latest
     LABEL description="This is my test Dockerfile"
     EXPOSE 9080
-      ```
-     {: pre}
+       ```
+       {: pre}
 
-     Questo esempio aggiunge un'etichetta ai metadati dell'immagine ed espone la porta 9080. Per ulteriori informazioni sui Dockerfile
+       Questo esempio aggiunge un'etichetta ai metadati dell'immagine ed espone la porta 9080. Per ulteriori informazioni sui Dockerfile
 che puoi utilizzare, vedi [Guida di riferimento per
 Dockerfile](https://docs.docker.com/engine/reference/builder/).
 
@@ -211,41 +201,40 @@ Dockerfile](https://docs.docker.com/engine/reference/builder/).
 
 4. Prendi nota del percorso della directory che contiene il tuo Dockerfile. Se esegui i comandi indicati nella seguente procedura mentre la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire _&lt;directory&gt;_ con un punto (.).
 5. Scegli se creare la tua immagine direttamente in {{site.data.keyword.Bluemix_notm}} oppure se creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}.
-  - Per creare l'immagine direttamente in {{site.data.keyword.Bluemix_notm}}, esegui questo comando:
+   - Per creare l'immagine direttamente in {{site.data.keyword.Bluemix_notm}}, esegui questo comando:
 
-    ```
-    ibmcloud cr build -t <image_name> <directory>
-    ```
-    {: pre}
+     ```
+     ibmcloud cr build -t <image_name> <directory>
+     ```
+     {: pre}
 
-    dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory.
-   
-   Per ulteriori informazioni sul comando `ibmcloud cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](registry_cli.html).
+     dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory. Se esegui il comando quando la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire _&lt;directory&gt;_ con un punto (.).
+  
+     Per ulteriori informazioni sul comando `ibmcloud cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_build).
 
-  - Per creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura:
-    1. Crea l'immagine dal Dockerfile sul tuo computer locale e contrassegnala tramite tag con il tuo nome immagine.
+   - Per creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura:
+      1. Crea l'immagine dal Dockerfile sul tuo computer locale e contrassegnala tramite tag con il tuo nome immagine.
 
-       ```
-       docker build -t <image_name> <directory>
-       ```
-       {: pre}
+         ```
+         docker build -t <image_name> <directory>
+         ```
+         {: pre}
 
-       dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory.
+         dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory.
 
-    2. Facoltativo: testa la tua immagine nel tuo computer locale prima di eseguirne il push al tuo spazio dei nomi.
+      2. Facoltativo: testa la tua immagine nel tuo computer locale prima di eseguirne il push al tuo spazio dei nomi.
 
-       ```
-       docker run <image_name>
-       ```
-       {: pre}
+         ```
+         docker run <image_name>
+         ```
+         {: pre}
 
-       Sostituisci _&lt;image_name&gt;_ con il nome della tua immagine.
+         Sostituisci _&lt;image_name&gt;_ con il nome della tua immagine.
 
-    3. Dopo aver creato la tua immagine e averla contrassegnata con una tag per il tuo spazio dei nomi,
+      3. Dopo aver creato la tua immagine e averla contrassegnata con una tag per il tuo spazio dei nomi,
 [puoi eseguire il push dell'immagine al tuo registro privato dello spazio dei nomi](#registry_images_pushing).
 
 Per utilizzare il Controllo vulnerabilità per verificare la sicurezza della tua immagine, vedi [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](../va/va_index.html).
-
 
 ## Eliminazione di immagini dal tuo repository {{site.data.keyword.Bluemix_notm}} privato
 {: #registry_images_remove}
@@ -260,7 +249,6 @@ Le immagini {{site.data.keyword.IBM_notm}} pubbliche non possono essere eliminat
 L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'immagine utilizzata da una distribuzione esistente potrebbe causare la mancata riuscita di un ridimensionamento, di una ripianificazione o di entrambe le operazioni.
 {:tip}
 
-
 ### Eliminazione di immagini dal tuo repository {{site.data.keyword.Bluemix_notm}} privato utilizzando la CLI
 {: #registry_images_remove_cli}
 
@@ -272,28 +260,27 @@ L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'im
 
 Per eliminare un'immagine utilizzando la CLI, completa la seguente procedura:
 
-1.  Effettua l'accesso a {{site.data.keyword.Bluemix_notm}} eseguendo il comando `ibmcloud login`.
-2.  Per eliminare un'immagine, esegui questo comando:
+1. Effettua l'accesso a {{site.data.keyword.Bluemix_notm}} eseguendo il comando `ibmcloud login`.
+2. Per eliminare un'immagine, esegui questo comando:
 
-    ```
-    ibmcloud cr image-rm IMMAGINE
-    ```
-    {: pre}
+   ```
+   ibmcloud cr image-rm IMMAGINE
+   ```
+   {: pre}
 
-    Dove _IMMAGINE_ è il nome dell'immagine che vuoi rimuovere, nel formato `repository:tag`.
+   Dove _IMMAGINE_ è il nome dell'immagine che vuoi rimuovere, nel formato `repository:tag`.
 
-    Se nel nome dell'immagine non è specificata alcuna tag, per impostazione predefinita verrà eliminata l'immagine con tag `latest`. Puoi eliminare più immagini elencando ogni percorso del registro {{site.data.keyword.Bluemix_notm}} privato nel comando con uno spazio tra ogni percorso.
+   Se nel nome dell'immagine non è specificata alcuna tag, per impostazione predefinita verrà eliminata l'immagine con tag `latest`. Puoi eliminare più immagini elencando ogni percorso del registro {{site.data.keyword.Bluemix_notm}} privato nel comando con uno spazio tra ogni percorso.
 
-    Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne Repository e Tag per creare il nome dell'immagine nel formato `repository:tag`.
- {:tip}
+   Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne Repository e Tag per creare il nome dell'immagine nel formato `repository:tag`.
+   {:tip}
 
-3.  Verifica che l'immagine sia stata eliminata immettendo il seguente comando e controlla che l'immagine non sia visualizzata nell'elenco.
+3. Verifica che l'immagine sia stata eliminata immettendo il seguente comando e controlla che l'immagine non sia visualizzata nell'elenco.
 
-    ```
-    ibmcloud cr image-list
-    ```
-    {: pre}
-
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
 
 ### Eliminazione di immagini dal tuo repository {{site.data.keyword.Bluemix_notm}} privato utilizzando la GUI
 {: #registry_images_remove_gui}
@@ -306,14 +293,17 @@ L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'im
 
 Per eliminare un'immagine utilizzando la GUI, completa la seguente procedura:
 
-1.  Effettua l'accesso alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con il tuo ID IBM.
-2.  Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
-3.  Fai clic su **Catalogo**.
-4.  Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
-5.  Fai clic su **Private Repositories**. Viene visualizzato un elenco dei tuoi repository privati.
-6.  Fai clic sulla riga che contiene il repository che contiene l'immagine che vuoi eliminare.
-7.  Nella riga che contiene l'immagine che vuoi eliminare, fai clic sull'icona **apri e chiudi elenco di opzioni** e seleziona **Delete Image**. Assicurati di aver selezionato l'immagine corretta perché questa azione non può essere annullata. Fai clic su **Delete**.
+1. Effettua l'accesso alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con il tuo ID IBM.
+2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
+3. Fai clic su **Catalogo**.
+4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
+5. Fai clic su **Immagini**. Viene visualizzato un elenco delle tue immagini.
+6. Nella riga che contiene l'immagine che vuoi eliminare, seleziona la casella di spunta.
 
+   Assicurati di aver selezionato l'immagine corretta perché questa azione non può essere annullata.
+   {: tip}
+
+7. Fai clic su **Elimina immagine**.
 
 ## Eliminazione di un repository privato e delle eventuali immagini associate
 {: #registry_repo_remove}
@@ -324,14 +314,20 @@ Puoi eliminare i repository privati che non sono più necessari, e le eventuali 
 Quando elimini un repository, tutte le immagini in tale repository vengono eliminate. Questa azione non può essere annullata.
 {:tip}
 
-Prima di iniziare, esegui il backup delle immagini che vuoi conservare.
+**Prima di iniziare**
 
-Per eliminare un repository utilizzando la GUI, completa la seguente procedura:
+Devi eseguire il backup di tutte immagini che vuoi conservare.
 
-1.  Effettua l'accesso alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con il tuo ID IBM.
-2.  Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
-3.  Fai clic su **Catalogo**.
-4.  Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
-5.  Fai clic su **Private Repositories**. Viene visualizzato un elenco dei tuoi repository privati.
-6.  Nella riga che contiene il repository privato che vuoi eliminare, fai clic sull'icona **apri e chiudi elenco di opzioni** e seleziona **Delete Repository**. Assicurati di aver selezionato il repository corretto perché questa azione non può essere annullata. Fai clic su **Delete**.
+Per eliminare un repository privato utilizzando la GUI, completa la seguente procedura:
 
+1. Effettua l'accesso alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) con il tuo ID IBM.
+2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
+3. Fai clic su **Catalogo**.
+4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
+5. Fai clic su **Repository**. Viene visualizzato un elenco dei tuoi repository privati.
+6. Nella riga che contiene il repository privato che vuoi eliminare, seleziona la casella di spunta.
+
+    Assicurati di aver selezionato il repository corretto perché questa azione non può essere annullata.
+    {: tip}
+
+7. Fai clic su **Elimina repository**.
