@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-03"
+lastupdated: "2019-01-02"
 
 ---
 
@@ -116,16 +116,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | Action | Operation on service | Role
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Build a container image. | Writer, Manager |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Delete one or more images. | Writer, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Delete one or more images.</li><li>`docker trust revoke` Delete the signature. </li></ul> | Writer, Manager |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Display details about a specific image. | Reader, Manager |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) List your container images. | Reader, Manager |
-| `container-registry.image.pull` | `docker pull` Pull the image. | Reader, Writer, Manager |
-| `container-registry.image.push` | <ul><li>`docker push` Push the image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.</li></ul> | Writer, Manager |
+| `container-registry.image.pull` | <ul><li>`docker pull` Pull the image. </li><li>`docker trust inspect` Inspect the signature. </li></ul> | Reader, Writer, Manager |
+| `container-registry.image.push` | <ul><li>`docker push` Push the image.</li><li>`docker trust sign` Sign the image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.</li></ul> | Writer, Manager |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) View a vulnerability assessment report for your image. | Reader, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Add a namespace. | Writer, Manager |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Remove a namespace. | Writer, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Display your namespaces. | Reader, Manager |
-| `container-registry.signature.create` | `docker trust sign` Sign the image. | Writer, Manager |
-| `container-registry.signature.delete` | `docker trust revoke` Delete the signature. | Writer, Manager |
-| `container-registry.signature.get` | `docker trust inspect` Inspect the signature. | Reader, Manager |
 {: caption="Table 5. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="top"}
