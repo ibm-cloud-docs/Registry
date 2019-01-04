@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ You can view information about potential vulnerabilities, and the security of im
 {:shortdesc}
 
 The **Security Status** column shows you the following information about the image:
+
 - `Secure` No security issues were found.
 - `Vulnerable` Security or configuration issues were found and must be addressed before you can deploy the image.
 - `Incomplete` The scan is not complete. The scan might still be running or the image’s operating system might not be compatible. Wait and try the scan again. If the scan still does not complete, push the image again to start a new scan. Images with incomplete scans are not blocked for deployment.

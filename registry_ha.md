@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-11"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # High availability and disaster recovery
 {: #ha-dr}
 
@@ -27,7 +25,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 * Data stored in {{site.data.keyword.registrylong_notm}} is backed up regularly, providing additional resilience.
 
-* If you are worried about the availability of your images in the case of an entire region being unavailable, you can choose to push your images to multiple regional registries. 
+* If you are worried about the availability of your images in the case of an entire region being unavailable, you can choose to push your images to multiple regional registries.
   
   You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -373,13 +373,13 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-## Step 3: Create a Service ID and grant access to a resource
+## Step 3: Create a service ID and grant access to a resource
 {: #service_id}
 
-In this section, you configure a Service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
+In this section, you configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
 {:shortdesc}
 
-1. Set up a Service ID with access to {{site.data.keyword.registrylong_notm}} and create an API key for it:
+1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an API key for it:
 
     1. Log in to User A's account by running the following command:
 
@@ -388,14 +388,14 @@ In this section, you configure a Service ID and grant it access to your {{site.d
         ```
         {: pre}
 
-    2. Create a Service ID named `cr-roles-tutorial` with the description `"Created during the access control tutorial for Container Registry"` by running the following command:
+    2. Create a service ID named `cr-roles-tutorial` with the description `"Created during the access control tutorial for Container Registry"` by running the following command:
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
         ```
         {: pre}
 
-    3. Create a service policy for the Service ID that grants the Reader role on `namespace_a` by running the following command:
+    3. Create a service policy for the service ID that grants the Reader role on `namespace_a` by running the following command:
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
@@ -409,14 +409,14 @@ In this section, you configure a Service ID and grant it access to your {{site.d
         ```
         {: pre}
 
-    5. Create an API key for the Service ID by running the following command:
+    5. Create an API key for the service ID by running the following command:
 
         ```
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial
         ```
         {: pre}
 
-2. Use Docker to log in with the Service ID API key, where _`<API_Key>`_ is your API key, and interact with the registry:
+2. Use Docker to log in with the service ID API key, where _`<API_Key>`_ is your API key, and interact with the registry:
 
     1. Log in to {{site.data.keyword.registrylong_notm}} by running the following command:
 
@@ -470,7 +470,7 @@ In this section, you configure a Service ID and grant it access to your {{site.d
         ```
         {: pre}
 
-    3. Delete your Service ID by running the following command:
+    3. Delete your service ID by running the following command:
 
         ```
         ibmcloud iam service-id-delete cr-roles-tutorial

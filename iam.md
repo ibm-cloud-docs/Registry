@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,7 +23,7 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM user roles](/docs/iam/users_roles.html).
 
-IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM Service ID instead of a registry token. For more information about Service IDs, see [Creating and working with Service IDs](/docs/iam/serviceid.html#serviceids).
+IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam/serviceid.html#serviceids).
 
 For more information about IAM, see [IBM Cloud Access and Management](/docs/iam/index.html#iamoverview).
 
@@ -45,7 +45,7 @@ Try out the tutorial [Tutorial: Granting access to {{site.data.keyword.registryl
 ## Platform management roles
 {: #platform_management_roles}
 
-The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete Service IDs.
+The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete service IDs.
 
 | Platform management role | Description of actions | Example actions|
 |:-----------------|:-----------------|:-----------------|
@@ -116,16 +116,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | Action | Operation on service | Role
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Build a container image. | Writer, Manager |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Delete one or more images. | Writer, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Delete one or more images.</li><li>`docker trust revoke` Delete the signature. </li></ul> | Writer, Manager |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Display details about a specific image. | Reader, Manager |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) List your container images. | Reader, Manager |
-| `container-registry.image.pull` | `docker pull` Pull the image. | Reader, Writer, Manager |
-| `container-registry.image.push` | <ul><li>`docker push` Push the image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.</li></ul> | Writer, Manager |
+| `container-registry.image.pull` | <ul><li>`docker pull` Pull the image. </li><li>`docker trust inspect` Inspect the signature. </li></ul> | Reader, Writer, Manager |
+| `container-registry.image.push` | <ul><li>`docker push` Push the image.</li><li>`docker trust sign` Sign the image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.</li></ul> | Writer, Manager |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) View a vulnerability assessment report for your image. | Reader, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Add a namespace. | Writer, Manager |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Remove a namespace. | Writer, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Display your namespaces. | Reader, Manager |
-| `container-registry.signature.create` | `docker trust sign` Sign the image. | Writer, Manager |
-| `container-registry.signature.delete` | `docker trust revoke` Delete the signature. | Writer, Manager |
-| `container-registry.signature.get` | `docker trust inspect` Inspect the signature. | Reader, Manager |
 {: caption="Table 5. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="top"}

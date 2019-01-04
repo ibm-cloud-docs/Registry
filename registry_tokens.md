@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -101,6 +101,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Understanding this command's components</th>
         </thead>
+          <caption>Table 1. The components of the `ibmcloud cr token-add` command</caption>
         <tbody>
         <tr>
         <td>`--description`</td>

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -31,7 +31,7 @@ To find out more about {{site.data.keyword.iamlong}} (IAM) access role policies,
 ## Creating policies
 {: #create}
 
-If you want to control access to resources, you must assign roles to users or Service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, or the entire service, that is, all namespaces in the account.
+If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, or the entire service, that is, all namespaces in the account.
 
 If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specifc namespace, specify the resource type as `namespace` and use the namespace name as the resource.
 
@@ -39,22 +39,22 @@ If you want to grant access to everything, don't specify a resource type or a re
 
 - Decide what roles each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/services/Registry/iam.html#iam). Take into consideration that you can create multiple policies, for example, you can grant write access on a resource but only grant read access on another resource, and grant no access on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
 
-- [Invite users and assign access](/docs/iam/iamuserinv.html#iamuserinv). 
+- [Invite users and assign access](/docs/iam/iamuserinv.html#iamuserinv).
 
   If you want users to be able to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users and do not assign a resource group, see [Preparing to create clusters](/docs/containers/cs_clusters.html#cluster_prepare).
   {: tip}
 
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
 
-* To create a policy for users, see [Managing access to resources](/docs/iam/mngiam.html#iammanidaccser).
-* To create a policy for Service IDs, run the `ibmcloud iam service-policy-create` command or use the GUI to bind roles to your Service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with Service IDs](/docs/iam/serviceid.html#serviceids) and [Managing Service ID access policies](/docs/iam/serviceidaccess.html#serviceidpolicy).
+- To create a policy for users, see [Managing access to resources](/docs/iam/mngiam.html#iammanidaccser).
+- To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the GUI to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/iam/serviceid.html#serviceids) and [Managing service ID access policies](/docs/iam/serviceidaccess.html#serviceidpolicy).
 
 ## Enabling policy enforcement for existing users
 {: #existing_users}
 
 For users provisioned after 4 October 2018, IAM policies are enabled by default. For users provisioned before 4 October 2018, after you create your policies, you must enable policy enforcement so that your policies take effect.
 
-1. [Create policies](#create) for your users and Service IDs.
+1. [Create policies](#create) for your users and service IDs.
 
 2. To enable policy enforcement, run the [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) command.
 
