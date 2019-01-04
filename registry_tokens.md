@@ -59,6 +59,11 @@ You can use an API key to automate access to your namespaces in {{site.data.keyw
 
 Use the API key to log in to your registry by running the following Docker command. Replace &lt;your_apikey&gt; with your API key, and replace &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
 
+- For namespaces set up in US-South, use `registry.ng.bluemix.net`
+- For namespaces set up in UK-South, use `registry.eu-gb.bluemix.net`
+- For namespaces set up in EU-Central, use `registry.eu-de.bluemix.net`
+- For namespaces set up in AP-South, use `registry.au-syd.bluemix.net`
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,7 +77,7 @@ For reference information about the command, see [Create a new {{site.data.keywo
 You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
 {:shortdesc}
 
-Everyone in possession of a registry token can access secured information. By creating a token for your {{site.data.keyword.Bluemix_notm}} account, you can grant access to all of your namespaces that you set up in a region for users outside your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
+Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 
@@ -122,7 +127,7 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
 
    ```
    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-   Token              <token_value>
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
