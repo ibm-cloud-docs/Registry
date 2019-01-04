@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-01-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,7 +23,7 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM user roles](/docs/iam/users_roles.html).
 
-IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM Service ID instead of a registry token. For more information about Service IDs, see [Creating and working with Service IDs](/docs/iam/serviceid.html#serviceids).
+IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam/serviceid.html#serviceids).
 
 For more information about IAM, see [IBM Cloud Access and Management](/docs/iam/index.html#iamoverview).
 
@@ -45,7 +45,7 @@ Try out the tutorial [Tutorial: Granting access to {{site.data.keyword.registryl
 ## Platform management roles
 {: #platform_management_roles}
 
-The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete Service IDs.
+The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete service IDs.
 
 | Platform management role | Description of actions | Example actions|
 |:-----------------|:-----------------|:-----------------|

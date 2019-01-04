@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -199,9 +199,9 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
 When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root key and repository key, and stores them on your local machine:
 
-* Linux and Mac directory: `~/.docker/trust/private`
+- Linux and Mac directory: `~/.docker/trust/private`
 
-* Windows directory: `%HOMEPATH%\.docker\trust\private`
+- Windows directory: `%HOMEPATH%\.docker\trust\private`
 
    If you changed your Docker configuration directory, look for the `trust` subdirectory there.
    {: tip}
