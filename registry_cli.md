@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-26"
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -555,7 +555,7 @@ Required permissions: Manager IAM service access role for {{site.data.keyword.re
 **Command options**
 <dl>
 <dt>`PLAN`</dt>
-<dd>The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
+<dd>(Optional) The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
 </dl>
 
 **Example**
@@ -758,7 +758,7 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 **Command options**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>(Optional) The unique identifier of the token that you want to retrieve. To list your tokens, run `ibmcloud cr token-list`.</dd>
+<dd>The unique identifier of the token that you want to retrieve. To list your tokens, run `ibmcloud cr token-list`.</dd>
 </dl>
 
 **Example**
@@ -776,7 +776,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 Displays all tokens that exist for your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
-ibmcloud cr token-list --format FORMAT
+ibmcloud cr token-list [--format FORMAT]
 ```
 {: codeblock}
 
@@ -827,7 +827,7 @@ Required permissions: Administrator IAM platform role for {{site.data.keyword.re
 **Command options**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>(Optional) TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
+<dd>TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
 </dl>
 
 **Example**
