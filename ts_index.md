@@ -135,13 +135,13 @@ You can fix this problem in the following ways:
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. Potential error messages might be:
 
 ```
-You have exceeded your storage quota. Delete one or more images, 
+You have exceeded your storage quota. Delete one or more images,
 or review your storage quota and pricing plan
 ```
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. 
+You have exceeded your pull traffic quota for the current month.
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
