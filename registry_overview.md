@@ -40,8 +40,6 @@ Review the following table to find an overview of benefits for using {{site.data
 |Quota limits for storage and pull traffic|<ul><li>Benefit from free storage and pull traffic to your private images until you reach your free quota.</li><li>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.</li></ul>|
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
 
-{{site.data.keyword.registrylong_notm}} supports only the most recent patch for Docker Engine v1.12, or later.
-
 ## Service plans
 {: #registry_plans}
 
