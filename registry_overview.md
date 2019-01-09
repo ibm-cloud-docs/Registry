@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-09"
 
 ---
 
@@ -39,6 +39,8 @@ Review the following table to find an overview of benefits for using {{site.data
 |Image security compliance with Vulnerability Advisor|<ul><li>Benefit from automatic scanning of images in your namespace.</li><li>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised.</li></ul>|
 |Quota limits for storage and pull traffic|<ul><li>Benefit from free storage and pull traffic to your private images until you reach your free quota.</li><li>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.</li></ul>|
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
+
+{{site.data.keyword.registrylong_notm}} supports only the most recent patch for Docker Engine v1.12, or later.
 
 ## Service plans
 {: #registry_plans}
