@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -19,6 +19,8 @@ lastupdated: "2019-01-04"
 {: #registry_setup_cli_namespace}
 
 Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
+
+Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must create a namespace. To work with namespaces, install the {{site.data.keyword.registrylong_notm}} CLI plug-in.
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).

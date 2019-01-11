@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -570,7 +570,7 @@ ibmcloud cr plan-upgrade standard
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
+Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your {{site.data.keyword.Bluemix_notm}} private registry namespace.
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
@@ -599,7 +599,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 **Example**
 
-Import IBM software and package it for use with Helm in your private registry namespace *`bluebird`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
+Import IBM software and package it for use with Helm in your {{site.data.keyword.Bluemix_notm}} private registry namespace *`bluebird`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
 
 ```
 ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird
