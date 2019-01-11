@@ -43,21 +43,14 @@ You can now set up your own namespace in the {{site.data.keyword.registrylong_no
 You might want to update the `container-registry` CLI plug-in periodically to use new features.
 {:shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
-
-    ```
-    ibmcloud login
-    ```
-    {: pre}
-
-2. Update the `container-registry` CLI plug-in.
+1. Update the `container-registry` CLI plug-in.
 
     ```
     ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
-3. Verify that the `container-registry` CLI plug-in updated successfully.
+2. Verify that the `container-registry` CLI plug-in updated successfully.
 
     ```
     ibmcloud plugin list
@@ -70,21 +63,14 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 If you no longer need the `container-registry` CLI plug-in, you can uninstall it.
 {:shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
-
-    ```
-    ibmcloud login
-    ```
-    {: pre}
-
-2. Uninstall the `container-registry` CLI plug-in.
+1. Uninstall the `container-registry` CLI plug-in.
 
     ```
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
-3. Verify that the `container-registry` CLI plug-in uninstalled successfully.
+2. Verify that the `container-registry` CLI plug-in uninstalled successfully.
 
     ```
     ibmcloud plugin list
