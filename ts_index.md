@@ -48,14 +48,14 @@ The `ibmcloud cr login` command fails.
 
 {: tsCauses}
 
-- The container-registry plug-in is out of date and needs updating.
+- The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
 - Your {{site.data.keyword.Bluemix_notm}} login credentials have expired.
 
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- Upgrade to the most recent version of the container-registry plug-in, see [Updating the container-registry plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 - Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
 
@@ -69,12 +69,12 @@ All `ibmcloud cr` commands fail.
 
 {: tsCauses}
 
-- The container-registry plug-in is out of date and needs updating.
+- The `container-registry` CLI plug-in is out of date and needs updating.
 
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Upgrade to the most recent version of the container-registry plug-in, see [Updating the container-registry plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
@@ -98,12 +98,12 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- The container-registry plug-in is not installed.
+- The `container-registry` CLI plug-in is not installed.
 
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Install the container-registry plug-in, see [Installing the {{site.data.keyword.registryshort_notm}} CLI (container-registry plug-in)](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
 
 ## Setting up a namespace fails
 {: #ts_problem}

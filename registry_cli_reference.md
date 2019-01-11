@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-19"
+  years: 2017, 2019
+lastupdated: "2019-01-11"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-19"
 # {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) commands for managing Docker images in your namespace
 {: #registry_cli_reference}
 
-You can use the container-registry plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can securely store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
+You can use the `container-registry` CLI plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can securely store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
 {:shortdesc}
 
 ## `ibmcloud cr` commands
@@ -35,7 +35,7 @@ For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The container-registry plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 

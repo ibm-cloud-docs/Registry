@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -77,7 +77,7 @@ For reference information about the command, see [Create a new {{site.data.keywo
 You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
 {:shortdesc}
 
-Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the container-registry plug-in.
+Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the `container-registry` CLI plug-in.
 
 When you create a token for your {{site.data.keyword.Bluemix_notm}} account, you can decide whether that token authorizes read-only (pull) or write access (push and pull) to the registry. You can also specify whether a token is permanent or if it expires after 24 hours. You can create and use multiple tokens to control different types of access.
 

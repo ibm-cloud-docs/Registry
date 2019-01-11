@@ -18,7 +18,7 @@ lastupdated: "2019-01-11"
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the container-registry plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
+You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
 {: shortdesc}
 
 **Prerequisites**
@@ -27,9 +27,9 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 
 * Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
 
-In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
 
-If you want to view the current version of your {{site.data.keyword.registrylong}} CLI plug-in (`container-registry`), run `ibmcloud plugin list`.
+If you want to view the current version of your `container-registry` CLI plug-in, run `ibmcloud plugin list`.
 
 To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
