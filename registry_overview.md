@@ -311,4 +311,4 @@ After you have targeted the global registry, run the `ibmcloud cr login` command
 
 {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later, see [Docker Documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/v1.12/).
 
-Docker is required only if you want to push or pull images or you want to run the `ibmcloud cr ppa-archive-load` command.
+Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
