@@ -18,9 +18,7 @@ lastupdated: "2019-01-11"
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
 
-Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in, and then set up a registry namespace to create your own image repository in {{site.data.keyword.registrylong_notm}}.
-
-Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must create a namespace. To work with namespaces, install the {{site.data.keyword.registrylong_notm}} CLI plug-in.
+Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must create a namespace. To work with namespaces, you must install the container-registry CLI plug-in.
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
@@ -28,21 +26,21 @@ Do not put personal information in your container images, namespace names, descr
 
 Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
 
-## Installing the {{site.data.keyword.registrylong_notm}} CLI (container-registry plug-in)
+## Installing the container-registry CLI plug-in
 {: #registry_cli_install}
 
-Install the {{site.data.keyword.registrylong_notm}} CLI to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
+Install the container-registry CLI plug-in to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
 {:shortdesc}
 
-1. [Install the container-registry plug-in.](index.html#registry_cli_install)
+1. [Install the container-registry CLI plug-in.](index.html#registry_cli_install)
 2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
 You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 
-## Updating the container-registry plug-in
+## Updating the container-registry CLI plug-in
 {: #registry_cli_update}
 
-You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodically to use new features.
+You might want to update the container-registry CLI plug-in periodically to use new features.
 {:shortdesc}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
@@ -52,24 +50,24 @@ You might want to update the {{site.data.keyword.registrylong_notm}} CLI periodi
     ```
     {: pre}
 
-2. Update the container-registry plug-in.
+2. Update the container-registry CLI plug-in.
 
     ```
     ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
-3. Verify that the plug-in is updated successfully.
+3. Verify that the container-registry CLI plug-in updated successfully.
 
     ```
     ibmcloud plugin list
     ```
      {: pre}
 
-## Uninstalling the container-registry plug-in
+## Uninstalling the container-registry CLI plug-in
 {: #registry_cli_uninstall}
 
-If you no longer need the container-registry plug-in, you can uninstall it.
+If you no longer need the container-registry CLI plug-in, you can uninstall it.
 {:shortdesc}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
@@ -79,21 +77,21 @@ If you no longer need the container-registry plug-in, you can uninstall it.
     ```
     {: pre}
 
-2. Uninstall the container-registry plug-in.
+2. Uninstall the container-registry CLI plug-in.
 
     ```
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
-3. Verify that the plug-in was uninstalled successfully.
+3. Verify that the container-registry CLI plug-in uninstalled successfully.
 
     ```
     ibmcloud plugin list
     ```
     {: pre}
 
-    The container-registry plug-in is not displayed in the results.
+    The container-registry CLI plug-in is not displayed in the results.
 
 ## Setting up a namespace
 {: #registry_namespace_add}
@@ -103,12 +101,12 @@ To securely store your Docker images, you must create a namespace in the {{site.
 
 **Before you begin**
 
-- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry plug-in](#registry_cli_install).
+- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the container-registry CLI plug-in](#registry_cli_install).
 - [Plan how to use and name your registry namespaces](registry_overview.html#registry_namespaces).
 
 Create a namespace, see [Set up a namespace](index.html#registry_namespace_add) in the Getting Started documentation.
 
-You can now [push Docker images to your namespace in the {{site.data.keyword.Bluemix_notm}} registry](registry_images_.html#registry_images_pushing) and share these images with other users in your account.
+You can now [push Docker images to your namespace in the {{site.data.keyword.registrylong_notm}} registry](registry_images_.html#registry_images_pushing) and share these images with other users in your account.
 
 ## Removing namespaces
 {: #registry_remove}
