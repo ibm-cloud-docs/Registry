@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-11"
 
 ---
 
@@ -305,3 +305,10 @@ ibmcloud cr region-set global
 For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
+
+## Support for Docker
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later, see [Docker Documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/v1.12/).
+
+Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
