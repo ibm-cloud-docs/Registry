@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-11-20"
 
 如果在 {{site.data.keyword.registrylong_notm}} 中为帐户启用了 IAM 策略，那么必须使用定义的 IAM 用户角色，为帐户中访问 {{site.data.keyword.registrylong_notm}} 服务的每个用户分配访问策略。该策略确定用户在服务的上下文中具有的角色，以及用户可以执行的操作。{{site.data.keyword.registrylong_notm}} 中的每个操作都会映射到一个或多个 [IAM 用户角色](/docs/iam/users_roles.html)。
 
-仅当您使用 IAM 登录到 {{site.data.keyword.registrylong_notm}} 时，才会强制实施 IAM 策略。如果使用其他方法（例如，注册表令牌）登录到 {{site.data.keyword.registrylong_notm}}，那么不会强制实施策略。如果要限制对自动化中使用的标识的一个或多个名称空间的访问，请考虑使用 IAM 服务标识，而不使用注册表令牌。有关服务标识的更多信息，请参阅[创建和使用服务标识](/docs/iam/serviceid.html#serviceids)。
+仅当您使用 IAM 登录到 {{site.data.keyword.registrylong_notm}} 时，才会强制实施 IAM 策略。如果使用其他方法（例如，注册表令牌）登录到 {{site.data.keyword.registrylong_notm}}，那么不会强制实施策略。如果要限制对用于自动化的标识的一个或多个名称空间的访问，请考虑使用 IAM 服务标识，而不使用注册表令牌。有关服务标识的更多信息，请参阅[创建和使用服务标识](/docs/iam/serviceid.html#serviceids)。
 
 有关 IAM 的更多信息，请参阅 [IBM Cloud 访问和管理](/docs/iam/index.html#iamoverview)。
 
@@ -36,8 +36,6 @@ lastupdated: "2018-11-20"
 * 对帐户中所有启用 IAM 的服务的访问权
 
 在定义访问策略的作用域后，可以分配角色。请查看下列各表，其中概述了每个角色在 {{site.data.keyword.registrylong_notm}} 服务中所允许的操作。
-
-有关管理用户角色的信息，请参阅[使用用户](/docs/iam/iamusermanage.html#iamusermanage)。
 
 有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam/mngiam.html#iammanidaccser)。
 
@@ -54,7 +52,7 @@ lastupdated: "2018-11-20"
 |查看者|不支持| |
 |编辑者|不支持| |
 |操作员|不支持| |
-|管理员| <ul><li>为其他用户配置访问权</li><li> 配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam/mngiam.html#iammanidaccser)。</li><li>添加、列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers/cs_clusters.html#cluster_prepare)。</ul> |
+|管理员| <ul><li>为其他用户配置访问权</li><li>配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam/mngiam.html#iammanidaccser)。</li><li>添加、列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers/cs_clusters.html#cluster_prepare)。</li></ul> |
 {: caption="表 1. IAM 用户角色和操作" caption-side="top"}
 
 对于 {{site.data.keyword.registrylong_notm}}，存在以下操作：

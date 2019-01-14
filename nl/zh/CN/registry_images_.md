@@ -189,7 +189,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
      {: pre}
 
-     其中，_&lt;image_name&gt;_ 是映像的名称，_&lt;directory&gt;_ 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_。
+     其中，_&lt;image_name&gt;_ 是映像的名称，_&lt;directory&gt;_ 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_.
   
      有关 `ibmcloud cr build` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build)。
 

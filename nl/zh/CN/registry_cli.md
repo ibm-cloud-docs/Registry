@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -123,7 +123,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 **命令选项**
 <dl>
 <dt>`DIRECTORY`</dt>
-<dd>构建上下文的位置，包含 Dockerfile 和必备文件。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 `DIRECTORY`。</dd>
+<dd>构建上下文的位置，包含 Dockerfile 和必备文件。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 `DIRECTORY`.</dd>
 <dt>`--no-cache`</dt>
 <dd>（可选）如果指定此项，那么在此构建中不会使用先前构建中的高速缓存映像层。</dd>
 <dt>`--pull`</dt>
@@ -140,7 +140,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **示例**
 
-在不使用构建高速缓存并禁止构建输出的情况下构建 Docker 映像，标记为 *`registry.ng.bluemix.net/bluebird/bird:1`*，并且目录是您的工作目录。
+构建 Docker 映像，该映像不使用先前构建的构建高速缓存（其中禁止了构建输出），标记为 *`registry.ng.bluemix.net/bluebird/bird:1`*，目录是您的工作目录。
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
