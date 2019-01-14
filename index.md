@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-14"
 
 ---
 
@@ -123,7 +123,7 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 
 **What's next?**
 
-- [Managing image security with Vulnerability Advisor](../va/va_index.html)
+- [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html)
 - [Review your service plans and usage](registry_overview.html#registry_plans)
 - [Store and manage more images in your namespace](registry_images_.html)
 - [Defining user access role policies](/docs/services/Registry/registry_users.html#user)

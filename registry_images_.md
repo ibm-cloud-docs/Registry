@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-14"
 
 ---
 
@@ -86,7 +86,7 @@ To upload (push) an image, complete the following steps:
 
 After you push your image to your {{site.data.keyword.Bluemix_notm}} private registry, you can do one of the following tasks:
 
-- [Manage security with Vulnerability Advisor](../va/va_index.html) to find information about potential security issues and vulnerabilities.
+- [Manage security with Vulnerability Advisor](/docs/services/va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copying images between registries
@@ -112,7 +112,7 @@ To copy an image between two registries, complete the following steps:
 
 After you copy your image, you can do one of the following tasks:
 
-- [Managing image security with Vulnerability Advisor](../va/va_index.html) to find information about potential security issues and vulnerabilities.
+- [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Building Docker images to use them with your namespace
@@ -206,7 +206,7 @@ To build your own Docker image, complete the following steps:
 
       3. After you create your image and tag it for your namespace, [you can push your image to your namespace {{site.data.keyword.Bluemix_notm}} private registry](#registry_images_pushing).
 
-To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](../va/va_index.html).
+To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 
 ## Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository
 {: #registry_images_remove}
