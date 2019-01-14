@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -37,8 +37,6 @@ lastupdated: "2018-11-20"
 
 在定義存取原則的範圍之後，您即可指派角色。請檢閱下列表格，其中概述每個角色容許在 {{site.data.keyword.registrylong_notm}} 服務內執行的動作。
 
-如需管理使用者角色的相關資訊，請參閱[處理使用者](/docs/iam/iamusermanage.html#iamusermanage)。
-
 如需在使用者介面中指派使用者角色的相關資訊，請參閱[管理 IAM 存取](/docs/iam/mngiam.html#iammanidaccser)。
 
 請嘗試[指導教學：授與對 {{site.data.keyword.registrylong_notm}} 資源的存取權](/docs/services/Registry/registry_tutorial_configure_iam.html#iam_access)指導教學。
@@ -54,7 +52,7 @@ lastupdated: "2018-11-20"
 | 檢視者 | 不支援 | |
 | 編輯者 | 不支援 | |
 | 操作員 | 不支援 | |
-| 管理者 | <ul><li>配置其他使用者的存取權</li><li> 配置登錄記號</li><li>建立叢集</li></ul> | <ul><li>如需在使用者介面中指派使用者角色的相關資訊，請參閱[管理 IAM 存取](/docs/iam/mngiam.html#iammanidaccser)。</li><li>新增、列出、擷取及移除登錄記號</li><li>若要在 {{site.data.keyword.containerlong_notm}} 中建立叢集，您必須將 {{site.data.keyword.registrylong_notm}} 的「管理者」角色指派給使用者，請參閱[準備建立叢集](/docs/containers/cs_clusters.html#cluster_prepare)。</ul> |
+| 管理者 | <ul><li>配置其他使用者的存取權</li><li>配置登錄記號</li><li>建立叢集</li></ul> | <ul><li>如需在使用者介面中指派使用者角色的相關資訊，請參閱[管理 IAM 存取](/docs/iam/mngiam.html#iammanidaccser)。</li><li>新增、列出、擷取及移除登錄記號</li><li>若要在 {{site.data.keyword.containerlong_notm}} 中建立叢集，您必須將 {{site.data.keyword.registrylong_notm}} 的「管理者」角色指派給使用者，請參閱[準備建立叢集](/docs/containers/cs_clusters.html#cluster_prepare)。</li></ul> |
 {: caption="表 1. IAM 使用者角色及動作" caption-side="top"}
 
 對於 {{site.data.keyword.registrylong_notm}}，存在下列動作：

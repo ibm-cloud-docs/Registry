@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -139,7 +139,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **範例**
 
-在不使用建置快取、暫停建置輸出並使用標籤 *`registry.ng.bluemix.net/bluebird/bird:1`* 的情況下建置 Docker 映像檔，而目錄是您的工作目錄。
+建置不使用先前建置之建置快取的 Docker 映像檔，其中會暫停建置輸出、標籤為 *`registry.ng.bluemix.net/bluebird/bird:1`*，且目錄是您的工作目錄。
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
