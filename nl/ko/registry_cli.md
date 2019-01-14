@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -141,7 +141,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **예**
 
-빌드 캐시를 사용하지 않고 빌드 출력이 억제되었으며 *`registry.ng.bluemix.net/bluebird/bird:1`* 태그가 지정된 Docker 이미지를 빌드하십시오. 디렉토리는 사용자 작업 디렉토리입니다.
+이전 빌드의 빌드 캐시를 사용하지 않는 Docker 이미지를 빌드하십시오. 이 경우 빌드 출력이 억제되고 태그는 *`registry.ng.bluemix.net/bluebird/bird:1`*이며 디렉토리는 사용자의 작업 디렉토리입니다.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
@@ -408,6 +408,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 <dl>
 <dt>`IMAGE`</dt>
 <dd>삭제할 이미지의 이름입니다. 각 이름 사이에 공백을 사용하여 명령에 각 이미지를 나열하면 동시에 여러 이미지를 삭제할 수 있습니다. `IMAGE`는 `repository:tag` 형식이어야 합니다(예: `registry.ng.bluemix.net/namespace/image:latest`).
+
 <p>이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오. 이미지 이름에 태그를 지정하지 않은 경우 기본적으로 `latest`로 태그 지정된 이미지가 삭제됩니다.</p>
 
 </dd>

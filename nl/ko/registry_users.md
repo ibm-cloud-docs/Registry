@@ -39,9 +39,10 @@ lastupdated: "2018-11-02"
 
 - 각 사용자에게 필요한 역할과 {{site.data.keyword.registrylong_notm}}의 리소스를 결정하십시오. [IAM 역할](/docs/services/Registry/iam.html#iam)의 내용을 참조하십시오. 여러 정책을 작성할 수 있음을 고려하십시오. 예를 들어, 하나의 리소스에 대한 쓰기 액세스를 부여하지만 다른 리소스에 대해서는 읽기 액세스만 부여하고 또 다른 리소스에 대해서는 액세스를 부여하지 않을 수 있습니다. 정책은 가산적입니다. 이는 글로벌 읽기 정책 및 리소스 범위의 쓰기 정책이 해당 리소스에 대한 읽기 및 쓰기 액세스를 둘 다 부여함을 의미합니다.
 
-- [사용자를 초대하고 액세스를 지정하십시오](/docs/iam/iamuserinv.html#iamuserinv).  
+- [사용자를 초대하고 액세스를 지정하십시오](/docs/iam/iamuserinv.html#iamuserinv). 
 
-  사용자가 {{site.data.keyword.containerlong_notm}}에서 클러스터를 작성할 수 있도록 하려면 해당 사용자에게 {{site.data.keyword.registrylong_notm}} 관리자 역할을 지정하고 리소스 그룹을 지정하지 않았는지 확인하십시오. [클러스터 작성 준비](/docs/containers/cs_clusters.html#cluster_prepare)를 참조하십시오. {: tip}
+  사용자가 {{site.data.keyword.containerlong_notm}}에서 클러스터를 작성할 수 있도록 하려면 해당 사용자에게 {{site.data.keyword.registrylong_notm}} 관리자 역할을 지정하고 리소스 그룹을 지정하지 않았는지 확인하십시오. [클러스터 작성 준비](/docs/containers/cs_clusters.html#cluster_prepare)를 참조하십시오.
+  {: tip}
 
 {{site.data.keyword.registrylong_notm}}에 대한 정책을 작성하려면 서비스 이름 필드가 `container-registry`여야 합니다.
 
@@ -57,4 +58,5 @@ lastupdated: "2018-11-02"
 
 2. 정책 적용을 사용으로 설정하려면 [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) 명령을 실행하십시오.
 
-    `ibmcloud cr iam-policies-enable` 명령을 실행할 수 있도록 계정에 관리자 역할이 있어야 합니다. 사용자 고유의 계정에 자동으로 관리자 역할이 보유됩니다. {: tip}
+    `ibmcloud cr iam-policies-enable` 명령을 실행할 수 있도록 계정에 관리자 역할이 있어야 합니다. 사용자 고유의 계정에 자동으로 관리자 역할이 보유됩니다.
+    {: tip}

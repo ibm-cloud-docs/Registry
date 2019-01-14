@@ -76,7 +76,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 때 해당 토큰이 레지스트리에 대한 읽기 전용(가져오기) 권한을 부여하는지 또는 쓰기(푸시 및 가져오기) 권한을 부여하는지 결정할 수 있습니다. 토큰이 영구적인지 또는 24시간 후에 만료되는지 여부를 지정할 수도 있습니다. 여러 토큰을 작성하고 사용하여 다양한 유형의 액세스를 제어할 수 있습니다.
 
-레지스트리 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}에 로그인하는 경우 IAM 액세스 정책이 적용되지 않습니다. 자동화에서 사용되는 ID에 대해 하나 이상의 네임스페이스에 대한 액세스를 제한하려면 레지스트리 토큰 대신에 IAM 서비스 ID API 키를 사용하는 것을 고려하십시오. API 키를 작성하여 {{site.data.keyword.registrylong_notm}}에 사용하는 방법에 대한 자세한 정보는 [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오. 
+레지스트리 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}에 로그인하는 경우 IAM 액세스 정책이 적용되지 않습니다. 자동화에서 사용되는 ID에 대해 하나 이상의 네임스페이스에 대한 액세스를 제한하려면 레지스트리 토큰 대신에 IAM 서비스 ID API 키를 사용하는 것을 고려하십시오. API 키를 작성하여 {{site.data.keyword.registrylong_notm}}에 사용하는 방법에 대한 자세한 정보는 [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 
 토큰을 관리하려면 다음 태스크를 사용하십시오.
 
