@@ -125,7 +125,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados de G
 |`Size`|Número Inteiro (64 bits)|Exibe o tamanho da imagem em bytes.|
 |`Tag`|Sequência de Caracteres|Exibe a tag para a imagem.|
 |`SecurityStatus`|Estrut.|Exibe o status de vulnerabilidade para a imagem. É possível filtrar e formatar os valores a seguir: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Os status possíveis são descritos em [Revisando um relatório de vulnerabilidade usando a CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr image-list</code>." caption-side="top"}
+{: caption="Tabela 1. Campos e tipos de dados disponíveis no comando <codeibmcloud cr image-list</code>." caption-side="top"}
 
 ### Opções de modelo e tipos de dados de Go no comando `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -151,7 +151,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados disp
 |`VirtualSize`|Número Inteiro (64 bits)|Exibe a soma do tamanho de cada camada na imagem em bytes.|
 |`RootFS`|Objeto|Exibe os metadados que descrevem o sistema de arquivos raiz para a imagem. Consulte os detalhes do
 campo em [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr image-inspect</code>." caption-side="top"}
+{: caption="Tabela 2. Campos e tipos de dados disponíveis no comando <codeibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
 
@@ -216,9 +216,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados disp
 |Campo|Tipo|descrição|
 |-----|----|-----------|
 |`ID`|Sequência de Caracteres|Exibe o identificador exclusivo para um token.|
-|`Expiry`|Número Inteiro (64 bits)|Exibe o [Registro de data e
-hora do UNIX](https://en.wikipedia.org/wiki/Unix_time) quando o token expira.|
-|`ReadOnly`|Booleano|Exibe _true_ quando é possível puxar imagens apenas e _false_ quando é possível
-enviar por push e puxar imagens para e do seu namespace.|
+|`Expiry`|Número Inteiro (64 bits)|Exibe o [Registro de data e hora do UNIX](https://en.wikipedia.org/wiki/Unix_time) quando o token expira.|
+|`ReadOnly`|Booleano|Exibe _true_ quando é possível puxar imagens apenas e _false_ quando é possível enviar por push e puxar imagens para e do seu namespace.|
 |`Description`|Sequência de Caracteres|Exibe a descrição do token.|
-{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando <code>ibmcloud cr token-list</code>." caption-side="top"}
+{: caption="Tabela 6. Campos e tipos de dados disponíveis no comando <codeibmcloud cr token-list</code>." caption-side="top"}

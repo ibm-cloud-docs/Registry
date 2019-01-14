@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -23,7 +23,7 @@ O acesso ao {{site.data.keyword.registrylong}} para usuários em sua conta é co
 
 Quando as políticas do IAM são ativadas para sua conta no {{site.data.keyword.registrylong_notm}}, cada usuário que acessa o serviço {{site.data.keyword.registrylong_notm}} em sua conta deve receber uma política de acesso com uma função de usuário do IAM definida. Essa política determina qual função o usuário tem dentro do contexto do serviço e quais ações o usuário pode executar. Cada ação no {{site.data.keyword.registrylong_notm}} é mapeada para uma ou mais [funções de usuário do IAM](/docs/iam/users_roles.html).
 
-As políticas do IAM são impostas apenas quando você usa o IAM para efetuar login no {{site.data.keyword.registrylong_notm}}. Se você efetuar login no {{site.data.keyword.registrylong_notm}} usando outro método, como um token de registro, suas políticas não serão impostas. Se você desejar restringir o acesso a um ou mais namespaces para um ID que é usado na automação, considere usar um ID de Serviço do IAM em vez de um token de registro. Para obter mais informações sobre IDs de Serviço, consulte [Criando e trabalhando com IDs de Serviço](/docs/iam/serviceid.html#serviceids).
+As políticas do IAM são impostas apenas quando você usa o IAM para efetuar login no {{site.data.keyword.registrylong_notm}}. Se você efetuar login no {{site.data.keyword.registrylong_notm}} usando outro método, como um token de registro, suas políticas não serão impostas. Se você desejar restringir o acesso a um ou mais namespaces para um ID que está sendo usando para automação, considere usar um ID do serviço do IAM em vez de um token de registro. Para obter mais informações sobre IDs de Serviço, consulte [Criando e trabalhando com IDs de Serviço](/docs/iam/serviceid.html#serviceids).
 
 Para obter mais informações sobre o IAM, consulte [IBM Cloud Access and Management](/docs/iam/index.html#iamoverview).
 
@@ -36,8 +36,6 @@ As políticas permitem que o acesso seja concedido em diferentes níveis. Alguma
 * Acesso a todos os serviços ativados pelo IAM em sua conta
 
 Depois de definir o escopo da política de acesso, você designa uma função. Revise as tabelas a seguir que descrevem quais ações cada função permite dentro do serviço {{site.data.keyword.registrylong_notm}}.
-
-Para obter informações sobre como gerenciar funções de usuário, consulte [Trabalhando com usuários](/docs/iam/iamusermanage.html#iamusermanage).
 
 Para obter informações sobre como designar funções de usuário na IU, consulte [Gerenciando o acesso ao IAM](/docs/iam/mngiam.html#iammanidaccser).
 
@@ -54,7 +52,7 @@ A tabela a seguir detalha as ações que são mapeadas para funções de gerenci
 | Visualizador | Sem suporte | |
 | Aplicativos | Sem suporte | |
 | Operador | Sem suporte | |
-| Administrador | <ul><li>Configurar acesso para outros usuários</li><li> Configurar tokens de registro</li><li>Criar clusters</li></ul> | <ul><li>Para obter informações sobre como designar funções de usuário na IU, consulte [Gerenciando o acesso ao IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Incluir, listar, recuperar e remover tokens de registro</li><li>Para criar clusters no {{site.data.keyword.containerlong_notm}}, deve-se designar a função de Administrador para o {{site.data.keyword.registrylong_notm}} para o usuário. Consulte [Preparando para criar clusters](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
+| Administrador | <ul><li>Configurar acesso para outros usuários</li><li>Configurar tokens de registro</li><li>Criar clusters</li></ul> | <ul><li>Para obter informações sobre como designar funções de usuário na IU, consulte [Gerenciando o acesso ao IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Incluir, listar, recuperar e remover tokens de registro</li><li>Para criar clusters no {{site.data.keyword.containerlong_notm}}, deve-se designar a função de Administrador para o {{site.data.keyword.registrylong_notm}} para o usuário. Consulte [Preparando para criar clusters](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
 {: caption="Tabela 1. Funções e ações do usuário do IAM" caption-side="top"}
 
 Para {{site.data.keyword.registrylong_notm}}, existem as seguintes ações:
@@ -129,5 +127,5 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Exiba seus namespaces. | Leitor, Gerenciador |
 | `container-registry.signature.create` | `docker trust sign` Assine a imagem. | Gravador, Gerente |
 | `container-registry.signature.delete` | `docker trust revoke` Exclua a assinatura. | Gravador, Gerente |
-| `container-registry.signature.get` | `docker trust inspect` Inspecione a assinatura.| Leitor, Gerenciador |
+| `container-registry.signature.get` | `docker trust inspect` Inspecione a assinatura. | Leitor, Gerenciador |
 {: caption="Tabela 5. Ações de serviço e operações para usar o {{site.data.keyword.registrylong_notm}}" caption-side="top"}

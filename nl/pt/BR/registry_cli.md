@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -143,7 +143,7 @@ Permissões necessárias: função de acesso de serviço de Gravador ou Gerencia
 
 **Exemplo**
 
-Construa uma imagem do Docker sem usar um cache de construção, com a saída de construção suprimida, com a tag *`registry.ng.bluemix.net/bluebird/bird:1`* e com o diretório sendo seu diretório ativo.
+Construa uma imagem do Docker que não use um cache de construção de construções anteriores, em que a saída de construção é suprimida, a tag é *`registry.ng.bluemix.net/bluebird/bird:1`* e o diretório é seu diretório ativo.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
@@ -410,6 +410,7 @@ Permissões necessárias: função de acesso de serviço de Gravador ou Gerencia
 <dl>
 <dt>`IMAGE`</dt>
 <dd>O nome da imagem que você deseja excluir. É possível excluir múltiplas imagens ao mesmo tempo listando cada imagem no comando com um espaço entre cada nome. `IMAGE` deve estar no formato `repository:tag`, por exemplo: `registry.ng.bluemix.net/namespace/image:latest`
+
 <p>Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas **Repositório** e **Tag** para criar o nome da imagem no formato `repository:tag`. Se uma tag não for especificada no nome da imagem, a imagem identificada como `latest` será excluída por padrão.</p>
 
 </dd>

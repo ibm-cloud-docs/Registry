@@ -58,4 +58,5 @@ Para usuários provisionados após 4 de outubro de 2018, as políticas do IAM s�
 
 2. Para ativar o cumprimento de política, execute o comando [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable).
 
-    Deve-se ter a função de Gerenciador na conta para que seja possível executar o comando `ibmcloud cr iam-policies-enable`. Você automaticamente tem a função de Gerenciador em sua própria conta. {: tip}
+    Deve-se ter a função de Gerenciador na conta para que seja possível executar o comando `ibmcloud cr iam-policies-enable`. Você automaticamente tem a função de Gerenciador em sua própria conta.
+    {: tip}
