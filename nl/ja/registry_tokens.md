@@ -28,7 +28,7 @@ API キーはアカウントにリンクされているので、{{site.data.keyw
 
 レジストリー・トークンの有効範囲は、{{site.data.keyword.registrylong_notm}} のみです。 レジストリー・トークンは、読み取り専用アクセスに制限したり、有効期限の有無を設定したりできます。
 
-API キーを使用すると、IAM ポリシーを使用して名前空間へのアクセスを制御できます。詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+API キーを使用すると、IAM ポリシーを使用して名前空間へのアクセスを制御できます。 詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
 
 {{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](/docs/iam/apikeys.html#manapikey)を参照してください。
 
@@ -76,7 +76,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 {{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成する際に、そのトークンがレジストリーへの読み取り専用アクセス (プル) を許可するのか、それとも書き込みアクセス (プッシュおよびプル) を許可するのかを決定できます。 また、トークンを永続的にするか、または 24 時間後に期限切れするかについても指定できます。 複数のトークンを作成および使用して、さまざまなタイプのアクセスを制御することができます。
 
-レジストリー・トークンを使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、IAM アクセス・ポリシーは適用されません。自動化に使用する ID を対象に 1 つ以上の名前空間にアクセスを制限しようとしている場合は、レジストリー・トークンではなく IAM サービス ID の API キーを使用することを考慮してください。API キーの作成と、{{site.data.keyword.registrylong_notm}} での使用について詳しくは、[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
+レジストリー・トークンを使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、IAM アクセス・ポリシーは適用されません。 自動化に使用する ID を対象に 1 つ以上の名前空間にアクセスを制限しようとしている場合は、レジストリー・トークンではなく IAM サービス ID の API キーを使用することを考慮してください。 API キーの作成と、{{site.data.keyword.registrylong_notm}} での使用について詳しくは、[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 
 以下のタスクを使用してトークンを管理します。
 

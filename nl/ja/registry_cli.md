@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -135,7 +135,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **例**
 
-ビルド・キャッシュを使用せずに Docker イメージをビルドします。ビルド出力は抑止され、タグは *`registry.ng.bluemix.net/bluebird/bird:1`* で、ディレクトリーはご使用の作業ディレクトリーになります。
+ビルド出力が抑止される、以前のビルドからのビルド・キャッシュを使用しない Docker イメージをビルドします。タグは *`registry.ng.bluemix.net/bluebird/bird:1`* で、ディレクトリーはご使用の作業ディレクトリーです。
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
@@ -215,7 +215,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **例**
 
-*`bluebird/bird`* リポジトリー内のイメージに適用するセキュリティー問題に関する免除をすべてリストします。出力には、アカウント規模の免除、*`bluebird`* 名前空間が適用範囲になる免除、*`bluebird/bird`* リポジトリーは適用範囲になるものの *`bluebird/bird`* リポジトリー内の特定のタグは適用範囲にならない免除が含まれます。
+*`bluebird/bird`* リポジトリー内のイメージに適用するセキュリティー問題に関する免除をすべてリストします。 出力には、アカウント規模の免除、*`bluebird`* 名前空間が適用範囲になる免除、*`bluebird/bird`* リポジトリーは適用範囲になるものの *`bluebird/bird`* リポジトリー内の特定のタグは適用範囲にならない免除が含まれます。
 
 ```
 ibmcloud cr exemption-list --scope bluebird/bird
@@ -289,7 +289,7 @@ ibmcloud cr exemption-types
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-IAM 認証を使用している場合、このコマンドは微細化された許可を有効にします。詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry/iam.html#iam)と[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+IAM 認証を使用している場合、このコマンドは微細化された許可を有効にします。 詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry/iam.html#iam)と[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
 
 ```
 ibmcloud cr iam-policies-enable
@@ -461,7 +461,7 @@ ibmcloud cr namespace-add NAMESPACE
 **コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.Bluemix_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。名前空間は、文字または数値で開始および終了する必要があります。
+<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.Bluemix_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。 名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
 <strong>ヒント</strong>: 名前空間名に個人情報を含めないでください。

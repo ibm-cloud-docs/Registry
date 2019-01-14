@@ -29,9 +29,9 @@ lastupdated: "2018-10-12"
 
 - {{site.data.keyword.cloud_notm}} CLI に関する container-registry プラグインの最新バージョンがあることを確認します。[container-registry プラグインの更新](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
 
-- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択するか、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と協力することができます。
+- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。 自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択するか、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と協力することができます。
 
-- 2018 年 10 月 4 日より前にご使用のアカウントで {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、`ibmcloud cr iam-policies-enable` コマンドを実行して、IAM ポリシーの制約を有効にしなければなりません。{{site.data.keyword.registrylong_notm}} 名前空間を使用する他のユーザーをご使用の IBM Cloud アカウントに招待した場合は、そのユーザーのアクセスの途絶を防ぐために、User A とは別のアカウントを使用してください。
+- 2018 年 10 月 4 日より前にご使用のアカウントで {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、`ibmcloud cr iam-policies-enable` コマンドを実行して、IAM ポリシーの制約を有効にしなければなりません。 {{site.data.keyword.registrylong_notm}} 名前空間を使用する他のユーザーをご使用の IBM Cloud アカウントに招待した場合は、そのユーザーのアクセスの途絶を防ぐために、User A とは別のアカウントを使用してください。
 
 ## ステップ 1: ユーザーがレジストリーを構成するのを許可する
 {: #configure_registry}
@@ -149,10 +149,10 @@ lastupdated: "2018-10-12"
 ## ステップ 2: ユーザーが特定の名前空間にアクセスするのを許可する
 {: #access_resources}
 
-このセクションでは、サンプルのイメージを使用して、名前空間を作成してアクセス権限を付与します。各名前空間に対するさまざまな役割を付与するポリシーを作成して、その影響を示します。
+このセクションでは、サンプルのイメージを使用して、名前空間を作成してアクセス権限を付与します。 各名前空間に対するさまざまな役割を付与するポリシーを作成して、その影響を示します。
 {:shortdesc}
 
-1. User A のアカウント内に 3 つの名前空間を新しく作成します。これらの名前空間は地域全体で固有でなければならないので、独自の名前空間の名前を選択しますが、このチュートリアルでは例として `namespace_a`、`namespace_b`、`namespace_c` を使用します。
+1. User A のアカウント内に 3 つの名前空間を新しく作成します。 これらの名前空間は地域全体で固有でなければならないので、独自の名前空間の名前を選択しますが、このチュートリアルでは例として `namespace_a`、`namespace_b`、`namespace_c` を使用します。
 
     1. 次のコマンドを実行して、User A としてログインします。
 
@@ -212,7 +212,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        このチュートリアルで作成した 3 つの名前空間 (`namespace_a`、`namespace_b`、`namespace_c`) が表示されます。これらの名前空間が表示されない場合は、戻って指示に従い、再度作成します。
+        このチュートリアルで作成した 3 つの名前空間 (`namespace_a`、`namespace_b`、`namespace_c`) が表示されます。 これらの名前空間が表示されない場合は、戻って指示に従い、再度作成します。
 
     3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与するポリシーを作成します。_`<Region>`_ は、`us-south` などの[領域](/docs/services/Registry/registry_overview.html#registry_regions)の短縮名です。
 
@@ -521,4 +521,4 @@ lastupdated: "2018-10-12"
    ```
    {: pre}
 
-お疲れ様でした。このチュートリアルが正常に完了しました。
+お疲れ様でした。 このチュートリアルが正常に完了しました。

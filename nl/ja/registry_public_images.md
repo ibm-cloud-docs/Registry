@@ -18,7 +18,7 @@ lastupdated: "2018-10-19"
 # パブリック {{site.data.keyword.IBM_notm}} イメージ
 {: #public_images}
 
-コマンド・ラインを使用して、{{site.data.keyword.IBM}} 提供のイメージにアクセスできます。グラフィカル・ユーザー・インターフェースを使用してパブリック {{site.data.keyword.IBM_notm}} イメージにアクセスすることはできなくなりました。
+コマンド・ラインを使用して、{{site.data.keyword.IBM}} 提供のイメージにアクセスできます。 グラフィカル・ユーザー・インターフェースを使用してパブリック {{site.data.keyword.IBM_notm}} イメージにアクセスすることはできなくなりました。
 {:shortdesc}
 
 ## CLI を使用したパブリック IBM イメージへのアクセス
