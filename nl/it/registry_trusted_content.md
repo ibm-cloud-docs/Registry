@@ -276,7 +276,7 @@ Per condividere le chiavi di firma:
 Se non vuoi più che un firmatario sia in grado di firmare le immagini nel tuo repository, puoi rimuoverlo come firmatario.
 {:shortdesc}
 
-Prima di iniziare, i proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 18.03 o successive. 
+Prima di iniziare, i proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 18.03 o successive.
 
 Se rimuovi un firmatario, il server di attendibilità non ritiene attendibili le sue versioni firmate dell'immagine. Per garantire di poter eseguire il pull dell'immagine dopo la rimozione del firmatario, assicurati che il firmatario non abbia firmato la versione più recente dell'immagine. Se il firmatario ha firmato la versione più recente dell'immagine, invia un aggiornamento all'immagine e firmala utilizzando la tua chiave prima di continuare.
 {:tip}

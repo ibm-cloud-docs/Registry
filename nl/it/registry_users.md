@@ -15,7 +15,7 @@ lastupdated: "2018-11-02"
 {:tip: .tip}
 {:download: .download}
 
-# Definizione delle politiche del ruolo di accesso utente 
+# Definizione delle politiche del ruolo di accesso utente
 {: #user access}
 
 Come amministratore, puoi definire le politiche di accesso per il tuo registro per creare diversi livelli di accesso per utenti diversi. Ad esempio, puoi autorizzare alcuni utenti ad impostare le quote mentre altri utenti le possono solo visualizzare.
@@ -49,7 +49,7 @@ Per creare le politiche per {{site.data.keyword.registrylong_notm}}, il campo de
 * Per creare una politica per gli utenti, consulta [Gestione dell'accesso alle risorse](/docs/iam/mngiam.html#iammanidaccser).
 * Per creare una politica per gli ID servizio, esegui il comando `ibmcloud iam service-policy-create` oppure utilizza la GUI per associare i ruoli ai tuoi ID servizio. Per creare le politiche, devi avere il ruolo di Amministratore. Hai automaticamente il ruolo di Amministratore per il tuo account. Per ulteriori informazioni, consulta [Creazione e gestione degli ID servizio](/docs/iam/serviceid.html#serviceids) e [Gestione delle politiche di accesso degli ID servizio](/docs/iam/serviceidaccess.html#serviceidpolicy).
 
-## Abilitazione dell'applicazione della politica per gli utenti esistenti 
+## Abilitazione dell'applicazione della politica per gli utenti esistenti
 {: #existing_users}
 
 Per gli utenti di cui è stato eseguito il provisioning dopo il 4 ottobre 2018, le politiche IAM sono abilitate per impostazione predefinita. Per gli utenti di cui è stato eseguito il provisioning prima del 4 ottobre 2018, dopo che hai creato le tue politiche, devi abilitare l'applicazione della politica in modo che le tue politiche abbiano effetto.

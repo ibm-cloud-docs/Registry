@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -141,7 +141,7 @@ Autorizzazioni necessarie: il ruolo di accesso al servizio IAM di Scrittore o Ge
 
 **Esempio**
 
-Crea un'immagine Docker senza utilizzare una cache di compilazione e con l'output di compilazione eliminato, la tag *`registry.ng.bluemix.net/bluebird/bird:1`* e la directory che è la tua directory di lavoro.
+Crea un'immagine Docker che non utilizza una cache di compilazione da compilazioni precedenti, dove l'output di compilazione è soppresso, la tag è *`registry.ng.bluemix.net/bluebird/bird:1`* e la directory è la tua directory di lavoro.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .

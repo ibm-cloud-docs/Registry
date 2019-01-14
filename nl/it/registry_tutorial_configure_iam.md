@@ -15,7 +15,7 @@ lastupdated: "2018-10-12"
 {:tip: .tip}
 {:download: .download}
 
-# Esercitazione: concessione dell'accesso alle risorse {{site.data.keyword.registrylong_notm}} 
+# Esercitazione: concessione dell'accesso alle risorse {{site.data.keyword.registrylong_notm}}
 {: #iam_access}
 
 Utilizza questa esercitazione per scoprire come concedere l'accesso alle tue risorse configurando {{site.data.keyword.iamlong}} (IAM) per {{site.data.keyword.registrylong_notm}}.

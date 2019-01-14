@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-11-20"
 {:tip: .tip}
 {:download: .download}
 
-# Gestione dell'accesso utente con Identity and Access Management (IAM) 
+# Gestione dell'accesso utente con Identity and Access Management (IAM)
 {: #iam}
 
 L'accesso a {{site.data.keyword.registrylong}} per gli utenti nel tuo account è controllato da {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM).
@@ -23,7 +23,7 @@ L'accesso a {{site.data.keyword.registrylong}} per gli utenti nel tuo account è
 
 Quando le politiche IAM sono abilitate per il tuo account in {{site.data.keyword.registrylong_notm}}, ogni utente che accede al servizio {{site.data.keyword.registrylong_notm}} nel tuo account deve avere assegnata una politica di accesso con un ruolo utente IAM definito. Questa politica determina il ruolo che l'utente ha all'interno del contesto del servizio e quali azioni può eseguire. Ogni azione in {{site.data.keyword.registrylong_notm}} è associata a uno o più [ruoli utente IAM](/docs/iam/users_roles.html).
 
-Le politiche IAM vengono applicate solo quando utilizzi IAM per accedere a {{site.data.keyword.registrylong_notm}}. Se accedi a {{site.data.keyword.registrylong_notm}} utilizzando un altro metodo, come ad esempio un token di registro, le tue politiche non vengono applicate. Se desideri limitare l'accesso a uno o più spazi dei nomi per un ID che viene utilizzato nell'automazione, considera l'utilizzo di un ID servizio IAM invece di un token di registro. Per ulteriori informazioni sugli ID servizio, consulta [Creazione e gestione degli ID servizio](/docs/iam/serviceid.html#serviceids).
+Le politiche IAM vengono applicate solo quando utilizzi IAM per accedere a {{site.data.keyword.registrylong_notm}}. Se accedi a {{site.data.keyword.registrylong_notm}} utilizzando un altro metodo, come ad esempio un token di registro, le tue politiche non vengono applicate. Se desideri limitare l'accesso a uno o più spazi dei nomi per un ID che stai utilizzando per l'automazione, considera l'utilizzo di un ID servizio IAM invece di un token di registro. Per ulteriori informazioni sugli ID servizio, consulta [Creazione e gestione degli ID servizio](/docs/iam/serviceid.html#serviceids).
 
 Per ulteriori informazioni su IAM, consulta [Accesso e gestione di IBM Cloud](/docs/iam/index.html#iamoverview).
 
@@ -37,14 +37,12 @@ Le politiche abilitano l'accesso da concedere a diversi livelli. Alcune delle op
 
 Dopo aver definito l'ambito della politica di accesso, assegna un ruolo. Esamina le seguenti tabelle che delineano le azioni che ogni ruolo consente all'interno del servizio {{site.data.keyword.registrylong_notm}}.
 
-Per informazioni sulla gestione dei ruoli utente, consulta [Gestione degli utenti](/docs/iam/iamusermanage.html#iamusermanage).
-
 Per informazioni sull'assegnazione dei ruoli utente nell'IU, consulta [Gestione dell'accesso IAM](/docs/iam/mngiam.html#iammanidaccser).
 
 Prova l'esercitazione [Esercitazione: concessione dell'accesso alle risorse {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_tutorial_configure_iam.html#iam_access).
 {: tip}
 
-## Ruoli di gestione della piattaforma 
+## Ruoli di gestione della piattaforma
 {: #platform_management_roles}
 
 La seguente tabella illustra le azioni che sono associate ai ruoli di gestione della piattaforma. I ruoli di gestione della piattaforma consentono agli utenti di eseguire attività sulle risorse del servizio a livello di piattaforma, ad esempio l'assegnazione dell'accesso utente al servizio e la creazione o eliminazione degli ID servizio.
@@ -54,7 +52,7 @@ La seguente tabella illustra le azioni che sono associate ai ruoli di gestione d
 | Visualizzatore | Non supportato | |
 | Editor | Non supportato | |
 | Operatore | Non supportato | |
-| Amministratore | <ul><li>Configura l'accesso per altri utenti</li><li> Configura i token di registro</li><li>Crea i cluster</li></ul> | <ul><li>Per informazioni sull'assegnazione dei ruoli utente nell'IU, consulta [Gestione dell'accesso IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Aggiungi, elenca, richiama e rimuovi i token di registro</li><li>Per creare i cluster in {{site.data.keyword.containerlong_notm}}, devi assegnare all'utente il ruolo Amministratore per {{site.data.keyword.registrylong_notm}}, consulta [Preparazione per la creazione dei cluster](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
+| Amministratore | <ul><li>Configura l'accesso per altri utenti</li><li>Configura i token di registro</li><li>Crea i cluster</li></ul> | <ul><li>Per informazioni sull'assegnazione dei ruoli utente nell'IU, consulta [Gestione dell'accesso IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Aggiungi, elenca, richiama e rimuovi i token di registro</li><li>Per creare i cluster in {{site.data.keyword.containerlong_notm}}, devi assegnare all'utente il ruolo Amministratore per {{site.data.keyword.registrylong_notm}}, consulta [Preparazione per la creazione dei cluster](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
 {: caption="Tabella 1. Azioni e ruoli utente IAM" caption-side="top"}
 
 Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
@@ -67,7 +65,7 @@ Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli.html#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.Bluemix_notm}}. | Amministratore |
 {: caption="Tabella 2. Operazioni e azioni della piattaforma per la configurazione di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
-## Ruoli di accesso al servizio 
+## Ruoli di accesso al servizio
 {: #service_access_roles}
 
 La seguente tabella illustra le azioni che sono associate ai ruoli di accesso al servizio. I ruoli di accesso al servizio abilitano gli utenti ad accedere a {{site.data.keyword.registrylong_notm}} nonché la possibilità di chiamare l'API {{site.data.keyword.registrylong_notm}}.

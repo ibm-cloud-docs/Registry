@@ -35,7 +35,7 @@ Per visualizzare l'interfaccia utente grafica, utilizza la seguente procedura:
 2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
 3. Fai clic su **Catalogo**.
 4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
-5. Per visualizzare le informazioni sulle immagini nei tuoi repository privati, fai clic su **Immagini**. Viene visualizzato un elenco delle immagini nei tuoi repository privati e lo stato di sicurezza di ogni immagine. 
+5. Per visualizzare le informazioni sulle immagini nei tuoi repository privati, fai clic su **Immagini**. Viene visualizzato un elenco delle immagini nei tuoi repository privati e lo stato di sicurezza di ogni immagine.
 6. Per trovare ulteriori informazioni sulle vulnerabilità potenziali, inclusi il digest dell'immagine e le tag, fai clic sulla riga per l'immagine nella tabella. Si apre la scheda **Dettagli immagine**.
 7. Per trovare le informazioni sui problemi per tipo, fai clic sulla scheda **Problemi per tipo**.
 8. Per trovare informazioni sui contenitori associati, fai clic sulla scheda **Contenitori associati**.

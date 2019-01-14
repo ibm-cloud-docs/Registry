@@ -36,7 +36,7 @@ Puoi accedere alle immagini {{site.data.keyword.IBM_notm}} pubbliche utilizzando
   ```
   {: pre}
 
-Per elencare le immagini pubbliche, completa la seguente procedura: 
+Per elencare le immagini pubbliche, completa la seguente procedura:
 
 1. Specifica il registro globale:
 

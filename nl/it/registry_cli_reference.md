@@ -117,10 +117,9 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 
 |Campo|Tipo|Descrizione|
 |-----|----|-----------|
-|`Created`|Numero intero (64 bit)|Visualizza quando è stata creata l'immagine, espresso in numero di secondi in [ora
-UNIX](https://en.wikipedia.org/wiki/Unix_time).|
+|`Created`|Numero intero (64 bit)|Visualizza quando è stata creata l'immagine, espresso in numero di secondi in [ora UNIX](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|Stringa|Visualizza l'identificativo univoco per un'immagine.|
-|`Spazio dei nomi `|Stringa|Visualizza lo spazio dei nomi in cui è memorizzata l'immagine.|
+|`Namespace`|Stringa|Visualizza lo spazio dei nomi in cui è memorizzata l'immagine.|
 |`Repository`|Stringa|Visualizza il repository dell'immagine.|
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`Tag`|Stringa|Visualizza la tag dell'immagine.|
