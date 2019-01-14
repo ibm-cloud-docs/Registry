@@ -10,7 +10,7 @@ IBM Cloud Container Registry
     registry_ha.md
 
     {: .topicgroup}
-    Public images
+    Images publiques
         registry_public_images.md
         /services/RegistryImages/toc
     

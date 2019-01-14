@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -27,7 +27,7 @@ Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.regi
 
 * Avant d'exécuter les commandes de registre, connectez-vous à {{site.data.keyword.Bluemix_notm}} à l'aide de la commande `ibmcloud login` pour générer un jeton d'accès et authentifier votre session.
 
-En ligne de commande, vous êtes averti lorsque les mises à jour de l'interface de ligne de commande et des plug-in `ibmcloud` sont disponibles. Prenez soin de maintenir votre interface de ligne de commande à jour afin de pouvoir utiliser toutes les commandes et options disponibles. 
+En ligne de commande, vous êtes averti lorsque les mises à jour de l'interface de ligne de commande et des plug-in `ibmcloud` sont disponibles. Prenez soin de maintenir votre interface de ligne de commande à jour afin de pouvoir utiliser toutes les commandes et options disponibles.
 
 Si vous souhaitez afficher la version en cours de votre plug-in d'interface de ligne de commande {{site.data.keyword.registrylong}}(`container-registry`), exécutez `ibmcloud plugin list`.
 
@@ -135,7 +135,7 @@ Droits requis : rôle d'accès aux services IAM Editeur ou Gestionnaire pour {{s
 
 **Exemple**
 
-Générez une image Docker sans utiliser un cache de génération, et avec la sortie de génération supprimée, la balise *`registry.ng.bluemix.net/bluebird/bird:1`*, et le répertoire est votre répertoire de travail. 
+Générez une image Docker n'utilisant pas de cache de génération des précédentes générations, où la sortie de génération est supprimée, où la balise est *`registry.ng.bluemix.net/bluebird/bird:1`* et avec votre répertoire de travail comme répertoire.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
@@ -171,7 +171,7 @@ Droits requis : rôle d'accès aux services IAM Gestionnaire pour {{site.data.ke
 
 **Exemples**
 
-Créez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/bluebird/bird`. 
+Créez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/bluebird/bird`.
 
 ```
 ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
@@ -215,7 +215,7 @@ Droits requis : rôle d'accès aux services IAM Gestionnaire pour {{site.data.ke
 
 **Exemple**
 
-Répertoriez toutes les exemptions pour les problèmes de sécurité qui s'appliquent aux images du référentiel *`bluebird/bird`*. La sortie inclut les exemptions à l'échelle du compte, les exemptions dont la portée est l'espace de nom *`bluebird`* et les exemptions dont la portée est le référentiel *`bluebird/bird`* mais pas certaines balises dans le référentiel *`bluebird/bird`*. 
+Répertoriez toutes les exemptions pour les problèmes de sécurité qui s'appliquent aux images du référentiel *`bluebird/bird`*. La sortie inclut les exemptions à l'échelle du compte, les exemptions dont la portée est l'espace de nom *`bluebird`* et les exemptions dont la portée est le référentiel *`bluebird/bird`* mais pas certaines balises dans le référentiel *`bluebird/bird`*.
 
 ```
 ibmcloud cr exemption-list --scope bluebird/bird
@@ -251,7 +251,7 @@ Droits requis : rôle d'accès aux services IAM Gestionnaire pour {{site.data.ke
 
 **Exemples**
 
-Supprimez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/bluebird/bird`. 
+Supprimez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/bluebird/bird`.
 
 ```
 ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
@@ -376,7 +376,7 @@ Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interfac
 
 **Exemple**
 
-Affiche les images dans l'espace de nom *`bluebird`* au format `repository:tag`, sans tronquer l'historique des images. 
+Affiche les images dans l'espace de nom *`bluebird`* au format `repository:tag`, sans tronquer l'historique des images.
 
 ```
 ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
@@ -447,7 +447,7 @@ Néant
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-Choisit un nom pour votre espace de nom et l'ajoute à votre compte {{site.data.keyword.Bluemix_notm}}. 
+Choisit un nom pour votre espace de nom et l'ajoute à votre compte {{site.data.keyword.Bluemix_notm}}.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -461,7 +461,7 @@ Droits requis : rôle d'accès aux services IAM Editeur ou Gestionnaire pour {{s
 **Options de commande**
 <dl>
 <dt>`ESPACE DE NOM`</dt>
-<dd>Espace de nom à ajouter. Il doit être unique sur tous les comptes {{site.data.keyword.Bluemix_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets et des traits de soulignement.  Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
+<dd>Espace de nom à ajouter. Il doit être unique sur tous les comptes {{site.data.keyword.Bluemix_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets et des traits de soulignement. Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
   
 <p>  
 <strong>Astuce</strong> ne placez pas d'informations personnelles dans vos noms d'espace de nom.
@@ -695,7 +695,7 @@ Pour plus d'informations, voir
 
 **Exemple**
 
-Ciblez la région Sud des Etats-Unis. 
+Ciblez la région Sud des Etats-Unis.
 
 ```
 ibmcloud cr region-set us-south
@@ -736,7 +736,7 @@ Droits requis : rôle de plateforme IAM Administrateur pour {{site.data.keyword.
 
 **Exemple**
 
-Ajoutez un jeton avec la description *Token for my account* qui n'expire pas et qui dispose de droits d'accès en lecture/écriture. 
+Ajoutez un jeton avec la description *Token for my account* qui n'expire pas et qui dispose de droits d'accès en lecture/écriture.
 
 ```
 ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
@@ -903,7 +903,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/bluebird/bird:1
 ```
 {: pre}
 
-Affiche un rapport d'évaluation des vulnérabilités pour votre image *`registry.ng.bluemix.net/bluebird/bird:1`* au format JSON, avec uniquement les vulnérabilités. 
+Affiche un rapport d'évaluation des vulnérabilités pour votre image *`registry.ng.bluemix.net/bluebird/bird:1`* au format JSON, avec uniquement les vulnérabilités.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/bluebird/bird:1

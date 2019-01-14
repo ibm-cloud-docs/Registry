@@ -29,9 +29,9 @@ Ce tutoriel dure environ 45 minutes.
 
 - Assurez-vous que vous disposez de la version la plus récente du plug-in container-registry pour l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Voir [Mise à jour du plug-in container-registry](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
-- Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/) que vous pouvez utiliser dans le cadre de ce tutoriel, l'un pour l'utilisateur A et l'autre pour l'utilisateur B, chacun devant utiliser une adresse électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}. 
+- Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/) que vous pouvez utiliser dans le cadre de ce tutoriel, l'un pour l'utilisateur A et l'autre pour l'utilisateur B, chacun devant utiliser une adresse électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
 
-- Si vous avez commencé à utiliser {{site.data.keyword.registrylong_notm}} dans votre compte avant le 4 octobre 2018, vous devez activer l'application des règles IAM en exécutant la commande `ibmcloud cr iam-policies-enable`. Si vous avez invité d'autres utilisateurs à utiliser vos espaces de nom {{site.data.keyword.registrylong_notm}} dans votre compte IBM Cloud, utilisez un autre compte en tant qu'utilisateur A pour empêcher que leurs accès ne soient interrompus. 
+- Si vous avez commencé à utiliser {{site.data.keyword.registrylong_notm}} dans votre compte avant le 4 octobre 2018, vous devez activer l'application des règles IAM en exécutant la commande `ibmcloud cr iam-policies-enable`. Si vous avez invité d'autres utilisateurs à utiliser vos espaces de nom {{site.data.keyword.registrylong_notm}} dans votre compte IBM Cloud, utilisez un autre compte en tant qu'utilisateur A pour empêcher que leurs accès ne soient interrompus.
 
 ## Etape 1 : Autoriser un utilisateur à configurer le registre
 {: #configure_registry}
@@ -48,7 +48,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-    2. Invitez l'utilisateur B à accéder au compte de l'utilisateur A en exécutant la commande suivante, où _`<user.b@example.com>`_ est l'adresse électronique de l'utilisateur B : 
+    2. Invitez l'utilisateur B à accéder au compte de l'utilisateur A en exécutant la commande suivante, où _`<user.b@example.com>`_ est l'adresse électronique de l'utilisateur B :
 
         ```
         ibmcloud account user-invite <user.b@example.com>
@@ -62,11 +62,11 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-        Notez l'ID de compte qui figure entre parenthèses ( ) sur la ligne Compte. 
+        Notez l'ID de compte qui figure entre parenthèses ( ) sur la ligne Compte.
 
-2. Vérifiez que l'utilisateur B peut cibler le compte de l'utilisateur A mais qu'il ne peut pas encore effectuer quoi que ce soit avec {{site.data.keyword.registrylong_notm}} : 
+2. Vérifiez que l'utilisateur B peut cibler le compte de l'utilisateur A mais qu'il ne peut pas encore effectuer quoi que ce soit avec {{site.data.keyword.registrylong_notm}} :
 
-    1. Connectez-vous en tant qu'utilisateur B et exécutez la commande suivante pour cible le compte de l'utilisateur A, où _`<YourAccountID>`_ est l'ID de compte de l'utilisateur A : 
+    1. Connectez-vous en tant qu'utilisateur B et exécutez la commande suivante pour cible le compte de l'utilisateur A, où _`<YourAccountID>`_ est l'ID de compte de l'utilisateur A :
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -80,7 +80,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-        La commande échoue car l'utilisateur B ne dispose pas des droits appropriés. 
+        La commande échoue car l'utilisateur B ne dispose pas des droits appropriés.
 
 3. Accordez à l'utilisateur B le rôle Responsable afin qu'il puisse configurer {{site.data.keyword.registrylong_notm}} :
 
@@ -114,7 +114,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-        La commande aboutit car l'utilisateur B dispose des droits d'accès appropriés. 
+        La commande aboutit car l'utilisateur B dispose des droits d'accès appropriés.
 
     3. A présent, rétablissez le quota en exécutant la commande suivante :
   
@@ -194,7 +194,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        Cette commande renvoie une liste vide car l'utilisateur B n'a pas accès aux espaces de nom. 
+        Cette commande renvoie une liste vide car l'utilisateur B n'a pas accès aux espaces de nom.
 
 3. Créez des règles pour accorder à l'utilisateur B les droits lui permettant d'interagir avec les espaces de nom en exécutant la commande suivante :
 
@@ -212,7 +212,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        Les trois espaces de nom que vous avez créés dans ce tutoriel (`namespace_a`, `namespace_b` et `namespace_c`) s'affichent. Si  vous ne voyez pas ces espaces de nom, revenez en arrière et suivez les instructions permettant de les recréer. 
+        Les trois espaces de nom que vous avez créés dans ce tutoriel (`namespace_a`, `namespace_b` et `namespace_c`) s'affichent. Si vous ne voyez pas ces espaces de nom, revenez en arrière et suivez les instructions permettant de les recréer.
 
     3. Créez une règle qui affecte le rôle Lecteur sur `namespace_b` à l'utilisateur B en exécutant la commande suivante, où _`<Region>`_ est le nom abrégé de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), par exemple, `us-south` :
 
@@ -337,7 +337,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        La commande aboutit car l'utilisateur B dispose du rôle Editeur sur `namespace_c`. 
+        La commande aboutit car l'utilisateur B dispose du rôle Editeur sur `namespace_c`.
 
     9. Extrayez l'image de `namespace_c` en exécutant la commande suivante :
 
@@ -346,7 +346,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        La commande aboutit car l'utilisateur B dispose du rôle Lecteur sur `namespace_c`. 
+        La commande aboutit car l'utilisateur B dispose du rôle Lecteur sur `namespace_c`.
 
 6. Effectuez des opérations de nettoyage :
 
@@ -364,7 +364,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        Recherchez les règles que vous venez de créer et notez les ID de règle. 
+        Recherchez les règles que vous venez de créer et notez les ID de règle.
 
     3. Supprimez les règles que vous venez de créer en exécutant la commande suivante, où _`<Policy_ID>`_ est l'ID de règle :
 
@@ -388,7 +388,7 @@ Dans cette section, vous allez configurer un ID de service et lui octroyer les d
         ```
         {: pre}
 
-    2. Créez un ID de service nommé `cr-roles-tutorial` avec la description `"Created during the access control tutorial for Container Registry"` en exécutant la commande suivante : 
+    2. Créez un ID de service nommé `cr-roles-tutorial` avec la description `"Created during the access control tutorial for Container Registry"` en exécutant la commande suivante :
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
@@ -432,7 +432,7 @@ Dans cette section, vous allez configurer un ID de service et lui octroyer les d
         ```
         {: pre}
 
-        Cette commande aboutit. 
+        Cette commande aboutit.
 
     3. Envoyez votre image à `namespace_a` en exécutant la commande suivante :
 
@@ -450,7 +450,7 @@ Dans cette section, vous allez configurer un ID de service et lui octroyer les d
         ```
         {: pre}
 
-        La commande aboutit car l'utilisateur dispose du rôle Editeur sur `namespace_b`. 
+        La commande aboutit car l'utilisateur dispose du rôle Editeur sur `namespace_b`.
 
 3. Effectuez des opérations de nettoyage :
 
@@ -461,7 +461,7 @@ Dans cette section, vous allez configurer un ID de service et lui octroyer les d
         ```
         {: pre}
 
-        Notez les ID de règle. 
+        Notez les ID de règle.
 
     2. Supprimez vos règles de service en exécutant la commande suivante pour chaque règle :
 

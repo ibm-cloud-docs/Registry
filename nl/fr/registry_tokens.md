@@ -165,7 +165,7 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 
    - Pour les espaces de nom définis pour la région Sud des Etats-Unis, utilisez `registry.ng.bluemix.net`
    - Pour les espaces de nom définis pour la région Sud du Royaume-Uni, utilisez `registry.eu-gb.bluemix.net`
-   - Pour les espaces de nom définis pour la région Centre Europe, utilisez `registry.eu-de.bluemix.net` egistry.eu-de.bluemix.net
+   - Pour les espaces de nom définis pour la région Centre Europe, utilisez `registry.eu-de.bluemix.net`
    - Pour les espaces de nom définis pour la région Sud de l'Asie Pacifique, utilisez `registry.au-syd.bluemix.net`
 
    ```
@@ -220,7 +220,7 @@ Les noms d'utilisateur valides sont les suivants :
 
 - `iambearer` Le mot de passe contient un jeton d'accès IAM. Ce type d'authentification a une courte durée de vie, mais peut être issue de tous types d'identité IAM.
 - `iamrefresh` Le mot de passe doit contenir un jeton d'actualisation IAM utilisé en interne pour générer et actualiser un jeton d'accès IAM. Ce type d'authentification a une durée de vie plus longue et est utilisé par la commande `ibmcloud cr login`.
-- `iamapikey` Le mot de passe est une clé d'API IAM. Ce type d'authentification est celui privilégié pour l'automatisation. Vous pouvez utiliser une clé d'API d'utilisateur ou d'ID de service (voir [Création d'une clé d'API](#registry_api_key_create).
+- `iamapikey` Le mot de passe est une clé d'API IAM. Ce type d'authentification est celui privilégié pour l'automatisation. Vous pouvez utiliser une clé d'API d'utilisateur ou d'ID de service (voir [Création d'une clé d'API](#registry_api_key_create)).
 - `token` Le mot de passe est un jeton de registre. Vous pouvez utiliser ce nom d'utilisateur pour l'automatisation.
 
 Vous n'avez pas besoin d'utiliser la commande `docker` pour l'authentification avec le registry. Par exemple, vous pouvez démarrer des applications Cloud Foundry à partir d'images du registre en utilisant l'interface de ligne de commande Cloud Foundry :

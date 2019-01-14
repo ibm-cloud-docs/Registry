@@ -29,7 +29,7 @@ Vous pouvez accéder aux images {{site.data.keyword.IBM_notm}} publiques à l'ai
 
 **Avant de commencer**
 
-- Connectez-vous à [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login) : 
+- Connectez-vous à [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login) :
 
   ```
   ibmcloud login

@@ -288,7 +288,7 @@ Pour supprimer une image à l'aide de l'interface graphique, procédez comme sui
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
 5. Cliquez sur **Images**. La liste de vos images s'affiche.
-6. Sur la ligne qui contient l'image à supprimer, cochez la case. 
+6. Sur la ligne qui contient l'image à supprimer, cochez la case.
 
    Cette action ne peut pas être annulée, par conséquent, vérifiez que l'image sélectionnée est bien celle que vous souhaitez supprimer.
    {: tip}
@@ -306,7 +306,7 @@ Lorsque vous supprimez un référentiel, toutes les images qu'il contient sont �
 
 **Avant de commencer**
 
-Vous devez sauvegarder les images que vous souhaitez conserver. 
+Vous devez sauvegarder les images que vous souhaitez conserver.
 
 Pour supprimer un référentiel privé à l'aide de l'interface graphique, procédez comme suit :
 
@@ -315,7 +315,7 @@ Pour supprimer un référentiel privé à l'aide de l'interface graphique, proc�
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
 5. Cliquez sur **Référentiels**. La liste de vos référentiels privés s'affiche.
-6. Sur la ligne qui contient le référentiel privé à supprimer, cochez la case. 
+6. Sur la ligne qui contient le référentiel privé à supprimer, cochez la case.
 
     Cette action ne peut pas être annulée, par conséquent, vérifiez que le référentiel sélectionné est bien celui que vous souhaitez supprimer.
     {: tip}

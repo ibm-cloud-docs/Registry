@@ -180,7 +180,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
 
 3. Vérifiez que l'approbation a été révoquée dans la liste du contenu sécurisé.
 
-   Facultatif Incluez la balise si vous souhaitez vérifier le contenu révoqué pour une image balisée. 
+   Facultatif Incluez la balise si vous souhaitez vérifier le contenu révoqué pour une image balisée.
 
    ```
    docker trust inspect --pretty <image>:<tag>

@@ -31,13 +31,13 @@ Pour en savoir plus sur les règles de rôle d'accès IAM ({{site.data.keyword.i
 ## Création de règles
 {: #create}
 
-Si vous souhaitez contrôler l'accès à des ressources, vous devez affecter des rôles à des utilisateurs ou des ID de service. L'accès aux ressources {{site.data.keyword.registrylong_notm}} peut être accordé à la ressource d'espace de nom par nom ou à l'ensemble du service, autrement dit, à tous les espaces de nom du compte. 
+Si vous souhaitez contrôler l'accès à des ressources, vous devez affecter des rôles à des utilisateurs ou des ID de service. L'accès aux ressources {{site.data.keyword.registrylong_notm}} peut être accordé à la ressource d'espace de nom par nom ou à l'ensemble du service, autrement dit, à tous les espaces de nom du compte.
 
-Si vous souhaitez accorder un accès à tout, ne spécifiez pas un type de ressource ou une ressource. Si vous souhaitez accorder un accès à un espace de nom spécifique, spécifiez `namespace` comme type de ressource et utilisez le nom d'espace de nom comme ressource. 
+Si vous souhaitez accorder un accès à tout, ne spécifiez pas un type de ressource ou une ressource. Si vous souhaitez accorder un accès à un espace de nom spécifique, spécifiez `namespace` comme type de ressource et utilisez le nom d'espace de nom comme ressource.
 
 **Avant de commencer**
 
-- Déterminez les rôles à affecter à chaque utilisateur et sur quelles ressources {{site.data.keyword.registrylong_notm}}. Voir [Rôles IAM](/docs/services/Registry/iam.html#iam). Tenez compte du fait que vous pouvez créer plusieurs règles, par exemple, vous pouvez accorder des droits d'accès en écriture sur une ressource, accorder des droits d'accès en lecture seule sur une autre ressource, et n'accorder aucun droit d'accès sur une autre ressource. Les règles s'additionnent, ce qui signifie qu'une règle d'accès en lecture globale et une règle d'accès en écriture limitée à une ressource octroient des droits d'accès en lecture et en écriture sur cette ressource. 
+- Déterminez les rôles à affecter à chaque utilisateur et sur quelles ressources {{site.data.keyword.registrylong_notm}}. Voir [Rôles IAM](/docs/services/Registry/iam.html#iam). Tenez compte du fait que vous pouvez créer plusieurs règles, par exemple, vous pouvez accorder des droits d'accès en écriture sur une ressource, accorder des droits d'accès en lecture seule sur une autre ressource, et n'accorder aucun droit d'accès sur une autre ressource. Les règles s'additionnent, ce qui signifie qu'une règle d'accès en lecture globale et une règle d'accès en écriture limitée à une ressource octroient des droits d'accès en lecture et en écriture sur cette ressource.
 
 - [Invitez des utilisateurs et affectez des droits d'accès](/docs/iam/iamuserinv.html#iamuserinv). 
 
@@ -52,10 +52,11 @@ Pour que des règles puissent être créées pour {{site.data.keyword.registrylo
 ## Activation de l'application des règles pour des utilisateurs existants
 {: #existing_users}
 
-Pour les utilisateurs dont les accès ont été configurés après le 4 octobre 2018, les règles IAM sont activées par défaut. Pour les utilisateurs dont les accès ont été configurés avant le 4 octobre 2018, une fois vos règles créées, vous devez activer leur application pour qu'elles puissent être effectives. 
+Pour les utilisateurs dont les accès ont été configurés après le 4 octobre 2018, les règles IAM sont activées par défaut. Pour les utilisateurs dont les accès ont été configurés avant le 4 octobre 2018, une fois vos règles créées, vous devez activer leur application pour qu'elles puissent être effectives.
 
-1. [Créez des règles](#create) pour vos utilisateurs et vos ID de service. 
+1. [Créez des règles](#create) pour vos utilisateurs et vos ID de service.
 
-2. Pour activer l'application des règles, exécutez la commande [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable). 
+2. Pour activer l'application des règles, exécutez la commande [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable).
 
-    Vous devez disposer du rôle Responsable sur le compte afin de pouvoir exécuter la commande `ibmcloud cr iam-policies-enable`. Vous disposez automatiquement du rôle Responsable sur votre propre compte. {: tip}
+    Vous devez disposer du rôle Responsable sur le compte afin de pouvoir exécuter la commande `ibmcloud cr iam-policies-enable`. Vous disposez automatiquement du rôle Responsable sur votre propre compte.
+    {: tip}

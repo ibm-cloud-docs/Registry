@@ -177,7 +177,7 @@ Vous pouvez corriger ce problème en procédant ainsi :
 Vous tentez d'exécuter la commande `docker pull`, mais celle-ci renvoie une version de l'image qui n'est pas la version la plus récente générée.
 
 {: tsCauses}
-L'étiquette `latest` est appliquée par défaut pour référencer une image lorsque vous exécutez des commandes Docker sans spécifier de valeur pour l'étiquette. L'étiquette `latest` est appliquée à la commande `docker build` ou `docker tag` la plus récente exécutée sans qu'une étiquette n'ait été spécifiée explicitement. Il est donc possible d'exécuter les commandes `docker` dans le désordre ou de définir des balises de manière explicite sur certaines images, la balise  `latest` désignant une génération qui n'est pas la plus récente.
+L'étiquette `latest` est appliquée par défaut pour référencer une image lorsque vous exécutez des commandes Docker sans spécifier de valeur pour l'étiquette. L'étiquette `latest` est appliquée à la commande `docker build` ou `docker tag` la plus récente exécutée sans qu'une étiquette n'ait été spécifiée explicitement. Il est donc possible d'exécuter les commandes `docker` dans le désordre ou de définir des balises de manière explicite sur certaines images, la balise `latest` désignant une génération qui n'est pas la plus récente.
 
 {: tsResolve}
 En général, il est préférable de définir explicitement chaque fois une balise séquentielle différente pour vos images et de ne pas vous en remettre à la balise `latest`.

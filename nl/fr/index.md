@@ -24,7 +24,7 @@ stocker et partager de manière sécurisée vos images Docker avec les utilisate
 votre compte {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Adbisor](/docs/services/va/va_index.html).
+La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html).
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {:tip}

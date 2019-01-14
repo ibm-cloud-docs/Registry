@@ -35,9 +35,9 @@ Pour afficher l'interface graphique, procédez comme suit :
 2. Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
-5. Pour afficher des informations sur les images de vos référentiels privés, cliquez sur **Images**. Une liste des images de vos référentiels privés avec le statut de sécurité pour chacune d'elle s'affiche. 
-6. Pour plus d'informations sur les vulnérabilités potentielles, notamment les balises et l'historique des images, cliquez sur la ligne correspondant à l'image dans le tableau. L'onglet **Détails de l'image** s'ouvre. 
+5. Pour afficher des informations sur les images de vos référentiels privés, cliquez sur **Images**. Une liste des images de vos référentiels privés avec le statut de sécurité pour chacune d'elle s'affiche.
+6. Pour plus d'informations sur les vulnérabilités potentielles, notamment les balises et l'historique des images, cliquez sur la ligne correspondant à l'image dans le tableau. L'onglet **Détails de l'image** s'ouvre.
 7. Pour en savoir plus sur les problèmes par type, cliquez sur l'onglet **Problèmes par type**.
-8. Pour obtenir des informations sur les conteneurs associés, cliquez sur l'onglet **Conteneurs associés**. 
+8. Pour obtenir des informations sur les conteneurs associés, cliquez sur l'onglet **Conteneurs associés**.
 
 Pour plus d'informations sur la signification des informations dans le rapport de sécurité, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html).

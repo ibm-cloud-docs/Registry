@@ -50,7 +50,7 @@ Le tableau suivant répertorie les méthodes d'API générant un événement lor
 
 Les événements {{site.data.keyword.cloudaccesstrailshort}} sont disponibles dans le **domaine de compte** {{site.data.keyword.cloudaccesstrailshort}} qui se trouve dans la région {{site.data.keyword.Bluemix_notm}} où les événements sont générés.
 
-La [région](/docs/services/Registry/registry_overview.html#registry_regions) dans laquelle un événement Vulnerability Advisor est disponible correspond à la région du registre {{site.data.keyword.registrylong_notm}} dans lequel la ressource (par exemple, l'image ou l'espace de nom) est disponible. 
+La [région](/docs/services/Registry/registry_overview.html#registry_regions) dans laquelle un événement Vulnerability Advisor est disponible correspond à la région du registre {{site.data.keyword.registrylong_notm}} dans lequel la ressource (par exemple, l'image ou l'espace de nom) est disponible.
 
 
 
