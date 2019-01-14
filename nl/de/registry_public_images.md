@@ -29,23 +29,23 @@ Sie können auf die öffentlichen {{site.data.keyword.IBM_notm}} Images über di
 
 **Vorbereitung**
 
-- Melden Sie sich bei [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login) an: 
+- Melden Sie sich bei [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login) an:
 
   ```
   ibmcloud login
   ```
   {: pre}
 
-Führen Sie die folgenden Schritte aus, um die öffentlichen Images aufzulisten: 
+Führen Sie die folgenden Schritte aus, um die öffentlichen Images aufzulisten:
 
-1. Legen Sie die globale Registry als Ziel fest: 
+1. Legen Sie die globale Registry als Ziel fest:
 
    ```
    ibmcloud cr region-set global
    ```
    {: pre}
 
-2. Listen Sie die öffentlichen {{site.data.keyword.IBM_notm}} Images auf: 
+2. Listen Sie die öffentlichen {{site.data.keyword.IBM_notm}} Images auf:
 
    ```
    ibmcloud cr images --include-ibm

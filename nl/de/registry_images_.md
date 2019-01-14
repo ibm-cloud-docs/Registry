@@ -269,13 +269,13 @@ Führen Sie die folgenden Schritte aus, um ein Image über die grafische Benutze
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
-5. Klicken Sie auf **Images**. Es wird eine Liste Ihrer Images angezeigt. 
-6. Markieren Sie in der Zeile, die das Image enthält, das Sie löschen möchten, das Kontrollkästchen. 
+5. Klicken Sie auf **Images**. Es wird eine Liste Ihrer Images angezeigt.
+6. Markieren Sie in der Zeile, die das Image enthält, das Sie löschen möchten, das Kontrollkästchen.
 
    Stellen Sie sicher, dass Sie das richtige Image ausgewählt haben, da diese Aktion nicht rückgängig gemacht werden kann.
    {: tip}
 
-7. Klicken Sie auf **Image löschen**. 
+7. Klicken Sie auf **Image löschen**.
 
 ## Privates Repository und alle zugehörigen Images löschen
 {: #registry_repo_remove}
@@ -288,18 +288,18 @@ Wenn Sie ein Repository löschen, werden alle Images in diesem Repository gelös
 
 **Vorbereitung**
 
-Sie müssen alle Images sichern, die Sie behalten möchten. 
+Sie müssen alle Images sichern, die Sie behalten möchten.
 
-Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen, führen Sie die folgenden Schritte aus: 
+Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen, führen Sie die folgenden Schritte aus:
 
 1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net](https://console.bluemix.net)) mit Ihrer IBMid an.
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
-5. Klicken Sie auf **Repositorys**. Es wird eine Liste Ihrer privaten Repositorys angezeigt. 
-6. Markieren Sie in der Zeile, die das private Repository enthält, das Sie löschen möchten, das Kontrollkästchen. 
+5. Klicken Sie auf **Repositorys**. Es wird eine Liste Ihrer privaten Repositorys angezeigt.
+6. Markieren Sie in der Zeile, die das private Repository enthält, das Sie löschen möchten, das Kontrollkästchen.
 
     Stellen Sie sicher, dass Sie das richtige Repository ausgewählt haben, da diese Aktion nicht rückgängig gemacht werden kann.
     {: tip}
 
-7. Klicken Sie auf **Repository löschen**. 
+7. Klicken Sie auf **Repository löschen**.

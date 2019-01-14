@@ -23,7 +23,7 @@ lastupdated: "2018-11-14"
 
 Wenn Sie Ihr Image mit Push-Operation und mit aktiviertem Content Trust übertragen, überträgt Ihr Docker-Client ebenfalls ein signiertes Metadatenobjekt mit Push-Operation an den {{site.data.keyword.Bluemix_notm}}-Trust-Server. Wird ein mit Tags versehenes Image bei aktiviertem Docker Content Trust mit Pull-Operation extrahiert, kontaktiert Ihr Docker-Client den Trust-Server, um die zuletzt signierte Version des von Ihnen angeforderten Tags festzustellen, überprüft die Inhaltssignatur und lädt das signierte Image herunter.
 
-Ein Imagename setzt sich aus einem Repository und einem Tag zusammen. Bei Verwendung von vertrauenswürdigen Inhalten verwendet jedes Repository einen eindeutigen Signierschlüssel. Jeder Tag innerhalb eines Repositorys verwendet den Schlüssel, der dem Repository angehört. Wenn mehrere Ihrer Teams Inhalte veröffentlichen, jedes in das eigene Repository innerhalb Ihrer {{site.data.keyword.registrylong_notm}}-Namensbereiche, kann jedes Team seinen eigenen Schlüssel zum Signieren des eigenen Inhalts verwenden, sodass Sie überprüfen können, ob jedes Images vom richtigen Team erzeugt wurde. 
+Ein Imagename setzt sich aus einem Repository und einem Tag zusammen. Bei Verwendung von vertrauenswürdigen Inhalten verwendet jedes Repository einen eindeutigen Signierschlüssel. Jeder Tag innerhalb eines Repositorys verwendet den Schlüssel, der dem Repository angehört. Wenn mehrere Ihrer Teams Inhalte veröffentlichen, jedes in das eigene Repository innerhalb Ihrer {{site.data.keyword.registrylong_notm}}-Namensbereiche, kann jedes Team seinen eigenen Schlüssel zum Signieren des eigenen Inhalts verwenden, sodass Sie überprüfen können, ob jedes Images vom richtigen Team erzeugt wurde.
 
 Ein Repository kann sowohl signierten als auch nicht signierten Inhalt enthalten. Wenn Docker Content Trust aktiviert ist, können Sie auch dann auf den signierten Inhalt eines Repositorys zugreifen, wenn auch anderer nicht signierter Inhalt darin vorhanden ist.
 
@@ -151,7 +151,7 @@ Sie können signierte Versionen eines Image oder Tags und auch die Informationen
 
 2. Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image.
 
-   (Optional) Geben Sie den Tag _&lt;tag&gt;_ an, um Informationen zu dieser Version des Images anzuzeigen. 
+   (Optional) Geben Sie den Tag _&lt;tag&gt;_ an, um Informationen zu dieser Version des Images anzuzeigen.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -179,14 +179,14 @@ Bevor Sie anfangen, rufen Sie die Kennphrase des Repository-Schlüssels ab, die 
 
 3. Überprüfen Sie, ob die Vertrauensbeziehung in der Liste der vertrauenswürdigen Inhalte widerrufen wurde.
 
-   (Optional): Schließen Sie den Tag ein, wenn widerrufener Inhalt für ein getaggtes Image überprüft werden soll. 
+   (Optional): Schließen Sie den Tag ein, wenn widerrufener Inhalt für ein getaggtes Image überprüft werden soll.
 
    ```
    docker trust inspect --pretty <image>:<tag>
    ```
    {: pre}
 
-   Ausgabe des vorherigen Befehls: 
+   Ausgabe des vorherigen Befehls:
 
    ```
    No signatures or cannot access <image>:<tag>
@@ -224,7 +224,7 @@ Damit andere Benutzer Images in einem Repository signieren können, fügen Sie d
 **Vorbereitung**
 
 - Image-Unterzeichner müssen über die Berechtigung zum Übertragen von Images an den Namensbereich mit Push-Operation verfügen.
-- Für Repository-Eigner und zusätzliche Unterzeichner muss Docker 18.03 oder höher installiert sein. 
+- Für Repository-Eigner und zusätzliche Unterzeichner muss Docker 18.03 oder höher installiert sein.
 - Erstellen Sie ein Repository für vertrauenswürdige Inhalte, indem Sie ein [signiertes Image mit Push-Operation übertragen](#trustedcontent_push). Repository-Eigner müssen über die Administratorschlüssel für das Repository verfügen, die im Docker-Vertrauensordner in ihrem lokalen System verfügbar sind. Wenn Sie nicht über den Administratorschlüssel für das Repository verfügen, kontaktieren Sie den Eigner, damit er diese Aufgabe für Sie durchführt.
 
 Wenn Sie einen Unterzeichner hinzufügen, können Sie nicht mehr den Administratorschlüssel für das Repository verwenden, um Images in diesem Repository zu signieren. Sie müssen den privaten Schlüssel für einen der genehmigten Unterzeichner zum Signieren besitzen. Um die Fähigkeit zum Signieren von Images nach dem Hinzufügen eines Unterzeichners beizubehalten, folgen Sie diesen Anweisungen nochmals, um eine Unterzeichnerrolle für Sie selbst zu generieren und hinzuzufügen.
@@ -232,7 +232,7 @@ Wenn Sie einen Unterzeichner hinzufügen, können Sie nicht mehr den Administrat
 
 Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 
-1. Wenn der neue Unterzeichner noch kein Schlüsselpaar generiert hat, muss ein Schlüsselpaar generiert und geladen werden. 
+1. Wenn der neue Unterzeichner noch kein Schlüsselpaar generiert hat, muss ein Schlüsselpaar generiert und geladen werden.
   
     a. Generieren Sie den Schlüssel. Für _&lt;NAME&gt;_ können Sie einen beliebigen Namen eingeben; allerdings ist der von Ihnen gewählte Name sichtbar, wenn jemand die Vertrauensbeziehung im Repository untersucht. Arbeiten Sie mit dem Repository-Eigner zusammen, um alle Namenskonventionen zu erfüllen, die von der Organisation vielleicht verwendet werden, und um einen Namen auszuwählen, der für diesen Unterzeichner identifizierbar ist.
 
@@ -247,7 +247,7 @@ Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 
 2. Der Repository-Eigner muss den Schlüssel des Unterzeichners zum Repository hinzufügen.
 
-    a. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup). 
+    a. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
     b. Fügen Sie den Schlüssel des Unterzeichners zum Repository hinzu.
 
@@ -258,7 +258,7 @@ Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 
 3. Der Unterzeichner kann seine Umgebung einrichten und ein Image signieren.
 
-    a. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup). 
+    a. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
     b. Der Unterzeichner muss ein Image signieren. In der Eingabeaufforderung geben Sie eine Kennphrase für den privaten Schlüssel ein.
 
@@ -275,7 +275,7 @@ Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 Wenn ein Unterzeichner nicht mehr in der Lage sein soll, Images in Ihrem Repository zu signieren, können Sie ihn als Unterzeichner entfernen.
 {:shortdesc}
 
-Bevor Sie beginnen, muss für Repository-Eigner und zusätzliche Unterzeichner Docker 18.03 oder höher installiert sein. 
+Bevor Sie beginnen, muss für Repository-Eigner und zusätzliche Unterzeichner Docker 18.03 oder höher installiert sein.
 
 Wenn Sie einen Unterzeichner entfernen, vertraut der Trust-Server den signierten Versionen des Images nicht mehr. Um sicherzustellen, dass das Image nach Entfernen des Unterzeichners noch mit Pull-Operation extrahiert werden kann, stellen Sie sicher, dass der Unterzeichner nicht die aktuellste Version des Image signiert hat, bevor Sie fortfahren. Hat der Unterzeichner die aktuellste Version des Image signiert, übertragen Sie eine Aktualisierung mit Push-Operation an das Image und signieren Sie es mit Ihrem Schlüssel, bevor Sie fortfahren.
 {:tip}

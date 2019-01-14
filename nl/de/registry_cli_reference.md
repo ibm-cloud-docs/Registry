@@ -162,7 +162,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`AttachStdout`|Boolesch|Zeigt _true_ an, wenn der Standardausgabedatenstrom an den Container angefügt ist, und _false_, wenn dies nicht der Fall ist.|
 |`AttachStderr`|Boolesch|Zeigt _true_ an, wenn der Standardfehlerdatenstrom an den Container angefügt ist, und _false_, wenn dies nicht der Fall ist.|
 |`ExposedPorts`|Schlüssel-Wert-Zuordnung|Zeigt die Liste der zugänglichen Ports im Format `[123:,456:]` an.|
-|`Tty`|Boolesch|Zeigt _true_ an, wenn ein `Pseudo-TTY` an den Container angefügt ist, und _false_, wenn dies nicht der Fall ist. |
+|`Tty`|Boolesch|Zeigt _true_ an, wenn ein `Pseudo-TTY` an den Container angefügt ist, und _false_, wenn dies nicht der Fall ist.|
 |`OpenStdin`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom geöffnet ist, und _false_, wenn er geschlossen ist.|
 |`StdinOnce`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom nach dem Trennen des angefügten Clients geschlossen wird, und _false_, wenn er geöffnet bleibt.|
 |`Env`|Array von Zeichenfolgen|Zeigt die Liste der Umgebungsvariablen in Form von Schlüssel-Wert-Paaren an.|

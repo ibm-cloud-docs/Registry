@@ -28,7 +28,7 @@ API-Schlüssel sind mit Ihrem Konto verknüpft und können im gesamten {{site.da
 
 Registry-Tokens sind ausschließlich für {{site.data.keyword.registrylong_notm}} bereichsorientiert festgelegt. Sie können sie auf Lesezugriff begrenzen und Sie können auswählen, ob ein Ablaufdatum gelten soll.
 
-Wenn Sie einen API-Schlüssel verwenden, können Sie den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry/registry_users.html#user). 
+Wenn Sie einen API-Schlüssel verwenden, können Sie den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry/registry_users.html#user).
 
 Weitere Informationen zu API-Schlüsseln für {{site.data.keyword.registrylong_notm}} finden Sie in [Mit API-Schlüsseln arbeiten](/docs/iam/apikeys.html#manapikey).
 
@@ -76,7 +76,7 @@ Jeder Benutzer, der über ein Registry-Token verfügt, kann auf auf geschützte 
 
 Wenn Sie ein Token für Ihr {{site.data.keyword.Bluemix_notm}}-Konto erstellen, können Sie entscheiden, ob das Token zum Lesezugriff (Pull-Operation) oder zum Schreibzugriff (Push- und Pull-Operation) auf die Registry berechtigen soll. Außerdem können Sie angeben, ob das Token permanent gültig sein oder nach 24 Stunden ablaufen soll. Sie können mehrere Tokens erstellen und verwenden, um unterschiedliche Zugriffstypen zu steuern.
 
-Wenn Sie sich mithilfe eines Registry-Tokens bei {{site.data.keyword.registrylong_notm}} anmelden, werden Ihre IAM-Zugriffsrichtlinien nicht umgesetzt. Wenn Sie den Zugriff auf einen oder mehrere Namensbereiche für eine ID beschränken möchten, die bei der Automatisierung verwendet wird, sollten Sie die Verwendung eines API-Schlüssels der IAM-Service-ID anstelle eines Registry-Tokens in Betracht ziehen. Weitere Informationen zum Erstellen eines API-Schlüssels und zum Verwenden des Schlüssels mit {{site.data.keyword.registrylong_notm}} finden Sie unter [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key). 
+Wenn Sie sich mithilfe eines Registry-Tokens bei {{site.data.keyword.registrylong_notm}} anmelden, werden Ihre IAM-Zugriffsrichtlinien nicht umgesetzt. Wenn Sie den Zugriff auf einen oder mehrere Namensbereiche für eine ID beschränken möchten, die bei der Automatisierung verwendet wird, sollten Sie die Verwendung eines API-Schlüssels der IAM-Service-ID anstelle eines Registry-Tokens in Betracht ziehen. Weitere Informationen zum Erstellen eines API-Schlüssels und zum Verwenden des Schlüssels mit {{site.data.keyword.registrylong_notm}} finden Sie unter [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 
 Mit den folgenden Tasks können Sie Ihre Tokens verwalten:
 
@@ -223,7 +223,7 @@ Die folgenden Benutzernamen sind gültig:
 - `iamapikey`: Das Kennwort ist ein IAM-API-Schlüssel. Diese Art der Authentifizierung wird für die Automatisierung bevorzugt. Sie können einen API-Schlüssel für Benutzer oder für Service-IDs verwenden; weitere Informationen finden Sie unter [API-Schlüssel erstellen](#registry_api_key_create).
 - `token`: Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
 
-Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten. 
+Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten.
 
 ```
 export CF_DOCKER_PASSWORD=<api-schlüssel>

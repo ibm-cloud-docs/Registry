@@ -50,7 +50,7 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
 
 Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.Bluemix_notm}}-Region befindet, in der die Ereignisse generiert wurden.
 
-Die [Region](/docs/services/Registry/registry_overview.html#registry_regions), in der ein Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist. 
+Die [Region](/docs/services/Registry/registry_overview.html#registry_regions), in der ein Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist.
 
 
 

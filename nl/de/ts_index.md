@@ -31,12 +31,12 @@ Wenn bei der Verwendung von {{site.data.keyword.registrylong_notm}} Fragen oder 
 
 Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass sie von den {{site.data.keyword.registrylong_notm}}-Entwicklungsteams gesehen wird.
 
-- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-bluemix` und `container-registry`. 
+- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-bluemix` und `container-registry`.
 - Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `bluemix` und `container-registry` dabei ein.
 
 Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support/howtogetsupport.html#using-avatar).
 
-Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Benötigte Unterstützung anfordern](/docs/get-support/howtogetsupport.html#getting-customer-support). 
+Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Benötigte Unterstützung anfordern](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Anmeldung bei {{site.data.keyword.registrylong_notm}} fehlgeschlagen
 {: #ts_login}
@@ -120,7 +120,7 @@ Wenn Sie `ibmcloud cr namespace-add` ausführen, können Sie den eingegebenen We
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Befolgen Sie die Anweisungen, die in der zurückgegebenen Fehlernachricht enthalten sind. 
+- Befolgen Sie die Anweisungen, die in der zurückgegebenen Fehlernachricht enthalten sind.
 - Prüfen Sie, ob Sie einen gültigen Namensbereich eingegeben haben:
   - Der Name muss 4 bis 30 Zeichen lang sein.
   - Der Name muss mit mindestens einem Buchstaben bzw. einer Ziffer beginnen.
@@ -177,7 +177,7 @@ Sie können dieses Problem wie folgt beheben:
 Sie versuchen, den Befehl `docker pull` auszuführen, aber er gibt eine Version Ihres Image zurück, die nicht die zuletzt erstellte Version darstellt.
 
 {: tsCauses}
-Der Tag `latest` wird standardmäßig für den Verweis auf ein Image angewandt, wenn Sie Docker-Befehle ausführen, ohne einen Tagwert anzugeben. Der Tag `latest` wird auf den `docker build`- oder `docker tag`-Befehl angewandt, der zuletzt ausgeführt wurde, ohne dass ein Tag explizit festgelegt wurde. Daher ist es möglich, `docker`-Befehle in falscher Reihenfolge auszuführen oder Tags für einige Images explizit festzulegen, und der Tag `latest` kann ein Build angeben, das nicht das aktuellste ist. 
+Der Tag `latest` wird standardmäßig für den Verweis auf ein Image angewandt, wenn Sie Docker-Befehle ausführen, ohne einen Tagwert anzugeben. Der Tag `latest` wird auf den `docker build`- oder `docker tag`-Befehl angewandt, der zuletzt ausgeführt wurde, ohne dass ein Tag explizit festgelegt wurde. Daher ist es möglich, `docker`-Befehle in falscher Reihenfolge auszuführen oder Tags für einige Images explizit festzulegen, und der Tag `latest` kann ein Build angeben, das nicht das aktuellste ist.
 
 {: tsResolve}
 In der Regel ist es besser, jedes Mal explizit einen anderen sequenziellen Tag für Ihre Images zu definieren und sich nicht auf den Tag `latest` zu verlassen.
@@ -276,11 +276,11 @@ Für die angepasste Firewall ist es erforderlich, dass bestimmte Netzgruppen fü
 
 {: tsResolve}
 
-Lassen Sie Ihr Cluster auf Infrastrukturressourcen und Services von hinter einer Firewall zugreifen. Siehe [Cluster Zugriff auf Infrastrukturressourcen und andere Services erteilen](/docs/containers/cs_firewall.html#firewall_outbound). 
+Lassen Sie Ihr Cluster auf Infrastrukturressourcen und Services von hinter einer Firewall zugreifen. Siehe [Cluster Zugriff auf Infrastrukturressourcen und andere Services erteilen](/docs/containers/cs_firewall.html#firewall_outbound).
 
-Für die Konnektivität der bei Ihrem Computer ankommenden Daten lassen Sie den ankommenden Netzdatenverkehr von den Quellennetzgruppen zur öffentlichen Ziel-IP-Adresse Ihres Computers zu. 
+Für die Konnektivität der bei Ihrem Computer ankommenden Daten lassen Sie den ankommenden Netzdatenverkehr von den Quellennetzgruppen zur öffentlichen Ziel-IP-Adresse Ihres Computers zu.
 
-Für die Konnektivität der von Ihrem Computer abgehenden Daten verwenden Sie dieselben Netzgruppen und lassen Sie den abgehenden Netzdatenverkehr von der öffentlichen Quellen-IP-Adresse Ihres Computers zu den Netzgruppen zu. 
+Für die Konnektivität der von Ihrem Computer abgehenden Daten verwenden Sie dieselben Netzgruppen und lassen Sie den abgehenden Netzdatenverkehr von der öffentlichen Quellen-IP-Adresse Ihres Computers zu den Netzgruppen zu.
 
 ## Verlorene oder beeinträchtigte Schlüssel wiederherstellen
 {: #ts_recoveringtrustedcontent}
@@ -295,7 +295,7 @@ Ihr Repository oder Rootschlüssel ist verloren gegangen oder beeinträchtigt.
 Ihre Optionen für die Wiederherstellung von verlorenen oder beeinträchtigten Schlüsseln sind vom Typ des Schlüssels abhängig - Repository oder Root:
 
 - Bei [Repository-Schlüsseln](#trustedcontent_lostrepokey) können Sie einen neuen Satz von Signierschlüsseln für das Repository generieren.
-- Bei [Rootschlüsseln](#trustedcontent_lostrootkey) können Sie die Löschung des Repositorys anfordern und ein neues Repository erstellen. 
+- Bei [Rootschlüsseln](#trustedcontent_lostrootkey) können Sie die Löschung des Repositorys anfordern und ein neues Repository erstellen.
 
 ### Repository-Schlüssel
 {: #trustedcontent_lostrepokey}
@@ -308,7 +308,7 @@ Die einzige Signierrolle, die Sie turnusmäßig wechseln können, ist `targets`,
 
 Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt haben, als Sie erstmalig [ein signiertes Image mit Push-Operation übertragen](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push) haben.
 
-1. Installieren Sie die Befehlszeilenschnittstellenversion des [Notary-Projekts ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli). 
+1. Installieren Sie die Befehlszeilenschnittstellenversion des [Notary-Projekts ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
 2. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 

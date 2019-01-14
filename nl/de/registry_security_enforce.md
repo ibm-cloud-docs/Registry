@@ -172,7 +172,7 @@ Es muss eine Richtlinie festgelegt sein. Andernfalls schlagen Bereitstellungen a
 
 Wenn Sie eine Bereitstellung anwenden, prüft Container Image Security Enforcement, ob der Kubernetes-Namensbereich, den Sie bereitstellen, eine anzuwendende Richtlinie besitzt. Ist dies nicht der Fall, verwendet Container Image Security Enforcement die clusterweite Richtlinie. Ihre Bereitstellung wird verweigert, wenn kein Namensbereich und keine clusterweite Richtlinie existieren.
 
-Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus. Führen Sie die dann folgenden Schritte aus: 
+Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus. Führen Sie die dann folgenden Schritte aus:
 
 1. Erstellen Sie eine `.yaml`-Datei für die Definition einer angepassten <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes-Ressource <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a>.
 

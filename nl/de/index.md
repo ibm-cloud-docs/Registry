@@ -21,7 +21,7 @@ lastupdated: "2018-11-16"
 {{site.data.keyword.registrylong}} bietet eine private Multi-Tenant-Registry für Images, mit der Sie Ihre Docker-Images sicher speichern und mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam nutzen können.
 {:shortdesc}
 
-Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zu Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie unter [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html). 
+Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zu Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie unter [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html).
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {:tip}
@@ -29,7 +29,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #registry_cli_install}
 
-1. Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert. 
+1. Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert.
 
 ## Namensbereich einrichten
 {: #registry_namespace_add}
@@ -60,7 +60,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/).
 
-2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository des Images und _&lt;tag&gt;_ durch den Tag des Images, das Sie verwenden möchten, z. B. _latest_. 
+2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository des Images und _&lt;tag&gt;_ durch den Tag des Images, das Sie verwenden möchten, z. B. _latest_.
 
    ```
    docker pull <quellenimage>:<tag>
