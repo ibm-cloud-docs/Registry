@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -135,7 +135,7 @@ Permisos necesarios: rol de acceso de servicio IAM de Escritor o de Gestor para 
 
 **Ejemplo**
 
-Cree una imagen de Docker sin utilizar una memoria caché de compilación, y con la salida de compilación suprimida, la etiqueta *`registry.ng.bluemix.net/bluebird/bird:1`* y el directorio es su directorio de trabajo.
+Cree una imagen de Docker que no utiliza una memoria caché de compilación, en la que la salida de compilación está suprimida, la etiqueta es *`registry.ng.bluemix.net/bluebird/bird:1`* y el directorio es su directorio de trabajo.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .

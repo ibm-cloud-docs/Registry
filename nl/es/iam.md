@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-11-20"
+lastupdated: "2018-12-03"
 
 ---
 
@@ -23,7 +23,7 @@ El acceso a {{site.data.keyword.registrylong}} para los usuarios de su cuenta es
 
 Cuando las políticas de IAM están habilitadas para su cuenta en {{site.data.keyword.registrylong_notm}}, a cada usuario que acceda al servicio {{site.data.keyword.registrylong_notm}} en su cuenta se le debe asignar una política de acceso con un rol de usuario de IAM definido. Esta política determina qué rol tiene el usuario dentro del contexto del servicio y qué acciones puede llevar a cabo el usuario. Cada acción de {{site.data.keyword.registrylong_notm}} se correlaciona con uno o varios [roles de usuario de IAM](/docs/iam/users_roles.html).
 
-Las políticas de IAM solo se imponen cuando se utiliza IAM para iniciar la sesión en {{site.data.keyword.registrylong_notm}}. Si inicia una sesión en {{site.data.keyword.registrylong_notm}} utilizando otro método, como por ejemplo una señal de registro, sus políticas no se imponen. Si desea restringir el acceso a uno o varios espacios de nombres para un ID que se utiliza en la automatización, tenga en cuenta la posibilidad de utilizar un ID de servicio de IAM en lugar de una señal de registro. Para obtener más información sobre los ID de servicio, consulte [Creación y trabajo con los ID de servicio](/docs/iam/serviceid.html#serviceids).
+Las políticas de IAM solo se imponen cuando se utiliza IAM para iniciar la sesión en {{site.data.keyword.registrylong_notm}}. Si inicia una sesión en {{site.data.keyword.registrylong_notm}} utilizando otro método, como por ejemplo una señal de registro, sus políticas no se imponen. Si desea restringir el acceso a uno o varios espacios de nombres para un ID que utiliza en la automatización, tenga en cuenta la posibilidad de utilizar un ID de servicio de IAM en lugar de una señal de registro. Para obtener más información sobre los ID de servicio, consulte [Creación y trabajo con los ID de servicio](/docs/iam/serviceid.html#serviceids).
 
 Para obtener más información sobre IAM, consulte [IBM Cloud Access y Management](/docs/iam/index.html#iamoverview).
 
@@ -36,8 +36,6 @@ Las políticas permiten otorgar acceso en distintos niveles. Algunas de las opci
 * Acceso a todos los servicios habilitados para IAM de su cuenta
 
 Después de definir el ámbito de la política de acceso, asigne un rol. Consulte las tablas siguientes, en las que se describen las acciones que permite cada rol dentro del servicio {{site.data.keyword.registrylong_notm}}.
-
-Para obtener información sobre la gestión de roles de usuario, consulte [Cómo trabajar con usuarios](/docs/iam/iamusermanage.html#iamusermanage).
 
 Para obtener información sobre la asignación de roles de usuario en la interfaz de usuario, consulte [Gestión del acceso de IAM](/docs/iam/mngiam.html#iammanidaccser).
 
@@ -54,7 +52,7 @@ En la tabla siguiente se muestran acciones que se correlacionan con los roles de
 | Visor | No soportado | |
 | Editor | No soportado | |
 | Operador | No soportado | |
-| Administrador | <ul><li>Configurar acceso para otros usuarios</li><li> Configurar señales de registro</li><li>Crear clústeres</li></ul> | <ul><li>Para obtener información sobre la asignación de roles de usuario en la interfaz de usuario, consulte [Gestión del acceso de IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Añadir, listar, recuperar y eliminar señales de registro</li><li>Para crear clústeres en {{site.data.keyword.containerlong_notm}}, debe asignar el rol de Administrador para {{site.data.keyword.registrylong_notm}} al usuario; consulte [Preparación para crear clústeres](/docs/containers/cs_clusters.html#cluster_prepare).</ul> |
+| Administrador | <ul><li>Configurar acceso para otros usuarios</li><li>Configurar señales de registro</li><li>Crear clústeres</li></ul> | <ul><li>Para obtener información sobre la asignación de roles de usuario en la interfaz de usuario, consulte [Gestión del acceso de IAM](/docs/iam/mngiam.html#iammanidaccser).</li><li>Añadir, listar, recuperar y eliminar señales de registro</li><li>Para crear clústeres en {{site.data.keyword.containerlong_notm}}, debe asignar el rol de Administrador para {{site.data.keyword.registrylong_notm}} al usuario; consulte [Preparación para crear clústeres](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
 {: caption="Tabla 1. Roles de usuario y acciones de IAM" caption-side="top"}
 
 Para {{site.data.keyword.registrylong_notm}}, existen las acciones siguientes:
