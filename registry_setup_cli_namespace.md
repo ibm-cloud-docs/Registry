@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-17"
 
 ---
 
@@ -82,17 +82,17 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 ## Setting up a namespace
 {: #registry_namespace_add}
 
-To securely store your Docker images, you must create a namespace in the {{site.data.keyword.registrylong_notm}} private registry.
+You must create a namespace to store your Docker images in the {{site.data.keyword.registrylong_notm}} private registry.
 {:shortdesc}
 
 **Before you begin**
 
-- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the `container-registry` CLI plug-in](#registry_cli_install).
-- [Plan how to use and name your registry namespaces](registry_overview.html#registry_namespaces).
+- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry/index.html#registry_cli_install).
+- [Plan how to use and name your registry namespaces](/docs/services/Registry/registry_overview.html#registry_namespaces).
 
-Create a namespace, see [Set up a namespace](index.html#registry_namespace_add) in the Getting Started documentation.
+Create a namespace, see [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add) in the Getting Started documentation.
 
-You can now [push Docker images to your namespace in the {{site.data.keyword.registrylong_notm}} registry](registry_images_.html#registry_images_pushing) and share these images with other users in your account.
+You can now [push Docker images to your namespace in the {{site.data.keyword.registrylong_notm}} registry](/docs/services/Registry/registry_images_.html#registry_images_pushing) and share these images with other users in your account.
 
 ## Removing namespaces
 {: #registry_remove}
@@ -125,4 +125,4 @@ If you no longer require a registry namespace, you can remove the namespace from
     ```
     {: pre}
 
-    After you delete a namespace, depending on the number of images that were stored, it might take a few minutes before that namespace becomes available again to reuse.
+    After you delete a namespace, it might take a few minutes before that namespace becomes available again to reuse.
