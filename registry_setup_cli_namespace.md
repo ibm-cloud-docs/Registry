@@ -32,8 +32,8 @@ Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External
 Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
 {:shortdesc}
 
-1. [Install the `container-registry` CLI plug-in.](index.html#registry_cli_install)
-2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
+1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry/index.html#registry_cli_install)
+2. Optional: [Configure your Docker client to run commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
 You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
 
@@ -118,7 +118,7 @@ If you no longer require a registry namespace, you can remove the namespace from
 
     **Attention:** When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
 
-    Replace _&lt;my_namespace&gt;_ with the namespace that you want to remove.
+    Replace `<my_namespace>` with the namespace that you want to remove.
 
     ```
     ibmcloud cr namespace-rm <my_namespace>
