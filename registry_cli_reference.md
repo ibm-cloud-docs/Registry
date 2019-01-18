@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-14"
 # {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) commands for managing Docker images in your namespace
 {: #registry_cli_reference}
 
-You can use the `container-registry` CLI plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can securely store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
+You can use the `container-registry` CLI plug-in to set up your own image namespace in an IBM-hosted and managed {{site.data.keyword.registrylong_notm}} private registry where you can store, and share Docker images with all users in your {{site.data.keyword.Bluemix}} account.
 {:shortdesc}
 
 ## `ibmcloud cr` commands

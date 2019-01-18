@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -29,7 +29,7 @@ Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External
 ## Installing the `container-registry` CLI plug-in
 {: #registry_cli_install}
 
-Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.Bluemix_notm}} private registry.
+Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.registrylong_notm}} private registry.
 {:shortdesc}
 
 1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry/index.html#registry_cli_install)
