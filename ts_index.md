@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -104,6 +104,26 @@ ibmcloud cr namespace
 You can fix this problem in the following way:
 
 - Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+
+## The `ibmcloud cr build` command fails
+{: #ts_build_fails}
+
+{: tsSymptoms}
+The build command fails.
+
+{: tsCauses}
+The server might be down or there might be issues with your Dockerfile.
+
+{: tsResolve}
+To find out what the cause is, run `docker build` locally with the appropriate [`docker build` options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- If the local build doesn't work, check for issues with your Dockerfile.
+- If the local build works, [contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Setting up a namespace fails
 {: #ts_problem}
