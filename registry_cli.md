@@ -383,6 +383,38 @@ ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
 ```
 {: pre}
 
+## `ibmcloud cr image-rm`
+{: #bx_cr_image_rm}
+
+Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
+
+```
+ibmcloud cr image-rm IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**Prerequisites**
+
+Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
+
+**Command options**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
+
+</dl>
+
+**Example**
+Delete the image *`registry.ng.bluemix.net/bluebird/bird:1`*.
+
+```
+ibmcloud cr image-rm registry.ng.bluemix.net/bluebird/bird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
