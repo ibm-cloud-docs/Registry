@@ -405,6 +405,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 <p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
 
+</dd>
 </dl>
 
 **Example**
