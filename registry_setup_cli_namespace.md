@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-18"
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
 
-Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must create a namespace. To work with namespaces, you must install the `container-registry` CLI plug-in.
+Before you can store your Docker images in {{site.data.keyword.registrylong}}, you must create a namespace. To work with namespaces, install the `container-registry` CLI plug-in.
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
