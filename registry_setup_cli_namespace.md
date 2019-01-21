@@ -50,7 +50,7 @@ You might want to update the `container-registry` CLI plug-in periodically to us
     ```
     {: pre}
 
-2. Verify that the `container-registry` CLI plug-in updated successfully.
+2. Verify that the `container-registry` CLI plug-in was updated successfully.
 
     ```
     ibmcloud plugin list
@@ -70,7 +70,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
     ```
     {: pre}
 
-2. Verify that the `container-registry` CLI plug-in uninstalled successfully.
+2. Verify that the `container-registry` CLI plug-in was uninstalled successfully.
 
     ```
     ibmcloud plugin list
