@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -52,15 +52,15 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing}
 
-You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to securely store and share your image with other users.
+You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
 {:shortdesc}
 
-<img src="images/images_push.svg" width="800" style="width:800px;" alt="Push an image from your computer to your {{site.data.keyword.registrylong_notm}} private registry."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Push an image from your computer to {{site.data.keyword.registrylong_notm}}."/>
 
 **Before you begin**
 
 - [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Pull](#registry_images_pulling) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
@@ -84,7 +84,7 @@ To upload (push) an image, complete the following steps:
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {:tip}
 
-After you push your image to your {{site.data.keyword.registrylong_notm}} private registry, you can do one of the following tasks:
+After you push your image to {{site.data.keyword.registrylong_notm}}, you can do one of the following tasks:
 
 - [Manage security with Vulnerability Advisor](/docs/services/va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
@@ -100,7 +100,7 @@ You can pull an image from a registry in one region and push it to a registry in
 **Before you begin**
 
 - [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -124,7 +124,7 @@ You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or c
 **Before you begin**
 
 - [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -144,7 +144,7 @@ To build your own Docker image, complete the following steps:
         ```
         {: pre}
 
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace _&lt;source_image&gt;_ and _&lt;tag&gt;_ with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in this {{site.data.keyword.registrylong_notm}} private registry.
+    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace _&lt;source_image&gt;_ and _&lt;tag&gt;_ with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -204,7 +204,7 @@ To build your own Docker image, complete the following steps:
 
          Replace _&lt;image_name&gt;_ with the name of your image.
 
-      3. After you create your image and tag it for your namespace, [you can push your image to your namespace {{site.data.keyword.registrylong_notm}} private registry](#registry_images_pushing).
+      3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing).
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 

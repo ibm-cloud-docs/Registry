@@ -29,13 +29,13 @@ Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External
 ## Installing the `container-registry` CLI plug-in
 {: #registry_cli_install}
 
-Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in the {{site.data.keyword.registrylong_notm}} private registry.
+Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry/index.html#registry_cli_install)
 2. Optional: [Configure your Docker client to run commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
-You can now set up your own namespace in the {{site.data.keyword.registrylong_notm}} private registry.
+You can now set up your own namespace in {{site.data.keyword.registrylong_notm}}.
 
 ## Updating the `container-registry` CLI plug-in
 {: #registry_cli_update}
@@ -82,7 +82,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 ## Setting up a namespace
 {: #registry_namespace_add}
 
-You must create a namespace to store your Docker images in the {{site.data.keyword.registrylong_notm}} private registry.
+You must create a namespace to store your Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 **Before you begin**
