@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-04"
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the container-registry plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
+You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
 {: shortdesc}
 
 **Prerequisites**
@@ -27,9 +27,9 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 
 * Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
 
-In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
 
-If you want to view the current version of your {{site.data.keyword.registrylong}} CLI plug-in (`container-registry`), run `ibmcloud plugin list`.
+If you want to view the current version of your `container-registry` CLI plug-in, run `ibmcloud plugin list`.
 
 To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
@@ -398,6 +398,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 Required permissions: Writer or Manager IAM service access role for {{site.data.keyword.registrylong_notm}}
 
 **Command options**
+
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
@@ -408,7 +409,6 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 </dl>
 
 **Example**
-
 Delete the image *`registry.ng.bluemix.net/bluebird/bird:1`*.
 
 ```
@@ -570,7 +570,7 @@ ibmcloud cr plan-upgrade standard
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your private registry namespace.
+Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
 
 Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) to host helm charts.
 
@@ -599,7 +599,7 @@ Required permissions: Writer or Manager IAM service access role for {{site.data.
 
 **Example**
 
-Import IBM software and package it for use with Helm in your private registry namespace *`bluebird`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
+Import IBM software and package it for use with Helm in your {{site.data.keyword.registrylong_notm}} namespace *`bluebird`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
 
 ```
 ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird

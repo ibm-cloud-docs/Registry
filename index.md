@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-11"
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #index}
 
-{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to safely store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
+{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
 
 The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
@@ -29,7 +29,7 @@ Do not put personal information in your container images, namespace names, descr
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1. Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
+1. Install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 ## Set up a namespace
 {: #registry_namespace_add}
@@ -123,7 +123,7 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 
 **What's next?**
 
-- [Managing image security with Vulnerability Advisor](../va/va_index.html)
+- [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html)
 - [Review your service plans and usage](registry_overview.html#registry_plans)
 - [Store and manage more images in your namespace](registry_images_.html)
 - [Defining user access role policies](/docs/services/Registry/registry_users.html#user)

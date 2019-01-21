@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -18,10 +18,10 @@ lastupdated: "2019-01-11"
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Use {{site.data.keyword.registrylong}} to safely store and access private Docker images in a highly available and scalable architecture.
+Use {{site.data.keyword.registrylong}} to store and access private Docker images in a highly available and scalable architecture.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. You can use the private registry by setting up your own image namespace and pushing Docker images to your namespace.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, and scalable private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image namespace and pushing Docker images to your namespace.
 
 <img src="images/registry_architecture1.svg" alt="Image showing how you can interact with IBM Cloud Container Registry. Container Registry contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The IBM Cloud web UI (console) interacts with the Container Registry API to list images. The Container Registry CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."/>
 
@@ -31,11 +31,11 @@ A Docker image is the basis for every container that you create. An image is cre
 
 When you push images to {{site.data.keyword.registrylong_notm}}, you benefit from the built-in Vulnerability Advisor features that scan for potential security issues and vulnerabilities. Vulnerability Advisor checks for vulnerable packages in specific Docker base images, and known vulnerabilities in app configuration settings. When vulnerabilities are found, information about the vulnerability is provided. You can use this information to resolve security issues so that containers are not deployed from vulnerable images.
 
-Review the following table to find an overview of benefits for using {{site.data.keyword.registrylong_notm}}.
+Review the following table to find an overview of benefits of using {{site.data.keyword.registrylong_notm}}.
 
 |Benefit|Description|
 |-------|-----------|
-|Highly available and scalable private registry|<ul><li>Set up your own image namespace in a multi-tenant, highly available, scalable private registry that is hosted and managed by IBM.</li><li>Securely store your private Docker images and share them with users in your {{site.data.keyword.Bluemix_notm}} account.</li></ul>|
+|Highly available and scalable private registry|<ul><li>Set up your own image namespace in a multi-tenant, highly available, scalable private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.</li><li>Store your private Docker images and share them with users in your {{site.data.keyword.Bluemix_notm}} account.</li></ul>|
 |Image security compliance with Vulnerability Advisor|<ul><li>Benefit from automatic scanning of images in your namespace.</li><li>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised.</li></ul>|
 |Quota limits for storage and pull traffic|<ul><li>Benefit from free storage and pull traffic to your private images until you reach your free quota.</li><li>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.</li></ul>|
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
@@ -52,7 +52,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 
 |Characteristics|Free|Standard|
 |---------------|----|--------|
-|Description|Try out the private registry in {{site.data.keyword.registrylong_notm}} to safely store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.Bluemix_notm}} account.|
+|Description|Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.Bluemix_notm}} account.|
 |Amount of storage for images|500 MB|Unlimited|
 |Pull traffic|5 GB per month|Unlimited|
 |Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the pricing calculator.</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the pricing calculator. If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the pricing calculator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -80,7 +80,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 
 **Storage:**
 
-  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to safely store your Docker images in the namespaces of your {{site.data.keyword.Bluemix_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.Bluemix_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
 
   Example for the standard plan:
 
@@ -176,7 +176,7 @@ If you want to find out what service plan you have, run the `ibmcloud cr plan` c
 ## Learning the basics
 {: #registry_planning}
 
-Prepare to safely store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
+Prepare to store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
@@ -227,7 +227,7 @@ To learn more about Docker-specific terms, [consult the Docker glossary ![Extern
 ### Planning Namespaces
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can safely store and share your Docker images in this registry by setting up a registry namespace.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 {:shortdesc}
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.Bluemix_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -48,14 +48,14 @@ The `ibmcloud cr login` command fails.
 
 {: tsCauses}
 
-- The container-registry plug-in is out of date and needs updating.
+- The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
 - Your {{site.data.keyword.Bluemix_notm}} login credentials have expired.
 
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- Upgrade to the most recent version of the container-registry plug-in, see [Updating the container-registry plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 - Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
 
@@ -69,12 +69,12 @@ All `ibmcloud cr` commands fail.
 
 {: tsCauses}
 
-- The container-registry plug-in is out of date and needs updating.
+- The `container-registry` CLI plug-in is out of date and needs updating.
 
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Upgrade to the most recent version of the container-registry plug-in, see [Updating the container-registry plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- The container-registry plug-in is not installed.
+- The `container-registry` CLI plug-in is not installed.
 
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Install the container-registry plug-in, see [Installing the {{site.data.keyword.registryshort_notm}} CLI (container-registry plug-in)](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+
+## The `ibmcloud cr build` command fails
+{: #ts_build_fails}
+
+{: tsSymptoms}
+The build command fails.
+
+{: tsCauses}
+The server might be down or there might be issues with your Dockerfile.
+
+{: tsResolve}
+To find out what the cause is, run `docker build` locally with the appropriate [`docker build` options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- If the local build doesn't work, check for issues with your Dockerfile.
+- If the local build works, [contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Setting up a namespace fails
 {: #ts_problem}
