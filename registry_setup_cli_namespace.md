@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-01-22"
 
 ---
 
@@ -92,7 +92,7 @@ You must create a namespace to store your Docker images in {{site.data.keyword.r
 
 Create a namespace, see [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add) in the Getting Started documentation.
 
-You can now [push Docker images to your namespace in the {{site.data.keyword.registrylong_notm}} registry](/docs/services/Registry/registry_images_.html#registry_images_pushing) and share these images with other users in your account.
+You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing) and share these images with other users in your account.
 
 ## Removing namespaces
 {: #registry_remove}
