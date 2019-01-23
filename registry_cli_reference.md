@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -35,7 +35,7 @@ For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
@@ -44,9 +44,9 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
@@ -117,7 +117,7 @@ Review the following table to find available Go template options and data types 
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`Created`|Integer (64 bit)|Displays when the image was created, expressed in number of seconds in [UNIX time](https://en.wikipedia.org/wiki/Unix_time).|
+|`Created`|Integer (64 bit)|Displays when the image was created, expressed in number of seconds in [UNIX time ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|String|Displays the unique identifier for an image.|
 |`Namespace`|String|Displays the namespace where the image is stored.|
 |`Repository`|String|Displays the repository of the image.|
@@ -137,18 +137,18 @@ Review the following table to find available Go template options and data types 
 |`ID`|String|Displays the unique identifier for an image.|
 |`Parent`|String|Displays the ID of the parent image that was used to build this image.|
 |`Comment`|String|Displays the description of the image.|
-|`Created`|String|Displays the [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
+|`Created`|String|Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
 |`Container`|String|Displays the ID of the container that created the image.|
-|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](registry_cli_reference.html#config).|
+|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`DockerVersion`|String|Displays the Docker version that was used to build this image.|
 |`Author`|String|Displays the author of the image.|
-|`Config`|Object|Displays configuration metadata for the image. See the field details in [Config](registry_cli_reference.html#config).|
+|`Config`|Object|Displays configuration metadata for the image. See the field details in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`Architecture`|String|Displays the processor architecture that was used to build this image, and that is required to run the image.|
 |`Os`|String|Displays the operating system family that was used to build this image, and that is required to run the image.|
 |`OsVersion`|String|Displays the version of the operating system that was used to build this image.|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`VirtualSize`|Integer (64 bit)|Displays the sum of the size of each layer in the image in bytes.|
-|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](registry_cli_reference.html#rootfs).|
+|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
 {: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-inspect</code> command." caption-side="top"}
 
 #### Config
@@ -167,7 +167,7 @@ Review the following table to find available Go template options and data types 
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
 |`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
-|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
 |`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
@@ -210,7 +210,7 @@ Review the following table to find available Go template options and data types 
 |Field|Type|Description|
 |-----|----|-----------|
 |`ID`|String|Displays the unique identifier for a token.|
-|`Expiry`|Integer (64 bit)|Displays [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
+|`Expiry`|Integer (64 bit)|Displays [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
 |`ReadOnly`|Boolean|Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 |`Description`|String|Displays the description of the token.|
 {: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}

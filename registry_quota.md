@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -146,5 +146,5 @@ To free up image storage in your {{site.data.keyword.Bluemix_notm}} account:
     To continue pulling images from your namespaces, choose between the following options.
 
     - Wait until the next billing cycle starts.
-    - If you have a free plan, [upgrade to the standard service plan](registry_overview.html#registry_plan_upgrade).
+    - If you have a free plan, [upgrade to the standard service plan](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
     - If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).

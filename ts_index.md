@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -437,7 +437,7 @@ on these resources:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers/cs_users.html#rbac) and [Kubernetes: Using RBAC Authorization
+For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers/cs_users.html#rbac) and [Kubernetes - Using RBAC Authorization
 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:

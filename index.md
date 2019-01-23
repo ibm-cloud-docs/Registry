@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -74,7 +74,7 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-3. Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Replace _&lt;region&gt;_ with the name of your [region](registry_overview.html#registry_regions). Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
+3. Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Replace _&lt;region&gt;_ with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions). Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -98,7 +98,7 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-2. Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](index.html#registry_namespace_add), and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
+2. Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add), and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -124,7 +124,7 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 **What's next?**
 
 - [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html)
-- [Review your service plans and usage](registry_overview.html#registry_plans)
-- [Store and manage more images in your namespace](registry_images_.html)
+- [Review your service plans and usage](/docs/services/Registry/registry_overview.html#registry_plans)
+- [Store and manage more images in your namespace](/docs/services/Registry/registry_images_.html)
 - [Defining user access role policies](/docs/services/Registry/registry_users.html#user)
 - [Setting up clusters and worker nodes](/docs/containers/cs_clusters.html#clusters)
