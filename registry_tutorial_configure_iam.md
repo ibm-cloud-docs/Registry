@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ This tutorial takes approximately 45 minutes.
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
-- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 - You must have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 

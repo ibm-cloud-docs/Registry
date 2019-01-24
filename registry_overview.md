@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -112,7 +112,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 
 **Storage:**
 
-  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either [free up space by removing images](registry_quota.html#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](registry_quota.html#registry_quota_set) to enable the pushing of new images again.
+  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either [free up space by removing images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry/registry_quota.html#registry_quota_set) to enable the pushing of new images again.
 
   Example for the standard plan:
 
@@ -122,7 +122,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 
 **Pull traffic:**
 
-  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](registry_quota.html#registry_quota_set).
+  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Example for the standard plan:
 

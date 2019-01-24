@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -37,55 +37,6 @@ For more information about the IAM platform and service access roles that are re
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
-
-<table summary="Manage {{site.data.keyword.registrylong_notm}}">
-<caption>Table 1. Commands for managing {{site.data.keyword.registrylong_notm}}
-</caption>
- <thead>
- <th colspan="5">Commands for managing the registry</th>
- </thead>
- <tbody>
- <tr>
- <td>[`ibmcloud cr api`](#bx_cr_api)</td>
- <td>[`ibmcloud cr build`](#bx_cr_build)</td>
- <td>[`ibmcloud cr exemption-add`](#bx_cr_exemption_add)</td>
- <td>[`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](#bx_cr_exemption_list)</td>
- <td>[`ibmcloud cr exemption-rm`](#bx_cr_exemption_rm)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr exemption-types`](#bx_cr_exemption_types)</td>
- <td>[`ibmcloud cr iam-policies-enable`](#bx_cr_iam_policies_enable)</td>
- <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
- <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
- <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
- </tr>
- <tr>
-
- <td>[`ibmcloud cr info`](#bx_cr_info)</td>
- <td>[`ibmcloud cr login`](#bx_cr_login)</td>
- <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
- <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
- <td>[`ibmcloud cr namespace-rm`](#bx_cr_namespace_rm)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
- <td>[`ibmcloud cr plan-upgrade`](#bx_cr_plan_upgrade)</td>
- <td>[`ibmcloud cr ppa-archive-load`](#bx_cr_ppa_archive_load)</td>
- <td>[`ibmcloud cr quota`](#bx_cr_quota)</td>
- <td>[`ibmcloud cr quota-set`](#bx_cr_quota_set)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr region`](#bx_cr_region)</td>
- <td>[`ibmcloud cr region-set`](#bx_cr_region_set)</td>
- <td>[`ibmcloud cr token-add`](#bx_cr_token_add)</td>
- <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
- <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
- <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
- </tr>
- </tbody></table>
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -413,6 +364,58 @@ Delete the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
+```
+{: pre}
+
+## `ibmcloud cr image-tag`
+{: #bx_cr_image_tag}
+
+Create a new image, TARGET_IMAGE, that refers to a source image, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
+
+To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+{: tip}
+
+```
+ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+```
+{: codeblock}
+
+**Prerequisites**
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using).
+
+**Command options**
+<dl>
+<dt>`SOURCE_IMAGE`</dt>
+<dd>The name of the source image. `SOURCE_IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+<dt>`TARGET_IMAGE`</dt>
+<dd>The name of the target image. `TARGET_IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+</dl>
+
+**Examples**
+
+Add another tag reference, `latest`, to the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+
+```
+ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
+```
+{: pre}
+
+Copy the image `registry.ng.bluemix.net/birds/bluebird:peck` to another repository in the same namespace `birds/pigeon`.
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/birds/pigeon:peck
+```
+{: pre}
+
+Copy the image `registry.ng.bluemix.net/birds/bluebird:peck` to another namespace `animals` to which you have access.
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
 ```
 {: pre}
 

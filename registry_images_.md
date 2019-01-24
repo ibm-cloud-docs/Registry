@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -36,13 +36,13 @@ You can pull (download) an image from any private or public registry source, and
 
 **Before you begin**
 
-- [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-Download the image, see [Pull an image](index.html#registry_images_pulling) in the Getting Started documentation.
+Download the image, see [Pull an image](/docs/services/Registry/index.html#registry_images_pulling) in the Getting Started documentation.
 
 If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
 {:tip}
@@ -59,10 +59,10 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 
 **Before you begin**
 
-- [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
 - [Pull](#registry_images_pulling) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -79,7 +79,7 @@ To upload (push) an image, complete the following steps:
   {:tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
-3. [Upload the image to your namespace.](index.html#registry_images_pushing)
+3. [Upload the image to your namespace.](/docs/services/Registry/index.html#registry_images_pushing)
 
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {:tip}
@@ -99,9 +99,9 @@ You can pull an image from a registry in one region and push it to a registry in
 
 **Before you begin**
 
-- [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -115,6 +115,44 @@ After you copy your image, you can do one of the following tasks:
 - [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
+## Creating new images that refer to a source image
+{: #registry_images_source}
+
+In the region that you're logged into, create a new image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images created by using Docker Engine version 1.12, or later, only.
+
+New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
+{: tip}
+
+**Before you begin**
+
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
+
+For more information about the command, see [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag).
+
+To create a new image from a source image, complete the following steps:
+
+1. Log in to the CLI.
+
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
+
+2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `<REPOSITORY>:<TAG>`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+   ```
+   ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+   ```
+   {: pre}
+
+3. Verify that the new image was created by running the following command, and check that the image is shown in the list with the same image digest as the source image.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
 
@@ -123,9 +161,9 @@ You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or c
 
 **Before you begin**
 
-- [Install the CLI](registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -161,7 +199,7 @@ To build your own Docker image, complete the following steps:
        ```
        {: pre}
 
-       This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/).
+       This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).
 
 3. Decide on a name for your image. The image name must be in the following format:
 
@@ -265,7 +303,7 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 
 To delete an image by using the GUI, complete the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net)) with your IBMid.
 2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
@@ -292,7 +330,7 @@ You must back up any images that you want to keep.
 
 To delete a private repository by using the GUI, complete the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net](https://console.bluemix.net)) with your IBMid.
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net)) with your IBMid.
 2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.

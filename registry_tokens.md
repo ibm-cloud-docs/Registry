@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -32,7 +32,7 @@ If you use an API key, you can control access to your namespaces by using IAM po
 
 For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam/apikeys.html#manapikey).
 
-Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](registry_setup_cli_namespace.html#registry_cli_install).
+Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
 
 ## Automating access to your namespaces by using API keys
 {: #registry_api_key}
@@ -237,6 +237,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Replace _&lt;apikey&gt;_ with your API key, _&lt;region&gt;_ with the name of your [region](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ with your namespace, and _&lt;image_repo&gt;_ with the repository.
+Replace _&lt;apikey&gt;_ with your API key, _&lt;region&gt;_ with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ with your namespace, and _&lt;image_repo&gt;_ with the repository.
 
 For more information, see [Using a private image registry](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

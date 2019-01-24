@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -110,13 +110,13 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the machine that is pushing the image.
 {:shortdesc}
 
-Before you begin, [set up your registry namespace](index.html#registry_namespace_add).
+Before you begin, [set up your registry namespace](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. [Push your image](index.html#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see, "Signing and pushing image metadata."
+2. [Push your image](/docs/services/Registry/index.html#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see, "Signing and pushing image metadata."
 
-3. **First time pushing a signed repository.** When you push a signed image to a new repository, the command creates two signing keys, root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](ts_index.html#ts_recoveringtrustedcontent) are limited.
+3. **First time pushing a signed repository.** When you push a signed image to a new repository, the command creates two signing keys, root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) are limited.
 
 ## Pulling a signed image
 {: #trustedcontent_pull}
@@ -206,7 +206,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
    If you changed your Docker configuration directory, look for the `trust` subdirectory there.
    {: tip}
 
-You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](ts_index.html#ts_recoveringtrustedcontent) are limited.
+You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) are limited.
 
 To back up your keys, consult the [Docker Content Trust documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
