@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -484,3 +484,71 @@ Complete the following steps to change the webhook configuration to make it fail
    {: pre}
 
    Change `failurePolicy` to `Fail`, save, and close.
+
+## Manifest error: `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+You tried to tag your image, but you receive the following error message, `The manifest type for this image is not supported for tagging.`.
+
+{: tsCauses}
+The manifest type is not supported.
+
+{: tsResolve}
+To resolve the problem, complete the following steps:
+
+1. Pull the image that you tried to tag by running the following command, where `<old_image_name>` is your old image name:
+
+   ```
+   docker pull <old_image_name>
+   ```
+   {: pre}
+
+2. Tag your local copy of the image that you pulled in the previous step by running the following command, where `<new_image_name>` is your new image name:
+
+   ```
+   docker tag <old_image_name> <new_image_name>
+   ```
+   {: pre}
+
+3. Push the image that you tagged in the previous step by running the following command:
+
+   ```
+   docker push <new_image_name>
+   ```
+   {: pre}
+
+## Manifest error: `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+You tried to tag your image, but you receive the following error message, `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.10 or later, then run the 'ibmcloud cr tag' command again.`.
+
+{: tsCauses}
+The manifest version is not supported.
+
+{: tsResolve}
+To resolve the problem, complete the following steps:
+
+1. Upgrade to Docker Engine version 1.10 or later, see [Migrate to Engine 1.10 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/migration/).
+
+2. Pull the image that you tried to tag by running the following command, where `<image_name>` is your image name:
+
+   ```
+   docker pull <image_name>
+   ```
+   {: pre}
+
+3. Push the image by running the following command:
+
+   ```
+   docker push <image_name>
+   ```
+   {: pre}
+
+4. Tag the image by running the following command:
+
+   ```
+   ibmcloud cr tag <image_name>
+   ```
+   {: pre}

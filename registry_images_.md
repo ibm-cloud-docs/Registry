@@ -115,6 +115,44 @@ After you copy your image, you can do one of the following tasks:
 - [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers/container_index.html#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
+## Creating new images that refer to a source image
+{: #registry_images_source}
+
+In the region that you're logged into, create a new image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images created by using Docker Engine version 1.12, or later, only.
+
+New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
+{: tip}
+
+**Before you begin**
+
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
+
+For more information about the command, see [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag).
+
+To create a new image from a source image, complete the following steps:
+
+1. Log in to the CLI.
+
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
+
+2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `<REPOSITORY>:<TAG>`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+   ```
+   ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+   ```
+   {: pre}
+
+3. Verify that the new image was created by running the following command, and check that the image is shown in the list with the same image digest as the source image.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
 

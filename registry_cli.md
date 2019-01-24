@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -364,6 +364,58 @@ Delete the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
+```
+{: pre}
+
+## `ibmcloud cr image-tag`
+{: #bx_cr_image_tag}
+
+Create a new image, TARGET_IMAGE, that refers to a source image, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
+
+To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+{: tip}
+
+```
+ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+```
+{: codeblock}
+
+**Prerequisites**
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using).
+
+**Command options**
+<dl>
+<dt>`SOURCE_IMAGE`</dt>
+<dd>The name of the source image. `SOURCE_IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+<dt>`TARGET_IMAGE`</dt>
+<dd>The name of the target image. `TARGET_IMAGE` must be in the format `repository:tag`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+</dl>
+
+**Examples**
+
+Add another tag reference, `latest`, to the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+
+```
+ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
+```
+{: pre}
+
+Copy the image `registry.ng.bluemix.net/birds/bluebird:peck` to another repository in the same namespace `birds/pigeon`.
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/birds/pigeon:peck
+```
+{: pre}
+
+Copy the image `registry.ng.bluemix.net/birds/bluebird:peck` to another namespace `animals` to which you have access.
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
 ```
 {: pre}
 
