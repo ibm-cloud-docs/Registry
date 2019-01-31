@@ -29,7 +29,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    /services/va/toc
+    /va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
