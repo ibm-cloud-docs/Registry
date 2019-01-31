@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -816,7 +816,7 @@ This example produces output in the following format:
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-Remove one or more specified tokens.
+Remove one or more specified registry tokens.
 
 ```
 ibmcloud cr token-rm TOKEN [TOKEN...]
