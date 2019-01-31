@@ -37,6 +37,7 @@ IBM Cloud Container Registry
     iam.md
     registry_at_events.md
     rellinks.md
+    /container-registry-cli-plugin/toc
     {: .navgroup-end}
 
     {: .navgroup id="help"}
