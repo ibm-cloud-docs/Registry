@@ -12,7 +12,7 @@ IBM Cloud Container Registry
     {: .topicgroup}
     Public images
         registry_public_images.md
-        /services/RegistryImages/toc
+        /RegistryImages/toc
     
     {: .topicgroup}
     Tutorials
