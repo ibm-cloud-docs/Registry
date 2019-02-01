@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -299,7 +299,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -317,7 +317,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Each image is listed in the format: `repository:tag`</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace or namespace and repository. </dd>
@@ -709,7 +709,7 @@ ibmcloud cr region-set us-south
 Add a token that you can use to control access to a registry.
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -727,7 +727,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Displays the token only, without any surrounding text.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(Optional) Creates a token with access that does not expire. Without this parameter set, access from a token expires after 24 hours by default.</dd>
@@ -816,7 +816,7 @@ This example produces output in the following format:
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-Remove one or more specified tokens.
+Remove one or more specified registry tokens.
 
 ```
 ibmcloud cr token-rm TOKEN [TOKEN...]
@@ -877,6 +877,12 @@ To find out about the required permissions, see [Access roles for using {{site.d
 For more information, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(Optional) The command output shows additional information about fixes for vulnerable packages.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(Optional) The command output is restricted to show vulnerabilities only.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(Optional) The command output is restricted to show configuration issues only.</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(Optional) The command output is returned in the chosen format. The default format is `text`. The following formats are supported:
 
@@ -886,13 +892,6 @@ For more information, see [Managing image security with Vulnerability Advisor](/
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(Optional) The command output is restricted to show vulnerabilities only.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(Optional) The command output is restricted to show configuration issues only.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(Optional) The command output shows additional information about fixes for vulnerable packages.</dd>
-
 </dl>
 
 **Examples**

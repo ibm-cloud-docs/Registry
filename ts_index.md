@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -547,4 +547,3 @@ To resolve the problem, complete the following steps:
    {: pre}
 
 4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/services/Registry/registry_images_.html#registry_images_source).
-  
