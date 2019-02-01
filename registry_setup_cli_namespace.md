@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,7 +24,7 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
-Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
+Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli/index.html#overview).
 
 ## Installing the `container-registry` CLI plug-in
 {: #registry_cli_install}

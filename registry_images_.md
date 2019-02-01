@@ -303,7 +303,7 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 
 To delete an image by using the GUI, complete the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net)) with your IBMid.
+1. Log in to the {{site.data.keyword.cloud_notm}} console ([https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login)) with your IBMid.
 2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
@@ -330,7 +330,7 @@ You must back up any images that you want to keep.
 
 To delete a private repository by using the GUI, complete the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net)) with your IBMid.
+1. Log in to the {{site.data.keyword.cloud_notm}} console ([https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login)) with your IBMid.
 2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.

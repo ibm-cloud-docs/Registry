@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -30,7 +30,7 @@ The **Security Status** column shows you the following information about the ima
 
 To view the graphical user interface, use the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console ([https://console.bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net)) with your IBMid.
+1. Log in to the {{site.data.keyword.cloud_notm}} console ([https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login)) with your IBMid.
 2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
