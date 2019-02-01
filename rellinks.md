@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-13"
+  years: 2017, 2019
+lastupdated: "2019-02-01"
 
 ---
 
@@ -24,7 +24,7 @@ You can use the following related links to become more familiar with {{site.data
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
 - [{{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/container-registry)
 - [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/container-registry/va)
 
