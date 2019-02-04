@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2019-01-31"
 {:tip: .tip}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} CLI
+# {{site.data.keyword.registrylong_notm}} CLI 
 {: #containerregcli}
 
 You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
