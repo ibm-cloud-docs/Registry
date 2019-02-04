@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -32,7 +32,7 @@ If you use an API key, you can control access to your namespaces by using IAM po
 
 For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam/apikeys.html#manapikey).
 
-Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## Automating access to your namespaces by using API keys
 {: #registry_api_key}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -27,7 +27,7 @@ Do not put personal information in your container images, namespace names, descr
 {:tip}
 
 ## Pulling images from another registry
-{: #registry_images_pulling}
+{: #registry_images_pulling_another}
 
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -36,8 +36,8 @@ You can pull (download) an image from any private or public registry source, and
 
 **Before you begin**
 
-- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup.
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -50,7 +50,7 @@ If you get an `unauthorized: authentication required` or a `denied: requested ac
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
 
 ## Pushing Docker images to your namespace
-{: #registry_images_pushing}
+{: #registry_images_pushing_namespace}
 
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
 {:shortdesc}
@@ -59,9 +59,9 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 
 **Before you begin**
 
-- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
-- [Pull](#registry_images_pulling) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup.
+- [Pull](#registry_images_pulling_another) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -99,16 +99,16 @@ You can pull an image from a registry in one region and push it to a registry in
 
 **Before you begin**
 
-- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
 To copy an image between two registries, complete the following steps:
 
-1. [Pull an image from a registry](#registry_images_pulling).
-2. [Push the image to another registry](#registry_images_pushing). Make sure that you use the correct domain name for the new region you're targeting.
+1. [Pull an image from a registry](#registry_images_pulling_another).
+2. [Push the image to another registry](#registry_images_pushing_namespace). Make sure that you use the correct domain name for the new region you're targeting.
 
 After you copy your image, you can do one of the following tasks:
 
@@ -125,7 +125,7 @@ New images that are created by using this mechanism do not retain signatures. If
 
 **Before you begin**
 
-- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
 - Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
 
 For more information about the command, see [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag).
@@ -161,8 +161,8 @@ You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or c
 
 **Before you begin**
 
-- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -242,7 +242,7 @@ To build your own Docker image, complete the following steps:
 
          Replace _&lt;image_name&gt;_ with the name of your image.
 
-      3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing).
+      3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
 

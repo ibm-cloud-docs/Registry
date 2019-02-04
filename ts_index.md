@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -103,7 +103,7 @@ ibmcloud cr namespace
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## The `ibmcloud cr build` command fails
 {: #ts_build_fails}

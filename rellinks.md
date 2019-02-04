@@ -38,6 +38,6 @@ You can use the following related links to become more familiar with {{site.data
 - REST API for managing Ingress application load balancers in clusters, see [IBM Cloud Container Service ALB API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://us-south.containers.bluemix.net/swagger-alb-api/)
 
 ## Docker
-{: #docker}
+{: #links_docker}
 
 - [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/)
