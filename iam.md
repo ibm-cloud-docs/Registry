@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -124,6 +124,6 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag) Create a new image that refers to a source image. The source and target images must be in the same region. | Reader, Writer, or Manager for the source image; Writer or Manager for the target image |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va) View a vulnerability assessment report for your image. | Reader, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add) Add a namespace. | Writer, Manager |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](//docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm) Remove a namespace. | Writer, Manager |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm) Remove a namespace. | Writer, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list) Display your namespaces. | Reader, Manager |
 {: caption="Table 5. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="top"}
