@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -24,10 +24,10 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
-Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://clis.ng.bluemix.net/ui/home.html).
+Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli/index.html#overview).
 
 ## Installing the `container-registry` CLI plug-in
-{: #registry_cli_install}
+{: #cli_namespace_registry_cli_install}
 
 Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -80,7 +80,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
     The `container-registry` CLI plug-in is not displayed in the results.
 
 ## Setting up a namespace
-{: #registry_namespace_add}
+{: #registry_namespace_setup}
 
 You must create a namespace to store your Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -92,7 +92,7 @@ You must create a namespace to store your Docker images in {{site.data.keyword.r
 
 Create a namespace, see [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add) in the Getting Started documentation.
 
-You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing) and share these images with other users in your account.
+You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace) and share these images with other users in your account.
 
 ## Removing namespaces
 {: #registry_remove}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -56,7 +56,7 @@ For users provisioned after 4 October 2018, IAM policies are enabled by default.
 
 1. [Create policies](#create) for your users and service IDs.
 
-2. To enable policy enforcement, run the [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) command.
+2. To enable policy enforcement, run the [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) command.
 
     You must have the Manager role on the account so that you can run the `ibmcloud cr iam-policies-enable` command. You automatically have Manager role in your own account.
     {: tip}
