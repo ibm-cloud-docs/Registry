@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -27,7 +27,7 @@ You can use the `container-registry` CLI plug-in to set up your own image namesp
 Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
 
-For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
+For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_listing}
