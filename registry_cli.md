@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -502,7 +502,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 Removes a namespace from your {{site.data.keyword.Bluemix_notm}} account. Images in this namespace are deleted when the namespace is removed.
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -514,6 +514,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to remove.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Optional) Force the command to run with no user prompts.</dd>
 </dl>
 
 **Example**
@@ -819,7 +821,7 @@ This example produces output in the following format:
 Remove one or more specified registry tokens.
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -831,6 +833,8 @@ To find out about the required permissions, see [Platform management roles](/doc
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Optional) Force the command to run with no user prompts.</dd>
 </dl>
 
 **Example**
