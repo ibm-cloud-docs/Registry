@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-02-05"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
@@ -57,7 +60,7 @@ You can create both user API keys and service ID API keys.
 You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Use the API key to log in to your registry by running the following Docker command. Replace &lt;your_apikey&gt; with your API key, and replace &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
+Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
 
 - For namespaces set up in US-South, use `registry.ng.bluemix.net`
 - For namespaces set up in UK-South, use `registry.eu-gb.bluemix.net`
@@ -158,7 +161,7 @@ You can use a token in your `docker login` command to automate access to your na
    ```
    {: pre}
 
-3. Retrieve the token value for the token. Replace &lt;token_id&gt; with the ID of the token.
+3. Retrieve the token value for the token. Replace `<token_id>` with the ID of the token.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -167,7 +170,7 @@ You can use a token in your `docker login` command to automate access to your na
 
     Your token value is displayed in **Token** in your CLI output.
 
-4. Use the token as part of your `docker login` command. Replace &lt;token_value&gt; with the token value that you retrieved in the previous step and &lt;registry_url&gt; with the URL to the registry where your namespaces are set up.
+4. Use the token as part of your `docker login` command. Replace `<token_value>` with the token value that you retrieved in the previous step and `<registry_url>` with the URL to the registry where your namespaces are set up.
 
    - For namespaces set up in US-South, use `registry.ng.bluemix.net`
    - For namespaces set up in UK-South, use `registry.eu-gb.bluemix.net`
@@ -237,6 +240,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Replace _&lt;apikey&gt;_ with your API key, _&lt;region&gt;_ with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ with your namespace, and _&lt;image_repo&gt;_ with the repository.
+Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` with your namespace, and `<image_repo>` with the repository.
 
 For more information, see [Using a private image registry](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
