@@ -44,6 +44,15 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
+   If you have a federated ID, log in by using the following command:
+
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+   
+
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
    ```
