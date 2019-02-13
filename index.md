@@ -51,8 +51,6 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-   
-
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
    ```
