@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -20,6 +20,7 @@ lastupdated: "2019-02-13"
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
+
 
 Use {{site.data.keyword.registrylong}} to store and access private Docker images in a highly available and scalable architecture.
 {:shortdesc}
@@ -312,6 +313,6 @@ After you have targeted the global registry, run the `ibmcloud cr login` command
 ## Support for Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later, see [Docker Documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/v1.12/).
+{{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
