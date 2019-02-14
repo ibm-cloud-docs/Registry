@@ -21,7 +21,6 @@ lastupdated: "2019-02-14"
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
-
 {{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools. To use this feature, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/content_trust/) and the [Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary) documentation.
 {:shortdesc}
 
