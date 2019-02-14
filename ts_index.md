@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-02-05"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -333,7 +336,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 2. [Set up your trusted content environment](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 
-3. Note the URL from the export command in the previous step. For example, `https://registry.ng.bluemix.net:4443`.
+3. Note the URL from the export command in the previous step. For example, `https://registry.ng.bluemix.net:4443`
 
 4. Generate a registry token.
 
@@ -342,7 +345,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
    ```
    {: pre}
 
-5. Rotate your keys so that content that was signed with those keys is no longer trusted. Replace _&lt;URL&gt;_ with the URL of the export command that you noted in Step 2, and _&lt;image&gt;_ with the image whose repository key is affected.
+5. Rotate your keys so that content that was signed with those keys is no longer trusted. Replace `<URL>` with the URL of the export command that you noted in Step 2, and `<image>` with the image whose repository key is affected.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-02-01"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
@@ -41,7 +44,14 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-2. Add a namespace to create your own image repository. Replace _&lt;my_namespace&gt;_ with your preferred namespace.
+   If you have a federated ID, log in by using the following command:
+
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -60,28 +70,28 @@ Do not put personal information in your container images, namespace names, descr
 
 1. [Install the Docker CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/) instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
-2. Download (_pull_) the image to your local machine. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, for example, _latest_.
+2. Download (_pull_) the image to your local machine. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, _latest_.
 
    ```
    docker pull <source_image>:<tag>
    ```
    {: pre}
 
-   Example, where _&lt;source_image&gt;_ is `hello-world` and _&lt;tag&gt;_ is `latest`:
+   Example, where `<source_image>` is `hello-world` and `<tag>` is `latest`:
 
    ```
    docker pull hello-world:latest
    ```
    {: pre}
 
-3. Tag the image. Replace _&lt;source_image&gt;_ with the repository and _&lt;tag&gt;_ with the tag of your local image that you pulled earlier. Replace _&lt;region&gt;_ with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions). Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing _&lt;new_image_repo&gt;_ and _&lt;new_tag&gt;_.
+3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Example, where _&lt;source_image&gt;_ is `hello-world`, _&lt;tag&gt;_ is `latest`, _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `namespace1`, _&lt;new_image_repo&gt;_ is `hw_repo`, and _&lt;new_tag&gt;_ is `1`:
+   Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `eu-gb`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
 
    ```
    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
@@ -98,19 +108,20 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-2. Upload (_push_) the image to your namespace. Replace _&lt;my_namespace&gt;_ with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add), and _&lt;image_repo&gt;_ and _&lt;tag&gt;_ with the repository and the tag of the image that you chose when you tagged the image.
+2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
 
-   Example, where _&lt;region&gt;_ is `eu-gb`, _&lt;my_namespace&gt;_ is `namespace1`, _&lt;image_repo&gt;_ is `hw_repo`, and _&lt;tag&gt;_ is `1`:
+   Example, where `<region>` is `eu-gb`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
 
    ```
    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
    ```
    {: pre}
+   
 
 3. Verify that the image was pushed successfully by running the following command.
 

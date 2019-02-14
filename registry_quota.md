@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Managing quota limits for storage and pull traffic
@@ -58,7 +61,7 @@ To set a quota:
     ```
     {: screen}
 
-3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option and replace _&lt;traffic_quota&gt;_ with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option and replace _&lt;storage_quota&gt;_ with the value in megabytes that you want to set.
+3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option and replace `<traffic_quota>` with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option and replace `<storage_quota>` with the value in megabytes that you want to set.
 
     If you are on the free plan, you cannot set your quota to an amount that exceeds the free tier. The free tier allowance for storage is 512 MB and traffic is 5120 MB.
     {:tip}
@@ -123,7 +126,7 @@ To free up image storage in your {{site.data.keyword.Bluemix_notm}} account:
     ```
     {: pre}
 
-2. Remove an image from your namespace. Replace _&lt;image_name&gt;_ with the name of the image that you want to remove.
+2. Remove an image from your namespace. Replace `<image_name>` with the name of the image that you want to remove.
 
     ```
     ibmcloud cr image-rm <image_name>

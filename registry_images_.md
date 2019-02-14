@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-02-05"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Adding images to your namespace
@@ -182,7 +185,7 @@ To build your own Docker image, complete the following steps:
         ```
         {: pre}
 
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace _&lt;source_image&gt;_ and _&lt;tag&gt;_ with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
+    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -208,9 +211,9 @@ To build your own Docker image, complete the following steps:
    ```
    {: pre}
 
-   where _&lt;my_namespace&gt;_ is your namespace information, _&lt;repo_name&gt;_ is the name of your repository, and _&lt;tag&gt;_ is the version that you want to use for your image. To find your namespace, run the `ibmcloud cr namespace-list` command.
+   where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image. To find your namespace, run the `ibmcloud cr namespace-list` command.
 
-4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
+4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
 5. Choose to either build your image directly in {{site.data.keyword.Bluemix_notm}} or build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}.
    - To build the image directly in {{site.data.keyword.Bluemix_notm}}, run the following command:
 
@@ -219,7 +222,7 @@ To build your own Docker image, complete the following steps:
      ```
      {: pre}
 
-     where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace _&lt;directory&gt;_ with a period (.).
+     where `<image_name>` is the name of your image and `<directory>` is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
   
      For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build).
 
@@ -231,7 +234,7 @@ To build your own Docker image, complete the following steps:
          ```
          {: pre}
 
-         where _&lt;image_name&gt;_ is the name of your image and _&lt;directory&gt;_ is the path to the directory.
+         where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
 
       2. Optional: Test your image on your local computer before you push it to your namespace.
 
@@ -240,7 +243,7 @@ To build your own Docker image, complete the following steps:
          ```
          {: pre}
 
-         Replace _&lt;image_name&gt;_ with the name of your image.
+         Replace `<image_name>` with the name of your image.
 
       3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 

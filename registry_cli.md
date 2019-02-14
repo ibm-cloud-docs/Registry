@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,9 +13,12 @@ lastupdated: "2019-02-06"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} CLI 
+# {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
 You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
@@ -116,7 +119,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 <dd>The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where *&lt;image&gt;* is the name of your image, and use the relevant value from either the **Vulnerability ID** or **Configuration Issue ID** column.
+<dd>The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where `<image>` is the name of your image, and use the relevant value from either the **Vulnerability ID** or **Configuration Issue ID** column.
 </dd>
 </dl>
 
@@ -360,7 +363,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 </dl>
 
 **Example**
-Delete the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Delete the image `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -398,7 +401,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 **Examples**
 
-Add another tag reference, `latest`, to the image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Add another tag reference, `latest`, to the image `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -907,7 +910,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-View a vulnerability assessment report for your image *`registry.ng.bluemix.net/birds/bluebird:1`* in JSON format, showing vulnerabilities only.
+View a vulnerability assessment report for your image `registry.ng.bluemix.net/birds/bluebird:1` in JSON format, showing vulnerabilities only.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

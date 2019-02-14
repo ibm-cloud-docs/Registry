@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Signing images for trusted content
@@ -126,7 +129,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. Pull your image. Replace _&lt;source_image&gt;_ with the repository of the image and _&lt;tag&gt;_ with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
+2. Pull your image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -152,7 +155,7 @@ You can review signed versions of an image repository or tag, including informat
 
 2. Review the tag, digest, and signer information for each image.
 
-   (Optional) Specify the tag, _&lt;tag&gt;_, to see information about that version of the image.
+   (Optional) Specify the tag, `<tag>`, to see information about that version of the image.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -235,7 +238,7 @@ To share signing keys:
 
 1. If the new signer has not generated a key pair yet, a key pair must be generated and loaded.
   
-    a. Generate the key. You can enter any name for _&lt;NAME&gt;_, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+    a. Generate the key. You can enter any name for `<NAME>`, however, the name you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
       ```
       docker trust key generate <NAME>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -13,6 +13,9 @@ lastupdated: "2019-02-01"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # About {{site.data.keyword.registrylong_notm}}
@@ -271,7 +274,7 @@ All registry artifacts are scoped to the specific regional registry that you are
 
 If you want to use a region other than your local region, you can target the region that you want to access by running the `ibmcloud cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
 
-To run the command with parameters, replace _&lt;region&gt;_ with the name of the region, for example, `eu-central`.
+To run the command with parameters, replace `<region>` with the name of the region, for example, `eu-central`.
 
 ```
 ibmcloud cr region-set <region>
