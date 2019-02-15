@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-02-15"
 
 ---
 
@@ -20,7 +20,6 @@ lastupdated: "2019-02-14"
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
-
 
 Use {{site.data.keyword.registrylong}} to store and access private Docker images in a highly available and scalable architecture.
 {:shortdesc}
