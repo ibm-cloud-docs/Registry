@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -23,7 +23,7 @@ O acesso ao {{site.data.keyword.registrylong}} para usuários em sua conta é co
 
 Quando as políticas do IAM são ativadas para sua conta no {{site.data.keyword.registrylong_notm}}, cada usuário que acessa o serviço {{site.data.keyword.registrylong_notm}} em sua conta deve receber uma política de acesso com uma função de usuário do IAM definida. Essa política determina qual função o usuário tem dentro do contexto do serviço e quais ações o usuário pode executar. Cada ação no {{site.data.keyword.registrylong_notm}} é mapeada para uma ou mais [funções de usuário do IAM](/docs/iam/users_roles.html).
 
-As políticas do IAM são impostas apenas quando você usa o IAM para efetuar login no {{site.data.keyword.registrylong_notm}}. Se você efetuar login no {{site.data.keyword.registrylong_notm}} usando outro método, como um token de registro, suas políticas não serão impostas. Se você desejar restringir o acesso a um ou mais namespaces para um ID que está sendo usando para automação, considere usar um ID do serviço do IAM em vez de um token de registro. Para obter mais informações sobre IDs de Serviço, consulte [Criando e trabalhando com IDs de Serviço](/docs/iam/serviceid.html#serviceids).
+As políticas do IAM são impostas apenas quando você usa o IAM para efetuar login no {{site.data.keyword.registrylong_notm}}. Se você efetuar login no {{site.data.keyword.registrylong_notm}} usando outro método, como um token de registro, suas políticas não serão impostas. Se desejar restringir o acesso a um ou mais namespaces de um ID que você está usando para automação, considere usar um ID de serviço do IAM em vez de um token de registro. Para obter mais informações sobre IDs de serviço, consulte [Criando e trabalhando com IDs de serviço](/docs/iam/serviceid.html#serviceids).
 
 Para obter mais informações sobre o IAM, consulte [IBM Cloud Access and Management](/docs/iam/index.html#iamoverview).
 
@@ -45,7 +45,7 @@ Experimente o tutorial [Tutorial: concedendo acesso aos recursos do {{site.data.
 ## Funções de gerenciamento de plataforma
 {: #platform_management_roles}
 
-A tabela a seguir detalha as ações que são mapeadas para funções de gerenciamento de plataforma. As funções de gerenciamento de plataforma permitem que os usuários executem tarefas em recursos de serviço no nível de plataforma, por exemplo, designar acesso de usuário para o serviço e criar ou excluir IDs de Serviço.
+A tabela a seguir detalha as ações que são mapeadas para funções de gerenciamento de plataforma. As funções de gerenciamento da plataforma permitem que os usuários executem tarefas em recursos de serviço no nível de plataforma, por exemplo, designar acesso de usuário para o serviço e criar ou excluir IDs de serviço.
 
 | Função de gerenciamento da plataforma | Descrição das ações | Ações de exemplo|
 |:-----------------|:-----------------|:-----------------|
@@ -116,16 +116,14 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | Action | Operação em serviço | Função
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Construa uma imagem de contêiner. | Gravador, Gerente |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Exclua uma ou mais imagens. | Gravador, Gerente |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Exclua uma ou mais imagens.</li><li>`docker trust revoke` Exclua a assinatura. </li></ul> | Gravador, Gerente |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Exiba detalhes sobre uma imagem específica. | Leitor, Gerenciador |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) Liste suas imagens de contêiner. | Leitor, Gerenciador |
-| `container-registry.image.pull` | `docker pull` Faça pull da imagem. | Leitor, Gravador, Gerenciador |
-| `container-registry.image.push` | <ul><li>`docker push` Envie a imagem por push.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importa o software IBM transferido por download do [IBM Passport Advantage Online para clientes ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e empacotado para uso com o Helm em seu namespace de registro privado.</li></ul> | Gravador, Gerente |
+| `container-registry.image.pull` | <ul><li>`docker pull` Faça pull da imagem. </li><li>`docker trust inspect` Inspecione a assinatura. </li></ul> | Leitor, Gravador, Gerenciador |
+| `container-registry.image.push` | <ul><li>`docker push` Envie a imagem por push.</li><li>`docker trust sign` Assine a imagem.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importa software da IBM que é transferido por download por meio do [IBM Passport Advantage Online para clientes ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e empacotado para uso com o Helm no namespace do {{site.data.keyword.registrylong_notm}}.</li></ul> | Gravador, Gerente |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) Crie uma nova imagem que se refira a uma imagem de origem. As imagens de origem e de destino devem estar na mesma região. | Leitor, Gravador ou Gerenciador para a imagem de origem; Gravador ou Gerenciador para a imagem de destino |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) Visualize um relatório de avaliação de vulnerabilidade para sua imagem. | Leitor, Gerenciador |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Inclua um namespace. | Gravador, Gerente |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Remova um namespace. | Gravador, Gerente |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Exiba seus namespaces. | Leitor, Gerenciador |
-| `container-registry.signature.create` | `docker trust sign` Assine a imagem. | Gravador, Gerente |
-| `container-registry.signature.delete` | `docker trust revoke` Exclua a assinatura. | Gravador, Gerente |
-| `container-registry.signature.get` | `docker trust inspect` Inspecione a assinatura. | Leitor, Gerenciador |
 {: caption="Tabela 5. Ações de serviço e operações para usar o {{site.data.keyword.registrylong_notm}}" caption-side="top"}

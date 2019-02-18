@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ Este tutorial leva aproximadamente 45 minutos.
 
 - Conclua as instruções em [Introdução ao {{site.data.keyword.registrylong_notm}} ](/docs/services/Registry/index.html#index).
 
-- Assegure-se de que você tenha a versão mais recente do plug-in de container-registry para a CLI do {{site.data.keyword.cloud_notm}}, consulte [Atualizando o plug-in do container-registry](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Assegure-se de que tenha a versão mais recente do plug-in da CLI `container-registry` para a CLI do {{site.data.keyword.cloud_notm}}. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 - Deve-se ter acesso a duas contas [ {{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ](https://console.bluemix.net/) que podem ser usadas para este tutorial, uma para o Usuário A e uma para o Usuário B, cada uma deve usar um endereço de e-mail exclusivo. Você trabalha em sua própria conta, Usuário A, e convida outro usuário, Usuário B, para usar sua conta. É possível optar por criar uma segunda conta {{site.data.keyword.cloud_notm}} ou trabalhar com um colega que tenha uma conta {{site.data.keyword.cloud_notm}}.
 
@@ -373,13 +373,13 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
         ```
         {: pre}
 
-## Etapa 3: criar um ID de Serviço e conceder acesso a um recurso
+## Etapa 3: Criar um ID de serviço e conceder acesso a um recurso
 {: #service_id}
 
-Nesta seção, você configura um ID de Serviço e concede a ele acesso ao seu namespace {{site.data.keyword.registrylong_notm}}.
+Nesta seção, você configura um ID de serviço e concede a ele acesso ao namespace do {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1. Configure um ID de Serviço com acesso a {{site.data.keyword.registrylong_notm}} e crie uma chave API para ele:
+1. Configure um ID de serviço com acesso ao {{site.data.keyword.registrylong_notm}} e crie uma chave de API para ele:
 
     1. Efetue login na conta do Usuário A executando o comando a seguir:
 
@@ -388,14 +388,14 @@ Nesta seção, você configura um ID de Serviço e concede a ele acesso ao seu n
         ```
         {: pre}
 
-    2. Crie um ID de Serviço denominado `cr-roles-tutorial` com a descrição `"Created during the access control tutorial for Container Registry"` executando o comando a seguir:
+    2. Crie um ID de serviço denominado `cr-roles-tutorial` com a descrição `"Created during the access control tutorial for Container Registry"` executando o comando a seguir:
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
         ```
         {: pre}
 
-    3. Crie uma política de serviço para o ID de Serviço que concede a função de Leitor em `namespace_a` executando o comando a seguir:
+    3. Crie uma política de serviço para o ID de serviço que conceda a função de Leitor em `namespace_a` executando o comando a seguir:
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
@@ -409,14 +409,14 @@ Nesta seção, você configura um ID de Serviço e concede a ele acesso ao seu n
         ```
         {: pre}
 
-    5. Crie uma chave API para o ID de Serviço executando o comando a seguir:
+    5. Crie uma chave de API para o ID de serviço executando o comando a seguir:
 
         ```
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial
         ```
         {: pre}
 
-2. Use o Docker para efetuar login com a chave API do ID de Serviço, em que _`<API_Key>`_ é sua chave API e interage com o registro:
+2. Use o Docker para efetuar login com a chave de API do ID de serviço, em que _`<API_Key>`_ é sua chave API e interage com o registro:
 
     1. Efetue login no {{site.data.keyword.registrylong_notm}} executando o comando a seguir:
 
@@ -470,7 +470,7 @@ Nesta seção, você configura um ID de Serviço e concede a ele acesso ao seu n
         ```
         {: pre}
 
-    3. Exclua seu ID de Serviço executando o comando a seguir:
+    3. Exclua seu ID de serviço executando o comando a seguir:
 
         ```
         ibmcloud iam service-id-delete cr-roles-tutorial

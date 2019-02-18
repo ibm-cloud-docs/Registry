@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ Vous pouvez examiner des informations sur les vulnérabilités potentielles et s
 {:shortdesc}
 
 La colonne **Statut de sécurité** présente les informations suivantes sur l'image :
+
 - `Sécurisée` Aucun problème de sécurité n'a été détecté.
 - `Vulnérable` Des problèmes de sécurité ou de configuration ont été détectés et doivent être corrigés avant que l'image ne puisse être déployée.
 - `Incomplet` L'analyse n'est pas terminée. Il se peut que l'analyse soit encore en cours ou que le système d'exploitation soit de l'image ne soit pas compatible. Patientez et relancez l'analyse. Si l'analyse est toujours incomplète, transférez à nouveau l'image pour lancer une nouvelle analyse. Le déploiement

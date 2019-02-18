@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-16"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-16"
 # Iniciación a {{site.data.keyword.registrylong_notm}}
 {: #index}
 
-{{site.data.keyword.registrylong}} proporciona un registro de imágenes privado multiarrendatario que puede utilizar para almacenar y compartir de forma segura sus imágenes de Docker con usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.registrylong}} proporciona un registro de imágenes privado multiarrendatario que puede utilizar para almacenar y compartir sus imágenes de Docker con usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información sobre cómo utilizar la consola de {{site.data.keyword.Bluemix_notm}}, consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va/va_index.html).
@@ -29,7 +29,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Instale la CLI de [{{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Esta instalación también instala los plugins para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
+1. Instale la CLI de [{{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Esta instalación también instala los plugins de CLI para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
 
 ## Configure un espacio de nombres
 {: #registry_namespace_add}
@@ -58,7 +58,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Extraiga imágenes de otro registro a su máquina local
 {: #registry_images_pulling}
 
-1. [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/).
+1. [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
 
 2. Descargue (_pull_) la imagen en su máquina local. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_.
 
@@ -74,7 +74,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-3. Etiquete la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio y _&lt;tag&gt;_ por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya _&lt;region&gt;_ por el nombre de su [región](registry_overview.html#registry_regions). Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que ha creado en [Configure un espacio de nombres](index.html#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en el espacio de nombres sustituyendo _&lt;new_image_repo&gt;_ y _&lt;new_tag&gt;_.
+3. Etiquete la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio y _&lt;tag&gt;_ por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya _&lt;region&gt;_ por el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions). Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry/index.html#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en el espacio de nombres sustituyendo _&lt;new_image_repo&gt;_ y _&lt;new_tag&gt;_.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -98,7 +98,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya _&lt;my_namespace&gt;_ con el nombre del espacio que ha creado en [Configure un espacio de nombres](index.html#registry_namespace_add), y _&lt;image_repo&gt;_ y _&lt;tag&gt;_ con el repositorio y etiquete la imagen que ha elegido cuando ha etiquetado la imagen.
+2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya _&lt;my_namespace&gt;_ con el nombre del espacio que ha creado en [Configure un espacio de nombres](/docs/services/Registry/index.html#registry_namespace_add), y _&lt;image_repo&gt;_ y _&lt;tag&gt;_ con el repositorio y etiquete la imagen que ha elegido cuando ha etiquetado la imagen.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -124,8 +124,8 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 **Qué hacer a continuación
 **
 
-- [Gestión de la seguridad de imágenes con Vulnerability Advisor](../va/va_index.html)
-- [Revise sus planes de servicio y el uso de los mismos](registry_overview.html#registry_plans)
-- [Almacene y gestione más imágenes en el espacio de nombres](registry_images_.html)
+- [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va/va_index.html)
+- [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry/registry_overview.html#registry_plans)
+- [Almacene y gestione más imágenes en el espacio de nombres](/docs/services/Registry/registry_images_.html)
 - [Definición de políticas de rol de acceso de usuario](/docs/services/Registry/registry_users.html#user)
 - [Configuración de clústeres y nodos de trabajador](/docs/containers/cs_clusters.html#clusters)

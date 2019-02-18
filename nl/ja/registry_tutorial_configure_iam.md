@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,9 +27,9 @@ lastupdated: "2018-10-12"
 
 - [{{site.data.keyword.registrylong_notm}}の概説](/docs/services/Registry/index.html#index)の指示を完了します。
 
-- {{site.data.keyword.cloud_notm}} CLI に関する container-registry プラグインの最新バージョンがあることを確認します。[container-registry プラグインの更新](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- {{site.data.keyword.cloud_notm}} CLI に関する `container-registry` CLI プラグインの最新バージョンがあることを確認します。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
 
-- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。 自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択するか、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と協力することができます。
+- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。 自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択することも、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と作業することもできます。
 
 - 2018 年 10 月 4 日より前にご使用のアカウントで {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、`ibmcloud cr iam-policies-enable` コマンドを実行して、IAM ポリシーの制約を有効にしなければなりません。 {{site.data.keyword.registrylong_notm}} 名前空間を使用する他のユーザーをご使用の IBM Cloud アカウントに招待した場合は、そのユーザーのアクセスの途絶を防ぐために、User A とは別のアカウントを使用してください。
 
@@ -132,7 +132,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
   
-    2. 次のコマンドを実行して、User B に関するポリシーをリストし、作成したばかりのポリシーを見つけ、その ID をメモします。
+    2. 次のコマンドを実行して、User B のポリシーをリストし、作成したばかりのポリシーを見つけ、その ID をメモします。
   
         ```
         ibmcloud iam user-policies <user.b@example.com>
@@ -149,7 +149,7 @@ lastupdated: "2018-10-12"
 ## ステップ 2: ユーザーが特定の名前空間にアクセスするのを許可する
 {: #access_resources}
 
-このセクションでは、サンプルのイメージを使用して、名前空間を作成してアクセス権限を付与します。 各名前空間に対するさまざまな役割を付与するポリシーを作成して、その影響を示します。
+このセクションでは、サンプルのイメージを使用して名前空間を作成し、その名前空間にアクセス権限を付与します。 各名前空間に対するさまざまな役割を付与するポリシーを作成して、その影響を示します。
 {:shortdesc}
 
 1. User A のアカウント内に 3 つの名前空間を新しく作成します。 これらの名前空間は地域全体で固有でなければならないので、独自の名前空間の名前を選択しますが、このチュートリアルでは例として `namespace_a`、`namespace_b`、`namespace_c` を使用します。
@@ -357,7 +357,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-    2. 次のコマンドを実行して、User B に関するポリシーをリストします。
+    2. 次のコマンドを実行して、User B のポリシーをリストします。
 
         ```
         ibmcloud iam user-policies <user.b@example.com>
@@ -379,7 +379,7 @@ lastupdated: "2018-10-12"
 このセクションでは、サービス ID を構成して、{{site.data.keyword.registrylong_notm}} 名前空間へのアクセス権限を付与します。
 {:shortdesc}
 
-1. {{site.data.keyword.registrylong_notm}} へのアクセス権限を持つサービス ID をセットアップし、その ID に関する API キーを作成します。
+1. {{site.data.keyword.registrylong_notm}} へのアクセス権限を持つサービス ID をセットアップし、その ID 用の API キーを作成します。
 
     1. 次のコマンドを実行して、User A のアカウントにログインします。
 
@@ -395,7 +395,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-    3. 次のコマンドを実行して、`namespace_a` に関するリーダーの役割をサービス ID に付与するサービス・ポリシーを作成します。
+    3. 次のコマンドを実行して、`namespace_a` でのリーダーの役割を付与する、サービス ID のサービス・ポリシーを作成します。
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
@@ -409,7 +409,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-    5. 次のコマンドを実行して、サービス ID に関する API キーを作成します。
+    5. 次のコマンドを実行して、サービス ID 用の API キーを作成します。
 
         ```
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial

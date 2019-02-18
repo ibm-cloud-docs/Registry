@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,12 +18,10 @@ lastupdated: "2018-11-15"
 # Sobre o {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Use o {{site.data.keyword.registrylong}} para armazenar com segurança
-e acessar as imagens privadas do Docker em uma arquitetura altamente disponível e escalável.
+Use o {{site.data.keyword.registrylong}} para armazenar e acessar imagens privadas do Docker em uma arquitetura altamente disponível e escalável.
 {:shortdesc}
 
-O {{site.data.keyword.registrylong_notm}} fornece um registro privado
-de imagem de múltiplos locatários, altamente disponível e escalável que é hospedado e gerenciado pela IBM. É possível usar o registro privado configurando o seu próprio namespace de imagem e enviando por push imagens do Docker para o seu namespace.
+O {{site.data.keyword.registrylong_notm}} fornece um registro de imagem privada de diversos locatários, altamente disponível e escalável que é hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}. É possível usar o {{site.data.keyword.registrylong_notm}} configurando seu próprio namespace de imagem e enviando por push imagens do Docker para seu namespace.
 
 <img src="images/registry_architecture1.svg" alt="Imagem mostrando como é possível interagir com o IBM Cloud Container Registry. O Container Registry contém repositórios privados e públicos e APIs para interagir com o serviço. Seu cliente local do Docker pode fazer pull de imagens e enviá-las por push para e por meio de seus repositórios particulares no registro e pode fazer pull de repositórios públicos. A IU da web do IBM Cloud (console) interage com a API do Container Registry para listar imagens. A CLI do Container Registry interage com a API para listar, criar, inspecionar e remover imagens, bem como outras funções administrativas. Seu cliente local do Docker também pode fazer pull e enviar por push imagens de seu armazenamento de imagem local para outros registros."/>
 
@@ -42,12 +40,11 @@ de configuração do app. Quando vulnerabilidades forem localizadas, informaçõ
 fornecidas. É possível usar essas informações para resolver problemas de segurança para que contêineres não sejam implementados
 por meio de imagens vulneráveis.
 
-Revise a tabela a seguir para localizar uma visão geral de benefícios por usar o {{site.data.keyword.registrylong_notm}}.
+Revise a tabela a seguir para localizar uma visão geral dos benefícios de uso do {{site.data.keyword.registrylong_notm}}.
 
 |Benefício|descrição|
 |-------|-----------|
-|Registro privado altamente disponível e escalável|<ul><li>Configure o seu próprio namespace de imagem em um registro privado de múltiplos locatários, altamente disponível e escalável
-que é hospedado e gerenciado pela IBM.</li><li>Armazene com segurança as suas imagens privadas do Docker e as compartilhe com os usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privado altamente disponível e escalável|<ul><li>Configure o seu próprio namespace de imagem em um registro privado de diversos locatários, altamente disponível e escalável que seja hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}.</li><li>Armazene suas imagens privadas do Docker e compartilhe-as com os usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.</li></ul>|
 |Conformidade de segurança de imagem com o Vulnerability Advisor|<ul><li>Benefício da varredura automática de imagens em seu namespace.</li><li>Revise as recomendações que são específicas para o sistema operacional para corrigir potenciais
 vulnerabilidades e proteger os seus contêineres de serem comprometidos.</li></ul>|
 |Limites de cota para armazenamento e tráfego extraído|<ul><li>Benefício do armazenamento livre e de tráfego extraído para as suas imagens privadas até você atingir a sua
@@ -70,8 +67,7 @@ A tabela a seguir mostra os planos de serviço disponíveis do {{site.data.keywo
 
 |Características|Livre|Padrão|
 |---------------|----|--------|
-|descrição|Experimente o registro privado no {{site.data.keyword.registrylong_notm}}
-para armazenar e compartilhar com segurança suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
+|descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
 primeiro namespace no {{site.data.keyword.registrylong_notm}}.|Benefícios do armazenamento ilimitado e uso de tráfego de extração para gerenciar as imagens do Docker para todos os namespaces em sua conta
 do {{site.data.keyword.Bluemix_notm}}.|
 |Quantidade de armazenamento para imagens|500 MB|Ilimitado|
@@ -105,7 +101,7 @@ extraído que usa por mês.
 
 **Armazenamento: **
 
-  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} é fornecido com uma determinada quantia de armazenamento que pode ser usada para armazenar com segurança as suas imagens do Docker nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
+  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} vem com uma determinada quantia de armazenamento que pode ser usada para armazenar as imagens do Docker nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
 
   Exemplo para o plano padrão:
 
@@ -139,7 +135,7 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
 
 **Armazenamento: **
 
-  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.Bluemix_notm}} até você [liberar espaço removendo imagens](registry_quota.html#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](registry_quota.html#registry_quota_set) para ativar o envio por push de novas imagens novamente.
+  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.Bluemix_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry/registry_quota.html#registry_quota_set) para ativar o envio por push de novas imagens novamente.
 
   Exemplo para o plano padrão:
 
@@ -152,7 +148,7 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos
 namespaces em sua conta do {{site.data.keyword.Bluemix_notm}}
 até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites
-de cota para tráfego extraído](registry_quota.html#registry_quota_set).
+de cota para tráfego extraído](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Exemplo para o plano padrão:
 
@@ -213,8 +209,7 @@ Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmclo
 ## Aprendendo o básico
 {: #registry_planning}
 
-Prepare-se para armazenar e compartilhar suas imagens do Docker com o {{site.data.keyword.registrylong_notm}} com segurança,
-aprendendo noções básicas de registro.
+Prepare-se para armazenar e compartilhar as imagens do Docker com o {{site.data.keyword.registrylong_notm}} aprendendo os conceitos básicos do registro.
 {:shortdesc}
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
@@ -269,8 +264,7 @@ Para saber mais sobre os termos específicos do Docker, [consulte o glossário d
 {: #registry_namespaces}
 
 O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagem de vários locatários que é hospedado e
-gerenciado pela IBM. É possível armazenar e compartilhar suas imagens do Docker de forma segura nesse registro, configurando um namespace de
-registro.
+gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker nesse registro, configurando um namespace de registro.
 {:shortdesc}
 
 É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus
@@ -352,3 +346,10 @@ ibmcloud cr region-set global
 Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
+
+## Suporte para o Docker
+{: #docker}
+
+O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente. Consulte a [documentação do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/v1.12/).
+
+O Docker será necessário apenas se você desejar enviar por push ou fazer pull de imagens ou desejar executar o comando `ibmcloud cr ppa-archive-load`.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -36,13 +36,13 @@ lastupdated: "2018-11-14"
 
 **始めに**
 
-- 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
-- [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](registry_setup_cli_namespace.html#registry_namespace_add)。
-- [root 権限なしで Docker コマンドを実行できることを確認します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
+- 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [root 権限なしで Docker コマンドを実行できることを確認します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
 
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
-概説資料の[イメージのプル](index.html#registry_images_pulling)を参照して、イメージをダウンロードします。
+概説資料の[イメージのプル](/docs/services/Registry/index.html#registry_images_pulling)を参照して、イメージをダウンロードします。
 
 「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
 {:tip}
@@ -52,17 +52,17 @@ lastupdated: "2018-11-14"
 ## Docker イメージの名前空間へのプッシュ
 {: #registry_images_pushing}
 
-イメージを {{site.data.keyword.registrylong_notm}} 内の名前空間にプッシュ (アップロード) して、安全にイメージを保管して他のユーザーと共有することができます。
+イメージを {{site.data.keyword.registrylong_notm}} 内の名前空間にプッシュ (アップロード) して、イメージを保管して他のユーザーと共有することができます。
 {:shortdesc}
 
-<img src="images/images_push.svg" width="800" style="width:800px;" alt="コンピューターからプライベート・レジストリーにイメージをプッシュします。"/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="イメージをコンピューターから {{site.data.keyword.registrylong_notm}} にプッシュします。"/>
 
 **始めに**
 
-- 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
-- [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
+- 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
 - イメージを[プル](#registry_images_pulling)するか、ローカル・コンピューターで[ビルド](#registry_images_creating)し、そのイメージに名前空間情報のタグを付けます。
-- [root 権限なしで Docker コマンドを実行できることを確認します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
+- [root 権限なしで Docker コマンドを実行できることを確認します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
 
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
@@ -79,14 +79,14 @@ lastupdated: "2018-11-14"
   {:tip}
 
 2. ご使用のアカウントで利用できるすべての名前空間を表示するには、`ibmcloud cr namespace-list` コマンドを実行します。
-3. [イメージを名前空間にアップロードします。](index.html#registry_images_pushing)
+3. [イメージを名前空間にアップロードします。](/docs/services/Registry/index.html#registry_images_pushing)
 
    「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
    {:tip}
 
-イメージをプライベート・レジストリーにプッシュしたら、以下のいずれかのタスクを実行できます。
+イメージを{{site.data.keyword.registrylong_notm}}にプッシュしたら、以下のいずれかのタスクを実行できます。
 
-- [脆弱性アドバイザーでセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を探します。
+- [脆弱性アドバイザーでセキュリティーを管理](/docs/services/va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を探します。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
 
 ## レジストリー間でのイメージのコピー
@@ -99,9 +99,9 @@ lastupdated: "2018-11-14"
 
 **始めに**
 
-- 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
-- [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
-- [root 権限なしで Docker コマンドを実行できることを確認します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
+- 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [root 権限なしで Docker コマンドを実行できることを確認します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、および `docker push` の各コマンドを `sudo` を使用して実行する必要があります。
 
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
@@ -112,8 +112,46 @@ lastupdated: "2018-11-14"
 
 イメージをコピーした後、以下のいずれかのタスクを実行できます。
 
-- [脆弱性アドバイザーでイメージのセキュリティーを管理](../va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を見つけます。
+- [脆弱性アドバイザーでイメージのセキュリティーを管理](/docs/services/va/va_index.html)して、潜在的なセキュリティー問題や脆弱性に関する情報を見つけます。
 - {{site.data.keyword.containerlong_notm}} で、[クラスターを作成し、このイメージを使用してコンテナーをそのクラスターにデプロイします](/docs/containers/container_index.html#container_index)。
+
+## ソース・イメージを参照する新しいイメージの作成
+{: #registry_images_source}
+
+ログインしている領域で、同じ領域にある既存のイメージを参照する新しいイメージを {{site.data.keyword.registrylong_notm}} 内に作成します。この操作は、Docker Engine バージョン 1.12 以降を使用して作成したソース・イメージでのみサポートされます。
+
+このメカニズムを使用して作成した新しいイメージは、シグニチャーを保持しません。新しいイメージに署名が必要な場合は、このメカニズムを使用しないでください。
+{: tip}
+
+**始めに**
+
+- 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- 別のイメージの参照に使用するソース・イメージを含む専用名前空間 {{site.data.keyword.registrylong_notm}} へのアクセス権限があることを確認してください。
+
+コマンドについて詳しくは、[`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) を参照してください。
+
+ソース・イメージから新しいイメージを作成するには、以下の手順を実行します。
+
+1. CLI にログインします。
+
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
+
+2. 以下のコマンドを実行して、新しい参照を追加します。`SOURCE_IMAGE` はソース・イメージの名前、`TARGET_IMAGE` はターゲット・イメージの名前です。ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。`SOURCE_IMAGE` および `TARGET_IMAGE` は `<REPOSITORY>:<TAG>` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
+
+   ```
+   ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+   ```
+   {: pre}
+
+3. 以下のコマンドを実行して、新しいイメージが作成されたことを確認し、そのイメージがソース・イメージと同じイメージ・ダイジェストによってリスト内に示されていることを検証します。
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
 
 ## 名前空間で使用する Docker イメージのビルド
 {: #registry_images_creating}
@@ -123,9 +161,9 @@ lastupdated: "2018-11-14"
 
 **始めに**
 
-- 名前空間内のイメージを処理するための [CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
-- [独自の名前空間を {{site.data.keyword.registrylong_notm}} 専用レジストリー](registry_setup_cli_namespace.html#registry_namespace_add)にセットアップします。
-- [root 権限なしで Docker コマンドを実行できることを確認します](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr
+- 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [root 権限なしで Docker コマンドを実行できることを確認します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 Docker クライアントが root 権限を必要とするようにセットアップされている場合は、`ibmcloud login`、`ibmcloud cr
 login`、`docker pull`、および `docker push` の各コマンドを
 `sudo` を使用して実行する必要があります。
 
@@ -146,7 +184,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
         ```
         {: pre}
 
-    2. テキスト・エディターを使用して Dockerfile を開きます。 少なくとも、イメージをビルドする元の基本イメージを追加する必要があります。 _&lt;source_image&gt;_ と _&lt;tag&gt;_ を、使用するイメージ・リポジトリーとタグに置き換えてください。 別の専用レジストリーのイメージを使用する場合は、この専用レジストリーのイメージに対する絶対パスを定義します。
+    2. テキスト・エディターを使用して Dockerfile を開きます。 少なくとも、イメージをビルドする元の基本イメージを追加する必要があります。 _&lt;source_image&gt;_ と _&lt;tag&gt;_ を、使用するイメージ・リポジトリーとタグに置き換えてください。 別の専用レジストリーのイメージを使用する場合は、{{site.data.keyword.registrylong_notm}}のイメージに対する絶対パスを定義します。
 
        ```
        FROM <source_image>:<tag>
@@ -163,7 +201,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
        ```
        {: pre}
 
-       この例では、イメージ・メタデータにラベルを追加し、ポート 9080 を公開します。 使用できる Dockerfile 指示の詳細については、[Dockerfile リファレンス](https://docs.docker.com/engine/reference/builder/)を参照してください。
+       この例では、イメージ・メタデータにラベルを追加し、ポート 9080 を公開します。 使用できる Dockerfile 指示の詳細については、[Dockerfile リファレンス ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/reference/builder/)を参照してください。
 
 3. イメージの名前を決めます。 イメージ名は以下の形式でなければなりません。
 
@@ -206,9 +244,9 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
          _&lt;image_name&gt;_ をイメージの名前に置き換えます。
 
-      3. イメージを作成して名前空間用にタグ付けしたら、[名前空間専用レジストリーにイメージをプッシュできます](#registry_images_pushing)。
+      3. イメージを作成して名前空間用にタグ付けしたら、[{{site.data.keyword.registrylong_notm}} 内の名前空間にイメージをプッシュできます](#registry_images_pushing)。
 
-脆弱性アドバイザーを使用してイメージのセキュリティーをチェックする方法については、[脆弱性アドバイザーによるイメージのセキュリティーの管理](../va/va_index.html)を参照してください。
+脆弱性アドバイザーを使用してイメージのセキュリティーをチェックする方法については、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va/va_index.html)を参照してください。
 
 ## プライベート {{site.data.keyword.Bluemix_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove}
@@ -267,7 +305,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 
 GUI を使用してイメージを削除するには、以下の手順を実行します。
 
-1. IBM ID を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([](https://console.bluemix.net)) にログインします。
+1. IBMid を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([https://console.bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net)) にログインします。
 2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。
@@ -294,7 +332,7 @@ GUI を使用してイメージを削除するには、以下の手順を実行�
 
 GUI を使用してプライベート・リポジトリーを削除するには、以下の手順を実行します。
 
-1. IBM ID を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([](https://console.bluemix.net)) にログインします。
+1. IBMid を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([https://console.bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net)) にログインします。
 2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。

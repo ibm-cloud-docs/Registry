@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-10-06"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -15,11 +15,10 @@ lastupdated: "2017-10-06"
 {:tip: .tip}
 {:download: .download}
 
-
 # IBM イメージ
 {: #registry_images_ibm}
 
 {{site.data.keyword.containerlong}} で {{site.data.keyword.IBM}} イメージを使用してコンテナーを作成できます。
 {:shortdesc}
 
-{{site.data.keyword.IBM_notm}} が提供するパブリック・イメージを使用する場合は、[{{site.data.keyword.containerlong_notm}} のパブリック {{site.data.keyword.IBM_notm}} イメージ](../../services/RegistryImages/index.html#ibm_images)を参照してください。
+{{site.data.keyword.IBM_notm}} が提供するパブリック・イメージを使用する場合は、[パブリック {{site.data.keyword.IBM_notm}} イメージ](/docs/services/Registry/registry_public_images.html#public_images)を参照してください。

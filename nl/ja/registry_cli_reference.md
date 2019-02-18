@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-19"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-19"
 # 名前空間内で Docker イメージを管理するための {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) コマンド
 {: #registry_cli_reference}
 
-container-registry プラグインを使用して、IBM によってホストおよび管理されている専用レジストリー内に、Docker イメージを安全に保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
+`container-registry` CLI プラグインを使用して、IBM によってホストおよび管理されている {{site.data.keyword.registrylong_notm}} 専用レジストリー内に、Docker イメージを保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
 {:shortdesc}
 
 ## `ibmcloud cr` commands
@@ -35,7 +35,7 @@ container-registry プラグインを使用して、IBM によってホストお
 サポートされている {{site.data.keyword.registrylong_notm}} コマンドの CLI 出力をフォーマット設定およびフィルター操作することができます。
 {:shortdesc}
 
-デフォルトで、CLI 出力は、人間が読める形式で表示されます。 ただし、このビューでは、特にコマンドがプログラマチックに実行される場合、出力の使用能力が制限される可能性があります。 例えば、`ibmcloud cr image-list` の CLI 出力で、`Size` フィールドを数値サイズでソートしたいかもしれませんが、コマンドから返されるのは文字列表記のサイズです。 container-registry プラグインには、Go テンプレートを CLI 出力に適用するために使用できる format オプションが用意されています。 Go テンプレートは、CLI 出力をカスタマイズするために使用できる [Go プログラミング言語](https://golang.org/pkg/text/template/)のフィーチャーの 1 つです。
+デフォルトで、CLI 出力は、人間が読める形式で表示されます。 ただし、このビューでは、特にコマンドがプログラマチックに実行される場合、出力の使用能力が制限される可能性があります。 例えば、`ibmcloud cr image-list` の CLI 出力で、`Size` フィールドを数値サイズでソートしたいかもしれませんが、コマンドから返されるのは文字列表記のサイズです。 `container-registry` CLI プラグインには、Go テンプレートを CLI 出力に適用するために使用できる format オプションが用意されています。 Go テンプレートは、CLI 出力をカスタマイズするために使用できる [Go プログラミング言語![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://golang.org/pkg/text/template/) のフィーチャーの 1 つです。
 
 format オプションを次の 2 つの異なる方法で適用して、CLI 出力を変更できます。
 
@@ -44,9 +44,9 @@ format オプションを次の 2 つの異なる方法で適用して、CLI 出
 
 format オプションは、次の {{site.data.keyword.registrylong_notm}} コマンドで使用できます。 コマンドをクリックすると、使用可能なフィールドとそれらのデータ・タイプのリストが表示されます。
 
-- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 次のサンプル・コードは、フォーマット設定オプションとフィルター操作オプションの使用方法を示しています。
 
@@ -117,14 +117,14 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 
 |フィールド|タイプ|説明|
 |-----|----|-----------|
-|`Created`|整数 (64 ビット)|イメージが作成された時刻を、[UNIX 時刻](https://en.wikipedia.org/wiki/Unix_time)の秒数で表示します。|
+|`Created`|整数 (64 ビット)|イメージが作成された時刻を、[UNIX 時刻![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/Unix_time)の秒数で表示します。|
 |`Digest`|文字列|イメージの固有 ID を表示します。|
 |`Namespace`|文字列|イメージが保管されている名前空間を表示します。|
 |`Repository`|文字列|イメージのリポジトリーを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`Tag`|文字列|イメージのタグを表示します。|
-|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](../va/va_index.html#va_registry_cli)に記載しています。|
-{: caption="表 1. <codeibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>
+|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/va/va_index.html#va_registry_cli)に記載しています。|
+{: caption="表 1. <code>ibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_imageinspect}
@@ -137,19 +137,19 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`ID`|文字列|イメージの固有 ID を表示します。|
 |`Parent`|文字列|このイメージのビルドに使用された親イメージの ID を表示します。|
 |`Comment`|文字列|イメージの説明を表示します。|
-|`Created`|文字列|イメージが作成された時刻の [UNIX タイム・スタンプ](https://en.wikipedia.org/wiki/Unix_time)を表示します。|
+|`Created`|文字列|イメージが作成された時刻の [UNIX タイム・スタンプ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/Unix_time) を表示します。|
 |`Container`|文字列|イメージを作成したコンテナーの ID を表示します。|
-|`ContainerConfig`|オブジェクト|このイメージから開始されるコンテナーのデフォルト構成を表示します。 [Config](registry_cli_reference.html#config) でフィールドの詳細を参照してください。|
+|`ContainerConfig`|オブジェクト|このイメージから開始されるコンテナーのデフォルト構成を表示します。 [Config](/docs/services/Registry/registry_cli_reference.html#config) でフィールドの詳細を参照してください。|
 |`DockerVersion`|文字列|このイメージのビルドに使用された Docker のバージョンを表示します。|
 |`Author`|文字列|イメージの作成者を表示します。|
-|`Config`|オブジェクト|イメージの構成メタデータを表示します。 [Config](registry_cli_reference.html#config) でフィールドの詳細を参照してください。|
+|`Config`|オブジェクト|イメージの構成メタデータを表示します。 [Config](/docs/services/Registry/registry_cli_reference.html#config) でフィールドの詳細を参照してください。|
 |`Architecture`|文字列|このイメージのビルドに使用された、およびこのイメージの実行に必要なプロセッサー・アーキテクチャーを表示します。|
 |`Os`|文字列|このイメージのビルドに使用された、およびこのイメージの実行に必要なオペレーティング・システム・ファミリーを表示します。|
 |`OsVersion`|文字列|このイメージのビルドに使用されたオペレーティング・システムのバージョンを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`VirtualSize`|整数 (64 ビット)|イメージ内の各レイヤーのサイズの合計をバイト単位で表示します。|
-|`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [RootFS](registry_cli_reference.html#rootfs) でフィールドの詳細を参照してください。|
-{: caption="表 2. <codeibmcloud cr image-inspect</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>
+|`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs) でフィールドの詳細を参照してください。|
+{: caption="表 2. <code>ibmcloud cr image-inspect</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 #### Config
 
@@ -167,7 +167,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`StdinOnce`|ブール|付加されたクライアントが切断した後に標準入力ストリームがクローズされた場合は _true_ を表示し、標準入力ストリームがオープンしたままの場合は _false_ を表示します。|
 |`Env`|文字列の配列|キーと値のペアの形式で環境変数のリストを表示します。|
 |`Cmd`|文字列の配列|コンテナーの開始時に実行するためにコンテナーに渡されるコマンドと引数を表します。|
-|`Healthcheck`|オブジェクト|コンテナーが正常に動作しているか確認する方法を表します。 [Healthcheck](registry_cli_reference.html#healthcheck) でフィールドの詳細を参照してください。|
+|`Healthcheck`|オブジェクト|コンテナーが正常に動作しているか確認する方法を表します。 [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck) でフィールドの詳細を参照してください。|
 |`ArgsEscaped`|ブール|コマンドが既にエスケープされている場合、true を表示します (Windows のみ)。|
 |`Image`|文字列|演算子によって渡されたイメージの名前を表示します。|
 |`Volumes`|キーと値のマップ|コンテナーにマウントされているボリューム・マウントのリストを表示します。|
@@ -210,7 +210,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |フィールド|タイプ|説明|
 |-----|----|-----------|
 |`ID`|文字列|トークンの固有 ID を表示します。|
-|`Expiry`|整数 (64 ビット)|トークンの有効期限の [UNIX タイム・スタンプ](https://en.wikipedia.org/wiki/Unix_time)を表示します。|
+|`Expiry`|整数 (64 ビット)|トークンの有効期限が切れる時刻の [UNIX タイム・スタンプ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/Unix_time) を表示します。|
 |`ReadOnly`|ブール|イメージのプルのみを実行できる場合は _true_ を表示し、名前空間へのイメージのプッシュ、および名前空間からのイメージのプルを実行できる場合は _false_ を表示します。|
 |`Description`|文字列|トークンの説明を表示します。|
-{: caption="表 6. <codeibmcloud cr token-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>
+{: caption="表 6. <code>ibmcloud cr token-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}

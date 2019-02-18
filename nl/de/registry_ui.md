@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ Sie können Informationen zu potenziellen Sicherheitslücken sowie zur Sicherhei
 {:shortdesc}
 
 Die Spalte **Sicherheitsstatus** enthält die folgenden Informationen zum Image:
+
 - `Sicher` Es wurden keine Sicherheitsproblem festgestellt.
 - `Gefährdet` Es wurden Sicherheits- oder Konfigurationsprobleme festgestellt, die behoben werden müssen, bevor das Image bereitgestellt werden kann.
 - `Unvollständig` Der Scan ist nicht vollständig. Die Ausführung des Scans ist noch nicht abgeschlossen oder das Betriebssystem des Image ist möglicherweise nicht kompatibel. Warten Sie und wiederholen Sie dann den Scan. Wenn der Scan weiterhin nicht abgeschlossen werden kann, führen Sie erneut eine Push-Operation für das Image aus, um einen neuen Scan zu starten. Images mit unvollständigen Scans werden nicht für die Bereitstellung blockiert.

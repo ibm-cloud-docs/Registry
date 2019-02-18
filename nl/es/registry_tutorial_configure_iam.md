@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ Esta guía de aprendizaje dura aproximadamente 45 minutos.
 
 - Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
-- Asegúrese de que tiene la versión más reciente del plugin de registro de contenedor para la CLI de {{site.data.keyword.cloud_notm}}; consulte [Actualización del plugin de registro de contenedor](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 - Debe tener acceso a dos cuentas de [ {{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
 

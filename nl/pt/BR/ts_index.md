@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,14 +48,14 @@ O comando  ` ibmcloud cr login `  falha.
 
 {: tsCauses}
 
-- O plug-in de registro de contêiner está desatualizado e precisa ser atualizado.
+- O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
 - O Docker não está instalado no computador local ou não está em execução.
 - Suas credenciais de login do {{site.data.keyword.Bluemix_notm}} expiraram.
 
 {: tsResolve}
 É possível corrigir esse problema das maneiras a seguir:
 
-- Para fazer upgrade para a versão mais recente do plug-in do contêiner de registro, veja [Atualizando o plug-in de registro de contêiner](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Faça upgrade para a versão mais recente do plug-in da CLI `container-registry`. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Assegure-se de que o Docker esteja instalado no computador. Se ele já estiver instalado, reinicie o daemon do Docker.
 - Execute novamente o comando `ibmcloud login` para atualizar suas credenciais de login do {{site.data.keyword.Bluemix_notm}}.
 
@@ -69,12 +69,12 @@ Todos os comandos  ` ibmcloud cr `  falham.
 
 {: tsCauses}
 
-- O plug-in de registro de contêiner está desatualizado e precisa ser atualizado.
+- O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
 
 {: tsResolve}
 É possível corrigir esse problema da maneira a seguir:
 
-- Para fazer upgrade para a versão mais recente do plug-in do contêiner de registro, veja [Atualizando o plug-in de registro de contêiner](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Faça upgrade para a versão mais recente do plug-in da CLI `container-registry`. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## Os comandos do {{site.data.keyword.registrylong_notm}} falham com `'cr' is not a registered command. Consulte 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- O plug-in de registro de contêiner não está instalado.
+- O plug-in da CLI `container-registry` não está instalado.
 
 {: tsResolve}
 É possível corrigir esse problema da maneira a seguir:
 
-- Instale o plug-in do container-registry, consulte [Instalando a CLI do {{site.data.keyword.registryshort_notm}} (plug-in container-registry) ](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Instale o plug-in da CLI `container-registry`. Consulte [Instalando o plug-in da CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+
+## O comando `ibmcloud cr build` falha
+{: #ts_build_fails}
+
+{: tsSymptoms}
+O comando de construção falha.
+
+{: tsCauses}
+O servidor pode estar inativo ou pode haver problemas com o seu Dockerfile.
+
+{: tsResolve}
+Para descobrir qual é a causa, execute `docker build` localmente com as opções [`docker build` apropriadas ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- Se a construção local não funcionar, verifique se há problemas no Dockerfile.
+- Se a construção local funcionar, [entre em contato com o suporte do {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Falha na configuração de um namespace
 {: #ts_problem}
@@ -141,7 +161,7 @@ cota de armazenamento e o plano de precificação
 {: screen}
 
 ```
-Você excedeu a sua cota de tráfego extraído para o mês atual. 
+Você excedeu a sua cota de tráfego extraído para o mês atual.
 Revise a sua cota de tráfego extraído e o plano de precificação
 ```
 {: screen}
@@ -417,7 +437,7 @@ nesses recursos:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Para obter mais informações sobre o RBAC, consulte [Autorizando os usuários com as funções RBAC do Kubernetes customizadas](/docs/containers/cs_users.html#rbac) e [Kubernetes: usando a autorização RBAC
+Para obter mais informações sobre o RBAC, consulte [Autorizando usuários com funções RBAC customizadas do Kubernetes](/docs/containers/cs_users.html#rbac) e [Kubernetes - Usando a autorização RBAC
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Conclua as etapas a seguir para mudar a configuração do webhook para que ele falhe aberto em vez de fechado e, em seguida, quando pelo menos um pod do Container Image Security Enforcement estiver em execução, restaure a configuração do webhook para que ele falhe fechado:
@@ -464,3 +484,67 @@ Conclua as etapas a seguir para mudar a configuração do webhook para que ele f
    {: pre}
 
    Mude `failurePolicy` para `Fail`, salve e feche.
+
+## Erro de manifest: `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+Você tenta identificar sua imagem, mas recebe a mensagem de erro a seguir: `The manifest type for this image is not supported for tagging.`.
+
+{: tsCauses}
+O tipo de manifest não é suportado.
+
+{: tsResolve}
+Para resolver o problema, conclua as etapas a seguir:
+
+1. Puxe a imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome de sua imagem de origem:
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. Identifique a cópia local da imagem que você puxou na etapa anterior, executando o comando a seguir, em que `<target_image>` é o nome de sua nova imagem:
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. Envie por push a imagem identificada na etapa anterior, executando o comando a seguir:
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## Erro de manifest: `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+Você tenta identificar sua imagem, mas recebe a mensagem de erro a seguir: `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
+
+{: tsCauses}
+A versão de manifest não é suportada.
+
+{: tsResolve}
+Para resolver o problema, conclua as etapas a seguir:
+
+1. Faça upgrade para o Docker Engine versão 1.12 ou mais recente.
+
+2. Puxe a imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome de sua imagem de origem:
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. Para fazer upgrade da versão de manifest, envie a imagem por push executando o comando a seguir:
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. Identifique a imagem executando o comando `ibmcloud cr image-tag`. Consulte [Criando novas imagens que se referem a uma imagem de origem](/docs/services/Registry/registry_images_.html#registry_images_source).
+  

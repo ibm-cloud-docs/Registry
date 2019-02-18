@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -37,15 +37,15 @@ Vous pouvez extraire (par commande pull) une image depuis n'importe quelle sourc
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
-- [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
+- [Installez l'interface de ligne de commande](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
+- [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
 Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
 `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
-Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](index.html#registry_images_pulling) dans le guide de mise en route.
+Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](/docs/services/Registry/index.html#registry_images_pulling) dans le guide de mise en route.
 
 Si le message `unauthorized: authentication required` ou `denied: requested access to the resource is denied` s'affiche, exécutez la commande `ibmcloud cr login`.
 {:tip}
@@ -55,17 +55,17 @@ Après avoir extrait une image et lui avoir attribué une étiquette pour votre 
 ## Envoi par commande push d'images Docker à votre espace de nom
 {: #registry_images_pushing}
 
-Vous pouvez transférer par commande push une image à votre espace de nom dans {{site.data.keyword.registrylong_notm}} pour la stocker et la partager de manière sécurisée avec d'autres utilisateurs.
+Vous pouvez transférer par commande push une image à votre espace de nom dans {{site.data.keyword.registrylong_notm}} pour la stocker et la partager avec d'autres utilisateurs.
 {:shortdesc}
 
-<img src="images/images_push.svg" width="800" style="width:800px;" alt="Envoi d'une image depuis votre ordinateur vers votre registre privé."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Transfert par commande push d'une image depuis votre ordinateur vers {{site.data.keyword.registrylong_notm}}."/>
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
-- [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Installez l'interface de ligne de commande](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
+- [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
 - [Extrayez par commande pull](#registry_images_pulling) ou [générez](#registry_images_creating) une image sur votre ordinateur local et étiquetez-la avec vos informations d'espace de nom.
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
 Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
 `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
@@ -84,14 +84,14 @@ Pour télécharger (par push) une image, procédez comme suit :
   {:tip}
 
 2. Si vous désirez afficher tous les espaces de nom disponibles dans votre compte, exécutez la commande `ibmcloud cr namespace-list`.
-3. [Téléchargez l'image par commande push vers votre espace de nom.](index.html#registry_images_pushing)
+3. [Téléchargez l'image par commande push vers votre espace de nom.](/docs/services/Registry/index.html#registry_images_pushing)
 
    Si le message `unauthorized: authentication required` ou `denied: requested access to the resource is denied` s'affiche, exécutez la commande `ibmcloud cr login`.
    {:tip}
 
-Après avoir envoyé à votre registre privé l'image par commande push, vous pouvez effectuer l'une des tâches suivantes :
+Après avoir envoyé à {{site.data.keyword.registrylong_notm}} l'image par commande push, vous pouvez effectuer l'une des tâches suivantes :
 
-- [Gérer la sécurité avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
+- [Gérer la sécurité avec Vulnerability Advisor](/docs/services/va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
 cluster et utiliser cette image pour déployer un conteneur](/docs/containers/container_index.html#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
@@ -105,9 +105,9 @@ Vous pouvez extraire une image depuis un registre dans une région donnée, puis
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
-- [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
+- [Installez l'interface de ligne de commande](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
+- [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
 Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
 `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
@@ -120,9 +120,47 @@ Pour copier une image entre deux registres, procédez comme suit :
 
 Après avoir copié votre image, vous pouvez effectuer l'une des tâches suivantes :
 
-- [Gérer la sécurité des images avec Vulnerability Advisor](../va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
+- [Gérer la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
 cluster et utiliser cette image pour déployer un conteneur](/docs/containers/container_index.html#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+
+## Création de nouvelles images qui font référence à une image source
+{: #registry_images_source}
+
+Dans la région dans laquelle vous êtes connecté, créez une nouvelle image dans {{site.data.keyword.registrylong_notm}} qui fait référence à une image existante dans la même région. Cette action est prise en charge pour les images source créées à l'aide de Docker Engine version 1.12 ou ultérieure uniquement. 
+
+Les nouvelles images qui sont créées au moyen de ce mécanisme ne conservent pas de signatures. Si la nouvelle image doit être signée, n'utilisez pas ce mécanisme.
+{: tip}
+
+**Avant de commencer**
+
+- [Installez l'interface de ligne de commande](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
+- Assurez-vous que vous avez accès à un espace de nom privé dans {{site.data.keyword.registrylong_notm}} qui contient une image source à laquelle une autre image doit faire référence. 
+
+Pour plus d'informations sur la commande, voir [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag).
+
+Pour créer une nouvelle image à partir d'une image source, procédez comme suit :
+
+1. Connectez-vous à l'interface de ligne de commande.
+
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
+
+2. Exécutez la commande suivante pour ajouter la nouvelle référence, où `SOURCE_IMAGE` est le nom de votre image source et `TARGET_IMAGE` est le nom de votre image cible. Les images source et cible doivent se trouver dans la même région. `SOURCE_IMAGE` et `TARGET_IMAGE` doivent être au format `<REPOSITORY>:<TAG>`. Par exemple : `registry.ng.bluemix.net/namespace/image:latest`
+
+   ```
+   ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+   ```
+   {: pre}
+
+3. Vérifiez que la nouvelle image a été créée en exécutant la commande suivante, puis assurez-vous que l'image apparaît dans la liste avec le même historique des images que l'image source. 
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
 
 ## Génération d'images Docker pour les utiliser avec votre espace de nom
 {: #registry_images_creating}
@@ -132,9 +170,9 @@ Vous pouvez générer une image Docker directement dans {{site.data.keyword.Blue
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande](registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
-- [Configurez votre propre espace de nom dans le registre {{site.data.keyword.registrylong_notm}} privé](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
+- [Installez l'interface de ligne de commande](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
+- [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client
 Docker est configuré pour exiger des autorisations root, vous devez exécuter le commandes `ibmcloud login`,
 `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
@@ -158,7 +196,7 @@ Pour générer votre propre image Docker, procédez comme suit :
         {: pre}
 
     2. Utilisez un éditeur de texte pour ouvrir le Dockerfile. Au minimum, vous devez ajouter l'image de base depuis laquelle générer votre image. Remplacez
-_&lt;source_image&gt;_ et _&lt;tag&gt;_ par le référentiel d'image et l'étiquette que vous désirez utiliser. Si vous utilisez une image d'un autre registre privé, spécifiez le chemin d'accès complet à l'image dans ce registre privé.
+_&lt;source_image&gt;_ et _&lt;tag&gt;_ par le référentiel d'image et l'étiquette que vous désirez utiliser. Si vous utilisez une image d'un autre registre privé, définissez le chemin d'accès complet à l'image dans {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -175,7 +213,7 @@ _&lt;source_image&gt;_ et _&lt;tag&gt;_ par le référentiel d'image et l'étiqu
        ```
        {: pre}
 
-       Cet exemple ajoute un libellé aux métadonnées de l'image et expose le port 9080. Pour connaître les autres instructions Dockerfile que vous pouvez utiliser, reportez-vous au document [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/).
+       Cet exemple ajoute un libellé aux métadonnées de l'image et expose le port 9080. Pour connaître les autres instructions Dockerfile que vous pouvez utiliser, voir le document [Dockerfile Reference![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/reference/builder/).
 
 3. Choisissez un nom pour votre image. Ce nom doit avoir le format suivant :
 
@@ -222,9 +260,9 @@ _&lt;source_image&gt;_ et _&lt;tag&gt;_ par le référentiel d'image et l'étiqu
 
       3. Après avoir créé votre image et l'avoir étiquetée
 pour votre espace de nom, [vous pouvez l'envoyer
-par commande push dans votre registre privé d'espace de nom](#registry_images_pushing).
+par commande push dans {{site.data.keyword.registrylong_notm}}](#registry_images_pushing). 
 
-Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image, voir [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html).
+Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html).
 
 ## Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé
 {: #registry_images_remove}
@@ -283,7 +321,7 @@ La suppression d'une image est irréversible. La suppression d'une image qui est
 
 Pour supprimer une image à l'aide de l'interface graphique, procédez comme suit :
 
-1. Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.
+1. Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net)) avec votre IBMid.
 2. Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
@@ -310,7 +348,7 @@ Vous devez sauvegarder les images que vous souhaitez conserver.
 
 Pour supprimer un référentiel privé à l'aide de l'interface graphique, procédez comme suit :
 
-1. Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net](https://console.bluemix.net)) avec votre IBMid.
+1. Connectez-vous à la console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net)) avec votre IBMid.
 2. Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.

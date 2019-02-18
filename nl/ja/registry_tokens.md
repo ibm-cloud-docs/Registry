@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -32,7 +32,7 @@ API キーを使用すると、IAM ポリシーを使用して名前空間への
 
 {{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](/docs/iam/apikeys.html#manapikey)を参照してください。
 
-始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](registry_setup_cli_namespace.html#registry_cli_install)。
+始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
 
 ## API キーを使用した名前空間へのアクセスの自動化
 {: #registry_api_key}
@@ -59,6 +59,11 @@ API キーを使用して、{{site.data.keyword.registrylong_notm}} の名前空
 
 次の Docker コマンドを実行して、API キーでレジストリーにログインします。 &lt;your_apikey&gt; を API キーに置き換え、&lt;registry_url&gt; を名前空間がセットアップされているレジストリーの URL に置き換えてください。
 
+- 米国南部でセットアップされている名前空間の場合、`registry.ng.bluemix.net` を使用
+- 英国南部でセットアップされている名前空間の場合、`registry.eu-gb.bluemix.net` を使用
+- EU 中央部でセットアップされている名前空間の場合、`registry.eu-de.bluemix.net` を使用
+- アジア太平洋南地域でセットアップされている名前空間の場合、`registry.au-syd.bluemix.net` を使用
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,11 +77,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 トークンを使用して、{{site.data.keyword.registrylong_notm}} 名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
 {:shortdesc}
 
-レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。 {{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成して、領域にセットアップしたすべての名前空間へのアクセスを、{{site.data.keyword.Bluemix_notm}} アカウント外部のユーザーに付与することができます。 このトークンを所有するすべてのユーザーまたはアプリは、container-registry プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
+レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。 領域内にセットアップしたすべての名前空間にアカウントの外部のユーザーがアクセスできるようにするため、{{site.data.keyword.Bluemix_notm}} アカウントのトークンを作成できます。このトークンを所有するすべてのユーザーまたはアプリは、`container-registry` CLI プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
 
 {{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成する際に、そのトークンがレジストリーへの読み取り専用アクセス (プル) を許可するのか、それとも書き込みアクセス (プッシュおよびプル) を許可するのかを決定できます。 また、トークンを永続的にするか、または 24 時間後に期限切れするかについても指定できます。 複数のトークンを作成および使用して、さまざまなタイプのアクセスを制御することができます。
 
-レジストリー・トークンを使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、IAM アクセス・ポリシーは適用されません。 自動化に使用する ID を対象に 1 つ以上の名前空間にアクセスを制限しようとしている場合は、レジストリー・トークンではなく IAM サービス ID の API キーを使用することを考慮してください。 API キーの作成と、{{site.data.keyword.registrylong_notm}} での使用について詳しくは、[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
+レジストリー・トークンを使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、IAM アクセス・ポリシーは適用されません。 自動化に使用する ID を対象に 1 つ以上の名前空間にアクセスを制限しようとしている場合は、レジストリー・トークンではなく IAM サービス ID の API キーを使用することを検討してください。 API キーの作成と、{{site.data.keyword.registrylong_notm}} での使用について詳しくは、[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 
 以下のタスクを使用してトークンを管理します。
 
@@ -101,6 +106,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
         <thead>
         <th colspan=2><img src="images/idea.png" alt="電球アイコン"/> このコマンドの構成要素の説明</th>
         </thead>
+          <caption>表 1. `ibmcloud cr token-add` コマンドの構成要素</caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -120,8 +126,8 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    CLI 出力は、以下のような出力になります。
 
    ```
-   Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad   
-    Token              <token_value>
+   Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
@@ -231,6 +237,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-_&lt;apikey&gt;_ を API キーに、_&lt;region&gt;_ を[領域](registry_overview.html#registry_regions)の名前に、_&lt;my_namespace&gt;_ を名前空間に、_&lt;image_repo&gt;_ をリポジトリーに置き換えてください。
+_&lt;apikey&gt;_ を API キーに、_&lt;region&gt;_ を[領域](/docs/services/Registry/registry_overview.html#registry_regions)の名前に、_&lt;my_namespace&gt;_ を名前空間に、_&lt;image_repo&gt;_ をリポジトリーに置き換えてください。
 
 詳しくは、[プライベート・イメージ・レジストリーの使用](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)を参照してください。

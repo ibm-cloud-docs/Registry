@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-15"
 # Mise en application de la sécurité des images de conteneur (bêta)
 {: #security_enforce}
 
-Container Image Security Enforcement (bêta) vous permet de vérifier vos images de conteneur avant de les déployer dans votre cluster dans {{site.data.keyword.containerlong}}. Vous pouvez contrôler l'emplacement depuis lequel les images sont déployées, mettre en application des règles Vulnerability Advisor et vous assurer que la [sécurité du contenu](registry_trusted_content.html) est correctement appliquée à l'image. Si une image ne répond pas aux exigences de règle, le pod n'est pas déployé sur votre cluster ni mis à jour.
+Container Image Security Enforcement (bêta) vous permet de vérifier vos images de conteneur avant de les déployer dans votre cluster dans {{site.data.keyword.containerlong}}. Vous pouvez contrôler l'emplacement depuis lequel les images sont déployées, mettre en application des règles Vulnerability Advisor et vous assurer que la [sécurité du contenu](/docs/services/Registry/registry_trusted_content.html) est correctement appliquée à l'image. Si une image ne répond pas aux exigences de règle, le pod n'est pas déployé sur votre cluster ni mis à jour.
 {:shortdesc}
 
 Container Image Security Enforcement extrait les informations relatives à la sécurité du contenu d'image et aux vulnérabilités depuis {{site.data.keyword.registrylong}}. Vous pouvez choisir de bloquer ou d'autoriser le déploiement des images stockés dans d'autres registres, mais vous ne pouvez pas utiliser le contrôle de vulnérabilité ou de confiance pour ces images.
@@ -219,7 +219,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Définissez sur `true` pour autoriser uniquement les images qui sont [signées pour la vérification de contenu](registry_trusted_content.html) à être déployées. Définissez sur `false` pour ignorer le fait que les images soient ou non signées.</td>
+    <td>Définissez sur `true` pour autoriser uniquement les images qui sont [signées pour la vérification de contenu](/docs/services/Registry/registry_trusted_content.html) à être déployées. Définissez sur `false` pour ignorer le fait que les images soient ou non signées.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +242,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
 ### Spécification de signataires de contenu sécurisé dans des règles personnalisées
 {: #signers}
 
-Si vous utilisez la sécurité du contenu, vous pouvez vérifier que les images sont signées par des signataires particuliers. Le déploiement est autorisé uniquement si la version signée la plus récente est signée par tous les signataires répertoriés. Pour ajouter un signataire à un référentiel, voir [Gestion des signataires de confiance](registry_trusted_content.html#trustedcontent_signers).
+Si vous utilisez la sécurité du contenu, vous pouvez vérifier que les images sont signées par des signataires particuliers. Le déploiement est autorisé uniquement si la version signée la plus récente est signée par tous les signataires répertoriés. Pour ajouter un signataire à un référentiel, voir [Gestion des signataires de confiance](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 Pour configurer la règle destinée à vérifier qu'une image est signée par un signataire spécifique :
@@ -338,7 +338,7 @@ Si Container Image Security Enforcement refuse un déploiement, le déploiement 
 
 Vous pouvez activer l'option `va` dans votre règle afin d'imposer la réussite de l'analyse Vulnerability Advisor avant qu'une image ne puisse être déployée. Les images non prise en charge par Vulnerability Advisor sont autorisées.
 
-Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](registry_trusted_content.html).
+Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](/docs/services/Registry/registry_trusted_content.html).
 
 Un déploiement est autorisé uniquement si toutes les images réussissent les vérifications de Container Image Security Enforcement.
 

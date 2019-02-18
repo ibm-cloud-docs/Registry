@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,12 +18,10 @@ lastupdated: "2018-11-15"
 # Informazioni su {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Utilizza {{site.data.keyword.registrylong}} per memorizzare e accedere
-in modo sicuro alle immagini Docker private in un'architettura scalabile e altamente disponibile.
+Utilizza {{site.data.keyword.registrylong}} per memorizzare e accedere alle immagini Docker private in un'architettura scalabile e altamente disponibile.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
-a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da IBM. Puoi utilizzare il registro privato configurando il tuo proprio spazio dei nomi di immagini ed eseguendo il push delle immagini Docker al tuo spazio dei nomi.
+{{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}. Puoi utilizzare {{site.data.keyword.registrylong_notm}} configurando il tuo spazio dei nomi di immagini ed eseguendo il push delle immagini Docker al tuo spazio dei nomi.
 
 <img src="images/registry_architecture1.svg" alt="Immagine che mostra come puoi interagire con IBM Cloud Container Registry. Container Registry contiene sia il repository pubblico che privato che le API per interagire con il servizio. Il tuo client Docker locale può ricevere e trasmettere le immagini dai tuoi repository privati al registro e può eseguire il pull dei repository privati. L'IU web (console) di IBM Cloud interagisce con l'API Container Registry per elencare le immagini. La CLI Container Registry interagisce con l' API per elencare, creare, ispezionare e rimuovere le immagini, così come per altre funzioni di gestione. Il tuo client Docker locale può anche ricevere e trasmettere le immagini dal tuo archivio delle immagini locale ad altri registri."/>
 
@@ -45,8 +43,7 @@ Esamina la seguente tabella per una panoramica dei vantaggi dell'utilizzo di {{s
 
 |Vantaggio|Descrizione|
 |-------|-----------|
-|Registro privato altamente disponibile e scalabile|<ul><li>Configura il tuo proprio spazio dei nomi di immagini in un registro privato a più tenant, altamente disponibile e scalabile
-che viene ospitato e gestito da IBM.</li><li>Memorizza in modo sicuro le tue immagini Docker private e condividile con gli utenti nel tuo account {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privato altamente disponibile e scalabile|<ul><li>Configura il tuo spazio dei nomi di immagini in un registro privato a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}.</li><li>Memorizza le tue immagini Docker private e condividile con gli utenti nel tuo account {{site.data.keyword.Bluemix_notm}}.</li></ul>|
 |Conformità della sicurezza dell'immagine con il Controllo vulnerabilità|<ul><li>Vantaggio della scansione automatica delle immagini nel tuo spazio dei nomi.</li><li>Riesamina i suggerimenti specifici del sistema operativo per risolvere le vulnerabilità potenziali ed
 evitare che i tuoi contenitori vengano compromessi.</li></ul>|
 |Limiti di quota per l'archiviazione e il traffico di pull|<ul><li>Vantaggio dell'archiviazione e del traffico di pull gratuiti per le tue immagini private fino al raggiungimento
@@ -71,8 +68,7 @@ La seguente tabella mostra i piani di servizio {{site.data.keyword.registrylong_
 
 |Caratteristiche|Gratuito|Standard|
 |---------------|----|--------|
-|Descrizione|Prova il registro privato in {{site.data.keyword.registrylong_notm}} per memorizzare e condividere in modo sicuro le tue immagini
-Docker. Questo è il piano di servizio predefinito quando configuri il tuo primo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.|Beneficia di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi
+|Descrizione|Prova {{site.data.keyword.registrylong_notm}} per memorizzare e condividere le tue immagini Docker. Questo è il piano di servizio predefinito quando configuri il tuo primo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.|Beneficia di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi
 dei nomi nel tuo account
 {{site.data.keyword.Bluemix_notm}}.|
 |Quantità di archiviazione per le immagini|500 MB|Senza limiti|
@@ -108,7 +104,7 @@ pull che utilizzi al mese.
 
 **Archiviazione: **
 
-  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare in modo sicuro le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
+  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
 
   Esempio per il piano standard:
 
@@ -141,7 +137,7 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
 
 **Archiviazione: **
 
-  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](registry_quota.html#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](registry_quota.html#registry_quota_set) per riabilitare il push di nuove immagini.
+  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry/registry_quota.html#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry/registry_quota.html#registry_quota_set) per riabilitare il push di nuove immagini.
 
   Esempio per il piano standard:
 
@@ -154,7 +150,7 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il pull di alcuna immagine dagli
 spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}
 finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'upgrade al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
-di quota per il traffico di pull](registry_quota.html#registry_quota_set).
+di quota per il traffico di pull](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Esempio per il piano standard:
 
@@ -216,8 +212,7 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
 ## Apprendimento delle nozioni di base
 {: #registry_planning}
 
-Preparati per archiviare in sicurezza e condividere le tue immagini Docker con {{site.data.keyword.registrylong_notm}}
-apprendendo le basi del registro.
+Preparati per memorizzare e condividere le tue immagini Docker con {{site.data.keyword.registrylong_notm}} apprendendo le basi del registro.
 {:shortdesc}
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
@@ -272,8 +267,7 @@ Per ulteriori informazioni sui termini specifici Docker, [consulta il glossario 
 {: #registry_namespaces}
 
 {{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
-a più tenant che viene ospitato e gestito da IBM. Puoi memorizzare e condividere in modo sicuro le tue immagini Docker
-in questo registro configurando uno spazio dei nomi del registro.
+a più tenant che viene ospitato e gestito da IBM. Puoi memorizzare e condividere le tue immagini Docker in questo registro configurando uno spazio dei nomi del registro.
 {:shortdesc}
 
 Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
@@ -356,3 +350,10 @@ ibmcloud cr region-set global
 Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Dopo aver specificato come destinazione il registro globale, esegui il comando `ibmcloud cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
+
+## Supporto per Docker
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} supporta Docker Engine v1.12.6 o successive, consulta [Docker Documentation ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/v1.12/).
+
+Docker è necessario solo se vuoi eseguire il push o il pull delle immagini o se vuoi eseguire il comando `ibmcloud cr ppa-archive-load`.

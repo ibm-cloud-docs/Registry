@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -39,15 +39,15 @@ Se vuoi concedere l'accesso a tutto, non specificare un tipo di risorsa o una ri
 
 - Decidi di quali ruoli e risorse ha bisogno ogni utente in {{site.data.keyword.registrylong_notm}}, consulta [Ruoli IAM](/docs/services/Registry/iam.html#iam). Prendi in considerazione che puoi creare più politiche, ad esempio, puoi concedere l'accesso in scrittura a una risorsa ma concedere solo l'accesso in lettura a un'altra risorsa e non concedere l'accesso a un'altra risorsa. Le politiche sono addizionali, il che significa che una politica di lettura globale e una politica di scrittura dedicata alla risorsa concedono sia l'accesso in lettura che in scrittura a quella risorsa.
 
-- [Invita gli utenti e assegna l'accesso](/docs/iam/iamuserinv.html#iamuserinv). 
+- [Invita gli utenti e assegna l'accesso](/docs/iam/iamuserinv.html#iamuserinv).
 
   Se vuoi che gli utenti possano creare i cluster in {{site.data.keyword.containerlong_notm}}, assicurati di assegnare il ruolo di Amministratore {{site.data.keyword.registrylong_notm}} a tali utenti e non assegnare un gruppo di risorse, consulta [Preparazione per la creazione dei cluster](/docs/containers/cs_clusters.html#cluster_prepare).
   {: tip}
 
 Per creare le politiche per {{site.data.keyword.registrylong_notm}}, il campo del nome del servizio deve essere `container-registry`.
 
-* Per creare una politica per gli utenti, consulta [Gestione dell'accesso alle risorse](/docs/iam/mngiam.html#iammanidaccser).
-* Per creare una politica per gli ID servizio, esegui il comando `ibmcloud iam service-policy-create` oppure utilizza la GUI per associare i ruoli ai tuoi ID servizio. Per creare le politiche, devi avere il ruolo di Amministratore. Hai automaticamente il ruolo di Amministratore per il tuo account. Per ulteriori informazioni, consulta [Creazione e gestione degli ID servizio](/docs/iam/serviceid.html#serviceids) e [Gestione delle politiche di accesso degli ID servizio](/docs/iam/serviceidaccess.html#serviceidpolicy).
+- Per creare una politica per gli utenti, consulta [Gestione dell'accesso alle risorse](/docs/iam/mngiam.html#iammanidaccser).
+- Per creare una politica per gli ID servizio, esegui il comando `ibmcloud iam service-policy-create` oppure utilizza la GUI per associare i ruoli ai tuoi ID servizio. Per creare le politiche, devi avere il ruolo di Amministratore. Hai automaticamente il ruolo di Amministratore per il tuo account. Per ulteriori informazioni, consulta [Creazione e gestione degli ID servizio](/docs/iam/serviceid.html#serviceids) e [Gestione delle politiche di accesso degli ID servizio](/docs/iam/serviceidaccess.html#serviceidpolicy).
 
 ## Abilitazione dell'applicazione della politica per gli utenti esistenti
 {: #existing_users}

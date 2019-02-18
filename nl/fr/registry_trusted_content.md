@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -110,13 +110,13 @@ Au cours de votre session avec Docker Content Trust activé, si vous voulez effe
 Lorsque vous envoyez par commande push une image signée pour la première fois, Docker crée automatiquement une paire de clés de signature : racine (root) et de référentiel. Pour signer une image dans un référentiel où des images signées ont été envoyées auparavant, vous devez disposer de la clé de signature de référentiel correcte chargées sur la machine qui envoie l'image.
 {:shortdesc}
 
-Avant de commencer, [configurez votre espace de nom de registre](index.html#registry_namespace_add).
+Avant de commencer, [configurez votre espace de nom de registre](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. [Envoyez votre image par commande push](index.html#registry_images_pushing). L'étiquette est obligatoire pour du contenu sécurisé. Dans la sortie de la commande, "Signature et envoi des métadonnées d'image".
+2. [Envoyez votre image par commande push](/docs/services/Registry/index.html#registry_images_pushing). L'étiquette est obligatoire pour du contenu sécurisé. Dans la sortie de la commande, "Signature et envoi des métadonnées d'image".
 
-3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](ts_index.html#ts_recoveringtrustedcontent) sont limitées.
+3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sont limitées.
 
 ## Extraction d'une image signée
 {: #trustedcontent_pull}
@@ -199,14 +199,14 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
 
 Lorsque vous envoyez une image signée à un nouveau référentiel pour la première fois, Docker Content Trust crée deux clés de signature, la clé racine et la clé de référentiel, et stocke ces clés sur votre machine locale :
 
-* Répertoire Linux et Mac : `~/.docker/trust/private`
+- Répertoire Linux et Mac : `~/.docker/trust/private`
 
-* Répertoire Windows : `%HOMEPATH%\.docker\trust\private`
+- Répertoire Windows : `%HOMEPATH%\.docker\trust\private`
 
    Si vous avez changé votre répertoire de configuration Docker, recherchez le sous-répertoire `trust` ici.
    {: tip}
 
-Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](ts_index.html#ts_recoveringtrustedcontent) sont limitées.
+Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sont limitées.
 
 Pour sauvegarder vos clés, consultez la [documentation Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

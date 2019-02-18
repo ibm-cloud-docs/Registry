@@ -24,7 +24,7 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html)
+- [{{site.data.keyword.registrylong_notm}} interface de ligne de commande](/docs/services/Registry/registry_cli.html)
 - [{{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/apidocs/container-registry)
 - [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/apidocs/container-registry/va)
 

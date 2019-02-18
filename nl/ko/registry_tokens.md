@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -21,18 +21,18 @@ lastupdated: "2018-11-14"
 이미지를 푸시하고 가져올 수 있도록 레지스트리 토큰 또는 {{site.data.keyword.iamlong}}(IAM) API를 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 액세스를 자동화할 수 있습니다.
 {:shortdesc}
 
-Kubernetes 배치에서 레지스트리 이미지를 사용하시겠습니까? [기타 Kubernetes 네임스페이스, {{site.data.keyword.Bluemix_notm}} 지역 및 계정의 이미지에 액세스](/docs/containers/cs_images.html#other)를 체크아웃하십시오.
+Kubernetes 배치에서 레지스트리 이미지를 사용하시겠습니까? [기타 Kubernetes 네임스페이스, {{site.data.keyword.Bluemix_notm}} 지역 및 계정의 이미지에 액세스](/docs/containers/cs_images.html#other)를 확인하십시오.
 {: tip}
 
-API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사용할 수 있으므로 각 서비스에 대해 다른 신임 정보가 필요하지 않습니다. CLI에서 API 키를 사용하거나 사용자 ID로 로그인하기 위한 자동화의 일부로 API 키를 사용할 수 있습니다.
+API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사용할 수 있으므로 각 서비스에 대해 다른 인증 정보가 필요하지 않습니다. CLI에서 API 키를 사용하거나 사용자 ID로 로그인하기 위한 자동화의 일부로 API 키를 사용할 수 있습니다.
 
-레지스트리 토큰의 범위는 {{site.data.keyword.registrylong_notm}}용으로만 지정됩니다. 레지스트리 토큰을 읽기 전용 액세스로 제한할 수 있으며 만료되는지 또는 만료되지 않는지 선택할 수 있습니다.
+레지스트리 토큰의 범위는 {{site.data.keyword.registrylong_notm}}용으로만 지정됩니다. 레지스트리 토큰을 읽기 전용 액세스로 제한할 수 있으며 만료되는지 또는 만료되지 않는지 여부를 선택할 수 있습니다.
 
 API 키를 사용하는 경우 IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry/registry_users.html#user)를 참조하십시오.
 
-{{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키로 작업](/docs/iam/apikeys.html#manapikey)을 참조하십시오.
+{{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키 작업](/docs/iam/apikeys.html#manapikey)을 참조하십시오.
 
-시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](registry_setup_cli_namespace.html#registry_cli_install)하십시오.
+시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
 
 ## API 키를 사용하여 네임스페이스에 대한 액세스 자동화
 {: #registry_api_key}
@@ -59,6 +59,11 @@ API 키를 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페�
 
 다음 Docker 명령을 실행하여 API 키로 레지스트리에 로그인하십시오. &lt;your_apikey&gt;를 API 키로 대체하고 &lt;registry_url&gt;을 네임스페이스가 설정된 레지스트리의 URL로 대체하십시오.
 
+- 미국 남부의 네임스페이스 설정의 경우 `registry.ng.bluemix.net`을 사용하십시오.
+- 영국 남부의 네임스페이스 설정의 경우 `registry.eu-gb.bluemix.net`을 사용하십시오.
+- 유럽 연합 중부의 네임스페이스 설정의 경우 `registry.eu-de.bluemix.net`을 사용하십시오.
+- 아시아/태평양 남부의 네임스페이스 설정의 경우 `registry.au-syd.bluemix.net`을 사용하십시오.
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 토큰을 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
 {:shortdesc}
 
-레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성하여 지역에서 설정한 모든 네임스페이스에 대한 액세스 권한을 {{site.data.keyword.Bluemix_notm}} 계정 외부의 사용자에게 부여할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 container-registry 플러그인을 설치하지 않고 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
+레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. 계정 외부의 사용자가 지역에서 설정한 모든 네임스페이스에 대해 액세스할 수 있도록 하려면 {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 `container-registry` CLI 플러그인을 설치하지 않고도 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
 
 {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 때 해당 토큰이 레지스트리에 대한 읽기 전용(가져오기) 권한을 부여하는지 또는 쓰기(푸시 및 가져오기) 권한을 부여하는지 결정할 수 있습니다. 토큰이 영구적인지 또는 24시간 후에 만료되는지 여부를 지정할 수도 있습니다. 여러 토큰을 작성하고 사용하여 다양한 유형의 액세스를 제어할 수 있습니다.
 
@@ -101,6 +106,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
         <thead>
         <th colspan=2><img src="images/idea.png" alt="전구 아이콘"/> 이 명령의 컴포넌트 이해</th>
         </thead>
+          <caption>표 1. `ibmcloud cr token-add` 명령의 컴포넌트</caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -121,7 +127,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
    ```
    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-   Token              <token_value>
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
@@ -231,6 +237,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-_&lt;apikey&gt;_를 API 키로, _&lt;region&gt;_을 [지역](registry_overview.html#registry_regions) 이름으로, _&lt;my_namespace&gt;_를 네임스페이스로, 그리고 _&lt;image_repo&gt;_를 저장소로 대체하십시오.
+_&lt;apikey&gt;_를 API 키로, _&lt;region&gt;_을 [지역](/docs/services/Registry/registry_overview.html#registry_regions) 이름으로, _&lt;my_namespace&gt;_를 네임스페이스로, 그리고 _&lt;image_repo&gt;_를 저장소로 대체하십시오.
 
 자세한 정보는 [개인용 이미지 레지스트리 사용](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)을 참조하십시오.

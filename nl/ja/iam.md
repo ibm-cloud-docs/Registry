@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -23,11 +23,11 @@ lastupdated: "2018-12-03"
 
 {{site.data.keyword.registrylong_notm}} 内のご使用のアカウントを対象に IAM ポリシーを有効にする際には、アカウント内の {{site.data.keyword.registrylong_notm}} サービスにアクセスするすべてのユーザーに、IAM ユーザー役割が定義されたアクセス・ポリシーを割り当てる必要があります。 そのポリシーによって、サービスのコンテキスト内でユーザーが持つ役割や、ユーザーが実行できるアクションが決まります。 {{site.data.keyword.registrylong_notm}} での各アクションは、1 つ以上の [IAM ユーザー役割](/docs/iam/users_roles.html)にマップされます。
 
-IAM ポリシーは、IAM を使用して {{site.data.keyword.registrylong_notm}} にログインする場合に限り適用されます。 レジストリー・トークンなどの別の方式を使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、ポリシーは適用されません。 自動化に使用している ID について、1 つ以上の名前空間へのアクセスを制限する場合は、レジストリー・トークンではなく IAM サービス ID の使用を検討してください。サービス ID について詳しくは、[サービス ID の作成と処理](/docs/iam/serviceid.html#serviceids)を参照してください。
+IAM ポリシーは、IAM を使用して {{site.data.keyword.registrylong_notm}} にログインする場合に限り適用されます。 レジストリー・トークンなどの別の方式を使用して {{site.data.keyword.registrylong_notm}} にログインする場合には、ポリシーは適用されません。 自動化に使用している ID について、1 つ以上の名前空間へのアクセスを制限する場合は、レジストリー・トークンではなく IAM サービス ID の使用を検討してください。 サービス ID について詳しくは、[サービス ID の作成と処理](/docs/iam/serviceid.html#serviceids)を参照してください。
 
 IAM について詳しくは、[IBM Cloud Access and Access Management](/docs/iam/index.html#iamoverview) を参照してください。
 
-{{site.data.keyword.registrylong_notm}} に関するポリシーの有効化について詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+{{site.data.keyword.registrylong_notm}} のポリシーの有効化について詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
 
 ポリシーにより、さまざまなレベルでアクセス権限を付与できます。 一部のオプションには、以下のアクセス・レベルが含まれています。
 
@@ -52,7 +52,7 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 | ビューアー | サポートなし | |
 | エディター | サポートなし | |
 | オペレーター | サポートなし | |
-| 管理者 | <ul><li>他のユーザー用のアクセス権の構成</li><li>レジストリー・トークンの構成</li><li>クラスターの作成</li></ul> | <ul><li>UI でのユーザー役割の割り当てについては、[IAM アクセス権限の管理](/docs/iam/mngiam.html#iammanidaccser)を参照してください。</li><li>レジストリー・トークンの追加、リスト、取得、削除</li><li>{{site.data.keyword.containerlong_notm}} でクラスターを作成するには、{{site.data.keyword.registrylong_notm}} に関する管理者の役割をユーザーに割り当てなければなりません。[クラスターの作成の準備](/docs/containers/cs_clusters.html#cluster_prepare) を参照してください。</li></ul> |
+| 管理者 | <ul><li>他のユーザー用のアクセス権の構成</li><li>レジストリー・トークンの構成</li><li>クラスターの作成</li></ul> | <ul><li>UI でのユーザー役割の割り当てについては、[IAM アクセス権限の管理](/docs/iam/mngiam.html#iammanidaccser)を参照してください。</li><li>レジストリー・トークンの追加、リスト、取得、削除</li><li>{{site.data.keyword.containerlong_notm}} でクラスターを作成するには、{{site.data.keyword.registrylong_notm}} の管理者の役割をユーザーに割り当てなければなりません。[クラスターの作成の準備](/docs/containers/cs_clusters.html#cluster_prepare) を参照してください。</li></ul> |
 {: caption="表 1. IAM ユーザーの役割とアクション" caption-side="top"}
 
 {{site.data.keyword.registrylong_notm}} のために、以下のアクションが用意されています。
@@ -74,15 +74,15 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 |:-----------------|:-----------------|:-----------------|
 | リーダー | リーダーの役割は情報を表示できます。 | <ul><li>イメージの表示、検査、プル</li><li>名前空間の表示</li><li>割り当て量の表示</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示</li></ul>|
 | ライター | ライターの役割は情報を編集できます。 |<ul><li>イメージのビルド、プッシュ、削除</li><li>割り当て量の表示</li><li>イメージへの署名</li><li>名前空間の追加と削除</li></ul> |
-| 管理者 | マネージャーの役割はすべてのアクションを実行できます。 | <ul><li>イメージの表示、検査、ビルド、プッシュ、削除</li><li>名前空間の表示、追加、削除</li><li>割り当て量の表示と設定</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示と作成</li><li>料金プランの確認と変更</li><li>IAM ポリシーの制約の有効化</li><li>脆弱性アドバイザーの免除の管理</li></ul> |
+| 管理者 | マネージャーの役割はすべてのアクションを実行できます。 | <ul><li>イメージの表示、検査、プル、ビルド、プッシュ、削除</li><li>名前空間の表示、追加、削除</li><li>割り当て量の表示と設定</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示と作成</li><li>料金プランの確認と変更</li><li>IAM ポリシーの制約の有効化</li><li>脆弱性アドバイザーの免除の管理</li></ul> |
 {: caption="表 3. IAM のサービス・アクセス役割とアクション" caption-side="top"}
 
  以下の {{site.data.keyword.registrylong_notm}} コマンドの場合、以下の表に示されているように、1 つ以上の役割が指定されていなければなりません。 {{site.data.keyword.registrylong_notm}} へのアクセスを許可するポリシーを作成するには、サービス名 `container-registry`、空のサービス・インスタンス、アクセス権限を付与しようとしている地域または空の地域 (すべての地域にアクセス権限を付与する) を指定してポリシーを作成しなければなりません。
 
-### {{site.data.keyword.registrylong_notm}} の構成に関するアクセス役割
+### {{site.data.keyword.registrylong_notm}} を構成するためのアクセス役割
 {: #access_roles_configure}
 
-アカウント内で {{site.data.keyword.registrylong_notm}} を構成するユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に `resource type` または `resource` を指定することはできません。
+アカウント内で {{site.data.keyword.registrylong_notm}} を構成するユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に `resource type` 、および `resource` を指定することはできません。
 
 **例**
 
@@ -104,7 +104,7 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 ### {{site.data.keyword.registrylong_notm}} の使用に関するアクセス役割
 {: #access_roles_using}
 
-アカウント内で {{site.data.keyword.registrylong_notm}} のコンテンツにアクセスするユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に、リソース・タイプ `namespace` と名前空間をリソースとして指定して、特定の名前空間にアクセスを制限できます。 `resource-type` と `resource` を指定しないと、ポリシーはアカウント内のすべてのリソースへのアクセス権限を付与します。
+アカウント内で {{site.data.keyword.registrylong_notm}} のコンテンツにアクセスするユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に、リソース・タイプ `namespace` 、およびリソースとして名前空間名を指定することにより、特定の名前空間にアクセスを制限できます。 `resource-type` と `resource` を指定しないと、ポリシーはアカウント内のすべてのリソースへのアクセス権限を付与します。
 
 **例**
 
@@ -116,16 +116,14 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | アクション | サービスに対する操作 | 役割
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) - コンテナー・イメージを構築します。 | ライター、管理者 |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) - 1 つ以上のイメージを削除します。 | ライター、管理者 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) 1 つ以上のイメージを削除します。</li><li>`docker trust revoke` - 署名を削除します。 </li></ul> | ライター、管理者 |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) - 特定のイメージに関する詳細を表示します。 | リーダー、管理者 |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) - コンテナー・イメージをリストします。 | リーダー、管理者 |
-| `container-registry.image.pull` | `docker pull` イメージをプルします。 | リーダー、ライター、管理者 |
-| `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、プライベート・レジストリー名前空間にインポートします。</li></ul> | ライター、管理者 |
+| `container-registry.image.pull` | <ul><li>`docker pull` イメージをプルします。 </li><li>`docker trust inspect` 署名を検査します。 </li></ul> | リーダー、ライター、管理者 |
+| `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>`docker trust sign` イメージに署名します。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、{{site.data.keyword.registrylong_notm}}名前空間にインポートします。</li></ul> | ライター、管理者 |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。| ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) - イメージの脆弱性評価レポートを表示します。 | リーダー、管理者 |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) - 名前空間を追加します。 | ライター、管理者 |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) - 名前空間を削除します。 | ライター、管理者 |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) - 名前空間を表示します。 | リーダー、管理者 |
-| `container-registry.signature.create` | `docker trust sign` イメージに署名します。 | ライター、管理者 |
-| `container-registry.signature.delete` | `docker trust revoke` - 署名を削除します。 | ライター、管理者 |
-| `container-registry.signature.get` | `docker trust inspect` 署名を検査します。 | リーダー、管理者 |
 {: caption="表 5. {{site.data.keyword.registrylong_notm}} の使用に関するサービスのアクションと操作" caption-side="top"}

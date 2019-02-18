@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,14 +48,14 @@ La commande `ibmcloud cr login` échoue.
 
 {: tsCauses}
 
-- Le plug-in container-registry est périmé et doit être mis à jour.
+- Le plug-in d'interface de ligne de commande `container-registry` est périmé et doit être mis à jour.
 - Docker n'est pas installé ou n'est pas en cours d'exécution sur votre ordinateur local.
 - Vos données d'identification {{site.data.keyword.Bluemix_notm}} ont expiré.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Effectuez une mise à niveau vers la version la plus récente du plug-in container-registry, voir [Mise à jour du plug-in container-registry](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Effectuez une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`? Consultez la rubrique [Mise à jour du plug-in d'interface de ligne de commande `container-registry` ](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Assurez-vous que Docker est installé sur votre ordinateur. S'il est déjà installé, redémarrez le démon Docker.
 - Exécutez à nouveau la commande `ibmcloud login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.Bluemix_notm}}.
 
@@ -69,12 +69,12 @@ Toutes les commandes `ibmcloud cr` échouent.
 
 {: tsCauses}
 
-- Le plug-in container-registry est périmé et doit être mis à jour.
+- Le plug-in d'interface de ligne de commande `container-registry` est périmé et doit être mis à jour.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Effectuez une mise à niveau vers la version la plus récente du plug-in container-registry, voir [Mise à jour du plug-in container-registry](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Effectuez une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`. Consultez la rubrique [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## Les commandes {{site.data.keyword.registrylong_notm}} échouent avec le message `'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- Le plug-in container-registry n'est pas installé.
+- Le plug-in d'interface de ligne de commande `container-registry` n'est pas installé. 
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Installez le plug-in container-registry. Voir [Installation de l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}} (plug-in container-registry)](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Installez le plug-in d'interface de ligne de commande `container-registry`. Consultez la rubrique [Installation du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+
+## La commande `ibmcloud cr build` échoue. 
+{: #ts_build_fails}
+
+{: tsSymptoms}
+La commande build échoue. 
+
+{: tsCauses}
+Il se peut que le serveur soit en panne ou que d'autres problèmes se soient produits avec votre fichier Dockerfile.
+
+{: tsResolve}
+Pour trouver la cause, exécutez `docker build` localement avec les options [`docker build` appropriées ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- Si la génération locale ne fonctionne pas, vérifiez votre fichier Dockerfile.
+- Si la génération locale fonctionne, [contactez le support {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Echec de la configuration d'un espace de nom
 {: #ts_problem}
@@ -140,7 +160,7 @@ You have exceeded your storage quota. Delete one or more images, or review your 
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. 
+You have exceeded your pull traffic quota for the current month.
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
@@ -416,8 +436,7 @@ sur les ressources suivantes :
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Pour plus d'informations sur le contrôle d'accès à base de rôles, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers/cs_users.html#rbac) et [Kubernetes: Using RBAC Authorization
-![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+Pour plus d'informations sur le contrôle d'accès à base de rôles, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers/cs_users.html#rbac) et [Kubernetes - Using RBAC Authorization ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed) ; puis, lorsqu'au moins un pod Container Image Security Enforcement est en cours d'exécution, restaurez la configuration de webhook pour une fermeture en cas d'échec :
 
@@ -463,3 +482,67 @@ Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'�
    {: pre}
 
    Pour `failurePolicy`, définissez `Fail`, puis sauvegardez et fermez.
+
+## Erreur de manifeste : `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+Vous avez essayé d'étiqueter votre image, mais vous recevez le message d'erreur suivant : `The manifest type for this image is not supported for tagging.`.
+
+{: tsCauses}
+Le type de manifeste n'est pas pris en charge. 
+
+{: tsResolve}
+Pour résoudre le problème, procédez comme suit :
+
+1. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source :
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. Etiquetez votre copie locale de l'image que vous avez extraite à l'étape précédente en exécutant la commande suivante, où `<target_image>` correspond au nom de votre nouvelle image :
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. Envoyez l'image que vous avez étiquetée à l'étape précédente en exécutant la commande suivante : 
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## Erreur de manifeste : `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+Vous avez essayé d'étiqueter votre image, mais vous recevez le message d'erreur suivant : `The manifest version for this image is not supported for tagging. Pour mettre à jour une version de manifeste prise en charge, extrayez et envoyez cette image à l'aide de Docker version 1.12 ou ultérieure, puis relancez l'exécution de la commande 'ibmcloud cr image-tag'.`
+
+{: tsCauses}
+La version de manifeste n'est pas pris en charge. 
+
+{: tsResolve}
+Pour résoudre le problème, procédez comme suit :
+
+1. Effectuez une mise à niveau vers Docker Engine version 1.12 ou ultérieure. 
+
+2. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source :
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. Pour mettre à niveau la version de manifeste, envoyez l'image en exécutant la commande suivante :
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. Etiquetez l'image en exécutant la commande `ibmcloud cr image-tag`. Consultez la rubrique [Création de nouvelles images qui font référence à une image source](/docs/services/Registry/registry_images_.html#registry_images_source).
+  

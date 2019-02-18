@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -109,13 +109,13 @@ Wenn Sie während Ihrer Sitzung mit aktiviertem Docker Content Trust eine Operat
 Wenn Sie ein signiertes Image erstmalig mit Push-Operation übertragen, erstellt Docker automatisch ein Paar von Signierschlüsseln, den Root- und den Repository-Schlüssel. Um ein Image in einem Repository zu signieren, in das bereits zuvor signierte Images mit Push-Operation übertragen wurden, muss der richtige Repository-Signierschlüssel in dem System geladen sein, das das Image mit Push-Operation überträgt.
 {:shortdesc}
 
-Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](index.html#registry_namespace_add).
+Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2. [Übertragen Sie Ihr Image mit Push-Operation](index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: "Signing and pushing image metadata." (Image-Metadaten werden signiert und mit Push-Operation übertragen.)
+2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry/index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: "Signing and pushing image metadata." (Image-Metadaten werden signiert und mit Push-Operation übertragen.)
 
-3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](ts_index.html#ts_recoveringtrustedcontent) begrenzt sind.
+3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) begrenzt sind.
 
 ## Signiertes Image mit Pull-Operation extrahieren
 {: #trustedcontent_pull}
@@ -198,14 +198,14 @@ Bevor Sie anfangen, rufen Sie die Kennphrase des Repository-Schlüssels ab, die 
 
 Wenn Sie ein signiertes Image erstmalig mit Push-Operation an ein neues Repository übertragen, erstellt Docker Content Trust zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System:
 
-* Linux- oder Mac-Verzeichnis: `~/.docker/trust/private`
+- Linux- oder Mac-Verzeichnis: `~/.docker/trust/private`
 
-* Windows-Verzeichnis: `%HOMEPATH%\.docker\trust\private`
+- Windows-Verzeichnis: `%HOMEPATH%\.docker\trust\private`
 
    Wenn Sie Ihr Docker-Konfigurationsverzeichnis geändert haben, suchen Sie dort nach dem `trust`-Unterverzeichnis.
    {: tip}
 
-Sie müssen alle Ihre Schlüssel sichern, besonders den Rootschlüssel. Wenn ein Schlüssel verloren geht oder beeinträchtigt wird, sind Ihre [Wiederherstellungsoptionen](ts_index.html#ts_recoveringtrustedcontent) begrenzt.
+Sie müssen alle Ihre Schlüssel sichern, besonders den Rootschlüssel. Wenn ein Schlüssel verloren geht oder beeinträchtigt wird, sind Ihre [Wiederherstellungsoptionen](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) begrenzt.
 
 Hinweise zum Sichern Ihrer Schlüssel finden Sie in der Dokumentation zu [Docker Content Trust ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,12 +18,12 @@ lastupdated: "2018-11-15"
 # Informationen zu {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch verfügbaren und skalierbaren Architektur sicher zu speichern und auf sie zuzugreifen.
+Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch verfügbaren und skalierbaren Architektur zu speichern und auf sie zuzugreifen.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. Sie können die private Registry verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
+{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können {{site.data.keyword.registrylong_notm}} verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen. 
 
-<img src="images/registry_architecture1.svg" alt="Bild, das darstellt, wie Sie mit IBM Cloud Container Registry interagieren können. Container Registry enthält private und öffentliche Repositorys sowie APIs, die mit dem Service interagieren. Der lokale Docker-Client kann Images aus Ihren privaten Repositorys mit Push- und Pull-Operationen in die Registry übertragen oder aus ihr abrufen und kann Images mit Pull-Operationen aus öffentlichen Repositorys abrufen. Die IBM Cloud-Webschnittstelle (Konsole) interagiert mit der Container Registry-API, um die Images aufzulisten. Die Container Registry-CLI interagiert mit der API, um Images aufzulisten, zu erstellen, zu überprüfen und zu entfernen und weitere Verwaltungsfunktionen auszuführen. Der lokale Docker-Client kann darüber hinaus Images aus dem lokalen Imagespeicher mit Push- und Pull-Operationen in andere Registrys übertragen oder aus ihnen abrufen."/>
+<img src="images/registry_architecture1.svg" alt="Abbildung, die darstellt, wie Sie mit IBM Cloud Container Registry interagieren können. Container Registry enthält private und öffentliche Repositorys sowie APIs, die mit dem Service interagieren. Der lokale Docker-Client kann Images aus Ihren privaten Repositorys mit Push- und Pull-Operationen in die Registry übertragen oder aus ihr abrufen und kann Images mit Pull-Operationen aus öffentlichen Repositorys abrufen. Die IBM Cloud-Webschnittstelle (Konsole) interagiert mit der Container Registry-API, um die Images aufzulisten. Die Container Registry-CLI interagiert mit der API, um Images aufzulisten, zu erstellen, zu überprüfen und zu entfernen und weitere Verwaltungsfunktionen auszuführen. Der lokale Docker-Client kann darüber hinaus Images aus dem lokalen Imagespeicher mit Push- und Pull-Operationen in andere Registrys übertragen oder aus ihnen abrufen."/>
 
 **Abbildung 1. Interaktion von {{site.data.keyword.registrylong_notm}} mit den Docker-Images**
 
@@ -31,31 +31,31 @@ Jeder von Ihnen erstellte Container basiert auf einem Docker-Image. Ein Image wi
 
 Wenn Sie Images mit einer Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen, profitieren Sie von den integrierten Vulnerability Advisor-Funktionen, die nach potenziellen Sicherheitsproblemen und Schwachstellen suchen. Vulnerability Advisor prüft auf gefährdete Pakete in bestimmten Basis-Docker-Images und bekannte Sicherheitslücken in App-Einstellungen. Werden Sicherheitslücken gefunden, so werden Informationen zu der Sicherheitslücke bereitgestellt. Sie können diese Informationen verwenden, um Sicherheitsprobleme zu beheben, sodass Container nicht über gefährdete Images bereitgestellt werden.
 
-Die folgende Tabelle gibt eine Übersicht über den Nutzen der Verwendung von {{site.data.keyword.registrylong_notm}}.
+Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung von {{site.data.keyword.registrylong_notm}}. 
 
 |Nutzen|Beschreibung|
 |-------|-----------|
-|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren privaten Multi-Tenant-Registry, die von IBM gehostet und verwaltet wird</li><li>Sicheres Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto</li></ul>|
+|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren privaten Multi-Tenant-Registry, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird</li><li>Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto</li></ul>|
 |Einhaltung von Sicherheitsbestimmungen für Images mit Vulnerability Advisor|<ul><li>Vorteil des automatischen Scannens von Images in Ihrem Namensbereich</li><li>Überprüfen von Betriebssystem-spezifischen Empfehlungen, um potenzielle Sicherheitslücken zu beheben und Ihre Container vor Schäden zu schützen</li></ul>|
-|Kontingente für Speicher und Pull-Datenverkehr|<ul><li>Vorteil von kostenlosem Speicherplatz und Pull-Datenverkehr zu Ihren privaten Images bis zur Obergrenze des kostenlosen Kontingents</li><li>Festlegen angepasster Kontingente für Speicher und Pull-Datenverkehr pro Monat, um ein Überziehen Ihres bevorzugten Zahlungsbetrags zu vermeiden</li></ul>|
+|Kontingente für Speicher und Pull-Datenverkehr|<ul><li>Vorteil von kostenfreiem Speicherplatz und Pull-Datenverkehr zu Ihren privaten Images bis zur Obergrenze des kostenfreien Kontingents</li><li>Festlegen angepasster Kontingente für Speicher und Pull-Datenverkehr pro Monat, um ein Überziehen Ihres bevorzugten Zahlungsbetrags zu vermeiden</li></ul>|
 {: caption="Tabelle 1. Nutzen von {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Servicepläne
 {: #registry_plans}
 
-Sie können zwischen einem kostenlosen Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung zu stellen.
+Sie können zwischen einem kostenfreien Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung zu stellen.
 {:shortdesc}
 
 Der Serviceplan von {{site.data.keyword.registrylong_notm}} legt die Speicherkapazität und den Umfang des Pull-Datenverkehrs fest, die/den Sie für Ihre privaten Images verwenden können. Der Serviceplan ist Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Die Begrenzungen für den Speicher und den Pull-Datenverkehr für Images gelten für alle Namensbereiche, die Sie in Ihrem Konto einrichten.
 
 In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.keyword.registrylong_notm}} und deren Merkmale aufgeführt. Weitere Informationen zur Funktionsweise der Abrechnung und zu den Folgen einer Überschreitung von Serviceplangrenzwerten finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
-|Merkmale|Kostenlos|Standard|
+|Merkmale|Kostenfrei|Standard|
 |---------------|----|--------|
-|Beschreibung|Bei diesem Serviceplan können Sie die private Registry in {{site.data.keyword.registrylong_notm}} ausprobieren, um Ihre Docker-Images sicher zu speichern und gemeinsam zu nutzen. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto.|
+|Beschreibung|Testen von {{site.data.keyword.registrylong_notm}} zum Speichern und gemeinsamen Verwenden von Docker-Images. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto.|
 |Speicherkapazität für Images|500 MB|Unbegrenzt|
 |Pull-Datenverkehr|5 GB pro Monat|Unbegrenzt|
-|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenlos. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabelle 2. Pläne in {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Kontingente und Abrechnung
@@ -80,7 +80,7 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
 
 **Speicher: **
 
-  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Speicherkontingent, das Sie nutzen können, um Ihre Docker-Images sicher in den Namensbereichen Ihres {{site.data.keyword.Bluemix_notm}}-Kontos zu speichern. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro GB-Monat abgerechnet. Die ersten 0,5 GB-Monate sind kostenfrei. Wenn Sie den kostenlosen Plan verwenden, können Sie Ihre Images kostenlos in {{site.data.keyword.registrylong_notm}} speichern, bis das Kontingent für den kostenlosen Plan erreicht ist. Ein GB-Monat ist der Durchschnittswert von 1 GB Speicher für einen Monat (730 Stunden).
+  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Speicherkontingent, das Sie nutzen können, um Ihre Docker-Images in den Namensbereichen Ihres {{site.data.keyword.Bluemix_notm}}-Kontos zu speichern. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro GB-Monat abgerechnet. Die ersten 0,5 GB-Monate sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images kostenfrei in {{site.data.keyword.registrylong_notm}} speichern, bis das Kontingent für den kostenfreien Plan erreicht ist. Ein GB-Monat ist der Durchschnittswert von 1 GB Speicher für einen Monat (730 Stunden).
 
   Beispiel für den Standardplan:
 
@@ -94,13 +94,13 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
 
 **Pull-Datenverkehr:**
 
-  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Kontingent an kostenlosem Pull-Datenverkehr zu Ihren privaten Images, die in Ihrem Namensbereich gespeichert sind. Pull-Datenverkehr ist die Bandbreite, die Sie verwenden, wenn Sie eine Ebene eines Image aus Ihrem Namensbereich mit Pull-Operation an Ihre lokale Maschine übertragen. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro Monat in GB abgerechnet. Die ersten 5 GB jeden Monat sind kostenlos. Wenn Sie den kostenlosen Plan verwenden, können Sie Ihre Images mit Pull-Operation aus Ihrem Namensbereich übertragen, bis Sie das Kontingent für den kostenlosen Plan ausgeschöpft haben.
+  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Kontingent an kostenfreiem Pull-Datenverkehr zu Ihren privaten Images, die in Ihrem Namensbereich gespeichert sind. Pull-Datenverkehr ist die Bandbreite, die Sie verwenden, wenn Sie eine Ebene eines Image aus Ihrem Namensbereich mit Pull-Operation an Ihre lokale Maschine übertragen. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro Monat in GB abgerechnet. Die ersten 5 GB jeden Monat sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images mit Pull-Operation aus Ihrem Namensbereich übertragen, bis Sie das Kontingent für den kostenfreien Plan ausgeschöpft haben.
 
   Beispiel für den Standardplan:
 
   > In einem Monat haben Sie Images mit Ebenen von 14 GB Gesamtgröße mit Pull-Operation extrahiert. Ihre monatliche Nutzung wird wie folgt berechnet:
   >
-  > Im Standardplan sind die ersten 5 GB pro Monat kostenlos, sodass Ihnen 9 GB (14 GB - 5 GB) berechnet werden.
+  > Im Standardplan sind die ersten 5 GB pro Monat kostenfrei, sodass Ihnen 9 GB (14 GB - 5 GB) berechnet werden.
 
   
 
@@ -112,7 +112,7 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
 **Speicher: **
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.Bluemix_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](registry_quota.html#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenlosen oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](registry_quota.html#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.Bluemix_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry/registry_quota.html#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
 
   Beispiel für den Standardplan:
 
@@ -122,7 +122,7 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
 **Pull-Datenverkehr:**
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.Bluemix_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](registry_quota.html#registry_quota_set).
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.Bluemix_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Beispiel für den Standardplan:
 
@@ -176,7 +176,7 @@ Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie d
 ## Zentrale Aspekte
 {: #registry_planning}
 
-Bereiten Sie die sichere Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{site.data.keyword.registrylong_notm}} vor, indem Sie sich mit grundlegenden Registry-Informationen vertraut machen.
+Bereiten Sie die Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{site.data.keyword.registrylong_notm}} vor, indem Sie sich mit grundlegenden Registry-Informationen vertraut machen.
 {:shortdesc}
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
@@ -219,7 +219,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>Tag</dt>
-  <dd>Bei einem Tag handelt es sich um eine Kennung für ein Image innerhalb eines Repositorys. Sie können Tags verwenden, um verschiedene Versionen desselben Basisimage innerhalb eines Repositorys zu unterscheiden. Wenn Sie einen Docker-Befehl ausführen und den Tag eines Repository-Image nicht angeben, wird das Image, das mit dem Tag <code>latest</code> versehen ist, standardmäßig verwendet.</dd>
+  <dd>Bei einem Tag handelt es sich um eine ID für ein Image innerhalb eines Repositorys. Sie können Tags verwenden, um verschiedene Versionen desselben Basisimage innerhalb eines Repositorys zu unterscheiden. Wenn Sie einen Docker-Befehl ausführen und den Tag eines Repository-Image nicht angeben, wird das Image, das mit dem Tag <code>latest</code> versehen ist, standardmäßig verwendet.</dd>
 </dl>
 
 Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glossar ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/glossary/).
@@ -227,7 +227,7 @@ Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glo
 ### Namensbereiche planen
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} bietet eine private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. In dieser Registry können Sie Ihre Docker-Images sicher speichern, indem Sie einen Registrynamensbereich einrichten.
+{{site.data.keyword.registrylong_notm}} bietet eine private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. In dieser Registry können Sie Ihre Docker-Images speichern, indem Sie einen Registrynamensbereich einrichten.
 {:shortdesc}
 
 Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.Bluemix_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
@@ -249,7 +249,7 @@ Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Rege
 Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
 {:tip}
 
-Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenlosen Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
+Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenfreien Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
 
 ## Regionen
 {: #registry_regions}
@@ -305,3 +305,10 @@ ibmcloud cr region-set global
 Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Nach der Angabe der globalen Registry führen Sie den Befehl `ibmcloud cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
+
+## Unterstützung für Docker
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version. Weitere Informationen finden Sie in der [Docker-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/v1.12/). 
+
+Docker ist nur für die Ausführung von Push- oder Pull-Operationen für Images oder für die Ausführung des Befehls `ibmcloud cr ppa-archive-load` erforderlich. 

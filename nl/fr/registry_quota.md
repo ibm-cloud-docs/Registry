@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-28"
-
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -16,7 +15,6 @@ lastupdated: "2018-11-28"
 {:tip: .tip}
 {:download: .download}
 
-
 # Gestion des limites de quota pour le stockage et le trafic d'extraction
 {: #registry_quota}
 
@@ -25,7 +23,6 @@ Vous pouvez limiter le volume de stockage et de trafic d'extraction pouvant
 {{site.data.keyword.Bluemix}} en
 définissant et en gérant des limites de quota personnalisées.
 {:shortdesc}
-
 
 ## Définition des limites de quota pour le stockage et l'extraction des images
 {: #registry_quota_set}
@@ -46,14 +43,14 @@ personnalisés dans le cadre du volume gratuit de stockage et de trafic d'extrac
 
 Pour définir un quota, procédez comme suit :
 
-1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Examinez vos limites de quota en cours concernant le stockage et le trafic
+2. Examinez vos limites de quota en cours concernant le stockage et le trafic
 d'extraction (pull).
 
     ```
@@ -74,7 +71,7 @@ d'extraction (pull).
     ```
     {: screen}
 
-3.  Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction, indiquez l'option
+3. Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction, indiquez l'option
 **traffic** et remplacez
 _&lt;quota_trafic&gt;_ par la valeur en mégaoctets que vous souhaitez
 définir pour le quota de trafic d'extraction. Si vous voulez modifier le volume de
@@ -100,7 +97,6 @@ d'extraction de 7000 mégaoctets :
     ```
     {: pre}
 
-
 ## Examen des limites de quota, de l'utilisation du stockage et de l'extraction des images
 {: #registry_quota_get}
 
@@ -108,14 +104,14 @@ Vous pouvez examiner vos limites de quota et vérifier l'utilisation de votre
 stockage actuel et du trafic d'extraction (pull) pour votre compte.
 {:shortdesc}
 
-1.  Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Examinez vos limites de quota en cours concernant le stockage et le trafic
+2. Examinez vos limites de quota en cours concernant le stockage et le trafic
 d'extraction (pull).
 
     ```
@@ -136,7 +132,6 @@ d'extraction (pull).
     ```
     {: screen}
 
-
 ## Libération du stockage utilisé et modification des plans de service ou des
 limites de quota dans le but de rester dans les limites de quota données
 {: #registry_quota_freeup}
@@ -150,14 +145,14 @@ et depuis votre espace de nom.
 
 Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix_notm}} :
 
-1.  Répertoriez toutes les images de tous vos espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.
+1. Répertoriez toutes les images de tous vos espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud cr images
     ```
     {: pre}
 
-2.  Retirez une image de votre espace de nom. Remplacez _&lt;image_name&gt;_ par le nom de l'image que vous voulez supprimer.
+2. Retirez une image de votre espace de nom. Remplacez _&lt;image_name&gt;_ par le nom de l'image que vous voulez supprimer.
 
     ```
     ibmcloud cr image-rm <image_name>
@@ -168,7 +163,7 @@ Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix
 stockage peuvent prendre un certain temps.
     {:tip}
 
-3.  Examinez votre utilisation du quota de stockage.
+3. Examinez votre utilisation du quota de stockage.
 
     ```
     ibmcloud cr quota
@@ -181,10 +176,10 @@ dans une période de facturation.
 
     Pour continuer à extraire des images de vos espaces de nom, sélectionnez l'une des options suivantes.
 
-    -   Patientez jusqu'au début du cycle de facturation suivant.
-    -   Si vous disposez d'un plan gratuit,
+    - Patientez jusqu'au début du cycle de facturation suivant.
+    - Si vous disposez d'un plan gratuit,
 [procédez à une mise à niveau vers le plan de
-service standard](registry_overview.html#registry_plan_upgrade).
-    -   Si vous disposez déjà d'un plan standard,
+service standard](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+    - Si vous disposez déjà d'un plan standard,
 [définissez de nouvelles limites de quota pour le
 trafic d'extraction](#registry_quota_set).

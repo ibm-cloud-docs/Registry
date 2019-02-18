@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ Puoi visualizzare informazioni sulle potenziali vulnerabilità e sulla sicurezza
 {:shortdesc}
 
 La colonna **Stato sicurezza** ti mostra le seguenti informazioni sull'immagine:
+
 - `Sicuro` nessun problema di sicurezza trovato.
 - `Vulnerabile` sono stati trovati dei problemi di sicurezza o configurazione e devono essere risolti prima che tu possa distribuire l'immagine.
 - `Incompleto` la scansione non è completa. La scansione potrebbe essere ancora in esecuzione oppure il sistema operativo dell'immagine potrebbe non essere compatibile. Attendi e prova di nuovo a eseguire la scansione. Se la scansione non

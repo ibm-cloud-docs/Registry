@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-10-06"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -15,11 +15,10 @@ lastupdated: "2017-10-06"
 {:tip: .tip}
 {:download: .download}
 
-
 # Images IBM
 {: #registry_images_ibm}
 
 Vous pouvez utiliser des images {{site.data.keyword.IBM}} pour créer des conteneurs dans {{site.data.keyword.containerlong}}.
 {:shortdesc}
 
-Pour utiliser les images publiques fournies par {{site.data.keyword.IBM_notm}}, voir la rubrique relative aux [images {{site.data.keyword.IBM_notm}} publiques pour {{site.data.keyword.containerlong_notm}}](../../services/RegistryImages/index.html#ibm_images).
+Pour utiliser les images publiques fournies par {{site.data.keyword.IBM_notm}}, voir [Images {{site.data.keyword.IBM_notm}} publiques](/docs/services/Registry/registry_public_images.html#public_images).

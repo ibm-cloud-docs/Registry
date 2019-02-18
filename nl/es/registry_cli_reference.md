@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-19"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-19"
 # Mandatos de {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) para la gestión de imágenes de Docker en el espacio de nombres
 {: #registry_cli_reference}
 
-Puede utilizar el plug-in container-registry para configurar su propio espacio de nombres de imágenes en un registro privado gestionado y albergado por IBM en el que puede almacenar y compartir de forma segura imágenes de Docker con todos los usuarios de su cuenta de {{site.data.keyword.Bluemix}}.
+Puede utilizar el plugin de CLI `container-registry` para configurar su propio espacio de nombres de imágenes en un registro privado de {{site.data.keyword.registrylong_notm}} gestionado y alojado por IBM en el que puede almacenar y compartir imágenes de Docker con todos los usuarios de su cuenta de {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 ## Mandatos `ibmcloud cr`
@@ -35,7 +35,7 @@ Para ver los mandatos admitidos, consulte [CLI de {{site.data.keyword.registrylo
 Puede formatear y filtrar la salida de la CLI soportados para los mandatos admitidos de {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-De forma predeterminada, la salida de la CLI se muestra en un formato legible para las personas. Sin embargo, esta vista puede limitar su capacidad de utilizar la salida, especialmente si el mandato se ejecuta mediante programación. Por ejemplo, en la salida de la CLI de `ibmcloud cr image-list`, es posible que desee clasificar el campo `Size` por tamaño numérico, pero el mandato devuelve una descripción del tamaño en formato de serie de caracteres. El plug-in container-registry proporciona la opción format, que puede utilizar para aplicar una plantilla de Go a la salida de la CLI. La plantilla de Go es una característica del [lenguaje de programación Go](https://golang.org/pkg/text/template/) que puede utilizar para personalizar la salida de la CLI.
+De forma predeterminada, la salida de la CLI se muestra en un formato legible para las personas. Sin embargo, esta vista puede limitar su capacidad de utilizar la salida, especialmente si el mandato se ejecuta mediante programación. Por ejemplo, en la salida de la CLI de `ibmcloud cr image-list`, es posible que desee clasificar el campo `Size` por tamaño numérico, pero el mandato devuelve una descripción del tamaño en formato de serie de caracteres. El plugin de CLI `container-registry` proporciona la opción format, que puede utilizar para aplicar una plantilla de Go a la salida de la CLI. La plantilla de Go es una característica del [lenguaje de programación Go ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://golang.org/pkg/text/template/) que puede utilizar para personalizar la salida de la CLI.
 
 Puede modificar la salida de la CLI mediante la aplicación de la opción de formato de dos maneras:
 
@@ -44,9 +44,9 @@ Puede modificar la salida de la CLI mediante la aplicación de la opción de for
 
 Puede utilizar la opción format con los siguientes mandatos de {{site.data.keyword.registrylong_notm}}. Pulse el mandato para visualizar una lista de campos disponibles y sus tipos de datos.
 
-- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 El código siguiente muestra cómo puede utilizar las opciones de formateo y de filtrado.
 
@@ -117,14 +117,14 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 
 |Campo|Tipo|Descripción|
 |-----|----|-----------|
-|`Created`|Entero (64 bits)|Muestra cuándo se ha creado la imagen, expresado en número de segundos en [hora de UNIX](https://en.wikipedia.org/wiki/Unix_time).|
+|`Created`|Entero (64 bits)|Muestra cuándo se ha creado la imagen, expresado en número de segundos en [hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|Serie|Muestra el identificador exclusivo de una imagen.|
 |`Namespace`|Serie|Muestra el espacio de nombres en el que está almacenada la imagen.|
 |`Repository`|Serie|Muestra el repositorio de la imagen.|
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`Tag`|Serie|Muestra la etiqueta de la imagen.|
-|`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](../va/va_index.html#va_registry_cli).|
-{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-list</code>." caption-side="top"}>
+|`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](/docs/services/va/va_index.html#va_registry_cli).|
+{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-list</code>." caption-side="top"}
 
 ### Opciones de plantilla de Go y tipos de datos en el mandato `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -137,19 +137,19 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`ID`|Serie|Muestra el identificador exclusivo de una imagen.|
 |`Parent`|Serie|Muestra el ID de la imagen padre utilizada para crear esta imagen.|
 |`Comment`|Serie|Muestra la descripción de la imagen.|
-|`Created`|Serie|Muestra la [indicación de fecha y hora de UNIX](https://en.wikipedia.org/wiki/Unix_time) en la que se creó la imagen.|
+|`Created`|Serie|Muestra la [indicación de fecha y hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time) en la que se creó la imagen.|
 |`Container`|Serie|Muestra el ID del contenedor que ha creado la imagen.|
-|`ContainerConfig`|Objeto|Muestra la configuración predeterminada de los contenedores iniciados desde esta imagen. Consulte los detalles del campo en [Config](registry_cli_reference.html#config).|
+|`ContainerConfig`|Objeto|Muestra la configuración predeterminada de los contenedores iniciados desde esta imagen. Consulte los detalles del campo en [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`DockerVersion`|Serie|Muestra la versión de Docker utilizada para crear esta imagen.|
 |`Author`|Serie|Muestra el autor de la imagen.|
-|`Config`|Objeto|Muestra los metadatos de configuración para la imagen. Consulte los detalles del campo en [Config](registry_cli_reference.html#config).|
+|`Config`|Objeto|Muestra los metadatos de configuración para la imagen. Consulte los detalles del campo en [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`Architecture`|Serie|Muestra la arquitectura de procesador que se ha utilizado para crear esta imagen y que se necesita para ejecutar la imagen.|
 |`Os`|Serie|Muestra la familia de sistema operativo que se ha utilizado para crear esta imagen y que se necesita para ejecutar la imagen.|
 |`OsVersion`|Serie|Muestra la versión del sistema operativo que se ha utilizado para crear esta imagen.|
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`VirtualSize`|Entero (64 bits)|Muestra la suma del tamaño de cada capa de la imagen en bytes.|
-|`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [RootFS](registry_cli_reference.html#rootfs).|
-{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-inspect</code>." caption-side="top"}>
+|`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
+{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
 
@@ -167,7 +167,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`StdinOnce`|Booleano|Muestra _true_ si la corriente de entrada estándar se cierra cuando el cliente conectado se desconecta y _false_ si la corriente de entrada estándar permanece abierta.|
 |`Env`|Matriz de series|Muestra la lista de variables de entorno en formato de pares clave-valor.|
 |`Cmd`|Matriz de series|Describe los mandatos y argumentos que se pasan a un contenedor para que se ejecuten cuando se inicie el contenedor.|
-|`Healthcheck`|Objeto|Describe cómo comprobar que el contenedor está funcionando correctamente. Consulte los detalles del campo en [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Objeto|Describe cómo comprobar que el contenedor está funcionando correctamente. Consulte los detalles del campo en [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Booleano|Muestra true si el mandato ya está entre caracteres de escape (específico de Windows).|
 |`Image`|Serie|Muestra el nombre de la imagen que se ha pasado el operador.|
 |`Volumes`|Correlación de clave-valor|Muestra la lista de montajes de volúmenes que se han montado en un contenedor.|
@@ -210,7 +210,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |Campo|Tipo|Descripción|
 |-----|----|-----------|
 |`ID`|Serie|Muestra el identificador exclusivo de una señal.|
-|`Expiry`|Entero (64 bits)|Muestra la [indicación de fecha y hora de UNIX](https://en.wikipedia.org/wiki/Unix_time) en que caduca la señal.|
+|`Expiry`|Entero (64 bits)|Muestra la [indicación de fecha y hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time) en la que caduca la señal.|
 |`ReadOnly`|Booleano|Muestra _true_ cuando solo puede extraer imágenes y _false_ cuando puede extraer imágenes del espacio de nombres y transmitir imágenes al mismo.|
 |`Description`|Serie|Muestra la descripción de la señal.|
-{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr token-list</code>." caption-side="top"}>
+{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr token-list</code>." caption-side="top"}

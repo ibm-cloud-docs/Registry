@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,14 +48,14 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry プラグインが古いため、更新する必要がある。
+- `container-registry` CLI プラグインが古いため、更新する必要がある。
 - Docker がローカル・コンピューターにインストールされていないか、稼働していない。
 - {{site.data.keyword.Bluemix_notm}} ログイン資格情報の有効期限が切れている。
 
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
-- container-registry プラグインの最新バージョンにアップグレードします。[container-registry プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
 - Docker がコンピューターにインストールされていることを確認します。 既にインストールされている場合、Docker デーモンを再始動します。
 - `ibmcloud login` コマンドを再実行して、{{site.data.keyword.Bluemix_notm}} ログイン資格情報をリフレッシュします。
 
@@ -69,12 +69,12 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry プラグインが古いため、更新する必要がある。
+- `container-registry` CLI プラグインが古いため、更新する必要がある。
 
 {: tsResolve}
 この問題は、以下の方法で解決できます。
 
-- container-registry プラグインの最新バージョンにアップグレードします。[container-registry プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} コマンドが「`'cr' is not a registered command. See 'ibmcloud help'`」で失敗する
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- The container-registry plug-in is not installed.
+- `container-registry` CLI プラグインがインストールされていません。
 
 {: tsResolve}
 この問題は、以下の方法で解決できます。
 
-- container-registry プラグインをインストールします。[{{site.data.keyword.registryshort_notm}} CLI (container-registry プラグイン) のインストール](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)を参照してください。
+- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)を参照してください。
+
+## `ibmcloud cr build` コマンドが失敗する
+{: #ts_build_fails}
+
+{: tsSymptoms}
+ビルド・コマンドが失敗しました。
+
+{: tsCauses}
+サーバーがダウンしているか、Dockerfile に問題がある可能性があります。
+
+{: tsResolve}
+その原因を見つけるには、適切な [`docker build` オプションを使用して `docker build` をローカルで実行します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- ローカル・ビルドが機能しない場合は、Dockerfile に問題がないかを確認してください。
+- ローカル・ビルドが機能する場合は、[{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 ## 名前空間のセットアップが失敗する
 {: #ts_problem}
@@ -141,7 +161,7 @@ or review your storage quota and pricing plan
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. 
+You have exceeded your pull traffic quota for the current month.
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
@@ -417,7 +437,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers/cs_users.html#rbac)と、[Kubernetes: RBAC 許可の使用
+RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers/cs_users.html#rbac)と、[Kubernetes -  RBAC 許可の使用
 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) を参照してください。
 
 以下の手順を実行して、エラー時にクローズするのではなくオープンするように Web フックの構成を変更した後、少なくとも 1 つの Container Image Security Enforcement ポッドが稼働中になったら、障害時にクローズするように Web フックの構成を元に戻します。
@@ -464,3 +484,67 @@ RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユ
    {: pre}
 
    `failurePolicy` を `Fail` に変更し、保存して閉じます。
+
+## マニフェスト・エラー: `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+イメージにタグ付けしようとしましたが、次のエラー・メッセージを受け取りました。`The manifest type for this image is not supported for tagging.`
+
+{: tsCauses}
+このマニフェスト・タイプはサポートされていません。
+
+{: tsResolve}
+問題を解決するには、以下の手順を実行します。
+
+1. 以下のコマンドを実行して、タグ付けしようとしたイメージをプルします。`<source_image>` はソース・イメージの名前です。
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. 以下のコマンドを実行して、直前のステップでプルしたイメージのローカル・コピーをタグ付けします。`<target_image>` は新しいイメージの名前です。
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. 以下のコマンドを実行して、直前のステップでタグ付けしたイメージをプッシュします。
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## マニフェスト・エラー: `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+イメージにタグ付けしようとしましたが、次のエラー・メッセージを受け取りました。`The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
+
+{: tsCauses}
+このマニフェスト・バージョンはサポートされていません。
+
+{: tsResolve}
+問題を解決するには、以下の手順を実行します。
+
+1. Docker Engine バージョン 1.12 以降にアップグレードします。
+
+2. 以下のコマンドを実行して、タグ付けしようとしたイメージをプルします。`<source_image>` はソース・イメージの名前です。
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. マニフェスト・バージョンをアップグレードするには、次のコマンドを実行してイメージをプッシュします。
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. `ibmcloud cr image-tag` コマンドを実行して、イメージにタグ付けします。[ソース・イメージを参照する新しいイメージの作成](/docs/services/Registry/registry_images_.html#registry_images_source)を参照してください。
+  

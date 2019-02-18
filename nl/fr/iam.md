@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -116,16 +116,14 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 | Action | Opération sur le service | Rôle
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Générer une image de conteneur. | Editeur, Responsable |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Supprimer une ou plusieurs images. | Editeur, Responsable |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Supprimer une ou plusieurs images.</li><li>`docker trust revoke` Supprimer la signature. </li></ul> | Editeur, Responsable |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Afficher les détails d'une image spécifique. | Lecteur, Responsable |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) Répertorier les images de votre conteneur. | Lecteur, Responsable |
-| `container-registry.image.pull` | `docker pull` Extraire l'image. | Lecteur, Editeur, Responsable |
-| `container-registry.image.push` | <ul><li>`docker push` Envoyer l'image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importer le logiciel IBM qui est téléchargé depuis [IBM Passport Advantage Online pour les clients ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/pao_customer.html) et conditionné pour une utilisation avec Helm dans votre espace de nom de registre privé.</li></ul> | Editeur, Responsable |
+| `container-registry.image.pull` | <ul><li>`docker pull` Extraire l'image. </li><li>`docker trust inspect` Inspecter la signature. </li></ul> | Lecteur, Editeur, Responsable |
+| `container-registry.image.push` | <ul><li>`docker push` Envoyer l'image.</li><li>`docker trust sign` Signer l'image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importer le logiciel IBM qui est téléchargé depuis [IBM Passport Advantage Online pour les clients ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/pao_customer.html) et conditionné pour une utilisation avec Helm dans votre espace de nom d'{{site.data.keyword.registrylong_notm}}. </li></ul> | Editeur, Responsable |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) Créer une nouvelle image qui fait référence à une image source. Les images source et cible doivent se trouver dans la même région. | Lecteur, auteur ou responsable pour l'image source ; auteur ou responsable pour l'image cible |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) Afficher un rapport d'évaluation des vulnérabilités pour votre image. | Lecteur, Responsable |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Ajouter un espace de nom. | Editeur, Responsable |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Retirer un espace de nom. | Editeur, Responsable |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Afficher vos espaces de nom. | Lecteur, Responsable |
-| `container-registry.signature.create` | `docker trust sign` Signer l'image. | Editeur, Responsable |
-| `container-registry.signature.delete` | `docker trust revoke` Supprimer la signature. | Editeur, Responsable |
-| `container-registry.signature.get` | `docker trust inspect` Inspecter la signature. | Lecteur, Responsable |
 {: caption="Tableau 5. Actions de service et opérations d'utilisation d'{{site.data.keyword.registrylong_notm}}" caption-side="top"}

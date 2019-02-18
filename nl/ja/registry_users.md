@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-11-02"
 
 {{site.data.keyword.registrylong}} を使用するすべてのユーザー用にアクセス・ポリシーを定義する必要があります。 アクセス・ポリシーの適用範囲は、実行を許可する操作を定義するためのユーザーの定義役割に基づきます。 事前定義されているポリシーもあれば、カスタマイズ可能なポリシーもあります。
 
-2018 年 10 月 4 日より前に {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、ポリシーを有効にする前に、ポリシーの制約を有効にしなければなりません。[既存のユーザーに関するポリシー制約を有効にする](#existing_users)を参照してください。
+2018 年 10 月 4 日より前に {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、ポリシーを有効にする前に、ポリシーの制約を有効にしなければなりません。[既存のユーザーに対してポリシー制約を有効にする](#existing_users)を参照してください。
 {: tip}
 
 {{site.data.keyword.iamlong}} (IAM) アクセス役割ポリシーについて詳しくは、[{{site.data.keyword.iamshort}}](/docs/iam/index.html#iamoverview) を参照してください。
@@ -31,30 +31,30 @@ lastupdated: "2018-11-02"
 ## ポリシーの作成
 {: #create}
 
-リソースへのアクセスを制御しようとしている場合は、役割をユーザーかサービス ID に割り当てなければなりません。 名前別の名前空間リソースか、またはサービス全体、つまりアカウント内のすべての名前空間のいずれかの {{site.data.keyword.registrylong_notm}} リソースに対するアクセス権限を付与できます。
+リソースへのアクセスを制御しようとしている場合は、役割をユーザーかサービス ID に割り当てなければなりません。 {{site.data.keyword.registrylong_notm}} リソースへのアクセス権限は、名前によって単一の名前空間リソースに対して付与することも、サービス全体、つまりアカウント内のすべての名前空間に対して付与することもできます。
 
 すべてのものへのアクセス権限を付与しようとしている場合は、リソース・タイプやリソースを指定しないでください。 特定の名前空間へのアクセス権限を付与しようとしている場合は、リソース・タイプを `namespace` として指定し、リソース名をリソースとして使用します。
 
 **始めに**
 
-- 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry/iam.html#iam)を参照してください。 複数のポリシーを作成できるか考慮してください。例えば、あるリソースに対する書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
+- 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry/iam.html#iam)を参照してください。 複数のポリシーを作成できるということを考慮してください。例えば、あるリソースに対して書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
 
-- [ユーザーの招待とアクセス権限の割り当て](/docs/iam/iamuserinv.html#iamuserinv)を行います。 
+- [ユーザーの招待とアクセス権限の割り当て](/docs/iam/iamuserinv.html#iamuserinv)を行います。
 
   ユーザーが {{site.data.keyword.containerlong_notm}} 内でクラスターを作成できるようにしようとしている場合は、そのユーザーに {{site.data.keyword.registrylong_notm}} 管理者の役割を割り当てており、リソース・グループを割り当てていないことを確認してください。[クラスターの作成の準備](/docs/containers/cs_clusters.html#cluster_prepare)を参照してください。
   {: tip}
 
-{{site.data.keyword.registrylong_notm}} に関するポリシーを作成するには、サービス名フィールドを `container-registry` にしなければなりません。
+{{site.data.keyword.registrylong_notm}} のポリシーを作成するには、サービス名フィールドを `container-registry` にしなければなりません。
 
-* ユーザーに関するポリシーを作成するには、[リソースに対するアクセス権限の管理](/docs/iam/mngiam.html#iammanidaccser)を参照してください。
-* サービス ID に関するポリシーを作成するには、`ibmcloud iam service-policy-create` コマンドを実行するか、GUI を使用して役割をサービス ID にバインドします。 ポリシーを作成するには、管理者の役割が必要です。 所有するアカウントには管理者の役割が自動的に与えられます。 詳しくは、[サービス ID の作成と処理](/docs/iam/serviceid.html#serviceids)と、[サービス ID のアクセス・ポリシーの管理](/docs/iam/serviceidaccess.html#serviceidpolicy)を参照してください。
+- ユーザーのポリシーを作成するには、[リソースに対するアクセス権限の管理](/docs/iam/mngiam.html#iammanidaccser)を参照してください。
+- サービス ID のポリシーを作成するには、`ibmcloud iam service-policy-create` コマンドを実行するか、GUI を使用して役割をサービス ID にバインドします。 ポリシーを作成するには、管理者の役割が必要です。 所有するアカウントには管理者の役割が自動的に与えられます。 詳しくは、[サービス ID の作成と処理](/docs/iam/serviceid.html#serviceids)と、[サービス ID のアクセス・ポリシーの管理](/docs/iam/serviceidaccess.html#serviceidpolicy)を参照してください。
 
-## 既存のユーザーに関するポリシー制約を有効にする
+## 既存のユーザーに対してポリシー制約を有効にする
 {: #existing_users}
 
 2018 年 10 月 4 日より後にプロビジョンしたユーザーの場合、デフォルトで IAM ポリシーが有効になっています。 2018 年 10 月 4 日より前にプロビジョンしたユーザーの場合、ポリシーを作成した後に、そのポリシーが有効になるように、ポリシーの制約を有効になければなりません。
 
-1. ユーザーとサービス ID に関する[ポリシーを作成](#create)します。
+1. ユーザーとサービス ID の[ポリシーを作成](#create)します。
 
 2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) コマンドを実行します。
 

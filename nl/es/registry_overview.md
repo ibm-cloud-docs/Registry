@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,10 +18,10 @@ lastupdated: "2018-11-15"
 # Acerca de {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Utilice {{site.data.keyword.registrylong}} para almacenar de forma segura y acceder a imágenes privadas de Docker en una arquitectura escalable y de alta disponibilidad.
+Utilice {{site.data.keyword.registrylong}} para almacenar y acceder a imágenes privadas de Docker en una arquitectura escalable y de alta disponibilidad.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que IBM aloja y gestiona. Puede utilizar el registro privado configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
+{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que {{site.data.keyword.IBM_notm}} aloja y gestiona. Puede utilizar {{site.data.keyword.registrylong_notm}} configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
 
 <img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo puede interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios privados y públicos y API para interactuar con el servicio. El cliente Docker puede extraer y enviar imágenes a y desde los repositorios privados del registro y puede extraer repositorios públicos. La interfaz de usuario web (consola) de IBM Cloud interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. El cliente Docker local también puede extraer y enviar imágenes del almacén de imágenes local a otros registros."/>
 
@@ -35,7 +35,7 @@ Revise la siguiente tabla para ver una visión general de las ventajas de utiliz
 
 |Ventaja|Descripción|
 |-------|-----------|
-|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por IBM.</li><li>Almacene de forma segura sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por {{site.data.keyword.IBM_notm}}.</li><li>Almacene sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.Bluemix_notm}}.</li></ul>|
 |Conformidad con la seguridad de imágenes con Vulnerability Advisor|<ul><li>Benefíciese de la exploración automática de imágenes en el espacio de nombres.</li><li>Revise las recomendaciones específicas del sistema operativo para solucionar posibles vulnerabilidades y proteger la seguridad de los contenedores.</li></ul>|
 |Límites de almacenamiento para almacenamiento y tráfico de extracción|<ul><li>Aproveche las ventajas del almacenamiento gratuito y del tráfico de extracción de sus imágenes privadas hasta alcanzar su cuota gratuita.</li><li>Configure límites de cuota personalizados para la cantidad de almacenamiento y tráfico de extracción mensual para no superar el nivel de pago elegido.</li></ul>|
 {: caption="Tabla 1. Ventajas de {{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -52,7 +52,7 @@ La tabla siguiente muestra los planes de servicio {{site.data.keyword.registrylo
 
 |Características|Gratuito|Estándar|
 |---------------|----|--------|
-|Descripción|Pruebe el registro privado de {{site.data.keyword.registrylong_notm}} para almacenar y compartir de forma segura las imágenes de Docker. Este plan es el plan de servicio predeterminado cuando configura el primer espacio de nombres en {{site.data.keyword.registrylong_notm}}.|Saque partido del almacenamiento ilimitado y extraiga el uso de tráfico para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.Bluemix_notm}}.|
+|Descripción|Pruebe {{site.data.keyword.registrylong_notm}} para almacenar y compartir las imágenes de Docker. Este plan es el plan de servicio predeterminado cuando configura el primer espacio de nombres en {{site.data.keyword.registrylong_notm}}.|Saque partido del almacenamiento ilimitado y extraiga el uso de tráfico para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.Bluemix_notm}}.|
 |Cantidad de almacenamiento para las imágenes|500 MB|Ilimitado|
 |Tráfico de extracción|5 GB por mes|Ilimitado|
 |Facturación|Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Almacenamiento: Se le facturará por Gigabyte-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas.</li><li>Tráfico de extracción: Se le facturará por Gigabyte uso mensual. Los primeros 5 GB son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas. Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información acerca de almacenamiento, tráfico de extracción y el calculador de precios, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -80,7 +80,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 
 **Almacenamiento: **
 
-  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar de forma segura las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
+  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
 
   Ejemplo para el plan estándar:
 
@@ -112,7 +112,7 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
 
 **Almacenamiento: **
 
-  Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que [libere espacio eliminando imágenes](registry_quota.html#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](registry_quota.html#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
+  Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que [libere espacio eliminando imágenes](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](/docs/services/Registry/registry_quota.html#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
 
   Ejemplo para el plan estándar:
 
@@ -122,7 +122,7 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
 
 **Tráfico de extracción: **
 
-  Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](registry_quota.html#registry_quota_set).
+  Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Ejemplo para el plan estándar:
 
@@ -177,7 +177,7 @@ Si desea conocer el plan de servicio que tiene, ejecute el mandato `ibmcloud cr 
 ## Conceptos básicos
 {: #registry_planning}
 
-Prepárese para almacenar y compartir de forma segura sus imágenes de Docker con {{site.data.keyword.registrylong_notm}} aprendiendo los conceptos básicos del registro.
+Prepárese para almacenar y compartir sus imágenes de Docker con {{site.data.keyword.registrylong_notm}} aprendiendo los conceptos básicos del registro.
 {:shortdesc}
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
@@ -192,7 +192,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 </dl>
 
 <dl>
-  <dt>Image</dt>
+  <dt>Imagen</dt>
   <dd>Sistema de archivos y sus parámetros de ejecución que se utilizan dentro de un tiempo de ejecución de contenedor para crear un contenedor. El sistema de archivos consta de una serie de capas, combinadas en tiempo de ejecución, que se crean a medida que la imagen se construye mediante actualizaciones sucesivas. La imagen no conserva el estado cuando se ejecuta el contenedor.</dd>
 </dl>
 
@@ -228,7 +228,7 @@ Para obtener más información sobre los términos específicos de Docker, [cons
 ### Planificación de espacios de nombres
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario que IBM aloja y gestiona. Puede almacenar y compartir de forma segura y las imágenes de Docker en este registro estableciendo un espacio de nombres del registro.
+{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario que IBM aloja y gestiona. Puede almacenar y compartir las imágenes de Docker en este registro estableciendo un espacio de nombres del registro.
 {:shortdesc}
 
 Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia. Si desea utilizar el registro en varias regiones de {{site.data.keyword.Bluemix_notm}}, debe configurar un espacio de nombres para cada región. Los espacios de nombres son exclusivos dentro de las regiones. Puede utilizar el mismo espacio de nombres para cada región, a menos que otra persona ya tenga un espacio de nombres con ese nombre configurado en esa región.
@@ -306,3 +306,10 @@ ibmcloud cr region-set global
 Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Después de haber accedido al registro global, ejecute el mandato `ibmcloud cr login` para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.
+
+## Soporte para Docker
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior. Consulte la [Documentación de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/v1.12/).
+
+Docker solo es necesario si desea enviar por push o extraer imágenes, o si desea ejecutar el mandato `ibmcloud cr ppa-archive-load`.

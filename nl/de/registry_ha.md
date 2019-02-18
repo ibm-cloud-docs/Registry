@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-11"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # Hochverfügbarkeit und Disaster-Recovery
 {: #ha-dr}
 
@@ -27,7 +25,7 @@ Der {{site.data.keyword.registrylong}}-Service ist ein hochverfügbarer regional
 
 * Die in {{site.data.keyword.registrylong_notm}} gespeicherten Daten werden regelmäßig gesichert, was zu zusätzlicher Ausfallsicherheit beiträgt.
 
-* Wenn Sie befürchten, dass Ihre Images beim Ausfall einer gesamten Region nicht verfügbar sind, können Sie Ihre Images an Registrys in mehreren Regionen übertragen. 
+* Wenn Sie befürchten, dass Ihre Images beim Ausfall einer gesamten Region nicht verfügbar sind, können Sie Ihre Images an Registrys in mehreren Regionen übertragen.
   
   Sie können Ihre Images auch an mehrere Registrys übertragen, um geschützt zu sein, falls die Images versehentlich gelöscht oder überschrieben werden.
 

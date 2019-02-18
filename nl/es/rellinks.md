@@ -24,7 +24,7 @@ Puede utilizar los siguientes enlaces relacionados para familiarizarse con {{sit
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html)
+- CLI de [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html)
 - [API de {{site.data.keyword.registrylong_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/apidocs/container-registry)
 - [API de Vulnerability Advisor {{site.data.keyword.registrylong_notm}}![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/apidocs/container-registry/va)
 

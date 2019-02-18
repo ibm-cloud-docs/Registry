@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -111,13 +111,13 @@ Durante a sessão com o Docker Content Trust ativado, se você desejar executar 
 Quando você envia uma imagem assinada por push pela primeira vez, o Docker cria automaticamente um par de chaves de assinatura: raiz e repositório. Para assinar uma imagem em um repositório no qual as imagens assinadas foram enviadas por push anteriormente, deve-se ter a chave de assinatura do repositório correto carregada na máquina que está enviando a imagem por push.
 {:shortdesc}
 
-Antes de iniciar, [configure o namespace de registro](index.html#registry_namespace_add).
+Antes de iniciar, [configure o namespace de registro](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2. [Empurre a imagem](index.html#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando é exibido "Assinando e enviando metadados de imagem por push".
+2. [Empurre a imagem](/docs/services/Registry/index.html#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando é exibido "Assinando e enviando metadados de imagem por push".
 
-3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](ts_index.html#ts_recoveringtrustedcontent) são limitadas.
+3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) são limitadas.
 
 ## Puxando uma imagem assinada
 {: #trustedcontent_pull}
@@ -201,14 +201,14 @@ Antes de iniciar, recupere a passphrase da chave de repositório salva quando [e
 
 Quando você enviar pela primeira vez uma imagem assinada para um novo repositório, o Docker Content Trust criará duas chaves de assinatura, a chave raiz e a chave do repositório e as armazenará em sua máquina local:
 
-* Diretório Linux e Mac: `~/.docker/trust/private`
+- Diretório Linux e Mac: `~/.docker/trust/private`
 
-* Diretório do Windows: `%HOMEPATH%\.docker\trust\private`
+- Diretório do Windows: `%HOMEPATH%\.docker\trust\private`
 
    Se você tiver mudado o diretório de configuração do Docker, procure o subdiretório `trust` lá.
    {: tip}
 
-Deve-se fazer backup de todas as chaves, especialmente da chave raiz. Se uma chave for perdida ou comprometida, as [opções de recuperação](ts_index.html#ts_recoveringtrustedcontent) serão limitadas.
+Deve-se fazer backup de todas as chaves, especialmente da chave raiz. Se uma chave for perdida ou comprometida, as [opções de recuperação](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) serão limitadas.
 
 Para fazer backup de suas chaves, consulte a
 [documentação do Docker Content Trust

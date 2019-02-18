@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,16 +48,16 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
+- `container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
 - Docker가 로컬 컴퓨터에 설치되어 있지 않거나 실행 중이 아닙니다.
-- {{site.data.keyword.Bluemix_notm}} 로그인 신임 정보가 만료되었습니다.
+- {{site.data.keyword.Bluemix_notm}} 로그인 인증 정보가 만료되었습니다.
 
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- 최신 버전의 container-registry 플러그인으로 업그레이드하십시오. [container-registry 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
 - Docker가 컴퓨터에 설치되어 있는지 확인하십시오. 이미 설치된 경우 Docker 디먼을 다시 시작하십시오.
-- `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 신임 정보를 새로 고치십시오.
+- `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 인증 정보를 새로 고치십시오.
 
 ## {{site.data.keyword.registrylong_notm}}에 대한 명령 실행이 실패하며 `FAILED You are not logged in to IBM Cloud.`가 나타남
 {: #ts_login_cloud}
@@ -69,12 +69,12 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
+- `container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
 
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- 최신 버전의 container-registry 플러그인으로 업그레이드하십시오. [container-registry 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'ibmcloud help'.`라는 메시지가 출력되며 실패함
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- container-registry 플러그인이 설치되지 않았습니다.
+- `container-registry` CLI 플러그인이 설치되지 않았습니다.
 
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- container-registry 플러그인을 설치하십시오. [{{site.data.keyword.registryshort_notm}} CLI(container-registry 플러그인) 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)를 참조하십시오.
+- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)를 참조하십시오.
+
+## `ibmcloud cr build` 명령이 실패합니다.
+{: #ts_build_fails}
+
+{: tsSymptoms}
+build 명령이 실패합니다.
+
+{: tsCauses}
+서버가 작동 중지되었거나 Dockerfile에 문제가 있을 수 있습니다.
+
+{: tsResolve}
+원인을 찾으려면 적절한 [`docker build` 옵션 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/reference/commandline/build/)과 함께 `docker build`를 로컬로 실행하십시오.
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- 로컬 빌드가 작동하지 않으면 Dockerfile에 문제가 없는지 확인하십시오.
+- 로컬 빌드가 작동하면 [{{site.data.keyword.Bluemix_notm}} 지원](/docs/get-support/howtogetsupport.html#getting-customer-support)에 문의하십시오.
 
 ## 네임스페이스 설정 실패
 {: #ts_problem}
@@ -142,7 +162,7 @@ You have exceeded your storage quota. Delete one or more images, or review your 
 {: screen}
 
 ```
-You have exceeded your pull traffic quota for the current month. 
+You have exceeded your pull traffic quota for the current month.
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
@@ -418,7 +438,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers/cs_users.html#rbac) 및 [Kubernetes: Using RBAC Authorization
+RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers/cs_users.html#rbac) 및 [Kubernetes - Using RBAC Authorization
 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)을 참조하십시오.
 
 실패 시 작동 중지 대신 실패 시 작동으로 웹훅 구성을 변경한 후 하나 이상의 Container Image Security Enforcement 팟(Pod)이 실행 중인 경우 실패 시 작동 중지로 웹훅 구성을 복원하려면 다음 단계를 완료하십시오.
@@ -465,3 +485,67 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
    {: pre}
 
    `failurePolicy`를 `Fail`로 변경하고 저장한 후 닫으십시오.
+
+## Manifest 오류: `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+이미지에 태그를 지정하려고 시도했으나 다음 오류가 수신되었습니다. `The manifest type for this image is not supported for tagging.`
+
+{: tsCauses}
+Manifest 유형이 지원되지 않습니다.
+
+{: tsResolve}
+문제를 해결하려면 다음 단계를 완료하십시오.
+
+1. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서, `<source_image>`는 소스 이미지의 이름입니다.
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. 다음 명령을 실행하여 이전 단계에서 가져온 이미지의 로컬 사본에 태그를 지정하십시오. 여기서, `<target_image>`는 새 이미지의 이름입니다.
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. 다음 명령을 실행하여 이전 단계에서 태그를 지정한 이미지를 푸시하십시오.
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## Manifest 오류: `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+이미지에 태그를 지정하려고 시도했으나 다음 오류가 수신되었습니다. `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
+
+{: tsCauses}
+Manifest 버전이 지원되지 않습니다.
+
+{: tsResolve}
+문제를 해결하려면 다음 단계를 완료하십시오.
+
+1. Docker Engine 버전 1.12 이상으로 업그레이드하십시오.
+
+2. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서, `<source_image>`는 소스 이미지의 이름입니다.
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. Manifest 버전을 업그레이드하려면 다음 명령을 실행하여 이미지를 푸시하십시오.
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. `ibmcloud cr image-tag` 명령을 실행하여 이미지에 태그를 지정하십시오. [소스 이미지를 참조하는 새 이미지 작성](/docs/services/Registry/registry_images_.html#registry_images_source)을 참조하십시오.
+  

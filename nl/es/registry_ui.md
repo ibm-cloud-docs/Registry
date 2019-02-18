@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ Puede ver información sobre vulnerabilidades potenciales y la seguridad de las 
 {:shortdesc}
 
 La columna **Estado de seguridad** muestra la siguiente información acerca de la imagen:
+
 - `Seguro` No se han encontrado problemas de seguridad.
 - `Vulnerable` Se han encontrado problemas de seguridad o de configuración y deben corregirse antes de que pueda desplegar la imagen.
 - `Incompleto` La exploración no se ha completado. Es posible que la exploración todavía se esté ejecutando o que el sistema operativo de la imagen no sea compatible. Espere y vuelva a intentar realizar la exploración. Si la exploración no se ha completado aún, envíe por push la imagen de nuevo para iniciar una nueva exploración. Las imágenes con exploraciones incompletas no se bloquean para el despliegue.

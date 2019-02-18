@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-08-20"
+  years: 2017, 2019
+lastupdated: "2019-01-22"
 
 ---
 
@@ -15,11 +15,10 @@ lastupdated: "2018-08-20"
 {:tip: .tip}
 {:download: .download}
 
-
 # Configuración de la CLI de {{site.data.keyword.registrylong_notm}} y del espacio de nombres de registro
 {: #registry_setup_cli_namespace}
 
-Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe instalar la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in container-registry y, a continuación, configurar un espacio de nombres de registro para crear su propio repositorio de imágenes en {{site.data.keyword.registrylong_notm}}.
+Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe crear un espacio de nombres. Para trabajar con espacios de nombres, instale el plugin de CLI `container-registry`.
 {:shortdesc}
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
@@ -27,90 +26,73 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 Antes de empezar, instale la [CLI de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://clis.ng.bluemix.net/ui/home.html).
 
-
-## Instalación de la CLI de {{site.data.keyword.registrylong_notm}} (plug-in container-registry)
+## Instalación del plugin de CLI `container-registry`
 {: #registry_cli_install}
 
-Instale la CLI de {{site.data.keyword.registrylong_notm}} para utilizar la línea de mandatos para gestionar los espacios de nombres y las imágenes de Docker en el registro privado de {{site.data.keyword.Bluemix_notm}}.
+Instale el plugin de CLI `container-registry` para utilizar la línea de mandatos para gestionar los espacios de nombres y las imágenes de Docker en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1.  [Instale el plug-in container-registry.](index.html#registry_cli_install)
-2.  Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con **sudo** o como root.
+1. [Instale el plugin de CLI `container-registry`.](/docs/services/Registry/index.html#registry_cli_install)
+2. Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con **sudo** o como root.
 
-Ahora puede configurar su propio espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}.
+Ahora puede configurar su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 
-## Actualización del plug-in container-registry
+## Actualización del plugin de CLI `container-registry`
 {: #registry_cli_update}
 
-Puede que desee actualizar la CLI de {{site.data.keyword.registrylong_notm}} de forma periódica para utilizar nuevas características.
+Puede que desee actualizar el plugin de CLI `container-registry` de forma periódica para utilizar nuevas características.
 {:shortdesc}
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
-
-    ```
-    ibmcloud login
-    ```
-    {: pre}
-
-2.  Actualice el plug-in container-registry.
+1. Actualice el plugin de CLI `container-registry`.
 
     ```
     ibmcloud plugin update container-registry -r Bluemix
     ```
     {: pre}
 
-3.  Verifique que el plug-in se ha actualizado correctamente.
+2. Verifique que el plugin de CLI `container-registry` se ha actualizado correctamente.
 
     ```
     ibmcloud plugin list
     ```
      {: pre}
 
-
-## Desinstalación del plug-in container-registry
+## Desinstalación del plugin de CLI `container-registry`
 {: #registry_cli_uninstall}
 
-Si ya no necesita el plug-in container-registry, puede desinstalarlo.
+Si ya no necesita el plugin de CLI `container-registry`, puede desinstalarlo.
 {:shortdesc}
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
-
-    ```
-    ibmcloud login
-    ```
-    {: pre}
-
-2.  Desinstale el plug-in container-registry.
+1. Desinstale el plugin de CLI `container-registry`.
 
     ```
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
-3.  Verifique que el plug-in se ha desinstalado correctamente.
+2. Verifique que el plugin de CLI `container-registry` se ha desinstalado correctamente.
 
     ```
     ibmcloud plugin list
     ```
     {: pre}
 
-    El plug-in container-registry no se muestra en los resultados.
-
+    El plugin de CLI `container-registry` no se muestra en los resultados.
 
 ## Configuración de un espacio de nombres
 {: #registry_namespace_add}
 
-Para almacenar de forma segura las imágenes de Docker, debe crear un espacio de nombres en el registro privado de {{site.data.keyword.registrylong_notm}}.
+Debe crear un espacio de nombres para almacenar las imágenes de Docker en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 **Antes de empezar**
 
--   [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plug-in container-registry](#registry_cli_install).
--   [Planifique cómo utilizar y denominar los espacios de nombres de su registro](registry_overview.html#registry_namespaces).
+- [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plugin de CLI `container-registry`](/docs/services/Registry/index.html#registry_cli_install).
+- [Planifique cómo utilizar y denominar los espacios de nombres de su registro](/docs/services/Registry/registry_overview.html#registry_namespaces).
 
-Para crear un espacio de nombres, consulte [Configure un espacio de nombres](index.html#registry_namespace_add) en la documentación de iniciación.
+Para crear un espacio de nombres, consulte [Configure un espacio de nombres](/docs/services/Registry/index.html#registry_namespace_add) en la documentación de iniciación.
 
-Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en el registro de {{site.data.keyword.Bluemix_notm}}](registry_images_.html#registry_images_pushing) y compartir estas imágenes con otros usuarios en su cuenta.
+Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing) y compartir estas imágenes con otros usuarios en su cuenta.
 
 ## Eliminación de espacios de nombres
 {: #registry_remove}
@@ -118,29 +100,29 @@ Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en el r
 Si ya no necesita un espacio de nombres de registro, puede eliminar el espacio de nombres de su cuenta de {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Enumere espacios de nombres disponibles.
+2. Enumere espacios de nombres disponibles.
 
     ```
     ibmcloud cr namespace-list
     ```
     {: pre}
 
-3.  Elimine un espacio de nombres.
+3. Elimine un espacio de nombres.
 
     **Atención:** Al eliminar un espacio de nombres, cualquier imagen almacenada en dicho espacio de nombres también se suprimirá. Esta acción no se puede deshacer.
 
-    Sustituya _&lt;my_namespace&gt;_ por el espacio de nombres que desea eliminar.
+    Sustituya `<my_namespace>` por el espacio de nombres que desea eliminar.
 
     ```
     ibmcloud cr namespace-rm <my_namespace>
     ```
     {: pre}
 
-    Después de suprimir un espacio de nombres, en función del número de imágenes que se han almacenado, puede tardar unos minutos antes de que dicho espacio de nombres pase a estar disponible de nuevo para volver a utilizarlo.
+    Después de suprimir un espacio de nombres, puede tardar unos minutos antes de que dicho espacio de nombres pase a estar disponible de nuevo para volver a utilizarlo.

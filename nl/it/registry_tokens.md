@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -32,7 +32,7 @@ Se utilizzi una chiave API, puoi controllare l'accesso ai tuoi spazi dei nomi ut
 
 Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](/docs/iam/apikeys.html#manapikey).
 
-Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](registry_setup_cli_namespace.html#registry_cli_install).
+Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
 
 ## Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API
 {: #registry_api_key}
@@ -59,6 +59,11 @@ Puoi utilizzare una chiave API per automatizzare l'accesso ai tuoi spazi dei nom
 
 Utilizza la chiave API per accedere al tuo registro eseguendo il seguente comando Docker. Sostituisci &lt;your_apikey&gt; con la tua chiave API e &lt;registry_url&gt; con l'URL del registro in cui sono configurati gli spazi dei nomi.
 
+- Per gli spazi dei nomi configurati in Stati Uniti Sud, utilizza `registry.ng.bluemix.net`
+- Per gli spazi dei nomi configurati in Regno Unito Sud, utilizza `registry.eu-gb.bluemix.net`
+- Per gli spazi dei nomi configurati in Europa centrale, utilizza `registry.eu-de.bluemix.net`
+- Per gli spazi dei nomi configurati in AP del sud, utilizza `registry.au-syd.bluemix.net`
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,7 +77,7 @@ Per le informazioni di riferimento sul comando, consulta [Crea una nuova chiave 
 Puoi utilizzare i token per automatizzare l'esecuzione del push e del pull delle immagini Docker da e verso i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Chiunque in possesso di un token del registro può accedere alle informazioni protette. Creando un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi concedere l'accesso a tutti i tuoi spazi dei nomi configurati in una regione per gli utenti esterni al tuo account {{site.data.keyword.Bluemix_notm}}. Ogni utente o applicazione in possesso di questo token, può eseguire il push e il pull di immagini da e verso i tuoi spazi dei nomi senza dover installare il plug-in container-registry.
+Chiunque in possesso di un token del registro può accedere alle informazioni protette. Se vuoi che degli utenti all'esterno del tuo account possano accedere a tutti i tuoi spazi dei nomi che hai configurato in una regione, puoi creare un token per il tuo account {{site.data.keyword.Bluemix_notm}}. Ogni utente o applicazione in possesso di questo token, può eseguire il push e il pull di immagini da e verso i tuoi spazi dei nomi senza dover installare il plug-in CLI `container-registry`.
 
 Quando crei un token per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi decidere se tale token autorizza l'accesso in sola lettura (pull) o in scrittura (push e pull) al registro. Inoltre, puoi specificare se il token è permanente o se scade dopo 24 ore. Puoi e utilizzare più token per controllare i diversi tipi di accesso.
 
@@ -101,6 +106,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descrizione dei componenti di questo comando</th>
         </thead>
+          <caption>Tabella 1. I componenti del comando `ibmcloud cr token-add` </caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -121,7 +127,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
 
    ```
    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-   Token              <token_value>
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
@@ -231,6 +237,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Sostituisci _&lt;apikey&gt;_ con la tua chiave API, _&lt;region&gt;_ con il nome della tua [regione](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ con il tuo spazio dei nomi _&lt;image_repo&gt;_ con il repository.
+Sostituisci _&lt;apikey&gt;_ con la tua chiave API, _&lt;region&gt;_ con il nome della tua [regione](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ con il tuo spazio dei nomi _&lt;image_repo&gt;_ con il repository.
 
 Per ulteriori informazioni, vedi [Utilizzo di un registro di immagini privato](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

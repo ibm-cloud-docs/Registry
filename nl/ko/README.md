@@ -1,13 +1,11 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-07-11"
+  years: 2019
+lastupdated: "2019-01-22"
 
 ---
 
-
-# 문서
-
+# IBM Cloud Registry 문서
 
 

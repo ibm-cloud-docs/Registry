@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-15"
 # コンテナー・イメージ・セキュリティーの適用 (ベータ)
 {: #security_enforce}
 
-Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry/registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
 Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
@@ -219,7 +219,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>[コンテント・トラストの署名](registry_trusted_content.html)があるイメージのデプロイだけを許可する場合は、`true` に設定します。 イメージに署名があるかどうかを無視する場合は、`false` に設定します。</td>
+    <td>[コンテント・トラストの署名](/docs/services/Registry/registry_trusted_content.html)があるイメージのデプロイだけを許可する場合は、`true` に設定します。 イメージに署名があるかどうかを無視する場合は、`false` に設定します。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +242,7 @@ spec:
 ### 信頼できるコンテンツの署名者をカスタム・ポリシーに指定する
 {: #signers}
 
-コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](registry_trusted_content.html#trustedcontent_signers)を参照してください。
+コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)を参照してください。
 {:shortdesc}
 
 イメージに特定の署名者の署名があることを検証するようにポリシーを構成するには、以下のようにします。
@@ -351,7 +351,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
 
-ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](registry_trusted_content.html)を参照してください。
+ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry/registry_trusted_content.html)を参照してください。
 
 すべてのイメージが Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
 

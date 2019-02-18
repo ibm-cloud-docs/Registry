@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ lastupdated: "2018-10-12"
 
 - [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry/index.html#index)의 지시사항을 완료하십시오.
 
-- {{site.data.keyword.cloud_notm}} CLI용 container-registry 플러그인의 최신 버전이 있는지 확인하십시오. [container-registry 플러그인 업데이트](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
 
 - 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net/)에 대한 액세스 권한이 있어야 합니다. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
 
@@ -275,7 +275,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-5. User B가 `namespace_b` 및 `namespace_c`와 상호작용할 수 있지만 `namespace_a`와는 상호작용할 수 없음을 증명하십시오.
+5. User B가 `namespace_b` 및 `namespace_c`와 상호작용할 수 있지만 `namespace_a`와는 상호작용할 수 없음을 입증하십시오.
 
     1. 다음 명령을 실행하여 User B로 로그인하십시오.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -110,13 +110,13 @@ Docker コンテント・トラストを有効にしたセッションで、信�
 署名付きのイメージを初めてプッシュすると、Docker が自動的に署名鍵のペア (ルートとリポジトリー) を作成します。 署名付きのイメージが前にプッシュされたことがあるリポジトリー内のイメージに署名するには、イメージをプッシュするマシン上に、正しいリポジトリー署名鍵をロードしていなければなりません。
 {:shortdesc}
 
-始める前に、[レジストリー名前空間をセットアップします](index.html#registry_namespace_add)。
+始める前に、[レジストリー名前空間をセットアップします](/docs/services/Registry/index.html#registry_namespace_add)。
 
 1. [信頼できるコンテンツ環境をセットアップします](#trustedcontent_setup)。
 
-2. [イメージをプッシュします](index.html#registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、「イメージ・メタデータに署名してプッシュ中 (Signing and pushing image metadata)」と表示されます。
+2. [イメージをプッシュします](/docs/services/Registry/index.html#registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、「イメージ・メタデータに署名してプッシュ中 (Signing and pushing image metadata)」と表示されます。
 
-3. **署名付きリポジトリーを初めてプッシュする場合**。 署名付きのイメージを新規リポジトリーにプッシュすると、コマンドによってルート鍵とリポジトリー鍵の 2 つの署名鍵が作成され、ローカル・マシンに保管されます。 両方の鍵について安全なパスフレーズを入力して保存し、[鍵をバックアップします](#trustedcontent_backupkeys)。 [リカバリー方法](ts_index.html#ts_recoveringtrustedcontent)が限られているので、鍵のバックアップは重要です。
+3. **署名付きリポジトリーを初めてプッシュする場合**。 署名付きのイメージを新規リポジトリーにプッシュすると、コマンドによってルート鍵とリポジトリー鍵の 2 つの署名鍵が作成され、ローカル・マシンに保管されます。 両方の鍵について安全なパスフレーズを入力して保存し、[鍵をバックアップします](#trustedcontent_backupkeys)。 [リカバリー方法](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)が限られているので、鍵のバックアップは重要です。
 
 ## 署名付きのイメージをプルする
 {: #trustedcontent_pull}
@@ -199,14 +199,14 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
 署名付きのイメージを新規リポジトリーに初めてプッシュすると、Docker コンテント・トラストによってルート鍵とリポジトリー鍵の 2 つの署名鍵が作成され、ローカル・マシンに保管されます。
 
-* Linux および Mac ディレクトリー: `~/.docker/trust/private`
+- Linux および Mac ディレクトリー: `~/.docker/trust/private`
 
-* Windows ディレクトリー: `%HOMEPATH%&#xa5;.docker&#xa5;trust&#xa5;private`
+- Windows ディレクトリー: `%HOMEPATH%&#xa5;.docker&#xa5;trust&#xa5;private`
 
    Docker 構成ディレクトリーを変更した場合は、そこで `trust` サブディレクトリーを探してください。
    {: tip}
 
-すべての鍵、特にルート鍵をバックアップする必要があります。 鍵が失われたり改ざんされたりした場合、[リカバリー方法](ts_index.html#ts_recoveringtrustedcontent)は限られています。
+すべての鍵、特にルート鍵をバックアップする必要があります。 鍵が失われたり改ざんされたりした場合、[リカバリー方法](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)は限られています。
 
 鍵をバックアップするには、[Docker コンテント・トラストの資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys) を参照してください。
 

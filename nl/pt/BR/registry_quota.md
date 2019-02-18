@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-28"
-
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -16,14 +15,12 @@ lastupdated: "2018-11-28"
 {:tip: .tip}
 {:download: .download}
 
-
 # Gerenciando os limites de cota para armazenamento e tráfego de pull
 {: #registry_quota}
 
 É possível limitar a quantia de armazenamento e tráfego extraído que pode ser usada em sua conta do {{site.data.keyword.Bluemix}} configurando e gerenciando os limites
 de cota customizados.
 {:shortdesc}
-
 
 ## Configurando limites de cota para armazenar e puxar imagens
 {: #registry_quota_set}
@@ -40,14 +37,14 @@ de serviço grátis, também poderá configurar cotas customizadas em sua quanti
 
 Para configurar uma cota:
 
-1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
+2. Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
 
     ```
     ibmcloud cr quota
@@ -68,7 +65,7 @@ saída é semelhante à mostrada a seguir.
     ```
     {: screen}
 
-3.  Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso de
+3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso de
 tráfego extraído, especifique a opção **tráfego** e substitua
 _&lt;traffic_quota&gt;_ pelo valor em megabytes que você deseja configurar para a cota
 de tráfego extraído. Se você deseja mudar a quantia de armazenamento em sua conta, especifique a
@@ -90,7 +87,6 @@ valor em megabytes que você deseja configurar.
     ```
     {: pre}
 
-
 ## Revisando limites de cota e uso para armazenar e puxar imagens
 {: #registry_quota_get}
 
@@ -98,14 +94,14 @@ valor em megabytes que você deseja configurar.
 para a sua conta.
 {:shortdesc}
 
-1.  Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
+2. Revise os seus limites de cota atuais para armazenamento e tráfego extraído.
 
     ```
     ibmcloud cr quota
@@ -126,7 +122,6 @@ saída é semelhante à mostrada a seguir.
     ```
     {: screen}
 
-
 ## Liberando o armazenamento usado e mudando planos de serviço ou limites de cota para permanecer dentro dos limites de cota fornecidos
 {: #registry_quota_freeup}
 
@@ -137,14 +132,14 @@ namespace.
 
 Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluemix_notm}}:
 
-1.  Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}.
+1. Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}.
 
     ```
     imagens ibmcloud cr
     ```
     {: pre}
 
-2.  Remova uma imagem de seu namespace. Substitua
+2. Remova uma imagem de seu namespace. Substitua
 _&lt;image_name&gt;_ pelo nome da imagem que você deseja remover.
 
     ```
@@ -156,7 +151,7 @@ _&lt;image_name&gt;_ pelo nome da imagem que você deseja remover.
 da imagem, pode demorar um pouco para a imagem ser removida e para o armazenamento ficar disponível.
     {:tip}
 
-3.  Revise o uso de sua cota de armazenamento.
+3. Revise o uso de sua cota de armazenamento.
 
     ```
     ibmcloud cr quota
@@ -168,8 +163,8 @@ da imagem, pode demorar um pouco para a imagem ser removida e para o armazenamen
 
     Para continuar a puxar imagens de seus namespaces, escolha entre as opções a seguir.
 
-    -   Espere até que o próximo ciclo de faturamento seja iniciado.
-    -   Se você tem um plano grátis, [faça upgrade para o plano
-de serviço padrão](registry_overview.html#registry_plan_upgrade).
-    -   Se você já tem um plano padrão, [configure novos limites
+    - Espere até que o próximo ciclo de faturamento seja iniciado.
+    - Se você tem um plano grátis, [faça upgrade para o plano
+de serviço padrão](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+    - Se você já tem um plano padrão, [configure novos limites
 de cota para o tráfego extraído](#registry_quota_set).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-16"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -19,8 +19,8 @@ lastupdated: "2018-11-16"
 {: #index}
 
 {{site.data.keyword.registrylong}}
-fournit un registre d'images privées à service partagé que vous pouvez utiliser pour
-stocker et partager de manière sécurisée vos images Docker avec les utilisateurs de
+fournit un registre d'images privé à service partagé que vous pouvez utiliser pour
+stocker et partager vos images Docker avec les utilisateurs de
 votre compte {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
@@ -32,7 +32,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Cette installation installe également les plug-in pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
+1. Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
 
 ## Configurez un espace de nom
 {: #registry_namespace_add}
@@ -63,7 +63,7 @@ _&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
 {: #registry_images_pulling}
 
 1. [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si
-vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place.
+vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur. 
 
 2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez _&lt;source_image&gt;_ par le référentiel de l'image et _&lt;tag&gt;_ par la balise de l'image que vous souhaitez utiliser, par exemple, _latest_.
 
@@ -80,7 +80,7 @@ vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, in
    {: pre}
 
 3. Attribuez une étiquette à l'image. Remplacez _&lt;source_image&gt;_ par le référentiel et
-_&lt;tag&gt;_ par celle de l'image locale extraite auparavant. Remplacez _&lt;region&gt;_ par le nom de votre [région](registry_overview.html#registry_regions). Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](index.html#registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous désirez utiliser dans votre espace de nom en remplaçant
+_&lt;tag&gt;_ par celle de l'image locale extraite auparavant. Remplacez _&lt;region&gt;_ par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions). Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous désirez utiliser dans votre espace de nom en remplaçant
 _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
 
    ```
@@ -105,7 +105,7 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
    ```
    {: pre}
 
-2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](index.html#registry_namespace_add) et _&lt;image_repo&gt;_ et _&lt;tag&gt;_ par le référentiel et l'étiquette de l'image choisie lorsque vous l'avez libellée.
+2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add) et _&lt;image_repo&gt;_ et _&lt;tag&gt;_ par le référentiel et l'étiquette de l'image choisie lorsque vous l'avez libellée.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -132,8 +132,8 @@ envoyé par commande push votre première image vers votre espace de nom.
 
 **Etape suivante ?**
 
-- [Gestion de la sécurité des images avec Vulnerability Advisor](../va/va_index.html)
-- [Examen de vos plans de service et de leur utilisation](registry_overview.html#registry_plans)
-- [Stockage et gestion davantage d'images dans votre espace de nom](registry_images_.html)
+- [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html)
+- [Examen de vos plans de service et de leur utilisation](/docs/services/Registry/registry_overview.html#registry_plans)
+- [Stockage et gestion davantage d'images dans votre espace de nom](/docs/services/Registry/registry_images_.html)
 - [Définition des règles de rôle d'accès utilisateur](/docs/services/Registry/registry_users.html#user)
 - [Configuration de clusters et de noeuds worker](/docs/containers/cs_clusters.html#clusters)

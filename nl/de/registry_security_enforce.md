@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-15"
 # Sicherheit des Container-Image durchsetzen (Beta)
 {: #security_enforce}
 
-Mit Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](registry_trusted_content.html) korrekt auf das Image angewendet wird. Wenn ein Image Ihre Richtlinienanforderungen nicht erfüllt, wird die Pod-Datei nicht in Ihrem Cluster implementiert oder aktualisiert.
+Mit Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](/docs/services/Registry/registry_trusted_content.html) korrekt auf das Image angewendet wird. Wenn ein Image Ihre Richtlinienanforderungen nicht erfüllt, wird die Pod-Datei nicht in Ihrem Cluster implementiert oder aktualisiert.
 {:shortdesc}
 
 Container Image Security Enforcement ruft die Informationen zu Content Trust für Images und zu Sicherheitslücken von {{site.data.keyword.registrylong}} ab. Sie können die Bereitstellung von Images, die in anderen Registrys gespeichert sind, blockieren oder zulassen. Für diese Images können Sie jedoch nicht die Prüfung auf Sicherheitslücken oder Durchsetzung der Vertrauensbeziehung verwenden.
@@ -219,7 +219,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_ins
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Legen Sie dies mit `true` fest, um die Bereitstellung nur von Images zuzulassen, die [für Content Trust signiert](registry_trusted_content.html) sind. Legen Sie `false` fest, um zu ignorieren, ob Images signiert sind.</td>
+    <td>Legen Sie dies mit `true` fest, um die Bereitstellung nur von Images zuzulassen, die [für Content Trust signiert](/docs/services/Registry/registry_trusted_content.html) sind. Legen Sie `false` fest, um zu ignorieren, ob Images signiert sind.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +242,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_ins
 ### Unterzeichner für vertrauenswürdige Inhalte in angepassten Richtlinien angeben
 {: #signers}
 
-Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die neueste signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](registry_trusted_content.html#trustedcontent_signers).
+Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die neueste signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 Gehen Sie folgendermaßen vor, um die Richtlinie so zu konfigurieren, dass sie überprüft, ob ein Image von einem bestimmten Unterzeichner signiert wurde:
@@ -338,7 +338,7 @@ Wenn Container Image Security Enforcement eine Bereitstellung verweigert, wird d
 
 Sie können die Option `va` in Ihrer Richtlinie aktivieren, um durchzusetzen, dass Vulnerability Advisor bestanden wird, bevor ein Image bereitgestellt werden kann. Images, die von Vulnerability Advisor nicht unterstützt werden, sind zulässig.
 
-Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](registry_trusted_content.html).
+Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](/docs/services/Registry/registry_trusted_content.html).
 
 Eine Bereitstellung ist nur dann zulässig, wenn alle Images die Prüfungen von Container Image Security Enforcement bestehen.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -110,13 +110,13 @@ Durante la tua sessione con Docker Content Trust abilitato, se vuoi eseguire un'
 Quando esegui per la prima volta il push di un'immagine firmata, Docker crea automaticamente una coppia di chiavi di firma: root e repository. Per firmare un'immagine in un repository in cui sono state già inserite immagini firmate, è necessario che la chiave di firma del repository corretta sia caricata sulla macchina che esegue il push dell'immagine.
 {:shortdesc}
 
-Prima di iniziare, [configura il tuo spazio dei nomi del registro](index.html#registry_namespace_add).
+Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2. [Esegui il push della tua immagine](index.html#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando, vedi: "Signing and pushing image metadata."
+2. [Esegui il push della tua immagine](/docs/services/Registry/index.html#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando, vedi: "Signing and pushing image metadata."
 
-3. **Esecuzione del push di un repository firmato per la prima volta.** Quando esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, chiave root e chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](ts_index.html#ts_recoveringtrustedcontent) sono limitate.
+3. **Esecuzione del push di un repository firmato per la prima volta.** Quando esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, chiave root e chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sono limitate.
 
 ## Esecuzione del pull di un'immagine firmata
 {: #trustedcontent_pull}
@@ -199,14 +199,14 @@ Prima di iniziare, richiama la passphrase della chiave di repository che hai sal
 
 Quando esegui per la prima volta il push di un'immagine firmata in un nuovo repository, Docker Content Trust crea due chiavi di firma, la chiave root e la chiave di repository, e le memorizza nella tua macchina locale:
 
-* Directory Linux e Mac: `~/.docker/trust/private`
+- Directory Linux e Mac: `~/.docker/trust/private`
 
-* Directory Windows: `%HOMEPATH%\.docker\trust\private`
+- Directory Windows: `%HOMEPATH%\.docker\trust\private`
 
    Se hai modificato la tua directory di configurazione Docker, cerca lì la sottodirectory `trust`.
    {: tip}
 
-Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](ts_index.html#ts_recoveringtrustedcontent) sono limitate.
+Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sono limitate.
 
 Per eseguire il backup delle tue chiavi, consulta la [documentazione Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

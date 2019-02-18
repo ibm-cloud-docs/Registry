@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-03"
+  years: 2018, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -21,9 +21,9 @@ lastupdated: "2018-12-03"
 Der Zugriff auf {{site.data.keyword.registrylong}} für Benutzer in Ihrem Konto wird von {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) gesteuert.
 {: shortdesc}
 
-Wenn IAM-Richtlinien für Ihr Konto in {{site.data.keyword.registrylong_notm}} aktiviert sind, muss jedem Benutzer, der auf den {{site.data.keyword.registrylong_notm}}-Service in Ihrem Konto zugreift, eine Zugriffsrichtlinie mit einer definierten IAM-Benutzerrolle zugeordnet werden. Diese Richtlinie bestimmt, welche Rolle der Benutzer im Kontext des Service hat, und welche Aktionen der Benutzer ausführen kann. Jede Aktion in {{site.data.keyword.registrylong_notm}} wird einer oder mehreren [IAM-Benutzerrollen](/docs/iam/users_roles.html) zugeordnet.
+Wenn IAM-Richtlinien für Ihr Konto in {{site.data.keyword.registrylong_notm}} aktiviert sind, muss jedem Benutzer, der auf den {{site.data.keyword.registrylong_notm}}-Service in Ihrem Konto zugreift, eine Zugriffsrichtlinie mit einer definierten IAM-Benutzerrolle zugewiesen werden. Diese Richtlinie bestimmt, welche Rolle der Benutzer im Kontext des Service hat, und welche Aktionen der Benutzer ausführen kann. Jede Aktion in {{site.data.keyword.registrylong_notm}} wird einer oder mehreren [IAM-Benutzerrollen](/docs/iam/users_roles.html) zugeordnet.
 
-IAM-Richtlinien werden nur umgesetzt, wenn Sie mit IAM bei {{site.data.keyword.registrylong_notm}} anmelden. Wenn Sie sich mit einer anderen Methode (z. B. einem Registry-Token) bei {{site.data.keyword.registrylong_notm}} anmelden, werden Ihre Richtlinien nicht umgesetzt. Wenn Sie den Zugriff auf einen oder mehrere Namensbereiche für eine ID beschränken möchten, die Sie bei der Automatisierung verwenden, sollten Sie die Verwendung einer IAM-Service-ID anstelle eines Registry-Tokens in Betracht ziehen. Weitere Informationen zu Service-IDs finden Sie unter [Service-IDs erstellen und damit arbeiten](/docs/iam/serviceid.html#serviceids).
+IAM-Richtlinien werden nur umgesetzt, wenn Sie mit IAM bei {{site.data.keyword.registrylong_notm}} anmelden. Wenn Sie sich mit einer anderen Methode (z. B. einem Registry-Token) bei {{site.data.keyword.registrylong_notm}} anmelden, werden Ihre Richtlinien nicht umgesetzt. Wenn Sie den Zugriff auf einen oder mehrere Namensbereiche für eine ID beschränken möchten, die Sie bei der Automatisierung verwenden, sollten Sie die Verwendung einer IAM-Service-ID anstelle eines Registry-Tokens in Betracht ziehen. Weitere Informationen zu Service-IDs finden Sie in [Service-IDs erstellen und damit arbeiten](/docs/iam/serviceid.html#serviceids).  
 
 Weitere Informationen zu IAM finden Sie unter [IBM Cloud - Zugriff und Verwaltung](/docs/iam/index.html#iamoverview).
 
@@ -35,9 +35,9 @@ Mit Richtlinien können Sie Zugriff auf unterschiedlichen Ebenen gewähren. Zu d
 * Zugriff auf eine spezifische Ressource innerhalb des Service
 * Zugriff auf alle IAM-fähigen Services in Ihrem Konto
 
-Nachdem Sie den Bereich der Zugriffsrichtlinie definiert haben, können Sie eine Rolle zuordnen. Sehen Sie sich die folgenden Tabellen an, in denen beschrieben ist, welche Aktionen die einzelnen Rollen innerhalb des {{site.data.keyword.registrylong_notm}}-Service zulassen.
+Nachdem Sie den Bereich der Zugriffsrichtlinie definiert haben, können Sie eine Rolle zuweisen. Sehen Sie sich die folgenden Tabellen an, in denen beschrieben ist, welche Aktionen die einzelnen Rollen innerhalb des {{site.data.keyword.registrylong_notm}}-Service zulassen.
 
-Informationen zum Zuordnen von Benutzerrollen in der Benutzerschnittstelle finden Sie unter [IAM-Zugriff verwalten](/docs/iam/mngiam.html#iammanidaccser).
+Informationen zum Zuweisen von Benutzerrollen in der Benutzerschnittstelle finden Sie unter [IAM-Zugriff verwalten](/docs/iam/mngiam.html#iammanidaccser).
 
 Testen Sie das Lernprogramm [Lernprogramm: Zugriff auf {{site.data.keyword.registrylong_notm}}-Ressourcen gewähren](/docs/services/Registry/registry_tutorial_configure_iam.html#iam_access).
 {: tip}
@@ -45,14 +45,14 @@ Testen Sie das Lernprogramm [Lernprogramm: Zugriff auf {{site.data.keyword.regis
 ## Plattformmanagementrollen
 {: #platform_management_roles}
 
-In der folgenden Tabelle sind die Aktionen, die Plattformmanagementrollen zugeordnet sind, im Detail aufgeführt. Plattformmanagementrollen ermöglichen es Benutzern, Tasks für Serviceressourcen auf Plattformebene auszuführen, z. B. Benutzerzugriff für den Service zuordnen oder Service-IDs erstellen oder löschen.
+In der folgenden Tabelle sind die Aktionen, die Plattformmanagementrollen zugeordnet sind, im Detail aufgeführt. Plattformmanagementrollen ermöglichen es Benutzern, Tasks für Serviceressourcen auf Plattformebene auszuführen, z. B. Benutzerzugriff für den Service zuweisen oder Service-IDs erstellen oder löschen. 
 
 | Plattformmanagementrolle | Beschreibung der Aktionen | Beispielaktionen|
 |:-----------------|:-----------------|:-----------------|
 | Anzeigeberechtigter | Nicht unterstützt | |
 | Editor | Nicht unterstützt | |
 | Operator | Nicht unterstützt | |
-| Administrator | <ul><li>Zugriff für andere Benutzer konfigurieren</li><li>Registry-Tokens konfigurieren</li><li>Cluster erstellen</li></ul> | <ul><li>Informationen zum Zuordnen von Benutzerrollen in der Benutzerschnittstelle finden Sie unter [IAM-Zugriff verwalten](/docs/iam/mngiam.html#iammanidaccser).</li><li>Registry-Tokens hinzufügen, auflisten, abrufen und entfernen</li><li>Zum Erstellen von Clustern in {{site.data.keyword.containerlong_notm}} müssen Sie dem Benutzer die Administratorrolle für {{site.data.keyword.registrylong_notm}} zuordnen. Siehe [Erstellen von Clustern vorbereiten](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
+| Administrator | <ul><li>Zugriff für andere Benutzer konfigurieren</li><li>Registry-Tokens konfigurieren</li><li>Cluster erstellen</li></ul> | <ul><li>Informationen zum Zuweisen von Benutzerrollen in der Benutzerschnittstelle finden Sie unter [IAM-Zugriff verwalten](/docs/iam/mngiam.html#iammanidaccser).</li><li>Registry-Tokens hinzufügen, auflisten, abrufen und entfernen</li><li>Zum Erstellen von Clustern in {{site.data.keyword.containerlong_notm}} müssen Sie dem Benutzer die Administratorrolle für {{site.data.keyword.registrylong_notm}} zuweisen. Siehe [Erstellen von Clustern vorbereiten](/docs/containers/cs_clusters.html#cluster_prepare).</li></ul> |
 {: caption="Tabelle 1. IAM-Benutzerrollen und Aktionen" caption-side="top"}
 
 Für {{site.data.keyword.registrylong_notm}} sind die folgenden Aktionen vorhanden:
@@ -116,16 +116,14 @@ bx iam user-policy-create <benutzer-e-mail> --service-name container-registry --
 | Aktion | Operation für Service | Rolle
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Container-Image erstellen. | Schreibberechtigter, Manager |
-| `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Ein Image oder mehrere Images löschen. | Schreibberechtigter, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Ein Image oder mehrere Images löschen. </li><li>`docker trust revoke` Signatur löschen. </li></ul> | Schreibberechtigter, Manager |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Details zu einem bestimmten Image anzeigen. | Leseberechtigter, Manager |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) Container-Images auflisten. | Leseberechtigter, Manager |
-| `container-registry.image.pull` | `docker pull` Image extrahieren. | Leseberechtigter, Schreibberechtigter, Manager |
-| `container-registry.image.push` | <ul><li>`docker push` Image mit Push-Operation übertragen.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importiert IBM Software, die von [IBM Passport Advantage Online für Kunden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und für die Verwendung mit Helm paketiert wurde, in den Namensbereich Ihrer privaten Registry.</li></ul> | Schreibberechtigter, Manager |
+| `container-registry.image.pull` | <ul><li>`docker pull` Image extrahieren. </li><li>`docker trust inspect` Signatur überprüfen. </li></ul> | Leseberechtigter, Schreibberechtigter, Manager |
+| `container-registry.image.push` | <ul><li>`docker push` Image mit Push-Operation übertragen.</li><li>`docker trust sign` Image signieren. </li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) IBM Software, die von [IBM Passport Advantage Online für Kunden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und zur Verwendung mit Helm paketiert wurde, in Ihren {{site.data.keyword.registrylong_notm}}-Namensbereich importieren. </li></ul> | Schreibberechtigter, Manager |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) Neues Image erstellen, das sich auf ein Quellenimage bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden. | Leseberechtigter, Schreibberechtigter oder Manager für das Quellenimage; Schreibberechtigter oder Manager für das Zielimage |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) Schwachstellenanalysebericht für Ihr Image anzeigen. | Leseberechtigter, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Namensbereich hinzufügen. | Schreibberechtigter, Manager |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Namensbereich entfernen. | Schreibberechtigter, Manager |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Namensbereiche anzeigen. | Leseberechtigter, Manager |
-| `container-registry.signature.create` | `docker trust sign` Image signieren. | Schreibberechtigter, Manager |
-| `container-registry.signature.delete` | `docker trust revoke` Signatur löschen. | Schreibberechtigter, Manager |
-| `container-registry.signature.get` | `docker trust inspect` Signatur überprüfen. | Leseberechtigter, Manager |
 {: caption="Tabelle 5. Serviceaktionen und -operationen für die Verwendung von {{site.data.keyword.registrylong_notm}}" caption-side="top"}

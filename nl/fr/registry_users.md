@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -39,15 +39,15 @@ Si vous souhaitez accorder un accès à tout, ne spécifiez pas un type de resso
 
 - Déterminez les rôles à affecter à chaque utilisateur et sur quelles ressources {{site.data.keyword.registrylong_notm}}. Voir [Rôles IAM](/docs/services/Registry/iam.html#iam). Tenez compte du fait que vous pouvez créer plusieurs règles, par exemple, vous pouvez accorder des droits d'accès en écriture sur une ressource, accorder des droits d'accès en lecture seule sur une autre ressource, et n'accorder aucun droit d'accès sur une autre ressource. Les règles s'additionnent, ce qui signifie qu'une règle d'accès en lecture globale et une règle d'accès en écriture limitée à une ressource octroient des droits d'accès en lecture et en écriture sur cette ressource.
 
-- [Invitez des utilisateurs et affectez des droits d'accès](/docs/iam/iamuserinv.html#iamuserinv). 
+- [Invitez des utilisateurs et affectez des droits d'accès](/docs/iam/iamuserinv.html#iamuserinv).
 
   Si vous souhaitez que des utilisateurs puissent créer des clusters dans {{site.data.keyword.containerlong_notm}}, prenez soin d'affecter le rôle Administrateur pour {{site.data.keyword.registrylong_notm}} à ces utilisateurs et n'affectez pas un groupe de ressources. Voir [Préparation à la création de clusters](/docs/containers/cs_clusters.html#cluster_prepare).
   {: tip}
 
 Pour que des règles puissent être créées pour {{site.data.keyword.registrylong_notm}}, la zone Nom de service doit contenir la valeur `container-registry`.
 
-* Pour créer une règle pour des utilisateurs, consultez la rubrique [Gestion des droits d'accès à des ressources](/docs/iam/mngiam.html#iammanidaccser).
-* Pour créer une règle pour les ID de service, exécutez la commande `ibmcloud iam service-policy-create` ou utilisez l'interface graphique afin de lier des rôles à vos ID de service. Pour créer des règles, vous devez disposer du rôle Administrateur. Vous disposez automatiquement du rôle Administrateur sur votre propre compte. Pour plus d'informations, voir [Création et gestion des ID de service](/docs/iam/serviceid.html#serviceids) and [Gestion des règles d'accès d'ID de service](/docs/iam/serviceidaccess.html#serviceidpolicy).
+- Pour créer une règle pour des utilisateurs, consultez la rubrique [Gestion des droits d'accès à des ressources](/docs/iam/mngiam.html#iammanidaccser).
+- Pour créer une règle pour les ID de service, exécutez la commande `ibmcloud iam service-policy-create` ou utilisez l'interface graphique afin de lier des rôles à vos ID de service. Pour créer des règles, vous devez disposer du rôle Administrateur. Vous disposez automatiquement du rôle Administrateur sur votre propre compte. Pour plus d'informations, voir [Création et gestion des ID de service](/docs/iam/serviceid.html#serviceids) et [Gestion des règles d'accès d'ID de service](/docs/iam/serviceidaccess.html#serviceidpolicy).
 
 ## Activation de l'application des règles pour des utilisateurs existants
 {: #existing_users}

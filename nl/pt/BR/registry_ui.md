@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
-
+  years: 2017, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -23,6 +22,7 @@ lastupdated: "2018-10-19"
 {:shortdesc}
 
 A coluna **Status de segurança** mostra as informações a seguir sobre a imagem:
+
 - `Secure` Nenhum problema de segurança foi localizado.
 - `Vulnerable` Problemas de segurança ou configuração foram localizados e devem ser direcionados antes de poder implementar a imagem.
 - `Incomplete` A varredura não está completa. A varredura ainda pode estar em execução ou o sistema operacional da imagem pode não ser compatível. Aguarde e tente a varredura novamente. Se a varredura ainda não tiver sido concluída, envie a imagem por push novamente para iniciar uma nova varredura. As

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ Questa esercitazione dura circa 45 minuti.
 
 - Completa le istruzioni in [Introduzione a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
-- Assicurati di avere la versione più recente del plug-in container-registry per la CLI {{site.data.keyword.cloud_notm}}, consulta [Aggiornamento del plug-in container-registry](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Assicurati di avere la versione più recente del plug-in CLI `container-registry` per la CLI {{site.data.keyword.cloud_notm}}, consulta [Aggiornamento del plug-in `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 - Devi avere accesso a due [account {{site.data.keyword.cloud_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/) che puoi utilizzare con questa esercitazione, uno per l'utente A e uno per l'utente B, ognuno dei quali deve utilizzare un indirizzo email univoco. Utilizza il tuo account, come utente A e invita un altro utente, l'utente B, ad utilizzare il tuo account. Puoi scegliere di creare un secondo account {{site.data.keyword.cloud_notm}}, oppure di collaborare con un collega che dispone di un account {{site.data.keyword.cloud_notm}}.
 

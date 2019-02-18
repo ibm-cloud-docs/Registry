@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -36,13 +36,13 @@ Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryq
 
 **Vorbereitung**
 
-- [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
-- [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](registry_setup_cli_namespace.html#registry_namespace_add) ein.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Installieren Sie die CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
+- [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add) ein.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
-Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](index.html#registry_images_pulling) in der Dokumentation zur Einführung.
+Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](/docs/services/Registry/index.html#registry_images_pulling) in der Dokumentation zur Einführung.
 
 Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
 {:tip}
@@ -52,17 +52,17 @@ Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensb
 ## Docker-Images mit Push-Operation in eigenen Namensbereich übertragen
 {: #registry_images_pushing}
 
-Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} übertragen (hochladen), um das Image sicher zu speichern und mit anderen Benutzern gemeinsam zu nutzen.
+Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} übertragen (hochladen), um das Image zu speichern und mit anderen Benutzern gemeinsam zu nutzen.
 {:shortdesc}
 
-<img src="images/images_push.svg" width="800" style="width:800px;" alt="Übertragen Sie ein Image mit einer Push-Operation an Ihre private Registry."/>
+<img src="images/images_push.svg" width="800" style="width:800px;" alt="Image per Push-Operation vom Computer an {{site.data.keyword.registrylong_notm}} übertragen. "/>
 
 **Vorbereitung**
 
-- [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
-- [Richten Sie einen eigenen Namensbereich in der privaten Registry von {{site.data.keyword.registrylong_notm}} ein](registry_setup_cli_namespace.html#registry_namespace_add).
+- [Installieren Sie die CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
+- [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add) ein.
 - [Führen Sie eine Pull-Operation für ein Image durch](#registry_images_pulling) oder [erstellen Sie ein Image](#registry_images_creating) auf Ihrem lokalen Computer und kennzeichnen Sie das Image mit den Informationen zu Ihrem Namensbereich.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -79,14 +79,14 @@ Führen Sie die folgenden Schritte aus, um ein Image hochzuladen (Push-Operation
   {:tip}
 
 2. Führen Sie den Befehl `ibmcloud cr namespace-list` aus, um alle Namensbereiche anzuzeigen, die in Ihrem Konto verfügbar sind.
-3. [Laden Sie das Image in Ihren Namensbereich hoch. ](index.html#registry_images_pushing)
+3. [Laden Sie das Image in Ihren Namensbereich hoch. ](/docs/services/Registry/index.html#registry_images_pushing)
 
    Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
    {:tip}
 
-Nachdem Sie das Image mit einer Push-Operation in Ihre private Registry übertragen haben, können Sie eine der folgenden Tasks ausführen:
+Nachdem Sie das Image per Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen haben, können Sie eine der folgenden Tasks ausführen:
 
-- [Verwalten Sie die Sicherheit mit Vulnerability Advisor](../va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
+- [Verwalten Sie die Sicherheit mit Vulnerability Advisor](/docs/services/va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
 - Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers/container_index.html#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
 
 ## Images zwischen Registrys kopieren
@@ -99,9 +99,9 @@ Sie können ein Image mit einer Pull-Operation aus einer Registry in einer Regio
 
 **Vorbereitung**
 
-- [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
-- [Richten Sie einen eigenen Namensbereich in der privaten Registry von {{site.data.keyword.registrylong_notm}} ein](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Installieren Sie die CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
+- [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add) ein.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -112,8 +112,46 @@ Führen Sie die folgenden Schritte aus, um ein Image zwischen zwei Registrys zu 
 
 Nachdem Sie das Image kopiert haben, können Sie eine der folgenden Tasks ausführen:
 
-- [Verwalten Sie die Imagesicherheit mit Vulnerability Advisor](../va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
+- [Verwalten Sie die Imagesicherheit mit Vulnerability Advisor](/docs/services/va/va_index.html), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
 - Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers/container_index.html#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
+
+## Neue Images erstellen, die auf ein Quellenimage verweisen
+{: #registry_images_source}
+
+Erstellen Sie in der Region, an der Sie angemeldet sind, ein neues Image in {{site.data.keyword.registrylong_notm}}, das sich auf ein vorhandenes Image in derselben Region bezieht. Diese Aktion wird nur für Quellenimages unterstützt, die mit Docker Engine Version 1.12 oder höher erstellt wurden. 
+
+Neue Images, die mit diesem Verfahren erstellt werden, behalten keine Signaturen bei. Wenn das neue Image signiert werden soll, verwenden Sie dieses Verfahren nicht.
+{: tip}
+
+**Vorbereitung**
+
+- [Installieren Sie die CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
+- Stellen Sie sicher, dass Sie über Zugriff auf einen privaten Namensbereich in {{site.data.keyword.registrylong_notm}} verfügen, der ein Quellenimage enthält, auf das sich ein anderes Image beziehen soll. 
+
+Weitere Informationen zu diesem Befehl finden Sie in [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag). 
+
+Führen Sie die folgenden Schritte aus, um ein neues Image auf der Basis eines Quellenimages zu erstellen: 
+
+1. Melden Sie sich an der Befehlszeilenschnittstelle an.
+
+   ```
+   ibmcloud cr login
+   ```
+   {: pre}
+
+2. Führen Sie den folgenden Befehl aus, um den neuen Verweis hinzuzufügen. Dabei ist `QUELLENIMAGE` der Name des Quellenimages und `ZIELIMAGE` der Name des Zielimages. Die Quellen- und Zielimages müssen sich in derselben Region befinden. `QUELLENIMAGE` und `ZIELIMAGE` müssen das Format `<REPOSITORY>:<TAG>` aufweisen. Beispiel: `registry.ng.bluemix.net/namespace/image:latest`. 
+
+   ```
+ibmcloud cr image-tag [QUELLENIMAGE] [ZIELIMAGE]
+```
+   {: pre}
+
+3. Vergewissern Sie sich, dass das neue Image erstellt wurde, indem Sie den folgenden Befehl ausführen, und stellen Sie sicher, dass das Image in der Liste mit demselben Image-Auszug wie das Quellenimage aufgeführt wird. 
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
 
 ## Docker-Images für die Verwendung mit dem eigenen Namensbereich erstellen
 {: #registry_images_creating}
@@ -123,9 +161,9 @@ Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstel
 
 **Vorbereitung**
 
-- [Installieren Sie die CLI](registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
-- [Richten Sie einen eigenen Namensbereich in der privaten Registry von {{site.data.keyword.registrylong_notm}} ein](registry_setup_cli_namespace.html#registry_namespace_add).
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Installieren Sie die CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
+- [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add) ein.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -144,10 +182,10 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
         ```
         {: pre}
 
-    2. Öffnen Sie die Dockerfile in einem Texteditor. Sie müssen mindestens das Basisimage hinzufügen, aus dem Sie Ihr Image erstellen wollen. Ersetzen Sie _&lt;quellenimage&gt;_ und _&lt;tag&gt;_ durch das Image-Repository und den Tag, die Sie verwenden wollen. Falls Sie ein Image aus einer anderen privaten Registry verwenden, definieren Sie den vollständigen Pfad zum Image in dieser privaten Registry.
+    2. Öffnen Sie die Dockerfile in einem Texteditor. Sie müssen mindestens das Basisimage hinzufügen, aus dem Sie Ihr Image erstellen wollen. Ersetzen Sie _&lt;quellenimage&gt;_ und _&lt;tag&gt;_ durch das Image-Repository und den Tag, die Sie verwenden wollen. Wenn Sie ein Image aus einer anderen privaten Registry verwenden, definieren Sie den vollständigen Pfad für das Image in {{site.data.keyword.registrylong_notm}}. 
 
        ```
-       FROM <quellenimage>:<tag>
+       FROM <Quellenimage>:<tag>
        ```
        {: pre}
 
@@ -161,7 +199,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
        ```
        {: pre}
 
-       Dieses Beispiel fügt eine Bezeichnung zu den Imagemetadaten hinzu und macht Port 9080 zugänglich. Informationen zu weiteren Dockerfile-Anweisungen, die Sie verwenden können, finden Sie auf der Seite [Dockerfile - Referenz](https://docs.docker.com/engine/reference/builder/).
+       Dieses Beispiel fügt eine Bezeichnung zu den Imagemetadaten hinzu und macht Port 9080 zugänglich. Weitere Dockerfile-Anweisungen, die Sie verwenden können, finden Sie in den [Dockerfile-Referenzinformationen![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/builder/). 
 
 3. Wählen Sie einen Namen für das Image. Der Imagename muss dem folgenden Format entsprechen:
 
@@ -204,9 +242,9 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
 
          Ersetzen Sie _&lt;imagename&gt;_ durch den Namen Ihres Images.
 
-      3. Nachdem Sie das Image erstellt und für Ihren Namensbereich gekennzeichnet haben, [können Sie das Image mit einer Push-Operation in die private Registry des Namensbereichs übertragen](#registry_images_pushing).
+      3. Nachdem Sie das Image erstellt und für Ihren Namensbereich gekennzeichnet haben, [können Sie das Image per Push-Operation in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing) übertragen. 
 
-Informationen zur Verwendung von Vulnerability Advisor zum Überprüfen der Sicherheit Ihres Images finden Sie im Abschnitt [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html).
+Informationen zur Verwendung von Vulnerability Advisor zum Überprüfen der Sicherheit Ihres Images finden Sie im Abschnitt [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html).
 
 ## Images aus Ihrem privaten {{site.data.keyword.Bluemix_notm}}-Repository löschen
 {: #registry_images_remove}
@@ -265,7 +303,7 @@ Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen e
 
 Führen Sie die folgenden Schritte aus, um ein Image über die grafische Benutzerschnittstelle zu löschen:
 
-1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net](https://console.bluemix.net)) mit Ihrer IBMid an.
+1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net)) mit Ihrer IBMid an.
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
@@ -292,7 +330,7 @@ Sie müssen alle Images sichern, die Sie behalten möchten.
 
 Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen, führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net](https://console.bluemix.net)) mit Ihrer IBMid an.
+1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net)) mit Ihrer IBMid an.
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.

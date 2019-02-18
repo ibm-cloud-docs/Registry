@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-19"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-19"
 # {{site.data.keyword.registrylong_notm}}-Befehle (`ibmcloud cr`) zum Verwalten von Docker-Images im Namensbereich
 {: #registry_cli_reference}
 
-Sie können das Container-Registry-Plug-in dazu verwenden, Ihren eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten Registry einzurichten, in der Sie Docker-Images sicher speichern und gemeinsam mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto nutzen können.
+Sie können das `container-registry`-CLI-Plug-in dazu verwenden, einen eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten {{site.data.keyword.registrylong_notm}}-Registry einzurichten, in der Sie Docker-Images speichern und mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto gemeinsam nutzen können.
 {:shortdesc}
 
 ## `ibmcloud cr`-Befehle
@@ -35,7 +35,7 @@ Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keywo
 Sie können die CLI-Ausgabe für unterstützte {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern.
 {:shortdesc}
 
-Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das Container-Registry-Plug-in stellt die Option 'format' bereit, mit der Sie eine Go-Vorlage auf die CLI-Ausgabe anwenden können. Die Go-Vorlage ist eine Komponente der [Programmiersprache Go](https://golang.org/pkg/text/template/), mit der Sie die Ausgabe der Befehlszeilenschnittstelle anpassen können.
+Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das `container-registry`-CLI-Plug-in enthält die Formatoption, die Sie verwenden können, um eine Go-Vorlage für die Ausgabe der Befehlszeilenschnittstelle anzuwenden. Die Go-Vorlage ist ein Feature der [Go-Programmiersprache ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://golang.org/pkg/text/template/), mit der Sie die Ausgabe der Befehlszeilenschnittstellen anpassen können. 
 
 Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei verschiedene Arten anwenden:
 
@@ -44,9 +44,9 @@ Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei vers
 
 Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylong_notm}}-Befehlen verwenden. Klicken Sie auf einen Befehl, um eine Liste der verfügbaren Felder und ihrer Datentypen anzuzeigen.
 
-- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptionen verwenden können.
 
@@ -117,13 +117,13 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
-|`Created`|Ganzzahl (64-Bit)|Wird angezeigt, wenn das Image erstellt wurde, ausgedrückt als Anzahl Sekunden in [UNIX-Zeit](https://en.wikipedia.org/wiki/Unix_time).|
-|`Digest`|Zeichenfolge|Zeigt die eindeutige Kennung für ein Image an.|
+|`Created`|Ganzzahl (64-Bit)|Zeigt den Erstellungszeitpunkt des Images als Sekundenanzahl in [UNIX-Zeit ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) an. |
+|`Digest`|Zeichenfolge|Zeigt die eindeutige ID für ein Image an.|
 |`Namespace`|Zeichenfolge|Zeigt den Namensbereich an, in dem das Image gespeichert ist.|
 |`Repository`|Zeichenfolge|Zeigt das Repository des Image an.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
-|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](../va/va_index.html#va_registry_cli) beschrieben.|
+|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](/docs/services/va/va_index.html#va_registry_cli) beschrieben.|
 {: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
@@ -134,21 +134,21 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
-|`ID`|Zeichenfolge|Zeigt die eindeutige Kennung für ein Image an.|
+|`ID`|Zeichenfolge|Zeigt die eindeutige ID für ein Image an.|
 |`Parent`|Zeichenfolge|Zeigt die ID des übergeordneten Image an, das verwendet wurde, um dieses Image zu erstellen.|
 |`Comment`|Zeichenfolge|Zeigt die Beschreibung des Image an.|
-|`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke](https://en.wikipedia.org/wiki/Unix_time) an, zu der das Image erstellt wurde.|
+|`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Erstellungszeitpunkt des Images an. |
 |`Container`|Zeichenfolge|Zeigt die ID des Containers an, der das Image erstellt hat.|
-|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](registry_cli_reference.html#config).|
+|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`DockerVersion`|Zeichenfolge|Zeigt die Docker-Version an, die zum Erstellen dieses Image verwendet wurde.|
 |`Author`|Zeichenfolge|Zeigt den Autor des Image an.|
-|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [Config](registry_cli_reference.html#config).|
+|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`Architecture`|Zeichenfolge|Zeigt die Prozessorarchitektur an, die verwendet wurde, um dieses Image zu erstellen, und die erforderlich ist, um das Image auszuführen.|
 |`Os`|Zeichenfolge|Zeigt die Betriebssystemfamilie, die verwendet wurde, um dieses Image zu erstellen, und die zur Ausführung des Image erforderlich ist.|
 |`OsVersion`|Zeichenfolge|Zeigt die Version des Betriebssystems an, die verwendet wurde, um dieses Image zu erstellen.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
-|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](registry_cli_reference.html#rootfs).|
+|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
 {: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
@@ -167,14 +167,14 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`StdinOnce`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom nach dem Trennen des angefügten Clients geschlossen wird, und _false_, wenn er geöffnet bleibt.|
 |`Env`|Array von Zeichenfolgen|Zeigt die Liste der Umgebungsvariablen in Form von Schlüssel-Wert-Paaren an.|
 |`Cmd`|Array von Zeichenfolgen|Beschreibt die Befehle und Argumente, die an einen Container übergeben werden, um beim Starten des Containers ausgeführt zu werden.|
-|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Boolesch|Zeigt 'true' an, wenn der Befehl bereits mit Escapezeichen versehen ist (Windows-spezifisch).|
 |`Image`|Zeichenfolge|Zeigt den Namen des Image an, das vom Operator übergeben wurde.|
 |`Volumes`|Schlüssel-Wert-Zuordnung|Zeigt die Liste der Datenträgermounts an, die an einen Container angehängt sind.|
 |`WorkingDir`|Zeichenfolge|Zeigt das Arbeitsverzeichnis in dem Container an, in dem angegebene Befehle ausgeführt werden.|
 |`Entrypoint`|Array von Zeichenfolgen|Beschreibt den Befehl, der beim Starten des Containers ausgeführt wird.|
 |`NetworkDisabled`|Boolesch|Zeigt _true_ an, wenn Netzbetrieb für den Container inaktiviert ist, und _false_, wenn Netzbetrieb für den Container aktiviert ist.|
-|`MacAddress`|Zeichenfolge|Zeigt die MAC-Adresse an, die dem Container zugeordnet ist.|
+|`MacAddress`|Zeichenfolge|Zeigt die MAC-Adresse an, die dem Container zugewiesen ist.|
 |`OnBuild`|Array von Zeichenfolgen|Zeigt die ONBUILD-Metadaten an, die für die Image-Dockerfile definiert wurden.|
 |`Labels`|Schlüssel-Wert-Zuordnung|Zeigt die Liste von Bezeichnungen an, die dem Image als Schlüssel-Wert-Paare hinzugefügt wurden.|
 |`StopSignal`|Zeichenfolge|Beschreibt das UNIX-Stoppsignal, das zu senden ist, wenn der Container gestoppt werden soll.|
@@ -209,8 +209,8 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
-|`ID`|Zeichenfolge|Zeigt die eindeutige Kennung für ein Token an.|
-|`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke](https://en.wikipedia.org/wiki/Unix_time) des Zeitpunkts an, an dem das Token abläuft.|
+|`ID`|Zeichenfolge|Zeigt die eindeutige ID für ein Token an.|
+|`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Zeitpunkt an, an dem das Token abläuft. |
 |`ReadOnly`|Boolesch|Zeigt _true_ an, wenn für Images nur Pull-Operationen durchgeführt werden können, und _false_, wenn für Images Push- und Pull-Operationen in und aus Ihrem Namensbereich durchgeführt werden können.|
 |`Beschreibung`|Zeichenfolge|Zeigt die Beschreibung des Tokens an.|
 {: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr token-list</code>." caption-side="top"}>

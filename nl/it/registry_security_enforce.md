@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-15"
 # Applicazione della sicurezza dell'immagine del contenitore (Beta)
 {: #security_enforce}
 
-Con Container Image Security Enforcement (Beta), puoi verificare le tue immagini del contenitore prima di distribuirle al tuo cluster in {{site.data.keyword.containerlong}}. Puoi controllare da dove vengono distribuite le immagini, applicare le politiche di Controllo vulnerabilità e garantire che l'[attendibilità dei contenuti](registry_trusted_content.html) sia applicata correttamente all'immagine. Se un'immagine non soddisfa i requisiti della tua politica, il pod non viene distribuito al tuo cluster o aggiornato.
+Con Container Image Security Enforcement (Beta), puoi verificare le tue immagini del contenitore prima di distribuirle al tuo cluster in {{site.data.keyword.containerlong}}. Puoi controllare da dove vengono distribuite le immagini, applicare le politiche di Controllo vulnerabilità e garantire che l'[attendibilità dei contenuti](/docs/services/Registry/registry_trusted_content.html) sia applicata correttamente all'immagine. Se un'immagine non soddisfa i requisiti della tua politica, il pod non viene distribuito al tuo cluster o aggiornato.
 {:shortdesc}
 
 Container Image Security Enforcement richiama le informazioni sull'attendibilità dei contenuti e sulle vulnerabilità delle immagini da {{site.data.keyword.registrylong}}. Puoi scegliere di bloccare o di consentire la distribuzione di immagini memorizzate in altri registri ma non puoi utilizzare la vulnerabilità o l'applicazione dell'attendibilità per queste immagini.
@@ -219,7 +219,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Imposta come `true` per consentire di distribuire solo le immagini [firmate per l'attendibilità dei contenuti](registry_trusted_content.html). Imposta come `false` per ignorare se le immagini sono firmate.</td>
+    <td>Imposta come `true` per consentire di distribuire solo le immagini [firmate per l'attendibilità dei contenuti](/docs/services/Registry/registry_trusted_content.html). Imposta come `false` per ignorare se le immagini sono firmate.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +242,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
 ### Specifica dei firmatari di contenuti attendibili nelle politiche personalizzate
 {: #signers}
 
-Se utilizzi l'attendibilità dei contenuti, puoi verificare che le immagini siano firmate da determinati firmatari. La distribuzione viene consentita solo se la versione firmata più recente è firmata da tutti i firmatari elencati. Per aggiungere un firmatario a un repository, vedi [Gestione dei firmatari attendibili](registry_trusted_content.html#trustedcontent_signers).
+Se utilizzi l'attendibilità dei contenuti, puoi verificare che le immagini siano firmate da determinati firmatari. La distribuzione viene consentita solo se la versione firmata più recente è firmata da tutti i firmatari elencati. Per aggiungere un firmatario a un repository, vedi [Gestione dei firmatari attendibili](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 Per configurare la politica per verificare che un'immagine sia firmata da un determinato firmatario:
@@ -338,7 +338,7 @@ Se Container Image Security Enforcement nega una distribuzione, la distribuzione
 
 Puoi abilitare l'opzione `va` nella tua politica per applicare l'approvazione del Controllo vulnerabilità prima che un'immagine possa essere distribuita. Le immagini che non sono supportate dal Controllo vulnerabilità sono consentite.
 
-Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](registry_trusted_content.html).
+Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](/docs/services/Registry/registry_trusted_content.html).
 
 Una distribuzione viene consentita solo se tutte le immagini superano i controlli di Container Image Security Enforcement.
 

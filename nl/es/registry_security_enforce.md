@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-15"
 # Imposición de seguridad de imagen de contenedor (Beta)
 {: #security_enforce}
 
-Con Container Image Security Enforcement (Beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](registry_trusted_content.html) esté aplicado correctamente a la imagen. Si una imagen no cumple con los requisitos de una política, el pod no se desplegará en el clúster ni se actualizará.
+Con Container Image Security Enforcement (Beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](/docs/services/Registry/registry_trusted_content.html) esté aplicado correctamente a la imagen. Si una imagen no cumple con los requisitos de una política, el pod no se desplegará en el clúster ni se actualizará.
 {:shortdesc}
 
 Container Image Security Enforcement recupera la información sobre la confianza del contenido de las imágenes y las vulnerabilidades desde {{site.data.keyword.registrylong}}. Puede optar por bloquear o permitir el despliegue de imágenes que se almacenan en otros registros, pero no puede utilizar el cumplimiento de confianza o vulnerabilidades para dichas imágenes.
@@ -219,7 +219,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_insta
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Establézcalo como `true` para permitir solo imágenes que están [firmadas para que se despliegue la confianza de contenido](registry_trusted_content.html). Establézcalo como `false` para ignorar si las imágenes están firmadas.</td>
+    <td>Establézcalo como `true` para permitir solo imágenes que están [firmadas para que se despliegue la confianza de contenido](/docs/services/Registry/registry_trusted_content.html). Establézcalo como `false` para ignorar si las imágenes están firmadas.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +242,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_insta
 ### Especificación de firmantes de contenido de confianza en políticas personalizadas
 {: #signers}
 
-Si utiliza la confianza de contenido, puede verificar que las imágenes estén firmadas por firmantes particulares. El despliegue solo está permitido si la versión firmada más reciente está firmada por todos los firmantes listados. Para añadir un firmante a un repositorio, consulte [Gestión de firmantes de confianza](registry_trusted_content.html#trustedcontent_signers).
+Si utiliza la confianza de contenido, puede verificar que las imágenes estén firmadas por firmantes particulares. El despliegue solo está permitido si la versión firmada más reciente está firmada por todos los firmantes listados. Para añadir un firmante a un repositorio, consulte [Gestión de firmantes de confianza](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
 {:shortdesc}
 
 Para configurar la política para verificar que una imagen esté firmada por un firmante en particular:
@@ -338,7 +338,7 @@ Si Container Image Security Enforcement deniega un Despliegue, este se creará, 
 
 Puede habilitar la opción `va` en su política para imponer que el Vulnerability Advisor pase antes de poder desplegar una imagen. Las imágenes que no están soportadas por Vulnerability Advisor están permitidas.
 
-Puede habilitar la opción `trust` en la política para imponer la confianza de contenido. Si no especifica ningún `signerSecrets`, el despliegue se permitirá si la imagen está firmada por cualquier persona. Si especifica `signerSecrets`, todos los firmantes que especifique deben haber firmado la versión firmada más recientemente de la imagen. Container Image Security Enforcement verifica que la clave pública proporcionada pertenezca al firmante. Para obtener más información sobre la confianza de contenido, consulte [Firma de imágenes para contenido de confianza](registry_trusted_content.html).
+Puede habilitar la opción `trust` en la política para imponer la confianza de contenido. Si no especifica ningún `signerSecrets`, el despliegue se permitirá si la imagen está firmada por cualquier persona. Si especifica `signerSecrets`, todos los firmantes que especifique deben haber firmado la versión firmada más recientemente de la imagen. Container Image Security Enforcement verifica que la clave pública proporcionada pertenezca al firmante. Para obtener más información sobre la confianza de contenido, consulte [Firma de imágenes para contenido de confianza](/docs/services/Registry/registry_trusted_content.html).
 
 Solo se permite un despliegue si todas las imágenes pasan las comprobaciones de Container Image Security Enforcement.
 

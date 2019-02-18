@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-11"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # Alta disponibilità e ripristino di emergenza
 {: #ha-dr}
 
@@ -27,7 +25,7 @@ Il servizio {{site.data.keyword.registrylong}} è un servizio regionale altament
 
 * Viene regolarmente eseguito il backup dei dati archiviati in {{site.data.keyword.registrylong_notm}}, fornendo ulteriore resilienza.
 
-* Se sei preoccupato per la disponibilità della tua immagine nel caso in cui un'intera regione non sia disponibile, puoi scegliere di passare le tue immagini a più registri regionali. 
+* Se sei preoccupato per la disponibilità della tua immagine nel caso in cui un'intera regione non sia disponibile, puoi scegliere di passare le tue immagini a più registri regionali.
   
   Potresti anche scegliere di passare le tue immagini a più registri nel caso elimini o sovrascrivi accidentalmente le tue immagini.
 

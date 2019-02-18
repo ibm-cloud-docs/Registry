@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-11"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # Alta disponibilidad y recuperación tras desastre
 {: #ha-dr}
 
@@ -27,7 +25,7 @@ El servicio {{site.data.keyword.registrylong}} es un servicio regional de alta d
 
 * Se realiza una copia de seguridad de forma regular de los datos almacenados en {{site.data.keyword.registrylong_notm}}, que proporciona más resiliencia.
 
-* Si le preocupa la disponibilidad de sus imágenes en el caso de que toda una región no esté disponible, puede optar por enviar por push sus imágenes a varios registros regionales. 
+* Si le preocupa la disponibilidad de sus imágenes en el caso de que toda una región no esté disponible, puede optar por enviar por push sus imágenes a varios registros regionales.
   
   También puede elegir enviar por push sus imágenes a varios registros en caso de que accidentalmente borre o sobrescriba sus imágenes.
 

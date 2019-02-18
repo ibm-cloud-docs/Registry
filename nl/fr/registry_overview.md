@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,10 +18,10 @@ lastupdated: "2018-11-15"
 # A propos d'{{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker privées et y accéder de manière sécurisée dans une architecture hautement disponible et évolutive.
+Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker privées et y accéder dans une architecture hautement disponible et évolutive.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par IBM. Vous pouvez utiliser le registre privé en configurant votre propre espace de nom d'images et en envoyant par push des images Docker vers votre espace de nom.
+{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser {{site.data.keyword.registrylong_notm}} en configurant votre propre espace de nom d'images et en envoyant des images Docker à votre espace de nom. 
 
 <img src="images/registry_architecture1.svg" alt="Image montrant comment vous pouvez interagir avec IBM Cloud Container Registry. Un registre de conteneur contient des référentiels privés et publics et des API permettant d'interagir avec le service. Votre client Docker local peut extraire et envoyer des images depuis et vers vos référentiels privés dans le registre, et peuvent extraire des registres publics. L'interface utilisateur Web IBM Cloud (console) interagit avec l'API de registre de conteneur pour répertorier des images. L'interface de ligne de commande de registre de conteneur interagit avec l'API pour répertorier, créer, inspecter et retirer des images, mais aussi pour d'autres fonctions administratives. Votre client Docker local peut également extraire et envoyer des images depuis votre magasin d'images locales vers d'autres registres."/>
 
@@ -31,11 +31,11 @@ Une image Docker est la base de chaque conteneur que vous créez. L'image est cr
 
 Lorsque vous envoyez des images par commande push au registre, {{site.data.keyword.registrylong_notm}}, vous pouvez exploiter les fonctionnalités intégrées de Vulnerability Advisor qui les sonde pour détecter des vulnérabilités et des problèmes de sécurité potentiels. Vulnerability Advisor recherche les packages vulnérables dans des images de base Docker spécifiques et des vulnérabilités connues dans les paramètres de configuration des applications. Lorsque des vulnérabilités sont détectées, il fournit les informations correspondantes. Vous pouvez utiliser ces informations pour résoudre des problèmes de sécurité afin d'éviter le déploiement de conteneurs à partir d'images vulnérables.
 
-Consultez le tableau suivant pour avoir une présentation des avantages liés à l'utilisation d'{{site.data.keyword.registrylong_notm}}.
+Consultez le tableau suivant pour avoir une présentation des avantages liés à l'utilisation d'{{site.data.keyword.registrylong_notm}} :
 
 |Avantage|Description|
 |-------|-----------|
-|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par IBM.</li><li>Stockez vos images Docker privées de manière sécurisée et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.</li></ul>|
 |Conformité en matière de sécurité d'image avec Vulnerability Advisor|<ul><li>Bénéficiez d'une analyse automatique des images dans votre espace de nom.</li><li>Consultez les recommandations spécifiques au système d'exploitation pour résoudre d'éventuelles vulnérabilité et protéger vos conteneurs contre la compromission.</li></ul>|
 |Limites de quota pour le stockage et le trafic d'extraction (pull)|<ul><li>Bénéficiez d'un stockage gratuit et d'un trafic d'extraction (pull) vers vos images privées jusqu'à ce que vous atteigniez votre quota gratuit.</li><li>Définissez des limites de quota personnalisées pour le volume de stockage et le trafic d'extraction (pull) par mois afin d'éviter de dépasser le niveau de paiement indiqué dans vos préférences.</li></ul>|
 {: caption="Table 1. Avantages d'{{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -53,7 +53,7 @@ Le tableau suivant décrit les plans de service {{site.data.keyword.registrylong
 
 |Caractéristiques|Gratuit|Standard|
 |---------------|----|--------|
-|Description|Essayez le registre privé dans {{site.data.keyword.registrylong_notm}} pour stocker de manière sécurisée et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.|
+|Description|Essayez {{site.data.keyword.registrylong_notm}} pour stocker et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.|
 |Volume de stockage pour les images|500 Mo|Illimité|
 |Trafic d'extraction (pull)|5 Go par mois|Illimité|
 |Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix.</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix. Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et la calculatrice de prix, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -81,7 +81,7 @@ En fonction du plan de service que vous choisissez, vous êtes facturé pour le 
 
 **Stockage : **
 
-  Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker de manière sécurisée vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
+  Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
 
   Exemple pour le plan standard :
 
@@ -113,7 +113,7 @@ En fonction du plan de service que vous choisissez, vous pouvez envoyer des imag
 
 **Stockage : **
 
-  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](registry_quota.html#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](registry_quota.html#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
+  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry/registry_quota.html#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
 
   Exemple pour le plan standard :
 
@@ -136,7 +136,7 @@ pas extraire d'image par commande pull à partir des espaces de nom de votre com
 vous patientez jusqu'au début de la période de facturation suivante, si vous
 [procédez à la mise à niveau vers le plan
 standard](#registry_plan_upgrade) ou si vous [augmentez vos
-limites de quota pour le trafic d'extraction (pull)](registry_quota.html#registry_quota_set).
+limites de quota pour le trafic d'extraction (pull)](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
   Exemple pour
 le plan standard :
@@ -207,7 +207,7 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 ## Notions élémentaires
 {: #registry_planning}
 
-Préparez-vous à stocker en sécurité et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
+Préparez-vous à stocker et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
 {:shortdesc}
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
@@ -260,7 +260,7 @@ Pour en savoir plus sur des termes spécifiques à Docker, consultez le [glossai
 ### Planification d'espaces de nom
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé qui est hébergé et géré par IBM. Vous pouvez stocker en sécurité et partager vos images Docker
+{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé qui est hébergé et géré par IBM. Vous pouvez stocker et partager vos images Docker
 dans ce registre en configurant un espace de nom du registre.
 {:shortdesc}
 
@@ -340,3 +340,10 @@ ibmcloud cr region-set global
 Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
 
 Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
+
+## Prise en charge de Docker
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur. Voir la [documentation Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/v1.12/).
+
+Docker est requis uniquement si vous souhaitez envoyer ou extraire des images, ou si vous souhaitez exécuter la commande `ibmcloud cr ppa-archive-load`. 

@@ -37,12 +37,12 @@
      id="namedview541"
      showgrid="false"
      inkscape:zoom="0.80037026"
-     inkscape:cx="892.68734"
-     inkscape:cy="443.67042"
+     inkscape:cx="600.99322"
+     inkscape:cy="405.67795"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Icons_and_lines" /><style
+     inkscape:current-layer="g536" /><style
      type="text/css"
      id="style2">
 	.st0{fill:none;stroke:#8C9BA5;stroke-width:1.5;stroke-miterlimit:10;}
@@ -666,32 +666,30 @@
          class="st12"
          d="M130.4,106.3C130.4,106.3,130.4,106.3,130.4,106.3c-0.5-0.3-1.1-0.5-1.8-0.5c-0.1,0-0.2,0-0.3,0    c0,0-0.1,0-0.1,0c-0.1,0-0.1,0-0.2,0c-0.2,0-0.5,0.1-0.7,0.2l-2.5,0.9l0,27.5c0,2.6-2,5.4-4.4,6.3l-25.7,9.7v2.7    c0,1.3,0.5,2.2,1.3,2.8l0,0c0.8,0.5,1.9,0.7,3.1,0.2l28.2-10.7c2.4-0.9,4.4-3.7,4.4-6.3l0-30.1    C131.7,107.8,131.2,106.8,130.4,106.3z"
          id="path348" /><text
-         transform="translate(151.8846,122.2208)"
+         transform="scale(0.95898562,1.0427685)"
          class="st13 st14"
          id="text350"
-         style="font-size:18px;font-family:IBMPlexSans">Controllo vulnerabilità e registro IBM Cloud Container</text>
+         x="158.52849"
+         y="117.20799"
+         style="font-size:17.26174164px;font-family:IBMPlexSans;stroke-width:0.95898563">IBM Cloud Container Registry e Controllo vulnerabilità</text>
 <path
          class="st5"
          d="M1068.4,806.4H907c-3.8,0-6.9-3.1-6.9-6.9v-24.9c0-3.8,3.1-6.9,6.9-6.9h161.4c3.8,0,6.9,3.1,6.9,6.9v24.9    C1075.2,803.4,1072.2,806.4,1068.4,806.4z"
          id="path352" /><text
-         transform="translate(901.6677,122.2211)"
+         transform="matrix(1 0 0 1 901.6677 122.2211)"
          class="st13 st14"
-         id="text354"
-         style="font-size:18px;font-family:IBMPlexSans">Servizio Kubernetes</text>
+         id="text354">Servizio Kubernetes</text>
 <text
-         id="text360"
-         x="879.49658"
-         y="784.47113"><tspan
-           x="879.49658"
-           y="784.47113"
+         transform="matrix(1 0 0 1 941.4966 784.4711)"
+         id="text360"><tspan
+           x="0"
+           y="0"
            class="st13 st14"
-           id="tspan356"
-           style="font-size:18px;font-family:IBMPlexSans">Altri registri Docker Hub</tspan><tspan
-           x="864.19659"
-           y="806.07111"
+           id="tspan356">Docker Hub</tspan><tspan
+           x="-15.3"
+           y="21.6"
            class="st13 st14"
-           id="tspan358"
-           style="font-size:18px;font-family:IBMPlexSans" /></text>
+           id="tspan358">Altri registri</tspan></text>
 <circle
          class="st15"
          cx="76.7"
@@ -740,37 +738,44 @@
          id="path388" /><text
          class="st13 st14"
          id="text390"
-         style="font-size:18px;font-family:IBMPlexSans"
-         x="178.1106"
-         y="447.91">Elenca</text>
+         x="180.1106"
+         y="447.91"
+         style="font-size:18px;font-family:IBMPlexSans">Elenca</text>
 <text
          id="text398"
-         x="262.7049"
+         x="268.7049"
          y="491.11301"><tspan
-           x="262.7049"
+           x="268.7049"
            y="491.11301"
            class="st13 st14"
            id="tspan392"
            style="font-size:18px;font-family:IBMPlexSans">Elenca,</tspan><tspan
-           x="247.40491"
+           x="253.40491"
            y="512.71301"
            class="st13 st14"
            id="tspan394"
-           style="font-size:18px;font-family:IBMPlexSans">ispeziona,</tspan><tspan
-           x="248.90491"
+           style="font-size:18px;font-family:IBMPlexSans">controlla,</tspan><tspan
+           x="254.90491"
            y="534.31299"
            class="st13 st14"
            id="tspan396"
-           style="font-size:18px;font-family:IBMPlexSans">reimuove</tspan></text>
+           style="font-size:18px;font-family:IBMPlexSans">rimuovi</tspan></text>
 <text
+         transform="scale(0.81632355,1.2250045)"
          id="text404"
-         x="254.00421"
-         y="393.56531"><tspan
-           x="254.00421"
-           y="393.56531"
+         x="358.24191"
+         y="321.27661"
+         style="font-size:9.79588223px;stroke-width:0.81632352"><tspan
+           x="358.24191"
+           y="321.27661"
            class="st13 st14"
            id="tspan400"
-           style="font-size:18px;font-family:IBMPlexSans">Crea spazio dei nomi</tspan></text>
+           style="font-size:14.69382381px;font-family:IBMPlexSans;stroke-width:0.81632352">Crea</tspan><tspan
+           x="341.99704"
+           y="338.90921"
+           class="st13 st14"
+           id="tspan402"
+           style="font-size:14.69382381px;font-family:IBMPlexSans;stroke-width:0.81632352">spazio dei nomi</tspan></text>
 <text
          transform="matrix(1 0 0 1 488.7948 463.2193)"
          class="st13 st14"
@@ -1046,50 +1051,47 @@
          class="st13 st14"
          id="text514">CLI</text>
 <text
-         id="text520"
-         x="547.52118"
-         y="784.47113"><tspan
-           x="547.52118"
-           y="784.47113"
+         transform="matrix(1 0 0 1 597.5212 784.4711)"
+         id="text520"><tspan
+           x="0"
+           y="0"
            class="st13 st14"
-           id="tspan516"
-           style="font-size:18px;font-family:IBMPlexSans">Archivio immagini locale</tspan></text>
+           id="tspan516">Archivio</tspan><tspan
+           x="27.2"
+           y="21.6"
+           class="st13 st14"
+           id="tspan518">immagine locale</tspan></text>
 <text
-         transform="translate(590.5526,141.1297)"
+         transform="matrix(1 0 0 1 590.5526 141.1297)"
          id="text526"><tspan
            x="0"
            y="0"
            class="st13 st14"
-           id="tspan522"
-           style="font-size:18px;font-family:IBMPlexSans" /></text>
-<text
-         transform="translate(590.5526,141.1297)"
-         id="text547"><tspan
-           x="0"
-           y="0"
+           id="tspan522">Repository privato</tspan><tspan
+           x="17.7"
+           y="21.6"
            class="st13 st14"
-           style="font-size:18px;font-family:IBMPlexSans"
-           id="tspan549">Repository privato Docker</tspan></text>
+           id="tspan524">Docker</tspan></text>
 <path
          class="st5"
          d="M463.6,168.1h-75.9c-2.2,0-4-1.8-4-4v-19.5c0-2.2,1.8-4,4-4h75.9c2.2,0,4,1.8,4,4v19.5    C467.6,166.3,465.8,168.1,463.6,168.1z"
          id="path528" /><text
-         transform="translate(357.2628,159.9272)"
+         transform="matrix(1 0 0 1 357.2628 159.9272)"
          class="st13 st14"
-         id="text530"
-         style="font-size:18px;font-family:IBMPlexSans">Repository pubblico</text>
+         id="text530">Repository pubblico</text>
 <text
+         transform="scale(0.92783847,1.0777738)"
          class="st13 st14"
          id="text532"
-         style="font-size:18px;font-family:IBMPlexSans"
-         x="375.45969"
-         y="333.80109">Immagine IBM </text>
+         x="399.2728"
+         y="309.7135"
+         style="font-size:16.70109367px;font-family:IBMPlexSans;stroke-width:0.9278385">Immagine IBM</text>
 <text
          class="st13 st14"
          id="text534"
-         style="font-size:18px;font-family:IBMPlexSans"
-         x="598.05377"
-         y="332.92419">Immagine</text>
+         x="602.05377"
+         y="332.92419"
+         style="font-size:18px;font-family:IBMPlexSans">Immagine</text>
 </g></switch><i:pgf
      id="adobe_illustrator_pgf"><![CDATA[
 	eJzsvetyJLmRLvgE8Q65P8ZMOjuVDCCAAEI7NmZMXmb77Ejdpm7paHbsWBnFYnfziEXWsFjS9Dz9

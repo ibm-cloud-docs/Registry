@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,14 +48,14 @@ El mandato `ibmcloud cr login` falla.
 
 {: tsCauses}
 
-- El plug-in container-registry no está actualizado y debe actualizarse.
+- El plugin de CLI `container-registry` no está actualizado y debe actualizarse.
 - Docker no está instalado en el sistema local o no está en ejecución.
 - Han caducado sus credenciales de inicio de sesión en {{site.data.keyword.Bluemix_notm}}.
 
 {: tsResolve}
 Puede solucionar este problema de las siguientes maneras:
 
-- Actualice a la versión más reciente del plug-in de container-registry, consulte [Actualización del plug-in container-registry](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Asegúrese de que Docker esté instalado en el sistema. Si ya está instalado, reinicie el daemon de Docker.
 - Vuelva a ejecutar el mandato `ibmcloud login` para renovar las credenciales de inicio de sesión en {{site.data.keyword.Bluemix_notm}}.
 
@@ -69,12 +69,12 @@ Todos los mandatos `ibmcloud cr` fallarán.
 
 {: tsCauses}
 
-- El plug-in container-registry no está actualizado y debe actualizarse.
+- El plugin de CLI `container-registry` no está actualizado y debe actualizarse.
 
 {: tsResolve}
 Puede solucionar este problema de la siguiente manera:
 
-- Actualice a la versión más reciente del plug-in de container-registry, consulte [Actualización del plug-in container-registry](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## Los mandatos de {{site.data.keyword.registrylong_notm}} fallan con `'cr' no es un mandato registrado. Consulte 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- El plug-in container-registry no está instalado.
+- El plugin de CLI `container-registry` no está instalado.
 
 {: tsResolve}
 Puede solucionar este problema de la siguiente manera:
 
-- Instale el plugin container-registry, consulte [Instalación de la CLI de {{site.data.keyword.registryshort_notm}} (plug-in container-registry)](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Instale el plugin de CLI `container-registry`. Consulte [Instalación del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+
+## El mandato `ibmcloud cr build` falla
+{: #ts_build_fails}
+
+{: tsSymptoms}
+El mandato de construcción falla.
+
+{: tsCauses}
+Puede que el servidor esté inactivo o que haya problemas con el Dockerfile.
+
+{: tsResolve}
+Para averiguar la causa, ejecute `docker build` localmente con las opciones correspondientes de [`docker build` ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/reference/commandline/build/):
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- Si la compilación local no funciona, compruebe si existe algún problema con el Dockerfile.
+- Si la compilación local funciona, [póngase en contacto con el equipo de soporte de {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Error de configuración de un espacio de nombres
 {: #ts_problem}
@@ -140,7 +160,7 @@ Ha superado la cuota de almacenamiento. Suprima una o varias imágenes, o bien r
 {: screen}
 
 ```
-Ha superado la cuota de tráfico de extracción para el mes actual. 
+Ha superado la cuota de tráfico de extracción para el mes actual.
 Revise la cuota del tráfico de extracción y el plan de precios
 ```
 {: screen}
@@ -467,3 +487,67 @@ Complete los pasos siguientes para cambiar la configuración de webhook para dej
    {: pre}
 
    Cambie `failurePolicy` a `Fail`, guarde y cierre.
+
+## Error de manifiesto: `The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+Ha intentado etiquetar la imagen, pero recibe el mensaje de error siguiente: `The manifest type for this image is not supported for tagging.`.
+
+{: tsCauses}
+No se admite el tipo de manifiesto.
+
+{: tsResolve}
+Para solucionar el problema, realice los pasos siguientes:
+
+1. Extraiga la imagen que ha intentado etiquetar con el mandato siguiente, donde `<source_image>` es el nombre de la imagen de origen:
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. Etiquete la copia local de la imagen que ha extraído en el paso anterior con el mandato siguiente, donde `<target_image>` es el nombre de la imagen nueva:
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. Envíe por push la imagen que ha etiquetado en el paso anterior con el mandato siguiente:
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## Error de manifiesto: `The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+Ha intentado etiquetar la imagen, pero recibe el mensaje de error siguiente: `The manifest version for this image is not supported for tagging. Para actualizar a una versión de manifiesto admitida, extraiga y envíe por push esta imagen mediante la versión 1.12 o posterior de Docker y, a continuación, ejecute el mandato 'ibmcloud cr image-tag' de nuevo.`
+
+{: tsCauses}
+No se admite la versión del manifiesto.
+
+{: tsResolve}
+Para solucionar el problema, realice los pasos siguientes:
+
+1. Actualice a la versión 1.12 o posterior de Docker Engine.
+
+2. Extraiga la imagen que ha intentado etiquetar con el mandato siguiente, donde `<source_image>` es el nombre de la imagen de origen:
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. Para actualizar la versión de manifiesto, envíe por push la imagen con el siguiente mandato:
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. Etiquete la imagen mediante el mandato `ibmcloud cr image-tag`. Consulte [Creación de imágenes nuevas que hacen referencia a una imagen de origen](/docs/services/Registry/registry_images_.html#registry_images_source).
+  

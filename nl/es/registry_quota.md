@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-28"
-
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -16,13 +15,11 @@ lastupdated: "2018-11-28"
 {:tip: .tip}
 {:download: .download}
 
-
 # Gestión de los límites de cuota para almacenamiento y tráfico de extracción
 {: #registry_quota}
 
 Puede limitar la cantidad de almacenamiento y de tráfico de extracción que se pueda utilizar en su cuenta de {{site.data.keyword.Bluemix}} estableciendo y gestionando límites de cuota personalizados.
 {:shortdesc}
-
 
 ## Establecimiento de límites de cuota para almacenar y extraer imágenes
 {: #registry_quota_set}
@@ -35,14 +32,14 @@ benefíciese de una cantidad ilimitada de almacenamiento y tráfico de extracci�
 
 Para establecer una cuota:
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
+2. Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
 
     ```
     ibmcloud cr quota
@@ -62,7 +59,7 @@ Para establecer una cuota:
     ```
     {: screen}
 
-3.  Cambie el límite de cuota para almacenamiento y tráfico de extracción. Para cambiar el uso de tráfico de extracción, especifique la opción **traffic** y sustituya
+3. Cambie el límite de cuota para almacenamiento y tráfico de extracción. Para cambiar el uso de tráfico de extracción, especifique la opción **traffic** y sustituya
 _&lt;traffic_quota&gt;_ por el valor en megabytes que desea establecer para la cuota del tráfico de extracción. Si desea cambiar la cantidad de almacenamiento de su cuenta, especifique la opción **storage** y sustituya _&lt;storage_quota&gt;_ por el valor en megabytes que desea establecer.
 
     Si tiene el plan gratuito, no puede establecer su cuota en una cantidad que supere el nivel gratuito. La concesión del nivel gratuito para el almacenamiento es de 512 MB y, para el tráfico, de 5120 MB.
@@ -80,21 +77,20 @@ _&lt;traffic_quota&gt;_ por el valor en megabytes que desea establecer para la c
     ```
     {: pre}
 
-
 ## Revisión de los límites de cuota y del uso para almacenar y extraer imágenes
 {: #registry_quota_get}
 
 Puede revisar los límites de cuota y comprobar el almacenamiento actual y el uso de tráfico de extracción correspondiente a su cuenta.
 {:shortdesc}
 
-1.  Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
+2. Revise los límites de cuota actuales correspondientes a almacenamiento y tráfico de extracción.
 
     ```
     ibmcloud cr quota
@@ -114,7 +110,6 @@ Puede revisar los límites de cuota y comprobar el almacenamiento actual y el us
     ```
     {: screen}
 
-
 ## Liberación de almacenamiento utilizado y cambio de planes de servicio o de límites de cuota para mantenerse dentro de los límites de cuota
 {: #registry_quota_freeup}
 
@@ -123,14 +118,14 @@ Si ha superado los límites de cuota establecidos para su cuenta de {{site.data.
 
 Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Bluemix_notm}}:
 
-1.  Obtenga una lista de todas las imágenes de todos los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}.
+1. Obtenga una lista de todas las imágenes de todos los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}.
 
     ```
     ibmcloud cr images
     ```
     {: pre}
 
-2.  Elimine una imagen del espacio de nombres. Sustituya
+2. Elimine una imagen del espacio de nombres. Sustituya
 _&lt;image_name&gt;_ por el nombre de la imagen que desea eliminar.
 
     ```
@@ -141,7 +136,7 @@ _&lt;image_name&gt;_ por el nombre de la imagen que desea eliminar.
     En función del tamaño de la imagen, es posible que la imagen tarde un rato en eliminarse y en dejar almacenamiento disponible.
     {:tip}
 
-3.  Revise el uso de la cuota de almacenamiento.
+3. Revise el uso de la cuota de almacenamiento.
 
     ```
     ibmcloud cr quota
@@ -153,6 +148,6 @@ _&lt;image_name&gt;_ por el nombre de la imagen que desea eliminar.
 
     Para seguir extrayendo imágenes de los espacios de nombres, elija una de las siguientes opciones.
 
-    -   Espere a que comience el siguiente ciclo de facturación.
-    -   Si tiene un plan gratuito, [actualice al plan de servicio estándar](registry_overview.html#registry_plan_upgrade).
-    -   Si ya tiene un plan estándar, [establezca nuevos límites de cuota para el tráfico de extracción](#registry_quota_set).
+    - Espere a que comience el siguiente ciclo de facturación.
+    - Si tiene un plan gratuito, [actualice al plan de servicio estándar](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+    - Si ya tiene un plan estándar, [establezca nuevos límites de cuota para el tráfico de extracción](#registry_quota_set).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -109,13 +109,13 @@ Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있�
 서명된 이미지를 처음 푸시할 때 Docker가 서명된 키 쌍(루트 및 저장소)을 자동으로 작성합니다. 이전에 서명된 이미지를 푸시한 저장소에서 이미지에 서명하려면 이미지를 푸시하는 시스템에 올바른 저장소 서명 키를 로드해야 합니다.
 {:shortdesc}
 
-시작하기 전에 [레지스트리 네임스페이스를 설정](index.html#registry_namespace_add)하십시오.
+시작하기 전에 [레지스트리 네임스페이스를 설정](/docs/services/Registry/index.html#registry_namespace_add)하십시오.
 
 1. [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2. [이미지를 푸시](index.html#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 "Signing and pushing image metadata"가 표시됩니다.
+2. [이미지를 푸시](/docs/services/Registry/index.html#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 "Signing and pushing image metadata"가 표시됩니다.
 
-3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](ts_index.html#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
+3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
 
 ## 서명된 이미지 가져오기
 {: #trustedcontent_pull}
@@ -198,14 +198,14 @@ docker trust revoke <image>:<tag>
 
 사용자가 새 저장소에 서명된 이미지를 처음 푸시하면 Docker Content Trust가 두 개의 서명 키인 루트 키와 저장소 키를 작성하여 로컬 시스템에 저장합니다.
 
-* Linux 및 Mac 디렉토리: `~/.docker/trust/private`
+- Linux 및 Mac 디렉토리: `~/.docker/trust/private`
 
-* Windows 디렉토리: `%HOMEPATH%\.docker\trust\private`
+- Windows 디렉토리: `%HOMEPATH%\.docker\trust\private`
 
    Docker 구성 디렉토리를 변경한 경우 이 디렉토리에서 `trust` 서브디렉토리를 찾으십시오.
    {: tip}
 
-모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](ts_index.html#ts_recoveringtrustedcontent)이 제한됩니다.
+모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)이 제한됩니다.
 
 키를 백업하려는 경우에는 [Docker Content Trust 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오.
 

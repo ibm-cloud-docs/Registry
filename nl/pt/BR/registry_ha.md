@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -15,8 +15,6 @@ lastupdated: "2018-09-11"
 {:tip: .tip}
 {:download: .download}
 
-
-
 # Alta disponibilidade e recuperação de desastre
 {: #ha-dr}
 
@@ -27,7 +25,7 @@ O {{site.data.keyword.registrylong}} é um serviço regional altamente disponív
 
 * Os dados armazenados no {{site.data.keyword.registrylong_notm}} são submetidos a backup regularmente, fornecendo resiliência adicional.
 
-* Se você estiver preocupado com a disponibilidade de suas imagens no caso de uma região inteira ficar indisponível, será possível optar por enviar suas imagens por push para múltiplos registros regionais. 
+* Se você estiver preocupado com a disponibilidade de suas imagens no caso de uma região inteira ficar indisponível, será possível optar por enviar suas imagens por push para múltiplos registros regionais.
   
   Também é possível optar por enviar suas imagens por push para múltiplos registros no caso de você excluir ou sobrescrever acidentalmente suas imagens.
 

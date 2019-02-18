@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -32,7 +32,7 @@ Si vous utilisez une clé d'API, vous pouvez contrôler l'accès à vos espaces 
 
 Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](/docs/iam/apikeys.html#manapikey).
 
-Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](registry_setup_cli_namespace.html#registry_cli_install).
+Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
 
 ## Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API
 {: #registry_api_key}
@@ -59,6 +59,11 @@ Vous pouvez utiliser une clé d'API pour automatiser l'accès à vos espaces de 
 
 Utilisez la clé d'API pour vous connecter à votre registre en exécutant la commande Docker suivante. Remplacez &lt;your_apikey&gt; par votre clé d'API et &lt;registry_url&gt; par l'URL du registre où sont définis vos espaces de nom.
 
+- Pour les espaces de nom définis pour la région Sud des Etats-Unis, utilisez `registry.ng.bluemix.net`
+- Pour les espaces de nom définis pour la région Sud du Royaume-Uni, utilisez `registry.eu-gb.bluemix.net`
+- Pour les espaces de nom définis pour la région Centre Europe, utilisez `registry.eu-de.bluemix.net`
+- Pour les espaces de nom définis pour la région Sud de l'Asie Pacifique, utilisez `registry.au-syd.bluemix.net`
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,7 +77,9 @@ Pour des informations de référence sur la commande, voir [Créer une nouvelle 
 Vous pouvez utiliser des jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. En créant un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez accorder un accès à tous vos espaces de nom configurés dans une région à des utilisateurs ne faisant pas partie de votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in container-registry.
+Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. Si vous souhaitez que des utilisateurs ne faisant pas partie de votre compte puissent accéder à tous les espaces de nom configurés dans une région, vous pouvez créer un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images
+vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in d'interface de ligne de commande `container-registry`.
+
 
 Quand vous créez un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez décider s'il octroie un accès en lecture seule (pull) ou en écriture (push et pull) au registre. Vous pouvez également spécifier s'il doit être permanent ou expirer au bout de 24 heures. Pour pouvez créer et utiliser plusieurs jetons destinés à des types d'accès différents.
 
@@ -101,6 +108,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Description des composantes de cette commande</th>
         </thead>
+          <caption>Tableau 1. Composantes de la commande `ibmcloud cr token-add`</caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -121,7 +129,7 @@ Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {
 
    ```
    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-   Token              <token_value>
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
@@ -231,6 +239,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Remplacez _&lt;apikey&gt;_ par votre clé d'API, _&lt;region&gt;_ par le nom de votre [région](registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ par votre espace de nom et _&lt;image_repo&gt;_ par le référentiel.
+Remplacez _&lt;apikey&gt;_ par votre clé d'API, _&lt;region&gt;_ par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ par votre espace de nom et _&lt;image_repo&gt;_ par le référentiel.
 
 Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

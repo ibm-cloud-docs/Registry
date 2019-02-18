@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -109,13 +109,13 @@ Durante la sesión con Docker Content Trust habilitado, si desea realizar una op
 Cuando envíe por primera vez una imagen firmada, Docker crea automáticamente un par de claves de firma: raíz y repositorio. Para firmar una imagen en un repositorio donde se hayan enviado antes las imágenes firmadas, debe tener la clave de firma de repositorios correcta cargada en la máquina que está enviando la imagen.
 {:shortdesc}
 
-Antes de empezar, [configure su espacio de nombres de registro](index.html#registry_namespace_add).
+Antes de empezar, [configure su espacio de nombres de registro](/docs/services/Registry/index.html#registry_namespace_add).
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. [Envíe su imagen](index.html#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato que ve, "Firma y envío de metadatos de imagen".
+2. [Envíe su imagen](/docs/services/Registry/index.html#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato que ve, "Firma y envío de metadatos de imagen".
 
-3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](ts_index.html#ts_recoveringtrustedcontent) son limitadas.
+3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) son limitadas.
 
 ## Extracción de una imagen firmada
 {: #trustedcontent_pull}
@@ -198,14 +198,14 @@ Antes de empezar, recupere la frase de contraseña de clave de repositorio que h
 
 Al enviar por primera vez una imagen firmada a un repositorio nuevo, Docker Content Trust crea dos claves de firma, la clave raíz y la clave de repositorio, y las almacena en la máquina local:
 
-* Directorio de Linux y Mac: `~/.docker/trust/private`
+- Directorio de Linux y Mac: `~/.docker/trust/private`
 
-* Directorio de Windows: `%HOMEPATH%\.docker\trust\private`
+- Directorio de Windows: `%HOMEPATH%\.docker\trust\private`
 
    Si ya cambiado el directorio de configuración de Docker, busque el subdirectorio `trust` allí.
    {: tip}
 
-Debe realizar copia de seguridad de todas sus claves, y especialmente de la clave raíz. Si una clave se pierde o está en peligro, las [opciones de recuperación](ts_index.html#ts_recoveringtrustedcontent) estarán limitadas.
+Debe realizar copia de seguridad de todas sus claves, y especialmente de la clave raíz. Si una clave se pierde o está en peligro, las [opciones de recuperación](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) estarán limitadas.
 
 Para hacer copia de seguridad de sus claves, consulte la [documentación de Docker Content Trust ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

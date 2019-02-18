@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-16"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-16"
 # Erste Schritte mit {{site.data.keyword.registrylong_notm}}
 {: #index}
 
-{{site.data.keyword.registrylong}} bietet eine private Multi-Tenant-Registry für Images, mit der Sie Ihre Docker-Images sicher speichern und mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam nutzen können.
+{{site.data.keyword.registrylong}} bietet eine private Multi-Tenant-Registry für Images, mit der Sie Ihre Docker-Images speichern und mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam nutzen können.
 {:shortdesc}
 
 Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zu Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie unter [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html).
@@ -29,7 +29,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #registry_cli_install}
 
-1. Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert.
+1. Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins der Befehlszeilenschnittstelle für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert. 
 
 ## Namensbereich einrichten
 {: #registry_namespace_add}
@@ -58,7 +58,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## Images mit einer Pull-Operation aus einer anderen Registry auf die lokale Maschine mit Pull-Operation extrahieren
 {: #registry_images_pulling}
 
-1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/).
+1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version. 
 
 2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository des Images und _&lt;tag&gt;_ durch den Tag des Images, das Sie verwenden möchten, z. B. _latest_.
 
@@ -74,7 +74,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-3. Kennzeichnen Sie das Image. Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository und _&lt;tag&gt;_ durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen [Region](registry_overview.html#registry_regions). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich, den Sie in [Namensbereich einrichten](index.html#registry_namespace_add) erstellt haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden wollen, indem Sie _&lt;neues_image-repository&gt;_ und _&lt;neuer_tag&gt;_ durch die entsprechenden Werte ersetzen.
+3. Kennzeichnen Sie das Image. Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository und _&lt;tag&gt;_ durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen [Region](/docs/services/Registry/registry_overview.html#registry_regions). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich, den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden wollen, indem Sie _&lt;neues_image-repository&gt;_ und _&lt;neuer_tag&gt;_ durch die entsprechenden Werte ersetzen.
 
    ```
    docker tag <Quellenimage>:<tag> registry.<region>.bluemix.net/<eigener Namensbereich>/<neues_Image-Repository>:<neuer Tag>
@@ -98,7 +98,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-2. Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich,  den Sie in [Namensbereich einrichten](index.html#registry_namespace_add) erstellt haben, und _&lt;Imagebericht&gt;_ und _&lt;Tag&gt;_ durch das Repository und den Tag des Image, das Sie beim Tagging ausgewählt haben.
+2. Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich,  den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben, und _&lt;Imagebericht&gt;_ und _&lt;Tag&gt;_ durch das Repository und den Tag des Image, das Sie beim Tagging ausgewählt haben.
 
    ```
    docker push registry.<region>.bluemix.net/<eigener Namensbereich>/<Image-Repository>:<tag>
@@ -123,8 +123,8 @@ Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.re
 
 **Wie geht es weiter?**
 
-- [Imagesicherheit mit Vulnerability Advisor verwalten](../va/va_index.html)
-- [Servicepläne und Nutzung überprüfen](registry_overview.html#registry_plans).
-- [Weitere Images in Ihrem Namensbereich speichern und verwalten](registry_images_.html)
+- [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html)
+- [Servicepläne und Nutzung überprüfen](/docs/services/Registry/registry_overview.html#registry_plans).
+- [Weitere Images in Ihrem Namensbereich speichern und verwalten](/docs/services/Registry/registry_images_.html)
 - [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry/registry_users.html#user)
 - [Cluster und Workerknoten einrichten](/docs/containers/cs_clusters.html#clusters)

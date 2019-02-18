@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ Ce tutoriel dure environ 45 minutes.
 
 - Suivez les instructions décrites dans la rubrique [Initiation à {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
-- Assurez-vous que vous disposez de la version la plus récente du plug-in container-registry pour l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Voir [Mise à jour du plug-in container-registry](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Assurez-vous que vous disposez de la version la plus récente du plug-in d'interface de ligne de commande `container-registry` pour l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Voir [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 - Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/) que vous pouvez utiliser dans le cadre de ce tutoriel, l'un pour l'utilisateur A et l'autre pour l'utilisateur B, chacun devant utiliser une adresse électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
 

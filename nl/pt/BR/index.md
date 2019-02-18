@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-16"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,9 +18,7 @@ lastupdated: "2018-11-16"
 # Introdução ao {{site.data.keyword.registrylong_notm}}
 {: #index}
 
-O {{site.data.keyword.registrylong}} fornece um registro privado
-de imagem de múltiplos locatários que é possível usar para armazenar e compartilhar com segurança as suas imagens do Docker com usuários em sua
-conta do {{site.data.keyword.Bluemix_notm}}.
+O {{site.data.keyword.registrylong}} fornece um registro de imagem privada de diversos locatários que pode ser usada para armazenar e compartilhar as imagens do Docker com usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, consulte [Gerenciando a segurança da imagem com o Vulnerability Advisor](/docs/services/va/va_index.html).
@@ -34,7 +32,7 @@ exemplo, nomes ou rótulos de imagem).
 
 1. Instale a CLI do [{{site.data.keyword.Bluemix_notm}}
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://clis.ng.bluemix.net/ui/home.html) para que os
-comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados. Essa instalação também instala os plug-ins para {{site.data.keyword.containerlong_notm}} e {{site.data.keyword.registrylong_notm}}.
+comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
 
 ## Configurar um namespace
 {: #registry_namespace_add}
@@ -63,7 +61,7 @@ comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados.
 ## Puxar imagens de outro registro para sua máquina local
 {: #registry_images_pulling}
 
-1. [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/).
+1. [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
 2. Faça download (_puxe_) da imagem para sua máquina local. Substitua _&lt;source_image&gt;_ pelo repositório da imagem e _&lt;tag&gt;_ pela tag da imagem que deseja usar, por exemplo, _latest_.
 
@@ -80,7 +78,7 @@ comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados.
    {: pre}
 
 3. Identifique a imagem. Substitua _&lt;source_image&gt;_ pelo repositório e
-_&lt;tag&gt;_ pela tag de sua imagem local extraída anteriormente. Substitua _&lt;region&gt;_ pelo nome de sua [região](registry_overview.html#registry_regions). Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](index.html#registry_namespace_add). Defina o repositório e identifique a imagem que você deseja usar
+_&lt;tag&gt;_ pela tag de sua imagem local extraída anteriormente. Substitua _&lt;region&gt;_ pelo nome de sua [região](/docs/services/Registry/registry_overview.html#registry_regions). Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add). Defina o repositório e identifique a imagem que você deseja usar
 em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
 
    ```
@@ -105,7 +103,7 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
    ```
    {: pre}
 
-2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](index.html#registry_namespace_add) e _&lt;image_repo&gt;_ e _&lt;tag&gt;_ pelo repositório e a tag da imagem que você escolheu quando identificou a imagem.
+2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add) e _&lt;image_repo&gt;_ e _&lt;tag&gt;_ pelo repositório e a tag da imagem que você escolheu quando identificou a imagem.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -130,8 +128,8 @@ Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_
 
 **O que Vem a Seguir?**
 
-- [Gerenciar segurança de imagem com o Vulnerability Advisor](../va/va_index.html)
-- [Revisar seus planos de serviço e uso](registry_overview.html#registry_plans)
-- [Armazenar e gerenciar mais imagens em seu namespace](registry_images_.html)
+- [Gerenciar segurança de imagem com o Vulnerability Advisor](/docs/services/va/va_index.html)
+- [Revisar seus planos de serviço e uso](/docs/services/Registry/registry_overview.html#registry_plans)
+- [Armazenar e gerenciar mais imagens em seu namespace](/docs/services/Registry/registry_images_.html)
 - [Definindo políticas de função de acesso do usuário](/docs/services/Registry/registry_users.html#user)
 - [Configurar clusters e nós do trabalhador](/docs/containers/cs_clusters.html#clusters)
