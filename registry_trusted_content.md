@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-02-15"
 
 ---
 
@@ -21,13 +21,12 @@ lastupdated: "2019-02-14"
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
-
 {{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools. To use this feature, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/content_trust/) and the [Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary) documentation.
 {:shortdesc}
 
 When you push your image with trusted content enabled, your Docker client also pushes a signed metadata object into the {{site.data.keyword.Bluemix_notm}} trust server. When pulling a tagged image with Docker Content Trust enabled, your Docker client contacts the trust server to establish the latest signed version of the tag that you requested, verifies the content signature, and downloads the signed image.
 
-An image name is made up of a repository and a tag. When using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content so that you can verify that each image is produced by the appropriate team.
+An image name is made up of a repository and a tag. When you are using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content so that you can verify that each image is produced by the appropriate team.
 
 A repository can contain both signed and unsigned content. If you have Docker Content Trust enabled, you can access the signed content in a repository, even if there is other unsigned content alongside it.
 

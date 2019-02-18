@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -40,7 +40,7 @@ You can pull (download) an image from any private or public registry source, and
 **Before you begin**
 
 - [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -63,7 +63,7 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 **Before you begin**
 
 - [Install the CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Pull](#registry_images_pulling_reg) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
 - [Make sure that you can run Docker commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
