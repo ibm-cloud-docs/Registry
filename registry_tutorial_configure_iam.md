@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-19"
 
 ---
 
@@ -217,7 +217,7 @@ In this section, you create some namespaces with sample images, and grant access
 
         The three namespaces that you created in this tutorial (`namespace_a`, `namespace_b`, and `namespace_c`) are shown. If you do not see these namespaces, go back and follow the instructions to create them again.
 
-    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the short name for your [region](/docs/services/Registry/registry_overview.html#registry_regions), for example `us-south`:
+    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), for example `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader

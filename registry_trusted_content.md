@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-15"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -117,7 +117,12 @@ Before you begin, [set up your registry namespace](/docs/services/Registry/index
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. [Push your image](/docs/services/Registry/index.html#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see, "Signing and pushing image metadata."
+2. [Push your image](/docs/services/Registry/index.html#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **First time pushing a signed repository.** When you push a signed image to a new repository, the command creates two signing keys, root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) are limited.
 

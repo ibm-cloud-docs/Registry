@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-19"
 
 ---
 
@@ -34,8 +34,8 @@ If you have problems or questions when you are using {{site.data.keyword.registr
 
 When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
 
-- If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-bluemix` and `container-registry`.
-- For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `bluemix` and `container-registry` tags.
+- If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-cloud` and `container-registry`.
+- For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `ibm-cloud` and `container-registry` tags.
 
 See [Using the Support Center](/docs/get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
 

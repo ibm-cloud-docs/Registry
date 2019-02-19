@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -49,7 +49,7 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 1. Update the `container-registry` CLI plug-in.
 
     ```
-    ibmcloud plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry
     ```
     {: pre}
 
