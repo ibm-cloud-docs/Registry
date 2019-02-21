@@ -2,7 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, high availability
+
+
+subcollection: registry
 
 ---
 

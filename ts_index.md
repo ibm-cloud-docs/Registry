@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-19"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -550,3 +554,18 @@ To resolve the problem, complete the following steps:
    {: pre}
 
 4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/services/Registry/registry_images_.html#registry_images_source).
+
+## Docker login fails on a Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+You receive the following error message when you try to run the `ibmcloud cr login` command on a Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+There is a problem with Docker for Mac that prevents your credentials from being stored in the macOS keychain.
+
+{: tsResolve}
+You might be able to resolve the problem by rebooting your Mac. If rebooting your Mac doesn't work, you can disable the storage of logins in your Mac keychain:
+
+1. In your menu, click the **Docker** icon, select **Preferences**.
+2. Clear the **Securely store Docker logins in macOS keychain** checkbox.
