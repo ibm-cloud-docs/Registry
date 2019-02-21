@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-21"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -78,11 +78,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
-## Automating access to your namespaces by using tokens
+## Automating access to your namespaces by using tokens (deprecated)
 {: #registry_tokens}
 
 You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
 {:shortdesc}
+
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+{: deprecated}
 
 Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the `container-registry` CLI plug-in.
 
@@ -96,11 +99,14 @@ Use the following tasks to manage your tokens:
 - [Using a token to automate access to your namespaces](#registry_tokens_use)
 - [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
 
-### Creating a token for your {{site.data.keyword.Bluemix_notm}} account
+### Creating a token for your {{site.data.keyword.Bluemix_notm}} account (deprecated)
 {: #registry_tokens_create}
 
 You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
 {:shortdesc}
+
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+{: deprecated}
 
 1. Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
@@ -145,11 +151,14 @@ You can create a token to grant access to all your {{site.data.keyword.registryl
    ```
    {: pre}
 
-### Using a token to automate access to your namespaces
+### Using a token to automate access to your namespaces (deprecated)
 {: #registry_tokens_use}
 
 You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
 {:shortdesc}
+
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+{: deprecated}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
@@ -191,11 +200,14 @@ You can use a token in your `docker login` command to automate access to your na
 
    After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
-### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
+### Removing a token from your {{site.data.keyword.Bluemix_notm}} account (deprecated)
 {: #registry_tokens_remove}
 
 Remove an {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
 {:shortdesc}
+
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+{: deprecated}
 
 Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.
 {:tip}
