@@ -31,7 +31,7 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
 
-Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## Installing the `container-registry` CLI plug-in
 {: #cli_namespace_registry_cli_install}
