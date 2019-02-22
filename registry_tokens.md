@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -246,7 +246,10 @@ The following user names are valid:
 - `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
 - `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
 - `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
-- `token` The password is a registry token. You can use this user name for automation.
+- `token` (deprecated) The password is a registry token. You can use this user name for automation.
+
+  Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+  {: deprecated}
 
 You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
 
