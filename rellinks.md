@@ -39,10 +39,10 @@ You can use the following related links to become more familiar with {{site.data
 {: #containers}
 
 - [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-container_index#container_index)
-- REST API for clusters, see [Kubernetes service API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.bluemix.net/swagger-api/)
-- [REST API JSON for clusters ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.bluemix.net/swagger-api/swagger.json)
-- REST API for logging in clusters, see [IBM Cloud Container Service Logging API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://us-south.containers.bluemix.net/swagger-logging/)
-- REST API for managing Ingress application load balancers in clusters, see [IBM Cloud Container Service ALB API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://us-south.containers.bluemix.net/swagger-alb-api/)
+- REST API for clusters, see [Kubernetes Service API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-api/)
+- [REST API JSON for clusters ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
+- REST API for logging in clusters, see [{{site.data.keyword.containerlong_notm}} Logging API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-logging/)
+- REST API for managing Ingress application load balancers in clusters, see [IBM Cloud Container Service ALB API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-alb-api/)
 
 ## Docker
 {: #links_docker}
