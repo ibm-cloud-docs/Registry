@@ -28,18 +28,18 @@ subcollection: registry
 You can use either registry tokens or an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your  {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
 {:shortdesc}
 
-Are you trying to use your registry images in Kubernetes deployments? Check out [Accessing images in other Kubernetes namespaces, {{site.data.keyword.Bluemix_notm}} regions, and accounts](/docs/containers/cs_images.html#other).
+Are you trying to use your registry images in Kubernetes deployments? Check out [Accessing images in other Kubernetes namespaces, {{site.data.keyword.Bluemix_notm}} regions, and accounts](/docs/containers?topic=containers-images#other).
 {: tip}
 
 API keys are linked to your account and can be used across {{site.data.keyword.Bluemix_notm}} so that you don't need different credentials for each service. You can use the API key in the CLI or as part of automation to log in as your user identity.
 
 Registry tokens are scoped for {{site.data.keyword.registrylong_notm}} only. You can limit them to read-only access, and you can choose whether they are expiring or non-expiring.
 
-If you use an API key, you can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
+If you use an API key, you can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
 
-For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam/apikeys.html#manapikey).
+For more information about {{site.data.keyword.registrylong_notm}} API keys, see [Working with API keys](/docs/iam?topic=iam-manapikey#manapikey).
 
-Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
+Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docker CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## Automating access to your namespaces by using API keys
 {: #registry_api_key}
@@ -55,8 +55,8 @@ You can create an API key that you can then use to log in to your registry.
 
 You can create both user API keys and service ID API keys.
 
-- To create a service ID API key, see [Creating an API key for a service ID](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
-- To create a user API key, see [Creating an API key](/docs/iam/userid_keys.html#creating-an-api-key).
+- To create a service ID API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#creating-an-api-key-for-a-service-id).
+- To create a user API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#creating-an-api-key).
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
@@ -76,7 +76,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
+For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ## Automating access to your namespaces by using tokens
 {: #registry_tokens}
@@ -244,6 +244,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` with your namespace, and `<image_repo>` with the repository.
+Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` with your namespace, and `<image_repo>` with the repository.
 
-For more information, see [Using a private image registry](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
+For more information, see [Using a private image registry](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

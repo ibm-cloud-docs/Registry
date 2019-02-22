@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -29,7 +29,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
 
-The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html).
+The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {:tip}
@@ -37,7 +37,7 @@ Do not put personal information in your container images, namespace names, descr
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1. Install the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
+1. Install the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 ## Set up a namespace
 {: #registry_namespace_add}
@@ -89,7 +89,7 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
+3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
@@ -113,7 +113,7 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry/index.html#registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
+2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
@@ -139,8 +139,8 @@ Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and
 
 **What's next?**
 
-- [Managing image security with Vulnerability Advisor](/docs/services/va/va_index.html)
-- [Review your service plans and usage](/docs/services/Registry/registry_overview.html#registry_plans)
-- [Store and manage more images in your namespace](/docs/services/Registry/registry_images_.html)
-- [Defining user access role policies](/docs/services/Registry/registry_users.html#user)
-- [Setting up clusters and worker nodes](/docs/containers/cs_clusters.html#clusters)
+- [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index)
+- [Review your service plans and usage](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
+- [Store and manage more images in your namespace](/docs/services/Registry?topic=registry-registry_images_)
+- [Defining user access role policies](/docs/services/Registry?topic=registry-user#user)
+- [Setting up clusters and worker nodes](/docs/containers?topic=containers-clusters#clusters)

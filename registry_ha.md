@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, high availability
 
@@ -37,4 +37,4 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
   
   You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
 
-  For more information about regions, see [Regions](/docs/services/Registry/registry_overview.html#registry_regions).
+  For more information about regions, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
