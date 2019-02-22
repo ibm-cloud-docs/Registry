@@ -78,14 +78,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 For reference information about the command, see [Create a new {{site.data.keyword.Bluemix_notm}} platform API key](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
 
-## Automating access to your namespaces by using tokens (deprecated)
+## Automating access to your namespaces by using tokens
 {: #registry_tokens}
 
 You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
 {:shortdesc}
-
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-{: deprecated}
 
 Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.Bluemix_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the `container-registry` CLI plug-in.
 
@@ -99,14 +96,11 @@ Use the following tasks to manage your tokens:
 - [Using a token to automate access to your namespaces](#registry_tokens_use)
 - [Removing a token from your {{site.data.keyword.Bluemix_notm}} account](#registry_tokens_remove)
 
-### Creating a token for your {{site.data.keyword.Bluemix_notm}} account (deprecated)
+### Creating a token for your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_create}
 
 You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
 {:shortdesc}
-
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-{: deprecated}
 
 1. Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
@@ -151,14 +145,11 @@ Using tokens to automate the pushing and pulling of Docker images to and from yo
    ```
    {: pre}
 
-### Using a token to automate access to your namespaces (deprecated)
+### Using a token to automate access to your namespaces
 {: #registry_tokens_use}
 
 You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
 {:shortdesc}
-
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-{: deprecated}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
@@ -200,14 +191,11 @@ Using tokens to automate the pushing and pulling of Docker images to and from yo
 
    After you log in to Docker by using the token, you can push or pull images to and from your namespaces.
 
-### Removing a token from your {{site.data.keyword.Bluemix_notm}} account (deprecated)
+### Removing a token from your {{site.data.keyword.Bluemix_notm}} account
 {: #registry_tokens_remove}
 
 Remove an {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
 {:shortdesc}
-
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-{: deprecated}
 
 Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.Bluemix_notm}} account and do not need to be removed manually.
 {:tip}
@@ -246,10 +234,7 @@ The following user names are valid:
 - `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
 - `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
 - `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
-- `token` (deprecated) The password is a registry token. You can use this user name for automation.
-
-  Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-  {: deprecated}
+- `token` The password is a registry token. You can use this user name for automation.
 
 You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
 
