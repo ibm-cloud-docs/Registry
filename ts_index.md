@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ When you are using the forums to ask a question, tag your question so that it is
 - If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=+ibm-bluemix) and tag your question with `ibm-cloud` and `container-registry`.
 - For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) forum. Include the `ibm-cloud` and `container-registry` tags.
 
-See [Using the Support Center](/docs/get-support/howtogetsupport.html#using-avatar) for more details about using the forums.
+See [Using the Support Center](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support/howtogetsupport.html#getting-customer-support)
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -62,7 +62,7 @@ The `ibmcloud cr login` command fails.
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 - Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
 
@@ -81,7 +81,7 @@ All `ibmcloud cr` commands fail.
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 You can fix this problem in the following way:
 
-- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
+- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## The `ibmcloud cr build` command fails
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - If the local build doesn't work, check for issues with your Dockerfile.
-- If the local build works, [contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support).
+- If the local build works, [contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Setting up a namespace fails
 {: #ts_problem}
@@ -193,10 +193,10 @@ denied: requested access to the resource is denied
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- [Ensure that Docker is installed on your computer](/docs/services/Registry/index.html#registry_cli_install).
+- [Ensure that Docker is installed on your computer](/docs/services/Registry?topic=registry-index#registry_cli_install).
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
-- [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_quota.html#registry_quota_get).
+- [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## Unable to pull the most recent image using the `latest` tag
 {: #ts_docker_latest}
@@ -224,8 +224,8 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
 
 - Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login [--sso]`.
 - Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
-- [Target the `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to your cluster.
-- If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers/cs_integrations.html#helm).
+- [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
+- If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-integrations#helm).
 - If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
@@ -304,7 +304,7 @@ Your custom firewall requires certain network groups to be opened for inbound an
 
 {: tsResolve}
 
-Let your cluster access infrastructure resources and services from behind a firewall, see [Allowing the cluster to access infrastructure resources and other services](/docs/containers/cs_firewall.html#firewall_outbound).
+Let your cluster access infrastructure resources and services from behind a firewall, see [Allowing the cluster to access infrastructure resources and other services](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 For INBOUND connectivity to your computer, allow incoming network traffic from the source network groups to the destination public IP address of your computer.
 
@@ -314,7 +314,7 @@ For OUTBOUND connectivity from your computer, use the same network groups and al
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-When using [trusted content](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent), you can no longer manage trusted images because your signing keys are lost or compromised.
+When using [trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent), you can no longer manage trusted images because your signing keys are lost or compromised.
 
 {: tsCauses}
 Your repository or root key is lost or compromised.
@@ -334,11 +334,11 @@ If your repository key is lost or compromised, generate a new set of signing key
 The only signing role that you can rotate is `targets`, which is the repository admin. If other roles are affected, generate new keys for those roles, remove the old ones, and add the new ones as signers.
 {:tip}
 
-Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push).
+Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
 
 1. Install the CLI version of the [Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
-2. [Set up your trusted content environment](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
+2. [Set up your trusted content environment](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
 3. Note the URL from the export command in the previous step. For example, `https://registry.ng.bluemix.net:4443`
 
@@ -358,7 +358,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 6. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
 
-7. [Push a signed image](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push) that uses the new signing keys.
+7. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
 ### Root keys
 {: #trustedcontent_lostrootkey}
@@ -366,11 +366,11 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 If your root key is lost or compromised, you cannot update any trusted content repositories that used that root key.
 {:shortdesc}
 
-You can [delete the namespaces](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
+You can [delete the namespaces](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
 
 If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
 
-1. [Contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support/howtogetsupport.html#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
+1. [Contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
 
 2. After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
 
@@ -381,7 +381,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
    Because the root key is affected, this step deletes all signing keys, including for other trust servers.
    {:tip}
 
-3. If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry/registry_security_enforce.html#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) and modify the deployment.
+3. If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -390,7 +390,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 4. Generate trusted content repositories.
 
-    - If you want to create new trusted content, [push new signed images](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push).
+    - If you want to create new trusted content, [push new signed images](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
 
     - If you don't want to change the previous trusted content, add a signature to the most recent images in the registry.
 
@@ -444,7 +444,7 @@ on these resources:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers/cs_users.html#rbac) and [Kubernetes - Using RBAC Authorization
+For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac) and [Kubernetes - Using RBAC Authorization
 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
@@ -553,7 +553,7 @@ To resolve the problem, complete the following steps:
    ```
    {: pre}
 
-4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/services/Registry/registry_images_.html#registry_images_source).
+4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/services/Registry?topic=registry-registry_images_#registry_images_source).
 
 ## Docker login fails on a Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: #ts_docker_mac}

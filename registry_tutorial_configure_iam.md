@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ This tutorial takes approximately 45 minutes.
 
 **Before you begin**
 
-- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
+- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
 
-- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 - You must have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 
@@ -221,7 +221,7 @@ In this section, you create some namespaces with sample images, and grant access
 
         The three namespaces that you created in this tutorial (`namespace_a`, `namespace_b`, and `namespace_c`) are shown. If you do not see these namespaces, go back and follow the instructions to create them again.
 
-    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry/registry_overview.html#registry_regions), for example `us-south`:
+    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader

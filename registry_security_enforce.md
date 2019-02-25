@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Enforcing container image security (Beta)
 {: #security_enforce}
 
-With Container Image Security Enforcement (Beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/services/Registry/registry_trusted_content.html) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
+With Container Image Security Enforcement (Beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
 Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow  deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
@@ -35,12 +35,12 @@ Container Image Security Enforcement retrieves information about image content t
 
 **Before you begin**
 
-* [Create](/docs/containers/cs_clusters.html#clusters_ui) or [update](/docs/containers/cs_cluster_update.html#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
-* [Target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+* [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+* [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
 Complete the following steps:
 
-1. [Set up Helm in your cluster](/docs/containers/cs_integrations.html#helm).
+1. [Set up Helm in your cluster](/docs/containers?topic=containers-integrations#helm).
 
 2. Add the IBM chart repository to your Helm client.
 
@@ -179,7 +179,7 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
-Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. Then, complete the following steps:
+Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
 1. Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
 
@@ -226,7 +226,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Set as `true` to allow only images that are [signed for content trust](/docs/services/Registry/registry_trusted_content.html) to be deployed. Set as `false` to ignore whether images are signed.</td>
+    <td>Set as `true` to allow only images that are [signed for content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va/va_index.html) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
+    <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.ht
 ### Specifying trusted content signers in custom policies
 {: #signers}
 
-If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 To configure the policy to verify that an image is signed by a particular signer:
@@ -277,7 +277,7 @@ To configure the policy to verify that an image is signed by a particular signer
 ## Controlling who can customize policies
 {: #assign_user_policy}
 
-If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](/docs/containers/cs_users.html#rbac).
+If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 In your role, add a rule for security policies:
@@ -358,14 +358,14 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
 
 You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
 
-You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/services/Registry/registry_trusted_content.html).
+You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 A deployment is allowed only if all images pass the Container Image Security Enforcement checks.
 
 ## Removing Container Image Security Enforcement
 {: #remove}
 
-Before you begin, [target your `kubectl` CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
 
 

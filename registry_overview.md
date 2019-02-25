@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -119,7 +119,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 
 **Storage:**
 
-  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either [free up space by removing images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry/registry_quota.html#registry_quota_set) to enable the pushing of new images again.
+  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either [free up space by removing images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
 
   Example for the standard plan:
 
@@ -129,7 +129,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 
 **Pull traffic:**
 
-  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry/registry_quota.html#registry_quota_set).
+  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Example for the standard plan:
 
@@ -239,7 +239,7 @@ To learn more about Docker-specific terms, [consult the Docker glossary ![Extern
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.Bluemix_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
 
-You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry/registry_users.html#user).
+You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
@@ -309,7 +309,7 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
+For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
 

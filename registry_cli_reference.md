@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ You can use the `container-registry` CLI plug-in to set up your own image namesp
 Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
 {:shortdesc}
 
-For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html).
+For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin?topic=container-registry-cli-plugin-containerregcli).
 
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
@@ -130,7 +130,7 @@ Review the following table to find available Go template options and data types 
 |`Repository`|String|Displays the repository of the image.|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
-|`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/va/va_index.html#va_registry_cli).|
+|`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/va?topic=va-va_index#va_registry_cli).|
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
 
 ### Go template options and data types in the `ibmcloud cr image-inspect` command
@@ -146,16 +146,16 @@ Review the following table to find available Go template options and data types 
 |`Comment`|String|Displays the description of the image.|
 |`Created`|String|Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
 |`Container`|String|Displays the ID of the container that created the image.|
-|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`DockerVersion`|String|Displays the Docker version that was used to build this image.|
 |`Author`|String|Displays the author of the image.|
-|`Config`|Object|Displays configuration metadata for the image. See the field details in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`Config`|Object|Displays configuration metadata for the image. See the field details in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`Architecture`|String|Displays the processor architecture that was used to build this image, and that is required to run the image.|
 |`Os`|String|Displays the operating system family that was used to build this image, and that is required to run the image.|
 |`OsVersion`|String|Displays the version of the operating system that was used to build this image.|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`VirtualSize`|Integer (64 bit)|Displays the sum of the size of each layer in the image in bytes.|
-|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
+|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
 {: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-inspect</code> command." caption-side="top"}
 
 #### Config
@@ -174,7 +174,7 @@ Review the following table to find available Go template options and data types 
 |`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
 |`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
-|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck).|
 |`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
 |`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
