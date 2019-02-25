@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -92,14 +92,14 @@ Do not put personal information in your container images, namespace names, descr
 3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
 
    ```
-   docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
+   docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `eu-gb`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
+   Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
 
    ```
-   docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
    ```
    {: pre}
 
@@ -116,17 +116,16 @@ Do not put personal information in your container images, namespace names, descr
 2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
-   docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-   ```
-   {: pre}
-
-   Example, where `<region>` is `eu-gb`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
-
-   ```
-   docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
    
+   Example, where `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
+
+   ```
+   docker push uk.icr.io/namespace1/hw_repo:1
+   ```
+   {: pre}
 
 3. Verify that the image was pushed successfully by running the following command.
 

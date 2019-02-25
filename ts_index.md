@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -258,9 +258,9 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-   The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
    1ecda25d51a8: Preparing
    369bf331939e: Preparing
    ...
@@ -340,7 +340,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 2. [Set up your trusted content environment](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Note the URL from the export command in the previous step. For example, `https://registry.ng.bluemix.net:4443`
+3. Note the URL from the export command in the previous step. For example, `https://us.icr.io:4443`
 
 4. Generate a registry token.
 

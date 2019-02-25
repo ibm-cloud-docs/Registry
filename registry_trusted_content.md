@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ When you push your image with trusted content enabled, your Docker client also p
 An image name is made up of a repository and a tag. When you are using trusted content, each repository uses a unique signing key. Each tag within a repository uses the key that belongs to the repository. If you have multiple teams publishing content, each to their own repository within your {{site.data.keyword.registrylong_notm}} namespaces, each team can use their own keys to sign their content so that you can verify that each image is produced by the appropriate team.
 
 A repository can contain both signed and unsigned content. If you have Docker Content Trust enabled, you can access the signed content in a repository, even if there is other unsigned content alongside it.
+
+Images have separate signatures for old (`registry.bluemix.net`) and new (`icr.io`) domain names. Existing signatures work when the image is pulled from the old domain name. If you want to pull signed content from the new domain name, you must re-sign the image on the new domain name, `icr.io`, see [Re-signing an image for the new domain name](#trustedcontent_resign).
+{: note}
 
 Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
@@ -90,19 +93,19 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
 
    ```
    user:~ user$ ibmcloud cr login
-   Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
    To set up your Docker client with content trust,
    export the following environment variable:
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Copy and paste the environment variable command in your terminal. For example:
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -147,6 +150,36 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
     Specify the tag when you push or pull a signed image. The `latest` tag only defaults when content trust is disabled.
     {: tip}
+
+## Re-signing an image for the new domain name
+{: #trustedcontent_resign}
+
+To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and push the image.
+{:shortdesc}
+
+1. Pull your signed image from the old domain name. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Specify the tag when you push or pull a signed image. The `latest` tag only defaults when content trust is disabled.
+    {: tip}
+
+2. Run the `docker tag` command for the new domain name. Replace `<old_domain_name>` with your old domain name, `<new_domain_name>` with your new domain name, `<repository>` with the name of your repository, and `<tag>` with the name of your tag.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/services/Registry?topic=registry-index#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+
+```
+Signing and pushing image metadata.
+```
+{: screen}
 
 ## Managing trusted content
 {: #trustedcontent_managetrust}

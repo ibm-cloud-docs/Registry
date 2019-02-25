@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -250,14 +250,14 @@ In this section, you create some namespaces with sample images, and grant access
     2. Tag the image to `namespace_a` by running the following command:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Tag the image to `namespace_b` by running the following command:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ In this section, you create some namespaces with sample images, and grant access
     5. Push the image to `namespace_a` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ In this section, you create some namespaces with sample images, and grant access
     5. Pull the image by running the following command:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ In this section, you create some namespaces with sample images, and grant access
     7. Tag the image with `namespace_c` by running the following command:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. Push the image to `namespace_c` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ In this section, you create some namespaces with sample images, and grant access
     9. Pull from `namespace_c` by running the following command:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ In this section, you configure a service ID and grant it access to your {{site.d
     1. Log in to {{site.data.keyword.registrylong_notm}} by running the following command:
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. Pull your image by running the following command:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ In this section, you configure a service ID and grant it access to your {{site.d
     3. Push your image to `namespace_a` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ In this section, you configure a service ID and grant it access to your {{site.d
     4. Push your image to `namespace_b` by running the following command:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
