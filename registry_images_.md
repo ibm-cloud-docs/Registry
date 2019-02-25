@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
 
@@ -146,7 +146,7 @@ To create a new image from a source image, complete the following steps:
    ```
    {: pre}
 
-2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `<REPOSITORY>:<TAG>`, for example: `registry.ng.bluemix.net/namespace/image:latest`
+2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `<REPOSITORY>:<TAG>`, for example: `us.icr.io/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -200,7 +200,7 @@ To build your own Docker image, complete the following steps:
        To create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following code:
 
        ```
-       FROM registry.<region>.bluemix.net/ibmliberty:latest
+       FROM <region>.icr.io/ibmliberty:latest
        LABEL description="This is my test Dockerfile"
        EXPOSE 9080
        ```
@@ -211,7 +211,7 @@ To build your own Docker image, complete the following steps:
 3. Decide on a name for your image. The image name must be in the following format:
 
    ```
-   registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
+   <region>.icr.io/<my_namespace>/<repo_name>:<tag>
    ```
    {: pre}
 

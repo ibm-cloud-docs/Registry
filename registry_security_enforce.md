@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -45,7 +45,7 @@ Complete the following steps:
 2. Add the IBM chart repository to your Helm client.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 

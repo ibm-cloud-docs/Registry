@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -67,10 +67,10 @@ The following code examples demonstrate how you might use the formatting and fil
   **Example output**
 
   ```
-  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-  example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 

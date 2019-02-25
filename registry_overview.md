@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -204,7 +204,7 @@ Do not put personal information in your container images, namespace names, descr
 
 <dl>
   <dt>Namespace</dt>
-  <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.Bluemix_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
+  <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.Bluemix_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   Every user in your {{site.data.keyword.Bluemix_notm}} account can view and work with images that are stored in your registry namespace. You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments.</dd>
 </dl>
@@ -267,12 +267,39 @@ After you set your first namespace, you are assigned the free {{site.data.keywor
 ### Local regions
 {: #registry_regions_local}
 
-A region is a geographic area that is accessed by a dedicated endpoint. {{site.data.keyword.registrylong_notm}} registries are available in the following regions:
+A local region is a geographic area that is accessed by a dedicated endpoint. The {{site.data.keyword.registrylong_notm}} domain names for the regions have changed. The new domain names are available in the console and the CLI.
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+The domain names are shown in the following table.
+
+| Local registry region | New domain name | Deprecated domain name |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | n/a |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="Table 3. Domain names for local regions." caption-side="top"}
+
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
+{: deprecated}
+
+**Vulnerability Advisor domain names**
+
+Vulnerability Advisor domain names for the regions have changed. The new domain names are available in the console and the CLI.
+
+The new domain names are shown in the following table.
+
+| Local Vulnerability Advisor region | New domain name | Deprecated domain name |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | n/a |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="Table 4. Domain names for local regions." caption-side="top"}
+
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
+{: deprecated}
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
 
@@ -297,8 +324,20 @@ After targeting a different region, log in to the registry again: `ibmcloud cr l
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available, which has no region that is included in its name (`registry.bluemix.net`). Only IBM-provided public images are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
+A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by IBM are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
+
+The domain name for the global registry has changed. The new domain name is available in the console and the CLI. 
+
+The new domain name is shown in the following table.
+
+| Registry | New domain name | Deprecated domain name |
+|-----|----|-----------|
+| Global | `icr.io` | `registry.bluemix.net` |
+{: caption="Table 5. Domain name for the global registry." caption-side="top"}
+
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
+{: deprecated}
 
 You can target the global registry by running the `ibmcloud cr region-set` command.
 
@@ -312,6 +351,20 @@ ibmcloud cr region-set global
 For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
+
+**Vulnerability Advisor domain names**
+
+The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI. 
+
+The new domain name is shown in the following table.
+
+| Vulnerability Advisor | New domain name  | Deprecated domain name |
+|-----|----|-----------|
+| Global | `icr.io/va` | `va.bluemix.net` |
+{: caption="Table 6. Domain name for the global registry for Vulnerability Advisor." caption-side="top"}
+
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
+{: deprecated}
 
 ## Support for Docker
 {: #docker}
