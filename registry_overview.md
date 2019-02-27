@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -273,7 +273,7 @@ The domain names are shown in the following table.
 
 | Local registry region | New domain name | Deprecated domain name |
 |-----|----|-----------|
-| `ap-north` | `jp.icr.io` | n/a |
+| `ap-north` | `jp.icr.io` | Not applicable |
 | `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
 | `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
 | `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
@@ -291,7 +291,7 @@ The new domain names are shown in the following table.
 
 | Local Vulnerability Advisor region | New domain name | Deprecated domain name |
 |-----|----|-----------|
-| `ap-north` | `jp.icr.io/va` | n/a |
+| `ap-north` | `jp.icr.io/va` | Not applicable |
 | `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
 | `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
 | `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
