@@ -1,3 +1,2 @@
 https://microprofile.io,
-https://containers.cloud.ibm.com/swagger-api/,
-https://containers.cloud.ibm.com/swagger-logging/,
+https://containers.cloud.ibm.com/swagger,
