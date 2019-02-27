@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -176,10 +176,10 @@ To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and 
 
 3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/services/Registry?topic=registry-index#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
-```
-Signing and pushing image metadata.
-```
-{: screen}
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## Managing trusted content
 {: #trustedcontent_managetrust}
