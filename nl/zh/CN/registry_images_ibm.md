@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2017-10-06"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -15,11 +15,10 @@ lastupdated: "2017-10-06"
 {:tip: .tip}
 {:download: .download}
 
-
 # IBM 映像
 {: #registry_images_ibm}
 
 您可以使用 {{site.data.keyword.IBM}} 映像在 {{site.data.keyword.containerlong}} 中创建容器。
 {:shortdesc}
 
-要使用 {{site.data.keyword.IBM_notm}} 提供的公共映像，请参阅[用于 {{site.data.keyword.containerlong_notm}} 的公共 {{site.data.keyword.IBM_notm}} 映像](../../services/RegistryImages/index.html#ibm_images)。
+要使用 {{site.data.keyword.IBM_notm}} 提供的公共映像，请参阅[公共 {{site.data.keyword.IBM_notm}} 映像](/docs/services/Registry/registry_public_images.html#public_images)。

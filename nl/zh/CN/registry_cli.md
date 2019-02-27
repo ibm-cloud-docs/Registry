@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-26"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-11-26"
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-您可以使用在 container-registry 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.Bluemix_notm}} 帐户的注册表及其资源。
+您可以使用在 `container-registry` CLI 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.Bluemix_notm}} 帐户的注册表及其资源。
 {: shortdesc}
 
 **先决条件**
@@ -27,9 +27,9 @@ lastupdated: "2018-11-26"
 
 * 在运行注册表命令之前，请使用 `ibmcloud login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成访问令牌并对会话进行认证。
 
-在命令行中，`ibmcloud` CLI 和插件更新可用时会通知您。请确保使 CLI 保持最新，以便可以使用所有可用的命令和标志。
+在命令行中，`ibmcloud` CLI 和 `container-registry` CLI 插件更新可用时会通知您。请确保使 CLI 保持最新，以便可以使用所有可用的命令和标志。
 
-如果要查看 {{site.data.keyword.registrylong}} CLI 插件 (`container-registry`) 的当前版本，请运行 `ibmcloud plugin list`。
+如果要查看 `container-registry` CLI 插件的当前版本，请运行 `ibmcloud plugin list`。
 
 要了解如何使用 {{site.data.keyword.registrylong_notm}} CLI，请参阅 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry/index.html#index)。
 
@@ -37,59 +37,6 @@ lastupdated: "2018-11-26"
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {:tip}
-
-<table summary="管理 {{site.data.keyword.registrylong_notm}}">
-<caption>表 1. 用于管理 {{site.data.keyword.registrylong_notm}} 的命令
-</caption>
- <thead>
- <th colspan="5">用于管理注册表的命令</th>
- </thead>
- <tbody>
- <tr>
- <td>[`ibmcloud cr api
-](#bx_cr_api)</td>
- <td>[`ibmcloud cr build`](#bx_cr_build)</td>
- <td>[`ibmcloud cr exemption-add`](#bx_cr_exemption_add)</td>
- <td>[`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](#bx_cr_exemption_list)</td>
- <td>[`ibmcloud cr exemption-rm`](#bx_cr_exemption_rm)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr exemption-types
-](#bx_cr_exemption_types)</td>
- <td>[`ibmcloud cr iam-policies-enable`](#bx_cr_iam_policies_enable)</td>
- <td>[`ibmcloud cr image-inspect`](#bx_cr_image_inspect)</td>
- <td>[`ibmcloud cr image-list` (`ibmcloud cr images`)](#bx_cr_image_list)</td>
- <td>[`ibmcloud cr image-rm`](#bx_cr_image_rm)</td>
- </tr>
- <tr>
-
- <td>[`ibmcloud cr info
-](#bx_cr_info)</td>
- <td>[`    ibmcloud cr login
-    ](#bx_cr_login)</td>
- <td>[`ibmcloud cr namespace-add`](#bx_cr_namespace_add)</td>
- <td>[`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](#bx_cr_namespace_list)</td>
- <td>[`ibmcloud cr namespace-rm`](#bx_cr_namespace_rm)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr plan`](#bx_cr_plan)</td>
- <td>[`ibmcloud cr plan-upgrade`](#bx_cr_plan_upgrade)</td>
- <td>[`ibmcloud cr ppa-archive-load`](#bx_cr_ppa_archive_load)</td>
- <td>[`ibmcloud cr quota`](#bx_cr_quota)</td>
- <td>[`ibmcloud cr quota-set`](#bx_cr_quota_set)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr region`](#bx_cr_region)</td>
- <td>[`ibmcloud cr region-set`](#bx_cr_region_set)</td>
- <td>[`ibmcloud cr token-add`](#bx_cr_token_add)</td>
- <td>[`ibmcloud cr token-get`](#bx_cr_token_get)</td>
- <td>[`ibmcloud cr token-list` (`ibmcloud cr tokens`)](#bx_cr_token_list)</td>
- </tr>
- <tr>
- <td>[`ibmcloud cr token-rm`](#bx_cr_token_rm)</td>
- <td>[`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](#bx_cr_va)</td>
- </tr>
- </tbody></table>
 
 ## `ibmcloud cr api
 `
@@ -118,7 +65,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -140,10 +87,10 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **示例**
 
-构建 Docker 映像，该映像不使用先前构建的构建高速缓存（其中禁止了构建输出），标记为 *`registry.ng.bluemix.net/bluebird/bird:1`*，目录是您的工作目录。
+构建 Docker 映像，该映像不使用先前构建的构建高速缓存，其中构建输出已禁止，标记为 *`registry.ng.bluemix.net/birds/bluebird:1`*，目录是您的工作目录。
 
 ```
-ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/bluebird/bird:1 .
+ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/birds/bluebird:1 .
 ```
 {: pre}
 
@@ -159,7 +106,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 **命令选项**
 <dl>
@@ -176,10 +123,10 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **示例**
 
-针对 `registry.ng.bluemix.net/bluebird/bird` 存储库中的所有映像，创建标识为 `CVE-2018-17929` 的 CVE 的 CVE 豁免。
+针对 `registry.ng.bluemix.net/birds/bluebird` 存储库中的所有映像，创建标识为 `CVE-2018-17929` 的 CVE 的 CVE 豁免。
 
 ```
-ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
@@ -190,10 +137,10 @@ ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-针对标记为 `registry.ng.bluemix.net/bluebird/bird:1` 的单个映像的问题 `application_configuration:nginx.ssl_protocols`，创建配置问题豁免。
+针对标记为 `registry.ng.bluemix.net/birds/bluebird:1` 的单个映像的问题 `application_configuration:nginx.ssl_protocols`，创建配置问题豁免。
 
 ```
-ibmcloud cr exemption-add --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -209,7 +156,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 **命令选项**
 <dl>
@@ -220,10 +167,10 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **示例**
 
-列出适用于 *`bluebird/bird`* 存储库中的映像的安全问题的所有豁免。输出包括帐户范围的豁免、作用域限定为 *`bluebird`* 名称空间的豁免，以及作用域限定为 *`bluebird/bird`* 存储库但不限定于 *`bluebird/bird`* 存储库中任何特定标记的豁免。
+列出适用于 *`birds/bluebird`* 存储库中映像的所有安全问题豁免。输出包括帐户范围的豁免、作用域限定为 *`birds`* 名称空间的豁免，以及作用域限定为 *`birds/bluebird`* 存储库的豁免，但不包括作用域限定为 *`birds/bluebird`* 存储库中特定标记的任何豁免。
 
 ```
-ibmcloud cr exemption-list --scope bluebird/bird
+ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
@@ -239,7 +186,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 **命令选项**
 <dl>
@@ -254,10 +201,10 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **示例**
 
-针对 `registry.ng.bluemix.net/bluebird/bird` 存储库中的所有映像，删除标识为 `CVE-2018-17929` 的 CVE 的 CVE 豁免。
+针对 `registry.ng.bluemix.net/birds/bluebird` 存储库中的所有映像，删除标识为 `CVE-2018-17929` 的 CVE 的 CVE 豁免。
 
 ```
-ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird --issue-type cve --issue-id CVE-2018-17929
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
@@ -268,10 +215,10 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-针对标记为 `registry.ng.bluemix.net/bluebird/bird:1` 的单个映像的问题 `application_configuration:nginx.ssl_protocols`，删除配置问题豁免。
+针对标记为 `registry.ng.bluemix.net/birds/bluebird:1` 的单个映像的问题 `application_configuration:nginx.ssl_protocols`，删除配置问题豁免。
 
 ```
-ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/bluebird/bird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -288,7 +235,7 @@ ibmcloud cr exemption-types
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
@@ -302,7 +249,7 @@ ibmcloud cr iam-policies-enable
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -316,7 +263,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“读者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -336,10 +283,10 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **示例**
 
-使用格式化伪指令 *`"{{ .Config.ExposedPorts }}"`* 来显示有关映像 *`registry.ng.bluemix.net/bluebird/bird:1`* 的已公开端口的详细信息。
+使用格式化伪指令 *`"{{ .Config.ExposedPorts }}"`* 来显示有关映像 *`registry.ng.bluemix.net/birds/bluebird:1`* 的已公开端口的详细信息。
 
 ```
-ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/bluebird/bird:1
+ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
@@ -358,7 +305,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“读者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -380,10 +327,10 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 
 **示例**
 
-以 `repository:tag` 格式显示 *`bluebird`* 名称空间中的映像，而不截断映像摘要。
+以 `repository:tag` 格式显示 *`birds`* 名称空间中的映像，而不截断映像摘要。
 
 ```
-ibmcloud cr image-list --restrict bluebird --quiet --no-trunc
+ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ```
 {: pre}
 
@@ -399,9 +346,10 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
+
 <dl>
 <dt>`IMAGE`</dt>
 <dd>要删除的映像的名称。可以通过在命令中列出每个映像（各名称之间用一个空格分隔）来同时删除多个映像。`IMAGE` 的格式必须为 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
@@ -412,11 +360,62 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **示例**
-
-删除映像 *`registry.ng.bluemix.net/bluebird/bird:1`*。
+删除映像 *`registry.ng.bluemix.net/birds/bluebird:1`*。
 
 ```
-ibmcloud cr image-rm registry.ng.bluemix.net/bluebird/bird:1
+ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
+```
+{: pre}
+
+## `ibmcloud cr image-tag`
+{: #bx_cr_image_tag}
+
+在 {{site.data.keyword.registrylong_notm}} 中创建引用源映像 SOURCE_IMAGE 的新映像 TARGET_IMAGE。源映像和目标映像必须位于同一区域中。
+
+要查找映像的名称，请运行 `ibmcloud cr image-list`。将**存储库**和**标记**列的内容组合在一起，以创建格式为 `repository:tag` 的映像名称。
+{: tip}
+
+```
+ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
+```
+{: codeblock}
+
+**先决条件**
+
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
+
+**命令选项**
+<dl>
+<dt>`SOURCE_IMAGE`</dt>
+<dd>源映像的名称。`SOURCE_IMAGE` 的格式必须为 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+<dt>`TARGET_IMAGE`</dt>
+<dd>目标映像的名称。`TARGET_IMAGE` 的格式必须为 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
+
+</dd>
+</dl>
+
+**示例**
+
+向映像 *`registry.ng.bluemix.net/birds/bluebird:1`* 添加另一个标记引用 `latest`。
+
+```
+ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
+```
+{: pre}
+
+将映像 `registry.ng.bluemix.net/birds/bluebird:peck` 复制到同一名称空间 `birds/pigeon` 中的其他存储库。
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/birds/pigeon:peck
+```
+{: pre}
+
+将映像 `registry.ng.bluemix.net/birds/bluebird:peck` 复制到您有权访问的另一个名称空间 `animals`。
+
+```
+ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
 ```
 {: pre}
 
@@ -461,7 +460,7 @@ ibmcloud cr namespace-add NAMESPACE
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -477,10 +476,10 @@ ibmcloud cr namespace-add NAMESPACE
 
 **示例**
 
-创建名称为 *`bluebird`* 的名称空间。
+创建名称为 *`birds`* 的名称空间。
 
 ```
-ibmcloud cr namespace-add bluebird
+ibmcloud cr namespace-add birds
 ```
 {: pre}
 
@@ -496,7 +495,7 @@ ibmcloud cr namespace-list
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“读者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -510,7 +509,7 @@ ibmcloud cr namespace-rm NAMESPACE
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -520,10 +519,10 @@ ibmcloud cr namespace-rm NAMESPACE
 
 **示例**
 
-除去名称空间 *`bluebird`*。
+除去名称空间 *`birds`*。
 
 ```
-ibmcloud cr namespace-rm bluebird
+ibmcloud cr namespace-rm birds
 ```
 {: pre}
 
@@ -540,7 +539,7 @@ ibmcloud cr plan
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -556,12 +555,12 @@ ibmcloud cr plan-upgrade [PLAN]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 **命令选项**
 <dl>
 <dt>`PLAN`</dt>
-<dd>要升级到的价格套餐的名称。如果未指定 `PLAN`，缺省值为 `standard`。</dd>
+<dd>（可选）要升级为的价格套餐的名称。如果未指定 `PLAN`，缺省值为 `standard`。</dd>
 </dl>
 
 **示例**
@@ -576,9 +575,9 @@ ibmcloud cr plan-upgrade [PLAN]
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-将已从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 {{site.data.keyword.IBM_notm}} 软件导入到专用注册表名称空间。
+将已从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 {{site.data.keyword.IBM_notm}} 软件导入到 {{site.data.keyword.registrylong_notm}} 名称空间。
 
-容器映像会推送到专用 {{site.data.keyword.registryshort_notm}} 名称空间。Helm 图表会写入从中运行命令的目录中所创建的 `ppa-import` 目录。（可选）可以使用 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) 来托管 Helm 图表。
+容器映像会推送到专用 {{site.data.keyword.registryshort_notm}} 名称空间。Helm chart 会写入从中运行命令的目录中所创建的 `ppa-import` 目录。（可选）可以使用 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) 来托管 Helm chart。
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
@@ -587,7 +586,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -605,10 +604,10 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 
 **示例**
 
-导入 IBM 软件，并将其打包以便与专用注册表名称空间 *`bluebird`* 中的 Helm 配合使用，其中压缩文件的路径为 *`downloads/compressed_file.tgz`*。
+在 {{site.data.keyword.registrylong_notm}} 名称空间 *`birds`* 中导入 IBM 软件并将其打包以与 Helm 配合使用，其中压缩文件的路径为 *`downloads/compressed_file.tgz`*。
 
 ```
-ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace bluebird
+ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace birds
 ```
 {: pre}
 
@@ -624,7 +623,7 @@ ibmcloud cr quota
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“读者”、“作者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -638,7 +637,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[配置 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_configure)。
 
 **命令选项**
 <dl>
@@ -719,7 +718,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 平台“管理员”角色
+要了解有关必需许可权的信息，请参阅[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
 
 **命令选项**
 <dl>
@@ -760,12 +759,12 @@ ibmcloud cr token-get TOKEN
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 平台“管理员”角色
+要了解有关必需许可权的信息，请参阅[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
 
 **命令选项**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>（可选）要检索的令牌的唯一标识。要列出令牌，请运行 `ibmcloud cr token-list`。</dd>
+<dd>要检索的令牌的唯一标识。要列出令牌，请运行 `ibmcloud cr token-list`。</dd>
 </dl>
 
 **示例**
@@ -783,13 +782,13 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。
 
 ```
-ibmcloud cr token-list --format FORMAT
+ibmcloud cr token-list [--format FORMAT]
 ```
 {: codeblock}
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 平台“管理员”角色
+要了解有关必需许可权的信息，请参阅[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
 
 **命令选项**
 <dl>
@@ -829,12 +828,12 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 平台“管理员”角色
+要了解有关必需许可权的信息，请参阅[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
 
 **命令选项**
 <dl>
 <dt>`TOKEN`</dt>
-<dd>（可选）TOKEN 可以是令牌本身，也可以是令牌的唯一标识，如 `ibmcloud cr token-list` 中所示。可以指定多个令牌，并且令牌之间必须以一个空格分隔。</dd>
+<dd>TOKEN 可以是令牌本身，也可以是令牌的唯一标识，如 `ibmcloud cr token-list` 中所示。可以指定多个令牌，并且令牌之间必须以一个空格分隔。</dd>
 </dl>
 
 **示例**
@@ -858,7 +857,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 **先决条件**
 
-必需的许可权：对 {{site.data.keyword.registrylong_notm}} 的 IAM 服务“读者”或“管理者”访问角色
+要了解有关必需许可权的信息，请参阅[使用 {{site.data.keyword.registrylong_notm}} 的访问角色](/docs/services/Registry/iam.html#access_roles_using)。
 
 **命令选项**
 <dl>
@@ -904,13 +903,13 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 查看映像的标准漏洞评估报告。
 
 ```
-ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/bluebird/bird:1
+ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-以 JSON 格式查看映像 *`registry.ng.bluemix.net/bluebird/bird:1`* 的漏洞评估报告，此报告仅显示漏洞。
+以 JSON 格式查看映像 *`registry.ng.bluemix.net/birds/bluebird:1`* 的漏洞评估报告，此报告仅显示漏洞。
 
 ```
-ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/bluebird/bird:1
+ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}

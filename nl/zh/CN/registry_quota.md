@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-28"
-
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -16,13 +15,11 @@ lastupdated: "2018-11-28"
 {:tip: .tip}
 {:download: .download}
 
-
 # 管理存储量和拉出流量的配额限制
 {: #registry_quota}
 
 可以通过设置和管理定制配额限制，从而限制可在 {{site.data.keyword.Bluemix}} 帐户中使用的存储量和拉出流量。
 {:shortdesc}
-
 
 ## 设置存储和拉出映像的配额限制
 {: #registry_quota_set}
@@ -34,14 +31,14 @@ lastupdated: "2018-11-28"
 
 要设置配额，请执行以下操作：
 
-1.  登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  查看存储量和拉出流量的当前配额限制。
+2. 查看存储量和拉出流量的当前配额限制。
 
     ```
     ibmcloud cr quota
@@ -66,7 +63,7 @@ lastupdated: "2018-11-28"
     ```
     {: screen}
 
-3.  更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 _&lt;traffic_quota&gt;_ 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 _&lt;storage_quota&gt;_ 替换为要设置的值（以兆字节为单位）。
+3. 更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 _&lt;traffic_quota&gt;_ 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 _&lt;storage_quota&gt;_ 替换为要设置的值（以兆字节为单位）。
 
 
     如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
@@ -85,21 +82,20 @@ lastupdated: "2018-11-28"
     ```
     {: pre}
 
-
 ## 查看存储和拉出映像的配额限制和使用量
 {: #registry_quota_get}
 
 针对您的帐户，可以查看配额限制，并检查当前存储量和拉出流量使用量。
 {:shortdesc}
 
-1.  登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.Bluemix_notm}}。
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  查看存储量和拉出流量的当前配额限制。
+2. 查看存储量和拉出流量的当前配额限制。
 
     ```
     ibmcloud cr quota
@@ -124,7 +120,6 @@ lastupdated: "2018-11-28"
     ```
     {: screen}
 
-
 ## 释放已用存储量以及更改服务套餐或配额限制以不超出给定配额限制范围
 {: #registry_quota_freeup}
 
@@ -133,14 +128,14 @@ lastupdated: "2018-11-28"
 
 要释放 {{site.data.keyword.Bluemix_notm}} 帐户中的映像存储量，请执行以下操作：
 
-1.  列出 {{site.data.keyword.Bluemix_notm}} 帐户的所有名称空间中的所有映像。
+1. 列出 {{site.data.keyword.Bluemix_notm}} 帐户的所有名称空间中的所有映像。
 
     ```
     ibmcloud cr images
     ```
     {: pre}
 
-2.  从名称空间中除去映像。将 _&lt;image_name&gt;_ 替换为要除去的映像的名称。
+2. 从名称空间中除去映像。将 _&lt;image_name&gt;_ 替换为要除去的映像的名称。
 
 
     ```
@@ -151,7 +146,7 @@ lastupdated: "2018-11-28"
     根据映像的大小，可能需要一些时间才能除去映像并使存储量可用。
     {:tip}
 
-3.  查看存储量配额使用情况。
+3. 查看存储量配额使用情况。
 
     ```
     ibmcloud cr quota
@@ -163,6 +158,6 @@ lastupdated: "2018-11-28"
 
     要继续从名称空间中拉出映像，请在以下选项中进行选择。
 
-    -   等待下一个结算周期开始。
-    -   如果您有免费套餐，请[升级到标准服务套餐](registry_overview.html#registry_plan_upgrade)。
-    -   如果您已经有标准套餐，请[为拉出流量设置新的配额限制](#registry_quota_set)。
+    - 等待下一个结算周期开始。
+    - 如果您有免费套餐，请[升级到标准服务套餐](/docs/services/Registry/registry_overview.html#registry_plan_upgrade)。
+    - 如果您已经有标准套餐，请[为拉出流量设置新的配额限制](#registry_quota_set)。

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-24"
 
 ---
 
@@ -48,14 +48,14 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- 容器注册表插件不是最新的，需要更新。
+- `container-registry` CLI 插件不是最新的，需要更新。
 - Docker 未安装在本地计算机上，或者未运行。
 - {{site.data.keyword.Bluemix_notm}} 登录凭证已到期。
 
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 升级到 container-registry 插件的最新版本；请参阅[更新 container-registry 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 - 确保 Docker 安装在您的计算机上。如果已安装，请重新启动 Docker 守护程序。
 - 重新运行 `ibmcloud login` 命令以刷新 {{site.data.keyword.Bluemix_notm}} 登录凭证。
 
@@ -69,12 +69,12 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- 容器注册表插件不是最新的，需要更新。
+- `container-registry` CLI 插件不是最新的，需要更新。
 
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 升级到 container-registry 插件的最新版本；请参阅[更新 container-registry 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 
 ## {{site.data.keyword.registrylong_notm}} 命令失败，消息为：`'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,12 +98,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- 未安装 container-registry 插件。
+- 未安装 `container-registry` CLI 插件。
 
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 安装 container-registry 插件；请参阅[安装 {{site.data.keyword.registryshort_notm}} CLI（container-registry 插件）](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+
+## `ibmcloud cr build` 命令失败
+{: #ts_build_fails}
+
+{: tsSymptoms}
+build 命令失败。
+
+{: tsCauses}
+服务器可能已停机，或者 Dockerfile 可能存在问题。
+
+{: tsResolve}
+要了解问题的原因，请本地运行带相应 [`docker build` 选项 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/reference/commandline/build/) 的 `docker build`：
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- 如果本地构建不起作用，请检查是否 Dockerfile 有问题。
+- 如果本地构建正常运行，请[联系 {{site.data.keyword.Bluemix_notm}} 支持人员](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 ## 设置名称空间失败
 {: #ts_problem}
@@ -189,7 +209,7 @@ denied: requested access to the resource is denied
 尝试导入您在其他 IBM 产品（例如，{{site.data.keyword.Bluemix_notm}} Private）中使用的内容时，无法将您的映像以及其他来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 的许可软件存储在注册表中。
 
 {: tsCauses}
-对于来自 IBM Passport Advantage 的软件包（例如，映像和 Helm 图表），必须使用 `ibmcloud cr ppa-archive-load` 命令将它们导入到注册表中。
+对于来自 IBM Passport Advantage 的软件包（例如，映像和 Helm chart），必须使用 `ibmcloud cr ppa-archive-load` 命令将它们导入到注册表中。
 
 {: tsResolve}
 **开始之前**
@@ -221,7 +241,7 @@ denied: requested access to the resource is denied
 
    此命令会解开压缩文件，将其中包含的所有映像都装入到本地 Docker 客户机中，然后将这些映像推送到注册表中的名称空间。
 
-   如果要将 IBM Passport Advantage 归档中的 Helm 图表上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+   如果要将 IBM Passport Advantage 归档中的 Helm chart 上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
    **示例输出**
@@ -242,7 +262,7 @@ user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.
     ```
    {: screen}
 
-4. 如果压缩文件包含 Helm 图表，这些图表会放在当前工作目录中创建的名为 `ppa-import` 的归档目录中。打开该目录以找到 Helm 图表名称 `<helm_chart>`，然后检查其值。
+4. 如果压缩文件包含 Helm chart，这些图表会放在当前工作目录中创建的名为 `ppa-import` 的归档目录中。打开该目录以找到 Helm chart 名称 `<helm_chart>`，然后检查其值。
 
    ```
 helm inspect values ppa-import/charts/<helm_chart>.tgz
@@ -252,9 +272,9 @@ helm inspect values ppa-import/charts/<helm_chart>.tgz
    如果在上一步中已将图表上传到 Chart Museum，可以使用 `helm inspect` 在 Chart Museum 中检查图表。
     {: tip}
 
-5. 根据 `helm inspect values` 命令输出的值来配置 Helm 图表 `<helm_chart>`。
+5. 根据 `helm inspect values` 命令输出的值来配置 Helm chart `<helm_chart>`。
 
-6. 使用 `helm install` 命令来部署 Helm 图表 `<helm_chart>`。可以根据需要使用 `--set` 选项来覆盖图表中的值。
+6. 使用 `helm install` 命令来部署 Helm chart `<helm_chart>`。可以根据需要使用 `--set` 选项来覆盖图表中的值。
 
    ```
 helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
@@ -415,7 +435,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-有关 RBAC 的更多信息，请参阅[使用定制 Kubernetes RBAC 角色授权用户](/docs/containers/cs_users.html#rbac)和 [Kubernetes：使用 RBAC 授权 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
+有关 RBAC 的更多信息，请参阅[使用定制 Kubernetes RBAC 角色授权用户](/docs/containers/cs_users.html#rbac)和 [Kubernetes - 使用 RBAC 授权 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
 
 完成以下步骤以更改 Webhook 配置，从而使其在发生故障时打开而不是关闭，然后，在至少有一个 Container Image Security Enforcement pod 运行时，复原 Webhook 配置，从而使其在发生故障时关闭：
 
@@ -461,3 +481,67 @@ kubectl edit ValidatingWebhookConfiguration image-admission-config
    {: pre}
 
    将 `failurePolicy` 更改为 `Fail`，保存并关闭。
+
+## 清单错误：`不支持对此映像的清单类型进行标记。`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+您尝试对映像进行标记，但收到以下错误消息：`不支持对此映像的清单类型进行标记`。
+
+{: tsCauses}
+不支持清单类型。
+
+{: tsResolve}
+要解决此问题，请完成以下步骤：
+
+1. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是源映像名称：
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. 通过运行以下命令，对上一步中拉出的映像的本地副本进行标记，其中 `<target_image>` 是新映像名称：
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. 通过运行以下命令，推送上一步中已标记的映像：
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## 清单错误：`不支持对此映像的清单版本进行标记。`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+您尝试对映像进行标记，但收到以下错误消息：`不支持对此映像的清单版本进行标记。要升级到受支持的清单版本，请使用 Docker V1.12 或更高版本来拉出并推送此映像，然后重新运行“ibmcloud cr image-tag”命令。`
+
+{: tsCauses}
+不支持清单版本。
+
+{: tsResolve}
+要解决此问题，请完成以下步骤：
+
+1. 升级为 Docker Engine V1.12 或更高版本。
+
+2. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是源映像名称：
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. 要升级清单版本，请通过运行以下命令来推送映像：
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. 通过运行 `ibmcloud cr image-tag` 命令对映像进行标记；请参阅[创建引用源映像的新映像](/docs/services/Registry/registry_images_.html#registry_images_source)。
+  

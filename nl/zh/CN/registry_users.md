@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-02"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -39,15 +39,15 @@ lastupdated: "2018-11-02"
 
 - 决定每个用户需要的角色以及这些角色是针对 {{site.data.keyword.registrylong_notm}} 中的哪些资源；请参阅 [IAM 角色](/docs/services/Registry/iam.html#iam)。请考虑您可以创建多个策略的情况；例如，可以授予对某个资源的写访问权，但仅授予对另一资源的读访问权，并且不授予对另一资源的访问权。策略是可叠加的，这意味着全局读策略和作用域限定为资源的写策略会授予对该资源的读和写访问权。
 
-- [邀请用户和分配访问权](/docs/iam/iamuserinv.html#iamuserinv)。 
+- [邀请用户和分配访问权](/docs/iam/iamuserinv.html#iamuserinv)。
 
   如果您希望用户能够在 {{site.data.keyword.containerlong_notm}} 中创建集群，请确保为这些用户分配 {{site.data.keyword.registrylong_notm}}“管理员”角色，而不要分配资源组；请参阅[准备创建集群](/docs/containers/cs_clusters.html#cluster_prepare)。
   {: tip}
 
 要为 {{site.data.keyword.registrylong_notm}} 创建策略，“服务名称”字段必须为 `container-registry`。
 
-* 要为用户创建策略，请参阅[管理对资源的访问权](/docs/iam/mngiam.html#iammanidaccser)。
-* 要为服务标识创建策略，请运行 `ibmcloud iam service-policy-create` 命令或使用 GUI 将角色绑定到服务标识。要创建策略，您必须具有“管理员”角色。您在自己的帐户上会自动具有“管理员”角色。有关更多信息，请参阅[创建和使用服务标识](/docs/iam/serviceid.html#serviceids)以及[管理服务标识访问策略](/docs/iam/serviceidaccess.html#serviceidpolicy)。
+- 要为用户创建策略，请参阅[管理对资源的访问权](/docs/iam/mngiam.html#iammanidaccser)。
+- 要为服务标识创建策略，请运行 `ibmcloud iam service-policy-create` 命令或使用 GUI 将角色绑定到服务标识。要创建策略，您必须具有“管理员”角色。您在自己的帐户上会自动具有“管理员”角色。有关更多信息，请参阅[创建和使用服务标识](/docs/iam/serviceid.html#serviceids)以及[管理服务标识访问策略](/docs/iam/serviceidaccess.html#serviceidpolicy)。
 
 ## 为现有用户启用策略强制实施
 {: #existing_users}

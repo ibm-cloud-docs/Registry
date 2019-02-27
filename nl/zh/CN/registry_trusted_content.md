@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -107,13 +107,13 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 首次推送签名的映像时，Docker 会自动创建一对签名密钥：根密钥和存储库密钥。要对之前已推送签名映像的存储库中的映像签名，必须在要推送该映像的机器上装入正确的存储库签名密钥。
 {:shortdesc}
 
-开始之前，请[设置注册表名称空间](index.html#registry_namespace_add)。
+开始之前，请[设置注册表名称空间](/docs/services/Registry/index.html#registry_namespace_add)。
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. [推送映像](index.html#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，会看到“Signing and pushing image metadata.”
+2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，会看到“Signing and pushing image metadata.”
 
-3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](ts_index.html#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
+3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
 
 ## 拉出签名的映像
 {: #trustedcontent_pull}
@@ -196,14 +196,14 @@ docker trust revoke <image>:<tag>
 
 首次将签名的映像推送到新存储库时，Docker Content Trust 会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机上：
 
-* Linux 和 Mac 目录：`~/.docker/trust/private`
+- Linux 和 Mac 目录：`~/.docker/trust/private`
 
-* Windows 目录：`%HOMEPATH%\.docker\trust\private`
+- Windows 目录：`%HOMEPATH%\.docker\trust\private`
 
    如果更改了 Docker 配置目录，请在更改后的目录中查找 `trust` 子目录。
    {: tip}
 
-您必须备份所有密钥，尤其是根密钥。如果密钥丢失或遭到破坏，[恢复选项](ts_index.html#ts_recoveringtrustedcontent)会受到限制。
+您必须备份所有密钥，尤其是根密钥。如果密钥丢失或遭到破坏，[恢复选项](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)会受到限制。
 
 要备份密钥，请参阅 [Docker Content Trust 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 

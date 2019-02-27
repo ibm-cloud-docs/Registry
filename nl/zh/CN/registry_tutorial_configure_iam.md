@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -27,7 +27,7 @@ lastupdated: "2018-10-12"
 
 - 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry/index.html#index)中的指示信息。
 
-- 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 container-registry 插件的最新版本，请参阅[更新 container-registry 插件](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 
 - 您必须有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
 
@@ -214,14 +214,14 @@ lastupdated: "2018-10-12"
 
         这将显示在本教程中创建的三个名称空间（`namespace_a`、`namespace_b` 和 `namespace_c`）。如果看不到这些名称空间，请返回并遵循指示信息以再次创建这些名称空间。
 
-    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry/registry_overview.html#registry_regions)的短名称，例如 `us-south`：
+    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry/registry_overview.html#registry_regions)的短名称，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
         ```
         {: pre}
 
-    4. 通过运行以下命令，创建第二个策略以用于授予用户 B 在 `namespace_c` 上的“读者”和“作者”角色：
+    4. 通过运行以下命令，创建第二个策略以用于授予用户 B 在 `namespace_c` 上的“读取者”和“写入者”角色：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_c --roles Reader,Writer
@@ -321,7 +321,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        由于用户 B 在 `namespace_b` 中没有“作者”角色，所以此命令失败。
+        由于用户 B 在 `namespace_b` 中没有“写入者”角色，所以此命令失败。
 
     7. 通过运行以下命令，将映像标记为 `namespace_c`：
 
@@ -337,7 +337,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        此命令有效，因为用户 B 在 `namespace_c` 中具有“作者”角色。
+        此命令有效，因为用户 B 在 `namespace_c` 中具有“写入者”角色。
 
     9. 通过运行以下命令，从 `namespace_c` 中执行拉出：
 
@@ -346,7 +346,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        此命令用效，因为用户 B 在 `namespace_c` 中具有“读者”角色。
+        此命令用效，因为用户 B 在 `namespace_c` 中具有“读取者”角色。
 
 6. 清除：
 
@@ -395,14 +395,14 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-    3. 通过运行以下命令，为服务标识创建服务策略，用于授予该标识在 `namespace_a` 上的“读者”角色：
+    3. 通过运行以下命令，为服务标识创建服务策略，用于授予该标识在 `namespace_a` 上的“读取者”角色：
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
         ```
         {: pre}
 
-    4. 通过运行以下命令，创建第二个服务策略，用于授予在 `namespace_b` 上的“作者”角色：
+    4. 通过运行以下命令，创建第二个服务策略，用于授予在 `namespace_b` 上的“写入者”角色：
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Writer
@@ -441,7 +441,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        由于用户在 `namespace_a` 中没有“作者”角色，所以此命令无效。
+        由于用户在 `namespace_a` 中没有“写入者”角色，所以此命令无效。
 
     4. 通过运行以下命令，将映像推送到 `namespace_b`：
 
@@ -450,7 +450,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        此命令有效，因为用户在 `namespace_b` 中具有“作者”角色。
+        此命令有效，因为用户在 `namespace_b` 中具有“写入者”角色。
 
 3. 清除：
 

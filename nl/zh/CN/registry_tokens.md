@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-01-23"
 
 ---
 
@@ -32,7 +32,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 
 有关 {{site.data.keyword.registrylong_notm}} API 密钥的更多信息，请参阅[使用 API 密钥](/docs/iam/apikeys.html#manapikey)。
 
-开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](registry_setup_cli_namespace.html#registry_cli_install)。
+开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
 
 ## 使用 API 密钥自动访问名称空间
 {: #registry_api_key}
@@ -59,6 +59,11 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 
 通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 &lt;your_apikey&gt; 替换为 API 密钥，将 &lt;registry_url&gt; 替换为在其中设置名称空间的注册表的 URL。
 
+- 对于在美国南部设置的名称空间，请使用 `registry.ng.bluemix.net`
+- 对于在英国南部设置的名称空间，请使用 `registry.eu-gb.bluemix.net`
+- 对于在欧洲中部设置的名称空间，请使用 `registry.eu-de.bluemix.net`
+- 对于在亚太南部设置的名称空间，请使用 `registry.au-syd.bluemix.net`
+
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
@@ -72,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 您可以使用令牌，将 Docker 映像自动推送到 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
 {:shortdesc}
 
-拥有注册表令牌的所有人都可访问安全信息。通过为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌，可以为您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户，授予对您在区域中所设置的所有名称空间的访问权。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 container-registry 插件。
+拥有注册表令牌的所有人都可访问安全信息。如果您希望您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户能够访问您在区域中设置的所有名称空间，那么可以为您的帐户创建令牌。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 `container-registry` CLI 插件。
 
 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
 
@@ -103,6 +108,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
         <thead>
         <th colspan=2><img src="images/idea.png" alt="灯泡图标"/> 了解此命令的组成部分</th>
         </thead>
+          <caption>表 1. `ibmcloud cr token-add` 命令的组成部分</caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -123,7 +129,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
    ```
    Token identifier   58669dd6-3ddd-5c78-99f9-ad0a5aabd9ad
-   Token              <token_value>
+   Token              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpYm0uY29tIiwibmFtZSI6Ikdpbm5pIFJvbWV0dHkiLCJpYXQiOjE1NDYzMDA4MDB9.wYMmTPHmrqhyHtgw5T8lbl1hxr2ykHq5T5s3mvMxjDw
    ```
    {: screen}
 
@@ -235,6 +241,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-将 _&lt;apikey&gt;_、_&lt;region&gt;_、_&lt;my_namespace&gt;_ 和 _&lt;image_repo&gt;_ 分别替换为您的 API 密钥、[区域](registry_overview.html#registry_regions)的名称、您的名称空间以及存储库。
+将 _&lt;apikey&gt;_、_&lt;region&gt;_、_&lt;my_namespace&gt;_ 和 _&lt;image_repo&gt;_ 分别替换为您的 API 密钥、[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称、您的名称空间以及存储库。
 
 有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)。
