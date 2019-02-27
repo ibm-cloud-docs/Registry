@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -55,8 +55,8 @@ You can create an API key that you can then use to log in to your registry.
 
 You can create both user API keys and service ID API keys.
 
-- To create a service ID API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#creating-an-api-key-for-a-service-id).
-- To create a user API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#creating-an-api-key).
+- To create a service ID API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+- To create a user API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key).
 
 ### Using an API key to automate access
 {: #registry_api_key_use}
