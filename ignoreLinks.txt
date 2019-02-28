@@ -1,0 +1,3 @@
+https://microprofile.io,
+https://containers.cloud.ibm.com/swagger,
+https://containers.cloud.ibm.com/swagger-alb-api/,
