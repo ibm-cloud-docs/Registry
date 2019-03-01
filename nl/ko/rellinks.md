@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-13"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, links
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-13"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 관련 링크
@@ -24,9 +31,9 @@ lastupdated: "2018-11-13"
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)
-- [{{site.data.keyword.registrylong_notm}} API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net/apidocs/container-registry)
-- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net/apidocs/container-registry/va)
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
+- [{{site.data.keyword.registrylong_notm}} API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/container-registry)
+- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
@@ -38,6 +45,6 @@ lastupdated: "2018-11-13"
 - 클러스터에서 Ingress 애플리케이션 로드 밸런서를 관리하기 위한 REST API, [IBM Cloud Container Service ALB API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://us-south.containers.bluemix.net/swagger-alb-api/)를 참조하십시오.
 
 ## Docker
-{: #docker}
+{: #links_docker}
 
 - [Dockerfile 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/reference/builder/)

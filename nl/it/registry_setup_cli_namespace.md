@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-22"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Configurazione della CLI di {{site.data.keyword.registrylong_notm}} e
@@ -25,10 +32,10 @@ Prima di poter memorizzare le tue immagini Docker in {{site.data.keyword.registr
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {:tip}
 
-Prima di iniziare, installa la CLI [{{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://clis.ng.bluemix.net/ui/home.html).
+Prima di iniziare, installa la [CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
 
-## Installazione del plugin CLI `container-registry` 
-{: #registry_cli_install}
+## Installazione del plugin CLI `container-registry`
+{: #cli_namespace_registry_cli_install}
 
 Installa il plugin CLI `container-registry` per utilizzare la riga di comando per gestire i tuoi spazi dei nomi e le tue immagini Docker in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -38,7 +45,7 @@ Installa il plugin CLI `container-registry` per utilizzare la riga di comando pe
 
 Puoi ora configurare il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
 
-## Aggiornamento del plugin CLI `container-registry` 
+## Aggiornamento del plugin CLI `container-registry`
 {: #registry_cli_update}
 
 Per utilizzare le nuove funzioni, ti consigliamo di aggiornare periodicamente il plugin CLI `container-registry`.
@@ -47,7 +54,7 @@ Per utilizzare le nuove funzioni, ti consigliamo di aggiornare periodicamente il
 1. Aggiorna il plug-in `container-registry`.
 
     ```
-    ibmcloud plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry
     ```
     {: pre}
 
@@ -58,7 +65,7 @@ Per utilizzare le nuove funzioni, ti consigliamo di aggiornare periodicamente il
     ```
      {: pre}
 
-## Disinstallazione del plugin CLI `container-registry` 
+## Disinstallazione del plugin CLI `container-registry`
 {: #registry_cli_uninstall}
 
 Se non hai più bisogno del plug-in CLI `container-registry`, puoi disinstallarlo.
@@ -78,10 +85,10 @@ Se non hai più bisogno del plug-in CLI `container-registry`, puoi disinstallarl
     ```
     {: pre}
 
-    Il plug-in CLI `container-registry` non viene visualizzato nei risultati. 
+    Il plug-in CLI `container-registry` non viene visualizzato nei risultati.
 
 ## Configurazione di uno spazio dei nomi
-{: #registry_namespace_add}
+{: #registry_namespace_setup}
 
 Devi creare uno spazio dei nomi per memorizzare le tue immagini Docker in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -93,7 +100,7 @@ Devi creare uno spazio dei nomi per memorizzare le tue immagini Docker in {{site
 
 Crea uno spazio dei nomi; vedi [Configura uno spazio dei nomi](/docs/services/Registry/index.html#registry_namespace_add) nella documentazione introduttiva.
 
-Puoi ora [eseguire il push delle immagini Docker al tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing) e condividere queste immagini con altri utenti nel tuo account.
+Puoi ora [eseguire il push delle immagini Docker al tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace) e condividere queste immagini con altri utenti nel tuo account.
 
 ## Rimozione degli spazi dei nomi
 {: #registry_remove}

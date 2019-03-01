@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # ストレージおよびプル・トラフィックの割り当て量制限の管理
@@ -58,7 +65,7 @@ lastupdated: "2019-01-23"
     ```
     {: screen}
 
-3. ストレージおよびプル・トラフィックの割り当て量制限を変更します。 プル・トラフィックの使用量を変更するには、**traffic** オプションを指定し、_&lt;traffic_quota&gt;_ を、プル・トラフィック割り当て量に設定する値 (M バイト単位) に置換します。 アカウント内のストレージの量を変更する場合は、**storage** オプションを指定し、_&lt;storage_quota&gt;_ を、設定する値 (M バイト単位) に置換します。
+3. ストレージおよびプル・トラフィックの割り当て量制限を変更します。 プル・トラフィックの使用量を変更するには、**traffic** オプションを指定し、`<traffic_quota>` を、プル・トラフィック割り当て量に設定する値 (M バイト単位) に置き換えます。アカウント内のストレージの量を変更する場合は、**storage** オプションを指定し、`<storage_quota>` を、設定する値 (M バイト単位) に置き換えます。
 
     無料プランを使用している場合は、無料層を超える量には割り当て量を設定できません。 無料層では、ストレージは 512 MB、トラフィックは 5120 MB まで許可されます。
     {:tip}
@@ -123,7 +130,7 @@ lastupdated: "2019-01-23"
     ```
     {: pre}
 
-2. 名前空間からイメージを削除します。 _&lt;image_name&gt;_ を、削除するイメージの名前に置換します。
+2. 名前空間からイメージを削除します。 `<image_name>` を、削除するイメージの名前に置き換えてください。
 
     ```
     ibmcloud cr image-rm <image_name>

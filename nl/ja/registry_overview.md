@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} の概要
@@ -271,7 +278,7 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 ローカル領域以外の領域を使用する場合は、`ibmcloud cr region-set` コマンドを実行して、アクセスしたい領域をターゲットにします。 このコマンドをパラメーターなしで実行して使用可能な領域のリストを表示することも、パラメーターとして領域を指定することもできます。
 
-パラメーターを指定してコマンドを実行する場合は、_&lt;region&gt;_ を例えば `eu-central` のような領域名に置き換えます。
+パラメーターを指定してコマンドを実行する場合は、`<region>` を領域名 (例: `eu-central`) に置き換えます。
 
 ```
 ibmcloud cr region-set <region>
@@ -302,13 +309,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set) を参照してください。
+`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set) を参照してください。
 
 グローバル・レジストリーをターゲットにした後に、`ibmcloud cr login` コマンドを実行してローカル Docker デーモンをグローバル・レジストリーにログインさせ、{{site.data.keyword.IBM_notm}} 提供のパブリック・イメージをプルできるようにします。
 
 ## Docker のサポート
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。[Docker の資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/v1.12/) を参照してください。
+{{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。
 
 Docker が必要になるのは、イメージをプッシュまたはプルするとき、または `ibmcloud cr ppa-archive-load` コマンドを実行するときだけです。

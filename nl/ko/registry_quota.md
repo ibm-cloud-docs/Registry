@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 스토리지 및 가져오기 트래픽의 할당량 한계 관리
@@ -62,9 +69,7 @@ lastupdated: "2019-01-23"
     ```
     {: screen}
 
-3. 스토리지 및 가져오기 트래픽의 할당량 한계를 변경하십시오. 가져오기 트래픽 사용량을 변경하려면 **traffic** 옵션을 지정하고
-_&lt;traffic_quota&gt;_를 가져오기 트래픽 할당량에 설정하려는 메가바이트 단위의 값으로 대체하십시오. 사용자의 계정에서 스토리지의 양을 변경하려는 경우, **storage** 옵션을 지정하고
-_&lt;storage_quota&gt;_를 설정하려는 메가바이트 단위의 값으로 대체하십시오.
+3. 스토리지 및 가져오기 트래픽의 할당량 한계를 변경하십시오. 가져오기 트래픽 사용량을 변경하려면 **traffic** 옵션을 지정하고 `<traffic_quota>`를 가져오기 트래픽 할당량에 설정하려는 메가바이트 단위의 값으로 대체하십시오. 사용자의 계정에서 스토리지의 양을 변경하려는 경우, **storage** 옵션을 지정하고 `<storage_quota>`를 설정하려는 메가바이트 단위의 값으로 대체하십시오.
 
     무료 플랜을 사용 중인 경우에는 무료 계층을 초과하는 양으로 할당량을 설정할 수 없습니다. 무료 계층 허용량은 스토리지의 경우 512MB이고 트래픽의 경우 5120MB입니다.
     {:tip}
@@ -130,7 +135,7 @@ _&lt;storage_quota&gt;_를 설정하려는 메가바이트 단위의 값으로 �
     ```
     {: pre}
 
-2. 네임스페이스에서 이미지를 제거하십시오. _&lt;image_name&gt;_을 제거하려는 이미지의 이름으로 대체하십시오.
+2. 네임스페이스에서 이미지를 제거하십시오. `<image_name>`을 제거하려는 이미지의 이름으로 대체하십시오.
 
     ```
     ibmcloud cr image-rm <image_name>

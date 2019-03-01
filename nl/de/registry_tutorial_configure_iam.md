@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Lernprogramm: Zugriff auf {{site.data.keyword.registrylong_notm}}-Ressourcen erteilen
@@ -27,9 +34,9 @@ Dieses Lernprogramm dauert ca. Minuten.
 
 - Führen Sie die Anweisungen im Abschnitt [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index) aus.
 
-- Stellen Sie sicher, dass Sie über die neueste Version des `container-registry`-CLI-Plug-ins für die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle verfügen. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update). 
+- Stellen Sie sicher, dass Sie über die neueste Version des `container-registry`-CLI-Plug-ins für die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle verfügen. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
-- Sie müssen Zugriff auf zwei [ {{site.data.keyword.cloud_notm}}-Konten ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/) haben, die Sie für dieses Lernprogramm verwenden können, ein Konto für Benutzer A und ein Konto für Benutzer B. Beide Konten müssen eine eindeutige E-Mail-Adresse haben. Sie arbeiten in Ihrem eigenen Konto, als Benutzer A, und laden einen anderen Benutzer, Benutzer B, ein, Ihr Konto zu verwenden. Sie können entweder ein zweites {{site.data.keyword.cloud_notm}}-Konto erstellen oder mit einem Kollegen arbeiten, der bereits ein {{site.data.keyword.cloud_notm}}-Konto besitzt.
+- Sie müssen über Zugriff auf zwei [{{site.data.keyword.cloud_notm}}-Konten ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login) verfügen, die Sie für dieses Lernprogramm verwenden können, eines für Benutzer A und eines für Benutzer B. Diese müssen jeweils eine eindeutige E-Mail-Adresse verwenden. Sie arbeiten in Ihrem eigenen Konto, als Benutzer A, und laden einen anderen Benutzer, Benutzer B, ein, Ihr Konto zu verwenden. Sie können entweder ein zweites {{site.data.keyword.cloud_notm}}-Konto erstellen oder mit einem Kollegen arbeiten, der bereits ein {{site.data.keyword.cloud_notm}}-Konto besitzt.
 
 - Wenn Sie mit der Verwendung von {{site.data.keyword.registrylong_notm}} in Ihrem Konto vor dem 4. Oktober 2018 begonnen haben, müssen Sie die IAM-Richtliniendurchsetzung aktivieren, indem Sie den Befehl `ibmcloud cr iam-policies-enable` ausführen. Wenn Sie andere Benutzer, die Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche verwenden, in Ihr IBM Cloud-Konto eingeladen haben, verwenden Sie ein anderes Konto als Benutzer A, um deren Zugriff nicht zu unterbrechen.
 
@@ -214,7 +221,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
 
         Die drei Namensbereiche, die Sie in diesem Lernprogramm erstellt haben (`namensbereich_a`, `namensbereich_b` und `namensbereich_c`), werden angezeigt. Wenn diese Namensbereiche nicht angezeigt werden, gehen Sie zurück und führen Sie erneut die Anweisungen zu ihrer Erstellung aus.
 
-    3. Erstellen Sie eine Richtlinie, die Benutzer B die Rolle 'Leseberechtigter' für `namensbereich_b` zuordnet, indem Sie den folgenden Befehl ausführen, wobei _`<Region>`_ der Kurzname für Ihre [Region](/docs/services/Registry/registry_overview.html#registry_regions) ist, z. B. `us-south`:
+    3. Erstellen Sie eine Richtlinie, die Benutzer B die Rolle 'Leseberechtigter' für `namensbereich_b` zuordnet, indem Sie den folgenden Befehl ausführen, wobei _`<Region>`_ der Name Ihrer [Region](/docs/services/Registry/registry_overview.html#registry_regions) ist, z. B. `us-south`:
 
         ```
         ibmcloud iam user-policy-create <benutzer.b@beispiel.com> --service-name container-registry --region <region> --resource-type namensbereich --resource <namensbereich_b> --roles Leseberechtigter
@@ -379,7 +386,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
 In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff auf Ihren {{site.data.keyword.registrylong_notm}}-Namensbereich.
 {:shortdesc}
 
-1. Richten Sie eine Service-ID mit Zugriff auf {{site.data.keyword.registrylong_notm}} ein und erstellen Sie einen API-Schlüssel dafür: 
+1. Richten Sie eine Service-ID mit Zugriff auf {{site.data.keyword.registrylong_notm}} ein und erstellen Sie einen API-Schlüssel dafür:
 
     1. Melden Sie sich beim Konto von Benutzer A an, indem Sie den folgenden Befehl ausführen:
 
@@ -388,14 +395,14 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
         ```
         {: pre}
 
-    2. Erstellen Sie eine Service-ID namens `cr-roles-tutorial` mit der Beschreibung `"Während des Zugriffssteuerungs-Lernprogramms für Container-Registry erstellt"`, indem Sie den folgenden Befehl ausführen: 
+    2. Erstellen Sie eine Service-ID namens `cr-roles-tutorial` mit der Beschreibung `"Während des Zugriffssteuerungs-Lernprogramms für Container-Registry erstellt"`, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Während des Zugriffssteuerungs-Lernprogramms für Container-Registry erstellt"
         ```
         {: pre}
 
-    3. Erstellen Sie eine Servicerichtlinie für die Service-ID, die die Rolle 'Leseberechtigter' für `namensbereich_a` zuordnet, indem Sie den folgenden Befehl ausführen: 
+    3. Erstellen Sie eine Servicerichtlinie für die Service-ID, die die Rolle 'Leseberechtigter' für `namensbereich_a` zuordnet, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <region> --resource-type namensbereich --resource namensbereich_a --roles Leseberechtigter
@@ -409,7 +416,7 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
         ```
         {: pre}
 
-    5. Erstellen Sie einen API-Schlüssel für die Service-ID, indem Sie den folgenden Befehl ausführen: 
+    5. Erstellen Sie einen API-Schlüssel für die Service-ID, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial
@@ -470,7 +477,7 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
         ```
         {: pre}
 
-    3. Löschen Sie Ihre Service-ID, indem Sie den folgenden Befehl ausführen: 
+    3. Löschen Sie Ihre Service-ID, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud iam service-id-delete cr-roles-tutorial

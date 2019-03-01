@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Définition des règles de rôle d'accès utilisateur
@@ -56,7 +63,7 @@ Pour les utilisateurs dont les accès ont été configurés après le 4 octobre 
 
 1. [Créez des règles](#create) pour vos utilisateurs et vos ID de service.
 
-2. Pour activer l'application des règles, exécutez la commande [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable).
+2. Pour activer l'application des règles, exécutez la commande [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable).
 
     Vous devez disposer du rôle Responsable sur le compte afin de pouvoir exécuter la commande `ibmcloud cr iam-policies-enable`. Vous disposez automatiquement du rôle Responsable sur votre propre compte.
     {: tip}

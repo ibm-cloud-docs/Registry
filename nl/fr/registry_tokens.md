@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Automatisation de l'accès à {{site.data.keyword.registrylong_notm}}
@@ -32,7 +39,7 @@ Si vous utilisez une clé d'API, vous pouvez contrôler l'accès à vos espaces 
 
 Pour plus d'informations sur les clés d'API {{site.data.keyword.registrylong_notm}}, voir [Utilisation des clés d'API](/docs/iam/apikeys.html#manapikey).
 
-Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+Avant de commencer, [installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et l'interface de ligne de commande de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API
 {: #registry_api_key}
@@ -57,7 +64,7 @@ Vous pouvez créer des clés d'API d'utilisateur et des clés d'API d'ID de serv
 Vous pouvez utiliser une clé d'API pour automatiser l'accès à vos espaces de nom dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Utilisez la clé d'API pour vous connecter à votre registre en exécutant la commande Docker suivante. Remplacez &lt;your_apikey&gt; par votre clé d'API et &lt;registry_url&gt; par l'URL du registre où sont définis vos espaces de nom.
+Utilisez la clé d'API pour vous connecter à votre registre en exécutant la commande Docker suivante. Remplacez `<your_apikey>` par votre clé d'API et remplacez `<registry_url>` par l'adresse URL du registre où sont configurés vos espaces de nom.
 
 - Pour les espaces de nom définis pour la région Sud des Etats-Unis, utilisez `registry.ng.bluemix.net`
 - Pour les espaces de nom définis pour la région Sud du Royaume-Uni, utilisez `registry.eu-gb.bluemix.net`
@@ -79,7 +86,6 @@ Vous pouvez utiliser des jetons pour automatiser l'envoi et l'extraction d'image
 
 Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. Si vous souhaitez que des utilisateurs ne faisant pas partie de votre compte puissent accéder à tous les espaces de nom configurés dans une région, vous pouvez créer un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images
 vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in d'interface de ligne de commande `container-registry`.
-
 
 Quand vous créez un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez décider s'il octroie un accès en lecture seule (pull) ou en écriture (push et pull) au registre. Vous pouvez également spécifier s'il doit être permanent ou expirer au bout de 24 heures. Pour pouvez créer et utiliser plusieurs jetons destinés à des types d'accès différents.
 
@@ -160,7 +166,7 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
    ```
    {: pre}
 
-3. Extrayez la valeur de jeton de ce jeton. Remplacez &lt;token_id&gt; par l'ID du jeton concerné.
+3. Extrayez la valeur de jeton de ce jeton. Remplacez `<token_id>` par l'ID du jeton.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -169,7 +175,7 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 
     Votre valeur de jeton est affichée dans la zone **Jeton** de la sortie de l'interface de ligne de commande.
 
-4. Utilisez le jeton avec votre commande `docker login`. Remplacez la valeur de &lt;token_value&gt; par la valeur de jeton que vous avez extraite à l'étape précédente et la valeur de &lt;registry_url&gt; par l'URL du registre où sont configurés vos espaces de nom.
+4. Utilisez le jeton avec votre commande `docker login`. Remplacez `<token_value>` par la valeur de jeton extraite à l'étape précédente et `<registry_url>` par l'adresse URL du registre où sont configurés vos espaces de nom.
 
    - Pour les espaces de nom définis pour la région Sud des Etats-Unis, utilisez `registry.ng.bluemix.net`
    - Pour les espaces de nom définis pour la région Sud du Royaume-Uni, utilisez `registry.eu-gb.bluemix.net`
@@ -239,6 +245,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Remplacez _&lt;apikey&gt;_ par votre clé d'API, _&lt;region&gt;_ par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ par votre espace de nom et _&lt;image_repo&gt;_ par le référentiel.
+Remplacez `<apikey>` par votre clé d'API, `<region>` par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` par votre espace de nom et `<image_repo>` par le référentiel.
 
 Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

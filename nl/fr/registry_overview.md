@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # A propos d'{{site.data.keyword.registrylong_notm}}
@@ -21,7 +28,7 @@ lastupdated: "2019-01-23"
 Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker privées et y accéder dans une architecture hautement disponible et évolutive.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser {{site.data.keyword.registrylong_notm}} en configurant votre propre espace de nom d'images et en envoyant des images Docker à votre espace de nom. 
+{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser {{site.data.keyword.registrylong_notm}} en configurant votre propre espace de nom d'images et en envoyant des images Docker à votre espace de nom.
 
 <img src="images/registry_architecture1.svg" alt="Image montrant comment vous pouvez interagir avec IBM Cloud Container Registry. Un registre de conteneur contient des référentiels privés et publics et des API permettant d'interagir avec le service. Votre client Docker local peut extraire et envoyer des images depuis et vers vos référentiels privés dans le registre, et peuvent extraire des registres publics. L'interface utilisateur Web IBM Cloud (console) interagit avec l'API de registre de conteneur pour répertorier des images. L'interface de ligne de commande de registre de conteneur interagit avec l'API pour répertorier, créer, inspecter et retirer des images, mais aussi pour d'autres fonctions administratives. Votre client Docker local peut également extraire et envoyer des images depuis votre magasin d'images locales vers d'autres registres."/>
 
@@ -83,7 +90,8 @@ En fonction du plan de service que vous choisissez, vous êtes facturé pour le 
 
   Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
 
-  Exemple pour le plan standard :
+  Exemple pour
+le plan standard :
 
   > Vous utilisez 5 Go pour exactement la moitié du mois, puis envoyez par commande push plusieurs images dans votre espace de nom et utilisez 10 Go pour le reste du mois. Votre utilisation mensuelle est calculée comme suit :
   >
@@ -97,7 +105,8 @@ En fonction du plan de service que vous choisissez, vous êtes facturé pour le 
 
   Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut une certaine quantité de trafic d'extraction (pull) gratuite vers vos images privées stockées dans votre espace de nom. Le trafic d'extraction (pull) est la bande passante que vous utilisez lorsque vous procédez à l'extraction par commande pull d'une image à partir de votre espace de nom vers votre machine locale. Si vous bénéficiez du plan standard, vous êtes facturé en Go d'utilisation par mois. Les 5 premiers Go de chaque mois sont gratuits. Si vous bénéficiez du plan gratuit, vous pouvez extraire des images à partir de votre espace de nom jusqu'à ce que vous atteigniez la limite de quota du plan gratuit.
 
-  Exemple pour le plan standard :
+  Exemple pour
+le plan standard :
 
   > Au cours du mois, vous avez extrait des images qui contenaient des couches d'une taille totale de 14 Go. Votre utilisation mensuelle est calculée comme suit :
   >
@@ -115,7 +124,8 @@ En fonction du plan de service que vous choisissez, vous pouvez envoyer des imag
 
   Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry/registry_quota.html#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
 
-  Exemple pour le plan standard :
+  Exemple pour
+le plan standard :
 
   > Votre limite de quota en cours pour le stockage est définie sur 1 Go. Toutes les images privées stockées dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}} utilisent déjà 900 Mo de ce stockage. Vous disposez de 100 Mo de stockage disponible jusqu'à ce que vous atteigniez cette limite de quota. Un utilisateur souhaite envoyer par commande push une image de 2 Go située sur la machine locale. Puisque la limite de quota n'est pas encore atteinte, {{site.data.keyword.registrylong_notm}} autorise l'utilisateur à envoyer cette image par commande push.
   >
@@ -306,7 +316,7 @@ La portée de tous les artefacts de registre est celle du registre régional sp�
 
 Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `ibmcloud cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
 
-Pour exécuter la commande avec des paramètres, remplacez _&lt;region&gt;_ par le nom de la région. Par exemple, `eu-central`.
+Pour exécuter la commande avec les paramètres, remplacez `<region>` par le nom de la région. Par exemple, `eu-central`.
 
 ```
 ibmcloud cr region-set <region>
@@ -337,13 +347,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
+Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
 
 Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
 
 ## Prise en charge de Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur. Voir la [documentation Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/v1.12/).
+{{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
 
-Docker est requis uniquement si vous souhaitez envoyer ou extraire des images, ou si vous souhaitez exécuter la commande `ibmcloud cr ppa-archive-load`. 
+Docker est requis uniquement si vous souhaitez envoyer ou extraire des images, ou si vous souhaitez exécuter la commande `ibmcloud cr ppa-archive-load`.

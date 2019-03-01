@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}
-
-{{site.data.keyword.Bluemix_notm}} アカウントのレジストリーとそのリソースを管理するには、`container-registry` CLI プラグイン内に用意されている {{site.data.keyword.registrylong}} CLI を使用できます。
+{: #containerregcli}{{site.data.keyword.Bluemix_notm}} アカウントのレジストリーとそのリソースを管理するには、`container-registry` CLI プラグイン内に用意されている {{site.data.keyword.registrylong}} CLI を使用できます。
 {: shortdesc}
 
 **前提条件**
 
-* [{{site.data.keyword.Bluemix_notm}} CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](/docs/cli/index.html#overview) をインストールします。 {{site.data.keyword.Bluemix_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
+* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。{{site.data.keyword.Bluemix_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
 
 * レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
@@ -116,7 +121,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>免除するセキュリティー問題のタイプ。 有効な問題タイプを見つけるには、`ibmcloud cr exemption-types` を実行します。
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>免除するセキュリティー問題の ID。 問題 ID を見つけるには、`ibmcloud cr va <image>` を実行 (*&lt;image&gt;* はイメージの名前) して、**「脆弱性 ID (Vulnerability ID)」**列または**「構成問題 ID (Configuration Issue ID)」**列の関連する値を使用します。
+<dd>免除するセキュリティー問題の ID。 問題 ID を見つけるには、`ibmcloud cr va <image>` を実行 (`<image>` はイメージの名前) して、**「脆弱性 ID (Vulnerability ID)」**列または**「構成問題 ID (Configuration Issue ID)」**列の関連する値を使用します。
 </dd>
 </dl>
 
@@ -299,7 +304,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -317,7 +322,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict 
 詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)を参照してください。
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(オプション) 各イメージが、`repository:tag` という形式でリストされます。</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(オプション) 指定した名前空間内または名前空間とリポジトリー内のイメージのみを表示するように出力を制限します。 </dd>
@@ -360,7 +365,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **例**
-イメージ *`registry.ng.bluemix.net/birds/bluebird:1`* を削除します。
+イメージ `registry.ng.bluemix.net/birds/bluebird:1` を削除します。
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -370,7 +375,7 @@ ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。
+{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}
@@ -387,18 +392,18 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 **コマンド・オプション**
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
-<dd>ソース・イメージの名前。`SOURCE_IMAGE` は `repository:tag` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
+<dd>ソース・イメージの名前。 `SOURCE_IMAGE` は `repository:tag` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
 
 </dd>
 <dt>`TARGET_IMAGE`</dt>
-<dd>ターゲット・イメージの名前。`TARGET_IMAGE` は `repository:tag` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
+<dd>ターゲット・イメージの名前。 `TARGET_IMAGE` は `repository:tag` という形式である必要があります。例: `registry.ng.bluemix.net/namespace/image:latest`
 
 </dd>
 </dl>
 
 **例**
 
-別のタグ参照 `latest` をイメージ *`registry.ng.bluemix.net/birds/bluebird:1`* に追加します。
+別のタグ参照 `latest` をイメージ `registry.ng.bluemix.net/birds/bluebird:1` に追加します。
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -502,7 +507,7 @@ ibmcloud cr namespace-list
 {{site.data.keyword.Bluemix_notm}} アカウントから名前空間を削除します。 名前空間を削除すると、この名前空間内のイメージが削除されます。
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -514,6 +519,8 @@ ibmcloud cr namespace-rm NAMESPACE
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>削除する名前空間。</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(オプション) ユーザー・プロンプトを出さずに強制的にコマンドを実行します。</dd>
 </dl>
 
 **例**
@@ -709,7 +716,7 @@ ibmcloud cr region-set us-south
 レジストリーへのアクセスを制御するために使用できるトークンを追加します。
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -727,7 +734,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(オプション) 周囲のテキストを含めずに、トークンのみを表示します。</dd>
 <dt>`--non-expiring`</dt>
 <dd>(オプション) 有効期限なしでアクセスできるトークンを作成します。 このパラメーターを設定しないと、デフォルトでは、トークンからのアクセスは 24 時間後に無効になります。</dd>
@@ -816,10 +823,10 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-指定した 1 つ以上のトークンを削除します。
+指定した 1 つ以上のレジストリー・トークンを削除します。
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -831,6 +838,8 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN には、トークン自体を指定することもトークンの固有 ID (`ibmcloud cr token-list` で表示されます) を指定することもできます。 複数のトークンをスペースで区切って指定できます。</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(オプション) ユーザー・プロンプトを出さずに強制的にコマンドを実行します。</dd>
 </dl>
 
 **例**
@@ -877,6 +886,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 詳しくは、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va/va_index.html)を参照してください。
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(オプション) 脆弱なパッケージのフィックスについての追加情報をコマンド出力に表示します。</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(オプション) 脆弱性のみを表示するようにコマンド出力を制限します。</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(オプション) 構成の問題のみを表示するようにコマンド出力を制限します。</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(オプション) 選択した形式でコマンド出力が返されます。 デフォルトの形式は `text` です。 以下の形式がサポートされています。
 
@@ -886,13 +901,6 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(オプション) 脆弱性のみを表示するようにコマンド出力を制限します。</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(オプション) 構成の問題のみを表示するようにコマンド出力を制限します。</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(オプション) 脆弱なパッケージのフィックスについての追加情報をコマンド出力に表示します。</dd>
-
 </dl>
 
 **例**
@@ -904,7 +912,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-JSON 形式でイメージ *`registry.ng.bluemix.net/birds/bluebird:1`* の脆弱性評価レポートを表示します。脆弱性のみ表示されます。
+JSON 形式でイメージ `registry.ng.bluemix.net/birds/bluebird:1` の脆弱性評価レポートを表示します。脆弱性のみ表示されます。
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

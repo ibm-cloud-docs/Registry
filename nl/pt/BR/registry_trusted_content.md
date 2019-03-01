@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Imagens de assinatura para conteúdo confiável
@@ -23,7 +30,8 @@ O {{site.data.keyword.registrylong}} fornece tecnologia de conteúdo confiável 
 
 Quando você envia a imagem por push com conteúdo confiável ativado, o cliente Docker também envia por push um objeto de metadados assinado para o servidor de confiança do {{site.data.keyword.Bluemix_notm}}. Ao puxar uma imagem identificada com o Docker Content Trust ativado, o cliente Docker entra em contato com o servidor de confiança para estabelecer a versão assinada mais recente da tag solicitada, verifica a assinatura de conteúdo e faz download da imagem assinada.
 
-Um nome de imagem é composto de um repositório e uma tag. Ao usar conteúdo confiável, cada repositório usa uma chave de assinatura exclusiva. Cada tag de um repositório usa a chave que pertence ao repositório. Se você tiver várias equipes publicando conteúdo, cada uma em seu próprio repositório dentro de seus namespaces do {{site.data.keyword.registrylong_notm}}, cada equipe poderá usar suas próprias chaves para assinar seu conteúdo para que seja possível verificar se cada imagem é produzida pela equipe apropriada.
+Um nome de imagem é composto de um repositório e uma tag. Quando você estiver usando conteúdo confiável, cada
+repositório usará uma chave de assinatura exclusiva. Cada tag de um repositório usa a chave que pertence ao repositório. Se você tiver várias equipes publicando conteúdo, cada uma em seu próprio repositório dentro de seus namespaces do {{site.data.keyword.registrylong_notm}}, cada equipe poderá usar suas próprias chaves para assinar seu conteúdo para que seja possível verificar se cada imagem é produzida pela equipe apropriada.
 
 Um repositório pode conter tanto conteúdo assinado quanto não assinado. Quando o Docker Content Trust está ativado, é possível acessar o conteúdo assinado em um repositório, mesmo quando há outro conteúdo não assinado ao lado dele.
 
@@ -115,7 +123,12 @@ Antes de iniciar, [configure o namespace de registro](/docs/services/Registry/in
 
 1. [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2. [Empurre a imagem](/docs/services/Registry/index.html#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando é exibido "Assinando e enviando metadados de imagem por push".
+2. [Empurre a imagem](/docs/services/Registry/index.html#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) são limitadas.
 
@@ -127,7 +140,8 @@ A primeira vez que você puxa uma imagem assinada com o Docker Content Trust ati
 
 1. [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2. Puxe sua imagem. Substitua _&lt;source_image&gt;_ pelo repositório da imagem e _&lt;tag&gt;_ pela tag da imagem que você deseja usar, como _mais recente_. Para listar imagens disponíveis a serem puxadas, execute `ibmcloud cr image-list`.
+2. Puxe sua imagem. Substitua `<source_image>` pelo repositório da imagem e `<tag>` pela tag da imagem
+que você deseja usar, como _latest_. Para listar imagens disponíveis a serem puxadas, execute `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -154,7 +168,7 @@ conteúdo de confiança. Para executar os comandos `docker trust`, deve-se ter o
 
 2. Revise a tag, a compilação e as informações de assinante de cada imagem.
 
-   (Opcional) Especifique a tag, _&lt;tag&gt;_, para ver informações sobre essa versão da imagem.
+   (Opcional) Especifique a tag, `<tag>`, para ver informações sobre essa versão da imagem.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -239,7 +253,8 @@ Para compartilhar chaves de assinatura:
 
 1. Se o novo assinante ainda não tiver gerado um par de chaves, um par de chaves deverá ser gerado e carregado.
   
-    a. Gere a chave. É possível inserir qualquer nome para _&lt;NAME&gt;_, no entanto, o nome selecionado será visível quando alguém inspecionar confiança no repositório. Trabalhe com o proprietário do repositório para atender quaisquer convenções de nomenclatura que possam ser usadas pela organização e para selecionar um nome que seja identificável para esse assinante.
+    a. Gere a chave. É possível inserir qualquer nome para `<NAME>`, no entanto, o nome selecionado ficará
+visível quando alguém inspecionar a confiança no repositório. Trabalhe com o proprietário do repositório para atender quaisquer convenções de nomenclatura que possam ser usadas pela organização e para selecionar um nome que seja identificável para esse assinante.
 
       ```
       docker trust key generate <NAME>

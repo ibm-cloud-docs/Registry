@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Tutoriel : Octroi de droits d'accès aux ressources {{site.data.keyword.registrylong_notm}}
@@ -29,7 +36,7 @@ Ce tutoriel dure environ 45 minutes.
 
 - Assurez-vous que vous disposez de la version la plus récente du plug-in d'interface de ligne de commande `container-registry` pour l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Voir [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
-- Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/) que vous pouvez utiliser dans le cadre de ce tutoriel, l'un pour l'utilisateur A et l'autre pour l'utilisateur B, chacun devant utiliser une adresse électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
+- Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/login) que vous pouvez utiliser pour ce tutoriel, un pour l'utilisateur A et un pour l'utilisateur B, chacun utilisant une adresse de courrier électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
 
 - Si vous avez commencé à utiliser {{site.data.keyword.registrylong_notm}} dans votre compte avant le 4 octobre 2018, vous devez activer l'application des règles IAM en exécutant la commande `ibmcloud cr iam-policies-enable`. Si vous avez invité d'autres utilisateurs à utiliser vos espaces de nom {{site.data.keyword.registrylong_notm}} dans votre compte IBM Cloud, utilisez un autre compte en tant qu'utilisateur A pour empêcher que leurs accès ne soient interrompus.
 
@@ -214,7 +221,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
 
         Les trois espaces de nom que vous avez créés dans ce tutoriel (`namespace_a`, `namespace_b` et `namespace_c`) s'affichent. Si vous ne voyez pas ces espaces de nom, revenez en arrière et suivez les instructions permettant de les recréer.
 
-    3. Créez une règle qui affecte le rôle Lecteur sur `namespace_b` à l'utilisateur B en exécutant la commande suivante, où _`<Region>`_ est le nom abrégé de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), par exemple, `us-south` :
+    3. Créez une règle qui affecte le rôle Lecteur sur `namespace_b` à l'utilisateur B en exécutant la commande suivante, où _`<Region>`_ est le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions), par exemple `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader

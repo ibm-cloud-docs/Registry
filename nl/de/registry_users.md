@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Richtlinien für Benutzerzugriffsrollen definieren
@@ -47,16 +54,16 @@ Wenn Sie Zugriff auf alles erteilen möchten, geben Sie keinen Ressourcentyp bzw
 Um Richtlinien für {{site.data.keyword.registrylong_notm}} zu erstellen, muss das Feld mit dem Servicenamen `container-registry` lauten.
 
 - Informationen zum Erstellen einer Richtlinie für Benutzer finden Sie unter [Zugriff auf Ressourcen verwalten](/docs/iam/mngiam.html#iammanidaccser).
-- Zum Erstellen einer Richtlinie für Service-IDs führen Sie den Befehl `ibmcloud iam service-policy-create` aus oder verwenden die GUI, um Rollen an Ihre Service-IDs zu binden. Zum Erstellen von Richtlinien müssen Sie die Rolle 'Administrator' innehaben. In Ihrem eigenen Konto haben Sie automatisch die Rolle 'Administrator'. Weitere Informationen finden Sie in [Service-IDs erstellen und damit arbeiten](/docs/iam/serviceid.html#serviceids) und [Service-ID-Zugriffsrichtlinien verwalten](/docs/iam/serviceidaccess.html#serviceidpolicy). 
+- Zum Erstellen einer Richtlinie für Service-IDs führen Sie den Befehl `ibmcloud iam service-policy-create` aus oder verwenden die GUI, um Rollen an Ihre Service-IDs zu binden. Zum Erstellen von Richtlinien müssen Sie die Rolle 'Administrator' innehaben. In Ihrem eigenen Konto haben Sie automatisch die Rolle 'Administrator'. Weitere Informationen finden Sie in [Service-IDs erstellen und damit arbeiten](/docs/iam/serviceid.html#serviceids) und [Service-ID-Zugriffsrichtlinien verwalten](/docs/iam/serviceidaccess.html#serviceidpolicy).
 
 ## Richtliniendurchsetzung für vorhandene Benutzer aktivieren
 {: #existing_users}
 
 Für Benutzer, die nach dem 4. Oktober 2018 bereitgestellt werden, sind IAM-Richtlinien standardmäßig aktiviert. Für Benutzer, die vor dem 4. Oktober 2018 bereitgestellt wurden, müssen Sie, nachdem Sie Ihre Richtlinien erstellt haben, die Richtliniendurchsetzung aktivieren, damit Ihre Richtlinien wirksam werden.
 
-1. [Erstellen Sie Richtlinien](#create) für Ihre Benutzer und Service-IDs. 
+1. [Erstellen Sie Richtlinien](#create) für Ihre Benutzer und Service-IDs.
 
-2. Zum Aktivieren der Richtliniendurchsetzung führen Sie den Befehl [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) aus.
+2. Zum Aktivieren der Richtliniendurchsetzung führen Sie den Befehl [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) aus.
 
     Sie müssen für das Konto die Rolle 'Manager' innehaben, um den Befehl `ibmcloud cr iam-policies-enable` ausführen zu können. In Ihrem eigenen Konto haben Sie automatisch die Rolle 'Manager'.
     {: tip}

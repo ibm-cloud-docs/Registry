@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Automazione dell'accesso a {{site.data.keyword.registrylong_notm}}
@@ -32,7 +39,7 @@ Se utilizzi una chiave API, puoi controllare l'accesso ai tuoi spazi dei nomi ut
 
 Per ulteriori informazioni sulle chiavi API {{site.data.keyword.registrylong_notm}}, consulta [Gestione delle chiavi API](/docs/iam/apikeys.html#manapikey).
 
-Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+Prima di iniziare, [installa la CLI {{site.data.keyword.registrylong_notm}} e Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API
 {: #registry_api_key}
@@ -57,7 +64,7 @@ Puoi creare sia le chiavi API dell'utente che le chiavi API dell'ID servizio.
 Puoi utilizzare una chiave API per automatizzare l'accesso ai tuoi spazi dei nomi in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Utilizza la chiave API per accedere al tuo registro eseguendo il seguente comando Docker. Sostituisci &lt;your_apikey&gt; con la tua chiave API e &lt;registry_url&gt; con l'URL del registro in cui sono configurati gli spazi dei nomi.
+Utilizza la chiave API per accedere al tuo registro eseguendo il seguente comando Docker. Sostituisci `<your_apikey>` con la tua chiave API e sostituisci `<registry_url>` con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
 
 - Per gli spazi dei nomi configurati in Stati Uniti Sud, utilizza `registry.ng.bluemix.net`
 - Per gli spazi dei nomi configurati in Regno Unito Sud, utilizza `registry.eu-gb.bluemix.net`
@@ -106,7 +113,7 @@ Puoi creare un token per concedere l'accesso a tutti i tuoi spazi dei nomi {{sit
         <thead>
         <th colspan=2><img src="images/idea.png" alt="light bulb icon"/> Descrizione dei componenti di questo comando</th>
         </thead>
-          <caption>Tabella 1. I componenti del comando `ibmcloud cr token-add` </caption>
+          <caption>Tabella 1. I componenti del comando `ibmcloud cr token-add`</caption>
         <tbody>
         <tr>
         <td>`--description`</td>
@@ -158,7 +165,7 @@ Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'acce
    ```
    {: pre}
 
-3. Richiama il valore per il token. Sostituisci &lt;token_id&gt; con l'ID del token.
+3. Richiama il valore per il token. Sostituisci `<token_id>` con l'ID del token.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -167,7 +174,7 @@ Puoi utilizzare un token nel tuo comando `docker login` per automatizzare l'acce
 
     Il valore del token viene visualizzato in **Token** nell'output della CLI.
 
-4. Utilizza il token come parte del tuo comando `docker login`. Sostituisci &lt;valore_token&gt; con il valore del token richiamato nel passo precedente e &lt;url_registro&gt; con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
+4. Utilizza il token come parte del tuo comando `docker login`. Sostituisci `<token_value>` con il valore del token richiamato nel passo precedente e `<registry_url>` con l'URL del registro in cui sono configurati i tuoi spazi dei nomi.
 
    - Per gli spazi dei nomi configurati in Stati Uniti Sud, utilizza `registry.ng.bluemix.net`
    - Per gli spazi dei nomi configurati in Regno Unito Sud, utilizza `registry.eu-gb.bluemix.net`
@@ -237,6 +244,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Sostituisci _&lt;apikey&gt;_ con la tua chiave API, _&lt;region&gt;_ con il nome della tua [regione](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ con il tuo spazio dei nomi _&lt;image_repo&gt;_ con il repository.
+Sostituisci `<apikey>` con la tua chiave API, `<region>` con il nome della tua [regione](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` con il tuo spazio dei nomi e `<image_repo>` con il repository.
 
 Per ulteriori informazioni, vedi [Utilizzo di un registro di immagini privato](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

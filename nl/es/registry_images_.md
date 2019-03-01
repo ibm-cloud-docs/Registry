@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Adición de imágenes a su espacio de nombres
@@ -27,7 +34,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 {:tip}
 
 ## Extracción de imágenes de otro registro
-{: #registry_images_pulling}
+{: #registry_images_pulling_reg}
 
 Puede extraer (descargar) una imagen desde cualquier origen de registro privado o público, y, a continuación, etiquétela para utilizarla más adelante en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -36,8 +43,8 @@ Puede extraer (descargar) una imagen desde cualquier origen de registro privado 
 
 **Antes de empezar**
 
-- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
-- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
+- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
@@ -50,7 +57,7 @@ Si obtiene el mensaje `No autorizado: se necesita autorización` o el mensaje `d
 Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen del sistema local al espacio de nombres.
 
 ## Envío por push de imágenes de Docker a su espacio de nombres
-{: #registry_images_pushing}
+{: #registry_images_pushing_namespace}
 
 Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data.keyword.registrylong_notm}} para almacenar y compartir su imagen con otros usuarios.
 {:shortdesc}
@@ -59,9 +66,9 @@ Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data
 
 **Antes de empezar**
 
-- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
-- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
-- [Extraiga](#registry_images_pulling) o [cree](#registry_images_creating) una imagen en el sistema local y etiquetar la imagen con la información de espacio de nombres.
+- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
+- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
+- [Extraiga](#registry_images_pulling_reg) o [cree](#registry_images_creating) una imagen en el sistema local y etiquetar la imagen con la información de espacio de nombres.
 - [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
@@ -100,16 +107,16 @@ Puede extraer una imagen de un registro en una región y enviarla por push a un 
 
 **Antes de empezar**
 
-- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
-- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
+- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
 Para copiar una imagen entre dos registros, siga los siguientes pasos:
 
-1. [Extraiga una imagen desde un registro](#registry_images_pulling).
-2. [Envíe por push la imagen a otro registro](#registry_images_pushing). Asegúrese de utilizar el nombre de dominio correcto para la nueva región de destino.
+1. [Extraiga una imagen desde un registro](#registry_images_pulling_reg).
+2. [Envíe por push la imagen a otro registro](#registry_images_pushing_namespace). Asegúrese de utilizar el nombre de dominio correcto para la nueva región de destino.
 
 Después de copiar la imagen, puede realizar una de las siguientes tareas:
 
@@ -127,10 +134,10 @@ Las imágenes nuevas que se crean mediante este mecanismo no retienen firmas. Si
 
 **Antes de empezar**
 
-- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
+- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - Asegúrese de que tiene acceso a un espacio de nombres privado en {{site.data.keyword.registrylong_notm}} que contiene una imagen de origen a la que desea hacer referencia desde otra imagen.
 
-Para obtener más información acerca del mandato, consulte [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag).
+Para obtener más información acerca del mandato, consulte [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag).
 
 Para crear una imagen nueva desde una imagen de origen, siga estos pasos:
 
@@ -141,7 +148,7 @@ Para crear una imagen nueva desde una imagen de origen, siga estos pasos:
    ```
    {: pre}
 
-2. Ejecute el mandato siguiente para añadir la nueva referencia, donde `SOURCE_IMAGE` es el nombre de la imagen de origen y `TARGET_IMAGE` es el nombre de la imagen de destino. Las imágenes de origen y destino deben estar en la misma región. `SOURCE_IMAGE` y `TARGET_IMAGE` deben estar en el formato `<REPOSITORY>:<TAG>`, por ejemplo: `registry.ng.bluemix.net/namespace/image:latest`
+2. Ejecute el mandato siguiente para añadir la nueva referencia, donde `SOURCE_IMAGE` es el nombre de la imagen de origen y `TARGET_IMAGE` es el nombre de la imagen de destino. Las imágenes de origen y de destino deben estar en la misma región. `SOURCE_IMAGE` y `TARGET_IMAGE` deben estar en el formato `<REPOSITORY>:<TAG>`, por ejemplo: `registry.ng.bluemix.net/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -163,8 +170,8 @@ Puede crear una imagen de Docker directamente en {{site.data.keyword.Bluemix_not
 
 **Antes de empezar**
 
-- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) para trabajar con imágenes en el espacio de nombres.
-- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Instale la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
+- [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
@@ -184,7 +191,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
         ```
         {: pre}
 
-    2. Utilice un editor de texto para abrir el Dockerfile. Como mínimo, debe añadir la imagen base para crear su imagen. Sustituya _&lt;source_image&gt;_ y _&lt;tag&gt;_ por el repositorio de la imagen y etiquételo como que desea utilizarlo. Si está utilizando una imagen desde otro registro privado, defina la vía de acceso completa a la imagen en {{site.data.keyword.registrylong_notm}}.
+    2. Utilice un editor de texto para abrir el Dockerfile. Como mínimo, debe añadir la imagen base para crear su imagen. Sustituya `<source_image>` y `<tag>` por el repositorio de la imagen y etiquételo como que desea utilizar. Si está utilizando una imagen desde otro registro privado, defina la vía de acceso completa a la imagen en {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -210,9 +217,9 @@ Para crear su propia imagen de Docker, siga estos pasos:
    ```
    {: pre}
 
-   donde _&lt;my_namespace&gt;_ es la información del espacio de nombres, _&lt;repo_name&gt;_ es el nombre del repositorio y _&lt;tag&gt;_ es la versión que desea utilizar para su imagen. Para encontrar el espacio de nombres, ejecute el mandato `ibmcloud cr namespace-list`.
+   donde `<my_namespace>` es la información de espacio de nombres, `<repo_name>` es el nombre del repositorio y `<tag>` es la versión que desea utilizar para su imagen. Para encontrar el espacio de nombres, ejecute el mandato `ibmcloud cr namespace-list`.
 
-4. Anote la vía de acceso al directorio que contiene el Dockerfile. Si ejecuta los mandatos con los pasos siguientes mientras el directorio de trabajo está establecido donde está almacenado su contexto de construcción, puede sustituir _&lt;directory&gt;_ por un punto (.).
+4. Anote la vía de acceso al directorio que contiene el Dockerfile. Si ejecuta los mandatos con los pasos siguientes mientras el directorio de trabajo está establecido donde está almacenado su contexto de construcción, puede sustituir `<directory>` por un punto (.).
 5. Puede crear la imagen directamente en {{site.data.keyword.Bluemix_notm}} o puede crearla y probarla localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}.
    - Para crear una imagen directamente en {{site.data.keyword.Bluemix_notm}}, ejecute el mandato siguiente:
 
@@ -221,9 +228,9 @@ Para crear su propia imagen de Docker, siga estos pasos:
      ```
      {: pre}
 
-     donde _&lt;image_name&gt;_ es el nombre de su imagen y _&lt;directory&gt;_ es la vía de acceso al directorio. Si ejecuta el mandato cuando el directorio de trabajo está establecido en el lugar en el que está almacenado el contexto de compilación, puede sustituir _&lt;directory&gt;_ por un punto (.).
+     donde `<image_name>` es el nombre de la imagen y `<directory>` es la vía de acceso al directorio. Si ejecuta el mandato donde el directorio de trabajo está establecido donde está almacenado su contexto de compilación, puede sustituir `<directory>` por un punto (.).
   
-     Para obtener más información sobre el mandato `ibmcloud cr build`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_build).
+     Para obtener más información sobre el mandato `ibmcloud cr build`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build).
 
    - Para crear y probar su imagen localmente antes de enviarla por push a {{site.data.keyword.Bluemix_notm}}, siga estos pasos:
       1. Cree la imagen del Dockerfile en el sistema local y etiquétela con el nombre de la imagen.
@@ -233,7 +240,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
          ```
          {: pre}
 
-         donde _&lt;image_name&gt;_ es el nombre de su imagen y _&lt;directory&gt;_ es la vía de acceso al directorio.
+         donde `<image_name>` es el nombre de la imagen y `<directory>` es la vía de acceso al directorio.
 
       2. Opcional: Pruebe la imagen en su sistema local antes de enviarla por push a su espacio de nombres.
 
@@ -242,9 +249,9 @@ Para crear su propia imagen de Docker, siga estos pasos:
          ```
          {: pre}
 
-         Sustituya _&lt;image_name&gt;_ por el nombre de la imagen.
+         Sustituya `<image_name>` por el nombre de la imagen.
 
-      3. Después de crear la imagen y etiquetarla para su espacio de nombres, [puede enviarla por push al espacio de nombres en {{site.data.keyword.registrylong_notm}}](#registry_images_pushing).
+      3. Después de crear la imagen y etiquetarla para su espacio de nombres, [puede enviarla por push al espacio de nombres en {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 Puede utilizar Vulnerability Advisor para comprobar la seguridad de su imagen; consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va/va_index.html).
 
@@ -305,7 +312,7 @@ La supresión de una imagen no se puede deshacer. La supresión de una imagen qu
 
 Complete los siguientes pasos para suprimir una imagen utilizando la GUI:
 
-1. Inicie la sesión en la consola de {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net)) con su IBMid.
+1. Inicie la sesión en la consola de {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login)) con su IBMid.
 2. Si tiene varias cuentas de {{site.data.keyword.Bluemix_notm}}, seleccione la cuenta y región que desea utilizar desde el menú de la cuenta.
 3. Pulse **Catálogo**.
 4. Seleccione la categoría **Contenedores** y pulse el mosaico **Container Registry**.
@@ -332,7 +339,7 @@ Debe hacer una copia de seguridad de las imágenes que desee conservar.
 
 Complete los siguientes pasos para suprimir un repositorio privado utilizando la interfaz gráfica de usuario (GUI):
 
-1. Inicie la sesión en la consola de {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net)) con su IBMid.
+1. Inicie la sesión en la consola de {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login)) con su IBMid.
 2. Si tiene varias cuentas de {{site.data.keyword.Bluemix_notm}}, seleccione la cuenta y región que desea utilizar desde el menú de la cuenta.
 3. Pulse **Catálogo**.
 4. Seleccione la categoría **Contenedores** y pulse el mosaico **Container Registry**.

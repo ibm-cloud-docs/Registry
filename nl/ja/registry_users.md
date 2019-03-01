@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # ユーザー・アクセスの役割ポリシーの定義
@@ -56,7 +63,7 @@ lastupdated: "2019-01-04"
 
 1. ユーザーとサービス ID の[ポリシーを作成](#create)します。
 
-2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) コマンドを実行します。
+2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) コマンドを実行します。
 
     アカウントにマネージャーの役割がないと、`ibmcloud cr iam-policies-enable` コマンドを実行できません。 所有するアカウントにはマネージャーの役割が自動的に与えられます。
     {: tip}

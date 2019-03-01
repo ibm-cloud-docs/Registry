@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry/index.html" path="services/Registry"}
+{: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry?topic=registry-index" path="services/Registry"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
@@ -12,13 +12,11 @@ IBM Cloud Container Registry
     {: .topicgroup}
     パブリック・イメージ
         registry_public_images.md
-        /services/RegistryImages/toc
+        /RegistryImages/toc
     
     {: .topicgroup}
     チュートリアル
         registry_tutorial_configure_iam.md
-        [Tutorial: Moving a VM based app to Kubernetes](tutorials/vm-to-containers-and-kubernetes.html#moving-a-vm-based-app-to-kubernetes)
-        [Tutorial: Resilient and secure multi-region Kubernetes clusters with Cloud Internet Services](tutorials/multi-region-k8s-cis.html#resilient-and-secure-multi-region-kubernetes-clusters-with-cloud-internet-services)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -29,7 +27,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
-    /services/va/toc
+    /va/toc
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -37,9 +35,11 @@ IBM Cloud Container Registry
     iam.md
     registry_at_events.md
     rellinks.md
+    /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     ts_index.md
     registry_faq.md
     {: .navgroup-end}
+    

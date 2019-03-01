@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Monitoraggio della vulnerabilità delle immagini
@@ -31,7 +38,7 @@ viene ancora completata, distribuisci nuovamente l'immagine e avvia una nuova sc
 
 Per visualizzare l'interfaccia utente grafica, utilizza la seguente procedura:
 
-1. Accedi alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net)) con il tuo ID IBM.
+1. Accedi alla console {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/login)) con il tuo ID IBM.
 2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
 3. Fai clic su **Catalogo**.
 4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.

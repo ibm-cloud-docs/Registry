@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Gestión de los límites de cuota para almacenamiento y tráfico de extracción
@@ -59,8 +66,7 @@ Para establecer una cuota:
     ```
     {: screen}
 
-3. Cambie el límite de cuota para almacenamiento y tráfico de extracción. Para cambiar el uso de tráfico de extracción, especifique la opción **traffic** y sustituya
-_&lt;traffic_quota&gt;_ por el valor en megabytes que desea establecer para la cuota del tráfico de extracción. Si desea cambiar la cantidad de almacenamiento de su cuenta, especifique la opción **storage** y sustituya _&lt;storage_quota&gt;_ por el valor en megabytes que desea establecer.
+3. Cambie el límite de cuota para almacenamiento y tráfico de extracción. Para cambiar el uso de tráfico de extracción, especifique la opción **traffic** y sustituya `<traffic_quota>` por el valor en megabytes que desea establecer para la cuota del tráfico de extracción. Si desea cambiar la cantidad de almacenamiento de su cuenta, especifique la opción **storage** y sustituya `<storage_quota>` por el valor en megabytes que desea establecer.
 
     Si tiene el plan gratuito, no puede establecer su cuota en una cantidad que supere el nivel gratuito. La concesión del nivel gratuito para el almacenamiento es de 512 MB y, para el tráfico, de 5120 MB.
     {:tip}
@@ -125,8 +131,7 @@ Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Blu
     ```
     {: pre}
 
-2. Elimine una imagen del espacio de nombres. Sustituya
-_&lt;image_name&gt;_ por el nombre de la imagen que desea eliminar.
+2. Elimine una imagen del espacio de nombres. Sustituya `<image_name>` por el nombre de la imagen que desea eliminar.
 
     ```
     ibmcloud cr image-rm <image_name>

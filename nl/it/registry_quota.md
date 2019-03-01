@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Gestione dei limiti di quota per l'archiviazione e il traffico di pull
@@ -66,12 +73,8 @@ sarà simile al seguente.
     ```
     {: screen}
 
-3. Modifica il limite di quota per l'archiviazione e il traffico di pull. Per modificare l'utilizzo del traffico di
-pull, specifica l'opzione **traffic** e sostituisci
-_&lt;quota_traffico&gt;_ con il valore in megabyte che vuoi impostare per la quota del traffico
-di pull. Se vuoi modificare la quantità di archiviazione nel tuo account, specifica
-l'opzione **storage** e sostituisci _&lt;quota_archiviazione&gt;_ con il
-valore in megabyte da impostare.
+3. Modifica il limite di quota per l'archiviazione e il traffico di pull. Per modificare l'utilizzo del traffico di pull, specifica l'opzione **traffic** e sostituisci `<traffic_quota>` con il valore in megabyte che vuoi impostare per la quota del traffico di pull. Se vuoi modificare la quantità di archiviazione nel tuo account, specifica
+l'opzione **storage** e sostituisci `<storage_quota>` con il valore in megabyte che vuoi impostare.
 
     Se utilizzi il piano gratuito, non puoi impostare la tua quota su una quantità che superi il livello gratuito. Il livello gratuito permesso per l'archiviazione è 512 MB e per il traffico è 5120 MB.
     {:tip}
@@ -141,8 +144,7 @@ Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.da
     ```
     {: pre}
 
-2. Rimuovi un'immagine dal tuo spazio dei nomi. Sostituisci
-_&lt;nome_immagine&gt;_ con il nome dell'immagine che vuoi rimuovere.
+2. Rimuovi un'immagine dal tuo spazio dei nomi. Sostituisci `<image_name>` con il nome dell'immagine che vuoi rimuovere.
 
     ```
     ibmcloud cr image-rm <image_name>

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 네임스페이스에 이미지 추가
@@ -27,7 +34,7 @@ lastupdated: "2019-01-24"
 {:tip}
 
 ## 다른 레지스트리에서 이미지 가져오기
-{: #registry_images_pulling}
+{: #registry_images_pulling_reg}
 
 개인용 또는 공용 레지스트리 소스에서 이미지를 가져온(다운로드) 후에 {{site.data.keyword.registrylong_notm}}에서 나중에 사용할 수 있도록 태그를 지정할 수 있습니다.
 {:shortdesc}
@@ -36,8 +43,8 @@ lastupdated: "2019-01-24"
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -50,7 +57,7 @@ lastupdated: "2019-01-24"
 이미지를 가져와 네임스페이스에 대한 태그를 지정한 후에는 로컬 컴퓨터에서 네임스페이스로 이미지를 업로드(푸시)할 수 있습니다.
 
 ## 네임스페이스에 Docker 이미지 푸시
-{: #registry_images_pushing}
+{: #registry_images_pushing_namespace}
 
 이미지를 저장하고 다른 사용자와 공유하기 위해 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 이미지를 푸시(업로드)할 수 있습니다.
 {:shortdesc}
@@ -59,9 +66,9 @@ lastupdated: "2019-01-24"
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)하십시오.
-- 로컬 컴퓨터에서 이미지 [가져오기](#registry_images_pulling) 또는 [빌드](#registry_images_creating)를 수행하고 네임스페이스 정보로 이미지에 태그를 지정하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
+- 로컬 컴퓨터에서 이미지 [가져오기](#registry_images_pulling_reg) 또는 [빌드](#registry_images_creating)를 수행하고 네임스페이스 정보로 이미지에 태그를 지정하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -100,16 +107,16 @@ lastupdated: "2019-01-24"
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
 두 레지스트리 간에 이미지를 복사하려면 다음 단계를 완료하십시오.
 
-1. [레지스트리에서 이미지를 가져오십시오](#registry_images_pulling).
-2. [다른 레지스트리에 이미지를 푸시하십시오](#registry_images_pushing). 대상으로 지정하는 새 지역에 대한 올바른 도메인 이름을 사용해야 합니다.
+1. [레지스트리에서 이미지를 가져오십시오](#registry_images_pulling_reg).
+2. [다른 레지스트리에 이미지를 푸시하십시오](#registry_images_pushing_namespace). 대상으로 지정하는 새 지역에 대한 올바른 도메인 이름을 사용해야 합니다.
 
 이미지를 복사한 후 다음 태스크 중 하나를 수행할 수 있습니다.
 
@@ -127,10 +134,10 @@ lastupdated: "2019-01-24"
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
 - 다른 이미지를 참조할 소스 이미지를 포함하는 {{site.data.keyword.registrylong_notm}}의 개인용 네임스페이스에 대한 액세스 권한이 있는지 확인하십시오.
 
-명령에 대한 자세한 정보는 [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag)를 참조하십시오.
+명령에 대한 자세한 정보는 [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag)를 참조하십시오.
 
 소스 이미지에서 새 이미지를 작성하려면 다음 단계를 완료하십시오.
 
@@ -163,8 +170,8 @@ lastupdated: "2019-01-24"
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -184,7 +191,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
         ```
         {: pre}
 
-    2. 텍스트 편집기를 사용하여 Dockerfile을 여십시오. 최소한, 이미지를 빌드하려면 기본 이미지를 추가해야 합니다. _&lt;source_image&gt;_ 및 _&lt;tag&gt;_를 사용하려는 이미지 저장소 및 태그로 대체하십시오. 다른 개인용 레지스트리의 이미지를 사용하는 경우, 이 {{site.data.keyword.registrylong_notm}}에서 이미지에 대한 전체 경로를 정의하십시오.
+    2. 텍스트 편집기를 사용하여 Dockerfile을 여십시오. 최소한, 이미지를 빌드하려면 기본 이미지를 추가해야 합니다. `<source_image>`와 `<tag>`를 사용하려는 이미지 저장소와 태그로 대체하십시오. 다른 개인용 레지스트리의 이미지를 사용하는 경우, 이 {{site.data.keyword.registrylong_notm}}에서 이미지에 대한 전체 경로를 정의하십시오.
 
        ```
     FROM <source_image>:<tag>
@@ -210,9 +217,9 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    ```
    {: pre}
 
-   여기서 _&lt;my_namespace&gt;_는 네임스페이스 정보이고, _&lt;repo_name&gt;_은 저장소의 이름이며, _&lt;tag&gt;_는 이미지에 사용할 버전입니다. 네임스페이스를 찾으려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
+   여기서 `<my_namespace>`는 네임스페이스 정보이며, `<repo_name>`은 저장소 이름이고, `<tag>`는 이미지에 사용할 버전입니다. 네임스페이스를 찾으려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
 
-4. Dockerfile을 포함하는 디렉토리의 경로를 기록해 두십시오. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 상태에서 다음 단계의 명령을 실행하면 _&lt;directory&gt;_를 점(.)으로 바꿀 수 있습니다.
+4. Dockerfile을 포함하는 디렉토리의 경로를 기록해 두십시오. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 상태에서 다음 단계의 명령을 실행하면 `<directory>`를 점(.)으로 바꿀 수 있습니다.
 5. {{site.data.keyword.Bluemix_notm}}에서 직접 이미지를 빌드하거나, {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 로컬로 이미지를 빌드하고 테스트하십시오.
    - {{site.data.keyword.Bluemix_notm}}에서 직접 이미지를 빌드하려면 다음 명령을 실행하십시오.
 
@@ -221,9 +228,9 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
      ```
      {: pre}
 
-     여기서 _&lt;image_name&gt;_은 이미지의 이름이고 _&lt;directory&gt;_는 디렉토리의 경로입니다. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 경우 명령을 실행하면 _&lt;directory&gt;_를 점(.)으로 바꿀 수 있습니다.
+     여기서 `<image_name>`은 이미지 이름이며 `<directory>`는 디렉토리 경로입니다. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 경우 명령을 실행하면 `<directory>`를 점(.)으로 바꿀 수 있습니다.
   
-     `ibmcloud cr build` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build)를 참조하십시오.
+     `ibmcloud cr build` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build)를 참조하십시오.
 
    - {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 로컬에서 이미지를 빌드하고 테스트하려면 다음 단계를 완료하십시오.
       1. 로컬 컴퓨터의 Dockerfile에서 이미지를 빌드하고 이미지 이름으로 태그를 지정하십시오.
@@ -233,7 +240,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
          ```
          {: pre}
 
-         여기서 _&lt;image_name&gt;_은 이미지의 이름이고 _&lt;directory&gt;_는 디렉토리의 경로입니다.
+         여기서 `<image_name>`은 이미지 이름이며 `<directory>`는 디렉토리 경로입니다. 
 
       2. 선택사항: 네임스페이스에 이미지를 푸시하기 전에 로컬 컴퓨터에서 이를 테스트하십시오.
 
@@ -242,9 +249,9 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
          ```
          {: pre}
 
-         _&lt;image_name&gt;_을 이미지의 이름으로 바꾸십시오.
+         `<image_name>`을 이미지 이름으로 대체하십시오. 
 
-      3. 이미지를 작성하고 여기에 사용자의 네임스페이스에 대한 태그를 지정한 후에 [{{site.data.keyword.registrylong_notm}}에서 네임스페이스로 이미지를 푸시](#registry_images_pushing)할 수 있습니다.
+      3. 이미지를 작성하고 여기에 사용자의 네임스페이스에 대한 태그를 지정한 후에 [{{site.data.keyword.registrylong_notm}}에서 네임스페이스로 이미지를 푸시](#registry_images_pushing_namespace)할 수 있습니다.
 
 Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vulnerability Advisor로 이미지 보안 관리](/docs/services/va/va_index.html)를 참조하십시오.
 
@@ -305,7 +312,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 
 GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십시오.
 
-1. IBM ID를 사용하여 {{site.data.keyword.Bluemix_notm}} 콘솔([https://console.bluemix.net ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net))에 로그인하십시오.
+1. IBMid를 사용하여 {{site.data.keyword.cloud_notm}} 콘솔([https://cloud.ibm.com/login ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login))에 로그인하십시오.
 2. {{site.data.keyword.Bluemix_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
 3. **카탈로그**를 클릭하십시오.
 4. **컨테이너** 카테고리를 선택하고 **컨테이너 레지스트리** 타일을 클릭하십시오.
@@ -332,7 +339,7 @@ GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 
 GUI를 사용하여 개인용 저장소를 삭제하려면 다음 단계를 완료하십시오.
 
-1. IBM ID를 사용하여 {{site.data.keyword.Bluemix_notm}} 콘솔([https://console.bluemix.net ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net))에 로그인하십시오.
+1. IBMid를 사용하여 {{site.data.keyword.cloud_notm}} 콘솔([https://cloud.ibm.com/login ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login))에 로그인하십시오.
 2. {{site.data.keyword.Bluemix_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
 3. **카탈로그**를 클릭하십시오.
 4. **컨테이너** 카테고리를 선택하고 **컨테이너 레지스트리** 타일을 클릭하십시오.

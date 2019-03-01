@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} 정보
@@ -282,7 +289,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 로컬 지역이 아닌 지역을 사용하려는 경우에는 `ibmcloud cr region-set` 명령을 실행하여 액세스할 지역을 대상으로 지정할 수 있습니다. 매개변수 없이 명령을 실행하여 사용 가능한 지역의 목록을 가져오거나 지역을 매개변수로 지정할 수 있습니다.
 
-매개변수를 사용하여 명령을 실행하려면 _&lt;region&gt;_을 지역 이름으로 대체하십시오(예: `eu-central`).
+매개변수를 사용하여 명령을 실행하려면 `<region>`을 지역 이름으로 대체하십시오(예: `eu-central`).
 
 ```
 ibmcloud cr region-set <region>
@@ -313,13 +320,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set)를 참조하십시오.
+`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)를 참조하십시오.
 
 글로벌 레지스트리를 대상으로 지정한 후에는 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 `ibmcloud cr login` 명령을 실행하여 로컬 Docker 디먼을 글로벌 레지스트리에 로그인시키십시오.
 
 ## Docker 지원
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다. [Docker 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/v1.12/)를 참조하십시오.
+{{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
 
 이미지를 푸시하거나 가져오거나 `ibmcloud cr ppa-archive-load` 명령을 실행하는 경우에만 Docker가 필요합니다.

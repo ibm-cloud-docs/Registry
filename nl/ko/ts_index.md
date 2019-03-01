@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ lastupdated: "2019-01-24"
 
 포럼을 사용하여 질문을 할 때는 {{site.data.keyword.registrylong_notm}} 개발 팀에서 볼 수 있도록 질문에 태그를 지정하십시오.
 
-- {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 질문에 `ibm-bluemix` 및 `container-registry`로 태그를 지정하십시오.
-- 서비스 및 시작하기 지시사항에 관한 질문의 경우 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `bluemix` 및 `container-registry` 태그를 포함하십시오.
+- {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 질문에 `ibm-cloud` 및 `container-registry`로 태그를 지정하십시오.
+- 서비스 및 시작하기 지시사항에 관한 질문의 경우 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `ibm-cloud` 및 `container-registry` 태그를 포함하십시오.
 
 포럼 사용에 대한 세부사항은 [지원 센터 사용](/docs/get-support/howtogetsupport.html#using-avatar)을 참조하십시오.
 
@@ -103,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)를 참조하십시오.
+- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)를 참조하십시오.
 
 ## `ibmcloud cr build` 명령이 실패합니다.
 {: #ts_build_fails}
@@ -334,7 +341,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)하십시오.
 
-3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예를 들어, `https://registry.ng.bluemix.net:4443`입니다.
+3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예: `https://registry.ng.bluemix.net:4443`
 
 4. 레지스트리 토큰을 생성하십시오.
 
@@ -343,7 +350,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
 
-5. 이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. _&lt;URL&gt;_을 2단계에서 기록한 내보내기 명령의 URL로 바꾸고 _&lt;image&gt;_를 저장소 키가 손상된 이미지로 바꾸십시오.
+5. 이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. `<URL>`을 2단계에서 기록한 내보내기 명령의 URL로 바꾸고 `<image>`를 저장소 키가 손상된 이미지로 바꾸십시오.
 
    ```
 notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -548,4 +555,18 @@ Manifest 버전이 지원되지 않습니다.
    {: pre}
 
 4. `ibmcloud cr image-tag` 명령을 실행하여 이미지에 태그를 지정하십시오. [소스 이미지를 참조하는 새 이미지 작성](/docs/services/Registry/registry_images_.html#registry_images_source)을 참조하십시오.
-  
+
+## Mac에서 Docker 로그인 실패: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+Mac에서 `ibmcloud cr login` 명령을 실행하려고 할 때 다음 오류 메시지가 수신됩니다. `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+Docker for Mac에 문제가 있어 macOS 키 체인에 인증 정보가 저장되지 않습니다. 
+
+{: tsResolve}
+이 문제는 Mac을 다시 부팅하여 해결할 수 있습니다. Mac을 다시 부팅해도 문제가 해결되지 않으면 Mac 키 체인의 로그인 스토리지를 비활성화할 수 있습니다. 
+
+1. 메뉴에서 **Docker** 아이콘을 클릭하고 **환경 설정**을 선택합니다. 
+2. **macOS 키 체인에 Docker 로그인 안전하게 저장** 선택란을 취소합니다. 

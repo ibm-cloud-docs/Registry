@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # IAM(Identity and Access Management)으로 사용자 액세스 관리
@@ -57,12 +64,12 @@ UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세
 
 {{site.data.keyword.registrylong_notm}}의 경우에는 다음 조치가 존재합니다.
 
-|조치|서비스에 대한 오퍼레이션 |역할
+|조치| 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/services/Registry/registry_cli.html#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. |관리자 |
-|`container-registry.registrytoken.delete` |[`ibmcloud cr token-rm`](/docs/services/Registry/registry_cli.html#bx_cr_token_rm) 하나 이상의 지정된 토큰을 제거합니다. |관리자 |
-|`container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry/registry_cli.html#bx_cr_token_get) 레지스트리에서 지정된 토큰을 검색합니다. |관리자 |
-|`container-registry.registrytoken.list` |[`ibmcloud cr token-list`](/docs/services/Registry/registry_cli.html#bx_cr_token_list) {{site.data.keyword.Bluemix_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |
+|`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. |관리자 |
+|`container-registry.registrytoken.delete` |[`ibmcloud cr token-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_rm) 하나 이상의 지정된 토큰을 제거합니다. |관리자 |
+|`container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_get) 레지스트리에서 지정된 토큰을 검색합니다. |관리자 |
+|`container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_list) {{site.data.keyword.Bluemix_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |
 {: caption="표 2. {{site.data.keyword.registrylong_notm}}를 구성하기 위한 플랫폼 조치 및 오퍼레이션" caption-side="top"}
 
 ## 서비스 액세스 역할
@@ -91,14 +98,14 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 ```
 {: pre}
 
-|조치|서비스에 대한 오퍼레이션 |역할
+|조치| 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-|`container-registry.auth.set` |[`ibmcloud cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) IAM 정책 적용을 사용으로 설정합니다. |관리자 |
-|`container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_add) 보안 문제에 대한 면제 항목을 작성합니다.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_list) 보안 문제에 대한 면제 항목을 나열합니다.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_rm) 보안 문제에 대한 면제 항목을 삭제합니다.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_types) 면제할 수 있는 보안 문제의 유형을 나열합니다.</li></ul> |관리자 |
-|`container-registry.plan.get` |[`ibmcloud cr plan`](/docs/services/Registry/registry_cli.html#bx_cr_plan) 가격 플랜을 표시합니다. |관리자 |
-|`container-registry.plan.set` |[`ibmcloud cr plan-upgrade`](/docs/services/Registry/registry_cli.html#bx_cr_plan_upgrade) 표준 플랜으로 업그레이드합니다. |관리자 |
-|`container-registry.quota.get` |[`ibmcloud cr quota`](/docs/services/Registry/registry_cli.html#bx_cr_quota) 트래픽과 스토리지에 대한 현재 할당량 및 이 할당량에 대한 사용량 정보를 표시합니다. |독자, 작성자, 관리자 |
-|`container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/services/Registry/registry_cli.html#bx_cr_quota_set) 지정된 할당량을 수정합니다. |관리자 |
+|`container-registry.auth.set` |[`ibmcloud cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) IAM 정책 적용을 사용으로 설정합니다. |관리자 |
+|`container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_add) 보안 문제에 대한 면제 항목을 작성합니다.</li><li>[`ibmcloud cr exemption-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_list) 보안 문제에 대한 면제 항목을 나열합니다.</li><li>[`ibmcloud cr exemption-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_rm) 보안 문제에 대한 면제 항목을 삭제합니다.</li><li>[`ibmcloud cr exemption-types`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_types) 면제할 수 있는 보안 문제의 유형을 나열합니다.</li></ul> |관리자 |
+|`container-registry.plan.get` |[`ibmcloud cr plan`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan) 가격 플랜을 표시합니다. |관리자 |
+|`container-registry.plan.set` |[`ibmcloud cr plan-upgrade`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan_upgrade) 표준 플랜으로 업그레이드합니다. |관리자 |
+|`container-registry.quota.get` |[`ibmcloud cr quota`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota) 트래픽과 스토리지에 대한 현재 할당량 및 이 할당량에 대한 사용량 정보를 표시합니다. | 독자, 작성자, 관리자 |
+|`container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota_set) 지정된 할당량을 수정합니다. |관리자 |
 {: caption="표 4. {{site.data.keyword.registrylong_notm}}를 구성하기 위한 서비스 조치 및 오퍼레이션" caption-side="top"}
 
 ### {{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할
@@ -115,15 +122,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 | 조치 | 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-| `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) 컨테이너 이미지를 빌드합니다. | 작성자, 관리자 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> | 작성자, 관리자 |
-| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) 특정 이미지에 대한 세부사항을 표시합니다. | 독자, 관리자 |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) 컨테이너 이미지를 나열합니다. | 독자, 관리자 |
+| `container-registry.image.build` | [`ibmcloud cr build`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build) 컨테이너 이미지를 빌드합니다. | 작성자, 관리자 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> | 작성자, 관리자 |
+| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_inspect) 특정 이미지에 대한 세부사항을 표시합니다. | 독자, 관리자 |
+| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_list) 컨테이너 이미지를 나열합니다. | 독자, 관리자 |
 | `container-registry.image.pull` | <ul><li>`docker pull` 이미지를 가져옵니다. </li><li>`docker trust inspect` 서명을 검사합니다. </li></ul> | 독자, 작성자, 관리자 |
-| `container-registry.image.push` | <ul><li>`docker push` 이미지를 푸시합니다.</li><li>`docker trust sign` 이미지에 서명합니다.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) [IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.</li></ul> | 작성자, 관리자 |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) 소스 이미지를 참조하는 새 이미지를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다.| 소스 이미지에 대한 독자, 작성자 또는 관리자. 대상 이미지에 대한 작성자 또는 관리자 |
-| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) 이미지의 취약성 평가 보고서를 봅니다. | 독자, 관리자 |
-| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) 네임스페이스를 추가합니다. | 작성자, 관리자 |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) 네임스페이스를 제거합니다. | 작성자, 관리자 |
-| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) 네임스페이스를 표시합니다. | 독자, 관리자 |
+| `container-registry.image.push` | <ul><li>`docker push` 이미지를 푸시합니다.</li><li>`docker trust sign` 이미지에 서명합니다.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_ppa_archive_load) [IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.</li></ul> |작성자, 관리자 |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag) 소스 이미지를 참조하는 새 이미지를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다. | 소스 이미지에 대한 독자, 작성자 또는 관리자. 대상 이미지에 대한 작성자 또는 관리자 |
+| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va) 이미지의 취약성 평가 보고서를 봅니다. | 독자, 관리자 |
+| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add) 네임스페이스를 추가합니다. | 작성자, 관리자 |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm) 네임스페이스를 제거합니다. | 작성자, 관리자 |
+| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list) 네임스페이스를 표시합니다. | 독자, 관리자 |
 {: caption="표 5. {{site.data.keyword.registrylong_notm}}를 사용하기 위한 서비스 조치 및 오퍼레이션" caption-side="top"}

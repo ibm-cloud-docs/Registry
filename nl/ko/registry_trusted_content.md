@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 신뢰할 수 있는 컨텐츠의 이미지에 서명
@@ -113,7 +120,12 @@ Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있�
 
 1. [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2. [이미지를 푸시](/docs/services/Registry/index.html#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 "Signing and pushing image metadata"가 표시됩니다.
+2. [이미지를 푸시](/docs/services/Registry/index.html#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다. 
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
 
@@ -125,7 +137,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 1. [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2. 이미지를 가져오십시오. _&lt;source_image&gt;_를 이미지의 저장소로 바꾸고 _&lt;tag&gt;_는 사용할 이미지의 태그(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오.
+2. 이미지를 가져오십시오. `<source_image>`를 이미지의 저장소로 바꾸고 `<tag>`를 사용할 이미지(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오.
 
    ```
     docker pull <source_image>:<tag>
@@ -151,7 +163,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 
 2. 각 이미지의 태그, 요약 및 서명자 정보를 검토하십시오.
 
-   (선택사항) 해당 버전의 이미지에 대한 정보를 보려면 _&lt;tag&gt;_ 태그를 지정하십시오.
+   (선택사항) 해당 버전의 이미지에 대한 정보를 보려면 `<tag>` 태그를 지정하십시오.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -234,7 +246,7 @@ docker trust revoke <image>:<tag>
 
 1. 새 서명자가 키 쌍을 아직 생성하지 않은 경우 키 쌍을 생성하고 로드해야 합니다.
   
-    a. 키를 생성하십시오. _&lt;NAME&gt;_에 대해 임의의 이름을 입력할 수 있지만 다른 사용자가 저장소에 대한 신뢰를 검사할 때 선택한 이름이 표시됩니다. 저장소 소유자와 함께 작업하여 조직이 사용할 수 있는 이름 지정 규칙을 충족시키고 이 서명자에 대해 식별 가능한 이름을 선택하십시오.
+    a. 키를 생성하십시오. `<NAME>`에 대해 임의의 이름을 입력할 수 있지만 다른 사용자가 저장소에 대한 신뢰를 검사할 때 선택한 이름이 표시됩니다. 저장소 소유자와 함께 작업하여 조직이 사용할 수 있는 이름 지정 규칙을 충족시키고 이 서명자에 대해 식별 가능한 이름을 선택하십시오.
 
       ```
 docker trust key generate <NAME>

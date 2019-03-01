@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Automatización del acceso a {{site.data.keyword.registrylong_notm}}
@@ -32,7 +39,7 @@ Si utiliza una clave de API, puede controlar el acceso a los espacios de nombres
 
 Para obtener más información acerca de las claves de API de {{site.data.keyword.registrylong_notm}}, consulte [Cómo trabajar con claves de API](/docs/iam/apikeys.html#manapikey).
 
-Antes de empezar, [instale {{site.data.keyword.registrylong_notm}} y la CLI de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+Antes de empezar, [instale {{site.data.keyword.registrylong_notm}} y la CLI de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## Acceso automático a sus espacios de nombres mediante el uso de claves de API
 {: #registry_api_key}
@@ -57,7 +64,7 @@ Puede crear tanto claves de API de usuario como claves de API de ID de servicio.
 Puede utilizar una clave de API para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Utilice la clave de API para iniciar sesión en su registro mediante la ejecución del siguiente mandato Docker. Substituya &lt;your_apikey&gt; por su clave de API, y sustituya &lt;registry_url&gt; por el URL del registro en el que está configurado sus espacios de nombres.
+Utilice la clave de API para iniciar sesión en su registro mediante la ejecución del siguiente mandato Docker. Sustituya `<your_apikey>` por su clave de API y sustituya `<registry_url>` por el URL del registro en el que están configurados sus espacios de nombres.
 
 - Para espacios de nombres configurados en EE.UU. sur, utilice `registry.ng.bluemix.net`
 - Para espacios de nombres configurados en Reino Unido sur, utilice `registry.eu-gb.bluemix.net`
@@ -87,7 +94,7 @@ Si inicia la sesión en {{site.data.keyword.registrylong_notm}} utilizando una s
 Utilice las siguientes tareas para gestionar sus señales:
 
 - [Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}](#registry_tokens_create)
-- [Utilización de una señal para automatizar el acceso a su espacio de nombres ](#registry_tokens_use)
+- [Utilización de una señal para automatizar el acceso a su espacio de nombres](#registry_tokens_use)
 - [Eliminación de una señal de su cuenta de {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
 
 ### Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}
@@ -159,7 +166,7 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
    ```
    {: pre}
 
-3. Recupere el valor de la señal para la señal. Sustituya &lt;id_señal&gt; con el ID de la señal.
+3. Recupere el valor de la señal para la señal. Sustituya `<token_id>` por el ID de la señal.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -168,7 +175,7 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 
     Su valor de la señal se muestra en **Señal** de la salida de la CLI.
 
-4. Utilice la señal como parte del mandato `docker login`. Sustituya &lt;valor_señal&gt; por el valor de la señal que ha recuperado en el paso anterior y &lt;url_registro&gt; por el URL en el registro donde los espacios de nombres está configurado.
+4. Utilice la señal como parte del mandato `docker login`. Sustituya `<token_value>` por el valor de la señal que ha recuperado en el paso anterior y `<registry_url>` por el URL del registro en el que están configurados sus espacios de nombres.
 
    - Para espacios de nombres configurados en EE.UU. sur, utilice `registry.ng.bluemix.net`
    - Para espacios de nombres configurados en Reino Unido sur, utilice `registry.eu-gb.bluemix.net`
@@ -238,6 +245,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Sustituya _&lt;apikey&gt;_ por su clave de API, _&lt;region&gt;_ por el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ por su espacio de nombres y _&lt;image_repo&gt;_ por el repositorio.
+Sustituya `<apikey>` por su clave de API, `<region>` por el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` por su espacio de nombres y `<image_repo>` por el repositorio.
 
 Para obtener más información, consulte [Uso de un registro de imagen privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

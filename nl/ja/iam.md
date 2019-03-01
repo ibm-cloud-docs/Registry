@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Identity and Access Management を使用したユーザー・アクセス権限の管理
@@ -59,10 +66,10 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 
 | 操作| サービスに対する操作 | 役割
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry/registry_cli.html#bx_cr_token_add) - レジストリーへのアクセスを制御するために使用できるトークンを追加します。 | 管理者 |
-| `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry/registry_cli.html#bx_cr_token_rm) - 指定した 1 つ以上のトークンを削除します。 | 管理者 |
-| `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry/registry_cli.html#bx_cr_token_get) - 指定したトークンをレジストリーから取得します。 | 管理者 |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli.html#bx_cr_token_list) - {{site.data.keyword.Bluemix_notm}} アカウント用に存在するすべてのトークンを表示します。 | 管理者 |
+| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_add) - レジストリーへのアクセスを制御するために使用できるトークンを追加します。 | 管理者 |
+| `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_rm) - 指定した 1 つ以上のトークンを削除します。 | 管理者 |
+| `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_get) - 指定したトークンをレジストリーから取得します。 | 管理者 |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_list) - {{site.data.keyword.Bluemix_notm}} アカウント用に存在するすべてのトークンを表示します。 | 管理者 |
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} の構成に関するプラットフォームのアクションと操作" caption-side="top"}
 
 ## サービス・アクセス役割
@@ -93,12 +100,12 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 | 操作| サービスに対する操作 | 役割
 |:-----------------|:-----------------|:--------------|
-| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) IAM ポリシーの制約を有効化します。 | 管理者 |
-| `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_add) - セキュリティー問題の免除を作成します。</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_list) - セキュリティー問題の免除をリストします。</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_rm) - セキュリティー問題の免除を削除します。</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_types) - 免除できるセキュリティー問題のタイプをリストします。</li></ul> | 管理者 |
-| `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/services/Registry/registry_cli.html#bx_cr_plan) - 価格プランを表示します。 | 管理者 |
-| `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/services/Registry/registry_cli.html#bx_cr_plan_upgrade) - 標準プランにアップグレードします。 | 管理者 |
-| `container-registry.quota.get` | [`ibmcloud cr quota`](/docs/services/Registry/registry_cli.html#bx_cr_quota) - トラフィックおよびストレージの現在の割り当て量、およびそれらの割り当て量に対する使用量の情報を表示します。 | リーダー、ライター、管理者 |
-| `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/services/Registry/registry_cli.html#bx_cr_quota_set) - 指定された割り当て量を変更します。 | 管理者 |
+| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) IAM ポリシーの制約を有効化します。 | 管理者 |
+| `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_add) - セキュリティー問題の免除を作成します。</li><li>[`ibmcloud cr exemption-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_list) - セキュリティー問題の免除をリストします。</li><li>[`ibmcloud cr exemption-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_rm) - セキュリティー問題の免除を削除します。</li><li>[`ibmcloud cr exemption-types`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_types) - 免除できるセキュリティー問題のタイプをリストします。</li></ul> | 管理者 |
+| `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan) - 価格プランを表示します。 | 管理者 |
+| `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan_upgrade) - 標準プランにアップグレードします。 | 管理者 |
+| `container-registry.quota.get` | [`ibmcloud cr quota`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota) - トラフィックおよびストレージの現在の割り当て量、およびそれらの割り当て量に対する使用量の情報を表示します。 | リーダー、ライター、管理者 |
+| `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota_set) - 指定された割り当て量を変更します。 | 管理者 |
 {: caption="表 4. {{site.data.keyword.registrylong_notm}} の構成に関するサービスのアクションと操作" caption-side="top"}
 
 ### {{site.data.keyword.registrylong_notm}} の使用に関するアクセス役割
@@ -115,15 +122,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 | アクション | サービスに対する操作 | 役割
 |:-----------------|:-----------------|:--------------|
-| `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) - コンテナー・イメージを構築します。 | ライター、管理者 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) 1 つ以上のイメージを削除します。</li><li>`docker trust revoke` - 署名を削除します。 </li></ul> | ライター、管理者 |
-| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) - 特定のイメージに関する詳細を表示します。 | リーダー、管理者 |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) - コンテナー・イメージをリストします。 | リーダー、管理者 |
+| `container-registry.image.build` | [`ibmcloud cr build`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build) - コンテナー・イメージを構築します。 | ライター、管理者 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_rm) 1 つ以上のイメージを削除します。</li><li>`docker trust revoke` - 署名を削除します。 </li></ul> | ライター、管理者 |
+| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_inspect) - 特定のイメージに関する詳細を表示します。 | リーダー、管理者 |
+| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_list) - コンテナー・イメージをリストします。 | リーダー、管理者 |
 | `container-registry.image.pull` | <ul><li>`docker pull` イメージをプルします。 </li><li>`docker trust inspect` 署名を検査します。 </li></ul> | リーダー、ライター、管理者 |
-| `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>`docker trust sign` イメージに署名します。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、{{site.data.keyword.registrylong_notm}}名前空間にインポートします。</li></ul> | ライター、管理者 |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。| ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
-| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) - イメージの脆弱性評価レポートを表示します。 | リーダー、管理者 |
-| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) - 名前空間を追加します。 | ライター、管理者 |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) - 名前空間を削除します。 | ライター、管理者 |
-| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) - 名前空間を表示します。 | リーダー、管理者 |
+| `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>`docker trust sign` イメージに署名します。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、{{site.data.keyword.registrylong_notm}}名前空間にインポートします。</li></ul> | ライター、管理者 |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。 | ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
+| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va) - イメージの脆弱性評価レポートを表示します。 | リーダー、管理者 |
+| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add) - 名前空間を追加します。 | ライター、管理者 |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm) - 名前空間を削除します。 | ライター、管理者 |
+| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list) - 名前空間を表示します。 | リーダー、管理者 |
 {: caption="表 5. {{site.data.keyword.registrylong_notm}} の使用に関するサービスのアクションと操作" caption-side="top"}

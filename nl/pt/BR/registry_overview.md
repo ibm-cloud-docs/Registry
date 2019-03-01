@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Sobre o {{site.data.keyword.registrylong_notm}}
@@ -42,7 +49,7 @@ por meio de imagens vulneráveis.
 
 Revise a tabela a seguir para localizar uma visão geral dos benefícios de uso do {{site.data.keyword.registrylong_notm}}.
 
-|Benefício|descrição|
+|Benefício|Descrição|
 |-------|-----------|
 |Registro privado altamente disponível e escalável|<ul><li>Configure o seu próprio namespace de imagem em um registro privado de diversos locatários, altamente disponível e escalável que seja hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}.</li><li>Armazene suas imagens privadas do Docker e compartilhe-as com os usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.</li></ul>|
 |Conformidade de segurança de imagem com o Vulnerability Advisor|<ul><li>Benefício da varredura automática de imagens em seu namespace.</li><li>Revise as recomendações que são específicas para o sistema operacional para corrigir potenciais
@@ -67,7 +74,7 @@ A tabela a seguir mostra os planos de serviço disponíveis do {{site.data.keywo
 
 |Características|Livre|Padrão|
 |---------------|----|--------|
-|descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
+|Descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
 primeiro namespace no {{site.data.keyword.registrylong_notm}}.|Benefícios do armazenamento ilimitado e uso de tráfego de extração para gerenciar as imagens do Docker para todos os namespaces em sua conta
 do {{site.data.keyword.Bluemix_notm}}.|
 |Quantidade de armazenamento para imagens|500 MB|Ilimitado|
@@ -312,7 +319,7 @@ Todos os artefatos de registro estão com escopo definido para o registro region
 
 Se desejar usar uma região diferente de sua região local, será possível destinar a região que você deseja acessar executando o comando `ibmcloud cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
 
-Para executar o comando com parâmetros, substitua _&lt;region&gt;_ pelo nome da região, por exemplo, `eu-central`.
+Para executar o comando com parâmetros, substitua `<region>` pelo nome da região, por exemplo, `eu-central`.
 
 ```
 ibmcloud cr region-set <region>
@@ -343,13 +350,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
+Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte a [CLI do {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
 
 Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
 
 ## Suporte para o Docker
 {: #docker}
 
-O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente. Consulte a [documentação do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/v1.12/).
+O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
 O Docker será necessário apenas se você desejar enviar por push ou fazer pull de imagens ou desejar executar o comando `ibmcloud cr ppa-archive-load`.

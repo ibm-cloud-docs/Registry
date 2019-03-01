@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-13"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, links
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-13"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Liens connexes
@@ -24,9 +31,9 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} interface de ligne de commande](/docs/services/Registry/registry_cli.html)
-- [{{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/apidocs/container-registry)
-- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/apidocs/container-registry/va)
+- [{{site.data.keyword.registrylong_notm}} interface de ligne de commande](/docs/container-registry-cli-plugin/container-registry-cli.html)
+- [{{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/apidocs/container-registry)
+- [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
@@ -38,6 +45,6 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 - API REST pour la gestion d'équilibreurs de charge d'application Ingress dans des clusters. Voir [IBM Cloud Container Service ALB API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://us-south.containers.bluemix.net/swagger-alb-api/)
 
 ## Docker
-{: #docker}
+{: #links_docker}
 
 - [Référence Dockerfile ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/reference/builder/)

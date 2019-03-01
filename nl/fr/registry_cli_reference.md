@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Commandes {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) pour la gestion des images Docker dans votre espace de nom
 {: #registry_cli_reference}
 
-Vous pouvez utiliser le plug-in d'interface de ligne de commande `container-registry` pour configurer votre propre espace de nom d'images dans un registre privé {{site.data.keyword.registrylong_notm}}, hébergé et géré par IBM, dans lequel vous pouvez stocker et partager des images Docker avec tous les utilisateurs de votre compte {{site.data.keyword.Bluemix}}.
+Vous pouvez utiliser le plug-in d'interface de ligne de commande `container-registry` pour configurer votre propre espace de nom d'images dans un registre privé, hébergé et géré par IBM, dans lequel vous pouvez stocker et partager de manière sécurisée des images Docker avec tous les utilisateurs de votre compte {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 ## Commandes `ibmcloud cr`
@@ -27,7 +34,7 @@ Vous pouvez utiliser le plug-in d'interface de ligne de commande `container-regi
 Exécutez les commandes `ibmcloud cr` dans l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html).
+Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -35,7 +42,7 @@ Pour connaître les commandes prises en charge, voir [Interface de ligne de comm
 Vous pouvez formater et filtrer la sortie de l'interface de ligne de commande des commandes {{site.data.keyword.registrylong_notm}} prises en charge.
 {:shortdesc}
 
-Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un format lisible par l'utilisateur. Cependant, cette vue risque de limiter votre capacité à utiliser la sortie, particulièrement si la commande est exécutée à l'aide d'un programme. Ainsi, dans la sortie de l'interface de ligne de commande `ibmcloud cr image-list`, vous souhaiterez peut-être trier la zone `Size` par ordre de taille numérique, mais la commande renvoie une description de la taille sous forme de chaîne. Le plug-in d'interface de ligne de commande `container-registry` fournit l'option format qui vous permet d'appliquer un modèle Go à la sortie de l'interface de ligne de commande. Le modèle Go est une fonction du [langage de programmation Go ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://golang.org/pkg/text/template/) que vous pouvez utiliser pour personnaliser la sortie de l'interface de ligne de commande. 
+Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un format lisible par l'utilisateur. Cependant, cette vue risque de limiter votre capacité à utiliser la sortie, particulièrement si la commande est exécutée à l'aide d'un programme. Ainsi, dans la sortie de l'interface de ligne de commande `ibmcloud cr image-list`, vous souhaiterez peut-être trier la zone `Size` par ordre de taille numérique, mais la commande renvoie une description de la taille sous forme de chaîne. Le plug-in d'interface de ligne de commande `container-registry` fournit l'option format qui vous permet d'appliquer un modèle Go à la sortie de l'interface de ligne de commande. Le modèle Go est une fonction du [langage de programmation Go ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://golang.org/pkg/text/template/) que vous pouvez utiliser pour personnaliser la sortie de l'interface de ligne de commande.
 
 Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant l'option format de deux façons différentes :
 
@@ -137,7 +144,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`ID`|Chaîne|Affiche l'identificateur unique de l'image.|
 |`Parent`|Chaîne|Affiche l'ID de l'image parent qui a été utilisée pour la génération de cette image.|
 |`Comment`|Chaîne|Affiche la description de l'image.|
-|`Created`|Chaîne|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où l'image a été créée. |
+|`Created`|Chaîne|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où l'image a été créée.|
 |`Container`|Chaîne|Affiche l'ID du conteneur ayant créé l'image.|
 |`ContainerConfig`|Objet|Affiche la configuration par défaut des conteneurs démarrés à partir de cette image. Pour plus de détails sur cette zone, voir [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`DockerVersion`|Chaîne|Affiche la version de Docker utilisée pour la génération de cette image.|
@@ -210,7 +217,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |Zone|Type|Description|
 |-----|----|-----------|
 |`ID`|Chaîne|Affiche l'identificateur unique d'un jeton.|
-|`Expiry`|Entier (64 bits)|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où le jeton arrive à expiration. |
+|`Expiry`|Entier (64 bits)|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où le jeton arrive à expiration.|
 |`ReadOnly`|Booléen|Affiche _true_ lorsque vous pouvez uniquement extraire des images, et _false_ lorsque vous pouvez envoyer des images par commande push et en extraire vers et depuis votre espace de nom.|
 |`Description`|Chaîne|Affiche la description du jeton.|
 {: caption="Tableau 6. Zones et types de données disponibles dans la commande <codeibmcloud cr token-list</code>." caption-side="top"}

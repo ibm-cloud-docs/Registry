@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Kontingente für Speicher und Pull-Datenverkehr verwalten
@@ -58,13 +65,13 @@ Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
     ```
     {: screen}
 
-3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie _&lt;datenverkehrskontingent&gt;_ durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie _&lt;speicherkontingent&gt;_ durch den Wert in Megabyte, den Sie festlegen möchten.
+3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie `<traffic_quota>` durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie `<storage_quota>`durch den Wert in Megabyte, den Sie festlegen möchten. 
 
     Bei der Verwendung des kostenfreien Plans können Sie das Kontingent nicht über die kostenfreie Stufe hinaus erhöhen. Die kostenfreie Stufe umfasst 512 MB an Speicher und 5120 MB an Datenverkehr.
     {:tip}
 
     ```
-    ibmcloud cr quota-set --traffic <datenverkehrskontingent> --storage <speicherkontingent>
+    ibmcloud cr quota-set --traffic <traffic_quota> --storage <storage_quota>
     ```
     {: pre}
 
@@ -123,10 +130,10 @@ Gehen Sie wie folgt vor, um Speicherplatz für Images in Ihrem {{site.data.keywo
     ```
     {: pre}
 
-2. Entfernen Sie ein Image aus Ihrem Namensbereich. Ersetzen Sie _&lt;imagename&gt;_ durch den Namen des Images, das Sie entfernen möchten.
+2. Entfernen Sie ein Image aus Ihrem Namensbereich. Ersetzen Sie `<image_name>` durch den Namen des Images, das entfernt werden soll. 
 
     ```
-    ibmcloud cr image-rm <imagename>
+    ibmcloud cr image-rm <image_name>
     ```
     {: pre}
 

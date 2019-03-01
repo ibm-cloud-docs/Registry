@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Definizione delle politiche del ruolo di accesso utente
@@ -56,7 +63,7 @@ Per gli utenti di cui è stato eseguito il provisioning dopo il 4 ottobre 2018, 
 
 1. [Crea le politiche](#create) per i tuoi utenti e ID servizio.
 
-2. Per abilitare l'applicazione della politica, esegui il comando [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable).
+2. Per abilitare l'applicazione della politica, esegui il comando [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable).
 
     Devi avere il ruolo di Gestore nell'account per poter eseguire il comando `ibmcloud cr iam-policies-enable`. Hai automaticamente il ruolo di Gestore nel tuo account.
     {: tip}

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Mandatos de {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) para la gestión de imágenes de Docker en el espacio de nombres
 {: #registry_cli_reference}
 
-Puede utilizar el plugin de CLI `container-registry` para configurar su propio espacio de nombres de imágenes en un registro privado de {{site.data.keyword.registrylong_notm}} gestionado y alojado por IBM en el que puede almacenar y compartir imágenes de Docker con todos los usuarios de su cuenta de {{site.data.keyword.Bluemix}}.
+Puede utilizar el plugin de CLI `container-registry` para configurar su propio espacio de nombres de imágenes en un registro privado gestionado y alojado por IBM en el que puede almacenar y compartir de forma segura imágenes de Docker con todos los usuarios de su cuenta de {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 ## Mandatos `ibmcloud cr`
@@ -27,7 +34,7 @@ Puede utilizar el plugin de CLI `container-registry` para configurar su propio e
 Ejecute los mandatos `ibmcloud cr` en la CLI de {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Para ver los mandatos admitidos, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html).
+Para ver los mandatos admitidos, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -124,7 +131,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`Tag`|Serie|Muestra la etiqueta de la imagen.|
 |`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](/docs/services/va/va_index.html#va_registry_cli).|
-{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-list</code>." caption-side="top"}
+{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Opciones de plantilla de Go y tipos de datos en el mandato `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -149,7 +156,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`VirtualSize`|Entero (64 bits)|Muestra la suma del tamaño de cada capa de la imagen en bytes.|
 |`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
-{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-inspect</code>." caption-side="top"}
+{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
 
@@ -213,4 +220,4 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Expiry`|Entero (64 bits)|Muestra la [indicación de fecha y hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time) en la que caduca la señal.|
 |`ReadOnly`|Booleano|Muestra _true_ cuando solo puede extraer imágenes y _false_ cuando puede extraer imágenes del espacio de nombres y transmitir imágenes al mismo.|
 |`Description`|Serie|Muestra la descripción de la señal.|
-{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr token-list</code>." caption-side="top"}
+{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr token-list</code>." caption-side="top"}>

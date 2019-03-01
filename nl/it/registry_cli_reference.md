@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Comandi {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) per la gestione delle immagini Docker nel tuo spazio dei nomi
 {: #registry_cli_reference}
 
-Puoi utilizzare il plug-in CLI `container-registry` per configurare il tuo spazio dei nomi dell'immagine in un registro privato {{site.data.keyword.registrylong_notm}} gestito e ospitato da IBM in cui puoi memorizzare in modo sicuro e condividere le immagini Docker con tutti gli utenti nel tuo account {{site.data.keyword.Bluemix}}.
+Puoi utilizzare il plug-in CLI `container-registry` per configurare lo spazio dei nomi della tua immagine in un registro privato gestito e ospitato da IBM in cui puoi memorizzare e condividere le immagini Docker con tutti gli utenti nel tuo account {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 ## Comandi `ibmcloud cr`
@@ -27,7 +34,7 @@ Puoi utilizzare il plug-in CLI `container-registry` per configurare il tuo spazi
 Esegui i comandi `ibmcloud cr` nella CLI di {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html).
+Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -169,7 +176,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`Cmd`|Array di stringhe|Descrive i comandi e gli argomenti passati a un contenitore che devono essere eseguiti all'avvio del contenitore.|
 |`Healthcheck`|Oggetto|Descrive come controllare che il contenitore sta funzionando correttamente. Vedi i dettagli del campo in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
 |`ArgsEscaped`|Booleano|Visualizza true se il comando è già con escape (specifico di Windows).|
-|`Immagine`|Stringa|Visualizza il nome dell'immagine che è stata passata dall'operatore.|
+|`Image`|Stringa|Visualizza il nome dell'immagine che è stata passata dall'operatore.|
 |`Volumes`|Associazione chiave-valore|Visualizza l'elenco di montaggi di volume che sono montati in un contenitore.|
 |`WorkingDir`|Stringa|Visualizza la directory di lavoro all'interno del contenitore in cui vengono eseguiti i comandi specificati.|
 |`Entrypoint`|Array di stringhe|Descrive il comando che viene eseguito all'avvio del contenitore.|

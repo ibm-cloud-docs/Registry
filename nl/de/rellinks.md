@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-13"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, links
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-13"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Zugehörige Links
@@ -24,9 +31,9 @@ lastupdated: "2018-11-13"
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)
-- [{{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/apidocs/container-registry)
-- [Vulnerability Advisor für {{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/apidocs/container-registry/va)
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
+- [{{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/apidocs/container-registry)
+- [Vulnerability Advisor für {{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
@@ -38,6 +45,6 @@ lastupdated: "2018-11-13"
 - REST-API für die Verwaltung von Lastausgleichsfunktionen für Ingress-Anwendungen in Clustern. Siehe [IBM Cloud Container Service ALB API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://us-south.containers.bluemix.net/swagger-alb-api/)
 
 ## Docker
-{: #docker}
+{: #links_docker}
 
 - [Dockerfile - Referenz ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/builder/)

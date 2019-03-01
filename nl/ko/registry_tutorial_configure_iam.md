@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 튜토리얼: {{site.data.keyword.registrylong_notm}} 리소스에 대한 액세스 부여
@@ -29,7 +36,7 @@ lastupdated: "2019-01-23"
 
 - {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
 
-- 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net/)에 대한 액세스 권한이 있어야 합니다. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
+- 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login)에 대한 액세스 권한이 있어야 합니다. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
 
 - 2018년 10월 4일 이전에 계정에서 {{site.data.keyword.registrylong_notm}}를 사용하기 시작한 경우 `ibmcloud cr iam-policies-enable` 명령을 실행하여 IAM 정책 적용을 사용으로 설정해야 합니다. {{site.data.keyword.registrylong_notm}} 네임스페이스를 사용하는 다른 사용자를 IBM Cloud 계정으로 초대한 경우 액세스가 중단되지 않도록 하려면 User A와 다른 계정을 사용하십시오.
 
@@ -214,7 +221,7 @@ lastupdated: "2019-01-23"
 
         이 튜토리얼에서 작성한 세 개의 네임스페이스(`namespace_a`, `namespace_b` 및 `namespace_c`)가 표시됩니다. 이러한 네임스페이스가 표시되지 않으면 되돌아가서 지시사항에 따라 다시 작성하십시오.
 
-    3. 다음 명령을 실행하여 User B에게 `namespace_b`에 대한 독자 역할을 부여하는 정책을 작성하십시오. 여기서 _`<Region>`_은 [지역](/docs/services/Registry/registry_overview.html#registry_regions)의 짧은 이름(예: `us-south`)입니다.
+    3. 다음 명령을 실행하여 User B에게 `namespace_b`에 대한 독자 역할을 부여하는 정책을 작성하십시오. 여기서 _`<Region>`_은 [지역](/docs/services/Registry/registry_overview.html#registry_regions)의 이름(예: `us-south`)입니다.
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader

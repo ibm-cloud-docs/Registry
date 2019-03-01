@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 이미지의 취약성 모니터링
@@ -30,7 +37,7 @@ lastupdated: "2019-01-04"
 
 그래픽 사용자 인터페이스를 보려면 다음 단계를 사용하십시오.
 
-1. IBM ID를 사용하여 {{site.data.keyword.Bluemix_notm}} 콘솔([https://console.bluemix.net ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net))에 로그인하십시오.
+1. IBMid를 사용하여 {{site.data.keyword.cloud_notm}} 콘솔([https://cloud.ibm.com/login ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login))에 로그인하십시오.
 2. {{site.data.keyword.Bluemix_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
 3. **카탈로그**를 클릭하십시오.
 4. **컨테이너** 카테고리를 선택하고 **컨테이너 레지스트리** 타일을 클릭하십시오.

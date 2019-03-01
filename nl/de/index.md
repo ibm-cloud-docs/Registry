@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
+
+
+subcollection: registry
 
 ---
 
@@ -13,6 +18,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Erste Schritte mit {{site.data.keyword.registrylong_notm}}
@@ -29,7 +37,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #registry_cli_install}
 
-1. Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle, ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://clis.ng.bluemix.net/ui/home.html), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins der Befehlszeilenschnittstelle für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert. 
+1. Installieren Sie die [Befehlszeilenschnittstelle von {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.Bluemix_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins der Befehlszeilenschnittstelle für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert.
 
 ## Namensbereich einrichten
 {: #registry_namespace_add}
@@ -41,10 +49,17 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-2. Fügen Sie einen Namensbereich hinzu, um Ihr eigenes Image-Repository zu erstellen. Ersetzen Sie hierbei _&lt;eigener Namensbereich&gt;_ durch den gewünschten Namen für Ihren Namensbereich.
+   Wenn Sie über eine föderierte ID verfügen, melden Sie sich mit dem folgenden Befehl an: 
 
    ```
-   ibmcloud cr namespace-add <eigener_namensbereich>
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+2. Fügen Sie einen Namensbereich hinzu, um Ihr eigenes Image-Repository zu erstellen. Ersetzen Sie `<my_namespace>` durch den gewünschten Namensbereich. 
+
+   ```
+   ibmcloud cr namespace-add <my_namespace>
    ```
    {: pre}
 
@@ -58,30 +73,30 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## Images mit einer Pull-Operation aus einer anderen Registry auf die lokale Maschine mit Pull-Operation extrahieren
 {: #registry_images_pulling}
 
-1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version. 
+1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
 
-2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository des Images und _&lt;tag&gt;_ durch den Tag des Images, das Sie verwenden möchten, z. B. _latest_.
+2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_.
 
    ```
-   docker pull <quellenimage>:<tag>
+   docker pull <source_image>:<tag>
    ```
    {: pre}
 
-   Beispiel, bei dem _&lt;Quellenimage&gt;_ `hello-world` und _&lt;Tag&gt;_ `latest` ist:
+   Beispiel, bei dem für `<source_image>` der Wert `hello-world` und für `<tag>` der Wert `latest` verwendet wird:
 
    ```
    docker pull hello-world:latest
    ```
    {: pre}
 
-3. Kennzeichnen Sie das Image. Ersetzen Sie _&lt;quellenimage&gt;_ durch das Repository und _&lt;tag&gt;_ durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen [Region](/docs/services/Registry/registry_overview.html#registry_regions). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich, den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden wollen, indem Sie _&lt;neues_image-repository&gt;_ und _&lt;neuer_tag&gt;_ durch die entsprechenden Werte ersetzen.
+3. Kennzeichnen Sie das Image. Ersetzen Sie `<source_image>` durch das Repository und `<tag>` durch den Tag des lokalen Image, das Sie zuvor mit einer Pull-Operation extrahiert haben. Ersetzen Sie `<region>` durch den Namen Ihrer [Region](/docs/services/Registry/registry_overview.html#registry_regions). Ersetzen Sie `<my_namespace>` durch den Namensbereich, den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben. Definieren Sie das Repository und den Tag des Images, die Sie in Ihrem Namensbereich verwenden möchten. Ersetzen Sie dazu `<new_image_repo>` und `<new_tag>`.
 
    ```
-   docker tag <Quellenimage>:<tag> registry.<region>.bluemix.net/<eigener Namensbereich>/<neues_Image-Repository>:<neuer Tag>
+   docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Beispiel, bei dem _&lt;Quellenimage&gt;_ `hello-world`, _&lt;tag&gt;_ `latest`, _&lt;Region&gt;_ `eu-gb`, _&lt;eigener Namensbereich&gt;_ `namespace1`, _&lt;neues_Image-Repository&gt;_ `hw_repo` und _&lt;neuer Tag&gt;_ `1` ist:
+   Beispiel, bei dem für `<source_image>` der Wert `hello-world`, für `<tag>` der Wert `latest`, für `<region>` der Wert `eu-gb`, für `<my_namespace>` der Wert `namespace1`, für `<new_image_repo>` der Wert `hw_repo` und für `<new_tag>` der Wert `1` verwendet wird:
 
    ```
    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
@@ -98,19 +113,20 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-2. Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie _&lt;eigener Namensbereich&gt;_ durch den Namensbereich,  den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben, und _&lt;Imagebericht&gt;_ und _&lt;Tag&gt;_ durch das Repository und den Tag des Image, das Sie beim Tagging ausgewählt haben.
+2. Laden Sie das Image in Ihren Namensbereich hoch (_mit Push-Operation übertragen_). Ersetzen Sie `<my_namespace>` durch den Namensbereich, den Sie in [Namensbereich einrichten](/docs/services/Registry/index.html#registry_namespace_add) erstellt haben, und `<image_repo>` und `<tag>` durch das Repository und den Tag des Images, die Sie beim Tagging des Images ausgewählt haben. 
 
    ```
-   docker push registry.<region>.bluemix.net/<eigener Namensbereich>/<Image-Repository>:<tag>
+   docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
 
-   Beispiel, bei dem _&lt;region&gt;_ `eu-gb`, _&lt;eigener Namensbereich&gt;_ `namespace1`, _&lt;Image-Repository&gt;_ `hw_repo` und _&lt;tag&gt;_ `1` ist:
+   Beispiel, bei dem für `<region>` der Wert `eu-gb`, für `<my_namespace>` der Wert `namespace1`, für `<image_repo>` der Wert `hw_repo` und für `<tag>` der Wert `1` verwendet wird:
 
    ```
    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
    ```
    {: pre}
+   
 
 3. Überprüfen Sie, ob das Image erfolgreich mit der Push-Operation übertragen wurde, indem Sie den folgenden Befehl ausführen.
 

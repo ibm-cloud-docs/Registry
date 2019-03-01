@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Interface de ligne de commande {{site.data.keyword.registrylong_notm}}
-{: #containerregcli}
-
-Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.registrylong}}, fournie dans le plug-in d'interface de ligne de commande `container-registry`, afin de gérer votre registre et ses ressources pour votre compte {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.registrylong}}, fournie dans le plug-in d'interface de ligne de commande `container-registry`, afin de gérer votre registre et ses ressources pour votre compte {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Prérequis**
 
-* Installez l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/cli/index.html#overview). Le préfixe pour l'exécution de commandes via l'interface CLI d'{{site.data.keyword.Bluemix_notm}} est `ibmcloud`.
+* Installez l'interface de ligne de commande [{{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Le préfixe pour l'exécution de commandes via l'interface CLI d'{{site.data.keyword.Bluemix_notm}} est `ibmcloud`.
 
 * Avant d'exécuter les commandes de registre, connectez-vous à {{site.data.keyword.Bluemix_notm}} à l'aide de la commande `ibmcloud login` pour générer un jeton d'accès et authentifier votre session.
 
@@ -86,7 +91,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 
 **Exemple**
 
-Générez une image Docker n'utilisant pas de cache de génération des précédentes générations, où la sortie de génération est supprimée, où la balise est *`registry.ng.bluemix.net/birds/bluebird:1`* et avec votre répertoire de travail comme répertoire. 
+Générez une image Docker n'utilisant pas de cache de génération des précédentes générations, où la sortie de génération est supprimée, où la balise est *`registry.ng.bluemix.net/birds/bluebird:1`* et avec votre répertoire de travail comme répertoire.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/birds/bluebird:1 .
@@ -116,13 +121,13 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour la configu
 <dd>Type de problème de sécurité que vous voulez exempter. Pour connaître les types de problème valides, exécutez `ibmcloud cr exemption-types`.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>ID de problème de sécurité que vous voulez exempter. Pour trouver un ID de problème, exécutez `ibmcloud cr va <image>`, où *&lt;image&gt;* est le nom de votre image, et utilisez la valeur pertinente de la colonne **Vulnerability ID** ou **Configuration Issue ID**.
+<dd>ID de problème de sécurité que vous voulez exempter. Pour trouver un ID de problème, exécutez `ibmcloud cr va <image>`, où `<image>` est le nom de votre image, et utilisez la valeur pertinente de la colonne **Vulnerability ID** ou **Configuration Issue ID**.
 </dd>
 </dl>
 
 **Exemples**
 
-Créez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/birds/bluebird`. 
+Créez une exemption CVE pour le CVE dont l'ID est `CVE-2018-17929` pour toutes les images du référentiel `registry.ng.bluemix.net/birds/bluebird`.
 
 ```
 ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
@@ -299,7 +304,7 @@ Le nom de l'image est la combinaison du contenu des colonnes **Repository** et *
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -317,7 +322,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Facultatif) Chaque image est répertoriée au format `repository:tag`</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Facultatif) Limite la sortie pour n'afficher que les images dans l'espace de nom spécifié ou dans l'espace de nom et le référentiel. </dd>
@@ -327,7 +332,7 @@ Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interfac
 
 **Exemple**
 
-Affichez les images dans l'espace de nom *`birds`* au format `repository:tag`, sans tronquer l'historique des images. 
+Affichez les images dans l'espace de nom *`birds`* au format `repository:tag`, sans tronquer l'historique des images.
 
 ```
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
@@ -360,7 +365,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 </dl>
 
 **Exemple**
-Supprimez l'image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Supprimez l'image `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -370,7 +375,7 @@ ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Créez une nouvelle image, TARGET_IMAGE, qui fait référence à une image source, SOURCE_IMAGE, dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région. 
+Créez une nouvelle image, TARGET_IMAGE, qui fait référence à une image source, SOURCE_IMAGE, dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région.
 
 Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`.
 {: tip}
@@ -398,7 +403,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 
 **Exemples**
 
-Ajoutez une autre référence d'étiquette, `latest`, à l'image *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Ajoutez une autre référence d'étiquette, `latest`, à l'image `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -412,7 +417,7 @@ ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bl
 ```
 {: pre}
 
-Copiez l'image `registry.ng.bluemix.net/birds/bluebird:peck` vers un autre espace de nom `animals` auquel vous avez accès. 
+Copiez l'image `registry.ng.bluemix.net/birds/bluebird:peck` vers un autre espace de nom `animals` auquel vous avez accès.
 
 ```
 ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
@@ -502,7 +507,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 Retire un espace de nom de votre compte {{site.data.keyword.Bluemix_notm}}. Les images dans cet espace de nom sont supprimées lorsque l'espace de nom est retiré.
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -514,6 +519,8 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>Espace de nom que vous désirez supprimer.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Facultatif) Force l'exécution de la commande sans invites utilisateur.</dd>
 </dl>
 
 **Exemple**
@@ -573,7 +580,7 @@ ibmcloud cr plan-upgrade standard
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-Importe le logiciel {{site.data.keyword.IBM_notm}} qui est téléchargé depuis [IBM Passport Advantage Online pour les clients ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/pao_customer.html) et conditionné pour une utilisation avec Helm dans votre espace de nom {{site.data.keyword.registrylong_notm}}. 
+Importe le logiciel {{site.data.keyword.IBM_notm}} qui est téléchargé depuis [IBM Passport Advantage Online pour les clients ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/pao_customer.html) et conditionné pour une utilisation avec Helm dans votre espace de nom {{site.data.keyword.registrylong_notm}}.
 
 Les images de conteneur sont envoyées par commande push à votre espace de nom {{site.data.keyword.registryshort_notm}} privé. Les chartes Helm sont écrites dans un répertoire `ppa-import` créé dans le répertoire à partir duquel vous exécutez la commande. Vous avez la possibilité d'utiliser le [projet open source Chart Museum ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) pour héberger des chartes Helm.
 
@@ -711,7 +718,7 @@ ibmcloud cr region-set us-south
 Ajoute un jeton que vous pouvez utiliser pour contrôler l'accès à un registre.
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -729,7 +736,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles de gestion de plateforme
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Facultatif) Affiche le jeton uniquement, sans aucun autre texte.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(Facultatif) Crée un jeton dont l'accès n'expire jamais. Si ce paramètre n'est pas défini, l'accès à l'aide d'un jeton expire au bout de 24 heures par défaut.</dd>
@@ -818,10 +825,10 @@ Cet exemple produit une sortie au format suivant :
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-Retire un ou plusieurs jetons spécifiés.
+Supprime un ou plusieurs des jetons de registre spécifiés.
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -833,6 +840,8 @@ Pour en savoir plus sur les droits requis, voir [Rôles de gestion de plateforme
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN peut correspondre au jeton proprement dit ou à l'identificateur unique du jeton, comme indiqué dans `ibmcloud cr token-list`. Vous pouvez spécifier plusieurs jetons en les séparant par un espace.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Facultatif) Force l'exécution de la commande sans invites utilisateur.</dd>
 </dl>
 
 **Exemple**
@@ -879,6 +888,12 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 Pour plus d'informations, voir la rubrique relative à la [gestion de la sécurité des images avec l'assistant de détection des vulnérabilités](/docs/services/va/va_index.html).
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(Facultatif) La sortie de la commande affiche des informations supplémentaires sur les correctifs pour les packages vulnérables.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(Facultatif) La sortie de la commande est restreinte pour n'afficher que les vulnérabilités.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(Facultatif) La sortie de la commande est restreinte pour n'afficher que les problèmes de configuration.</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(Facultatif) La sortie de la commande est retournée dans le format choisi. Le format par défaut est `text`. Les formats suivants sont pris en charge :
 
@@ -888,13 +903,6 @@ Pour plus d'informations, voir la rubrique relative à la [gestion de la sécuri
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(Facultatif) La sortie de la commande est restreinte pour n'afficher que les vulnérabilités.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(Facultatif) La sortie de la commande est restreinte pour n'afficher que les problèmes de configuration.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(Facultatif) La sortie de la commande affiche des informations supplémentaires sur les correctifs pour les packages vulnérables.</dd>
-
 </dl>
 
 **Exemples**
@@ -906,7 +914,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-Affichez un rapport d'évaluation des vulnérabilités pour votre image *`registry.ng.bluemix.net/birds/bluebird:1`* au format JSON, avec uniquement les vulnérabilités.
+Affichez un rapport d'évaluation des vulnérabilités pour votre image `registry.ng.bluemix.net/birds/bluebird:1` au format JSON, avec uniquement les vulnérabilités.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

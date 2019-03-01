@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 名前空間内で Docker イメージを管理するための {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) コマンド
 {: #registry_cli_reference}
 
-`container-registry` CLI プラグインを使用して、IBM によってホストおよび管理されている {{site.data.keyword.registrylong_notm}} 専用レジストリー内に、Docker イメージを保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
+`container-registry` CLI プラグインを使用すると、IBM によってホストおよび管理されている専用レジストリー内に、Docker イメージを保管したり、{{site.data.keyword.Bluemix}} アカウント内のすべてのユーザーと Docker イメージを共有したりできる、独自のイメージ名前空間をセットアップすることができます。
 {:shortdesc}
 
 ## `ibmcloud cr` commands
@@ -27,7 +34,7 @@ lastupdated: "2019-01-23"
 {{site.data.keyword.registryshort_notm}} CLI で `ibmcloud cr` コマンドを実行します。
 {:shortdesc}
 
-サポートされているコマンドについては、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html) を参照してください。
+サポートされているコマンドについては、[{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html) を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作
 {: #registry_cli_listing}

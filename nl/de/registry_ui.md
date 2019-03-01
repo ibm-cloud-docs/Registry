@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Sicherheitslücken bei Images überwachen
@@ -30,7 +37,7 @@ Die Spalte **Sicherheitsstatus** enthält die folgenden Informationen zum Image:
 
 Führen Sie die folgenden Schritte aus, um die grafische Benutzerschnittstelle anzuzeigen:
 
-1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole ([https://console.bluemix.net ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net)) mit Ihrer IBMid an.
+1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ([https://cloud.ibm.com/login ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login)) mit Ihrer IBMid an. 
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.

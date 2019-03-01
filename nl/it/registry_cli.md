@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}
-
-Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Prerequisiti**
 
-* Installa la [CLI {{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/cli/index.html#overview). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.Bluemix_notm}} è `ibmcloud`.
+* Installa la [CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.Bluemix_notm}} è `ibmcloud`.
 
 * Prima di eseguire i comandi del registro, effettua l'accesso a {{site.data.keyword.Bluemix_notm}}
  con il comando `ibmcloud login` per generare un token di accesso e autenticare la tua sessione.
@@ -60,7 +65,7 @@ Nessun valore
 Crea un'immagine Docker in {{site.data.keyword.registrylong_notm}}.
 
 ```
-ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg CHIAVE=VALORE ...] [--file FILE | -f FILE] --tag DIRECTORY TAG
+ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
 ```
 {: codeblock}
 
@@ -78,7 +83,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dd>(Facoltativo) Se specificato, le immagini di base vengono estratte anche se sull'host di build esiste già un'immagine con una tag corrispondente.</dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>(Facoltativo) Se specificato, l'output di build viene eliminato a meno che non si verifichi un errore.</dd>
-<dt>`--build-arg CHIAVE=VALORE`</dt>
+<dt>`--build-arg KEY=VALUE`</dt>
 <dd>(Facoltativo) Specifica un argomento di build aggiuntivo nel formato `'CHIAVE=VALORE'`. È possibile specificare più argomenti di build includendo questo parametro più volte. Il valore di ogni argomento di build è disponibile come variabile di ambiente quando specifichi una riga ARG che corrisponde alla chiave nel tuo Dockerfile.</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(Facoltativo) Se utilizzi gli stessi file per più build, puoi scegliere un percorso di un Dockerfile diverso. Specifica la posizione del Dockerfile in relazione al contesto di build. Se non specificato, il valore predefinito è `PATH/Dockerfile`, dove PATH è la root del contesto di build.</dd>
@@ -101,7 +106,7 @@ ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/birds/bluebir
 Crea un'esenzione per un problema di sicurezza. Puoi creare un'esenzione per un problema di sicurezza che si applica a diversi ambiti. L'ambito può essere l'account, lo spazio dei nomi, il repository o una tag.
 
 ```
-ibmcloud cr exemption-add --scope AMBITO --issue-type TIPO_PROBLEMA --issue-id ID_PROBLEMA
+ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
 {: codeblock}
 
@@ -111,14 +116,14 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--scope AMBITO`</dt>
+<dt>`--scope SCOPE`</dt>
 <dd>Per impostare il tuo account come ambito, utilizza `"*"` come valore. Per impostare uno spazio dei nomi, un repository o una tag come ambito, immetti il valore in uno dei seguenti formati: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
-<dt>`--issue-type TIPO_PROBLEMA`</dt>
+<dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>Il tipo di problema di sicurezza che vuoi esentare. Per trovare i tipi di problema validi, esegui `ibmcloud cr exemption-types`.
 </dd>
-<dt>`--issue-id ID_PROBLEMA`</dt>
-<dd>L'ID del problema di sicurezza che vuoi esentare. Per trovare un ID problema, esegui `ibmcloud cr va <image>`, dove *&lt;image&gt;* è il nome della tua immagine, e usa il valore pertinente dalla colonna **Vulnerability ID** o **Configuration Issue ID**.
+<dt>`--issue-id ISSUE_ID`</dt>
+<dd>L'ID del problema di sicurezza che vuoi esentare. Per trovare un ID problema, esegui `ibmcloud cr va <image>`, dove `<image>` è il nome della tua immagine, e usa il valore pertinente dalla colonna **Vulnerability ID** o **Configuration Issue ID**.
 </dd>
 </dl>
 
@@ -151,7 +156,7 @@ ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird:1 --iss
 Elenca le tue esenzioni per i problemi di sicurezza.
 
 ```
-ibmcloud cr exemption-list [--scope AMBITO]
+ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
@@ -161,7 +166,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--scope AMBITO`</dt>
+<dt>`--scope SCOPE`</dt>
 <dd>(Facoltativo) Elenca solo le esenzioni che si applicano a questo ambito. Per impostare uno spazio dei nomi, un repository o una tag come ambito, immetti il valore in uno dei seguenti formati: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
@@ -181,7 +186,7 @@ ibmcloud cr exemption-list --scope birds/bluebird
 Elimina un'esenzione per un problema di sicurezza. Per visualizzare le tue esenzioni esistenti, esegui `ibmcloud cr exemption-list`.
 
 ```
-ibmcloud cr exemption-rm --scope AMBITO --issue-type TIPO_PROBLEMA --issue-id ID_PROBLEMA
+ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
 {: codeblock}
 
@@ -191,13 +196,13 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--scope AMBITO`</dt>
+<dt>`--scope SCOPE`</dt>
 <dd>Per impostare il tuo account come ambito, utilizza `"*"` come valore. Per impostare uno spazio dei nomi, un repository o una tag come ambito, immetti il valore in uno dei seguenti formati: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
-<dt>`--issue-type TIPO_PROBLEMA`</dt>
+<dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>Il tipo di problema dell'esenzione per il problema di sicurezza che vuoi rimuovere. Per trovare i tipi di problema per le tue esenzioni, esegui `ibmcloud cr exemption-list`.
 </dd>
-<dt>`--issue-id ID_PROBLEMA`</dt>
+<dt>`--issue-id ISSUE_ID`</dt>
 <dd>L'ID dell'esenzione per il problema di sicurezza che vuoi rimuovere. Per trovare gli ID sicurezza per le tue esenzioni, esegui `ibmcloud cr exemption-list`.
 </dd>
 </dl>
@@ -259,7 +264,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 Visualizza i dettagli di una specifica immagine.
 
 ```
-ibmcloud cr image-inspect [--format FORMATO] IMMAGINE [IMMAGINE...]
+ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -269,13 +274,13 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--format FORMATO`</dt>
+<dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
 Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`IMMAGINE`</dt>
+<dt>`IMAGE`</dt>
 <dd>Il nome dell'immagine per cui vuoi ottenere un report. Puoi analizzare più immagini elencando ogni immagine nel comando con uno spazio tra ciascun nome.
 
 <p>Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`. Se nel nome immagine non è specificata alcuna tag, viene analizzata l'immagine contrassegnata con la tag `latest`. </p>
@@ -301,7 +306,7 @@ Il nome dell'immagine è la combinazione del contenuto delle colonne **Repositor
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMATO] [-q, --quiet] [--restrict LIMITAZIONE] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -313,15 +318,15 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dl>
 <dt>`--no-trunc`</dt>
 <dd>(Facoltativo) Non troncare i digest immagine.</dd>
-<dt>`--format FORMATO`</dt>
+<dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
 Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Facoltativo) Ogni immagine viene elencata nel formato: `repository:tag`</dd>
-<dt>`--restrict LIMITAZIONE`</dt>
+<dt>`--restrict RESTRICTION`</dt>
 <dd>(Facoltativo) Limita l'output per visualizzare solo le immagini nello spazio dei nomi o nello spazio dei nomi e nel repository specificati. </dd>
 <dt>`--include-ibm`</dt>
 <dd>(Facoltativo) Include le immagini pubbliche fornite da {{site.data.keyword.IBM_notm}} nell'output. Senza questa opzione, vengono elencate solo le immagini private per impostazione predefinita.</dd>
@@ -342,7 +347,7 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 Elimina una o più immagini specificate da {{site.data.keyword.registrylong_notm}}.
 
 ```
-ibmcloud cr image-rm IMMAGINE [IMMAGINE...]
+ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -353,7 +358,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 **Opzioni del comando**
 
 <dl>
-<dt>`IMMAGINE`</dt>
+<dt>`IMAGE`</dt>
 <dd>Il nome dell'immagine che desideri eliminare. Puoi eliminare più immagini contemporaneamente elencando ogni immagine nel comando con uno spazio tra ciascun nome. `IMMAGINE` deve essere nel formato `repository:tag`, ad esempio: `registry.ng.bluemix.net/namespace/image:latest`
 
 <p>Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`. Se nel nome immagine non è specificata alcuna tag, per impostazione predefinita viene eliminata l'immagine contrassegnata con la tag `latest`.</p>
@@ -362,7 +367,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 </dl>
 
 **Esempio**
-Elimina l'immagine *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Elimina l'immagine `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -372,7 +377,7 @@ ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crea una nuova immagine, TARGET_IMAGE, che fa riferimento a un'immagine di origine, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione. 
+Crea una nuova immagine, TARGET_IMAGE, che fa riferimento a un'immagine di origine, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione.
 
 Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`.
 {: tip}
@@ -400,7 +405,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Esempi**
 
-Aggiungi un altro riferimento tag, `latest`, all'immagine *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Aggiungi un altro riferimento tag, `latest`, all'immagine `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -457,7 +462,7 @@ Nessun valore
 Scegli un nome per il tuo spazio dei nomi e aggiungilo al tuo account {{site.data.keyword.Bluemix_notm}}.
 
 ```
-ibmcloud cr namespace-add SPAZIONOMI
+ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
@@ -467,7 +472,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`SPAZIONOMI`</dt>
+<dt>`NAMESPACE`</dt>
 <dd>Lo spazio dei nomi che desideri aggiungere. Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.Bluemix_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini e caratteri di sottolineatura. Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
   
 <p>  
@@ -506,7 +511,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 Rimuove uno spazio dei nomi dal tuo account {{site.data.keyword.Bluemix_notm}}. Le immagini in questo spazio dei nomi vengono eliminate quando si rimuove lo spazio dei nomi.
 
 ```
-ibmcloud cr namespace-rm SPAZIONOMI
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -516,8 +521,10 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`SPAZIONOMI`</dt>
+<dt>`NAMESPACE`</dt>
 <dd>Lo spazio dei nomi che desideri rimuovere.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Facoltativo) Forza l'esecuzione del comando senza alcun prompt utente.</dd>
 </dl>
 
 **Esempio**
@@ -551,7 +558,7 @@ Esegue il tuo upgrade al piano standard.
 Per informazioni sui piani, vedi [Piani del registro](/docs/services/Registry/registry_overview.html#registry_plans).
 
 ```
-ibmcloud cr plan-upgrade [PIANO]
+ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
@@ -561,7 +568,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`PIANO`</dt>
+<dt>`PLAN`</dt>
 <dd>(Facoltativo) Il nome del piano dei prezzi a cui desideri eseguire l'upgrade. Se `PLAN` non viene specificato, il valore predefinito è `standard`.</dd>
 </dl>
 
@@ -582,7 +589,7 @@ Importa il software {{site.data.keyword.IBM_notm}} scaricato da [IBM Passport Ad
 Le immagini del contenitore vengono trasmesse al tuo spazio dei nomi {{site.data.keyword.registryshort_notm}} privato. I grafici Helm sono scritti in una directory `ppa-import` che viene creata nella directory da cui esegui il comando. Facoltativamente, puoi utilizzare il [progetto open source Chart Museum ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) per ospitare i grafici Helm.
 
 ```
-ibmcloud cr ppa-archive-load --archive FILE --namespace SPAZIONOMI
+ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
@@ -594,7 +601,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>Il percorso del file compresso scaricato da IBM Passport Advantage.</dd>
-  <dt>`--namespace SPAZIONOMI`</dt>
+  <dt>`--namespace NAMESPACE`</dt>
   <dd>Uno dei tuoi spazi dei nomi. Le immagini del contenitore nel file compresso vengono trasmesse a questo spazio dei nomi. Per elencare gli spazi dei nomi, esegui `ibmcloud cr namespace-list`.</dd>
   <dt>`--chartmuseum-uri URI`</dt>
   <dd>(Facoltativo) L'identificativo di risorsa univoco per [Chart Museum ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum).</dd>
@@ -633,7 +640,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 Modifica la quota specificata.
 
 ```
-ibmcloud cr quota-set [--traffic TRAFFICO] [--storage ARCHIVIAZIONE]
+ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
@@ -643,9 +650,9 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--traffic TRAFFICO`</dt>
+<dt>`--traffic TRAFFIC`</dt>
 <dd>(Facoltativo) Modifica la tua quota di traffico sul valore specificato in megabyte. L'operazione non riesce se non sei autorizzato a impostare il traffico o se imposti un valore che supera il tuo piano dei prezzi corrente.</dd>
-<dt>`--storage ARCHIVIAZIONE`</dt>
+<dt>`--storage STORAGE`</dt>
 <dd>(Facoltativo) Modifica la tua quota di archiviazione sul valore specificato in megabyte. L'operazione non riesce se non sei autorizzato a impostare le quote di archiviazione o se imposti un valore che supera il tuo piano dei prezzi corrente.</dd>
 </dl>
 
@@ -681,7 +688,7 @@ Per ulteriori informazioni, vedi [Regioni](/docs/services/Registry/registry_over
 Imposta una regione di destinazione per i comandi {{site.data.keyword.registrylong_notm}}. Per elencare le regioni disponibili, esegui il comando senza parametri.
 
 ```
-ibmcloud cr region-set [REGIONE]
+ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
@@ -691,7 +698,7 @@ Nessun valore
 
 **Opzioni del comando**
 <dl>
-<dt>`REGIONE`</dt>
+<dt>`REGION`</dt>
 <dd>(Facoltativo) Il nome della tua regione di destinazione, ad esempio, `us-south`.
 
 Per ulteriori informazioni, vedi [Regioni](/docs/services/Registry/registry_overview.html#registry_regions).
@@ -714,7 +721,7 @@ ibmcloud cr region-set us-south
 Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro.
 
 ```
-ibmcloud cr token-add [--description DESCRIZIONE] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -724,7 +731,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--description DESCRIZIONE`</dt>
+<dt>`--description DESCRIPTION`</dt>
 <dd>(Facoltativo) Specifica il valore come una descrizione per il token, che viene visualizzata quando esegui `ibmcloud cr token-list`. Se il tuo token viene creato automaticamente da {{site.data.keyword.containerlong_notm}}, la descrizione viene impostata sul nome del tuo cluster Kubernetes. In questo caso, il token viene rimosso automaticamente alla rimozione del cluster.
   
 <p> 
@@ -732,7 +739,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Facoltativo) Visualizza solo il token, senza alcun testo circostante.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(Facoltativo) Crea un token con l'accesso che non scade. Se questo parametro non è impostato, l'accesso da un token scade dopo 24 ore per impostazione predefinita.</dd>
@@ -794,7 +801,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`--format FORMATO`</dt>
+<dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
 Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
@@ -821,10 +828,10 @@ Questo esempio produce l'output nel seguente formato:
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-Rimuove uno o più token specificati.
+Rimuovi uno o più token di registro specificati.
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -836,6 +843,8 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN può essere il token stesso o l'identificativo univoco del token, come mostrato in `ibmcloud cr token-list`. È possibile specificare più token e devono essere separati da uno spazio.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Facoltativo) Forza l'esecuzione del comando senza alcun prompt utente.</dd>
 </dl>
 
 **Esempio**
@@ -853,7 +862,7 @@ ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
 Visualizza un report di valutazione delle vulnerabilità per le tue immagini.
 
 ```
-ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMATO | -o FORMATO] IMMAGINE [IMMAGINE...]
+ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] [--configuration-issues | -c] [--output FORMAT | -o FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -863,7 +872,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 **Opzioni del comando**
 <dl>
-<dt>`IMMAGINE`</dt>
+<dt>`IMAGE`</dt>
 <dd>Il nome dell'immagine per cui vuoi ottenere un report. Il report ti informa se l'immagine ha delle vulnerabilità di pacchetto note. Puoi richiedere report per più immagini contemporaneamente elencando ogni immagine nel comando con uno spazio tra ciascun nome.
 
 <p>Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`. Se nel nome immagine non è specificata alcuna tag, il report valuta l'immagine contrassegnata con la tag `latest`.</p>
@@ -882,7 +891,13 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 Per ulteriori informazioni, vedi [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va/va_index.html).
 
 </dd>
-<dt>`--output FORMATO`, `-o FORMATO`</dt>
+<dt>`--extended`, `-e`</dt>
+<dd>(Facoltativo) L'output del comando mostra informazioni aggiuntive sulle correzioni per i pacchetti vulnerabili.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(Facoltativo) L'output del comando è limitato per mostrare solo le vulnerabilità.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(Facoltativo) L'output del comando è limitato per mostrare solo i problemi di configurazione.</dd>
+<dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(Facoltativo) L'output del comando viene restituito nel formato scelto. Il formato predefinito è `text`. Sono supportati i seguenti formati:
 
 <ul>
@@ -891,13 +906,6 @@ Per ulteriori informazioni, vedi [Gestione della sicurezza delle immagini con il
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(Facoltativo) L'output del comando è limitato per mostrare solo le vulnerabilità.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(Facoltativo) L'output del comando è limitato per mostrare solo i problemi di configurazione.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(Facoltativo) L'output del comando mostra informazioni aggiuntive sulle correzioni per i pacchetti vulnerabili.</dd>
-
 </dl>
 
 **Esempi**
@@ -909,7 +917,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-Visualizza un report di valutazione delle vulnerabilità per la tua immagine *`registry.ng.bluemix.net/birds/bluebird:1`* in formato JSON, che mostra solo le vulnerabilità.
+Visualizza un report di valutazione delle vulnerabilità per la tua immagine `registry.ng.bluemix.net/birds/bluebird:1` in formato JSON, che mostra solo le vulnerabilità.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

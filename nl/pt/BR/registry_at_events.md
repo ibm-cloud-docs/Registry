@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Activity Tracker events, events
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-21"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Eventos do {{site.data.keyword.cloudaccesstrailshort}}
@@ -31,7 +38,7 @@ A tabela a seguir lista os métodos de API que geram um evento quando eles são 
   <caption>Tabela 1. Ações que geram eventos</caption>
   <tr>
     <th>Action</th>
-	  <th>descrição</th>
+	  <th>Descrição</th>
   </tr>
   <tr>
     <td>`container-registry.exemption.create`</td>

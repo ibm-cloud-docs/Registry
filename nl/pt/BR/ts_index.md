@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,12 @@ Se tiver problemas ou perguntas quando estiver usando o {{site.data.keyword.regi
 
 Quando você estiver usando os fóruns para fazer uma pergunta, marque a sua pergunta para que ela seja vista pela equipe de desenvolvimento do {{site.data.keyword.registrylong_notm}}.
 
-- Se você tiver questões técnicas sobre desenvolver ou implementar um app com o {{site.data.keyword.registrylong_notm}}, poste sua questão no [Stack Overflow ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://stackoverflow.com/search?q=+ibm-bluemix) e identifique sua questão com `ibm-bluemix` e `container-registry`.
-- Para perguntas sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Inclua as tags `bluemix` e `registro de contêiner`.
+- Se você tiver alguma pergunta técnica sobre como desenvolver ou implementar um aplicativo com o
+{{site.data.keyword.registrylong_notm}}, poste-a no
+[Stack Overflow
+![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://stackoverflow.com/search?q=+ibm-bluemix) e
+identifique-a com `ibm-cloud` e `container-registry`.
+- Para perguntas sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Inclua as tags `ibm-cloud` e `container-registry`.
 
 Consulte [Usando o centro de suporte](/docs/get-support/howtogetsupport.html#using-avatar) para obter mais detalhes sobre o uso dos fóruns.
 
@@ -103,7 +114,9 @@ ibmcloud cr namespace
 {: tsResolve}
 É possível corrigir esse problema da maneira a seguir:
 
-- Instale o plug-in da CLI `container-registry`. Consulte [Instalando o plug-in da CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Instale o plug-in da CLI `container-registry`. Consulte
+[Instalando o
+plug-in da CLI container-registry](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## O comando `ibmcloud cr build` falha
 {: #ts_build_fails}
@@ -333,7 +346,8 @@ Antes de iniciar, recupere a passphrase da chave raiz que você criou quando [en
 
 2. [Configurar o ambiente de conteúdo confiável](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 
-3. Observe a URL do comando de exportação na etapa anterior. Por exemplo, `https://registry.ng.bluemix.net:4443`.
+3. Observe a URL do comando de exportação na etapa anterior. Por exemplo,
+`https://registry.ng.bluemix.net:4443`
 
 4. Gere um token de registro.
 
@@ -342,7 +356,9 @@ Antes de iniciar, recupere a passphrase da chave raiz que você criou quando [en
    ```
    {: pre}
 
-5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Substitua _&lt;URL&gt;_ pela URL do comando de exportação observado na Etapa 2 e _&lt;image&gt;_ pela imagem cuja chave do repositório foi afetada.
+5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Substitua `<URL>` pela URL
+do comando de exportação que você anotou na Etapa 2 e `<image>` pela imagem cuja chave do repositório
+é afetada.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -547,4 +563,22 @@ Para resolver o problema, conclua as etapas a seguir:
    {: pre}
 
 4. Identifique a imagem executando o comando `ibmcloud cr image-tag`. Consulte [Criando novas imagens que se referem a uma imagem de origem](/docs/services/Registry/registry_images_.html#registry_images_source).
-  
+
+## O login do Docker falha em um Mac: `Error saving credentials: error storing credentials - err: exit status 1, out:
+'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+A mensagem de erro a seguir é recebida ao tentar executar o comando `ibmcloud cr login` em um Mac:
+`Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you
+entered is not correct.'`
+
+{: tsCauses}
+Há um problema com o Docker for Mac que evita que suas credenciais sejam armazenadas no keychain do macOS.
+
+{: tsResolve}
+Talvez o problema seja resolvido reinicializando o Mac. Se a reinicialização do Mac não funcionar, será
+possível desativar o armazenamento de logins no keychain do Mac:
+
+1. Em seu menu, clique no ícone **Docker** e selecione **Preferências**.
+2. Limpe a caixa de seleção **Armazenar os logins do Docker com segurança no keychain do macOS**.

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI (interface da linha de comandos)
-{: #containerregcli}
-
-É possível usar a CLI do {{site.data.keyword.registrylong}}, que é fornecida no plug-in da CLI `container-registry`, para gerenciar seu registro e seus recursos para sua conta do {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}É possível usar a CLI do {{site.data.keyword.registrylong}}, que é fornecida no plug-in da CLI `container-registry`, para gerenciar seu registro e seus recursos para sua conta do {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Pré-requisitos**
 
-* Instale o [{{site.data.keyword.Bluemix_notm}} CLI ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/cli/index.html#overview). O prefixo para executar comandos usando a CLI do {{site.data.keyword.Bluemix_notm}} é `ibmcloud`.
+* Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). O prefixo para executar comandos usando a CLI do {{site.data.keyword.Bluemix_notm}} é `ibmcloud`.
 
 * Antes de executar os comandos de registro, efetue login no {{site.data.keyword.Bluemix_notm}}
  com o comando `ibmcloud login` para gerar um token de acesso e autenticar sua sessão.
@@ -118,7 +123,9 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 <dd>O tipo de problema de segurança que você deseja isentar. Para localizar tipos de problemas válidos, execute `ibmcloud cr exemption-types`.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>O ID do problema de segurança que você deseja isentar. Para localizar um ID de problema, execute `ibmcloud cr va <image>`, em que *&lt;image&gt;* é o nome de sua imagem, e use o valor relevante da coluna **ID de vulnerabilidade** ou **ID do problema de configuração**.
+<dd>O ID do problema de segurança que você deseja isentar. Para localizar um ID de problema, execute `ibmcloud cr va <image>`, em que  `<image>`
+é o nome da sua imagem, e use o valor relevante da coluna **ID de vulnerabilidade** ou
+**Identificador do problema de configuração**.
 </dd>
 </dl>
 
@@ -302,7 +309,7 @@ O nome da imagem é a combinação do conteúdo das colunas **Repositório** e *
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -320,7 +327,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 Para obter informações adicionais, consulte [Formatando e filtrando a saída de CLI para comandos do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Opcional) Cada imagem é listada no formato: `repository:tag`</dd>
 <dt>`-- restrict RESTRICTION`</dt>
 <dd>(Opcional) Limite a saída para exibir somente imagens no namespace especificado ou namespace e repositório. </dd>
@@ -363,7 +370,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 </dl>
 
 **Exemplo**
-Exclua a imagem *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Exclua a imagem `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -401,7 +408,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 
 **Exemplos**
 
-Inclua outra referência de tag, `latest`, na imagem *`registry.ng.bluemix.net/birds/bluebird:1`*.
+Inclua outra referência de tag, `latest`, na imagem `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -507,7 +514,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 Remove um namespace de sua conta do {{site.data.keyword.Bluemix_notm}}. As imagens nesse namespace são excluídas quando o namespace é removido.
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -519,6 +526,8 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>O namespace que deseja remover.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Opcional) Forçar o comando a ser executado sem prompts de usuário.</dd>
 </dl>
 
 **Exemplo**
@@ -718,7 +727,7 @@ ibmcloud cr region-set us-south
 Inclua um token que possa ser usado para controlar o acesso a um registro.
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -736,7 +745,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de gerenc
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Opcional) Exibe o token somente, sem nenhum texto circundante.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(Opcional) Cria um token com acesso que não expira. Sem esse conjunto de parâmetros, o acesso por meio de um token expirará após 24 horas, por padrão.</dd>
@@ -825,10 +834,10 @@ Este exemplo produz saída no formato a seguir:
 ## ` ibmcloud cr token-rm `
 {: #bx_cr_token_rm}
 
-Remova um ou mais tokens especificados.
+Remover um ou mais tokens de registro especificados.
 
 ```
-ibmcloud cr token-rm TOKEN [ TOKEN ...]
+ibmcloud cr token-rm TOKEN [ TOKEN ...] [--force | -f]
 ```
 {: codeblock}
 
@@ -840,6 +849,8 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de gerenc
 <dl>
 <dt>`TOKEN`</dt>
 <dd>O TOKEN pode ser o próprio token ou o identificador exclusivo do token, conforme mostrado em `ibmcloud cr token-list`. É possível especificar múltiplos tokens e devem ser separados por um espaço.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Opcional) Forçar o comando a ser executado sem prompts de usuário.</dd>
 </dl>
 
 **Exemplo**
@@ -886,6 +897,12 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 Para obter mais informações, consulte [Gerenciando a segurança de imagens com o Vulnerability Advisor](/docs/services/va/va_index.html).
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(Opcional) A saída de comando mostra informações adicionais sobre correções para pacotes vulneráveis.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(Opcional) A saída de comando é restrita para mostrar somente as vulnerabilidades.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(Opcional) A saída de comando é restrita para mostrar somente problemas de configuração.</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(Opcional) A saída de comando é retornada no formato escolhido. O formato padrão é `text`. Os seguintes formatos são suportados:
 
@@ -895,13 +912,6 @@ Para obter mais informações, consulte [Gerenciando a segurança de imagens com
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(Opcional) A saída de comando é restrita para mostrar somente as vulnerabilidades.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(Opcional) A saída de comando é restrita para mostrar somente problemas de configuração.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(Opcional) A saída de comando mostra informações adicionais sobre correções para pacotes vulneráveis.</dd>
-
 </dl>
 
 **Exemplos**
@@ -913,7 +923,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-Visualize um relatório de avaliação de vulnerabilidade de sua imagem *`registry.ng.bluemix.net/birds/bluebird:1`* no formato JSON, mostrando apenas as vulnerabilidades.
+Visualize um relatório de avaliação de vulnerabilidade de sua imagem `registry.ng.bluemix.net/birds/bluebird:1` no formato JSON, mostrando apenas as vulnerabilidades.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

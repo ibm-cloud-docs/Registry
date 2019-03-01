@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ lastupdated: "2019-01-24"
 
 フォーラムを使用して質問するときは、{{site.data.keyword.registrylong_notm}} 開発チームの目に留まるように、質問にタグを付けてください。
 
-- {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=+ibm-bluemix) で質問を投稿し、質問に `ibm-bluemix` および `container-registry` のタグを付けてください。
-- サービスおよび概説の指示に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) フォーラムを使用してください。 `bluemix` タグと `container-registry` タグを含めてください。
+- {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=+ibm-bluemix) で質問を投稿し、質問に `ibm-cloud` および `container-registry` のタグを付けてください。
+- サービスおよび概説の指示に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) フォーラムを使用してください。 `ibm-cloud` タグと `container-registry` タグを含めてください。
 
 フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support/howtogetsupport.html#using-avatar)を参照してください。
 
@@ -103,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 この問題は、以下の方法で解決できます。
 
-- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)を参照してください。
+- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)を参照してください。
 
 ## `ibmcloud cr build` コマンドが失敗する
 {: #ts_build_fails}
@@ -333,7 +340,7 @@ denied: requested access to the resource is denied
 
 2. [信頼できるコンテンツ環境をセットアップします](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)。
 
-3. 前の手順の export コマンドの URL をメモします。 例えば、`https://registry.ng.bluemix.net:4443` です。
+3. 前の手順の export コマンドの URL をメモします。 例えば、`https://registry.ng.bluemix.net:4443` となります。
 
 4. レジストリー・トークンを生成します。
 
@@ -342,7 +349,7 @@ denied: requested access to the resource is denied
    ```
    {: pre}
 
-5. 問題の鍵で署名されたコンテンツが信頼されなくなるように、鍵をローテーションします。 _&lt;URL&gt;_ を、手順 2 でメモした export コマンドの URL に置き換え、_&lt;image&gt;_ を、リポジトリー鍵が影響を受けたイメージに置き換えます。
+5. 問題の鍵で署名されたコンテンツが信頼されなくなるように、鍵をローテーションします。 `<URL>` を、手順 2 でメモした export コマンドの URL に置き換え、`<image>` を、リポジトリー鍵が影響を受けたイメージに置き換えます。
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -547,4 +554,18 @@ RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユ
    {: pre}
 
 4. `ibmcloud cr image-tag` コマンドを実行して、イメージにタグ付けします。[ソース・イメージを参照する新しいイメージの作成](/docs/services/Registry/registry_images_.html#registry_images_source)を参照してください。
-  
+
+## Mac での Docker ログインの失敗: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+Mac で `ibmcloud cr login` コマンドを実行しようとして、次のエラー・メッセージを受け取ります。`Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+Docker for Mac に、macOS キーチェーンへの資格情報の保管を妨げる問題があります。
+
+{: tsResolve}
+Mac をリブートして問題を解決できる場合があります。Mac をリブートしても解決しない場合は、以下のようにして Mac キーチェーンへのログインの保管を無効にすることができます。
+
+1. メニューにある**「Docker」**アイコンをクリックし、**「設定 (Preferences)」**を選択します。
+2. **「Docker ログインを macOS キーチェーンに安全に保管する (Securely store Docker logins in macOS keychain)」**チェック・ボックスをクリアします。

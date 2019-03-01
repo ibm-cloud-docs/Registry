@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}}에 대한 액세스 자동화
@@ -32,7 +39,7 @@ API 키를 사용하는 경우 IAM 정책을 사용하여 네임스페이스에 
 
 {{site.data.keyword.registrylong_notm}} API 키에 대한 자세한 정보는 [API 키 작업](/docs/iam/apikeys.html#manapikey)을 참조하십시오.
 
-시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)하십시오.
+시작하기 전에 [{{site.data.keyword.registrylong_notm}} 및 Docker CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
 
 ## API 키를 사용하여 네임스페이스에 대한 액세스 자동화
 {: #registry_api_key}
@@ -57,7 +64,7 @@ API 키를 작성한 후 레지스트리에 로그인하는 데 사용할 수 �
 API 키를 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 액세스할 수 있습니다.
 {:shortdesc}
 
-다음 Docker 명령을 실행하여 API 키로 레지스트리에 로그인하십시오. &lt;your_apikey&gt;를 API 키로 대체하고 &lt;registry_url&gt;을 네임스페이스가 설정된 레지스트리의 URL로 대체하십시오.
+다음 Docker 명령을 실행하여 API 키로 레지스트리에 로그인하십시오. `<your_apikey>`를 API 키로 대체하고 `<registry_url>`을 네임스페이스가 설정된 레지스트리의 URL로 대체하십시오. 
 
 - 미국 남부의 네임스페이스 설정의 경우 `registry.ng.bluemix.net`을 사용하십시오.
 - 영국 남부의 네임스페이스 설정의 경우 `registry.eu-gb.bluemix.net`을 사용하십시오.
@@ -158,7 +165,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    ```
    {: pre}
 
-3. 토큰에 대한 토큰 값을 검색하십시오. &lt;token_id&gt;를 토큰의 ID로 대체하십시오.
+3. 토큰에 대한 토큰 값을 검색하십시오. `<token_id>`를 토큰 ID로 대체하십시오. 
 
    ```
     ibmcloud cr token-get <token_id>
@@ -167,7 +174,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
     사용자의 토큰 값이 CLI 출력의 **토큰**에 표시됩니다.
 
-4. `docker login` 명령의 일부로 토큰을 사용하십시오. &lt;token_value&gt;는 이전 단계에서 검색한 토큰 값으로 대체하고 &lt;registry_url&gt;은 네임스페이스가 설정된 레지스트리에 대한 URL로 대체하십시오.
+4. `docker login` 명령의 일부로 토큰을 사용하십시오. `<token_value>`는 이전 단계에서 검색한 토큰 값으로 대체하고 `<registry_url>`은 네임스페이스가 설정된 레지스트리에 대한 URL로 대체하십시오.
 
    - 미국 남부의 네임스페이스 설정의 경우 `registry.ng.bluemix.net`을 사용하십시오.
    - 영국 남부의 네임스페이스 설정의 경우 `registry.eu-gb.bluemix.net`을 사용하십시오.
@@ -237,6 +244,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-_&lt;apikey&gt;_를 API 키로, _&lt;region&gt;_을 [지역](/docs/services/Registry/registry_overview.html#registry_regions) 이름으로, _&lt;my_namespace&gt;_를 네임스페이스로, 그리고 _&lt;image_repo&gt;_를 저장소로 대체하십시오.
+`<apikey>`는 API 키로, `<region>`은 [지역](/docs/services/Registry/registry_overview.html#registry_regions) 이름으로, `<my_namespace>`는 네임스페이스로, `<image_repo>`는 저장소로 대체하십시오. 
 
 자세한 정보는 [개인용 이미지 레지스트리 사용](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)을 참조하십시오.

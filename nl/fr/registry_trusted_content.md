@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Signature d'images pour du contenu sécurisé
@@ -21,9 +28,9 @@ lastupdated: "2019-01-23"
 {{site.data.keyword.registrylong}} fournit une technologie de contenu sécurisé pour vous permettre de signer des images et garantir l'intégrité des images de votre espace de nom de registre. En extrayant et en transférant des images signées, vous pouvez vérifier que vos images ont été envoyées par la partie appropriée, comme les outils d'intégration continue. Pour utiliser cette fonction, vous devez disposer de Docker version 18.03 ou ultérieure. Pour en savoir plus, consultez la documentation [Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/content_trust/) et la documentation sur le [projet Notary ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
-Lorsque vous envoyez par commande push votre image avec le contenu sécurisé activé, votre client Docker envoie également un objet métadonnées signé au serveur d'accréditation {{site.data.keyword.Bluemix_notm}}. Lors de l'extraction d'une image étiquetée avec Docker Content Trust activé, votre client Docker contacte le serveur d'accréditation afin d'établir la version signée la plus récente de l'étiquette demandée, vérifie la signature du contenu puis télécharge l'image signée.
+Lorsque vous envoyez par commande push votre image avec le contenu sécurisé activé, votre client Docker envoie également un objet métadonnées signé au serveur d'accréditation {{site.data.keyword.Bluemix_notm}}. Lors de l'extraction d'une image balisée avec Docker Content Trust activé, votre client Docker contacte le serveur d'accréditation afin d'établir la version signée la plus récente de la balise demandée, vérifie la signature du contenu puis télécharge l'image signée.
 
-Un nom d'image est composé d'un référentiel et d'une étiquette. Lors de l'utilisation de contenu sécurisé, chaque référentiel utilise une clé de signature unique. Chaque étiquette d'un référentiel utilise la clé appartenant au référentiel. Si plusieurs équipes publient du contenu, chacun sur leur propre référentiel au sein de vos espaces de nom {{site.data.keyword.registrylong_notm}}, chaque équipe peut utiliser ses propres clés pour signer son contenu, ce qui vous permet de vérifier que chaque image est produite par l'équipe appropriée.
+Un nom d'image est composé d'un référentiel et d'une balise. Lorsque vous utilisez du contenu sécurisé, chaque référentiel utilise une clé de signature unique. Chaque balise d'un référentiel utilise la clé appartenant au référentiel. Si plusieurs équipes publient du contenu, chacun sur leur propre référentiel au sein de vos espaces de nom {{site.data.keyword.registrylong_notm}}, chaque équipe peut utiliser ses propres clés pour signer son contenu, ce qui vous permet de vérifier que chaque image est produite par l'équipe appropriée.
 
 Un référentiel peut comporter du contenu signé et du contenu non signé. Si Docker Content Trust est activé, vous pouvez accéder au contenu signé d'un référentiel, même si ce dernier contient également du contenu non signé.
 
@@ -114,7 +121,12 @@ Avant de commencer, [configurez votre espace de nom de registre](/docs/services/
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. [Envoyez votre image par commande push](/docs/services/Registry/index.html#registry_images_pushing). L'étiquette est obligatoire pour du contenu sécurisé. Dans la sortie de la commande, "Signature et envoi des métadonnées d'image".
+2. [Envoyez votre image par commande push](/docs/services/Registry/index.html#registry_images_pushing). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sont limitées.
 
@@ -126,14 +138,14 @@ La première fois que vous extrayez une image signée avec Docker Content Trust 
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. Extrayez votre image. Remplacez _&lt;source_image&gt;_ par le référentiel de l'image et _&lt;tag&gt;_ par l'étiquette de l'image à utiliser, par exemple _dernier_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
+2. Extrayez votre image. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par la balise de l'image que vous voulez utiliser, par exemple _latest_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
    ```
    {: pre}
 
-    Spécifiez l'étiquette lorsque vous extrayez ou envoyez par commande push une image signée. L'étiquette `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.
+    Spécifiez la balise lorsque vous extrayez ou envoyez par commande push une image signée. La balise `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.
     {: tip}
 
 ## Gestion du contenu sécurisé
@@ -150,9 +162,9 @@ Vous pouvez vérifier les versions signées du référentiel ou de la balise d'u
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. Vérifiez les informations d'étiquette, d'historique et de signataire pour chaque image.
+2. Vérifiez les informations de balise, d'historique et de signataire pour chaque image.
 
-   (Facultatif) Spécifiez la balise, _&lt;tag&gt;_, pour voir les informations sur cette version de l'image.
+   (Facultatif) Spécifiez la balise `<tag>` pour afficher les informations sur cette version de l'image.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -171,7 +183,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
 
 2. Retirez toutes les métadonnées sécurisées pour le référentiel d'images. Entrez votre phrase passe de clé de référentiel lorsque vous y êtes invité.
 
-   Facultatif Spécifiez une balise pour révoquer les métadonnées sécurisées uniquement pour cette version de l'image.
+   (Facultatif) Spécifiez une balise pour révoquer les métadonnées sécurisées uniquement pour cette version de l'image.
 
    ```
    docker trust revoke <image>:<tag>
@@ -180,7 +192,7 @@ Avant de commencer, récupérez la phrase passe de clé de référentiel que vou
 
 3. Vérifiez que l'approbation a été révoquée dans la liste du contenu sécurisé.
 
-   Facultatif Incluez la balise si vous souhaitez vérifier le contenu révoqué pour une image balisée.
+   (Facultatif) Incluez la balise si vous souhaitez vérifier le contenu révoqué pour une image balisée.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -235,7 +247,7 @@ Pour partager des clés de signature :
 
 1. Si le nouveau signataire n'a pas encore généré de paire de clés, une paire doit être générée et chargée.
   
-    a. Générez la clé. Vous pouvez indiquer le nom de votre choix pour _&lt;NAME&gt;_, mais le nom sélectionné est visible lorsqu'une personne inspecte la fiabilité du référentiel. Travaillez avec le propriétaire du référentiel afin de respecter les conventions de dénomination qui pourraient être utilisées par l'organisation et de sélectionner un nom identifiable pour ce signataire.
+    a. Générez la clé. Vous pouvez indiquer le nom de votre choix pour `<NAME>`, mais le nom sélectionné est visible lorsqu'une personne inspecte la fiabilité du référentiel. Travaillez avec le propriétaire du référentiel afin de respecter les conventions de dénomination qui pourraient être utilisées par l'organisation et de sélectionner un nom identifiable pour ce signataire.
 
       ```
       docker trust key generate <NAME>

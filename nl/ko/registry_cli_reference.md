@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 네임스페이스에서 Docker 이미지를 관리하기 위한 {{site.data.keyword.registrylong_notm}}(`ibmcloud cr`) 명령
 {: #registry_cli_reference}
 
-`container-registry` CLI 플러그인을 사용하여 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix}} 계정의 모든 사용자와 공유할 수 있는, IBM이 호스팅하고 관리하는 {{site.data.keyword.registrylong_notm}} 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정할 수 있습니다.
+`container-registry` CLI 플러그인을 사용하여 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix}} 계정의 모든 사용자와 공유할 수 있는, IBM이 호스팅하고 관리하는 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정할 수 있습니다.
 {:shortdesc}
 
 ## `ibmcloud cr` 명령
@@ -27,7 +34,7 @@ lastupdated: "2019-01-23"
 {{site.data.keyword.registryshort_notm}} CLI에서 `ibmcloud cr` 명령을 실행하십시오.
 {:shortdesc}
 
-지원되는 명령은 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)를 참조하십시오.
+지원되는 명령은 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링
 {: #registry_cli_listing}
@@ -124,7 +131,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Size`|정수(64비트)|바이트 단위로 이미지의 크기를 표시합니다.|
 |`Tag`|문자열|이미지에 대한 태그를 표시합니다.|
 |`SecurityStatus`|구조체|이미지에 대한 취약성 상태를 표시합니다. 다음 값을 필터링하고 형식화할 수 있습니다. Status `string`, IssueCount `int` 및 ExemptionCount `int`. 가능한 상태는 [CLI를 사용하여 취약성 보고서 검토](/docs/services/va/va_index.html#va_registry_cli)에 설명되어 있습니다.|
-{: caption="표 1. <code>eibmcloud cr image-list</code> 명령에서 사용 가능한 필드 및 데이터 유형" caption-side="top"}
+{: caption="표 1. <code>ibmcloud cr image-list</code> 명령에서 사용 가능한 필드 및 데이터 유형" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` 명령의 Go 템플리트 옵션 및 데이터 유형
 {: #registry_cli_listing_imageinspect}

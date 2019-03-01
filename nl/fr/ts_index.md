@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ Si vous rencontrez des problèmes ou des questions lors de l'utilisation d'{{sit
 
 Lorsque vous posez une question sur un forum, marquez votre question à l'aide d'une étiquette pour qu'elle soit vue par l'équipe de développement d'{{site.data.keyword.registrylong_notm}}.
 
-- Si vous avez une question technique sur le développement ou le déploiement d'une application avec {{site.data.keyword.registrylong_notm}}, publiez-la sur [Stack Overflow ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://stackoverflow.com/search?q=+ibm-bluemix) en y ajoutant les balises `ibm-bluemix` et `container-registry`.
-- Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Ajoutez les balises `bluemix` et `container-registry`.
+- Si vous avez une question technique sur le développement ou le déploiement d'une application avec {{site.data.keyword.registrylong_notm}}, publiez-la sur [Stack Overflow ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://stackoverflow.com/search?q=+ibm-bluemix) en y ajoutant les balises `ibm-cloud` et `container-registry`.
+- Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Ajoutez les balises `ibm-cloud` et `container-registry`.
 
 Voir [Utilisation du centre de support](/docs/get-support/howtogetsupport.html#using-avatar) pour plus de détails sur l'utilisation des forums.
 
@@ -55,7 +62,7 @@ La commande `ibmcloud cr login` échoue.
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Effectuez une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`? Consultez la rubrique [Mise à jour du plug-in d'interface de ligne de commande `container-registry` ](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Procédez à une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`. Voir [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Assurez-vous que Docker est installé sur votre ordinateur. S'il est déjà installé, redémarrez le démon Docker.
 - Exécutez à nouveau la commande `ibmcloud login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.Bluemix_notm}}.
 
@@ -74,7 +81,7 @@ Toutes les commandes `ibmcloud cr` échouent.
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Effectuez une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`. Consultez la rubrique [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Procédez à une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`. Voir [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## Les commandes {{site.data.keyword.registrylong_notm}} échouent avec le message `'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,18 +105,18 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- Le plug-in d'interface de ligne de commande `container-registry` n'est pas installé. 
+- Le plug-in d'interface de ligne de commande `container-registry` n'est pas installé.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- Installez le plug-in d'interface de ligne de commande `container-registry`. Consultez la rubrique [Installation du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Installez le plug-in d'interface de ligne de commande `container-registry`. Voir [Installation du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
-## La commande `ibmcloud cr build` échoue. 
+## La commande `ibmcloud cr build` échoue.
 {: #ts_build_fails}
 
 {: tsSymptoms}
-La commande build échoue. 
+La commande build échoue.
 
 {: tsCauses}
 Il se peut que le serveur soit en panne ou que d'autres problèmes se soient produits avec votre fichier Dockerfile.
@@ -332,7 +339,7 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
 
 2. [Configurez votre environnement de contenu sécurisé](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 
-3. Notez l'URL figurant dans la commande d'exportation à l'étape précédente. Par exemple, `https://registry.ng.bluemix.net:4443`.
+3. Notez l'URL figurant dans la commande d'exportation à l'étape précédente. Par exemple, `https://registry.ng.bluemix.net:4443`
 
 4. Générez un jeton de registre.
 
@@ -341,7 +348,7 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
    ```
    {: pre}
 
-5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Remplacez _&lt;URL&gt;_ par l'URL de la commande d'exportation notée à l'étape 2, puis _&lt;image&gt;_ par l'image dont la clé de référentiel est affectée.
+5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Remplacez `<URL>` par l'URL de la commande d'exportation que vous avez noté à l'étape 2 et `<image>` par l'image dont la clé de référentiel est concernée.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -490,7 +497,7 @@ Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'�
 Vous avez essayé d'étiqueter votre image, mais vous recevez le message d'erreur suivant : `The manifest type for this image is not supported for tagging.`.
 
 {: tsCauses}
-Le type de manifeste n'est pas pris en charge. 
+Le type de manifeste n'est pas pris en charge.
 
 {: tsResolve}
 Pour résoudre le problème, procédez comme suit :
@@ -509,7 +516,7 @@ Pour résoudre le problème, procédez comme suit :
    ```
    {: pre}
 
-3. Envoyez l'image que vous avez étiquetée à l'étape précédente en exécutant la commande suivante : 
+3. Envoyez l'image que vous avez étiquetée à l'étape précédente en exécutant la commande suivante :
 
    ```
    docker push <target_image>
@@ -523,12 +530,12 @@ Pour résoudre le problème, procédez comme suit :
 Vous avez essayé d'étiqueter votre image, mais vous recevez le message d'erreur suivant : `The manifest version for this image is not supported for tagging. Pour mettre à jour une version de manifeste prise en charge, extrayez et envoyez cette image à l'aide de Docker version 1.12 ou ultérieure, puis relancez l'exécution de la commande 'ibmcloud cr image-tag'.`
 
 {: tsCauses}
-La version de manifeste n'est pas pris en charge. 
+La version de manifeste n'est pas pris en charge.
 
 {: tsResolve}
 Pour résoudre le problème, procédez comme suit :
 
-1. Effectuez une mise à niveau vers Docker Engine version 1.12 ou ultérieure. 
+1. Effectuez une mise à niveau vers Docker Engine version 1.12 ou ultérieure.
 
 2. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source :
 
@@ -545,4 +552,18 @@ Pour résoudre le problème, procédez comme suit :
    {: pre}
 
 4. Etiquetez l'image en exécutant la commande `ibmcloud cr image-tag`. Consultez la rubrique [Création de nouvelles images qui font référence à une image source](/docs/services/Registry/registry_images_.html#registry_images_source).
-  
+
+## Echec de connexion à Docker sur Mac avec le message suivant : `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+Vous recevez le message d'erreur suivant lorsque vous tentez d'exécuter la commande `ibmcloud cr login` sur Mac : `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+Un problème lié à Docker pour Mac empêche le stockage de vos données d'identification dans la chaîne de certificats macOS.
+
+{: tsResolve}
+Vous devriez résoudre ce problème en réamorçant votre Mac. Si le problème persiste malgré le réamorçage de votre Mac, désactivez le stockage des connexions dans votre chaîne de certificats Mac :
+
+1. Dans votre menu, cliquez sur l'icône **Docker**, puis sélectionnez **Préférences**.
+2. Désactivez la case **Securely store Docker logins in macOS keychain**.

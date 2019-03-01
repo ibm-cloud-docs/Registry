@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,23 +17,24 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}
-
-Sie können die {{site.data.keyword.registrylong}}-CLI, die im `container-registry`-CLI-Plug-in bereitgestellt wird, verwenden, um Ihre Registry und die zugehörigen Ressourcen für Ihr {{site.data.keyword.Bluemix_notm}}-Konto zu verwalten.
+{: #containerregcli}Sie können die {{site.data.keyword.registrylong}}-CLI, die im `container-registry`-CLI-Plug-in bereitgestellt wird, verwenden, um Ihre Registry und die zugehörigen Ressourcen für Ihr {{site.data.keyword.Bluemix_notm}}-Konto zu verwalten.
 {: shortdesc}
 
 **Voraussetzungen**
 
-* Installieren Sie die [{{site.data.keyword.Bluemix_notm}}-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](/docs/cli/index.html#overview). Das Präfix für die Ausführung von Befehlen unter Verwendung der {{site.data.keyword.Bluemix_notm}}-CLI lautet `ibmcloud`.
+* Installieren Sie die [Befehlszeilenschnittstelle von {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Das Präfix für die Ausführung von Befehlen unter Verwendung der {{site.data.keyword.Bluemix_notm}}-CLI lautet `ibmcloud`.
 
 * Bevor Sie die Registry-Befehle ausführen, melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, wobei Sie den Befehl `ibmcloud login` verwenden, um ein Zugriffstoken zu generieren und Ihre Sitzung zu authentifizieren.
 
 Sobald Aktualisierungen für die `ibmcloud`-CLI und `container-registry`-CLI-Plug-ins verfügbar sind, erhalten Sie eine Benachrichtigung über die Befehlszeile. Stellen Sie sicher, dass Sie Ihre CLI aktuell halten, damit Sie alle verfügbaren Befehle und Flags verwenden können.
 
-Führen Sie den Befehl `ibmcloud plugin list` aus, wenn Sie die aktuelle Version des `container-registry`-CLI-Plug-ins anzeigen möchten. 
+Führen Sie den Befehl `ibmcloud plugin list` aus, wenn Sie die aktuelle Version des `container-registry`-CLI-Plug-ins anzeigen möchten.
 
 Informationen zur Verwendung der {{site.data.keyword.registrylong_notm}}-CLI finden Sie unter [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
 
@@ -64,7 +69,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -86,7 +91,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **Beispiel**
 
-Erstellen Sie ein Docker-Image, das keinen Build-Cache aus vorherigen Builds verwendet, wobei die Buildausgabe unterdrückt wird, der Tag *`registry.ng.bluemix.net/birds/bluebird:1`* lautet und das Verzeichnis Ihr Arbeitsverzeichnis ist. 
+Erstellen Sie ein Docker-Image, das keinen Build-Cache aus vorherigen Builds verwendet, wobei die Buildausgabe unterdrückt wird, der Tag *`registry.ng.bluemix.net/birds/bluebird:1`* lautet und das Verzeichnis Ihr Arbeitsverzeichnis ist.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/birds/bluebird:1 .
@@ -105,7 +110,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -116,13 +121,13 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>Der Typ des Sicherheitsproblems, das Sie freistellen möchten. Um nach gültigen Problemtypen zu suchen, führen Sie den Befehl `ibmcloud cr exemption-types` aus.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>Die ID des Sicherheitsproblems, das Sie freistellen möchten. Um nach einer Problem-ID zu suchen, führen Sie den Befehl `ibmcloud cr va <image>`, wobei *&lt;image&gt;* der Name des Image ist. Verwenden Sie dabei den entsprechenden Wert aus der Spalte mit der **Schwachstellen-ID** oder der Spalte mit der **Konfigurationsproblem-ID**.
+<dd>Die ID des Sicherheitsproblems, das Sie freistellen möchten. Um nach einer Problem-ID zu suchen, führen Sie den Befehl `ibmcloud cr va <image>`, wobei `<image>` der Name des Images ist. Verwenden Sie dabei den entsprechenden Wert aus der Spalte mit der **Schwachstellen-ID** oder der Spalte mit der **Konfigurationsproblem-ID**.
 </dd>
 </dl>
 
 **Beispiele**
 
-Erstellen Sie eine CVE-Freistellung für CVE mit der ID `CVE-2018-17929` für alle Images im Repository `registry.ng.bluemix.net/birds/bluebird`. 
+Erstellen Sie eine CVE-Freistellung für CVE mit der ID `CVE-2018-17929` für alle Images im Repository `registry.ng.bluemix.net/birds/bluebird`.
 
 ```
 ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
@@ -136,7 +141,7 @@ ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-Erstellen Sie eine Konfigurationsproblemfreistellung für das Problem `application_configuration:nginx.ssl_protocols` für ein einzelnes Image mit dem Tag `registry.ng.bluemix.net/birds/bluebird:1`. 
+Erstellen Sie eine Konfigurationsproblemfreistellung für das Problem `application_configuration:nginx.ssl_protocols` für ein einzelnes Image mit dem Tag `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
@@ -155,7 +160,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -166,7 +171,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **Beispiel**
 
-Listet alle Freistellungen für Sicherheitsprobleme auf, die für Images im Repository *`birds/bluebird`* gelten. Die Ausgabe enthält kontoweite Freistellungen, Freistellungen für den Namensbereich *`birds`* und Freistellungen für das Repository *`birds/bluebird`*, aber keine Freistellungen für spezifische Tags innerhalb des Repositorys *`birds/bluebird`*. 
+Listet alle Freistellungen für Sicherheitsprobleme auf, die für Images im Repository *`birds/bluebird`* gelten. Die Ausgabe enthält kontoweite Freistellungen, Freistellungen für den Namensbereich *`birds`* und Freistellungen für das Repository *`birds/bluebird`*, aber keine Freistellungen für spezifische Tags innerhalb des Repositorys *`birds/bluebird`*.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
@@ -185,7 +190,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -202,7 +207,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **Beispiele**
 
-Erstellen Sie eine CVE-Freistellung für CVE mit der ID `CVE-2018-17929` für alle Images im Repository `registry.ng.bluemix.net/birds/bluebird`. 
+Erstellen Sie eine CVE-Freistellung für CVE mit der ID `CVE-2018-17929` für alle Images im Repository `registry.ng.bluemix.net/birds/bluebird`.
 
 ```
 ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
@@ -216,7 +221,7 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-Löschen Sie eine Konfigurationsproblemfreistellung für das Problem `application_configuration:nginx.ssl_protocols` für ein einzelnes Image mit dem Tag `registry.ng.bluemix.net/birds/bluebird:1`. 
+Löschen Sie eine Konfigurationsproblemfreistellung für das Problem `application_configuration:nginx.ssl_protocols` für ein einzelnes Image mit dem Tag `registry.ng.bluemix.net/birds/bluebird:1`.
 
 ```
 ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
@@ -235,7 +240,7 @@ ibmcloud cr exemption-types
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
@@ -249,7 +254,7 @@ ibmcloud cr iam-policies-enable
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -263,7 +268,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -274,7 +279,7 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 
 </dd>
 <dt>`IMAGE`</dt>
-<dd>Der Name des Image, für das ein Bericht erstellt werden soll. Sie können mehrere Images untersuchen, indem Sie die einzelnen Images im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten.
+<dd>Der Name des Images, für das ein Bericht erstellt werden soll. Sie können mehrere Images untersuchen, indem Sie die einzelnen Images im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten.
 
 <p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen. Wenn im Imagenamen kein Tag angegeben ist, wird das Image mit dem Tag `latest` untersucht. </p>
 
@@ -283,7 +288,7 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 
 **Beispiel**
 
-Zeigen Sie Details zu den zugänglichen Ports für das Image *`registry.ng.bluemix.net/birds/bluebird:1`* an. Verwenden Sie dazu die Formatierungsanweisung *`"{{ .Config.ExposedPorts }}"`*. 
+Zeigen Sie Details zu den zugänglichen Ports für das Image *`registry.ng.bluemix.net/birds/bluebird:1`* an. Verwenden Sie dazu die Formatierungsanweisung *`"{{ .Config.ExposedPorts }}"`*.
 
 ```
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/birds/bluebird:1
@@ -299,13 +304,13 @@ Der Imagename ist eine Kombination des Inhalts der Spalten **Repository** und **
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -317,7 +322,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict 
 Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Jedes Image wird im Format `repository:tag` aufgelistet.</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Optional) Begrenzen Sie die Ausgabe, sodass nur Images im angegebenen Namensbereich oder Namensbereich und Repository angezeigt werden. </dd>
@@ -327,7 +332,7 @@ Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.reg
 
 **Beispiel**
 
-Zeigen Sie die Images im Namensbereich *`birds`* im Format `repository:tag` an, ohne dass die Image-Auszüge abgeschnitten werden. 
+Zeigen Sie die Images im Namensbereich *`birds`* im Format `repository:tag` an, ohne dass die Image-Auszüge abgeschnitten werden.
 
 ```
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
@@ -346,7 +351,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 
@@ -360,7 +365,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **Beispiel**
-Image *`registry.ng.bluemix.net/birds/bluebird:1`* löschen. 
+Image `registry.ng.bluemix.net/birds/bluebird:1` löschen.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -370,7 +375,7 @@ ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Erstellen Sie ein neues Image (ZIELIMAGE), das sich auf ein Quellenimage (QUELLENIMAGE) in {{site.data.keyword.registrylong_notm}} bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden. 
+Erstellen Sie ein neues Image (ZIELIMAGE), das sich auf ein Quellenimage (QUELLENIMAGE) in {{site.data.keyword.registrylong_notm}} bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden.
 
 Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen.
 {: tip}
@@ -382,7 +387,7 @@ ibmcloud cr image-tag [QUELLENIMAGE] [ZIELIMAGE]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -398,21 +403,21 @@ ibmcloud cr image-tag [QUELLENIMAGE] [ZIELIMAGE]
 
 **Beispiele**
 
-Fügen Sie einen weiteren Tagverweis, `latest`, zum Image *`registry.ng.bluemix.net/birds/bluebird:1`* hinzu. 
+Fügen Sie einen weiteren Tagverweis, `latest`, zum Image `registry.ng.bluemix.net/birds/bluebird:1` hinzu.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
 ```
 {: pre}
 
-Kopieren Sie das Image `registry.ng.bluemix.net/birds/bluebird:peck` in ein anderes Repository im selben Namensbereich `birds/pigeon`. 
+Kopieren Sie das Image `registry.ng.bluemix.net/birds/bluebird:peck` in ein anderes Repository im selben Namensbereich `birds/pigeon`.
 
 ```
 ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/birds/pigeon:peck
 ```
 {: pre}
 
-Kopieren Sie das Image `registry.ng.bluemix.net/birds/bluebird:peck` in einen anderen Namensbereich `animals`, auf den Sie zugreifen können. 
+Kopieren Sie das Image `registry.ng.bluemix.net/birds/bluebird:peck` in einen anderen Namensbereich `animals`, auf den Sie zugreifen können.
 
 ```
 ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
@@ -459,7 +464,7 @@ ibmcloud cr namespace-add NAMENSBEREICH
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -475,7 +480,7 @@ ibmcloud cr namespace-add NAMENSBEREICH
 
 **Beispiel**
 
-Erstellen Sie einen Namensbereich mit dem Namen *`birds`*. 
+Erstellen Sie einen Namensbereich mit dem Namen *`birds`*.
 
 ```
 ibmcloud cr namespace-add birds
@@ -494,7 +499,7 @@ ibmcloud cr namespace-list
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -502,23 +507,25 @@ ibmcloud cr namespace-list
 Entfernt einen Namensbereich aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto. Images in diesem Namensbereich werden gelöscht, wenn der Namensbereich entfernt wird.
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>Der zu entfernende Namensbereich.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Optional) Ausführung des Befehls ohne Benutzereingabeaufforderungen erzwingen. </dd>
 </dl>
 
 **Beispiel**
 
-Entfernen Sie den Namensbereich *`birds`*. 
+Entfernen Sie den Namensbereich *`birds`*.
 
 ```
 ibmcloud cr namespace-rm birds
@@ -537,7 +544,7 @@ ibmcloud cr plan
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -553,7 +560,7 @@ ibmcloud cr plan-upgrade [PLAN]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -573,7 +580,7 @@ ibmcloud cr plan-upgrade standard
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-Importiert {{site.data.keyword.IBM_notm}} Software, die von [IBM Passport Advantage Online für Kunden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und für die Verwendung mit Helm paketiert wurde, in den {{site.data.keyword.registrylong_notm}}-Namensbereich. 
+Importiert {{site.data.keyword.IBM_notm}} Software, die von [IBM Passport Advantage Online für Kunden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und für die Verwendung mit Helm paketiert wurde, in den {{site.data.keyword.registrylong_notm}}-Namensbereich.
 
 Container-Images werden mit Push-Operation in Ihren privaten {{site.data.keyword.registryshort_notm}}-Namensbereich übertragen. Helm-Diagramme werden in ein Verzeichnis `ppa-import` geschrieben, das in dem Verzeichnis erstellt wird, in dem Sie den Befehl ausführen. Optional können Sie das [Open-Source-Projekt ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) verwenden, um Helm-Diagramme zu hosten.
 
@@ -584,7 +591,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -602,7 +609,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 
 **Beispiel**
 
-Importieren Sie IBM Software und packen Sie sie für die Verwendung mit Helm in den {{site.data.keyword.registrylong_notm}}-Namensbereich *`birds`*, wobei der Pfad der komprimierten Datei *`downloads/komprimierte_datei.tgz`* lautet. 
+Importieren Sie IBM Software und packen Sie sie für die Verwendung mit Helm in den {{site.data.keyword.registrylong_notm}}-Namensbereich *`birds`*, wobei der Pfad der komprimierten Datei *`downloads/komprimierte_datei.tgz`* lautet.
 
 ```
 ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace birds
@@ -621,7 +628,7 @@ ibmcloud cr quota
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -635,7 +642,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Konfiguration von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_configure) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -709,13 +716,13 @@ ibmcloud cr region-set us-south
 Fügen Sie ein Token hinzu, mit dem Sie den Zugriff auf eine Registry kontrollieren können.
 
 ```
-ibmcloud cr token-add [--description BESCHREIBUNG] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
 **Voraussetzungen**
 
-[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -727,7 +734,7 @@ ibmcloud cr token-add [--description BESCHREIBUNG] [-q, --quiet] [--non-expiring
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Zeigt nur das Token an, ohne einschließenden Text.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(Optional) Erstellt ein Token mit zeitlich unbeschränkter Gültigkeit. Ist dieser Parameter nicht festgelegt, läuft der Zugriff von einem Token standardmäßig nach 24 Stunden ab.</dd>
@@ -756,7 +763,7 @@ ibmcloud cr token-get TOKEN
 
 **Voraussetzungen**
 
-[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -785,7 +792,7 @@ ibmcloud cr token-list [--format FORMAT]
 
 **Voraussetzungen**
 
-[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -816,21 +823,23 @@ In diesem Beispiel wird eine Ausgabe im folgenden Format erzeugt.
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-Entfernt ein oder mehrere angegebene Tokens.
+Ein oder mehrere angegebene Registry-Tokens entfernen. 
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
 **Voraussetzungen**
 
-[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Plattformmanagementrollen](/docs/services/Registry/iam.html#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
 <dt>`TOKEN`</dt>
 <dd>(Optional) TOKEN kann entweder das Token selbst oder die eindeutige ID des Tokens sein, wie in `ibmcloud cr token-list` dargestellt. Mehrere Tokens können angegeben werden, wobei sie durch ein Leerzeichen getrennt sein müssen.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Optional) Ausführung des Befehls ohne Benutzereingabeaufforderungen erzwingen. </dd>
 </dl>
 
 **Beispiel**
@@ -854,7 +863,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 **Voraussetzungen**
 
-[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen. 
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/iam.html#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
 
 **Befehlsoptionen**
 <dl>
@@ -877,6 +886,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 Weitere Informationen finden Sie unter [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html).
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(Optional) Die Befehlsausgabe zeigt zusätzliche Informationen zu Fixes für anfällige Pakete an.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(Optional) Die Befehlsausgabe ist auf die Anzeige von Sicherheitslücken beschränkt.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(Optional) Die Befehlsausgabe ist auf die Anzeige von Konfigurationsproblemen beschränkt.</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(Optional) Die Befehlsausgabe wird im ausgewählten Format zurückgegeben. Das Standardformat ist `text`. Folgende Formate werden unterstützt:
 
@@ -886,13 +901,6 @@ Weitere Informationen finden Sie unter [Imagesicherheit mit Vulnerability Adviso
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(Optional) Die Befehlsausgabe ist auf die Anzeige von Sicherheitslücken beschränkt.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(Optional) Die Befehlsausgabe ist auf die Anzeige von Konfigurationsproblemen beschränkt.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(Optional) Die Befehlsausgabe zeigt zusätzliche Informationen zu Fixes für anfällige Pakete an.</dd>
-
 </dl>
 
 **Beispiele**
@@ -904,7 +912,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-Zeigen Sie einen Schwachstellenanalysebericht für Ihr Image *`registry.ng.bluemix.net/birds/bluebird:1`* im JSON-Format an, der nur Sicherheitslücken angibt. 
+Zeigen Sie einen Schwachstellenanalysebericht für Ihr Image `registry.ng.bluemix.net/birds/bluebird:1` im JSON-Format an, der nur Sicherheitslücken angibt.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

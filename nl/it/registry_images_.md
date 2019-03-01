@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Aggiunta di immagini al tuo spazio dei nomi
@@ -31,7 +38,7 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 {:tip}
 
 ## Esecuzione del pull di immagini da un altro registro
-{: #registry_images_pulling}
+{: #registry_images_pulling_reg}
 
 Puoi eseguire il pull (scaricare) di un'immagine da una qualsiasi origine di registro privato o pubblico e contrassegnarla con una tag
 per un uso successivo in {{site.data.keyword.registrylong_notm}}.
@@ -41,12 +48,11 @@ per un uso successivo in {{site.data.keyword.registrylong_notm}}.
 
 **Prima di iniziare**
 
-- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
+- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
-- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
-il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push`
-con `sudo`.
+il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
@@ -58,7 +64,7 @@ Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denie
 Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dal tuo computer locale al tuo spazio dei nomi.
 
 ## Esecuzione del push di immagini Docker al tuo spazio dei nomi
-{: #registry_images_pushing}
+{: #registry_images_pushing_namespace}
 
 Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}} per memorizzare e condividere la tua immagine con altri utenti.
 {:shortdesc}
@@ -67,10 +73,10 @@ Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{sit
 
 **Prima di iniziare**
 
-- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
+- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
-- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
-- [Esegui il pull](#registry_images_pulling) o [crea](#registry_images_creating) un'immagine sul tuo computer locale e contrassegna l'immagine tramite tag con le informazioni sul tuo spazio dei nomi.
+- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
+- [Esegui il pull](#registry_images_pulling_reg) o [crea](#registry_images_creating) un'immagine sul tuo computer locale e contrassegna l'immagine tramite tag con le informazioni sul tuo spazio dei nomi.
 - [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
@@ -111,9 +117,9 @@ condividere l'immagine in entrambe le regioni.
 
 **Prima di iniziare**
 
-- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
+- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
-- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
@@ -121,9 +127,9 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
 Per copiare un'immagine tra due registri, completa le seguenti istruzioni:
 
-1. [Esegui il pull di un'immagine da un registro](#registry_images_pulling).
+1. [Esegui il pull di un'immagine da un registro](#registry_images_pulling_reg).
 2. [Esegui il push dell'immagine a un altro
-registro](#registry_images_pushing). Assicurati di utilizzare il nome del dominio corretto per la nuova regione di destinazione.
+registro](#registry_images_pushing_namespace). Assicurati di utilizzare il nome del dominio corretto per la nuova regione di destinazione.
 
 Dopo aver copiato la tua immagine, puoi effettuare una delle seguenti attività:
 
@@ -141,11 +147,11 @@ Le nuove immagini create utilizzando questo meccanismo non conservano le firme. 
 
 **Prima di iniziare**
 
-- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
+- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
 - Assicurati di avere accesso a uno spazio dei nomi privato in {{site.data.keyword.registrylong_notm}} che contiene un'immagine di origine a cui vuoi che un'altra immagine faccia riferimento.
 
-Per ulteriori informazioni sul comando, consulta [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag).
+Per ulteriori informazioni sul comando, consulta [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag).
 
 Per creare una nuova immagine da un'immagine di origine, completa la seguente procedura:
 
@@ -178,9 +184,9 @@ Puoi creare un'immagine Docker direttamente in {{site.data.keyword.Bluemix_notm}
 
 **Prima di iniziare**
 
-- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) per lavorare con le immagini nel tuo
+- [Installa la CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
-- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add).
+- [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup).
 - [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
@@ -204,9 +210,7 @@ Per creare la tua immagine Docker, completa la seguente procedura:
         ```
         {: pre}
 
-    2. Utilizza un editor di testo per aprire il Dockerfile. Come minimo, devi aggiungere l'immagine di base da cui creare la tua immagine. Sostituisci
-_&lt;source_image&gt;_ e _&lt;tag&gt;_ con il repository di immagini e la
-tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro registro privato, definisci il percorso completo all'immagine in {{site.data.keyword.registrylong_notm}}.
+    2. Utilizza un editor di testo per aprire il Dockerfile. Come minimo, devi aggiungere l'immagine di base da cui creare la tua immagine. Sostituisci `<source_image>` e `<tag>` con il repository di immagini e la tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro registro privato, definisci il percorso completo all'immagine in {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -232,9 +236,9 @@ tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro
    ```
    {: pre}
 
-   dove _&lt;my_namespace&gt;_ indica le informazioni sul tuo spazio dei nomi, _&lt;repo_name&gt;_ è il nome del tuo repository e _&lt;tag&gt;_ è la versione che vuoi utilizzare per la tua immagine. Per trovare il tuo spazio dei nomi, esegui il comando `ibmcloud cr namespace-list`.
+   dove `<my_namespace>` indica le informazioni sul tuo spazio dei nomi, `<repo_name>` è il nome del tuo repository e `<tag>` è la versione che vuoi utilizzare per la tua immagine. Per trovare il tuo spazio dei nomi, esegui il comando `ibmcloud cr namespace-list`.
 
-4. Prendi nota del percorso della directory che contiene il tuo Dockerfile. Se esegui i comandi indicati nella seguente procedura mentre la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire _&lt;directory&gt;_ con un punto (.).
+4. Prendi nota del percorso della directory che contiene il tuo Dockerfile. Se esegui i comandi indicati nella seguente procedura mentre la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire `<directory>` con un punto (.).
 5. Scegli se creare la tua immagine direttamente in {{site.data.keyword.Bluemix_notm}} oppure se creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}.
    - Per creare l'immagine direttamente in {{site.data.keyword.Bluemix_notm}}, esegui questo comando:
 
@@ -243,9 +247,9 @@ tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro
      ```
      {: pre}
 
-     dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory. Se esegui il comando quando la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire _&lt;directory&gt;_ con un punto (.).
+     dove `<image_name>` è il nome della tua immagine e `<directory>` è il percorso alla directory. Se esegui il comando quando la tua directory di lavoro è impostata sulla posizione in cui è memorizzato il contesto di build, puoi sostituire `<directory>` con un punto (.).
   
-     Per ulteriori informazioni sul comando `ibmcloud cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_build).
+     Per ulteriori informazioni sul comando `ibmcloud cr build`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build).
 
    - Per creare e testare la tua immagine in locale prima di eseguirne il push a {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura:
       1. Crea l'immagine dal Dockerfile sul tuo computer locale e contrassegnala tramite tag con il tuo nome immagine.
@@ -255,7 +259,7 @@ tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro
          ```
          {: pre}
 
-         dove _&lt;image_name&gt;_ è il nome della tua immagine e _&lt;directory&gt;_ è il percorso della directory.
+         dove `<image_name>` è il nome della tua immagine e `<directory>` è il percorso alla directory.
 
       2. Facoltativo: testa la tua immagine nel tuo computer locale prima di eseguirne il push al tuo spazio dei nomi.
 
@@ -264,9 +268,9 @@ tag che vuoi utilizzare. Se stai utilizzando un'immagine proveniente da un altro
          ```
          {: pre}
 
-         Sostituisci _&lt;image_name&gt;_ con il nome della tua immagine.
+         Sostituisci `<image_name>` con il nome della tua immagine.
 
-      3. Dopo aver creato la tua immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, [puoi eseguire il push della tua immagine al tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing).
+      3. Dopo aver creato la tua immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, [puoi eseguire il push della tua immagine al tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 Per utilizzare il Controllo vulnerabilità per verificare la sicurezza della tua immagine, vedi [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va/va_index.html).
 
@@ -327,7 +331,7 @@ L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'im
 
 Per eliminare un'immagine utilizzando la GUI, completa la seguente procedura:
 
-1. Accedi alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net)) con il tuo ID IBM.
+1. Accedi alla console {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/login)) con il tuo ID IBM.
 2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
 3. Fai clic su **Catalogo**.
 4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.
@@ -354,7 +358,7 @@ Devi eseguire il backup di tutte immagini che vuoi conservare.
 
 Per eliminare un repository privato utilizzando la GUI, completa la seguente procedura:
 
-1. Accedi alla console {{site.data.keyword.Bluemix_notm}} ([https://console.bluemix.net ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net)) con il tuo ID IBM.
+1. Accedi alla console {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/login)) con il tuo ID IBM.
 2. Se hai più account {{site.data.keyword.Bluemix_notm}}, seleziona l'account e la regione che desideri utilizzare dal menu dell'account.
 3. Fai clic su **Catalogo**.
 4. Seleziona la categoria **Contenitori** e fai clic sul tile **Registro contenitore**.

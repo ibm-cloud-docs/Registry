@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ Si tiene problemas o preguntas cuando utiliza {{site.data.keyword.registrylong_n
 
 Cuando utilice los foros para formular una pregunta, etiquete la pregunta de manera que la vea el equipo de desarrollo de {{site.data.keyword.registrylong_notm}}.
 
-- Si tiene preguntas técnica sobre cómo desarrollar o desplegar una app con {{site.data.keyword.registrylong_notm}}, publique su pregunta en [Stack Overflow ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://stackoverflow.com/search?q=+ibm-bluemix) y etiquete la pregunta con `ibm-bluemix` y `container-registry`.
-- Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Incluya las etiquetas `bluemix` y `container-registry`.
+- Si tiene preguntas técnica sobre cómo desarrollar o desplegar una app con {{site.data.keyword.registrylong_notm}}, publique su pregunta en [Stack Overflow ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://stackoverflow.com/search?q=+ibm-bluemix) y etiquete la pregunta con `ibm-cloud` y `container-registry`.
+- Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Incluya las etiquetas `ibm-cloud` y `container-registry`.
 
 Consulte [Utilización del Centro de soporte](/docs/get-support/howtogetsupport.html#using-avatar) para obtener más detalles sobre el uso de los foros.
 
@@ -59,7 +66,7 @@ Puede solucionar este problema de las siguientes maneras:
 - Asegúrese de que Docker esté instalado en el sistema. Si ya está instalado, reinicie el daemon de Docker.
 - Vuelva a ejecutar el mandato `ibmcloud login` para renovar las credenciales de inicio de sesión en {{site.data.keyword.Bluemix_notm}}.
 
-## La ejecución de cualquier mandato para {{site.data.keyword.registrylong_notm}} falla con `FAILED You are not logged in to IBM Cloud. `
+## La ejecución de cualquier mandato para {{site.data.keyword.registrylong_notm}} falla con `FAILED You are not logged in to IBM Cloud.`
 {: #ts_login_cloud}
 
 No puede ejecutar ningún mandato en {{site.data.keyword.registrylong_notm}}, aunque haya iniciado sesión en {{site.data.keyword.Bluemix_notm}}.
@@ -76,7 +83,7 @@ Puede solucionar este problema de la siguiente manera:
 
 - Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
-## Los mandatos de {{site.data.keyword.registrylong_notm}} fallan con `'cr' no es un mandato registrado. Consulte 'ibmcloud help'. `
+## Los mandatos de {{site.data.keyword.registrylong_notm}} fallan con `'cr' no es un mandato registrado. Consulte 'ibmcloud help'.`
 {: #ts_login_error}
 
 No puede ejecutar un mandato `ibmcloud cr` porque `cr` no es un mandato `ibmcloud` registrado.
@@ -103,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 Puede solucionar este problema de la siguiente manera:
 
-- Instale el plugin de CLI `container-registry`. Consulte [Instalación del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+- Instale el plugin de CLI `container-registry`. Consulte [Instalación del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## El mandato `ibmcloud cr build` falla
 {: #ts_build_fails}
@@ -223,7 +230,7 @@ Los paquetes de software como las imágenes y las gráficas de Helm de IBM Passp
 ### Importación de productos de IBM Passport Advantage para utilizarlos en {{site.data.keyword.Bluemix_notm}}
 {: #ts_ppa_import}
 
-1. Obtenga el archivo comprimido que desea importar de [IBM Passport Advantage![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/software/passportadvantage/index.html).
+1. Obtenga el archivo comprimido que desea importar de [IBM Passport Advantage ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/software/passportadvantage/index.html).
 
 2. Establezca la región que desee utilizar. Si no sabe el nombre de la región, ejecute el mandato sin la región y luego elija una.
 
@@ -336,7 +343,7 @@ Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado 
 
 2. [Configure su entorno de contenido de confianza](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 
-3. Anota el URL desde el mandato export en el paso anterior. Por ejemplo, `https://registry.ng.bluemix.net:4443`.
+3. Anota el URL desde el mandato export en el paso anterior. Por ejemplo, `https://registry.ng.bluemix.net:4443`
 
 4. Genere una señal de registro.
 
@@ -345,7 +352,7 @@ Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado 
    ```
    {: pre}
 
-5. Rote las claves para que el contenido que se ha firmado con dichas claves ya no sea fiable. Sustituya _&lt;URL&gt;_ por el URL del mandato export que ha anotado en el Paso 2, e _&lt;image&gt;_ con la imagen cuya clave de repositorio está afectada.
+5. Rote las claves para que el contenido que se ha firmado con dichas claves ya no sea fiable. Sustituya `<URL>` por el URL del mandato export que ha anotado en el Paso2, y `<image>` por la imagen cuya clave de repositorio esté afectada.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -550,4 +557,18 @@ Para solucionar el problema, realice los pasos siguientes:
    {: pre}
 
 4. Etiquete la imagen mediante el mandato `ibmcloud cr image-tag`. Consulte [Creación de imágenes nuevas que hacen referencia a una imagen de origen](/docs/services/Registry/registry_images_.html#registry_images_source).
-  
+
+## El inicio de sesión de Docker falla en un Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+Recibe el siguiente mensaje de error cuando intenta ejecutar el mandato `ibmcloud cr login` en un Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+Hay un problema con Docker para Mac que impide que sus credenciales se almacenen en la cadena de claves de macOS.
+
+{: tsResolve}
+Puede resolver el problema reiniciando el Mac. Si el reinicio de Mac no funciona, puede inhabilitar el almacenamiento de los inicios de sesión en la cadena de claves del Mac:
+
+1. En el menú, pulse el icono **Docker**, seleccione **Preferencias**.
+2. Desmarque el recuadro de selección **Almacenar de forma segura los inicios de sesión de Docker en la cadena de claves de macOS**.

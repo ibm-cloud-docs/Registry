@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}}-Befehle (`ibmcloud cr`) zum Verwalten von Docker-Images im Namensbereich
 {: #registry_cli_reference}
 
-Sie können das `container-registry`-CLI-Plug-in dazu verwenden, einen eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten {{site.data.keyword.registrylong_notm}}-Registry einzurichten, in der Sie Docker-Images speichern und mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto gemeinsam nutzen können.
+Sie können das `container-registry`-CLI-Plug-in dazu verwenden, einen eigenen Imagenamensbereich in einer von IBM gehosteten und verwalteten privaten Registry einzurichten, in der Sie Docker-Images speichern und mit allen Benutzern in Ihrem {{site.data.keyword.Bluemix}}-Konto gemeinsam nutzen können.
 {:shortdesc}
 
 ## `ibmcloud cr`-Befehle
@@ -27,7 +34,7 @@ Sie können das `container-registry`-CLI-Plug-in dazu verwenden, einen eigenen I
 Führen Sie die `ibmcloud cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
 {:shortdesc}
 
-Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry/registry_cli.html).
+Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern
 {: #registry_cli_listing}
@@ -35,7 +42,7 @@ Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keywo
 Sie können die CLI-Ausgabe für unterstützte {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern.
 {:shortdesc}
 
-Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das `container-registry`-CLI-Plug-in enthält die Formatoption, die Sie verwenden können, um eine Go-Vorlage für die Ausgabe der Befehlszeilenschnittstelle anzuwenden. Die Go-Vorlage ist ein Feature der [Go-Programmiersprache ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://golang.org/pkg/text/template/), mit der Sie die Ausgabe der Befehlszeilenschnittstellen anpassen können. 
+Standardmäßig wird die CLI-Ausgabe in einem lesbaren Format angezeigt. Diese Ansicht kann jedoch Ihre Möglichkeit, die Ausgabe zu verwenden, einschränken, besonders wenn der Befehl programmgesteuert ausgeführt wird. Beispiel: Sie möchten in der CLI-Ausgabe `ibmcloud cr image-list` das Feld `Size` nach numerischer Größe sortieren, der Befehl gibt jedoch einen beschreibenden Text der Größe zurück. Das `container-registry`-CLI-Plug-in enthält die Formatoption, die Sie verwenden können, um eine Go-Vorlage für die Ausgabe der Befehlszeilenschnittstelle anzuwenden. Die Go-Vorlage ist ein Feature der [Go-Programmiersprache ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://golang.org/pkg/text/template/), mit der Sie die Ausgabe der Befehlszeilenschnittstellen anpassen können.
 
 Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei verschiedene Arten anwenden:
 
@@ -117,7 +124,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
-|`Created`|Ganzzahl (64-Bit)|Zeigt den Erstellungszeitpunkt des Images als Sekundenanzahl in [UNIX-Zeit ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) an. |
+|`Created`|Ganzzahl (64-Bit)|Zeigt den Erstellungszeitpunkt des Images als Sekundenanzahl in [UNIX-Zeit ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) an.|
 |`Digest`|Zeichenfolge|Zeigt die eindeutige ID für ein Image an.|
 |`Namespace`|Zeichenfolge|Zeigt den Namensbereich an, in dem das Image gespeichert ist.|
 |`Repository`|Zeichenfolge|Zeigt das Repository des Image an.|
@@ -137,7 +144,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`ID`|Zeichenfolge|Zeigt die eindeutige ID für ein Image an.|
 |`Parent`|Zeichenfolge|Zeigt die ID des übergeordneten Image an, das verwendet wurde, um dieses Image zu erstellen.|
 |`Comment`|Zeichenfolge|Zeigt die Beschreibung des Image an.|
-|`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Erstellungszeitpunkt des Images an. |
+|`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Erstellungszeitpunkt des Images an.|
 |`Container`|Zeichenfolge|Zeigt die ID des Containers an, der das Image erstellt hat.|
 |`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
 |`DockerVersion`|Zeichenfolge|Zeigt die Docker-Version an, die zum Erstellen dieses Image verwendet wurde.|
@@ -210,7 +217,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
 |`ID`|Zeichenfolge|Zeigt die eindeutige ID für ein Token an.|
-|`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Zeitpunkt an, an dem das Token abläuft. |
+|`Expiry`|Ganzzahl (64-Bit)|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Zeitpunkt an, an dem das Token abläuft.|
 |`ReadOnly`|Boolesch|Zeigt _true_ an, wenn für Images nur Pull-Operationen durchgeführt werden können, und _false_, wenn für Images Push- und Pull-Operationen in und aus Ihrem Namensbereich durchgeführt werden können.|
 |`Beschreibung`|Zeichenfolge|Zeigt die Beschreibung des Tokens an.|
 {: caption="Tabelle 6. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr token-list</code>." caption-side="top"}>

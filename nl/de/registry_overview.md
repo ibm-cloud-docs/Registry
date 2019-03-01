@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Informationen zu {{site.data.keyword.registrylong_notm}}
@@ -21,7 +28,7 @@ lastupdated: "2019-01-23"
 Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch verfügbaren und skalierbaren Architektur zu speichern und auf sie zuzugreifen.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können {{site.data.keyword.registrylong_notm}} verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen. 
+{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können {{site.data.keyword.registrylong_notm}} verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
 
 <img src="images/registry_architecture1.svg" alt="Abbildung, die darstellt, wie Sie mit IBM Cloud Container Registry interagieren können. Container Registry enthält private und öffentliche Repositorys sowie APIs, die mit dem Service interagieren. Der lokale Docker-Client kann Images aus Ihren privaten Repositorys mit Push- und Pull-Operationen in die Registry übertragen oder aus ihr abrufen und kann Images mit Pull-Operationen aus öffentlichen Repositorys abrufen. Die IBM Cloud-Webschnittstelle (Konsole) interagiert mit der Container Registry-API, um die Images aufzulisten. Die Container Registry-CLI interagiert mit der API, um Images aufzulisten, zu erstellen, zu überprüfen und zu entfernen und weitere Verwaltungsfunktionen auszuführen. Der lokale Docker-Client kann darüber hinaus Images aus dem lokalen Imagespeicher mit Push- und Pull-Operationen in andere Registrys übertragen oder aus ihnen abrufen."/>
 
@@ -31,7 +38,7 @@ Jeder von Ihnen erstellte Container basiert auf einem Docker-Image. Ein Image wi
 
 Wenn Sie Images mit einer Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen, profitieren Sie von den integrierten Vulnerability Advisor-Funktionen, die nach potenziellen Sicherheitsproblemen und Schwachstellen suchen. Vulnerability Advisor prüft auf gefährdete Pakete in bestimmten Basis-Docker-Images und bekannte Sicherheitslücken in App-Einstellungen. Werden Sicherheitslücken gefunden, so werden Informationen zu der Sicherheitslücke bereitgestellt. Sie können diese Informationen verwenden, um Sicherheitsprobleme zu beheben, sodass Container nicht über gefährdete Images bereitgestellt werden.
 
-Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung von {{site.data.keyword.registrylong_notm}}. 
+Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung von {{site.data.keyword.registrylong_notm}}.
 
 |Nutzen|Beschreibung|
 |-------|-----------|
@@ -271,7 +278,7 @@ Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regio
 
 Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `ibmcloud cr region-set` verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.
 
-Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie _&lt;Region&gt;_ durch den Namen der jeweiligen Region, z. B. `eu-central`.
+Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie `<Region>` durch den Namen der jeweiligen Region, z. B. `eu-central`.
 
 ```
 ibmcloud cr region-set <Region>
@@ -302,13 +309,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
+Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
 
 Nach der Angabe der globalen Registry führen Sie den Befehl `ibmcloud cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
 
 ## Unterstützung für Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version. Weitere Informationen finden Sie in der [Docker-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/v1.12/). 
+{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
 
-Docker ist nur für die Ausführung von Push- oder Pull-Operationen für Images oder für die Ausführung des Befehls `ibmcloud cr ppa-archive-load` erforderlich. 
+Docker ist nur für die Ausführung von Push- oder Pull-Operationen für Images oder für die Ausführung des Befehls `ibmcloud cr ppa-archive-load` erforderlich.

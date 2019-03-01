@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Acerca de {{site.data.keyword.registrylong_notm}}
@@ -25,7 +32,7 @@ Utilice {{site.data.keyword.registrylong}} para almacenar y acceder a imágenes 
 
 <img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo puede interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios privados y públicos y API para interactuar con el servicio. El cliente Docker puede extraer y enviar imágenes a y desde los repositorios privados del registro y puede extraer repositorios públicos. La interfaz de usuario web (consola) de IBM Cloud interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. El cliente Docker local también puede extraer y enviar imágenes del almacén de imágenes local a otros registros."/>
 
-**Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker **
+**Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker**
 
 Una imagen de Docker es la base para todos los contenedores que cree. Una imagen se crea a partir de un Dockerfile, que es un archivo que contiene las instrucciones para crear la imagen. Un Dockerfile podría hacer referencia a los artefactos de compilación en sus instrucciones que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias. Las imágenes se almacenan normalmente en un registro que puede ser accesible para el público (registro público) o configurado con acceso limitado para un pequeño grupo de usuarios (registro privado). Mediante {{site.data.keyword.registrylong_notm}}, sólo los usuarios con acceso a su cuenta de {{site.data.keyword.Bluemix_notm}} pueden acceder a sus imágenes.
 
@@ -78,7 +85,7 @@ Ejemplo de transferencia de imágenes:
 En función del plan de servicio que elija, se le facturará el almacenamiento y el tráfico de extracción que utilice al mes.
 {:shortdesc}
 
-**Almacenamiento: **
+**Almacenamiento:**
 
   Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
 
@@ -92,7 +99,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 
   
 
-**Tráfico de extracción: **
+**Tráfico de extracción:**
 
   Cada plan de servicio de {{site.data.keyword.registrylong_notm}} incluye una determinada cantidad de tráfico de extracción gratuito de imágenes privadas almacenadas en el espacio de nombres. El tráfico de extracción es el ancho de banda que se utiliza para extraer una capa de una imagen del espacio de nombres en la máquina local. Si tiene el plan estándar, se le facturará por GB de uso al mes. Los 5 primeros GB son gratuitos. Si tiene el plan gratuito, puede extraer imágenes del espacio de nombres hasta alcanzar el límite de cuota del plan gratuito.
 
@@ -110,7 +117,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 En función del plan de servicio que elija, puede transferir imágenes al espacio de nombres y extraer imágenes del mismo hasta alcanzar los límites de cuota específicos del plan o personalizados.
 {:shortdesc}
 
-**Almacenamiento: **
+**Almacenamiento:**
 
   Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que [libere espacio eliminando imágenes](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](/docs/services/Registry/registry_quota.html#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
 
@@ -120,7 +127,7 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
   >
   > Después de la transferencia, {{site.data.keyword.registrylong_notm}} determina el tamaño real de la imagen en el espacio de nombres, que puede variar con respecto al tamaño en la máquina local, y comprueba si se ha alcanzado el límite de almacenamiento. En este ejemplo, el uso de almacenamiento aumenta de 900 MB a 2 GB. Como el límite de cuota actual está establecido en 1 GB, {{site.data.keyword.registrylong_notm}} le impide transferir más imágenes al espacio de nombres.
 
-**Tráfico de extracción: **
+**Tráfico de extracción:**
 
   Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](/docs/services/Registry/registry_quota.html#registry_quota_set).
 
@@ -272,7 +279,7 @@ Todos los artefactos de registro abarcan el registro regional específico con el
 
 Si desea utilizar una región diferente a su región local, puede acceder a la región que desea, si ejecuta el mandato `ibmcloud cr region-set`. Puede ejecutar el mandato sin parámetros para obtener una lista de regiones disponibles, o puede especificar la región como un parámetro.
 
-Para ejecutar el mandato con parámetros, substituya _&lt;region&gt;_ con el nombre de la región, por ejemplo, `eu-central`.
+Para ejecutar el mandato con parámetros, sustituya `<region>` por el nombre de la región, por ejemplo, `eu-central`.
 
 ```
 ibmcloud cr region-set <region>
@@ -303,13 +310,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
+Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
 
 Después de haber accedido al registro global, ejecute el mandato `ibmcloud cr login` para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.
 
 ## Soporte para Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior. Consulte la [Documentación de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/v1.12/).
+{{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
 
 Docker solo es necesario si desea enviar por push o extraer imágenes, o si desea ejecutar el mandato `ibmcloud cr ppa-archive-load`.

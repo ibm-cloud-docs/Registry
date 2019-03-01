@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Gestion des limites de quota pour le stockage et le trafic d'extraction
@@ -71,13 +78,7 @@ d'extraction (pull).
     ```
     {: screen}
 
-3. Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction, indiquez l'option
-**traffic** et remplacez
-_&lt;quota_trafic&gt;_ par la valeur en mégaoctets que vous souhaitez
-définir pour le quota de trafic d'extraction. Si vous voulez modifier le volume de
-stockage de votre compte, indiquez l'option **storage** et
-remplacez _&lt;quota_stockage&gt;_ par la valeur en mégaoctets que vous
-voulez définir.
+3. Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction (pull), indiquez l'option **traffic** et remplacez `<traffic_quota>` par la valeur en mégaoctets que vous voulez définir pour le quota de trafic d'extraction. Si vous voulez modifier le volume de stockage de votre compte, indiquez l'option **storage** et remplacez `<storage_quota>` par la valeur en mégaoctets que vous voulez définir.
 
     Si vous bénéficiez du plan gratuit, vous ne pouvez pas définir comme quota une
 quantité qui dépasse le niveau gratuit. La franchise du niveau gratuit pour le stockage
@@ -152,7 +153,7 @@ Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix
     ```
     {: pre}
 
-2. Retirez une image de votre espace de nom. Remplacez _&lt;image_name&gt;_ par le nom de l'image que vous voulez supprimer.
+2. Retirez une image de votre espace de nom. Remplacez `<image_name>` par le nom de l'image que vous voulez supprimer.
 
     ```
     ibmcloud cr image-rm <image_name>

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # イメージの脆弱性のモニタリング
@@ -30,7 +37,7 @@ lastupdated: "2019-01-04"
 
 グラフィカル・ユーザー・インターフェースを表示するには、以下の手順を使用します。
 
-1. IBMid を使用して {{site.data.keyword.Bluemix_notm}} コンソール ([https://console.bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net)) にログインします。
+1. IBMid を使用して {{site.data.keyword.cloud_notm}} コンソール ([https://cloud.ibm.com/login ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login)) にログインします。
 2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。

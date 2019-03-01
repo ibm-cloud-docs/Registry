@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
+
+
+subcollection: registry
 
 ---
 
@@ -13,6 +18,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Initiation à {{site.data.keyword.registrylong_notm}}
@@ -32,7 +40,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Installez l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Installez l'[interface de ligne de commande d'{{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://clis.ng.bluemix.net/ui/home.html) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
+1. Installez l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview) pour pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
 
 ## Configurez un espace de nom
 {: #registry_namespace_add}
@@ -44,8 +52,14 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    ```
    {: pre}
 
-2. Ajoutez un espace de nom pour créer votre propre registre d'images. Remplacez
-_&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
+   Si vous possédez un ID fédéré, connectez-vous à l'aide de la commande suivante :
+
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+2. Ajoutez un espace de nom pour créer votre propre registre d'images. Remplacez `<my_namespace>` par l'espace de nom de votre choix.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -63,32 +77,30 @@ _&lt;my_namespace&gt;_ par l'espace de nom de votre choix.
 {: #registry_images_pulling}
 
 1. [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si
-vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur. 
+vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
 
-2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez _&lt;source_image&gt;_ par le référentiel de l'image et _&lt;tag&gt;_ par la balise de l'image que vous souhaitez utiliser, par exemple, _latest_.
+2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par la balise de l'image que vous voulez utiliser, par exemple, _latest_.
 
    ```
    docker pull <source_image>:<tag>
    ```
    {: pre}
 
-   Exemple, où _&lt;source_image&gt;_ correspond à `hello-world` et _&lt;tag&gt;_ à `latest` :
+   Exemple, où `<source_image>` est `hello-world` et `<tag>` est `latest`:
 
    ```
    docker pull hello-world:latest
    ```
    {: pre}
 
-3. Attribuez une étiquette à l'image. Remplacez _&lt;source_image&gt;_ par le référentiel et
-_&lt;tag&gt;_ par celle de l'image locale extraite auparavant. Remplacez _&lt;region&gt;_ par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions). Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous désirez utiliser dans votre espace de nom en remplaçant
-_&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
+3. Attribuez une étiquette à l'image. Remplacez `<source_image>` par le référentiel et `<tag>` par la balise de votre image locale extraite précédemment. Remplacez `<region>` par le nom de votre [région](/docs/services/Registry/registry_overview.html#registry_regions). Remplacez `<my_namespace>` par l'espace de nom que vous avez créé à l'étape [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add). Définissez le référentiel et la balise que vous voulez utiliser dans votre espace de nom en remplaçant `<new_image_repo>` et `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Exemple, où _&lt;source_image&gt;_ correspond à `hello-world`, _&lt;tag&gt;_ à `latest`, _&lt;region&gt;_ à `eu-gb`, _&lt;my_namespace&gt;_ à `namespace1`, _&lt;new_image_repo&gt;_ à `hw_repo` et _&lt;new_tag&gt;_ à `1`:
+   Exemple, où `<source_image>` est `hello-world`, `<tag>` est `latest`, `<region>` est `eu-gb`, `<my_namespace>` est `namespace1`, `<new_image_repo>` est `hw_repo` et `<new_tag>` est `1` :
 
    ```
    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
@@ -105,19 +117,20 @@ _&lt;new_image_repo&gt;_ et _&lt;new_tag&gt;_.
    ```
    {: pre}
 
-2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez _&lt;my_namespace&gt;_ par l'espace de nom que vous avez créé lors de la tâche [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add) et _&lt;image_repo&gt;_ et _&lt;tag&gt;_ par le référentiel et l'étiquette de l'image choisie lorsque vous l'avez libellée.
+2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez `<my_namespace>` par l'espace de nom que vous avez créé à l'étape [Configuration d'un espace de nom](/docs/services/Registry/index.html#registry_namespace_add), et remplacez `<image_repo>` et `<tag>` par le référentiel et la balise de l'image choisie lorsque vous avez balisé l'image.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
 
-   Exemple, où _&lt;region&gt;_ correspond à `eu-gb`, _&lt;my_namespace&gt;_ à `namespace1`, _&lt;image_repo&gt;_ à `hw_repo` et _&lt;tag&gt;_ à `1`:
+   Exemple, où `<region>` est `eu-gb`, `<my_namespace>` est `namespace1`, `<image_repo>` est `hw_repo`et `<tag>` est `1`:
 
    ```
    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
    ```
    {: pre}
+   
 
 3. Vérifiez que le transfert de l'image a abouti en exécutant la commande suivante.
 

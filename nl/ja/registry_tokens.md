@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} へのアクセスの自動化
@@ -32,7 +39,7 @@ API キーを使用すると、IAM ポリシーを使用して名前空間への
 
 {{site.data.keyword.registrylong_notm}} API キーについて詳しくは、[API キーの処理](/docs/iam/apikeys.html#manapikey)を参照してください。
 
-始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+始めに、[{{site.data.keyword.registrylong_notm}} および Docker CLI をインストールします](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
 
 ## API キーを使用した名前空間へのアクセスの自動化
 {: #registry_api_key}
@@ -57,7 +64,7 @@ API キーを使用して、名前空間との間で行う Docker イメージ�
 API キーを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化できます。
 {:shortdesc}
 
-次の Docker コマンドを実行して、API キーでレジストリーにログインします。 &lt;your_apikey&gt; を API キーに置き換え、&lt;registry_url&gt; を名前空間がセットアップされているレジストリーの URL に置き換えてください。
+次の Docker コマンドを実行して、API キーでレジストリーにログインします。 `<your_apikey>` を API キーに置き換え、`<registry_url>` を、名前空間がセットアップされているレジストリーの URL に置き換えてください。
 
 - 米国南部でセットアップされている名前空間の場合、`registry.ng.bluemix.net` を使用
 - 英国南部でセットアップされている名前空間の場合、`registry.eu-gb.bluemix.net` を使用
@@ -77,7 +84,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 トークンを使用して、{{site.data.keyword.registrylong_notm}} 名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
 {:shortdesc}
 
-レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。 領域内にセットアップしたすべての名前空間にアカウントの外部のユーザーがアクセスできるようにするため、{{site.data.keyword.Bluemix_notm}} アカウントのトークンを作成できます。このトークンを所有するすべてのユーザーまたはアプリは、`container-registry` CLI プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
+レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。 領域内にセットアップしたすべての名前空間にアカウントの外部のユーザーがアクセスできるようにするため、{{site.data.keyword.Bluemix_notm}} アカウントのトークンを作成できます。 このトークンを所有するすべてのユーザーまたはアプリは、`container-registry` CLI プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
 
 {{site.data.keyword.Bluemix_notm}} アカウント用のトークンを作成する際に、そのトークンがレジストリーへの読み取り専用アクセス (プル) を許可するのか、それとも書き込みアクセス (プッシュおよびプル) を許可するのかを決定できます。 また、トークンを永続的にするか、または 24 時間後に期限切れするかについても指定できます。 複数のトークンを作成および使用して、さまざまなタイプのアクセスを制御することができます。
 
@@ -158,7 +165,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    ```
    {: pre}
 
-3. トークンのトークン値を取得します。 &lt;token_id&gt; は、トークンの ID に置換してください。
+3. トークンのトークン値を取得します。 `<token_id>` をトークンの ID に置き換えてください。
 
    ```
    ibmcloud cr token-get <token_id>
@@ -167,7 +174,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
     CLI 出力の**「トークン」**に、トークン値が表示されます。
 
-4. トークンを `docker login` コマンドの一部として使用します。 &lt;token_value&gt; を、前の手順で取得したトークン値に置換し、&lt;registry_url&gt; を、名前空間がセットアップされているレジストリーの URL に置換します。
+4. トークンを `docker login` コマンドの一部として使用します。 `<token_value>` を、前の手順で取得したトークン値に置き換え、`<registry_url>` を、名前空間がセットアップされているレジストリーの URL に置き換えます。
 
    - 米国南部でセットアップされている名前空間の場合、`registry.ng.bluemix.net` を使用
    - 英国南部でセットアップされている名前空間の場合、`registry.eu-gb.bluemix.net` を使用
@@ -237,6 +244,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-_&lt;apikey&gt;_ を API キーに、_&lt;region&gt;_ を[領域](/docs/services/Registry/registry_overview.html#registry_regions)の名前に、_&lt;my_namespace&gt;_ を名前空間に、_&lt;image_repo&gt;_ をリポジトリーに置き換えてください。
+`<apikey>` を API キーに、`<region>` を[領域](/docs/services/Registry/registry_overview.html#registry_regions)の名前に、`<my_namespace>` を名前空間に、`<image_repo>` をリポジトリーに置き換えてください。
 
 詳しくは、[プライベート・イメージ・レジストリーの使用](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)を参照してください。

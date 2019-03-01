@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,17 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Comandos do {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) para gerenciar imagens do Docker em seu namespace
 {: #registry_cli_reference}
 
-É possível usar o plug-in da CLI `container-registry` para configurar o seu próprio namespace de imagem em um registro privado do {{site.data.keyword.registrylong_notm}} hospedado e gerenciado pela IBM, no qual é possível armazenar e compartilhar as imagens do Docker com todos os usuários em sua conta do {{site.data.keyword.Bluemix}}.
+É possível usar o plug-in da CLI `container-registry` para configurar o seu próprio namespace de
+imagem em um registro privado hospedado e gerenciado pela IBM, no qual é possível armazenar e compartilhar imagens do
+Docker com todos os usuários em sua conta do {{site.data.keyword.Bluemix}}.
 {:shortdesc}
 
 ## Comandos `ibmcloud cr`
@@ -27,7 +36,7 @@ lastupdated: "2019-01-23"
 Execute comandos `ibmcloud cr` na CLI do {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Para comandos suportados, consulte [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html).
+Para comandos suportados, consulte [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html).
 
 ## Formatando e filtrando a saída da CLI para comandos do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -61,9 +70,9 @@ Os exemplos de código a seguir demonstram como você pode usar as opções de f
 
   ```
   example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-  example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 

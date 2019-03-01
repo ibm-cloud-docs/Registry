@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Gerenciando os limites de cota para armazenamento e tráfego de pull
@@ -65,12 +72,10 @@ saída é semelhante à mostrada a seguir.
     ```
     {: screen}
 
-3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso de
-tráfego extraído, especifique a opção **tráfego** e substitua
-_&lt;traffic_quota&gt;_ pelo valor em megabytes que você deseja configurar para a cota
-de tráfego extraído. Se você deseja mudar a quantia de armazenamento em sua conta, especifique a
-opção **armazenamento** e substitua _&lt;storage_quota&gt;_ pelo
-valor em megabytes que você deseja configurar.
+3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso do tráfego de pull, especifique a opção **tráfego** e substitua `<traffic_quota>`
+pelo valor em megabytes que você deseja configurar para a cota de tráfego de pull. Se desejar mudar a quantia de
+armazenamento em sua conta, especifique a opção **armazenamento** e substitua `<storage_quota>`
+pelo valor em megabytes que você deseja configurar.
 
     Se você estiver no plano grátis, não será possível configurar sua cota para uma quantia que excede a camada grátis. O abono da camada grátis para armazenamento é de 512 MB e o tráfego é de 5120 MB.
     {:tip}
@@ -139,8 +144,7 @@ Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluem
     ```
     {: pre}
 
-2. Remova uma imagem de seu namespace. Substitua
-_&lt;image_name&gt;_ pelo nome da imagem que você deseja remover.
+2. Remova uma imagem de seu namespace. Substitua `<image_name>` pelo nome da imagem que você deseja remover.
 
     ```
     ibmcloud cr image-rm <image_name>

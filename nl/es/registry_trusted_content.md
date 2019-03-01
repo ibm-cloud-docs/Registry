@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Firma de imágenes para contenido de confianza
@@ -113,7 +120,12 @@ Antes de empezar, [configure su espacio de nombres de registro](/docs/services/R
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. [Envíe su imagen](/docs/services/Registry/index.html#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato que ve, "Firma y envío de metadatos de imagen".
+2. [Envíe su imagen](/docs/services/Registry/index.html#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) son limitadas.
 
@@ -125,7 +137,7 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. Extraiga la imagen. Sustituya _&lt;source_image&gt;_ por el repositorio de la imagen y _&lt;tag&gt;_ por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
+2. Extraiga la imagen. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -151,7 +163,7 @@ Puede revisar versiones firmadas de un repositorio de imágenes o de una etiquet
 
 2. Revise la información de la etiqueta, del resumen y del firmante para cada imagen.
 
-   (Opcional) Especifique la etiqueta, _&lt;tag&gt;_, para ver información sobre la versión de la imagen.
+   (Opcional) Especifique la etiqueta, `<tag>`, para ver información sobre la versión de la imagen.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -234,7 +246,7 @@ Para compartir las claves de firma:
 
 1. Si el nuevo firmante aún no ha generado un par de claves, este debe generarse y cargarse.
   
-    a. Generar la clave. Puede especificar cualquier nombre para _&lt;NAME&gt;_; sin embargo, el nombre que seleccione es visible cuando alguien inspeccione la confianza en el repositorio. Trabaje con el propietario del repositorio para satisfacer los convenios de denominación que pueden ser utilizados por la organización y para seleccionar un nombre que sea identificable para dicho firmante.
+    a. Generar la clave. Puede especificar cualquier nombre para `<NAME>`, sin embargo, el nombre que seleccione es visible cuando alguien inspeccione la confianza en el repositorio. Trabaje con el propietario del repositorio para satisfacer los convenios de denominación que pueden ser utilizados por la organización y para seleccionar un nombre que sea identificable para dicho firmante.
 
       ```
       docker trust key generate <NAME>

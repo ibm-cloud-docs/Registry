@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Images für vertrauenswürdige Inhalte signieren
@@ -113,7 +120,12 @@ Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/service
 
 1. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry/index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: "Signing and pushing image metadata." (Image-Metadaten werden signiert und mit Push-Operation übertragen.)
+2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry/index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: 
+
+   ```
+   Image-Metadaten werden signiert und mit Push-Operation übertragen.
+   ```
+   {: screen}
 
 3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) begrenzt sind.
 
@@ -125,7 +137,7 @@ Beim erstmaligen Extrahieren eines signierten Image mit Pull-Operation bei aktiv
 
 1. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2. Extrahieren Sie Ihr Image mit Pull-Operation. Ersetzen Sie _&lt;source_image&gt;_ durch das Repository des Image und _&lt;tag&gt;_ durch den zu verwendenden Tag des Image, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `ibmcloud cr image-list` aus.
+2. Extrahieren Sie Ihr Image mit Pull-Operation. Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `ibmcloud cr image-list` aus.
 
    ```
    docker pull <quellenimage>:<tag>
@@ -151,7 +163,7 @@ Sie können signierte Versionen eines Image oder Tags und auch die Informationen
 
 2. Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image.
 
-   (Optional) Geben Sie den Tag _&lt;tag&gt;_ an, um Informationen zu dieser Version des Images anzuzeigen.
+   (Optional) Den Tag, `<tag>`, angeben, um Informationen zu dieser Version des Images anzuzeigen. 
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -234,7 +246,7 @@ Zum Freigeben von Signierschlüsseln gehen Sie folgendermaßen vor:
 
 1. Wenn der neue Unterzeichner noch kein Schlüsselpaar generiert hat, muss ein Schlüsselpaar generiert und geladen werden.
   
-    a. Generieren Sie den Schlüssel. Für _&lt;NAME&gt;_ können Sie einen beliebigen Namen eingeben; allerdings ist der von Ihnen gewählte Name sichtbar, wenn jemand die Vertrauensbeziehung im Repository untersucht. Arbeiten Sie mit dem Repository-Eigner zusammen, um alle Namenskonventionen zu erfüllen, die von der Organisation vielleicht verwendet werden, und um einen Namen auszuwählen, der für diesen Unterzeichner identifizierbar ist.
+    a. Generieren Sie den Schlüssel. Es kann ein beliebiger Name für `<NAME>` eingegeben werden, der ausgewählte Name ist jedoch sichtbar, wenn die Vertrauensbeziehung im Repository überprüft wird. Arbeiten Sie mit dem Repository-Eigner zusammen, um alle Namenskonventionen zu erfüllen, die von der Organisation vielleicht verwendet werden, und um einen Namen auszuwählen, der für diesen Unterzeichner identifizierbar ist.
 
       ```
       docker trust key generate <NAME>

@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
+
+
+subcollection: registry
 
 ---
 
@@ -13,6 +18,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Introdução ao {{site.data.keyword.registrylong_notm}}
@@ -30,9 +38,8 @@ exemplo, nomes ou rótulos de imagem).
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Instale a CLI do [{{site.data.keyword.Bluemix_notm}}
-![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://clis.ng.bluemix.net/ui/home.html) para que os
-comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
+1. Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview) para que
+você possa executar os comandos `ibmcloud` do {{site.data.keyword.Bluemix_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
 
 ## Configurar um namespace
 {: #registry_namespace_add}
@@ -44,7 +51,15 @@ comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados.
    ```
    {: pre}
 
-2. Inclua um namespace para criar seu próprio repositório de imagem. Substitua _&lt;my_namespace&gt;_ pelo seu namespace preferencial.
+   Se você tiver uma identidade federada, efetue login usando o comando a seguir:
+
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+2. Inclua um namespace para criar seu próprio repositório de imagem. Substitua `<my_namespace>` por seu namespace
+preferencial.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -63,30 +78,32 @@ comandos do {{site.data.keyword.Bluemix_notm}} `ibmcloud` possam ser executados.
 
 1. [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
-2. Faça download (_puxe_) da imagem para sua máquina local. Substitua _&lt;source_image&gt;_ pelo repositório da imagem e _&lt;tag&gt;_ pela tag da imagem que deseja usar, por exemplo, _latest_.
+2. Faça download (_puxe_) da imagem para sua máquina local. Substitua `<source_image>` pelo repositório
+da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _latest_.
 
    ```
    docker pull <source_image>:<tag>
    ```
    {: pre}
 
-   Exemplo, em que _&lt;source_image&gt;_ é `hello-world` e _&lt;tag&gt;_ é `latest`:
+   Veja este exemplo, em que `<source_image>` é `hello-world` e `<tag>` é `latest`:
 
    ```
    docker pull hello-world:latest
    ```
    {: pre}
 
-3. Identifique a imagem. Substitua _&lt;source_image&gt;_ pelo repositório e
-_&lt;tag&gt;_ pela tag de sua imagem local extraída anteriormente. Substitua _&lt;region&gt;_ pelo nome de sua [região](/docs/services/Registry/registry_overview.html#registry_regions). Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add). Defina o repositório e identifique a imagem que você deseja usar
-em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
+3. Identifique a imagem. Substitua `<source_image>` pelo repositório e `<tag>` pela tag de sua
+imagem local cujo pull você fez anteriormente. Substitua `<region>` pelo nome de sua
+[região](/docs/services/Registry/registry_overview.html#registry_regions). Substitua `<my_namespace>` pelo namespace criado em [Configurar
+um namespace](/docs/services/Registry/index.html#registry_namespace_add). Defina o repositório e a tag da imagem que você deseja usar em seu namespace substituindo <new_image_repo>  e  <new_tag>.
 
    ```
    docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Exemplo, em que _&lt;source_image&gt;_ é `hello-world`, _&lt;tag&gt;_ é `latest`, _&lt;region&gt;_ é `eu-gb`, _&lt;my_namespace&gt;_ é `namespace1`, _&lt;new_image_repo&gt;_ é `hw_repo` e _&lt;new_tag&gt;_ é `1`:
+   Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>` é `eu-gb`, `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
 
    ```
    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1 /hw_repo: 1
@@ -103,19 +120,22 @@ em seu namespace substituindo _&lt;new_image_repo&gt;_ e _&lt;new_tag&gt;_.
    ```
    {: pre}
 
-2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua _&lt;my_namespace&gt;_ pelo namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add) e _&lt;image_repo&gt;_ e _&lt;tag&gt;_ pelo repositório e a tag da imagem que você escolheu quando identificou a imagem.
+2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua `<my_namespace>` pelo
+namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add) e `<image_repo>`  e  `<tag>` pelo repositório e pela tag da imagem escolhidos ao identificar a imagem.
 
    ```
    docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
 
-   Exemplo, em que _&lt;region&gt;_ é `eu-gb`, _&lt;my_namespace&gt;_ é `namespace1`, _&lt;image_repo&gt;_ é `hw_repo` e _&lt;tag&gt;_ é `1`:
+   Veja este exemplo, em que `<region>` é `eu-gb`, `<my_namespace>` é `namespace1`,
+`<image_repo>` é `hw_repo` e `<tag>` é `1`:
 
    ```
    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
    ```
    {: pre}
+   
 
 3. Verifique se a imagem foi enviada por push com sucesso executando o comando a seguir.
 

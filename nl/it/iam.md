@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Gestione dell'accesso utente con Identity and Access Management (IAM)
@@ -59,10 +66,10 @@ Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
 
 | Azione| Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry/registry_cli.html#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. | Amministratore |
-| `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry/registry_cli.html#bx_cr_token_rm) Rimuovi uno o più token specificati. | Amministratore |
-| `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry/registry_cli.html#bx_cr_token_get) Richiama il token specificato dal registro. | Amministratore |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli.html#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.Bluemix_notm}}. | Amministratore |
+| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. | Amministratore |
+| `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_rm) Rimuovi uno o più token specificati. | Amministratore |
+| `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_get) Richiama il token specificato dal registro. | Amministratore |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.Bluemix_notm}}. | Amministratore |
 {: caption="Tabella 2. Operazioni e azioni della piattaforma per la configurazione di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Ruoli di accesso al servizio
@@ -93,12 +100,12 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 | Azione| Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
-| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) Abilita l'applicazione della politica IAM. | Gestore |
-| `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_add) Crea un'esenzione per un problema di sicurezza.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_list) Elenca le tue esenzioni per i problemi di sicurezza.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_rm) Elimina un'esenzione per un problema di sicurezza.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_types) Elenca i tipi dei problemi di sicurezza che puoi esentare.</li></ul> | Gestore |
-| `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/services/Registry/registry_cli.html#bx_cr_plan) Visualizza il tuo piano dei prezzi. | Gestore |
-| `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/services/Registry/registry_cli.html#bx_cr_plan_upgrade) Esegui l'upgrade al piano standard. | Gestore |
-| `container-registry.quota.get` | [`ibmcloud cr quota`](/docs/services/Registry/registry_cli.html#bx_cr_quota) Visualizza le tue quote correnti per traffico e archiviazione e le informazioni di utilizzo rispetto a tali quote. | Lettore, Scrittore e Gestore |
-| `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/services/Registry/registry_cli.html#bx_cr_quota_set) Modifica la quota specificata. | Gestore |
+| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) Abilita l'applicazione della politica IAM. | Gestore |
+| `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_add) Crea un'esenzione per un problema di sicurezza.</li><li>[`ibmcloud cr exemption-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_list) Elenca le tue esenzioni per i problemi di sicurezza.</li><li>[`ibmcloud cr exemption-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_rm) Elimina un'esenzione per un problema di sicurezza.</li><li>[`ibmcloud cr exemption-types`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_types) Elenca i tipi dei problemi di sicurezza che puoi esentare.</li></ul> | Gestore |
+| `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan) Visualizza il tuo piano dei prezzi. | Gestore |
+| `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan_upgrade) Esegui l'upgrade al piano standard. | Gestore |
+| `container-registry.quota.get` | [`ibmcloud cr quota`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota) Visualizza le tue quote correnti per traffico e archiviazione e le informazioni di utilizzo rispetto a tali quote. | Lettore, Scrittore e Gestore |
+| `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota_set) Modifica la quota specificata. | Gestore |
 {: caption="Tabella 4. Operazioni e azioni del servizio per la configurazione di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ### Ruoli di accesso per l'utilizzo di {{site.data.keyword.registrylong_notm}}
@@ -115,15 +122,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 | Azione | Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
-| `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build) Crea un'immagine contenitore. | Scrittore, Gestore |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm) Elimina una o più immagini.</li><li>`docker trust revoke` Elimina la firma. </li></ul> | Scrittore, Gestore |
-| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect) Visualizza i dettagli di un'immagine specifica. | Lettore, Gestore |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list) Elenca le tue immagini contenitore. | Lettore, Gestore |
+| `container-registry.image.build` | [`ibmcloud cr build`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build) Crea un'immagine contenitore. | Scrittore, Gestore |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_rm) Elimina una o più immagini.</li><li>`docker trust revoke` Elimina la firma. </li></ul> | Scrittore, Gestore |
+| `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_inspect) Visualizza i dettagli di un'immagine specifica. | Lettore, Gestore |
+| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_list) Elenca le tue immagini contenitore. | Lettore, Gestore |
 | `container-registry.image.pull` | <ul><li>`docker pull` Esegui il pull dell'immagine. </li><li>`docker trust inspect` Controlla la firma. </li></ul> | Lettore, Scrittore e Gestore |
-| `container-registry.image.push` | <ul><li>`docker push` Esegui il push dell'immagine.</li><li>`docker trust sign` Firma l'immagine.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load) Importa il software IBM scaricato da [IBM Passport Advantage Online for customers ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e impacchettato per essere utilizzato con Helm nel tuo spazio dei nomi {{site.data.keyword.registrylong_notm}}.</li></ul> | Scrittore, Gestore |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag) Crea una nuova immagine che fa riferimento a un'immagine di origine. Le immagini di origine e di destinazione devono essere nella stessa regione. | Lettore, Scrittore o Gestore per l'immagine di origine; Scrittore o Gestore per l'immagine di destinazione |
-| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va) Visualizza un report di valutazione delle vulnerabilità per la tua immagine. | Lettore, Gestore |
-| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add) Aggiungi uno spazio dei nomi. | Scrittore, Gestore |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm) Rimuovi uno spazio dei nomi. | Scrittore, Gestore |
-| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list) Visualizza il tuo spazio dei nomi. | Lettore, Gestore |
+| `container-registry.image.push` | <ul><li>`docker push` Esegui il push dell'immagine.</li><li>`docker trust sign` Firma l'immagine.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_ppa_archive_load) Importa il software IBM scaricato da [IBM Passport Advantage Online for customers ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e impacchettato per essere utilizzato con Helm nel tuo spazio dei nomi {{site.data.keyword.registrylong_notm}}.</li></ul> | Scrittore, Gestore |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag) Crea una nuova immagine che fa riferimento a un'immagine di origine. Le immagini di origine e di destinazione devono essere nella stessa regione. | Lettore, Scrittore o Gestore per l'immagine di origine; Scrittore o Gestore per l'immagine di destinazione |
+| `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va) Visualizza un report di valutazione delle vulnerabilità per la tua immagine. | Lettore, Gestore |
+| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add) Aggiungi uno spazio dei nomi. | Scrittore, Gestore |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm) Rimuovi uno spazio dei nomi. | Scrittore, Gestore |
+| `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list) Visualizza il tuo spazio dei nomi. | Lettore, Gestore |
 {: caption="Tabella 5. Operazioni e azioni del servizio per l'utilizzo di {{site.data.keyword.registrylong_notm}}" caption-side="top"}

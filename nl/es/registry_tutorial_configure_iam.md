@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Guía de aprendizaje: Cómo otorgar acceso a los recursos de {{site.data.keyword.registrylong_notm}}
@@ -29,7 +36,7 @@ Esta guía de aprendizaje dura aproximadamente 45 minutos.
 
 - Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
-- Debe tener acceso a dos cuentas de [ {{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.bluemix.net/) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
+- Debe tener acceso a dos cuentas de [{{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
 
 - Si ha empezado a utilizar {{site.data.keyword.registrylong_notm}} en su cuenta antes del 4 de octubre de 2018, debe habilitar la imposición de políticas de IAM ejecutando el mandato `ibmcloud cr iam-policies-enable`. Si ha invitado a otros usuarios que utilizan sus espacios de nombres de {{site.data.keyword.registrylong_notm}} en su cuenta de IBM Cloud, utilice una cuenta distinta como Usuario A para evitar la interrupción de su acceso.
 
@@ -48,7 +55,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
         ```
         {: pre}
 
-    2. Invite al Usuario B a acceder a la cuenta del Usuario A con el mandato siguiente, donde _ `<user.b@example.com>`_ es la dirección de correo electrónico del Usuario B:
+    2. Invite al Usuario B a acceder a la cuenta del Usuario A con el mandato siguiente, donde _`<user.b@example.com>`_ es la dirección de correo electrónico del Usuario B:
 
         ```
         ibmcloud account user-invite <user.b@example.com>
@@ -139,7 +146,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
         ```
         {: pre}
   
-    3. Suprima la política con el mandato siguiente, donde _ `<Policy_ID>`_ es su ID de política:
+    3. Suprima la política con el mandato siguiente, donde _`<Policy_ID>`_ es su ID de política:
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -214,7 +221,7 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
 
         Se muestran los tres espacios de nombres que ha creado en esta guía de aprendizaje (`namespace_a`, `namespace_b` y `namespace_c`). Si no ve estos espacios de nombres, vuelva y siga las instrucciones para crearlos de nuevo.
 
-    3. Cree una política que otorgue el rol de Lector sobre `namespace_b` al Usuario B con el siguiente mandato, donde _`<Region>`_ es el nombre abreviado de su [región](/docs/services/Registry/registry_overview.html#registry_regions), por ejemplo `us-south`:
+    3. Cree una política que otorgue el rol de Lector sobre `namespace_b` al Usuario B con el siguiente mandato, donde _`<Region>`_ es el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions), por ejemplo `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -366,7 +373,7 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
 
         Busque las políticas que acaba de crear y anote los ID de política.
 
-    3. Suprima las políticas que acaba de crear con el mandato siguiente, donde _ `<Policy_ID>`_ es el ID de política:
+    3. Suprima las políticas que acaba de crear con el mandato siguiente, donde _`<Policy_ID>`_ es el ID de política:
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>

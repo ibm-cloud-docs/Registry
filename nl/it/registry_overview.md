@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Informazioni su {{site.data.keyword.registrylong_notm}}
@@ -316,7 +323,7 @@ Tutte le risorse del registro sono associate al registro regionale specifico con
 
 Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `ibmcloud cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
 
-Per eseguire il comando con i parametri, sostituisci _&lt;region&gt;_ con il nome della regione, ad esempio, `eu-central`.
+Per eseguire il comando con i parametri, sostituisci `<region>` con il nome della regione, ad esempio `eu-central`.
 
 ```
 ibmcloud cr region-set <region>
@@ -347,13 +354,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_cli.html#bx_cr_region_set).
+Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
 
 Dopo aver specificato come destinazione il registro globale, esegui il comando `ibmcloud cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
 
 ## Supporto per Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supporta Docker Engine v1.12.6 o successive, consulta [Docker Documentation ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/v1.12/).
+{{site.data.keyword.registrylong_notm}} supporta Docker Engine v1.12.6 o successive.
 
 Docker è necessario solo se vuoi eseguire il push o il pull delle immagini o se vuoi eseguire il comando `ibmcloud cr ppa-archive-load`.

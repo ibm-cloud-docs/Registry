@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ Wenn bei der Verwendung von {{site.data.keyword.registrylong_notm}} Fragen oder 
 
 Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass sie von den {{site.data.keyword.registrylong_notm}}-Entwicklungsteams gesehen wird.
 
-- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-bluemix` und `container-registry`.
-- Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `bluemix` und `container-registry` dabei ein.
+- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-cloud` und `container-registry`.
+- Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `ibm-cloud` und `container-registry` dabei ein.
 
 Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support/howtogetsupport.html#using-avatar).
 
@@ -48,18 +55,18 @@ Der Befehl `ibmcloud cr login` schlägt fehl.
 
 {: tsCauses}
 
-- Das `container-registry`-CLI-Plug-in ist nicht auf dem neuesten Stand und muss aktualisiert werden. 
+- Das `container-registry`-CLI-Plug-in ist nicht auf dem neuesten Stand und muss aktualisiert werden.
 - Docker ist auf dem lokalen Computer nicht installiert oder wird nicht ausgeführt.
 - Ihre {{site.data.keyword.Bluemix_notm}}-Anmeldeberechtigungsnachweise sind abgelaufen.
 
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update). 
+- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 - Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist. Wenn das Programm bereits installiert ist, starten Sie den Docker-Dämon erneut.
 - Führen Sie den Befehl `ibmcloud login` erneut aus, um Ihre {{site.data.keyword.Bluemix_notm}}-Anmeldeberechtigungsnachweise zu aktualisieren.
 
-## Die Ausführung jedes Befehls für {{site.data.keyword.registrylong_notm}} schlägt fehl mit der Nachricht `FEHLGESCHLAGEN Sie sind nicht bei IBM Cloud angemeldet`. 
+## Die Ausführung jedes Befehls für {{site.data.keyword.registrylong_notm}} schlägt fehl mit der Nachricht `FEHLGESCHLAGEN Sie sind nicht bei IBM Cloud angemeldet`.
 {: #ts_login_cloud}
 
 Sie können in {{site.data.keyword.registrylong_notm}} keine Befehle ausführen, obwohl Sie bei {{site.data.keyword.Bluemix_notm}} angemeldet sind.
@@ -69,12 +76,12 @@ Alle `ibmcloud cr`-Befehle schlagen fehl.
 
 {: tsCauses}
 
-- Das `container-registry`-CLI-Plug-in ist nicht auf dem neuesten Stand und muss aktualisiert werden. 
+- Das `container-registry`-CLI-Plug-in ist nicht auf dem neuesten Stand und muss aktualisiert werden.
 
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update). 
+- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}}-Befehle schlagen fehl mit der Nachricht `'cr' ist kein registrierter Befehl. Siehe 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,32 +105,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- Das `container-registry`-CLI-Plug-in ist nicht installiert. 
+- Das `container-registry`-CLI-Plug-in ist nicht installiert.
 
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Installieren Sie das `container-registry`-CLI-Plug-in. Weitere Informationen finden Sie in [`container-registry`-CLI -Pug-in installieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install). 
+- Installieren Sie das Plug-in `container-registry` der Befehlszeilenschnittstelle. Informationen hierzu finden Sie in [Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install). 
 
-## Der Befehl `ibmcloud cr build` schlägt fehl. 
+## Der Befehl `ibmcloud cr build` schlägt fehl.
 {: #ts_build_fails}
 
 {: tsSymptoms}
-Der Erstellungsbefehl schlägt fehl. 
+Der Erstellungsbefehl schlägt fehl.
 
 {: tsCauses}
-Möglicherweise ist der Server inaktiv oder es liegen Probleme bei der Dockerfile vor. 
+Möglicherweise ist der Server inaktiv oder es liegen Probleme bei der Dockerfile vor.
 
 {: tsResolve}
-Führen Sie zur Ermittlung der Fehlerursache den Befehl `docker build` lokal mit den entsprechenden [`docker build`-Optionen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/commandline/build/) aus: 
+Führen Sie zur Ermittlung der Fehlerursache den Befehl `docker build` lokal mit den entsprechenden [`docker build`-Optionen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/commandline/build/) aus:
 
 ```
 docker build --no-cache .
 ```
 {:  pre}
 
-- Wenn der lokale Build nicht möglich ist, prüfen Sie, ob bei der Dockerfile Probleme vorliegen. 
-- Wenn der lokale Build möglich ist, [wenden Sie sich an den {{site.data.keyword.Bluemix_notm}}-Support](/docs/get-support/howtogetsupport.html#getting-customer-support). 
+- Wenn der lokale Build nicht möglich ist, prüfen Sie, ob bei der Dockerfile Probleme vorliegen.
+- Wenn der lokale Build möglich ist, [wenden Sie sich an den {{site.data.keyword.Bluemix_notm}}-Support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 ## Einrichtung eines Namensbereichs schlägt fehl
 {: #ts_problem}
@@ -235,7 +242,7 @@ Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen 
 3. Importieren Sie die komprimierte Archivdatei. Geben Sie den Pfad zur komprimierten Datei und den Registry-Namensbereich an, an den die Images mit Push-Operation übertragen werden sollen.
 
    ```
-   ibmcloud cr ppa-archive-load --archive </pfad/zum/archiv.tgz> --namespace <namensbereich>
+   ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace>
    ```
    {: pre}
 
@@ -332,7 +339,7 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
 
 2. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
 
-3. Vermerken Sie die URL aus dem Exportbefehl im vorherigen Schritt. Beispiel: `https://registry.ng.bluemix.net:4443`.
+3. Vermerken Sie die URL aus dem Exportbefehl im vorherigen Schritt. Beispiel: `https://registry.ng.bluemix.net:4443`
 
 4. Generieren Sie ein Registry-Token.
 
@@ -341,7 +348,7 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
    ```
    {: pre}
 
-5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Ersetzen Sie die _&lt;URL&gt;_ durch die URL des Exportbefehls, die Sie in Schritt 2 vermerkt haben, und _&lt;image&gt;_ durch das Image, dessen Repository-Schlüssel beeinträchtigt ist.
+5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Ersetzen Sie `<URL>` durch die URL des Exportbefehls, die Sie in Schritt 2 notiert haben, und `<image>` durch das Image, dessen Repository-Schlüssel betroffen ist. 
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -437,7 +444,7 @@ Für die folgenden Ressourcen:
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
 Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers/cs_users.html#rbac) und [Kubernetes - RBAC-Berechtigung verwenden
-![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). 
+![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail closed' in 'fail open' zu ändern und sie dann, wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, wieder auf 'fail closed' zurückzusetzen:
 
@@ -488,32 +495,32 @@ Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail cl
 {: #ts_manifest_error_type}
 
 {: tsSymptoms}
-Sie haben versucht, das Image mit Tags zu kennzeichnen, erhalten jedoch die folgende Fehlernachricht: `Der Manifesttyp für dieses Image wird für das Tagging nicht unterstützt`. 
+Sie haben versucht, das Image mit Tags zu kennzeichnen, erhalten jedoch die folgende Fehlernachricht: `Der Manifesttyp für dieses Image wird für das Tagging nicht unterstützt`.
 
 {: tsCauses}
-Der Manifesttyp wird nicht unterstützt. 
+Der Manifesttyp wird nicht unterstützt.
 
 {: tsResolve}
-Führen Sie die folgenden Schritte aus, um das Problem zu beheben: 
+Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
 
-1. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<Quellenimage>` der Name des Quellenimages. 
-
-   ```
-   docker pull <Quellenimage>
-   ```
-   {: pre}
-
-2. Führen Sie den folgenden Befehl aus, um die lokale Kopie des Images, das Sie im vorherigen Schritt per Pull-Operation abgerufen haben, mit Tags zu kennzeichnen. Dabei ist `<Zielimage>` der neue Imagename: 
+1. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages: 
 
    ```
-   docker tag <Quellenimage> <Zielimage>
+   docker pull <source_image>
    ```
    {: pre}
 
-3. Führen Sie den folgenden Befehl aus, um das Image, das Sie im vorherigen Schritt mit Tags gekennzeichnet haben, per Push-Operation zu übertragen: 
+2. Führen Sie den folgenden Befehl aus, um die lokale Kopie des Images, das Sie im vorherigen Schritt per Pull-Operation abgerufen haben, mit Tags zu kennzeichnen. Dabei ist `<target_image>` der neue Imagename: 
 
    ```
-   docker push <Zielimage>
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. Führen Sie den folgenden Befehl aus, um das Image, das Sie im vorherigen Schritt mit Tags gekennzeichnet haben, per Push-Operation zu übertragen:
+
+   ```
+   docker push <target_image>
    ```
    {: pre}
 
@@ -524,26 +531,40 @@ Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
 Sie haben versucht, das Image mit Tags zu kennzeichnen, erhalten jedoch die folgende Fehlernachricht: `Die Manifestversion für dieses Image wird für das Tagging nicht unterstützt. Für ein Upgrade auf eine unterstützte Manifestversion verwenden Sie Docker Version 1.12 oder höher zur Durchführung von Pull- und Push-Operationen für dieses Image. Führen Sie anschließend den Befehl 'ibmcloud cr image-tag' erneut aus. `
 
 {: tsCauses}
-Die Manifestversion wird nicht unterstützt. 
+Die Manifestversion wird nicht unterstützt.
 
 {: tsResolve}
-Führen Sie die folgenden Schritte aus, um das Problem zu beheben: 
+Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
 
-1. Führen Sie ein Upgrade auf Docker Engine Version 1.12 oder höher durch. 
+1. Führen Sie ein Upgrade auf Docker Engine Version 1.12 oder höher durch.
 
-2. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<Quellenimage>` der Name des Quellenimages. 
-
-   ```
-   docker pull <Quellenimage>
-   ```
-   {: pre}
-
-3. Für ein Upgrade der Manifestversion führen Sie eine Push-Operation für das Image durch, indem Sie den folgenden Befehl ausführen: 
+2. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages: 
 
    ```
-   docker push <Quellenimage>
+   docker pull <source_image>
    ```
    {: pre}
 
-4. Führen Sie den Befehl `ibmcloud cr image-tag` aus, um das Image mit Tags zu kennzeichnen. Weitere Informationen hierzu finden Sie in [Neue Images erstellen, die sich auf ein Quellenimage beziehen](/docs/services/Registry/registry_images_.html#registry_images_source). 
-  
+3. Für ein Upgrade der Manifestversion führen Sie eine Push-Operation für das Image durch, indem Sie den folgenden Befehl ausführen:
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. Führen Sie den Befehl `ibmcloud cr image-tag` aus, um das Image mit Tags zu kennzeichnen. Weitere Informationen hierzu finden Sie in [Neue Images erstellen, die sich auf ein Quellenimage beziehen](/docs/services/Registry/registry_images_.html#registry_images_source).
+
+## Die Docker-Anmeldung auf einem Mac-Computer schlägt fehl: `Fehler beim Speichern der Berechtigungsnachweise: - err: Exitstatus 1, out: 'Der eingegebene Benutzername oder die eingegebene Kennphrase ist nicht korrekt.' `
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+Beim Versuch, den Befehl `ibmcloud cr login` auf einem Mac-Computer auszuführen, wird die folgende Fehlernachricht ausgegeben: Fehler beim Speichern der Berechtigungsnachweise: - err: Exitstatus 1, out: 'Der eingegebene Benutzername oder die eingegebene Kennphrase ist nicht korrekt.' 
+
+{: tsCauses}
+Ein Problem bei Docker for Mac verhindert, dass die Berechtigungsnachweise in der macOS-Schlüsselkette gespeichert werden. 
+
+{: tsResolve}
+Möglicherweise kann das Problem durch einen Neustart des Mac-Computers behoben werden. Ist dies nicht der Fall, können Sie das Speichern von Anmeldungen in der Mac-Schlüsselkette inaktivieren. 
+
+1. Klicken Sie im Menü auf das **Docker**-Symbol und wählen Sie **Vorgaben** aus. 
+2. Nehmen Sie die Auswahl des Kontrollkästchens **Docker-Anmeldungen sicher in der macOS-Schlüsselkette speichern** zurück. 

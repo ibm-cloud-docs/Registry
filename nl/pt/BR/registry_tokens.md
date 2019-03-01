@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Automatizando o acesso ao {{site.data.keyword.registrylong_notm}}
@@ -32,7 +39,7 @@ Se você usar uma chave API, poderá controlar o acesso aos namespaces usando po
 
 Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](/docs/iam/apikeys.html#manapikey).
 
-Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install).
+Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
 
 ## Automatizando o acesso aos seus namespaces usando chaves API
 {: #registry_api_key}
@@ -57,7 +64,8 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 É possível usar uma chave API para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Use a chave API para efetuar login no seu registro executando o comando do Docker a seguir. Substitua &lt;your_apikey&gt; por sua chave API e substitua &lt;registry_url&gt; pela URL para o registro no qual seus namespaces estão configurados.
+Use a chave API para efetuar login no seu registro executando o comando do Docker a seguir. Substitua `<your_apikey>` pela sua chave de API e substitua `<registry_url>` pela URL para o registro no qual os namespaces
+estão configurados.
 
 - Para namespaces configurados em US-South, use `registry.ng.bluemix.net`
 - Para namespaces configurados em UK-South, use `registry.eu-gb.bluemix.net`
@@ -160,8 +168,7 @@ imagens para e dos namespaces.
    ```
    {: pre}
 
-3. Recupere o valor do token para o token. Substitua
-&lt;token_id&gt; pelo ID do token.
+3. Recupere o valor do token para o token. Substitua `<token_id>` pelo ID do token.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -170,7 +177,9 @@ imagens para e dos namespaces.
 
     Seu valor do token é exibido em **Token** na saída da CLI.
 
-4. Use o token como parte de seu comando `docker login`. Substitua &lt;token_value&gt; pelo valor do token que você recuperou na etapa anterior e &lt;registry_url&gt; pela URL para o registro no qual seus namespaces estão configurados.
+4. Use o token como parte de seu comando `docker login`. Substitua `<token_value>` pelo valor do
+token que você recuperou na etapa anterior e `<registry_url>` pela URL para o registro no qual os namespaces estão
+configurados.
 
    - Para namespaces configurados em US-South, use `registry.ng.bluemix.net`
    - Para namespaces configurados em UK-South, use `registry.eu-gb.bluemix.net`
@@ -240,6 +249,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-Substitua _&lt;apikey&gt;_ pela sua chave API, _&lt;region&gt;_ pelo nome de sua [região](/docs/services/Registry/registry_overview.html#registry_regions), _&lt;my_namespace&gt;_ pelo seu namespace e _&lt;image_repo&gt;_ pelo repositório.
+Substitua `<apikey>` pela sua chave de API, `<region>` pelo nome de sua [região](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` pelo seu namespace e `<image_repo>` pelo repositório.
 
 Para obter mais informações, consulte [Usando um registro de imagem privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).

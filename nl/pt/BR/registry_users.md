@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # Definindo políticas de função de acesso do usuário
@@ -56,7 +63,7 @@ Para usuários provisionados após 4 de outubro de 2018, as políticas do IAM s�
 
 1. [Crie políticas](#create) para seus usuários e IDs de serviço.
 
-2. Para ativar o cumprimento de política, execute o comando [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable).
+2. Para ativar o cumprimento de política, execute o comando [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable).
 
     Deve-se ter a função de Gerenciador na conta para que seja possível executar o comando `ibmcloud cr iam-policies-enable`. Você automaticamente tem a função de Gerenciador em sua própria conta.
     {: tip}

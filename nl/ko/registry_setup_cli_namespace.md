@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-22"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI 및 레지스트리 네임스페이스 설정
@@ -24,10 +31,10 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {:tip}
 
-시작하기 전에 [{{site.data.keyword.Bluemix_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://clis.ng.bluemix.net/ui/home.html)를 설치하십시오.
+시작하기 전에, [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)를 설치하십시오.
 
 ## `container-registry` CLI 플러그인 설치
-{: #registry_cli_install}
+{: #cli_namespace_registry_cli_install}
 
 {{site.data.keyword.registrylong_notm}}에서 Docker 이미지 및 네임스페이스를 관리하기 위해 명령행을 사용하도록 `container-registry` CLI 플러그인을 설치합니다.
 {:shortdesc}
@@ -46,7 +53,7 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 1. `container-registry` CLI 플러그인을 업데이트하십시오.
 
     ```
-    ibmcloud plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry
     ```
     {: pre}
 
@@ -80,7 +87,7 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
     `container-registry` CLI 플러그인이 결과에 표시되지 않습니다.
 
 ## 네임스페이스 설정
-{: #registry_namespace_add}
+{: #registry_namespace_setup}
 
 {{site.data.keyword.registrylong_notm}}에 Docker 이미지를 저장하려면 네임스페이스를 작성해야 합니다.
 {:shortdesc}
@@ -92,7 +99,7 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 
 네임스페이스를 작성하려면 시작 문서의 [네임스페이스 설정](/docs/services/Registry/index.html#registry_namespace_add)을 참조하십시오.
 
-이제 [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing)에서 네임스페이스로 Docker 이미지를 푸시하고 계정의 다른 사용자들과 해당 이미지를 공유할 수 있습니다.
+이제 [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace)에서 네임스페이스로 Docker 이미지를 푸시하고 계정의 다른 사용자들과 해당 이미지를 공유할 수 있습니다.
 
 ## 네임스페이스 제거
 {: #registry_remove}

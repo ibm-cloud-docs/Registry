@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}
-
-`container-registry` CLI 플러그인에서 제공되는 {{site.data.keyword.registrylong}} CLI를 사용하여 {{site.data.keyword.Bluemix_notm}} 계정의 레지스트리 및 해당 리소스를 관리할 수 있습니다.
+{: #containerregcli}`container-registry` CLI 플러그인에서 제공되는 {{site.data.keyword.registrylong}} CLI를 사용하여 {{site.data.keyword.Bluemix_notm}} 계정의 레지스트리 및 해당 리소스를 관리할 수 있습니다.
 {: shortdesc}
 
 **전제조건**
 
-* [{{site.data.keyword.Bluemix_notm}} CLI ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/cli/index.html#overview)를 설치하십시오. {{site.data.keyword.Bluemix_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
+* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. {{site.data.keyword.Bluemix_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
 
 * 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.Bluemix_notm}}에
 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
@@ -117,7 +122,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>면제할 보안 문제의 유형입니다. 유효한 문제 유형을 찾으려면 `ibmcloud cr exemption-types`를 실행하십시오.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>면제할 보안 문제의 ID입니다. 문제 ID를 찾으려면 `ibmcloud cr va <image>`를 실행하십시오. 여기서 *&lt;image&gt;*는 이미지의 이름이며, **취약성 ID** 또는 **구성 문제 ID** 열에 있는 값 중 관련된 값을 사용하십시오.
+<dd>면제할 보안 문제의 ID입니다. 문제 ID를 찾으려면 `ibmcloud cr va <image>`를 실행하십시오. 여기서 `<image>`는 이미지의 이름이며 **취약성 ID** 또는 **구성 문제 ID** 열에 있는 값 중 관련된 값을 사용하십시오.
 </dd>
 </dl>
 
@@ -300,7 +305,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 {:tip}
 
 ```
- ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -318,7 +323,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)을 참조하십시오.
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(선택사항) 각 이미지가 `repository:tag` 형식으로 나열됩니다.</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(선택사항) 지정된 네임스페이스 또는 네임스페이스와 저장소의 이미지만 표시하도록 출력을 제한합니다. </dd>
@@ -361,7 +366,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **예**
-*`registry.ng.bluemix.net/birds/bluebird:1`* 이미지를 삭제합니다.
+`registry.ng.bluemix.net/birds/bluebird:1` 이미지를 삭제합니다.
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -399,7 +404,7 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 
 **예**
 
-또 다른 태그 참조 `latest`를 *`registry.ng.bluemix.net/birds/bluebird:1`* 이미지에 추가하십시오.
+또 다른 태그 참조 `latest`를 `registry.ng.bluemix.net/birds/bluebird:1` 이미지에 추가하십시오.
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -503,7 +508,7 @@ ibmcloud cr namespace-list
 {{site.data.keyword.Bluemix_notm}} 계정에서 네임스페이스를 제거합니다. 네임스페이스가 제거되면 이 네임스페이스의 이미지가 삭제됩니다.
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -515,6 +520,8 @@ ibmcloud cr namespace-rm NAMESPACE
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>제거할 네임스페이스입니다.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(선택사항) 명령이 사용자 프롬프트 없이 실행되도록 강제 실행합니다. </dd>
 </dl>
 
 **예**
@@ -710,7 +717,7 @@ ibmcloud cr region-set us-south
 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다.
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -728,7 +735,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>(선택사항) 주변 텍스트 없이 토큰만 표시합니다.</dd>
 <dt>`--non-expiring`</dt>
 <dd>(선택사항) 만료되지 않는 액세스 권한이 있는 토큰을 작성합니다. 이 매개변수를 설정하지 않으면 기본적으로 24시간 후에 토큰의 액세스 권한이 만료됩니다.</dd>
@@ -817,10 +824,10 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-하나 이상의 지정된 토큰을 제거합니다.
+하나 이상의 지정된 레지스트리 토큰을 제거합니다.
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -832,6 +839,8 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 <dl>
 <dt>`TOKEN`</dt>
 <dd>`ibmcloud cr token-list`에 표시되는 바와 같이, TOKEN은 토큰 자체이거나 토큰의 고유 ID일 수 있습니다. 여러 토큰을 지정할 수 있으며 공백으로 구분해야 합니다.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(선택사항) 명령이 사용자 프롬프트 없이 실행되도록 강제 실행합니다. </dd>
 </dl>
 
 **예**
@@ -878,6 +887,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 자세한 정보는 [Vulnerability Advisor를 사용하여 이미지 보안 관리](/docs/services/va/va_index.html)를 참조하십시오.
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>(선택사항) 명령 출력이 취약한 패키지의 수정사항에 대한 추가 정보를 표시합니다.</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>(선택사항) 명령 출력이 취약성만 표시하도록 제한됩니다.</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>(선택사항) 명령 출력이 구성 문제만 표시하도록 제한됩니다.</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>(선택사항) 선택한 형식으로 명령 출력이 리턴됩니다. 기본 형식은 `text`입니다. 다음 형식이 지원됩니다.
 
@@ -887,13 +902,6 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>(선택사항) 명령 출력이 취약성만 표시하도록 제한됩니다.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>(선택사항) 명령 출력이 구성 문제만 표시하도록 제한됩니다.</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>(선택사항) 명령 출력이 취약한 패키지의 수정사항에 대한 추가 정보를 표시합니다.</dd>
-
 </dl>
 
 **예**
@@ -905,7 +913,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-취약성만 표시하는 JSON 형식의 *`registry.ng.bluemix.net/birds/bluebird:1`* 이미지에 대한 취약성 평가 보고서를 봅니다.
+취약성만 표시하는 JSON 형식의 `registry.ng.bluemix.net/birds/bluebird:1` 이미지에 대한 취약성 평가 보고서를 봅니다.
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

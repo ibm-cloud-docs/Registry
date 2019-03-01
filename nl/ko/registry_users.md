@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 사용자 액세스 역할 정책 정의
@@ -56,7 +63,7 @@ lastupdated: "2019-01-04"
 
 1. 사용자 및 서비스 ID에 대한 [정책을 작성](#create)하십시오.
 
-2. 정책 적용을 사용으로 설정하려면 [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) 명령을 실행하십시오.
+2. 정책 적용을 사용으로 설정하려면 [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) 명령을 실행하십시오.
 
     `ibmcloud cr iam-policies-enable` 명령을 실행할 수 있도록 계정에 관리자 역할이 있어야 합니다. 사용자 고유의 계정에 자동으로 관리자 역할이 보유됩니다.
     {: tip}
