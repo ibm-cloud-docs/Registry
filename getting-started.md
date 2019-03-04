@@ -6,7 +6,6 @@ lastupdated: "2019-03-04"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
-
 subcollection: registry
 
 ---
