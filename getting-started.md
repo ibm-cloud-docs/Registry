@@ -22,8 +22,8 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Getting started with {{site.data.keyword.registrylong_notm}} tutorial
-{: #index}
+# Getting started tutorial
+{: #getting-started}
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
 {:shortdesc}
