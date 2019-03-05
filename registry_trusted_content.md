@@ -120,11 +120,11 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the machine that is pushing the image.
 {:shortdesc}
 
-Before you begin, [set up your registry namespace](/docs/services/Registry?topic=registry-getting-started#registry_namespace_add).
+Before you begin, [set up your registry namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. [Push your image](/docs/services/Registry?topic=registry-getting-started#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+2. [Push your image](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.
@@ -174,7 +174,7 @@ To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and 
    ```
    {: pre}
 
-3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/services/Registry?topic=registry-getting-started#registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.

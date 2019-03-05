@@ -39,7 +39,7 @@ Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cl
 Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry?topic=registry-getting-started#registry_cli_install)
+1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Optional: [Configure your Docker client to run commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/installation/linux/linux-postinstall). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with **sudo** or as root.
 
 You can now set up your own namespace in {{site.data.keyword.registrylong_notm}}.
@@ -94,10 +94,10 @@ You must create a namespace to store your Docker images in {{site.data.keyword.r
 
 **Before you begin**
 
-- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-getting-started#registry_cli_install).
+- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Plan how to use and name your registry namespaces](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-Create a namespace, see [Set up a namespace](/docs/services/Registry?topic=registry-getting-started#registry_namespace_add) in the Getting Started documentation.
+Create a namespace, see [Set up a namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in the Getting Started documentation.
 
 You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account.
 

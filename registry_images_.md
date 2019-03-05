@@ -49,7 +49,7 @@ You can pull (download) an image from any private or public registry source, and
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-Download the image, see [Pull an image](/docs/services/Registry?topic=registry-getting-started#registry_images_pulling) in the Getting Started documentation.
+Download the image, see [Pull an image](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
 If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
 {:tip}
@@ -86,7 +86,7 @@ To upload (push) an image, complete the following steps:
   {:tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
-3. [Upload the image to your namespace.](/docs/services/Registry?topic=registry-getting-started#registry_images_pushing)
+3. [Upload the image to your namespace.](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {:tip}
