@@ -34,12 +34,12 @@ Do not put personal information in your container images, namespace names, descr
 {: important}
 
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
-{: #index_registry_cli_install}
+{: #registry_cli_install}
 
 1. Install the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 ## Set up a namespace
-{: #index_registry_namespace_add}
+{: #registry_namespace_add}
 
 1. Log in to {{site.data.keyword.Bluemix_notm}}.
 
@@ -70,7 +70,7 @@ Do not put personal information in your container images, namespace names, descr
    {: pre}
 
 ## Pull images from another registry to your local machine
-{: #index_registry_images_pulling}
+{: #registry_images_pulling}
 
 1. [Install the Docker CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/) instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
@@ -103,7 +103,7 @@ Do not put personal information in your container images, namespace names, descr
    {: pre}
 
 ## Push Docker images to your namespace
-{: #index_registry_images_pushing}
+{: #registry_images_pushing}
 
 1. Run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
@@ -136,7 +136,7 @@ Do not put personal information in your container images, namespace names, descr
 Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
 
 ## Next steps
-{: #index_get_start_next}
+{: #get_start_next}
 
 - [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index)
 - [Review your service plans and usage](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
