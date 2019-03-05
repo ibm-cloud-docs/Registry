@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,7 +32,7 @@ This tutorial takes approximately 45 minutes.
 
 **Before you begin**
 
-- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 

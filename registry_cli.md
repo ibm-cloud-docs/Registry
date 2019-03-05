@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
 kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -36,7 +36,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and `co
 
 If you want to view the current version of your `container-registry` CLI plug-in, run `ibmcloud plugin list`.
 
-To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 

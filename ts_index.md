@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -193,7 +193,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- [Ensure that Docker is installed on your computer](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Ensure that Docker is installed on your computer](/docs/services/Registry?topic=registry-getting-started#registry_cli_install).
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
 - [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
