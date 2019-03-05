@@ -5,6 +5,7 @@
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
+    getting-started.md
     index.md
     registry_overview.md
     registry_ha.md
