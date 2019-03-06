@@ -6,7 +6,7 @@ lastupdated: "2019-03-06"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
-subcollection: registry
+subcollection: container-registry-cli-plugin
 
 ---
 
