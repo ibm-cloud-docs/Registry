@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 将映像添加到名称空间
@@ -27,7 +34,7 @@ lastupdated: "2019-01-24"
 {:tip}
 
 ## 从其他注册表拉出映像
-{: #registry_images_pulling}
+{: #registry_images_pulling_reg}
 
 您可以从任何专用或公共注册表源拉出（下载）映像，然后对其进行标记，以便稍后在 {{site.data.keyword.registrylong_notm}} 中使用。
 {:shortdesc}
@@ -36,9 +43,9 @@ lastupdated: "2019-01-24"
 
 **开始之前**
 
-- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
+- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
-- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)。
 - [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
@@ -51,7 +58,7 @@ lastupdated: "2019-01-24"
 拉出映像并针对名称空间对其进行标记后，可以将该映像从本地计算机上传（推送）至名称空间。
 
 ## 将 Docker 映像推送到名称空间
-{: #registry_images_pushing}
+{: #registry_images_pushing_namespace}
 
 您可以将映像推送（上传）至 {{site.data.keyword.registrylong_notm}} 中的名称空间，以存储映像并与其他用户共享。
 {:shortdesc}
@@ -60,10 +67,10 @@ lastupdated: "2019-01-24"
 
 **开始之前**
 
-- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
+- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
-- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
-- 在本地计算机上[拉出](#registry_images_pulling)或[构建](#registry_images_creating)映像，并使用名称空间信息对该映像进行标记。
+- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)。
+- 在本地计算机上[拉出](#registry_images_pulling_reg)或[构建](#registry_images_creating)映像，并使用名称空间信息对该映像进行标记。
 
 - [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
@@ -102,17 +109,17 @@ lastupdated: "2019-01-24"
 
 **开始之前**
 
-- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
+- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
-- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)。
 - [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
 要在两个注册表之间复制映像，请完成以下步骤：
 
-1. [从注册表拉出映像](#registry_images_pulling)。
-2. [将映像推送到另一个注册表](#registry_images_pushing)。确保为新目标区域使用正确的域名。
+1. [从注册表拉出映像](#registry_images_pulling_reg)。
+2. [将映像推送到另一个注册表](#registry_images_pushing_namespace)。确保为新目标区域使用正确的域名。
 
 复制映像后，可以执行下列其中一项任务：
 
@@ -129,11 +136,11 @@ lastupdated: "2019-01-24"
 
 **开始之前**
 
-- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
+- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
 - 确保您有权访问 {{site.data.keyword.registrylong_notm}} 中包含要被其他映像引用的源映像的专用名称空间。
 
-有关命令的更多信息，请参阅 [`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag)。
+有关命令的更多信息，请参阅 [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag)。
 
 要基于源映像创建新映像，请完成以下步骤：
 
@@ -166,9 +173,9 @@ lastupdated: "2019-01-24"
 
 **开始之前**
 
-- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install) 以在名称空间中使用映像。
+- [安装 CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
-- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_add)。
+- [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)。
 - [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
@@ -189,8 +196,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
         {: pre}
 
-    2. 使用文本编辑器打开 Dockerfile。您至少必须添加基本映像，以从中构建映像。将 _&lt;source_image&gt;_ 和 _&lt;tag&gt;_ 替换为您要使用的映像存储库和标记。
-如果您使用来自其他专用注册表的映像，请在 {{site.data.keyword.registrylong_notm}} 中定义映像的完整路径。
+    2. 使用文本编辑器打开 Dockerfile。您至少必须添加基本映像，以从中构建映像。将 `<source_image>` 和 `<tag>` 替换为要使用的映像存储库和标记。如果您使用来自其他专用注册表的映像，请在 {{site.data.keyword.registrylong_notm}} 中定义映像的完整路径。
 
 
        ```
@@ -217,9 +223,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   ```
    {: pre}
 
-   其中，_&lt;my_namespace&gt;_ 是名称空间信息，_&lt;repo_name&gt;_ 是存储库的名称，_&lt;tag&gt;_ 是要用于映像的版本。要查找名称空间，请运行 `ibmcloud cr namespace-list` 命令。
+   其中，`<my_namespace>` 是名称空间信息，`<repo_name>` 是存储库的名称，`<tag>` 是要用于映像的版本。要查找名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 
-4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时，按以下步骤运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_.
+4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时运行以下步骤中的命令，那么可以将 `<directory>` 替换为句点 (.)。
 5. 选择直接在 {{site.data.keyword.Bluemix_notm}} 中构建映像，或者先在本地构建并测试映像，然后再将其推送到 {{site.data.keyword.Bluemix_notm}}。
    - 要直接在 {{site.data.keyword.Bluemix_notm}} 中构建映像，请运行以下命令：
 
@@ -228,9 +234,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
      {: pre}
 
-     其中，_&lt;image_name&gt;_ 是映像的名称，_&lt;directory&gt;_ 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 _&lt;directory&gt;_.
+     其中，`<image_name>` 是映像的名称，`<directory>` 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行该命令，那么可以将 `<directory>` 替换为句点 (.)。
   
-     有关 `ibmcloud cr build` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_build)。
+     有关 `ibmcloud cr build` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build)。
 
    - 要先在本地构建并测试映像，然后再将其推送到 {{site.data.keyword.Bluemix_notm}}，请完成以下步骤：
       1. 在本地计算机上通过 Dockerfile 构建映像，并使用映像名称对其进行标记。
@@ -240,7 +246,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
       ```
          {: pre}
 
-         其中，_&lt;image_name&gt;_ 是映像的名称，_&lt;directory&gt;_ 是目录的路径。
+         其中，`<image_name>` 是映像的名称，`<directory>` 是目录的路径。
 
       2. 可选：在本地计算机上测试映像，然后再将其推送到名称空间。
 
@@ -249,9 +255,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
       ```
          {: pre}
 
-         将 _&lt;image_name&gt;_ 替换为映像的名称。
+         将 `<image_name>` 替换为映像的名称。
 
-      3. 创建映像并针对名称空间对其进行标记后，[可以将该映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](#registry_images_pushing)。
+      3. 创建映像并针对名称空间对其进行标记后，[可以将该映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](#registry_images_pushing_namespace)。
 
 要使用漏洞顾问程序来检查映像的安全性，请参阅[使用漏洞顾问程序管理映像安全性](/docs/services/va/va_index.html)。
 
@@ -312,7 +318,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要使用 GUI 删除映像，请完成以下步骤：
 
-1. 使用 IBM 标识登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ([https://console.bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net))。
+1. 使用 IBM 标识登录到 {{site.data.keyword.cloud_notm}} 控制台 ([https://cloud.ibm.com/login ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login))。
 2. 如果有多个 {{site.data.keyword.Bluemix_notm}} 帐户，请从帐户菜单中选择您要使用的帐户和区域。
 3. 单击**目录**。
 4. 选择**容器**类别，然后单击**容器注册表**磁贴。
@@ -339,7 +345,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要使用 GUI 删除专用存储库，请完成以下步骤：
 
-1. 使用 IBM 标识登录到 {{site.data.keyword.Bluemix_notm}} 控制台 ([https://console.bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net))。
+1. 使用 IBM 标识登录到 {{site.data.keyword.cloud_notm}} 控制台 ([https://cloud.ibm.com/login ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login))。
 2. 如果有多个 {{site.data.keyword.Bluemix_notm}} 帐户，请从帐户菜单中选择您要使用的帐户和区域。
 3. 单击**目录**。
 4. 选择**容器**类别，然后单击**容器注册表**磁贴。

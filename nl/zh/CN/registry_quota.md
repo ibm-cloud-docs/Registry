@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 管理存储量和拉出流量的配额限制
@@ -63,8 +70,7 @@ lastupdated: "2019-01-23"
     ```
     {: screen}
 
-3. 更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 _&lt;traffic_quota&gt;_ 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 _&lt;storage_quota&gt;_ 替换为要设置的值（以兆字节为单位）。
-
+3. 更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 `<traffic_quota>` 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 `<storage_quota>` 替换为要设置的值（以兆字节为单位）。
 
     如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
     {:tip}
@@ -135,8 +141,7 @@ lastupdated: "2019-01-23"
     ```
     {: pre}
 
-2. 从名称空间中除去映像。将 _&lt;image_name&gt;_ 替换为要除去的映像的名称。
-
+2. 从名称空间中除去映像。将 `<image_name>` 替换为要除去的映像的名称。
 
     ```
     ibmcloud cr image-rm <image_name>

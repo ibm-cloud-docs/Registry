@@ -1,9 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-28"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
 
+keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
+
+subcollection: registry
 
 ---
 
@@ -14,15 +17,16 @@ lastupdated: "2018-11-28"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
-
 
 # 管理儲存空間及取回資料流量的配額限制
 {: #registry_quota}
 
 您可以藉由設定及管理自訂配額限制，來限制可在 {{site.data.keyword.Bluemix}} 帳戶中使用的儲存空間及取回資料流量的數量。
 {:shortdesc}
-
 
 ## 設定儲存及取回映像檔的配額限制
 {: #registry_quota_set}
@@ -34,14 +38,14 @@ lastupdated: "2018-11-28"
 
 若要設定配額，請執行下列動作：
 
-1.  登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  檢閱儲存空間及取回資料流量的現行配額限制。
+2. 檢閱儲存空間及取回資料流量的現行配額限制。
 
     ```
     ibmcloud cr quota
@@ -61,7 +65,7 @@ lastupdated: "2018-11-28"
     ```
     {: screen}
 
-3.  變更儲存空間及取回資料流量的配額限制。若要變更取回資料流量用量，請指定 **traffic** 選項，並將 _&lt;traffic_quota&gt;_ 取代為您要針對取回資料流量配額設定的值 (MB)。如果您要變更帳戶中的儲存空間量，請指定 **storage** 選項，並將 _&lt;storage_quota&gt;_ 取代為您要設定的值 (MB)。
+3. 變更儲存空間及取回資料流量的配額限制。若要變更取回資料流量用量，請指定 **traffic** 選項，並將 `<traffic_quota>` 取代為您要針對取回資料流量配額設定的值 (MB)。如果您要變更帳戶中的儲存空間量，請指定 **storage** 選項，並將 `<storage_quota>` 取代為您要設定的值 (MB)。
 
     如果您使用免費方案，則無法將配額設為超出免費層的數量。儲存空間的免費層額度是 512 MB，而資料流量的免費層額度是 5120 MB。
     {:tip}
@@ -78,21 +82,20 @@ lastupdated: "2018-11-28"
     ```
     {: pre}
 
-
 ## 檢閱儲存及取回映像檔的配額限制及用量
 {: #registry_quota_get}
 
 您可以檢閱配額限制，以及檢查帳戶的現行儲存空間及取回資料流量用量。
 {:shortdesc}
 
-1.  登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
     ```
     ibmcloud login
     ```
     {: pre}
 
-2.  檢閱儲存空間及取回資料流量的現行配額限制。
+2. 檢閱儲存空間及取回資料流量的現行配額限制。
 
     ```
     ibmcloud cr quota
@@ -112,7 +115,6 @@ lastupdated: "2018-11-28"
     ```
     {: screen}
 
-
 ## 釋放已使用的儲存空間，並且變更服務方案或配額限制，以保持在給定配額限制內
 {: #registry_quota_freeup}
 
@@ -121,14 +123,14 @@ lastupdated: "2018-11-28"
 
 若要釋放 {{site.data.keyword.Bluemix_notm}} 帳戶中的映像檔儲存空間，請執行下列動作：
 
-1.  列出 {{site.data.keyword.Bluemix_notm}} 帳戶的所有名稱空間中的所有映像檔。
+1. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶的所有名稱空間中的所有映像檔。
 
     ```
     ibmcloud cr images
     ```
     {: pre}
 
-2.  從名稱空間中移除映像檔。將 _&lt;image_name&gt;_ 取代為您要移除的映像檔名稱。
+2. 從名稱空間中移除映像檔。將 `<image_name>` 取代為您要移除的映像檔名稱。
 
     ```
     ibmcloud cr image-rm <image_name>
@@ -138,7 +140,7 @@ lastupdated: "2018-11-28"
     取決於映像檔大小，可能需要一些時間，才能移除映像檔，並且讓儲存空間變為可用。
     {:tip}
 
-3.  檢閱儲存空間配額用量。
+3. 檢閱儲存空間配額用量。
 
     ```
     ibmcloud cr quota
@@ -150,6 +152,6 @@ lastupdated: "2018-11-28"
 
     若要繼續從名稱空間取回映像檔，請在下列選項之間進行選擇：
 
-    -   等到下一個計費週期開始。
-    -   如果您有免費方案，請[升級至標準服務方案](registry_overview.html#registry_plan_upgrade)。
-    -   如果您已有標準方案，請[設定取回資料流量的新配額限制](#registry_quota_set)。
+    - 等到下一個計費週期開始。
+    - 如果您有免費方案，請[升級至標準服務方案](/docs/services/Registry/registry_overview.html#registry_plan_upgrade)。
+    - 如果您已有標準方案，請[設定取回資料流量的新配額限制](#registry_quota_set)。

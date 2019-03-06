@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,15 +17,18 @@ lastupdated: "2018-11-15"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 關於 {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-使用 {{site.data.keyword.registrylong}}，在高可用性且可擴充的架構中，安全地儲存及存取專用 Docker 映像檔。
+使用 {{site.data.keyword.registrylong}}，在高可用性且可擴充的架構中，儲存及存取專用 Docker 映像檔。
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶、高可用性且可擴充的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用專用登錄。
+{{site.data.keyword.registrylong_notm}} 提供 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用 {{site.data.keyword.registrylong_notm}}。
 
 <img src="images/registry_architecture1.svg" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 同時包含專用及公用儲存庫，以及用來與服務互動的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔以及將映像檔推送至其中，也可以取回公用儲存庫。IBM Cloud Web 使用者介面（主控台）可與 Container Registry API 互動，以列出映像檔。Container Registry CLI 可與 API 互動，以列出、建立、檢查及移除映像檔，以及其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫中取回映像檔，並將其推送至其他登錄。"/>
 
@@ -35,7 +42,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 |好處|說明|
 |-------|-----------|
-|高可用性且可擴充的專用登錄|<ul><li>在 IBM 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>安全地儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。</li></ul>|
+|高可用性且可擴充的專用登錄|<ul><li>在 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。</li></ul>|
 |漏洞警告器的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統特有的建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
 |儲存空間及取回資料流量的配額限制|<ul><li>受益於專用映像檔的免費儲存空間及取回資料流量，直到達到免費配額為止。</li><li>設定每個月的儲存空間量及取回資料流量的自訂配額限制，以避免超出偏好的付費等級。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 的好處" caption-side="top"}
@@ -52,10 +59,10 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 |特徵|免費|標準|
 |---------------|----|--------|
-|說明|試用 {{site.data.keyword.registrylong_notm}} 中的專用登錄，以安全地儲存及共用 Docker 映像檔。當您在 {{site.data.keyword.registrylong_notm}} 中設定第一個名稱空間時，此方案是預設服務方案。|受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.Bluemix_notm}} 帳戶中所有名稱空間的 Docker 映像檔。|
+|說明|試用 {{site.data.keyword.registrylong_notm}}，以儲存及共用 Docker 映像檔。當您在 {{site.data.keyword.registrylong_notm}} 中設定第一個名稱空間時，此方案是預設服務方案。|受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.Bluemix_notm}} 帳戶中所有名稱空間的 Docker 映像檔。|
 |映像檔的儲存空間量|500 MB|無限制|
 |取回資料流量|每個月 5 GB|無限制|
-|計費|如果您超出儲存空間或取回資料流量限制，即無法將映像檔推送至名稱空間或從中取回映像檔。如需相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。|<ul><li>儲存空間：會依使用的 GB-月向您收費。前 0.5 GB-月免費。之後，會依定價計算機中所述向您收費。</li><li>取回資料流量：會依每個月使用的 GB 量向您收費。前 5 GB 免費。之後，會依定價計算機中所述向您收費。如果您超出儲存空間或取回資料流量限制，即無法將映像檔推送至名稱空間或從中取回映像檔。如需儲存空間、取回資料流量及定價計算機的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。</li></ul>|
+|計費|如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。|<ul><li>儲存空間：會依使用的 GB-月向您收費。前 0.5 GB-月免費。之後，會依定價計算機中所述向您收費。</li><li>取回資料流量：會依每個月使用的 GB 量向您收費。前 5 GB 免費。之後，會依定價計算機中所述向您收費。如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需儲存空間、取回資料流量及定價計算機的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。</li></ul>|
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} 方案" caption-side="top"}
 
 ## 配額限制及計費
@@ -80,7 +87,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **儲存空間：**
 
-  每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔安全地儲存在 {{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是指一個月（730 小時）平均 1 GB 儲存空間。
+  每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔儲存在 {{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間中。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是指一個月（730 小時）平均 1 GB 儲存空間。
 
   標準方案的範例：
 
@@ -94,7 +101,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **取回資料流量：**
 
-  每個 {{site.data.keyword.registrylong_notm}} 服務方案都包含一定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
+  每個 {{site.data.keyword.registrylong_notm}} 服務方案都包括特定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
 
   標準方案的範例：
 
@@ -107,12 +114,12 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 儲存空間及取回資料流量的配額限制
 {: #registry_quota_limits}
 
-視您選擇的服務方案而定，在達到方案特定或自訂配額限制之前，可以將映像檔推送至名稱空間以及從中取回映像檔。
+視選擇的服務方案而定，您可以在達到方案特定或自訂配額限制之前，將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
 **儲存空間：**
 
-  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](registry_quota.html#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](registry_quota.html#registry_quota_set)，以重新啟用新映像檔的推送。
+  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry/registry_quota.html#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry/registry_quota.html#registry_quota_set)，以重新啟用新映像檔的推送。
 
   標準方案的範例：
 
@@ -122,7 +129,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **取回資料流量：**
 
-  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](registry_quota.html#registry_quota_set)之前，您無法從 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間取回任何映像檔。
+  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry/registry_quota.html#registry_quota_set)之前，您無法從 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間取回任何映像檔。
 
   標準方案的範例：
 
@@ -176,7 +183,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ## 學習基本觀念
 {: #registry_planning}
 
-學習登錄基本觀念，以準備好使用 {{site.data.keyword.registrylong_notm}} 安全地儲存及共用 Docker 映像檔。
+學習登錄基本觀念，以準備好使用 {{site.data.keyword.registrylong_notm}} 來儲存及共用 Docker 映像檔。
 {:shortdesc}
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
@@ -229,7 +236,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 規劃名稱空間
 {: #registry_namespaces}
 
-{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中安全地儲存及共用 Docker 映像檔。
+{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中儲存及共用 Docker 映像檔。
 {:shortdesc}
 
 例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.Bluemix_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
@@ -273,7 +280,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 如果您要使用非本端地區的地區，則可以執行 `ibmcloud cr region-set` 指令，將目標設定為您要存取的地區。您可以在不含任何參數的情況下執行指令來取得可用地區的清單，也可以將地區指定為參數。
 
-若要搭配參數執行指令，請將 _&lt;region&gt;_ 取代為地區的名稱，例如 `eu-central`。
+若要搭配參數執行指令，請將 `<region>` 取代為地區的名稱，例如 `eu-central`。
 
 ```
 ibmcloud cr region-set <region>
@@ -304,6 +311,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set)。
+如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)。
 
 將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，以便您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。
+
+## Docker 支援
+{: #docker}
+
+{{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
+
+只有在您要推送或取回映像檔，或者要執行 `ibmcloud cr ppa-archive-load` 指令時，才需要 Docker。

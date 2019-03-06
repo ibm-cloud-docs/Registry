@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 教程：授予对 {{site.data.keyword.registrylong_notm}} 资源的访问权
@@ -29,7 +36,7 @@ lastupdated: "2019-01-23"
 
 - 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 
-- 您必须有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
+- 您必须有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
 
 - 如果您在 2018 年 10 月 4 日之前就开始使用 {{site.data.keyword.registrylong_notm}}，那么必须通过运行 `ibmcloud cr iam-policies-enable` 命令来启用 IAM 策略强制实施。如果您邀请了其他使用您的 {{site.data.keyword.registrylong_notm}} 名称空间的用户加入您的 IBM Cloud 帐户，请以用户 A 的身份使用其他帐户以防止其访问中断。
 
@@ -214,7 +221,7 @@ lastupdated: "2019-01-23"
 
         这将显示在本教程中创建的三个名称空间（`namespace_a`、`namespace_b` 和 `namespace_c`）。如果看不到这些名称空间，请返回并遵循指示信息以再次创建这些名称空间。
 
-    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry/registry_overview.html#registry_regions)的短名称，例如 `us-south`：
+    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader

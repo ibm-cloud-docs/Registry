@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-19"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, public IBM images, images
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-10-19"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 公用 {{site.data.keyword.IBM_notm}} 映像檔

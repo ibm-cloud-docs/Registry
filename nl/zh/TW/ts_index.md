@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-14"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ lastupdated: "2018-11-14"
 
 使用討論區提問時，請標記您的問題，讓 {{site.data.keyword.registrylong_notm}} 開發團隊能看到它。
 
-- 如果您在使用 {{site.data.keyword.registrylong_notm}} 開發或部署應用程式時有技術方面的問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=+ibm-bluemix)，並使用 `ibm-bluemix` 和 `container-registry` 來標記問題。
-- 若為服務及開始使用指示的相關問題，請使用 [IBM developerWorks dW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 討論區。請包括 `bluemix` 及 `container-registry` 標籤。
+- 如果您在使用 {{site.data.keyword.registrylong_notm}} 開發或部署應用程式時有技術方面的問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=+ibm-bluemix)，並使用 `ibm-cloud` 和 `container-registry` 來標記問題。
+- 若為服務及開始使用指示的相關問題，請使用 [IBM developerWorks dW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 討論區。請包含 `ibm-cloud` 及 `container-registry` 標籤。
 
 如需有關使用討論區的詳細資料，請參閱[使用支援中心](/docs/get-support/howtogetsupport.html#using-avatar)。
 
@@ -48,14 +55,14 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry 外掛程式已過期，需要更新。
+- `container-registry` CLI 外掛程式已過期，需要更新。
 - Docker 未安裝在您的本端電腦上，或是不在執行中。
 - 您的 {{site.data.keyword.Bluemix_notm}} 登入認證已過期。
 
 {: tsResolve}
 您可以使用下列方式修正此問題：
 
-- 升級至最新版的 container-registry 外掛程式，請參閱[更新 container-registry 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升級至最新版的 `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 - 確定 Docker 已安裝在您的電腦上。如果已安裝，請重新啟動 Docker 常駐程式。
 - 重新執行 `ibmcloud login` 指令，以重新整理您的 {{site.data.keyword.Bluemix_notm}} 登入認證。
 
@@ -69,12 +76,12 @@ lastupdated: "2018-11-14"
 
 {: tsCauses}
 
-- container-registry 外掛程式已過期，需要更新。
+- `container-registry` CLI 外掛程式已過期，需要更新。
 
 {: tsResolve}
 您可以使用下列方式修正此問題：
 
-- 升級至最新版的 container-registry 外掛程式，請參閱[更新 container-registry 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升級至最新版的 `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 
 ## {{site.data.keyword.registrylong_notm}} 指令失敗，並傳回 `'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -98,12 +105,32 @@ ibmcloud cr namespace
 
 {: tsCauses}
 
-- 未安裝 container-registry 外掛程式。
+- 未安裝 `container-registry` CLI 外掛程式。
 
 {: tsResolve}
 您可以使用下列方式修正此問題：
 
-- 安裝 container-registry 外掛程式，請參閱[安裝 {{site.data.keyword.registryshort_notm}} CLI（container-registry 外掛程式）](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- 安裝 `container-registry` CLI 外掛程式，請參閱[安裝 `container-registry` CLI 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
+
+## `ibmcloud cr build` 指令失敗
+{: #ts_build_fails}
+
+{: tsSymptoms}
+build 指令失敗。
+
+{: tsCauses}
+伺服器可能已關閉，或者 Dockerfile 可能有問題。
+
+{: tsResolve}
+若要找出原因，請在本端執行 `docker build`，並搭配適當的 [`docker build` 選項 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/reference/commandline/build/)：
+
+```
+docker build --no-cache .
+```
+{:  pre}
+
+- 如果本端建置沒有運作，請檢查 Dockerfile 的問題。
+- 如果本端建置有運作，請[與 {{site.data.keyword.Bluemix_notm}} 支援中心聯絡](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 ## 設定名稱空間失敗
 {: #ts_problem}
@@ -307,7 +334,7 @@ denied: requested access to the resource is denied
 
 2. [設定受信任內容環境](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)。
 
-3. 記下前一個步驟中，匯出指令的 URL。例如，`https://registry.ng.bluemix.net:4443`。
+3. 記下前一個步驟中，匯出指令的 URL。例如，`https://registry.ng.bluemix.net:4443`
 
 4. 產生登錄記號。
 
@@ -316,7 +343,7 @@ denied: requested access to the resource is denied
     ```
    {: pre}
 
-5. 替換您的金鑰，讓使用那些金鑰所簽署的內容不再受到信任。將 _&lt;URL&gt;_ 取代為您在步驟 2 中記下的匯出指令 URL，並將 _&lt;image&gt;_ 取代為儲存庫金鑰受到影響的映像檔。
+5. 替換您的金鑰，讓使用那些金鑰所簽署的內容不再受到信任。將 `<URL>` 取代為您在步驟 2 中記下的匯出指令 URL，並將 `<image>` 取代為儲存庫金鑰受到影響的映像檔。
 
    ```
 notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -412,7 +439,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-如需 RBAC 的相關資訊，請參閱[授權具有自訂 Kubernetes RBAC 角色的使用者](/docs/containers/cs_users.html#rbac)及 [Kubernetes：使用 RBAC 授權 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
+如需 RBAC 的相關資訊，請參閱[授權具有自訂 Kubernetes RBAC 角色的使用者](/docs/containers/cs_users.html#rbac)及 [Kubernetes - 使用 RBAC 授權 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
 
 請完成下列步驟來變更 Webhook 配置，以讓開啟失敗，而非關閉，然後，至少一個 Container Image Security Enforcement Pod 正在執行時，請還原 Webhook 配置，以讓關閉失敗：
 
@@ -458,3 +485,81 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
    {: pre}
 
    將 `failurePolicy` 變更為 `Fail`、儲存並關閉。
+
+## 資訊清單錯誤：`The manifest type for this image is not supported for tagging.`
+{: #ts_manifest_error_type}
+
+{: tsSymptoms}
+您已嘗試標記您的映像檔，但是接收到下列錯誤訊息：`The manifest type for this image is not supported for tagging.`。
+
+{: tsCauses}
+不支援該資訊清單類型。
+
+{: tsResolve}
+若要解決此問題，請完成下列步驟：
+
+1. 執行下列指令，以取回您嘗試標記的映像檔，其中，`<source_image>` 是來源映像檔的名稱：
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+2. 執行下列指令，標記您在前一個步驟所取回之映像檔的本端副本，其中 `<target_image>` 是您的新映像檔名稱：
+
+   ```
+   docker tag <source_image> <target_image>
+   ```
+   {: pre}
+
+3. 執行下列指令，推送您在前一個步驟所標記的映像檔：
+
+   ```
+   docker push <target_image>
+   ```
+   {: pre}
+
+## 資訊清單錯誤：`The manifest version for this image is not supported for tagging.`
+{: #ts_manifest_error_version}
+
+{: tsSymptoms}
+您已嘗試標記您的映像檔，但是接收到下列錯誤訊息：`The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
+
+{: tsCauses}
+不支援該資訊清單版本。
+
+{: tsResolve}
+若要解決此問題，請完成下列步驟：
+
+1. 升級至 Docker Engine 1.12 版或更新版本。
+
+2. 執行下列指令，以取回您嘗試標記的映像檔，其中，`<source_image>` 是來源映像檔的名稱：
+
+   ```
+   docker pull <source_image>
+   ```
+   {: pre}
+
+3. 若要升級資訊清單版本，請執行下列指令，以推送映像檔：
+
+   ```
+   docker push <source_image>
+   ```
+   {: pre}
+
+4. 執行 `ibmcloud cr image-tag` 指令，以標記映像檔，請參閱[建立參照來源映像檔的新映像檔](/docs/services/Registry/registry_images_.html#registry_images_source)。
+
+## Docker 登入在 Mac 上失敗：`Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+當您嘗試在 Mac 上執行 `ibmcloud cr login` 指令時，收到下列錯誤訊息：`Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+
+{: tsCauses}
+Docker for Mac 有問題，導致您的認證無法儲存在 macOS 金鑰鏈。
+
+{: tsResolve}
+將 Mac 重新開機可能可以解決問題。如果將 Mac 重新開機無效，您可以停用在 Mac 金鑰鏈中儲存登入：
+
+1. 在功能表中按一下 **Docker** 圖示，選取 **Preferences**。
+2. 清除 **Securely store Docker logins in macOS keychain** 勾選框。

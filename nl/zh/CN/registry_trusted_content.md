@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 对映像签名以实现可信内容
@@ -111,7 +118,12 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，会看到“Signing and pushing image metadata.”
+2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
 
@@ -123,7 +135,7 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. 拉出映像。将 _&lt;source_image&gt;_ 替换为映像的存储库，并将 _&lt;tag&gt;_ 替换为要使用的映像标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
+2. 拉出映像。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
 
    ```
     docker pull <source_image>:<tag>
@@ -149,7 +161,7 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 2. 查看每个映像的标记、摘要和签署者信息。
 
-   （可选）指定标记 _&lt;tag&gt;_ 以查看有关该版本映像的信息。
+   （可选）指定标记 `<tag>` 以查看有关该版本映像的信息。
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -232,7 +244,7 @@ docker trust revoke <image>:<tag>
 
 1. 如果新的签署者尚未生成密钥对，那么必须生成并装入密钥对。
   
-    a. 生成密钥。您可以为 _&lt;NAME&gt;_ 输入任何名称，但是，您选择的名称在有人检查对存储库的信任时会显示。与存储库所有者合作，以满足组织可能使用的任何命名约定，并选择可识别该签署者的名称。
+    a. 生成密钥。您可以为 `<NAME>` 输入任何名称，但是，您选择的名称在有人检查对存储库的信任时会显示。与存储库所有者合作，以满足组织可能使用的任何命名约定，并选择可识别该签署者的名称。
 
       ```
 docker trust key generate <NAME>

@@ -1,8 +1,13 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-11"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, high availability
+
+
+subcollection: registry
 
 ---
 
@@ -13,9 +18,10 @@ lastupdated: "2018-09-11"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
-
-
 
 # 高可用性及災難回復
 {: #ha-dr}
@@ -27,7 +33,7 @@ lastupdated: "2018-09-11"
 
 * 儲存在 {{site.data.keyword.registrylong_notm}} 中的資料會定期備份，提供額外的備援。
 
-* 如果您擔心整個地區無法使用時的映像檔可用性，可以選擇將映像檔推送至多個地區登錄。 
+* 如果您擔心整個地區無法使用時的映像檔可用性，可以選擇將映像檔推送至多個地區登錄。
   
   您也可能選擇將映像檔推送至多個登錄，以防意外刪除或改寫映像檔。
 

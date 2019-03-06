@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-22"
+
+kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+
+subcollection: registry
 
 ---
 
@@ -13,17 +17,18 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}
-
-您可以使用在 `container-registry` CLI 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.Bluemix_notm}} 帐户的注册表及其资源。
+{: #containerregcli}您可以使用在 `container-registry` CLI 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.Bluemix_notm}} 帐户的注册表及其资源。
 {: shortdesc}
 
 **先决条件**
 
-* 安装 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/cli/index.html#overview)。使用 {{site.data.keyword.Bluemix_notm}} CLI 运行命令的前缀为 `ibmcloud`。
+* 安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.Bluemix_notm}} CLI 运行命令的前缀为 `ibmcloud`。
 
 * 在运行注册表命令之前，请使用 `ibmcloud login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成访问令牌并对会话进行认证。
 
@@ -117,8 +122,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>要豁免的安全问题的类型。要查找有效的问题类型，请运行 `ibmcloud cr exemption-types`。
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>要豁免的安全问题的标识。要查找问题标识，请运行 `ibmcloud cr va <image>`，其中 *&lt;image&gt;* 是映像的名称，并使用 **Vulnerability ID** 或 **Configuration Issue ID** 列中的相关值。
-</dd>
+<dd>要豁免的安全问题的标识。要查找问题标识，请运行 `ibmcloud cr va <image>`，其中 `<image>` 是映像的名称，并使用 **Vulnerability ID** 或 **Configuration Issue ID** 列中的相关值。</dd>
 </dl>
 
 **示例**
@@ -299,7 +303,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 {:tip}
 
 ```
- ibmcloud cr image-list [--no-trunc] [--format FORMAT] [-q, --quiet] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
 ```
 {: codeblock}
 
@@ -317,7 +321,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.blu
 有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)。
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>（可选）将列出每个映像，格式为 `repository:tag`</dd>
 <dt>`--restrict RESTRICTION`</dt>
 <dd>（可选）将输出限制为仅显示指定名称空间或名称空间和存储库中的映像。</dd>
@@ -360,7 +364,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **示例**
-删除映像 *`registry.ng.bluemix.net/birds/bluebird:1`*。
+删除映像 `registry.ng.bluemix.net/birds/bluebird:1`。
 
 ```
 ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
@@ -398,7 +402,7 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 
 **示例**
 
-向映像 *`registry.ng.bluemix.net/birds/bluebird:1`* 添加另一个标记引用 `latest`。
+向映像 `registry.ng.bluemix.net/birds/bluebird:1` 添加另一个标记引用 `latest`。
 
 ```
 ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
@@ -503,7 +507,7 @@ ibmcloud cr namespace-list
 从 {{site.data.keyword.Bluemix_notm}} 帐户中除去名称空间。除去名称空间时，将删除此名称空间中的映像。
 
 ```
-ibmcloud cr namespace-rm NAMESPACE
+ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
@@ -515,6 +519,8 @@ ibmcloud cr namespace-rm NAMESPACE
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>要除去的名称空间。</dd>
+<dt>`--force`, `-f`</dt>
+<dd>（可选）强制命令运行，而不显示用户提示。</dd>
 </dl>
 
 **示例**
@@ -712,7 +718,7 @@ ibmcloud cr region-set us-south
 添加可用于控制对注册表的访问权的令牌。
 
 ```
-ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring] [--readwrite]
+ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
 ```
 {: codeblock}
 
@@ -730,7 +736,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [-q, --quiet] [--non-expiring]
 </p>
 
 </dd>
-<dt>`-q`, `--quiet`</dt>
+<dt>`--quiet`, `-q`</dt>
 <dd>（可选）仅显示令牌，不显示任何周围的文本。</dd>
 <dt>`--non-expiring`</dt>
 <dd>（可选）创建具有不会到期的访问权的令牌。未设置此参数时，缺省情况下令牌的访问权将在 24 小时后到期。</dd>
@@ -819,10 +825,11 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 ## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
-除去一个或多个指定的令牌。
+除去一个或多个指定的注册表令牌。
 
 ```
 ibmcloud cr token-rm TOKEN [TOKEN...]
+[--force | -f]
 ```
 {: codeblock}
 
@@ -834,6 +841,8 @@ ibmcloud cr token-rm TOKEN [TOKEN...]
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN 可以是令牌本身，也可以是令牌的唯一标识，如 `ibmcloud cr token-list` 中所示。可以指定多个令牌，并且令牌之间必须以一个空格分隔。</dd>
+<dt>`--force`, `-f`</dt>
+<dd>（可选）强制命令运行，而不显示用户提示。</dd>
 </dl>
 
 **示例**
@@ -880,6 +889,12 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 有关更多信息，请参阅[使用漏洞顾问程序管理映像安全性](/docs/services/va/va_index.html)。
 
 </dd>
+<dt>`--extended`, `-e`</dt>
+<dd>（可选）命令输出显示有关有漏洞包的修订的其他信息。</dd>
+<dt>`--vulnerabilities`, `-v`</dt>
+<dd>（可选）命令输出限制为仅显示漏洞。</dd>
+<dt>`--configuration-issues`, `-c`</dt>
+<dd>（可选）命令输出限制为仅显示配置问题。</dd>
 <dt>`--output FORMAT`, `-o FORMAT`</dt>
 <dd>（可选）命令输出以所选格式返回。缺省格式为 `text`。支持以下格式：
 
@@ -889,13 +904,6 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </ul>
 
 </dd>
-<dt>`--vulnerabilities`, `-v`</dt>
-<dd>（可选）命令输出限制为仅显示漏洞。</dd>
-<dt>`--configuration-issues`, `-c`</dt>
-<dd>（可选）命令输出限制为仅显示配置问题。</dd>
-<dt>`--extended`, `-e`</dt>
-<dd>（可选）命令输出显示有关有漏洞包的修订的其他信息。</dd>
-
 </dl>
 
 **示例**
@@ -907,7 +915,7 @@ ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
 ```
 {: pre}
 
-以 JSON 格式查看映像 *`registry.ng.bluemix.net/birds/bluebird:1`* 的漏洞评估报告，此报告仅显示漏洞。
+以 JSON 格式查看映像 `registry.ng.bluemix.net/birds/bluebird:1` 的漏洞评估报告，此报告仅显示漏洞。
 
 ```
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1

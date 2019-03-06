@@ -1,9 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-19"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
 
+keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
+
+subcollection: registry
 
 ---
 
@@ -14,6 +17,9 @@ lastupdated: "2018-10-19"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 監視映像檔的漏洞
@@ -23,6 +29,7 @@ lastupdated: "2018-10-19"
 {:shortdesc}
 
 **安全狀態**直欄顯示映像檔的下列相關資訊：
+
 - `安全`：未發現任何安全問題。
 - `有漏洞`：發現安全或配置問題，而且必須先解決才能部署映像檔。
 - `未完成`：掃描未完成。掃描可能仍在執行中，或是映像檔的作業系統可能不相容。請稍候，然後重試掃描。如果掃描仍未完成，請重新推送映像檔來啟動新的掃描。不會封鎖掃描未完成的映像檔進行部署。
@@ -30,7 +37,7 @@ lastupdated: "2018-10-19"
 
 若要檢視圖形使用者介面，請使用下列步驟：
 
-1. 使用您的 IBM ID 登入 {{site.data.keyword.Bluemix_notm}} 主控台 ([https://console.bluemix.net ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net))。
+1. 使用您的 IBM ID 登入 {{site.data.keyword.cloud_notm}} 主控台 ([https://cloud.ibm.com/login ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/login))。
 2. 如果您有多個 {{site.data.keyword.Bluemix_notm}} 帳戶，請從帳戶功能表中選取要使用的帳戶及地區。
 3. 按一下**型錄**。
 4. 選取**容器**種類，然後按一下 **Container Registry** 磚。

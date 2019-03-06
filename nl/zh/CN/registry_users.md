@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-04"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 定义用户访问角色策略
@@ -56,7 +63,7 @@ lastupdated: "2019-01-04"
 
 1. 为用户和服务标识[创建策略](#create)。
 
-2. 要启用策略强制实施，请运行 [`bx cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable) 命令。
+2. 要启用策略强制实施，请运行 [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) 命令。
 
     您必须在帐户上具有“管理者”角色，才能运行 `ibmcloud cr iam-policies-enableibmcloud cr iam-policies-enable` 命令。您在自己的帐户中会自动具有“管理者”角色。
     {: tip}

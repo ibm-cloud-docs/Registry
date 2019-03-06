@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-19"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2018-11-19"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 用於管理名稱空間中 Docker 映像檔的 {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) 指令
 {: #registry_cli_reference}
 
-您可以使用 container-registry 外掛程式，在 IBM 所管理的專用登錄中設定自己的映像檔名稱空間，而在此專用登錄中，您可以安全地儲存 Docker 映像檔，並將其與 {{site.data.keyword.Bluemix}} 帳戶中的所有使用者共用。
+您可以使用 `container-registry` CLI 外掛程式，在 IBM 所管理的專用登錄中設定自己的映像檔名稱空間，而在此專用登錄中，您可以儲存 Docker 映像檔，並將其與 {{site.data.keyword.Bluemix}} 帳戶中的所有使用者共用。
 {:shortdesc}
 
 ## `ibmcloud cr` 指令
@@ -27,7 +34,7 @@ lastupdated: "2018-11-19"
 在 {{site.data.keyword.registryshort_notm}} CLI 中，執行 `ibmcloud cr` 指令。
 {:shortdesc}
 
-如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html)。
+如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)。
 
 ## 格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出
 {: #registry_cli_listing}
@@ -35,7 +42,7 @@ lastupdated: "2018-11-19"
 您可以格式化及過濾所支援 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出。
 {:shortdesc}
 
-依預設，會以人類可讀格式顯示 CLI 輸出。不過，此視圖可能會限制您使用輸出的能力，特別是以程式設計方式執行指令時。例如，在 `ibmcloud cr image-list` CLI 輸出中，您可能想要依數值大小排序 `Size` 欄位，但指令傳回大小的字串說明。container-registry 外掛程式提供 format 選項，可用來將 Go 範本套用至 CLI 輸出。Go 範本是 [Go 程式設計語言](https://golang.org/pkg/text/template/)的特性，您可以用來自訂 CLI 輸出。
+依預設，會以人類可讀格式顯示 CLI 輸出。不過，此視圖可能會限制您使用輸出的能力，特別是以程式設計方式執行指令時。例如，在 `ibmcloud cr image-list` CLI 輸出中，您可能想要依數值大小排序 `Size` 欄位，但指令傳回大小的字串說明。`container-registry` CLI 外掛程式提供 format 選項，可用來將 Go 範本套用至 CLI 輸出。Go 範本是 [Go 程式設計語言 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://golang.org/pkg/text/template/) 的特性，可用來自訂 CLI 輸出。
 
 您可以使用兩種不同方式套用 format 選項，以變更 CLI 輸出：
 
@@ -44,69 +51,69 @@ lastupdated: "2018-11-19"
 
 您可以搭配使用 format 選項與下列 {{site.data.keyword.registrylong_notm}} 指令。按一下指令，以檢視可用欄位及其資料類型的清單。
 
-- [`ibmcloud cr image-list`](registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
 
 下列程式碼範例示範如何使用格式化及過濾選項。
 
 - 執行下列 `ibmcloud cr image-list` 指令，以顯示大小超過 1 MB 的所有映像檔的儲存庫、標籤及安全狀態：
 
   ```
-ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
-    ```
+  ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
+  ```
   {: pre}
 
   **輸出範例**
 
   ```
-    example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
+  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
+  example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
+  example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
+  example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  ```
   {: screen}
 
 - 執行下列 `ibmcloud cr image-inspect` 指令，以顯示管理所指定 IBM 公用映像檔的 IBM 文件的位置：
 
   ```
-ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
-    ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
+  ```
   {: pre}
 
   **輸出範例**
 
   ```
-    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
-    ```
+  map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+  ```
   {: screen}
 
 - 執行下列 `ibmcloud cr image-inspect` 指令，以顯示所指定映像檔的公開埠：
 
   ```
-ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
-    ```
+  ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
+  ```
   {: pre}
 
   **輸出範例**
 
   ```
-    map[9080/tcp: 9443/tcp:]
-    ```
+  map[9080/tcp: 9443/tcp:]
+  ```
   {: screen}
 
 - 執行下列 `ibmcloud cr token-list` 指令，以顯示所有唯讀記號：
 
   ```
-ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
+  ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
+  ```
   {: pre}
 
   **輸出範例**
 
   ```
-    0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-    ```
+  0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
+  ```
   {: screen}
 
 ### `ibmcloud cr image-list` 指令中的 Go 範本選項及資料類型
@@ -117,13 +124,13 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 
 |欄位|類型|說明|
 |-----|----|-----------|
-|`Created`|整數（64 位元）|以 [UNIX 時間](https://en.wikipedia.org/wiki/Unix_time)顯示映像檔的建立時間（以秒數表示）。|
+|`Created`|整數（64 位元）|以 [UNIX 時間 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Unix_time) 顯示映像檔的建立時間（以秒數表示）。|
 |`Digest`|字串|顯示映像檔的唯一 ID。|
 |`Namespace`|字串|顯示儲存映像檔的名稱空間。|
 |`Repository`|字串|顯示映像檔的儲存庫。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`Tag`|字串|顯示映像檔的標籤。|
-|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](../va/va_index.html#va_registry_cli)中會說明可能的狀態。|
+|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](/docs/services/va/va_index.html#va_registry_cli)中會說明可能的狀態。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` 指令中的 Go 範本選項及資料類型
@@ -137,18 +144,18 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`ID`|字串|顯示映像檔的唯一 ID。|
 |`Parent`|字串|顯示用來建置此映像檔之主映像檔的 ID。|
 |`Comment`|字串|顯示映像檔的說明。|
-|`Created`|字串|顯示建立映像檔時的 [UNIX 時間戳記](https://en.wikipedia.org/wiki/Unix_time)。|
+|`Created`|字串|顯示建立映像檔時的 [UNIX 時間戳記 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`Container`|字串|顯示已建立映像檔之容器的 ID。|
-|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [Config](registry_cli_reference.html#config) 中的欄位詳細資料。|
+|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的欄位詳細資料。|
 |`DockerVersion`|字串|顯示用來建置此映像檔的 Docker 版本。|
 |`Author`|字串|顯示映像檔的作者。|
-|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [Config](registry_cli_reference.html#config) 中的欄位詳細資料。|
+|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的欄位詳細資料。|
 |`Architecture`|字串|顯示用來建置此映像檔、且為執行映像檔所需的處理器架構。|
 |`Os`|字串|顯示用來建置此映像檔、且為執行映像檔所需的作業系統系列。|
 |`OsVersion`|字串|顯示用來建置此映像檔的作業系統版本。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`VirtualSize`|整數（64 位元）|顯示映像檔中每一層的大小總和（以位元組為單位）。|
-|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [RootFS](registry_cli_reference.html#rootfs) 中的欄位詳細資料。|
+|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs) 中的欄位詳細資料。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
 #### Config
@@ -167,7 +174,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`StdinOnce`|布林|如果在連接的用戶端中斷連線之後關閉標準輸入串流，會顯示 _true_，如果標準輸入串流保持開啟，會顯示 _false_。|
 |`Env`|字串陣列|以鍵值配對形式顯示環境變數清單。|
 |`Cmd`|字串陣列|說明傳遞給容器以在容器啟動時執行的指令及引數。|
-|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [Healthcheck](registry_cli_reference.html#healthcheck) 中的欄位詳細資料。|
+|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck) 中的欄位詳細資料。|
 |`ArgsEscaped`|布林|如果已跳出指令（Windows 特有），會顯示 true。|
 |`Image`|字串|顯示操作員所傳遞之映像檔的名稱。|
 |`Volumes`|鍵值對映|顯示已裝載至容器的磁區裝載清單。|
@@ -210,7 +217,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |欄位|類型|說明|
 |-----|----|-----------|
 |`ID`|字串|顯示記號的唯一 ID。|
-|`Expiry`|整數（64 位元）|顯示記號到期時的 [UNIX 時間戳記](https://en.wikipedia.org/wiki/Unix_time)。|
+|`Expiry`|整數（64 位元）|顯示記號到期時的 [UNIX 時間戳記 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`ReadOnly`|布林|當您只可以取回映像檔時會顯示 _true_，當您可以將映像檔推送至名稱空間以及從中取回映像檔時會顯示 _false_。|
 |`Description`|字串|顯示記號的說明。|
 {: caption="表 6. <code>ibmcloud cr token-list</code> 指令中的可用欄位及資料類型。" caption-side="top"}

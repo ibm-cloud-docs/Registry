@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 
-lastupdated: "2018-11-15"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-15"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 

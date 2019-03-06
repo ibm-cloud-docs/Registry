@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-22"
+
+keywords: IBM Cloud Container Registry, API keys, tokens
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 自动访问 {{site.data.keyword.registrylong_notm}}
@@ -32,7 +39,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 
 有关 {{site.data.keyword.registrylong_notm}} API 密钥的更多信息，请参阅[使用 API 密钥](/docs/iam/apikeys.html#manapikey)。
 
-开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+开始之前，[安装 {{site.data.keyword.registrylong_notm}} 和 Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
 
 ## 使用 API 密钥自动访问名称空间
 {: #registry_api_key}
@@ -57,7 +64,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 您可以使用 API 密钥自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 {:shortdesc}
 
-通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 &lt;your_apikey&gt; 替换为 API 密钥，将 &lt;registry_url&gt; 替换为在其中设置名称空间的注册表的 URL。
+通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 `<your_apikey>` 替换为 API 密钥，将 `<registry_url>` 替换为在其中设置名称空间的注册表的 URL。
 
 - 对于在美国南部设置的名称空间，请使用 `registry.ng.bluemix.net`
 - 对于在英国南部设置的名称空间，请使用 `registry.eu-gb.bluemix.net`
@@ -161,8 +168,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     ```
    {: pre}
 
-3. 检索令牌的令牌值。将 &lt;token_id&gt; 替换为令牌的标识。
-
+3. 检索令牌的令牌值。将 `<token_id>` 替换为令牌的标识。
 
    ```
     ibmcloud cr token-get <token_id>
@@ -171,7 +177,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
     令牌值会显示在 CLI 输出的**令牌**中。
 
-4. 将令牌用作 `docker login` 命令的一部分。将 &lt;token_value&gt; 替换为在上一步中检索到的令牌值，将 &lt;registry_url&gt; 替换为设置名称空间的注册表的 URL。
+4. 将令牌用作 `docker login` 命令的一部分。将 `<token_value>` 替换为在上一步中检索到的令牌值，将 `<registry_url>` 替换为在其中设置名称空间的注册表的 URL。
 
    - 对于在美国南部设置的名称空间，请使用 `registry.ng.bluemix.net`
    - 对于在英国南部设置的名称空间，请使用 `registry.eu-gb.bluemix.net`
@@ -241,6 +247,6 @@ ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image
 ```
 {: pre}
 
-将 _&lt;apikey&gt;_、_&lt;region&gt;_、_&lt;my_namespace&gt;_ 和 _&lt;image_repo&gt;_ 分别替换为您的 API 密钥、[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称、您的名称空间以及存储库。
+将 `<apikey>` 替换为 API 密钥，将 `<region>` 替换为[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称，将 `<my_namespace>` 替换为名称空间，将 `<image_repo>` 替换为存储库。
 
 有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)。

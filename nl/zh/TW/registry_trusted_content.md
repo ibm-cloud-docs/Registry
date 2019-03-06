@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-14"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-11-14"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 簽署受信任內容的映像檔
@@ -107,13 +114,18 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 第一次推送已簽署的映像檔時，Docker 會自動建立一對簽署金鑰：主要金鑰與儲存庫金鑰。若要在先前已推送已簽署映像檔的儲存庫中簽署映像檔，您必須在推送映像檔的機器上，載入正確的儲存庫簽署金鑰。
 {:shortdesc}
 
-開始之前，請[設定登錄名稱空間](index.html#registry_namespace_add)。
+開始之前，請[設定登錄名稱空間](/docs/services/Registry/index.html#registry_namespace_add)。
 
 1. [設定受信任內容環境](#trustedcontent_setup)。
 
-2. [推送映像](index.html#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到 "Signing and pushing image metadata"。
+2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
 
-3. **首次推送已簽署的儲存庫。**將已簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](ts_index.html#ts_recoveringtrustedcontent)受到限制。
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
+
+3. **首次推送已簽署的儲存庫。**將已簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)受到限制。
 
 ## 取回已簽署的映像檔
 {: #trustedcontent_pull}
@@ -123,11 +135,11 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
 1. [設定受信任內容環境](#trustedcontent_setup)。
 
-2. 取回映像檔。將 _&lt;source_image&gt;_ 取代為映像檔的儲存庫，並將 _&lt;tag&gt;_ 取代為您要使用之映像檔的標籤，例如 _latest_。若要列出可取回的可用映像檔，請執行 `ibmcloud cr image-list`。
+2. 取回映像檔。將 `<source_image>` 取代為映像檔的儲存庫，並將 `<tag>` 取代為您要使用之映像檔的標籤，例如 _latest_。若要列出可取回的可用映像檔，請執行 `ibmcloud cr image-list`。
 
    ```
-docker pull <source_image>:<tag>
-    ```
+   docker pull <source_image>:<tag>
+   ```
    {: pre}
 
     當您推送或取回已簽署的映像檔時，請指定標籤。只有在停用內容信任時，才會預設為 `latest` 標籤。
@@ -149,7 +161,7 @@ docker pull <source_image>:<tag>
 
 2. 檢閱每一個映像檔的標籤、摘要及簽章者資訊。
 
-   （選用）指定標籤 _&lt;tag&gt;_，以查看該映像檔版本的相關資訊。
+   （選用）指定標籤 `<tag>`，以查看該映像檔版本的相關資訊。
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -196,14 +208,14 @@ docker trust revoke <image>:<tag>
 
 第一次將已簽署的映像檔推送至新儲存庫時，Docker Content Trust 會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器：
 
-* Linux 及 Mac 目錄：`~/.docker/trust/private`
+- Linux 及 Mac 目錄：`~/.docker/trust/private`
 
-* Windows 目錄：`%HOMEPATH%\.docker\trust\private`
+- Windows 目錄：`%HOMEPATH%\.docker\trust\private`
 
    如果您已變更 Docker 配置目錄，請在那裡尋找 `trust` 子目錄。
    {: tip}
 
-您必須備份所有金鑰，尤其是主要金鑰。如果金鑰遺失或洩漏，您的[回復選項](ts_index.html#ts_recoveringtrustedcontent)會受到限制。
+您必須備份所有金鑰，尤其是主要金鑰。如果金鑰遺失或洩漏，您的[回復選項](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)會受到限制。
 
 若要備份您的金鑰，請參閱 [Docker Content Trust 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 
@@ -232,7 +244,7 @@ docker trust revoke <image>:<tag>
 
 1. 如果新的簽章者尚未產生金鑰組，則必須產生並載入金鑰組。
   
-    a. 產生金鑰。您可以針對 _&lt;NAME&gt;_ 輸入任何名稱，不過，當有人對儲存庫檢查信任時，會看見您選取的名稱。請與儲存庫擁有者合作，以符合組織可能使用的任何命名慣例，並選取該簽章者可識別的名稱。
+    a. 產生金鑰。您可以針對 `<NAME>` 輸入任何名稱，不過，當有人對儲存庫檢查信任時，會看見您選取的名稱。請與儲存庫擁有者合作，以符合組織可能使用的任何命名慣例，並選取該簽章者可識別的名稱。
 
       ```
       docker trust key generate <NAME>

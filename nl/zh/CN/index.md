@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
+
+
+subcollection: registry
 
 ---
 
@@ -13,6 +18,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} 入门
@@ -29,7 +37,7 @@ lastupdated: "2019-01-23"
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1. 安装 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://clis.ng.bluemix.net/ui/home.html)，以便可以运行 {{site.data.keyword.Bluemix_notm}} `ibmcloud` 命令。此安装还会安装 {{site.data.keyword.containerlong_notm}} 和 {{site.data.keyword.registrylong_notm}} 的 CLI 插件。
+1. 安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)，以便可以运行 {{site.data.keyword.Bluemix_notm}} `ibmcloud` 命令。此安装还会安装 {{site.data.keyword.containerlong_notm}} 和 {{site.data.keyword.registrylong_notm}} 的 CLI 插件。
 
 ## 设置名称空间
 {: #registry_namespace_add}
@@ -41,7 +49,14 @@ lastupdated: "2019-01-23"
     ```
    {: pre}
 
-2. 添加名称空间以创建自己的映像存储库。将 _&lt;my_namespace&gt;_ 替换为首选名称空间。
+   如果拥有的是联合标识，请使用以下命令进行登录：
+
+   ```
+   ibmcloud login --sso
+   ```
+   {: pre}
+
+2. 添加名称空间以创建自己的映像存储库。将 `<my_namespace>` 替换为首选名称空间。
 
    ```
     ibmcloud cr namespace-add <my_namespace>
@@ -60,28 +75,28 @@ lastupdated: "2019-01-23"
 
 1. [安装 Docker CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/community-edition#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
 
-2. 将映像下载（_拉出_）到本地计算机。将 _&lt;source_image&gt;_ 替换为映像的存储库，并将 _&lt;tag&gt;_ 替换为要使用的映像标记，例如 _latest_。
+2. 将映像下载（_拉出_）到本地计算机。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，例如 _latest_。
 
    ```
     docker pull <source_image>:<tag>
     ```
    {: pre}
 
-   例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`：
+   例如，其中 `<source_image>` 为 `hello-world`，`<tag>` 为 `latest`：
 
    ```
     docker pull hello-world:latest
     ```
    {: pre}
 
-3. 标记映像。将 _&lt;source_image&gt;_ 替换为存储库，将 _&lt;tag&gt;_ 替换为之前拉出的本地映像的标记。将 _&lt;region&gt;_ 替换为 [region](/docs/services/Registry/registry_overview.html#registry_regions) 的名称。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)中创建的名称空间。通过替换 _&lt;new_image_repo&gt;_ 和 _&lt;new_tag&gt;_，定义要在名称空间中使用的映像的存储库和标记。
+3. 标记映像。将 `<source_image>` 替换为存储库，将 `<tag>` 替换为之前拉出的本地映像的标记。将 `<region>` 替换为[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称。将 `<my_namespace>` 替换为在[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)中创建的名称空间。通过替换 `<new_image_repo>` 和 `<new_tag>`，定义要在名称空间中使用的映像的存储库和标记。
 
    ```
     docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
     ```
    {: pre}
 
-   例如，其中 _&lt;source_image&gt;_ 是 `hello-world`，_&lt;tag&gt;_ 是 `latest`，_&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `namespace1`，_&lt;new_image_repo&gt;_ 是 `hw_repo`，_&lt;new_tag&gt;_ 是 `1`：
+   例如，其中 `<source_image>` 为 `hello-world`，`<tag>` 为 `latest`，`<region>` 为 `eu-gb`，`<my_namespace>` 为 `namespace1`，`<new_image_repo>` 为 `hw_repo`，`<new_tag>` 为 `1`：
 
    ```
     docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
@@ -98,20 +113,20 @@ lastupdated: "2019-01-23"
   ```
    {: pre}
 
-2. 将映像上传（_推送_）至名称空间。将 _&lt;my_namespace&gt;_ 替换为在[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)中创建的名称空间，将 _&lt;image_repo&gt;_ 和 _&lt;tag&gt;_ 替换为标记映像时所选择的映像的存储库和标记。
-
+2. 将映像上传（_推送_）至名称空间。将 `<my_namespace>` 替换为在[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)中创建的名称空间，将 `<image_repo>` 和 `<tag>` 替换为标记映像时所选择的映像的存储库和标记。
 
    ```
     docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
     ```
    {: pre}
 
-   例如，其中 _&lt;region&gt;_ 是 `eu-gb`，_&lt;my_namespace&gt;_ 是 `namespace1`，_&lt;image_repo&gt;_ 是 `hw_repo`，_&lt;tag&gt;_ 是 `1`：
+   例如，其中 `<region>` 为 `eu-gb`，`<my_namespace>` 为 `namespace1`，`<image_repo>` 为 `hw_repo`，`<tag>` 为 `1`：
 
    ```
     docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
     ```
    {: pre}
+   
 
 3. 通过运行以下命令，验证已成功推送映像。
 

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-23"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 关于 {{site.data.keyword.registrylong_notm}}
@@ -148,7 +155,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 您可以使用由 {{site.data.keyword.Bluemix_notm}} 提供的成本计算器来计算应用程序价格。
 
 1. 打开价格表，查看 [{{site.data.keyword.Bluemix_notm}} 定价 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/pricing)。
-2. 在**现买现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
+2. 在**现收现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
 3. 在**容器费用**部分中，滚动到**容器注册表**部分。
 4. 在提供的字段中输入估算的存储量和流量。
 
@@ -287,7 +294,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 如果要使用您本地区域以外的区域，可以通过运行 `ibmcloud cr region-set` 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。
 
-要带参数运行该命令，请将 _&lt;region&gt;_ 替换为区域的名称，例如 `eu-central`。
+要运行带参数的命令，请将 `<region>` 替换为区域的名称，例如 `eu-central`。
 
 ```
 ibmcloud cr region-set <region>
@@ -318,13 +325,13 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry/registry_cli.html#bx_cr_region_set)。
+有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)。
 
 将全局注册表设定为目标后，运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到全局注册表，这样就可以拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。
 
 ## 对 Docker 的支持
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本；请参阅 [Docker 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/v1.12/)。
+{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
 
 仅当您要推送或拉出映像，或者要运行 `ibmcloud cr ppa-archive-load` 命令时，才需要 Docker。

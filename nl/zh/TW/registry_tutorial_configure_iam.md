@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-12"
+  years: 2018, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access, tutorial
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2018-10-12"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 指導教學：授與 {{site.data.keyword.registrylong_notm}} 資源存取權
@@ -27,9 +34,9 @@ lastupdated: "2018-10-12"
 
 - 完成[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index) 中的指示。
 
-- 確保您具有最新版的 {{site.data.keyword.cloud_notm}} CLI container-registry 外掛程式，請參閱[更新 container-registry 外掛程式](https://console.bluemix.net/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 確保您具有最新版的 {{site.data.keyword.cloud_notm}} CLI `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
 
-- 您必須有權存取可用於本指導教學的兩個 [{{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/)：一個適用於「使用者 A」，一個適用於「使用者 B」，而且每個都必須使用唯一的電子郵件位址。您使用自己的帳戶（使用者 A）工作，並邀請另一位使用者（使用者 B）使用您的帳戶。您可以選擇建立第二個 {{site.data.keyword.cloud_notm}} 帳戶，也可以與具有 {{site.data.keyword.cloud_notm}} 帳戶的同事一起工作。
+- 您必須有權存取可用於本指導教學的兩個 [{{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/login)：一個適用於「使用者 A」，一個適用於「使用者 B」，而且每個都必須使用唯一的電子郵件位址。您使用自己的帳戶（使用者 A）工作，並邀請另一位使用者（使用者 B）使用您的帳戶。您可以選擇建立第二個 {{site.data.keyword.cloud_notm}} 帳戶，也可以與具有 {{site.data.keyword.cloud_notm}} 帳戶的同事一起工作。
 
 - 如果您在 2018 年 10 月 4 日之前開始在帳戶中使用 {{site.data.keyword.registrylong_notm}}，則必須執行 `ibmcloud cr iam-policies-enable` 指令來啟用 IAM 原則強制執行。如果您已邀請其他使用您 {{site.data.keyword.registrylong_notm}} 名稱空間的使用者加入您的 IBM Cloud 帳戶，則請使用與「使用者 A」不同的帳戶來防止中斷其存取。
 
@@ -214,14 +221,14 @@ lastupdated: "2018-10-12"
 
         顯示您在本指導教學中建立的三個名稱空間（`namespace_a`、`namespace_b` 及 `namespace_c`）。如果您沒有看到這些名稱空間，請返回並遵循指示再次建立它們。
 
-    3. 執行下列指令，建立原則以將 `namespace_b` 的「讀者」角色授與「使用者 B」，其中 _`<Region>`_ 是[地區](/docs/services/Registry/registry_overview.html#registry_regions)的簡稱，例如 `us-south`：
+    3. 執行下列指令，建立原則以將 `namespace_b` 的「讀者」角色授與「使用者 B」，其中 _`<Region>`_ 是[地區](/docs/services/Registry/registry_overview.html#registry_regions)的名稱，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
         ```
         {: pre}
 
-    4. 執行下列指令，建立第二個原則以將 `namespace_c` 的「讀者」及「作者」角色授與「使用者 B」：
+    4. 執行下列指令，建立第二個原則以將 `namespace_c` 的「讀者」及「撰寫者」角色授與「使用者 B」：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_c --roles Reader,Writer
@@ -257,8 +264,8 @@ lastupdated: "2018-10-12"
     4. 執行下列指令，以登入 {{site.data.keyword.registrylong_notm}}：
 
         ```
-  ibmcloud cr login
-  ```
+        ibmcloud cr login
+        ```
         {: pre}
 
     5. 執行下列指令，以將映像檔推送至 `namespace_a`：
@@ -294,8 +301,8 @@ lastupdated: "2018-10-12"
     3. 執行下列指令，以列出映像檔：
 
         ```
-    ibmcloud cr images
-    ```
+        ibmcloud cr images
+        ```
         {: pre}
 
         `namespace_b` 中的映像檔會顯示在清單中，但 `namespace_a` 中的映像檔不會，因為「使用者 B」無法存取 `namespace_a`。
@@ -303,8 +310,8 @@ lastupdated: "2018-10-12"
     4. 執行下列指令，以登入 {{site.data.keyword.registrylong_notm}}：
 
         ```
-  ibmcloud cr login
-  ```
+        ibmcloud cr login
+        ```
         {: pre}
 
     5. 執行下列指令，以取回映像檔：
@@ -321,7 +328,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        因為「使用者 B」沒有 `namespace_b` 的「作者」角色，所以此指令失敗。
+        因為「使用者 B」沒有 `namespace_b` 的「撰寫者」角色，所以此指令失敗。
 
     7. 執行下列指令，以使用 `namespace_c` 來標記映像檔：
 
@@ -337,7 +344,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        此指令的運作原因是「使用者 B」具有 `namespace_c` 的「作者」角色。
+        此指令的運作原因是「使用者 B」具有 `namespace_c` 的「撰寫者」角色。
 
     9. 執行下列指令，以從 `namespace_c` 取回：
 
@@ -353,8 +360,8 @@ lastupdated: "2018-10-12"
     1. 執行下列指令，以重新登入「使用者 A」的帳戶：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以列出「使用者 B」的原則：
@@ -376,47 +383,47 @@ lastupdated: "2018-10-12"
 ## 步驟 3：建立服務 ID 並授與資源存取權
 {: #service_id}
 
-在本節中，您會配置「服務 ID」，並將您 {{site.data.keyword.registrylong_notm}} 名稱空間的存取權授與它。
+在本節中，您會配置服務 ID，並授與該 ID 您的 {{site.data.keyword.registrylong_notm}} 名稱空間存取權。
 {:shortdesc}
 
-1. 設定具有 {{site.data.keyword.registrylong_notm}} 存取權的「服務 ID」，並為其建立 API 金鑰：
+1. 設定具有 {{site.data.keyword.registrylong_notm}} 存取權的服務 ID，並為其建立 API 金鑰：
 
     1. 執行下列指令，以登入「使用者 A」的帳戶：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
-    2. 執行下列指令，以建立名為 `cr-roles-tutorial` 的「服務 ID」，且說明為 `"Created during the access control tutorial for Container Registry"`：
+    2. 執行下列指令，以建立名為 `cr-roles-tutorial` 的服務 ID，且說明為 `"Created during the access control tutorial for Container Registry"`：
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
         ```
         {: pre}
 
-    3. 執行下列指令，建立「服務 ID」的服務原則，以授與 `namespace_a` 的「讀者」角色：
+    3. 執行下列指令，建立服務 ID 的服務原則，以授與 `namespace_a` 的「讀者」角色：
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
         ```
         {: pre}
 
-    4. 執行下列指令，建立第二個服務原則，以授與 `namespace_b` 的「作者」角色：
+    4. 執行下列指令，建立第二個服務原則，以授與 `namespace_b` 的「撰寫者」角色：
 
         ```
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Writer
         ```
         {: pre}
 
-    5. 執行下列指令，以建立「服務 ID」的 API 金鑰：
+    5. 執行下列指令，以建立服務 ID 的 API 金鑰：
 
         ```
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial
         ```
         {: pre}
 
-2. 使用 Docker 以利用「服務 ID」API 金鑰登入，其中 _`<API_Key>`_ 是 API 金鑰，並與登錄互動：
+2. 使用 Docker 以利用「服務 ID」API 金鑰登入，其中，_`<API_Key>`_ 是 API 金鑰，並與登錄互動：
 
     1. 執行下列指令，以登入 {{site.data.keyword.registrylong_notm}}：
 
@@ -441,7 +448,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        因為使用者沒有 `namespace_a` 的「作者」角色，所以此指令未運作。
+        因為使用者沒有 `namespace_a` 的「撰寫者」角色，所以此指令未運作。
 
     4. 執行下列指令，以將映像檔推送至 `namespace_b`：
 
@@ -450,7 +457,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-        此指令的運作原因是使用者具有 `namespace_b` 的「作者」角色。
+        此指令的運作原因是使用者具有 `namespace_b` 的「撰寫者」角色。
 
 3. 清除：
 
@@ -470,7 +477,7 @@ lastupdated: "2018-10-12"
         ```
         {: pre}
 
-    3. 執行下列指令，以刪除「服務 ID」：
+    3. 執行下列指令，以刪除您的服務 ID：
 
         ```
         ibmcloud iam service-id-delete cr-roles-tutorial
@@ -480,8 +487,8 @@ lastupdated: "2018-10-12"
     4. 以「使用者 A」身分重新登入 {{site.data.keyword.registrylong_notm}}：
 
         ```
-  ibmcloud cr login
-  ```
+        ibmcloud cr login
+        ```
         {: pre}
 
 ## 步驟 4：清除

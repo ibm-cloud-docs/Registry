@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-15"
+  years: 2017, 2019
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
+
+subcollection: registry
 
 ---
 
@@ -13,12 +17,15 @@ lastupdated: "2018-11-15"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 強制執行容器映像檔安全（測試版）
 {: #security_enforce}
 
-使用 Container Image Security Enforcement（測試版），您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](registry_trusted_content.html)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
+使用 Container Image Security Enforcement（測試版），您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry/registry_trusted_content.html)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
 {:shortdesc}
 
 Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} 擷取映像檔內容信任及漏洞的相關資訊。您可以選擇封鎖或容許部署儲存在其他登錄中的映像檔，但無法針對這些映像檔使用漏洞或信任強制執行。
@@ -219,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>設為 `true`，只容許部署[針對內容信任簽署](registry_trusted_content.html)的映像檔。設為 `false` 會忽略是否簽署映像檔。</td>
+    <td>設為 `true`，只容許部署[針對內容信任簽署](/docs/services/Registry/registry_trusted_content.html)的映像檔。設為 `false` 會忽略是否簽署映像檔。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -242,7 +249,7 @@ kubectl apply -f <filepath>
 ### 在自訂原則中指定受信任內容簽章者
 {: #signers}
 
-如果您使用內容信任，則可以驗證映像檔已由特定簽章者簽署。只有在所有列出的簽章者已簽署最新的簽署版本時，才容許部署。若要將簽章者新增至儲存庫，請參閱[管理受信任的簽章者](registry_trusted_content.html#trustedcontent_signers)。
+如果您使用內容信任，則可以驗證映像檔已由特定簽章者簽署。只有在所有列出的簽章者已簽署最新的簽署版本時，才容許部署。若要將簽章者新增至儲存庫，請參閱[管理受信任的簽章者](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)。
 {:shortdesc}
 
 若要配置原則來驗證映像檔已由特定的簽章者簽署，請執行下列動作：
@@ -340,7 +347,7 @@ kubectl apply -f <filepath>
 
 您可以在原則中啟用 `va` 選項，以強制在部署映像檔之前，先通過「漏洞警告器」掃描。容許「漏洞警告器」不支援的映像檔。
 
-您可以在原則中啟用 `trust` 選項，以強制執行內容信任。如果您未指定任何 `signerSecret`，則會容許部署任何人簽署的映像檔。如果您指定 `signerSecret`，則映像檔的最新簽署版本必須已由您指定的所有簽章者簽署。Container Image Security Enforcement 會驗證所提供的公開金鑰屬於簽章者。如需內容信任的相關資訊，請參閱[簽署受信任內容的映像檔](registry_trusted_content.html)。
+您可以在原則中啟用 `trust` 選項，以強制執行內容信任。如果您未指定任何 `signerSecret`，則會容許部署任何人簽署的映像檔。如果您指定 `signerSecret`，則映像檔的最新簽署版本必須已由您指定的所有簽章者簽署。Container Image Security Enforcement 會驗證所提供的公開金鑰屬於簽章者。如需內容信任的相關資訊，請參閱[簽署受信任內容的映像檔](/docs/services/Registry/registry_trusted_content.html)。
 
 只有在所有映像檔都通過 Container Image Security Enforcement 檢查時，才會容許部署。
 

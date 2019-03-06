@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, user access
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 使用 Identity and Access Management 管理用户访问权
@@ -59,10 +66,10 @@ lastupdated: "2019-01-24"
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/services/Registry/registry_cli.html#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。|管理员|
-|`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/services/Registry/registry_cli.html#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
-|`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/services/Registry/registry_cli.html#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
-|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/services/Registry/registry_cli.html#bx_cr_token_list)：显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。|管理员|
+|`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。|管理员|
+|`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
+|`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
+|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_list)：显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。|管理员|
 {: caption="表 2. 用于配置 {{site.data.keyword.registrylong_notm}} 的平台操作" caption-side="top"}
 
 ## 服务访问角色
@@ -93,12 +100,12 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.auth.set`|[`ibmcloud cr iam-policies-enable`](/docs/services/Registry/registry_cli.html#bx_cr_iam_policies_enable)：启用 IAM 策略强制实施。|管理者|
-|`container-registry.exemption.manager`| <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_add)：为安全问题创建豁免。</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_list)：列出对安全问题的豁免。</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_rm)：删除对安全问题的豁免。</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry/registry_cli.html#bx_cr_exemption_types)：列出可以豁免的安全问题的类型。</li></ul> |管理者|
-|`container-registry.plan.get`|[`ibmcloud cr plan`](/docs/services/Registry/registry_cli.html#bx_cr_plan)：显示价格套餐。|管理者|
-|`container-registry.plan.set`|[`ibmcloud cr plan-upgrade`](/docs/services/Registry/registry_cli.html#bx_cr_plan_upgrade)：升级为标准套餐。|管理者|
-|`container-registry.quota.get`|[`ibmcloud cr quota`](/docs/services/Registry/registry_cli.html#bx_cr_quota)：显示流量和存储的当前配额以及这些配额的使用情况信息。|读取者、写入者和管理者|
-|`container-registry.quota.set`|[`ibmcloud cr quota-set`](/docs/services/Registry/registry_cli.html#bx_cr_quota_set)：修改指定的配额。|管理者|
+|`container-registry.auth.set`|[`ibmcloud cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable)：启用 IAM 策略强制实施。|管理者|
+|`container-registry.exemption.manager`| <ul><li>[`ibmcloud cr exemption-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_add)：为安全问题创建豁免。</li><li>[`ibmcloud cr exemption-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_list)：列出对安全问题的豁免。</li><li>[`ibmcloud cr exemption-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_rm)：删除对安全问题的豁免。</li><li>[`ibmcloud cr exemption-types`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_types)：列出可以豁免的安全问题的类型。</li></ul> |管理者|
+|`container-registry.plan.get`|[`ibmcloud cr plan`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan)：显示价格套餐。|管理者|
+|`container-registry.plan.set`|[`ibmcloud cr plan-upgrade`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan_upgrade)：升级为标准套餐。|管理者|
+|`container-registry.quota.get`|[`ibmcloud cr quota`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota)：显示流量和存储的当前配额以及这些配额的使用情况信息。|读取者、写入者和管理者|
+|`container-registry.quota.set`|[`ibmcloud cr quota-set`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota_set)：修改指定的配额。|管理者|
 {: caption="表 4. 用于配置 {{site.data.keyword.registrylong_notm}} 的服务操作" caption-side="top"}
 
 ### 使用 {{site.data.keyword.registrylong_notm}} 的访问角色
@@ -115,15 +122,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.image.build`|[`ibmcloud cr build`](/docs/services/Registry/registry_cli.html#bx_cr_build)：构建容器映像。|写入者、管理者|
-|`container-registry.image.delete`| <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry/registry_cli.html#bx_cr_image_rm)：删除一个或多个映像。</li><li>`docker trust revoke`：删除签名。</li></ul> |写入者、管理者|
-|`container-registry.image.inspect`|[`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli.html#bx_cr_image_inspect)：显示有关特定映像的详细信息。|读取者、管理者|
-|`container-registry.image.list`|[`ibmcloud cr image-list`](/docs/services/Registry/registry_cli.html#bx_cr_image_list)：列出容器映像。|读取者、管理者|
+|`container-registry.image.build`|[`ibmcloud cr build`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build)：构建容器映像。|写入者、管理者|
+|`container-registry.image.delete`| <ul><li> [`ibmcloud cr image-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_rm)：删除一个或多个映像。</li><li>`docker trust revoke`：删除签名。</li></ul> |写入者、管理者|
+|`container-registry.image.inspect`|[`ibmcloud cr image-inspect`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_inspect)：显示有关特定映像的详细信息。|读取者、管理者|
+|`container-registry.image.list`|[`ibmcloud cr image-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_list)：列出容器映像。|读取者、管理者|
 |`container-registry.image.pull`| <ul><li>`docker pull`：拉出映像。</li><li>`docker trust inspect`：检查签名。</li></ul> |读取者、写入者和管理者|
-|`container-registry.image.push`| <ul><li>`docker push`：推送映像。</li><li>`docker trust sign`：对映像签名。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry/registry_cli.html#bx_cr_ppa_archive_load)：将从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 IBM 软件导入到 {{site.data.keyword.registrylong_notm}} 名称空间。</li></ul> |写入者、管理者|
-|`container-registry.image.tag`|[`ibmcloud cr image-tag`](/docs/services/Registry/registry_cli.html#bx_cr_image_tag)：创建引用源映像的新映像。源映像和目标映像必须位于同一区域中。|对于源映像，为读取者、写入者或管理者；对于目标映像，为写入者或管理者|
-|`container-registry.image.vulnerabilities`|[`ibmcloud cr vulnerability-assessment`](/docs/services/Registry/registry_cli.html#bx_cr_va)：查看映像的漏洞评估报告。|读取者、管理者|
-|`container-registry.namespace.create`|[`ibmcloud cr namespace-add`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_add)：添加名称空间。|写入者、管理者|
-|`container-registry.namespace.delete`|[`ibmcloud cr namespace-rm`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_rm)：除去名称空间。|写入者、管理者|
-|`container-registry.namespace.list`|[`ibmcloud cr namespace-list`](/docs/services/Registry/registry_cli.html#bx_cr_namespace_list)：显示名称空间。|读取者、管理者|
+|`container-registry.image.push`| <ul><li>`docker push`：推送映像。</li><li>`docker trust sign`：对映像签名。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_ppa_archive_load)：将从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 IBM 软件导入到 {{site.data.keyword.registrylong_notm}} 名称空间。</li></ul> |写入者、管理者|
+|`container-registry.image.tag`|[`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag)：创建引用源映像的新映像。源映像和目标映像必须位于同一区域中。|对于源映像，为读取者、写入者或管理者；对于目标映像，为写入者或管理者|
+|`container-registry.image.vulnerabilities`|[`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va)：查看映像的漏洞评估报告。|读取者、管理者|
+|`container-registry.namespace.create`|[`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add)：添加名称空间。|写入者、管理者|
+|`container-registry.namespace.delete`|[`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm)：除去名称空间。|写入者、管理者|
+|`container-registry.namespace.list`|[`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list)：显示名称空间。|读取者、管理者|
 {: caption="表 5. 使用 {{site.data.keyword.registrylong_notm}} 的服务操作" caption-side="top"}

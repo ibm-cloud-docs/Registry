@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-24"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
@@ -31,8 +38,8 @@ lastupdated: "2019-01-24"
 
 使用论坛提问时，请标记您的问题，以使其可由 {{site.data.keyword.registrylong_notm}} 开发团队看到。
 
-- 如果有与使用 {{site.data.keyword.registrylong_notm}} 开发或部署应用程序相关的技术问题，请在 [Stack Overflow ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://stackoverflow.com/search?q=+ibm-bluemix) 上发布问题，并使用 `ibm-bluemix` 和 `container-registry` 标记您的问题。
-- 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 论坛。请包含 `bluemix` 和 `container-registry` 标记。
+- 如果有与使用 {{site.data.keyword.registrylong_notm}} 开发或部署应用程序相关的技术问题，请在 [Stack Overflow ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://stackoverflow.com/search?q=+ibm-bluemix) 上发布问题，并使用 `ibm-cloud` 和 `container-registry` 标记您的问题。
+- 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 论坛。请包含 `ibm-cloud` 和 `container-registry` 标记。
 
 有关使用论坛的更多详细信息，请参阅[使用支持中心](/docs/get-support/howtogetsupport.html#using-avatar)。
 
@@ -103,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_install)。
+- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
 
 ## `ibmcloud cr build` 命令失败
 {: #ts_build_fails}
@@ -330,7 +337,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 2. [设置可信内容环境](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)。
 
-3. 记下先前步骤中 export 命令中的 URL。例如，`https://registry.ng.bluemix.net:4443`。
+3. 记下先前步骤中 export 命令中的 URL。例如，`https://registry.ng.bluemix.net:4443`
 
 4. 生成注册表令牌。
 
@@ -339,7 +346,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
     ```
    {: pre}
 
-5. 轮换密钥，以便不再信任已使用这些密钥签名的内容。将 _&lt;URL&gt;_ 替换为在步骤 2 中记录的 export 命令的 URL，并将 _&lt;image&gt;_ 替换为其存储库密钥受影响的映像。
+5. 轮换密钥，以便不再信任已使用这些密钥签名的内容。将 `<URL>` 替换为在步骤 2 中记录的 export 命令的 URL，并将 `<image>` 替换为其存储库密钥受影响的映像。
 
    ```
 notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -544,4 +551,18 @@ kubectl edit ValidatingWebhookConfiguration image-admission-config
    {: pre}
 
 4. 通过运行 `ibmcloud cr image-tag` 命令对映像进行标记；请参阅[创建引用源映像的新映像](/docs/services/Registry/registry_images_.html#registry_images_source)。
-  
+
+## 在 Mac 上 Docker 登录失败：`保存凭证时出错：存储凭证时出错 - 错误：退出状态 1，输出：“您输入的用户名或口令不正确。”`
+{: #ts_docker_mac}
+
+{: tsSymptoms}
+在 Mac 上尝试运行 `ibmcloud cr login` 命令时，收到以下错误消息：`保存凭证时出错：存储凭证时出错 - 错误：退出状态 1，输出：“您输入的用户名或口令不正确。”`
+
+{: tsCauses}
+Docker for Mac 发生问题，导致凭证无法存储在 macOS 钥匙串中。
+
+{: tsResolve}
+您可能可以通过重新引导 Mac 来解决此问题。如果重新引导 Mac 不起作用，您可以禁止在 Mac 钥匙串中存储登录：
+
+1. 在菜单中，单击 **Docker** 图标，选择**偏好设置**。
+2. 清除**在 macOS 钥匙串中安全存储 Docker 登录**复选框。

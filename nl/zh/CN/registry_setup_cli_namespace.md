@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-20"
+
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+
+subcollection: registry
 
 ---
 
@@ -13,6 +17,9 @@ lastupdated: "2019-01-22"
 {:table: .aria-labeledby="caption"}
 {:codeblock: .codeblock}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
+{:deprecated: .deprecated}
 {:download: .download}
 
 # 设置 {{site.data.keyword.registrylong_notm}} CLI 和注册表名称空间
@@ -24,10 +31,10 @@ lastupdated: "2019-01-22"
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {:tip}
 
-开始之前，安装 [{{site.data.keyword.Bluemix_notm}} CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://clis.ng.bluemix.net/ui/home.html)。
+开始之前，安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
 
 ## 安装 `container-registry` CLI 插件
-{: #registry_cli_install}
+{: #cli_namespace_registry_cli_install}
 
 安装 `container-registry` CLI 插件，以使用命令行在 {{site.data.keyword.registrylong_notm}} 中管理名称空间和 Docker 映像。
 {:shortdesc}
@@ -46,7 +53,7 @@ lastupdated: "2019-01-22"
 1. 更新 `container-registry` CLI 插件。
 
     ```
-    ibmcloud plugin update container-registry -r Bluemix
+    ibmcloud plugin update container-registry
     ```
     {: pre}
 
@@ -80,7 +87,7 @@ lastupdated: "2019-01-22"
     结果中不会显示 `container-registry` CLI 插件。
 
 ## 设置名称空间
-{: #registry_namespace_add}
+{: #registry_namespace_setup}
 
 必须创建名称空间才能在 {{site.data.keyword.registrylong_notm}} 中存储 Docker 映像。
 {:shortdesc}
@@ -92,7 +99,7 @@ lastupdated: "2019-01-22"
 
 创建名称空间；请参阅“入门”文档中的[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)。
 
-现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry/registry_images_.html#registry_images_pushing)，并与帐户中的其他用户共享这些映像。
+现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。
 
 
 ## 除去名称空间
