@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
-{:tip}
+{: important}
 
 Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
