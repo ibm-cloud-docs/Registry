@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -412,10 +412,10 @@ Error: jobs.batch "create-crds" already exists
 {: screen}
 
 {: tsCauses}
-The previous installation failed and the subsequent uninstallation did not remove every Kubenetes job that is associated with the installation.
+The previous installation failed and the subsequent uninstallation did not remove every Kubernetes job that is associated with the installation.
 
 {: tsResolve}
-Remove the remaining Kubenetes jobs by running the following command:
+Remove the remaining Kubernetes jobs by running the following command:
 
 ```
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true

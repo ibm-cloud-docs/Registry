@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-07"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -40,7 +40,7 @@ To find out more about {{site.data.keyword.iamlong}} (IAM) access role policies,
 
 If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, or the entire service, that is, all namespaces in the account.
 
-If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specifc namespace, specify the resource type as `namespace` and use the namespace name as the resource.
+If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specific namespace, specify the resource type as `namespace` and use the namespace name as the resource.
 
 **Before you begin**
 
