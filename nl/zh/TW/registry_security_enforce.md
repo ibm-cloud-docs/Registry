@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 強制執行容器映像檔安全（測試版）
 {: #security_enforce}
 
-使用 Container Image Security Enforcement（測試版），您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry/registry_trusted_content.html)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
+使用 Container Image Security Enforcement（測試版），您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
 {:shortdesc}
 
 Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} 擷取映像檔內容信任及漏洞的相關資訊。您可以選擇封鎖或容許部署儲存在其他登錄中的映像檔，但無法針對這些映像檔使用漏洞或信任強制執行。
@@ -35,17 +35,17 @@ Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} �
 
 **開始之前**
 
-* 使用 **Kubernetes 1.9 版或更新版本**來[建立](/docs/containers/cs_clusters.html#clusters_ui)或[更新](/docs/containers/cs_cluster_update.html#update)您要使用的叢集。
-* [將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。
+* 使用 **Kubernetes 1.9 版或更新版本**來[建立](/docs/containers?topic=containers-clusters#clusters_ui)或[更新](/docs/containers?topic=containers-update#update)您要使用的叢集。
+* [將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
 
 請完成下列步驟：
 
-1. [在叢集中設定 Helm](/docs/containers/cs_integrations.html#helm)。
+1. [在叢集中設定 Helm](/docs/containers?topic=containers-integrations#helm)。
 
 2. 將 IBM 圖表儲存庫新增至 Helm 用戶端。
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ spec:
 
 當您套用部署時，Container Image Security Enforcement 會檢查您正在部署至的 Kubernetes 名稱空間是否有原則可套用。如果沒有，Container Image Security Enforcement 會使用叢集層面原則。如果沒有任何名稱空間或叢集層面原則存在，即會拒絕您的部署。
 
-開始之前，請[將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。然後，請完成下列步驟：
+開始之前，請[將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。然後，請完成下列步驟：
 
 1. 建立 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 自訂資源定義 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a> `.yaml` 檔案。
 
@@ -226,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>設為 `true`，只容許部署[針對內容信任簽署](/docs/services/Registry/registry_trusted_content.html)的映像檔。設為 `false` 會忽略是否簽署映像檔。</td>
+    <td>設為 `true`，只容許部署[針對內容信任簽署](/docs/services/Registry?topic=registry-registry_trustedcontent)的映像檔。設為 `false` 會忽略是否簽署映像檔。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>設為 `true`，只容許通過[漏洞警告器](/docs/services/va/va_index.html)掃描的映像檔。設為 `false` 會忽略「漏洞警告器」掃描。</td>
+    <td>設為 `true`，只容許通過[漏洞警告器](/docs/services/va?topic=va-va_index)掃描的映像檔。設為 `false` 會忽略「漏洞警告器」掃描。</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ kubectl apply -f <filepath>
 ### 在自訂原則中指定受信任內容簽章者
 {: #signers}
 
-如果您使用內容信任，則可以驗證映像檔已由特定簽章者簽署。只有在所有列出的簽章者已簽署最新的簽署版本時，才容許部署。若要將簽章者新增至儲存庫，請參閱[管理受信任的簽章者](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)。
+如果您使用內容信任，則可以驗證映像檔已由特定簽章者簽署。只有在所有列出的簽章者已簽署最新的簽署版本時，才容許部署。若要將簽章者新增至儲存庫，請參閱[管理受信任的簽章者](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers)。
 {:shortdesc}
 
 若要配置原則來驗證映像檔已由特定的簽章者簽署，請執行下列動作：
@@ -279,7 +279,7 @@ kubectl apply -f <filepath>
 ## 控制可以自訂原則的人員
 {: #assign_user_policy}
 
-如果您在 Kubernetes 叢集上啟用了角色型存取控制 (RBAC)，則可以建立角色來控管誰可以在叢集上管理安全原則。如需將 RBAC 規則套用至叢集的相關資訊，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers/cs_users.html#rbac)。
+如果您在 Kubernetes 叢集上啟用了角色型存取控制 (RBAC)，則可以建立角色來控管誰可以在叢集上管理安全原則。如需將 RBAC 規則套用至叢集的相關資訊，請參閱 [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-users#rbac)。
 {:shortdesc}
 
 在您的角色中，新增安全原則的規則：
@@ -347,28 +347,28 @@ kubectl apply -f <filepath>
 
 您可以在原則中啟用 `va` 選項，以強制在部署映像檔之前，先通過「漏洞警告器」掃描。容許「漏洞警告器」不支援的映像檔。
 
-您可以在原則中啟用 `trust` 選項，以強制執行內容信任。如果您未指定任何 `signerSecret`，則會容許部署任何人簽署的映像檔。如果您指定 `signerSecret`，則映像檔的最新簽署版本必須已由您指定的所有簽章者簽署。Container Image Security Enforcement 會驗證所提供的公開金鑰屬於簽章者。如需內容信任的相關資訊，請參閱[簽署受信任內容的映像檔](/docs/services/Registry/registry_trusted_content.html)。
+您可以在原則中啟用 `trust` 選項，以強制執行內容信任。如果您未指定任何 `signerSecret`，則會容許部署任何人簽署的映像檔。如果您指定 `signerSecret`，則映像檔的最新簽署版本必須已由您指定的所有簽章者簽署。Container Image Security Enforcement 會驗證所提供的公開金鑰屬於簽章者。如需內容信任的相關資訊，請參閱[簽署受信任內容的映像檔](/docs/services/Registry?topic=registry-registry_trustedcontent)。
 
 只有在所有映像檔都通過 Container Image Security Enforcement 檢查時，才會容許部署。
 
 ## 移除 Container Image Security Enforcement
 {: #remove}
 
-開始之前，請[將 `kubectl` CLI 的目標](/docs/containers/cs_cli_install.html#cs_cli_configure)設為叢集。
+開始之前，請[將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
 
 
 
 1. 停用 Container Image Security Enforcement。
 
    ```
-$ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config 
-    ```
+   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+   $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   ```
    {: codeblock}
 
 2. 移除圖表。
 
    ```
-helm delete --purge cise
-    ```
+   helm delete --purge cise
+   ```
    {: pre}

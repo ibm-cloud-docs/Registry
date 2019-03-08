@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, Activity Tracker events, events
 
@@ -29,7 +29,7 @@ Utilice el servicio {{site.data.keyword.cloudaccesstrailfull}} para realizar el 
 {:shortdesc}
 
 El servicio {{site.data.keyword.cloudaccesstrailfull_notm}} registra las actividades iniciadas por el usuario que cambian el estado de un servicio en {{site.data.keyword.Bluemix_notm}}.
-Para obtener más información, consulte [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla).
+Para obtener más información, consulte [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
 
 En la tabla siguiente se muestran los métodos de API que generan un suceso cuando se le llama:
 
@@ -54,4 +54,4 @@ En la tabla siguiente se muestran los métodos de API que generan un suceso cuan
 
 Los sucesos de {{site.data.keyword.cloudaccesstrailshort}} están disponibles en el {{site.data.keyword.cloudaccesstrailshort}} **dominio de la cuenta** disponible en la región de {{site.data.keyword.Bluemix_notm}} donde se han generado los sucesos.
 
-La [región](/docs/services/Registry/registry_overview.html#registry_regions) en la que está disponible un suceso de Vulnerability Advisor corresponde a la región de {{site.data.keyword.registrylong_notm}} onde está disponible el recurso (por ejemplo, la imagen o el espacio de nombres).
+La [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions) en la que está disponible un suceso de Vulnerability Advisor corresponde a la región de {{site.data.keyword.registrylong_notm}} onde está disponible el recurso (por ejemplo, la imagen o el espacio de nombres).

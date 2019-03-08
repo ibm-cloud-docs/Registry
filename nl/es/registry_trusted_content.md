@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ Al enviar la imagen con el contenido de confianza habilitado, el cliente de Dock
 Un nombre de imagen se compone de un repositorio y de una etiqueta. Al utilizar contenido de confianza, cada repositorio utiliza una clave de firma exclusiva. Cada etiqueta de un repositorio utiliza la clave que pertenece al repositorio. Si tiene varios equipos que publican contenido, cada uno en su propio repositorio dentro de los espacios de nombres de {{site.data.keyword.registrylong_notm}}, cada equipo puede utilizar sus propias claves para firmar su contenido, de modo que pueda verificar que cada imagen la produzca el equipo apropiado.
 
 Un repositorio puede contener contenido firmado y no firmado. Si tiene Docker Content Trust habilitado, puede acceder al contenido firmado en un repositorio, aunque haya otro contenido no firmado junto a él.
+
+Las imágenes tienen firmas separadas para los nombres de dominio antiguos (`registry.bluemix.net`) y nuevos (`icr.io`). Las firmas existentes funcionan cuando la imagen se extrae del nombre de dominio antiguo. Si desea extraer contenido firmado del nuevo nombre de dominio, debe volver a firmar la imagen en el nuevo nombre de dominio, `icr.io`, consulte [Redefinir una imagen para el nuevo nombre de dominio](#trustedcontent_resign).
+{: note}
 
 Docker Content Trust utiliza un modelo de seguridad "trust on first use" ("confianza en el primer uso"). La clave de repositorio se extrae del servidor de confianza al extraer una imagen firmada de un repositorio por primera vez, y dicha clave se utiliza para verificar imágenes de ese repositorio en el futuro. Debe verificar que confíe en el servidor de confianza o en la imagen y su editor antes de extraer el repositorio por primera vez. Si la información de confianza del servidor está en peligro y no ha extraído una imagen del repositorio antes, el cliente de Docker podría extraer la información en peligro del servidor de confianza. Si los datos de confianza están en peligro después de extraer la imagen por primera vez, en extracciones posteriores, el cliente de Docker no podrá verificar los datos en peligro y no extraerá la imagen. Para obtener más información sobre cómo inspeccionar datos de confianza para una imagen, consulte [Visualización de imágenes firmadas](#trustedcontent_viewsigned).
 
@@ -90,18 +93,19 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
-   To set up your Docker client with content trust, export the following environment variable:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   To set up your Docker client with content trust,
+   export the following environment variable:
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Copie y pegue el mandato de la variable de entorno en el terminal. Por ejemplo:
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -116,18 +120,18 @@ Durante la sesión con Docker Content Trust habilitado, si desea realizar una op
 Cuando envíe por primera vez una imagen firmada, Docker crea automáticamente un par de claves de firma: raíz y repositorio. Para firmar una imagen en un repositorio donde se hayan enviado antes las imágenes firmadas, debe tener la clave de firma de repositorios correcta cargada en la máquina que está enviando la imagen.
 {:shortdesc}
 
-Antes de empezar, [configure su espacio de nombres de registro](/docs/services/Registry/index.html#registry_namespace_add).
+Antes de empezar, [configure su espacio de nombres de registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. [Envíe su imagen](/docs/services/Registry/index.html#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
+2. [Envíe su imagen](/docs/services/Registry?topic=registry-index#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) son limitadas.
+3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) son limitadas.
 
 ## Extracción de una imagen firmada
 {: #trustedcontent_pull}
@@ -146,6 +150,36 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 
     Especifique la etiqueta cuando envíe o extraiga una imagen firmada. La etiqueta `latest` solo tiene el valor predeterminado cuando la confianza de contenido esté inhabilitada.
     {: tip}
+
+## Volver a firmar una imagen para el nuevo nombre de dominio
+{: #trustedcontent_resign}
+
+Para volver a firmar la imagen para el nuevo nombre de dominio, `icr.io`, debe extraer, etiquetar y enviar la imagen.
+{:shortdesc}
+
+1. Extraiga la imagen firmada del nombre de dominio antiguo. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Especifique la etiqueta cuando envíe o extraiga una imagen firmada. La etiqueta `latest` solo tiene el valor predeterminado cuando la confianza de contenido esté inhabilitada.
+    {: tip}
+
+2. Ejecute al mandato `docker tag` para el nuevo nombre de dominio. Sustituya `<old_domain_name>` por su nombre de dominio antiguo, `<new_domain_name>` por su nombre de dominio nuevo, `<repository>` por el nombre de su repositorio y `<tag>` por el nombre de su etiqueta.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Envíe por push su imagen usando el nuevo nombre de dominio, consulte [Envíe por push de imágenes de Docker a su espacio de nombres](/docs/services/Registry?topic=registry-index#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## Gestión de contenido de confianza
 {: #trustedcontent_managetrust}
@@ -217,7 +251,7 @@ Al enviar por primera vez una imagen firmada a un repositorio nuevo, Docker Cont
    Si ya cambiado el directorio de configuración de Docker, busque el subdirectorio `trust` allí.
    {: tip}
 
-Debe realizar copia de seguridad de todas sus claves, y especialmente de la clave raíz. Si una clave se pierde o está en peligro, las [opciones de recuperación](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) estarán limitadas.
+Debe realizar copia de seguridad de todas sus claves, y especialmente de la clave raíz. Si una clave se pierde o está en peligro, las [opciones de recuperación](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) estarán limitadas.
 
 Para hacer copia de seguridad de sus claves, consulte la [documentación de Docker Content Trust ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

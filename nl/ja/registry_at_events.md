@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, Activity Tracker events, events
 
@@ -29,7 +29,7 @@ subcollection: registry
 {:shortdesc}
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} サービスは、{{site.data.keyword.Bluemix_notm}} のサービスの状態を変更するアクティビティーをユーザーが開始すると、そのアクティビティーを記録します。
-詳細については、[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla)を参照してください。
+詳細については、[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)を参照してください。
 
 次の表に、呼び出されるとイベントを生成する API メソッドをリストします。
 
@@ -54,4 +54,4 @@ subcollection: registry
 
 {{site.data.keyword.cloudaccesstrailshort}} イベントは、イベントが生成された {{site.data.keyword.Bluemix_notm}} 領域に存在する {{site.data.keyword.cloudaccesstrailshort}} **アカウント・ドメイン** で確認できます。
 
-脆弱性アドバイザーのイベントを確認できる[領域](/docs/services/Registry/registry_overview.html#registry_regions)は、リソース (イメージや名前空間など) が存在する {{site.data.keyword.registrylong_notm}} の領域に対応します。
+脆弱性アドバイザーのイベントを確認できる[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)は、リソース (イメージや名前空間など) が存在する {{site.data.keyword.registrylong_notm}} の領域に対応します。

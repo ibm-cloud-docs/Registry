@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ subcollection: registry
 
 **開始之前**
 
-- 完成[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index) 中的指示。
+- 完成[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index) 中的指示。
 
-- 確保您具有最新版的 {{site.data.keyword.cloud_notm}} CLI `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 確保您具有最新版的 {{site.data.keyword.cloud_notm}} CLI `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
 - 您必須有權存取可用於本指導教學的兩個 [{{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/login)：一個適用於「使用者 A」，一個適用於「使用者 B」，而且每個都必須使用唯一的電子郵件位址。您使用自己的帳戶（使用者 A）工作，並邀請另一位使用者（使用者 B）使用您的帳戶。您可以選擇建立第二個 {{site.data.keyword.cloud_notm}} 帳戶，也可以與具有 {{site.data.keyword.cloud_notm}} 帳戶的同事一起工作。
 
@@ -51,8 +51,8 @@ subcollection: registry
     1. 執行下列指令，以登入「使用者 A」的帳戶：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以邀請「使用者 B」存取「使用者 A」的帳戶，其中 _`<user.b@example.com>`_ 是「使用者 B」的電子郵件位址：
@@ -94,8 +94,8 @@ subcollection: registry
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，建立原則以將「管理員」角色授與「使用者 B」：
@@ -135,8 +135,8 @@ subcollection: registry
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
   
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
   
     2. 列出「使用者 B」的原則，並執行下列指令找到您剛才建立的原則，然後記下 ID：
@@ -164,8 +164,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」身分登入：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以建立名稱空間 `namespace_b`：
@@ -197,8 +197,8 @@ subcollection: registry
     2. 執行下列指令，嘗試以「使用者 B」身分列出映像檔：
 
         ```
-    ibmcloud cr images
-    ```
+        ibmcloud cr images
+        ```
         {: pre}
 
         它會傳回空清單，因為「使用者 B」無法存取任何名稱空間。
@@ -208,8 +208,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」的帳戶身分登入：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以確認至少列出三個名稱空間：
@@ -221,7 +221,7 @@ subcollection: registry
 
         顯示您在本指導教學中建立的三個名稱空間（`namespace_a`、`namespace_b` 及 `namespace_c`）。如果您沒有看到這些名稱空間，請返回並遵循指示再次建立它們。
 
-    3. 執行下列指令，建立原則以將 `namespace_b` 的「讀者」角色授與「使用者 B」，其中 _`<Region>`_ 是[地區](/docs/services/Registry/registry_overview.html#registry_regions)的名稱，例如 `us-south`：
+    3. 執行下列指令，建立原則以將 `namespace_b` 的「讀者」角色授與「使用者 B」，其中 _`<Region>`_ 是[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名稱，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -250,14 +250,14 @@ subcollection: registry
     2. 執行下列指令，以將映像檔標記至 `namespace_a`：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. 執行下列指令，以將映像檔標記至 `namespace_b`：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ subcollection: registry
     5. 執行下列指令，以將映像檔推送至 `namespace_a`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. 執行下列指令，以將映像檔推送至 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ subcollection: registry
     5. 執行下列指令，以取回映像檔：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. 執行下列指令，以將映像檔推送至 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ subcollection: registry
     7. 執行下列指令，以使用 `namespace_c` 來標記映像檔：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. 執行下列指令，以將映像檔推送至 `namespace_c`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ subcollection: registry
     9. 執行下列指令，以從 `namespace_c` 取回：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ subcollection: registry
     1. 執行下列指令，以登入 {{site.data.keyword.registrylong_notm}}：
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. 執行下列指令，以取回映像檔：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ subcollection: registry
     3. 執行下列指令，以將映像檔推送至 `namespace_a`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ subcollection: registry
     4. 執行下列指令，以將映像檔推送至 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

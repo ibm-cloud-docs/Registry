@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
 
@@ -31,7 +31,7 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {:tip}
 
-시작하기 전에, [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)를 설치하십시오.
+시작하기 전에, [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오.
 
 ## `container-registry` CLI 플러그인 설치
 {: #cli_namespace_registry_cli_install}
@@ -39,7 +39,7 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 {{site.data.keyword.registrylong_notm}}에서 Docker 이미지 및 네임스페이스를 관리하기 위해 명령행을 사용하도록 `container-registry` CLI 플러그인을 설치합니다.
 {:shortdesc}
 
-1. [`container-registry` CLI 플러그인을 설치](/docs/services/Registry/index.html#registry_cli_install)하십시오.
+1. [`container-registry` CLI 플러그인을 설치](/docs/services/Registry?topic=registry-index#registry_cli_install)하십시오.
 2. 선택사항: [루트 권한 없이 명령을 실행하도록 Docker 클라이언트를 구성 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 이 단계를 수행하지 않은 경우에는 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 **docker push** 명령을 `sudo`를 사용하여 실행하거나 루트로서 실행해야 합니다.
 
 이제 {{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정할 수 있습니다.
@@ -94,12 +94,12 @@ Docker 이미지를 {{site.data.keyword.registrylong}}에 저장하기 전에 �
 
 **시작하기 전에**
 
-- [{{site.data.keyword.Bluemix_notm}} CLI 및 `container-registry` CLI 플러그인을 설치](/docs/services/Registry/index.html#registry_cli_install)하십시오.
-- [레지스트리 네임스페이스의 사용 방법 및 이름 지정 방법을 계획](/docs/services/Registry/registry_overview.html#registry_namespaces)하십시오.
+- [{{site.data.keyword.Bluemix_notm}} CLI 및 `container-registry` CLI 플러그인을 설치](/docs/services/Registry?topic=registry-index#registry_cli_install)하십시오.
+- [레지스트리 네임스페이스의 사용 방법 및 이름 지정 방법을 계획](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)하십시오.
 
-네임스페이스를 작성하려면 시작 문서의 [네임스페이스 설정](/docs/services/Registry/index.html#registry_namespace_add)을 참조하십시오.
+네임스페이스를 작성하려면 시작 문서의 [네임스페이스 설정](/docs/services/Registry?topic=registry-index#registry_namespace_add)을 참조하십시오.
 
-이제 [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace)에서 네임스페이스로 Docker 이미지를 푸시하고 계정의 다른 사용자들과 해당 이미지를 공유할 수 있습니다.
+이제 [{{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)에서 네임스페이스로 Docker 이미지를 푸시하고 계정의 다른 사용자들과 해당 이미지를 공유할 수 있습니다.
 
 ## 네임스페이스 제거
 {: #registry_remove}

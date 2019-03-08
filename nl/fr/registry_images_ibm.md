@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, images
 
@@ -28,4 +28,4 @@ subcollection: registry
 Vous pouvez utiliser des images {{site.data.keyword.IBM}} pour créer des conteneurs dans {{site.data.keyword.containerlong}}.
 {:shortdesc}
 
-Pour utiliser les images publiques fournies par {{site.data.keyword.IBM_notm}}, voir [Images {{site.data.keyword.IBM_notm}} publiques](/docs/services/Registry/registry_public_images.html#public_images).
+Pour utiliser les images publiques fournies par {{site.data.keyword.IBM_notm}}, voir [Images {{site.data.keyword.IBM_notm}} publiques](/docs/services/Registry?topic=registry-public_images#public_images).

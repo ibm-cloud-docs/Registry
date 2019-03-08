@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -29,7 +29,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va/va_index.html)を参照してください。
+{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {:tip}
@@ -37,7 +37,7 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
 {: #registry_cli_install}
 
-1. {{site.data.keyword.Bluemix_notm}} `ibmcloud` コマンドを実行できるように、[{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview) をインストールします。このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
+1. {{site.data.keyword.Bluemix_notm}} `ibmcloud` コマンドを実行できるように、[{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
 
 ## 名前空間のセットアップ
 {: #registry_namespace_add}
@@ -89,17 +89,17 @@ subcollection: registry
    ```
    {: pre}
 
-3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。`<region>` を[領域](/docs/services/Registry/registry_overview.html#registry_regions)の名前に置き換えます。`<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry/index.html#registry_namespace_add)で作成した名前空間に置き換えます。`<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
+3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。 `<region>` を[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に置き換えます。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換えます。 `<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
 
    ```
-   docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
+   docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   `<source_image>` が `hello-world`、`<tag>` が `latest`、`<region>` が `eu-gb`、`<my_namespace>` が `namespace1`、`<new_image_repo>` が `hw_repo`、`<new_tag>` が `1` の場合の例:
+   `<source_image>` が `hello-world`、`<tag>` が `latest`、`<region>` が `uk`、`<my_namespace>` が `namespace1`、`<new_image_repo>` が `hw_repo`、`<new_tag>` が `1` の場合の例:
 
    ```
-   docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
    ```
    {: pre}
 
@@ -113,20 +113,19 @@ subcollection: registry
    ```
    {: pre}
 
-2. イメージを名前空間にアップロード (_プッシュ_) します。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry/index.html#registry_namespace_add)で作成した名前空間に置き換え、`<image_repo>` と `<tag>` を、イメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えてください。
+2. イメージを名前空間にアップロード (_プッシュ_) します。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換え、`<image_repo>` と `<tag>` を、イメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えてください。
 
    ```
-   docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-   ```
-   {: pre}
-
-   `<region>` が `eu-gb`、`<my_namespace>` が `namespace1`、`<image_repo>` が `hw_repo`、`<tag>` が `1` の場合の例:
-
-   ```
-   docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
    
+   `<region>` が `uk`、`<my_namespace>` が `namespace1`、`<image_repo>` が `hw_repo`、`<tag>` が `1` の場合の例:
+
+   ```
+   docker push uk.icr.io/namespace1/hw_repo:1
+   ```
+   {: pre}
 
 3. 次のコマンドを実行して、イメージが正常にプッシュされたことを確認します。
 
@@ -139,8 +138,8 @@ subcollection: registry
 
 **次の作業**
 
-- [脆弱性アドバイザーでのイメージ・セキュリティーの管理](/docs/services/va/va_index.html)
-- [サービス・プランと使用量を確認します](/docs/services/Registry/registry_overview.html#registry_plans)
-- [名前空間で追加のイメージを保管および管理します](/docs/services/Registry/registry_images_.html)
-- [ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)
-- [クラスターとワーカー・ノードを設定します](/docs/containers/cs_clusters.html#clusters)
+- [脆弱性アドバイザーでのイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)
+- [サービス・プランと使用量を確認します](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
+- [名前空間で追加のイメージを保管および管理します](/docs/services/Registry?topic=registry-registry_images_)
+- [ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)
+- [クラスターとワーカー・ノードを設定します](/docs/containers?topic=containers-clusters#clusters)

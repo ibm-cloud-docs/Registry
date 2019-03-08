@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, images
 
@@ -28,4 +28,4 @@ subcollection: registry
 您可以使用 {{site.data.keyword.IBM}} 映像在 {{site.data.keyword.containerlong}} 中创建容器。
 {:shortdesc}
 
-要使用 {{site.data.keyword.IBM_notm}} 提供的公共映像，请参阅[公共 {{site.data.keyword.IBM_notm}} 映像](/docs/services/Registry/registry_public_images.html#public_images)。
+要使用 {{site.data.keyword.IBM_notm}} 提供的公共映像，请参阅[公共 {{site.data.keyword.IBM_notm}} 映像](/docs/services/Registry?topic=registry-public_images#public_images)。

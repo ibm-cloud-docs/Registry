@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ subcollection: registry
 
 **시작하기 전에**
 
-- [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry/index.html#index)의 지시사항을 완료하십시오.
+- [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry?topic=registry-index#index)의 지시사항을 완료하십시오.
 
-- {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 
 - 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login)에 대한 액세스 권한이 있어야 합니다. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
 
@@ -221,7 +221,7 @@ subcollection: registry
 
         이 튜토리얼에서 작성한 세 개의 네임스페이스(`namespace_a`, `namespace_b` 및 `namespace_c`)가 표시됩니다. 이러한 네임스페이스가 표시되지 않으면 되돌아가서 지시사항에 따라 다시 작성하십시오.
 
-    3. 다음 명령을 실행하여 User B에게 `namespace_b`에 대한 독자 역할을 부여하는 정책을 작성하십시오. 여기서 _`<Region>`_은 [지역](/docs/services/Registry/registry_overview.html#registry_regions)의 이름(예: `us-south`)입니다.
+    3. 다음 명령을 실행하여 User B에게 `namespace_b`에 대한 독자 역할을 부여하는 정책을 작성하십시오. 여기서 _`<Region>`_은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)의 이름(예: `us-south`)입니다.
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -250,14 +250,14 @@ subcollection: registry
     2. 다음 명령을 실행하여 이미지에 `namespace_a`로 태그를 지정하십시오.
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. 다음 명령을 실행하여 이미지에 `namespace_b`로 태그를 지정하십시오.
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ subcollection: registry
     5. 다음 명령을 실행하여 이미지를 `namespace_a`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. 다음 명령을 실행하여 이미지를 `namespace_b`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ subcollection: registry
     5. 다음 명령을 실행하여 이미지를 가져오십시오.
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. 다음 명령을 실행하여 이미지를 `namespace_b`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ subcollection: registry
     7. 다음 명령을 실행하여 이미지에 `namespace_c`로 태그를 지정하십시오.
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. 다음 명령을 실행하여 이미지를 `namespace_c`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ subcollection: registry
     9. 다음 명령을 실행하여 `namespace_c`에서 가져오십시오.
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ subcollection: registry
     1. 다음 명령을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. 다음 명령을 실행하여 이미지를 가져오십시오.
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ subcollection: registry
     3. 다음 명령을 실행하여 이미지를 `namespace_a`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ subcollection: registry
     4. 다음 명령을 실행하여 이미지를 `namespace_b`에 푸시하십시오.
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

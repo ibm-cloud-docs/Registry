@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ subcollection: registry
 映像名称由存储库和标记组成。使用可信内容时，每个存储库都使用唯一的签名密钥。存储库中的每个标记都会使用属于该存储库的密钥。如果您有多个团队在发布内容，每个团队将内容发布到 {{site.data.keyword.registrylong_notm}} 名称空间内其自己的存储库，那么每个团队可以使用自己的密钥来对其内容进行签名，以便您可以验证各个映像是否由相应的团队生成。
 
 存储库可以包含签名的内容和未签名的内容。如果启用了 Docker Content Trust，那么可以访问存储库中签名的内容，即使同时存在其他未签名的内容也不例外。
+
+针对旧 (`registry.bluemix.net`) 域名和新 (`icr.io`) 域名，映像具有不同的签名。从旧域名中拉出该映像后，现有签名才会有效。如果想要从新域名中拉出签名的内容，必须为新域名 `icr.io` 对该映像重新签名，请参阅[为新域名对映像重新签名](#trustedcontent_resign)。
+{: note}
 
 Docker Content Trust 使用“首次使用时信任”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
 
@@ -89,18 +92,20 @@ set DOCKER_CONTENT_TRUST=1
    **示例**
 
    ```
-    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-    Logged in to 'registry.ng.bluemix.net'.要使用内容信任来设置 Docker 客户机，请导出以下环境变量：
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
-    ```
+   user:~ user$ ibmcloud cr login
+   正在登录到 'us.icr.io'...
+   已登录到 'us.icr.io'。
+
+   要使用内容信任来设置 Docker 客户机，请导出以下环境变量：
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
+   ```
    {: screen}
 
 5. 在终端中复制并粘贴该环境变量命令。例如：
 
    ```
-export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
-    ```
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
+   ```
    {: pre}
 
 现在，您已准备就绪，可以推送、拉出和管理可信的签名映像。
@@ -114,18 +119,18 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 首次推送签名的映像时，Docker 会自动创建一对签名密钥：根密钥和存储库密钥。要对之前已推送签名映像的存储库中的映像签名，必须在要推送该映像的机器上装入正确的存储库签名密钥。
 {:shortdesc}
 
-开始之前，请[设置注册表名称空间](/docs/services/Registry/index.html#registry_namespace_add)。
+开始之前，请[设置注册表名称空间](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
+2. [推送映像](/docs/services/Registry?topic=registry-index#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
+3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
 
 ## 拉出签名的映像
 {: #trustedcontent_pull}
@@ -144,6 +149,36 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
     在推送或拉出签名的映像时指定标记。仅当禁用了内容信任时，才会缺省使用 `latest` 标记。
     {: tip}
+
+## 为新域名对映像重新签名
+{: #trustedcontent_resign}
+
+要为新域名 `icr.io` 对映像重新签名，必须拉出、标记和推送该映像。
+{:shortdesc}
+
+1. 从旧域名中拉出已签名的映像。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
+
+   ```
+    docker pull <source_image>:<tag>
+    ```
+   {: pre}
+
+    在推送或拉出签名的映像时指定标记。仅当禁用了内容信任时，才会缺省使用 `latest` 标记。
+    {: tip}
+
+2. 针对新域名运行 `docker tag` 命令。用旧域名替换 `<old_domain_name>`，用新域名替换 `<new_domain_name>`，用存储库的名称替换 `<repository>`，用标记的名称替换 `<tag>`。
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. 通过使用新域名来推送映像，请参阅[将 Docker 映像推送到名称空间](/docs/services/Registry?topic=registry-index#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## 管理可信内容
 {: #trustedcontent_managetrust}
@@ -215,7 +250,7 @@ docker trust revoke <image>:<tag>
    如果更改了 Docker 配置目录，请在更改后的目录中查找 `trust` 子目录。
    {: tip}
 
-您必须备份所有密钥，尤其是根密钥。如果密钥丢失或遭到破坏，[恢复选项](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)会受到限制。
+您必须备份所有密钥，尤其是根密钥。如果密钥丢失或遭到破坏，[恢复选项](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)会受到限制。
 
 要备份密钥，请参阅 [Docker Content Trust 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 

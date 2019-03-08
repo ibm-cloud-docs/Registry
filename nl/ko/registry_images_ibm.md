@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, images
 
@@ -28,4 +28,4 @@ subcollection: registry
 {{site.data.keyword.IBM}} 이미지를 사용하여 {{site.data.keyword.containerlong}}에 컨테이너를 작성할 수 있습니다.
 {:shortdesc}
 
-{{site.data.keyword.IBM_notm}}에서 제공하는 공용 이미지를 사용하려면 [공용 {{site.data.keyword.IBM_notm}} 이미지](/docs/services/Registry/registry_public_images.html#public_images)를 참조하십시오.
+{{site.data.keyword.IBM_notm}}에서 제공하는 공용 이미지를 사용하려면 [공용 {{site.data.keyword.IBM_notm}} 이미지](/docs/services/Registry?topic=registry-public_images#public_images)를 참조하십시오.

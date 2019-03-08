@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -43,7 +43,7 @@ Consultez le tableau suivant pour avoir une présentation des avantages liés à
 |Avantage|Description|
 |-------|-----------|
 |Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.</li></ul>|
-|Conformité en matière de sécurité d'image avec Vulnerability Advisor|<ul><li>Bénéficiez d'une analyse automatique des images dans votre espace de nom.</li><li>Consultez les recommandations spécifiques au système d'exploitation pour résoudre d'éventuelles vulnérabilité et protéger vos conteneurs contre la compromission.</li></ul>|
+|Conformité en matière de sécurité d'image avec Vulnerability Advisor|<ul><li>Bénéficiez d'une analyse automatique des images dans votre espace de nom.</li><li>Consultez les recommandations spécifiques au système d'exploitation pour résoudre d'éventuelles vulnérabilités et protéger vos conteneurs contre la compromission.</li></ul>|
 |Limites de quota pour le stockage et le trafic d'extraction (pull)|<ul><li>Bénéficiez d'un stockage gratuit et d'un trafic d'extraction (pull) vers vos images privées jusqu'à ce que vous atteigniez votre quota gratuit.</li><li>Définissez des limites de quota personnalisées pour le volume de stockage et le trafic d'extraction (pull) par mois afin d'éviter de dépasser le niveau de paiement indiqué dans vos préférences.</li></ul>|
 {: caption="Table 1. Avantages d'{{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
@@ -122,7 +122,7 @@ En fonction du plan de service que vous choisissez, vous pouvez envoyer des imag
 
 **Stockage : **
 
-  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry/registry_quota.html#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
+  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
 
   Exemple pour
 le plan standard :
@@ -146,7 +146,7 @@ pas extraire d'image par commande pull à partir des espaces de nom de votre com
 vous patientez jusqu'au début de la période de facturation suivante, si vous
 [procédez à la mise à niveau vers le plan
 standard](#registry_plan_upgrade) ou si vous [augmentez vos
-limites de quota pour le trafic d'extraction (pull)](/docs/services/Registry/registry_quota.html#registry_quota_set).
+limites de quota pour le trafic d'extraction (pull)](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Exemple pour
 le plan standard :
@@ -239,7 +239,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 <dl>
   <dt>Espace de nom</dt>
   <dd>Les espaces de nom sont une façon d'organiser les référentiels de vos images dans {{site.data.keyword.registrylong_notm}}. L'espace de nom est associé à votre compte
-{{site.data.keyword.Bluemix_notm}}. Quand vous configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}, l'espace de nom est ajouté à l'URL du registre comme suit : <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
+{{site.data.keyword.Bluemix_notm}}. Lorsque vous configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}, l'espace de nom est ajouté à l'URL du registre comme suit : <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   Chaque utilisateur dans votre compte {{site.data.keyword.Bluemix_notm}} peut visualiser et utiliser les images stockées dans l'espace de nom de votre registre. Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
 environnement de transfert.</dd>
@@ -277,7 +277,7 @@ dans ce registre en configurant un espace de nom du registre.
 Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
 environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.Bluemix_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
 
-Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry/registry_users.html#user).
+Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry?topic=registry-user#user).
 
 Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
 
@@ -305,12 +305,39 @@ Les registres {{site.data.keyword.registrylong_notm}} sont disponibles dans plus
 ### Régions locales
 {: #registry_regions_local}
 
-Une région est une zone géographique dont l'accès s'effectue par un noeud final dédié. Des registres {{site.data.keyword.registrylong_notm}} sont disponibles dans les régions suivantes :
+Une région locale est une zone géographique dont l'accès s'effectue par un noeud final dédié. Les noms de domaine {{site.data.keyword.registrylong_notm}} pour les régions ont été modifiés. Les nouveaux noms de domaine sont disponibles sur la console et sur l'interface de ligne de commande.
 
-- `ap-south` : `registry.au-syd.bluemix.net`
-- `eu-central` : `registry.eu-de.bluemix.net`
-- `uk-south` : `registry.eu-gb.bluemix.net`
-- `us-south` : `registry.ng.bluemix.net`
+Les noms de domaine sont présentés dans le tableau suivant.
+
+| Région de registre locale | Nouveau nom de domaine | Nom de domaine obsolète |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | Non applicable |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="Tableau 3. Noms de domaine pour les régions locales." caption-side="top"}
+
+Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
+{: deprecated}
+
+**Noms de domaine de l'assistant de détection des vulnérabilités (Vulnerability Advisor)**
+
+Les noms de domaine Vulnerability Advisor pour les régions ont été modifiés. Les nouveaux noms de domaine sont disponibles sur la console et sur l'interface de ligne de commande.
+
+Les nouveaux noms de domaine sont présentés dans le tableau suivant.
+
+| Région Vulnerability Advisor locale | Nouveau nom de domaine | Nom de domaine obsolète |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | Non applicable |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="Tableau 4. Noms de domaine pour les régions locales." caption-side="top"}
+
+Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
+{: deprecated}
 
 La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
 
@@ -335,8 +362,20 @@ Après avoir ciblé une région différente, connectez-vous à nouveau au regist
 ### Base de registre globale
 {: #registry_regions_global}
 
-Une base de registre globale est disponible, qui ne comporte aucune région dans son nom (`registry.bluemix.net`). Seules des images publiques fournies par IBM sont hébergées dans ce registre. Pour gérer vos propres images, par exemple pour définir des espaces de nom ou baliser et envoyer des images par commande push à un registre, utilisez un [registre régional local](#registry_regions_local).
+Une base de registre globale dont le nom ne comporte aucune région (`icr.io`) est disponible. Seules des images publiques fournies par IBM sont hébergées dans ce registre. Pour gérer vos propres images, par exemple pour définir des espaces de nom ou baliser et envoyer des images par commande push à un registre, utilisez un [registre régional local](#registry_regions_local).
 {:shortdesc}
+
+Le nom de domaine pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande. 
+
+Le nouveau nom de domaine est présenté dans le tableau suivant.
+
+| Registre | Nouveau nom de domaine | Nom de domaine obsolète |
+|-----|----|-----------|
+| Global | `icr.io` | `registry.bluemix.net` |
+{: caption="Tableau 5. Nom de domaine pour la base de registre globale" caption-side="top"}
+
+Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
+{: deprecated}
 
 Vous pouvez cibler la base de registre globale en exécutant la commande `ibmcloud cr region-set`.
 
@@ -347,9 +386,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
+Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
+
+**Noms de domaine de l'assistant de détection des vulnérabilités (Vulnerability Advisor)**
+
+Le nom de domaine de Vulnerability Advisor pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande. 
+
+Le nouveau nom de domaine est présenté dans le tableau suivant.
+
+| Vulnerability Advisor | Nouveau nom de domaine | Nom de domaine obsolète |
+|-----|----|-----------|
+| Global | `icr.io/va` | `va.bluemix.net` |
+{: caption="Tableau 6. Nom de domaine de la base de registre globale pour Vulnerability Advisor." caption-side="top"}
+
+Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
+{: deprecated}
 
 ## Prise en charge de Docker
 {: #docker}

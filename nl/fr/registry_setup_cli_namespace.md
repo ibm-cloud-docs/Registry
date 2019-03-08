@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
 
@@ -33,7 +33,7 @@ Avant de pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {:tip}
 
-Avant de commencer, installez l'interface de ligne de commande [{{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
+Avant de commencer, installez l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## Installation du plug-in d'interface de ligne de commande `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -41,7 +41,7 @@ Avant de commencer, installez l'interface de ligne de commande [{{site.data.keyw
 Installez le plug-in d'interface de ligne de commande `container-registry` afin d'utiliser la ligne de commande pour gérer vos espaces de nom et vos images Docker dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1. [Installez le plug-in d'interface de ligne de commande `container-registry`.](/docs/services/Registry/index.html#registry_cli_install)
+1. [Installez le plug-in d'interface de ligne de commande `container-registry`.](/docs/services/Registry?topic=registry-index#registry_cli_install)
 2. Facultatif : [Configurez votre client Docker pour exécuter des commandes sans autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si vous n'effectuez pas cette étape, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec **sudo** ou en tant qu'utilisateur root.
 
 Vous pouvez à présent configurer votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}.
@@ -96,12 +96,12 @@ Vous devez créer un espace de nom pour stocker vos images Docker dans {{site.da
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry/index.html#registry_cli_install).
-- [Planifiez comment utiliser et nommer vos espaces de nom du registre](/docs/services/Registry/registry_overview.html#registry_namespaces).
+- [Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Planifiez comment utiliser et nommer vos espaces de nom du registre](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-Créez un espace de nom, voir [Configurez un espace de nom](/docs/services/Registry/index.html#registry_namespace_add) dans la documentation Initiation.
+Créez un espace de nom, voir [Configuration d'un espace de nom](/docs/services/Registry?topic=registry-index#registry_namespace_add) dans la documentation d'initiation.
 
-Vous pouvez à présent [envoyer par commande push des images Docker à votre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace) et partager ces images avec d'autres utilisateurs dans votre compte.
+Vous pouvez à présent [envoyer par commande push des images Docker à votre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) et partager ces images avec d'autres utilisateurs dans votre compte.
 
 ## Retrait d'espaces de nom
 {: #registry_remove}

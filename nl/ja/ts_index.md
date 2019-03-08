@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ subcollection: registry
 - {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=+ibm-bluemix) で質問を投稿し、質問に `ibm-cloud` および `container-registry` のタグを付けてください。
 - サービスおよび概説の指示に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) フォーラムを使用してください。 `ibm-cloud` タグと `container-registry` タグを含めてください。
 
-フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support/howtogetsupport.html#using-avatar)を参照してください。
+フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)を参照してください。
 
-{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポートへのお問い合わせ](/docs/get-support/howtogetsupport.html#getting-customer-support)を参照してください。
+{{site.data.keyword.IBM_notm}} サポート・チケットを開く方法や、サポート・レベルとチケットの重大度については、[サポートへのお問い合わせ](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} へのログインが失敗する
 {: #ts_login}
@@ -62,7 +62,7 @@ subcollection: registry
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
-- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 - Docker がコンピューターにインストールされていることを確認します。 既にインストールされている場合、Docker デーモンを再始動します。
 - `ibmcloud login` コマンドを再実行して、{{site.data.keyword.Bluemix_notm}} ログイン資格情報をリフレッシュします。
 
@@ -81,7 +81,7 @@ subcollection: registry
 {: tsResolve}
 この問題は、以下の方法で解決できます。
 
-- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} コマンドが「`'cr' is not a registered command. See 'ibmcloud help'`」で失敗する
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 この問題は、以下の方法で解決できます。
 
-- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)を参照してください。
+- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)を参照してください。
 
 ## `ibmcloud cr build` コマンドが失敗する
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - ローカル・ビルドが機能しない場合は、Dockerfile に問題がないかを確認してください。
-- ローカル・ビルドが機能する場合は、[{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。
+- ローカル・ビルドが機能する場合は、[{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
 
 ## 名前空間のセットアップが失敗する
 {: #ts_problem}
@@ -193,10 +193,10 @@ denied: requested access to the resource is denied
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
-- [Docker がコンピューターにインストールされていることを確認します](/docs/services/Registry/index.html#registry_cli_install)。
+- [Docker がコンピューターにインストールされていることを確認します](/docs/services/Registry?topic=registry-index#registry_cli_install)。
 - Docker のインストール・パスを確認します。
 - `ibmcloud login` を実行して {{site.data.keyword.Bluemix_notm}} にログインします。 次に、`ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} CLI にログインします。
-- [{{site.data.keyword.registrylong_notm}} で Docker イメージを保管およびプルするための割り当て量制限と使用量を検討します](/docs/services/Registry/registry_quota.html#registry_quota_get)。
+- [{{site.data.keyword.registrylong_notm}} で Docker イメージを保管およびプルするための割り当て量制限と使用量を検討します](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)。
 
 ## `latest` タグを使用して最新イメージをプルできない
 {: #ts_docker_latest}
@@ -224,8 +224,8 @@ denied: requested access to the resource is denied
 
 - `ibmcloud login [--sso]` を実行して {{site.data.keyword.Bluemix_notm}} にログインします。
 - `ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} にログインします。
-- クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)します。
-- クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
+- クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)します。
+- クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers?topic=containers-integrations#helm)。
 - 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
 
 ### {{site.data.keyword.Bluemix_notm}} で使用するための IBM パスポート・アドバンテージ製品のインポート
@@ -258,12 +258,12 @@ denied: requested access to the resource is denied
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
-    1ecda25d51a8: Preparing
-    369bf331939e: Preparing
-    ...
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
+   1ecda25d51a8: Preparing
+   369bf331939e: Preparing
+   ...
    369bf331939e: Pushed
     1ecda25d51a8: Pushed
     10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
@@ -304,7 +304,7 @@ denied: requested access to the resource is denied
 
 {: tsResolve}
 
-[クラスターからインフラストラクチャー・リソースや他のサービスへのアクセスを許可](/docs/containers/cs_firewall.html#firewall_outbound)します。
+[クラスターからインフラストラクチャー・リソースや他のサービスへのアクセスを許可](/docs/containers?topic=containers-firewall#firewall_outbound)します。
 
 コンピューターへのインバウンド接続については、ソース・ネットワーク・グループからコンピューターの宛先パブリック IP アドレスへの着信ネットワーク・トラフィックを許可します。
 
@@ -314,7 +314,7 @@ denied: requested access to the resource is denied
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-[信頼できるコンテンツ](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent)を使用している場合に、署名鍵が失われたり改ざんされたりすると、信頼できるイメージを管理できなくなります。
+[信頼できるコンテンツ](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent)を使用している場合に、署名鍵が失われたり改ざんされたりすると、信頼できるイメージを管理できなくなります。
 
 {: tsCauses}
 リポジトリー鍵またはルート鍵が失われたか、改ざんされました。
@@ -334,13 +334,13 @@ denied: requested access to the resource is denied
 ローテーションできる署名役割は、リポジトリー管理者である `targets` だけです。 その他の役割が影響を受けた場合は、それらの役割のために新規鍵を生成し、古い鍵を削除し、新しい鍵を署名者として追加してください。
 {:tip}
 
-始める前に、[署名付きのイメージを初めてプッシュ](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)したときに作成したルート鍵のパスフレーズを取得しておいてください。
+始める前に、[署名付きのイメージを初めてプッシュ](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)したときに作成したルート鍵のパスフレーズを取得しておいてください。
 
 1. [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli) の CLI バージョンをインストールします。
 
-2. [信頼できるコンテンツ環境をセットアップします](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)。
+2. [信頼できるコンテンツ環境をセットアップします](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)。
 
-3. 前の手順の export コマンドの URL をメモします。 例えば、`https://registry.ng.bluemix.net:4443` となります。
+3. 前の手順の export コマンドの URL をメモします。 例えば、`https://us.icr.io:4443` となります。
 
 4. レジストリー・トークンを生成します。
 
@@ -358,7 +358,7 @@ denied: requested access to the resource is denied
 
 6. プロンプトが出たら、ルート鍵のパスフレーズを入力します。 次に、新しいリポジトリー鍵のための新しいルート鍵のパスフレーズをプロンプトに応じて入力します。
 
-7. 新しい署名鍵を使用する[署名付きのイメージをプッシュ](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)します。
+7. 新しい署名鍵を使用する[署名付きのイメージをプッシュ](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)します。
 
 ### ルート鍵
 {: #trustedcontent_lostrootkey}
@@ -366,11 +366,11 @@ denied: requested access to the resource is denied
 ルート鍵が失われたり改ざんされたりした場合、そのルート鍵を使用した信頼できるコンテンツ・リポジトリーは更新できません。
 {:shortdesc}
 
-影響を受けたルート鍵を使用するリポジトリーが含まれている[名前空間を削除](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove)できます。これにより、イメージとトラスト・データが削除されます。
+影響を受けたルート鍵を使用するリポジトリーが含まれている[名前空間を削除](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove)できます。これにより、イメージとトラスト・データが削除されます。
 
 実動イメージ用の名前空間のように、ルート鍵が影響を受けていないリポジトリーが名前空間に含まれている場合、影響を受けたルート鍵に関連付けられているトラスト・データだけを削除する必要があります。 サポート・チケットをオープンしてください。
 
-1. [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support/howtogetsupport.html#getting-customer-support)。 問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
+1. [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
 
 2. {{site.data.keyword.Bluemix_notm}} で問題が解決されたら、ローカル・コンピューター上の Docker コンテント・トラストのリポジトリーを削除します。
 
@@ -381,7 +381,7 @@ denied: requested access to the resource is denied
    ルート鍵が影響を受けたため、この手順では、他のトラスト・サーバーのものを含め、すべての署名鍵を削除します。
    {:tip}
 
-3. {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry/registry_security_enforce.html#security_enforce) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動開始させるには、ポッド上の一部のメタデータを変更します。 例えば、[クラスターを Kubernetes CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)し、デプロイメントを変更します。
+3. {{site.data.keyword.containershort_notm}} クラスターで [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) を使用する場合は、各イメージ制約ポッドを再始動します。 Kubernetes にポッドのローリング再始動を自動開始させるには、ポッド上の一部のメタデータを変更します。 例えば、[クラスターを Kubernetes CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)し、デプロイメントを変更します。
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -390,7 +390,7 @@ denied: requested access to the resource is denied
 
 4. 信頼できるコンテンツ・リポジトリーを生成します。
 
-    - 信頼できるコンテンツを新規作成する場合は、[新しく署名したイメージをプッシュします](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)。
+    - 信頼できるコンテンツを新規作成する場合は、[新しく署名したイメージをプッシュします](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)。
 
     - 以前の信頼できるコンテンツを変更しない場合は、レジストリー内の最新のイメージに署名を追加します。
 
@@ -444,7 +444,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers/cs_users.html#rbac)と、[Kubernetes -  RBAC 許可の使用
+RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers?topic=containers-users#rbac)と、[Kubernetes -  RBAC 許可の使用
 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) を参照してください。
 
 以下の手順を実行して、エラー時にクローズするのではなくオープンするように Web フックの構成を変更した後、少なくとも 1 つの Container Image Security Enforcement ポッドが稼働中になったら、障害時にクローズするように Web フックの構成を元に戻します。
@@ -553,7 +553,7 @@ RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユ
    ```
    {: pre}
 
-4. `ibmcloud cr image-tag` コマンドを実行して、イメージにタグ付けします。[ソース・イメージを参照する新しいイメージの作成](/docs/services/Registry/registry_images_.html#registry_images_source)を参照してください。
+4. `ibmcloud cr image-tag` コマンドを実行して、イメージにタグ付けします。[ソース・イメージを参照する新しいイメージの作成](/docs/services/Registry?topic=registry-registry_images_#registry_images_source)を参照してください。
 
 ## Mac での Docker ログインの失敗: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: #ts_docker_mac}
@@ -565,7 +565,7 @@ Mac で `ibmcloud cr login` コマンドを実行しようとして、次のエ�
 Docker for Mac に、macOS キーチェーンへの資格情報の保管を妨げる問題があります。
 
 {: tsResolve}
-Mac をリブートして問題を解決できる場合があります。Mac をリブートしても解決しない場合は、以下のようにして Mac キーチェーンへのログインの保管を無効にすることができます。
+Mac をリブートして問題を解決できる場合があります。 Mac をリブートしても解決しない場合は、以下のようにして Mac キーチェーンへのログインの保管を無効にすることができます。
 
 1. メニューにある**「Docker」**アイコンをクリックし、**「設定 (Preferences)」**を選択します。
 2. **「Docker ログインを macOS キーチェーンに安全に保管する (Securely store Docker logins in macOS keychain)」**チェック・ボックスをクリアします。

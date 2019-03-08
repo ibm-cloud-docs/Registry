@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Mise en application de la sécurité des images de conteneur (bêta)
 {: #security_enforce}
 
-Container Image Security Enforcement (bêta) vous permet de vérifier vos images de conteneur avant de les déployer dans votre cluster dans {{site.data.keyword.containerlong}}. Vous pouvez contrôler l'emplacement depuis lequel les images sont déployées, mettre en application des règles Vulnerability Advisor et vous assurer que la [sécurité du contenu](/docs/services/Registry/registry_trusted_content.html) est correctement appliquée à l'image. Si une image ne répond pas aux exigences de règle, le pod n'est pas déployé sur votre cluster ni mis à jour.
+Container Image Security Enforcement (bêta) vous permet de vérifier vos images de conteneur avant de les déployer dans votre cluster dans {{site.data.keyword.containerlong}}. Vous pouvez contrôler l'emplacement depuis lequel les images sont déployées, mettre en application des règles Vulnerability Advisor et vous assurer que la [sécurité du contenu](/docs/services/Registry?topic=registry-registry_trustedcontent) est correctement appliquée à l'image. Si une image ne répond pas aux exigences de règle, le pod n'est pas déployé sur votre cluster ni mis à jour.
 {:shortdesc}
 
 Container Image Security Enforcement extrait les informations relatives à la sécurité du contenu d'image et aux vulnérabilités depuis {{site.data.keyword.registrylong}}. Vous pouvez choisir de bloquer ou d'autoriser le déploiement des images stockés dans d'autres registres, mais vous ne pouvez pas utiliser le contrôle de vulnérabilité ou de confiance pour ces images.
@@ -35,17 +35,17 @@ Container Image Security Enforcement extrait les informations relatives à la s�
 
 **Avant de commencer**
 
-* [Créez](/docs/containers/cs_clusters.html#clusters_ui) ou [mettez à jour](/docs/containers/cs_cluster_update.html#update) le cluster à utiliser avec **Kubernetes version 1.9 ou ultérieure**.
-* [Ciblez votre interface de ligne de commande `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) sur le cluster.
+* [Créez](/docs/containers?topic=containers-clusters#clusters_ui) ou [mettez à jour](/docs/containers?topic=containers-update#update) le cluster à utiliser avec **Kubernetes version 1.9 ou ultérieure**.
+* [Ciblez votre interface de ligne de commande `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) sur le cluster.
 
 Procédez comme suit :
 
-1. [Configurez Helm dans votre cluster](/docs/containers/cs_integrations.html#helm).
+1. [Configurez Helm dans votre cluster](/docs/containers?topic=containers-integrations#helm).
 
 2. Ajoutez le référentiel de chartes IBM à votre client Helm.
 
    ```
-   helm repo add ibm  https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ Vous devez disposer d'un ensemble de règles. Dans le cas contraire, les déploi
 
 Lorsque vous appliquez un déploiement, Container Image Security Enforcement vérifie si l'espace de nom Kubernetes que vous déployez dispose d'une règle à appliquer. Si ce n'est pas le cas, Container Image Security Enforcement utilise la règle à l'échelle du cluster. Votre déploiement est refusé s'il n'existe aucune règle au niveau de l'espace de nom ou à l'échelle du cluster.
 
-Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster. Procédez ensuite comme suit :
+Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Procédez ensuite comme suit :
 
 1. Créez un fichier `.yaml` de <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">définition de ressource personnalisée Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icône de lien externe"></a>.
 
@@ -226,7 +226,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Définissez sur `true` pour autoriser uniquement les images qui sont [signées pour la vérification de contenu](/docs/services/Registry/registry_trusted_content.html) à être déployées. Définissez sur `false` pour ignorer le fait que les images soient ou non signées.</td>
+    <td>Définissez sur `true` pour autoriser uniquement les images qui sont [signées pour la vérification de contenu](/docs/services/Registry?topic=registry-registry_trustedcontent) à être déployées. Définissez sur `false` pour ignorer le fait que les images soient ou non signées.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Définissez sur `true` pour autoriser uniquement les images réussissant l'analyse [Vulnerability Advisor](/docs/services/va/va_index.html). Définissez sur `false` pour ignorer l'analyse Vulnerability Advisor.</td>
+    <td>Définissez sur `true` pour autoriser uniquement les images réussissant l'analyse [Vulnerability Advisor](/docs/services/va?topic=va-va_index). Définissez sur `false` pour ignorer l'analyse Vulnerability Advisor.</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
 ### Spécification de signataires de contenu sécurisé dans des règles personnalisées
 {: #signers}
 
-Si vous utilisez la sécurité du contenu, vous pouvez vérifier que les images sont signées par des signataires particuliers. Le déploiement est autorisé uniquement si la version signée la plus récente est signée par tous les signataires répertoriés. Pour ajouter un signataire à un référentiel, voir [Gestion des signataires de confiance](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+Si vous utilisez la sécurité du contenu, vous pouvez vérifier que les images sont signées par des signataires particuliers. Le déploiement est autorisé uniquement si la version signée la plus récente est signée par tous les signataires répertoriés. Pour ajouter un signataire à un référentiel, voir [Gestion des signataires de confiance](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 Pour configurer la règle destinée à vérifier qu'une image est signée par un signataire spécifique :
@@ -277,7 +277,7 @@ Pour configurer la règle destinée à vérifier qu'une image est signée par un
 ## Contrôle des personnes pouvant personnaliser des règles
 {: #assign_user_policy}
 
-Si le contrôle d'accès basé sur les rôles (RBAC) est activé sur votre cluster Kubernetes, vous pouvez créer un rôle pour décider qui a la possibilité d'administrer les règles de sécurité sur votre cluster. Pour plus d'informations sur l'application de règles de contrôle d'accès à base de rôles à votre cluster, voir [la documentation d'{{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
+Si le contrôle d'accès basé sur les rôles (RBAC) est activé sur votre cluster Kubernetes, vous pouvez créer un rôle pour décider qui a la possibilité d'administrer les règles de sécurité sur votre cluster. Pour plus d'informations sur l'application de règles de contrôle d'accès basé sur les rôles (RBAC) à votre cluster, voir [la documentation {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 Dans votre rôle, ajoutez une règle pour les règles de sécurité :
@@ -345,14 +345,14 @@ Si Container Image Security Enforcement refuse un déploiement, le déploiement 
 
 Vous pouvez activer l'option `va` dans votre règle afin d'imposer la réussite de l'analyse Vulnerability Advisor avant qu'une image ne puisse être déployée. Les images non prise en charge par Vulnerability Advisor sont autorisées.
 
-Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](/docs/services/Registry/registry_trusted_content.html).
+Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Un déploiement est autorisé uniquement si toutes les images réussissent les vérifications de Container Image Security Enforcement.
 
 ## Retrait de Container Image Security Enforcement
 {: #remove}
 
-Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) to the cluster.
+Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur le cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
 
 

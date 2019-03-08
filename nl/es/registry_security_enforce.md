@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Imposición de seguridad de imagen de contenedor (Beta)
 {: #security_enforce}
 
-Con Container Image Security Enforcement (Beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](/docs/services/Registry/registry_trusted_content.html) esté aplicado correctamente a la imagen. Si una imagen no cumple con los requisitos de una política, el pod no se desplegará en el clúster ni se actualizará.
+Con Container Image Security Enforcement (Beta), puede verificar las imágenes de contenedor antes de desplegarlas en el clúster en {{site.data.keyword.containerlong}}. Puede controlar desde dónde se despliegan las imágenes, forzar políticas de Vulnerability Advisor y asegurarse de que el [contenido de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent) esté aplicado correctamente a la imagen. Si una imagen no cumple con los requisitos de una política, el pod no se desplegará en el clúster ni se actualizará.
 {:shortdesc}
 
 Container Image Security Enforcement recupera la información sobre la confianza del contenido de las imágenes y las vulnerabilidades desde {{site.data.keyword.registrylong}}. Puede optar por bloquear o permitir el despliegue de imágenes que se almacenan en otros registros, pero no puede utilizar el cumplimiento de confianza o vulnerabilidades para dichas imágenes.
@@ -35,17 +35,17 @@ Container Image Security Enforcement recupera la información sobre la confianza
 
 **Antes de empezar**
 
-* [Cree](/docs/containers/cs_clusters.html#clusters_ui) o [actualice](/docs/containers/cs_cluster_update.html#update) el clúster que desee utilizar con **Kubernetes versión 1.9 o posterior**.
-* [Establezca la CLI de `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) en el clúster.
+* [Cree](/docs/containers?topic=containers-clusters#clusters_ui) o [actualice](/docs/containers?topic=containers-update#update) el clúster que desee utilizar con **Kubernetes versión 1.9 o posterior**.
+* [Establezca la CLI de `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) en el clúster.
 
 Realice los pasos siguientes:
 
-1. [Configure Helm en su clúster](/docs/containers/cs_integrations.html#helm).
+1. [Configure Helm en su clúster](/docs/containers?topic=containers-integrations#helm).
 
 2. Añada el repositorio de gráficas de IBM a su cliente de Helm.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ Debe tener algún conjunto de políticas. De lo contrario, los despliegues al cl
 
 Cuando se aplica un despliegue, Container Image Security Enforcement comprueba si el espacio de nombres de Kubernetes al que está desplegando tiene una política para aplicar. Si no la tiene, Container Image Security Enforcement utilizará la política de todo el clúster. El despliegue se deniega si no existe ningún espacio de nombres ni ninguna política de todo el clúster.
 
-Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) en el clúster. A continuación, realice los pasos siguientes:
+Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) en el clúster. A continuación, realice los pasos siguientes:
 
 1. Cree un archivo `.yaml` de <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definición de recursos personalizados de Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icono de enlace externo"></a>.
 
@@ -226,7 +226,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_insta
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Establézcalo como `true` para permitir solo imágenes que están [firmadas para que se despliegue la confianza de contenido](/docs/services/Registry/registry_trusted_content.html). Establézcalo como `false` para ignorar si las imágenes están firmadas.</td>
+    <td>Establézcalo como `true` para permitir solo imágenes que están [firmadas para que se despliegue la confianza de contenido](/docs/services/Registry?topic=registry-registry_trustedcontent). Establézcalo como `false` para ignorar si las imágenes están firmadas.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_insta
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Establézcalo como `true` para permitir solo imágenes que pasen la exploración de [Vulnerability Advisor](/docs/services/va/va_index.html). Establézcalo como `false` para ignorar la exploración del Vulnerability Advisor.</td>
+    <td>Establézcalo como `true` para permitir solo imágenes que pasen la exploración de [Vulnerability Advisor](/docs/services/va?topic=va-va_index). Establézcalo como `false` para ignorar la exploración del Vulnerability Advisor.</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_insta
 ### Especificación de firmantes de contenido de confianza en políticas personalizadas
 {: #signers}
 
-Si utiliza la confianza de contenido, puede verificar que las imágenes estén firmadas por firmantes particulares. El despliegue solo está permitido si la versión firmada más reciente está firmada por todos los firmantes listados. Para añadir un firmante a un repositorio, consulte [Gestión de firmantes de confianza](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+Si utiliza la confianza de contenido, puede verificar que las imágenes estén firmadas por firmantes particulares. El despliegue solo está permitido si la versión firmada más reciente está firmada por todos los firmantes listados. Para añadir un firmante a un repositorio, consulte [Gestión de firmantes de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 Para configurar la política para verificar que una imagen esté firmada por un firmante en particular:
@@ -277,7 +277,7 @@ Para configurar la política para verificar que una imagen esté firmada por un 
 ## Cómo controlar quién puede personalizar las políticas
 {: #assign_user_policy}
 
-Si tiene el control de acceso basado en roles (RBAC) habilitado en el clúster de Kubernetes, puede crear un rol para controlar quién tiene la capacidad para administrar políticas de seguridad en el clúster. Para obtener más información sobre cómo aplicar reglas de RBAC al clúster, consulte [la documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
+Si tiene el control de acceso basado en roles (RBAC) habilitado en el clúster de Kubernetes, puede crear un rol para controlar quién tiene la capacidad para administrar políticas de seguridad en el clúster. Para obtener más información sobre cómo aplicar reglas de RBAC al clúster, consulte [la documentación de {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 En el rol, añada una regla para las políticas de seguridad:
@@ -345,14 +345,14 @@ Si Container Image Security Enforcement deniega un Despliegue, este se creará, 
 
 Puede habilitar la opción `va` en su política para imponer que el Vulnerability Advisor pase antes de poder desplegar una imagen. Las imágenes que no están soportadas por Vulnerability Advisor están permitidas.
 
-Puede habilitar la opción `trust` en la política para imponer la confianza de contenido. Si no especifica ningún `signerSecrets`, el despliegue se permitirá si la imagen está firmada por cualquier persona. Si especifica `signerSecrets`, todos los firmantes que especifique deben haber firmado la versión firmada más recientemente de la imagen. Container Image Security Enforcement verifica que la clave pública proporcionada pertenezca al firmante. Para obtener más información sobre la confianza de contenido, consulte [Firma de imágenes para contenido de confianza](/docs/services/Registry/registry_trusted_content.html).
+Puede habilitar la opción `trust` en la política para imponer la confianza de contenido. Si no especifica ningún `signerSecrets`, el despliegue se permitirá si la imagen está firmada por cualquier persona. Si especifica `signerSecrets`, todos los firmantes que especifique deben haber firmado la versión firmada más recientemente de la imagen. Container Image Security Enforcement verifica que la clave pública proporcionada pertenezca al firmante. Para obtener más información sobre la confianza de contenido, consulte [Firma de imágenes para contenido de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Solo se permite un despliegue si todas las imágenes pasan las comprobaciones de Container Image Security Enforcement.
 
 ## Eliminación de Container Image Security Enforcement
 {: #remove}
 
-Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) en el clúster.
+Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) en el clúster.
 
 
 

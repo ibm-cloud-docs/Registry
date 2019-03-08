@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, Activity Tracker events, events
 
@@ -30,7 +30,7 @@ Use o serviço {{site.data.keyword.cloudaccesstrailfull}} para controlar como os
 
 O serviço {{site.data.keyword.cloudaccesstrailfull_notm}} registra as atividades iniciadas pelo usuário que mudam
 o estado de um serviço no {{site.data.keyword.Bluemix_notm}}.
-Para obter mais informações, consulte [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla).
+Para obter mais informações, consulte [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
 
 A tabela a seguir lista os métodos de API que geram um evento quando eles são chamados:
 
@@ -57,4 +57,4 @@ Os eventos do {{site.data.keyword.cloudaccesstrailshort}} estão disponíveis no
 {{site.data.keyword.cloudaccesstrailshort}} **domínio de contas** disponível na região do
 {{site.data.keyword.Bluemix_notm}} na qual eles são gerados.
 
-A [região](/docs/services/Registry/registry_overview.html#registry_regions) na qual um evento do Vulnerability Advisor está disponível corresponde à região do {{site.data.keyword.registrylong_notm}} em que o recurso (por exemplo, a imagem ou namespace) está disponível.
+A [região](/docs/services/Registry?topic=registry-registry_overview#registry_regions) na qual um evento do Vulnerability Advisor está disponível corresponde à região do {{site.data.keyword.registrylong_notm}} em que o recurso (por exemplo, a imagem ou namespace) está disponível.

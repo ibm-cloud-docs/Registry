@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -28,18 +28,18 @@ subcollection: registry
 Sie können entweder Registry-Tokens oder einen {{site.data.keyword.iamlong}}-API-Schlüssel (IAM-API-Schlüssel) verwenden, um den Zugriff auf die {{site.data.keyword.registrylong_notm}}-Namensbereiche zu automatisieren, um so Push- und Pull-Operationen für Images auszuführen.
 {:shortdesc}
 
-Versuchen Sie, Ihre Registry-Images in Kubernetes-Implementierungen zu verwenden? Erfahren Sie, wie Sie [auf Images in anderen Kubernetes-Namensbereichen, {{site.data.keyword.Bluemix_notm}}-Regionen und -Konten](/docs/containers/cs_images.html#other) zugreifen.
+Versuchen Sie, Ihre Registry-Images in Kubernetes-Implementierungen zu verwenden? Erfahren Sie, wie Sie [auf Images in anderen Kubernetes-Namensbereichen, {{site.data.keyword.Bluemix_notm}}-Regionen und -Konten](/docs/containers?topic=containers-images#other) zugreifen.
 {: tip}
 
 API-Schlüssel sind mit Ihrem Konto verknüpft und können im gesamten {{site.data.keyword.Bluemix_notm}} verwendet werden, sodass Sie nicht für jeden Service unterschiedliche Berechtigungsnachweise benötigen. Sie können den API-Schlüssel in der CLI oder als Teil der Automatisierung zur Anmeldung mit Ihrer Benutzeridentität verwenden.
 
 Registry-Tokens sind ausschließlich für {{site.data.keyword.registrylong_notm}} bereichsorientiert festgelegt. Sie können sie auf Lesezugriff begrenzen und Sie können auswählen, ob ein Ablaufdatum gelten soll.
 
-Wenn Sie einen API-Schlüssel verwenden, können Sie den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry/registry_users.html#user).
+Wenn Sie einen API-Schlüssel verwenden, können Sie den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry?topic=registry-user#user).
 
-Weitere Informationen zu API-Schlüsseln für {{site.data.keyword.registrylong_notm}} finden Sie in [Mit API-Schlüsseln arbeiten](/docs/iam/apikeys.html#manapikey).
+Weitere Informationen zu API-Schlüsseln für {{site.data.keyword.registrylong_notm}} finden Sie in [Mit API-Schlüsseln arbeiten](/docs/iam?topic=iam-manapikey#manapikey).
 
-Bevor Sie beginnen, müssen Sie die [Befehlszeilenschnittstellen von {{site.data.keyword.registrylong_notm}} und Docker installieren](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install). 
+Bevor Sie beginnen, müssen Sie die [Befehlszeilenschnittstellen von {{site.data.keyword.registrylong_notm}} und Docker installieren](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren
 {: #registry_api_key}
@@ -55,8 +55,8 @@ Sie können einen API-Schlüssel erstellen, mit dem Sie sich dann bei Ihrer Regi
 
 Sie können API-Schlüssel für Benutzer und API-Schlüssel für Service-IDs erstellen.
 
-- Informationen zum Erstellen eines API-Schlüssels für Service-IDs finden Sie unter [API-Schlüssel für Service-ID erstellen](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
-- Informationen zum Erstellen eines API-Schlüssels für Benutzer finden Sie unter [API-Schlüssel erstellen](/docs/iam/userid_keys.html#creating-an-api-key).
+- Informationen zum Erstellen eines API-Schlüssels für Service-IDs finden Sie unter [API-Schlüssel für Service-ID erstellen](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+- Informationen zum Erstellen eines API-Schlüssels für Benutzer finden Sie unter [API-Schlüssel erstellen](/docs/iam?topic=iam-userapikey#create_user_key).
 
 ### Zugriff mithilfe eines API-Schlüssels automatisieren
 {: #registry_api_key_use}
@@ -64,25 +64,29 @@ Sie können API-Schlüssel für Benutzer und API-Schlüssel für Service-IDs ers
 Sie können den Zugriff auf Ihre Namensbereiche in {{site.data.keyword.registrylong_notm}} mithilfe eines API-Schlüssels automatisieren.
 {:shortdesc}
 
-Verwenden Sie den API-Schlüssel für die Anmeldung bei Ihrer Registry, indem Sie den folgenden Docker-Befehl ausführen. Ersetzen Sie `<your_apikey>` durch den API-Schlüssel und `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind. 
+Verwenden Sie den API-Schlüssel für die Anmeldung bei Ihrer Registry, indem Sie den folgenden Docker-Befehl ausführen. Ersetzen Sie `<your_apikey>` durch den API-Schlüssel und `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind.
 
-- Verwenden Sie für Namensbereiche in der Region 'Vereinigte Staaten (Süden)': `registry.ng.bluemix.net`
-- Verwenden Sie für Namensbereiche in der Region 'Großbritannien (Süden)': `registry.eu-gb.bluemix.net`
-- Verwenden Sie für Namensbereiche in der Region 'Mitteleuropa': `registry.eu-de.bluemix.net`
-- Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Süden)': `registry.au-syd.bluemix.net`
+- Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Norden)': `jp.icr.io`
+- Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Süden)': `au.icr.io`
+- Verwenden Sie für Namensbereiche in der Region 'Mitteleuropa': `de.icr.io`
+- Verwenden Sie für Namensbereiche in der Region 'Großbritannien (Süden)': `uk.icr.io`
+- Verwenden Sie für Namensbereiche in der Region 'Vereinigte Staaten (Süden)': `us.icr.io`
 
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.Bluemix_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
+Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.Bluemix_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
-## Zugriff auf eigene Namensbereiche durch Tokens automatisieren
+## Zugriff auf eigene Namensbereiche durch Tokens automatisieren (veraltet)
 {: #registry_tokens}
 
 Durch die Verwendung von Tokens können Sie Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche automatisieren.
 {:shortdesc}
+
+Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+{: deprecated}
 
 Jeder Benutzer, der über ein Registry-Token verfügt, kann auf auf geschützte Informationen zugreifen. Wenn Sie möchten, dass Benutzer außerhalb Ihres Kontos auf alle Ihre Namensbereiche zugreifen können, die Sie in einer Region eingerichtet haben, können Sie ein Token für Ihr {{site.data.keyword.Bluemix_notm}}-Konto erstellen. Jeder Benutzer bzw. jede App, der/die über dieses Token verfügt, kann Images per Push-Operation in Ihre Namensbereiche übertragen und Images per Pull-Operation aus Ihren Namensbereichen abrufen, ohne dass das `container-registry`-CLI-Plug-in installiert werden muss.
 
@@ -96,11 +100,14 @@ Mit den folgenden Tasks können Sie Ihre Tokens verwalten:
 - [Zugriff auf Namensbereiche mit einem Token automatisieren](#registry_tokens_use)
 - [Token vom {{site.data.keyword.Bluemix_notm}}-Konto entfernen](#registry_tokens_remove)
 
-### Token für {{site.data.keyword.Bluemix_notm}}-Konto erstellen
+### Token für {{site.data.keyword.Bluemix_notm}}-Konto erstellen (veraltet)
 {: #registry_tokens_create}
 
 Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche in einer Region zu erteilen.
 {:shortdesc}
+
+Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+{: deprecated}
 
 1. Erstellen Sie ein Token. Im folgenden Beispiel wird ein nicht ablaufendes Token erstellt, das über Lese- und Schreibzugriff auf alle Namensbereiche verfügt, die in einer Region eingerichtet wurden.
 
@@ -145,11 +152,14 @@ Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keywor
    ```
    {: pre}
 
-### Zugriff auf Namensbereiche mit einem Token automatisieren
+### Zugriff auf Namensbereiche mit einem Token automatisieren (veraltet)
 {: #registry_tokens_use}
 
 Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den Zugriff auf Ihre Namensbereiche in {{site.data.keyword.registrylong_notm}} automatisieren. Abhängig davon, ob Sie für Ihr Token einen schreibgeschützten Zugriff oder einen Schreib-/Lesezugriff festgelegt haben, können Benutzer Push- und Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
 {:shortdesc}
+
+Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+{: deprecated}
 
 1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
 
@@ -165,7 +175,7 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
    ```
    {: pre}
 
-3. Rufen Sie den Tokenwert für das Token ab. Ersetzen Sie `<token_id>` durch die ID des Tokens. 
+3. Rufen Sie den Tokenwert für das Token ab. Ersetzen Sie `<token_id>` durch die ID des Tokens.
 
    ```
    ibmcloud cr token-get <token-id>
@@ -174,12 +184,13 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 
     Ihr Tokenwert wird im Feld **Token** in der CLI-Ausgabe angezeigt.
 
-4. Verwenden Sie das Token als Bestandteil des Befehls `docker login`. Ersetzen Sie `<token_value>` durch den im vorherigen Schritt abgerufenen Tokenwert und `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind. 
+4. Verwenden Sie das Token als Bestandteil des Befehls `docker login`. Ersetzen Sie `<token_value>` durch den im vorherigen Schritt abgerufenen Tokenwert und `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind.
 
-   - Verwenden Sie für Namensbereiche in der Region 'Vereinigte Staaten (Süden)': `registry.ng.bluemix.net`
-   - Verwenden Sie für Namensbereiche in der Region 'Großbritannien (Süden)': `registry.eu-gb.bluemix.net`
-   - Verwenden Sie für Namensbereiche in der Region 'Mitteleuropa': `registry.eu-de.bluemix.net`
-   - Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Süden)': `registry.au-syd.bluemix.net`
+   - Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Norden)': `jp.icr.io`
+   - Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Süden)': `au.icr.io`
+   - Verwenden Sie für Namensbereiche in der Region 'Mitteleuropa': `de.icr.io`
+   - Verwenden Sie für Namensbereiche in der Region 'Großbritannien (Süden)': `uk.icr.io`
+   - Verwenden Sie für Namensbereiche in der Region 'Vereinigte Staaten (Süden)': `us.icr.io`
 
    ```
    docker login -u token -p <token_value> <registry_url>
@@ -191,11 +202,14 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 
    Nachdem Sie sich unter Verwendung des Tokens bei Docker angemeldet haben, können Sie Push- oder Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
 
-### Token aus einem {{site.data.keyword.Bluemix_notm}}-Konto entfernen
+### Token aus einem {{site.data.keyword.Bluemix_notm}}-Konto entfernen (veraltet)
 {: #registry_tokens_remove}
 
 Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nicht mehr benötigen.
 {:shortdesc}
+
+Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+{: deprecated}
 
 Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
 {:tip}
@@ -234,16 +248,19 @@ Die folgenden Benutzernamen sind gültig:
 - `iambearer`: Das Kennwort enthält ein IAM-Zugriffstoken. Diese Art der Authentifizierung ist nur kurze Zeit gültig, kann aber aus allen Typen der IAM-Identität abgeleitet werden.
 - `iamrefresh`: Das Kennwort muss ein IAM-Aktualisierungstoken enthalten, das intern verwendet wird, um ein IAM-Zugriffstoken zu generieren und zu aktualisieren. Diese Art der Authentifizierung ist länger gültig und wird vom Befehl `ibmcloud cr login` verwendet.
 - `iamapikey`: Das Kennwort ist ein IAM-API-Schlüssel. Diese Art der Authentifizierung wird für die Automatisierung bevorzugt. Sie können einen API-Schlüssel für Benutzer oder für Service-IDs verwenden; weitere Informationen finden Sie unter [API-Schlüssel erstellen](#registry_api_key_create).
-- `token`: Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
+- `token`: (veraltet) Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
+
+  Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+{: deprecated}
 
 Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten.
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
 ```
 {: pre}
 
-Ersetzen Sie `<apikey>` durch den API-Schlüssel, `<region>` durch den Namen Ihrer [Region](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` durch Ihren Namensbereich und `<image_repo>` durch das Repository. 
+Ersetzen Sie `<apikey>` durch den API-Schlüssel, `<region>` durch den Namen Ihrer [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` durch Ihren Namensbereich und `<image_repo>` durch das Repository.
 
-Weitere Informationen finden Sie unter [Private Image-Registry verwenden](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
+Weitere Informationen finden Sie unter [Private Image-Registry verwenden](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

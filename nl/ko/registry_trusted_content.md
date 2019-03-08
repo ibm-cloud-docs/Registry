@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -34,6 +34,9 @@ subcollection: registry
 
 저장소에는 서명된 컨텐츠와 서명되지 않은 컨텐츠가 포함될 수 있습니다. Docker Content Trust를 사용하는 경우 서명되지 않은 다른 컨텐츠가 함께 있는 경우에도 저장소에 있는 서명된 컨텐츠에 액세스할 수 있습니다.
 
+이미지에는 이전 (`registry.bluemix.net`) 및 새 (`icr.io`) 도메인 이름에 대한 별도의 서명이 있습니다. 기존 서명은 이전 도메인 이름에서 이미지를 가져올 때 수행됩니다. 새 도메인 이름에서 서명된 컨텐츠를 가져오려면 새 도메인 이름인 `icr.io`의 이미지를 다시 서명해야 합니다. [새 도메인 이름의 이미지 다시 서명](#trustedcontent_resign)을 참조하십시오.
+{: note}
+
 Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
 
 "trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.
@@ -49,21 +52,21 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
    Linux 또는 Mac의 경우:
 
    ```
-export DOCKER_CONTENT_TRUST=1
+   export DOCKER_CONTENT_TRUST=1
    ```
    {: codeblock}
 
    Windows의 경우:
 
    ```
-set DOCKER_CONTENT_TRUST=1
+   set DOCKER_CONTENT_TRUST=1
    ```
    {: codeblock}
 
 2. {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오.
 
    ```
-    ibmcloud login [--sso]
+   ibmcloud login [--sso]
    ```
    {: pre}
 
@@ -73,14 +76,14 @@ set DOCKER_CONTENT_TRUST=1
 3. 사용할 지역을 대상으로 지정하십시오. 지역 이름을 모르는 경우 지역 없이 명령을 실행한 다음 지역을 선택할 수 있습니다.
 
    ```
-    ibmcloud cr region-set <region>
+   ibmcloud cr region-set <region>
    ```
    {: pre}
 
 4. {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 
    ```
-  ibmcloud cr login
+   ibmcloud cr login
    ```
    {: pre}
 
@@ -89,19 +92,20 @@ set DOCKER_CONTENT_TRUST=1
    **예**
 
    ```
-    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   user:~ user$ ibmcloud cr login
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
-   컨텐츠 신뢰를 사용하도록 Docker 클라이언트를 설정하려면 다음 환경 변수를 내보내십시오.
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   컨텐츠 신뢰를 사용하도록 Docker 클라이언트를 설정하려면
+   다음 환경 변수를 내보내십시오.
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. 터미널에서 환경 변수 명령을 복사하고 붙여넣으십시오. 예를 들어, 다음과 같습니다.
 
    ```
-export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -116,18 +120,18 @@ Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있�
 서명된 이미지를 처음 푸시할 때 Docker가 서명된 키 쌍(루트 및 저장소)을 자동으로 작성합니다. 이전에 서명된 이미지를 푸시한 저장소에서 이미지에 서명하려면 이미지를 푸시하는 시스템에 올바른 저장소 서명 키를 로드해야 합니다.
 {:shortdesc}
 
-시작하기 전에 [레지스트리 네임스페이스를 설정](/docs/services/Registry/index.html#registry_namespace_add)하십시오.
+시작하기 전에 [레지스트리 네임스페이스를 설정](/docs/services/Registry?topic=registry-index#registry_namespace_add)하십시오.
 
 1. [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2. [이미지를 푸시](/docs/services/Registry/index.html#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다. 
+2. [이미지를 푸시](/docs/services/Registry?topic=registry-index#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
+3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
 
 ## 서명된 이미지 가져오기
 {: #trustedcontent_pull}
@@ -140,12 +144,42 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 2. 이미지를 가져오십시오. `<source_image>`를 이미지의 저장소로 바꾸고 `<tag>`를 사용할 이미지(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오.
 
    ```
-    docker pull <source_image>:<tag>
+   docker pull <source_image>:<tag>
    ```
    {: pre}
 
     서명된 이미지를 푸시하거나 가져올 때 태그를 지정하십시오. `latest` 태그는 컨텐츠 신뢰가 사용되지 않는 경우에만 기본값으로 지정됩니다.
     {: tip}
+
+## 새 도메인 이름의 이미지 다시 서명
+{: #trustedcontent_resign}
+
+새 도메인 이름인 `icr.io`의 이미지를 다시 서명하려면 이미지를 가져오고, 태그를 지정하고, 푸시해야 합니다.
+{:shortdesc}
+
+1. 이전 도메인 이름에서 서명된 이미지를 가져오십시오. `<source_image>`를 이미지의 저장소로 바꾸고 `<tag>`를 사용할 이미지(예: _latest_)로 바꾸십시오. 가져올 수 있는 이미지를 나열하려면 `ibmcloud cr image-list`를 실행하십시오.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    서명된 이미지를 푸시하거나 가져올 때 태그를 지정하십시오. `latest` 태그는 컨텐츠 신뢰가 사용되지 않는 경우에만 기본값으로 지정됩니다.
+    {: tip}
+
+2. 새 도메인 이름에 맞는 `docker tag` 명령을 실행하십시오. `<old_domain_name>`은 이전 도메인 이름으로, `<new_domain_name>`은 새 도메인 이름으로, `<repository>`는 저장소의 이름으로, `<tag>`는 태그의 이름으로 대체하십시오. 
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. 새 도메인 이름을 사용하여 이미지를 푸시하십시오. [Docker 이미지를 네임스페이스에 푸시](/docs/services/Registry?topic=registry-index#registry_images_pushing)를 참조하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## 신뢰할 수 있는 컨텐츠 관리
 {: #trustedcontent_managetrust}
@@ -185,7 +219,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
    (선택사항) 해당 버전의 이미지에 대한 신뢰할 수 있는 메타데이터를 철회하려면 태그를 지정하십시오.
 
    ```
-docker trust revoke <image>:<tag>
+   docker trust revoke <image>:<tag>
    ```
    {: pre}
 
@@ -217,7 +251,7 @@ docker trust revoke <image>:<tag>
    Docker 구성 디렉토리를 변경한 경우 이 디렉토리에서 `trust` 서브디렉토리를 찾으십시오.
    {: tip}
 
-모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)이 제한됩니다.
+모든 키, 특히 루트 키를 백업해야 합니다. 키가 유실되었거나 손상된 경우 [복구 옵션](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)이 제한됩니다.
 
 키를 백업하려는 경우에는 [Docker Content Trust 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)를 참조하십시오.
 
@@ -299,7 +333,7 @@ docker trust sign <repository>:<tag>
 2. 서명자를 제거하십시오.
 
    ```
-docker trust signer remove <NAME> <repository>
+   docker trust signer remove <NAME> <repository>
    ```
    {: pre}
 

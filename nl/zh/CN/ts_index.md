@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ subcollection: registry
 - 如果有与使用 {{site.data.keyword.registrylong_notm}} 开发或部署应用程序相关的技术问题，请在 [Stack Overflow ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://stackoverflow.com/search?q=+ibm-bluemix) 上发布问题，并使用 `ibm-cloud` 和 `container-registry` 标记您的问题。
 - 有关服务的问题和入门指示信息，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 论坛。请包含 `ibm-cloud` 和 `container-registry` 标记。
 
-有关使用论坛的更多详细信息，请参阅[使用支持中心](/docs/get-support/howtogetsupport.html#using-avatar)。
+有关使用论坛的更多详细信息，请参阅[使用支持中心](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)。
 
-有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[如何获得所需的支持？](/docs/get-support/howtogetsupport.html#getting-customer-support)
+有关开具 {{site.data.keyword.IBM_notm}} 支持凭单的信息，或有关支持级别和凭单严重性的信息，请参阅[如何获得所需的支持？](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)
 
 ## 登录 {{site.data.keyword.registrylong_notm}} 失败
 {: #ts_login}
@@ -62,7 +62,7 @@ subcollection: registry
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 - 确保 Docker 安装在您的计算机上。如果已安装，请重新启动 Docker 守护程序。
 - 重新运行 `ibmcloud login` 命令以刷新 {{site.data.keyword.Bluemix_notm}} 登录凭证。
 
@@ -81,7 +81,7 @@ subcollection: registry
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
 ## {{site.data.keyword.registrylong_notm}} 命令失败，消息为：`'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
+- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 
 ## `ibmcloud cr build` 命令失败
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - 如果本地构建不起作用，请检查是否 Dockerfile 有问题。
-- 如果本地构建正常运行，请[联系 {{site.data.keyword.Bluemix_notm}} 支持人员](/docs/get-support/howtogetsupport.html#getting-customer-support)。
+- 如果本地构建正常运行，请[联系 {{site.data.keyword.Bluemix_notm}} 支持人员](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
 
 ## 设置名称空间失败
 {: #ts_problem}
@@ -192,10 +192,10 @@ denied: requested access to the resource is denied
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
-- [确保已在计算机上安装 Docker](/docs/services/Registry/index.html#registry_cli_install)。
+- [确保已在计算机上安装 Docker](/docs/services/Registry?topic=registry-index#registry_cli_install)。
 - 检查 Docker 安装路径。
 - 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.Bluemix_notm}}。然后，通过运行 `ibmcloud cr login` 登录到 {{site.data.keyword.registrylong_notm}} CLI。
-- [查看在 {{site.data.keyword.registrylong_notm}} 中存储和拉出 Docker 映像的配额限制和使用量](/docs/services/Registry/registry_quota.html#registry_quota_get)。
+- [查看在 {{site.data.keyword.registrylong_notm}} 中存储和拉出 Docker 映像的配额限制和使用量](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)。
 
 ## 无法使用 `latest` 标记拉出最新的映像
 {: #ts_docker_latest}
@@ -223,8 +223,8 @@ denied: requested access to the resource is denied
 
 - 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.Bluemix_notm}}。
 - 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.registrylong_notm}}。
-- [将 `kubectl` CLI 的目标设定为集群](/docs/containers/cs_cli_install.html#cs_cli_configure)。
-- 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers/cs_integrations.html#helm)。
+- [将 `kubectl` CLI 的目标设定为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
+- 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers?topic=containers-integrations#helm)。
 - 如果要在组织内共享图表，可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)。有关指示信息，请参阅此 [developerWorks 诀窍 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
 ### 导入 IBM Passport Advantage 产品以在 {{site.data.keyword.Bluemix_notm}} 中使用
@@ -257,12 +257,12 @@ denied: requested access to the resource is denied
 user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-    Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+    Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
-    1ecda25d51a8: Preparing
-    369bf331939e: Preparing
-    ...
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
+   1ecda25d51a8: Preparing
+   369bf331939e: Preparing
+   ...
    369bf331939e: Pushed
     1ecda25d51a8: Pushed
     10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.OK
@@ -301,7 +301,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 {: tsResolve}
 
-支持集群从防火墙后访问基础架构资源和服务，请参阅[允许集群访问基础架构资源和其他服务](/docs/containers/cs_firewall.html#firewall_outbound)。
+支持集群从防火墙后访问基础架构资源和服务，请参阅[允许集群访问基础架构资源和其他服务](/docs/containers?topic=containers-firewall#firewall_outbound)。
 
 对于指向计算机的 INBOUND 连接，允许入局网络流量从源网络组流向计算机的目标公共 IP 地址。
 
@@ -311,7 +311,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-使用[可信内容](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent)时，由于签名密钥丢失或遭到破坏，无法再管理可信映像。
+使用[可信内容](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent)时，由于签名密钥丢失或遭到破坏，无法再管理可信映像。
 
 {: tsCauses}
 您的存储库密钥或根密钥已丢失或遭到破坏。
@@ -331,13 +331,13 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 可以轮换的唯一签名角色是 `targets`，即存储库管理员。如果其他角色受到影响，请为这些角色生成新密钥，除去旧密钥，然后将新密钥添加为签署者。
 {:tip}
 
-开始之前，请先检索首次[推送签名的映像](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)时创建的根密钥口令。
+开始之前，请先检索首次[推送签名的映像](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)时创建的根密钥口令。
 
 1. 安装 [Notary 项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli) 的 CLI 版本。
 
-2. [设置可信内容环境](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)。
+2. [设置可信内容环境](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)。
 
-3. 记下先前步骤中 export 命令中的 URL。例如，`https://registry.ng.bluemix.net:4443`
+3. 记下先前步骤中 export 命令中的 URL。例如，`https://us.icr.io:4443`
 
 4. 生成注册表令牌。
 
@@ -355,7 +355,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 
 6. 如果出现提示，请输入根密钥口令。然后，在提示时，输入新的根密钥口令用于新的存储库密钥。
 
-7. [推送签名的映像](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)，此映像将使用新的签名密钥。
+7. [推送签名的映像](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)，此映像将使用新的签名密钥。
 
 ### 根密钥
 {: #trustedcontent_lostrootkey}
@@ -363,11 +363,11 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 如果根密钥丢失或遭到破坏，您将无法更新使用该根密钥的任何可信内容存储库。
 {:shortdesc}
 
-可以[删除名称空间](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove)，即具有使用受影响根密钥的存储库的名称空间，这样将删除映像和信任数据。
+可以[删除名称空间](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove)，即具有使用受影响根密钥的存储库的名称空间，这样将删除映像和信任数据。
 
 如果名称空间包含使用不受影响的根密钥的存储库（例如，生产映像的名称空间），那么您可能希望仅删除与受影响的根密钥相关联的信任数据。请开具支持凭单。
 
-1. [联系 {{site.data.keyword.Bluemix_notm}} 支持](/docs/get-support/howtogetsupport.html#getting-customer-support)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
+1. [联系 {{site.data.keyword.Bluemix_notm}} 支持](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
 
 2. {{site.data.keyword.Bluemix_notm}} 解决此问题后，请删除本地计算机上的 Docker Content Trust 存储库。
 
@@ -378,7 +378,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
    因为根密钥受到影响，所以此步骤将删除所有签名密钥，包括其他信任服务器的签名密钥。
     {:tip}
 
-3. 如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry/registry_security_enforce.html#security_enforce)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](/docs/containers/cs_cli_install.html#cs_cli_configure)，然后修改部署。
+3. 如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，然后修改部署。
     
 
    ```
@@ -388,7 +388,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 
 4. 生成可信内容存储库。
 
-    - 如果要创建新的可信内容，请[推送新的签名映像](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)。
+    - 如果要创建新的可信内容，请[推送新的签名映像](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)。
 
     - 如果不想更改先前的可信内容，请将签名添加到注册表中的最新映像。
 
@@ -442,7 +442,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-有关 RBAC 的更多信息，请参阅[使用定制 Kubernetes RBAC 角色授权用户](/docs/containers/cs_users.html#rbac)和 [Kubernetes - 使用 RBAC 授权 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
+有关 RBAC 的更多信息，请参阅[使用定制 Kubernetes RBAC 角色授权用户](/docs/containers?topic=containers-users#rbac)和 [Kubernetes - 使用 RBAC 授权 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
 
 完成以下步骤以更改 Webhook 配置，从而使其在发生故障时打开而不是关闭，然后，在至少有一个 Container Image Security Enforcement pod 运行时，复原 Webhook 配置，从而使其在发生故障时关闭：
 
@@ -550,7 +550,7 @@ kubectl edit ValidatingWebhookConfiguration image-admission-config
    ```
    {: pre}
 
-4. 通过运行 `ibmcloud cr image-tag` 命令对映像进行标记；请参阅[创建引用源映像的新映像](/docs/services/Registry/registry_images_.html#registry_images_source)。
+4. 通过运行 `ibmcloud cr image-tag` 命令对映像进行标记；请参阅[创建引用源映像的新映像](/docs/services/Registry?topic=registry-registry_images_#registry_images_source)。
 
 ## 在 Mac 上 Docker 登录失败：`保存凭证时出错：存储凭证时出错 - 错误：退出状态 1，输出：“您输入的用户名或口令不正确。”`
 {: #ts_docker_mac}

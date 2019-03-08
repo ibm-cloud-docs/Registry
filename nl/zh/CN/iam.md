@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, user access
 
@@ -28,13 +28,13 @@ subcollection: registry
 您帐户中的用户对 {{site.data.keyword.registrylong}} 的访问权通过 {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) 进行控制。
 {: shortdesc}
 
-如果在 {{site.data.keyword.registrylong_notm}} 中为帐户启用了 IAM 策略，那么必须使用定义的 IAM 用户角色，为帐户中访问 {{site.data.keyword.registrylong_notm}} 服务的每个用户分配访问策略。该策略确定用户在服务的上下文中具有的角色，以及用户可以执行的操作。{{site.data.keyword.registrylong_notm}} 中的每个操作都会映射到一个或多个 [IAM 用户角色](/docs/iam/users_roles.html)。
+如果在 {{site.data.keyword.registrylong_notm}} 中为帐户启用了 IAM 策略，那么必须使用定义的 IAM 用户角色，为帐户中访问 {{site.data.keyword.registrylong_notm}} 服务的每个用户分配访问策略。该策略确定用户在服务的上下文中具有的角色，以及用户可以执行的操作。{{site.data.keyword.registrylong_notm}} 中的每个操作都会映射到一个或多个 [IAM 用户角色](/docs/iam?topic=iam-userroles)。
 
-仅当您使用 IAM 登录到 {{site.data.keyword.registrylong_notm}} 时，才会强制实施 IAM 策略。如果使用其他方法（例如，注册表令牌）登录到 {{site.data.keyword.registrylong_notm}}，那么不会强制实施策略。如果要针对用于自动化的某个标识限制对一个或多个名称空间的访问，请考虑使用 IAM 服务标识，而不使用注册表令牌。有关服务标识的更多信息，请参阅[创建和使用服务标识](/docs/iam/serviceid.html#serviceids)。
+仅当您使用 IAM 登录到 {{site.data.keyword.registrylong_notm}} 时，才会强制实施 IAM 策略。如果使用其他方法（例如，注册表令牌）登录到 {{site.data.keyword.registrylong_notm}}，那么不会强制实施策略。如果要针对用于自动化的某个标识限制对一个或多个名称空间的访问，请考虑使用 IAM 服务标识，而不使用注册表令牌。有关服务标识的更多信息，请参阅[创建和使用服务标识](/docs/iam?topic=iam-serviceids#serviceids)。
 
-有关 IAM 的更多信息，请参阅 [IBM Cloud 访问和管理](/docs/iam/index.html#iamoverview)。
+有关 IAM 的更多信息，请参阅 [IBM Cloud 访问和管理](/docs/iam?topic=iam-iamoverview#iamoverview)。
 
-有关为 {{site.data.keyword.registrylong_notm}} 启用策略的信息，请参阅[定义用户访问角色策略](/docs/services/Registry/registry_users.html#user)。
+有关为 {{site.data.keyword.registrylong_notm}} 启用策略的信息，请参阅[定义用户访问角色策略](/docs/services/Registry?topic=registry-user#user)。
 
 策略允许在不同级别授予访问权。其中一些选项包含以下访问级别：
 
@@ -44,9 +44,9 @@ subcollection: registry
 
 在定义访问策略的作用域后，可以分配角色。请查看下列各表，其中概述了每个角色在 {{site.data.keyword.registrylong_notm}} 服务中所允许的操作。
 
-有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam/mngiam.html#iammanidaccser)。
+有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。
 
-请尝试[教程：授予对 {{site.data.keyword.registrylong_notm}} 资源的访问权](/docs/services/Registry/registry_tutorial_configure_iam.html#iam_access)。
+请尝试[教程：授予对 {{site.data.keyword.registrylong_notm}} 资源的访问权](/docs/services/Registry?topic=registry-iam_access#iam_access)。
 {: tip}
 
 ## 平台管理角色
@@ -59,17 +59,17 @@ subcollection: registry
 |查看者|不支持| |
 |编辑者|不支持| |
 |操作员|不支持| |
-|管理员| <ul><li>为其他用户配置访问权</li><li>配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam/mngiam.html#iammanidaccser)。</li><li>添加、列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers/cs_clusters.html#cluster_prepare)。</li></ul> |
+|管理员| <ul><li>为其他用户配置访问权</li><li>配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。</li><li>添加、列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers?topic=containers-clusters#cluster_prepare)。</li></ul> |
 {: caption="表 1. IAM 用户角色和操作" caption-side="top"}
 
 对于 {{site.data.keyword.registrylong_notm}}，存在以下操作：
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。|管理员|
-|`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
-|`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
-|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_token_list)：显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。|管理员|
+|`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。|管理员|
+|`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
+|`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
+|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)：显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。|管理员|
 {: caption="表 2. 用于配置 {{site.data.keyword.registrylong_notm}} 的平台操作" caption-side="top"}
 
 ## 服务访问角色
@@ -100,12 +100,12 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.auth.set`|[`ibmcloud cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable)：启用 IAM 策略强制实施。|管理者|
-|`container-registry.exemption.manager`| <ul><li>[`ibmcloud cr exemption-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_add)：为安全问题创建豁免。</li><li>[`ibmcloud cr exemption-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_list)：列出对安全问题的豁免。</li><li>[`ibmcloud cr exemption-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_rm)：删除对安全问题的豁免。</li><li>[`ibmcloud cr exemption-types`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_exemption_types)：列出可以豁免的安全问题的类型。</li></ul> |管理者|
-|`container-registry.plan.get`|[`ibmcloud cr plan`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan)：显示价格套餐。|管理者|
-|`container-registry.plan.set`|[`ibmcloud cr plan-upgrade`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_plan_upgrade)：升级为标准套餐。|管理者|
-|`container-registry.quota.get`|[`ibmcloud cr quota`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota)：显示流量和存储的当前配额以及这些配额的使用情况信息。|读取者、写入者和管理者|
-|`container-registry.quota.set`|[`ibmcloud cr quota-set`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_quota_set)：修改指定的配额。|管理者|
+|`container-registry.auth.set`|[`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable)：启用 IAM 策略强制实施。|管理者|
+|`container-registry.exemption.manager`| <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add)：为安全问题创建豁免。</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list)：列出对安全问题的豁免。</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm)：删除对安全问题的豁免。</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types)：列出可以豁免的安全问题的类型。</li></ul> |管理者|
+|`container-registry.plan.get`|[`ibmcloud cr plan`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan)：显示价格套餐。|管理者|
+|`container-registry.plan.set`|[`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)：升级为标准套餐。|管理者|
+|`container-registry.quota.get`|[`ibmcloud cr quota`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota)：显示流量和存储的当前配额以及这些配额的使用情况信息。|读取者、写入者和管理者|
+|`container-registry.quota.set`|[`ibmcloud cr quota-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set)：修改指定的配额。|管理者|
 {: caption="表 4. 用于配置 {{site.data.keyword.registrylong_notm}} 的服务操作" caption-side="top"}
 
 ### 使用 {{site.data.keyword.registrylong_notm}} 的访问角色
@@ -122,15 +122,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.image.build`|[`ibmcloud cr build`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build)：构建容器映像。|写入者、管理者|
-|`container-registry.image.delete`| <ul><li> [`ibmcloud cr image-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_rm)：删除一个或多个映像。</li><li>`docker trust revoke`：删除签名。</li></ul> |写入者、管理者|
-|`container-registry.image.inspect`|[`ibmcloud cr image-inspect`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_inspect)：显示有关特定映像的详细信息。|读取者、管理者|
-|`container-registry.image.list`|[`ibmcloud cr image-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_list)：列出容器映像。|读取者、管理者|
+|`container-registry.image.build`|[`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)：构建容器映像。|写入者、管理者|
+|`container-registry.image.delete`| <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm)：删除一个或多个映像。</li><li>`docker trust revoke`：删除签名。</li></ul> |写入者、管理者|
+|`container-registry.image.inspect`|[`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect)：显示有关特定映像的详细信息。|读取者、管理者|
+|`container-registry.image.list`|[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list)：列出容器映像。|读取者、管理者|
 |`container-registry.image.pull`| <ul><li>`docker pull`：拉出映像。</li><li>`docker trust inspect`：检查签名。</li></ul> |读取者、写入者和管理者|
-|`container-registry.image.push`| <ul><li>`docker push`：推送映像。</li><li>`docker trust sign`：对映像签名。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_ppa_archive_load)：将从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 IBM 软件导入到 {{site.data.keyword.registrylong_notm}} 名称空间。</li></ul> |写入者、管理者|
-|`container-registry.image.tag`|[`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag)：创建引用源映像的新映像。源映像和目标映像必须位于同一区域中。|对于源映像，为读取者、写入者或管理者；对于目标映像，为写入者或管理者|
-|`container-registry.image.vulnerabilities`|[`ibmcloud cr vulnerability-assessment`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_va)：查看映像的漏洞评估报告。|读取者、管理者|
-|`container-registry.namespace.create`|[`ibmcloud cr namespace-add`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_add)：添加名称空间。|写入者、管理者|
-|`container-registry.namespace.delete`|[`ibmcloud cr namespace-rm`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_rm)：除去名称空间。|写入者、管理者|
-|`container-registry.namespace.list`|[`ibmcloud cr namespace-list`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_namespace_list)：显示名称空间。|读取者、管理者|
+|`container-registry.image.push`| <ul><li>`docker push`：推送映像。</li><li>`docker trust sign`：对映像签名。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)：将从 [IBM Passport Advantage Online for customers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下载并已打包与 Helm 配合使用的 IBM 软件导入到 {{site.data.keyword.registrylong_notm}} 名称空间。</li></ul> |写入者、管理者|
+|`container-registry.image.tag`|[`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag)：创建引用源映像的新映像。源映像和目标映像必须位于同一区域中。|对于源映像，为读取者、写入者或管理者；对于目标映像，为写入者或管理者|
+|`container-registry.image.vulnerabilities`|[`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va)：查看映像的漏洞评估报告。|读取者、管理者|
+|`container-registry.namespace.create`|[`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add)：添加名称空间。|写入者、管理者|
+|`container-registry.namespace.delete`|[`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm)：除去名称空间。|写入者、管理者|
+|`container-registry.namespace.list`|[`ibmcloud cr namespace-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list)：显示名称空间。|读取者、管理者|
 {: caption="表 5. 使用 {{site.data.keyword.registrylong_notm}} 的服务操作" caption-side="top"}

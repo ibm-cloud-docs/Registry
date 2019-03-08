@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, public IBM images, images
 
@@ -36,10 +36,10 @@ subcollection: registry
 
 **시작하기 전에**
 
-- [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login)에 로그인하십시오.
+- [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)에 로그인하십시오.
 
   ```
-    ibmcloud login
+  ibmcloud login
   ```
   {: pre}
 
@@ -48,13 +48,13 @@ subcollection: registry
 1. 글로벌 레지스트리를 대상으로 지정하십시오.
 
    ```
-ibmcloud cr region-set global
+   ibmcloud cr region-set global
    ```
    {: pre}
 
 2. {{site.data.keyword.IBM_notm}} 공용 이미지를 나열하십시오.
 
    ```
-ibmcloud cr images --include-ibm
+   ibmcloud cr images --include-ibm
    ```
    {: pre}

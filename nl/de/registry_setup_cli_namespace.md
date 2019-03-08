@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
 
@@ -31,7 +31,7 @@ Bevor Sie Ihre Docker-Images in {{site.data.keyword.registrylong}} speichern kö
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {:tip}
 
-Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.Bluemix_notm}})](/docs/cli/index.html#overview). 
+Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). 
 
 ## `container-registry`-CLI-Plug-in installieren
 {: #cli_namespace_registry_cli_install}
@@ -39,7 +39,7 @@ Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {
 Installieren Sie das `container-registry`-CLI-Plug-in, um Namensbereiche und Docker-Images in {{site.data.keyword.registrylong_notm}} über die Befehlszeile zu verwalten.
 {:shortdesc}
 
-1. [Installieren Sie das `container-registry`-CLI-Plug-in. ](/docs/services/Registry/index.html#registry_cli_install)
+1. [Installieren Sie das `container-registry`-CLI-Plug-in. ](/docs/services/Registry?topic=registry-index#registry_cli_install)
 2. Optional: [Konfigurieren Sie den Docker-Client für die Ausführung von Befehlen ohne Rootberechtigungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Sie diesen Schritt nicht ausführen, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit **sudo** oder als Root ausführen.
 
 Sie können jetzt einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.
@@ -94,12 +94,12 @@ Sie müssen einen Namensbereich erstellen, um Docker-Images in {{site.data.keywo
 
 **Vorbereitung**
 
-- [{{site.data.keyword.Bluemix_notm}}-CLI und das `container-registry`-CLI-Plug-in installieren](/docs/services/Registry/index.html#registry_cli_install).
-- [Planen Sie, wie Sie Ihre Registry-Namensbereiche verwenden und benennen](/docs/services/Registry/registry_overview.html#registry_namespaces).
+- [{{site.data.keyword.Bluemix_notm}}-CLI und das `container-registry`-CLI-Plug-in installieren](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Planen Sie, wie Sie Ihre Registry-Namensbereiche verwenden und benennen](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-Erstellen Sie einen Namensbereich. Informationen dazu finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry/index.html#registry_namespace_add) in der Dokumentation zur Einführung.
+Erstellen Sie einen Namensbereich. Informationen dazu finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry?topic=registry-index#registry_namespace_add) in der Dokumentation zur Einführung.
 
-Sie können nun [Docker-Images per Push-Operation in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace) übertragen und diese Images mit anderen Benutzern in Ihrem Konto gemeinsam nutzen.
+Sie können nun [Docker-Images per Push-Operation in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) übertragen und diese Images mit anderen Benutzern in Ihrem Konto gemeinsam nutzen.
 
 ## Namensbereiche entfernen
 {: #registry_remove}
@@ -125,7 +125,7 @@ Falls Sie einen Registry-Namensbereich nicht mehr benötigen, können Sie ihn au
 
     **Achtung:** Wenn Sie einen Namensbereich entfernen, werden alle in diesem Namensbereich gespeicherten Images ebenfalls gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.
 
-    Ersetzen Sie `<my_namespace>` durch den Namensbereich, der entfernt werden soll. 
+    Ersetzen Sie `<my_namespace>` durch den Namensbereich, der entfernt werden soll.
 
     ```
     ibmcloud cr namespace-rm <my_namespace>

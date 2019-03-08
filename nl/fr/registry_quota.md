@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -180,7 +180,7 @@ dans une période de facturation.
     - Patientez jusqu'au début du cycle de facturation suivant.
     - Si vous disposez d'un plan gratuit,
 [procédez à une mise à niveau vers le plan de
-service standard](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+service standard](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
     - Si vous disposez déjà d'un plan standard,
 [définissez de nouvelles limites de quota pour le
 trafic d'extraction](#registry_quota_set).

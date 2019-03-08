@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ Esta guía de aprendizaje dura aproximadamente 45 minutos.
 
 **Antes de empezar**
 
-- Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index).
+- Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
 
-- Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 - Debe tener acceso a dos cuentas de [{{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
 
@@ -221,7 +221,7 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
 
         Se muestran los tres espacios de nombres que ha creado en esta guía de aprendizaje (`namespace_a`, `namespace_b` y `namespace_c`). Si no ve estos espacios de nombres, vuelva y siga las instrucciones para crearlos de nuevo.
 
-    3. Cree una política que otorgue el rol de Lector sobre `namespace_b` al Usuario B con el siguiente mandato, donde _`<Region>`_ es el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions), por ejemplo `us-south`:
+    3. Cree una política que otorgue el rol de Lector sobre `namespace_b` al Usuario B con el siguiente mandato, donde _`<Region>`_ es el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions), por ejemplo `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -250,14 +250,14 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
     2. Etiquete la imagen para `namespace_a` con el siguiente mandato:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Etiquete la imagen para `namespace_b` con el siguiente mandato:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
     5. Envíe la imagen a `namespace_a` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. Envíe la imagen a `namespace_b` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
     5. Extraiga la imagen con el siguiente mandato:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. Envíe la imagen a `namespace_b` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
     7. Etiquete la imagen con `namespace_c` con el siguiente mandato:
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. Envíe la imagen a `namespace_c` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
     9. Extraiga de `namespace_c` con el siguiente mandato:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ En esta sección, configurará un ID de servicio y le otorgará acceso al espaci
     1. Inicie una sesión en {{site.data.keyword.registrylong_notm}} con el siguiente mandato:
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. Extraiga la imagen con el siguiente mandato:
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ En esta sección, configurará un ID de servicio y le otorgará acceso al espaci
     3. Envíe su imagen a `namespace_a` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ En esta sección, configurará un ID de servicio y le otorgará acceso al espaci
     4. Envíe su imagen a `namespace_b` con el siguiente mandato:
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

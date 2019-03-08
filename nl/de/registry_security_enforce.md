@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Sicherheit des Container-Image durchsetzen (Beta)
 {: #security_enforce}
 
-Mit Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](/docs/services/Registry/registry_trusted_content.html) korrekt auf das Image angewendet wird. Wenn ein Image Ihre Richtlinienanforderungen nicht erfüllt, wird die Pod-Datei nicht in Ihrem Cluster implementiert oder aktualisiert.
+Mit Container Image Security Enforcement (Beta) können Sie Ihre Container-Images überprüfen, bevor Sie sie in Ihrem Cluster in {{site.data.keyword.containerlong}} bereitstellen. Sie können steuern, von wo aus Images bereitgestellt werden, Vulnerability Advisor-Richtlinien durchsetzen und sicherstellen, dass [content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) korrekt auf das Image angewendet wird. Wenn ein Image Ihre Richtlinienanforderungen nicht erfüllt, wird die Pod-Datei nicht in Ihrem Cluster implementiert oder aktualisiert.
 {:shortdesc}
 
 Container Image Security Enforcement ruft die Informationen zu Content Trust für Images und zu Sicherheitslücken von {{site.data.keyword.registrylong}} ab. Sie können die Bereitstellung von Images, die in anderen Registrys gespeichert sind, blockieren oder zulassen. Für diese Images können Sie jedoch nicht die Prüfung auf Sicherheitslücken oder Durchsetzung der Vertrauensbeziehung verwenden.
@@ -35,17 +35,17 @@ Container Image Security Enforcement ruft die Informationen zu Content Trust fü
 
 **Vorbereitung**
 
-* [Erstellen](/docs/containers/cs_clusters.html#clusters_ui) oder [aktualisieren](/docs/containers/cs_cluster_update.html#update) Sie den Cluster, den Sie mit **Kubernetes Version 1.9 oder höher** verwenden möchten.
-* [Wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
+* [Erstellen](/docs/containers?topic=containers-clusters#clusters_ui) oder [aktualisieren](/docs/containers?topic=containers-update#update) Sie den Cluster, den Sie mit **Kubernetes Version 1.9 oder höher** verwenden möchten.
+* [Wählen Sie Ihre `kubectl`-CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) als Ziel für den Cluster aus.
 
 Führen Sie die folgenden Schritte aus:
 
-1. [Richten Sie Helm in Ihrem Cluster ein](/docs/containers/cs_integrations.html#helm).
+1. [Richten Sie Helm in Ihrem Cluster ein](/docs/containers?topic=containers-integrations#helm).
 
 2. Fügen Sie das IBM Chart-Repository zu Ihrem Helm-Client hinzu.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ Es muss eine Richtlinie festgelegt sein. Andernfalls schlagen Bereitstellungen a
 
 Wenn Sie eine Bereitstellung anwenden, prüft Container Image Security Enforcement, ob der Kubernetes-Namensbereich, den Sie bereitstellen, eine anzuwendende Richtlinie besitzt. Ist dies nicht der Fall, verwendet Container Image Security Enforcement die clusterweite Richtlinie. Ihre Bereitstellung wird verweigert, wenn kein Namensbereich und keine clusterweite Richtlinie existieren.
 
-Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus. Führen Sie die dann folgenden Schritte aus:
+Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) als Ziel für den Cluster aus. Führen Sie die dann folgenden Schritte aus:
 
 1. Erstellen Sie eine `.yaml`-Datei für die Definition einer angepassten <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes-Ressource <img src="../../icons/launch-glyph.svg" alt="Symbol für externen Link"></a>.
 
@@ -226,7 +226,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_ins
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Legen Sie dies mit `true` fest, um die Bereitstellung nur von Images zuzulassen, die [für Content Trust signiert](/docs/services/Registry/registry_trusted_content.html) sind. Legen Sie `false` fest, um zu ignorieren, ob Images signiert sind.</td>
+    <td>Legen Sie dies mit `true` fest, um die Bereitstellung nur von Images zuzulassen, die [für Content Trust signiert](/docs/services/Registry?topic=registry-registry_trustedcontent) sind. Legen Sie `false` fest, um zu ignorieren, ob Images signiert sind.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_ins
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Legen Sie dies mit `true` fest, um nur Images zuzulassen, die die [Vulnerability Advisor](/docs/services/va/va_index.html)-Prüfung bestehen. Legen Sie `false` fest, um die Vulnerability Advisor-Prüfung zu ignorieren.</td>
+    <td>Legen Sie dies mit `true` fest, um nur Images zuzulassen, die die [Vulnerability Advisor](/docs/services/va?topic=va-va_index)-Prüfung bestehen. Legen Sie `false` fest, um die Vulnerability Advisor-Prüfung zu ignorieren.</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_ins
 ### Unterzeichner für vertrauenswürdige Inhalte in angepassten Richtlinien angeben
 {: #signers}
 
-Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die neueste signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+Wenn Sie Content Trust verwenden, können Sie überprüfen, ob Images von bestimmten Unterzeichnern signiert wurden. Die Bereitstellung ist nur dann zulässig, wenn die neueste signierte Version von allen aufgelisteten Unterzeichnern signiert wurde. Anweisungen zum Hinzufügen eines Unterzeichners zu einem Repository finden Sie unter [Vertrauenswürdige Unterzeichner verwalten](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 Gehen Sie folgendermaßen vor, um die Richtlinie so zu konfigurieren, dass sie überprüft, ob ein Image von einem bestimmten Unterzeichner signiert wurde:
@@ -277,7 +277,7 @@ Gehen Sie folgendermaßen vor, um die Richtlinie so zu konfigurieren, dass sie �
 ## Steuern, wer Richtlinien anpassen darf
 {: #assign_user_policy}
 
-Wenn in Ihrem Kubernetes-Cluster die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) aktiviert ist, können Sie eine Rolle erstellen, die regelt, wer Sicherheitsrichtlinien in Ihrem Cluster verwalten kann. Weitere Informationen zur Anwendung von RBAC-Regeln auf Ihren Cluster finden Sie in der [Dokumentation zu {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
+Wenn in Ihrem Kubernetes-Cluster die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) aktiviert ist, können Sie eine Rolle erstellen, die regelt, wer Sicherheitsrichtlinien in Ihrem Cluster verwalten kann. Weitere Informationen zur Anwendung von RBAC-Regeln auf Ihren Cluster finden Sie in der [Dokumentation zu {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 Fügen Sie in Ihrer Rolle eine Regel für Sicherheitsrichtlinien hinzu:
@@ -345,14 +345,14 @@ Wenn Container Image Security Enforcement eine Bereitstellung verweigert, wird d
 
 Sie können die Option `va` in Ihrer Richtlinie aktivieren, um durchzusetzen, dass Vulnerability Advisor bestanden wird, bevor ein Image bereitgestellt werden kann. Images, die von Vulnerability Advisor nicht unterstützt werden, sind zulässig.
 
-Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](/docs/services/Registry/registry_trusted_content.html).
+Sie können die Option `trust` in Ihrer Richtlinie akzeptieren, um Content Trust durchzusetzen. Wenn Sie keine `signerSecrets` (geheime Schlüssel von Unterzeichnern) angeben, wird die Bereitstellung zugelassen, sofern das Image überhaupt signiert wurde. Wenn Sie `signerSecrets` angeben, muss die zuletzt signierte Version des Image von allen Unterzeichnern signiert worden sein, die Sie angegeben haben. Container Image Security Enforcement überprüft, ob der angegebene öffentliche Schlüssel dem Unterzeichner gehört. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Eine Bereitstellung ist nur dann zulässig, wenn alle Images die Prüfungen von Container Image Security Enforcement bestehen.
 
 ## Container Image Security Enforcement entfernen
 {: #remove}
 
-Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für den Cluster aus.
+Bevor Sie anfangen, [wählen Sie Ihre `kubectl`-CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) als Ziel für den Cluster aus.
 
 
 

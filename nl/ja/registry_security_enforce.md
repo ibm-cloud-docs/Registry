@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # コンテナー・イメージ・セキュリティーの適用 (ベータ)
 {: #security_enforce}
 
-Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry/registry_trusted_content.html)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
 Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
@@ -35,17 +35,17 @@ Container Image Security Enforcement は、イメージ・コンテンツの信�
 
 **始めに**
 
-* **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](/docs/containers/cs_clusters.html#clusters_ui)または[更新](/docs/containers/cs_cluster_update.html#update)します。
-* クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers/cs_cli_install.html#cs_cli_configure)。
+* **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](/docs/containers?topic=containers-clusters#clusters_ui)または[更新](/docs/containers?topic=containers-update#update)します。
+* クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
 
 以下の手順を実行してください。
 
-1. [クラスターに Helm をセットアップします](/docs/containers/cs_integrations.html#helm)。
+1. [クラスターに Helm をセットアップします](/docs/containers?topic=containers-integrations#helm)。
 
 2. IBM のチャート・リポジトリーを Helm クライアントに追加します。
 
    ```
-   helm repo add ibm  https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ spec:
 
 デプロイメントを行うと、Container Image Security Enforcement が、デプロイ先の Kubernetes 名前空間に適用すべきポリシーがあるかどうかを検査します。 ない場合、Container Image Security Enforcement はクラスター規模のポリシーを使用します。 名前空間規模のポリシーもクラスター規模のポリシーも存在しない場合、デプロイメントは拒否されます。
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。 次に、以下の手順を実行します。
+始める前に、クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)してください。次に、以下の手順を実行します。
 
 1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
 
@@ -226,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>[コンテント・トラストの署名](/docs/services/Registry/registry_trusted_content.html)があるイメージのデプロイだけを許可する場合は、`true` に設定します。 イメージに署名があるかどうかを無視する場合は、`false` に設定します。</td>
+    <td>[コンテント・トラストの署名](/docs/services/Registry?topic=registry-registry_trustedcontent)があるイメージのデプロイだけを許可する場合は、`true` に設定します。 イメージに署名があるかどうかを無視する場合は、`false` に設定します。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>[脆弱性アドバイザー](/docs/services/va/va_index.html)のスキャンに合格したイメージだけを許可する場合は、`true` に設定します。 脆弱性アドバイザーのスキャンを無視する場合は、`false` に設定します。</td>
+    <td>[脆弱性アドバイザー](/docs/services/va?topic=va-va_index)のスキャンに合格したイメージだけを許可する場合は、`true` に設定します。 脆弱性アドバイザーのスキャンを無視する場合は、`false` に設定します。</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ spec:
 ### 信頼できるコンテンツの署名者をカスタム・ポリシーに指定する
 {: #signers}
 
-コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)を参照してください。
+コンテント・トラストを使用する場合は、イメージに特定の署名者の署名があることを検証できます。 署名付きの最新のバージョンに、リストしたすべての署名者の署名がある場合に限り、デプロイメントは許可されます。 署名者をリポジトリーに追加するには、[信頼できる署名者の管理](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers)を参照してください。
 {:shortdesc}
 
 イメージに特定の署名者の署名があることを検証するようにポリシーを構成するには、以下のようにします。
@@ -277,7 +277,7 @@ spec:
 ## ポリシーをカスタマイズできるユーザーの制御
 {: #assign_user_policy}
 
-Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有効にしている場合は、役割を作成して、クラスターのセキュリティー・ポリシーを管理できるユーザーを制御できます。 クラスターに RBAC ルールを適用する方法について詳しくは、[{{site.data.keyword.containerlong_notm}} の資料](/docs/containers/cs_users.html#rbac)を参照してください。
+Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有効にしている場合は、役割を作成して、クラスターのセキュリティー・ポリシーを管理できるユーザーを制御できます。 クラスターに RBAC ルールを適用する方法について詳しくは、[{{site.data.keyword.containerlong_notm}} の資料](/docs/containers?topic=containers-users#rbac)を参照してください。
 {:shortdesc}
 
 役割にセキュリティー・ポリシーのルールを追加します。
@@ -358,14 +358,14 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 
 ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
 
-ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry/registry_trusted_content.html)を参照してください。
+ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry?topic=registry-registry_trustedcontent)を参照してください。
 
 すべてのイメージが Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
 
 ## Container Image Security Enforcement の削除
 {: #remove}
 
-始める前に、クラスターを [ `kubectl` CLI のターゲットとして設定](/docs/containers/cs_cli_install.html#cs_cli_configure)してください。
+始める前に、クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)してください。
 
 
 

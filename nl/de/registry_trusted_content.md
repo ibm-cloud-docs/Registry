@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ Wenn Sie Ihr Image mit Push-Operation und mit aktiviertem Content Trust übertra
 Ein Imagename setzt sich aus einem Repository und einem Tag zusammen. Bei Verwendung von vertrauenswürdigen Inhalten verwendet jedes Repository einen eindeutigen Signierschlüssel. Jeder Tag innerhalb eines Repositorys verwendet den Schlüssel, der dem Repository angehört. Wenn mehrere Ihrer Teams Inhalte veröffentlichen, jedes in das eigene Repository innerhalb Ihrer {{site.data.keyword.registrylong_notm}}-Namensbereiche, kann jedes Team seinen eigenen Schlüssel zum Signieren des eigenen Inhalts verwenden, sodass Sie überprüfen können, ob jedes Images vom richtigen Team erzeugt wurde.
 
 Ein Repository kann sowohl signierten als auch nicht signierten Inhalt enthalten. Wenn Docker Content Trust aktiviert ist, können Sie auch dann auf den signierten Inhalt eines Repositorys zugreifen, wenn auch anderer nicht signierter Inhalt darin vorhanden ist.
+
+Images weisen separate Signaturen für alte (`registry.bluemix.net`) und für neue (`icr.io`) Domänennamen auf. Bereits vorhandene Signaturen funktionieren, wenn das Image aus dem alten Domänennamen extrahiert wird. Wenn Sie signierten Inhalt per Pull-Operation aus dem neuen Domänennamen extrahieren möchten, müssen Sie das Image beim neuen Domänennamen `icr.io` erneut signieren; Informationen hierzu finden Sie im Abschnitt zum [Erneuten Signieren eines Image für den neuen Domänennamen](#trustedcontent_resign).
+{: note}
 
 Docker Content Trust verwendet ein "trust on first use"-Sicherheitsmodell ("Vertrauen bei erster Verwendung"). Der Repository-Schlüssel wird aus dem Trust-Server mit Pull-Operation extrahiert, wenn Sie erstmalig ein signiertes Image mit Pull-Operation aus einem Repository extrahieren, und dieser Schlüssel wird künftig verwendet, um Images aus diesem Repository zu überprüfen. Sie müssen darauf achten, entweder dem Trust-Server oder dem Image und seinem Veröffentlicher zu vertrauen, bevor Sie das Repository zum ersten Mal mit Pull-Operation extrahieren. Wenn die vertrauenswürdigen Informationen im Server beeinträchtigt sind und Sie vorher noch kein Image aus dem Repository mit Pull-Operation extrahiert haben, kann es sein, dass Ihr Docker-Client die beeinträchtigten Daten vom Trust-Server mit Pull-Operation extrahiert. Werden die Trust-Daten beschädigt, nachdem Sie das Image zum ersten Mal mit Pull-Operation extrahiert haben, kann Ihr Docker-Client bei späteren Extraktionen die beschädigten Daten nicht prüfen und extrahiert das Image nicht. Weitere Informationen dazu, wie Trust-Daten für ein Image untersucht werden, finden Sie unter [Signierte Images anzeigen](#trustedcontent_viewsigned).
 
@@ -90,18 +93,18 @@ Standardmäßig ist Docker Content Trust inaktiviert. Aktivieren Sie die Content
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
    Um Ihren Docker-Client mit Content Trust einzurichten, exportieren Sie die folgende Umgebungsvariable:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+    export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Kopieren Sie den Befehl für die Umgebungsvariable und fügen Sie ihn in Ihr Terminal ein. Beispiel:
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -116,18 +119,18 @@ Wenn Sie während Ihrer Sitzung mit aktiviertem Docker Content Trust eine Operat
 Wenn Sie ein signiertes Image erstmalig mit Push-Operation übertragen, erstellt Docker automatisch ein Paar von Signierschlüsseln, den Root- und den Repository-Schlüssel. Um ein Image in einem Repository zu signieren, in das bereits zuvor signierte Images mit Push-Operation übertragen wurden, muss der richtige Repository-Signierschlüssel in dem System geladen sein, das das Image mit Push-Operation überträgt.
 {:shortdesc}
 
-Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/services/Registry/index.html#registry_namespace_add).
+Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/services/Registry?topic=registry-index#registry_namespace_add).
 
 1. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry/index.html#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an: 
+2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry?topic=registry-index#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
 
    ```
    Image-Metadaten werden signiert und mit Push-Operation übertragen.
    ```
    {: screen}
 
-3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) begrenzt sind.
+3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) begrenzt sind.
 
 ## Signiertes Image mit Pull-Operation extrahieren
 {: #trustedcontent_pull}
@@ -147,6 +150,36 @@ Beim erstmaligen Extrahieren eines signierten Image mit Pull-Operation bei aktiv
     Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag ` latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
     {: tip}
 
+## Image für den neuen Domänennamen erneut signieren
+{: #trustedcontent_resign}
+
+Um das Image für den neuen Domänennamen `icr.io` erneut zu signieren, müssen Sie für das Image eine Pull-, Tag- und Push-Operation durchführen.
+{:shortdesc}
+
+1. Extrahieren Sie Ihr signiertes Image mit der Pull-Operation aus dem alten Domänennamen. Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `ibmcloud cr image-list` aus.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag ` latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
+    {: tip}
+
+2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen Ihres Repositorys und `<tag>` durch den Namen Ihres Tags.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Führen Sie für Ihr Image eine Push-Operation durch, indem Sie den neuen Domänennamen verwenden; Informationen hierzu finden Sie im Abschnitt zum [Durchführen einer Push-Operation für Docker-Images in den eigenen Namensbereich](/docs/services/Registry?topic=registry-index#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
+
+   ```
+   Image-Metadaten werden signiert und mit Push-Operation übertragen.
+   ```
+   {: screen}
+
 ## Vertrauenswürdige Inhalte verwalten
 {: #trustedcontent_managetrust}
 
@@ -163,7 +196,7 @@ Sie können signierte Versionen eines Image oder Tags und auch die Informationen
 
 2. Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image.
 
-   (Optional) Den Tag, `<tag>`, angeben, um Informationen zu dieser Version des Images anzuzeigen. 
+   (Optional) Den Tag, `<tag>`, angeben, um Informationen zu dieser Version des Images anzuzeigen.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -217,7 +250,7 @@ Wenn Sie ein signiertes Image erstmalig mit Push-Operation an ein neues Reposito
    Wenn Sie Ihr Docker-Konfigurationsverzeichnis geändert haben, suchen Sie dort nach dem `trust`-Unterverzeichnis.
    {: tip}
 
-Sie müssen alle Ihre Schlüssel sichern, besonders den Rootschlüssel. Wenn ein Schlüssel verloren geht oder beeinträchtigt wird, sind Ihre [Wiederherstellungsoptionen](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) begrenzt.
+Sie müssen alle Ihre Schlüssel sichern, besonders den Rootschlüssel. Wenn ein Schlüssel verloren geht oder beeinträchtigt wird, sind Ihre [Wiederherstellungsoptionen](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) begrenzt.
 
 Hinweise zum Sichern Ihrer Schlüssel finden Sie in der Dokumentation zu [Docker Content Trust ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

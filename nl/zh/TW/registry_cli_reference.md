@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ subcollection: registry
 在 {{site.data.keyword.registryshort_notm}} CLI 中，執行 `ibmcloud cr` 指令。
 {:shortdesc}
 
-如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)。
+如需支援的指令，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)。
 
 ## 格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ subcollection: registry
 
 您可以搭配使用 format 選項與下列 {{site.data.keyword.registrylong_notm}} 指令。按一下指令，以檢視可用欄位及其資料類型的清單。
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 下列程式碼範例示範如何使用格式化及過濾選項。
 
@@ -67,10 +67,10 @@ subcollection: registry
   **輸出範例**
 
   ```
-  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-  example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-  example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 
@@ -130,7 +130,7 @@ subcollection: registry
 |`Repository`|字串|顯示映像檔的儲存庫。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`Tag`|字串|顯示映像檔的標籤。|
-|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](/docs/services/va/va_index.html#va_registry_cli)中會說明可能的狀態。|
+|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](/docs/services/va?topic=va-va_index#va_registry_cli)中會說明可能的狀態。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` 指令中的 Go 範本選項及資料類型
@@ -146,16 +146,16 @@ subcollection: registry
 |`Comment`|字串|顯示映像檔的說明。|
 |`Created`|字串|顯示建立映像檔時的 [UNIX 時間戳記 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`Container`|字串|顯示已建立映像檔之容器的 ID。|
-|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的欄位詳細資料。|
+|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config) 中的欄位詳細資料。|
 |`DockerVersion`|字串|顯示用來建置此映像檔的 Docker 版本。|
 |`Author`|字串|顯示映像檔的作者。|
-|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的欄位詳細資料。|
+|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config) 中的欄位詳細資料。|
 |`Architecture`|字串|顯示用來建置此映像檔、且為執行映像檔所需的處理器架構。|
 |`Os`|字串|顯示用來建置此映像檔、且為執行映像檔所需的作業系統系列。|
 |`OsVersion`|字串|顯示用來建置此映像檔的作業系統版本。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`VirtualSize`|整數（64 位元）|顯示映像檔中每一層的大小總和（以位元組為單位）。|
-|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs) 中的欄位詳細資料。|
+|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs) 中的欄位詳細資料。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
 #### Config
@@ -174,7 +174,7 @@ subcollection: registry
 |`StdinOnce`|布林|如果在連接的用戶端中斷連線之後關閉標準輸入串流，會顯示 _true_，如果標準輸入串流保持開啟，會顯示 _false_。|
 |`Env`|字串陣列|以鍵值配對形式顯示環境變數清單。|
 |`Cmd`|字串陣列|說明傳遞給容器以在容器啟動時執行的指令及引數。|
-|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck) 中的欄位詳細資料。|
+|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck) 中的欄位詳細資料。|
 |`ArgsEscaped`|布林|如果已跳出指令（Windows 特有），會顯示 true。|
 |`Image`|字串|顯示操作員所傳遞之映像檔的名稱。|
 |`Volumes`|鍵值對映|顯示已裝載至容器的磁區裝載清單。|

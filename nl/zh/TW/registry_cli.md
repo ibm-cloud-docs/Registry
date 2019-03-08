@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-25"
 
 kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -36,9 +36,9 @@ subcollection: registry
 
 如果您要檢視 `container-registry` CLI 外掛程式的現行版本，請執行 `ibmcloud plugin list`。
 
-若要找出如何使用 {{site.data.keyword.registrylong_notm}} CLI 的詳細資訊，請參閱[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index)。
+若要找出如何使用 {{site.data.keyword.registrylong_notm}} CLI 的詳細資訊，請參閱[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index)。
 
-如需部分指令所需 IAM 平台及服務存取角色的相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry/iam.html#iam)。
+如需部分指令所需 IAM 平台及服務存取角色的相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry?topic=registry-iam#iam)。
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {:tip}
@@ -69,7 +69,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -91,10 +91,10 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 
 **範例**
 
-建置不使用先前建置之建置快取的 Docker 映像檔，其中會暫停建置輸出、標籤為 *`registry.ng.bluemix.net/birds/bluebird:1`*，且目錄是您的工作目錄。
+建置不使用先前建置之建置快取的 Docker 映像檔，其中會暫停建置輸出、標籤為 *`us.icr.io/birds/bluebird:1`*，且目錄是您的工作目錄。
 
 ```
-ibmcloud cr build --no-cache --quiet --tag registry.ng.bluemix.net/birds/bluebird:1 .
+ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
 ```
 {: pre}
 
@@ -110,7 +110,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 **指令選項**
 <dl>
@@ -126,10 +126,10 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 
 **範例**
 
-對於 `registry.ng.bluemix.net/birds/bluebird` 儲存庫中的所有映像檔，建立 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
+對於 `us.icr.io/birds/bluebird` 儲存庫中的所有映像檔，建立 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
 
 ```
-ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
+ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
@@ -140,10 +140,10 @@ ibmcloud cr exemption-add --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-對於標籤為 `registry.ng.bluemix.net/birds/bluebird:1` 的單一映像檔，建立問題 `application_configuration:nginx.ssl_protocols` 的配置問題豁免。
+對於標籤為 `us.icr.io/birds/bluebird:1` 的單一映像檔，建立問題 `application_configuration:nginx.ssl_protocols` 的配置問題豁免。
 
 ```
-ibmcloud cr exemption-add --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -159,7 +159,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 **指令選項**
 <dl>
@@ -189,7 +189,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 **指令選項**
 <dl>
@@ -206,10 +206,10 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **範例**
 
-對於 `registry.ng.bluemix.net/birds/bluebird` 儲存庫中的所有映像檔，刪除 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
+對於 `us.icr.io/birds/bluebird` 儲存庫中的所有映像檔，刪除 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
 
 ```
-ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
+ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
@@ -220,10 +220,10 @@ ibmcloud cr exemption-rm --scope "*" --issue-type cve --issue-id CVE-2018-17929
 ```
 {: pre}
 
-對於標籤為 `registry.ng.bluemix.net/birds/bluebird:1` 的單一映像檔，刪除問題 `application_configuration:nginx.ssl_protocols` 的配置問題豁免。
+對於標籤為 `us.icr.io/birds/bluebird:1` 的單一映像檔，刪除問題 `application_configuration:nginx.ssl_protocols` 的配置問題豁免。
 
 ```
-ibmcloud cr exemption-rm --scope registry.ng.bluemix.net/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
@@ -240,12 +240,12 @@ ibmcloud cr exemption-types
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-如果您使用 IAM 鑑別，則此指令會啟用精細授權。如需相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry/iam.html#iam)及[定義使用者存取角色原則](/docs/services/Registry/registry_users.html#user)。
+如果您使用 IAM 鑑別，則此指令會啟用精細授權。如需相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry?topic=registry-iam#iam)及[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
 
 ```
 ibmcloud cr iam-policies-enable
@@ -254,7 +254,7 @@ ibmcloud cr iam-policies-enable
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
@@ -268,14 +268,14 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
 
-如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)。
+如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -288,10 +288,10 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 **範例**
 
-使用格式化指引 *`"{{ .Config.ExposedPorts }}"`*，以顯示映像檔 *`registry.ng.bluemix.net/birds/bluebird:1`* 之已公開埠的詳細資料。
+使用格式化指引 *`"{{ .Config.ExposedPorts }}"`*，以顯示映像檔 *`us.icr.io/birds/bluebird:1`* 之已公開埠的詳細資料。
 
 ```
-ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" registry.ng.bluemix.net/birds/bluebird:1
+ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
@@ -310,7 +310,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -319,7 +319,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
 
-如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)。
+如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -351,13 +351,13 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>您要刪除之映像檔的名稱。您可以藉由在指令中列出每一個映像檔，並以空格隔開每一個名稱，來同時刪除多個映像檔。`IMAGE` 的格式必須為 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
+<dd>您要刪除之映像檔的名稱。您可以藉由在指令中列出每一個映像檔，並以空格隔開每一個名稱，來同時刪除多個映像檔。`IMAGE` 的格式必須為 `repository:tag`，例如：`us.icr.io/namespace/image:latest`
 
 <p>若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 **Repository** 及 **Tag** 直欄的內容，以建立映像檔名稱。如果映像檔名稱中未指定標籤，則依預設會刪除以 `latest` 標記的映像檔。</p>
 
@@ -365,10 +365,10 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dl>
 
 **範例**
-刪除映像檔 `registry.ng.bluemix.net/birds/bluebird:1`。
+刪除映像檔 `us.icr.io/birds/bluebird:1`。
 
 ```
-ibmcloud cr image-rm registry.ng.bluemix.net/birds/bluebird:1
+ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
@@ -387,38 +387,40 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
-<dd>來源映像檔的名稱。`SOURCE_IMAGE` 的格式必須為 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
+<dd>來源映像檔的名稱。`SOURCE_IMAGE` 的格式必須為 `repository:tag`，例如：`us.icr.io/namespace/image:latest`
+
 </dd>
 <dt>`TARGET_IMAGE`</dt>
-<dd>目標映像檔的名稱。`TARGET_IMAGE` 的格式必須為 `repository:tag`，例如：`registry.ng.bluemix.net/namespace/image:latest`
+<dd>目標映像檔的名稱。`TARGET_IMAGE` 的格式必須為 `repository:tag`，例如：`us.icr.io/namespace/image:latest`
+
 </dd>
 </dl>
 
 **範例**
 
-將另一個標記參照 `latest` 新增至映像檔 `registry.ng.bluemix.net/birds/bluebird:1`。
+將另一個標記參照 `latest` 新增至映像檔 `us.icr.io/birds/bluebird:1`。
 
 ```
-ibmcloud cr image-tag  registry.ng.bluemix.net/birds/bluebird:1 registry.ng.bluemix.net/birds/bluebird:latest
-```
-{: pre}
-
-將映像檔 `registry.ng.bluemix.net/birds/bluebird:peck` 複製到相同名稱空間 `birds/pigeon` 中的另一個儲存庫。
-
-```
-ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/birds/pigeon:peck
+ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
 ```
 {: pre}
 
-將映像檔 `registry.ng.bluemix.net/birds/bluebird:peck` 複製到您有存取權的另一個名稱空間 `animals`。
+將映像檔 `us.icr.io/birds/bluebird:peck` 複製到相同名稱空間 `birds/pigeon` 中的另一個儲存庫。
 
 ```
-ibmcloud cr image-tag registry.ng.bluemix.net/birds/bluebird:peck registry.ng.bluemix.net/animals/dog:bark
+ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/birds/pigeon:peck
+```
+{: pre}
+
+將映像檔 `us.icr.io/birds/bluebird:peck` 複製到您有存取權的另一個名稱空間 `animals`。
+
+```
+ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
@@ -464,7 +466,7 @@ ibmcloud cr namespace-add NAMESPACE
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -499,7 +501,7 @@ ibmcloud cr namespace-list
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -513,7 +515,7 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -544,14 +546,14 @@ ibmcloud cr plan
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 升級為標準方案。
 
-如需方案的相關資訊，請參閱[登錄方案](/docs/services/Registry/registry_overview.html#registry_plans)。
+如需方案的相關資訊，請參閱[登錄方案](/docs/services/Registry?topic=registry-registry_overview#registry_plans)。
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -560,7 +562,7 @@ ibmcloud cr plan-upgrade [PLAN]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 **指令選項**
 <dl>
@@ -573,8 +575,8 @@ ibmcloud cr plan-upgrade [PLAN]
 升級至標準定價方案。
 
 ```
-    ibmcloud cr plan-upgrade standard
-    ```
+ibmcloud cr plan-upgrade standard
+```
 {: pre}
 
 ## `ibmcloud cr ppa-archive-load`
@@ -591,7 +593,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -616,8 +618,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ```
 {: pre}
 
-## `    ibmcloud cr quota
-    `
+## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
 顯示資料流量及儲存空間的現行配額，以及這些配額的用量資訊。
@@ -629,7 +630,7 @@ ibmcloud cr quota
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -643,7 +644,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_configure)。
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
 **指令選項**
 <dl>
@@ -676,7 +677,7 @@ ibmcloud cr region
 
 無
 
-如需相關資訊，請參閱[地區](/docs/services/Registry/registry_overview.html#registry_regions)。
+如需相關資訊，請參閱[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -697,7 +698,7 @@ ibmcloud cr region-set [REGION]
 <dt>`REGION`</dt>
 <dd>（選用）目標地區的名稱，例如 `us-south`。
 
-如需相關資訊，請參閱[地區](/docs/services/Registry/registry_overview.html#registry_regions)。
+如需相關資訊，請參閱[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。
 
 </dd>
 </dl>
@@ -723,7 +724,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
+若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
 **指令選項**
 <dl>
@@ -764,7 +765,7 @@ ibmcloud cr token-get TOKEN
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
+若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
 **指令選項**
 <dl>
@@ -793,14 +794,14 @@ ibmcloud cr token-list [--format FORMAT]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
+若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
 **指令選項**
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
 
-如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing)。
+如需相關資訊，請參閱[格式化及過濾 {{site.data.keyword.registrylong_notm}} 指令的 CLI 輸出](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
 
 </dd>
 </dl>
@@ -811,7 +812,7 @@ ibmcloud cr token-list [--format FORMAT]
 
 ```
 ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-    ```
+```
 {: pre}
 
 此範例會產生下列格式的輸出：
@@ -833,7 +834,7 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry/iam.html#platform_management_roles)。
+若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
 **指令選項**
 <dl>
@@ -864,7 +865,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 
 **必要條件**
 
-若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry/iam.html#access_roles_using)。
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
 **指令選項**
 <dl>
@@ -884,7 +885,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </ul>
 </p>
 
-如需相關資訊，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va/va_index.html)。
+如需相關資訊，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)。
 
 </dd>
 <dt>`--extended`, `-e`</dt>
@@ -909,13 +910,13 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 檢視映像檔的標準漏洞評量報告。
 
 ```
-ibmcloud cr vulnerability-assessment registry.ng.bluemix.net/birds/bluebird:1
+ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
-檢視 `registry.ng.bluemix.net/birds/bluebird:1` 映像檔的漏洞評量報告（JSON 格式），並僅顯示漏洞。
+檢視 `us.icr.io/birds/bluebird:1` 映像檔的漏洞評量報告（JSON 格式），並僅顯示漏洞。
 
 ```
-ibmcloud cr vulnerability-assessment --vulnerabilities  --output json registry.ng.bluemix.net/birds/bluebird:1
+ibmcloud cr vulnerability-assessment --vulnerabilities  --output json us.icr.io/birds/bluebird:1
 ```
 {: pre}

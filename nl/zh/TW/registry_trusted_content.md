@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -34,6 +34,9 @@ subcollection: registry
 
 儲存庫可以包含已簽署及未簽署的內容。如果已啟用 Docker Content Trust，您可以存取儲存庫中已簽署的內容，即使一旁還有其他未簽署的內容。
 
+映像檔針對舊網域名稱 (`registry.bluemix.net`) 及新網域名稱 (`icr.io`) 有不同的簽章。現有的簽章適用於從舊網域名稱取回映像檔時。如果您要從新的網域名稱取回已簽署的內容，必須在新的網域名稱 `icr.io` 上重新簽署映像檔，請參閱[針對新網域名稱重新簽署映像檔](#trustedcontent_resign)。
+{: note}
+
 Docker Content Trust 使用「首次使用時信任」的安全模型。第一次從儲存庫取回已簽署的映像檔時，會從信任伺服器取回儲存庫金鑰，並在未來使用該金鑰來驗證來自該儲存庫的映像檔。第一次取回儲存庫之前，您必須先驗證您信任信任伺服器，或是信任映像檔及其發佈者。如果伺服器中的信任資訊已洩漏，且您之前未曾從儲存庫取回映像檔，則 Docker 用戶端可能會從信任伺服器取回已洩漏的資訊。如果信任資料在您第一次取回映像檔之後洩漏，則在後續取回時，您的 Docker 用戶端將無法驗證已洩漏的資料，而不會取回映像檔。如需如何檢查映像檔信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。
 
 如需「首次使用時信任」安全模型的相關資訊，請參閱 [The Update Framework (TUF) ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://theupdateframework.github.io/)。
@@ -49,22 +52,22 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
    若為 Linux 或 Mac：
 
    ```
-export DOCKER_CONTENT_TRUST=1
-    ```
+   export DOCKER_CONTENT_TRUST=1
+   ```
    {: codeblock}
 
    若為 Windows：
 
    ```
-set DOCKER_CONTENT_TRUST=1
-    ```
+   set DOCKER_CONTENT_TRUST=1
+   ```
    {: codeblock}
 
 2. 登入 {{site.data.keyword.Bluemix_notm}} CLI。
 
    ```
-    ibmcloud login [--sso]
-    ```
+   ibmcloud login [--sso]
+   ```
    {: pre}
 
    如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
@@ -73,15 +76,15 @@ set DOCKER_CONTENT_TRUST=1
 3. 將目標設為您要使用的地區。如果您不知道地區名稱，則可以執行不含地區的指令，然後選擇地區。
 
    ```
-    ibmcloud cr region-set <region>
-    ```
+   ibmcloud cr region-set <region>
+   ```
    {: pre}
 
 4. 登入 {{site.data.keyword.registrylong_notm}}。
 
    ```
-  ibmcloud cr login
-  ```
+   ibmcloud cr login
+   ```
    {: pre}
 
    輸出會指示您匯出 Docker Content Trust 環境變數。
@@ -89,18 +92,21 @@ set DOCKER_CONTENT_TRUST=1
    **範例**
 
    ```
-    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-    Logged in to 'registry.ng.bluemix.net'.To set up your Docker client with content trust, export the following environment variable:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
-    ```
+   user:~ user$ ibmcloud cr login
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
+
+   To set up your Docker client with content trust,
+   export the following environment variable:
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
+   ```
    {: screen}
 
 5. 在終端機中，複製並貼上環境變數指令。例如：
 
    ```
-export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
-    ```
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
+   ```
    {: pre}
 
 現在，您可以開始推送、取回及管理受信任的已簽署映像檔。
@@ -114,18 +120,18 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 第一次推送已簽署的映像檔時，Docker 會自動建立一對簽署金鑰：主要金鑰與儲存庫金鑰。若要在先前已推送已簽署映像檔的儲存庫中簽署映像檔，您必須在推送映像檔的機器上，載入正確的儲存庫簽署金鑰。
 {:shortdesc}
 
-開始之前，請[設定登錄名稱空間](/docs/services/Registry/index.html#registry_namespace_add)。
+開始之前，請[設定登錄名稱空間](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
 
 1. [設定受信任內容環境](#trustedcontent_setup)。
 
-2. [推送映像](/docs/services/Registry/index.html#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
+2. [推送映像](/docs/services/Registry?topic=registry-index#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **首次推送已簽署的儲存庫。**將已簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)受到限制。
+3. **首次推送已簽署的儲存庫。**將已簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制。
 
 ## 取回已簽署的映像檔
 {: #trustedcontent_pull}
@@ -144,6 +150,36 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
 
     當您推送或取回已簽署的映像檔時，請指定標籤。只有在停用內容信任時，才會預設為 `latest` 標籤。
     {: tip}
+
+## 針對新網域名稱重新簽署映像檔
+{: #trustedcontent_resign}
+
+若要針對新網域名稱 `icr.io` 重新簽署映像檔，您必須取回、標記並推送映像檔。
+{:shortdesc}
+
+1. 從舊網域名稱取回您的已簽署映像檔。將 `<source_image>` 取代為映像檔的儲存庫，並將 `<tag>` 取代為您要使用之映像檔的標籤，例如 _latest_。若要列出可取回的可用映像檔，請執行 `ibmcloud cr image-list`。
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    當您推送或取回已簽署的映像檔時，請指定標籤。只有在停用內容信任時，才會預設為 `latest` 標籤。
+    {: tip}
+
+2. 針對新網域名稱執行 `docker tag` 指令。將 `<old_domain_name>` 取代為舊網域名稱、將 `<new_domain_name>` 取代為新網域名稱、將 `<repository>` 取代為儲存庫名稱，以及將 `<tag>` 取代為標籤的名稱。
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. 使用新網域名稱推送映像檔，請參閱[將 Docker 映像檔推送至名稱空間](/docs/services/Registry?topic=registry-index#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## 管理受信任的內容
 {: #trustedcontent_managetrust}
@@ -183,8 +219,8 @@ export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
    （選用）指定標籤，僅針對該映像檔版本撤銷受信任的 meta 資料。
 
    ```
-docker trust revoke <image>:<tag>
-    ```
+   docker trust revoke <image>:<tag>
+   ```
    {: pre}
 
 3. 在受信任內容清單中，驗證信任已撤銷。
@@ -215,7 +251,7 @@ docker trust revoke <image>:<tag>
    如果您已變更 Docker 配置目錄，請在那裡尋找 `trust` 子目錄。
    {: tip}
 
-您必須備份所有金鑰，尤其是主要金鑰。如果金鑰遺失或洩漏，您的[回復選項](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)會受到限制。
+您必須備份所有金鑰，尤其是主要金鑰。如果金鑰遺失或洩漏，您的[回復選項](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)會受到限制。
 
 若要備份您的金鑰，請參閱 [Docker Content Trust 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys)。
 
@@ -297,8 +333,8 @@ docker trust revoke <image>:<tag>
 2. 移除簽章者。
 
    ```
-    docker trust signer remove <NAME> <repository>
-    ```
+   docker trust signer remove <NAME> <repository>
+   ```
    {: pre}
 
 3. 若要驗證已移除簽章者，請檢視映像檔的信任資料，並驗證不再列出該簽章者。如需檢視信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。

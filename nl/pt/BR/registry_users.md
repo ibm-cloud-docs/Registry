@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
 
@@ -33,7 +33,7 @@ Deve-se definir políticas de acesso para cada usuário que trabalhe com o {{sit
 Se você começou a usar o {{site.data.keyword.registrylong_notm}} antes de 4 de outubro de 2018, deverá ativar o cumprimento de política antes que as políticas possam entrar em vigor, consulte [Ativando o cumprimento de política para usuários existentes](#existing_users).
 {: tip}
 
-Para descobrir mais sobre as políticas de função de acesso do {{site.data.keyword.iamlong}} (IAM), consulte [{{site.data.keyword.iamshort}}](/docs/iam/index.html#iamoverview).
+Para descobrir mais sobre as políticas de função de acesso do {{site.data.keyword.iamlong}} (IAM), consulte [{{site.data.keyword.iamshort}}](/docs/iam?topic=iam-iamoverview#iamoverview).
 
 ## Criando políticas
 {: #create}
@@ -44,17 +44,17 @@ Se você desejar conceder acesso a tudo, não especifique um tipo de recurso ou 
 
 **Antes de iniciar**
 
-- Decida quais funções cada usuário precisa e sobre quais recursos no {{site.data.keyword.registrylong_notm}}, consulte [Funções do IAM](/docs/services/Registry/iam.html#iam). Leve em consideração que é possível criar várias políticas. Por exemplo, é possível conceder acesso de gravação em um recurso, mas conceder somente acesso leitura em outro recurso e não conceder nenhum acesso em outro recurso. As políticas são aditivas, o que significa que uma política de leitura global e uma política de gravação com escopo de recursos concede acesso de leitura e gravação nesse recurso.
+- Decida quais funções cada usuário precisa e sobre quais recursos no {{site.data.keyword.registrylong_notm}}, consulte [Funções do IAM](/docs/services/Registry?topic=registry-iam#iam). Leve em consideração que é possível criar várias políticas. Por exemplo, é possível conceder acesso de gravação em um recurso, mas conceder somente acesso leitura em outro recurso e não conceder nenhum acesso em outro recurso. As políticas são aditivas, o que significa que uma política de leitura global e uma política de gravação com escopo de recursos concede acesso de leitura e gravação nesse recurso.
 
-- [Convidar usuários e designar acesso](/docs/iam/iamuserinv.html#iamuserinv).
+- [Convidar usuários e designar acesso](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
-  Se você desejar que os usuários possam criar clusters no {{site.data.keyword.containerlong_notm}}, assegure-se de designar a função de Administrador do {{site.data.keyword.registrylong_notm}} a esses usuários e não designar um grupo de recursos. Consulte [Preparando para criar clusters](/docs/containers/cs_clusters.html#cluster_prepare).
+  Se você desejar que os usuários possam criar clusters no {{site.data.keyword.containerlong_notm}}, assegure-se de designar a função de Administrador do {{site.data.keyword.registrylong_notm}} a esses usuários e não designar um grupo de recursos. Consulte [Preparando para criar clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
   {: tip}
 
 Para criar políticas para o {{site.data.keyword.registrylong_notm}}, o campo de nome do serviço deve ser `container-registry`.
 
-- Para criar uma política para os usuários, consulte [Gerenciando acesso a recursos](/docs/iam/mngiam.html#iammanidaccser).
-- Para criar uma política para IDs de serviço, execute o comando `ibmcloud iam service-policy-create` ou use a GUI para ligar funções a seus IDs de serviço. Para criar políticas, deve-se ter a função de Administrador. Você automaticamente tem a função de Administrador em sua própria conta. Para obter mais informações, consulte [Criando e trabalhando com IDs de serviço](/docs/iam/serviceid.html#serviceids) e [Gerenciando políticas de acesso do ID de serviço](/docs/iam/serviceidaccess.html#serviceidpolicy).
+- Para criar uma política para os usuários, consulte [Gerenciando acesso a recursos](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+- Para criar uma política para IDs de serviço, execute o comando `ibmcloud iam service-policy-create` ou use a GUI para ligar funções a seus IDs de serviço. Para criar políticas, deve-se ter a função de Administrador. Você automaticamente tem a função de Administrador em sua própria conta. Para obter mais informações, consulte [Criando e trabalhando com IDs de serviço](/docs/iam?topic=iam-serviceids#serviceids) e [Gerenciando políticas de acesso do ID de serviço](/docs/iam?topic=iam-serviceidpolicy#serviceidpolicy).
 
 ## Ativando o cumprimento de política para usuários existentes
 {: #existing_users}
@@ -63,7 +63,7 @@ Para usuários provisionados após 4 de outubro de 2018, as políticas do IAM s�
 
 1. [Crie políticas](#create) para seus usuários e IDs de serviço.
 
-2. Para ativar o cumprimento de política, execute o comando [`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable).
+2. Para ativar o cumprimento de política, execute o comando [`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable).
 
     Deve-se ter a função de Gerenciador na conta para que seja possível executar o comando `ibmcloud cr iam-policies-enable`. Você automaticamente tem a função de Gerenciador em sua própria conta.
     {: tip}

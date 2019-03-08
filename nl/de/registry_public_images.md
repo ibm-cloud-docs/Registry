@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, public IBM images, images
 
@@ -36,7 +36,7 @@ Sie können auf die öffentlichen {{site.data.keyword.IBM_notm}} Images über di
 
 **Vorbereitung**
 
-- Melden Sie sich bei [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud/bx_cli.html#ibmcloud_login) an:
+- Melden Sie sich bei [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login) an:
 
   ```
   ibmcloud login

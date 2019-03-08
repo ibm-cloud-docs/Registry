@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 컨테이너 이미지 보안 적용(베타)
 {: #security_enforce}
 
-Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](/docs/services/Registry/registry_trusted_content.html)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
+Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](/docs/services/Registry?topic=registry-registry_trustedcontent)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
 {:shortdesc}
 
 Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서 이미지 컨텐츠 신뢰 및 취약성에 대한 정보를 검색합니다. 사용자는 다른 레지스트리에 저장된 이미지의 배치를 차단하거나 허용하도록 선택할 수 있지만, 이러한 이미지에 대해 취약성 또는 신뢰 적용을 사용할 수는 없습니다.
@@ -35,17 +35,17 @@ Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서
 
 **시작하기 전에**
 
-* **Kubernetes 버전 1.9 이상**에서 사용할 클러스터를 [작성](/docs/containers/cs_clusters.html#clusters_ui)하거나 [업데이트](/docs/containers/cs_cluster_update.html#update)하십시오.
-* 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
+* **Kubernetes 버전 1.9 이상**에서 사용할 클러스터를 [작성](/docs/containers?topic=containers-clusters#clusters_ui)하거나 [업데이트](/docs/containers?topic=containers-update#update)하십시오.
+* 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
 
 다음 단계를 완료하십시오.
 
-1. [클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
+1. [클러스터에서 Helm을 설정](/docs/containers?topic=containers-integrations#helm)하십시오.
 
 2. Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ spec:
 
 배치를 적용할 때 Container Image Security Enforcement에서 사용자가 배치하는 Kubernetes 네임스페이스에 적용할 정책이 있는지 여부를 확인합니다. 없는 경우 Container Image Security Enforcement가 클러스터 범위 정책을 사용합니다. 네임스페이스 또는 클러스터 범위 정책이 없는 경우 배치가 거부됩니다.
 
-시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오. 그런 다음, 다음 단계를 완료하십시오.
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오. 그런 다음, 다음 단계를 완료하십시오.
 
 1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
 
@@ -226,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>[컨텐츠 신뢰를 위해 서명](/docs/services/Registry/registry_trusted_content.html)된 이미지만 배치하도록 하려면 `true`로 설정하십시오. 이미지가 서명되었는지 여부를 무시하려면 `false`로 설정하십시오.</td>
+    <td>[컨텐츠 신뢰를 위해 서명](/docs/services/Registry?topic=registry-registry_trustedcontent)된 이미지만 배치하도록 하려면 `true`로 설정하십시오. 이미지가 서명되었는지 여부를 무시하려면 `false`로 설정하십시오.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>[Vulnerability Advisor](/docs/services/va/va_index.html) 스캔을 통과한 이미지만 허용하려면 `true`로 설정하십시오. Vulnerability Advisor 스캔을 무시하려면 `false`로 설정하십시오.</td>
+    <td>[Vulnerability Advisor](/docs/services/va?topic=va-va_index) 스캔을 통과한 이미지만 허용하려면 `true`로 설정하십시오. Vulnerability Advisor 스캔을 무시하려면 `false`로 설정하십시오.</td>
     </tr>
     </tbody>
     </table>
@@ -242,14 +242,14 @@ spec:
 2. 클러스터에 `.yaml` 파일을 적용하십시오.
 
    ```
-kubectl apply -f <filepath>
+   kubectl apply -f <filepath>
    ```
    {: pre}
 
 ### 사용자 정의 정책에 신뢰할 수 있는 컨텐츠 서명자 지정
 {: #signers}
 
-컨텐츠 신뢰를 사용하는 경우 특정 서명자가 이미지에 서명하도록 할 수 있습니다. 서명된 최신 버전이 나열된 모든 서명자에 의해 서명된 경우에만 배치가 허용됩니다. 저장소에 서명자를 추가하려면 [신뢰할 수 있는 서명자 관리](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)를 참조하십시오.
+컨텐츠 신뢰를 사용하는 경우 특정 서명자가 이미지에 서명하도록 할 수 있습니다. 서명된 최신 버전이 나열된 모든 서명자에 의해 서명된 경우에만 배치가 허용됩니다. 저장소에 서명자를 추가하려면 [신뢰할 수 있는 서명자 관리](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers)를 참조하십시오.
 {:shortdesc}
 
 특정 서명자가 이미지에 서명했는지 확인하도록 정책을 구성하려면 다음을 수행하십시오.
@@ -258,7 +258,7 @@ kubectl apply -f <filepath>
 2. 서명자 이름과 공개 키가 있는 Kubernetes 시크릿을 생성하십시오.
 
    ```
-    kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
+   kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
    ```
    {: pre}
 
@@ -277,7 +277,7 @@ kubectl apply -f <filepath>
 ## 정책을 사용자 정의할 수 있는 사용자 제어
 {: #assign_user_policy}
 
-Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하는 경우 역할을 작성하여 클러스터에서 보안 정책을 관리하는 기능을 가진 사용자를 통제할 수 있습니다. 클러스터에 RBAC 규칙을 적용하는 데 대한 자세한 정보는 [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers/cs_users.html#rbac)를 참조하십시오.
+Kubernetes 클러스터에서 역할 기반 액세스 제어(RBAC)를 사용하는 경우 역할을 작성하여 클러스터에서 보안 정책을 관리하는 기능을 가진 사용자를 통제할 수 있습니다. 클러스터에 RBAC 규칙을 적용하는 데 대한 자세한 정보는 [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers?topic=containers-users#rbac)를 참조하십시오.
 {:shortdesc}
 
 역할에서 보안 정책에 대한 규칙을 추가하십시오.
@@ -345,28 +345,28 @@ Container Image Security Enforcement가 배치를 거부하면, 배치가 작성
 
 정책에 `va` 옵션을 사용하여 이미지를 배치하기 전에 Vulnerability Advisor가 수행되도록 할 수 있습니다. Vulnerability Advisor가 지원하지 않는 이미지가 허용됩니다.
 
-정책에서 `trust` 옵션을 사용하여 컨텐츠 신뢰를 적용할 수 있습니다. `signerSecrets`를 지정하지 않으면 어떤 사용자가 이미지에 서명해도 배치가 허용됩니다. `signerSecrets`를 지정하면 최근에 서명된 버전의 이미지가 지정된 모든 사용자에 의해 서명되어 있어야 합니다. Container Image Security Enforcement는 제공된 공개 키가 서명자에게 속하는지 확인합니다. 컨텐츠 신뢰에 대한 자세한 정보는 [신뢰할 수 있는 컨텐츠의 이미지에 서명](/docs/services/Registry/registry_trusted_content.html)을 참조하십시오.
+정책에서 `trust` 옵션을 사용하여 컨텐츠 신뢰를 적용할 수 있습니다. `signerSecrets`를 지정하지 않으면 어떤 사용자가 이미지에 서명해도 배치가 허용됩니다. `signerSecrets`를 지정하면 최근에 서명된 버전의 이미지가 지정된 모든 사용자에 의해 서명되어 있어야 합니다. Container Image Security Enforcement는 제공된 공개 키가 서명자에게 속하는지 확인합니다. 컨텐츠 신뢰에 대한 자세한 정보는 [신뢰할 수 있는 컨텐츠의 이미지에 서명](/docs/services/Registry?topic=registry-registry_trustedcontent)을 참조하십시오.
 
 모든 이미지가 Container Image Security Enforcement 검사를 통과한 경우에만 배치가 허용됩니다.
 
 ## Container Image Security Enforcement 제거
 {: #remove}
 
-시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
+시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오. 
 
 
 
 1. Container Image Security Enforcement를 사용 안함으로 설정하십시오.
 
    ```
-$ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+   $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
    ```
    {: codeblock}
 
 2. 차트를 제거하십시오.
 
    ```
-helm delete --purge cise
+   helm delete --purge cise
    ```
    {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -56,11 +56,11 @@ Para establecer una cuota:
     La salida es parecida a la siguiente.
 
     ```
-    Obtención de cuotas y uso para el mes actual para la cuenta '<propietario_cuenta> Cuenta'...
+    Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
-    CUOTA          LÍMITE    UTILIZADO
-    Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB
+    QUOTA          LIMIT    USED
+    Pull traffic   5.1 GB   0 B
+    Storage        512 MB   511 MB
 
     OK
     ```
@@ -106,11 +106,11 @@ Puede revisar los límites de cuota y comprobar el almacenamiento actual y el us
     La salida es parecida a la siguiente.
 
     ```
-    Obtención de cuotas y uso para el mes actual para la cuenta '<propietario_cuenta> Cuenta'...
+    Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
-    CUOTA          LÍMITE    UTILIZADO
-    Tráfico extr   5.1 GB   0 B
-    Almacenamiento        512 MB   511 MB
+    QUOTA          LIMIT    USED
+    Pull traffic   5.1 GB   0 B
+    Storage        512 MB   511 MB
 
     OK
     ```
@@ -154,5 +154,5 @@ Para liberar almacenamiento de imágenes en la cuenta de {{site.data.keyword.Blu
     Para seguir extrayendo imágenes de los espacios de nombres, elija una de las siguientes opciones.
 
     - Espere a que comience el siguiente ciclo de facturación.
-    - Si tiene un plan gratuito, [actualice al plan de servicio estándar](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+    - Si tiene un plan gratuito, [actualice al plan de servicio estándar](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
     - Si ya tiene un plan estándar, [establezca nuevos límites de cuota para el tráfico de extracción](#registry_quota_set).

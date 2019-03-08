@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, high availability
 
@@ -37,4 +37,4 @@ subcollection: registry
   
   您也可能選擇將映像檔推送至多個登錄，以防意外刪除或改寫映像檔。
 
-  如需地區的相關資訊，請參閱[地區](/docs/services/Registry/registry_overview.html#registry_regions)。
+  如需地區的相關資訊，請參閱[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。

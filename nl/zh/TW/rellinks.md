@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, links
 
@@ -31,18 +31,18 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
 - [{{site.data.keyword.registrylong_notm}} API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/apidocs/container-registry)
 - [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers/container_index.html#container_index)
-- 叢集的 REST API，請參閱 [Kubernetes 服務 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.bluemix.net/swagger-api/)
-- [叢集的 REST API JSON ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.bluemix.net/swagger-api/swagger.json)
-- 用於登入叢集的 REST API，請參閱 [IBM Cloud Container Service 記載 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://us-south.containers.bluemix.net/swagger-logging/)
-- 用於管理叢集中 Ingress 應用程式負載平衡器的 REST API，請參閱 [IBM Cloud Container Service ALB API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://us-south.containers.bluemix.net/swagger-alb-api/)
+- [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-container_index#container_index)
+- 叢集的 REST API，請參閱 [Kubernetes 服務 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-api/)
+- [叢集的 REST API JSON ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
+- 用於登入叢集的 REST API，請參閱 [{{site.data.keyword.containerlong_notm}} 記載 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-logging/)
+- 用於管理叢集中 Ingress 應用程式負載平衡器的 REST API，請參閱 [IBM Cloud Container Service ALB API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-alb-api/)
 
 ## Docker
 {: #links_docker}

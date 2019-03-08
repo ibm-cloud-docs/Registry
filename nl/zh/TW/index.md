@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -29,7 +29,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} 提供多方承租戶專用映像檔登錄，可用來儲存 Docker 映像檔，並與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.Bluemix_notm}} 主控台的詳細資訊，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va/va_index.html)。
+{{site.data.keyword.Bluemix_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.Bluemix_notm}} 主控台的詳細資訊，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)。
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {:tip}
@@ -37,7 +37,7 @@ subcollection: registry
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
 
-1. 安裝 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)，讓您可以執行 {{site.data.keyword.Bluemix_notm}} `ibmcloud` 指令。此安裝也會安裝 {{site.data.keyword.containerlong_notm}} 及 {{site.data.keyword.registrylong_notm}} 的 CLI 外掛程式。
+1. 安裝 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)，讓您可以執行 {{site.data.keyword.Bluemix_notm}} `ibmcloud` 指令。此安裝也會安裝 {{site.data.keyword.containerlong_notm}} 及 {{site.data.keyword.registrylong_notm}} 的 CLI 外掛程式。
 
 ## 設定名稱空間
 {: #registry_namespace_add}
@@ -45,8 +45,8 @@ subcollection: registry
 1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
    ```
-    ibmcloud login
-    ```
+   ibmcloud login
+   ```
    {: pre}
 
    如果您有聯合 ID，請使用下列指令來登入：
@@ -89,18 +89,18 @@ subcollection: registry
    ```
    {: pre}
 
-3. 標記映像檔。將 `<source_image>` 取代為儲存庫，並將 `<tag>` 取代為您先前取回之本端映像檔的標籤。將 `<region>` 取代為您的[地區](/docs/services/Registry/registry_overview.html#registry_regions)名稱。將 `<my_namespace>` 取代為您在[設定名稱空間](/docs/services/Registry/index.html#registry_namespace_add)中建立的名稱空間。取代 `<new_image_repo>` 及 `<new_tag>`，以定義您要在名稱空間中使用之映像檔的儲存庫及標籤。
+3. 標記映像檔。將 `<source_image>` 取代為儲存庫，並將 `<tag>` 取代為您先前取回之本端映像檔的標籤。將 `<region>` 取代為您的[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)名稱。將 `<my_namespace>` 取代為您在[設定名稱空間](/docs/services/Registry?topic=registry-index#registry_namespace_add)中建立的名稱空間。取代 `<new_image_repo>` 及 `<new_tag>`，以定義您要在名稱空間中使用之映像檔的儲存庫及標籤。
 
    ```
-docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
-    ```
+   docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
+   ```
    {: pre}
 
-   例如，其中 `<source_image>` 是 `hello-world`、`<tag>` 是 `latest`、`<region>` 是 `eu-gb`、`<my_namespace>` 是 `namespace1`、`<new_image_repo>` 是 `hw_repo`，而 `<new_tag>` 是 `1`：
+   例如，其中 `<source_image>` 是 `hello-world`、`<tag>` 是 `latest`、`<region>` 是 `uk`、`<my_namespace>` 是 `namespace1`、`<new_image_repo>` 是 `hw_repo`，而 `<new_tag>` 是 `1`：
 
    ```
-    docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
-    ```
+   docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
+   ```
    {: pre}
 
 ## 將 Docker 映像檔推送至名稱空間
@@ -113,34 +113,33 @@ docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<ne
   ```
    {: pre}
 
-2. 將映像檔上傳（_推送_）至名稱空間。將 `<my_namespace>` 取代為您在[設定名稱空間](/docs/services/Registry/index.html#registry_namespace_add)中建立的名稱空間，並將 `<image_repo>` 及 `<tag>` 取代為您在標記映像檔時所選擇映像檔的儲存庫及標籤。
+2. 將映像檔上傳（_推送_）至名稱空間。將 `<my_namespace>` 取代為您在[設定名稱空間](/docs/services/Registry?topic=registry-index#registry_namespace_add)中建立的名稱空間，並將 `<image_repo>` 及 `<tag>` 取代為您在標記映像檔時所選擇映像檔的儲存庫及標籤。
 
    ```
-docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-    ```
-   {: pre}
-
-   例如，其中 `<region>` 是 `eu-gb`、`<my_namespace>` 是 `namespace1`、`<image_repo>` 是 `hw_repo`，而 `<tag>` 是 `1`：
-
+   docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
-    docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
-    ```
    {: pre}
    
+   例如，其中 `<region>` 是 `uk`、`<my_namespace>` 是 `namespace1`、`<image_repo>` 是 `hw_repo`，而 `<tag>` 是 `1`：
+
+   ```
+   docker push uk.icr.io/namespace1/hw_repo:1
+   ```
+   {: pre}
 
 3. 執行下列指令，驗證已順利推送映像檔。
 
    ```
-    ibmcloud cr image-list
-    ```
+   ibmcloud cr image-list
+   ```
    {: pre}
 
 做得好！您已在 {{site.data.keyword.registrylong_notm}} 中設定名稱空間，並將您的第一個映像檔推送至名稱空間。
 
 **下一步為何？**
 
-- [使用漏洞警告器管理映像檔安全](/docs/services/va/va_index.html)
-- [檢閱服務方案及用量](/docs/services/Registry/registry_overview.html#registry_plans)
-- [儲存及管理名稱空間中的其他映像檔](/docs/services/Registry/registry_images_.html)
-- [定義使用者存取角色原則](/docs/services/Registry/registry_users.html#user)
-- [設定叢集與工作者節點](/docs/containers/cs_clusters.html#clusters)
+- [使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)
+- [檢閱服務方案及用量](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
+- [儲存及管理名稱空間中的其他映像檔](/docs/services/Registry?topic=registry-registry_images_)
+- [定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)
+- [設定叢集與工作者節點](/docs/containers?topic=containers-clusters#clusters)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
 
@@ -33,7 +33,7 @@ subcollection: registry
 2018 年 10 月 4 日より前に {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、ポリシーを有効にする前に、ポリシーの制約を有効にしなければなりません。[既存のユーザーに対してポリシー制約を有効にする](#existing_users)を参照してください。
 {: tip}
 
-{{site.data.keyword.iamlong}} (IAM) アクセス役割ポリシーについて詳しくは、[{{site.data.keyword.iamshort}}](/docs/iam/index.html#iamoverview) を参照してください。
+{{site.data.keyword.iamlong}} (IAM) アクセス役割ポリシーについて詳しくは、[{{site.data.keyword.iamshort}}](/docs/iam?topic=iam-iamoverview#iamoverview) を参照してください。
 
 ## ポリシーの作成
 {: #create}
@@ -44,17 +44,17 @@ subcollection: registry
 
 **始めに**
 
-- 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry/iam.html#iam)を参照してください。 複数のポリシーを作成できるということを考慮してください。例えば、あるリソースに対して書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
+- 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry?topic=registry-iam#iam)を参照してください。 複数のポリシーを作成できるということを考慮してください。例えば、あるリソースに対して書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
 
-- [ユーザーの招待とアクセス権限の割り当て](/docs/iam/iamuserinv.html#iamuserinv)を行います。
+- [ユーザーの招待とアクセス権限の割り当て](/docs/iam?topic=iam-iamuserinv#iamuserinv)を行います。
 
-  ユーザーが {{site.data.keyword.containerlong_notm}} 内でクラスターを作成できるようにしようとしている場合は、そのユーザーに {{site.data.keyword.registrylong_notm}} 管理者の役割を割り当てており、リソース・グループを割り当てていないことを確認してください。[クラスターの作成の準備](/docs/containers/cs_clusters.html#cluster_prepare)を参照してください。
+  ユーザーが {{site.data.keyword.containerlong_notm}} 内でクラスターを作成できるようにしようとしている場合は、そのユーザーに {{site.data.keyword.registrylong_notm}} 管理者の役割を割り当てており、リソース・グループを割り当てていないことを確認してください。[クラスターの作成の準備](/docs/containers?topic=containers-clusters#cluster_prepare)を参照してください。
   {: tip}
 
 {{site.data.keyword.registrylong_notm}} のポリシーを作成するには、サービス名フィールドを `container-registry` にしなければなりません。
 
-- ユーザーのポリシーを作成するには、[リソースに対するアクセス権限の管理](/docs/iam/mngiam.html#iammanidaccser)を参照してください。
-- サービス ID のポリシーを作成するには、`ibmcloud iam service-policy-create` コマンドを実行するか、GUI を使用して役割をサービス ID にバインドします。 ポリシーを作成するには、管理者の役割が必要です。 所有するアカウントには管理者の役割が自動的に与えられます。 詳しくは、[サービス ID の作成と処理](/docs/iam/serviceid.html#serviceids)と、[サービス ID のアクセス・ポリシーの管理](/docs/iam/serviceidaccess.html#serviceidpolicy)を参照してください。
+- ユーザーのポリシーを作成するには、[リソースに対するアクセス権限の管理](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)を参照してください。
+- サービス ID のポリシーを作成するには、`ibmcloud iam service-policy-create` コマンドを実行するか、GUI を使用して役割をサービス ID にバインドします。 ポリシーを作成するには、管理者の役割が必要です。 所有するアカウントには管理者の役割が自動的に与えられます。 詳しくは、[サービス ID の作成と処理](/docs/iam?topic=iam-serviceids#serviceids)と、[サービス ID のアクセス・ポリシーの管理](/docs/iam?topic=iam-serviceidpolicy#serviceidpolicy)を参照してください。
 
 ## 既存のユーザーに対してポリシー制約を有効にする
 {: #existing_users}
@@ -63,7 +63,7 @@ subcollection: registry
 
 1. ユーザーとサービス ID の[ポリシーを作成](#create)します。
 
-2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_iam_policies_enable) コマンドを実行します。
+2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) コマンドを実行します。
 
     アカウントにマネージャーの役割がないと、`ibmcloud cr iam-policies-enable` コマンドを実行できません。 所有するアカウントにはマネージャーの役割が自動的に与えられます。
     {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -28,18 +28,18 @@ subcollection: registry
 É possível usar tokens de registro ou uma chave API do {{site.data.keyword.iamlong}} (IAM) para automatizar o acesso a seus namespaces do {{site.data.keyword.registrylong_notm}} de forma que possa enviar por push e fazer pull das imagens.
 {:shortdesc}
 
-Está tentando usar suas imagens de registro em implementações do Kubernetes? Verifique [Acessando imagens em outros namespaces, {{site.data.keyword.Bluemix_notm}} regiões e contas do Kubernetes](/docs/containers/cs_images.html#other).
+Está tentando usar suas imagens de registro em implementações do Kubernetes? Verifique [Acessando imagens em outros namespaces, {{site.data.keyword.Bluemix_notm}} regiões e contas do Kubernetes](/docs/containers?topic=containers-images#other).
 {: tip}
 
 As chaves API são vinculadas à sua conta e podem ser usadas no {{site.data.keyword.Bluemix_notm}} para que você não precise de credenciais diferentes para cada serviço. É possível usar a chave API na CLI ou como parte de automação para efetuar login como sua identidade do usuário.
 
 Os tokens de registro têm o escopo definido somente para {{site.data.keyword.registrylong_notm}}. É possível limitá-los ao acesso somente leitura e escolher se eles estão expirando ou não expirando.
 
-Se você usar uma chave API, poderá controlar o acesso aos namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry/registry_users.html#user).
+Se você usar uma chave API, poderá controlar o acesso aos namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry?topic=registry-user#user).
 
-Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](/docs/iam/apikeys.html#manapikey).
+Para obter mais informações sobre chaves API do {{site.data.keyword.registrylong_notm}}, veja [Trabalhando com chaves API](/docs/iam?topic=iam-manapikey#manapikey).
 
-Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
+Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do Docker](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## Automatizando o acesso aos seus namespaces usando chaves API
 {: #registry_api_key}
@@ -55,8 +55,8 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 
 É possível criar tanto chaves API do usuário quanto chaves API do ID de serviço.
 
-- Para criar uma chave API do ID de serviço, consulte [Criando uma chave API para um ID de serviço](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
-- Para criar uma chave API do usuário, consulte [Criando uma chave API](/docs/iam/userid_keys.html#creating-an-api-key).
+- Para criar uma chave API do ID de serviço, consulte [Criando uma chave API para um ID de serviço](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+- Para criar uma chave API do usuário, consulte [Criando uma chave API](/docs/iam?topic=iam-userapikey#create_user_key).
 
 ### Usando uma chave API para automatizar o acesso
 {: #registry_api_key_use}
@@ -67,24 +67,27 @@ Antes de iniciar, [instale o {{site.data.keyword.registrylong_notm}} e a CLI do 
 Use a chave API para efetuar login no seu registro executando o comando do Docker a seguir. Substitua `<your_apikey>` pela sua chave de API e substitua `<registry_url>` pela URL para o registro no qual os namespaces
 estão configurados.
 
-- Para namespaces configurados em US-South, use `registry.ng.bluemix.net`
-- Para namespaces configurados em UK-South, use `registry.eu-gb.bluemix.net`
-- Para namespaces configurados em EU-Central, use `registry.eu-de.bluemix.net`
-- Para namespaces configurados em AP-South, use `registry.au-syd.bluemix.net`
+- Para namespaces configurados no norte da Ásia-Pacífico, use `jp.icr.io`
+- Para namespaces configurados no sul da Ásia-Pacífico, use `au.icr.io`
+- Para namespaces configurados na UE Central, use `de.icr.io`
+- Para namespaces configurados no sul do Reino Unido, use `uk.icr.io`
+- Para namespaces configurados no sul dos EUA, use `us.icr.io`
 
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Para obter informações de referência sobre o comando, consulte
-[Criar uma nova chave API da plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
+Para obter informações de referência sobre o comando, consulte [Criar uma nova chave de API da plataforma do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
-## Automatizando o acesso aos seus namespaces usando tokens
+## Automatizando o acesso aos seus namespaces usando tokens (descontinuado)
 {: #registry_tokens}
 
 É possível usar tokens para automatizar o push e o pull de imagens do Docker e de seus namespaces do {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](#registry_api_key).
+{: deprecated}
 
 Todos em posse de um token de registro podem acessar informações protegidas. Se desejar que os usuários fora de sua conta possam acessar todos os namespaces configurados em uma região, será possível criar um token para sua conta do {{site.data.keyword.Bluemix_notm}}. Todo usuário ou app em posse desse token pode enviar por push e puxar imagens de seus namespaces sem instalar o plug-in da CLI `container-registry`.
 
@@ -98,11 +101,14 @@ Use as tarefas a seguir para gerenciar seus tokens:
 - [Usando um token para automatizar o acesso a seus namespaces](#registry_tokens_use)
 - [Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
 
-### Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}}
+### Criando um token para sua conta do {{site.data.keyword.Bluemix_notm}} (descontinuado)
 {: #registry_tokens_create}
 
 É possível criar um token para conceder acesso a todos os namespaces do {{site.data.keyword.registrylong_notm}} em uma região.
 {:shortdesc}
+
+O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](#registry_api_key).
+{: deprecated}
 
 1. Crie um token. O exemplo a seguir cria um token sem expiração que tem acesso de leitura e de gravação a todos os namespaces configurados em uma região.
 
@@ -147,12 +153,15 @@ Use as tarefas a seguir para gerenciar seus tokens:
    ```
    {: pre}
 
-### Usando um token para automatizar o acesso a seus namespaces
+### Usando um token para automatizar o acesso a seus namespaces (descontinuado)
 {: #registry_tokens_use}
 
 É possível usar um token em seu comando `docker login` para automatizar o acesso a seus namespaces no {{site.data.keyword.registrylong_notm}}. Dependendo do acesso configurado para o token, somente leitura ou leitura/gravação, os usuários poderão enviar por push e puxar as
 imagens para e dos namespaces.
 {:shortdesc}
+
+O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](#registry_api_key).
+{: deprecated}
 
 1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
 
@@ -181,10 +190,11 @@ imagens para e dos namespaces.
 token que você recuperou na etapa anterior e `<registry_url>` pela URL para o registro no qual os namespaces estão
 configurados.
 
-   - Para namespaces configurados em US-South, use `registry.ng.bluemix.net`
-   - Para namespaces configurados em UK-South, use `registry.eu-gb.bluemix.net`
-   - Para namespaces configurados em EU-Central, use `registry.eu-de.bluemix.net`
-   - Para namespaces configurados em AP-South, use `registry.au-syd.bluemix.net`
+   - Para namespaces configurados no norte da Ásia-Pacífico, use `jp.icr.io`
+   - Para namespaces configurados no sul da Ásia-Pacífico, use `au.icr.io`
+   - Para namespaces configurados na UE Central, use `de.icr.io`
+   - Para namespaces configurados no sul do Reino Unido, use `uk.icr.io`
+   - Para namespaces configurados no sul dos EUA, use `us.icr.io`
 
    ```
    docker login -u token -p <token_value> <registry_url>
@@ -196,11 +206,14 @@ configurados.
 
    Depois de efetuar login no Docker usando o token, é possível enviar por push ou puxar imagens para/de seus namespaces.
 
-### Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}}
+### Removendo um token de sua conta do {{site.data.keyword.Bluemix_notm}} (descontinuado)
 {: #registry_tokens_remove}
 
 Remova um token do {{site.data.keyword.registrylong_notm}} quando você não precisar mais dele.
 {:shortdesc}
+
+O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](#registry_api_key).
+{: deprecated}
 
 Os tokens expirados do {{site.data.keyword.registrylong_notm}} são removidos automaticamente de sua conta do {{site.data.keyword.Bluemix_notm}} e não precisam ser removidos manualmente.
 {:tip}
@@ -239,16 +252,19 @@ Os nomes de usuário a seguir são válidos:
 - `iambearer` A senha contém um token de acesso do IAM. Esse tipo de autenticação é de curta duração, mas pode ser derivada de todos os tipos de identidade do IAM.
 - `iamrefresh` A senha deve conter um token de atualização do IAM que é usado internamente para gerar e atualizar um token de acesso do IAM. Esse tipo de autenticação é mais duradouro e é usado pelo comando `ibmcloud cr login`.
 - `iamapikey` A senha é uma chave API do IAM. Esse tipo de autenticação é o tipo preferencial para automação. É possível usar uma chave API do ID de usuário ou de serviço. Consulte [Criando uma chave API](#registry_api_key_create).
-- `token` A senha é um token de registro. É possível usar esse nome de usuário para automação.
+- `token` (descontinuado) A senha é um token de registro. É possível usar esse nome de usuário para automação.
+
+  O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](#registry_api_key).
+  {: deprecated}
 
 Você não tem que usar o comando `docker` para autenticar com o registro. Por exemplo, é possível iniciar os apps do Cloud Foundry por meio de imagens no registro usando a CLI do Cloud Foundry:
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
 ```
 {: pre}
 
-Substitua `<apikey>` pela sua chave de API, `<region>` pelo nome de sua [região](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` pelo seu namespace e `<image_repo>` pelo repositório.
+Substitua `<apikey>` pela sua chave de API, `<region>` pelo nome de sua [região](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` pelo seu namespace e `<image_repo>` pelo repositório.
 
-Para obter mais informações, consulte [Usando um registro de imagem privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
+Para obter mais informações, consulte [Usando um registro de imagem privado](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

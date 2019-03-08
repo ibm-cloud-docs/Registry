@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -26,7 +26,7 @@ subcollection: registry
 {: #security_enforce}
 
 Com o Container Image Security Enforcement (Beta), é possível verificar as imagens de contêiner antes de implementá-las para o
-cluster no {{site.data.keyword.containerlong}}. É possível controlar de onde as imagens serão implementadas, aplicar as políticas do Vulnerability Advisor e assegurar-se de que a [confiança de conteúdo](/docs/services/Registry/registry_trusted_content.html) seja aplicada corretamente à imagem. Se uma imagem não atender a seus requisitos de política, o pod não será implementado em seu cluster nem atualizado.
+cluster no {{site.data.keyword.containerlong}}. É possível controlar de onde as imagens serão implementadas, aplicar as políticas do Vulnerability Advisor e assegurar-se de que a [confiança de conteúdo](/docs/services/Registry?topic=registry-registry_trustedcontent) seja aplicada corretamente à imagem. Se uma imagem não atender a seus requisitos de política, o pod não será implementado em seu cluster nem atualizado.
 {:shortdesc}
 
 O Container Image Security Enforcement recupera as informações sobre a confiança de conteúdo e as vulnerabilidades da imagem do {{site.data.keyword.registrylong}}. É possível optar por bloquear ou permitir a implementação de imagens armazenadas em outros registros, mas não é possível usar o cumprimento de vulnerabilidade ou de confiança para essas imagens.
@@ -36,17 +36,17 @@ O Container Image Security Enforcement recupera as informações sobre a confian
 
 **Antes de iniciar**
 
-* [Crie](/docs/containers/cs_clusters.html#clusters_ui) ou [atualize](/docs/containers/cs_cluster_update.html#update) o cluster que você deseja usar com o **Kubernetes versão 1.9 ou mais recente**.
-* [Direcione a CLI do `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster.
+* [Crie](/docs/containers?topic=containers-clusters#clusters_ui) ou [atualize](/docs/containers?topic=containers-update#update) o cluster que você deseja usar com o **Kubernetes versão 1.9 ou mais recente**.
+* [Direcione sua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) para o cluster.
 
 Conclua as etapas a seguir:
 
-1. [Configure o Helm em seu cluster](/docs/containers/cs_integrations.html#helm).
+1. [Configure o Helm em seu cluster](/docs/containers?topic=containers-integrations#helm).
 
 2. Inclua o repositório de gráficos da IBM no cliente Helm.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -183,8 +183,7 @@ Enforcement](#remove).
 
 Quando você aplica uma implementação, o Container Image Security Enforcement verifica se o namespace do Kubernetes que está sendo implementado tem uma política para aplicar. Se não tiver, o Container Image Security Enforcement usará a política de todo o cluster. Sua implementação será negada se nenhuma política de todo o namespace ou de todo o cluster existir.
 
-Antes de iniciar, [direcione a CLI do
-kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster. Em seguida, conclua as etapas a seguir:
+Antes de iniciar, [destine a CLI do `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) ao cluster. Em seguida, conclua as etapas a seguir:
 
 1. Crie um arquivo `.yaml` de <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definição de recurso customizado do Kubernetes <img src="../../icons/launch-glyph.svg" alt="Ícone de link externo"></a>.
 
@@ -210,7 +209,7 @@ kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster. 
     <caption>Tabela 1. Compreendendo os componentes YAML</caption>
     <thead>
     <th>Campo</th>
-    <th>descrição</th>
+    <th>Descrição</th>
     </thead>
     <tbody>
     <tr>
@@ -231,7 +230,7 @@ kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster. 
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Configure como `true` para permitir que apenas as imagens [assinadas para confiança de conteúdo](/docs/services/Registry/registry_trusted_content.html) sejam implementadas. Configure como `false` para ignorar se as imagens são assinadas.</td>
+    <td>Configure como `true` para permitir que apenas as imagens [assinadas para confiança de conteúdo](/docs/services/Registry?topic=registry-registry_trustedcontent) sejam implementadas. Configure como `false` para ignorar se as imagens são assinadas.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -239,7 +238,7 @@ kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster. 
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Configure como `true` para permitir apenas as imagens que passam na varredura do [Vulnerability Advisor](/docs/services/va/va_index.html). Configure como `false` para ignorar a varredura do Vulnerability Advisor.</td>
+    <td>Configure como `true` para permitir apenas as imagens que passam na varredura do [Vulnerability Advisor](/docs/services/va?topic=va-va_index). Configure como `false` para ignorar a varredura do Vulnerability Advisor.</td>
     </tr>
     </tbody>
     </table>
@@ -255,7 +254,7 @@ kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster. 
 {: #signers}
 
 Se você usar a confiança de conteúdo, será possível verificar se as imagens são assinadas por assinantes específicos. A
-implementação será permitida somente se a versão assinada mais recente for assinada por todos os assinantes listados. Para incluir um assinante em um repositório, consulte [Gerenciando assinantes confiáveis](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+implementação será permitida somente se a versão assinada mais recente for assinada por todos os assinantes listados. Para incluir um assinante em um repositório, consulte [Gerenciando assinantes confiáveis](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 Para configurar a política para verificar se uma imagem está assinada por um assinante específico:
@@ -283,7 +282,7 @@ Para configurar a política para verificar se uma imagem está assinada por um a
 ## Controlando quem pode customizar políticas
 {: #assign_user_policy}
 
-Se você tiver o controle de acesso baseado na função (RBAC) ativado no cluster do Kubernetes, será possível criar uma função para governar quem tem a capacidade de administrar políticas de segurança no cluster. Para obter mais informações sobre a aplicação das regras RBAC no cluster, consulte [a documentação do {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
+Se você tiver o controle de acesso baseado na função (RBAC) ativado no cluster do Kubernetes, será possível criar uma função para governar quem tem a capacidade de administrar políticas de segurança no cluster. Para obter mais informações sobre a aplicação de regras RBAC ao seu cluster, consulte [os docs do {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 Em sua função, inclua uma regra para as políticas de segurança:
@@ -350,15 +349,14 @@ Se o Container Image Security Enforcement negar uma implementação, ela será c
 
 É possível ativar a opção `va` em sua política para exigir que o Vulnerability Advisor passe antes de uma imagem poder ser implementada. As imagens não suportadas pelo Vulnerability Advisor são permitidas.
 
-É possível ativar a opção `trust` em sua política para cumprir a confiança de conteúdo. Se você não especificar `signerSecrets`, a implementação será permitida se a imagem for assinada por qualquer pessoa. Se você especificar `signerSecrets`, a versão assinada mais recentemente da imagem deverá ter sido assinada por todos os assinantes especificados. O Container Image Security Enforcement verifica se a chave pública fornecida pertence ao assinante. Para obter mais informações sobre a confiança de conteúdo, consulte [Assinando imagens para conteúdo confiável](/docs/services/Registry/registry_trusted_content.html).
+É possível ativar a opção `trust` em sua política para cumprir a confiança de conteúdo. Se você não especificar `signerSecrets`, a implementação será permitida se a imagem for assinada por qualquer pessoa. Se você especificar `signerSecrets`, a versão assinada mais recentemente da imagem deverá ter sido assinada por todos os assinantes especificados. O Container Image Security Enforcement verifica se a chave pública fornecida pertence ao assinante. Para obter mais informações sobre a confiança de conteúdo, consulte [Assinando imagens para conteúdo confiável](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Uma implementação será permitida somente se todas as imagens passarem nas verificações do Container Image Security Enforcement.
 
 ## Remover Imagem de Execução de Segurança do Contêiner
 {: #remove}
 
-Antes de iniciar, [direcione a CLI do
-kubectl](/docs/containers/cs_cli_install.html#cs_cli_configure) para o cluster.
+Antes de iniciar, [destine a CLI do `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) ao cluster.
 
 
 

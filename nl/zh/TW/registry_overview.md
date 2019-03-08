@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -119,7 +119,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **儲存空間：**
 
-  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry/registry_quota.html#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry/registry_quota.html#registry_quota_set)，以重新啟用新映像檔的推送。
+  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)，以重新啟用新映像檔的推送。
 
   標準方案的範例：
 
@@ -129,7 +129,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **取回資料流量：**
 
-  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry/registry_quota.html#registry_quota_set)之前，您無法從 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間取回任何映像檔。
+  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)之前，您無法從 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間取回任何映像檔。
 
   標準方案的範例：
 
@@ -163,8 +163,8 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
    ```
-    ibmcloud login
-    ```
+   ibmcloud login
+   ```
    {: pre}
 
    如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.Bluemix_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
@@ -173,8 +173,8 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 2. 升級為標準方案。
 
    ```
-    ibmcloud cr plan-upgrade standard
-    ```
+   ibmcloud cr plan-upgrade standard
+   ```
    {: pre}
 
    如果您有 {{site.data.keyword.Bluemix_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.Bluemix_notm}} 隨收隨付制或訂閱帳戶，然後才執行 `ibmcloud cr plan-upgrade`。
@@ -204,9 +204,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 <dl>
   <dt>名稱空間 (Namespace)</dt>
-  <dd>名稱空間是在 {{site.data.keyword.registrylong_notm}} 內組織映像檔儲存庫的一種方式。名稱空間與 {{site.data.keyword.Bluemix_notm}} 帳戶相關聯。當您在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間時，會將名稱空間附加至登錄 URL，如下所示：<code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>。
-
-
+  <dd>名稱空間是在 {{site.data.keyword.registrylong_notm}} 內組織映像檔儲存庫的一種方式。名稱空間與 {{site.data.keyword.Bluemix_notm}} 帳戶相關聯。當您在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間時，會將名稱空間附加至登錄 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
   您 {{site.data.keyword.Bluemix_notm}} 帳戶中的每個使用者都可以檢視及使用登錄名稱空間中所儲存的映像檔。例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。</dd>
 </dl>
@@ -241,7 +239,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.Bluemix_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
 
-您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry/registry_users.html#user)。
+您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
 
 若只要使用 IBM 提供的公用映像檔，您不需要設定名稱空間。
 
@@ -269,12 +267,39 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 本端地區
 {: #registry_regions_local}
 
-地區是專用端點存取的地理區域。{{site.data.keyword.registrylong_notm}} 登錄可在下列地區中使用：
+本端地區是專用端點存取的地理區域。地區的 {{site.data.keyword.registrylong_notm}} 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
 
-- `ap-south`：`registry.au-syd.bluemix.net`
-- `eu-central`：`registry.eu-de.bluemix.net`
-- `uk-south`：`registry.eu-gb.bluemix.net`
-- `us-south`：`registry.ng.bluemix.net`
+下表顯示網域名稱。
+
+|本端登錄地區|新的網域名稱|已淘汰的網域名稱|
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` |不適用|
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="表 3. 本端地區的網域名稱。" caption-side="top"}
+
+現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
+{: deprecated}
+
+**漏洞警告器網域名稱**
+
+地區的漏洞警告器網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
+
+下表顯示新的網域名稱。
+
+|本端漏洞警告器地區|新的網域名稱|已淘汰的網域名稱|
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` |不適用|
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="表 4. 本端地區的網域名稱。" caption-side="top"}
+
+現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
+{: deprecated}
 
 所有登錄構件的範圍設定為您目前使用中的特定地區登錄。例如，名稱空間、映像檔、記號、配額設定及方案設定必須全都針對每一個地區登錄個別管理。
 
@@ -299,8 +324,20 @@ ibmcloud cr region-set eu-central
 ### 全球登錄
 {: #registry_regions_global}
 
-有全球登錄可供使用，其名稱 (`registry.bluemix.net`) 中不含地區。此登錄中僅管理 IBM 提供的公用映像檔。若要管理您自己的映像檔（例如設定名稱空間或標記映像檔並將映像檔推送至登錄），請使用[本端地區登錄](#registry_regions_local)。
+有全球登錄可供使用，其名稱 (`icr.io`) 中不含地區。此登錄中僅管理 IBM 提供的公用映像檔。若要管理您自己的映像檔（例如設定名稱空間或標記映像檔並將映像檔推送至登錄），請使用[本端地區登錄](#registry_regions_local)。
 {:shortdesc}
+
+全球登錄的網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
+
+下表顯示新的網域名稱。
+
+|登錄|新的網域名稱|已淘汰的網域名稱|
+|-----|----|-----------|
+|全球| `icr.io` | `registry.bluemix.net` |
+{: caption="表 5. 全球登錄的網域名稱。" caption-side="top"}
+
+現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
+{: deprecated}
 
 您可以執行 `ibmcloud cr region-set` 指令，將目標設定為全球登錄。
 
@@ -311,9 +348,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)。
+如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)。
 
 將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，以便您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。
+
+**漏洞警告器網域名稱**
+
+全球的漏洞警告器網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
+
+下表顯示新的網域名稱。
+
+|漏洞警告器|新的網域名稱|已淘汰的網域名稱|
+|-----|----|-----------|
+|全球| `icr.io/va` | `va.bluemix.net` |
+{: caption="表 6. 全球登錄的漏洞警告器網域名稱。" caption-side="top"}
+
+現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
+{: deprecated}
 
 ## Docker 支援
 {: #docker}

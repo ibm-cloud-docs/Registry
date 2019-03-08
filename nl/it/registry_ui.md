@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
 
@@ -47,4 +47,4 @@ Per visualizzare l'interfaccia utente grafica, utilizza la seguente procedura:
 7. Per trovare le informazioni sui problemi per tipo, fai clic sulla scheda **Problemi per tipo**.
 8. Per trovare informazioni sui contenitori associati, fai clic sulla scheda **Contenitori associati**.
 
-Per trovare informazioni sul significato di ogni informazione nel report di sicurezza, consulta [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va/va_index.html).
+Per trovare informazioni sul significato di ogni informazione nel report di sicurezza, consulta [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va?topic=va-va_index).

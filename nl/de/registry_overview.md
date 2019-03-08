@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -119,7 +119,7 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
 **Speicher: **
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.Bluemix_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry/registry_quota.html#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry/registry_quota.html#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.Bluemix_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
 
   Beispiel für den Standardplan:
 
@@ -129,7 +129,7 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
 **Pull-Datenverkehr:**
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.Bluemix_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry/registry_quota.html#registry_quota_set).
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.Bluemix_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Beispiel für den Standardplan:
 
@@ -204,7 +204,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>Namensbereich</dt>
-  <dd>Namensbereiche sind eine Möglichkeit, Repositorys Ihrer Images innerhalb {{site.data.keyword.registrylong_notm}} zu organisieren. Der Namensbereich wird Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Wenn Sie in {{site.data.keyword.registrylong_notm}} einen eigenen Namensbereich einrichten, wird der Namensbereich wie folgt an die Registry-URL angehängt: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/eigener_namensbereich</code>.
+  <dd>Namensbereiche sind eine Möglichkeit, Repositorys Ihrer Images innerhalb {{site.data.keyword.registrylong_notm}} zu organisieren. Der Namensbereich wird Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Wenn Sie in {{site.data.keyword.registrylong_notm}} einen eigenen Namensbereich einrichten, wird der Namensbereich wie folgt an die Registry-URL angehängt: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   Jeder Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto kann Images, die in Ihrem Registry-Namensbereich gespeichert sind, anzeigen und mit ihnen arbeiten. Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten.</dd>
 </dl>
@@ -239,7 +239,7 @@ Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glo
 
 Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.Bluemix_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
 
-Sie können den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry/registry_users.html#user).
+Sie können den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry?topic=registry-user#user).
 
 Wenn Sie ausschließlich mit den von IBM bereitgestellten öffentlichen Images arbeiten möchten, ist die Einrichtung eines Namensbereichs nicht erforderlich.
 
@@ -267,12 +267,39 @@ Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kosten
 ### Lokale Regionen
 {: #registry_regions_local}
 
-Eine Region ist ein geografischer Bereich, auf den über einen dedizierten Endpunkt zugegriffen wird. {{site.data.keyword.registrylong_notm}}-Registrys sind in den folgenden Regionen verfügbar:
+Eine lokale Region ist ein geografischer Bereich, auf den über einen dedizierten Endpunkt zugegriffen wird. Die {{site.data.keyword.registrylong_notm}}-Domänennamen für die Regionen wurden geändert. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar.
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+Die Domänennamen werden in der folgenden Tabelle angezeigt.
+
+| Lokale Registry-Region | Neuer Domänenname | Veralteter Domänenname |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | Nicht vorhanden |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="Tabelle 3. Domänennamen für lokale Regionen." caption-side="top"}
+
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+{: deprecated}
+
+**Vulnerability Advisor - Domänennamen**
+
+Die Vulnerability Advisor-Domänennamen für die Regionen wurden geändert. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar.
+
+Die neuen Domänennamen werden in der folgenden Tabelle angezeigt.
+
+| Lokale Vulnerability Advisor-Region | Neuer Domänenname | Veralteter Domänenname |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | Nicht vorhanden |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="Tabelle 4. Domänennamen für lokale Regionen." caption-side="top"}
+
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+{: deprecated}
 
 Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
 
@@ -297,8 +324,20 @@ Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Re
 ### Globale Registry
 {: #registry_regions_global}
 
-Eine globale Registry ist verfügbar, in deren Namen keine Region eingeschlossen ist (`registry.bluemix.net`). Nur von IBM bereitgestellte öffentliche Images befinden sich in dieser Registry. Um Ihre eigenen Images zu verwalten, z. B. durch Festlegen von Namensbereichen, Taggen von Images und Übertragen an eine Registry mittels Push-Operation, verwenden Sie eine [lokale regionale Registry](#registry_regions_local).
+Es ist eine globale Registry ist verfügbar; in deren Name ist keine Region integriert (`icr.io`). Nur von IBM bereitgestellte öffentliche Images befinden sich in dieser Registry. Um Ihre eigenen Images zu verwalten, z. B. durch Festlegen von Namensbereichen, Taggen von Images und Übertragen an eine Registry mittels Push-Operation, verwenden Sie eine [lokale regionale Registry](#registry_regions_local).
 {:shortdesc}
+
+Der Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar. 
+
+Der neue Domänenname wird in der folgenden Tabelle angezeigt.
+
+| Registry | Neuer Domänenname | Veralteter Domänenname |
+|-----|----|-----------|
+| Global | `icr.io` | `registry.bluemix.net` |
+{: caption="Tabelle 5. Domänenname für die globale Registry." caption-side="top"}
+
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+{: deprecated}
 
 Sie können die globale Registry als Ziel verwenden, indem Sie den Befehl `ibmcloud cr region-set` ausführen.
 
@@ -309,9 +348,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
+Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 Nach der Angabe der globalen Registry führen Sie den Befehl `ibmcloud cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
+
+**Vulnerability Advisor - Domänennamen**
+
+Der Vulnerability Advisor-Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar. 
+
+Der neue Domänenname wird in der folgenden Tabelle angezeigt.
+
+| Vulnerability Advisor | Neuer Domänenname | Veralteter Domänenname |
+|-----|----|-----------|
+| Global | `icr.io/va` | `va.bluemix.net` |
+{: caption="Tabelle 6. Domänenname für die globale Registry für Vulnerability Advisor." caption-side="top"}
+
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+{: deprecated}
 
 ## Unterstützung für Docker
 {: #docker}

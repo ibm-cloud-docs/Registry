@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -128,7 +128,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 **存储量：**
 
-  达到或超过套餐的配额限制时，就不能将任何映像推送到 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间，除非[通过除去名称空间中的映像来释放空间](/docs/services/Registry/registry_quota.html#registry_quota_freeup)或[升级到标准套餐](#registry_plan_upgrade)。如果在免费或标准套餐中设置了存储量配额限制，那么还可以[增大此配额限制](/docs/services/Registry/registry_quota.html#registry_quota_set)以再次允许推送新映像。
+  达到或超过套餐的配额限制时，就不能将任何映像推送到 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间，除非[通过除去名称空间中的映像来释放空间](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升级到标准套餐](#registry_plan_upgrade)。如果在免费或标准套餐中设置了存储量配额限制，那么还可以[增大此配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)以再次允许推送新映像。
 
   标准套餐示例：
 
@@ -138,7 +138,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 **拉出流量：**
 
-  达到或超过套餐的配额限制时，就不能从 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中拉出任何映像，除非您等待下一个结算周期开始、[升级到标准套餐](#registry_plan_upgrade)或[增大拉出流量的配额限制](/docs/services/Registry/registry_quota.html#registry_quota_set)。
+  达到或超过套餐的配额限制时，就不能从 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中拉出任何映像，除非您等待下一个结算周期开始、[升级到标准套餐](#registry_plan_upgrade)或[增大拉出流量的配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)。
 
   标准套餐示例：
 
@@ -215,7 +215,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 <dl>
   <dt>名称空间</dt>
-  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.Bluemix_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>。
+  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.Bluemix_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
   {{site.data.keyword.Bluemix_notm}} 帐户中的每位用户都可以查看和使用存储在注册表名称空间中的映像。例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
 </dd>
@@ -254,7 +254,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 如果要在多个 {{site.data.keyword.Bluemix_notm}} 区域中使用注册表，那么必须为每个区域设置名称空间。
 在区域中，名称空间名称是唯一的。您可以对每个区域使用相同的名称空间名称，除非别人已经在该区域中设置了使用该名称的名称空间。
 
-您可以使用 IAM 策略来控制对名称空间的访问权。有关更多信息，请参阅[定义用户访问角色策略](/docs/services/Registry/registry_users.html#user)。
+您可以使用 IAM 策略来控制对名称空间的访问权。有关更多信息，请参阅[定义用户访问角色策略](/docs/services/Registry?topic=registry-user#user)。
 
 要仅使用 IBM 提供的公共映像，您无需设置名称空间。
 
@@ -283,12 +283,39 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 本地区域
 {: #registry_regions_local}
 
-区域是指由专用端点访问的地理区域。{{site.data.keyword.registrylong_notm}} 注册表在以下区域中可用：
+本地区域是指由专用端点访问的地理区域。该区域的 {{site.data.keyword.registrylong_notm}} 域名已更改。控制台和 CLI 中提供了新域名。
 
-- `ap-south`：`registry.au-syd.bluemix.net`
-- `eu-central`：`registry.eu-de.bluemix.net`
-- `uk-south`：`registry.eu-gb.bluemix.net`
-- `us-south`：`registry.ng.bluemix.net`
+域名显示在下表中。
+
+| 本地注册表区域 | 新域名 | 不推荐的域名 |
+|-----|----|-----------|
+| `亚太北部` | `jp.icr.io` | 不适用 |
+| `亚太南部` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `欧洲中部` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `英国南部` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `美国南部` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="表 3. 本地区域的域名。" caption-side="top"}
+
+不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
+{: deprecated}
+
+**漏洞顾问程序域名**
+
+区域的漏洞顾问程序域名已更改。控制台和 CLI 中提供了新域名。
+
+新域名显示在下表中。
+
+| 本地漏洞顾问程序区域 | 新域名 | 不推荐的域名 |
+|-----|----|-----------|
+| `亚太北部` | `jp.icr.io/va` | 不适用 |
+| `亚太南部` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `欧洲中部` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `英国南部` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `美国南部` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="表 4. 本地区域的域名。" caption-side="top"}
+
+不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
+{: deprecated}
 
 所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
 
@@ -313,8 +340,20 @@ ibmcloud cr region-set eu-central
 ### 全局注册表
 {: #registry_regions_global}
 
-我们为您提供了全局注册表，其名称 (`registry.bluemix.net`) 中不包含区域。仅 IBM 提供的公共映像在此注册表中托管。要管理您自己的映像（例如，设置名称空间，或标记映像并将其推送到注册表），请使用[本地区域注册表](#registry_regions_local)。
+我们为您提供了全局注册表，其名称 `icr.io` 中不包含区域。此注册表中仅托管 IBM 提供的公共映像。要管理您自己的映像（例如，设置名称空间，或标记映像并将其推送到注册表），请使用[本地区域注册表](#registry_regions_local)。
 {:shortdesc}
+
+全局注册表的域名已更改。控制台和 CLI 中提供了新域名。 
+
+新域名显示在下表中。
+
+|注册表| 新域名 | 不推荐的域名 |
+|-----|----|-----------|
+| 全局 | `icr.io` | `registry.bluemix.net` |
+{: caption="表 5. 全局注册表的域名。" caption-side="top"}
+
+不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
+{: deprecated}
 
 可以通过运行 `ibmcloud cr region-set` 命令将全局注册表设定为目标。
 
@@ -325,9 +364,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)。
+有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)。
 
 将全局注册表设定为目标后，运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到全局注册表，这样就可以拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。
+
+**漏洞顾问程序域名**
+
+全局注册表的漏洞顾问程序域名已更改。控制台和 CLI 中提供了新域名。 
+
+新域名显示在下表中。
+
+| Vulnerability Advisor | 新域名 | 不推荐的域名 |
+|-----|----|-----------|
+| 全局 | `icr.io/va` | `va.bluemix.net` |
+{: caption="表 6. 漏洞顾问程序的全局注册表的域名。" caption-side="top"}
+
+不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
+{: deprecated}
 
 ## 对 Docker 的支持
 {: #docker}

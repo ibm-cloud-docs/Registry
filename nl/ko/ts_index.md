@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ subcollection: registry
 - {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 질문에 `ibm-cloud` 및 `container-registry`로 태그를 지정하십시오.
 - 서비스 및 시작하기 지시사항에 관한 질문의 경우 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `ibm-cloud` 및 `container-registry` 태그를 포함하십시오.
 
-포럼 사용에 대한 세부사항은 [지원 센터 사용](/docs/get-support/howtogetsupport.html#using-avatar)을 참조하십시오.
+포럼 사용에 대한 세부사항은 [지원 센터 사용](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)을 참조하십시오.
 
-{{site.data.keyword.IBM_notm}} 지원 티켓 열기에 대한 정보나 지원 레벨 및 티켓 심각도에 대한 정보는 [도움이 필요하십니까?](/docs/get-support/howtogetsupport.html#getting-customer-support)의 내용을 참조하십시오.
+{{site.data.keyword.IBM_notm}} 지원 티켓 열기에 대한 정보나 지원 레벨 및 티켓 심각도에 대한 정보는 [도움이 필요하십니까?](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)의 내용을 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}}에 로그인 실패
 {: #ts_login}
@@ -62,7 +62,7 @@ subcollection: registry
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 - Docker가 컴퓨터에 설치되어 있는지 확인하십시오. 이미 설치된 경우 Docker 디먼을 다시 시작하십시오.
 - `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 인증 정보를 새로 고치십시오.
 
@@ -81,7 +81,7 @@ subcollection: registry
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)를 참조하십시오.
+- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'ibmcloud help'.`라는 메시지가 출력되며 실패함
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)를 참조하십시오.
+- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)를 참조하십시오.
 
 ## `ibmcloud cr build` 명령이 실패합니다.
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - 로컬 빌드가 작동하지 않으면 Dockerfile에 문제가 없는지 확인하십시오.
-- 로컬 빌드가 작동하면 [{{site.data.keyword.Bluemix_notm}} 지원](/docs/get-support/howtogetsupport.html#getting-customer-support)에 문의하십시오.
+- 로컬 빌드가 작동하면 [{{site.data.keyword.Bluemix_notm}} 지원](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)에 문의하십시오.
 
 ## 네임스페이스 설정 실패
 {: #ts_problem}
@@ -194,10 +194,10 @@ denied: requested access to the resource is denied
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- [Docker가 사용자의 컴퓨터에 설치되어 있는지 확인](/docs/services/Registry/index.html#registry_cli_install)하십시오.
+- [Docker가 사용자의 컴퓨터에 설치되어 있는지 확인](/docs/services/Registry?topic=registry-index#registry_cli_install)하십시오.
 - Docker 설치 경로를 확인하십시오.
 - `ibmcloud login`을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 그 후 `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토](/docs/services/Registry/registry_quota.html#registry_quota_get)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)하십시오.
 
 ## `latest` 태그를 사용하여 최신 이미지를 가져올 수 없음
 {: #ts_docker_latest}
@@ -225,8 +225,8 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
 - `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 - `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
-- 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하십시오.
-- 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers/cs_integrations.html#helm)하십시오.
+- 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
+- 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-integrations#helm)하십시오.
 - 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
 
 ### {{site.data.keyword.Bluemix_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
@@ -237,7 +237,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 2. 사용할 지역을 대상으로 지정하십시오. 지역 이름을 모르는 경우 지역 없이 명령을 실행한 다음 지역을 선택하십시오.
 
    ```
-    ibmcloud cr region-set <region>
+   ibmcloud cr region-set <region>
    ```
    {: pre}
 
@@ -256,18 +256,18 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
    **출력 예**
 
    ```
-user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
-    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+   user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+   Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
-    1ecda25d51a8: Preparing
-    369bf331939e: Preparing
-    ...
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
+   1ecda25d51a8: Preparing
+   369bf331939e: Preparing
+   ...
    369bf331939e: Pushed
-    1ecda25d51a8: Pushed
-    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+   1ecda25d51a8: Pushed
+   10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
 
    Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
 
@@ -278,7 +278,7 @@ user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.
 4. 압축 파일에 Helm 차트가 있는 경우 이러한 차트는 현재 작업 디렉토리에 작성된 아카이브 디렉토리 `ppa-import`에 배치됩니다. 디렉토리를 열어 Helm 차트 `<helm_chart>`의 이름을 가져온 다음 해당 값을 검사하십시오.
 
    ```
-helm inspect values ppa-import/charts/<helm_chart>.tgz
+   helm inspect values ppa-import/charts/<helm_chart>.tgz
    ```
    {: pre}
 
@@ -290,7 +290,7 @@ helm inspect values ppa-import/charts/<helm_chart>.tgz
 6. `helm install` 명령을 사용하여 Helm 차트 `<helm_chart>`를 배치하십시오. `--set` 옵션을 사용하여 필요에 따라 차트에서 값을 대체할 수 있습니다.
 
    ```
-helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
+   helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
 
@@ -305,7 +305,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 {: tsResolve}
 
-클러스터가 방화벽 뒤에서 인프라 리소스 및 서비스에 액세스하도록 하십시오. [클러스터가 인프라 리소스 및 기타 서비스에 액세스하도록 허용](/docs/containers/cs_firewall.html#firewall_outbound)을 참조하십시오.
+클러스터가 방화벽 뒤에서 인프라 리소스 및 서비스에 액세스하도록 하십시오. [클러스터가 인프라 리소스 및 기타 서비스에 액세스하도록 허용](/docs/containers?topic=containers-firewall#firewall_outbound)을 참조하십시오.
 
 사용자의 컴퓨터에 대한 인바운드 연결의 경우, 소스 네트워크 그룹에서 컴퓨터의 대상 공인 IP 주소로의 수신 네트워크 트래픽을 허용하십시오.
 
@@ -315,7 +315,7 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-[신뢰할 수 있는 컨텐츠](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent) 사용 시 서명 키가 누락되었거나 손상되었으므로 신뢰할 수 있는 이미지를 더 이상 관리할 수 없습니다.
+[신뢰할 수 있는 컨텐츠](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) 사용 시 서명 키가 누락되었거나 손상되었으므로 신뢰할 수 있는 이미지를 더 이상 관리할 수 없습니다.
 
 {: tsCauses}
 저장소 또는 루트 키가 누락되었거나 손상되었습니다.
@@ -335,31 +335,31 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 순환시킬 수 있는 유일한 서명 역할은 `targets`이며 이는 저장소 관리자입니다. 다른 역할이 손상된 경우 이 역할에 대해 새 키를 생성하고 이전 키를 제거한 다음 새 키를 서명자로 추가하십시오.
 {:tip}
 
-시작하기 전에 처음 [서명된 이미지를 푸시](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)할 때 작성한 루트 키 비밀번호 문구를 검색하십시오.
+시작하기 전에 처음 [서명된 이미지를 푸시](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)할 때 작성한 루트 키 비밀번호 문구를 검색하십시오.
 
 1. [Notary 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli)의 CLI 버전을 설치하십시오.
 
-2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup)하십시오.
+2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)하십시오.
 
-3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예: `https://registry.ng.bluemix.net:4443`
+3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예를 들면, `https://us.icr.io:4443`입니다. 
 
 4. 레지스트리 토큰을 생성하십시오.
 
    ```
-    ibmcloud cr token-add --readwrite
+   ibmcloud cr token-add --readwrite
    ```
    {: pre}
 
 5. 이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. `<URL>`을 2단계에서 기록한 내보내기 명령의 URL로 바꾸고 `<image>`를 저장소 키가 손상된 이미지로 바꾸십시오.
 
    ```
-notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. 프롬프트가 표시되면 루트 키 비밀번호 문구를 입력하십시오. 그런 다음, 프롬프트가 표시되면 새 저장소의 새 루트 키 비밀번호 문구를 입력하십시오.
 
-7. 새 서명 키를 사용하는 [서명된 이미지를 푸시](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)하십시오.
+7. 새 서명 키를 사용하는 [서명된 이미지를 푸시](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)하십시오.
 
 ### 루트 키
 {: #trustedcontent_lostrootkey}
@@ -367,11 +367,11 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 루트 키가 손상된 경우 이 루트 키를 사용한 신뢰할 수 있는 컨텐츠 저장소를 업데이트할 수 없습니다.
 {:shortdesc}
 
-손상된 루트 키를 사용하는 저장소가 있는 [네임스페이스를 삭제](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove)할 수 있으며, 이렇게 하면 이미지와 신뢰 데이터가 삭제됩니다.
+손상된 루트 키를 사용하는 저장소가 있는 [네임스페이스를 삭제](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove)할 수 있으며, 이렇게 하면 이미지와 신뢰 데이터가 삭제됩니다.
 
 네임스페이스에 손상되지 않은 루트 키를 사용하는 저장소가 있는 경우(예: 프로덕션 이미지의 네임스페이스) 손상된 루트 키와 연관된 신뢰 데이터만 삭제할 수 있습니다. 지원 티켓을 여십시오.
 
-1. [{{site.data.keyword.Bluemix_notm}} 지원에 문의](/docs/get-support/howtogetsupport.html#getting-customer-support)하십시오. 문제에 대한 간략한 설명, 계정 ID 및 손상된 루트 키를 사용하는 이미지 저장소가 포함된 네임스페이스 목록을 포함하십시오.
+1. [{{site.data.keyword.Bluemix_notm}} 지원에 문의](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)하십시오. 문제에 대한 간략한 설명, 계정 ID 및 손상된 루트 키를 사용하는 이미지 저장소가 포함된 네임스페이스 목록을 포함하십시오.
 
 2. {{site.data.keyword.Bluemix_notm}}에서 문제를 처리한 후에는 로컬 컴퓨터에서 Docker Content Trust 저장소를 삭제하십시오.
 
@@ -382,16 +382,16 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
    루트 키가 손상되었으므로, 이 단계는 다른 신뢰 서버의 서명 키를 포함한 모든 서명 키를 삭제합니다.
    {:tip}
 
-3. {{site.data.keyword.containershort_notm}} 클러스터에서 [{{site.data.keyword.Bluemix_notm}} 이미지 적용](/docs/services/Registry/registry_security_enforce.html#security_enforce)을 사용하는 경우, 각 이미지 적용 팟(Pod)을 다시 시작하십시오. 팟(Pod)의 롤링 다시 시작을 자동으로 수행하도록 Kubernetes를 트리거하려는 경우에는 팟(Pod)의 일부 메타데이터를 변경할 수 있습니다. 예를 들어, [대상 클러스터에 Kubernetes CLI를 지정](/docs/containers/cs_cli_install.html#cs_cli_configure)하고 배치를 수정하십시오.
+3. {{site.data.keyword.containershort_notm}} 클러스터에서 [{{site.data.keyword.Bluemix_notm}} 이미지 적용](/docs/services/Registry?topic=registry-security_enforce#security_enforce)을 사용하는 경우, 각 이미지 적용 팟(Pod)을 다시 시작하십시오. 팟(Pod)의 롤링 다시 시작을 자동으로 수행하도록 Kubernetes를 트리거하려는 경우에는 팟(Pod)의 일부 메타데이터를 변경할 수 있습니다. 예를 들어, [대상 클러스터에 Kubernetes CLI를 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하고 배치를 수정하십시오.
 
    ```
-    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
+   kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
    ```
    {: pre}
 
 4. 신뢰할 수 있는 컨텐츠 저장소를 생성하십시오.
 
-    - 새 신뢰할 수 있는 컨텐츠를 작성하려는 경우 [새 서명된 이미지를 푸시](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push)하십시오.
+    - 새 신뢰할 수 있는 컨텐츠를 작성하려는 경우 [새 서명된 이미지를 푸시](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)하십시오.
 
     - 이전 신뢰할 수 있는 컨텐츠를 변경하지 않으려는 경우에는 레지스트리의 최신 이미지에 서명을 추가하십시오.
 
@@ -445,7 +445,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers/cs_users.html#rbac) 및 [Kubernetes - Using RBAC Authorization
+RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers?topic=containers-users#rbac) 및 [Kubernetes - Using RBAC Authorization
 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)을 참조하십시오.
 
 실패 시 작동 중지 대신 실패 시 작동으로 웹훅 구성을 변경한 후 하나 이상의 Container Image Security Enforcement 팟(Pod)이 실행 중인 경우 실패 시 작동 중지로 웹훅 구성을 복원하려면 다음 단계를 완료하십시오.
@@ -453,7 +453,7 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
 1. 다음 명령을 실행하여 `MutatingWebhookConfiguration`을 업데이트하십시오.
 
    ```
-    kubectl edit MutatingWebhookConfiguration image-admission-config
+   kubectl edit MutatingWebhookConfiguration image-admission-config
    ```
    {: pre}
 
@@ -462,7 +462,7 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
 2. 다음 명령을 실행하여 `ValidatingWebhookConfiguration`을 업데이트하십시오.
 
    ```
-    kubectl edit ValidatingWebhookConfiguration image-admission-config
+   kubectl edit ValidatingWebhookConfiguration image-admission-config
    ```
    {: pre}
 
@@ -471,14 +471,14 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
 3. 임의의 Container Image Security Enforcement 팟(Pod)이 시작될 때까지 기다리십시오. 하나 이상의 팟(Pod)에 대한 **상태** 열이 `Running`을 표시할 때까지 다음 명령을 실행하여 팟(Pod)의 시작 여부를 확인할 수 있습니다.
 
    ```
-    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+   kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
    ```
    {: pre}
 
 4. 하나 이상의 Container Image Security Enforcement 팟(Pod)이 실행 중이면 다음 명령을 실행하여 `MutatingWebhookConfiguration`을 업데이트하십시오.
 
    ```
-    kubectl edit MutatingWebhookConfiguration image-admission-config
+   kubectl edit MutatingWebhookConfiguration image-admission-config
    ```
    {: pre}
 
@@ -487,7 +487,7 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
 5. 다음 명령을 실행하여 `ValidatingWebhookConfiguration`을 업데이트하십시오.
 
    ```
-    kubectl edit ValidatingWebhookConfiguration image-admission-config
+   kubectl edit ValidatingWebhookConfiguration image-admission-config
    ```
    {: pre}
 
@@ -554,7 +554,7 @@ Manifest 버전이 지원되지 않습니다.
    ```
    {: pre}
 
-4. `ibmcloud cr image-tag` 명령을 실행하여 이미지에 태그를 지정하십시오. [소스 이미지를 참조하는 새 이미지 작성](/docs/services/Registry/registry_images_.html#registry_images_source)을 참조하십시오.
+4. `ibmcloud cr image-tag` 명령을 실행하여 이미지에 태그를 지정하십시오. [소스 이미지를 참조하는 새 이미지 작성](/docs/services/Registry?topic=registry-registry_images_#registry_images_source)을 참조하십시오.
 
 ## Mac에서 Docker 로그인 실패: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: #ts_docker_mac}
@@ -563,10 +563,10 @@ Manifest 버전이 지원되지 않습니다.
 Mac에서 `ibmcloud cr login` 명령을 실행하려고 할 때 다음 오류 메시지가 수신됩니다. `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 
 {: tsCauses}
-Docker for Mac에 문제가 있어 macOS 키 체인에 인증 정보가 저장되지 않습니다. 
+Docker for Mac에 문제가 있어 macOS 키 체인에 인증 정보가 저장되지 않습니다.
 
 {: tsResolve}
-이 문제는 Mac을 다시 부팅하여 해결할 수 있습니다. Mac을 다시 부팅해도 문제가 해결되지 않으면 Mac 키 체인의 로그인 스토리지를 비활성화할 수 있습니다. 
+이 문제는 Mac을 다시 부팅하여 해결할 수 있습니다. Mac을 다시 부팅해도 문제가 해결되지 않으면 Mac 키 체인의 로그인 스토리지를 비활성화할 수 있습니다.
 
-1. 메뉴에서 **Docker** 아이콘을 클릭하고 **환경 설정**을 선택합니다. 
-2. **macOS 키 체인에 Docker 로그인 안전하게 저장** 선택란을 취소합니다. 
+1. 메뉴에서 **Docker** 아이콘을 클릭하고 **환경 설정**을 선택합니다.
+2. **macOS 키 체인에 Docker 로그인 안전하게 저장** 선택란을 취소합니다.

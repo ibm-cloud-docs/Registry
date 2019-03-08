@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, high availability
 
@@ -37,4 +37,4 @@ subcollection: registry
   
   您还可以选择将映像推送到多个注册表中，以防意外删除或覆盖映像。
 
-  有关区域的更多信息，请参阅[区域](/docs/services/Registry/registry_overview.html#registry_regions)。
+  有关区域的更多信息，请参阅[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。

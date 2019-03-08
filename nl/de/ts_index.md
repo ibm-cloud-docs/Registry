@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass 
 - Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-cloud` und `container-registry`.
 - Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `ibm-cloud` und `container-registry` dabei ein.
 
-Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support/howtogetsupport.html#using-avatar).
+Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support?topic=get-support-getting-customer-support#using-avatar).
 
-Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Benötigte Unterstützung anfordern](/docs/get-support/howtogetsupport.html#getting-customer-support).
+Informationen zum Öffnen eines {{site.data.keyword.IBM_notm}} Support-Tickets oder zu Supportstufen und Prioritätsstufen von Tickets finden Sie unter [Benötigte Unterstützung anfordern](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Anmeldung bei {{site.data.keyword.registrylong_notm}} fehlgeschlagen
 {: #ts_login}
@@ -62,7 +62,7 @@ Der Befehl `ibmcloud cr login` schlägt fehl.
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist. Wenn das Programm bereits installiert ist, starten Sie den Docker-Dämon erneut.
 - Führen Sie den Befehl `ibmcloud login` erneut aus, um Ihre {{site.data.keyword.Bluemix_notm}}-Anmeldeberechtigungsnachweise zu aktualisieren.
 
@@ -81,7 +81,7 @@ Alle `ibmcloud cr`-Befehle schlagen fehl.
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Führen Sie ein Upgrade auf die neueste Version des `container-registry`-CLI-Plug-ins durch. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}}-Befehle schlagen fehl mit der Nachricht `'cr' ist kein registrierter Befehl. Siehe 'ibmcloud help'. `
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- Installieren Sie das Plug-in `container-registry` der Befehlszeilenschnittstelle. Informationen hierzu finden Sie in [Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install). 
+- Installieren Sie das Plug-in `container-registry` der Befehlszeilenschnittstelle. Informationen hierzu finden Sie in [Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## Der Befehl `ibmcloud cr build` schlägt fehl.
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - Wenn der lokale Build nicht möglich ist, prüfen Sie, ob bei der Dockerfile Probleme vorliegen.
-- Wenn der lokale Build möglich ist, [wenden Sie sich an den {{site.data.keyword.Bluemix_notm}}-Support](/docs/get-support/howtogetsupport.html#getting-customer-support).
+- Wenn der lokale Build möglich ist, [wenden Sie sich an den {{site.data.keyword.Bluemix_notm}}-Support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Einrichtung eines Namensbereichs schlägt fehl
 {: #ts_problem}
@@ -192,10 +192,10 @@ Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert
 {: tsResolve}
 Sie können dieses Problem wie folgt beheben:
 
-- [Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist](/docs/services/Registry/index.html#registry_cli_install).
+- [Stellen Sie sicher, dass Docker auf Ihrem Computer installiert ist](/docs/services/Registry?topic=registry-index#registry_cli_install).
 - Prüfen Sie Ihren Docker-Installationspfad.
 - Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, indem Sie den Befehl `ibmcloud login` ausführen. Melden Sie sich anschließend bei der {{site.data.keyword.registrylong_notm}}-CLI an, indem Sie `ibmcloud cr login` ausführen.
-- [Überprüfen Sie Kontingente und Nutzung zum Speichern und für Pull-Operationen von Docker-Images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_quota.html#registry_quota_get).
+- [Überprüfen Sie Kontingente und Nutzung zum Speichern und für Pull-Operationen von Docker-Images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## Das neueste Image kann nicht mit dem Tag `latest` abgerufen werden
 {: #ts_docker_latest}
@@ -223,8 +223,8 @@ Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen 
 
 - Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, indem Sie den Befehl `ibmcloud login [--sso]` ausführen.
 - Melden Sie sich bei {{site.data.keyword.registrylong_notm}} an, indem Sie den Befehl `ibmcloud cr login` ausführen.
-- [Wählen Sie die `kubectl`-CLI](/docs/containers/cs_cli_install.html#cs_cli_configure) als Ziel für Ihren Cluster aus.
-- Wenn Sie Helm noch nicht in Ihrem Cluster eingerichtet haben, [richten Sie Helm jetzt in Ihrem Cluster ein](/docs/containers/cs_integrations.html#helm).
+- [Wählen Sie die `kubectl`-CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) als Ziel für Ihren Cluster aus.
+- Wenn Sie Helm noch nicht in Ihrem Cluster eingerichtet haben, [richten Sie Helm jetzt in Ihrem Cluster ein](/docs/containers?topic=containers-integrations#helm).
 - Wenn Sie die Charts innerhalb Ihrer Organisation gemeinsam nutzen möchten, können Sie das [Open-Source-Projekt ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) installieren. Anweisungen hierzu finden Sie in dieser [developerWorks-Anleitung ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### IBM Passport Advantage-Produkte für die Verwendung in {{site.data.keyword.Bluemix_notm}} importieren
@@ -257,12 +257,12 @@ Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen 
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
-    1ecda25d51a8: Preparing
-    369bf331939e: Preparing
-    ...
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
+   1ecda25d51a8: Preparing
+   369bf331939e: Preparing
+   ...
    369bf331939e: Pushed
     1ecda25d51a8: Pushed
     10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
@@ -303,7 +303,7 @@ Für die angepasste Firewall ist es erforderlich, dass bestimmte Netzgruppen fü
 
 {: tsResolve}
 
-Lassen Sie Ihr Cluster auf Infrastrukturressourcen und Services von hinter einer Firewall zugreifen. Siehe [Cluster Zugriff auf Infrastrukturressourcen und andere Services erteilen](/docs/containers/cs_firewall.html#firewall_outbound).
+Lassen Sie Ihr Cluster auf Infrastrukturressourcen und Services von hinter einer Firewall zugreifen. Siehe [Cluster Zugriff auf Infrastrukturressourcen und andere Services erteilen](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 Für die Konnektivität der bei Ihrem Computer ankommenden Daten lassen Sie den ankommenden Netzdatenverkehr von den Quellennetzgruppen zur öffentlichen Ziel-IP-Adresse Ihres Computers zu.
 
@@ -313,7 +313,7 @@ Für die Konnektivität der von Ihrem Computer abgehenden Daten verwenden Sie di
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-Wenn Sie [vertrauenswürdige Inhalte](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent) verwenden, können Sie vertrauenswürdige Images nicht mehr verwalten, weil Ihre Signierschlüssel verloren gegangen oder beeinträchtigt sind.
+Wenn Sie [vertrauenswürdige Inhalte](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent) verwenden, können Sie vertrauenswürdige Images nicht mehr verwalten, weil Ihre Signierschlüssel verloren gegangen oder beeinträchtigt sind.
 
 {: tsCauses}
 Ihr Repository oder Rootschlüssel ist verloren gegangen oder beeinträchtigt.
@@ -333,13 +333,13 @@ Wenn Ihr Repository-Schlüssel nicht mehr vorhanden oder beeinträchtigt ist, ge
 Die einzige Signierrolle, die Sie turnusmäßig wechseln können, ist `targets`, der Repository-Administrator. Sind andere Rollen betroffen, generieren Sie neue Schlüssel für diese Rollen, entfernen Sie die alten und fügen Sie die neuen als Unterzeichner hinzu.
 {:tip}
 
-Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt haben, als Sie erstmalig [ein signiertes Image mit Push-Operation übertragen](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push) haben.
+Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt haben, als Sie erstmalig [ein signiertes Image mit Push-Operation übertragen](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) haben.
 
 1. Installieren Sie die Befehlszeilenschnittstellenversion des [Notary-Projekts ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
-2. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
+2. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Vermerken Sie die URL aus dem Exportbefehl im vorherigen Schritt. Beispiel: `https://registry.ng.bluemix.net:4443`
+3. Vermerken Sie die URL aus dem Exportbefehl im vorherigen Schritt. Beispiel: `https://us.icr.io:4443`
 
 4. Generieren Sie ein Registry-Token.
 
@@ -348,7 +348,7 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
    ```
    {: pre}
 
-5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Ersetzen Sie `<URL>` durch die URL des Exportbefehls, die Sie in Schritt 2 notiert haben, und `<image>` durch das Image, dessen Repository-Schlüssel betroffen ist. 
+5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Ersetzen Sie `<URL>` durch die URL des Exportbefehls, die Sie in Schritt 2 notiert haben, und `<image>` durch das Image, dessen Repository-Schlüssel betroffen ist.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -357,7 +357,7 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
 
 6. In der Eingabeaufforderung geben Sie die Kennphrase des Rootschlüssels ein. Anschließend geben Sie in die Eingabeaufforderung eine neue Rootschlüssel-Kennphrase für das neue Repository ein.
 
-7. [Übertragen Sie mit Push-Operation ein signiertes Image](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push), das die neuen Signierschlüssel verwendet.
+7. [Übertragen Sie mit Push-Operation ein signiertes Image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push), das die neuen Signierschlüssel verwendet.
 
 ### Rootschlüssel
 {: #trustedcontent_lostrootkey}
@@ -365,11 +365,11 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
 Wenn Ihr Rootschlüssel verloren gegangen oder beeinträchtigt ist, können Sie Repositorys mit vertrauenswürdigen Inhalten, die diesen Rootschlüssel verwendet haben, nicht aktualisieren.
 {:shortdesc}
 
-Sie können [Namensbereiche löschen](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove), deren Repositorys den betroffenen Rootschlüssel verwenden, womit Ihre Images und Trust-Daten gelöscht werden.
+Sie können [Namensbereiche löschen](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove), deren Repositorys den betroffenen Rootschlüssel verwenden, womit Ihre Images und Trust-Daten gelöscht werden.
 
 Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z. B. ein Namensbereich für Produktions-Images, kann es sinnvoll sein, nur diejenigen Trust-Daten zu löschen, die dem betroffenen Rootschlüssel zugehörig sind. Öffnen Sie ein Support-Ticket.
 
-1. [Wenden Sie sich an den {{site.data.keyword.Bluemix_notm}} Support](/docs/get-support/howtogetsupport.html#getting-customer-support). Schließen Sie eine Kurzbeschreibung Ihres Problems, die Konto-ID und eine Liste der Namensbereiche ein, die die Image-Repositorys mit den betroffenen Rootschlüsseln enthalten.
+1. [Wenden Sie sich an den {{site.data.keyword.Bluemix_notm}} Support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Schließen Sie eine Kurzbeschreibung Ihres Problems, die Konto-ID und eine Liste der Namensbereiche ein, die die Image-Repositorys mit den betroffenen Rootschlüsseln enthalten.
 
 2. Nachdem sich {{site.data.keyword.Bluemix_notm}} mit dem Problem befasst hat, löschen Sie das Docker Content Trust-Repository auf Ihrem lokalen Computer.
 
@@ -380,7 +380,7 @@ Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z.
    Da der Rootschlüssel betroffen ist, werden mit diesem Schritt alle Signierschlüssel, auch die für andere Trust-Server, gelöscht.
    {:tip}
 
-3. Wenn Sie [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry/registry_security_enforce.html#security_enforce) in Ihrem {{site.data.keyword.containershort_notm}}-Cluster verwenden, starten Sie jeden Image Enforcement-Pod neu. Um Kubernetes zu veranlassen, automatisch einen sequenziellen Neustart der Pods durchzuführen, können Sie einige Metadaten am Pod ändern. Zum Beispiel [wählen Sie Ihre Kubernetes-CLI als Ziel für Ihren Cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) aus und modifizieren Sie die Implementierung.
+3. Wenn Sie [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in Ihrem {{site.data.keyword.containershort_notm}}-Cluster verwenden, starten Sie jeden Image Enforcement-Pod neu. Um Kubernetes zu veranlassen, automatisch einen sequenziellen Neustart der Pods durchzuführen, können Sie einige Metadaten am Pod ändern. Zum Beispiel [wählen Sie Ihre Kubernetes-CLI als Ziel für Ihren Cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) aus und modifizieren Sie die Implementierung.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -389,7 +389,7 @@ Enthält der Namensbereich Repositorys mit nicht betroffenen Rootschlüsseln, z.
 
 4. Generieren Sie Repositorys mit vertrauenswürdigen Inhalten.
 
-    - Wenn Sie neue vertrauenswürdige Inhalte erstellen möchten, [übertragen Sie die neuen signierten Images mit Push-Operation](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push).
+    - Wenn Sie neue vertrauenswürdige Inhalte erstellen möchten, [übertragen Sie die neuen signierten Images mit Push-Operation](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
 
     - Wenn Sie die vorherigen vertrauenswürdigen Inhalte nicht ändern möchten, fügen Sie den neuesten Images in der Registry eine Signatur hinzu.
 
@@ -443,7 +443,7 @@ Für die folgenden Ressourcen:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers/cs_users.html#rbac) und [Kubernetes - RBAC-Berechtigung verwenden
+Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers?topic=containers-users#rbac) und [Kubernetes - RBAC-Berechtigung verwenden
 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail closed' in 'fail open' zu ändern und sie dann, wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, wieder auf 'fail closed' zurückzusetzen:
@@ -503,14 +503,14 @@ Der Manifesttyp wird nicht unterstützt.
 {: tsResolve}
 Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
 
-1. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages: 
+1. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages:
 
    ```
    docker pull <source_image>
    ```
    {: pre}
 
-2. Führen Sie den folgenden Befehl aus, um die lokale Kopie des Images, das Sie im vorherigen Schritt per Pull-Operation abgerufen haben, mit Tags zu kennzeichnen. Dabei ist `<target_image>` der neue Imagename: 
+2. Führen Sie den folgenden Befehl aus, um die lokale Kopie des Images, das Sie im vorherigen Schritt per Pull-Operation abgerufen haben, mit Tags zu kennzeichnen. Dabei ist `<target_image>` der neue Imagename:
 
    ```
    docker tag <source_image> <target_image>
@@ -538,7 +538,7 @@ Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
 
 1. Führen Sie ein Upgrade auf Docker Engine Version 1.12 oder höher durch.
 
-2. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages: 
+2. Führen Sie den folgenden Befehl aus, um das Image per Pull-Operation abzurufen, das mit Tags versehen werden soll. Dabei ist `<source_image>` der Name des Quellenimages:
 
    ```
    docker pull <source_image>
@@ -552,19 +552,19 @@ Führen Sie die folgenden Schritte aus, um das Problem zu beheben:
    ```
    {: pre}
 
-4. Führen Sie den Befehl `ibmcloud cr image-tag` aus, um das Image mit Tags zu kennzeichnen. Weitere Informationen hierzu finden Sie in [Neue Images erstellen, die sich auf ein Quellenimage beziehen](/docs/services/Registry/registry_images_.html#registry_images_source).
+4. Führen Sie den Befehl `ibmcloud cr image-tag` aus, um das Image mit Tags zu kennzeichnen. Weitere Informationen hierzu finden Sie in [Neue Images erstellen, die sich auf ein Quellenimage beziehen](/docs/services/Registry?topic=registry-registry_images_#registry_images_source).
 
 ## Die Docker-Anmeldung auf einem Mac-Computer schlägt fehl: `Fehler beim Speichern der Berechtigungsnachweise: - err: Exitstatus 1, out: 'Der eingegebene Benutzername oder die eingegebene Kennphrase ist nicht korrekt.' `
 {: #ts_docker_mac}
 
 {: tsSymptoms}
-Beim Versuch, den Befehl `ibmcloud cr login` auf einem Mac-Computer auszuführen, wird die folgende Fehlernachricht ausgegeben: Fehler beim Speichern der Berechtigungsnachweise: - err: Exitstatus 1, out: 'Der eingegebene Benutzername oder die eingegebene Kennphrase ist nicht korrekt.' 
+Beim Versuch, den Befehl `ibmcloud cr login` auf einem Mac-Computer auszuführen, wird die folgende Fehlernachricht ausgegeben: Fehler beim Speichern der Berechtigungsnachweise: - err: Exitstatus 1, out: 'Der eingegebene Benutzername oder die eingegebene Kennphrase ist nicht korrekt.'
 
 {: tsCauses}
-Ein Problem bei Docker for Mac verhindert, dass die Berechtigungsnachweise in der macOS-Schlüsselkette gespeichert werden. 
+Ein Problem bei Docker for Mac verhindert, dass die Berechtigungsnachweise in der macOS-Schlüsselkette gespeichert werden.
 
 {: tsResolve}
-Möglicherweise kann das Problem durch einen Neustart des Mac-Computers behoben werden. Ist dies nicht der Fall, können Sie das Speichern von Anmeldungen in der Mac-Schlüsselkette inaktivieren. 
+Möglicherweise kann das Problem durch einen Neustart des Mac-Computers behoben werden. Ist dies nicht der Fall, können Sie das Speichern von Anmeldungen in der Mac-Schlüsselkette inaktivieren.
 
-1. Klicken Sie im Menü auf das **Docker**-Symbol und wählen Sie **Vorgaben** aus. 
-2. Nehmen Sie die Auswahl des Kontrollkästchens **Docker-Anmeldungen sicher in der macOS-Schlüsselkette speichern** zurück. 
+1. Klicken Sie im Menü auf das **Docker**-Symbol und wählen Sie **Vorgaben** aus.
+2. Nehmen Sie die Auswahl des Kontrollkästchens **Docker-Anmeldungen sicher in der macOS-Schlüsselkette speichern** zurück.

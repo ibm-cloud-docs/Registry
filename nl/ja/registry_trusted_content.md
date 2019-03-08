@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -30,9 +30,13 @@ subcollection: registry
 
 信頼できるコンテンツを有効にしてイメージをプッシュすると、Docker クライアントが、署名付きのメタデータ・オブジェクトも {{site.data.keyword.Bluemix_notm}} トラスト・サーバーにプッシュします。 Docker コンテント・トラストを有効にしてタグ付きのイメージをプルしようとすると、Docker クライアントが、要求されたタグの署名付きの最新バージョンをトラスト・サーバーに確認し、コンテンツの署名を検証し、署名付きのイメージをダウンロードします。
 
-イメージ名は、リポジトリーとタグで構成されます。 信頼できるコンテンツを使用する場合は、リポジトリーごとに固有の署名鍵が使用されます。特定のリポジトリー内のすべてのタグに、そのリポジトリーに属する鍵が使用されます。 複数のチームが {{site.data.keyword.registrylong_notm}} 名前空間内の各チーム用のリポジトリーにコンテンツを公開する場合、チームごとに独自の鍵を使用して自分たちのコンテンツに署名できます。そのため、各イメージが適切なチームによって作成されたことを検証できます。
+イメージ名は、リポジトリーとタグで構成されます。 信頼できるコンテンツを使用する場合は、リポジトリーごとに固有の署名鍵が使用されます。 特定のリポジトリー内のすべてのタグに、そのリポジトリーに属する鍵が使用されます。 複数のチームが {{site.data.keyword.registrylong_notm}} 名前空間内の各チーム用のリポジトリーにコンテンツを公開する場合、チームごとに独自の鍵を使用して自分たちのコンテンツに署名できます。そのため、各イメージが適切なチームによって作成されたことを検証できます。
 
 リポジトリーには、署名ありのコンテンツと署名なしのコンテンツの両方を含められます。 署名のない他のコンテンツが含まれていても、Docker コンテント・トラストを有効にしていれば、リポジトリー内の署名付きのコンテンツにアクセスできます。
+
+イメージに含まれる署名は、古い (`registry.bluemix.net`) ドメイン・ネームと新しい (`icr.io`) ドメイン・ネームとで異なります。イメージが古いドメイン・ネームかプルされたときは、既存の署名が機能します。
+署名ありのコンテンツを新しいドメイン・ネームからプルする場合、新しいドメイン・ネーム `icr.io` のイメージに再度署名する必要があります。[新しいドメイン・ネームのイメージに対する再署名](#trustedcontent_resign)を参照してください。
+{: note}
 
 Docker コンテント・トラストでは、「Trust on first use」セキュリティー・モデルが使用されます。 リポジトリーから初めて署名付きのイメージをプルするときに、リポジトリーの鍵がトラスト・サーバーからプルされ、それ以降はその鍵がそのリポジトリーのイメージの検証に使用されます。 初めてリポジトリーをプルする前に、トラスト・サーバー、またはイメージとそのパブリッシャーを信頼することをユーザーが確認する必要があります。 サーバー内のトラスト情報が改ざんされている場合、まだそのリポジトリーからイメージをプルしたことがなければ、Docker クライアントは改ざんされた情報をトラスト・サーバーからプルする可能性があります。 初めてイメージをプルした後にトラスト・データが改ざんされた場合、それ以降のプルでは、Docker クライアントは、改ざんされたデータを検証できないので、イメージをプルしません。 イメージのトラスト・データの詳細を表示する方法について詳しくは、[署名付きのイメージを表示する](#trustedcontent_viewsigned)を参照してください。
 
@@ -90,19 +94,19 @@ Docker コンテント・トラストでは、「Trust on first use」セキュ�
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
    To set up your Docker client with content trust,
-    export the following environment variable:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export the following environment variable:
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. この環境変数コマンドをコピーして端末に貼り付けます。 以下に例を示します。
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -117,18 +121,18 @@ Docker コンテント・トラストを有効にしたセッションで、信�
 署名付きのイメージを初めてプッシュすると、Docker が自動的に署名鍵のペア (ルートとリポジトリー) を作成します。 署名付きのイメージが前にプッシュされたことがあるリポジトリー内のイメージに署名するには、イメージをプッシュするマシン上に、正しいリポジトリー署名鍵をロードしていなければなりません。
 {:shortdesc}
 
-始める前に、[レジストリー名前空間をセットアップします](/docs/services/Registry/index.html#registry_namespace_add)。
+始める前に、[レジストリー名前空間をセットアップします](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
 
 1. [信頼できるコンテンツ環境をセットアップします](#trustedcontent_setup)。
 
-2. [イメージをプッシュします](/docs/services/Registry/index.html#registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
+2. [イメージをプッシュします](/docs/services/Registry?topic=registry-index#registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **署名付きリポジトリーを初めてプッシュする場合**。 署名付きのイメージを新規リポジトリーにプッシュすると、コマンドによってルート鍵とリポジトリー鍵の 2 つの署名鍵が作成され、ローカル・マシンに保管されます。 両方の鍵について安全なパスフレーズを入力して保存し、[鍵をバックアップします](#trustedcontent_backupkeys)。 [リカバリー方法](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)が限られているので、鍵のバックアップは重要です。
+3. **署名付きリポジトリーを初めてプッシュする場合**。 署名付きのイメージを新規リポジトリーにプッシュすると、コマンドによってルート鍵とリポジトリー鍵の 2 つの署名鍵が作成され、ローカル・マシンに保管されます。 両方の鍵について安全なパスフレーズを入力して保存し、[鍵をバックアップします](#trustedcontent_backupkeys)。 [リカバリー方法](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)が限られているので、鍵のバックアップは重要です。
 
 ## 署名付きのイメージをプルする
 {: #trustedcontent_pull}
@@ -138,7 +142,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
 1. [信頼できるコンテンツ環境をセットアップします](#trustedcontent_setup)。
 
-2. イメージをプルします。 `<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (_latest_ など) に置き換えてください。プルできるイメージをリストするには、`ibmcloud cr image-list` を実行します。
+2. イメージをプルします。 `<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (_latest_ など) に置き換えてください。 プルできるイメージをリストするには、`ibmcloud cr image-list` を実行します。
 
    ```
    docker pull <source_image>:<tag>
@@ -147,6 +151,36 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
     署名付きのイメージをプッシュまたはプルするときにはタグを指定してください。 `latest` タグがデフォルトとして使用されるのは、コンテント・トラストが無効な場合だけです。
     {: tip}
+
+## 新しいドメイン・ネームのイメージに対する再署名
+{: #trustedcontent_resign}
+
+新しいドメイン・ネーム `icr.io` のイメージに再度署名するには、そのイメージをプル、タグ設定、およびプッシュする必要があります。
+{:shortdesc}
+
+1. 署名付きのイメージを古いドメイン・ネームからプルします。`<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (_latest_ など) に置き換えてください。 プルできるイメージをリストするには、`ibmcloud cr image-list` を実行します。
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    署名付きのイメージをプッシュまたはプルするときにはタグを指定してください。 `latest` タグがデフォルトとして使用されるのは、コンテント・トラストが無効な場合だけです。
+    {: tip}
+
+2. 新しいドメイン・ネームに対して `docker tag` コマンドを実行します。`<old_domain_name>` を古いドメイン・ネームに、`<new_domain_name>` を新しいドメイン・ネームに、`<repository>` をリポジトリーの名前に、`<tag>` をタグの名前に置き換えてください。
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. 新しいドメイン・ネームを使用してイメージをプッシュします。[Docker イメージを名前空間にプッシュする](/docs/services/Registry?topic=registry-index#registry_images_pushing)を参照してください。信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## 信頼できるコンテンツを管理する
 {: #trustedcontent_managetrust}
@@ -218,7 +252,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
    Docker 構成ディレクトリーを変更した場合は、そこで `trust` サブディレクトリーを探してください。
    {: tip}
 
-すべての鍵、特にルート鍵をバックアップする必要があります。 鍵が失われたり改ざんされたりした場合、[リカバリー方法](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent)は限られています。
+すべての鍵、特にルート鍵をバックアップする必要があります。 鍵が失われたり改ざんされたりした場合、[リカバリー方法](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)は限られています。
 
 鍵をバックアップするには、[Docker コンテント・トラストの資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys) を参照してください。
 
@@ -247,7 +281,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 
 1. 新規署名者がまだ鍵ペアを生成していない場合は、鍵ペアを生成してロードする必要があります。
   
-    a. 鍵を生成します。 `<NAME>` には任意の名前を入力できます。ただし、選択した名前は、だれかがリポジトリーのトラストを検査するときに表示されます。リポジトリー所有者と一緒に、組織で使用されている命名規則を満たし、かつ、署名者が識別できる名前を選択してください。
+    a. 鍵を生成します。 `<NAME>` には任意の名前を入力できます。ただし、選択した名前は、だれかがリポジトリーのトラストを検査するときに表示されます。 リポジトリー所有者と一緒に、組織で使用されている命名規則を満たし、かつ、署名者が識別できる名前を選択してください。
 
       ```
       docker trust key generate <NAME>

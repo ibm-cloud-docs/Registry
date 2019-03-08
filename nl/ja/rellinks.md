@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, links
 
@@ -31,18 +31,18 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}}
 {: #registry}
 
-- [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)
+- [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
 - [{{site.data.keyword.registrylong_notm}} API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/apidocs/container-registry)
 - [{{site.data.keyword.registrylong_notm}} API の脆弱性アドバイザー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} 資料](/docs/containers/container_index.html#container_index)
-- クラスター用の REST API ([Kubernetes service API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.bluemix.net/swagger-api/) を参照)
-- [クラスター用の REST API JSON ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.bluemix.net/swagger-api/swagger.json)
-- クラスターでのロギング用の REST API ([IBM Cloud Container Service Logging API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://us-south.containers.bluemix.net/swagger-logging/) を参照)
-- クラスターでの Ingress アプリケーション・ロード・バランサーの管理用 REST API ([IBM Cloud Container Service ALB API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://us-south.containers.bluemix.net/swagger-alb-api/) を参照)
+- [{{site.data.keyword.containerlong_notm}} の資料](/docs/containers?topic=containers-container_index#container_index)
+- クラスター用の REST API ([Kubernetes Service API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-api/) を参照)
+- [クラスター用の REST API JSON ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
+- クラスターでのロギング用の REST API ([{{site.data.keyword.containerlong_notm}} Logging API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-logging/) を参照)
+- クラスターでの Ingress アプリケーション・ロード・バランサーの管理用 REST API ([IBM Cloud Container Service ALB API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-alb-api/) を参照)
 
 ## Docker
 {: #links_docker}

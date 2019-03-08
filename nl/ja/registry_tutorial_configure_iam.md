@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ subcollection: registry
 
 **始めに**
 
-- [{{site.data.keyword.registrylong_notm}}の概説](/docs/services/Registry/index.html#index)の指示を完了します。
+- [{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-index#index)の指示を完了します。
 
-- {{site.data.keyword.cloud_notm}} CLI に関する `container-registry` CLI プラグインの最新バージョンがあることを確認します。[`container-registry` CLI プラグインの更新](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)を参照してください。
+- {{site.data.keyword.cloud_notm}} CLI に関する `container-registry` CLI プラグインの最新バージョンがあることを確認します。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 
 - このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。 自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択することも、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と作業することもできます。
 
@@ -221,7 +221,7 @@ subcollection: registry
 
         このチュートリアルで作成した 3 つの名前空間 (`namespace_a`、`namespace_b`、`namespace_c`) が表示されます。 これらの名前空間が表示されない場合は、戻って指示に従い、再度作成します。
 
-    3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与する、ポリシーを作成します。_`<Region>`_ は、`us-south` などの[領域](/docs/services/Registry/registry_overview.html#registry_regions)の名前です。
+    3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与する、ポリシーを作成します。_`<Region>`_ は、`us-south` などの[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前です。
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -250,14 +250,14 @@ subcollection: registry
     2. 次のコマンドを実行して、イメージを `namespace_a` にタグ付けします。
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. 次のコマンドを実行して、イメージを `namespace_b` にタグ付けします。
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ subcollection: registry
     5. 次のコマンドを実行して、イメージを `namespace_a` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. 次のコマンドを実行して、イメージを `namespace_b` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ subcollection: registry
     5. 次のコマンドを実行して、イメージをプルします。
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. 次のコマンドを実行して、イメージを `namespace_b` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ subcollection: registry
     7. 次のコマンドを実行して、イメージを `namespace_c` とタグ付けします。
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. 次のコマンドを実行して、イメージを `namespace_c` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ subcollection: registry
     9. 次のコマンドを実行して、`namespace_c` からプルします。
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ subcollection: registry
     1. 次のコマンドを実行して、{{site.data.keyword.registrylong_notm}} にログインします。
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. 次のコマンドを実行して、ご使用のイメージをプルします。
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ subcollection: registry
     3. 次のコマンドを実行して、ご使用のイメージを `namespace_a` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ subcollection: registry
     4. 次のコマンドを実行して、ご使用のイメージを `namespace_b` にプッシュします。
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

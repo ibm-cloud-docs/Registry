@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
 
@@ -46,4 +46,4 @@ subcollection: registry
 7. タイプ別の問題について調べるには、**「タイプ別の問題」**タブをクリックします。
 8. 関連付けられたコンテナーについて調べるには、**「関連付けられたコンテナー」**タブをクリックします。
 
-セキュリティー・レポートの情報の意味について詳しくは、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va/va_index.html)を参照してください。
+セキュリティー・レポートの情報の意味について詳しくは、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。

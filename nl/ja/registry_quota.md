@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -65,7 +65,7 @@ subcollection: registry
     ```
     {: screen}
 
-3. ストレージおよびプル・トラフィックの割り当て量制限を変更します。 プル・トラフィックの使用量を変更するには、**traffic** オプションを指定し、`<traffic_quota>` を、プル・トラフィック割り当て量に設定する値 (M バイト単位) に置き換えます。アカウント内のストレージの量を変更する場合は、**storage** オプションを指定し、`<storage_quota>` を、設定する値 (M バイト単位) に置き換えます。
+3. ストレージおよびプル・トラフィックの割り当て量制限を変更します。 プル・トラフィックの使用量を変更するには、**traffic** オプションを指定し、`<traffic_quota>` を、プル・トラフィック割り当て量に設定する値 (M バイト単位) に置き換えます。 アカウント内のストレージの量を変更する場合は、**storage** オプションを指定し、`<storage_quota>` を、設定する値 (M バイト単位) に置き換えます。
 
     無料プランを使用している場合は、無料層を超える量には割り当て量を設定できません。 無料層では、ストレージは 512 MB、トラフィックは 5120 MB まで許可されます。
     {:tip}
@@ -153,5 +153,5 @@ subcollection: registry
     名前空間からのイメージのプルを継続するには、以下のいずれかのオプションを選択します。
 
     - 次の請求処理サイクルが開始されるまで待つ。
-    - 無料プランを使用している場合は、[標準サービス・プランにアップグレードする](/docs/services/Registry/registry_overview.html#registry_plan_upgrade)。
+    - 無料プランを使用している場合は、[標準サービス・プランにアップグレードする](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)。
     - 既に標準プランを使用している場合は、[プル・トラフィックの新しい割り当て量制限を設定する](#registry_quota_set)。

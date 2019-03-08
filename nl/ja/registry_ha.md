@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, high availability
 
@@ -37,4 +37,4 @@ subcollection: registry
   
   また、誤ってイメージを削除したり上書きしたりした場合に備えて、複数のレジストリーにイメージをプッシュすることもできます。
 
-  領域について詳しくは、[領域](/docs/services/Registry/registry_overview.html#registry_regions)を参照してください。
+  領域について詳しくは、[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)を参照してください。

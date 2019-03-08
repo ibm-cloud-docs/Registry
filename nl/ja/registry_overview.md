@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -119,7 +119,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 **ストレージ: **
 
-  ご使用プランの割り当て量制限に達した場合やその制限を超えた場合は、名前空間から[イメージを削除してスペースを解放する](/docs/services/Registry/registry_quota.html#registry_quota_freeup)か、[標準プランにアップグレードする](#registry_plan_upgrade)まで、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間にイメージをプッシュできなくなります。 無料プランまたは標準プランでストレージの割り当て量制限を設定している場合も、[この割り当て制限を増加](/docs/services/Registry/registry_quota.html#registry_quota_set)して、新しいイメージのプッシュを再び可能にすることができます。
+  ご使用プランの割り当て量制限に達した場合やその制限を超えた場合は、名前空間から[イメージを削除してスペースを解放する](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)か、[標準プランにアップグレードする](#registry_plan_upgrade)まで、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間にイメージをプッシュできなくなります。 無料プランまたは標準プランでストレージの割り当て量制限を設定している場合も、[この割り当て制限を増加](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)して、新しいイメージのプッシュを再び可能にすることができます。
 
   標準プランの例:
 
@@ -129,7 +129,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 **プル・トラフィック: **
 
-  ご使用プランの割り当て量制限に達した場合やその制限を超えた場合は、次回の請求対象期間が開始されるまで待つか、[標準プランにアップグレードするか](#registry_plan_upgrade)、または[プル・トラフィックの割り当て量制限を増加する](/docs/services/Registry/registry_quota.html#registry_quota_set)まで、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間からイメージをプルできなくなります。
+  ご使用プランの割り当て量制限に達した場合やその制限を超えた場合は、次回の請求対象期間が開始されるまで待つか、[標準プランにアップグレードするか](#registry_plan_upgrade)、または[プル・トラフィックの割り当て量制限を増加する](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)まで、{{site.data.keyword.Bluemix_notm}} アカウント内の名前空間からイメージをプルできなくなります。
 
   標準プランの例:
 
@@ -204,7 +204,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 <dl>
   <dt>名前空間</dt>
-  <dd>名前空間は、{{site.data.keyword.registrylong_notm}} 内でイメージのリポジトリーを編成する手段です。 名前空間は、{{site.data.keyword.Bluemix_notm}} アカウントに関連付けられています。 {{site.data.keyword.registrylong_notm}} に独自の名前空間をセットアップすると、その名前空間が次のようにレジストリー URL に付加されます: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>。
+  <dd>名前空間は、{{site.data.keyword.registrylong_notm}} 内でイメージのリポジトリーを編成する手段です。 名前空間は、{{site.data.keyword.Bluemix_notm}} アカウントに関連付けられています。 {{site.data.keyword.registrylong_notm}} に独自の名前空間をセットアップすると、その名前空間が次のようにレジストリー URL に付加されます: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
   {{site.data.keyword.Bluemix_notm}} アカウントに存在するすべてのユーザーは、対象のレジストリー名前空間に保管されているイメージを表示したり処理したりできます。 複数の名前空間をセットアップし、例えば、実動用とステージング環境用に別々のリポジトリーを用意することができます。</dd>
 </dl>
@@ -239,7 +239,7 @@ Docker 固有の用語について詳しくは、[Docker 用語集を参照し�
 
 複数の名前空間をセットアップし、例えば、実動用とステージング環境用に別々のリポジトリーを用意することができます。 レジストリーを複数の {{site.data.keyword.Bluemix_notm}} 領域で使用する場合は、領域ごとに名前空間をセットアップする必要があります。 名前空間名は、それぞれの領域内で固有です。 同じ名前空間名を各領域で使用できますが、別のユーザーが既にその名前で名前空間を設定している領域では使用できません。
 
-IAM ポリシーを使用して、名前空間へのアクセスを制御できます。 詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry/registry_users.html#user)を参照してください。
+IAM ポリシーを使用して、名前空間へのアクセスを制御できます。 詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)を参照してください。
 
 IBM 提供のパブリック・イメージのみを使用して作業する場合、名前空間をセットアップする必要はありません。
 
@@ -267,12 +267,39 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 ### ローカル領域
 {: #registry_regions_local}
 
-領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。 {{site.data.keyword.registrylong_notm}} レジストリーは、以下の領域で使用できます。
+ローカル領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。領域の {{site.data.keyword.registrylong_notm}} ドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+ドメイン・ネームを以下の表に示します。
+
+| ローカル・レジストリー領域 | 新しいドメイン・ネーム | 非推奨のドメイン・ネーム |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | 適用外 |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="表 3. ローカル領域のドメイン・ネーム。" caption-side="top"}
+
+既存の `bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。
+{: deprecated}
+
+**脆弱性アドバイザーのドメイン・ネーム**
+
+領域の脆弱性アドバイザーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
+
+新しいドメイン・ネームを以下の表に示します。
+
+| ローカルの脆弱性アドバイザー・リージョン | 新しいドメイン・ネーム | 非推奨のドメイン・ネーム |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | 適用外 |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="表 4. ローカル領域のドメイン・ネーム。" caption-side="top"}
+
+既存の `bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。
+{: deprecated}
 
 すべてのレジストリー成果物は、現在使用している特定の領域レジストリーが範囲になります。 例えば、名前空間、イメージ、トークン、割り当て量の設定、プランの設定はすべて、領域レジストリーごとに管理する必要があります。
 
@@ -297,8 +324,20 @@ ibmcloud cr region-set eu-central
 ### グローバル・レジストリー
 {: #registry_regions_global}
 
-グローバル・レジストリーを使用できます。このレジストリーの名前 (`registry.bluemix.net`) には地域は含まれません。 このレジストリーでは、IBM 提供のパブリック・イメージのみがホストされます。 名前空間をセットアップする、イメージにタグを付けてレジストリーにプッシュする、などの自分のイメージの管理を行うには、[ローカルな地域のレジストリー](#registry_regions_local)を使用してください。
+グローバル・レジストリーを使用できます。このレジストリーの名前 (`icr.io`) には領域は含まれません。このレジストリーでは、IBM が提供するパブリック・イメージのみがホストされます。名前空間をセットアップする、イメージにタグを付けてレジストリーにプッシュする、などの自分のイメージの管理を行うには、[ローカルな地域のレジストリー](#registry_regions_local)を使用してください。
 {:shortdesc}
+
+グローバル・レジストリーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
+
+新しいドメイン・ネームを以下の表に示します。
+
+| レジストリー | 新しいドメイン・ネーム | 非推奨のドメイン・ネーム |
+|-----|----|-----------|
+| グローバル | `icr.io` | `registry.bluemix.net` |
+{: caption="表 5. グローバル・レジストリーのドメイン・ネーム。" caption-side="top"}
+
+既存の `bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。
+{: deprecated}
 
 `ibmcloud cr region-set` コマンドを実行して、グローバル・レジストリーをターゲットにすることができます。
 
@@ -309,9 +348,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set) を参照してください。
+`ibmcloud cr region-set` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) を参照してください。
 
 グローバル・レジストリーをターゲットにした後に、`ibmcloud cr login` コマンドを実行してローカル Docker デーモンをグローバル・レジストリーにログインさせ、{{site.data.keyword.IBM_notm}} 提供のパブリック・イメージをプルできるようにします。
+
+**脆弱性アドバイザーのドメイン・ネーム**
+
+グローバルの脆弱性アドバイザーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
+
+新しいドメイン・ネームを以下の表に示します。
+
+| 脆弱性アドバイザー | 新しいドメイン・ネーム | 非推奨のドメイン・ネーム |
+|-----|----|-----------|
+| グローバル | `icr.io/va` | `va.bluemix.net` |
+{: caption="表 6. 脆弱性アドバイザーのグローバル・レジストリーのドメイン・ネーム。" caption-side="top"}
+
+既存の `bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。
+{: deprecated}
 
 ## Docker のサポート
 {: #docker}

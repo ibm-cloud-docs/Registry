@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
 
@@ -37,7 +37,7 @@ Die Spalte **Sicherheitsstatus** enthält die folgenden Informationen zum Image:
 
 Führen Sie die folgenden Schritte aus, um die grafische Benutzerschnittstelle anzuzeigen:
 
-1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ([https://cloud.ibm.com/login ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login)) mit Ihrer IBMid an. 
+1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ([https://cloud.ibm.com/login ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login)) mit Ihrer IBMid an.
 2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
@@ -46,4 +46,4 @@ Führen Sie die folgenden Schritte aus, um die grafische Benutzerschnittstelle a
 7. Klicken Sie auf die Registerkarte **Probleme nach Typ**, um Informationen zu den Problemen nach Typ des Problems zu erhalten.
 8. Klicken Sie auf die Registerkarte **Zugeordnete Container**, um Informationen zu den zugeordneten Containern zu erhalten.
 
-Eine Erläuterung zu den Informationen im Sicherheitsbericht finden Sie in [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va/va_index.html).
+Eine Erläuterung zu den Informationen im Sicherheitsbericht finden Sie in [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va?topic=va-va_index).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -28,18 +28,18 @@ subcollection: registry
 Puede utilizar elementos de registro o una clave de API (IAM) de {{site.data.keyword.iamlong}} para automatizar el acceso a sus espacios de nombres de {{site.data.keyword.registrylong_notm}} para poder enviar por push y extraer imágenes.
 {:shortdesc}
 
-¿Está intentando utilizar las imágenes de registro en despliegues de Kubernetes? Consulte [Acceso a imágenes en otros espacios de nombres de Kubernetes, regiones de {{site.data.keyword.Bluemix_notm}} y cuentas](/docs/containers/cs_images.html#other).
+¿Está intentando utilizar las imágenes de registro en despliegues de Kubernetes? Consulte [Acceso a imágenes en otros espacios de nombres de Kubernetes, regiones de {{site.data.keyword.Bluemix_notm}} y cuentas](/docs/containers?topic=containers-images#other).
 {: tip}
 
 Las claves de API están enlazadas a su cuenta y pueden utilizarse en {{site.data.keyword.Bluemix_notm}} sin que necesite distintas credenciales para cada servicio. Puede utilizar la clave de API en la CLI o como parte de la automatización para iniciar sesión como su identidad de usuario.
 
 Los elementos de registro solo abarcan {{site.data.keyword.registrylong_notm}}. Puede limitarlos a un acceso de sólo lectura y puede seleccionar si caducan o no caducan.
 
-Si utiliza una clave de API, puede controlar el acceso a los espacios de nombres utilizando las políticas de IAM. Para obtener más información, consulte [Definición de políticas de rol de acceso de usuario](/docs/services/Registry/registry_users.html#user).
+Si utiliza una clave de API, puede controlar el acceso a los espacios de nombres utilizando las políticas de IAM. Para obtener más información, consulte [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user).
 
-Para obtener más información acerca de las claves de API de {{site.data.keyword.registrylong_notm}}, consulte [Cómo trabajar con claves de API](/docs/iam/apikeys.html#manapikey).
+Para obtener más información acerca de las claves de API de {{site.data.keyword.registrylong_notm}}, consulte [Cómo trabajar con claves de API](/docs/iam?topic=iam-manapikey#manapikey).
 
-Antes de empezar, [instale {{site.data.keyword.registrylong_notm}} y la CLI de Docker](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
+Antes de empezar, [instale {{site.data.keyword.registrylong_notm}} y la CLI de Docker](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## Acceso automático a sus espacios de nombres mediante el uso de claves de API
 {: #registry_api_key}
@@ -55,8 +55,8 @@ Puede crear un clave de API que puede utilizar para iniciar sesión en su regist
 
 Puede crear tanto claves de API de usuario como claves de API de ID de servicio.
 
-- Para crear una clave de API de ID de servicio, consulte [Creación de una clave de API para un ID de servicio](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id).
-- Para crear una clave de API de usuario, consulte [Creación de una clave de API](/docs/iam/userid_keys.html#creating-an-api-key).
+- Para crear una clave de API de ID de servicio, consulte [Creación de una clave de API para un ID de servicio](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+- Para crear una clave de API de usuario, consulte [Creación de una clave de API](/docs/iam?topic=iam-userapikey#create_user_key).
 
 ### Utilización de una clave de API para automatizar el acceso
 {: #registry_api_key_use}
@@ -66,23 +66,27 @@ Puede utilizar una clave de API para automatizar el acceso a sus espacios de nom
 
 Utilice la clave de API para iniciar sesión en su registro mediante la ejecución del siguiente mandato Docker. Sustituya `<your_apikey>` por su clave de API y sustituya `<registry_url>` por el URL del registro en el que están configurados sus espacios de nombres.
 
-- Para espacios de nombres configurados en EE.UU. sur, utilice `registry.ng.bluemix.net`
-- Para espacios de nombres configurados en Reino Unido sur, utilice `registry.eu-gb.bluemix.net`
-- Para espacios de nombres configurados en UE central, utilice `registry.eu-de.bluemix.net`
-- Para espacios de nombres configurados en AP sur, utilice `registry.au-syd.bluemix.net`
+- Para espacios de nombres configurados en AP-North, utilice `jp.icr.io`
+- Para espacios de nombres configurados en AP sur, utilice `au.icr.io`
+- Para espacios de nombres configurados en UE central, utilice `de.icr.io`
+- Para espacios de nombres configurados en Reino Unido sur, utilice `uk.icr.io`
+- Para espacios de nombres configurados en EE.UU. sur, utilice `us.icr.io`
 
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Para obtener información acerca del mandato, consulte [Cree una nueva clave de API de plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create).
+Para obtener información acerca del mandato, consulte [Cree una nueva clave de API de plataforma {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
-## Automatización del acceso a sus espacios de nombres mediante señales
+## Automatización del acceso a sus espacios de nombres mediante señales (en desuso)
 {: #registry_tokens}
 
 Puede utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+{: deprecated}
 
 Cualquiera que tenga una señal de registro puede acceder a la información protegida. Si desea que los usuarios de fuera de su cuenta puedan acceder a todos los espacios de nombres que ha configurado en una región, puede crear una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}. Cada usuario o app en posesión de esta señal puede enviar por push o extraer imágenes a espacios de nombres sin tener que instalar el plugin de CLI `container-registry`.
 
@@ -97,11 +101,14 @@ Utilice las siguientes tareas para gestionar sus señales:
 - [Utilización de una señal para automatizar el acceso a su espacio de nombres](#registry_tokens_use)
 - [Eliminación de una señal de su cuenta de {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
 
-### Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}}
+### Creación de una señal para su cuenta de {{site.data.keyword.Bluemix_notm}} (en desuso)
 {: #registry_tokens_create}
 
 Puede crear una señal para otorgar acceso a todos los espacios de nombres {{site.data.keyword.registrylong_notm}} en una región.
 {:shortdesc}
+
+Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+{: deprecated}
 
 1. Cree una señal. En el ejemplo siguiente se crea una señal que no caduca que tiene acceso de lectura y escritura a todos los espacios de nombres que se encuentran configurados en una región.
 
@@ -146,11 +153,14 @@ Puede crear una señal para otorgar acceso a todos los espacios de nombres {{sit
    ```
    {: pre}
 
-### Utilización de una señal para automatizar el acceso a su espacio de nombres
+### Utilización de una señal para automatizar el acceso a su espacio de nombres (en desuso)
 {: #registry_tokens_use}
 
 Puede utilizar una señal en su mandato `login docker` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de lectura/escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
 {:shortdesc}
+
+Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+{: deprecated}
 
 1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
 
@@ -177,10 +187,11 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 
 4. Utilice la señal como parte del mandato `docker login`. Sustituya `<token_value>` por el valor de la señal que ha recuperado en el paso anterior y `<registry_url>` por el URL del registro en el que están configurados sus espacios de nombres.
 
-   - Para espacios de nombres configurados en EE.UU. sur, utilice `registry.ng.bluemix.net`
-   - Para espacios de nombres configurados en Reino Unido sur, utilice `registry.eu-gb.bluemix.net`
-   - Para espacios de nombres configurados en UE central, utilice `registry.eu-de.bluemix.net`
-   - Para espacios de nombres configurados en AP sur, utilice `registry.au-syd.bluemix.net`
+   - Para espacios de nombres configurados en AP-North, utilice `jp.icr.io`
+   - Para espacios de nombres configurados en AP sur, utilice `au.icr.io`
+   - Para espacios de nombres configurados en UE central, utilice `de.icr.io`
+   - Para espacios de nombres configurados en Reino Unido sur, utilice `uk.icr.io`
+   - Para espacios de nombres configurados en EE.UU. sur, utilice `us.icr.io`
 
    ```
    docker login -u token -p <token_value> <registry_url>
@@ -192,11 +203,14 @@ Puede utilizar una señal en su mandato `login docker` para automatizar el acces
 
    Después de que haya iniciado una sesión en Docker utilizando la señal, puede enviar por push o extraer imágenes a y desde el espacio de nombres.
 
-### Eliminación de una señal de su cuenta de {{site.data.keyword.Bluemix_notm}}
+### Eliminación de una señal desde su cuenta de {{site.data.keyword.Bluemix_notm}} (en desuso)
 {: #registry_tokens_remove}
 
 Elimine una señal de {{site.data.keyword.registrylong_notm}} cuando ya no la necesite.
 {:shortdesc}
+
+Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+{: deprecated}
 
 Las señales caducadas de {{site.data.keyword.registrylong_notm}} se eliminan automáticamente desde su cuenta de {{site.data.keyword.Bluemix_notm}} y no es necesario eliminarlas manualmente.
 {:tip}
@@ -235,16 +249,19 @@ Son válidos los siguientes nombres de usuarios:
 - `iambearer` La contraseña contiene un señal de acceso a IAM. Este tipo de autenticación es de corta duración, pero puede derivarse de todos los tipos de identidad IAM.
 - `iamrefresh` La contraseña debe contener un señal de actualización de IAM que se utiliza internamente para generar y actualizar un señal de acceso a IAM. Este tipo de autenticación es más duradero y es utilizado por el mandato `ibmcloud cr login`.
 - `iamapikey` La contraseña es una clave de API de IAM. Este tipo de autenticación es el preferido para la automatización. Puede utilizar una clave de API de usuario o de ID de servicio, consulte [Creación de una clave de API](#registry_api_key_create).
-- `token` La contraseña es una señal de registro. Puede utilizar este nombre de usuario para la automatización.
+- `token` La contraseña es una señal de registro (en desuso). Puede utilizar este nombre de usuario para la automatización.
+
+  Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+  {: deprecated}
 
 No es necesario utilizar el mandato `docker` para autenticarse con el registro. Por ejemplo, puede iniciar apps de Cloud Foundry desde las imágenes del registro utilizando la CLI de Cloud Foundry:
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
 ```
 {: pre}
 
-Sustituya `<apikey>` por su clave de API, `<region>` por el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions), `<my_namespace>` por su espacio de nombres y `<image_repo>` por el repositorio.
+Sustituya `<apikey>` por su clave de API, `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` por su espacio de nombres y `<image_repo>` por el repositorio.
 
-Para obtener más información, consulte [Uso de un registro de imagen privado](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry).
+Para obtener más información, consulte [Uso de un registro de imagen privado](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

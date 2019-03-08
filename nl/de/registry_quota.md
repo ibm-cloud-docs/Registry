@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -65,7 +65,7 @@ Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
     ```
     {: screen}
 
-3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie `<traffic_quota>` durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie `<storage_quota>`durch den Wert in Megabyte, den Sie festlegen möchten. 
+3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie `<traffic_quota>` durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie `<storage_quota>`durch den Wert in Megabyte, den Sie festlegen möchten.
 
     Bei der Verwendung des kostenfreien Plans können Sie das Kontingent nicht über die kostenfreie Stufe hinaus erhöhen. Die kostenfreie Stufe umfasst 512 MB an Speicher und 5120 MB an Datenverkehr.
     {:tip}
@@ -130,7 +130,7 @@ Gehen Sie wie folgt vor, um Speicherplatz für Images in Ihrem {{site.data.keywo
     ```
     {: pre}
 
-2. Entfernen Sie ein Image aus Ihrem Namensbereich. Ersetzen Sie `<image_name>` durch den Namen des Images, das entfernt werden soll. 
+2. Entfernen Sie ein Image aus Ihrem Namensbereich. Ersetzen Sie `<image_name>` durch den Namen des Images, das entfernt werden soll.
 
     ```
     ibmcloud cr image-rm <image_name>
@@ -153,5 +153,5 @@ Gehen Sie wie folgt vor, um Speicherplatz für Images in Ihrem {{site.data.keywo
     Um weitere Images mit einer Pull-Operation aus Ihrem Namensbereich zu extrahieren, können Sie eine der folgenden Optionen auswählen.
 
     - Warten Sie, bis der nächste Abrechnungszyklus beginnt.
-    - Wenn Sie einen kostenfreien Plan verwenden, führen Sie ein [Upgrade auf den Standard-Serviceplan](/docs/services/Registry/registry_overview.html#registry_plan_upgrade) durch.
+    - Wenn Sie einen kostenfreien Plan verwenden, führen Sie ein [Upgrade auf den Standard-Serviceplan](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade) durch.
     - Wenn Sie bereits einen Standardplan verwenden, [richten Sie neue Kontingente für den Pull-Datenverkehr ein](#registry_quota_set).

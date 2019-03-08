@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, Activity Tracker events, events
 
@@ -29,7 +29,7 @@ subcollection: registry
 {:shortdesc}
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} 서비스는 {{site.data.keyword.Bluemix_notm}}에서 서비스의 상태를 변경하는 사용자 시작 활동을 기록합니다.
-추가 정보는 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla)의 내용을 참조하십시오.
+추가 정보는 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)의 내용을 참조하십시오.
 
 다음 표에는 호출 시에 이벤트를 생성하는 API 메소드가 나열되어 있습니다.
 
@@ -54,4 +54,4 @@ subcollection: registry
 
 {{site.data.keyword.cloudaccesstrailshort}} 이벤트는 이벤트가 생성되는 {{site.data.keyword.Bluemix_notm}} 지역에서 사용할 수 있는 {{site.data.keyword.cloudaccesstrailshort}} **계정 도메인**에서 사용 가능합니다.
 
-Vulnerability Advisor 이벤트가 사용 가능한 [지역](/docs/services/Registry/registry_overview.html#registry_regions)은 리소스(예: 이미지 또는 네임스페이스)가 사용 가능한 {{site.data.keyword.registrylong_notm}}의 지역에 해당합니다.
+Vulnerability Advisor 이벤트가 사용 가능한 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)은 리소스(예: 이미지 또는 네임스페이스)가 사용 가능한 {{site.data.keyword.registrylong_notm}}의 지역에 해당합니다.

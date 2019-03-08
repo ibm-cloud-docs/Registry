@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 强制实施容器映像安全性 (Beta)
 {: #security_enforce}
 
-通过 Container Image Security Enforcement (Beta)，可以在将容器映像部署到 {{site.data.keyword.containerlong}} 中的集群之前，对这些映像进行验证。您可以控制从何处部署映像，强制实施漏洞顾问程序策略，以及确保[内容信任](/docs/services/Registry/registry_trusted_content.html)正确应用于映像。如果映像不符合策略需求，那么不会将 pod 部署到集群，也不会更新 pod。
+通过 Container Image Security Enforcement (Beta)，可以在将容器映像部署到 {{site.data.keyword.containerlong}} 中的集群之前，对这些映像进行验证。您可以控制从何处部署映像，强制实施漏洞顾问程序策略，以及确保[内容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)正确应用于映像。如果映像不符合策略需求，那么不会将 pod 部署到集群，也不会更新 pod。
 {:shortdesc}
 
 Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检索有关映像内容信任和漏洞的信息。您可以选择是阻止还是允许部署存储在其他注册表中的映像，但不能对这些映像使用漏洞或信任强制实施。
@@ -35,17 +35,17 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 
 **开始之前**
 
-* [创建](/docs/containers/cs_clusters.html#clusters_ui)或[更新](/docs/containers/cs_cluster_update.html#update)要与 **Kubernetes V1.9 或更高版本**配合使用的集群。
-* [设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。
+* [创建](/docs/containers?topic=containers-clusters#clusters_ui)或[更新](/docs/containers?topic=containers-update#update)要与 **Kubernetes V1.9 或更高版本**配合使用的集群。
+* [设定 `kubectl` CLI 的目标](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)为集群。
 
 请完成以下步骤：
 
-1. [在集群中设置 Helm](/docs/containers/cs_integrations.html#helm)。
+1. [在集群中设置 Helm](/docs/containers?topic=containers-integrations#helm)。
 
 2. 将 IBM 图表存储库添加到 Helm 客户机。
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ spec:
 
 应用部署时，Container Image Security Enforcement 会检查要部署到的 Kubernetes 名称空间是否具有要应用的策略。如果没有，Container Image Security Enforcement 会使用集群范围的策略。如果不存在名称空间或集群范围的策略，那么将拒绝部署。
 
-开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。然后，完成以下步骤：
+开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)为集群。然后，完成以下步骤：
 
 1. 创建 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 定制资源定义 <img src="../../icons/launch-glyph.svg" alt="外部链接图标"></a> `.yaml` 文件。
 
@@ -226,7 +226,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>设置为 `true` 仅允许部署已[签名以实现内容信任](/docs/services/Registry/registry_trusted_content.html)的映像。设置为 `false` 会忽略是否对映像签名。</td>
+    <td>设置为 `true` 仅允许部署已[签名以实现内容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)的映像。设置为 `false` 会忽略是否对映像签名。</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>设置为 `true` 仅允许通过[漏洞顾问程序](/docs/services/va/va_index.html)扫描的映像。设置为 `false` 会忽略漏洞顾问程序扫描。</td>
+    <td>设置为 `true` 仅允许通过[漏洞顾问程序](/docs/services/va?topic=va-va_index)扫描的映像。设置为 `false` 会忽略漏洞顾问程序扫描。</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ kubectl apply -f <filepath>
 ### 在定制策略中指定可信内容签署者
 {: #signers}
 
-如果使用内容信任，那么可以验证映像是否由特定签署者签名。仅当所有列出的签署者均对最新的签名版本签名时，才允许部署。要将签署者添加到存储库，请参阅[管理可信签署者](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers)。
+如果使用内容信任，那么可以验证映像是否由特定签署者签名。仅当所有列出的签署者均对最新的签名版本签名时，才允许部署。要将签署者添加到存储库，请参阅[管理可信签署者](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers)。
 {:shortdesc}
 
 要配置策略以验证映像是否由特定签署者签名，请执行以下操作：
@@ -279,7 +279,7 @@ kubectl apply -f <filepath>
 ## 控制可以定制策略的人员
 {: #assign_user_policy}
 
-如果在 Kubernetes 集群上启用了基于角色的访问控制 (RBAC)，那么可以创建角色来控制谁能够管理集群上的安全策略。有关将 RBAC 规则应用于集群的更多信息，请参阅 [{{site.data.keyword.containerlong_notm}} 文档](/docs/containers/cs_users.html#rbac)。
+如果在 Kubernetes 集群上启用了基于角色的访问控制 (RBAC)，那么可以创建角色来控制谁能够管理集群上的安全策略。有关将 RBAC 规则应用于集群的更多信息，请参阅 [{{site.data.keyword.containerlong_notm}} 文档](/docs/containers?topic=containers-users#rbac)。
 {:shortdesc}
 
 在角色中，添加安全策略的规则：
@@ -347,14 +347,14 @@ kubectl apply -f <filepath>
 
 可以在策略中启用 `va` 选项以强制漏洞顾问程序在部署映像之前通过。这将允许漏洞顾问程序不支持的映像。
 
-可以在策略中启用 `trust` 选项来强制实施内容信任。如果未指定任何 `signerSecrets`，那么允许部署由任何人签名的映像。如果指定 `signerSecrets`，那么最近签名的映像版本必须已由您指定的所有签署者签名。Container Image Security Enforcement 会验证提供的公用密钥是否属于签署者。有关内容信任的更多信息，请参阅[对映像签名以实现可信内容](/docs/services/Registry/registry_trusted_content.html)。
+可以在策略中启用 `trust` 选项来强制实施内容信任。如果未指定任何 `signerSecrets`，那么允许部署由任何人签名的映像。如果指定 `signerSecrets`，那么最近签名的映像版本必须已由您指定的所有签署者签名。Container Image Security Enforcement 会验证提供的公用密钥是否属于签署者。有关内容信任的更多信息，请参阅[对映像签名以实现可信内容](/docs/services/Registry?topic=registry-registry_trustedcontent)。
 
 仅当所有映像都通过了 Container Image Security Enforcement 检查时，才允许部署。
 
 ## 除去 Container Image Security Enforcement
 {: #remove}
 
-开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers/cs_cli_install.html#cs_cli_configure)为集群。
+开始之前，请[设定 `kubectl` CLI 的目标](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)为集群。
 
 
 

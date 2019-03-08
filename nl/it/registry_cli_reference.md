@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ Puoi utilizzare il plug-in CLI `container-registry` per configurare lo spazio de
 Esegui i comandi `ibmcloud cr` nella CLI di {{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html).
+Per i comandi supportati, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
 
 ## Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ Puoi modificare l'output della CLI applicando l'opzione formato in due modi dive
 
 Puoi utilizzare l'opzione formato con i seguenti comandi {{site.data.keyword.registrylong_notm}}. Fai clic su un comando per visualizzare un elenco di campi disponibili e i relativi tipi di dati.
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazione e di filtro.
 
@@ -67,10 +67,10 @@ I seguenti esempi di codice illustrano come utilizzare le opzioni di formattazio
   **Output di esempio**
 
   ```
-  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 
@@ -130,7 +130,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`Repository`|Stringa|Visualizza il repository dell'immagine.|
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`Tag`|Stringa|Visualizza la tag dell'immagine.|
-|`SecurityStatus`|Struct|Visualizza lo stato di vulnerabilità per l'immagine. Puoi filtrare e formattare i seguenti valori: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Gli stati possibili sono descritti in [Revisione di un report di vulnerabilità utilizzando la CLI](/docs/services/va/va_index.html#va_registry_cli).|
+|`SecurityStatus`|Struct|Visualizza lo stato di vulnerabilità per l'immagine. Puoi filtrare e formattare i seguenti valori: Status  `string`, IssueCount  `int` e ExemptionCount  `int`. Gli stati possibili sono descritti in [Revisione di un report di vulnerabilità utilizzando la CLI](/docs/services/va?topic=va-va_index#va_registry_cli).|
 {: caption="Tabella 1. Campi e tipi di dati disponibili nel comando <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Opzioni e tipi di dati del template Go nel comando `ibmcloud cr image-inspect`
@@ -146,16 +146,16 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`Comment`|Stringa|Visualizza la descrizione dell'immagine.|
 |`Created`|Stringa|Visualizza la [UNIX timestamp ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://en.wikipedia.org/wiki/Unix_time) in cui è stata creata l'immagine.|
 |`Container`|Stringa|Visualizza l'ID del contenitore che ha creato l'immagine.|
-|`ContainerConfig`|Oggetto|Visualizza la configurazione predefinita per i contenitori avviati da questa immagine. Vedi i dettagli del campo in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`ContainerConfig`|Oggetto|Visualizza la configurazione predefinita per i contenitori avviati da questa immagine. Vedi i dettagli del campo in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`DockerVersion`|Stringa|Visualizza la versione Docker utilizzata per creare questa immagine.|
 |`Author`|Stringa|Visualizza l'autore dell'immagine.|
-|`Config`|Oggetto|Visualizza i metadati di configurazione per l'immagine. Vedi i dettagli del campo in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`Config`|Oggetto|Visualizza i metadati di configurazione per l'immagine. Vedi i dettagli del campo in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`Architecture`|Stringa|Visualizza l'architettura del processore utilizzata per costruire questa immagine e che è necessaria per eseguire l'immagine.|
 |`Os`|Stringa|Visualizza la famiglia di sistemi operativi utilizzata per creare questa immagine e che è necessaria per eseguire l'immagine.|
 |`OsVersion`|Stringa|Visualizza la versione del sistema operativo utilizzato per creare questa immagine.|
 |`Size`|Numero intero (64 bit)|Visualizza la dimensione dell'immagine in byte.|
 |`VirtualSize`|Numero intero (64 bit)|Visualizza la somma delle dimensioni di ogni livello nell'immagine in byte.|
-|`RootFS`|Oggetto|Visualizza i metadati che descrivono il file system root per l'immagine. Vedi i dettagli del campo in [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
+|`RootFS`|Oggetto|Visualizza i metadati che descrivono il file system root per l'immagine. Vedi i dettagli del campo in [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
 {: caption="Tabella 2. Campi e tipi di dati disponibili nel comando <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
@@ -174,7 +174,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 |`StdinOnce`|Booleano|Visualizza _true_ se il flusso di input standard viene chiuso dopo che il client collegato si disconnette e _false_ se il flusso di input standard rimane aperto.|
 |`Env`|Array di stringhe|Visualizza l'elenco di variabili di ambiente in forma di coppie chiave-valore.|
 |`Cmd`|Array di stringhe|Descrive i comandi e gli argomenti passati a un contenitore che devono essere eseguiti all'avvio del contenitore.|
-|`Healthcheck`|Oggetto|Descrive come controllare che il contenitore sta funzionando correttamente. Vedi i dettagli del campo in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Oggetto|Descrive come controllare che il contenitore sta funzionando correttamente. Vedi i dettagli del campo in [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck).|
 |`ArgsEscaped`|Booleano|Visualizza true se il comando è già con escape (specifico di Windows).|
 |`Image`|Stringa|Visualizza il nome dell'immagine che è stata passata dall'operatore.|
 |`Volumes`|Associazione chiave-valore|Visualizza l'elenco di montaggi di volume che sono montati in un contenitore.|

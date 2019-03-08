@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Applicazione della sicurezza dell'immagine del contenitore (Beta)
 {: #security_enforce}
 
-Con Container Image Security Enforcement (Beta), puoi verificare le tue immagini del contenitore prima di distribuirle al tuo cluster in {{site.data.keyword.containerlong}}. Puoi controllare da dove vengono distribuite le immagini, applicare le politiche di Controllo vulnerabilità e garantire che l'[attendibilità dei contenuti](/docs/services/Registry/registry_trusted_content.html) sia applicata correttamente all'immagine. Se un'immagine non soddisfa i requisiti della tua politica, il pod non viene distribuito al tuo cluster o aggiornato.
+Con Container Image Security Enforcement (Beta), puoi verificare le tue immagini del contenitore prima di distribuirle al tuo cluster in {{site.data.keyword.containerlong}}. Puoi controllare da dove vengono distribuite le immagini, applicare le politiche di Controllo vulnerabilità e garantire che l'[attendibilità dei contenuti](/docs/services/Registry?topic=registry-registry_trustedcontent) sia applicata correttamente all'immagine. Se un'immagine non soddisfa i requisiti della tua politica, il pod non viene distribuito al tuo cluster o aggiornato.
 {:shortdesc}
 
 Container Image Security Enforcement richiama le informazioni sull'attendibilità dei contenuti e sulle vulnerabilità delle immagini da {{site.data.keyword.registrylong}}. Puoi scegliere di bloccare o di consentire la distribuzione di immagini memorizzate in altri registri ma non puoi utilizzare la vulnerabilità o l'applicazione dell'attendibilità per queste immagini.
@@ -35,17 +35,17 @@ Container Image Security Enforcement richiama le informazioni sull'attendibilit�
 
 **Prima di iniziare**
 
-* [Crea](/docs/containers/cs_clusters.html#clusters_ui) o [aggiorna](/docs/containers/cs_cluster_update.html#update) il cluster che vuoi utilizzare con **Kubernetes versione 1.9 o successive**.
-* [Indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster.
+* [Crea](/docs/containers?topic=containers-clusters#clusters_ui) o [aggiorna](/docs/containers?topic=containers-update#update) il cluster che vuoi utilizzare con **Kubernetes versione 1.9 o successive**.
+* [Indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.
 
 Completa la seguente procedura:
 
-1. [Configura Helm nel tuo cluster](/docs/containers/cs_integrations.html#helm).
+1. [Configura Helm nel tuo cluster](/docs/containers?topic=containers-integrations#helm).
 
 2. Aggiungi il repository di grafici IBM al tuo client Helm.
 
    ```
-   helm repo add ibm https://registry.bluemix.net/helm/ibm
+   helm repo add ibm https://icr.io/helm/ibm
    ```
    {: pre}
 
@@ -179,7 +179,7 @@ Devi disporre di una serie di politiche. In caso contrario, le distribuzioni al 
 
 Quando applichi una distribuzione, Container Image Security Enforcement verifica se lo spazio dei nomi Kubernetes in cui stai distribuendo ha una politica da applicare. Se non ce l'ha, Container Image Security Enforcement utilizza la politica a livello di cluster. La tua distribuzione viene negata se non esistono politiche a livello di spazio dei nomi o di cluster.
 
-Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster. Successivamente, completa la seguente procedura:
+Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.Successivamente, completa la seguente procedura:
 
 1. Crea un file `.yaml` di <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definizione di risorsa personalizzata Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>.
 
@@ -226,7 +226,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
     </tr>
     <tr>
     <td><code>../../../../trust/enabled</code></td>
-    <td>Imposta come `true` per consentire di distribuire solo le immagini [firmate per l'attendibilità dei contenuti](/docs/services/Registry/registry_trusted_content.html). Imposta come `false` per ignorare se le immagini sono firmate.</td>
+    <td>Imposta come `true` per consentire di distribuire solo le immagini [firmate per l'attendibilità dei contenuti](/docs/services/Registry?topic=registry-registry_trustedcontent). Imposta come `false` per ignorare se le immagini sono firmate.</td>
     </tr>
     <tr>
     <td><code>../../../../trust/signerSecrets/name</code></td>
@@ -234,7 +234,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>Imposta come `true` per consentire solo le immagini che superano la scansione di [Controllo vulnerabilità](/docs/services/va/va_index.html). Imposta come `false` per ignorare la scansione di Controllo vulnerabilità.</td>
+    <td>Imposta come `true` per consentire solo le immagini che superano la scansione di [Controllo vulnerabilità](/docs/services/va?topic=va-va_index). Imposta come `false` per ignorare la scansione di Controllo vulnerabilità.</td>
     </tr>
     </tbody>
     </table>
@@ -249,7 +249,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_inst
 ### Specifica dei firmatari di contenuti attendibili nelle politiche personalizzate
 {: #signers}
 
-Se utilizzi l'attendibilità dei contenuti, puoi verificare che le immagini siano firmate da determinati firmatari. La distribuzione viene consentita solo se la versione firmata più recente è firmata da tutti i firmatari elencati. Per aggiungere un firmatario a un repository, vedi [Gestione dei firmatari attendibili](/docs/services/Registry/registry_trusted_content.html#trustedcontent_signers).
+Se utilizzi l'attendibilità dei contenuti, puoi verificare che le immagini siano firmate da determinati firmatari. La distribuzione viene consentita solo se la versione firmata più recente è firmata da tutti i firmatari elencati. Per aggiungere un firmatario a un repository, vedi [Gestione dei firmatari attendibili](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 Per configurare la politica per verificare che un'immagine sia firmata da un determinato firmatario:
@@ -277,7 +277,7 @@ Per configurare la politica per verificare che un'immagine sia firmata da un det
 ## Controllo di chi può personalizzare le politiche
 {: #assign_user_policy}
 
-Se sul tuo cluster Kubernetes hai abilitato il controllo degli accessi in base al ruolo (RBAC), puoi creare un ruolo per controllare chi ha la capacità di amministrare le politiche di sicurezza sul tuo cluster. Per ulteriori informazioni sull'applicazione di regole RBAC al tuo cluster, vedi [la documentazione di {{site.data.keyword.containerlong_notm}}](/docs/containers/cs_users.html#rbac).
+Se sul tuo cluster Kubernetes hai abilitato il controllo degli accessi in base al ruolo (RBAC), puoi creare un ruolo per controllare chi ha la capacità di amministrare le politiche di sicurezza sul tuo cluster. Per ulteriori informazioni sull'applicazione di regole RBAC al tuo cluster, vedi [la documentazione di {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 Nel tuo ruolo, aggiungi una regola per le politiche di sicurezza:
@@ -345,14 +345,14 @@ Se Container Image Security Enforcement nega una distribuzione, la distribuzione
 
 Puoi abilitare l'opzione `va` nella tua politica per applicare l'approvazione del Controllo vulnerabilità prima che un'immagine possa essere distribuita. Le immagini che non sono supportate dal Controllo vulnerabilità sono consentite.
 
-Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](/docs/services/Registry/registry_trusted_content.html).
+Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Una distribuzione viene consentita solo se tutte le immagini superano i controlli di Container Image Security Enforcement.
 
 ## Rimozione di Container Image Security Enforcement
 {: #remove}
 
-Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) al cluster.
+Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.
 
 
 

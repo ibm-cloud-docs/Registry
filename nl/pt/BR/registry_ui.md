@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
 
@@ -38,8 +38,7 @@ imagens com varreduras incompletas não são bloqueadas para implementação.
 
 Para visualizar a interface gráfica com o usuário, use as etapas a seguir:
 
-1. Efetue login no console do {{site.data.keyword.cloud_notm}}
-([https://cloud.ibm.com/login
+1. Efetue login no console do {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login))
 com o seu IBMid.
 2. Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
@@ -50,4 +49,4 @@ com o seu IBMid.
 7. Para saber mais sobre os problemas por tipo, clique na guia **Problemas por tipo**.
 8. Para saber mais sobre os contêineres associados, clique na guia **Contêineres associados**.
 
-Para saber mais sobre o significado das informações no relatório de segurança, veja [Gerenciando a segurança de imagem com o Vulnerability Advisor](/docs/services/va/va_index.html).
+Para saber mais sobre o significado das informações no relatório de segurança, veja [Gerenciando a segurança de imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index).

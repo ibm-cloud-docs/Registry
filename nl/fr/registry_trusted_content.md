@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ Lorsque vous envoyez par commande push votre image avec le contenu sécurisé ac
 Un nom d'image est composé d'un référentiel et d'une balise. Lorsque vous utilisez du contenu sécurisé, chaque référentiel utilise une clé de signature unique. Chaque balise d'un référentiel utilise la clé appartenant au référentiel. Si plusieurs équipes publient du contenu, chacun sur leur propre référentiel au sein de vos espaces de nom {{site.data.keyword.registrylong_notm}}, chaque équipe peut utiliser ses propres clés pour signer son contenu, ce qui vous permet de vérifier que chaque image est produite par l'équipe appropriée.
 
 Un référentiel peut comporter du contenu signé et du contenu non signé. Si Docker Content Trust est activé, vous pouvez accéder au contenu signé d'un référentiel, même si ce dernier contient également du contenu non signé.
+
+Les images ont des signatures distinctes pour les anciens (`registry.bluemix.net`) et les nouveaux (`icr.io`) noms de domaine. Les signatures existantes fonctionnent lorsque l'image est extraite de l'ancien nom de domaine. Si vous voulez extraire du contenu signé d'un nouveau nom de domaine, vous devez re-signer l'image sur le nouveau nom de domaine, `icr.io` (voir [Re-signature d'une image pour un nouveau nom de domaine](#trustedcontent_resign)).
+{: note}
 
 Docker Content Trust utilise un modèle de sécurité de type "approuver à la première utilisation". La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
 
@@ -91,18 +94,19 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
-   Pour configurer votre client Docker avec la sécurité du contenu, exportez la variable d'environnement suivante :
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   Pour configurer votre client Docker avec la sécurité du contenu,
+   exportez la variable d'environnement suivante :
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Copiez et collez la commande de variable d'environnement dans votre terminal. Par exemple :
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -117,18 +121,18 @@ Au cours de votre session avec Docker Content Trust activé, si vous voulez effe
 Lorsque vous envoyez par commande push une image signée pour la première fois, Docker crée automatiquement une paire de clés de signature : racine (root) et de référentiel. Pour signer une image dans un référentiel où des images signées ont été envoyées auparavant, vous devez disposer de la clé de signature de référentiel correcte chargées sur la machine qui envoie l'image.
 {:shortdesc}
 
-Avant de commencer, [configurez votre espace de nom de registre](/docs/services/Registry/index.html#registry_namespace_add).
+Avant de commencer, [configurez votre espace de nom de registre](/docs/services/Registry?topic=registry-index#registry_namespace_add).
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. [Envoyez votre image par commande push](/docs/services/Registry/index.html#registry_images_pushing). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+2. [Envoyez votre image par commande push](/docs/services/Registry?topic=registry-index#registry_images_pushing). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sont limitées.
+3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sont limitées.
 
 ## Extraction d'une image signée
 {: #trustedcontent_pull}
@@ -138,7 +142,7 @@ La première fois que vous extrayez une image signée avec Docker Content Trust 
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. Extrayez votre image. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par la balise de l'image que vous voulez utiliser, par exemple _latest_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
+2. Extrayez votre image. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par l'étiquette de l'image que vous voulez utiliser, par exemple, _latest_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -147,6 +151,36 @@ La première fois que vous extrayez une image signée avec Docker Content Trust 
 
     Spécifiez la balise lorsque vous extrayez ou envoyez par commande push une image signée. La balise `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.
     {: tip}
+
+## Re-signature d'une image pour un nouveau nom de domaine
+{: #trustedcontent_resign}
+
+Pour re-signer l'image pour le nouveau nom de domaine, `icr.io`, vous devez extraire, étiqueter et envoyer l'image.
+{:shortdesc}
+
+1. Extrayez votre image signée de l'ancien nom de domaine. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par l'étiquette de l'image que vous voulez utiliser, par exemple, _latest_. Pour répertorier les images disponibles pour extraction, exécutez `ibmcloud cr image-list`.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Spécifiez la balise lorsque vous extrayez ou envoyez par commande push une image signée. La balise `latest` est la valeur par défaut uniquement quand la sécurité du contenu est désactivée.
+    {: tip}
+
+2. Exécutez la commande `docker tag` pour le nouveau nom de domaine. Remplacez `<old_domain_name>` par votre ancien nom de domaine, `<new_domain_name>` par votre nouveau nom de domaine, `<repository>` par le nom de votre référentiel et `<tag>` par le nom de votre étiquette.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Transférez votre image (par commande Push) en utilisant le nouveau nom de domaine (voir [Transfert d'images Docker (par commande Push) vers votre espace de nom](/docs/services/Registry?topic=registry-index#registry_images_pushing)). L'étiquette est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## Gestion du contenu sécurisé
 {: #trustedcontent_managetrust}
@@ -218,7 +252,7 @@ Lorsque vous envoyez une image signée à un nouveau référentiel pour la premi
    Si vous avez changé votre répertoire de configuration Docker, recherchez le sous-répertoire `trust` ici.
    {: tip}
 
-Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sont limitées.
+Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sont limitées.
 
 Pour sauvegarder vos clés, consultez la [documentation Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

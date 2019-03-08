@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ subcollection: registry
 在 {{site.data.keyword.registryshort_notm}} CLI 中运行 `ibmcloud cr` 命令。
 {:shortdesc}
 
-有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html)。
+有关支持的命令的信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)。
 
 ## 对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ subcollection: registry
 
 可以将 format 选项用于以下 {{site.data.keyword.registrylong_notm}} 命令。单击命令可查看可用字段及其数据类型的列表。
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 以下代码示例演示了可如何对选项进行格式设置和过滤。
 
@@ -67,11 +67,11 @@ ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .
   **示例输出**
 
   ```
-example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
-    ```
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
+  ```
   {: screen}
 
 - 运行以下 `ibmcloud cr image-inspect` 命令，以显示指定 IBM 公共映像的 IBM 文档的托管位置：
@@ -130,7 +130,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Repository`|字符串|显示映像的存储库。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`Tag`|字符串|显示映像的标记。|
-|`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](/docs/services/va/va_index.html#va_registry_cli)。|
+|`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](/docs/services/va?topic=va-va_index#va_registry_cli)。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> 命令中的可用字段和数据类型" caption-side="top"}
 
 ### `ibmcloud cr image-inspect` 命令中的 Go 模板选项和数据类型
@@ -146,16 +146,16 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Comment`|字符串|显示映像的描述。|
 |`Created`|字符串|显示映像创建时的 [UNIX 时间戳记 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`Container`|字符串|显示已创建映像的容器的标识。|
-|`ContainerConfig`|对象|显示基于此映像启动的容器的缺省配置。请参阅 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的字段详细信息。|
+|`ContainerConfig`|对象|显示基于此映像启动的容器的缺省配置。请参阅 [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config) 中的字段详细信息。|
 |`DockerVersion`|字符串|显示用于构建此映像的 Docker 版本。|
 |`Author`|字符串|显示映像的创建者。|
-|`Config`|对象|显示映像的配置元数据。请参阅 [Config](/docs/services/Registry/registry_cli_reference.html#config) 中的字段详细信息。|
+|`Config`|对象|显示映像的配置元数据。请参阅 [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config) 中的字段详细信息。|
 |`Architecture`|字符串|显示用于构建此映像以及运行此映像所需的处理器体系结构。|
 |`Os`|字符串|显示用于构建此映像以及运行此映像所需的操作系统系列。|
 |`OsVersion`|字符串|显示用于构建此映像的操作系统版本。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`VirtualSize`|整数（64 位）|显示映像中每层大小的总和（以字节为单位）。|
-|`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs) 中的字段详细信息。|
+|`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs) 中的字段详细信息。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> 命令中的可用字段和数据类型" caption-side="top"}
 
 #### Config
@@ -174,7 +174,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`StdinOnce`|布尔值|如果标准输入流在所连接客户机断开连接后关闭，将显示 _true_；如果标准输入流保持打开，将显示 _false_。|
 |`Env`|字符串数组|显示环境变量的列表，格式为键值对。|
 |`Cmd`|字符串数组|描述传递给容器以在启动容器时运行的命令和自变量。|
-|`Healthcheck`|对象|描述如何检查容器是否正常工作。请参阅 [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck) 中的字段详细信息。|
+|`Healthcheck`|对象|描述如何检查容器是否正常工作。请参阅 [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck) 中的字段详细信息。|
 |`ArgsEscaped`|布尔值|如果命令已经转义（特定于 Windows），将显示 true。|
 |`Image`|字符串|显示操作程序传递的映像的名称。|
 |`Volumes`|键值映射|显示安装到容器的卷安装的列表。|

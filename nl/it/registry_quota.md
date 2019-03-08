@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -168,6 +168,6 @@ Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.da
 
     - Attendi l'inizio del nuovo ciclo di fatturazione.
     - Se hai un piano gratuito, [esegui l'upgrade al piano di servizio
-standard](/docs/services/Registry/registry_overview.html#registry_plan_upgrade).
+standard](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
     - Se hai già un piano standard, [imposta i nuovi limiti
 di quota per il traffico di pull](#registry_quota_set).

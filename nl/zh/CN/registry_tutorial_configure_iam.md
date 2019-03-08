@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ subcollection: registry
 
 **开始之前**
 
-- 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry/index.html#index)中的指示信息。
+- 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry?topic=registry-index#index)中的指示信息。
 
-- 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update)。
+- 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
 - 您必须有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
 
@@ -221,7 +221,7 @@ subcollection: registry
 
         这将显示在本教程中创建的三个名称空间（`namespace_a`、`namespace_b` 和 `namespace_c`）。如果看不到这些名称空间，请返回并遵循指示信息以再次创建这些名称空间。
 
-    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry/registry_overview.html#registry_regions)的名称，例如 `us-south`：
+    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名称，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
@@ -250,14 +250,14 @@ subcollection: registry
     2. 通过运行以下命令，将映像标记为 `namespace_a`：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. 通过运行以下命令，将映像标记为 `namespace_b`：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ subcollection: registry
     5. 通过运行以下命令，将映像推送到 `namespace_a`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. 通过运行以下命令，将映像推送到 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ subcollection: registry
     5. 通过运行以下命令来拉出映像：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. 通过运行以下命令，将映像推送到 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ subcollection: registry
     7. 通过运行以下命令，将映像标记为 `namespace_c`：
 
         ```
-        docker tag hello-world registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. 通过运行以下命令，将映像推送到 `namespace_c`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ subcollection: registry
     9. 通过运行以下命令，从 `namespace_c` 中执行拉出：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ subcollection: registry
     1. 通过运行以下命令，登录到 {{site.data.keyword.registrylong_notm}}：
 
         ```
-        docker login -u iamapikey -p <API_Key> registry.<Region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. 通过运行以下命令来拉出映像：
 
         ```
-        docker pull registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ subcollection: registry
     3. 通过运行以下命令，将映像推送到 `namespace_a`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ subcollection: registry
     4. 通过运行以下命令，将映像推送到 `namespace_b`：
 
         ```
-        docker push registry.<Region>.bluemix.net/namespace_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

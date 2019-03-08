@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ Sie können das `container-registry`-CLI-Plug-in dazu verwenden, einen eigenen I
 Führen Sie die `ibmcloud cr`-Befehle in der {{site.data.keyword.registryshort_notm}}-CLI aus.
 {:shortdesc}
 
-Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](/docs/container-registry-cli-plugin/container-registry-cli.html).
+Informationen zu den unterstützten Befehlen finden Sie unter [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
 
 ## CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ Sie können die CLI-Ausgabe ändern, indem Sie die Option 'format' auf zwei vers
 
 Sie können die Option 'format' mit den folgenden {{site.data.keyword.registrylong_notm}}-Befehlen verwenden. Klicken Sie auf einen Befehl, um eine Liste der verfügbaren Felder und ihrer Datentypen anzuzeigen.
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptionen verwenden können.
 
@@ -67,10 +67,10 @@ Die folgenden Codebeispiele zeigen, wie Sie die Formatierungs- und Filteroptione
   **Beispielausgabe**
 
   ```
-  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 
@@ -130,7 +130,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Repository`|Zeichenfolge|Zeigt das Repository des Image an.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
-|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](/docs/services/va/va_index.html#va_registry_cli) beschrieben.|
+|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](/docs/services/va?topic=va-va_index#va_registry_cli) beschrieben.|
 {: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ### Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
@@ -146,16 +146,16 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Comment`|Zeichenfolge|Zeigt die Beschreibung des Image an.|
 |`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Erstellungszeitpunkt des Images an.|
 |`Container`|Zeichenfolge|Zeigt die ID des Containers an, der das Image erstellt hat.|
-|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`DockerVersion`|Zeichenfolge|Zeigt die Docker-Version an, die zum Erstellen dieses Image verwendet wurde.|
 |`Author`|Zeichenfolge|Zeigt den Autor des Image an.|
-|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`Architecture`|Zeichenfolge|Zeigt die Prozessorarchitektur an, die verwendet wurde, um dieses Image zu erstellen, und die erforderlich ist, um das Image auszuführen.|
 |`Os`|Zeichenfolge|Zeigt die Betriebssystemfamilie, die verwendet wurde, um dieses Image zu erstellen, und die zur Ausführung des Image erforderlich ist.|
 |`OsVersion`|Zeichenfolge|Zeigt die Version des Betriebssystems an, die verwendet wurde, um dieses Image zu erstellen.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
-|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
+|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
 {: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
 #### Config
@@ -174,7 +174,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`StdinOnce`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom nach dem Trennen des angefügten Clients geschlossen wird, und _false_, wenn er geöffnet bleibt.|
 |`Env`|Array von Zeichenfolgen|Zeigt die Liste der Umgebungsvariablen in Form von Schlüssel-Wert-Paaren an.|
 |`Cmd`|Array von Zeichenfolgen|Beschreibt die Befehle und Argumente, die an einen Container übergeben werden, um beim Starten des Containers ausgeführt zu werden.|
-|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck).|
 |`ArgsEscaped`|Boolesch|Zeigt 'true' an, wenn der Befehl bereits mit Escapezeichen versehen ist (Windows-spezifisch).|
 |`Image`|Zeichenfolge|Zeigt den Namen des Image an, das vom Operator übergeben wurde.|
 |`Volumes`|Schlüssel-Wert-Zuordnung|Zeigt die Liste der Datenträgermounts an, die an einen Container angehängt sind.|

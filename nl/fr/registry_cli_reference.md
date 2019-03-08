@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
 
@@ -34,7 +34,7 @@ Vous pouvez utiliser le plug-in d'interface de ligne de commande `container-regi
 Exécutez les commandes `ibmcloud cr` dans l'interface de ligne de commande d'{{site.data.keyword.registryshort_notm}}.
 {:shortdesc}
 
-Pour connaître les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html).
+Pour les commandes prises en charge, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
 
 ## Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_listing}
@@ -51,9 +51,9 @@ Vous pouvez modifier la sortie de l'interface de ligne de commande en appliquant
 
 Vous pouvez utiliser l'option format avec les commandes {{site.data.keyword.registrylong_notm}} suivantes. Cliquez sur une commande pour afficher la liste de zones disponibles et des types de données associés.
 
-- [`ibmcloud cr image-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imagelist)
-- [`ibmcloud cr image-inspect`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_imageinspect)
-- [`ibmcloud cr token-list`](/docs/services/Registry/registry_cli_reference.html#registry_cli_listing_tokenlist)
+- [`ibmcloud cr image-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imagelist)
+- [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_imageinspect)
+- [`ibmcloud cr token-list`](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing_tokenlist)
 
 Les exemples de code suivants illustrent la manière dont vous pouvez utiliser les options de formatage et de filtrage.
 
@@ -67,10 +67,10 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
   **Exemple de sortie**
 
   ```
-  example-registry.<region>.bluemix.net/user1/ibmliberty:latest No Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:1 2 Issues
-    example-registry.<region>.bluemix.net/user1/ibmnode:test1 1 Issue
-    example-registry.<region>.bluemix.net/user1/ibmnode2:test2 7 Issues
+  example-<region>.icr.io/user1/ibmliberty:latest No Issues
+  example-<region>.icr.io/user1/ibmnode:1 2 Issues
+  example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+  example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
   ```
   {: screen}
 
@@ -130,7 +130,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Repository`|Chaîne|Affiche le référentiel de l'image.|
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`Tag`|Chaîne|Affiche l'étiquette de l'image.|
-|`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : Status  `string`, IssueCount  `int` et ExemptionCount  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface de ligne de commande](/docs/services/va/va_index.html#va_registry_cli).|
+|`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : Status  `string`, IssueCount  `int` et ExemptionCount  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface de ligne de commande](/docs/services/va?topic=va-va_index#va_registry_cli).|
 {: caption="Tableau 1. Zones et types de données disponibles dans la commande <codeibmcloud cr image-list</code>." caption-side="top"}
 
 ### Options du modèle Go et types de données dans la commande `ibmcloud cr image-inspect`
@@ -146,16 +146,16 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Comment`|Chaîne|Affiche la description de l'image.|
 |`Created`|Chaîne|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où l'image a été créée.|
 |`Container`|Chaîne|Affiche l'ID du conteneur ayant créé l'image.|
-|`ContainerConfig`|Objet|Affiche la configuration par défaut des conteneurs démarrés à partir de cette image. Pour plus de détails sur cette zone, voir [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`ContainerConfig`|Objet|Affiche la configuration par défaut des conteneurs démarrés à partir de cette image. Pour plus de détails sur cette zone, voir [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`DockerVersion`|Chaîne|Affiche la version de Docker utilisée pour la génération de cette image.|
 |`Author`|Chaîne|Affiche l'auteur de l'image.|
-|`Config`|Objet|Affiche les métadonnées de configuration de l'image. Pour plus de détails sur cette zone, voir [Config](/docs/services/Registry/registry_cli_reference.html#config).|
+|`Config`|Objet|Affiche les métadonnées de configuration de l'image. Pour plus de détails sur cette zone, voir [Config](/docs/services/Registry?topic=registry-registry_cli_reference#config).|
 |`Architecture`|Chaîne|Affiche l'architecture de processeur utilisée pour la génération de cette image et requise pour son exécution.|
 |`Os`|Chaîne|Affiche la famille de système d'exploitation utilisée pour la génération de cette image et requise pour son exécution.|
 |`OsVersion`|Chaîne|Affiche la version du système d'exploitation utilisé pour la génération de cette image.|
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`VirtualSize`|Entier (64 bits)|Affiche la somme des tailles de chaque couche de l'image en octets.|
-|`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir [RootFS](/docs/services/Registry/registry_cli_reference.html#rootfs).|
+|`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
 {: caption="Tableau 2. Zones et types de données disponibles dans la commande <codeibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
@@ -174,7 +174,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`StdinOnce`|Booléen|Affiche _true_ si le flux d'entrée standard est fermé après la déconnexion du client associé, et _false_ si le flux d'entrée standard reste ouvert.|
 |`Env`|Tableau de chaînes|Affiche la liste des variables d'environnement sous la forme de paires clé-valeur.|
 |`Cmd`|Tableau de chaînes|Décrit les commandes et les arguments transmis à un conteneur et à exécuter au démarrage de ce dernier.|
-|`Healthcheck`|Objet|Décrit comment vérifier que le conteneur fonctionne correctement. Pour plus de détails sur cette zone, voir [Healthcheck](/docs/services/Registry/registry_cli_reference.html#healthcheck).|
+|`Healthcheck`|Objet|Décrit comment vérifier que le conteneur fonctionne correctement. Pour plus de détails sur cette zone, voir [Healthcheck](/docs/services/Registry?topic=registry-registry_cli_reference#healthcheck).|
 |`ArgsEscaped`|Booléen|Affiche true si la commande fait déjà l'objet d'un échappement (spécifique à Windows).|
 |`Image`|Chaîne|Affiche le nom de l'image transmise par l'opérateur.|
 |`Volumes`|Mappe de valeur de clé|Affiche la liste des montages de volume montés sur un conteneur.|

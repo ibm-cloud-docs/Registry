@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -158,5 +158,5 @@ subcollection: registry
     네임스페이스에서 이미지를 계속 가져오려면 다음 옵션 중 하나를 선택하십시오.
 
     - 다음 청구 주기가 시작될 때까지 기다리십시오.
-    - 무료 플랜인 경우, [표준 서비스 플랜으로 업그레이드](/docs/services/Registry/registry_overview.html#registry_plan_upgrade)하십시오.
+    - 무료 플랜인 경우, [표준 서비스 플랜으로 업그레이드](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)하십시오.
     - 이미 표준 플랜인 경우, [가져오기 트래픽에 대한 새 할당량 한계를 설정](#registry_quota_set)하십시오.

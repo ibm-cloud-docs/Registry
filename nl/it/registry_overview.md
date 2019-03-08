@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -144,7 +144,7 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
 
 **Archiviazione: **
 
-  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry/registry_quota.html#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry/registry_quota.html#registry_quota_set) per riabilitare il push di nuove immagini.
+  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) per riabilitare il push di nuove immagini.
 
   Esempio per il piano standard:
 
@@ -157,7 +157,7 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il pull di alcuna immagine dagli
 spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}
 finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'upgrade al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
-di quota per il traffico di pull](/docs/services/Registry/registry_quota.html#registry_quota_set).
+di quota per il traffico di pull](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Esempio per il piano standard:
 
@@ -241,7 +241,7 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 <dl>
   <dt>Spazio dei nomi</dt>
   <dd>Gli spazi dei nomi sono un modo per organizzare i repository delle tue immagini all'interno di {{site.data.keyword.registrylong_notm}}. Lo spazio dei nomi è associato al tuo account
-{{site.data.keyword.Bluemix_notm}}. Quando configuri il tuo proprio spazio dei nomi in {{site.data.keyword.registrylong_notm}}, lo spazio dei nomi viene aggiunto all'URL del registro nel seguente modo: <code>registry.<em>&lt;regione&gt;</em>.bluemix.net/mio_spazionomi</code>.
+{{site.data.keyword.Bluemix_notm}}. Quando configuri il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}, lo spazio dei nomi viene aggiunto all'URL del registro nel seguente modo: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   Ogni utente nel tuo account {{site.data.keyword.Bluemix_notm}} può visualizzare e gestire le immagini
 memorizzate nel tuo spazio dei nomi del registro. Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
@@ -282,7 +282,7 @@ ambienti di produzione e di preparazione. Se vuoi utilizzare il registro in più
 ogni regione. I nomi degli spazi dei nomi sono univoci nelle regioni. Puoi utilizzare lo stesso nome dello spazio dei nomi per ogni regione, a meno che
 qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale regione.
 
-Puoi controllare l'accesso ai tuoi spazi dei nomi utilizzando le politiche IAM. Per ulteriori informazioni, consulta [Definizione delle politiche del ruolo di accesso utente](/docs/services/Registry/registry_users.html#user).
+Puoi controllare l'accesso ai tuoi spazi dei nomi utilizzando le politiche IAM. Per ulteriori informazioni, consulta [Definizione delle politiche del ruolo di accesso utente](/docs/services/Registry?topic=registry-user#user).
 
 Per lavorare solo con le immagini pubbliche fornite da IBM, non hai bisogno di configurare uno
 spazio dei nomi.
@@ -312,12 +312,39 @@ I registri di {{site.data.keyword.registrylong_notm}} sono disponibili in divers
 ### Regioni locali
 {: #registry_regions_local}
 
-Una regione è un'area geografica a cui si accede da un endpoint dedicato. I registri di {{site.data.keyword.registrylong_notm}} sono disponibili nelle seguenti regioni:
+Una regione locale è un'area geografica a cui si accede da un endpoint dedicato. I nomi del dominio {{site.data.keyword.registrylong_notm}} per le regioni sono stati modificati. I nuovi nomi del dominio sono disponibili nella console e nella CLI.
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+I nomi del dominio vengono mostrati nella seguente tabella.
+
+| Regione del registro locale | Nuovo nome del dominio | Nome del dominio obsoleto |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | Non applicabile |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="Tabella 3. Nomi del dominio per le regioni locali." caption-side="top"}
+
+I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
+{: deprecated}
+
+**Nomi del dominio del controllo vulnerabilità**
+
+I nomi del dominio del controllo vulnerabilità per le regioni sono stati modificati. I nuovi nomi del dominio sono disponibili nella console e nella CLI.
+
+I nuovi nomi del dominio vengono mostrati nella seguente tabella.
+
+| Regione del controllo vulnerabilità locale | Nuovo nome del dominio | Nome del dominio obsoleto |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | Non applicabile |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="Tabella 4. Nomi del dominio per le regioni locali." caption-side="top"}
+
+I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
+{: deprecated}
 
 Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
 
@@ -342,8 +369,20 @@ Dopo aver specificato una diversa regione di destinazione, effettua nuovamente l
 ### Registro globale
 {: #registry_regions_global}
 
-È disponibile un registro globale, che non ha alcuna regione inclusa nel suo nome (`registry.bluemix.net`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro. Per gestire le tue immagini, ad esempio configurando gli spazi dei nomi o inserendo tag e trasmettendo le immagini a un registro, utilizza un [registro regionale locale](#registry_regions_local).
+È disponibile un registro globale, senza alcuna regione inclusa nel proprio nome (`icr.io`). Solo le immagini pubbliche fornite da IBM sono ospitate in questo registro. Per gestire le tue immagini, ad esempio configurando gli spazi dei nomi o inserendo tag e trasmettendo le immagini a un registro, utilizza un [registro regionale locale](#registry_regions_local).
 {:shortdesc}
+
+Il nome del dominio per il registro globale è stato modificato. Il nuovo nome del dominio è disponibile nella console e nella CLI. 
+
+Il nuovo nome del dominio viene mostrato nella seguente tabella.
+
+| Registro | Nuovo nome del dominio | Nome del dominio obsoleto |
+|-----|----|-----------|
+| Globale | `icr.io` | `registry.bluemix.net` |
+{: caption="Tabella 5. Nome del dominio per il registro globale." caption-side="top"}
+
+I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
+{: deprecated}
 
 Puoi indicare come destinazione il registro locale eseguendo il comando `ibmcloud cr region-set`.
 
@@ -354,9 +393,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
+Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 Dopo aver specificato come destinazione il registro globale, esegui il comando `ibmcloud cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
+
+**Nomi del dominio del controllo vulnerabilità**
+
+Il nome del dominio del controllo vulnerabilità globale è stato modificato. Il nuovo nome del dominio è disponibile nella console e nella CLI. 
+
+Il nuovo nome del dominio viene mostrato nella seguente tabella.
+
+| Controllo vulnerabilità | Nuovo nome del dominio | Nome del dominio obsoleto |
+|-----|----|-----------|
+| Globale | `icr.io/va` | `va.bluemix.net` |
+{: caption="Tabella 6. Nome del dominio per il registro globale per il controllo vulnerabilità." caption-side="top"}
+
+I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
+{: deprecated}
 
 ## Supporto per Docker
 {: #docker}

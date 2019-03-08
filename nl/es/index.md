@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -29,7 +29,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} proporciona un registro de imágenes privado multiarrendatario que puede utilizar para almacenar y compartir sus imágenes de Docker con usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información sobre cómo utilizar la consola de {{site.data.keyword.Bluemix_notm}}, consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va/va_index.html).
+La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información sobre cómo utilizar la consola de {{site.data.keyword.Bluemix_notm}}, consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {:tip}
@@ -37,7 +37,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Instale la CLI de [{{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Esta instalación también instala los plugins de CLI para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
+1. Instale la CLI de [{{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para que pueda ejecutar los mandatos de {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Esta instalación también instala los plugins de CLI para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
 
 ## Configure un espacio de nombres
 {: #registry_namespace_add}
@@ -89,17 +89,17 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-3. Etiquete la imagen. Sustituya `<source_image>` por el repositorio y `<tag>` por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya `<region>` por el nombre de su [región](/docs/services/Registry/registry_overview.html#registry_regions). Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry/index.html#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en su espacio de nombres y sustituya `<new_image_repo>` y `<new_tag>`.
+3. Etiquete la imagen. Sustituya `<source_image>` por el repositorio y `<tag>` por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en su espacio de nombres y sustituya `<new_image_repo>` y `<new_tag>`.
 
    ```
-   docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
+   docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Ejemplo, donde `<source_image>` es `hello-world`, `<tag>` es `latest`, `<region>` es `eu-gb`, `<my_namespace>` es `namespace1`, `<new_image_repo>` es `hw_repo` y `<new_tag>` es `1`:
+   Ejemplo, donde `<source_image>` es `hello-world`, `<tag>` es `latest`, `<region>` es `uk`, `<my_namespace>` es `namespace1`, `<new_image_repo>` es `hw_repo` y `<new_tag>` es `1`:
 
    ```
-   docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
    ```
    {: pre}
 
@@ -113,20 +113,19 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry/index.html#registry_namespace_add) y `<image_repo>` y `<tag>` por el repositorio y la etiqueta de la imagen que ha elegido cuando ha etiquetado la imagen.
+2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add) y `<image_repo>` y `<tag>` por el repositorio y la etiqueta de la imagen que ha elegido cuando ha etiquetado la imagen.
 
    ```
-   docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-   ```
-   {: pre}
-
-   Ejemplo, donde `<region>` es `eu-gb`, `<my_namespace>` es `namespace1`, `<image_repo>` es `hw_repo` y `<tag>` es `1`:
-
-   ```
-   docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
    
+   Ejemplo, donde `<region>` es `uk`, `<my_namespace>` es `namespace1`, `<image_repo>` es `hw_repo` y `<tag>` es `1`:
+
+   ```
+   docker push uk.icr.io/namespace1/hw_repo:1
+   ```
+   {: pre}
 
 3. Compruebe que la imagen se ha enviado por push satisfactoriamente ejecutando el siguiente mandato.
 
@@ -139,8 +138,8 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 
 **Qué hacer a continuación**
 
-- [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va/va_index.html)
-- [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry/registry_overview.html#registry_plans)
-- [Almacene y gestione más imágenes en el espacio de nombres](/docs/services/Registry/registry_images_.html)
-- [Definición de políticas de rol de acceso de usuario](/docs/services/Registry/registry_users.html#user)
-- [Configuración de clústeres y nodos de trabajador](/docs/containers/cs_clusters.html#clusters)
+- [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va?topic=va-va_index)
+- [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
+- [Almacene y gestione más imágenes en el espacio de nombres](/docs/services/Registry?topic=registry-registry_images_)
+- [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user)
+- [Configuración de clústeres y nodos de trabajador](/docs/containers?topic=containers-clusters#clusters)

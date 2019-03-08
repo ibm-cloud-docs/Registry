@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -142,7 +142,7 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
 
 **Armazenamento: **
 
-  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.Bluemix_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry/registry_quota.html#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry/registry_quota.html#registry_quota_set) para ativar o envio por push de novas imagens novamente.
+  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.Bluemix_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para ativar o envio por push de novas imagens novamente.
 
   Exemplo para o plano padrão:
 
@@ -155,7 +155,7 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos
 namespaces em sua conta do {{site.data.keyword.Bluemix_notm}}
 até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites
-de cota para tráfego extraído](/docs/services/Registry/registry_quota.html#registry_quota_set).
+de cota para tráfego extraído](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Exemplo para o plano padrão:
 
@@ -239,7 +239,7 @@ exemplo, nomes ou rótulos de imagem).
 <dl>
   <dt>Namespace</dt>
   <dd>Os namespaces são uma maneira de organizar repositórios de suas imagens no {{site.data.keyword.registrylong_notm}}. O namespace está associado à sua
-conta do {{site.data.keyword.Bluemix_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexado à URL de registro conforme a seguir: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
+conta do {{site.data.keyword.Bluemix_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexo à URL de registro como a seguir: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   Cada usuário em sua conta do {{site.data.keyword.Bluemix_notm}} pode
 visualizar e trabalhar com imagens que estão armazenadas em seu namespace de registro. É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção.</dd>
@@ -279,7 +279,7 @@ ambientes temporários e de produção. Se você deseja usar o registro em múlt
 cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que
 alguém já tenha um namespace com esse nome configurado nessa região.
 
-É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry/registry_users.html#user).
+É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry?topic=registry-user#user).
 
 Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
 namespace.
@@ -308,12 +308,39 @@ Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis em v
 ### Regiões locais
 {: #registry_regions_local}
 
-Uma região é uma área geográfica acessada por um terminal dedicado. Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis nas regiões a seguir:
+Uma região local é uma área geográfica que é acessada por um terminal dedicado. Os nomes de domínio do {{site.data.keyword.registrylong_notm}} para as regiões que mudaram. Os novos nomes de domínio estão disponíveis no console e na CLI.
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+Os nomes de domínio são mostrados na tabela a seguir.
+
+| Região de registro local | Novo nome de domínio | Nome do domínio descontinuado |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | Não aplicável |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="Tabela 3. Nomes de domínio para regiões locais." caption-side="top"}
+
+Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
+{: deprecated}
+
+** Nomes de domínio do Vulnerability Advisor **
+
+Os nomes de domínio do Vulnerability Advisor para as regiões mudaram. Os novos nomes de domínio estão disponíveis no console e na CLI.
+
+Os novos nomes de domínio são mostrados na tabela a seguir.
+
+| Região do Local Vulnerability Advisor | Novo nome de domínio | Nome do domínio descontinuado |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | Não aplicável |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="Tabela 4. Nomes de domínio para regiões locais." caption-side="top"}
+
+Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
+{: deprecated}
 
 Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
 
@@ -338,8 +365,20 @@ Depois de destinar uma região diferente, efetue login no registro novamente: `i
 ### Registro Global
 {: #registry_regions_global}
 
-Está disponível um registro global que não tem nenhuma região incluída em seu nome (`registry.bluemix.net`). Somente imagens públicas fornecidas pela IBM são hospedadas nesse registro. Para gerenciar suas próprias imagens, por exemplo, ao configurar namespaces ou identificar e enviar imagens por push para um registro, use um [registro regional local](#registry_regions_local).
+Um registro global está disponível; ele não tem região incluída em seu nome (`icr.io`). Somente imagens públicas que são fornecidas pela IBM são hospedadas nesse registro. Para gerenciar suas próprias imagens, por exemplo, ao configurar namespaces ou identificar e enviar imagens por push para um registro, use um [registro regional local](#registry_regions_local).
 {:shortdesc}
+
+O nome de domínio para o registro global mudou. O novo nome de domínio está disponível no console e na CLI. 
+
+O novo nome de domínio é mostrado na tabela a seguir.
+
+| Registro | Novo nome de domínio | Nome do domínio descontinuado |
+|-----|----|-----------|
+| Global | `icr.io` | `registry.bluemix.net` |
+{: caption="Tabela 5. Nome de domínio para o registro global." caption-side="top"}
+
+Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
+{: deprecated}
 
 É possível destinar o registro global executando o comando `ibmcloud cr region-set`.
 
@@ -350,9 +389,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte a [CLI do {{site.data.keyword.registrylong_notm}}](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set).
+Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
 
 Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
+
+** Nomes de domínio do Vulnerability Advisor **
+
+O nome de domínio do Vulnerability Advisor para global mudou. O novo nome de domínio está disponível no console e na CLI. 
+
+O novo nome de domínio é mostrado na tabela a seguir.
+
+| Consultor de vulnerabilidade | Novo nome de domínio  | Nome do domínio descontinuado |
+|-----|----|-----------|
+| Global | `icr.io/va` | `va.bluemix.net` |
+{: caption="Tabela 6. Nome de domínio para o registro global do Vulnerability Advisor." caption-side="top"}
+
+Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
+{: deprecated}
 
 ## Suporte para o Docker
 {: #docker}

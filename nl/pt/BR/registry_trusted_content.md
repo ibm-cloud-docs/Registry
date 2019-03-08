@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -34,6 +34,9 @@ Um nome de imagem é composto de um repositório e uma tag. Quando você estiver
 repositório usará uma chave de assinatura exclusiva. Cada tag de um repositório usa a chave que pertence ao repositório. Se você tiver várias equipes publicando conteúdo, cada uma em seu próprio repositório dentro de seus namespaces do {{site.data.keyword.registrylong_notm}}, cada equipe poderá usar suas próprias chaves para assinar seu conteúdo para que seja possível verificar se cada imagem é produzida pela equipe apropriada.
 
 Um repositório pode conter tanto conteúdo assinado quanto não assinado. Quando o Docker Content Trust está ativado, é possível acessar o conteúdo assinado em um repositório, mesmo quando há outro conteúdo não assinado ao lado dele.
+
+As imagens têm assinaturas separadas para nomes de domínio antigos (`registry.bluemix.net`) e novos (`icr.io`). As assinaturas existentes funcionam quando a imagem é extraída do nome de domínio antigo. Se você desejar puxar o conteúdo assinado por meio do novo nome de domínio, deverá assinar novamente a imagem no novo nome de domínio, `icr.io`; consulte [Assinando novamente uma imagem para o novo nome de domínio](#trustedcontent_resign).
+{: note}
 
 O Docker Content Trust usa um modelo de segurança "confiança no primeiro uso". A chave do repositório é puxada do servidor de confiança ao puxar uma imagem assinada de um repositório pela primeira vez e essa chave é usada para verificar imagens desse repositório no futuro. Deve-se verificar se você confia no servidor de confiança ou na imagem e em seu publicador antes de puxar o repositório pela primeira vez. Se as informações de confiança no servidor estiverem comprometidas e você não tiver puxado uma imagem do repositório antes, seu cliente Docker poderá puxar as informações comprometidas do servidor de confiança. Se os dados de confiança estiverem comprometidos depois que você puxar a imagem pela primeira vez, nos pulls subsequentes, o cliente Docker não verificará os dados comprometidos e não puxará a imagem. Para obter mais informações sobre como inspecionar dados de confiança para uma imagem, consulte [Visualizando imagens assinadas](#trustedcontent_viewsigned).
 
@@ -92,18 +95,19 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
-   Para configurar o cliente Docker com confiança de conteúdo, exporte a variável de ambiente a seguir:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   Para configurar seu cliente Docker com confiança de conteúdo,
+   exporte a variável de ambiente a seguir:
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Copie e cole o comando da variável de ambiente em seu terminal. Por exemplo:
 
    ```
-   DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net exportação: 4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io: 4443
    ```
    {: pre}
 
@@ -119,18 +123,18 @@ Durante a sessão com o Docker Content Trust ativado, se você desejar executar 
 Quando você envia uma imagem assinada por push pela primeira vez, o Docker cria automaticamente um par de chaves de assinatura: raiz e repositório. Para assinar uma imagem em um repositório no qual as imagens assinadas foram enviadas por push anteriormente, deve-se ter a chave de assinatura do repositório correto carregada na máquina que está enviando a imagem por push.
 {:shortdesc}
 
-Antes de iniciar, [configure o namespace de registro](/docs/services/Registry/index.html#registry_namespace_add).
+Antes de iniciar, [configure o namespace de registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
 
 1. [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2. [Empurre a imagem](/docs/services/Registry/index.html#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
+2. [Empurre a imagem](/docs/services/Registry?topic=registry-index#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) são limitadas.
+3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) são limitadas.
 
 ## Puxando uma imagem assinada
 {: #trustedcontent_pull}
@@ -150,6 +154,37 @@ que você deseja usar, como _latest_. Para listar imagens disponíveis a serem p
 
     Especifique a tag quando enviar por push ou puxar uma imagem assinada. A tag `latest` somente é usada como padrão quando a confiança de conteúdo está desativada.
     {: tip}
+
+## Assinando novamente uma imagem para o novo nome de domínio
+{: #trustedcontent_resign}
+
+Para assinar novamente a imagem para o novo nome de domínio, `icr.io`, deve-se puxar, identificar e enviar por push a imagem.
+{:shortdesc}
+
+1. Puxe sua imagem assinada por meio do nome de domínio antigo. Substitua `<source_image>` pelo repositório da imagem e `<tag>` pela tag da imagem
+que você deseja usar, como _latest_. Para listar imagens disponíveis a serem puxadas, execute `ibmcloud cr image-list`.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Especifique a tag quando enviar por push ou puxar uma imagem assinada. A tag `latest` somente é usada como padrão quando a confiança de conteúdo está desativada.
+    {: tip}
+
+2. Execute o comando `docker tag` para o novo nome de domínio. Substitua `<old_domain_name>`  com seu nome de domínio antigo,  `<new_domain_name>` pelo seu novo nome de domínio, `<repository>` pelo nome do seu repositório e `<tag>`  com o nome de sua tag.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Envie por push sua imagem usando o novo nome de domínio, consulte [Enviar por push imagens do Docker para seu namespace](/docs/services/Registry?topic=registry-index#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## Gerenciando conteúdo confiável
 {: #trustedcontent_managetrust}
@@ -222,7 +257,7 @@ Quando você enviar pela primeira vez uma imagem assinada para um novo repositó
    Se você tiver mudado o diretório de configuração do Docker, procure o subdiretório `trust` lá.
    {: tip}
 
-Deve-se fazer backup de todas as chaves, especialmente da chave raiz. Se uma chave for perdida ou comprometida, as [opções de recuperação](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) serão limitadas.
+Deve-se fazer backup de todas as chaves, especialmente da chave raiz. Se uma chave for perdida ou comprometida, as [opções de recuperação](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) serão limitadas.
 
 Para fazer backup de suas chaves, consulte a
 [documentação do Docker Content Trust

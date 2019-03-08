@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
 
@@ -43,13 +43,13 @@ subcollection: registry
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
-이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry/index.html#registry_images_pulling)를 참조하십시오.
+이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry?topic=registry-index#registry_images_pulling)를 참조하십시오.
 
 `unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
 {:tip}
@@ -66,8 +66,8 @@ subcollection: registry
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - 로컬 컴퓨터에서 이미지 [가져오기](#registry_images_pulling_reg) 또는 [빌드](#registry_images_creating)를 수행하고 네임스페이스 정보로 이미지에 태그를 지정하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
@@ -78,7 +78,7 @@ subcollection: registry
 1. CLI에 로그인하십시오.
 
    ```
-  ibmcloud cr login
+   ibmcloud cr login
    ```
    {: pre}
 
@@ -86,16 +86,16 @@ subcollection: registry
   {:tip}
 
 2. 계정에서 사용 가능한 모든 네임스페이스를 보려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
-3. [네임스페이스에 이미지를 업로드](/docs/services/Registry/index.html#registry_images_pushing)하십시오.
+3. [네임스페이스에 이미지를 업로드](/docs/services/Registry?topic=registry-index#registry_images_pushing)하십시오.
 
    `unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
    {:tip}
 
 이미지를 {{site.data.keyword.registrylong_notm}}에 푸시한 후 다음 태스크 중 하나를 수행할 수 있습니다.
 
-- [Vulnerability Advisor를 사용하여 보안을 관리](/docs/services/va/va_index.html)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
+- [Vulnerability Advisor를 사용하여 보안을 관리](/docs/services/va?topic=va-va_index)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
 - [클러스터를 작성하고
-이 이미지를 사용하여 컨테이너](/docs/containers/container_index.html#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
+이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-container_index#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
 
 ## 레지스트리 간에 이미지 복사
 {: #registry_images_copying}
@@ -107,8 +107,8 @@ subcollection: registry
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -120,9 +120,9 @@ subcollection: registry
 
 이미지를 복사한 후 다음 태스크 중 하나를 수행할 수 있습니다.
 
-- [Vulnerability Advisor를 사용하여 이미지 보안을 관리](/docs/services/va/va_index.html)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
+- [Vulnerability Advisor를 사용하여 이미지 보안을 관리](/docs/services/va?topic=va-va_index)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
 - [클러스터를 작성하고
-이 이미지를 사용하여 컨테이너](/docs/containers/container_index.html#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
+이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-container_index#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
 
 ## 소스 이미지를 참조하는 새 이미지 작성
 {: #registry_images_source}
@@ -134,21 +134,21 @@ subcollection: registry
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - 다른 이미지를 참조할 소스 이미지를 포함하는 {{site.data.keyword.registrylong_notm}}의 개인용 네임스페이스에 대한 액세스 권한이 있는지 확인하십시오.
 
-명령에 대한 자세한 정보는 [`ibmcloud cr image-tag`](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_image_tag)를 참조하십시오.
+명령에 대한 자세한 정보는 [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag)를 참조하십시오.
 
 소스 이미지에서 새 이미지를 작성하려면 다음 단계를 완료하십시오.
 
 1. CLI에 로그인하십시오.
 
    ```
-  ibmcloud cr login
+   ibmcloud cr login
    ```
    {: pre}
 
-2. 다음 명령을 실행하여 새 참조를 추가하십시오. 여기서, `SOURCE_IMAGE`는 소스 이미지의 이름이며 `TARGET_IMAGE`는 대상 이미지의 이름입니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다. `SOURCE_IMAGE` 및 `TARGET_IMAGE`는 `<REPOSITORY>:<TAG>` 형식이어야 합니다(예: `registry.ng.bluemix.net/namespace/image:latest`).
+2. 다음 명령을 실행하여 새 참조를 추가하십시오. 여기서, `SOURCE_IMAGE`는 소스 이미지의 이름이며 `TARGET_IMAGE`는 대상 이미지의 이름입니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다. `SOURCE_IMAGE` 및 `TARGET_IMAGE`는 `<REPOSITORY>:<TAG>` 형식이어야 합니다(예: `us.icr.io/namespace/image:latest`).
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -158,7 +158,7 @@ subcollection: registry
 3. 다음 명령을 실행하여 이미지가 작성되었는지 확인하고 이미지가 소스 이미지와 동일한 이미지 요약으로 목록에 표시되는지 검사하십시오.
 
    ```
-    ibmcloud cr image-list
+   ibmcloud cr image-list
    ```
    {: pre}
 
@@ -170,8 +170,8 @@ subcollection: registry
 
 **시작하기 전에**
 
-- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry/registry_setup_cli_namespace.html#registry_namespace_setup)하십시오.
+- 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -202,9 +202,9 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
      공용 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty(ibmliberty) 이미지를 기반으로 하는 Dockerfile을 작성하려면 다음 코드를 사용하십시오.
 
        ```
-     FROM registry.<region>.bluemix.net/ibmliberty:latest
-     LABEL description="This is my test Dockerfile"
-     EXPOSE 9080
+       FROM <region>.icr.io/ibmliberty:latest
+       LABEL description="This is my test Dockerfile"
+       EXPOSE 9080
        ```
        {: pre}
 
@@ -213,7 +213,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 3. 이미지의 이름을 결정하십시오. 이미지 이름의 형식은 다음과 같아야 합니다.
 
    ```
-  registry.<region>.bluemix.net/<my_namespace>/<repo_name>:<tag>
+   <region>.icr.io/<my_namespace>/<repo_name>:<tag>
    ```
    {: pre}
 
@@ -230,7 +230,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
      여기서 `<image_name>`은 이미지 이름이며 `<directory>`는 디렉토리 경로입니다. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 경우 명령을 실행하면 `<directory>`를 점(.)으로 바꿀 수 있습니다.
   
-     `ibmcloud cr build` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_build)를 참조하십시오.
+     `ibmcloud cr build` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)를 참조하십시오.
 
    - {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 로컬에서 이미지를 빌드하고 테스트하려면 다음 단계를 완료하십시오.
       1. 로컬 컴퓨터의 Dockerfile에서 이미지를 빌드하고 이미지 이름으로 태그를 지정하십시오.
@@ -240,7 +240,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
          ```
          {: pre}
 
-         여기서 `<image_name>`은 이미지 이름이며 `<directory>`는 디렉토리 경로입니다. 
+         여기서 `<image_name>`은 이미지 이름이며 `<directory>`는 디렉토리 경로입니다.
 
       2. 선택사항: 네임스페이스에 이미지를 푸시하기 전에 로컬 컴퓨터에서 이를 테스트하십시오.
 
@@ -249,11 +249,11 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
          ```
          {: pre}
 
-         `<image_name>`을 이미지 이름으로 대체하십시오. 
+         `<image_name>`을 이미지 이름으로 대체하십시오.
 
       3. 이미지를 작성하고 여기에 사용자의 네임스페이스에 대한 태그를 지정한 후에 [{{site.data.keyword.registrylong_notm}}에서 네임스페이스로 이미지를 푸시](#registry_images_pushing_namespace)할 수 있습니다.
 
-Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vulnerability Advisor로 이미지 보안 관리](/docs/services/va/va_index.html)를 참조하십시오.
+Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vulnerability Advisor로 이미지 보안 관리](/docs/services/va?topic=va-va_index)를 참조하십시오.
 
 ## 개인용 {{site.data.keyword.Bluemix_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove}
@@ -283,7 +283,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 2. 이미지를 삭제하려면 다음 명령을 실행하십시오.
 
    ```
-  ibmcloud cr image-rm IMAGE
+   ibmcloud cr image-rm IMAGE
    ```
    {: pre}
 
@@ -297,7 +297,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 3. 다음 명령을 실행하여 이미지가 삭제되었는지 확인하고 이미지가 목록에 표시되지 않는지 검사하십시오.
 
    ```
-    ibmcloud cr image-list
+   ibmcloud cr image-list
    ```
    {: pre}
 

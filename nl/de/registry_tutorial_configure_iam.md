@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial
 
@@ -32,9 +32,9 @@ Dieses Lernprogramm dauert ca. Minuten.
 
 **Vorbereitung**
 
-- Führen Sie die Anweisungen im Abschnitt [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/index.html#index) aus.
+- Führen Sie die Anweisungen im Abschnitt [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index) aus.
 
-- Stellen Sie sicher, dass Sie über die neueste Version des `container-registry`-CLI-Plug-ins für die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle verfügen. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Stellen Sie sicher, dass Sie über die neueste Version des `container-registry`-CLI-Plug-ins für die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle verfügen. Weitere Informationen finden Sie in [`container-registry`-CLI-Plug-in aktualisieren](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 - Sie müssen über Zugriff auf zwei [{{site.data.keyword.cloud_notm}}-Konten ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login) verfügen, die Sie für dieses Lernprogramm verwenden können, eines für Benutzer A und eines für Benutzer B. Diese müssen jeweils eine eindeutige E-Mail-Adresse verwenden. Sie arbeiten in Ihrem eigenen Konto, als Benutzer A, und laden einen anderen Benutzer, Benutzer B, ein, Ihr Konto zu verwenden. Sie können entweder ein zweites {{site.data.keyword.cloud_notm}}-Konto erstellen oder mit einem Kollegen arbeiten, der bereits ein {{site.data.keyword.cloud_notm}}-Konto besitzt.
 
@@ -221,7 +221,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
 
         Die drei Namensbereiche, die Sie in diesem Lernprogramm erstellt haben (`namensbereich_a`, `namensbereich_b` und `namensbereich_c`), werden angezeigt. Wenn diese Namensbereiche nicht angezeigt werden, gehen Sie zurück und führen Sie erneut die Anweisungen zu ihrer Erstellung aus.
 
-    3. Erstellen Sie eine Richtlinie, die Benutzer B die Rolle 'Leseberechtigter' für `namensbereich_b` zuordnet, indem Sie den folgenden Befehl ausführen, wobei _`<Region>`_ der Name Ihrer [Region](/docs/services/Registry/registry_overview.html#registry_regions) ist, z. B. `us-south`:
+    3. Erstellen Sie eine Richtlinie, die Benutzer B die Rolle 'Leseberechtigter' für `namensbereich_b` zuordnet, indem Sie den folgenden Befehl ausführen, wobei _`<Region>`_ der Name Ihrer [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) ist, z. B. `us-south`:
 
         ```
         ibmcloud iam user-policy-create <benutzer.b@beispiel.com> --service-name container-registry --region <region> --resource-type namensbereich --resource <namensbereich_b> --roles Leseberechtigter
@@ -250,14 +250,14 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     2. Kennzeichnen Sie das Image für `namensbereich_a`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker tag hello-world registry.<region>.bluemix.net/namensbereich_a/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Kennzeichnen Sie das Image für `namensbereich_b`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker tag hello-world registry.<region>.bluemix.net/namensbereich_b/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -271,14 +271,14 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     5. Übertragen Sie das Image per Push-Operation an `namensbereich_a`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. Übertragen Sie das Image per Push-Operation an `namensbereich_b`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -317,14 +317,14 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     5. Extrahieren Sie das Image, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker pull registry.<region>.bluemix.net/namensbereich_b/hello-world
+        docker pull <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. Übertragen Sie das Image per Push-Operation an `namensbereich_b`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -333,14 +333,14 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     7. Kennzeichnen Sie das Image mit `namensbereich_c`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker tag hello-world registry.<region>.bluemix.net/namensbereich_c/hello-world
+        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. Übertragen Sie das Image per Push-Operation an `namensbereich_c`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_c/hello-world
+        docker push <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -349,7 +349,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     9. Führen Sie eine Pull-Operation aus `namensbereich_c` durch, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker pull registry.<region>.bluemix.net/namensbereich_c/hello-world
+        docker pull <Region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -428,14 +428,14 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
     1. Melden Sie sich bei {{site.data.keyword.registrylong_notm}} an, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker login -u iamapikey -p <api-schlüssel> registry.<region>.bluemix.net
+        docker login -u iamapikey -p <API_Key> <Region>.icr.io
         ```
         {: pre}
 
     2. Extrahieren Sie Ihr Image, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker pull registry.<region>.bluemix.net/namensbereich_a/hello-world
+        docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -444,7 +444,7 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
     3. Übertragen Sie Ihr Image per Push-Operation an `namensbereich_a`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_a/hello-world
+        docker push <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -453,7 +453,7 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
     4. Übertragen Sie Ihr Image per Push-Operation an `namensbereich_b`, indem Sie den folgenden Befehl ausführen:
 
         ```
-        docker push registry.<region>.bluemix.net/namensbereich_b/hello-world
+        docker push <Region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

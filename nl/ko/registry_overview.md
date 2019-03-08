@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
 
@@ -125,7 +125,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 **스토리지: **
 
-  플랜에 대한 할당량 한계에 도달하거나 초과하면 네임스페이스에서 [이미지를 제거하여 여유 공간을 확보](/docs/services/Registry/registry_quota.html#registry_quota_freeup)하거나 [표준 플랜으로 업그레이드](#registry_plan_upgrade)할 때까지 {{site.data.keyword.Bluemix_notm}} 계정의 네임스페이스에 이미지를 푸시할 수 없습니다. 무료 또는 표준 플랜에서 스토리지에 대한 할당량 한계를 설정한 경우, [이 할당량 한계를 늘려](/docs/services/Registry/registry_quota.html#registry_quota_set) 새 이미지를 푸시할 수 있습니다.
+  플랜에 대한 할당량 한계에 도달하거나 초과하면 네임스페이스에서 [이미지를 제거하여 여유 공간을 확보](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)하거나 [표준 플랜으로 업그레이드](#registry_plan_upgrade)할 때까지 {{site.data.keyword.Bluemix_notm}} 계정의 네임스페이스에 이미지를 푸시할 수 없습니다. 무료 또는 표준 플랜에서 스토리지에 대한 할당량 한계를 설정한 경우, [이 할당량 한계를 늘려](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 새 이미지를 푸시할 수 있습니다.
 
   표준 플랜에 대한 예:
 
@@ -137,7 +137,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
   플랜에 대한 할당량 한계에 도달하거나 이를 초과하면
 다음 청구 기간이 시작되기를 기다리거나, [표준 플랜으로 업그레이드](#registry_plan_upgrade)하거나, [가져오기 트래픽에 대한 할당량
-한계를 늘릴](/docs/services/Registry/registry_quota.html#registry_quota_set) 때까지 {{site.data.keyword.Bluemix_notm}} 계정의
+한계를 늘릴](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 때까지 {{site.data.keyword.Bluemix_notm}} 계정의
 네임스페이스에서 이미지를 가져올 수 없습니다.
 
   표준 플랜에 대한 예:
@@ -174,7 +174,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
    ```
-    ibmcloud login
+   ibmcloud login
    ```
    {: pre}
 
@@ -184,7 +184,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 2. 표준 플랜으로 업그레이드하십시오.
 
    ```
-    ibmcloud cr plan-upgrade standard
+   ibmcloud cr plan-upgrade standard
    ```
    {: pre}
 
@@ -215,7 +215,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>네임스페이스</dt>
-  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code>registry.<em>&lt;region&gt;</em>.bluemix.net/my_namespace</code>.
+  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   {{site.data.keyword.Bluemix_notm}} 계정의 모든 사용자가 레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다.</dd>
 </dl>
@@ -250,7 +250,7 @@ Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집을 �
 
 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.Bluemix_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
 
-IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry/registry_users.html#user)를 참조하십시오.
+IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry?topic=registry-user#user)를 참조하십시오.
 
 IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지 않아도 됩니다.
 
@@ -278,12 +278,39 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 ### 로컬 지역
 {: #registry_regions_local}
 
-지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. {{site.data.keyword.registrylong_notm}} 레지스트리는 다음 지역에서 사용할 수 있습니다.
+로컬 지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. 지역의 {{site.data.keyword.registrylong_notm}} 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
 
-- `ap-south`: `registry.au-syd.bluemix.net`
-- `eu-central`: `registry.eu-de.bluemix.net`
-- `uk-south`: `registry.eu-gb.bluemix.net`
-- `us-south`: `registry.ng.bluemix.net`
+도메인 이름은 다음 표에 나와 있습니다. 
+
+| 로컬 레지스트리 지역 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io` | 해당 사항 없음 |
+| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+{: caption="표 3. 로컬 지역의 도메인 이름" caption-side="top"}
+
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+{: deprecated}
+
+**취약성 어드바이저 도메인 이름**
+
+지역의 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
+
+새 도메인 이름은 다음 표에 나와 있습니다. 
+
+| 로컬 취약성 어드바이저 지역 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
+|-----|----|-----------|
+| `ap-north` | `jp.icr.io/va` | 해당 사항 없음 |
+| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+{: caption="표 4. 로컬 지역의 도메인 이름" caption-side="top"}
+
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+{: deprecated}
 
 모든 레지스트리 아티팩트의 범위는 현재 작업 중인 특정 지역 레지스트리로 지정됩니다. 예를 들어, 네임스페이스, 이미지, 토큰, 할당량 설정 및 플랜 설정은 모두 각 지역 레지스트리에서 개별적으로 관리해야 합니다.
 
@@ -308,8 +335,20 @@ ibmcloud cr region-set eu-central
 ### 글로벌 레지스트리
 {: #registry_regions_global}
 
-글로벌 레지스트리가 사용 가능하며, 해당 이름(`registry.bluemix.net`)에 있는 지역은 포함하지 않습니다. IBM 제공 공용 이미지는 이 레지스트리에서 호스팅됩니다. 네임스페이스를 설정하거나 이미지에 태그를 지정하고 이 이미지를 레지스트리로 푸시하여 고유 이미지를 관리하려면 [로컬 지역 레지스트리](#registry_regions_local)를 사용하십시오.
+글로벌 레지스트리가 사용 가능하며, 해당 이름(`icr.io`)에 포함된 지역은 없습니다. IBM에서 제공하는 공용 이미지만 이 레지스트리에서 호스팅됩니다. 네임스페이스를 설정하거나 이미지에 태그를 지정하고 이 이미지를 레지스트리로 푸시하여 고유 이미지를 관리하려면 [로컬 지역 레지스트리](#registry_regions_local)를 사용하십시오.
 {:shortdesc}
+
+글로벌 레지스트리의 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.  
+
+새 도메인 이름은 다음 표에 나와 있습니다. 
+
+|레지스트리 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
+|-----|----|-----------|
+| 글로벌 | `icr.io` | `registry.bluemix.net` |
+{: caption="표 5. 글로벌 레지스트리의 도메인 이름" caption-side="top"}
+
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+{: deprecated}
 
 `ibmcloud cr region-set` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정할 수 있습니다.
 
@@ -320,9 +359,23 @@ ibmcloud cr region-set global
 ```
 {: pre}
 
-`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/container-registry-cli-plugin/container-registry-cli.html#bx_cr_region_set)를 참조하십시오.
+`ibmcloud cr region-set` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)를 참조하십시오.
 
 글로벌 레지스트리를 대상으로 지정한 후에는 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 가져올 수 있도록 `ibmcloud cr login` 명령을 실행하여 로컬 Docker 디먼을 글로벌 레지스트리에 로그인시키십시오.
+
+**취약성 어드바이저 도메인 이름**
+
+글로벌 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.  
+
+새 도메인 이름은 다음 표에 나와 있습니다. 
+
+|취약성 어드바이저 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
+|-----|----|-----------|
+| 글로벌 | `icr.io/va` | `va.bluemix.net` |
+{: caption="표 6. 취약성 어드바이저를 위한 글로벌 레지스트리의 도메인 이름" caption-side="top"}
+
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+{: deprecated}
 
 ## Docker 지원
 {: #docker}

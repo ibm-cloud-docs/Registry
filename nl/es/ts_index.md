@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
 
@@ -41,9 +41,9 @@ Cuando utilice los foros para formular una pregunta, etiquete la pregunta de man
 - Si tiene preguntas técnica sobre cómo desarrollar o desplegar una app con {{site.data.keyword.registrylong_notm}}, publique su pregunta en [Stack Overflow ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://stackoverflow.com/search?q=+ibm-bluemix) y etiquete la pregunta con `ibm-cloud` y `container-registry`.
 - Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Incluya las etiquetas `ibm-cloud` y `container-registry`.
 
-Consulte [Utilización del Centro de soporte](/docs/get-support/howtogetsupport.html#using-avatar) para obtener más detalles sobre el uso de los foros.
+Consulte [Utilización del Centro de soporte](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) para obtener más detalles sobre el uso de los foros.
 
-Para obtener información sobre cómo abrir una incidencia de soporte de {{site.data.keyword.IBM_notm}} o sobre los niveles de soporte y las gravedades de las incidencias, consulte [¿Cómo puedo obtener la ayuda que necesito?](/docs/get-support/howtogetsupport.html#getting-customer-support)
+Para obtener información sobre cómo abrir una incidencia de soporte de {{site.data.keyword.IBM_notm}}, o sobre los niveles de soporte y la gravedad de las incidencias, consulte [¿Cómo puedo obtener la ayuda que necesito?](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)
 
 ## Falla el inicio de sesión en {{site.data.keyword.registrylong_notm}}
 {: #ts_login}
@@ -62,7 +62,7 @@ El mandato `ibmcloud cr login` falla.
 {: tsResolve}
 Puede solucionar este problema de las siguientes maneras:
 
-- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Asegúrese de que Docker esté instalado en el sistema. Si ya está instalado, reinicie el daemon de Docker.
 - Vuelva a ejecutar el mandato `ibmcloud login` para renovar las credenciales de inicio de sesión en {{site.data.keyword.Bluemix_notm}}.
 
@@ -81,7 +81,7 @@ Todos los mandatos `ibmcloud cr` fallarán.
 {: tsResolve}
 Puede solucionar este problema de la siguiente manera:
 
-- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#registry_cli_update).
+- Actualice a la versión más reciente del plugin de CLI `container-registry`, consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## Los mandatos de {{site.data.keyword.registrylong_notm}} fallan con `'cr' no es un mandato registrado. Consulte 'ibmcloud help'.`
 {: #ts_login_error}
@@ -110,7 +110,7 @@ ibmcloud cr namespace
 {: tsResolve}
 Puede solucionar este problema de la siguiente manera:
 
-- Instale el plugin de CLI `container-registry`. Consulte [Instalación del plugin de CLI `container-registry`](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install).
+- Instale el plugin de CLI `container-registry`, consulte [Instalación del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## El mandato `ibmcloud cr build` falla
 {: #ts_build_fails}
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - Si la compilación local no funciona, compruebe si existe algún problema con el Dockerfile.
-- Si la compilación local funciona, [póngase en contacto con el equipo de soporte de {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support).
+- Si la compilación local funciona, [póngase en contacto con el equipo de soporte de {{site.data.keyword.Bluemix_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Error de configuración de un espacio de nombres
 {: #ts_problem}
@@ -192,10 +192,10 @@ denegado: se ha denegado el acceso al recurso
 {: tsResolve}
 Puede solucionar este problema de las siguientes maneras:
 
-- [Asegúrese de que Docker esté instalado en el sistema](/docs/services/Registry/index.html#registry_cli_install).
+- [Asegúrese de que Docker esté instalado en el sistema](/docs/services/Registry?topic=registry-index#registry_cli_install).
 - Compruebe la vía de acceso de instalación de Docker.
 - Inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `ibmcloud login`. Luego inicie una sesión en la CLI de {{site.data.keyword.registrylong_notm}} con el mandato `ibmcloud cr login`.
-- [Revisión de los límites de cuota y del uso para almacenar y extraer imágenes de Docker en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry/registry_quota.html#registry_quota_get).
+- [Revisión de los límites de cuota y del uso para almacenar y extraer imágenes de Docker en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## No se puede extraer la imagen más reciente utilizando la etiqueta `latest`
 {: #ts_docker_latest}
@@ -223,8 +223,8 @@ Los paquetes de software como las imágenes y las gráficas de Helm de IBM Passp
 
 - Inicie sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `ibmcloud login [--sso]`.
 - Inicie sesión en {{site.data.keyword.registrylong_notm}} con el mandato `ibmcloud cr login`.
-- [Establezca la CLI de `kubectl`](/docs/containers/cs_cli_install.html#cs_cli_configure) en el clúster.
-- Si aún no ha establecido Helm en el clúster, [configure Helm en el clúster ahora](/docs/containers/cs_integrations.html#helm).
+- [Establezca la CLI de `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) en el clúster.
+- Si aún no ha establecido Helm en el clúster, [configure Helm en el clúster ahora](/docs/containers?topic=containers-integrations#helm).
 - Si desea compartir las gráficas dentro de la organización, puede instalar el [proyecto de código abierto de Chart Museum ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). Para obtener instrucciones, consulte este [enlace de developerWorks ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importación de productos de IBM Passport Advantage para utilizarlos en {{site.data.keyword.Bluemix_notm}}
@@ -257,12 +257,12 @@ Los paquetes de software como las imágenes y las gráficas de Helm de IBM Passp
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
     Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'registry.ng.bluemix.net/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
-    The push refers to repository [registry.ng.bluemix.net/mynamespace/iib-prod]
-    1ecda25d51a8: Preparing
-    369bf331939e: Preparing
-    ...
+   The push refers to repository [us.icr.io/mynamespace/iib-prod]
+   1ecda25d51a8: Preparing
+   369bf331939e: Preparing
+   ...
    369bf331939e: Pushed
     1ecda25d51a8: Pushed
     10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
@@ -305,7 +305,7 @@ para permitir la comunicación a y desde el registro.
 
 {: tsResolve}
 
-Deje que el clúster acceda a los servicios y recursos de la infraestructura desde detrás de un cortafuegos; consulte [Cómo permitir al clúster acceder a recursos de infraestructura y otros servicios](/docs/containers/cs_firewall.html#firewall_outbound).
+Deje que el clúster acceda a los servicios y recursos de la infraestructura desde detrás de un cortafuegos; consulte [Cómo permitir al clúster acceder a recursos de infraestructura y otros servicios](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 Para la conectividad ENTRANTE a su sistema, permita el tráfico de red entrante desde los
 grupos de red de origen a la dirección IP pública de destino del sistema.
@@ -317,7 +317,7 @@ desde la dirección IP pública de origen del sistema a los grupos de red.
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-Al utilizar [contenido de confianza](/docs/services/Registry/registry_trusted_content.html#registry_trustedcontent), ya no podrá gestionar las imágenes de confianza porque sus claves de firma están perdidas o en peligro.
+Al utilizar [contenido de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent), ya no podrá gestionar las imágenes de confianza porque sus claves de firma están perdidas o en peligro.
 
 {: tsCauses}
 Su repositorio o clave raíz está perdido o en peligro.
@@ -337,13 +337,13 @@ Si su clave de repositorio está perdida o en peligro, genere un nuevo conjunto 
 El único rol de firma que puede rotar es `targets`, que es el administrador del repositorio. Si hay otros roles afectados, genere claves nuevas para dichas funciones, elimine las antiguas y añada las nuevas como firmantes.
 {:tip}
 
-Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado al [enviar una imagen firmada](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push) en primer lugar.
+Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado al [enviar una imagen firmada](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) en primer lugar.
 
 1. Instale la versión de CLI del [proyecto Notary ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
 
-2. [Configure su entorno de contenido de confianza](/docs/services/Registry/registry_trusted_content.html#trustedcontent_setup).
+2. [Configure su entorno de contenido de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Anota el URL desde el mandato export en el paso anterior. Por ejemplo, `https://registry.ng.bluemix.net:4443`
+3. Anota el URL desde el mandato export en el paso anterior. Por ejemplo, `https://us.icr.io:4443`
 
 4. Genere una señal de registro.
 
@@ -361,7 +361,7 @@ Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado 
 
 6. Si se le solicita, especifique la frase de contraseña de clave raíz. A continuación, especifique una nueva frase de contraseña de clave raíz para la nueva clave de repositorio cuando se le solicite.
 
-7. [Envíe una imagen firmada](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push) que utilice las nuevas claves de firma.
+7. [Envíe una imagen firmada](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) que utilice las nuevas claves de firma.
 
 ### Claves raíz
 {: #trustedcontent_lostrootkey}
@@ -369,11 +369,11 @@ Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado 
 Si la clave raíz se ha perdido o está en peligro, no podrá actualizar ningún repositorio de contenido de confianza que haya utilizado dicha clave raíz.
 {:shortdesc}
 
-Puede [suprimir los espacios de nombres](/docs/services/Registry/registry_setup_cli_namespace.html#registry_remove) que tengan repositorios que utilicen la clave raíz afectada, lo que suprime las imágenes y los datos de confianza.
+Puede [suprimir los espacios de nombres](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove) que tengan repositorios que utilicen la clave raíz afectada, lo que suprime las imágenes y los datos de confianza.
 
 Si el espacio de nombres contiene repositorios con las claves raíz sin afectar, como un espacio de nombres para imágenes de producción, es posible que desee suprimir solo los datos de confianza asociados con la clave raíz afectada. Abra una incidencia de soporte.
 
-1. [Póngase en contacto con el soporte de {{site.data.keyword.Bluemix_notm}}](/docs/get-support/howtogetsupport.html#getting-customer-support). Incluya una breve descripción del problema, el ID de la cuenta y una lista de los espacios de nombres que contienen los repositorios de imágenes con las claves raíz afectadas.
+1. [Póngase en contacto con el soporte de {{site.data.keyword.Bluemix_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Incluya una breve descripción del problema, el ID de la cuenta y una lista de los espacios de nombres que contienen los repositorios de imágenes con las claves raíz afectadas.
 
 2. Una vez que {{site.data.keyword.Bluemix_notm}} resuelva el problema, suprima el repositorio Docker Content Trust en su sistema local.
 
@@ -384,7 +384,7 @@ Si el espacio de nombres contiene repositorios con las claves raíz sin afectar,
    Puesto que la clave raíz está afectada, este paso suprime todas las claves de firma, incluso para otros servidores de confianza.
    {:tip}
 
-3. Si utiliza [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry/registry_security_enforce.html#security_enforce) en el clúster de {{site.data.keyword.containershort_notm}}, reinicie todos los pods de imposición de imágenes. Para hacer que Kubernetes realice un reinicio continuo de los pods automáticamente, puede cambiar algunos metadatos en el pod. Por ejemplo, [apunte la CLI de Kubernetes al clúster](/docs/containers/cs_cli_install.html#cs_cli_configure) y modifique el despliegue.
+3. Si utiliza [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) en el clúster de {{site.data.keyword.containershort_notm}}, reinicie todos los pods de imposición de imágenes. Para hacer que Kubernetes realice un reinicio continuo de los pods automáticamente, puede cambiar algunos metadatos en el pod. Por ejemplo, [apunte la CLI de Kubernetes al clúster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) y modifique el despliegue.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -393,7 +393,7 @@ Si el espacio de nombres contiene repositorios con las claves raíz sin afectar,
 
 4. Genere repositorios de contenido de confianza.
 
-    - Si desea crear nuevo contenido de confianza, [envíe nuevas imágenes firmadas](/docs/services/Registry/registry_trusted_content.html#trustedcontent_push).
+    - Si desea crear nuevo contenido de confianza, [envíe nuevas imágenes firmadas](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
 
     - Si no desea cambiar el contenido de confianza anterior, añada una firma a las imágenes más recientes del registro.
 
@@ -447,7 +447,7 @@ en estos recursos:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Para obtener más información sobre RBAC, consulte [Autorización de usuarios con roles de RBAC de Kubernetes personalizados](/docs/containers/cs_users.html#rbac) y [Kubernetes: Utilización de la autorización de RBAC
+Para obtener más información sobre RBAC, consulte [Autorización de usuarios con roles de RBAC de Kubernetes personalizados](/docs/containers?topic=containers-users#rbac) y [Kubernetes: Utilización de la autorización de RBAC
 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Complete los pasos siguientes para cambiar la configuración de webhook para dejarla abierta en lugar de cerrada y, a continuación, con al menos un pod de Container Image Security Enforcement en ejecución, restaure la configuración del webhook para que se quede cerrado:
@@ -556,7 +556,7 @@ Para solucionar el problema, realice los pasos siguientes:
    ```
    {: pre}
 
-4. Etiquete la imagen mediante el mandato `ibmcloud cr image-tag`. Consulte [Creación de imágenes nuevas que hacen referencia a una imagen de origen](/docs/services/Registry/registry_images_.html#registry_images_source).
+4. Etiquete la imagen mediante el mandato `ibmcloud cr image-tag`. Consulte [Creación de imágenes nuevas que hacen referencia a una imagen de origen](/docs/services/Registry?topic=registry-registry_images_#registry_images_source).
 
 ## El inicio de sesión de Docker falla en un Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: #ts_docker_mac}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-25"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
 
@@ -29,7 +29,7 @@ subcollection: registry
 O {{site.data.keyword.registrylong}} fornece um registro de imagem privada de diversos locatários que pode ser usada para armazenar e compartilhar as imagens do Docker com usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
-O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, consulte [Gerenciando a segurança da imagem com o Vulnerability Advisor](/docs/services/va/va_index.html).
+O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, consulte [Gerenciando a segurança da imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
@@ -38,8 +38,7 @@ exemplo, nomes ou rótulos de imagem).
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
 
-1. Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview) para que
-você possa executar os comandos `ibmcloud` do {{site.data.keyword.Bluemix_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
+1. Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para que seja possível executar os comandos `ibmcloud` do {{site.data.keyword.Bluemix_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
 
 ## Configurar um namespace
 {: #registry_namespace_add}
@@ -95,18 +94,18 @@ da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _late
 
 3. Identifique a imagem. Substitua `<source_image>` pelo repositório e `<tag>` pela tag de sua
 imagem local cujo pull você fez anteriormente. Substitua `<region>` pelo nome de sua
-[região](/docs/services/Registry/registry_overview.html#registry_regions). Substitua `<my_namespace>` pelo namespace criado em [Configurar
-um namespace](/docs/services/Registry/index.html#registry_namespace_add). Defina o repositório e a tag da imagem que você deseja usar em seu namespace substituindo <new_image_repo>  e  <new_tag>.
+[região](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Substitua `<my_namespace>` pelo namespace criado em [Configurar
+um namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add). Defina o repositório e a tag da imagem que você deseja usar em seu namespace substituindo <new_image_repo>  e  <new_tag>.
 
    ```
-   docker tag <source_image>:<tag> registry.<region>.bluemix.net/<my_namespace>/<new_image_repo>:<new_tag>
+   docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>` é `eu-gb`, `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
+   Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
 
    ```
-   docker tag hello-world:latest registry.eu-gb.bluemix.net/namespace1 /hw_repo: 1
+   docker tag hello-world:latest uk.icr.io/namespace1 /hw_repo: 1
    ```
    {: pre}
 
@@ -121,21 +120,20 @@ um namespace](/docs/services/Registry/index.html#registry_namespace_add). Defina
    {: pre}
 
 2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua `<my_namespace>` pelo
-namespace criado em [Configurar um namespace](/docs/services/Registry/index.html#registry_namespace_add) e `<image_repo>`  e  `<tag>` pelo repositório e pela tag da imagem escolhidos ao identificar a imagem.
+namespace criado em [Configurar um namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add) e `<image_repo>`  e  `<tag>` pelo repositório e pela tag da imagem escolhidos ao identificar a imagem.
 
    ```
-   docker push registry.<region>.bluemix.net/<my_namespace>/<image_repo>:<tag>
-   ```
-   {: pre}
-
-   Veja este exemplo, em que `<region>` é `eu-gb`, `<my_namespace>` é `namespace1`,
-`<image_repo>` é `hw_repo` e `<tag>` é `1`:
-
-   ```
-   docker push registry.eu-gb.bluemix.net/namespace1/hw_repo:1
+   docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
    
+   Veja este exemplo, em que `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`,
+`<image_repo>` é `hw_repo` e `<tag>` é `1`:
+
+   ```
+   docker push uk.icr.io/namespace1 /hw_repo: 1
+   ```
+   {: pre}
 
 3. Verifique se a imagem foi enviada por push com sucesso executando o comando a seguir.
 
@@ -148,8 +146,8 @@ Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_
 
 **O que Vem a Seguir?**
 
-- [Gerenciar segurança de imagem com o Vulnerability Advisor](/docs/services/va/va_index.html)
-- [Revisar seus planos de serviço e uso](/docs/services/Registry/registry_overview.html#registry_plans)
-- [Armazenar e gerenciar mais imagens em seu namespace](/docs/services/Registry/registry_images_.html)
-- [Definindo políticas de função de acesso do usuário](/docs/services/Registry/registry_users.html#user)
-- [Configurar clusters e nós do trabalhador](/docs/containers/cs_clusters.html#clusters)
+- [Gerenciar segurança de imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index)
+- [Revisar seus planos de serviço e uso](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
+- [Armazenar e gerenciar mais imagens em seu namespace](/docs/services/Registry?topic=registry-registry_images_)
+- [Definindo políticas de função de acesso do usuário](/docs/services/Registry?topic=registry-user#user)
+- [Configurar clusters e nós do trabalhador](/docs/containers?topic=containers-clusters#clusters)

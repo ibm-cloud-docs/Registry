@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, API keys, tokens
 
@@ -28,18 +28,18 @@ subcollection: registry
 您可以使用登錄記號或 {{site.data.keyword.iamlong}} (IAM) API 金鑰來自動化 {{site.data.keyword.registrylong_notm}} 名稱空間的存取，以推送及取回映像檔。
 {:shortdesc}
 
-您嘗試在 Kubernetes 部署中使用您的登錄映像檔嗎？請參閱[存取其他 Kubernetes 名稱空間、{{site.data.keyword.Bluemix_notm}} 地區及帳戶中的映像檔](/docs/containers/cs_images.html#other)。
+您嘗試在 Kubernetes 部署中使用您的登錄映像檔嗎？請參閱[存取其他 Kubernetes 名稱空間、{{site.data.keyword.Bluemix_notm}} 地區及帳戶中的映像檔](/docs/containers?topic=containers-images#other)。
 {: tip}
 
 API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.Bluemix_notm}} 使用，因此您不需要為每一個服務提供不同的認證。您可以在 CLI 中使用 API 金鑰，也可以在以您的使用者身分自動登入的過程中使用。
 
 登錄記號的範圍僅限於 {{site.data.keyword.registrylong_notm}}。您可以將其限制為唯讀存取，也可以選擇它們是否會到期。
 
-如果您使用 API 金鑰，則可以使用 IAM 原則來控制對名稱空間的存取權。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry/registry_users.html#user)。
+如果您使用 API 金鑰，則可以使用 IAM 原則來控制對名稱空間的存取權。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
 
-如需 {{site.data.keyword.registrylong_notm}} API 金鑰的相關資訊，請參閱[使用 API 金鑰](/docs/iam/apikeys.html#manapikey)。
+如需 {{site.data.keyword.registrylong_notm}} API 金鑰的相關資訊，請參閱[使用 API 金鑰](/docs/iam?topic=iam-manapikey#manapikey)。
 
-開始之前，請[安裝 {{site.data.keyword.registrylong_notm}} 及 Docker CLI](/docs/services/Registry/registry_setup_cli_namespace.html#cli_namespace_registry_cli_install)。
+開始之前，請[安裝 {{site.data.keyword.registrylong_notm}} 及 Docker CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 
 ## 使用 API 金鑰自動化名稱空間的存取
 {: #registry_api_key}
@@ -55,8 +55,8 @@ API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.Bluemix_notm}} 使�
 
 您可以建立使用者 API 金鑰及服務 ID API 金鑰。
 
-- 若要建立服務 ID API 金鑰，請參閱[建立服務 ID 的 API 金鑰](/docs/iam/serviceid_keys.html#creating-an-api-key-for-a-service-id)。
-- 若要建立使用者 API 金鑰，請參閱[建立 API 金鑰](/docs/iam/userid_keys.html#creating-an-api-key)。
+- 若要建立服務 ID API 金鑰，請參閱[建立服務 ID 的 API 金鑰](/docs/iam?topic=iam-serviceidapikeys#create_service_key)。
+- 若要建立使用者 API 金鑰，請參閱[建立 API 金鑰](/docs/iam?topic=iam-userapikey#create_user_key)。
 
 ### 使用 API 金鑰以自動化存取
 {: #registry_api_key_use}
@@ -66,23 +66,27 @@ API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.Bluemix_notm}} 使�
 
 請執行下列 Docker 指令，以使用 API 金鑰登入您的登錄。將 `<your_apikey>` 取代為您的 API 金鑰，並將 `<registry_url>` 取代為已設定名稱空間之登錄的 URL。
 
-- 針對美國南部中所設定的名稱空間，使用 `registry.ng.bluemix.net`
-- 針對英國南部中所設定的名稱空間，使用 `registry.eu-gb.bluemix.net`
-- 針對歐盟中部中所設定的名稱空間，使用 `registry.eu-de.bluemix.net`
-- 針對亞太地區南部中所設定的名稱空間，使用 `registry.au-syd.bluemix.net`
+- 針對亞太地區北部中所設定的名稱空間，使用 `jp.icr.io`
+- 針對亞太地區南部中所設定的名稱空間，使用 `au.icr.io`
+- 針對歐盟中部中所設定的名稱空間，使用 `de.icr.io`
+- 針對英國南部中所設定的名稱空間，使用 `uk.icr.io`
+- 針對美國南部中所設定的名稱空間，使用 `us.icr.io`
 
 ```
 docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-如需指令的相關參考資訊，請參閱[建立新的 {{site.data.keyword.Bluemix_notm}} 平台 API 金鑰](/docs/cli/reference/ibmcloud/cli_api_policy.html#ibmcloud_iam_api_key_create)。
+如需指令的相關參考資訊，請參閱[建立新的 {{site.data.keyword.Bluemix_notm}} 平台 API 金鑰](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
 
-## 使用記號自動化名稱空間的存取
+## 使用記號自動化名稱空間的存取（已淘汰）
 {: #registry_tokens}
 
 您可以使用記號，以自動化將 Docker 映像檔推送至 {{site.data.keyword.registrylong_notm}} 名稱空間以及從其中取回 Docker 映像檔的作業。
 {:shortdesc}
+
+使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+{: deprecated}
 
 擁有登錄記號的每個人都可以存取受保護的資訊。如果想要讓帳戶外的使用者可以存取您在某一地區中設定的所有名稱空間，您可以針對 {{site.data.keyword.Bluemix_notm}} 帳戶建立一個記號。每個擁有此記號的使用者或應用程式都可以將映像檔推送至名稱空間以及從中取回映像檔，而不需要安裝 `container-registry` CLI 外掛程式。
 
@@ -96,17 +100,20 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 - [使用記號自動化名稱空間的存取](#registry_tokens_use)
 - [從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除記號](#registry_tokens_remove)
 
-### 建立 {{site.data.keyword.Bluemix_notm}} 帳戶的記號
+### 建立 {{site.data.keyword.Bluemix_notm}} 帳戶的記號（已淘汰）
 {: #registry_tokens_create}
 
 您可以建立記號，來授與對地區中所有 {{site.data.keyword.registrylong_notm}} 名稱空間的存取權。
 {:shortdesc}
 
+使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+{: deprecated}
+
 1. 建立記號。下列範例會建立不會到期的記號，它具有對地區中已設定之所有名稱空間的讀寫權。
 
    ```
-    ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
-    ```
+   ibmcloud cr token-add --description "This is a token" --non-expiring --readwrite
+   ```
    {: pre}
 
    <table>
@@ -141,28 +148,31 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 2. 驗證已建立記號。
 
    ```
-    ibmcloud cr token-list
-    ```
+   ibmcloud cr token-list
+   ```
    {: pre}
 
-### 使用記號自動化名稱空間的存取
+### 使用記號自動化名稱空間的存取（已淘汰）
 {: #registry_tokens_use}
 
 您可以在 `docker login` 指令中使用記號，以自動化 {{site.data.keyword.registrylong_notm}} 名稱空間的存取。取決於您設定記號的唯讀權還是讀寫權，使用者可以將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
+使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+{: deprecated}
+
 1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
    ```
-    ibmcloud login
-    ```
+   ibmcloud login
+   ```
    {: pre}
 
 2. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶中的所有記號，並記下您要使用的記號 ID。
 
    ```
-    ibmcloud cr token-list
-    ```
+   ibmcloud cr token-list
+   ```
    {: pre}
 
 3. 擷取記號的記號值。將 `<token_id>` 取代為記號的 ID。
@@ -176,14 +186,15 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 4. 在 `docker login` 指令中使用記號。將 `<token_value>` 取代為您在上一步所擷取的記號值，並將 `<registry_url>` 取代為已設定名稱空間之登錄的 URL。
 
-   - 針對美國南部中所設定的名稱空間，使用 `registry.ng.bluemix.net`
-   - 針對英國南部中所設定的名稱空間，使用 `registry.eu-gb.bluemix.net`
-   - 針對歐盟中部中所設定的名稱空間，使用 `registry.eu-de.bluemix.net`
-   - 針對亞太地區南部中所設定的名稱空間，使用 `registry.au-syd.bluemix.net`
+   - 針對亞太地區北部中所設定的名稱空間，使用 `jp.icr.io`
+   - 針對亞太地區南部中所設定的名稱空間，使用 `au.icr.io`
+   - 針對歐盟中部中所設定的名稱空間，使用 `de.icr.io`
+   - 針對英國南部中所設定的名稱空間，使用 `uk.icr.io`
+   - 針對美國南部中所設定的名稱空間，使用 `us.icr.io`
 
    ```
-docker login -u token -p <token_value> <registry_url>
-    ```
+   docker login -u token -p <token_value> <registry_url>
+   ```
    {: pre}
 
    針對 `-u` 參數，確定您鍵入字串 `token`，而非記號 ID。
@@ -191,11 +202,14 @@ docker login -u token -p <token_value> <registry_url>
 
    在使用記號登入 Docker 之後，您可以將映像檔推送至名稱空間或從中取回映像檔。
 
-### 從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除記號
+### 從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除記號（已淘汰）
 {: #registry_tokens_remove}
 
 當您不再需要 {{site.data.keyword.registrylong_notm}} 記號時，請將它移除。
 {:shortdesc}
+
+使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+{: deprecated}
 
 會自動從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除到期的 {{site.data.keyword.registrylong_notm}} 記號，不需要手動移除。
 {:tip}
@@ -203,22 +217,22 @@ docker login -u token -p <token_value> <registry_url>
 1. 登入 {{site.data.keyword.Bluemix_notm}}。
 
    ```
-    ibmcloud login
-    ```
+   ibmcloud login
+   ```
    {: pre}
 
 2. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶中的所有記號，並記下您要移除的記號 ID。
 
    ```
-    ibmcloud cr token-list
-    ```
+   ibmcloud cr token-list
+   ```
    {: pre}
 
 3. 移除記號。
 
    ```
-    ibmcloud cr token-rm <token_id>
-    ```
+   ibmcloud cr token-rm <token_id>
+   ```
    {: pre}
 
 ## 所有用戶端的鑑別選項
@@ -234,16 +248,19 @@ docker login -u token -p <token_value> <registry_url>
 - `iambearer` 密碼包含 IAM 存取記號。這種鑑別存在時間很短，但可以從所有類型的 IAM 身分衍生。
 - `iamrefresh` 密碼必須包含 IAM 重新整理記號，其在內部用來產生及重新整理 IAM 存取記號。這種鑑別存在時間較長，並且由 `ibmcloud cr login` 指令使用。
 - `iamapikey` 密碼是一個 IAM API 金鑰。這種鑑別是自動化的偏好類型。您可以使用使用者或服務 ID API 金鑰，請參閱[建立 API 金鑰](#registry_api_key_create)。
-- `token` 密碼是一個登錄記號。您可以將這個使用者名稱用於自動化。
+- `token`（已淘汰）密碼是一個登錄記號。您可以將這個使用者名稱用於自動化。
+
+  使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+  {: deprecated}
 
 您不需要使用 `docker` 指令即可向登錄進行鑑別。例如，您可以使用 Cloud Foundry CLI，從登錄的映像檔中啟動 Cloud Foundry 應用程式：
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o registry.<region>.bluemix.net/<my_namespace>/<image_repo> --docker-username iamapikey
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
 ```
 {: pre}
 
-請將 `<apikey>` 取代為您的 API 金鑰、將 `<region>` 取代為[地區](/docs/services/Registry/registry_overview.html#registry_regions)的名稱、將 `<my_namespace>` 取代為名稱空間，以及將 `<image_repo>` 取代為儲存庫。
+請將 `<apikey>` 取代為您的 API 金鑰、將 `<region>` 取代為[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名稱、將 `<my_namespace>` 取代為名稱空間，以及將 `<image_repo>` 取代為儲存庫。
 
-如需相關資訊，請參閱[使用專用映像檔登錄](/docs/services/ContinuousDelivery/pipeline_custom_docker_images.html#private_image_registry)。
+如需相關資訊，請參閱[使用專用映像檔登錄](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。

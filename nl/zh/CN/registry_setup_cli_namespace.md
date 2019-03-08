@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
 
@@ -31,7 +31,7 @@ subcollection: registry
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {:tip}
 
-开始之前，安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
+开始之前，安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
 ## 安装 `container-registry` CLI 插件
 {: #cli_namespace_registry_cli_install}
@@ -39,7 +39,7 @@ subcollection: registry
 安装 `container-registry` CLI 插件，以使用命令行在 {{site.data.keyword.registrylong_notm}} 中管理名称空间和 Docker 映像。
 {:shortdesc}
 
-1. [安装 `container-registry` CLI 插件](/docs/services/Registry/index.html#registry_cli_install)。
+1. [安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-index#registry_cli_install)。
 2. 可选：[配置 Docker 客户机以在没有 root 用户许可权的情况下运行命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 **docker push** 命令。
 
 现在，您可以在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间。
@@ -94,13 +94,12 @@ subcollection: registry
 
 **开始之前**
 
-- [安装 {{site.data.keyword.Bluemix_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry/index.html#registry_cli_install)。
-- [规划如何使用注册表名称空间并为其命名](/docs/services/Registry/registry_overview.html#registry_namespaces)。
+- [安装 {{site.data.keyword.Bluemix_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-index#registry_cli_install)。
+- [规划如何使用注册表名称空间并为其命名](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-创建名称空间；请参阅“入门”文档中的[设置名称空间](/docs/services/Registry/index.html#registry_namespace_add)。
+创建名称空间；请参阅“入门”文档中的[设置名称空间](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
 
-现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry/registry_images_.html#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。
-
+现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。
 
 ## 除去名称空间
 {: #registry_remove}

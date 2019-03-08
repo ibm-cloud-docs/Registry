@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-27"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys
 
@@ -33,6 +33,9 @@ Quando esegui il push della tua immagine con i contenuti attendibili abilitati, 
 Un nome immagine è costituito da un repository e una tag. Quando utilizzi contenuto attendibile, ciascun repository utilizza una chiave di firma univoca. Ogni tag all'interno di un repository utilizza la chiave che appartiene al repository. Se ci sono più team che pubblicano dei contenuti, ciascuno nel proprio repository all'interno dei tuoi spazi dei nomi di {{site.data.keyword.registrylong_notm}}, ogni team può utilizzare le proprie chiavi per firmare i propri contenuti, in modo che tu possa verificare che ogni immagine sia prodotta dal team appropriato.
 
 Un repository può contenere sia contenuti firmati che non firmati. Se hai abilitato Docker Content Trust, puoi accedere ai contenuti firmati in un repository, anche se ci sono altri contenuti non firmati al suo interno.
+
+Le immagini hanno firme separate per il vecchio nome del dominio (`registry.bluemix.net`) e quello nuovo (`icr.io`). Le firme esistenti funzionano quando viene eseguito il pull dell'immagine dal vecchio nome del dominio. Se vuoi eseguire il pull del contenuto firmato dal nuovo nome del dominio, devi rifirmare l'immagine sul nuovo nome del dominio, `icr.io`, consulta [Rifirmare un'immagine per il nuovo nome del dominio](#trustedcontent_resign).
+{: note}
 
 Docker Content Trust usa un modello di sicurezza di "attendibilità al primo utilizzo". La chiave di repository viene estratta dal server di attendibilità quando esegui per la prima volta il pull di un'immagine firmata da un repository e tale chiave viene utilizzata per verificare le immagini da quel repository in futuro. Devi verificare di considerare attendibile il server di attendibilità o l'immagine e il relativo editore prima di eseguire il pull dal repository per la prima volta. Se le informazioni sull'attendibilità nel server sono compromesse e non hai ancora eseguito il pull di un'immagine dal repository, il client Docker potrebbe estrarre le informazioni compromesse dal server di attendibilità. Se i dati di attendibilità vengono compromessi dopo che hai eseguito il pull dell'immagine per la prima volta, durante i pull successivi, il client Docker non riesce a verificare i dati compromessi e non esegue il pull dell'immagine. Per ulteriori informazioni su come controllare i dati di attendibilità per un'immagine, vedi [Visualizzazione delle immagini firmate](#trustedcontent_viewsigned).
 
@@ -91,18 +94,19 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
 
    ```
    user:~ user$ ibmcloud cr login
-    Logging in to 'registry.ng.bluemix.net'...
-   Logged in to 'registry.ng.bluemix.net'.
+   Logging in to 'us.icr.io'...
+   Logged in to 'us.icr.io'.
 
-   Per configurare il tuo client Docker con l'attendibilità dei contenuti, esporta la seguente variabile di ambiente:
-    export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   To set up your Docker client with content trust,
+   export the following environment variable:
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: screen}
 
 5. Copia e incolla il comando della variabile di ambiente nel tuo terminale. Ad esempio:
 
    ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://registry.ng.bluemix.net:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
    ```
    {: pre}
 
@@ -117,18 +121,18 @@ Durante la tua sessione con Docker Content Trust abilitato, se vuoi eseguire un'
 Quando esegui per la prima volta il push di un'immagine firmata, Docker crea automaticamente una coppia di chiavi di firma: root e repository. Per firmare un'immagine in un repository in cui sono state già inserite immagini firmate, è necessario che la chiave di firma del repository corretta sia caricata sulla macchina che esegue il push dell'immagine.
 {:shortdesc}
 
-Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/services/Registry/index.html#registry_namespace_add).
+Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
 
 1. [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2. [Esegui il push della tua immagine](/docs/services/Registry/index.html#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
+2. [Esegui il push della tua immagine](/docs/services/Registry?topic=registry-index#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. **Esecuzione del push di un repository firmato per la prima volta.** Quando esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, chiave root e chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sono limitate.
+3. **Esecuzione del push di un repository firmato per la prima volta.** Quando esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, chiave root e chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sono limitate.
 
 ## Esecuzione del pull di un'immagine firmata
 {: #trustedcontent_pull}
@@ -147,6 +151,36 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 
     Specifica la tag quando esegui il push o il pull di un'immagine firmata. La tag `latest` assume il valore predefinito solo quando l'attendibilità dei contenuti è disabilitata.
     {: tip}
+
+## Rifirmare un'immagine per il nuovo nome del dominio
+{: #trustedcontent_resign}
+
+Per rifirmare l'immagine per il nuovo nome del dominio, `icr.io`, devi eseguire il pull, contrassegnare ed eseguire il push dell'immagine.
+{:shortdesc}
+
+1. Esegui il pull della tua immagine firmata dal vecchio nome del dominio. Sostituisci `<source_image>` con il repository dell'immagine e `<tag>` con la tag dell'immagine che vuoi utilizzare, come ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
+
+   ```
+   docker pull <source_image>:<tag>
+   ```
+   {: pre}
+
+    Specifica la tag quando esegui il push o il pull di un'immagine firmata. La tag `latest` assume il valore predefinito solo quando l'attendibilità dei contenuti è disabilitata.
+    {: tip}
+
+2. Esegui il comando `docker tag` per il nuovo nome del dominio. Sostituisci `<old_domain_name>` con il tuo vecchio nome del dominio, `<new_domain_name>` con il tuo nuovo nome del dominio, `<repository>` con il nome del tuo repository e `<tag>` con il nome della tua tag.
+
+   ```
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   ```
+   {: pre}
+
+3. Esegui il push della tua immagine utilizzando il nuovo nome del dominio, consulta [Esegui il push delle immagini Docker nel tuo spazio dei nomi](/docs/services/Registry?topic=registry-index#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
+
+   ```
+   Signing and pushing image metadata.
+   ```
+   {: screen}
 
 ## Gestione dei contenuti attendibili
 {: #trustedcontent_managetrust}
@@ -218,7 +252,7 @@ Quando esegui per la prima volta il push di un'immagine firmata in un nuovo repo
    Se hai modificato la tua directory di configurazione Docker, cerca lì la sottodirectory `trust`.
    {: tip}
 
-Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](/docs/services/Registry/ts_index.html#ts_recoveringtrustedcontent) sono limitate.
+Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sono limitate.
 
 Per eseguire il backup delle tue chiavi, consulta la [documentazione Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 

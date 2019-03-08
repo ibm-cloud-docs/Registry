@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic
 
@@ -153,5 +153,5 @@ subcollection: registry
     若要繼續從名稱空間取回映像檔，請在下列選項之間進行選擇：
 
     - 等到下一個計費週期開始。
-    - 如果您有免費方案，請[升級至標準服務方案](/docs/services/Registry/registry_overview.html#registry_plan_upgrade)。
+    - 如果您有免費方案，請[升級至標準服務方案](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)。
     - 如果您已有標準方案，請[設定取回資料流量的新配額限制](#registry_quota_set)。

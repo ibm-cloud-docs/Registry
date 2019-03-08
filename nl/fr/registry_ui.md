@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-02-22"
 
 keywords: IBM Cloud Container Registry, vulnerability of images, security of images, security issues
 
@@ -47,4 +47,4 @@ Pour afficher l'interface graphique, procédez comme suit :
 7. Pour en savoir plus sur les problèmes par type, cliquez sur l'onglet **Problèmes par type**.
 8. Pour obtenir des informations sur les conteneurs associés, cliquez sur l'onglet **Conteneurs associés**.
 
-Pour plus d'informations sur la signification des informations dans le rapport de sécurité, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va/va_index.html).
+Pour plus d'informations sur la signification des informations dans le rapport de sécurité, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
