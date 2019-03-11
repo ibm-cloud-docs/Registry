@@ -4,9 +4,10 @@
 {: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry?topic=registry-getting-started" path="services/Registry"}
 IBM Cloud Container Registry
 
+    index.md
+    
     {: .navgroup id="learn"}
     getting-started.md
-    index.md
     registry_overview.md
     registry_ha.md
 
