@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -568,4 +568,4 @@ There is a problem with Docker for Mac that prevents your credentials from being
 You might be able to resolve the problem by rebooting your Mac. If rebooting your Mac doesn't work, you can disable the storage of logins in your Mac keychain:
 
 1. In your menu, click the **Docker** icon, select **Preferences**.
-2. Clear the **Securely store Docker logins in macOS keychain** checkbox.
+2. Clear the **Securely store Docker logins in macOS keychain** check box.

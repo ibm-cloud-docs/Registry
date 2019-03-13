@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -261,7 +261,7 @@ You can delete unwanted images from your private repository by using either the 
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
-Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.Bluemix_notm}} repository, and do not count towards your quota.
+Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.Bluemix_notm}} repository, and do not count toward your quota.
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
 {:tip}

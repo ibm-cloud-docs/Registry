@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -253,7 +253,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
 
 You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
-To back up your keys, consult the [Docker Content Trust documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+To back up your keys, see [Docker Content Trust documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 ## Managing trusted signers
 {: #trustedcontent_signers}
