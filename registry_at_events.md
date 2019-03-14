@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-14"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -48,6 +48,82 @@ The following table lists the API methods that generate an event when they are c
     <td>`container-registry.exemption.delete`</td>
 	  <td>Delete a Vulnerability Advisor exemption.</td>
   </tr>
+  <tr>
+    <td>`container-registry.image.build`</td>
+	  <td>Build a Docker image in {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.delete`</td>
+	  <td>Delete an image from {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.inspect`</td>
+	  <td>Display details about an image.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.list`</td>
+	  <td>List the images in your {{site.data.keyword.IBM_notm}} account.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.pull`</td>
+	  <td>Pull an image from {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.push`</td>
+	  <td>Push an image to {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.tag`</td>
+	  <td>Add a new tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.namespace.create`</td>
+	  <td>Add a namespace to {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.namespace.delete`</td>
+	  <td>Delete a namespace from {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.namespace.list`</td>
+	  <td>List the namespaces in your {{site.data.keyword.IBM_notm}} account.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.quota.get`</td>
+	  <td>Display the current quotas for traffic and storage, and the usage information against those quotas.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.quota.set`</td>
+	  <td>Modify the quotas.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.registrytoken.create`</td>
+	  <td>Create a new registry token.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.registrytoken.delete`</td>
+	  <td>Delete a registry token.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.registrytoken.get`</td>
+	  <td>Retrieve information about a registry token.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.registrytoken.list`</td>
+	  <td>List the registry tokens in your {{site.data.keyword.IBM_notm}} account.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.registrytokens.delete`</td>
+	  <td>Delete multiple registry tokens.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.plan.get`</td>
+	  <td>Display information about the current pricing plan.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.plan.set`</td>
+	  <td>Upgrade to the standard plan.</td>
+  </tr>
  </table>
 
 ## Where to look for the events
@@ -55,4 +131,4 @@ The following table lists the API methods that generate an event when they are c
 
 {{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
 
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource (for example, the image or namespace) is available.
+The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource (for example, the image or namespace) is available.
