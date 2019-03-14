@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-14"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -229,7 +229,7 @@ Do not put personal information in your container images, namespace names, descr
   <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
-To learn more about Docker-specific terms, [consult the Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
+To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
 
 ### Planning Namespaces
 {: #registry_namespaces}
