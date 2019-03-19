@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-19"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -257,6 +257,8 @@ ibmcloud cr iam-policies-enable
 **Prerequisites**
 
 To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+
+
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
