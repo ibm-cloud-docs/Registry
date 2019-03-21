@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -257,8 +257,16 @@ ibmcloud cr iam-policies-enable
 **Prerequisites**
 
 To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+  
+## `ibmcloud cr iam-policies-status`
+{: #bx_cr_iam_policies_status}
 
+Displays the IAM policy status of the targeted {{site.data.keyword.registryshort_notm}} account. For more information, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
 
+```
+ibmcloud cr iam-policies-status
+```
+{: codeblock}
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
