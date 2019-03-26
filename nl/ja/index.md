@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} の概説
+# {{site.data.keyword.registrylong_notm}} の概説のチュートリアル
 {: #index}
 
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
@@ -32,7 +31,7 @@ subcollection: registry
 {{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
-{:tip}
+{: important}
 
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
 {: #registry_cli_install}
@@ -136,7 +135,8 @@ subcollection: registry
 
 おつかれさまでした。 これで、{{site.data.keyword.registrylong_notm}} 内に名前空間がセットアップされ、最初のイメージが名前空間にプッシュされました。
 
-**次の作業**
+## 次のステップ
+{: #get_start_next}
 
 - [脆弱性アドバイザーでのイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)
 - [サービス・プランと使用量を確認します](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

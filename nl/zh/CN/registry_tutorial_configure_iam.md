@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, user access, tutorial
+keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
 subcollection: registry
 
@@ -32,7 +32,7 @@ subcollection: registry
 
 **开始之前**
 
-- 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry?topic=registry-index#index)中的指示信息。
+- 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry?topic=registry-getting-started#getting-started)中的指示信息。
 
 - 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
 subcollection: registry
 
@@ -267,7 +267,7 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 ### ローカル領域
 {: #registry_regions_local}
 
-ローカル領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。領域の {{site.data.keyword.registrylong_notm}} ドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
+ローカル領域とは、専用のエンドポイントからアクセスされる地理的な領域のことです。 領域の {{site.data.keyword.registrylong_notm}} ドメイン・ネームは変更されています。 新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
 
 ドメイン・ネームを以下の表に示します。
 
@@ -285,7 +285,7 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 **脆弱性アドバイザーのドメイン・ネーム**
 
-領域の脆弱性アドバイザーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
+領域の脆弱性アドバイザーのドメイン・ネームは変更されています。 新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。
 
 新しいドメイン・ネームを以下の表に示します。
 
@@ -324,10 +324,10 @@ ibmcloud cr region-set eu-central
 ### グローバル・レジストリー
 {: #registry_regions_global}
 
-グローバル・レジストリーを使用できます。このレジストリーの名前 (`icr.io`) には領域は含まれません。このレジストリーでは、IBM が提供するパブリック・イメージのみがホストされます。名前空間をセットアップする、イメージにタグを付けてレジストリーにプッシュする、などの自分のイメージの管理を行うには、[ローカルな地域のレジストリー](#registry_regions_local)を使用してください。
+グローバル・レジストリーを使用できます。このレジストリーの名前 (`icr.io`) には領域は含まれません。 このレジストリーでは、IBM が提供するパブリック・イメージのみがホストされます。 名前空間をセットアップする、イメージにタグを付けてレジストリーにプッシュする、などの自分のイメージの管理を行うには、[ローカルな地域のレジストリー](#registry_regions_local)を使用してください。
 {:shortdesc}
 
-グローバル・レジストリーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
+グローバル・レジストリーのドメイン・ネームは変更されています。 新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
 
 新しいドメイン・ネームを以下の表に示します。
 
@@ -354,11 +354,11 @@ ibmcloud cr region-set global
 
 **脆弱性アドバイザーのドメイン・ネーム**
 
-グローバルの脆弱性アドバイザーのドメイン・ネームは変更されています。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
+グローバルの脆弱性アドバイザーのドメイン・ネームは変更されています。 新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 
 
 新しいドメイン・ネームを以下の表に示します。
 
-| 脆弱性アドバイザー | 新しいドメイン・ネーム | 非推奨のドメイン・ネーム |
+| 脆弱性アドバイザー | 新しいドメイン・ネーム  | 非推奨のドメイン・ネーム |
 |-----|----|-----------|
 | グローバル | `icr.io/va` | `va.bluemix.net` |
 {: caption="表 6. 脆弱性アドバイザーのグローバル・レジストリーのドメイン・ネーム。" caption-side="top"}

@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Introdução ao {{site.data.keyword.registrylong_notm}}
+# Tutorial de Introdução ao {{site.data.keyword.registrylong_notm}}
 {: #index}
 
 O {{site.data.keyword.registrylong}} fornece um registro de imagem privada de diversos locatários que pode ser usada para armazenar e compartilhar as imagens do Docker com usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.
@@ -33,7 +32,7 @@ O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação 
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
-{:tip}
+{: important}
 
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
@@ -77,8 +76,7 @@ preferencial.
 
 1. [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
-2. Faça download (_puxe_) da imagem para sua máquina local. Substitua `<source_image>` pelo repositório
-da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _latest_.
+2. Faça download (_puxe_) da imagem para sua máquina local. Substitua `<source_image>` pelo repositório da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _latest_.
 
    ```
    docker pull <source_image>:<tag>
@@ -127,8 +125,7 @@ namespace criado em [Configurar um namespace](/docs/services/Registry?topic=regi
    ```
    {: pre}
    
-   Veja este exemplo, em que `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`,
-`<image_repo>` é `hw_repo` e `<tag>` é `1`:
+   Veja este exemplo, em que `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`, `<image_repo>` é `hw_repo` e `<tag>` é `1`:
 
    ```
    docker push uk.icr.io/namespace1 /hw_repo: 1
@@ -144,7 +141,8 @@ namespace criado em [Configurar um namespace](/docs/services/Registry?topic=regi
 
 Bom Trabalho! Você configurou um namespace no {{site.data.keyword.registrylong_notm}} e enviou sua primeira imagem para o seu namespace.
 
-**O que Vem a Seguir?**
+## Etapas seguintes
+{: #get_start_next}
 
 - [Gerenciar segurança de imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index)
 - [Revisar seus planos de serviço e uso](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

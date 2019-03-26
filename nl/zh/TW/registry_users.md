@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
 subcollection: registry
 

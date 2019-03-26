@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Activity Tracker events, events
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -31,6 +31,7 @@ Use o serviço {{site.data.keyword.cloudaccesstrailfull}} para controlar como os
 O serviço {{site.data.keyword.cloudaccesstrailfull_notm}} registra as atividades iniciadas pelo usuário que mudam
 o estado de um serviço no {{site.data.keyword.Bluemix_notm}}.
 Para obter mais informações, consulte [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
+
 
 A tabela a seguir lista os métodos de API que geram um evento quando eles são chamados:
 

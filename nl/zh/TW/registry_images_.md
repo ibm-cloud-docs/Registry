@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ subcollection: registry
 您要新增至名稱空間的每個映像檔都必須先存在於本端電腦上。您可以將映像檔從另一個儲存庫下載（取回）至本端電腦，或使用 Docker `build` 指令，以從 Dockerfile 建置自己的映像檔。若要將映像檔新增至名稱空間，您必須將本端映像檔上傳（推送）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間。
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
-{:tip}
+{: important}
 
 ## 從另一個登錄取回映像檔
 {: #registry_images_pulling_reg}
@@ -49,7 +49,7 @@ subcollection: registry
 
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
-下載映像檔，請參閱「開始使用」文件中的[取回映像檔](/docs/services/Registry?topic=registry-index#registry_images_pulling)。
+下載映像檔，請參閱「開始使用」文件中的[取回映像檔](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)。
 
 如果您收到 `unauthorized: authentication required` 或 `denied: requested access to the resource is denied` 訊息，請執行 `ibmcloud cr login` 指令。
   {:tip}
@@ -86,7 +86,7 @@ subcollection: registry
   {:tip}
 
 2. 若要檢視帳戶中可用的所有名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
-3. [將映像檔上傳至名稱空間。](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [將映像檔上傳至名稱空間。](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    如果您收到 `unauthorized: authentication required` 或 `denied: requested access to the resource is denied` 訊息，請執行 `ibmcloud cr login` 指令。
   {:tip}

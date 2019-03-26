@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -120,11 +120,11 @@ Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있�
 서명된 이미지를 처음 푸시할 때 Docker가 서명된 키 쌍(루트 및 저장소)을 자동으로 작성합니다. 이전에 서명된 이미지를 푸시한 저장소에서 이미지에 서명하려면 이미지를 푸시하는 시스템에 올바른 저장소 서명 키를 로드해야 합니다.
 {:shortdesc}
 
-시작하기 전에 [레지스트리 네임스페이스를 설정](/docs/services/Registry?topic=registry-index#registry_namespace_add)하십시오.
+시작하기 전에 [레지스트리 네임스페이스를 설정](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)하십시오.
 
 1. [신뢰할 수 있는 컨텐츠 환경을 설정](#trustedcontent_setup)하십시오.
 
-2. [이미지를 푸시](/docs/services/Registry?topic=registry-index#registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
+2. [이미지를 푸시](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
 
    ```
    Signing and pushing image metadata.
@@ -167,14 +167,14 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
     서명된 이미지를 푸시하거나 가져올 때 태그를 지정하십시오. `latest` 태그는 컨텐츠 신뢰가 사용되지 않는 경우에만 기본값으로 지정됩니다.
     {: tip}
 
-2. 새 도메인 이름에 맞는 `docker tag` 명령을 실행하십시오. `<old_domain_name>`은 이전 도메인 이름으로, `<new_domain_name>`은 새 도메인 이름으로, `<repository>`는 저장소의 이름으로, `<tag>`는 태그의 이름으로 대체하십시오. 
+2. 새 도메인 이름에 맞는 `docker tag` 명령을 실행하십시오. `<old_domain_name>`은 이전 도메인 이름으로, `<new_domain_name>`은 새 도메인 이름으로, `<repository>`는 저장소의 이름으로, `<tag>`는 태그의 이름으로 대체하십시오.
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
    ```
    {: pre}
 
-3. 새 도메인 이름을 사용하여 이미지를 푸시하십시오. [Docker 이미지를 네임스페이스에 푸시](/docs/services/Registry?topic=registry-index#registry_images_pushing)를 참조하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
+3. 새 도메인 이름을 사용하여 이미지를 푸시하십시오. [Docker 이미지를 네임스페이스에 푸시](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)를 참조하십시오. 태그는 신뢰할 수 있는 컨텐츠에 필수입니다. 명령 출력에 다음이 표시됩니다.
 
    ```
    Signing and pushing image metadata.

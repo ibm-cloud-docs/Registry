@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
 subcollection: registry
 
@@ -193,7 +193,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 この問題は、以下の方法で修正できます。
 
-- [Docker がコンピューターにインストールされていることを確認します](/docs/services/Registry?topic=registry-index#registry_cli_install)。
+- [Docker がコンピューターにインストールされていることを確認します](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - Docker のインストール・パスを確認します。
 - `ibmcloud login` を実行して {{site.data.keyword.Bluemix_notm}} にログインします。 次に、`ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} CLI にログインします。
 - [{{site.data.keyword.registrylong_notm}} で Docker イメージを保管およびプルするための割り当て量制限と使用量を検討します](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)。
@@ -370,7 +370,7 @@ denied: requested access to the resource is denied
 
 実動イメージ用の名前空間のように、ルート鍵が影響を受けていないリポジトリーが名前空間に含まれている場合、影響を受けたルート鍵に関連付けられているトラスト・データだけを削除する必要があります。 サポート・チケットをオープンしてください。
 
-1. [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
+1. [{{site.data.keyword.Bluemix_notm}} サポートにお問い合わせください](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。 問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
 
 2. {{site.data.keyword.Bluemix_notm}} で問題が解決されたら、ローカル・コンピューター上の Docker コンテント・トラストのリポジトリーを削除します。
 
@@ -412,10 +412,10 @@ Error: jobs.batch "create-crds" already exists
 {: screen}
 
 {: tsCauses}
-前のインストールが失敗し、その後のアンインストールで、インストールに関連付けられた一部の Kubenetes ジョブが削除されませんでした。
+前のインストールが失敗し、その後のアンインストールで、インストールに関連付けられた一部の Kubernetes ジョブが削除されませんでした。
 
 {: tsResolve}
-次のコマンドを実行して、残りの Kubenetes ジョブを削除します。
+次のコマンドを実行して、残りの Kubernetes ジョブを削除します。
 
 ```
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true

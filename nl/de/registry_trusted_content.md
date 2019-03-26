@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -119,11 +119,11 @@ Wenn Sie während Ihrer Sitzung mit aktiviertem Docker Content Trust eine Operat
 Wenn Sie ein signiertes Image erstmalig mit Push-Operation übertragen, erstellt Docker automatisch ein Paar von Signierschlüsseln, den Root- und den Repository-Schlüssel. Um ein Image in einem Repository zu signieren, in das bereits zuvor signierte Images mit Push-Operation übertragen wurden, muss der richtige Repository-Signierschlüssel in dem System geladen sein, das das Image mit Push-Operation überträgt.
 {:shortdesc}
 
-Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/services/Registry?topic=registry-index#registry_namespace_add).
+Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](#trustedcontent_setup).
 
-2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry?topic=registry-index#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
+2. [Übertragen Sie Ihr Image mit Push-Operation](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
 
    ```
    Image-Metadaten werden signiert und mit Push-Operation übertragen.
@@ -166,14 +166,14 @@ Um das Image für den neuen Domänennamen `icr.io` erneut zu signieren, müssen 
     Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag ` latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
     {: tip}
 
-2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen Ihres Repositorys und `<tag>` durch den Namen Ihres Tags.
+2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen des Repositorys und `<tag>` durch den Namen des Tags. 
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
    ```
    {: pre}
 
-3. Führen Sie für Ihr Image eine Push-Operation durch, indem Sie den neuen Domänennamen verwenden; Informationen hierzu finden Sie im Abschnitt zum [Durchführen einer Push-Operation für Docker-Images in den eigenen Namensbereich](/docs/services/Registry?topic=registry-index#registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
+3. Führen Sie für Ihr Image eine Push-Operation durch, indem Sie den neuen Domänennamen verwenden; Informationen hierzu finden Sie im Abschnitt zum [Durchführen einer Push-Operation für Docker-Images in den eigenen Namensbereich](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). Der Tag ist für vertrauenswürdige Inhalte obligatorisch. Die Befehlsausgabe gibt Folgendes an:
 
    ```
    Image-Metadaten werden signiert und mit Push-Operation übertragen.

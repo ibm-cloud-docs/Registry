@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
 subcollection: registry
 
@@ -278,9 +278,9 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 ### 로컬 지역
 {: #registry_regions_local}
 
-로컬 지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. 지역의 {{site.data.keyword.registrylong_notm}} 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
+로컬 지역은 데디케이티드 엔드포인트에서 액세스하는 지리적 영역입니다. 지역의 {{site.data.keyword.registrylong_notm}} 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.
 
-도메인 이름은 다음 표에 나와 있습니다. 
+도메인 이름은 다음 표에 나와 있습니다.
 
 | 로컬 레지스트리 지역 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
 |-----|----|-----------|
@@ -296,9 +296,9 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 **취약성 어드바이저 도메인 이름**
 
-지역의 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
+지역의 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.
 
-새 도메인 이름은 다음 표에 나와 있습니다. 
+새 도메인 이름은 다음 표에 나와 있습니다.
 
 | 로컬 취약성 어드바이저 지역 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
 |-----|----|-----------|
@@ -338,9 +338,9 @@ ibmcloud cr region-set eu-central
 글로벌 레지스트리가 사용 가능하며, 해당 이름(`icr.io`)에 포함된 지역은 없습니다. IBM에서 제공하는 공용 이미지만 이 레지스트리에서 호스팅됩니다. 네임스페이스를 설정하거나 이미지에 태그를 지정하고 이 이미지를 레지스트리로 푸시하여 고유 이미지를 관리하려면 [로컬 지역 레지스트리](#registry_regions_local)를 사용하십시오.
 {:shortdesc}
 
-글로벌 레지스트리의 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.  
+글로벌 레지스트리의 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
 
-새 도메인 이름은 다음 표에 나와 있습니다. 
+새 도메인 이름은 다음 표에 나와 있습니다.
 
 |레지스트리 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
 |-----|----|-----------|
@@ -365,11 +365,11 @@ ibmcloud cr region-set global
 
 **취약성 어드바이저 도메인 이름**
 
-글로벌 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.  
+글로벌 취약성 어드바이저 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
 
-새 도메인 이름은 다음 표에 나와 있습니다. 
+새 도메인 이름은 다음 표에 나와 있습니다.
 
-|취약성 어드바이저 | 새 도메인 이름 | 더 이상 사용되지 않는 도메인 이름 |
+|취약성 어드바이저 | 새 도메인 이름  | 더 이상 사용되지 않는 도메인 이름 |
 |-----|----|-----------|
 | 글로벌 | `icr.io/va` | `va.bluemix.net` |
 {: caption="표 6. 취약성 어드바이저를 위한 글로벌 레지스트리의 도메인 이름" caption-side="top"}

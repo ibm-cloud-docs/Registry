@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, API keys, tokens
+keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
 subcollection: registry
 
@@ -251,7 +251,7 @@ Die folgenden Benutzernamen sind gültig:
 - `token`: (veraltet) Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
 
   Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
-{: deprecated}
+  {: deprecated}
 
 Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten.
 

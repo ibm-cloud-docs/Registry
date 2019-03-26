@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong
 {:shortdesc}
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
-{:tip}
+{: important}
 
 Antes de empezar, instale la [CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
@@ -39,7 +39,7 @@ Antes de empezar, instale la [CLI de {{site.data.keyword.Bluemix_notm}}](/docs/c
 Instale el plugin de CLI `container-registry` para utilizar la línea de mandatos para gestionar los espacios de nombres y las imágenes de Docker en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-1. [Instale el plugin de CLI `container-registry`.](/docs/services/Registry?topic=registry-index#registry_cli_install)
+1. [Instale el plugin de CLI `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con **sudo** o como root.
 
 Ahora puede configurar su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}.
@@ -94,10 +94,10 @@ Debe crear un espacio de nombres para almacenar las imágenes de Docker en {{sit
 
 **Antes de empezar**
 
-- [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifique cómo utilizar y denominar los espacios de nombres de su registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-Para crear un espacio de nombres, consulte [Configure un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add) en la documentación de iniciación.
+Para crear un espacio de nombres, consulte [Configure un espacio de nombres](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) en la documentación de iniciación.
 
 Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) y compartir estas imágenes con otros usuarios en su cuenta.
 

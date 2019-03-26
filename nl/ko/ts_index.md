@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
 subcollection: registry
 
@@ -194,7 +194,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
-- [Docker가 사용자의 컴퓨터에 설치되어 있는지 확인](/docs/services/Registry?topic=registry-index#registry_cli_install)하십시오.
+- [Docker가 사용자의 컴퓨터에 설치되어 있는지 확인](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)하십시오.
 - Docker 설치 경로를 확인하십시오.
 - `ibmcloud login`을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 그 후 `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)하십시오.
@@ -341,7 +341,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
 2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)하십시오.
 
-3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예를 들면, `https://us.icr.io:4443`입니다. 
+3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예를 들면, `https://us.icr.io:4443`입니다.
 
 4. 레지스트리 토큰을 생성하십시오.
 
@@ -413,10 +413,10 @@ Error: jobs.batch "create-crds" already exists
 {: screen}
 
 {: tsCauses}
-이전 설치가 실패했으며 그 다음에 설치 제거를 수행했으나 설치와 연관된 일부 Kubenetes 작업이 제거되지 않았습니다.
+이전 설치가 실패했으며 그 다음에 설치 제거를 수행했으나 설치와 연관된 일부 Kubernetes 작업이 제거되지 않았습니다.
 
 {: tsResolve}
-다음 명령을 실행하여 나머지 Kubenetes 작업을 제거하십시오.
+다음 명령을 실행하여 나머지 Kubernetes 작업을 제거하십시오.
 
 ```
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true

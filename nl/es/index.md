@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Iniciación a {{site.data.keyword.registrylong_notm}}
+# Guía de aprendizaje de iniciación a {{site.data.keyword.registrylong_notm}}
 {: #index}
 
 {{site.data.keyword.registrylong}} proporciona un registro de imágenes privado multiarrendatario que puede utilizar para almacenar y compartir sus imágenes de Docker con usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
@@ -32,7 +31,7 @@ subcollection: registry
 La consola de {{site.data.keyword.Bluemix_notm}} incluye una breve Guía de inicio rápido. Para obtener más información sobre cómo utilizar la consola de {{site.data.keyword.Bluemix_notm}}, consulte [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
-{:tip}
+{: important}
 
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
@@ -136,7 +135,8 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registrylong_notm}} y ha transmitido su primera imagen al espacio de nombres.
 
-**Qué hacer a continuación**
+## Pasos siguientes
+{: #get_start_next}
 
 - [Gestión de la seguridad de imágenes con Vulnerability Advisor](/docs/services/va?topic=va-va_index)
 - [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -35,7 +35,7 @@ Todas as imagens que desejar incluir no namespace deverão existir primeiro no c
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
-{:tip}
+{: important}
 
 ## Puxando imagens de outro registro
 {: #registry_images_pulling_reg}
@@ -56,7 +56,7 @@ uso posterior no {{site.data.keyword.registrylong_notm}}.
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
 deve-se executar o comando `ibmcloud login` novamente.
 
-Faça download da imagem, veja [Puxar uma imagem](/docs/services/Registry?topic=registry-index#registry_images_pulling) na documentação de Introdução.
+Faça download da imagem, veja [Puxar uma imagem](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) na documentação de Introdução.
 
 Se você receber uma mensagem `unauthorized: authentication required` ou `denied: requested access to the resource is denied`, execute o comando `ibmcloud cr login`.
 {:tip}
@@ -97,7 +97,7 @@ Para fazer upload de uma imagem (enviá-la por push), conclua as etapas a seguir
   {:tip}
 
 2. Para visualizar todos os namespaces disponíveis em sua conta, execute o comando `ibmcloud cr namespace-list`.
-3. [Faça upload da imagem para seu namespace.](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [Faça upload da imagem para seu namespace.](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    Se você receber uma mensagem `unauthorized: authentication required` ou `denied: requested access to the resource is denied`, execute o comando `ibmcloud cr login`.
    {:tip}
@@ -253,7 +253,8 @@ antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
 
      em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório. Se você
 executar o comando quando seu diretório ativo estiver configurado para o local em que seu contexto de compilação está
-armazenado, será possível substituir `<directory>` por um ponto (.).
+armazenado, será possível substituir `<directory>`
+por um ponto (.).
   
      Para obter mais informações sobre o comando `ibmcloud cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
@@ -366,8 +367,7 @@ Deve-se fazer backup de todas as imagens que deseja manter.
 
 Para excluir um repositório privado usando a GUI, conclua as etapas a seguir:
 
-1. Efetue login no console do {{site.data.keyword.cloud_notm}}
-([https://cloud.ibm.com/login
+1. Efetue login no console do {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login))
 com o seu IBMid.
 2. Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.

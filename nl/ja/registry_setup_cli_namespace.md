@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ subcollection: registry
 {:shortdesc}
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
-{:tip}
+{: important}
 
 始めに、[{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。
 
@@ -39,7 +39,7 @@ subcollection: registry
 コマンド・ラインを使用して {{site.data.keyword.registrylong_notm}} の名前空間および Docker イメージを管理するには、`container-registry` CLI プラグインをインストールします。
 {:shortdesc}
 
-1. [`container-registry` CLI プラグインをインストールします。](/docs/services/Registry?topic=registry-index#registry_cli_install)
+1. [`container-registry` CLI プラグインをインストールします。](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 この手順を行わない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用して実行するか root として実行する必要があります。
 
 これで、{{site.data.keyword.registrylong_notm}} に固有の名前空間をセットアップできます。
@@ -94,10 +94,10 @@ Docker イメージを {{site.data.keyword.registrylong_notm}} に保管する�
 
 **始めに**
 
-- [{{site.data.keyword.Bluemix_notm}} CLI と `container-registry` CLI プラグインをインストールします](/docs/services/Registry?topic=registry-index#registry_cli_install)。
+- [{{site.data.keyword.Bluemix_notm}} CLI と `container-registry` CLI プラグインをインストールします](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [レジストリー名前空間の使用方法と命名について計画します](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-概説資料の[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)を参照して名前空間を作成します。
+概説資料の[名前空間のセットアップ](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)を参照して名前空間を作成します。
 
 これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。
 

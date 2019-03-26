@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Activity Tracker events, events
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -29,6 +29,7 @@ subcollection: registry
 {:shortdesc}
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} 服务会记录哪些用户发起的活动会更改 {{site.data.keyword.Bluemix_notm}} 中服务的状态。有关更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)。
+
 
 下表列出了在调用时生成事件的 API 方法：
 

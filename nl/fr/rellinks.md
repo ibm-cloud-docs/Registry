@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, links
+keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
 subcollection: registry
 
@@ -38,10 +38,10 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-container_index#container_index)
-- REST API for clusters, see [Kubernetes Service API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-api/)
+- [Documentation {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-container_index#container_index)
+- API REST pour les clusters. Voir [Kubernetes Service API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-api/)
 - [Fichier JSON d'API REST pour les clusters ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
-- REST API for logging in clusters, see [{{site.data.keyword.containerlong_notm}} Logging API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-logging/)
+- API REST pour la journalisation dans des clusters. Voir [{{site.data.keyword.containerlong_notm}} Logging API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-logging/)
 - API REST pour la gestion d'équilibreurs de charge d'application Ingress dans des clusters. Voir [IBM Cloud Container Service ALB API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-alb-api/)
 
 ## Docker

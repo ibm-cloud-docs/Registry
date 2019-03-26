@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Introduzione a {{site.data.keyword.registrylong_notm}}
+# Esercitazione introduttiva a {{site.data.keyword.registrylong_notm}}
 {: #index}
 
 {{site.data.keyword.registrylong}} fornisce un registro delle immagini privato a più tenant che puoi utilizzare per memorizzare e condividere le tue immagini Docker con gli utenti nel tuo account {{site.data.keyword.Bluemix_notm}}.
@@ -32,7 +31,7 @@ subcollection: registry
 La console {{site.data.keyword.Bluemix_notm}} include una breve guida rapida. Per ulteriori informazioni su come utilizzare la console {{site.data.keyword.Bluemix_notm}}, vedi [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va?topic=va-va_index).
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
-{:tip}
+{: important}
 
 ## Installa la CLI {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
@@ -138,7 +137,8 @@ repository e la tag dell'immagine che vuoi utilizzare nel tuo spazio dei nomi so
 Ottimo lavoro! Hai configurato uno spazio dei nomi in {{site.data.keyword.registrylong_notm}} e hai eseguito il push della tua prima immagine allo
 spazio dei nomi.
 
-**Operazioni successive**
+## Passi successivi
+{: #get_start_next}
 
 - [Gestione della sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va?topic=va-va_index)
 - [Riesamina il tuo utilizzo e i tuoi piani del servizio](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

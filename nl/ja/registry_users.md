@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
 subcollection: registry
 
@@ -40,7 +40,7 @@ subcollection: registry
 
 リソースへのアクセスを制御しようとしている場合は、役割をユーザーかサービス ID に割り当てなければなりません。 {{site.data.keyword.registrylong_notm}} リソースへのアクセス権限は、名前によって単一の名前空間リソースに対して付与することも、サービス全体、つまりアカウント内のすべての名前空間に対して付与することもできます。
 
-すべてのものへのアクセス権限を付与しようとしている場合は、リソース・タイプやリソースを指定しないでください。 特定の名前空間へのアクセス権限を付与しようとしている場合は、リソース・タイプを `namespace` として指定し、リソース名をリソースとして使用します。
+すべてのものへのアクセス権限を付与しようとしている場合は、リソース・タイプやリソースを指定しないでください。 特定の名前空間へのアクセス権限を付与しようとしている場合は、リソース・タイプを `namespace` として指定し、名前空間名をリソースとして使用します。
 
 **始めに**
 

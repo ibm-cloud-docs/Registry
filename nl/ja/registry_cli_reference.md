@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output
+keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
 subcollection: registry
 
@@ -131,7 +131,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`Tag`|文字列|イメージのタグを表示します。|
 |`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/va?topic=va-va_index#va_registry_cli)に記載しています。|
-{: caption="表 1. <code>ibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 1. <codeibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>
 
 ### `ibmcloud cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_listing_imageinspect}
@@ -156,7 +156,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`VirtualSize`|整数 (64 ビット)|イメージ内の各レイヤーのサイズの合計をバイト単位で表示します。|
 |`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs) でフィールドの詳細を参照してください。|
-{: caption="表 2. <code>ibmcloud cr image-inspect</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 2. <codeibmcloud cr image-inspect</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>
 
 #### Config
 
@@ -220,4 +220,4 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Expiry`|整数 (64 ビット)|トークンの有効期限が切れる時刻の [UNIX タイム・スタンプ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/Unix_time) を表示します。|
 |`ReadOnly`|ブール|イメージのプルのみを実行できる場合は _true_ を表示し、名前空間へのイメージのプッシュ、および名前空間からのイメージのプルを実行できる場合は _false_ を表示します。|
 |`Description`|文字列|トークンの説明を表示します。|
-{: caption="表 6. <code>ibmcloud cr token-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 6. <codeibmcloud cr token-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}>

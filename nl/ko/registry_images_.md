@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ subcollection: registry
 네임스페이스에 추가할 모든 이미지는 먼저 로컬 컴퓨터에 있어야 합니다. 다른 저장소에서 로컬 컴퓨터로 이미지를 다운로드(가져오기)하거나, Docker `build` 명령을 사용하여 Dockerfile에서 고유의 이미지를 빌드할 수 있습니다. 네임스페이스에 이미지를 추가하려면 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 로컬 이미지를 업로드(푸시)해야 합니다.
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
-{:tip}
+{: important}
 
 ## 다른 레지스트리에서 이미지 가져오기
 {: #registry_images_pulling_reg}
@@ -49,7 +49,7 @@ subcollection: registry
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
-이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry?topic=registry-index#registry_images_pulling)를 참조하십시오.
+이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)를 참조하십시오.
 
 `unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
 {:tip}
@@ -86,7 +86,7 @@ subcollection: registry
   {:tip}
 
 2. 계정에서 사용 가능한 모든 네임스페이스를 보려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
-3. [네임스페이스에 이미지를 업로드](/docs/services/Registry?topic=registry-index#registry_images_pushing)하십시오.
+3. [네임스페이스에 이미지를 업로드](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)하십시오.
 
    `unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
    {:tip}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, user access role policies, access policies, policies
+keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
 subcollection: registry
 
@@ -40,7 +40,7 @@ Para descobrir mais sobre as políticas de função de acesso do {{site.data.key
 
 Caso queira controlar o acesso aos recursos, deve-se designar funções aos usuários ou aos IDs de serviço. O acesso a recursos do {{site.data.keyword.registrylong_notm}} pode ser concedido ao recurso namespace por nome ou ao serviço inteiro, ou seja, todos os namespaces na conta.
 
-Se você desejar conceder acesso a tudo, não especifique um tipo de recurso ou um recurso. Se você desejar conceder acesso a um namespace específico, especifique o tipo de recurso como `namespace` e use o nome do namespace como o recurso.
+Se você desejar conceder acesso a tudo, não especifique um tipo de recurso ou um recurso. Se você deseja conceder acesso a um determinado namespace, especifique o tipo de recurso como `namespace` e use o nome do namespace como o recurso.
 
 **Antes de iniciar**
 

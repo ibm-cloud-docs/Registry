@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Activity Tracker events, events
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -30,6 +30,7 @@ subcollection: registry
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} サービスは、{{site.data.keyword.Bluemix_notm}} のサービスの状態を変更するアクティビティーをユーザーが開始すると、そのアクティビティーを記録します。
 詳細については、[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)を参照してください。
+
 
 次の表に、呼び出されるとイベントを生成する API メソッドをリストします。
 

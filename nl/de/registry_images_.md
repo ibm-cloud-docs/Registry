@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ Wenn Sie Images zu Ihrem eigenen Namensbereich in {{site.data.keyword.registrylo
 Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf Ihrem lokalen Computer vorhanden sein. Sie können entweder ein Image aus einem anderen Repository auf Ihren lokalen Computer herunterladen (Pull-Operation) oder mit dem Docker-Befehl `build` Ihr eigenes Image aus einer Dockerfile erstellen. Um ein Image zu Ihrem Namensbereich hinzuzufügen, müssen Sie das lokale Image in Ihren Namensbereich von {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{:tip}
+{: important}
 
 ## Images aus einer anderen Registry mit Pull-Operation extrahieren
 {: #registry_images_pulling_reg}
@@ -49,7 +49,7 @@ Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryq
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
-Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](/docs/services/Registry?topic=registry-index#registry_images_pulling) in der Dokumentation zur Einführung.
+Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in der Dokumentation zur Einführung.
 
 Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
 {:tip}
@@ -86,7 +86,7 @@ Führen Sie die folgenden Schritte aus, um ein Image hochzuladen (Push-Operation
   {:tip}
 
 2. Führen Sie den Befehl `ibmcloud cr namespace-list` aus, um alle Namensbereiche anzuzeigen, die in Ihrem Konto verfügbar sind.
-3. [Laden Sie das Image in Ihren Namensbereich hoch. ](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [Laden Sie das Image in Ihren Namensbereich hoch. ](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
    {:tip}

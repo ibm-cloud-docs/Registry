@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
 subcollection: registry
 
@@ -23,7 +23,9 @@ subcollection: registry
 {:download: .download}
 
 # CLI de {{site.data.keyword.registrylong_notm}}
-{: #containerregcli}La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de CLI `container-registry`, sirve para gestionar su registro y sus recursos para su cuenta de {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}
+
+La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de CLI `container-registry`, sirve para gestionar su registro y sus recursos para su cuenta de {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Requisitos previos**
@@ -36,7 +38,7 @@ En la línea de mandatos, se le notifica cuando hay actualizaciones de la CLI de
 
 Si desea ver la versión actual del plugin de CLI `container-registry`, ejecute `ibmcloud plugin list`.
 
-Para obtener más información sobre cómo utilizar la CLI de {{site.data.keyword.registrylong_notm}}, consulte [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+Para obtener más información sobre cómo utilizar la CLI de {{site.data.keyword.registrylong_notm}}, consulte [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 Para obtener más información sobre la plataforma IAM y los roles de acceso a servicios necesarios para algunos mandatos, consulte [Gestión del acceso de usuario con Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 

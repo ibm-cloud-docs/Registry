@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, user access, tutorial
+keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
 subcollection: registry
 
@@ -32,7 +32,7 @@ Esta guía de aprendizaje dura aproximadamente 45 minutos.
 
 **Antes de empezar**
 
-- Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+- Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 

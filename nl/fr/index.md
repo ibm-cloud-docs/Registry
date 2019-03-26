@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,19 +22,16 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Initiation à {{site.data.keyword.registrylong_notm}}
+# Tutoriel d'initiation à {{site.data.keyword.registrylong_notm}}
 {: #index}
 
-{{site.data.keyword.registrylong}}
-fournit un registre d'images privé à service partagé que vous pouvez utiliser pour
-stocker et partager vos images Docker avec les utilisateurs de
-votre compte {{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.registrylong}} fournit un registre d'images privé à service partagé que vous pouvez utiliser pour stocker et partager vos images Docker avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
 
 La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
-{:tip}
+{: important}
 
 ## Installation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_install}
@@ -76,8 +72,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Extraction d'images d'un autre registre vers votre machine locale
 {: #registry_images_pulling}
 
-1. [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si
-vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
+1. [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
 
 2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par l'étiquette de l'image que vous voulez utiliser, par exemple, _latest_.
 
@@ -86,7 +81,7 @@ vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, in
    ```
    {: pre}
 
-   Exemple, où `<source_image>` est `hello-world` et `<tag>` est `latest`:
+   Exemple, où `<source_image>` est `hello-world` et `<tag>` est `latest` :
 
    ```
    docker pull hello-world:latest
@@ -142,7 +137,8 @@ Bien joué ! Vous avez configuré un espace de nom dans
 {{site.data.keyword.registrylong_notm}} et avez
 envoyé par commande push votre première image vers votre espace de nom.
 
-**Etape suivante ?**
+## Etapes suivantes
+{: #get_start_next}
 
 - [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index)
 - [Examen de vos plans de service et de leur utilisation](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -120,11 +120,11 @@ Durante la sesión con Docker Content Trust habilitado, si desea realizar una op
 Cuando envíe por primera vez una imagen firmada, Docker crea automáticamente un par de claves de firma: raíz y repositorio. Para firmar una imagen en un repositorio donde se hayan enviado antes las imágenes firmadas, debe tener la clave de firma de repositorios correcta cargada en la máquina que está enviando la imagen.
 {:shortdesc}
 
-Antes de empezar, [configure su espacio de nombres de registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
+Antes de empezar, [configure su espacio de nombres de registro](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. [Envíe su imagen](/docs/services/Registry?topic=registry-index#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
+2. [Envíe su imagen](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
 
    ```
    Signing and pushing image metadata.
@@ -174,7 +174,7 @@ Para volver a firmar la imagen para el nuevo nombre de dominio, `icr.io`, debe e
    ```
    {: pre}
 
-3. Envíe por push su imagen usando el nuevo nombre de dominio, consulte [Envíe por push de imágenes de Docker a su espacio de nombres](/docs/services/Registry?topic=registry-index#registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
+3. Envíe por push su imagen usando el nuevo nombre de dominio, consulte [Envíe por push de imágenes de Docker a su espacio de nombres](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). La etiqueta es obligatoria para contenido de confianza. En la salida de mandato verá:
 
    ```
    Signing and pushing image metadata.

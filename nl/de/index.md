@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Erste Schritte mit {{site.data.keyword.registrylong_notm}}
+# {{site.data.keyword.registrylong_notm}}-Lernprogramm zur Einführung
 {: #index}
 
 {{site.data.keyword.registrylong}} bietet eine private Multi-Tenant-Registry für Images, mit der Sie Ihre Docker-Images speichern und mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam nutzen können.
@@ -32,7 +31,7 @@ subcollection: registry
 Die {{site.data.keyword.Bluemix_notm}}-Konsole enthält eine kurze Anleitung zum Schnelleinstieg. Weitere Informationen zu Verwendung der {{site.data.keyword.Bluemix_notm}}-Konsole finden Sie unter [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va?topic=va-va_index).
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{:tip}
+{: important}
 
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #registry_cli_install}
@@ -136,7 +135,8 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.registrylong_notm}} konfiguriert und mit Push-Operation Ihr erstes Image an Ihren Namensbereich übertragen.
 
-**Wie geht es weiter?**
+## Weitere Schritte
+{: #get_start_next}
 
 - [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va?topic=va-va_index)
 - [Servicepläne und Nutzung überprüfen](/docs/services/Registry?topic=registry-registry_overview#registry_plans).

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, user access, tutorial
+keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
 subcollection: registry
 
@@ -32,7 +32,7 @@ subcollection: registry
 
 **始めに**
 
-- [{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-index#index)の指示を完了します。
+- [{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-getting-started#getting-started)の指示を完了します。
 
 - {{site.data.keyword.cloud_notm}} CLI に関する `container-registry` CLI プラグインの最新バージョンがあることを確認します。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 

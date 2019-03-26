@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -35,7 +35,7 @@ immagine da un Dockerfile utilizzando il comando `build` di Docker. Per aggiunge
 spazio dei nomi, devi caricare (push) l'immagine locale nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
-{:tip}
+{: important}
 
 ## Esecuzione del pull di immagini da un altro registro
 {: #registry_images_pulling_reg}
@@ -56,7 +56,7 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-Scarica l'immagine; consulta [Esegui il pull di un'immagine](/docs/services/Registry?topic=registry-index#registry_images_pulling) nella documentazione introduttiva.
+Scarica l'immagine; consulta [Esegui il pull di un'immagine](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) nella documentazione introduttiva.
 
 Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
 {:tip}
@@ -95,7 +95,7 @@ Per caricare (push) un'immagine, completa le seguenti istruzioni:
   {:tip}
 
 2. Per visualizzare tutti gli spazi dei nomi disponibili nel tuo account, esegui il comando `ibmcloud cr namespace-list`.
-3. [Carica l'immagine nel tuo spazio dei nomi.](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [Carica l'immagine nel tuo spazio dei nomi.](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
    {:tip}

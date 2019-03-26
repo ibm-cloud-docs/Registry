@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
 subcollection: registry
 
@@ -23,7 +23,9 @@ subcollection: registry
 {:download: .download}
 
 # Interface de ligne de commande {{site.data.keyword.registrylong_notm}}
-{: #containerregcli}Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.registrylong}}, fournie dans le plug-in d'interface de ligne de commande `container-registry`, afin de gérer votre registre et ses ressources pour votre compte {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}
+
+Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.registrylong}}, fournie dans le plug-in d'interface de ligne de commande `container-registry`, afin de gérer votre registre et ses ressources pour votre compte {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Prérequis**
@@ -36,7 +38,7 @@ En ligne de commande, vous êtes averti lorsque les mises à jour de l'interface
 
 Si vous souhaitez afficher la version en cours de votre plug-in d'interface de ligne de commande `container-registry`, exécutez `ibmcloud plugin list`.
 
-Pour vous familiariser avec l'utilisation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}, voir [Initiation à {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+Pour vous familiariser avec l'utilisation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}, voir [Initiation à {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 Pour plus d'informations sur les rôles d'accès aux services et aux plateformes IAM qui sont requis pour certaines commandes, voir [Gestion des accès utilisateur à l'aide d'Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 

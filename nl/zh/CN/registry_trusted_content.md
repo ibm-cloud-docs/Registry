@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -119,11 +119,11 @@ set DOCKER_CONTENT_TRUST=1
 首次推送签名的映像时，Docker 会自动创建一对签名密钥：根密钥和存储库密钥。要对之前已推送签名映像的存储库中的映像签名，必须在要推送该映像的机器上装入正确的存储库签名密钥。
 {:shortdesc}
 
-开始之前，请[设置注册表名称空间](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
+开始之前，请[设置注册表名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. [推送映像](/docs/services/Registry?topic=registry-index#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
+2. [推送映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
 
    ```
    Signing and pushing image metadata.
@@ -166,14 +166,14 @@ set DOCKER_CONTENT_TRUST=1
     在推送或拉出签名的映像时指定标记。仅当禁用了内容信任时，才会缺省使用 `latest` 标记。
     {: tip}
 
-2. 针对新域名运行 `docker tag` 命令。用旧域名替换 `<old_domain_name>`，用新域名替换 `<new_domain_name>`，用存储库的名称替换 `<repository>`，用标记的名称替换 `<tag>`。
+2. 针对新域名运行 `docker tag` 命令。将 `<old_domain_name>` 替换为旧域名，将 `<new_domain_name>` 替换为新域名，将 `<repository>` 替换为存储库的名称，并将 `<tag>` 替换为标记的名称。
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
    ```
    {: pre}
 
-3. 通过使用新域名来推送映像，请参阅[将 Docker 映像推送到名称空间](/docs/services/Registry?topic=registry-index#registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
+3. 通过使用新域名来推送映像，请参阅[将 Docker 映像推送到名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)。必须对可信内容使用标记。在命令输出中，您会看到：
 
    ```
    Signing and pushing image metadata.

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ subcollection: registry
 您要添加到名称空间的每个映像首先必须在您的本地计算机上存在。您可以将映像从其他存储库下载（拉出）到本地计算机，或者使用 Docker `build` 命令通过 Dockerfile 构建自己的映像。要将映像添加到名称空间，必须将本地映像上传（推送）到 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
-{:tip}
+{: important}
 
 ## 从其他注册表拉出映像
 {: #registry_images_pulling_reg}
@@ -50,7 +50,7 @@ subcollection: registry
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
-下载映像；请参阅“入门”文档中的[拉出映像](/docs/services/Registry?topic=registry-index#registry_images_pulling)。
+下载映像；请参阅“入门”文档中的[拉出映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)。
 
 如果您收到`未获授权：需要认证`或`被拒绝：请求的资源访问权被拒绝`消息，请运行 `ibmcloud cr login` 命令。
    {:tip}
@@ -89,7 +89,7 @@ subcollection: registry
   {:tip}
 
 2. 要查看帐户中可用的所有名称空间，请运行 `ibmcloud cr namespace-list` 命令。
-3. [将映像上传到名称空间。](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [将映像上传到名称空间。](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    如果您收到`未获授权：需要认证`或`被拒绝：请求的资源访问权被拒绝`消息，请运行 `ibmcloud cr login` 命令。
    {:tip}

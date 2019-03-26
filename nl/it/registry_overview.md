@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
 subcollection: registry
 
@@ -403,7 +403,7 @@ Il nome del dominio del controllo vulnerabilità globale è stato modificato. Il
 
 Il nuovo nome del dominio viene mostrato nella seguente tabella.
 
-| Controllo vulnerabilità | Nuovo nome del dominio | Nome del dominio obsoleto |
+| Controllo vulnerabilità | Nuovo nome del dominio  | Nome del dominio obsoleto |
 |-----|----|-----------|
 | Globale | `icr.io/va` | `va.bluemix.net` |
 {: caption="Tabella 6. Nome del dominio per il registro globale per il controllo vulnerabilità." caption-side="top"}

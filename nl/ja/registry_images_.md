@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ subcollection: registry
 名前空間に追加するすべてのイメージは、まずローカル・コンピューターに存在していなければなりません。 別のリポジトリーからローカル・コンピューターにイメージをダウンロード (プル) するか、または Docker `build` コマンドを使用して Dockerfile から独自のイメージをビルドすることができます。 名前空間にイメージを追加するには、{{site.data.keyword.registrylong_notm}} 内の名前空間にローカル・イメージをアップロード (プッシュ) する必要があります。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
-{:tip}
+{: important}
 
 ## 別のレジストリーからのイメージのプル
 {: #registry_images_pulling_reg}
@@ -49,7 +49,7 @@ subcollection: registry
 
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
-概説資料の[イメージのプル](/docs/services/Registry?topic=registry-index#registry_images_pulling)を参照して、イメージをダウンロードします。
+概説資料の[イメージのプル](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)を参照して、イメージをダウンロードします。
 
 「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
 {:tip}
@@ -86,7 +86,7 @@ subcollection: registry
   {:tip}
 
 2. ご使用のアカウントで利用できるすべての名前空間を表示するには、`ibmcloud cr namespace-list` コマンドを実行します。
-3. [イメージを名前空間にアップロードします。](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [イメージを名前空間にアップロードします。](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
    {:tip}

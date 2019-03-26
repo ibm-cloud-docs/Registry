@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
 subcollection: registry
 
@@ -192,7 +192,7 @@ denied: requested access to the resource is denied
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
-- [Assurez-vous que Docker est installé sur votre ordinateur](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Assurez-vous que Docker est installé sur votre ordinateur](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - Vérifiez votre chemin d'installation Docker.
 - Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `ibmcloud login`. Connectez-vous ensuite à l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
 - [Examinez les limites de quota et l'utilisation du stockage et de l'extraction des images Docker dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).

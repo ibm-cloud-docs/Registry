@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
 subcollection: registry
 
@@ -23,7 +23,9 @@ subcollection: registry
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.Bluemix_notm}}.
+{: #containerregcli}
+
+Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.Bluemix_notm}}.
 {: shortdesc}
 
 **Prerequisiti**
@@ -37,7 +39,7 @@ Nella riga di comando, vieni avvisato quando sono disponibili gli aggiornamenti 
 
 Se desideri visualizzare la versione corrente del tuo plugin CLI `container-registry`, esegui `ibmcloud plugin list`.
 
-Per informazioni su come utilizzare la CLI {{site.data.keyword.registrylong_notm}}, vedi [Introduzione a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index).
+Per informazioni su come utilizzare la CLI {{site.data.keyword.registrylong_notm}}, vedi [Introduzione a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 Per ulteriori informazioni sui ruoli della piattaforma IAM e di accesso al servizio necessari per alcuni comandi, consulta [Gestione dell'accesso utente con Identity and Access Management (IAM)](/docs/services/Registry?topic=registry-iam#iam).
 
@@ -897,7 +899,7 @@ Per ulteriori informazioni, vedi [Gestione della sicurezza delle immagini con il
 <dd>(Facoltativo) L'output del comando è limitato per mostrare solo le vulnerabilità.</dd>
 <dt>`--configuration-issues`, `-c`</dt>
 <dd>(Facoltativo) L'output del comando è limitato per mostrare solo i problemi di configurazione.</dd>
-<dt>`--output FORMAT`, `-o FORMAT`</dt>
+<dt>`--output FORMATO`, `-o FORMATO`</dt>
 <dd>(Facoltativo) L'output del comando viene restituito nel formato scelto. Il formato predefinito è `text`. Sono supportati i seguenti formati:
 
 <ul>

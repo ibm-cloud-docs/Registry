@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -120,11 +120,11 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
 第一次推送已簽署的映像檔時，Docker 會自動建立一對簽署金鑰：主要金鑰與儲存庫金鑰。若要在先前已推送已簽署映像檔的儲存庫中簽署映像檔，您必須在推送映像檔的機器上，載入正確的儲存庫簽署金鑰。
 {:shortdesc}
 
-開始之前，請[設定登錄名稱空間](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
+開始之前，請[設定登錄名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
 1. [設定受信任內容環境](#trustedcontent_setup)。
 
-2. [推送映像](/docs/services/Registry?topic=registry-index#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
+2. [推送映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
 
    ```
    Signing and pushing image metadata.
@@ -174,7 +174,7 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
    ```
    {: pre}
 
-3. 使用新網域名稱推送映像檔，請參閱[將 Docker 映像檔推送至名稱空間](/docs/services/Registry?topic=registry-index#registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
+3. 使用新網域名稱推送映像檔，請參閱[將 Docker 映像檔推送至名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)。標籤對於受信任內容而言是必要的。在指令輸出中，您會看到：
 
    ```
    Signing and pushing image metadata.

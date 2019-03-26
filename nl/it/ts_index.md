@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-07"
 
-keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error message
+keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
 subcollection: registry
 
@@ -194,7 +194,7 @@ negato: l'accesso richiesto alla risorsa è stato negato
 {: tsResolve}
 Puoi risolvere questo problema nei seguenti modi:
 
-- [Assicurati che Docker sia installato sul tuo computer](/docs/services/Registry?topic=registry-index#registry_cli_install).
+- [Assicurati che Docker sia installato sul tuo computer](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - Controlla il tuo percorso di installazione Docker.
 - Accedi a {{site.data.keyword.Bluemix_notm}} eseguendo `ibmcloud login`. Effettua quindi l'accesso alla CLI di {{site.data.keyword.registrylong_notm}} eseguendo `ibmcloud cr login`.
 - [Riesamina i limiti e l'utilizzo della quota per l'archiviazione e il pull delle immagini Docker in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
@@ -422,7 +422,7 @@ Error: jobs.batch "create-crds" already exists
 L'installazione precedente non è riuscita e la successiva disinstallazione non ha rimosso tutti i lavori di Kubernetes associati all'installazione.
 
 {: tsResolve}
-Rimuovi i restanti lavori di Kubernetes immettendo il seguente comando:
+Rimuovi i restanti lavori di Kubernetes eseguendo il seguente comando:
 
 ```
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true

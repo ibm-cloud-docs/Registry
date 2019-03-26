@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -121,11 +121,11 @@ Durante la tua sessione con Docker Content Trust abilitato, se vuoi eseguire un'
 Quando esegui per la prima volta il push di un'immagine firmata, Docker crea automaticamente una coppia di chiavi di firma: root e repository. Per firmare un'immagine in un repository in cui sono state già inserite immagini firmate, è necessario che la chiave di firma del repository corretta sia caricata sulla macchina che esegue il push dell'immagine.
 {:shortdesc}
 
-Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
+Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2. [Esegui il push della tua immagine](/docs/services/Registry?topic=registry-index#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
+2. [Esegui il push della tua immagine](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
 
    ```
    Signing and pushing image metadata.
@@ -175,7 +175,7 @@ Per rifirmare l'immagine per il nuovo nome del dominio, `icr.io`, devi eseguire 
    ```
    {: pre}
 
-3. Esegui il push della tua immagine utilizzando il nuovo nome del dominio, consulta [Esegui il push delle immagini Docker nel tuo spazio dei nomi](/docs/services/Registry?topic=registry-index#registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
+3. Esegui il push della tua immagine utilizzando il nuovo nome del dominio, consulta [Esegui il push delle immagini Docker nel tuo spazio dei nomi](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). La tag è obbligatoria per il contenuto attendibile. Nell'output del comando vedi:
 
    ```
    Signing and pushing image metadata.

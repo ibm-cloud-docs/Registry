@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
+keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
 subcollection: registry
 
@@ -179,7 +179,7 @@ Devi disporre di una serie di politiche. In caso contrario, le distribuzioni al 
 
 Quando applichi una distribuzione, Container Image Security Enforcement verifica se lo spazio dei nomi Kubernetes in cui stai distribuendo ha una politica da applicare. Se non ce l'ha, Container Image Security Enforcement utilizza la politica a livello di cluster. La tua distribuzione viene negata se non esistono politiche a livello di spazio dei nomi o di cluster.
 
-Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.Successivamente, completa la seguente procedura:
+Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster. Successivamente, completa la seguente procedura:
 
 1. Crea un file `.yaml` di <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">definizione di risorsa personalizzata Kubernetes <img src="../../icons/launch-glyph.svg" alt="Icona link esterno"></a>.
 

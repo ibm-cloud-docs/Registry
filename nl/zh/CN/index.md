@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} 入门
+# {{site.data.keyword.registrylong_notm}} 入门教程
 {: #index}
 
 {{site.data.keyword.registrylong}} 提供多租户专用映像注册表，可用于存储 Docker 映像并与您 {{site.data.keyword.Bluemix_notm}} 帐户中的用户共享。
@@ -32,7 +31,7 @@ subcollection: registry
 {{site.data.keyword.Bluemix_notm}} 控制台中有简要的“快速入门”。要了解有关如何使用 {{site.data.keyword.Bluemix_notm}} 控制台的更多信息，请参阅[使用漏洞顾问程序管理映像安全性](/docs/services/va?topic=va-va_index)。
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
-{:tip}
+{: important}
 
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
 {: #registry_cli_install}
@@ -136,7 +135,8 @@ subcollection: registry
 
 非常好！您已在 {{site.data.keyword.registrylong_notm}} 中设置名称空间，并将第一个映像推送到您的名称空间。
 
-**后续步骤**
+## 后续步骤
+{: #get_start_next}
 
 - [使用漏洞顾问程序管理映像安全性](/docs/services/va?topic=va-va_index)
 - [查看服务套餐和使用情况](/docs/services/Registry?topic=registry-registry_overview#registry_plans)

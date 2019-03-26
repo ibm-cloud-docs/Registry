@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, user access, tutorial
+keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
 subcollection: registry
 
@@ -32,7 +32,7 @@ subcollection: registry
 
 **시작하기 전에**
 
-- [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry?topic=registry-index#index)의 지시사항을 완료하십시오.
+- [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry?topic=registry-getting-started#getting-started)의 지시사항을 완료하십시오.
 
 - {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -34,8 +34,7 @@ subcollection: registry
 
 リポジトリーには、署名ありのコンテンツと署名なしのコンテンツの両方を含められます。 署名のない他のコンテンツが含まれていても、Docker コンテント・トラストを有効にしていれば、リポジトリー内の署名付きのコンテンツにアクセスできます。
 
-イメージに含まれる署名は、古い (`registry.bluemix.net`) ドメイン・ネームと新しい (`icr.io`) ドメイン・ネームとで異なります。イメージが古いドメイン・ネームかプルされたときは、既存の署名が機能します。
-署名ありのコンテンツを新しいドメイン・ネームからプルする場合、新しいドメイン・ネーム `icr.io` のイメージに再度署名する必要があります。[新しいドメイン・ネームのイメージに対する再署名](#trustedcontent_resign)を参照してください。
+イメージに含まれる署名は、古い (`registry.bluemix.net`) ドメイン・ネームと新しい (`icr.io`) ドメイン・ネームとで異なります。 イメージが古いドメイン・ネームかプルされたときは、既存の署名が機能します。 署名ありのコンテンツを新しいドメイン・ネームからプルする場合、新しいドメイン・ネーム `icr.io` のイメージに再度署名する必要があります。[新しいドメイン・ネームのイメージに対する再署名](#trustedcontent_resign)を参照してください。
 {: note}
 
 Docker コンテント・トラストでは、「Trust on first use」セキュリティー・モデルが使用されます。 リポジトリーから初めて署名付きのイメージをプルするときに、リポジトリーの鍵がトラスト・サーバーからプルされ、それ以降はその鍵がそのリポジトリーのイメージの検証に使用されます。 初めてリポジトリーをプルする前に、トラスト・サーバー、またはイメージとそのパブリッシャーを信頼することをユーザーが確認する必要があります。 サーバー内のトラスト情報が改ざんされている場合、まだそのリポジトリーからイメージをプルしたことがなければ、Docker クライアントは改ざんされた情報をトラスト・サーバーからプルする可能性があります。 初めてイメージをプルした後にトラスト・データが改ざんされた場合、それ以降のプルでは、Docker クライアントは、改ざんされたデータを検証できないので、イメージをプルしません。 イメージのトラスト・データの詳細を表示する方法について詳しくは、[署名付きのイメージを表示する](#trustedcontent_viewsigned)を参照してください。
@@ -121,11 +120,11 @@ Docker コンテント・トラストを有効にしたセッションで、信�
 署名付きのイメージを初めてプッシュすると、Docker が自動的に署名鍵のペア (ルートとリポジトリー) を作成します。 署名付きのイメージが前にプッシュされたことがあるリポジトリー内のイメージに署名するには、イメージをプッシュするマシン上に、正しいリポジトリー署名鍵をロードしていなければなりません。
 {:shortdesc}
 
-始める前に、[レジストリー名前空間をセットアップします](/docs/services/Registry?topic=registry-index#registry_namespace_add)。
+始める前に、[レジストリー名前空間をセットアップします](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
 1. [信頼できるコンテンツ環境をセットアップします](#trustedcontent_setup)。
 
-2. [イメージをプッシュします](/docs/services/Registry?topic=registry-index#registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
+2. [イメージをプッシュします](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
 
    ```
    Signing and pushing image metadata.
@@ -158,7 +157,7 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
 新しいドメイン・ネーム `icr.io` のイメージに再度署名するには、そのイメージをプル、タグ設定、およびプッシュする必要があります。
 {:shortdesc}
 
-1. 署名付きのイメージを古いドメイン・ネームからプルします。`<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (_latest_ など) に置き換えてください。 プルできるイメージをリストするには、`ibmcloud cr image-list` を実行します。
+1. 署名付きのイメージを古いドメイン・ネームからプルします。 `<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (_latest_ など) に置き換えてください。 プルできるイメージをリストするには、`ibmcloud cr image-list` を実行します。
 
    ```
    docker pull <source_image>:<tag>
@@ -168,14 +167,14 @@ Docker コンテント・トラストを有効にした状態で初めて署名�
     署名付きのイメージをプッシュまたはプルするときにはタグを指定してください。 `latest` タグがデフォルトとして使用されるのは、コンテント・トラストが無効な場合だけです。
     {: tip}
 
-2. 新しいドメイン・ネームに対して `docker tag` コマンドを実行します。`<old_domain_name>` を古いドメイン・ネームに、`<new_domain_name>` を新しいドメイン・ネームに、`<repository>` をリポジトリーの名前に、`<tag>` をタグの名前に置き換えてください。
+2. 新しいドメイン・ネームに対して `docker tag` コマンドを実行します。 `<old_domain_name>` を古いドメイン・ネームに、`<new_domain_name>` を新しいドメイン・ネームに、`<repository>` をリポジトリーの名前に、`<tag>` をタグの名前に置き換えてください。
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
    ```
    {: pre}
 
-3. 新しいドメイン・ネームを使用してイメージをプッシュします。[Docker イメージを名前空間にプッシュする](/docs/services/Registry?topic=registry-index#registry_images_pushing)を参照してください。信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
+3. 新しいドメイン・ネームを使用してイメージをプッシュします。[Docker イメージを名前空間にプッシュする](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)を参照してください。 信頼できるコンテンツにはタグが必須です。 コマンド出力に、次のように表示されます。
 
    ```
    Signing and pushing image metadata.

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
 subcollection: registry
 
@@ -23,7 +23,9 @@ subcollection: registry
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}您可以使用 {{site.data.keyword.registrylong}} CLI（其在 `container-registry` 外掛程式中提供），針對您的 {{site.data.keyword.Bluemix_notm}} 帳戶管理登錄及其資源。
+{: #containerregcli}
+
+您可以使用 {{site.data.keyword.registrylong}} CLI（其在 `container-registry` 外掛程式中提供），針對您的 {{site.data.keyword.Bluemix_notm}} 帳戶管理登錄及其資源。
 {: shortdesc}
 
 **必要條件**
@@ -36,7 +38,7 @@ subcollection: registry
 
 如果您要檢視 `container-registry` CLI 外掛程式的現行版本，請執行 `ibmcloud plugin list`。
 
-若要找出如何使用 {{site.data.keyword.registrylong_notm}} CLI 的詳細資訊，請參閱[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-index#index)。
+若要找出如何使用 {{site.data.keyword.registrylong_notm}} CLI 的詳細資訊，請參閱[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started)。
 
 如需部分指令所需 IAM 平台及服務存取角色的相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry?topic=registry-iam#iam)。
 

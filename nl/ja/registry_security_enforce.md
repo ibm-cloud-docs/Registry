@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement
+keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
 subcollection: registry
 
@@ -179,7 +179,7 @@ spec:
 
 デプロイメントを行うと、Container Image Security Enforcement が、デプロイ先の Kubernetes 名前空間に適用すべきポリシーがあるかどうかを検査します。 ない場合、Container Image Security Enforcement はクラスター規模のポリシーを使用します。 名前空間規模のポリシーもクラスター規模のポリシーも存在しない場合、デプロイメントは拒否されます。
 
-始める前に、クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)してください。次に、以下の手順を実行します。
+始める前に、クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)してください。 次に、以下の手順を実行します。
 
 1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
 

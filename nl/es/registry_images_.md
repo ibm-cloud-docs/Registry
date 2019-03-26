@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images
+keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
 subcollection: registry
 
@@ -31,7 +31,7 @@ Puede almacenar y compartir de forma segura imágenes de Docker con otros usuari
 Cada imagen que desea añadir a su espacio de nombres debe existir en su sistema local en primer lugar. Puede descargar (extraer) una imagen desde otro repositorio al sistema local, o crear su propia imagen de un Dockerfile utilizando el mandato de Docker `build`. Para añadir una imagen a su espacio de nombres, debe subir (enviar por push) la imagen local a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
-{:tip}
+{: important}
 
 ## Extracción de imágenes de otro registro
 {: #registry_images_pulling_reg}
@@ -49,7 +49,7 @@ Puede extraer (descargar) una imagen desde cualquier origen de registro privado 
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
-Para descargar la imagen, consulte [Extraiga una imagen](/docs/services/Registry?topic=registry-index#registry_images_pulling) en la documentación de iniciación.
+Para descargar la imagen, consulte [Extraiga una imagen](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) en la documentación de iniciación.
 
 Si obtiene el mensaje `No autorizado: se necesita autorización` o el mensaje `denegado: se ha denegado el acceso al recurso`, ejecute el mandato `ibmcloud cr login`.
 {:tip}
@@ -86,7 +86,7 @@ Para subir (enviar por push) una imagen, siga los siguientes pasos:
   {:tip}
 
 2. Para ver todos los espacios de nombres que están disponibles en su cuenta, ejecute el mandato `ibmcloud cr namespace-list`.
-3. [Cargue la imagen a su espacio de nombres.](/docs/services/Registry?topic=registry-index#registry_images_pushing)
+3. [Cargue la imagen a su espacio de nombres.](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)
 
    Si obtiene el mensaje `No autorizado: se necesita autorización` o el mensaje `denegado: se ha denegado el acceso al recurso`, ejecute el mandato `ibmcloud cr login`.
    {:tip}

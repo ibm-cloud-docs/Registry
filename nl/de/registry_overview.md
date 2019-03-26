@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry
+keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
 subcollection: registry
 
@@ -358,7 +358,7 @@ Der Vulnerability Advisor-Domänenname für die globale Registry wurde geändert
 
 Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 
-| Vulnerability Advisor | Neuer Domänenname | Veralteter Domänenname |
+| Vulnerability Advisor | Neuer Domänenname  | Veralteter Domänenname |
 |-----|----|-----------|
 | Global | `icr.io/va` | `va.bluemix.net` |
 {: caption="Tabelle 6. Domänenname für die globale Registry für Vulnerability Advisor." caption-side="top"}

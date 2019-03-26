@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, API keys, tokens
+keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
 subcollection: registry
 
@@ -187,8 +187,8 @@ O uso de tokens para automatizar o envio por push e o pull de imagens do Docker 
     Seu valor do token é exibido em **Token** na saída da CLI.
 
 4. Use o token como parte de seu comando `docker login`. Substitua `<token_value>` pelo valor do
-token que você recuperou na etapa anterior e `<registry_url>` pela URL para o registro no qual os namespaces estão
-configurados.
+token que você recuperou na etapa anterior e `<registry_url>` pela URL para o registro no qual os namespaces
+estão configurados.
 
    - Para namespaces configurados no norte da Ásia-Pacífico, use `jp.icr.io`
    - Para namespaces configurados no sul da Ásia-Pacífico, use `au.icr.io`

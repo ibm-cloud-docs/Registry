@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-06"
 
-kkeywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
+keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
 subcollection: registry
 
@@ -23,7 +23,9 @@ subcollection: registry
 {:download: .download}
 
 # {{site.data.keyword.registrylong_notm}} CLI
-{: #containerregcli}{{site.data.keyword.Bluemix_notm}} アカウントのレジストリーとそのリソースを管理するには、`container-registry` CLI プラグイン内に用意されている {{site.data.keyword.registrylong}} CLI を使用できます。
+{: #containerregcli}
+
+{{site.data.keyword.Bluemix_notm}} アカウントのレジストリーとそのリソースを管理するには、`container-registry` CLI プラグイン内に用意されている {{site.data.keyword.registrylong}} CLI を使用できます。
 {: shortdesc}
 
 **前提条件**
@@ -36,7 +38,7 @@ subcollection: registry
 
 現行バージョンの `container-registry` CLI プラグインを表示しようとしている場合は、`ibmcloud plugin list` を実行します。
 
-{{site.data.keyword.registrylong_notm}} CLI の使用方法については、『[{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-index#index)』を参照してください。
+{{site.data.keyword.registrylong_notm}} CLI の使用方法については、[{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-getting-started#getting-started)を参照してください。
 
 一部のコマンドにとって必要な IAM プラットフォームとサービス・アクセス役割について詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)を参照してください。
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, high availability
+keywords: IBM Cloud Container Registry, high availability, load balancing, back ups, 
 
 
 subcollection: registry

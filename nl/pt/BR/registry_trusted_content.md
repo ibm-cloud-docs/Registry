@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -123,11 +123,11 @@ Durante a sessão com o Docker Content Trust ativado, se você desejar executar 
 Quando você envia uma imagem assinada por push pela primeira vez, o Docker cria automaticamente um par de chaves de assinatura: raiz e repositório. Para assinar uma imagem em um repositório no qual as imagens assinadas foram enviadas por push anteriormente, deve-se ter a chave de assinatura do repositório correto carregada na máquina que está enviando a imagem por push.
 {:shortdesc}
 
-Antes de iniciar, [configure o namespace de registro](/docs/services/Registry?topic=registry-index#registry_namespace_add).
+Antes de iniciar, [configure o namespace de registro](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Configurar o ambiente de conteúdo confiável](#trustedcontent_setup).
 
-2. [Empurre a imagem](/docs/services/Registry?topic=registry-index#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
+2. [Empurre a imagem](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
 
    ```
    Signing and pushing image metadata.
@@ -179,7 +179,7 @@ que você deseja usar, como _latest_. Para listar imagens disponíveis a serem p
    ```
    {: pre}
 
-3. Envie por push sua imagem usando o novo nome de domínio, consulte [Enviar por push imagens do Docker para seu namespace](/docs/services/Registry?topic=registry-index#registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
+3. Envie por push sua imagem usando o novo nome de domínio, consulte [Enviar por push imagens do Docker para seu namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). A tag é obrigatória para o conteúdo confiável. Na saída de comando, você verá:
 
    ```
    Signing and pushing image metadata.

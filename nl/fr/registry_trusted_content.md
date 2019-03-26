@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-27"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, Docker Content Trust, keys
+keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
 subcollection: registry
 
@@ -121,11 +121,11 @@ Au cours de votre session avec Docker Content Trust activé, si vous voulez effe
 Lorsque vous envoyez par commande push une image signée pour la première fois, Docker crée automatiquement une paire de clés de signature : racine (root) et de référentiel. Pour signer une image dans un référentiel où des images signées ont été envoyées auparavant, vous devez disposer de la clé de signature de référentiel correcte chargées sur la machine qui envoie l'image.
 {:shortdesc}
 
-Avant de commencer, [configurez votre espace de nom de registre](/docs/services/Registry?topic=registry-index#registry_namespace_add).
+Avant de commencer, [configurez votre espace de nom de registre](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Configurez votre environnement de contenu sécurisé](#trustedcontent_setup).
 
-2. [Envoyez votre image par commande push](/docs/services/Registry?topic=registry-index#registry_images_pushing). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+2. [Envoyez votre image par commande push](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
 
    ```
    Signing and pushing image metadata.
@@ -175,7 +175,7 @@ Pour re-signer l'image pour le nouveau nom de domaine, `icr.io`, vous devez extr
    ```
    {: pre}
 
-3. Transférez votre image (par commande Push) en utilisant le nouveau nom de domaine (voir [Transfert d'images Docker (par commande Push) vers votre espace de nom](/docs/services/Registry?topic=registry-index#registry_images_pushing)). L'étiquette est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+3. Transférez votre image (par commande Push) en utilisant le nouveau nom de domaine (voir [Transfert d'images Docker (par commande Push) vers votre espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)). L'étiquette est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
 
    ```
    Signing and pushing image metadata.

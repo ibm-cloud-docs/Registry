@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-22"
+lastupdated: "2019-03-06"
 
-keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
 subcollection: registry
 
@@ -29,9 +29,9 @@ Bevor Sie Ihre Docker-Images in {{site.data.keyword.registrylong}} speichern kö
 {:shortdesc}
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{:tip}
+{: important}
 
-Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). 
+Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## `container-registry`-CLI-Plug-in installieren
 {: #cli_namespace_registry_cli_install}
@@ -39,7 +39,7 @@ Bevor Sie beginnen, installieren Sie die [Befehlszeilenschnittstelle (CLI) von {
 Installieren Sie das `container-registry`-CLI-Plug-in, um Namensbereiche und Docker-Images in {{site.data.keyword.registrylong_notm}} über die Befehlszeile zu verwalten.
 {:shortdesc}
 
-1. [Installieren Sie das `container-registry`-CLI-Plug-in. ](/docs/services/Registry?topic=registry-index#registry_cli_install)
+1. [Installieren Sie das `container-registry`-CLI-Plug-in. ](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Optional: [Konfigurieren Sie den Docker-Client für die Ausführung von Befehlen ohne Rootberechtigungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Sie diesen Schritt nicht ausführen, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit **sudo** oder als Root ausführen.
 
 Sie können jetzt einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.
@@ -94,10 +94,10 @@ Sie müssen einen Namensbereich erstellen, um Docker-Images in {{site.data.keywo
 
 **Vorbereitung**
 
-- [{{site.data.keyword.Bluemix_notm}}-CLI und das `container-registry`-CLI-Plug-in installieren](/docs/services/Registry?topic=registry-index#registry_cli_install).
-- [Planen Sie, wie Sie Ihre Registry-Namensbereiche verwenden und benennen](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
+- [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle und das Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
+- [Verwendung und Benennung der Registry-Namensbereiche planen](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-Erstellen Sie einen Namensbereich. Informationen dazu finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry?topic=registry-index#registry_namespace_add) in der Dokumentation zur Einführung.
+Erstellen Sie einen Namensbereich. Informationen dazu finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in der Dokumentation zur Einführung.
 
 Sie können nun [Docker-Images per Push-Operation in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) übertragen und diese Images mit anderen Benutzern in Ihrem Konto gemeinsam nutzen.
 

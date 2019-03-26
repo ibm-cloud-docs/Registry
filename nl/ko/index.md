@@ -2,10 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-02-25"
+lastupdated: "2019-03-05"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security
-
+keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: registry
 
@@ -23,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} 시작하기
+# {{site.data.keyword.registrylong_notm}} 튜토리얼 시작하기
 {: #index}
 
 {{site.data.keyword.registrylong}}에서는 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자들과 공유하기 위해 사용할 수 있는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다.
@@ -32,7 +31,7 @@ subcollection: registry
 {{site.data.keyword.Bluemix_notm}} 콘솔에는 간략한 빠른 시작이 포함되어 있습니다. {{site.data.keyword.Bluemix_notm}} 콘솔 사용 방법에 대해 자세히 알아보려면 [Vulnerability Advisor를 사용하여 이미지 보안 관리](/docs/services/va?topic=va-va_index)를 참조하십시오.
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
-{:tip}
+{: important}
 
 ## {{site.data.keyword.registrylong_notm}} CLI 설치
 {: #registry_cli_install}
@@ -136,7 +135,8 @@ subcollection: registry
 
 과정이 완료되었습니다! {{site.data.keyword.registrylong_notm}}에 네임스페이스를 설정하고 첫 번째 이미지를 사용자의 네임스페이스로 푸시했습니다.
 
-**다음 단계**
+## 다음 단계
+{: #get_start_next}
 
 - [Vulnerability Advisor로 이미지 보안 관리](/docs/services/va?topic=va-va_index)
 - [서비스 플랜 및 사용량 검토](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
