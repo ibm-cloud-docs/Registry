@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ Review the following table to find available Go template options and data types 
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>{}: inherit the health check</li><li>{"NONE"}: the health check is disabled</li><li>{"CMD", args...}: exec arguments directly</li><li>{"CMD-SHELL", command}: run the command with the system's default shell</li></ul>|
+|`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>`{}`: inherit the health check</li><li>`{"NONE"}`: the health check is disabled</li><li>`{"CMD", args...}`: exec arguments directly</li><li>`{"CMD-SHELL", command}`: run the command with the system's default shell</li></ul>|
 |`Interval`|Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds.|
 |`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
 |`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
