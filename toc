@@ -5,6 +5,7 @@
 IBM Cloud Container Registry
 
     index.md
+    registry_images_ibm.md
     
     {: .navgroup id="learn"}
     getting-started.md
