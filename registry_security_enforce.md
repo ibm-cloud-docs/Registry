@@ -163,7 +163,7 @@ spec:
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
     # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
-    - name: quay.io/coreos/hyperkube
+    - name: registry.bluemix.net/kubectl
       policies:
 ```
 {: codeblock}
