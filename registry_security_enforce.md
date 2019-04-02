@@ -159,10 +159,10 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself.
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
-    # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
+    # This policy allows Container Image Security Enforcement to use the Kubernetes API to configure your cluster. This policy is required so that Container Image Security Enforcement can be uninstalled cleanly.
     - name: registry.bluemix.net/kubectl
       policies:
 ```
