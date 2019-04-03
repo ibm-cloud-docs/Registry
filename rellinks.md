@@ -38,7 +38,7 @@ You can use the following related links to become more familiar with {{site.data
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-container_index#container_index)
+- [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-getting-started#getting-started)
 - REST API for clusters, see [Kubernetes Service API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-api/)
 - [REST API JSON for clusters ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
 - REST API for logging in clusters, see [{{site.data.keyword.containerlong_notm}} Logging API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://containers.cloud.ibm.com/swagger-logging/)
