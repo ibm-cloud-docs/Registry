@@ -94,7 +94,7 @@ To upload (push) an image, complete the following steps:
 After you push your image to {{site.data.keyword.registrylong_notm}}, you can do one of the following tasks:
 
 - [Manage security with Vulnerability Advisor](/docs/services/va?topic=va-va_index) to find information about potential security issues and vulnerabilities.
-- [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-container_index#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
+- [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copying images between registries
 {: #registry_images_copying}
@@ -120,7 +120,7 @@ To copy an image between two registries, complete the following steps:
 After you copy your image, you can do one of the following tasks:
 
 - [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index) to find information about potential security issues and vulnerabilities.
-- [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-container_index#container_index) to the cluster in {{site.data.keyword.containerlong_notm}}.
+- [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Creating new images that refer to a source image
 {: #registry_images_source}
