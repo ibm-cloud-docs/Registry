@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -22,10 +22,10 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Enforcing container image security (Beta)
+# Enforcing container image security
 {: #security_enforce}
 
-With Container Image Security Enforcement (Beta), you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
+With Container Image Security Enforcement, you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
 Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong}}. You can choose to block or to allow deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
@@ -159,7 +159,7 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself.
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
     # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
@@ -167,6 +167,7 @@ spec:
       policies:
 ```
 {: codeblock}
+
 
 ## Customizing policies
 {: #customize_policies}
@@ -181,7 +182,7 @@ When you apply a deployment, Container Image Security Enforcement checks whether
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
-1. Create a <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes custom resource definition <img src="../../icons/launch-glyph.svg" alt="External link icon"></a> `.yaml` file.
+1. Create a [Kubernetes custom resource definition ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` file.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
