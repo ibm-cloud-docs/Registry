@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -57,19 +57,19 @@ The `ibmcloud cr login` command fails.
 
 - The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
-- Your {{site.data.keyword.Bluemix_notm}} login credentials have expired.
+- Your {{site.data.keyword.cloud_notm}} login credentials have expired.
 
 {: tsResolve}
 You can fix this problem in the following ways:
 
 - Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
-- Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.Bluemix_notm}} login credentials.
+- Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.cloud_notm}} login credentials.
 
 ## Running any command for {{site.data.keyword.registrylong_notm}} fails with `FAILED You are not logged in to IBM Cloud.`
 {: #ts_login_cloud}
 
-You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.Bluemix_notm}}.
+You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.cloud_notm}}.
 
 {: tsSymptoms}
 All `ibmcloud cr` commands fail.
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - If the local build doesn't work, check for issues with your Dockerfile.
-- If the local build works, [contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
+- If the local build works, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Setting up a namespace fails
 {: #ts_problem}
@@ -140,7 +140,7 @@ When you run `ibmcloud cr namespace-add`, you are unable to set your entered val
 
 {: tsCauses}
 
-- You entered a namespace value that is already being used by another {{site.data.keyword.Bluemix_notm}} organization.
+- You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registrylong_notm}}.
 - You used invalid characters in the namespace value.
 
@@ -187,15 +187,15 @@ denied: requested access to the resource is denied
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
-- Your {{site.data.keyword.Bluemix_notm}} access token might have expired.
-- You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.Bluemix_notm}} account.
+- Your {{site.data.keyword.cloud_notm}} access token might have expired.
+- You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
 
 {: tsResolve}
 You can fix this problem in the following ways:
 
 - [Ensure that Docker is installed on your computer](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
-- Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
+- Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
 - [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## Unable to pull the most recent image using the `latest` tag
@@ -214,7 +214,7 @@ It is generally better to explicitly define a different sequential tag for your 
 {: #ts_ppa}
 
 {: tsSymptoms}
-When you try to import content that you used in other IBM products, such as {{site.data.keyword.Bluemix_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html) in the registry.
+When you try to import content that you used in other IBM products, such as {{site.data.keyword.cloud_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html) in the registry.
 
 {: tsCauses}
 Software packages such as images and Helm charts from IBM Passport Advantage must be imported to the registry with the `ibmcloud cr ppa-archive-load` command.
@@ -222,13 +222,13 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
 {: tsResolve}
 **Before you begin**
 
-- Log in to {{site.data.keyword.Bluemix_notm}} by running `ibmcloud login [--sso]`.
+- Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login [--sso]`.
 - Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
 - [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
 - If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-integrations#helm).
 - If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
-### Importing IBM Passport Advantage products for use in {{site.data.keyword.Bluemix_notm}}
+### Importing IBM Passport Advantage products for use in {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
 
 1. Obtain the compressed file that you want to import from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
@@ -370,9 +370,9 @@ You can [delete the namespaces](/docs/services/Registry?topic=registry-registry_
 
 If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
 
-1. [Contact {{site.data.keyword.Bluemix_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
+1. [Contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
 
-2. After {{site.data.keyword.Bluemix_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
+2. After {{site.data.keyword.cloud_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
 
    - Linux and Mac directory: `~/.docker/trust/private` and `~/.docker/trust/tuf`
 
@@ -381,7 +381,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
    Because the root key is affected, this step deletes all signing keys, including for other trust servers.
    {:tip}
 
-3. If you use [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
+3. If you use [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system

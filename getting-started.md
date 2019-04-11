@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,10 +25,10 @@ subcollection: registry
 # Getting started tutorial
 {: #getting-started}
 
-{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.Bluemix_notm}} account.
+{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-The {{site.data.keyword.Bluemix_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.Bluemix_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
+The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -36,12 +36,12 @@ Do not put personal information in your container images, namespace names, descr
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #gs_registry_cli_install}
 
-1. Install the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) so that you can run the {{site.data.keyword.Bluemix_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
+1. Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands. This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login

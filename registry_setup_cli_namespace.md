@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -31,7 +31,7 @@ Before you can store your Docker images in {{site.data.keyword.registrylong}}, y
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {: important}
 
-Before you begin, install the [{{site.data.keyword.Bluemix_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Before you begin, install the [{{site.data.keyword.cloud_notm}} CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## Installing the `container-registry` CLI plug-in
 {: #cli_namespace_registry_cli_install}
@@ -94,21 +94,21 @@ You must create a namespace to store your Docker images in {{site.data.keyword.r
 
 **Before you begin**
 
-- [Install the {{site.data.keyword.Bluemix_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
+- [Install the {{site.data.keyword.cloud_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Plan how to use and name your registry namespaces](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
 <br>
 To create a namespace, see [Set up a namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in the Getting Started documentation.
 
-You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account. To control access to namespaces in {{site.data.keyword.Bluemix_notm}} IAM, see [Creating policies](/docs/services/Registry?topic=registry-user#create).
+You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account. To control access to namespaces in {{site.data.keyword.cloud_notm}} IAM, see [Creating policies](/docs/services/Registry?topic=registry-user#create).
 
 ## Removing namespaces
 {: #registry_remove}
 
-If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.Bluemix_notm}} account.
+If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
