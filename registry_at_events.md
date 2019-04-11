@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -25,10 +25,10 @@ subcollection: registry
 # {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
-Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.Bluemix}}.
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.Bluemix_notm}}.
+The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
 For more information, see [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
 
 
@@ -129,6 +129,6 @@ The following table lists the API methods that generate an event when they are c
 ## Where to look for the events
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated, except for `ap-north`. Events for `ap-north` show in `ap-south`.
+{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated, except for `ap-north`. Events for `ap-north` show in `ap-south`.
 
 The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource (for example, the image or namespace) is available.

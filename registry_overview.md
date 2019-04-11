@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -34,7 +34,7 @@ Use {{site.data.keyword.registrylong}} to store and access private Docker images
 
 **Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images**
 
-A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registrylong_notm}}, only users with access to your {{site.data.keyword.Bluemix_notm}} account can access your images.
+A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registrylong_notm}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
 When you push images to {{site.data.keyword.registrylong_notm}}, you benefit from the built-in Vulnerability Advisor features that scan for potential security issues and vulnerabilities. Vulnerability Advisor checks for vulnerable packages in specific Docker base images, and known vulnerabilities in app configuration settings. When vulnerabilities are found, information about the vulnerability is provided. You can use this information to resolve security issues so that containers are not deployed from vulnerable images.
 
@@ -42,7 +42,7 @@ Review the following table to find an overview of benefits of using {{site.data.
 
 |Benefit|Description|
 |-------|-----------|
-|Highly available and scalable private registry|<ul><li>Set up your own image namespace in a multi-tenant, highly available, scalable private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.</li><li>Store your private Docker images and share them with users in your {{site.data.keyword.Bluemix_notm}} account.</li></ul>|
+|Highly available and scalable private registry|<ul><li>Set up your own image namespace in a multi-tenant, highly available, scalable private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.</li><li>Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account.</li></ul>|
 |Image security compliance with Vulnerability Advisor|<ul><li>Benefit from automatic scanning of images in your namespace.</li><li>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised.</li></ul>|
 |Quota limits for storage and pull traffic|<ul><li>Benefit from free storage and pull traffic to your private images until you reach your free quota.</li><li>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level.</li></ul>|
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
@@ -50,16 +50,16 @@ Review the following table to find an overview of benefits of using {{site.data.
 ## Service plans
 {: #registry_plans}
 
-You can choose between the free or standard {{site.data.keyword.registrylong_notm}} service plans to store your Docker images and make these images available to users in your {{site.data.keyword.Bluemix_notm}} account.
+You can choose between the free or standard {{site.data.keyword.registrylong_notm}} service plans to store your Docker images and make these images available to users in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.Bluemix_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
+The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Characteristics|Free|Standard|
 |---------------|----|--------|
-|Description|Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.Bluemix_notm}} account.|
+|Description|Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.|
 |Amount of storage for images|500 MB|Unlimited|
 |Pull traffic|5 GB per month|Unlimited|
 |Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the pricing calculator.</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the pricing calculator. If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the pricing calculator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -71,7 +71,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 Find information and examples for how the billing process and quota limits work in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.Bluemix_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer.
+Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.cloud_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer.
 
 Example for pushing images:
 
@@ -87,7 +87,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 
 **Storage:**
 
-  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.Bluemix_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
 
   Example for the standard plan:
 
@@ -119,17 +119,17 @@ Depending on the service plan that you choose, you can push and pull images to a
 
 **Storage:**
 
-  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either [free up space by removing images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
+  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
 
   Example for the standard plan:
 
-  > Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.Bluemix_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local machine. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
+  > Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local machine. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
   >
   > After the push, {{site.data.keyword.registrylong_notm}} determines the actual size of the image in your namespace, which can vary from the size on your local machine, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registrylong_notm}} prevents you from pushing additional images to the namespace.
 
 **Pull traffic:**
 
-  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.Bluemix_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Example for the standard plan:
 
@@ -140,12 +140,12 @@ Depending on the service plan that you choose, you can push and pull images to a
 ### Estimating costs
 {: #registry_estimating_costs}
 
-Use the {{site.data.keyword.Bluemix_notm}} pricing calculator to estimate the cost of your plan.
+Use the {{site.data.keyword.cloud_notm}} pricing calculator to estimate the cost of your plan.
 {:shortdesc}
 
-You can price your app by using the cost calculators that are provided by {{site.data.keyword.Bluemix_notm}}.
+You can price your app by using the cost calculators that are provided by {{site.data.keyword.cloud_notm}}.
 
-1. Open the pricing sheet, see [{{site.data.keyword.Bluemix_notm}} Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/pricing).
+1. Open the pricing sheet, see [{{site.data.keyword.cloud_notm}} Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/pricing).
 2. In the **Pay As You Go** section, click **Estimate your costs with our calculator**. The calculator opens.
 3. Scroll to the **Container Registry** section in the **Container Charges** section.
 4. Enter your storage and traffic estimates in the fields provided.
@@ -155,19 +155,19 @@ Your estimated costs are displayed in the calculator.
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
 
-You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.Bluemix_notm}} account.
+You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
 If you want to find out what service plan you have, run the `ibmcloud cr plan` command.
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.Bluemix_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+   If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {:tip}
 
 2. Upgrade to the standard plan.
@@ -177,7 +177,7 @@ If you want to find out what service plan you have, run the `ibmcloud cr plan` c
    ```
    {: pre}
 
-   If you have an {{site.data.keyword.Bluemix_notm}} Lite account, you must upgrade to an {{site.data.keyword.Bluemix_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
+   If you have an {{site.data.keyword.cloud_notm}} Lite account, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
    {:tip}
 
 ## Learning the basics
@@ -204,9 +204,9 @@ Do not put personal information in your container images, namespace names, descr
 
 <dl>
   <dt>Namespace</dt>
-  <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.Bluemix_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+  <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.cloud_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Every user in your {{site.data.keyword.Bluemix_notm}} account can view and work with images that are stored in your registry namespace. You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments.</dd>
+  Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace. You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments.</dd>
 </dl>
 
 <dl>
@@ -237,7 +237,7 @@ To learn more about Docker-specific terms, see [Docker glossary ![External link 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 {:shortdesc}
 
-You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.Bluemix_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
+You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
 
 You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
 
@@ -248,7 +248,7 @@ If you are unsure whether a namespace is already set for your account, run the `
 
 Consider the following rules when you choose a namespace:
 
-- Your namespace must be unique in an {{site.data.keyword.Bluemix_notm}} region.
+- Your namespace must be unique in an {{site.data.keyword.cloud_notm}} region.
 - Your namespace must be 4 - 30 characters long.
 - Your namespace must start with at least one letter or number.
 - Your namespace must contain lowercase letters, numbers, or underscores (_) only.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -102,7 +102,7 @@ After you push your image to {{site.data.keyword.registrylong_notm}}, you can do
 You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copy an image from any  private or public registry to your private {{site.data.keyword.Bluemix_notm}} registry."/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copy an image from any  private or public registry to your private {{site.data.keyword.cloud_notm}} registry."/>
 
 **Before you begin**
 
@@ -163,7 +163,7 @@ To create a new image from a source image, complete the following steps:
 ## Building Docker images to use them with your namespace
 {: #registry_images_creating}
 
-You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
+You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 **Before you begin**
@@ -176,7 +176,7 @@ You can build a Docker image directly in {{site.data.keyword.Bluemix_notm}} or c
 
 A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
 
-If you want to take advantage of {{site.data.keyword.Bluemix_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.Bluemix_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
+If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.cloud_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
 
 To build your own Docker image, complete the following steps:
 
@@ -218,8 +218,8 @@ To build your own Docker image, complete the following steps:
    where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image. To find your namespace, run the `ibmcloud cr namespace-list` command.
 
 4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
-5. Choose to either build your image directly in {{site.data.keyword.Bluemix_notm}} or build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}.
-   - To build the image directly in {{site.data.keyword.Bluemix_notm}}, run the following command:
+5. Choose to either build your image directly in {{site.data.keyword.cloud_notm}} or build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
+   - To build the image directly in {{site.data.keyword.cloud_notm}}, run the following command:
 
      ```
      ibmcloud cr build -t <image_name> <directory>
@@ -230,7 +230,7 @@ To build your own Docker image, complete the following steps:
   
      For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
-   - To build and test your image locally before you push it to {{site.data.keyword.Bluemix_notm}}, complete the following steps:
+   - To build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}, complete the following steps:
       1. Build the image from your Dockerfile on your local computer and tag it with your image name.
 
          ```
@@ -253,7 +253,7 @@ To build your own Docker image, complete the following steps:
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
-## Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository
+## Deleting images from your private {{site.data.keyword.cloud_notm}} repository
 {: #registry_images_remove}
 
 You can delete unwanted images from your private repository by using either the graphical user interface (GUI) or the CLI.
@@ -261,12 +261,12 @@ You can delete unwanted images from your private repository by using either the 
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
-Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.Bluemix_notm}} repository, and do not count toward your quota.
+Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.cloud_notm}} repository, and do not count toward your quota.
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
 {:tip}
 
-### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the CLI
+### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
 
 You can delete unwanted images from your private repository by using the CLI.
@@ -277,7 +277,7 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 
 To delete an image by using the CLI, complete the following steps:
 
-1. Log in to {{site.data.keyword.Bluemix_notm}} by running the `ibmcloud login` command.
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. To delete an image, run the following command:
 
    ```
@@ -287,7 +287,7 @@ To delete an image by using the CLI, complete the following steps:
 
    Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
 
-   If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_notm}} registry path in the command with a space between each path.
+   If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
    {:tip}
@@ -299,7 +299,7 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-### Deleting images from your private {{site.data.keyword.Bluemix_notm}} repository by using the GUI
+### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
 
 You can delete unwanted images from your private image repository by using the graphical user interface (GUI).
@@ -311,7 +311,7 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 To delete an image by using the GUI, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console ([https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login)) with your IBMid.
-2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Images**. A list of your images is displayed.
@@ -338,7 +338,7 @@ You must back up any images that you want to keep.
 To delete a private repository by using the GUI, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console ([https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login)) with your IBMid.
-2. If you have multiple {{site.data.keyword.Bluemix_notm}} accounts, select the account and region that you want to use from the account menu.
+2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Repositories**. A list of your private repositories is displayed.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
-You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.Bluemix}} account by setting and managing custom quota limits.
+You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.cloud}} account by setting and managing custom quota limits.
 {:shortdesc}
 
 ## Setting quota limits for storing and pulling images
@@ -38,7 +38,7 @@ When you upgrade to the {{site.data.keyword.registryshort_notm}} standard plan, 
 
 To set a quota:
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -88,7 +88,7 @@ To set a quota:
 You can review your quota limits and check your current storage and pull traffic usage for your account.
 {:shortdesc}
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -118,12 +118,12 @@ You can review your quota limits and check your current storage and pull traffic
 ## Freeing up used storage and changing service plans or quota limits to stay within given quota limits
 {: #registry_quota_freeup}
 
-If you exceeded your quota limits that are set for your {{site.data.keyword.Bluemix_notm}} account, you can free up storage and change your service plan or quota limits to continue pushing and pulling images to and from your namespace.
+If you exceeded your quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits to continue pushing and pulling images to and from your namespace.
 {:shortdesc}
 
-To free up image storage in your {{site.data.keyword.Bluemix_notm}} account:
+To free up image storage in your {{site.data.keyword.cloud_notm}} account:
 
-1. List all images in all your namespaces of your {{site.data.keyword.Bluemix_notm}} account.
+1. List all images in all your namespaces of your {{site.data.keyword.cloud_notm}} account.
 
     ```
     ibmcloud cr images
