@@ -22,9 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Configuration de l'interface de ligne de commande
-d'{{site.data.keyword.registrylong_notm}} et de
-l'espace de nom du registre
+# Configuration de l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et de l'espace de nom du registre
 {: #registry_setup_cli_namespace}
 
 Avant de pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong}}, vous devez créer un espace de nom. Pour gérer des espaces de nom, installez le plug-in d'interface de ligne de commande `container-registry`.
