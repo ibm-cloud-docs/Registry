@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Extraction d'images d'un autre registre vers votre machine locale
 {: #gs_registry_images_pulling}
 
-1. [Installez l'interface de ligne de commande de Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/community-edition#/download). Si vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
+1. [Installez l'interface de ligne de commande de Docker Engine ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/products/docker-engine#/download). Si vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
 
 2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par l'étiquette de l'image que vous voulez utiliser, par exemple, _latest_.
 

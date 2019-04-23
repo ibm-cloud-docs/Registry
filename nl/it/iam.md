@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ Per concedere a un utente l'autorizzazione per configurare il tuo {{site.data.ke
 **Esempio**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 Per concedere a un utente l'autorizzazione ad accedere al contenuto di {{site.data.keyword.registrylong_notm}} nel tuo account, devi creare una politica che concede uno o più ruoli nella seguente tabella. Quando crei la tua politica, puoi limitare l'accesso a uno spazio dei nomi specifico specificando il tipo di risorsa `namespace` e il nome dello spazio dei nomi come risorsa. Se non si specifica `resource-type` e `resource`, la politica concede l'accesso a tutte le risorse presenti nell'account.
 
+Non puoi organizzare e assegnare l'accesso agli spazi dei nomi del registro nei gruppi di risorse.
+{: note}
+
 **Esempio**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ subcollection: registry
     3. 다음 명령을 실행하여 User B에게 `namespace_b`에 대한 독자 역할을 부여하는 정책을 작성하십시오. 여기서 _`<Region>`_은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)의 이름(예: `us-south`)입니다.
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

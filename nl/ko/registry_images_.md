@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -45,7 +45,7 @@ subcollection: registry
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
@@ -69,7 +69,7 @@ subcollection: registry
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - 로컬 컴퓨터에서 이미지 [가져오기](#registry_images_pulling_reg) 또는 [빌드](#registry_images_creating)를 수행하고 네임스페이스 정보로 이미지에 태그를 지정하십시오.
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
@@ -95,7 +95,7 @@ subcollection: registry
 
 - [Vulnerability Advisor를 사용하여 보안을 관리](/docs/services/va?topic=va-va_index)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
 - [클러스터를 작성하고
-이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-container_index#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
+이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-getting-started#getting-started)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
 
 ## 레지스트리 간에 이미지 복사
 {: #registry_images_copying}
@@ -109,7 +109,7 @@ subcollection: registry
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
@@ -122,7 +122,7 @@ subcollection: registry
 
 - [Vulnerability Advisor를 사용하여 이미지 보안을 관리](/docs/services/va?topic=va-va_index)함으로써 잠재적 보안 문제 및 취약성에 대한 정보를 찾습니다.
 - [클러스터를 작성하고
-이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-container_index#container_index)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
+이 이미지를 사용하여 컨테이너](/docs/containers?topic=containers-getting-started#getting-started)를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치합니다.
 
 ## 소스 이미지를 참조하는 새 이미지 작성
 {: #registry_images_source}
@@ -172,7 +172,7 @@ subcollection: registry
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
-- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/installation/linux/linux-postinstall)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
+- [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 

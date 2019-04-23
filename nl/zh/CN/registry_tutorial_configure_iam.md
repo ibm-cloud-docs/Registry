@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ subcollection: registry
     3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名称，例如 `us-south`：
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

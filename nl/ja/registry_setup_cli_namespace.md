@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -40,7 +40,7 @@ subcollection: registry
 {:shortdesc}
 
 1. [`container-registry` CLI プラグインをインストールします。](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
-2. オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。 この手順を行わない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、**sudo** を使用して実行するか root として実行する必要があります。
+2. オプション: [root 権限なしでコマンドを実行するように Docker クライアントを構成します ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/install/linux/linux-postinstall/)。 この手順を行わない場合は、`ibmcloud login`、`ibmcloud cr login`、`docker pull`、`docker push` の各コマンドを、`sudo` を使用して実行するか root として実行する必要があります。
 
 これで、{{site.data.keyword.registrylong_notm}} に固有の名前空間をセットアップできます。
 
@@ -97,9 +97,10 @@ Docker イメージを {{site.data.keyword.registrylong_notm}} に保管する�
 - [{{site.data.keyword.Bluemix_notm}} CLI と `container-registry` CLI プラグインをインストールします](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [レジストリー名前空間の使用方法と命名について計画します](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-概説資料の[名前空間のセットアップ](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)を参照して名前空間を作成します。
+<br>
+名前空間を作成するには、概説資料内の[名前空間のセットアップ](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)を参照してください。
 
-これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。
+これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。{{site.data.keyword.Bluemix_notm}} IAM で名前空間へのアクセスを制御するには、[ポリシーの作成](/docs/services/Registry?topic=registry-user#create)を参照してください。
 
 ## 名前空間の削除
 {: #registry_remove}

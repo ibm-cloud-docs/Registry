@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ subcollection: registry
 ## 将映像从其他注册表拉出到本地计算机
 {: #gs_registry_images_pulling}
 
-1. [安装 Docker CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/community-edition#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
+1. [安装 Docker Engine CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/products/docker-engine#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
 
 2. 将映像下载（_拉出_）到本地计算机。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，例如 _latest_。
 

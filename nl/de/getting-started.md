@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## Images mit einer Pull-Operation aus einer anderen Registry auf die lokale Maschine mit Pull-Operation extrahieren
 {: #gs_registry_images_pulling}
 
-1. [Installieren Sie die Docker-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/community-edition#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
+1. [Installieren Sie die Docker Engine-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/products/docker-engine#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
 
 2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_.
 

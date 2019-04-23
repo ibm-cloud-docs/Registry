@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ subcollection: registry
 ## 다른 레지스트리의 이미지를 로컬 시스템으로 가져오기
 {: #gs_registry_images_pulling}
 
-1. [Docker CLI를 설치 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.docker.com/community-edition#/download)하십시오. Windows 8 또는 OS X Yosemite 10.10.x 이하의 경우 [Docker Toolbox ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/toolbox/)를 대신 설치하십시오. {{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
+1. [Docker Engine CLI를 설치 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.docker.com/products/docker-engine#/download)하십시오. Windows 8 또는 OS X Yosemite 10.10.x 이하의 경우 [Docker Toolbox ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/toolbox/)를 대신 설치하십시오. {{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
 
 2. 로컬 시스템에 이미지를 다운로드(_가져오기_)하십시오. `<source_image>`를 이미지의 저장소로 바꾸고 `<tag>`를 사용할 이미지(예: _latest_)로 바꾸십시오.
 

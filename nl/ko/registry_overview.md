@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -240,7 +240,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   <dd>태그는 저장소에 있는 이미지의 ID입니다. 태그를 사용하여 저장소에 있는 동일한 기본 이미지의 여러 다른 버전을 구분할 수 있습니다. Docker 명령을 실행할 때 저장소 이미지의 태그를 지정하지 않으면 <code>latest</code>로 태그가 지정된 이미지가 기본적으로 사용됩니다.</dd>
 </dl>
 
-Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집을 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/glossary/)하십시오.
+Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/glossary/)을 참조하십시오.
 
 ### 네임스페이스 계획
 {: #registry_namespaces}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -42,6 +42,9 @@ subcollection: registry
 
 如果您要授與任何項目的存取權，請不要指定資源類型或資源。如果您要授與特定名稱空間的存取權，請將資源類型指定為 `namespace`，並使用名稱空間名稱作為資源。
 
+您無法組織及指派對資源群組中之登錄名稱空間的存取權。
+{: note}
+
 **開始之前**
 
 - 決定每位使用者所需的角色，以及 {{site.data.keyword.registrylong_notm}} 中的資源，請參閱 [IAM 角色](/docs/services/Registry?topic=registry-iam#iam)。請考量您可以建立多個原則，例如，您可以授與資源的寫入權，但只授與另一個資源的讀取權，而且無法授與另一個資源的存取權。原則是加總性的，表示廣域讀取原則及資源範圍寫入原則會授與該資源的讀取權及寫入權。
@@ -63,7 +66,9 @@ subcollection: registry
 
 1. 針對使用者及服務 ID，[建立原則](#create)。
 
-2. 若要啟用原則強制執行，請執行 [`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) 指令。
+2. 若要啟用原則強制執行，請執行 [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) 指令。
 
     您必須具有帳戶的「管理員」角色，才能執行 `ibmcloud cr iam-policies-enable` 指令。您自動具有自己帳戶的「管理員」角色。
     {: tip}
+
+3. 若要驗證已啟用 IAM 原則，請執行 [`ibmcloud cr iam-policies-status`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status)。

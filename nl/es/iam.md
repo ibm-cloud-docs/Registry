@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -72,7 +72,7 @@ Para {{site.data.keyword.registrylong_notm}}, existen las acciones siguientes:
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizar todas las señales que existen para su cuenta de {{site.data.keyword.Bluemix_notm}}. | Administrador |
 {: caption="Tabla 2. Acciones y operaciones de la plataforma para configurar {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
-## Roles de acceso de servicio
+## Roles de acceso al servicio
 {: #service_access_roles}
 
 En la tabla siguiente se muestran acciones que se correlacionan con roles de acceso al servicio. Los roles de acceso al servicio permiten a los usuarios acceder a {{site.data.keyword.registrylong_notm}}, así como la posibilidad de llamar a la API de {{site.data.keyword.registrylong_notm}}.
@@ -82,7 +82,7 @@ En la tabla siguiente se muestran acciones que se correlacionan con roles de acc
 | Lector | El rol Lector puede ver información. | <ul><li>Ver, inspeccionar y extraer imágenes</li><li>Ver espacios de nombres</li><li>Ver cuotas</li><li>Ver informes de vulnerabilidades</li><li>Ver firmas de imágenes</li></ul>|
 | Escritor | El rol Escritor puede editar información. |<ul><li>Crear, enviar y suprimir imágenes</li><li>Ver cuotas</li><li>Firmar imágenes</li><li>Añadir y eliminar espacios de nombres</li></ul> |
 | Gestor | El rol Gestor puede realizar todas las acciones. | <ul><li>Ver, inspeccionar, extraer, crear, enviar y suprimir imágenes</li><li>Ver, añadir y eliminar espacios de nombres</li><li>Ver y establecer cuotas</li><li>Ver informes de vulnerabilidades</li><li>Ver y crear firmas de imágenes</li><li>Revisar y cambiar planes de precios</li><li>Habilitar la imposición de políticas de IAM</li><li>Gestionar exenciones de Vulnerability Advisor</li></ul> |
-{: caption="Tabla 3. Roles y acciones de acceso a servicio de IAM" caption-side="top"}
+{: caption="Tabla 3. Acciones y roles de acceso al servicio de IAM" caption-side="top"}
 
  Para los siguientes mandatos de {{site.data.keyword.registrylong_notm}}, debe tener al menos uno de los roles especificados que se muestran en las tablas siguientes. Para crear una política que permita el acceso a {{site.data.keyword.registrylong_notm}}, debe crear una política en la que el nombre de servicio sea `container-registry`, la instancia de servicio esté vacía y la región sea la región a la que desea otorgar acceso o bien esté vacía para dar acceso a todas las regiones.
 
@@ -94,7 +94,7 @@ Para otorgar a un usuario permiso para configurar su {{site.data.keyword.registr
 **Ejemplo**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -111,12 +111,15 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 ### Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}
 {: #access_roles_using}
 
-Para otorgar a un usuario permiso para acceder al contenido de {{site.data.keyword.registrylong_notm}} en su cuenta, debe crear una política que otorgue uno o varios de los roles de la tabla siguiente. Cuando crea la política, puede restringir el acceso a un espacio de nombres específico especificando el tipo de recurso `namespace` y el nombre de espacio de nombres como recurso. Si no especifica un `resource-type` y un `resource`, la política otorga acceso a todos los recursos de la cuenta.
+Para otorgar a un usuario permiso para acceder al contenido de {{site.data.keyword.registrylong_notm}} en su cuenta, debe crear una política que otorgue uno o varios de los roles de la tabla siguiente. Cuando crea la política, puede restringir el acceso a un espacio de nombres específico especificando el tipo de recurso `namespace` y el nombre del espacio de nombres como recurso. Si no especifica un `resource-type` y un `resource`, la política otorga acceso a todos los recursos de la cuenta.
+
+No puede organizar y asignar acceso para registrar espacios de nombre en grupos de recursos.
+{: note}
 
 **Ejemplo**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

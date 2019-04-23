@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -265,7 +265,7 @@ environnement de transfert.</dd>
   <dd>Une étiquette est l'identificateur d'une image dans le référentiel. Vous pouvez utiliser des étiquettes pour différencier plusieurs versions d'une même image de base dans un référentiel. Lorsque vous exécutez une commande Docker sans spécifier l'étiquette d'une image du référentiel, celle associée à l'étiquette <code>latest</code> (dernière) est utilisée par défaut.</dd>
 </dl>
 
-Pour en savoir plus sur des termes spécifiques à Docker, consultez le [glossaire Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/glossary/).
+Pour en savoir plus sur des termes spécifiques à Docker, voir le [glossaire Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/glossary/).
 
 ### Planification d'espaces de nom
 {: #registry_namespaces}

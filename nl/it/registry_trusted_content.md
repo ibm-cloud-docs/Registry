@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -254,7 +254,7 @@ Quando esegui per la prima volta il push di un'immagine firmata in un nuovo repo
 
 Devi eseguire il backup di tutte le chiavi, in particolare della chiave root. Se una chiave viene persa o compromessa, le tue [opzioni di ripristino](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sono limitate.
 
-Per eseguire il backup delle tue chiavi, consulta la [documentazione Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Per eseguire il backup delle tue chiavi, vedi la [documentazione Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 ## Gestione dei firmatari attendibili
 {: #trustedcontent_signers}

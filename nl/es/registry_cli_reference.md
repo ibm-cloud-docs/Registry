@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -131,7 +131,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`Tag`|Serie|Muestra la etiqueta de la imagen.|
 |`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](/docs/services/va?topic=va-va_index#va_registry_cli).|
-{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-list</code>." caption-side="top"}>
+{: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-list</code>." caption-side="top"}
 
 ### Opciones de plantilla de Go y tipos de datos en el mandato `ibmcloud cr image-inspect`
 {: #registry_cli_listing_imageinspect}
@@ -156,7 +156,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`VirtualSize`|Entero (64 bits)|Muestra la suma del tamaño de cada capa de la imagen en bytes.|
 |`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
-{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr image-inspect</code>." caption-side="top"}>
+{: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-inspect</code>." caption-side="top"}
 
 #### Config
 
@@ -193,7 +193,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 
 |Campo|Tipo|Descripción|
 |-----|----|-----------|
-|`Test`|Matriz de series|Muestra cómo ejecutar la prueba de comprobación de estado. Las opciones disponibles son:<ul><li>{}: heredar comprobación de estado</li><li>{"NONE"}: la comprobación de estado está inhabilitada</li><li>{"CMD", args...}: ejecutar argumentos directamente</li><li>{"CMD-SHELL", command}: ejecutan el mandato con el shell predeterminado del sistema</li></ul>|
+|`Test`|Matriz de series|Muestra cómo ejecutar la prueba de comprobación de estado. Las opciones disponibles son:<ul><li>`{}`: heredar comprobación de estado</li><li>`{"NONE"}`: la comprobación de estado está inhabilitada</li><li>`{"CMD", args...}`: ejecutar argumentos directamente</li><li>`{"CMD-SHELL", command}`: ejecutan el mandato con el shell predeterminado del sistema</li></ul>|
 |`Interval`|Entero (64 bits)|Visualiza el tiempo que se debe esperar entre dos comprobaciones de estado en nanosegundos.|
 |`Timeout`|Entero (64 bits)|Muestra el tiempo que se debe esperar antes de considerar que una comprobación de estado ha fallado en nanosegundos.|
 |`Retries`|Entero|Muestra el número de errores consecutivos que se necesitan para considerar que un contenedor no está funcionando correctamente.|
@@ -220,4 +220,4 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Expiry`|Entero (64 bits)|Muestra la [indicación de fecha y hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time) en la que caduca la señal.|
 |`ReadOnly`|Booleano|Muestra _true_ cuando solo puede extraer imágenes y _false_ cuando puede extraer imágenes del espacio de nombres y transmitir imágenes al mismo.|
 |`Description`|Serie|Muestra la descripción de la señal.|
-{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <codeibmcloud cr token-list</code>." caption-side="top"}>
+{: caption="Tabla 6. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr token-list</code>." caption-side="top"}

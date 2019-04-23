@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -195,7 +195,7 @@ subcollection: registry
 
 |필드|유형|설명|
 |-----|----|-----------|
-|`Test`|문자열의 배열|상태 검사 테스트 실행 방법을 표시합니다. 사용 가능한 옵션은 다음과 같습니다.<ul><li>{}: 상태 검사 상속</li><li>{"NONE"}: 상태 검사 사용 안함</li><li>{"CMD", args...}: 인수 직접 실행</li><li>{"CMD-SHELL", command}: 시스템의 기본 쉘로 명령 실행</li></ul>|
+|`Test`|문자열의 배열|상태 검사 테스트 실행 방법을 표시합니다. 사용 가능한 옵션은 다음과 같습니다.<ul><li>`{}`: 상태 검사 상속</li><li>`{"NONE"}`: 상태 검사 사용 안함</li><li>`{"CMD", args...}`: 인수 직접 실행</li><li>`{"CMD-SHELL", command}`: 시스템의 기본 쉘로 명령 실행</li></ul>|
 |`Interval`|정수(64비트)|두 개의 상태 검사 사이에 대기하는 시간을 나노초 단위로 표시합니다.|
 |`Timeout`|정수(64비트)|상태 검사를 실패한 것으로 간주하기 전에 대기하는 시간을 나노초 단위로 표시합니다.|
 |`Retries`|정수|컨테이너를 올바르게 작동하지 않는 것으로 간주하기 위해 필요한 연속 실패 수를 표시합니다.|

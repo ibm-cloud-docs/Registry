@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -38,8 +38,8 @@ subcollection: registry
 
 포럼을 사용하여 질문을 할 때는 {{site.data.keyword.registrylong_notm}} 개발 팀에서 볼 수 있도록 질문에 태그를 지정하십시오.
 
-- {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://stackoverflow.com/search?q=+ibm-bluemix)에 질문을 게시하고 질문에 `ibm-cloud` 및 `container-registry`로 태그를 지정하십시오.
-- 서비스 및 시작하기 지시사항에 관한 질문의 경우 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 포럼을 사용하십시오. `ibm-cloud` 및 `container-registry` 태그를 포함하십시오.
+- {{site.data.keyword.registrylong_notm}}로 앱을 개발하거나 배치하는 데 관한 기술적 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry)에 질문을 게시하고 질문에 `ibm-cloud` 및 `container-registry`로 태그를 지정하십시오.
+- 서비스 및 시작하기 지시사항에 관한 질문이 있는 경우 [IBM Developer Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/container-registry.html) 포럼을 사용하십시오. `ibm-cloud` 및 `container-registry` 태그를 포함하십시오.
 
 포럼 사용에 대한 세부사항은 [지원 센터 사용](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)을 참조하십시오.
 
@@ -227,7 +227,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 - `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 - 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
 - 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-integrations#helm)하십시오.
-- 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
+- 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
 
 ### {{site.data.keyword.Bluemix_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
 {: #ts_ppa_import}

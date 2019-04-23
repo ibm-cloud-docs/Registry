@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -51,7 +51,7 @@ per un uso successivo in {{site.data.keyword.registrylong_notm}}.
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
 - [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
+- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/install/linux/linux-postinstall/). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
@@ -77,7 +77,7 @@ Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{sit
 spazio dei nomi.
 - [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Esegui il pull](#registry_images_pulling_reg) o [crea](#registry_images_creating) un'immagine sul tuo computer locale e contrassegna l'immagine tramite tag con le informazioni sul tuo spazio dei nomi.
-- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
+- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/install/linux/linux-postinstall/). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
@@ -104,7 +104,7 @@ Dopo aver eseguito il push della tua immagine a {{site.data.keyword.registrylong
 
 - [Gestisci la sicurezza con il Controllo vulnerabilità](/docs/services/va?topic=va-va_index) per trovare informazioni su possibili vulnerabilità e problemi di sicurezza.
 - [Creare un cluster
-e utilizzare questa immagine per distribuire un contenitore](/docs/containers?topic=containers-container_index#container_index) al cluster in {{site.data.keyword.containerlong_notm}}.
+e utilizzare questa immagine per distribuire un contenitore](/docs/containers?topic=containers-getting-started#getting-started) al cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copia di immagini tra i registri
 {: #registry_images_copying}
@@ -120,7 +120,7 @@ condividere l'immagine in entrambe le regioni.
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
 - [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
+- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/install/linux/linux-postinstall/). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
@@ -135,7 +135,7 @@ Dopo aver copiato la tua immagine, puoi effettuare una delle seguenti attività:
 
 - [Gestire la sicurezza delle immagini con il Controllo vulnerabilità](/docs/services/va?topic=va-va_index) per trovare informazioni su potenziali vulnerabilità e problemi di sicurezza.
 - [Creare un cluster
-e utilizzare questa immagine per distribuire un contenitore](/docs/containers?topic=containers-container_index#container_index) al cluster in {{site.data.keyword.containerlong_notm}}.
+e utilizzare questa immagine per distribuire un contenitore](/docs/containers?topic=containers-getting-started#getting-started) al cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Creazione di nuove immagini che fanno riferimento a un'immagine di origine
 {: #registry_images_source}
@@ -187,7 +187,7 @@ Puoi creare un'immagine Docker direttamente in {{site.data.keyword.Bluemix_notm}
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
 - [Configura il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Se
+- [Assicurati di poter eseguire i comandi Docker senza autorizzazioni root![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/install/linux/linux-postinstall/). Se
 il tuo client Docker è configurato per richiedere le autorizzazioni root, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo`.
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.

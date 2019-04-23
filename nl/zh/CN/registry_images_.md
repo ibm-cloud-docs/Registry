@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -46,7 +46,7 @@ subcollection: registry
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
@@ -72,7 +72,7 @@ subcollection: registry
 - [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
 - 在本地计算机上[拉出](#registry_images_pulling_reg)或[构建](#registry_images_creating)映像，并使用名称空间信息对该映像进行标记。
 
-- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
@@ -97,7 +97,7 @@ subcollection: registry
 将映像推送到 {{site.data.keyword.registrylong_notm}} 后，可以执行下列其中一项任务：
 
 - [使用漏洞顾问程序管理安全性](/docs/services/va?topic=va-va_index)，以查找潜在安全问题和漏洞的相关信息。
-- [创建集群并使用此映像部署容器](/docs/containers?topic=containers-container_index#container_index)至 {{site.data.keyword.containerlong_notm}} 中的集群。
+- [创建集群并使用此映像部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的集群。
 
 ## 在注册表之间复制映像
 {: #registry_images_copying}
@@ -112,7 +112,7 @@ subcollection: registry
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
@@ -124,7 +124,7 @@ subcollection: registry
 复制映像后，可以执行下列其中一项任务：
 
 - [使用漏洞顾问程序管理映像安全性](/docs/services/va?topic=va-va_index)，以查找潜在安全问题和漏洞的相关信息。
-- [创建集群并使用此映像部署容器](/docs/containers?topic=containers-container_index#container_index)至 {{site.data.keyword.containerlong_notm}} 中的集群。
+- [创建集群并使用此映像部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的集群。
 
 ## 创建引用源映像的新映像
 {: #registry_images_source}
@@ -176,7 +176,7 @@ subcollection: registry
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
 - [在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
+- [确保您可以在没有 root 用户许可权的情况下运行 Docker 命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果您的 Docker 客户机设置为需要 root 用户许可权，那么必须使用 `sudo` 运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 

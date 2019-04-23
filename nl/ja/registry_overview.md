@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -229,7 +229,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
   <dd>タグは、リポジトリー内にあるイメージの識別子です。 タグを使用して、リポジトリー内にある同じ基本イメージを持つさまざまなバージョンを区別できます。 リポジトリー・イメージのタグを指定しないで Docker コマンドを実行すると、<code>latest</code> タグの付いたイメージがデフォルトで使用されます。</dd>
 </dl>
 
-Docker 固有の用語について詳しくは、[Docker 用語集を参照してください![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/glossary/)。
+Docker 固有の用語について詳しくは、[Docker 用語集 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/glossary/) を参照してください。
 
 ### 名前空間の計画
 {: #registry_namespaces}

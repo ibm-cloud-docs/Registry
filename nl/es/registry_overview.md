@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -230,7 +230,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
   <dd>Una etiqueta es un identificador de una imagen dentro de un repositorio. Puede utilizar etiquetas para distinguir entre distintas versiones de la misma imagen base dentro de un repositorio. Cuando ejecuta un mandato de Docker y no especifica la etiqueta de una imagen del repositorio, se utilizará de forma predeterminada la imagen con la etiqueta <code>latest</code>.</dd>
 </dl>
 
-Para obtener más información sobre los términos específicos de Docker, [consulte el glosario de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/glossary/).
+Para obtener más información sobre los términos específicos de Docker, consulte el [glosario de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/glossary/).
 
 ### Planificación de espacios de nombres
 {: #registry_namespaces}

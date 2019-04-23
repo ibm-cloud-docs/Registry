@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세
 **예**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,24 +113,27 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 사용자에게 계정에서 {{site.data.keyword.registrylong_notm}} 컨텐츠에 액세스할 수 있는 권한을 부여하려면 다음 표에 있는 하나 이상의 역할을 부여하는 정책을 작성해야 합니다. 정책을 작성할 때 리소스 유형을 `namespace`로 지정하고 네임스페이스 이름을 리소스로 지정하여 특정 네임스페이스에 대한 액세스를 제한할 수 있습니다. `resource-type` 및 `resource`를 지정하지 않으면 정책이 계정의 모든 리소스에 대한 액세스를 부여합니다.
 
+리소스 그룹에서 레지스트리 네임스페이스에 대한 액세스 권한을 구성하고 지정할 수 없습니다.
+{: note}
+
 **예**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
 | 조치 | 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-| `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) 컨테이너 이미지를 빌드합니다. | 작성자, 관리자 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> | 작성자, 관리자 |
+| `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) 컨테이너 이미지를 빌드합니다. |작성자, 관리자 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> |작성자, 관리자 |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) 특정 이미지에 대한 세부사항을 표시합니다. | 독자, 관리자 |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 컨테이너 이미지를 나열합니다. | 독자, 관리자 |
 | `container-registry.image.pull` | <ul><li>`docker pull` 이미지를 가져옵니다. </li><li>`docker trust inspect` 서명을 검사합니다. </li></ul> | 독자, 작성자, 관리자 |
 | `container-registry.image.push` | <ul><li>`docker push` 이미지를 푸시합니다.</li><li>`docker trust sign` 이미지에 서명합니다.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) [IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.</li></ul> |작성자, 관리자 |
 | `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) 소스 이미지를 참조하는 새 이미지를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다. | 소스 이미지에 대한 독자, 작성자 또는 관리자. 대상 이미지에 대한 작성자 또는 관리자 |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) 이미지의 취약성 평가 보고서를 봅니다. | 독자, 관리자 |
-| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) 네임스페이스를 추가합니다. | 작성자, 관리자 |
-| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) 네임스페이스를 제거합니다. | 작성자, 관리자 |
+| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) 네임스페이스를 추가합니다. |작성자, 관리자 |
+| `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) 네임스페이스를 제거합니다. |작성자, 관리자 |
 | `container-registry.namespace.list` | [`ibmcloud cr namespace-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) 네임스페이스를 표시합니다. | 독자, 관리자 |
 {: caption="표 5. {{site.data.keyword.registrylong_notm}}를 사용하기 위한 서비스 조치 및 오퍼레이션" caption-side="top"}

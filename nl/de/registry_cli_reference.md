@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 
 |Feld|Typ|Beschreibung|
 |-----|----|-----------|
-|`Test`|Array von Zeichenfolgen|Zeigt an, wie die Statusprüfung ausgeführt wird. Verfügbare Optionen:<ul><li>{}: Statusprüfung übernehmen</li><li>{"NONE"}: Statusprüfung ist inaktiviert</li><li>{"CMD", args...}: Argumente direkt ausführen</li><li>{"CMD-SHELL", command}: den Befehl mit der Standard-Shell des Systems ausführen</li></ul>|
+|`Test`|Array von Zeichenfolgen|Zeigt an, wie die Statusprüfung ausgeführt wird. Verfügbare Optionen:<ul><li>`{}`: Statusprüfung übernehmen</li><li>`{"NONE"}`: Statusprüfung ist inaktiviert</li><li>`{"CMD", args...}`: Argumente direkt ausführen</li><li>`{"CMD-SHELL", command}`: den Befehl mit der Standard-Shell des Systems ausführen</li></ul>|
 |`Interval`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die zwischen zwei Statusprüfungen gewartet werden soll.|
 |`Timeout`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die gewartet werden soll, bevor die Statusprüfung als fehlgeschlagen eingestuft wird.|
 |`Retries`|Ganzzahl|Zeigt die Anzahl der aufeinanderfolgenden Fehlversuche an, die erforderlich sind, damit die Ausführung eines Containers als nicht korrekt eingestuft wird.|

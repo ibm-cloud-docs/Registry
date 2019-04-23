@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -166,7 +166,7 @@ Um das Image für den neuen Domänennamen `icr.io` erneut zu signieren, müssen 
     Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag ` latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
     {: tip}
 
-2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen des Repositorys und `<tag>` durch den Namen des Tags. 
+2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen des Repositorys und `<tag>` durch den Namen des Tags.
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>

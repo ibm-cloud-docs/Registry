@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -45,7 +45,7 @@ Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryq
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/install/linux/linux-postinstall/). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -69,7 +69,7 @@ Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
 - [Führen Sie eine Pull-Operation für ein Image durch](#registry_images_pulling_reg) oder [erstellen Sie ein Image](#registry_images_creating) auf Ihrem lokalen Computer und kennzeichnen Sie das Image mit den Informationen zu Ihrem Namensbereich.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/install/linux/linux-postinstall/). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -94,7 +94,7 @@ Führen Sie die folgenden Schritte aus, um ein Image hochzuladen (Push-Operation
 Nachdem Sie das Image per Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen haben, können Sie eine der folgenden Tasks ausführen:
 
 - [Verwalten Sie die Sicherheit mit Vulnerability Advisor](/docs/services/va?topic=va-va_index), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
-- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers?topic=containers-container_index#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
+- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers?topic=containers-getting-started#getting-started) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
 
 ## Images zwischen Registrys kopieren
 {: #registry_images_copying}
@@ -108,7 +108,7 @@ Sie können ein Image mit einer Pull-Operation aus einer Registry in einer Regio
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/install/linux/linux-postinstall/). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
@@ -120,7 +120,7 @@ Führen Sie die folgenden Schritte aus, um ein Image zwischen zwei Registrys zu 
 Nachdem Sie das Image kopiert haben, können Sie eine der folgenden Tasks ausführen:
 
 - [Verwalten Sie die Imagesicherheit mit Vulnerability Advisor](/docs/services/va?topic=va-va_index), um Informationen zu möglichen Sicherheitsproblemen und Sicherheitslücken zu erhalten.
-- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers?topic=containers-container_index#container_index) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
+- Sie können einen [Cluster erstellen und dieses Image zum Bereitstellen eines Containers](/docs/containers?topic=containers-getting-started#getting-started) für den Cluster in {{site.data.keyword.containerlong_notm}} verwenden.
 
 ## Neue Images erstellen, die auf ein Quellenimage verweisen
 {: #registry_images_source}
@@ -170,7 +170,7 @@ Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstel
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
-- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
+- [Stellen Sie sicher, dass Sie Docker-Befehle ohne Rootberechtigungen ausführen können![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/install/linux/linux-postinstall/). Falls Ihr Docker-Client konfigurationsgemäß Rootberechtigungen erfordert, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` ausführen.
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 

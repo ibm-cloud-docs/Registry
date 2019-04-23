@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ In questa sezione, crea alcuni spazi dei nomi con immagini di esempio e concedi 
     3. Crea una politica che concede il ruolo di Lettore per `namespace_b` all'utente B immettendo il seguente comando, dove _`<Region>`_ è il nome della tua [regione](/docs/services/Registry?topic=registry-registry_overview#registry_regions), ad esempio `us-south`:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

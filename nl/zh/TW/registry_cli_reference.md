@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ subcollection: registry
 
 |欄位|類型|說明|
 |-----|----|-----------|
-|`Test`|字串陣列|顯示如何執行性能檢查測試。可用的選項包含：<ul><li>{}：繼承性能檢查</li><li>{"NONE"}：已停用性能檢查</li><li>{"CMD", args...}：直接執行引數</li><li>{"CMD-SHELL", command}：使用系統預設 Shell 來執行指令</li></ul>|
+|`Test`|字串陣列|顯示如何執行性能檢查測試。可用的選項包含：<ul><li>`{}`：繼承性能檢查</li><li>`{"NONE"}`：已停用性能檢查</li><li>`{"CMD", args...}`：直接執行引數</li><li>`{"CMD-SHELL", command}`：使用系統預設 Shell 來執行指令</li></ul>|
 |`Interval`|整數（64 位元）|顯示在兩次性能檢查之間等待的時間（以十億分之一秒為單位）。|
 |`Timeout`|整數（64 位元）|顯示將性能檢查視為失敗之前等待的時間（以十億分之一秒為單位）。|
 |`Retries`|整數|顯示將容器視為未正確運作所需的連續失敗次數。|

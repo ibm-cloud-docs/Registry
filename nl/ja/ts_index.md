@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -38,8 +38,8 @@ subcollection: registry
 
 フォーラムを使用して質問するときは、{{site.data.keyword.registrylong_notm}} 開発チームの目に留まるように、質問にタグを付けてください。
 
-- {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=+ibm-bluemix) で質問を投稿し、質問に `ibm-cloud` および `container-registry` のタグを付けてください。
-- サービスおよび概説の指示に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) フォーラムを使用してください。 `ibm-cloud` タグと `container-registry` タグを含めてください。
+- {{site.data.keyword.registrylong_notm}} でのアプリの開発またはデプロイに関する技術的な質問がある場合は、[スタック・オーバーフロー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry) で質問を投稿し、質問に `ibm-cloud` および `container-registry` のタグを付けてください。
+- サービスおよび概説の指示に関する質問については、[IBM Developer Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/container-registry.html) フォーラムを使用してください。`ibm-cloud` タグと `container-registry` タグを含めてください。
 
 フォーラムの使用について詳しくは、[サポート・センターの使用](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)を参照してください。
 
@@ -226,7 +226,7 @@ denied: requested access to the resource is denied
 - `ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} にログインします。
 - クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)します。
 - クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers?topic=containers-integrations#helm)。
-- 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
+- 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/helm/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
 
 ### {{site.data.keyword.Bluemix_notm}} で使用するための IBM パスポート・アドバンテージ製品のインポート
 {: #ts_ppa_import}

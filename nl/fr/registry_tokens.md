@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-29"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -262,6 +262,6 @@ ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docke
 ```
 {: pre}
 
-Remplacez `<apikey>` par votre clé d'API, `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` par votre espace de nom et `<image_repo>` par votre référentiel.
+Remplacez `<apikey>` par votre clé d'API et remplacez `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` par votre espace de nom, et `<image_repo>` par le référentiel.
 
 Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

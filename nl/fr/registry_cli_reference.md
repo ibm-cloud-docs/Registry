@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 
 |Zone|Type|Description|
 |-----|----|-----------|
-|`Test`|Tableau de chaînes|Affiche le mode d'exécution du diagnostic d'intégrité. Options disponibles :<ul><li>{} : hérite du diagnostic d'intégrité</li><li>{"NONE"} : le diagnostic d'intégrité est désactivé</li><li>{"CMD", args...} : arguments exec directement</li><li>{"CMD-SHELL", command} : exécute la commande avec le shell par défaut du système</li></ul>|
+|`Test`|Tableau de chaînes|Affiche le mode d'exécution du diagnostic d'intégrité. Options disponibles :<ul><li>`{}` : hérite du diagnostic d'intégrité</li><li>`{"NONE"}` : le diagnostic d'intégrité est désactivé</li><li>`{"CMD", args...}` : arguments exec directement</li><li>`{"CMD-SHELL", command}` : exécute la commande avec le shell par défaut du système</li></ul>|
 |`Interval`|Entier (64 bits)|Affiche la durée d'attente entre deux diagnostics d'intégrité en nanosecondes.|
 |`Timeout`|Entier (64 bits)|Affiche la durée d'attente avant que le diagnostic d'intégrité ne soit considéré comme ayant échoué en nanosecondes.|
 |`Retries`|Entier|Affiche le nombre d'échecs consécutifs à prendre en compte pour déterminer qu'un conteneur ne fonctionne pas correctement.|

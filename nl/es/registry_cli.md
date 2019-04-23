@@ -40,7 +40,7 @@ Si desea ver la versión actual del plugin de CLI `container-registry`, ejecute 
 
 Para obtener más información sobre cómo utilizar la CLI de {{site.data.keyword.registrylong_notm}}, consulte [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
-Para obtener más información sobre la plataforma IAM y los roles de acceso a servicios necesarios para algunos mandatos, consulte [Gestión del acceso de usuario con Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
+Para obtener más información sobre la plataforma IAM y los roles de acceso al servicio necesarios para algunos mandatos, consulte [Gestión del acceso de usuario con Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {:tip}
@@ -302,7 +302,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 
 Visualiza todas las imágenes de su cuenta de {{site.data.keyword.Bluemix_notm}}.
 
-El nombre de imagen es la combinación del contenido de las columnas **Repositorio** y **Etiqueta** en el formato `repository:tag`.
+El nombre de imagen es la combinación del contenido de las columnas **Repositorio** y **Etiqueta** en el formato `repository:tag`
 {:tip}
 
 ```

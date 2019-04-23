@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -22,10 +22,10 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# コンテナー・イメージ・セキュリティーの適用 (ベータ)
+# コンテナー・イメージ・セキュリティーの適用
 {: #security_enforce}
 
-Container Image Security Enforcement (ベータ) を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
 Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
@@ -159,7 +159,7 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself.
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
     # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
@@ -167,6 +167,7 @@ spec:
       policies:
 ```
 {: codeblock}
+
 
 ## ポリシーのカスタマイズ
 {: #customize_policies}
@@ -181,7 +182,7 @@ spec:
 
 始める前に、クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)してください。 次に、以下の手順を実行します。
 
-1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes カスタム・リソース定義 <img src="../../icons/launch-glyph.svg" alt="外部リンク・アイコン"></a> の `.yaml` ファイルを作成します。
+1. [Kubernetes カスタム・リソース定義 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` ファイルを作成します。
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1

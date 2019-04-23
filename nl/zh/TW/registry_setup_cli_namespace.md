@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -40,7 +40,7 @@ subcollection: registry
 {:shortdesc}
 
 1. [安裝 `container-registry` CLI 外掛程式。](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
-2. 選用項目：[配置 Docker 用戶端在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 的情況下執行指令](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果您未執行此步驟，則必須使用 **sudo** 或以 root 使用者身分來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
+2. 選用項目：[配置 Docker 用戶端在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示") 的情況下執行指令](https://docs.docker.com/install/linux/linux-postinstall/)。如果您未執行此步驟，則必須使用 `sudo` 或以 root 使用者身分來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
 您現在可以在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間。
 
@@ -97,9 +97,10 @@ subcollection: registry
 - [安裝 {{site.data.keyword.Bluemix_notm}} CLI 及 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [計劃如何使用及命名您的登錄名稱空間](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-建立名稱空間，請參閱「開始使用」文件中的[設定名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
+<br>
+若要建立名稱空間，請參閱「開始使用」文件中的[設定名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
-您現在可以[將 Docker 映像檔推送至{{site.data.keyword.registrylong_notm}} 中的名稱空間](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，並與您帳戶中的其他使用者共用這些映像檔。
+您現在可以[將 Docker 映像檔推送至{{site.data.keyword.registrylong_notm}} 中的名稱空間](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，並與您帳戶中的其他使用者共用這些映像檔。若要在 {{site.data.keyword.Bluemix_notm}} IAM 中控制名稱空間的存取權，請參閱[建立原則](/docs/services/Registry?topic=registry-user#create)。
 
 ## 移除名稱空間
 {: #registry_remove}

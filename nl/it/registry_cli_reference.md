@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ Riesamina la seguente tabella per trovare le opzioni e i tipi di dati del templa
 
 |Campo|Tipo|Descrizione|
 |-----|----|-----------|
-|`Test`|Array di stringhe|Visualizza come eseguire il test del controllo di integrità. Le opzioni disponibili sono:<ul><li>{}: ereditare il controllo di integrità</li><li>{"NONE"}: il controllo di integrità è disabilitato</li><li>{"CMD", args...}: eseguire gli argomenti direttamente</li><li>{"CMD-SHELL", command}: eseguire il comando con la shell predefinita del sistema</li></ul>|
+|`Test`|Array di stringhe|Visualizza come eseguire il test del controllo di integrità. Le opzioni disponibili sono:<ul><li>`{}`: ereditare il controllo di integrità</li><li>`{"NONE"}`: il controllo di integrità è disabilitato</li><li>`{"CMD", args...}`: eseguire gli argomenti direttamente</li><li>`{"CMD-SHELL", command}`: eseguire il comando con la shell predefinita del sistema</li></ul>|
 |`Interval`|Numero intero (64 bit)|Visualizza il tempo di attesa tra due controlli di integrità in nanosecondi.|
 |`Timeout`|Numero intero (64 bit)|Visualizza il tempo di attesa prima di considerare come non riuscito il controllo di integrità in nanosecondi.|
 |`Retries`|Numero intero|Visualizza il numero di errori consecutivi necessari per considerare un contenitore come non funzionante correttamente.|

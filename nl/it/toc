@@ -3,10 +3,9 @@
 
 {: .toc subcollection="registry" audience="compute" arm="2413616" href="/docs/services/Registry?topic=registry-getting-started" path="services/Registry"}
 IBM Cloud Container Registry
-
+   
     {: .navgroup id="learn"}
     getting-started.md
-    index.md
     registry_overview.md
     registry_ha.md
 
@@ -18,6 +17,8 @@ IBM Cloud Container Registry
     {: .topicgroup}
     Esercitazioni
         registry_tutorial_configure_iam.md
+        /tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+        /tutorials/solution-tutorials-multi-region-k8s-cis
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -43,4 +44,3 @@ IBM Cloud Container Registry
     ts_index.md
     registry_faq.md
     {: .navgroup-end}
-    

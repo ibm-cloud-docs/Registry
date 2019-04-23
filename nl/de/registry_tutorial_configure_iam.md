@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
     3. Erstellen Sie eine Richtlinie, die Benutzer B die Rolle 'Leseberechtigter' für `namensbereich_b` zuordnet, indem Sie den folgenden Befehl ausführen, wobei _`<Region>`_ der Name Ihrer [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) ist, z. B. `us-south`:
 
         ```
-        ibmcloud iam user-policy-create <benutzer.b@beispiel.com> --service-name container-registry --region <region> --resource-type namensbereich --resource <namensbereich_b> --roles Leseberechtigter
+        ibmcloud iam user-policy-create <benutzer.b@beispiel.com> --service-name container-registry --region <region> --resource-type namensbereich --resource namensbereich_b --roles Leseberechtigter
         ```
         {: pre}
 

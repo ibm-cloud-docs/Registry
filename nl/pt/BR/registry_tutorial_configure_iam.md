@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -228,7 +228,7 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
 [região](/docs/services/Registry?topic=registry-registry_overview#registry_regions), por exemplo, `us-south`:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

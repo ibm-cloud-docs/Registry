@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -22,10 +22,10 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 強制執行容器映像檔安全（測試版）
+# 強制執行容器映像檔安全
 {: #security_enforce}
 
-使用 Container Image Security Enforcement（測試版），您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
+使用 Container Image Security Enforcement，您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
 {:shortdesc}
 
 Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} 擷取映像檔內容信任及漏洞的相關資訊。您可以選擇封鎖或容許部署儲存在其他登錄中的映像檔，但無法針對這些映像檔使用漏洞或信任強制執行。
@@ -159,7 +159,7 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself.
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
     # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
@@ -167,6 +167,7 @@ spec:
       policies:
 ```
 {: codeblock}
+
 
 ## 自訂原則
 {: #customize_policies}
@@ -181,7 +182,7 @@ spec:
 
 開始之前，請[將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。然後，請完成下列步驟：
 
-1. 建立 <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 自訂資源定義 <img src="../../icons/launch-glyph.svg" alt="外部鏈結圖示"></a> `.yaml` 檔案。
+1. 建立 [Kubernetes 自訂資源定義 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` 檔案。
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1

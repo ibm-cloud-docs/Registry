@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -195,7 +195,7 @@ Revise a tabela a seguir para localizar opções de modelo e tipos de dados disp
 
 |Campo|Tipo|Descrição|
 |-----|----|-----------|
-|`Test`|Matriz de sequências|Exibe como executar o teste de verificação de funcionamento. As opções disponíveis são:<ul><li>{}: herdam a verificação de funcionamento</li><li>{"NONE"}: a verificação de funcionamento é desativada</li><li>{"CMD", args...}: argumentos exec diretamente</li><li>{"CMD-SHELL", command}: execute o comando com o shell padrão do sistema</li></ul>|
+|`Test`|Matriz de sequências|Exibe como executar o teste de verificação de funcionamento. As opções disponíveis são:<ul><li>`{}`: herdam a verificação de funcionamento</li><li>`{"NONE"}`: a verificação de funcionamento é desativada</li><li>`{"CMD", args...}`: executam argumentos diretamente</li><li>`{"CMD-SHELL", command}`: executam o comando com o shell padrão do sistema</li></ul>|
 |`Interval`|Número Inteiro (64 bits)|Exibe o tempo para esperar entre as verificações de funcionamento em nanossegundos.|
 |`Timeout`|Número Inteiro (64 bits)|Exibe o tempo para esperar antes de considerar a verificação de funcionamento como tendo falhado em nanossegundos.|
 |`Retries`|Número inteiro|Exibe o número de falhas consecutivas necessárias para que o funcionamento de um contêiner seja considerado incorreto.|

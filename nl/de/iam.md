@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ Um einem Benutzer die Berechtigung zum Konfigurieren von {{site.data.keyword.reg
 **Beispiel**
 
 ```
-bx iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <benutzer-e-mail> --service-name container-registry --
 
 Um einem Benutzer die Berechtigung zum Zugriff auf {{site.data.keyword.registrylong_notm}}-Inhalte in Ihrem Account zu erteilen, müssen Sie eine Richtlinie erstellen, die eine oder mehrere der Rollen in der folgenden Tabelle zuordnet. Beim Erstellen Ihrer Richtlinie können Sie den Zugriff auf einen bestimmten Namensbereich einschränken, indem Sie den Ressourcentyp `namespace` und den Namen des Namensbereichs als Ressource angeben. Wenn Sie keinen Ressourcentyp (`resource-type`) und keine Ressource (`resource`) angeben, erteilt die Richtlinie Zugriff auf alle Ressourcen in dem Konto.
 
+Eine Organisation und Zuweisung von Zugriff zu Registry-Namensbereichen in Ressourcengruppen ist nicht möglich.
+{: note}
+
 **Beispiel**
 
 ```
-bx iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Leseberechtigter> [--resource-type namespace --resource <name_von_namensbereich>]
+ibmcloud iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Leseberechtigter> [--resource-type namespace --resource <name_von_namensbereich>]
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -38,7 +38,7 @@ subcollection: registry
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-container_index#container_index)
+- [{{site.data.keyword.containerlong_notm}} 文件](/docs/containers?topic=containers-getting-started#getting-started)
 - 叢集的 REST API，請參閱 [Kubernetes 服務 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-api/)
 - [叢集的 REST API JSON ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
 - 用於登入叢集的 REST API，請參閱 [{{site.data.keyword.containerlong_notm}} 記載 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://containers.cloud.ibm.com/swagger-logging/)

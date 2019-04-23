@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -229,7 +229,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   <dd>標籤是儲存庫內映像檔的 ID。您可以使用標籤來識別儲存庫內相同基礎映像檔的不同版本。當您執行 Docker 指令但未指定儲存庫映像檔的標籤時，依預設會使用以 <code>latest</code> 標記的映像檔。</dd>
 </dl>
 
-若要進一步瞭解 Docker 特有術語，[請參閱 Docker 名詞解釋 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/glossary/)。
+若要進一步瞭解 Docker 特有術語，請參閱 [Docker 名詞解釋 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/glossary/)。
 
 ### 規劃名稱空間
 {: #registry_namespaces}

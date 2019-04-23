@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ Pour accorder à un utilisateur les droits nécessaires pour configurer votre {{
 **Exemple**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 Pour accorder à un utilisateur les droits nécessaires pour accéder au contenu {{site.data.keyword.registrylong_notm}} dans votre compte, vous devez créer une règle qui accorde un ou plusieurs des rôles répertoriés dans le tableau ci-après. Lorsque vous créez votre règle, vous pouvez limiter l'accès à un espace de nom spécifique en spécifiant le type de ressource `namespace` et le nom de l'espace de nom comme ressource. Si vous ne spécifiez pas un élément `resource-type` ni un élément `resource`, la règle accorde l'accès à toutes les ressources du compte.
 
+Vous ne pouvez pas organiser et affecter un accès aux espaces de nom de registre dans des groupes de ressources.
+{: note}
+
 **Exemple**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

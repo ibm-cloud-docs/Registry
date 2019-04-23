@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ subcollection: registry
     3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与する、ポリシーを作成します。_`<Region>`_ は、`us-south` などの[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前です。
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

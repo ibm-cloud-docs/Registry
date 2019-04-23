@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Extraiga imágenes de otro registro a su máquina local
 {: #gs_registry_images_pulling}
 
-1. [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
+1. [Instale la CLI de Docker Engine ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/products/docker-engine#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
 
 2. Descargue (_pull_) la imagen en su máquina local. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_.
 

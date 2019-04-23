@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -38,7 +38,7 @@ subcollection: registry
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers?topic=containers-container_index#container_index)
+- [{{site.data.keyword.containerlong_notm}} 문서](/docs/containers?topic=containers-getting-started#getting-started)
 - 클러스터용 REST API, [Kubernetes Service API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://containers.cloud.ibm.com/swagger-api/)를 참조하십시오.
 - [클러스터용 REST API JSON ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
 - 클러스터에서 로깅하기 위한 REST API, [{{site.data.keyword.containerlong_notm}} Logging API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://containers.cloud.ibm.com/swagger-logging/)를 참조하십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-13"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -254,7 +254,7 @@ Lorsque vous envoyez une image signée à un nouveau référentiel pour la premi
 
 Vous devez sauvegarder toutes vos clés, et tout particulièrement la clé racine (root). si une clé est perdue ou compromise, vos [options de récupération](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sont limitées.
 
-Pour sauvegarder vos clés, consultez la [documentation Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
+Pour sauvegarder vos clés, voir la [documentation Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys).
 
 ## Gestion des signataires de confiance
 {: #trustedcontent_signers}

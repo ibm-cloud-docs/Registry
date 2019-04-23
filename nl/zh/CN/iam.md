@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ subcollection: registry
 **示例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 要授予用户访问帐户中 {{site.data.keyword.registrylong_notm}} 内容的许可权，您必须创建授予下表中一个或多个角色的策略。创建策略时，可以通过将资源类型 `namespace` 和特定名称空间的名称指定为资源，从而限制对该名称空间的访问。如果未指定 `resource-type` 和 `resource`，那么策略将授予对帐户中所有资源的访问权。
 
+您无法组织资源组中的注册表名称空间，以及分配对这些名称空间的访问权。
+{: note}
+
 **示例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

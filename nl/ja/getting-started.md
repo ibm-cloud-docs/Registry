@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 概説のチュートリアル
+# 入門チュートリアル
 {: #getting-started}
 
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
@@ -72,7 +72,7 @@ subcollection: registry
 ## 別のレジストリーからイメージをローカル・マシンにプルする
 {: #gs_registry_images_pulling}
 
-1. [Docker CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/community-edition#/download) をインストールします。 Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/toolbox/) をインストールします。 {{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。
+1. [Docker Engine CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-engine#/download) をインストールします。Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/toolbox/) をインストールします。 {{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。
 
 2. イメージをローカル・マシンにダウンロード (_プル_) します。 `<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (例: _latest_) に置き換えてください。
 

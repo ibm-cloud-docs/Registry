@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -74,7 +74,7 @@ preferencial.
 ## Puxar imagens de outro registro para sua máquina local
 {: #gs_registry_images_pulling}
 
-1. [Instale a CLI do Docker ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/community-edition#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
+1. [Instale a CLI do Docker Engine ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.docker.com/products/docker-engine#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
 2. Faça download (_puxe_) da imagem para sua máquina local. Substitua `<source_image>` pelo repositório da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _latest_.
 

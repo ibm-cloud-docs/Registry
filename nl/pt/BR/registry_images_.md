@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -50,7 +50,7 @@ uso posterior no {{site.data.keyword.registrylong_notm}}.
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/install/linux/linux-postinstall/). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
 `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
@@ -78,7 +78,7 @@ push) da imagem do computador local para o namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Puxe](#registry_images_pulling_reg) ou [construa](#registry_images_creating) uma imagem no
 computador local e identifique-a com as informações do namespace.
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/install/linux/linux-postinstall/). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
 `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
@@ -105,7 +105,7 @@ Para fazer upload de uma imagem (enviá-la por push), conclua as etapas a seguir
 Depois de enviar por push sua imagem para o {{site.data.keyword.registrylong_notm}}, é possível executar uma das tarefas a seguir:
 
 - [Gerenciar a segurança com o Vulnerability Advisor](/docs/services/va?topic=va-va_index) para localizar informações sobre possíveis problemas e vulnerabilidade de segurança.
-- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers?topic=containers-container_index#container_index)
+- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers?topic=containers-getting-started#getting-started)
 para o cluster no {{site.data.keyword.containerlong_notm}}.
 
 ## Copiando imagens entre registros
@@ -121,7 +121,7 @@ compartilhar a imagem com usuários em ambas as regiões.
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/install/linux/linux-postinstall/). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
 `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
@@ -135,7 +135,7 @@ Para copiar uma imagem entre dois registros, conclua as etapas a seguir:
 Após copiar sua imagem, será possível fazer uma das tarefas a seguir:
 
 - [Gerenciando a segurança de imagens com o Vulnerability Advisor](/docs/services/va?topic=va-va_index) para localizar informações sobre potenciais problemas e vulnerabilidades de segurança.
-- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers?topic=containers-container_index#container_index)
+- [Criar um cluster e usar essa imagem para implementar um contêiner](/docs/containers?topic=containers-getting-started#getting-started)
 para o cluster no {{site.data.keyword.containerlong_notm}}.
 
 ## Criando novas imagens que se referem a uma imagem de origem
@@ -187,7 +187,7 @@ própria no computador local e transferi-la por upload (enviar por push) para o 
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
+- [Certifique-se de que seja possível executar comandos do Docker sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/install/linux/linux-postinstall/). Caso o cliente Docker esteja configurado para requerer permissões raiz, deve-se executar os comandos
 `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo`.
 
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
@@ -289,7 +289,7 @@ Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, vej
 
 Se desejar excluir um repositório privado e suas imagens associadas, consulte [Excluindo um repositório privado e quaisquer imagens associadas](#registry_repo_remove).
 
-As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas de seu repositório privado do {{site.data.keyword.Bluemix_notm}} e não são consideradas para sua cota.
+As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas do seu repositório privado do {{site.data.keyword.Bluemix_notm}} e não são contabilizadas para sua cota.
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
 {:tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -40,7 +40,7 @@ subcollection: registry
 {:shortdesc}
 
 1. [安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
-2. 可选：[配置 Docker 客户机以在没有 root 用户许可权的情况下运行命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/installation/linux/linux-postinstall)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 **docker push** 命令。
+2. 可选：[配置 Docker 客户机以在没有 root 用户许可权的情况下运行命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
 现在，您可以在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间。
 
@@ -97,9 +97,10 @@ subcollection: registry
 - [安装 {{site.data.keyword.Bluemix_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [规划如何使用注册表名称空间并为其命名](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-创建名称空间；请参阅“入门”文档中的[设置名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
+<br>
+要创建名称空间，请参阅“入门”文档中的[设置名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
-现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。
+现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。要控制对 {{site.data.keyword.Bluemix_notm}} IAM 中名称空间的访问权，请参阅[创建策略](/docs/services/Registry?topic=registry-user#create)。
 
 ## 除去名称空间
 {: #registry_remove}

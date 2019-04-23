@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ subcollection: registry
 **範例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 若要將在您帳戶中存取 {{site.data.keyword.registrylong_notm}} 內容的許可權授與給使用者，您必須建立原則，以授與下表中的一個以上角色。建立原則時，您可以指定資源類型 `namespace` 及名稱空間名稱作為資源，將存取權限制在特定名稱空間。如果您未指定 `resource-type` 及 `resource`，則原則會授與對帳戶中所有資源的存取權。
 
+您無法組織及指派對資源群組中之登錄名稱空間的存取權。
+{: note}
+
 **範例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -265,7 +265,7 @@ visualizar e trabalhar com imagens que estão armazenadas em seu namespace de re
   <dd>Uma tag é um identificador de uma imagem em um repositório. É possível usar tags para distinguir diferentes versões da mesma imagem base em um repositório. Quando você executa um comando do Docker e não especifica a tag de uma imagem do repositório, a imagem identificada como <code>latest</code> é usada por padrão.</dd>
 </dl>
 
-Para saber mais sobre os termos específicos do Docker, [consulte o glossário do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/glossary/).
+Para saber mais sobre os termos específicos do Docker, consulte o [Glossário do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/glossary/).
 
 ### Planejando namespaces
 {: #registry_namespaces}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -42,6 +42,9 @@ subcollection: registry
 
 如果要授予对所有内容的访问权，那么不要指定资源类型或资源。如果要授予对特定名称空间的访问权，请将资源类型指定为 `namespace`，然后将该名称空间的名称用作资源。
 
+您无法组织资源组中的注册表名称空间，以及分配对这些名称空间的访问权。
+{: note}
+
 **开始之前**
 
 - 决定每个用户需要的角色以及这些角色是针对 {{site.data.keyword.registrylong_notm}} 中的哪些资源；请参阅 [IAM 角色](/docs/services/Registry?topic=registry-iam#iam)。请考虑您可以创建多个策略的情况；例如，可以授予对某个资源的写访问权，但仅授予对另一资源的读访问权，并且不授予对另一资源的访问权。策略是可叠加的，这意味着全局读策略和作用域限定为资源的写策略会授予对该资源的读和写访问权。
@@ -63,7 +66,9 @@ subcollection: registry
 
 1. 为用户和服务标识[创建策略](#create)。
 
-2. 要启用策略强制实施，请运行 [`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) 命令。
+2. 要启用策略强制实施，请运行 [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) 命令。
 
     您必须在帐户上具有“管理者”角色，才能运行 `ibmcloud cr iam-policies-enableibmcloud cr iam-policies-enable` 命令。您在自己的帐户中会自动具有“管理者”角色。
     {: tip}
+
+3. 要验证 IAM 策略是否已启用，请运行 [`ibmcloud cr iam-policies-status`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status)。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -94,7 +94,7 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 **例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
@@ -113,10 +113,13 @@ bx iam user-policy-create <user_email> --service-name container-registry --regio
 
 アカウント内で {{site.data.keyword.registrylong_notm}} のコンテンツにアクセスするユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に、リソース・タイプ `namespace` 、およびリソースとして名前空間名を指定することにより、特定の名前空間にアクセスを制限できます。 `resource-type` と `resource` を指定しないと、ポリシーはアカウント内のすべてのリソースへのアクセス権限を付与します。
 
+リソース・グループにおけるレジストリー名前空間へのアクセス権限を編成して割り当てることはできません。
+{: note}
+
 **例**
 
 ```
-bx iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -45,7 +45,7 @@ Puede extraer (descargar) una imagen desde cualquier origen de registro privado 
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
+- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
@@ -69,7 +69,7 @@ Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Extraiga](#registry_images_pulling_reg) o [cree](#registry_images_creating) una imagen en el sistema local y etiquetar la imagen con la información de espacio de nombres.
-- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
+- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
@@ -95,7 +95,7 @@ Después de enviar por push la imagen a {{site.data.keyword.registrylong_notm}},
 
 - [Gestionar la seguridad con Vulnerability Advisor](/docs/services/va?topic=va-va_index) para encontrar información sobre potenciales problemas de seguridad y vulnerabilidades.
 - [Cree un clúster
-y utilice esta imagen para desplegar un contenedor](/docs/containers?topic=containers-container_index#container_index) al clúster en {{site.data.keyword.containerlong_notm}}.
+y utilice esta imagen para desplegar un contenedor](/docs/containers?topic=containers-getting-started#getting-started) al clúster en {{site.data.keyword.containerlong_notm}}.
 
 ## Copia de imágenes entre registros
 {: #registry_images_copying}
@@ -109,7 +109,7 @@ Puede extraer una imagen de un registro en una región y enviarla por push a un 
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
+- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
@@ -122,7 +122,7 @@ Después de copiar la imagen, puede realizar una de las siguientes tareas:
 
 - [Gestionar la seguridad con Vulnerability Advisor](/docs/services/va?topic=va-va_index) para encontrar información sobre potenciales problemas de seguridad y vulnerabilidades.
 - [Cree un clúster
-y utilice esta imagen para desplegar un contenedor](/docs/containers?topic=containers-container_index#container_index) al clúster en {{site.data.keyword.containerlong_notm}}.
+y utilice esta imagen para desplegar un contenedor](/docs/containers?topic=containers-getting-started#getting-started) al clúster en {{site.data.keyword.containerlong_notm}}.
 
 ## Creación de imágenes nuevas que hacen referencia a una imagen de origen
 {: #registry_images_source}
@@ -172,7 +172,7 @@ Puede crear una imagen de Docker directamente en {{site.data.keyword.Bluemix_not
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
+- [Asegúrese de que puede ejecutar mandatos Docker sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si el cliente Docker está configurado para requerir permisos root, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull`, y `docker push` con `sudo`.
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 

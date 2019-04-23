@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -41,9 +41,9 @@ Quando você estiver usando os fóruns para fazer uma pergunta, marque a sua per
 - Se você tiver alguma pergunta técnica sobre como desenvolver ou implementar um aplicativo com o
 {{site.data.keyword.registrylong_notm}}, poste-a no
 [Stack Overflow
-![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://stackoverflow.com/search?q=+ibm-bluemix) e
+![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry) e
 identifique-a com `ibm-cloud` e `container-registry`.
-- Para perguntas sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Inclua as tags `ibm-cloud` e `container-registry`.
+- Para perguntas sobre o serviço e instruções de introdução, use o fórum do [IBM Developer Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/container-registry.html). Inclua as tags `ibm-cloud` e `container-registry`.
 
 Consulte [Usando o centro de suporte](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) para obter mais detalhes sobre o uso dos fóruns.
 
@@ -230,7 +230,7 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
 - Efetue login no {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
 - [Direcione a CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) para seu cluster.
 - Se ainda não tiver configurado o Helm no cluster, [configure o Helm em seu cluster agora](/docs/containers?topic=containers-integrations#helm).
-- Se desejar compartilhar os gráficos em sua organização, será possível instalar o [Projeto de software livre Chart Museum ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum). Para obter instruções, consulte esta [orientação do developerWorks ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+- Se desejar compartilhar os gráficos em sua organização, será possível instalar o [Projeto de software livre Chart Museum ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum). Para obter instruções, consulte esta [orientação do developerWorks ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importando produtos IBM Passport Advantage para uso no {{site.data.keyword.Bluemix_notm}}
 {: #ts_ppa_import}
@@ -578,4 +578,4 @@ Talvez o problema seja resolvido reinicializando o Mac. Se a reinicialização d
 possível desativar o armazenamento de logins no keychain do Mac:
 
 1. Em seu menu, clique no ícone **Docker** e selecione **Preferências**.
-2. Limpe a caixa de seleção **Armazenar os logins do Docker com segurança no keychain do macOS**.
+2. Limpe a caixa de seleção **Armazenar com segurança os logins do Docker no keychain do macOS**.

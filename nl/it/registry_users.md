@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -42,6 +42,9 @@ Se vuoi controllare l'accesso alle risorse, devi assegnare i ruoli agli utenti o
 
 Se vuoi concedere l'accesso a tutto, non specificare un tipo di risorsa o una risorsa. Se vuoi concedere l'accesso a uno spazio dei nomi specifico, specifica il tipo di risorsa come `namespace` e utilizza il nome dello spazio dei nomi come risorsa.
 
+Non puoi organizzare e assegnare l'accesso agli spazi dei nomi del registro nei gruppi di risorse.
+{: note}
+
 **Prima di iniziare**
 
 - Decidi di quali ruoli e risorse ha bisogno ogni utente in {{site.data.keyword.registrylong_notm}}, consulta [Ruoli IAM](/docs/services/Registry?topic=registry-iam#iam). Prendi in considerazione che puoi creare più politiche, ad esempio, puoi concedere l'accesso in scrittura a una risorsa ma concedere solo l'accesso in lettura a un'altra risorsa e non concedere l'accesso a un'altra risorsa. Le politiche sono addizionali, il che significa che una politica di lettura globale e una politica di scrittura dedicata alla risorsa concedono sia l'accesso in lettura che in scrittura a quella risorsa.
@@ -63,7 +66,9 @@ Per gli utenti di cui è stato eseguito il provisioning dopo il 4 ottobre 2018, 
 
 1. [Crea le politiche](#create) per i tuoi utenti e ID servizio.
 
-2. Per abilitare l'applicazione della politica, esegui il comando [`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable).
+2. Per abilitare l'applicazione della politica, esegui il comando [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable).
 
     Devi avere il ruolo di Gestore nell'account per poter eseguire il comando `ibmcloud cr iam-policies-enable`. Hai automaticamente il ruolo di Gestore nel tuo account.
     {: tip}
+
+3. Per verificare che le politiche IAM siano abilitate, esegui [`ibmcloud cr iam-policies-status`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status).

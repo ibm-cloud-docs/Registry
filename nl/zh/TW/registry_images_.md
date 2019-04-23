@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -45,7 +45,7 @@ subcollection: registry
 
 - [安裝 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/installation/linux/linux-postinstall) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/install/linux/linux-postinstall/) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
@@ -69,7 +69,7 @@ subcollection: registry
 - [安裝 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
 - 在本端電腦上[取回](#registry_images_pulling_reg)或[建置](#registry_images_creating)映像檔，並以您的名稱空間資訊標記映像檔。
-- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/installation/linux/linux-postinstall) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/install/linux/linux-postinstall/) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
@@ -94,7 +94,7 @@ subcollection: registry
 在將映像檔推送至 {{site.data.keyword.registrylong_notm}} 之後，您可以執行下列其中一項作業：
 
 - [使用漏洞警告器管理安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
-- [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-container_index#container_index)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
+- [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
 
 ## 在登錄之間複製映像檔
 {: #registry_images_copying}
@@ -108,7 +108,7 @@ subcollection: registry
 
 - [安裝 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/installation/linux/linux-postinstall) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/install/linux/linux-postinstall/) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 
@@ -120,7 +120,7 @@ subcollection: registry
 複製映像檔之後，您可以執行下列其中一項作業：
 
 - [使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
-- [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-container_index#container_index)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
+- [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
 
 ## 建立參照來源映像檔的新映像檔
 {: #registry_images_source}
@@ -170,7 +170,7 @@ subcollection: registry
 
 - [安裝 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)，以使用名稱空間中的映像檔。
 - [在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
-- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/installation/linux/linux-postinstall) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
+- [確定您可以在沒有 root 使用者權限 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/install/linux/linux-postinstall/) 的情況下執行 Docker 指令。如果您的 Docker 用戶端設定成需要 root 許可權，則必須使用 `sudo` 來執行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 及 `docker push` 指令。
 
   如果您變更許可權以在沒有 root 專用權的情況下執行 Docker 指令，則必須再次執行 `ibmcloud login` 指令。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -193,7 +193,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 
 |字段|类型|描述|
 |-----|----|-----------|
-|`Test`|字符串数组|显示如何运行运行状况检查测试。可用选项包括：<ul><li>{}：继承运行状况检查</li><li>{"NONE"}：禁用运行状况检查</li><li>{"CMD", args...}：直接执行自变量</li><li>{"CMD-SHELL", command}：使用系统的缺省 shell 程序运行命令</li></ul>|
+|`Test`|字符串数组|显示如何运行运行状况检查测试。可用选项包括：<ul><li>`{}`：继承运行状况检查</li><li>`{"NONE"}`：禁用运行状况检查</li><li>`{"CMD", args...}`：直接执行自变量</li><li>`{"CMD-SHELL", command}`：使用系统的缺省 shell 程序运行命令</li></ul>|
 |`Interval`|整数（64 位）|显示两次运行状况检查之间等待的时间（以纳秒为单位）。|
 |`Timeout`|整数（64 位）|显示将运行状况检查视为失败之前等待的时间（以纳秒为单位）。|
 |`Retries`|整数|显示将容器视为工作不正常所需的连续失败次数。|

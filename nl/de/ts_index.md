@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -38,8 +38,8 @@ Wenn bei der Verwendung von {{site.data.keyword.registrylong_notm}} Fragen oder 
 
 Wenn Sie eine Frage in einem Forum stellen, kennzeichnen Sie Ihre Frage, sodass sie von den {{site.data.keyword.registrylong_notm}}-Entwicklungsteams gesehen wird.
 
-- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=+ibm-bluemix) und kennzeichnen Sie Ihre Frage mit `ibm-cloud` und `container-registry`.
-- Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix). Schließen Sie die Tags `ibm-cloud` und `container-registry` dabei ein.
+- Wenn Sie technische Fragen zur Entwicklung oder Bereitstellung einer App mit {{site.data.keyword.registrylong_notm}} haben, posten Sie Ihre Frage unter [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry) und kennzeichnen Sie Ihre Frage mit `ibm-cloud` und `container-registry`.
+- Bei Fragen zum Service sowie zu einführenden Anweisungen nutzen Sie das Forum [IBM Developer Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/container-registry.html). Schließen Sie die Tags `ibm-cloud` und `container-registry` dabei ein.
 
 Weitere Informationen zur Verwendung der Foren finden Sie unter [Support Center nutzen](/docs/get-support?topic=get-support-getting-customer-support#using-avatar).
 
@@ -225,7 +225,7 @@ Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen 
 - Melden Sie sich bei {{site.data.keyword.registrylong_notm}} an, indem Sie den Befehl `ibmcloud cr login` ausführen.
 - [Wählen Sie die `kubectl`-CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) als Ziel für Ihren Cluster aus.
 - Wenn Sie Helm noch nicht in Ihrem Cluster eingerichtet haben, [richten Sie Helm jetzt in Ihrem Cluster ein](/docs/containers?topic=containers-integrations#helm).
-- Wenn Sie die Charts innerhalb Ihrer Organisation gemeinsam nutzen möchten, können Sie das [Open-Source-Projekt ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) installieren. Anweisungen hierzu finden Sie in dieser [developerWorks-Anleitung ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+- Wenn Sie die Charts innerhalb Ihrer Organisation gemeinsam nutzen möchten, können Sie das [Open-Source-Projekt ChartMuseum ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/helm/charts/tree/master/stable/chartmuseum) installieren. Anweisungen hierzu finden Sie in dieser [developerWorks-Anleitung ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### IBM Passport Advantage-Produkte für die Verwendung in {{site.data.keyword.Bluemix_notm}} importieren
 {: #ts_ppa_import}

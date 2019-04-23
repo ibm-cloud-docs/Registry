@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} の概説のチュートリアル
+# {{site.data.keyword.registrylong_notm}} の入門チュートリアル
 {: #index}
 
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。

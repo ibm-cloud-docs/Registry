@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -42,6 +42,9 @@ subcollection: registry
 
 すべてのものへのアクセス権限を付与しようとしている場合は、リソース・タイプやリソースを指定しないでください。 特定の名前空間へのアクセス権限を付与しようとしている場合は、リソース・タイプを `namespace` として指定し、名前空間名をリソースとして使用します。
 
+リソース・グループにおけるレジストリー名前空間へのアクセス権限を編成して割り当てることはできません。
+{: note}
+
 **始めに**
 
 - 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry?topic=registry-iam#iam)を参照してください。 複数のポリシーを作成できるということを考慮してください。例えば、あるリソースに対して書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
@@ -63,7 +66,9 @@ subcollection: registry
 
 1. ユーザーとサービス ID の[ポリシーを作成](#create)します。
 
-2. ポリシーの制約を有効にするには、[`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) コマンドを実行します。
+2. ポリシーの制約を有効にするため、[`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) コマンドを実行します。
 
     アカウントにマネージャーの役割がないと、`ibmcloud cr iam-policies-enable` コマンドを実行できません。 所有するアカウントにはマネージャーの役割が自動的に与えられます。
     {: tip}
+
+3. IAM ポリシーが有効になっていることを確認するため、[`ibmcloud cr iam-policies-status`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status) を実行します。

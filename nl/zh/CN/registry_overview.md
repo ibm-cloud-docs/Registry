@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-02"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -241,7 +241,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   <dd>标记是存储库中映像的标识。您可以使用标记来区分存储库中同一个基本映像的不同版本。在运行 Docker 命令时，如果未指定存储库映像的标记，那么缺省情况下，会使用标记为 <code>latest</code> 的映像。</dd>
 </dl>
 
-要了解有关 Docker 特定术语的更多信息，请[查询 Docker 词汇表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/glossary/)。
+要了解有关 Docker 特定术语的更多信息，请参阅 [Docker 词汇表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/glossary/)。
 
 ### 规划名称空间
 {: #registry_namespaces}

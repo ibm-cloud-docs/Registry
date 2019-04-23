@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -38,7 +38,7 @@ Vous pouvez utiliser les liens connexes suivants pour vous familiariser avec {{s
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [Documentation {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-container_index#container_index)
+- [Documentation {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started#getting-started)
 - API REST pour les clusters. Voir [Kubernetes Service API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-api/)
 - [Fichier JSON d'API REST pour les clusters ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
 - API REST pour la journalisation dans des clusters. Voir [{{site.data.keyword.containerlong_notm}} Logging API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://containers.cloud.ibm.com/swagger-logging/)

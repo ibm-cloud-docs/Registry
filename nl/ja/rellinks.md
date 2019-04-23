@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -38,7 +38,7 @@ subcollection: registry
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}
 
-- [{{site.data.keyword.containerlong_notm}} の資料](/docs/containers?topic=containers-container_index#container_index)
+- [{{site.data.keyword.containerlong_notm}} の資料](/docs/containers?topic=containers-getting-started#getting-started)
 - クラスター用の REST API ([Kubernetes Service API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-api/) を参照)
 - [クラスター用の REST API JSON ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-api/swagger.json)
 - クラスターでのロギング用の REST API ([{{site.data.keyword.containerlong_notm}} Logging API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://containers.cloud.ibm.com/swagger-logging/) を参照)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -40,7 +40,7 @@ Instale el plugin de CLI `container-registry` para utilizar la línea de mandato
 {:shortdesc}
 
 1. [Instale el plugin de CLI `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
-2. Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con **sudo** o como root.
+2. Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con `sudo` o como root.
 
 Ahora puede configurar su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 
@@ -97,9 +97,10 @@ Debe crear un espacio de nombres para almacenar las imágenes de Docker en {{sit
 - [Instale la CLI de {{site.data.keyword.Bluemix_notm}} y el plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifique cómo utilizar y denominar los espacios de nombres de su registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
+<br>
 Para crear un espacio de nombres, consulte [Configure un espacio de nombres](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) en la documentación de iniciación.
 
-Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) y compartir estas imágenes con otros usuarios en su cuenta.
+Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) y compartir estas imágenes con otros usuarios en su cuenta. Para controlar el acceso a los espacios de nombres en {{site.data.keyword.Bluemix_notm}} IAM, consulte [Creación de políticas](/docs/services/Registry?topic=registry-user#create).
 
 ## Eliminación de espacios de nombres
 {: #registry_remove}

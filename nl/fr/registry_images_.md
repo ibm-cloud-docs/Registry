@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -46,7 +46,7 @@ Vous pouvez extraire (par commande pull) une image depuis n'importe quelle sourc
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/install/linux/linux-postinstall/). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
@@ -70,7 +70,7 @@ Vous pouvez transférer par commande push une image à votre espace de nom dans 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Extrayez par commande pull](#registry_images_pulling_reg) ou [générez](#registry_images_creating) une image sur votre ordinateur local et étiquetez-la avec vos informations d'espace de nom.
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/install/linux/linux-postinstall/). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
@@ -96,7 +96,7 @@ Après avoir envoyé à {{site.data.keyword.registrylong_notm}} l'image par comm
 
 - [Gérer la sécurité avec Vulnerability Advisor](/docs/services/va?topic=va-va_index) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
-cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-container_index#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Copie d'images entre registres
 {: #registry_images_copying}
@@ -110,7 +110,7 @@ Vous pouvez extraire une image depuis un registre dans une région donnée, puis
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/install/linux/linux-postinstall/). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
@@ -123,7 +123,7 @@ Après avoir copié votre image, vous pouvez effectuer l'une des tâches suivant
 
 - [Gérer la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
 - [Créer un
-cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-container_index#container_index) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Création de nouvelles images qui font référence à une image source
 {: #registry_images_source}
@@ -173,7 +173,7 @@ Vous pouvez générer une image Docker directement dans {{site.data.keyword.Blue
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/installation/linux/linux-postinstall). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
+- [Vérifiez que vous pouvez utiliser des commandes Docker sans disposer pour autant d'autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/install/linux/linux-postinstall/). Si votre client Docker est configuré pour exiger des autorisations root, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo`.
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 

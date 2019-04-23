@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-27"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -42,6 +42,9 @@ Wenn Sie den Zugriff auf Ressourcen steuern möchten, müssen Sie Benutzern oder
 
 Wenn Sie Zugriff auf alles erteilen möchten, geben Sie keinen Ressourcentyp bzw. keine Ressource an. Wenn Sie Zugriff auf einen bestimmten Namensbereich erteilen möchten, geben Sie den Ressourcentyp als `namespace` an und verwenden Sie den Namen des Namensbereichs als Ressource.
 
+Eine Organisation und Zuweisung von Zugriff zu Registry-Namensbereichen in Ressourcengruppen ist nicht möglich.
+{: note}
+
 **Vorbereitung**
 
 - Entscheiden Sie, welche Rollen die einzelnen Benutzer benötigen und für welche Ressourcen in {{site.data.keyword.registrylong_notm}} sie diese benötigen. Siehe [IAM-Rollen](/docs/services/Registry?topic=registry-iam#iam). Bedenken Sie, dass Sie mehrere Richtlinien erstellen können. Sie können beispielsweise Schreibzugriff für eine Ressource erteilen, für eine andere Ressource nur Lesezugriff, und für eine dritte Ressource gar keinen Zugriff. Richtlinien sind additiv, d. h. dass mit einer globalen Leserichtlinie und einer ressourcenbezogenen Schreibrichtlinie sowohl Lese- als auch Schreibzugriff für eine bestimmte Ressource erteilt wird.
@@ -63,7 +66,9 @@ Für Benutzer, die nach dem 4. Oktober 2018 bereitgestellt werden, sind IAM-Rich
 
 1. [Erstellen Sie Richtlinien](#create) für Ihre Benutzer und Service-IDs.
 
-2. Zum Aktivieren der Richtliniendurchsetzung führen Sie den Befehl [`bx cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) aus.
+2. Zum Aktivieren der Richtliniendurchsetzung führen Sie den Befehl [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) aus.
 
     Sie müssen für das Konto die Rolle 'Manager' innehaben, um den Befehl `ibmcloud cr iam-policies-enable` ausführen zu können. In Ihrem eigenen Konto haben Sie automatisch die Rolle 'Manager'.
     {: tip}
+
+3. Führen Sie den Befehl [`ibmcloud cr iam-policies-status`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status) aus, um sicherzustellen, dass die IAM-Richtlinien aktiviert sind.

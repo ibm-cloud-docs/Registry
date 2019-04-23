@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-04-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -38,8 +38,8 @@ subcollection: registry
 
 使用討論區提問時，請標記您的問題，讓 {{site.data.keyword.registrylong_notm}} 開發團隊能看到它。
 
-- 如果您在使用 {{site.data.keyword.registrylong_notm}} 開發或部署應用程式時有技術方面的問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=+ibm-bluemix)，並使用 `ibm-cloud` 和 `container-registry` 來標記問題。
-- 若為服務及開始使用指示的相關問題，請使用 [IBM developerWorks dW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/container-registry/?smartspace=bluemix) 討論區。請包含 `ibm-cloud` 及 `container-registry` 標籤。
+- 如果您在使用 {{site.data.keyword.registrylong_notm}} 開發或部署應用程式時有技術方面的問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry)，並使用 `ibm-cloud` 和 `container-registry` 來標記問題。
+- 若為服務及開始使用指示的相關問題，請使用 [IBM Developer Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/container-registry.html) 討論區。請包含 `ibm-cloud` 及 `container-registry` 標籤。
 
 如需有關使用討論區的詳細資料，請參閱[使用支援中心](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)。
 
@@ -224,7 +224,7 @@ denied: requested access to the resource is denied
 - 執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}}。
 - [將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
 - 如果您尚未在叢集中設定 Helm，請[立即在叢集中設定 Helm](/docs/containers?topic=containers-integrations#helm)。
-- 如果您要在組織內共用圖表，可以安裝 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum)。如需指示，請參閱此 [developerWorks 秘訣 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
+- 如果您要在組織內共用圖表，可以安裝 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。如需指示，請參閱此 [developerWorks 秘訣 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
 ### 匯入 IBM Passport Advantage 產品，以用於 {{site.data.keyword.Bluemix_notm}}
 {: #ts_ppa_import}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -224,7 +224,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
     3. Créez une règle qui affecte le rôle Lecteur sur `namespace_b` à l'utilisateur B en exécutant la commande suivante, où _`<Region>`_ est le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions), par exemple `us-south`:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource <namespace_b> --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 

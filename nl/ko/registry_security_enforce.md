@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -22,10 +22,10 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 컨테이너 이미지 보안 적용(베타)
+# 컨테이너 이미지 보안 적용
 {: #security_enforce}
 
-Container Image Security Enforcement(베타)를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](/docs/services/Registry?topic=registry-registry_trustedcontent)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
+Container Image Security Enforcement를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](/docs/services/Registry?topic=registry-registry_trustedcontent)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다. 이미지가 정책 요구사항을 만족시키지 않는 경우에는 팟(Pod)이 클러스터에 배치되지 않거나 업데이트되지 않습니다.
 {:shortdesc}
 
 Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서 이미지 컨텐츠 신뢰 및 취약성에 대한 정보를 검색합니다. 사용자는 다른 레지스트리에 저장된 이미지의 배치를 차단하거나 허용하도록 선택할 수 있지만, 이러한 이미지에 대해 취약성 또는 신뢰 적용을 사용할 수는 없습니다.
@@ -159,7 +159,7 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself
+    # This policy prevents Container Image Security Enforcement from blocking itself.
     - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
       policy:
     # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
@@ -167,6 +167,7 @@ spec:
       policies:
 ```
 {: codeblock}
+
 
 ## 정책 사용자 정의
 {: #customize_policies}
@@ -181,7 +182,7 @@ spec:
 
 시작하기 전에 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오. 그런 다음, 다음 단계를 완료하십시오.
 
-1. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/" target="_blank">Kubernetes 사용자 정의 리소스 정의 <img src="../../icons/launch-glyph.svg" alt="외부 링크 아이콘"></a> `.yaml` 파일을 작성하십시오.
+1. [Kubernetes 사용자 정의 리소스 정의 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` 파일을 작성하십시오.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -72,7 +72,7 @@ subcollection: registry
 ## 將映像檔從另一個登錄取回到本端機器
 {: #gs_registry_images_pulling}
 
-1. [安裝 Docker CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/community-edition#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
+1. [安裝 Docker 引擎 CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/products/docker-engine#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
 
 2. 將映像檔下載（_取回_）至本端機器。將 `<source_image>` 取代為映像檔的儲存庫，並將 `<tag>` 取代為您要使用之映像檔的標籤，例如 _latest_。
 
@@ -95,7 +95,7 @@ subcollection: registry
    ```
    {: pre}
 
-   例如，其中 `<source_image>` 是 `hello-world`、`<tag>` 是 `latest`、`<region>` 是 `uk`、`<my_namespace>` 是 `namespace1`、`<new_image_repo>` 是 `hw_repo`，而 `<new_tag>` 是 `1`：
+   範例，其中 `<source_image>` 是 `hello-world`，`<tag>` 是 `latest`，`<region>` 是 `uk`，`<my_namespace>` 是 `namespace1`，`<new_image_repo>` 是 `hw_repo`，而 `<new_tag>` 是 `1`：
 
    ```
    docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
