@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -252,6 +252,20 @@ To build your own Docker image, complete the following steps:
       3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
+
+## Pushing images to {{site.data.keyword.registrylong_notm}} by using an API key
+{: #registry_api_key_push_image}
+
+Create a service ID that uses an API key to push images to {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
+
+1. Create a service ID, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
+2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
+3. Create an API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+4. Use the API key to log in to registry so that you can push images to the registry, see [Using an API key to automate access](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use).
+5. Push your images, see [Pushing Docker images to your namespace](#registry_images_pushing_namespace).
+
+You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images#other_registry_accounts).
 
 ## Deleting images from your private {{site.data.keyword.cloud_notm}} repository
 {: #registry_images_remove}
