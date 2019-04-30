@@ -140,7 +140,7 @@ Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluem
 1. Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}.
 
     ```
-    imagens ibmcloud cr
+    ibmcloud cr images
     ```
     {: pre}
 

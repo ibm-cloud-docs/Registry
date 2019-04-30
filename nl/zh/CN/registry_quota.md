@@ -54,17 +54,12 @@ subcollection: registry
 
     输出类似于以下内容。
 
-
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
-
-    
 
     QUOTA          LIMIT    USED
     Pull traffic   5.1 GB   0 B
     Storage        512 MB   511 MB
-
-    
 
     OK
     ```
@@ -81,7 +76,6 @@ subcollection: registry
     {: pre}
 
     以下示例将存储量配额限制设置为 600 兆字节，将拉出流量设置为 7000 兆字节：
-
 
     ```
     ibmcloud cr quota-set --storage 600 --traffic 7000
@@ -110,17 +104,12 @@ subcollection: registry
 
     输出类似于以下内容。
 
-
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
-
-    
 
     QUOTA          LIMIT    USED
     Pull traffic   5.1 GB   0 B
     Storage        512 MB   511 MB
-
-    
 
     OK
     ```
@@ -159,7 +148,7 @@ subcollection: registry
     {: pre}
 
 4. 无法减少结算周期内的拉出流量使用量。
-    {:tip}
+   {:tip}
 
     要继续从名称空间中拉出映像，请在以下选项中进行选择。
 

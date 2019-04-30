@@ -200,7 +200,7 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
     2. Tente listar imagens como Usuário B executando o comando a seguir:
 
         ```
-        imagens ibmcloud cr
+        ibmcloud cr images
         ```
         {: pre}
 
@@ -218,7 +218,7 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
     2. Verifique se pelo menos três namespaces estão listados executando o comando a seguir:
 
         ```
-        Ibmcloud cr namespaces
+        ibmcloud cr namespaces
         ```
         {: pre}
 
@@ -298,14 +298,14 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
     2. Mostre que o Usuário B pode ver `namespace_b` e `namespace_c`, mas não `namespace_a`, pois o Usuário B não tem acesso a `namespace_a`, executando o comando a seguir:
 
         ```
-        Ibmcloud cr namespaces
+        ibmcloud cr namespaces
         ```
         {:pre}
 
     3. Liste suas imagens ao executar o comando a seguir:
 
         ```
-        imagens ibmcloud cr
+        ibmcloud cr images
         ```
         {: pre}
 

@@ -44,8 +44,7 @@ subcollection: container-registry-cli-plugin
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {:tip}
 
-## `ibmcloud cr api
-`
+## `ibmcloud cr api`
 {: #bx_cr_api}
 
 返回有关对其运行命令的注册表 API 端点的详细信息。
@@ -227,8 +226,7 @@ ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configu
 ```
 {: pre}
 
-## `ibmcloud cr exemption-types
-`
+## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
 列出可以豁免的安全问题的类型。
@@ -434,8 +432,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
-## `ibmcloud cr info
-`
+## `ibmcloud cr info`
 {: #bx_cr_info}
 
 显示登录到的注册表的名称和帐户。
@@ -543,8 +540,7 @@ ibmcloud cr namespace-rm birds
 ```
 {: pre}
 
-## `ibmcloud cr plan
-`
+## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
 显示您的价格套餐。
@@ -673,8 +669,7 @@ ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
 
-## `ibmcloud cr region
-`
+## `ibmcloud cr region`
 {: #bx_cr_region}
 
 显示目标区域和注册表。
@@ -839,8 +834,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 除去一个或多个指定的注册表令牌。
 
 ```
-ibmcloud cr token-rm TOKEN [TOKEN...]
-[--force | -f]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 

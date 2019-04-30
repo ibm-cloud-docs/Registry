@@ -46,7 +46,7 @@ Não coloque informações pessoais em imagens de contêiner, nomes de namespace
 exemplo, nomes ou rótulos de imagem).
 {:tip}
 
-## ` ibmcloud cr api `
+## `ibmcloud cr api`
 {: #bx_cr_api}
 
 Retorna os detalhes sobre o terminal de API de registro com relação ao qual os comandos são executados.
@@ -60,7 +60,7 @@ ibmcloud cr api
 
 Nenhuma
 
-## ` ibmcloud cr build `
+## `ibmcloud cr build`
 {: #bx_cr_build}
 
 Constrói uma imagem do Docker no {{site.data.keyword.registrylong_notm}}.
@@ -101,7 +101,7 @@ ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
 ```
 {: pre}
 
-## ` ibmcloud cr UNK-add `
+## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
 
 Crie uma isenção para um problema de segurança. É possível criar uma isenção para um problema de segurança que se aplica a diferentes escopos. O escopo pode ser a conta, o namespace, o repositório ou a tag.
@@ -159,7 +159,7 @@ ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird:1 --issue-type config
 Liste suas isenções para problemas de segurança.
 
 ```
-ibmcloud cr UNK-list [ -- scope SCOPE ]
+ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
@@ -183,7 +183,7 @@ ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
-## ` ibmcloud cr isenção-rm `
+## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
 
 Exclua uma isenção para um problema de segurança. Para visualizar suas isenções existentes, execute `ibmcloud cr exemption-list`.
@@ -233,8 +233,7 @@ ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configu
 ```
 {: pre}
 
-## `ibmcloud cr exemption-types
-`
+## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
 Lista os tipos de problemas de segurança que podem ser isentados.
@@ -272,7 +271,7 @@ ibmcloud cr iam-policies-status
 ```
 {: codeblock}
 
-## ` ibmcloud cr image-inspect `
+## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
 
 Exibe detalhes sobre uma imagem específica.
@@ -359,13 +358,13 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ```
 {: pre}
 
-## ` Imagem do ibmcloud cr-rm `
+## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
 Exclua uma ou mais imagens especificadas do {{site.data.keyword.registrylong_notm}}.
 
 ```
-ibmcloud cr image-rm IMAGE [ IMAGE ...]
+ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
@@ -387,7 +386,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 ** Exemplo **  Exclua a imagem  ` us.icr.io/birds/bluebird: 1 `.
 
 ```
-ibmcloud cr image-rm us.icr.io/birds/bluebird: 1
+ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
@@ -425,7 +424,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 Inclua outra referência de tag, `latest`, para a imagem `us.icr.io/birds/bluebird:1`.
 
 ```
-ibmcloud cr image-tag us.icr.io/birds/bluebird: 1 us.icr.io/birds/bluebird:latest
+ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
 ```
 {: pre}
 
@@ -443,8 +442,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
-## `ibmcloud cr info
-`
+## `ibmcloud cr info`
 {: #bx_cr_info}
 
 Exibe o nome e a conta do registro ao qual você está conectado.
@@ -458,8 +456,7 @@ ibmcloud cr info
 
 Nenhuma
 
-## `  ibmcloud cr login
-  `
+## `ibmcloud cr login`
 {: #bx_cr_login}
 
 Esse comando executa o comando `docker login` no registro. O comando `docker login` é necessário para poder executar os comandos `docker push` ou `docker pull` para o registro. Esse comando não é necessário para executar outros comandos `ibmcloud cr`. Se o Docker não estiver instalado, esse comando retornará uma mensagem de erro.
@@ -522,7 +519,7 @@ ibmcloud cr namespace-list
 
 Para saber mais sobre as permissões necessárias, consulte [Funções de acesso para usar o {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-## ` ibmcloud cr namespace-rm `
+## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
 Remove um namespace de sua conta do {{site.data.keyword.Bluemix_notm}}. As imagens nesse namespace são excluídas quando o namespace é removido.
@@ -553,8 +550,7 @@ ibmcloud cr namespace-rm birds
 ```
 {: pre}
 
-## `ibmcloud cr plan
-`
+## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
 Exibe seu plano de precificação.
@@ -568,7 +564,7 @@ ibmcloud cr plan
 
 Para saber mais sobre as permissões necessárias, consulte [Funções de acesso para configurar o {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-## ` ibmcloud cr plan-upgrade `
+## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
 Upgrades para você o plano padrão.
@@ -600,7 +596,7 @@ ibmcloud cr plan-upgrade standard
 ```
 {: pre}
 
-## ` ibmcloud cr ppa-archive-load `
+## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
 Importa o software {{site.data.keyword.IBM_notm}} que é transferido por download por meio do [IBM Passport Advantage Online para clientes ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e empacotado para uso com o Helm no namespace do {{site.data.keyword.registrylong_notm}}.
@@ -639,8 +635,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ```
 {: pre}
 
-## `    ibmcloud cr quota
-    `
+## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
 Exibe suas cotas atuais para tráfego e armazenamento e informações de uso com relação a essas cotas.
@@ -654,7 +649,7 @@ ibmcloud cr quota
 
 Para saber mais sobre as permissões necessárias, consulte [Funções de acesso para configurar o {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-## ` cota ibmcloud cr-set `
+## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
 Modifique a cota especificada.
@@ -685,8 +680,7 @@ ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
 
-## `ibmcloud cr region
-`
+## `ibmcloud cr region`
 {: #bx_cr_region}
 
 Exibe a região de destino e o registro.
@@ -702,13 +696,13 @@ Nenhuma
 
 Para obter mais informações, consulte [Regiões](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
 
-## ` ibmcloud cr region-set `
+## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
 
 Configure uma região de destino para os comandos do {{site.data.keyword.registrylong_notm}}. Para listar as regiões disponíveis, execute o comando sem parâmetros.
 
 ```
-ibmcloud cr region-set [ REGION ]
+ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
@@ -735,7 +729,7 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## ` ibmcloud cr token-add `
+## `ibmcloud cr token-add`
 {: #bx_cr_token_add}
 
 Inclua um token que possa ser usado para controlar o acesso a um registro.
@@ -847,13 +841,13 @@ Este exemplo produz saída no formato a seguir:
 ```
 {: screen}
 
-## ` ibmcloud cr token-rm `
+## `ibmcloud cr token-rm`
 {: #bx_cr_token_rm}
 
 Remover um ou mais tokens de registro especificados.
 
 ```
-ibmcloud cr token-rm TOKEN [ TOKEN ...] [--force | -f]
+ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
@@ -935,7 +929,7 @@ Para obter mais informações, consulte [Gerenciando a segurança de imagens com
 Visualize um relatório de avaliação de vulnerabilidade padrão para sua imagem.
 
 ```
-ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird: 1
+ibmcloud cr vulnerability-assessment us.icr.io/birds/bluebird:1
 ```
 {: pre}
 

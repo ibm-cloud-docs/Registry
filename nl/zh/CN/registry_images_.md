@@ -192,16 +192,15 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     1. 在本地目录中创建 Dockerfile。
 
         ```
-    touch Dockerfile
-    ```
+        touch Dockerfile
+        ```
         {: pre}
 
     2. 使用文本编辑器打开 Dockerfile。您至少必须添加基本映像，以从中构建映像。将 `<source_image>` 和 `<tag>` 替换为要使用的映像存储库和标记。如果您使用来自其他专用注册表的映像，请在 {{site.data.keyword.registrylong_notm}} 中定义映像的完整路径。
 
-
        ```
-    FROM <source_image>:<tag>
-    ```
+       FROM <source_image>:<tag>
+       ```
        {: pre}
 
        **示例**

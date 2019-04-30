@@ -55,7 +55,7 @@ Para obter informações sobre como abrir um chamado de suporte da {{site.data.k
 Não é possível efetuar login no {{site.data.keyword.registrylong_notm}}.
 
 {: tsSymptoms}
-O comando  ` ibmcloud cr login `  falha.
+O comando `ibmcloud cr login` falha.
 
 {: tsCauses}
 
@@ -76,7 +76,7 @@ O comando  ` ibmcloud cr login `  falha.
 Não é possível executar comandos no {{site.data.keyword.registrylong_notm}}, mesmo que você esteja conectado ao {{site.data.keyword.Bluemix_notm}}.
 
 {: tsSymptoms}
-Todos os comandos  ` ibmcloud cr `  falham.
+Todos os comandos `ibmcloud cr` falham.
 
 {: tsCauses}
 
@@ -260,7 +260,7 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
 
    ```
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
-    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+   Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
    Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10

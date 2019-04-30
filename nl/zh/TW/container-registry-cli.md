@@ -228,8 +228,7 @@ ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configu
 ```
 {: pre}
 
-## `ibmcloud cr exemption-types
-`
+## `ibmcloud cr exemption-types`
 {: #bx_cr_exemption_types}
 
 列出您可豁免的安全問題類型。
@@ -435,8 +434,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
-## `ibmcloud cr info
-`
+## `ibmcloud cr info`
 {: #bx_cr_info}
 
 顯示您所登入之登錄的名稱及帳戶。
@@ -450,8 +448,7 @@ ibmcloud cr info
 
 無
 
-## `  ibmcloud cr login
-  `
+## `ibmcloud cr login`
 {: #bx_cr_login}
 
 這個指令會針對登錄執行 `docker login` 指令。必須執行 `docker login` 指令，才能對登錄執行 `docker push` 或 `docker pull` 指令。若要執行其他 `ibmcloud cr` 指令，則不需要執行這個指令。如果未安裝 Docker，則這個指令會傳回錯誤訊息。
