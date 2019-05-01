@@ -45,8 +45,7 @@ Per ulteriori informazioni sui ruoli della piattaforma IAM e di accesso al servi
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {:tip}
 
-## `ibmcloud cr api
-`
+## `ibmcloud cr api`
 {: #bx_cr_api}
 
 Restituisce i dettagli sull'endpoint API del registro in cui vengono eseguiti i comandi.
@@ -437,8 +436,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
-## `ibmcloud cr info
-`
+## `ibmcloud cr info`
 {: #bx_cr_info}
 
 Visualizza il nome e l'account del registro a cui sei collegato.
@@ -452,8 +450,7 @@ ibmcloud cr info
 
 Nessun valore
 
-## `ibmcloud cr login
-`
+## `ibmcloud cr login`
 {: #bx_cr_login}
 
 Questo comando esegue il comando `docker login` nel registro. Il comando `docker login` è obbligatorio per abilitare l'esecuzione dei comandi `docker push` o `docker pull` per il registro. Questo comando non è obbligatorio per eseguire altri comandi `ibmcloud cr`. Se Docker non è installato, questo comando restituisce un messaggio di errore.
@@ -676,8 +673,7 @@ ibmcloud cr quota-set --traffic 7000 --storage 600
 ```
 {: pre}
 
-## `ibmcloud cr region
-`
+## `ibmcloud cr region`
 {: #bx_cr_region}
 
 Visualizza la regione di destinazione e il registro.
