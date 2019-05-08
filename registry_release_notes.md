@@ -117,7 +117,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **Vulnerability Advisor API version 3**
 
-  Version 3 of the API changes the behavior of backwards compatibility for querying exemptions.
+  Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You should check that your use of the API does not rely on the behavior of version 2.
 
   For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).
 
