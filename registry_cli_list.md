@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2019
 lastupdated: "2019-05-09"
 
-keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
+keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
 subcollection: registry
 
@@ -22,22 +22,8 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`) commands for managing Docker images in your namespace
-{: #registry_cli_reference}
-
-You can use the `container-registry` CLI plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can store, and share Docker images with all users in your {{site.data.keyword.cloud}} account.
-{:shortdesc}
-
-## `ibmcloud cr` commands
-{: #registry_cli_reference_bxcr}
-
-Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
-{:shortdesc}
-
-For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
-
-## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
-{: #registry_cli_listing}
+# Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
+{: #registry_cli_list}
 
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
@@ -116,8 +102,8 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: screen}
 
-### Go template options and data types in the `ibmcloud cr image-list` command
-{: #registry_cli_listing_imagelist}
+## Go template options and data types in the `ibmcloud cr image-list` command
+{: #registry_cli_list_imagelist}
 
 Review the following table to find available Go template options and data types for the `ibmcloud cr image-list` command.
 {:shortdesc}
@@ -133,8 +119,8 @@ Review the following table to find available Go template options and data types 
 |`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: Status  `string`, IssueCount  `int`, and ExemptionCount  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/va?topic=va-va_index#va_registry_cli).|
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
 
-### Go template options and data types in the `ibmcloud cr image-inspect` command
-{: #registry_cli_listing_imageinspect}
+## Go template options and data types in the `ibmcloud cr image-inspect` command
+{: #registry_cli_list_imageinspect}
 
 Review the following table to find available Go template options and data types for the `ibmcloud cr image-inspect` command.
 {:shortdesc}
@@ -158,7 +144,8 @@ Review the following table to find available Go template options and data types 
 |`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [RootFS](/docs/services/Registry?topic=registry-registry_cli_reference#rootfs).|
 {: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-inspect</code> command." caption-side="top"}
 
-#### Config
+### Config
+{: #registry_cli_list_imageinspect_config}
 
 |Field|Type|Description|
 |-----|----|-----------|
@@ -189,7 +176,8 @@ Review the following table to find available Go template options and data types 
 |`Shell`|Array of strings|Displays the shell-form of RUN, CMD, ENTRYPOINT.|
 {: caption="Table 3. Available fields and data types in Config. " caption-side="top"}
 
-#### Healthcheck
+### Healthcheck
+{: #registry_cli_list_imageinspect_healthcheck}
 
 |Field|Type|Description|
 |-----|----|-----------|
@@ -199,7 +187,8 @@ Review the following table to find available Go template options and data types 
 |`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
 {: caption="Table 4. Available fields and data types in the Healthcheck struct." caption-side="top"}
 
-#### RootFS
+### RootFS
+{: #registry_cli_list_imageinspect_rootfs}
 
 |Option|Type|Description|
 |------|----|-----------|
@@ -208,8 +197,8 @@ Review the following table to find available Go template options and data types 
 |`BaseLayer`|String|Displays the descriptor for the base layer in the image.|
 {: caption="Table 5. Available fields and data types in the RootFS struct." caption-side="top"}
 
-### Go template options and data types in the `ibmcloud cr token-list` command
-{: #registry_cli_listing_tokenlist}
+## Go template options and data types in the `ibmcloud cr token-list` command
+{: #registry_cli_list_tokenlist}
 
 Review the following table to find available Go template options and data types for the `ibmcloud cr token-list` command.
 {:shortdesc}
