@@ -132,7 +132,7 @@ Review the following table to find available Go template options and data types 
 |`Comment`|String|Displays the description of the image.|
 |`Created`|String|Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
 |`Container`|String|Displays the ID of the container that created the image.|
-|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](/#registry_cli_list_imageinspect_config).|
+|`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [Config](#registry_cli_list_imageinspect_config).|
 |`DockerVersion`|String|Displays the Docker version that was used to build this image.|
 |`Author`|String|Displays the author of the image.|
 |`Config`|Object|Displays configuration metadata for the image. See the field details in [Config](#registry_cli_list_imageinspect_config).|
