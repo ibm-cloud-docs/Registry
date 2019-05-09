@@ -41,6 +41,7 @@ IBM Cloud Container Registry
     {: .navgroup id="reference"}
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
+    registry_cli_list.md
     registry_cli_reference.md
     iam.md
     registry_at_events.md
