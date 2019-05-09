@@ -41,6 +41,7 @@ IBM Cloud Container Registry
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
     [{{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/container-registry/va)
+    [{{site.data.keyword.containerlong_notm}} documentation](/docs/containers?topic=containers-getting-started#getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
