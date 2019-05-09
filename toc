@@ -39,9 +39,9 @@ IBM Cloud Container Registry
     registry_at_events.md
     rellinks.md
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
-    [{{site.data.keyword.registrylong_notm}} API](https://{DomainName}/apidocs/container-registry)
-    [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API](https://{DomainName}/apidocs/container-registry/va)
-    [{{site.data.keyword.containerlong_notm}} documentation](https://cloud.ibm.com/docs/containers?topic=containers-getting-started)
+    [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
+    [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
+    [IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
