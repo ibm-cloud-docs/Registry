@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-08"
+lastupdated: "2019-05-09"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -81,7 +81,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **End of support for Vulnerability Advisor API version 2**
 
-  Vulnerability Advisor’s API V2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).
+  Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).
 
   For more information, see [Vulnerability Advisor v2 API Deprecation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/).
 
@@ -92,7 +92,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-  For more information, see [Managing user access with {{site.data.keyword.iamshort}}](https://cloud.ibm.com/docs/services/Registry?topic=registry-iam#iam), [Defining user access role policies](/docs/services/Registry?topic=registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/services/Registry?topic=registry-iam_access#iam_access).
+  For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/services/Registry?topic=registry-iam#iam), [Defining user access role policies](/docs/services/Registry?topic=registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/services/Registry?topic=registry-iam_access#iam_access).
 
 ## 7 August 2018
 {: #7aug2018}
