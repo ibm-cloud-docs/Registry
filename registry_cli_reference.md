@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-09"
 
 keywords: IBM Cloud Container Registry, commands, Docker images, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -28,19 +28,13 @@ subcollection: registry
 You can use the `container-registry` CLI plug-in to set up your own image namespace in an IBM-hosted and managed private registry where you can store, and share Docker images with all users in your {{site.data.keyword.cloud}} account.
 {:shortdesc}
 
-## `ibmcloud cr` commands
-{: #registry_cli_reference_bxcr}
-
-Run `ibmcloud cr` commands in the {{site.data.keyword.registryshort_notm}} CLI.
-{:shortdesc}
-
-For supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
-
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_listing}
 
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {:shortdesc}
+
+For information about supported commands, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli).
 
 By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
 
