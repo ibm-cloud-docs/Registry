@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-10"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,7 +27,6 @@ subcollection: registry
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
-
 ## 2 April 2019
 {: #2apr2019}
 
@@ -133,7 +132,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 21 March 2018
 {: #21mar2018}
 
-- **Container scanner**
+- **Container Scanner**
 
   Container Scanner enables Vulnerability Advisor to report any problems found in running containers that are not present in the container's base image.
 
