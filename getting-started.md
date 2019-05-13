@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -57,6 +57,9 @@ Do not put personal information in your container images, namespace names, descr
 
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
+   You must use a unique name.
+   {: tip}
+
    ```
    ibmcloud cr namespace-add <my_namespace>
    ```
@@ -89,6 +92,9 @@ Do not put personal information in your container images, namespace names, descr
    {: pre}
 
 3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
+
+   To find the name of your region, run the `ibmcloud cr region`command.
+   {: tip}
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
