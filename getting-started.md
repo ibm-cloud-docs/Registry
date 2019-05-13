@@ -57,7 +57,7 @@ Do not put personal information in your container images, namespace names, descr
 
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
-   You must use a unique name.
+   Namespace names must be unique in the region.
    {: tip}
 
    ```
