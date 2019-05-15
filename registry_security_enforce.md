@@ -45,18 +45,129 @@ Complete the following steps:
 2. Add the IBM chart repository to your Helm client.
 
    ```
-   helm repo add ibm https://icr.io/helm/ibm
+   helm repo add iks-charts https://icr.io/helm/iks-charts
    ```
    {: pre}
 
 3. Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
    ```
-   helm install --name cise ibm/ibmcloud-image-enforcement
+   helm install --name cise iks-charts/ibmcloud-image-enforcement
    ```
    {: pre}
-   
-   
+
+Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
+
+## Default policies
+{: #default_policies}
+
+Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
+{:shortdesc}
+
+To override these policies, use one of the following options:
+
+* Write a new policy document and apply it to your cluster by using `kubectl apply`
+* Edit the default policy by using `kubectl edit`
+
+For more information about writing security policies, see [Customizing policies](#customize_policies).
+
+### Cluster-wide policy
+{: #cluster-wide}
+
+By default, a cluster-wide policy enforces that all images in all registries have trust information and have no reported vulnerabilities in Vulnerability Advisor.
+{:shortdesc}
+
+**Default cluster-wide policy `.yaml` file**
+
+```yaml
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ClusterImagePolicy
+metadata:
+  name: ibmcloud-default-cluster-image-policy
+spec:
+   repositories:
+    # This enforces that all images deployed to this cluster pass trust and VA
+    # To override, set an ImagePolicy for a specific Kubernetes namespace or modify this policy
+    - name: "*"
+      policy:
+        trust:
+          enabled: true
+        va:
+          enabled: true
+```
+{: codeblock}
+
+When you set `va` or `trust` to `enabled: true` for a container registry other than {{site.data.keyword.registrylong_notm}}, any attempts to deploy pods from images in that registry are denied. If you want to deploy images from other registries, remove the `va` and `trust` policies.
+{:tip}
+
+### Kube-system policy
+{: #kube-system}
+
+By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
+{:shortdesc}
+
+**Default `kube-system` policy `.yaml` file**
+
+```yaml
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: ibmcloud-image-policy
+  namespace: kube-system
+spec:
+   repositories:
+    # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
+    # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
+    - name: "*"
+      policy:
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
+    # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
+    - name: "registry*.bluemix.net/armada/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-worker/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-master/*"
+      policy:
+```
+{: codeblock}
+
+### IBM-system policy
+{: #ibm-system}
+
+By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Container Image Security Enforcement.
+{:shortdesc}
+
+**Default `ibm-system` policy `.yaml` file**
+
+```yaml
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: ibmcloud-image-policy
+  namespace: ibm-system
+spec:
+   repositories:
+    # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
+    # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
+    - name: "*"
+      policy:
+    # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
+    # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
+    - name: "registry*.bluemix.net/armada/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-worker/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-master/*"
+      policy:
+    # This policy prevents Container Image Security Enforcement from blocking itself.
+    - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
+      policy:
+    # This policy allows Container Image Security Enforcement to use Hyperkube to configure your cluster. This policy must exist if you uninstall Container Image Security Enforcement.
+    - name: quay.io/coreos/hyperkube
+      policies:
+```
+{: codeblock}
+
 
 ## Customizing policies
 {: #customize_policies}
