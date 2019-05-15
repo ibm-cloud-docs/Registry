@@ -55,6 +55,8 @@ Complete the following steps:
    helm install --name cise ibm/ibmcloud-image-enforcement
    ```
    {: pre}
+   
+   
 
 ## Customizing policies
 {: #customize_policies}
