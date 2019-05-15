@@ -168,7 +168,6 @@ spec:
 ```
 {: codeblock}
 
-
 ## Customizing policies
 {: #customize_policies}
 
