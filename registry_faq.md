@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, 
 
