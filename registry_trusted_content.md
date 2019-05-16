@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ Images have separate signatures for old (`registry.bluemix.net`) and new (`icr.i
 
 Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
-For more information about the "trust on first use" security model, see [The Update Framework (TUF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://theupdateframework.github.io/).
+For more information about the "trust on first use" security model, see [The Update Framework ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://theupdateframework.github.io/).
 
 ## Setting up your trusted content environment
 {: #trustedcontent_setup}
