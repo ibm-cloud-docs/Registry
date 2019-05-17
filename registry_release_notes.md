@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-10"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,16 @@ subcollection: registry
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 13 May 2019
+{: #13may2019}
+
+- **End of support for Container Scanner**
+
+  Container Scanner is now deprecated and is no longer usable.
+
+  For more information, see [Installing the Container Scanner (deprecated)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
+
 ## 2 April 2019
 {: #2apr2019}
 
