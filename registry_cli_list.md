@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -174,7 +174,7 @@ Review the following table to find available Go template options and data types 
 |`StopSignal`|String|Describes the UNIX stop signal to send when to stop the container.|
 |`StopTimeout`|Integer|Displays the timeout in seconds to stop a container.|
 |`Shell`|Array of strings|Displays the shell-form of RUN, CMD, ENTRYPOINT.|
-{: caption="Table 3. Available fields and data types in `Config`. " caption-side="top"}
+{: caption="Table 3. Available fields and data types in <code>Config</code>. " caption-side="top"}
 
 ### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
@@ -185,7 +185,7 @@ Review the following table to find available Go template options and data types 
 |`Interval`|Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds.|
 |`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
 |`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
-{: caption="Table 4. Available fields and data types in the `Healthcheck` struct." caption-side="top"}
+{: caption="Table 4. Available fields and data types in the <code>Healthcheck</code> struct." caption-side="top"}
 
 ### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
@@ -195,7 +195,7 @@ Review the following table to find available Go template options and data types 
 |`Type`|String|Displays the type of file system.|
 |`Layers`|Array of strings|Displays the descriptors of each image layer.|
 |`BaseLayer`|String|Displays the descriptor for the base layer in the image.|
-{: caption="Table 5. Available fields and data types in the `RootFS` struct." caption-side="top"}
+{: caption="Table 5. Available fields and data types in the <code>RootFS</code> struct." caption-side="top"}
 
 ## Go template options and data types in the `ibmcloud cr token-list` command
 {: #registry_cli_list_tokenlist}
