@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 For reference information about the command, see [Create a new {{site.data.keyword.cloud_notm}} platform API key](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
+## Authentication options for all clients
+{: #registry_authentication}
+
+You can authenticate by using the `docker login` command or other registry clients.
+{:shortdesc}
+
+Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a user name and password. In {{site.data.keyword.registrylong_notm}}, the user name indicates the type of secret that is presented in the password.
+
+The following user names are valid:
+
+- `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
+- `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
+- `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
+- `token` (deprecated) The password is a registry token. You can use this user name for automation.
+
+  Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
+  {: deprecated}
+
+You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` with your namespace, and `<image_repo>` with the repository.
+
+For more information, see [Using a private image registry](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
+
 ## Automating access to your namespaces by using tokens (deprecated)
 {: #registry_tokens}
 
-You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
-{:shortdesc}
-
 Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
 {: deprecated}
+
+You can use tokens to automate the pushing and pulling of Docker images to and from your {{site.data.keyword.registrylong_notm}} namespaces.
+{:shortdesc}
 
 Everyone in possession of a registry token can access secured information. If you want users outside your account to be able to access all of your namespaces that you set up in a region, you can create a token for your {{site.data.keyword.cloud_notm}} account. Every user or app in possession of this token can push and pull images to and from your namespaces without installing the `container-registry` CLI plug-in.
 
@@ -103,11 +133,11 @@ Use the following tasks to manage your tokens:
 ### Creating a token for your {{site.data.keyword.cloud_notm}} account (deprecated)
 {: #registry_tokens_create}
 
-You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
-{:shortdesc}
-
 Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
 {: deprecated}
+
+You can create a token to grant access to all your {{site.data.keyword.registrylong_notm}} namespaces in a region.
+{:shortdesc}
 
 1. Create a token. The following example creates a non-expiring token that has read and write access to all namespaces that are set up in a region.
 
@@ -155,11 +185,11 @@ Using tokens to automate the pushing and pulling of Docker images to and from yo
 ### Using a token to automate access to your namespaces (deprecated)
 {: #registry_tokens_use}
 
-You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
-{:shortdesc}
-
 Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
 {: deprecated}
+
+You can use a token in your `docker login` command to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}. Depending on whether you set read-only or read/write access for your token, users can push and pull images to and from your namespaces.
+{:shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -205,11 +235,11 @@ Using tokens to automate the pushing and pulling of Docker images to and from yo
 ### Removing a token from your {{site.data.keyword.cloud_notm}} account (deprecated)
 {: #registry_tokens_remove}
 
-Remove an {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
-{:shortdesc}
-
 Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
 {: deprecated}
+
+Remove an {{site.data.keyword.registrylong_notm}} token when you do not need it anymore.
+{:shortdesc}
 
 Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically from your {{site.data.keyword.cloud_notm}} account and do not need to be removed manually.
 {:tip}
@@ -234,33 +264,3 @@ Expired {{site.data.keyword.registrylong_notm}} tokens are removed automatically
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## Authentication options for all clients
-{: #registry_authentication}
-
-You can authenticate by using the `docker login` command or other registry clients.
-{:shortdesc}
-
-Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a user name and password. In {{site.data.keyword.registrylong_notm}}, the user name indicates the type of secret that is presented in the password.
-
-The following user names are valid:
-
-- `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity.
-- `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived and is used by the `ibmcloud cr login` command.
-- `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Creating an API key](#registry_api_key_create).
-- `token` (deprecated) The password is a registry token. You can use this user name for automation.
-
-  Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](#registry_api_key).
-  {: deprecated}
-
-You do not have to use the `docker` command to authenticate with the registry. For example, you can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI:
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` with your namespace, and `<image_repo>` with the repository.
-
-For more information, see [Using a private image registry](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
