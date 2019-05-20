@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ In this section, you add a second user to your account and grant them the abilit
 
 2. Prove that User B can target User A's account but can't do anything with {{site.data.keyword.registrylong_notm}} yet:
 
-    1. Log in as User B, and run the following command to target User A's account, where _`<YourAccountID>`_ is User A's Account ID:
+    1. Log in as User B and target User A's account by running the following command, where _`<YourAccountID>`_ is User A's Account ID:
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Create a namespace, `namespace_b`, by running the following command:
+    2. Create `namespace_a` by running the following command:
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         Namespace names must be unique in the region.
         {: tip}
 
-    3. Create another namespace, `namespace_c`, by running the following command:
+    3. Create `namespace_b` by running the following command:
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. Create `namespace_c` by running the following command:
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -438,8 +445,6 @@ In this section, you configure a service ID and grant it access to your {{site.d
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        This command works.
 
     3. Push your image to `namespace_a` by running the following command:
 
