@@ -146,7 +146,7 @@ subcollection: registry
         ```
         {: pre}
   
-    3. 通过运行以下命令来删除策略，其中 _`<Policy_ID>`_ 是策略标识：
+    3. 通过运行以下命令来删除策略，其中 _`<Policy_ID>`_ 是您的策略标识：
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -221,7 +221,7 @@ subcollection: registry
 
         这将显示在本教程中创建的三个名称空间（`namespace_a`、`namespace_b` 和 `namespace_c`）。如果看不到这些名称空间，请返回并遵循指示信息以再次创建这些名称空间。
 
-    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名称，例如 `us-south`：
+    3. 通过运行以下命令，创建策略以用于授予用户 B 在 `namespace_b` 上的“读取者”角色，其中 _`<Region>`_ 是您的[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)名称，例如 `us-south`：
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
@@ -373,7 +373,7 @@ subcollection: registry
 
         找到刚才创建的策略并记下策略标识。
 
-    3. 通过运行以下命令，删除刚才创建的策略，其中 _`<Policy_ID>`_ 是策略标识：
+    3. 通过运行以下命令来删除刚才创建的策略，其中 _`<Policy_ID>`_ 是策略标识：
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>

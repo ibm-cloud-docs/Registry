@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -57,19 +57,19 @@ subcollection: registry
 
 - `container-registry` CLI 外掛程式已過期，需要更新。
 - Docker 未安裝在您的本端電腦上，或是不在執行中。
-- 您的 {{site.data.keyword.Bluemix_notm}} 登入認證已過期。
+- 您的 {{site.data.keyword.cloud_notm}} 登入認證已過期。
 
 {: tsResolve}
 您可以使用下列方式修正此問題：
 
 - 升級至最新版的 `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 - 確定 Docker 已安裝在您的電腦上。如果已安裝，請重新啟動 Docker 常駐程式。
-- 重新執行 `ibmcloud login` 指令，以重新整理您的 {{site.data.keyword.Bluemix_notm}} 登入認證。
+- 重新執行 `ibmcloud login` 指令，以重新整理您的 {{site.data.keyword.cloud_notm}} 登入認證。
 
 ## 對 {{site.data.keyword.registrylong_notm}} 執行任何指令失敗，並顯示 `FAILED You are not logged in to IBM Cloud`。
 {: #ts_login_cloud}
 
-您無法在 {{site.data.keyword.registrylong_notm}} 中執行任何指令，即使您已登入 {{site.data.keyword.Bluemix_notm}}。
+您無法在 {{site.data.keyword.registrylong_notm}} 中執行任何指令，即使您已登入 {{site.data.keyword.cloud_notm}}。
 
 {: tsSymptoms}
 所有 `ibmcloud cr` 指令都失敗。
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - 如果本端建置沒有運作，請檢查 Dockerfile 的問題。
-- 如果本端建置有運作，請[與 {{site.data.keyword.Bluemix_notm}} 支援中心聯絡](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
+- 如果本端建置有運作，請[與 {{site.data.keyword.cloud_notm}} 支援中心聯絡](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
 
 ## 設定名稱空間失敗
 {: #ts_problem}
@@ -140,7 +140,7 @@ docker build --no-cache .
 
 {: tsCauses}
 
-- 您輸入的名稱空間值已由另一個 {{site.data.keyword.Bluemix_notm}} 組織使用中。
+- 您輸入的名稱空間值已由另一個 {{site.data.keyword.cloud_notm}} 組織使用中。
 - 最近已刪除名稱空間，而您要重複使用其名稱。如果已刪除的名稱空間包含許多資源，則 {{site.data.keyword.registrylong_notm}} 可能尚未完全處理這項刪除作業。
 - 您在名稱空間值中使用了無效字元。
 
@@ -185,15 +185,15 @@ denied: requested access to the resource is denied
 
 - 未安裝 Docker。
 - Docker 用戶端未登入 {{site.data.keyword.registrylong_notm}}。
-- 您的 {{site.data.keyword.Bluemix_notm}} 存取記號可能已過期。
-- 您已超出針對 {{site.data.keyword.Bluemix_notm}} 帳戶所設定的儲存空間或取回資料流量的配額限制。
+- 您的 {{site.data.keyword.cloud_notm}} 存取記號可能已過期。
+- 您已超出針對 {{site.data.keyword.cloud_notm}} 帳戶所設定的儲存空間或取回資料流量的配額限制。
 
 {: tsResolve}
 您可以使用下列方式修正此問題：
 
 - [確定 Docker 已安裝在您的電腦上](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - 檢查 Docker 安裝路徑。
-- 執行 `ibmcloud login`，以登入 {{site.data.keyword.Bluemix_notm}}。然後，執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}} CLI。
+- 執行 `ibmcloud login`，以登入 {{site.data.keyword.cloud_notm}}。然後，執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}} CLI。
 - [檢閱在 {{site.data.keyword.registrylong_notm}} 中儲存及取回 Docker 映像檔的配額限制及用量](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)。
 
 ## 無法使用 `latest` 標籤取回最近的映像檔
@@ -212,7 +212,7 @@ denied: requested access to the resource is denied
 {: #ts_ppa}
 
 {: tsSymptoms}
-當您嘗試匯入您在其他 IBM 產品（例如 {{site.data.keyword.Bluemix_notm}} Private）中所使用的內容時，您無法將來自 [IBM Passport Advantage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/index.html) 的映像檔及其他授權軟體儲存在登錄中。
+當您嘗試匯入您在其他 IBM 產品（例如 {{site.data.keyword.cloud_notm}} Private）中所使用的內容時，您無法將來自 [IBM Passport Advantage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/index.html) 的映像檔及其他授權軟體儲存在登錄中。
 
 {: tsCauses}
 軟體套件（例如來自 IBM Passport Advantage 的映像檔及 Helm 圖表）必須使用 `ibmcloud cr ppa-archive-load` 指令匯入至登錄中。
@@ -220,13 +220,13 @@ denied: requested access to the resource is denied
 {: tsResolve}
 **開始之前**
 
-- 執行 `ibmcloud login [--sso]`，以登入 {{site.data.keyword.Bluemix_notm}}。
+- 執行 `ibmcloud login [--sso]`，以登入 {{site.data.keyword.cloud_notm}}。
 - 執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}}。
 - [將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
-- 如果您尚未在叢集中設定 Helm，請[立即在叢集中設定 Helm](/docs/containers?topic=containers-integrations#helm)。
+- 如果您尚未在叢集中設定 Helm，請[立即在叢集中設定 Helm](/docs/containers?topic=containers-helm#helm)。
 - 如果您要在組織內共用圖表，可以安裝 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。如需指示，請參閱此 [developerWorks 秘訣 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
-### 匯入 IBM Passport Advantage 產品，以用於 {{site.data.keyword.Bluemix_notm}}
+### 匯入 IBM Passport Advantage 產品，以用於 {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
 
 1. 從 [IBM Passport Advantage![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/index.html) 取得您要匯入的壓縮檔。
@@ -368,9 +368,9 @@ denied: requested access to the resource is denied
 
 如果名稱空間包含的儲存庫具有不受影響的主要金鑰（例如正式作業映像檔的名稱空間），則建議您只刪除與受影響之主要金鑰相關聯的信任資料。開立支援問題單。
 
-1. [與 {{site.data.keyword.Bluemix_notm}} 支援中心聯絡](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。請包含問題的簡要說明、帳戶 ID，以及包含具有受影響主要金鑰之映像檔儲存庫的名稱空間清單。
+1. [與 {{site.data.keyword.cloud_notm}} 支援中心聯絡](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。請包含問題的簡要說明、帳戶 ID，以及包含具有受影響主要金鑰之映像檔儲存庫的名稱空間清單。
 
-2. 在 {{site.data.keyword.Bluemix_notm}} 處理該問題後，刪除本端電腦上的 Docker Content Trust 儲存庫。
+2. 在 {{site.data.keyword.cloud_notm}} 處理該問題後，刪除本端電腦上的 Docker Content Trust 儲存庫。
 
    - Linux 及 Mac 目錄：`~/.docker/trust/private` 及 `~/.docker/trust/tuf`
 
@@ -379,7 +379,7 @@ denied: requested access to the resource is denied
    因為主要金鑰受到影響，所以此步驟會刪除所有簽署金鑰，包括其他信任伺服器的簽署金鑰。
     {:tip}
 
-3. 如果您在 {{site.data.keyword.containershort_notm}} 叢集中使用 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，請重新啟動每一個映像檔強制執行 Pod。若要觸發 Kubernetes 以自動執行 Pod 的漸進式重新啟動，您可以變更 Pod 上的部分 meta 資料。例如，[將您的 Kubernetes CLI 目標設為叢集](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，並修改部署。
+3. 如果您在 {{site.data.keyword.containershort_notm}} 叢集中使用 [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，請重新啟動每一個映像檔強制執行 Pod。若要觸發 Kubernetes 以自動執行 Pod 的漸進式重新啟動，您可以變更 Pod 上的部分 meta 資料。例如，[將您的 Kubernetes CLI 目標設為叢集](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，並修改部署。
     
 
    ```
@@ -475,8 +475,8 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 4. 至少一個 Container Image Security Enforcement Pod 正在執行時，請執行下列指令來更新 `MutatingWebhookConfiguration`：
 
    ```
-    kubectl edit MutatingWebhookConfiguration image-admission-config
-    ```
+   kubectl edit MutatingWebhookConfiguration image-admission-config
+   ```
    {: pre}
 
     將 `failurePolicy` 變更為 `Fail`、儲存並關閉。
@@ -484,8 +484,8 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 5. 執行下列指令，以更新 `ValidatingWebhookConfiguration`：
 
    ```
-    kubectl edit ValidatingWebhookConfiguration image-admission-config
-    ```
+   kubectl edit ValidatingWebhookConfiguration image-admission-config
+   ```
    {: pre}
 
    將 `failurePolicy` 變更為 `Fail`、儲存並關閉。
@@ -502,7 +502,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 {: tsResolve}
 若要解決此問題，請完成下列步驟：
 
-1. 執行下列指令，以取回您嘗試標記的映像檔，其中，`<source_image>` 是來源映像檔的名稱：
+1. 執行下列指令，以取回您嘗試標記的映像檔，其中 `<source_image>` 是您的來源映像檔名稱：
 
    ```
    docker pull <source_image>
@@ -537,7 +537,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 
 1. 升級至 Docker Engine 1.12 版或更新版本。
 
-2. 執行下列指令，以取回您嘗試標記的映像檔，其中，`<source_image>` 是來源映像檔的名稱：
+2. 執行下列指令，以取回您嘗試標記的映像檔，其中 `<source_image>` 是您的來源映像檔名稱：
 
    ```
    docker pull <source_image>

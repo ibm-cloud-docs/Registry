@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI (interface da linha de comandos)
 {: #containerregcli}
 
-É possível usar a CLI do {{site.data.keyword.registrylong}}, que é fornecida no plug-in da CLI `container-registry`, para gerenciar seu registro e seus recursos para sua conta do {{site.data.keyword.Bluemix_notm}}.
+É possível usar a CLI do {{site.data.keyword.registrylong}}, que é fornecida no plug-in da CLI `container-registry`, para gerenciar seu registro e seus recursos para sua conta do {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 **Pré-requisitos**
 
-* Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). O prefixo para executar comandos usando a CLI do {{site.data.keyword.Bluemix_notm}} é `ibmcloud`.
-* Antes de executar os comandos de registro, efetue login no {{site.data.keyword.Bluemix_notm}}
+* Instale a [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). O prefixo para executar comandos usando a CLI do {{site.data.keyword.cloud_notm}} é `ibmcloud`.
+* Antes de executar os comandos de registro, efetue login no {{site.data.keyword.cloud_notm}}
  com o comando `ibmcloud login` para gerar um token de acesso e autenticar sua sessão.
 
 Na linha de comandos, você é notificado quando as atualizações para os plug-ins da CLI `ibmcloud` e da CLI `container-registry` estão disponíveis. Assegure-se de manter sua CLI atualizada para que seja possível usar todos os comandos e sinalizadores disponíveis.
@@ -124,9 +124,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 <dd>O tipo de problema de segurança que você deseja isentar. Para localizar tipos de problemas válidos, execute `ibmcloud cr exemption-types`.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>O ID do problema de segurança que você deseja isentar. Para localizar um ID de problema, execute `ibmcloud cr va <image>`, em que  `<image>`
-é o nome da sua imagem, e use o valor relevante da coluna **ID de vulnerabilidade** ou
-**Identificador do problema de configuração**.
+<dd>O ID do problema de segurança que você deseja isentar. Para localizar um ID de problema, execute `ibmcloud cr va<image>`, em que `<image>` é o nome de sua imagem, e use o valor relevante da coluna **ID de vulnerabilidade** ou **ID do problema de configuração**.
 </dd>
 </dl>
 
@@ -315,7 +313,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-Exibe todas as imagens em sua conta. {{site.data.keyword.Bluemix_notm}}
+Exibe todas as imagens em sua conta. {{site.data.keyword.cloud_notm}}
 
 O nome da imagem é a combinação do conteúdo das colunas **Repositório** e **Tag** no formato: `repository:tag`
 {:tip}
@@ -473,7 +471,7 @@ Nenhuma
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-Escolha um nome para seu namespace e inclua-o em sua conta {{site.data.keyword.Bluemix_notm}}.
+Escolha um nome para seu namespace e inclua-o em sua conta {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -487,7 +485,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 **Opções de comandos**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>O namespace que deseja incluir. O namespace deve ser exclusivo em todas as contas do {{site.data.keyword.Bluemix_notm}} na mesma região. Os namespaces devem ter de 4 a 30 caracteres e conter somente letra minúsculas, números, hifens e sublinhados. Os namespaces devem iniciar e terminar com uma letra ou número.
+<dd>O namespace que deseja incluir. O namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região. Os namespaces devem ter de 4 a 30 caracteres e conter somente letra minúsculas, números, hifens e sublinhados. Os namespaces devem iniciar e terminar com uma letra ou número.
   
 <p>  
 <strong>Dica:</strong> não coloque informações pessoais em seus nomes de namespace.
@@ -508,7 +506,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-Exibe todos os namespaces pertencentes à sua conta do {{site.data.keyword.Bluemix_notm}}.
+Exibe todos os namespaces pertencentes à sua conta do {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-list
@@ -522,7 +520,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-Remove um namespace de sua conta do {{site.data.keyword.Bluemix_notm}}. As imagens nesse namespace são excluídas quando o namespace é removido.
+Remove um namespace de sua conta do {{site.data.keyword.cloud_notm}}. As imagens nesse namespace são excluídas quando o namespace é removido.
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -802,7 +800,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-Exibe todos os tokens que existem para sua conta do {{site.data.keyword.Bluemix_notm}}.
+Exibe todos os tokens que existem para sua conta do {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr token-list [--format FORMAT]

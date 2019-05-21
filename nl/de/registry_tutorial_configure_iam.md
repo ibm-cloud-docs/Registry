@@ -373,7 +373,7 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
 
         Suchen Sie nach den Richtlinien, die Sie gerade erstellt haben, und notieren Sie die Richtlinien-IDs.
 
-    3. Löschen Sie die Richtlinien, die Sie gerade erstellt haben, indem Sie den folgenden Befehl eingeben, wobei _`<Policy_ID>`_ die Richtlinien-ID ist.
+    3. Löschen Sie die Richtlinien, die Sie gerade erstellt haben, indem Sie den folgenden Befehl eingeben, wobei _`<Policy_ID>`_ die Richtlinien-ID ist:
 
         ```
         ibmcloud iam user-policy-delete <benutzer.b@beispiel.com> <richtlinien-id>

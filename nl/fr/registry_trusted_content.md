@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} fournit une technologie de contenu sécurisé pour vous permettre de signer des images et garantir l'intégrité des images de votre espace de nom de registre. En extrayant et en transférant des images signées, vous pouvez vérifier que vos images ont été envoyées par la partie appropriée, comme les outils d'intégration continue. Pour utiliser cette fonction, vous devez disposer de Docker version 18.03 ou ultérieure. Pour en savoir plus, consultez la documentation [Docker Content Trust ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/security/trust/content_trust/) et la documentation sur le [projet Notary ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
-Lorsque vous envoyez par commande push votre image avec le contenu sécurisé activé, votre client Docker envoie également un objet métadonnées signé au serveur d'accréditation {{site.data.keyword.Bluemix_notm}}. Lors de l'extraction d'une image balisée avec Docker Content Trust activé, votre client Docker contacte le serveur d'accréditation afin d'établir la version signée la plus récente de la balise demandée, vérifie la signature du contenu puis télécharge l'image signée.
+Lorsque vous envoyez par commande push votre image avec le contenu sécurisé activé, votre client Docker envoie également un objet métadonnées signé au serveur d'accréditation {{site.data.keyword.cloud_notm}}. Lors de l'extraction d'une image balisée avec Docker Content Trust activé, votre client Docker contacte le serveur d'accréditation afin d'établir la version signée la plus récente de la balise demandée, vérifie la signature du contenu puis télécharge l'image signée.
 
 Un nom d'image est composé d'un référentiel et d'une balise. Lorsque vous utilisez du contenu sécurisé, chaque référentiel utilise une clé de signature unique. Chaque balise d'un référentiel utilise la clé appartenant au référentiel. Si plusieurs équipes publient du contenu, chacun sur leur propre référentiel au sein de vos espaces de nom {{site.data.keyword.registrylong_notm}}, chaque équipe peut utiliser ses propres clés pour signer son contenu, ce qui vous permet de vérifier que chaque image est produite par l'équipe appropriée.
 
@@ -63,7 +63,7 @@ Par défaut, Docker Content Trust est désactivé. Activez l'environnement Conte
    ```
    {: codeblock}
 
-2. Connectez-vous à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
+2. Connectez-vous à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login [--sso]
@@ -175,7 +175,7 @@ Pour re-signer l'image pour le nouveau nom de domaine, `icr.io`, vous devez extr
    ```
    {: pre}
 
-3. Transférez votre image (par commande Push) en utilisant le nouveau nom de domaine (voir [Transfert d'images Docker (par commande Push) vers votre espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)). L'étiquette est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
+3. Transférez votre image (par commande Push) en utilisant le nouveau nom de domaine (voir [Transfert d'images Docker (par commande Push) vers votre espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing)). La balise est obligatoire pour du contenu sécurisé. La sortie de la commande est la suivante :
 
    ```
    Signing and pushing image metadata.

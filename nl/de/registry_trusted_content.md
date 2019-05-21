@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} bietet eine Technologie für vertrauenswürdige Inhalte, sodass Sie Images signieren können, um die Integrität von Images in Ihrem Registry-Namensbereich sicherzustellen. Durch Extrahieren von signierten Images mit Pull-Operation und ihre Übertragung mit Push-Operation können Sie sicherstellen, dass Ihre Images vom richtigen Teilnehmer, z. B. Ihren Tools für kontinuierliche Integration (Continuous Integration, CI), mit Push-Operation übertragen wurden. Um diese Funktion verwenden zu können, müssen Sie über Docker Version 18.03 oder höher verfügen. Weitere Informationen finden Sie in der Dokumentation zu [Docker Content Trust ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/security/trust/content_trust/) und zum [Notary-Projekt ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
-Wenn Sie Ihr Image mit Push-Operation und mit aktiviertem Content Trust übertragen, überträgt Ihr Docker-Client ebenfalls ein signiertes Metadatenobjekt mit Push-Operation an den {{site.data.keyword.Bluemix_notm}}-Trust-Server. Wird ein mit Tags versehenes Image bei aktiviertem Docker Content Trust mit Pull-Operation extrahiert, kontaktiert Ihr Docker-Client den Trust-Server, um die zuletzt signierte Version des von Ihnen angeforderten Tags festzustellen, überprüft die Inhaltssignatur und lädt das signierte Image herunter.
+Wenn Sie Ihr Image mit Push-Operation und mit aktiviertem Content Trust übertragen, überträgt Ihr Docker-Client ebenfalls ein signiertes Metadatenobjekt mit Push-Operation an den {{site.data.keyword.cloud_notm}}-Trust-Server. Wird ein mit Tags versehenes Image bei aktiviertem Docker Content Trust mit Pull-Operation extrahiert, kontaktiert Ihr Docker-Client den Trust-Server, um die zuletzt signierte Version des von Ihnen angeforderten Tags festzustellen, überprüft die Inhaltssignatur und lädt das signierte Image herunter.
 
 Ein Imagename setzt sich aus einem Repository und einem Tag zusammen. Bei Verwendung von vertrauenswürdigen Inhalten verwendet jedes Repository einen eindeutigen Signierschlüssel. Jeder Tag innerhalb eines Repositorys verwendet den Schlüssel, der dem Repository angehört. Wenn mehrere Ihrer Teams Inhalte veröffentlichen, jedes in das eigene Repository innerhalb Ihrer {{site.data.keyword.registrylong_notm}}-Namensbereiche, kann jedes Team seinen eigenen Schlüssel zum Signieren des eigenen Inhalts verwenden, sodass Sie überprüfen können, ob jedes Images vom richtigen Team erzeugt wurde.
 
@@ -63,7 +63,7 @@ Standardmäßig ist Docker Content Trust inaktiviert. Aktivieren Sie die Content
    ```
    {: codeblock}
 
-2. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-CLI an.
+2. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-CLI an.
 
    ```
    ibmcloud login [--sso]
@@ -143,7 +143,7 @@ Beim erstmaligen Extrahieren eines signierten Image mit Pull-Operation bei aktiv
 2. Extrahieren Sie Ihr Image mit Pull-Operation. Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_. Zum Auflisten der für Pull-Operationen verfügbaren Images führen Sie den Befehl `ibmcloud cr image-list` aus.
 
    ```
-   docker pull <quellenimage>:<tag>
+   docker pull <source_image>:<tag>
    ```
    {: pre}
 
@@ -196,7 +196,7 @@ Sie können signierte Versionen eines Image oder Tags und auch die Informationen
 
 2. Prüfen Sie den Tag, den Auszug und die Unterzeichnerinformationen für jedes Image.
 
-   (Optional) Den Tag, `<tag>`, angeben, um Informationen zu dieser Version des Images anzuzeigen.
+   (Optional) Den Tag `<tag>` angeben, um Informationen zu dieser Version des Images anzuzeigen.
 
    ```
    docker trust inspect --pretty <image>:<tag>

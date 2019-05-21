@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -103,7 +103,7 @@ subcollection: registry
 두 지역에 있는 사용자와 이미지를 공유할 수 있도록 한 지역의 레지스트리에서 이미지를 가져와 다른 지역의 레지스트리에 푸시할 수 있습니다.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리의 이미지를 개인용 {{site.data.keyword.Bluemix_notm}} 레지스트리에 복사합니다."/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리의 이미지를 개인용 {{site.data.keyword.cloud_notm}} 레지스트리에 복사합니다."/>
 
 **시작하기 전에**
 
@@ -165,7 +165,7 @@ subcollection: registry
 ## 네임스페이스와 사용할 Docker 이미지 빌드
 {: #registry_images_creating}
 
-{{site.data.keyword.Bluemix_notm}}에서 직접 Docker 이미지를 빌드하거나 로컬 컴퓨터에 고유 Docker 이미지를 작성하고 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 업로드(푸시)할 수 있습니다.
+{{site.data.keyword.cloud_notm}}에서 직접 Docker 이미지를 빌드하거나 로컬 컴퓨터에 고유 Docker 이미지를 작성하고 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 업로드(푸시)할 수 있습니다.
 {:shortdesc}
 
 **시작하기 전에**
@@ -178,7 +178,7 @@ subcollection: registry
 
 Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이미지는 이미지를 빌드하는 지시사항이 포함된 파일인 Dockerfile에서 작성됩니다. Dockerfile은 앱, 해당 앱의 구성 및 그 종속 항목과 같이 개별적으로 저장되는 해당 지시사항의 빌드 아티팩트를 참조할 수 있습니다.
 
-{{site.data.keyword.Bluemix_notm}} 컴퓨팅 리소스 및 인터넷 연결을 이용하거나 워크스테이션에 Docker가 설치되지 않은 경우 {{site.data.keyword.Bluemix_notm}}에서 직업 이미지를 빌드하십시오. 방화벽 뒤의 서버에 있는 빌드의 리소스에 액세스해야 하는 경우 로컬에서 이미지를 빌드하십시오.
+{{site.data.keyword.cloud_notm}} 컴퓨팅 리소스 및 인터넷 연결을 이용하거나 워크스테이션에 Docker가 설치되지 않은 경우 {{site.data.keyword.cloud_notm}}에서 직업 이미지를 빌드하십시오. 방화벽 뒤의 서버에 있는 빌드의 리소스에 액세스해야 하는 경우 로컬에서 이미지를 빌드하십시오.
 
 고유 Docker 이미지를 빌드하려면 다음 단계를 완료하십시오.
 
@@ -220,8 +220,8 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    여기서 `<my_namespace>`는 네임스페이스 정보이며, `<repo_name>`은 저장소 이름이고, `<tag>`는 이미지에 사용할 버전입니다. 네임스페이스를 찾으려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
 
 4. Dockerfile을 포함하는 디렉토리의 경로를 기록해 두십시오. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 상태에서 다음 단계의 명령을 실행하면 `<directory>`를 점(.)으로 바꿀 수 있습니다.
-5. {{site.data.keyword.Bluemix_notm}}에서 직접 이미지를 빌드하거나, {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 로컬로 이미지를 빌드하고 테스트하십시오.
-   - {{site.data.keyword.Bluemix_notm}}에서 직접 이미지를 빌드하려면 다음 명령을 실행하십시오.
+5. {{site.data.keyword.cloud_notm}}에서 직접 이미지를 빌드하거나, {{site.data.keyword.cloud_notm}}에 푸시하기 전에 로컬로 이미지를 빌드하고 테스트하십시오.
+   - {{site.data.keyword.cloud_notm}}에서 직접 이미지를 빌드하려면 다음 명령을 실행하십시오.
 
      ```
     ibmcloud cr build -t <image_name> <directory>
@@ -232,7 +232,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   
      `ibmcloud cr build` 명령에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)를 참조하십시오.
 
-   - {{site.data.keyword.Bluemix_notm}}에 푸시하기 전에 로컬에서 이미지를 빌드하고 테스트하려면 다음 단계를 완료하십시오.
+   - {{site.data.keyword.cloud_notm}}에 푸시하기 전에 로컬에서 이미지를 빌드하고 테스트하려면 다음 단계를 완료하십시오.
       1. 로컬 컴퓨터의 Dockerfile에서 이미지를 빌드하고 이미지 이름으로 태그를 지정하십시오.
 
          ```
@@ -255,7 +255,21 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vulnerability Advisor로 이미지 보안 관리](/docs/services/va?topic=va-va_index)를 참조하십시오.
 
-## 개인용 {{site.data.keyword.Bluemix_notm}} 저장소에서 이미지 삭제
+## API 키를 사용하여 이미지를 {{site.data.keyword.registrylong_notm}}에 푸시
+{: #registry_api_key_push_image}
+
+API 키를 사용하여 이미지를 {{site.data.keyword.registrylong_notm}}에 푸시하는 서비스 ID를 작성하십시오.
+{:shortdesc}
+
+1. 서비스 ID를 작성하십시오. [서비스 ID 작성 및 관련 작업 수행](/docs/iam?topic=iam-serviceids#serviceids)을 참조하십시오.
+2. 레지스트리에 액세스할 수 있는 권한을 서비스 ID에 제공하는 정책을 작성하십시오(예: `Administrator` 및 `Manager` 역할). [Identity and Access Management를 사용한 사용자 액세스 관리](/docs/services/Registry?topic=registry-iam#iam)를 참조하십시오.
+3. API 키를 작성하십시오. [서비스 ID의 API 키 작성](/docs/iam?topic=iam-serviceidapikeys#create_service_key)을 참조하십시오.
+4. 이미지를 레지스트리에 푸시할 수 있도록 API 키를 사용하여 레지스트리에 로그인하십시오. [API 키를 사용하여 액세스 자동화](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use)를 참조하십시오.
+5. 이미지를 푸시하십시오. [Docker 이미지를 네임스페이스에 푸시](#registry_images_pushing_namespace)를 참조하십시오.
+
+이제 클러스터를 사용하여 이미지를 가져올 수 있습니다. [이미지에서 컨테이너 빌드](/docs/containers?topic=containers-images#other_registry_accounts)를 참조하십시오.
+
+## 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove}
 
 그래픽 사용자 인터페이스(GUI) 또는 CLI를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제할 수 있습니다.
@@ -263,12 +277,12 @@ Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vu
 
 개인용 저장소 및 해당 연관된 이미지를 삭제하려는 경우에는 [개인용 저장소 및 연관된 이미지 삭제](#registry_repo_remove)를 참조하십시오.
 
-공용 {{site.data.keyword.IBM_notm}} 이미지는 개인용 {{site.data.keyword.Bluemix_notm}} 저장소에서 삭제할 수 없으며 할당량에 대해 계산되지 않습니다.
+공용 {{site.data.keyword.IBM_notm}} 이미지는 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 삭제할 수 없으며 할당량에 대해 계산되지 않습니다.
 
 이미지 삭제는 실행 취소할 수 없습니다. 기존 배치에서 사용 중인 이미지를 삭제하면 스케일 업 또는 재스케줄(또는 둘 다)이 실패할 수 있습니다.
 {:tip}
 
-### CLI를 사용하여 개인용 {{site.data.keyword.Bluemix_notm}} 저장소에서 이미지 삭제
+### CLI를 사용하여 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove_cli}
 
 CLI를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제할 수 있습니다.
@@ -279,7 +293,7 @@ CLI를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제�
 
 CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십시오.
 
-1. `ibmcloud login` 명령을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. `ibmcloud login` 명령을 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 2. 이미지를 삭제하려면 다음 명령을 실행하십시오.
 
    ```
@@ -289,7 +303,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 
    여기서 _IMAGE_는 `repository:tag` 형식으로 된 제거할 이미지의 이름입니다.
 
-   이미지 이름에 태그가 지정되지 않은 경우에는 `latest`로 태그 지정된 이미지가 기본적으로 삭제됩니다. 명령에 각 개인용 {{site.data.keyword.Bluemix_notm}} 레지스트리 경로를 공백으로 구분하여 나열함으로써 여러 이미지를 삭제할 수 있습니다.
+   이미지 이름에 태그가 지정되지 않은 경우에는 `latest`로 태그 지정된 이미지가 기본적으로 삭제됩니다. 명령에 각 개인용 {{site.data.keyword.cloud_notm}} 레지스트리 경로를 공백으로 구분하여 나열함으로써 여러 이미지를 삭제할 수 있습니다.
 
    이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. 저장소 및 태그 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
    {:tip}
@@ -301,7 +315,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
    ```
    {: pre}
 
-### GUI를 사용하여 개인용 {{site.data.keyword.Bluemix_notm}} 저장소에서 이미지 삭제
+### GUI를 사용하여 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove_gui}
 
 그래픽 사용자 인터페이스(GUI)를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제할 수 있습니다.
@@ -313,7 +327,7 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십시오.
 
 1. IBMid를 사용하여 {{site.data.keyword.cloud_notm}} 콘솔([https://cloud.ibm.com/login ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login))에 로그인하십시오.
-2. {{site.data.keyword.Bluemix_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
+2. {{site.data.keyword.cloud_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
 3. **카탈로그**를 클릭하십시오.
 4. **컨테이너** 카테고리를 선택하고 **컨테이너 레지스트리** 타일을 클릭하십시오.
 5. **이미지**를 클릭하십시오. 이미지 목록이 표시됩니다.
@@ -340,7 +354,7 @@ GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 GUI를 사용하여 개인용 저장소를 삭제하려면 다음 단계를 완료하십시오.
 
 1. IBMid를 사용하여 {{site.data.keyword.cloud_notm}} 콘솔([https://cloud.ibm.com/login ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login))에 로그인하십시오.
-2. {{site.data.keyword.Bluemix_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
+2. {{site.data.keyword.cloud_notm}} 계정이 여러 개인 경우 계정 메뉴에서 사용할 계정과 지역을 선택하십시오.
 3. **카탈로그**를 클릭하십시오.
 4. **컨테이너** 카테고리를 선택하고 **컨테이너 레지스트리** 타일을 클릭하십시오.
 5. **저장소**를 클릭하십시오. 개인용 저장소의 목록이 표시됩니다.

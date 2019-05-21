@@ -377,7 +377,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。
+{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}

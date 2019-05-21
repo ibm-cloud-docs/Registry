@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 管理存储量和拉出流量的配额限制
 {: #registry_quota}
 
-可以通过设置和管理定制配额限制，从而限制可在 {{site.data.keyword.Bluemix}} 帐户中使用的存储量和拉出流量。
+可以通过设置和管理定制配额限制，从而限制可在 {{site.data.keyword.cloud}} 帐户中使用的存储量和拉出流量。
 {:shortdesc}
 
 ## 设置存储和拉出映像的配额限制
@@ -38,7 +38,7 @@ subcollection: registry
 
 要设置配额，请执行以下操作：
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login
@@ -65,7 +65,7 @@ subcollection: registry
     ```
     {: screen}
 
-3. 更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 `<traffic_quota>` 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储量**选项，并将 `<storage_quota>` 替换为要设置的值（以兆字节为单位）。
+3. 更改存储量和拉出流量的配额限制。要更改拉出流量使用量，请指定**流量**选项，并将 `<traffic_quota>` 替换为要为拉出流量配额设置的值（以兆字节为单位）。如果要更改您的帐户中的存储量，请指定**存储**选项，并将 `<storage_quota>` 替换为要设置的值（以兆字节为单位）。
 
     如果使用的是免费套餐，那么无法将配额设置为超过免费层的量。免费层的存储量配额为 512 MB，流量为 5120 MB。
     {:tip}
@@ -88,7 +88,7 @@ subcollection: registry
 针对您的帐户，可以查看配额限制，并检查当前存储量和拉出流量使用量。
 {:shortdesc}
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login
@@ -118,12 +118,12 @@ subcollection: registry
 ## 释放已用存储量以及更改服务套餐或配额限制以不超出给定配额限制范围
 {: #registry_quota_freeup}
 
-如果超过了为 {{site.data.keyword.Bluemix_notm}} 帐户设置的配额限制，那么可以释放存储量以及更改服务套餐或配额限制，以继续向名称空间推送映像和从名称空间中拉出映像。
+如果超过了为 {{site.data.keyword.cloud_notm}} 帐户设置的配额限制，那么可以释放存储量以及更改服务套餐或配额限制，以继续向名称空间推送映像和从名称空间中拉出映像。
 {:shortdesc}
 
-要释放 {{site.data.keyword.Bluemix_notm}} 帐户中的映像存储量，请执行以下操作：
+要释放 {{site.data.keyword.cloud_notm}} 帐户中的映像存储量，请执行以下操作：
 
-1. 列出 {{site.data.keyword.Bluemix_notm}} 帐户的所有名称空间中的所有映像。
+1. 列出 {{site.data.keyword.cloud_notm}} 帐户的所有名称空间中的所有映像。
 
     ```
     ibmcloud cr images

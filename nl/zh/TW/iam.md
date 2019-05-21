@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ subcollection: registry
 | `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 新增可用來控制登錄存取權的記號。| 管理者 |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 移除一個以上的指定記號。| 管理者 |
 | `container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 從登錄擷取指定的記號。| 管理者 |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) 顯示 {{site.data.keyword.Bluemix_notm}} 帳戶的所有現有記號。| 管理者 |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) 顯示 {{site.data.keyword.cloud_notm}} 帳戶的所有現有記號。| 管理者 |
 {: caption="表 2. 用來配置 {{site.data.keyword.registrylong_notm}} 的平台動作及作業" caption-side="top"}
 
 ## 服務存取角色

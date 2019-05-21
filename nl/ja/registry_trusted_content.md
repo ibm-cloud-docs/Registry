@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} は、信頼できるコンテンツのテクノロジーを備えているので、レジストリー名前空間内のイメージに署名してイメージの完全性を保証できます。 署名付きのイメージをプル/プッシュすることで、イメージをプッシュしたのが継続的統合 (CI) ツールなどの正当なパーティーであることを検証できます。 この機能を使用するには、Docker バージョン 18.03 以降が必要です。 詳しくは、[Docker のコンテント・トラスト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/engine/security/trust/content_trust/) および [Notary プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/theupdateframework/notary) の資料を参照してください。
 {:shortdesc}
 
-信頼できるコンテンツを有効にしてイメージをプッシュすると、Docker クライアントが、署名付きのメタデータ・オブジェクトも {{site.data.keyword.Bluemix_notm}} トラスト・サーバーにプッシュします。 Docker コンテント・トラストを有効にしてタグ付きのイメージをプルしようとすると、Docker クライアントが、要求されたタグの署名付きの最新バージョンをトラスト・サーバーに確認し、コンテンツの署名を検証し、署名付きのイメージをダウンロードします。
+信頼できるコンテンツを有効にしてイメージをプッシュすると、Docker クライアントが、署名付きのメタデータ・オブジェクトも {{site.data.keyword.cloud_notm}} トラスト・サーバーにプッシュします。 Docker コンテント・トラストを有効にしてタグ付きのイメージをプルしようとすると、Docker クライアントが、要求されたタグの署名付きの最新バージョンをトラスト・サーバーに確認し、コンテンツの署名を検証し、署名付きのイメージをダウンロードします。
 
 イメージ名は、リポジトリーとタグで構成されます。 信頼できるコンテンツを使用する場合は、リポジトリーごとに固有の署名鍵が使用されます。 特定のリポジトリー内のすべてのタグに、そのリポジトリーに属する鍵が使用されます。 複数のチームが {{site.data.keyword.registrylong_notm}} 名前空間内の各チーム用のリポジトリーにコンテンツを公開する場合、チームごとに独自の鍵を使用して自分たちのコンテンツに署名できます。そのため、各イメージが適切なチームによって作成されたことを検証できます。
 
@@ -63,7 +63,7 @@ Docker コンテント・トラストでは、「Trust on first use」セキュ�
    ```
    {: codeblock}
 
-2. {{site.data.keyword.Bluemix_notm}} CLI にログインします。
+2. {{site.data.keyword.cloud_notm}} CLI にログインします。
 
    ```
    ibmcloud login [--sso]

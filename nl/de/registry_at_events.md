@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -25,12 +25,11 @@ subcollection: registry
 # {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse
 {: #at_events}
 
-Verwenden Sie den {{site.data.keyword.cloudaccesstrailfull}}-Service, um zu verfolgen, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.Bluemix}} interagieren.
+Verwenden Sie den {{site.data.keyword.cloudaccesstrailfull}}-Service, um zu verfolgen, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.cloud}} interagieren.
 {:shortdesc}
 
-Der {{site.data.keyword.cloudaccesstrailfull_notm}} zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.Bluemix_notm}} ändern.
-Weitere Informationen finden Sie unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
-
+Der {{site.data.keyword.cloudaccesstrailfull_notm}} zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.cloud_notm}} ändern.
+Weitere Informationen finden Sie unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis auslösen, wenn sie aufgerufen werden:
 
@@ -129,6 +128,6 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
 ## Speicherposition der Ereignisse
 {: #ui}
 
-Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.Bluemix_notm}}-Region befindet, in der die Ereignisse generiert wurden; eine Ausnahme bildet `ap-north`. Ereignisse für `ap-north` werden in `ap-south` angezeigt.
+Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.cloud_notm}}-Region befindet, in der die Ereignisse generiert wurden; eine Ausnahme bildet `ap-north`. Ereignisse für `ap-north` werden in `ap-south` angezeigt.
 
 Die [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), in der ein {{site.data.keyword.registrylong_notm}}- oder Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist.

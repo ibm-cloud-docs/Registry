@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Kontingente für Speicher und Pull-Datenverkehr verwalten
 {: #registry_quota}
 
-Sie können den Speicherplatz und den Pull-Datenverkehr, den Sie in Ihrem {{site.data.keyword.Bluemix}}-Konto nutzen können, begrenzen, indem Sie angepasste Kontingente festlegen und verwalten.
+Sie können den Speicherplatz und den Pull-Datenverkehr, den Sie in Ihrem {{site.data.keyword.cloud}}-Konto nutzen können, begrenzen, indem Sie angepasste Kontingente festlegen und verwalten.
 {:shortdesc}
 
 ## Kontingente für Speicher und Pull-Datenverkehr für Images festlegen
@@ -38,7 +38,7 @@ Wenn Sie ein Upgrade auf den {{site.data.keyword.registryshort_notm}}-Standardpl
 
 Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
     ```
     ibmcloud login
@@ -65,7 +65,7 @@ Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
     ```
     {: screen}
 
-3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie `<traffic_quota>` durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie `<storage_quota>`durch den Wert in Megabyte, den Sie festlegen möchten.
+3. Ändern Sie die Kontingente für Speicher und Pull-Datenverkehr. Um die Nutzung des Pull-Datenverkehrs zu ändern, geben Sie die Option **traffic** an und ersetzen Sie `<traffic_quota>` durch den Wert in Megabyte, den Sie für das Pull-Datenverkehrskontingent festlegen möchten. Um die Speicherkapazität für Ihr Konto zu ändern, geben Sie die Option **storage** an und ersetzen Sie `<storage_quota>` durch den Wert in Megabyte, den Sie festlegen möchten.
 
     Bei der Verwendung des kostenfreien Plans können Sie das Kontingent nicht über die kostenfreie Stufe hinaus erhöhen. Die kostenfreie Stufe umfasst 512 MB an Speicher und 5120 MB an Datenverkehr.
     {:tip}
@@ -88,7 +88,7 @@ Um ein Kontingent festzulegen, gehen Sie folgendermaßen vor:
 Sie können Ihre Kontingente und Ihren aktuell genutzten Speicher sowie die Nutzung durch Pull-Datenverkehr für Ihr Konto überprüfen.
 {:shortdesc}
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
     ```
     ibmcloud login
@@ -118,12 +118,12 @@ Sie können Ihre Kontingente und Ihren aktuell genutzten Speicher sowie die Nutz
 ## Belegten Speicher freigeben und Servicepläne oder Kontingente ändern, um innerhalb der jeweiligen Kontingente zu bleiben
 {: #registry_quota_freeup}
 
-Wenn Sie Ihre Kontingente überschritten haben, die für Ihr {{site.data.keyword.Bluemix_notm}}-Konto festgelegt sind, können Sie Speicher freigeben und den Serviceplan oder die Kontingente ändern, um weiterhin Images mit Push- und Pull-Operation in und aus Ihrem Namensbereich zu übertragen.
+Wenn Sie Ihre Kontingente überschritten haben, die für Ihr {{site.data.keyword.cloud_notm}}-Konto festgelegt sind, können Sie Speicher freigeben und den Serviceplan oder die Kontingente ändern, um weiterhin Images mit Push- und Pull-Operation in und aus Ihrem Namensbereich zu übertragen.
 {:shortdesc}
 
-Gehen Sie wie folgt vor, um Speicherplatz für Images in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto freizugeben:
+Gehen Sie wie folgt vor, um Speicherplatz für Images in Ihrem {{site.data.keyword.cloud_notm}}-Konto freizugeben:
 
-1. Listen Sie alle Images in allen Ihren Namensbereichen Ihres {{site.data.keyword.Bluemix_notm}}-Kontos auf.
+1. Listen Sie alle Images in allen Ihren Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos auf.
 
     ```
     ibmcloud cr images

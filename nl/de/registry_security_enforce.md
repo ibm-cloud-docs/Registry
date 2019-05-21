@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -40,7 +40,7 @@ Container Image Security Enforcement ruft die Informationen zu Content Trust fü
 
 Führen Sie die folgenden Schritte aus:
 
-1. [Richten Sie Helm in Ihrem Cluster ein](/docs/containers?topic=containers-integrations#helm).
+1. [Richten Sie Helm in Ihrem Cluster ein](/docs/containers?topic=containers-helm#helm).
 
 2. Fügen Sie das IBM Chart-Repository zu Ihrem Helm-Client hinzu.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # CLI de {{site.data.keyword.registrylong_notm}}
 {: #containerregcli}
 
-La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de CLI `container-registry`, sirve para gestionar su registro y sus recursos para su cuenta de {{site.data.keyword.Bluemix_notm}}.
+La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de CLI `container-registry`, sirve para gestionar su registro y sus recursos para su cuenta de {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 **Requisitos previos**
 
-* Instale la CLI de [{{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). El prefijo para ejecutar mandatos utilizando la CLI de {{site.data.keyword.Bluemix_notm}} es `ibmcloud`.
-* Antes de ejecutar los mandatos de registro, inicie sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
+* Instale la [CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). El prefijo para ejecutar mandatos utilizando la CLI de {{site.data.keyword.cloud_notm}} es `ibmcloud`.
+* Antes de ejecutar los mandatos de registro, inicie sesión en {{site.data.keyword.cloud_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
 
 En la línea de mandatos, se le notifica cuando hay actualizaciones de la CLI de `ibmcloud` y de los plugins de CLI `container-registry` disponibles. Asegúrese de mantener la CLI actualizada para poder utilizar todos los mandatos y distintivos disponibles.
 
@@ -122,7 +122,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dd>El tipo del problema de seguridad que desea eximir. Ejecute `ibmcloud cr exemption-types` para averiguar los tipos de problema válidos.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>El ID del problema de seguridad que desea eximir. Para encontrar un ID de problema, ejecute `ibmcloud cr va <image>`, donde `<image>` es el nombre de la imagen. Utilice el valor que corresponda de la columna **ID de vulnerabilidad** o **ID de problema de configuración**.
+<dd>El ID del problema de seguridad que desea eximir. Para localizar un ID de problema, ejecute `ibmcloud cr va <image>`, donde `<image>` es el nombre de la imagen, o utilice el valor relevante de la columna **ID de vulnerabilidad** o **ID de problema de configuración**.
 </dd>
 </dl>
 
@@ -309,7 +309,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-Visualiza todas las imágenes de su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Visualiza todas las imágenes de su cuenta de {{site.data.keyword.cloud_notm}}.
 
 El nombre de imagen es la combinación del contenido de las columnas **Repositorio** y **Etiqueta** en el formato `repository:tag`
 {:tip}
@@ -466,7 +466,7 @@ Ninguno
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-Elige un nombre para el espacio de nombres y lo añade a su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Elige un nombre para el espacio de nombres y lo añade a su cuenta de {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -480,7 +480,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 **Opciones del mandato**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>El espacio de nombres que desea añadir. El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.Bluemix_notm}} en la misma región. Los espacios de nombres deben tener entre 4 y 30 caracteres y solo deben contener letras en minúsculas, números, guiones y guiones bajos. Los espacios de nombres deben empezar y finalizar con una letra o un número.
+<dd>El espacio de nombres que desea añadir. El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región. Los espacios de nombres deben tener entre 4 y 30 caracteres y solo deben contener letras en minúsculas, números, guiones y guiones bajos. Los espacios de nombres deben empezar y finalizar con una letra o un número.
   
 <p>  
 <strong>Sugerencia</strong> No coloque información personal en los nombres del espacio de nombres.
@@ -501,7 +501,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-Visualiza todos los espacios de nombres cuyo propietario es su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Visualiza todos los espacios de nombres cuyo propietario es su cuenta de {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-list
@@ -515,7 +515,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-Elimina un espacio de nombres de su cuenta de {{site.data.keyword.Bluemix_notm}}. Las imágenes en este espacio de nombres se suprimen cuando se elimina el espacio de nombres.
+Elimina un espacio de nombres de su cuenta de {{site.data.keyword.cloud_notm}}. Las imágenes en este espacio de nombres se suprimen cuando se elimina el espacio de nombres.
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -794,7 +794,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-Visualiza todas las señales que existen para su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Visualiza todas las señales que existen para su cuenta de {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr token-list [--format FORMAT]

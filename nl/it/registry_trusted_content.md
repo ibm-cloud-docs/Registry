@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} fornisce una tecnologia di contenuti attendibili che ti permette di firmare le immagini per garantirne l'integrità nel tuo spazio dei nomi del registro. Mediante l'esecuzione del pull e del push delle immagini firmate, puoi verificare che le tue immagini siano state trasmesse dalla parte giusta, come i tuoi strumenti di integrazione continua (CI). Per utilizzare questa funzione, devi avere Docker versione 18.03 o successive. Per ulteriori informazioni, consulta la documentazione di [Docker Content Trust ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/engine/security/trust/content_trust/) e del [progetto Notary ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
-Quando esegui il push della tua immagine con i contenuti attendibili abilitati, il tuo client Docker esegue anche il push di un oggetto di metadati firmato nel server di attendibilità {{site.data.keyword.Bluemix_notm}}. Quando esegui il pull di un'immagine con tag con il Docker Content Trust abilitato, il tuo client Docker contatta il server di attendibilità per stabilire l'ultima versione firmata della tag che hai richiesto, verifica la firma del contenuto e scarica l'immagine firmata.
+Quando esegui il push della tua immagine con i contenuti attendibili abilitati, il tuo client Docker esegue anche il push di un oggetto di metadati firmato nel server di attendibilità {{site.data.keyword.cloud_notm}}. Quando esegui il pull di un'immagine con tag con il Docker Content Trust abilitato, il tuo client Docker contatta il server di attendibilità per stabilire l'ultima versione firmata della tag che hai richiesto, verifica la firma del contenuto e scarica l'immagine firmata.
 
 Un nome immagine è costituito da un repository e una tag. Quando utilizzi contenuto attendibile, ciascun repository utilizza una chiave di firma univoca. Ogni tag all'interno di un repository utilizza la chiave che appartiene al repository. Se ci sono più team che pubblicano dei contenuti, ciascuno nel proprio repository all'interno dei tuoi spazi dei nomi di {{site.data.keyword.registrylong_notm}}, ogni team può utilizzare le proprie chiavi per firmare i propri contenuti, in modo che tu possa verificare che ogni immagine sia prodotta dal team appropriato.
 
@@ -63,7 +63,7 @@ Per impostazione predefinita, Docker Content Trust è disabilitato. Abilita l'am
    ```
    {: codeblock}
 
-2. Accedi alla CLI di {{site.data.keyword.Bluemix_notm}}.
+2. Accedi alla CLI di {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login [--sso]
@@ -142,7 +142,7 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 
 1. [Configura il tuo ambiente di contenuti attendibili](#trustedcontent_setup).
 
-2. Esegui il pull della tua immagine. Sostituisci `<source_image>` con il repository dell'immagine e `<tag>` con la tag dell'immagine che vuoi utilizzare, come ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
+2. Esegui il pull della tua immagine. Sostituisci `<source_image>` con il repository dell'immagine e `<tag>` con la tag dell'immagine che vuoi utilizzare, ad esempio, _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -158,7 +158,7 @@ La prima volta che esegui il pull di un'immagine firmata con Docker Content Trus
 Per rifirmare l'immagine per il nuovo nome del dominio, `icr.io`, devi eseguire il pull, contrassegnare ed eseguire il push dell'immagine.
 {:shortdesc}
 
-1. Esegui il pull della tua immagine firmata dal vecchio nome del dominio. Sostituisci `<source_image>` con il repository dell'immagine e `<tag>` con la tag dell'immagine che vuoi utilizzare, come ad esempio _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
+1. Esegui il pull della tua immagine firmata dal vecchio nome del dominio. Sostituisci `<source_image>` con il repository dell'immagine e `<tag>` con la tag dell'immagine che vuoi utilizzare, ad esempio, _latest_. Per elencare le immagini disponibili per il pull, esegui `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -168,7 +168,7 @@ Per rifirmare l'immagine per il nuovo nome del dominio, `icr.io`, devi eseguire 
     Specifica la tag quando esegui il push o il pull di un'immagine firmata. La tag `latest` assume il valore predefinito solo quando l'attendibilità dei contenuti è disabilitata.
     {: tip}
 
-2. Esegui il comando `docker tag` per il nuovo nome del dominio. Sostituisci `<old_domain_name>` con il tuo vecchio nome del dominio, `<new_domain_name>` con il tuo nuovo nome del dominio, `<repository>` con il nome del tuo repository e `<tag>` con il nome della tua tag.
+2. Esegui il comando `docker tag` per il nuovo nome del dominio. Sostituisci `<old_domain_name>` con il tuo nome del dominio precedente, `<new_domain_name>` con il tuo nuovo nome del dominio, `<repository>` con il nome del tuo repository e `<tag>` con il nome della tua tag.
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
@@ -198,7 +198,7 @@ Puoi esaminare le versioni firmate di un repository o una tag di immagini, inclu
 
 2. Esamina le informazioni su tag, digest e firmatario per ciascuna immagine.
 
-   (Facoltativo) Specifica la tag, `<tag>`, per vedere le informazioni su quella versione dell'immagine.
+   (Facoltativo) Specifica la tag, `<tag>`, per visualizzare le informazioni su quella versione dell'immagine.
 
    ```
    docker trust inspect --pretty <image>:<tag>
@@ -281,7 +281,7 @@ Per condividere le chiavi di firma:
 
 1. Se il nuovo firmatario non ha ancora generato una coppia di chiavi, è necessario generare e caricare una coppia di chiavi.
   
-    a. Genera la chiave. Puoi immettere qualsiasi nome per `<NAME>`, tuttavia, il nome da te selezionato è visibile quando qualcuno ispeziona l'attendibilità sul repository. . Collabora con il proprietario del repository per soddisfare eventuali convenzioni di denominazione che potrebbero essere utilizzate dall'organizzazione e per selezionare un nome che sia identificabile per tale firmatario.
+    a. Genera la chiave. Puoi immettere qualsiasi nome per `<NAME>`, tuttavia, il nome che selezioni è visibile quando qualcuno controlla l'attendibilità sul repository. Collabora con il proprietario del repository per soddisfare eventuali convenzioni di denominazione che potrebbero essere utilizzate dall'organizzazione e per selezionare un nome che sia identificabile per tale firmatario.
 
       ```
       docker trust key generate <NOME>

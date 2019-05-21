@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}}에서는 사용자가 이미지에 서명하여 레지스트리 네임스페이스에서 이미지의 무결성을 보장할 수 있도록 신뢰할 수 있는 컨텐츠 기술을 제공합니다. 서명된 이미지를 가져오고 푸시하여 CI(Continuous Integration) 도구와 같이 올바른 당사자가 이미지를 푸시했는지 확인할 수 있습니다. 이 기능을 사용하려면 Docker 버전 18.03 이상이 있어야 합니다. [Docker Content Trust ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/security/trust/content_trust/) 및 [Notary 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/theupdateframework/notary) 문서를 검토하여 더 자세히 알아볼 수 있습니다.
 {:shortdesc}
 
-사용자가 신뢰할 수 있는 컨텐츠가 사용되는 이미지를 푸시할 때 Docker 클라이언트도 {{site.data.keyword.Bluemix_notm}} 신뢰 서버에 서명된 메타데이터 오브젝트를 푸시합니다. Docker Content Trust가 사용되는 태그 지정된 이미지를 가져올 때 Docker 클라이언트는 신뢰 서버에 접속하여 사용자가 요청한 태그의 서명된 최신 버전을 확립하고 컨텐츠 서명을 확인하고 서명된 이미지를 다운로드합니다.
+사용자가 신뢰할 수 있는 컨텐츠가 사용되는 이미지를 푸시할 때 Docker 클라이언트도 {{site.data.keyword.cloud_notm}} 신뢰 서버에 서명된 메타데이터 오브젝트를 푸시합니다. Docker Content Trust가 사용되는 태그 지정된 이미지를 가져올 때 Docker 클라이언트는 신뢰 서버에 접속하여 사용자가 요청한 태그의 서명된 최신 버전을 확립하고 컨텐츠 서명을 확인하고 서명된 이미지를 다운로드합니다.
 
 이미지 이름은 저장소와 태그로 구성됩니다. 신뢰할 수 있는 컨텐츠를 사용할 때 각 저장소는 고유한 서명 키를 사용합니다. 저장소 내 각 태그는 저장소에 속한 키를 사용합니다. 여러 팀이 컨텐츠를 공개하는 경우, {{site.data.keyword.registrylong_notm}} 네임스페이스 내 고유 저장소마다 각 팀이 고유 키를 사용하여 해당 컨텐츠에 서명하면 사용자는 해당 팀에서 각 이미지가 생성되었음을 확인할 수 있습니다.
 
@@ -63,7 +63,7 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
    ```
    {: codeblock}
 
-2. {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오.
+2. {{site.data.keyword.cloud_notm}} CLI에 로그인하십시오.
 
    ```
    ibmcloud login [--sso]

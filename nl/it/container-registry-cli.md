@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.Bluemix_notm}}.
+Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel plug-in CLI `container-registry`, per gestire il tuo registro e le relative risorse per il tuo account {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 **Prerequisiti**
 
-* Installa la [CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.Bluemix_notm}} è `ibmcloud`.
-* Prima di eseguire i comandi del registro, effettua l'accesso a {{site.data.keyword.Bluemix_notm}}
+* Installa la [CLI {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.cloud_notm}} è `ibmcloud`.
+* Prima di eseguire i comandi del registro, effettua l'accesso a {{site.data.keyword.cloud_notm}}
  con il comando `ibmcloud login` per generare un token di accesso e autenticare la tua sessione.
 
 Nella riga di comando, vieni avvisato quando sono disponibili gli aggiornamenti alla CLI `ibmcloud` e ai plug-in CLI `container-registry`. Assicurati di mantenere la CLI aggiornata in modo da poter utilizzare tutti i comandi e gli indicatori disponibili.
@@ -310,7 +310,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-Visualizza tutte le immagini nel tuo account {{site.data.keyword.Bluemix_notm}}.
+Visualizza tutte le immagini nel tuo account {{site.data.keyword.cloud_notm}}.
 
 Il nome dell'immagine è la combinazione del contenuto delle colonne **Repository** e **Tag** nel formato: `repository:tag`
 {:tip}
@@ -467,7 +467,7 @@ Nessun valore
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-Scegli un nome per il tuo spazio dei nomi e aggiungilo al tuo account {{site.data.keyword.Bluemix_notm}}.
+Scegli un nome per il tuo spazio dei nomi e aggiungilo al tuo account {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -481,7 +481,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 **Opzioni del comando**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>Lo spazio dei nomi che desideri aggiungere. Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.Bluemix_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini e caratteri di sottolineatura. Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
+<dd>Lo spazio dei nomi che desideri aggiungere. Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini e caratteri di sottolineatura. Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
   
 <p>  
 <strong>Suggerimento</strong> non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
@@ -502,7 +502,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-Visualizza tutti gli spazi dei nomi che appartengono al tuo account {{site.data.keyword.Bluemix_notm}}.
+Visualizza tutti gli spazi dei nomi che appartengono al tuo account {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr namespace-list
@@ -516,7 +516,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-Rimuove uno spazio dei nomi dal tuo account {{site.data.keyword.Bluemix_notm}}. Le immagini in questo spazio dei nomi vengono eliminate quando si rimuove lo spazio dei nomi.
+Rimuove uno spazio dei nomi dal tuo account {{site.data.keyword.cloud_notm}}. Le immagini in questo spazio dei nomi vengono eliminate quando si rimuove lo spazio dei nomi.
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -795,7 +795,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.Bluemix_notm}}.
+Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.cloud_notm}}.
 
 ```
 ibmcloud cr token-list [--format FORMAT]

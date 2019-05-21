@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -31,7 +31,7 @@ Avant de pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
-Avant de commencer, installez l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Avant de commencer, installez l'[interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 ## Installation du plug-in d'interface de ligne de commande `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -94,21 +94,21 @@ Vous devez créer un espace de nom pour stocker vos images Docker dans {{site.da
 
 **Avant de commencer**
 
-- [Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
+- [Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifiez comment utiliser et nommer vos espaces de nom du registre](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
 <br>
 Pour créer un espace de nom, voir [Configurez un espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) dans la documentation Initiation.
 
-Vous pouvez à présent [envoyer par commande push des images Docker à votre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) et partager ces images avec d'autres utilisateurs dans votre compte. Pour contrôler l'accès aux espaces de nom dans {{site.data.keyword.Bluemix_notm}} IAM, voir [Création de règles](/docs/services/Registry?topic=registry-user#create).
+Vous pouvez à présent [envoyer par commande push des images Docker à votre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) et partager ces images avec d'autres utilisateurs dans votre compte. Pour contrôler l'accès aux espaces de nom dans {{site.data.keyword.cloud_notm}} IAM, voir [Création de règles](/docs/services/Registry?topic=registry-user#create).
 
 ## Retrait d'espaces de nom
 {: #registry_remove}
 
-Si vous n'avez plus besoin d'un espace de nom de registre, vous pouvez le retirer de votre compte {{site.data.keyword.Bluemix_notm}}.
+Si vous n'avez plus besoin d'un espace de nom de registre, vous pouvez le retirer de votre compte {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login

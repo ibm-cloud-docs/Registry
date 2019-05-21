@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,10 +25,10 @@ subcollection: registry
 # Tutoriel d'initiation
 {: #getting-started}
 
-{{site.data.keyword.registrylong}} fournit un registre d'images privé à service partagé que vous pouvez utiliser pour stocker et partager vos images Docker avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.registrylong}} fournit un registre d'images privé à service partagé que vous pouvez utiliser pour stocker et partager vos images Docker avec les utilisateurs de votre compte {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-La console {{site.data.keyword.Bluemix_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.Bluemix_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
+La console {{site.data.keyword.cloud_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.cloud_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
@@ -36,12 +36,12 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Installation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}
 {: #gs_registry_cli_install}
 
-1. Installez l'[interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) de manière à pouvoir exécuter les commandes {{site.data.keyword.Bluemix_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
+1. Installez l'[interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) de manière à pouvoir exécuter les commandes {{site.data.keyword.cloud_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
 
 ## Configuration d'un espace de nom
 {: #gs_registry_namespace_add}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
@@ -88,7 +88,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    ```
    {: pre}
 
-3. Attribuez une étiquette à l'image. Remplacez `<source_image>` par le référentiel et `<tag>` par l'étiquette de votre image locale précédemment extraite. Remplacez `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Remplacez `<my_namespace>` par l'espace de nom créé à l'étape [Configuration d'un espace de nom](/docs/services/Registry?topic=registry-index#registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous voulez utiliser dans votre espace de nom en remplaçant `<new_image_repo>` et `<new_tag>`.
+3. Attribuez une étiquette à l'image. Remplacez `<source_image>` par le référentiel et `<tag>` par l'étiquette de votre image locale précédemment extraite. Remplacez `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Remplacez `<my_namespace>` par l'espace de nom créé à l'étape [Configuration d'un espace de nom](#gs_registry_namespace_add). Définissez le référentiel et l'étiquette de l'image que vous voulez utiliser dans votre espace de nom en remplaçant `<new_image_repo>` et `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
@@ -112,7 +112,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    ```
    {: pre}
 
-2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez `<my_namespace>` par l'espace de nom créé à l'étape [Configuration d'un espace de nom](/docs/services/Registry?topic=registry-index#registry_namespace_add) et `<image_repo>` et `<tag>` par le référentiel et l'étiquette de l'image sélectionnés lorsque vous avez étiqueté l'image.
+2. Téléchargez (par commande _push_) l'image vers votre espace de nom. Remplacez `<my_namespace>` par l'espace de nom créé à l'étape [Configuration d'un espace de nom](#gs_registry_namespace_add) et `<image_repo>` et `<tag>` par le référentiel et l'étiquette de l'image sélectionnés lorsque vous avez étiqueté l'image.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>

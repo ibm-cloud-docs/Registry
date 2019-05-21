@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -34,7 +34,7 @@ Utilice {{site.data.keyword.registrylong}} para almacenar y acceder a imágenes 
 
 **Figura 1. Cómo interactúa {{site.data.keyword.registrylong_notm}} con sus imágenes Docker**
 
-Una imagen de Docker es la base para todos los contenedores que cree. Una imagen se crea a partir de un Dockerfile, que es un archivo que contiene las instrucciones para crear la imagen. Un Dockerfile podría hacer referencia a los artefactos de compilación en sus instrucciones que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias. Las imágenes se almacenan normalmente en un registro que puede ser accesible para el público (registro público) o configurado con acceso limitado para un pequeño grupo de usuarios (registro privado). Mediante {{site.data.keyword.registrylong_notm}}, sólo los usuarios con acceso a su cuenta de {{site.data.keyword.Bluemix_notm}} pueden acceder a sus imágenes.
+Una imagen de Docker es la base para todos los contenedores que cree. Una imagen se crea a partir de un Dockerfile, que es un archivo que contiene las instrucciones para crear la imagen. Un Dockerfile podría hacer referencia a los artefactos de compilación en sus instrucciones que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias. Las imágenes se almacenan normalmente en un registro que puede ser accesible para el público (registro público) o configurado con acceso limitado para un pequeño grupo de usuarios (registro privado). Mediante {{site.data.keyword.registrylong_notm}}, sólo los usuarios con acceso a su cuenta de {{site.data.keyword.cloud_notm}} pueden acceder a sus imágenes.
 
 Al enviar imágenes por push a {{site.data.keyword.registrylong_notm}}, se beneficia de las características integradas de Vulnerability Advisor, que realizan exploraciones en busca de posibles problemas de seguridad y vulnerabilidades. Vulnerability Advisor comprueba si hay paquetes vulnerables en determinadas imágenes básicas de Docker y vulnerabilidades conocidas en los valores de configuración de las apps. Cuando se encuentran vulnerabilidades, se proporciona información acerca de las mismas. Puede utilizar esta información para resolver problemas de seguridad, de forma que no se desplieguen contenedores a partir de imágenes vulnerables.
 
@@ -42,7 +42,7 @@ Revise la siguiente tabla para ver una visión general de las ventajas de utiliz
 
 |Ventaja|Descripción|
 |-------|-----------|
-|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por {{site.data.keyword.IBM_notm}}.</li><li>Almacene sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por {{site.data.keyword.IBM_notm}}.</li><li>Almacene sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformidad con la seguridad de imágenes con Vulnerability Advisor|<ul><li>Benefíciese de la exploración automática de imágenes en el espacio de nombres.</li><li>Revise las recomendaciones específicas del sistema operativo para solucionar posibles vulnerabilidades y proteger la seguridad de los contenedores.</li></ul>|
 |Límites de almacenamiento para almacenamiento y tráfico de extracción|<ul><li>Aproveche las ventajas del almacenamiento gratuito y del tráfico de extracción de sus imágenes privadas hasta alcanzar su cuota gratuita.</li><li>Configure límites de cuota personalizados para la cantidad de almacenamiento y tráfico de extracción mensual para no superar el nivel de pago elegido.</li></ul>|
 {: caption="Tabla 1. Ventajas de {{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -50,16 +50,16 @@ Revise la siguiente tabla para ver una visión general de las ventajas de utiliz
 ## Planes de servicio
 {: #registry_plans}
 
-Existe la posibilidad de elegir entre los planes de servicio de {{site.data.keyword.registrylong_notm}} estándar o gratuitos para almacenar las imágenes de Docker y hacer disponibles estas imágenes para los usuarios de su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Existe la posibilidad de elegir entre los planes de servicio de {{site.data.keyword.registrylong_notm}} estándar o gratuitos para almacenar las imágenes de Docker y hacer disponibles estas imágenes para los usuarios de su cuenta de {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-El plan de servicio {{site.data.keyword.registrylong_notm}} determina la cantidad de almacenamiento y extrae el tráfico que puede utilizar para sus imágenes privadas. El servicio plan está asociado a su cuenta de {{site.data.keyword.Bluemix_notm}}, y los límites de almacenamiento y de tráfico de extracción de imágenes se aplican a todos los espacios de nombres que ha configurado en su cuenta.
+El plan de servicio {{site.data.keyword.registrylong_notm}} determina la cantidad de almacenamiento y extrae el tráfico que puede utilizar para sus imágenes privadas. El servicio plan está asociado a su cuenta de {{site.data.keyword.cloud_notm}}, y los límites de almacenamiento y de tráfico de extracción de imágenes se aplican a todos los espacios de nombres que ha configurado en su cuenta.
 
 La tabla siguiente muestra los planes de servicio {{site.data.keyword.registrylong_notm}} y sus características. Para obtener más información sobre cómo funciona la facturación y lo que sucede cuando se sobrepasan los límites de planes de servicio, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Características|Gratuito|Estándar|
 |---------------|----|--------|
-|Descripción|Pruebe {{site.data.keyword.registrylong_notm}} para almacenar y compartir las imágenes de Docker. Este plan es el plan de servicio predeterminado cuando configura el primer espacio de nombres en {{site.data.keyword.registrylong_notm}}.|Saque partido del almacenamiento ilimitado y extraiga el uso de tráfico para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.Bluemix_notm}}.|
+|Descripción|Pruebe {{site.data.keyword.registrylong_notm}} para almacenar y compartir las imágenes de Docker. Este plan es el plan de servicio predeterminado cuando configura el primer espacio de nombres en {{site.data.keyword.registrylong_notm}}.|Saque partido del almacenamiento ilimitado y extraiga el uso de tráfico para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.cloud_notm}}.|
 |Cantidad de almacenamiento para las imágenes|500 MB|Ilimitado|
 |Tráfico de extracción|5 GB por mes|Ilimitado|
 |Facturación|Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Almacenamiento: Se le facturará por Gigabyte-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas.</li><li>Tráfico de extracción: Se le facturará por Gigabyte uso mensual. Los primeros 5 GB son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas. Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información acerca de almacenamiento, tráfico de extracción y el calculador de precios, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -71,7 +71,7 @@ La tabla siguiente muestra los planes de servicio {{site.data.keyword.registrylo
 Encontrará información y ejemplos sobre el funcionamiento del proceso de facturación y los límites de cuota en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Cada imagen se crea a partir de un número de capas, cada una de las cuales representa un cambio incremental con respecto a la imagen base. Cuando transfiere o extrae una imagen, la cantidad de almacenamiento y de tráfico de extracción necesaria para cada capa se añade al uso mensual. Las capas idénticas se comparten automáticamente entre imágenes en la cuenta de {{site.data.keyword.Bluemix_notm}} y se reutilizan al crear otras imágenes. El almacenamiento correspondiente a cada capa idéntica se factura una sola vez, independientemente del número de imágenes de la cuenta que hagan referencia a la capa.
+Cada imagen se crea a partir de un número de capas, cada una de las cuales representa un cambio incremental con respecto a la imagen base. Cuando transfiere o extrae una imagen, la cantidad de almacenamiento y de tráfico de extracción necesaria para cada capa se añade al uso mensual. Las capas idénticas se comparten automáticamente entre imágenes en la cuenta de {{site.data.keyword.cloud_notm}} y se reutilizan al crear otras imágenes. El almacenamiento correspondiente a cada capa idéntica se factura una sola vez, independientemente del número de imágenes de la cuenta que hagan referencia a la capa.
 
 Ejemplo de transferencia de imágenes:
 
@@ -87,7 +87,7 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 
 **Almacenamiento:**
 
-  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
+  Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
 
   Ejemplo para el plan estándar:
 
@@ -119,17 +119,17 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
 
 **Almacenamiento:**
 
-  Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que [libere espacio eliminando imágenes](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
+  Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}} hasta que [libere espacio eliminando imágenes](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
 
   Ejemplo para el plan estándar:
 
-  > Su límite de cuota actual para el almacenamiento está establecido en 1 GB. Todas las imágenes privadas que se han almacenado en los espacios de nombres de su cuenta de {{site.data.keyword.Bluemix_notm}} ya utilizan 900 MB de este almacenamiento. Tiene 100 MB de almacenamiento disponible hasta alcanzar el límite de cuota. Un usuario desea transferir una imagen con un tamaño de 2 GB en la máquina local. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario transfiera esta imagen.
+  > Su límite de cuota actual para el almacenamiento está establecido en 1 GB. Todas las imágenes privadas que se han almacenado en los espacios de nombres de su cuenta de {{site.data.keyword.cloud_notm}} ya utilizan 900 MB de este almacenamiento. Tiene 100 MB de almacenamiento disponible hasta alcanzar el límite de cuota. Un usuario desea transferir una imagen con un tamaño de 2 GB en la máquina local. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario transfiera esta imagen.
   >
   > Después de la transferencia, {{site.data.keyword.registrylong_notm}} determina el tamaño real de la imagen en el espacio de nombres, que puede variar con respecto al tamaño en la máquina local, y comprueba si se ha alcanzado el límite de almacenamiento. En este ejemplo, el uso de almacenamiento aumenta de 900 MB a 2 GB. Como el límite de cuota actual está establecido en 1 GB, {{site.data.keyword.registrylong_notm}} le impide transferir más imágenes al espacio de nombres.
 
 **Tráfico de extracción:**
 
-  Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.Bluemix_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Ejemplo para el plan estándar:
 
@@ -141,12 +141,12 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
 ### Estimación de costes
 {: #registry_estimating_costs}
 
-Utilice la calculadora de tarifas de {{site.data.keyword.Bluemix_notm}} para estimar el coste de su plan.
+Utilice la calculadora de tarifas de {{site.data.keyword.cloud_notm}} para estimar el coste de su plan.
 {:shortdesc}
 
-Puede establecer el precio de su app utilizando las calculadores de coste proporcionadas por {{site.data.keyword.Bluemix_notm}}.
+Puede establecer el precio de su app utilizando las calculadores de coste proporcionadas por {{site.data.keyword.cloud_notm}}.
 
-1. Abra la hoja de precios, consulte [Precios de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/pricing).
+1. Abra la hoja de precios, consulte [Precios de {{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/pricing).
 2. En la sección **Pago según uso**, pulse **Calcule sus costes con nuestra calculadora**. Se abre la calculadora.
 3. Desplácese hasta la sección **Container Registry** dentro de **Cargos por contenedor**.
 4. Escriba las estimaciones de almacenamiento y de tráfico en los campos proporcionados.
@@ -156,19 +156,19 @@ Los costes estimados se muestran en la calculadora.
 ## Actualización del plan de servicio
 {: #registry_plan_upgrade}
 
-Puede actualizar su plan de servicio para beneficiarse de un almacenamiento ilimitado y uso de tráfico de extracción para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.Bluemix_notm}}.
+Puede actualizar su plan de servicio para beneficiarse de un almacenamiento ilimitado y uso de tráfico de extracción para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Si desea conocer el plan de servicio que tiene, ejecute el mandato `ibmcloud cr plan`.
 
-1. Inicie una sesión en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie una sesión en {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.Bluemix_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
+   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.cloud_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
     {:tip}
 
 2. Actualice al plan estándar.
@@ -178,7 +178,7 @@ Si desea conocer el plan de servicio que tiene, ejecute el mandato `ibmcloud cr 
    ```
    {: pre}
 
-   Si tiene una cuenta Lite de {{site.data.keyword.Bluemix_notm}}, debe actualizar una cuenta de pago por uso o de suscripción de {{site.data.keyword.Bluemix_notm}} para poder ejecutar `ibmcloud cr plan-upgrade`.
+   Si tiene una cuenta Lite de {{site.data.keyword.cloud_notm}}, debe actualizar una cuenta de pago por uso o de suscripción de {{site.data.keyword.cloud_notm}} para poder ejecutar `ibmcloud cr plan-upgrade`.
    {:tip}
 
 ## Conceptos básicos
@@ -205,9 +205,9 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 <dl>
   <dt>Espacio de nombres</dt>
-  <dd>Los espacios de nombres son una forma de organizar los repositorios de sus imágenes dentro de {{site.data.keyword.registrylong_notm}}. El espacio de nombres está asociado a su cuenta de {{site.data.keyword.Bluemix_notm}}. Cuando se configura el propio espacio de nombres en {{site.data.keyword.registrylong_notm}}, el espacio de nombres se añade al URL de registro como se indica a continuación: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/mi_espaciodenombres</code>.
+  <dd>Los espacios de nombres son una forma de organizar los repositorios de sus imágenes dentro de {{site.data.keyword.registrylong_notm}}. El espacio de nombres está asociado a su cuenta de {{site.data.keyword.cloud_notm}}. Cuando se configura el propio espacio de nombres en {{site.data.keyword.registrylong_notm}}, el espacio de nombres se añade al URL de registro como se indica a continuación: <code>registry.<em>&lt;region&gt;</em>.bluemix.net/mi_espaciodenombres</code>.
 
-  Cada usuario de la cuenta de {{site.data.keyword.Bluemix_notm}} podrá ver y trabajar con imágenes que se han almacenado en su espacio de nombres de registro. Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia.</dd>
+  Cada usuario de la cuenta de {{site.data.keyword.cloud_notm}} podrá ver y trabajar con imágenes que se han almacenado en su espacio de nombres de registro. Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia.</dd>
 </dl>
 
 <dl>
@@ -238,7 +238,7 @@ Para obtener más información sobre los términos específicos de Docker, consu
 {{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario que IBM aloja y gestiona. Puede almacenar y compartir las imágenes de Docker en este registro estableciendo un espacio de nombres del registro.
 {:shortdesc}
 
-Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia. Si desea utilizar el registro en varias regiones de {{site.data.keyword.Bluemix_notm}}, debe configurar un espacio de nombres para cada región. Los espacios de nombres son exclusivos dentro de las regiones. Puede utilizar el mismo espacio de nombres para cada región, a menos que otra persona ya tenga un espacio de nombres con ese nombre configurado en esa región.
+Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia. Si desea utilizar el registro en varias regiones de {{site.data.keyword.cloud_notm}}, debe configurar un espacio de nombres para cada región. Los espacios de nombres son exclusivos dentro de las regiones. Puede utilizar el mismo espacio de nombres para cada región, a menos que otra persona ya tenga un espacio de nombres con ese nombre configurado en esa región.
 
 Puede controlar el acceso a los espacios de nombres utilizando políticas de IAM. Para obtener más información, consulte [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user).
 
@@ -249,7 +249,7 @@ Si no está seguro de si ya se ha establecido un espacio de nombres para su cuen
 
 Considere las reglas siguientes al elegir un espacio de nombres:
 
-- Su espacio de nombres debe ser exclusivo en una región de {{site.data.keyword.Bluemix_notm}}.
+- Su espacio de nombres debe ser exclusivo en una región de {{site.data.keyword.cloud_notm}}.
 - Su espacio de nombres debe tener entre 4 y 30 caracteres.
 - El espacio de nombres debe empezar por al menos una letra o un número.
 - Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.

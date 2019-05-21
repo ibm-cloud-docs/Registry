@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,10 +25,10 @@ subcollection: registry
 # 入門チュートリアル
 {: #getting-started}
 
-{{site.data.keyword.registrylong}} には、{{site.data.keyword.Bluemix_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
+{{site.data.keyword.registrylong}} には、{{site.data.keyword.cloud_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.Bluemix_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
+{{site.data.keyword.cloud_notm}} コンソールには、簡単なクイック・スタートが用意されています。{{site.data.keyword.cloud_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
@@ -36,12 +36,12 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
 {: #gs_registry_cli_install}
 
-1. {{site.data.keyword.Bluemix_notm}} `ibmcloud` コマンドを実行できるように、[{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
+1. {{site.data.keyword.cloud_notm}} `ibmcloud` コマンドを実行できるように、[{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
 
 ## 名前空間のセットアップ
 {: #gs_registry_namespace_add}
 
-1. {{site.data.keyword.Bluemix_notm}} にログインします。
+1. {{site.data.keyword.cloud_notm}} にログインします。
 
    ```
    ibmcloud login
@@ -72,7 +72,7 @@ subcollection: registry
 ## 別のレジストリーからイメージをローカル・マシンにプルする
 {: #gs_registry_images_pulling}
 
-1. [Docker Engine CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-engine#/download) をインストールします。Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/toolbox/) をインストールします。 {{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。
+1. [Docker Engine CLI ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.docker.com/products/docker-engine#/download) をインストールします。 Windows 8、または OS X Yosemite 10.10.x 以前の場合は、代わりに [Docker Toolbox ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/toolbox/) をインストールします。 {{site.data.keyword.registrylong_notm}} は、Docker Engine v1.12.6 以降をサポートしています。
 
 2. イメージをローカル・マシンにダウンロード (_プル_) します。 `<source_image>` を、イメージのリポジトリーに置き換え、`<tag>` を、イメージに使用するタグ (例: _latest_) に置き換えてください。
 
@@ -88,7 +88,7 @@ subcollection: registry
    ```
    {: pre}
 
-3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。 `<region>` を[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に置き換えます。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換えます。 `<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
+3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。 `<region>` を[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に置き換えます。 `<my_namespace>` を、[名前空間のセットアップ](#gs_registry_namespace_add)で作成した名前空間に置き換えます。 `<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
@@ -112,7 +112,7 @@ subcollection: registry
    ```
    {: pre}
 
-2. イメージを名前空間にアップロード (_プッシュ_) します。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換え、`<image_repo>` と `<tag>` を、イメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えてください。
+2. イメージを名前空間にアップロード (_プッシュ_) します。 `<my_namespace>` を、[名前空間のセットアップ](#gs_registry_namespace_add)で作成した名前空間に置き換え、`<image_repo>` と `<tag>` を、イメージにタグを付けた際に選択したイメージのリポジトリーとタグに置き換えてください。
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>

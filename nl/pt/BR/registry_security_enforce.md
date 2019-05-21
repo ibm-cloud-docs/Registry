@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -40,7 +40,7 @@ O Container Image Security Enforcement recupera as informações sobre a confian
 
 Conclua as etapas a seguir:
 
-1. [Configure o Helm em seu cluster](/docs/containers?topic=containers-integrations#helm).
+1. [Configure o Helm em seu cluster](/docs/containers?topic=containers-helm#helm).
 
 2. Inclua o repositório de gráficos da IBM no cliente Helm.
 
@@ -314,7 +314,7 @@ Os usuários e as contas de serviço com a função `cluster-admin` têm acesso 
 Quando uma política é aplicada, é possível implementar conteúdo no cluster normalmente. Sua política é aplicada automaticamente pelo cluster do Kubernetes. Sua implementação será aceita pelo cluster e aplicada se ela corresponder e for permitida por uma política.
 {:shortdesc}
 
-Se o Container Image Security Enforcement negar uma implementação, ela será criada, mas o ReplicaSet criado por ela falhará ao ser escalado e nenhum pod será criado. É possível localizar o ReplicaSet executando `kubectl describe deployment <deployment-name>` e, em seguida, ver a razão pela qual a implementação foi negada executando `kubectl describe rs <replicaset-name>`.
+Se o Container Image Security Enforcement negar uma implementação, ela será criada, mas o ReplicaSet criado por ela falhará ao ser escalado e nenhum pod será criado. É possível localizar o ReplicaSet executando `kubectl describe deployment<deployment-name>` e, em seguida, ver a razão pela qual a implementação foi negada executando `kubectl describe rs<replicaset-name>`.
 
 **Mensagens de erro de amostra**
 

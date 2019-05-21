@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -28,10 +28,10 @@ subcollection: registry
 您可以使用登錄記號或 {{site.data.keyword.iamlong}} (IAM) API 金鑰來自動化 {{site.data.keyword.registrylong_notm}} 名稱空間的存取，以推送及取回映像檔。
 {:shortdesc}
 
-您嘗試在 Kubernetes 部署中使用您的登錄映像檔嗎？請參閱[存取其他 Kubernetes 名稱空間、{{site.data.keyword.Bluemix_notm}} 地區及帳戶中的映像檔](/docs/containers?topic=containers-images#other)。
+您嘗試在 Kubernetes 部署中使用您的登錄映像檔嗎？請參閱[存取其他 Kubernetes 名稱空間、{{site.data.keyword.cloud_notm}} 地區及帳戶中的映像檔](/docs/containers?topic=containers-images#other)。
 {: tip}
 
-API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.Bluemix_notm}} 使用，因此您不需要為每一個服務提供不同的認證。您可以在 CLI 中使用 API 金鑰，也可以在以您的使用者身分自動登入的過程中使用。
+API 金鑰與您的帳戶鏈結，可跨 {{site.data.keyword.cloud_notm}} 使用，因此您不需要為每一個服務提供不同的認證。您可以在 CLI 中使用 API 金鑰，也可以在以您的使用者身分自動登入的過程中使用。
 
 登錄記號的範圍僅限於 {{site.data.keyword.registrylong_notm}}。您可以將其限制為唯讀存取，也可以選擇它們是否會到期。
 
@@ -77,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-如需指令的相關參考資訊，請參閱[建立新的 {{site.data.keyword.Bluemix_notm}} 平台 API 金鑰](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
+如需指令的相關參考資訊，請參閱[建立新的 {{site.data.keyword.cloud_notm}} 平台 API 金鑰](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
 
 ## 使用記號自動化名稱空間的存取（已淘汰）
 {: #registry_tokens}
@@ -88,19 +88,19 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
 
-擁有登錄記號的每個人都可以存取受保護的資訊。如果想要讓帳戶外的使用者可以存取您在某一地區中設定的所有名稱空間，您可以針對 {{site.data.keyword.Bluemix_notm}} 帳戶建立一個記號。每個擁有此記號的使用者或應用程式都可以將映像檔推送至名稱空間以及從中取回映像檔，而不需要安裝 `container-registry` CLI 外掛程式。
+擁有登錄記號的每個人都可以存取受保護的資訊。如果想要讓帳戶外的使用者可以存取您在某一地區中設定的所有名稱空間，您可以針對 {{site.data.keyword.cloud_notm}} 帳戶建立一個記號。每個擁有此記號的使用者或應用程式都可以將映像檔推送至名稱空間以及從中取回映像檔，而不需要安裝 `container-registry` CLI 外掛程式。
 
-建立 {{site.data.keyword.Bluemix_notm}} 帳戶的記號時，您可以決定該記號是要授權登錄的唯讀（取回）還是寫入權（推送及取回）。您也可以指定記號是永久性的，還是在 24 小時之後到期。您可以建立及使用多個記號來控制不同類型的存取權。
+建立 {{site.data.keyword.cloud_notm}} 帳戶的記號時，您可以決定該記號是要授權登錄的唯讀（取回）還是寫入權（推送及取回）。您也可以指定記號是永久性的，還是在 24 小時之後到期。您可以建立及使用多個記號來控制不同類型的存取權。
 
 如果您使用登錄記號登入 {{site.data.keyword.registrylong_notm}}，則不會強制執行 IAM 存取原則。如果您要將存取權限制在自動化中所使用 ID 的一個以上名稱空間，則請考慮使用 IAM 服務 ID API 金鑰，而不要使用登錄記號。如需建立 API 金鑰以及將它與 {{site.data.keyword.registrylong_notm}} 搭配使用的相關資訊，請參閱[使用 API 金鑰自動化存取名稱空間](#registry_api_key)。
 
 請使用下列作業來管理記號：
 
-- [建立 {{site.data.keyword.Bluemix_notm}} 帳戶的記號](#registry_tokens_create)
+- [建立 {{site.data.keyword.cloud_notm}} 帳戶的記號](#registry_tokens_create)
 - [使用記號自動化名稱空間的存取](#registry_tokens_use)
-- [從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除記號](#registry_tokens_remove)
+- [從 {{site.data.keyword.cloud_notm}} 帳戶中移除記號](#registry_tokens_remove)
 
-### 建立 {{site.data.keyword.Bluemix_notm}} 帳戶的記號（已淘汰）
+### 建立 {{site.data.keyword.cloud_notm}} 帳戶的記號（已淘汰）
 {: #registry_tokens_create}
 
 您可以建立記號，來授與對地區中所有 {{site.data.keyword.registrylong_notm}} 名稱空間的存取權。
@@ -161,14 +161,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶中的所有記號，並記下您要使用的記號 ID。
+2. 列出 {{site.data.keyword.cloud_notm}} 帳戶中的所有記號，並記下您要使用的記號 ID。
 
    ```
    ibmcloud cr token-list
@@ -202,7 +202,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
    在使用記號登入 Docker 之後，您可以將映像檔推送至名稱空間或從中取回映像檔。
 
-### 從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除記號（已淘汰）
+### 從 {{site.data.keyword.cloud_notm}} 帳戶中移除記號（已淘汰）
 {: #registry_tokens_remove}
 
 當您不再需要 {{site.data.keyword.registrylong_notm}} 記號時，請將它移除。
@@ -211,17 +211,17 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
 
-會自動從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除到期的 {{site.data.keyword.registrylong_notm}} 記號，不需要手動移除。
+系統會自動從 {{site.data.keyword.cloud_notm}} 帳戶中移除到期的 {{site.data.keyword.registrylong_notm}} 記號，不需要手動移除。
 {:tip}
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶中的所有記號，並記下您要移除的記號 ID。
+2. 列出 {{site.data.keyword.cloud_notm}} 帳戶中的所有記號，並記下您要移除的記號 ID。
 
    ```
    ibmcloud cr token-list

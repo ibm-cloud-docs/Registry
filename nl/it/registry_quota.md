@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Gestione dei limiti di quota per l'archiviazione e il traffico di pull
 {: #registry_quota}
 
-Puoi limitare la quantità di archiviazione e di traffico di pull che può essere utilizzata nel tuo account {{site.data.keyword.Bluemix}} impostando e gestendo dei limiti
+Puoi limitare la quantità di archiviazione e di traffico di pull che può essere utilizzata nel tuo account {{site.data.keyword.cloud}} impostando e gestendo dei limiti
 di quota personalizzati.
 {:shortdesc}
 
@@ -45,7 +45,7 @@ servizio gratuito, puoi anche impostare quote personalizzate all'interno della t
 
 Per impostare una quota:
 
-1. Accedi a {{site.data.keyword.Bluemix_notm}}.
+1. Accedi a {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -73,8 +73,7 @@ sarà simile al seguente.
     ```
     {: screen}
 
-3. Modifica il limite di quota per l'archiviazione e il traffico di pull. Per modificare l'utilizzo del traffico di pull, specifica l'opzione **traffic** e sostituisci `<traffic_quota>` con il valore in megabyte che vuoi impostare per la quota del traffico di pull. Se vuoi modificare la quantità di archiviazione nel tuo account, specifica
-l'opzione **storage** e sostituisci `<storage_quota>` con il valore in megabyte che vuoi impostare.
+3. Modifica il limite di quota per l'archiviazione e il traffico di pull. Per modificare l'utilizzo del traffico di pull, specifica l'opzione **traffic** e sostituisci `<traffic_quota>` con il valore in megabyte che vuoi impostare per la quota del traffico di pull. Se vuoi modificare la quantità di archiviazione nel tuo account, specifica l'opzione **storage** e sostituisci `<storage_quota>` con il valore in megabyte da impostare.
 
     Se utilizzi il piano gratuito, non puoi impostare la tua quota su una quantità che superi il livello gratuito. Il livello gratuito permesso per l'archiviazione è 512 MB e per il traffico è 5120 MB.
     {:tip}
@@ -99,7 +98,7 @@ Puoi riesaminare i tuoi limiti di quota e controllare il tuo utilizzo corrente d
 per il tuo account.
 {:shortdesc}
 
-1. Accedi a {{site.data.keyword.Bluemix_notm}}.
+1. Accedi a {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -130,14 +129,14 @@ sarà simile al seguente.
 ## Liberazione dello spazio di archiviazione utilizzato e modifica dei piani di servizio o dei limiti di quota per restare entro i limiti di quota forniti
 {: #registry_quota_freeup}
 
-Se hai superato i limiti di quota impostati per il tuo account {{site.data.keyword.Bluemix_notm}}, puoi liberare lo spazio di archiviazione
+Se hai superato i limiti di quota impostati per il tuo account {{site.data.keyword.cloud_notm}}, puoi liberare lo spazio di archiviazione
 e modificare il tuo piano di servizio o i tuoi limiti di quota per continuare a eseguire il push e il pull delle immagini da e verso
 il tuo spazio dei nomi.
 {:shortdesc}
 
-Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.data.keyword.Bluemix_notm}}:
+Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.data.keyword.cloud_notm}}:
 
-1. Elenca tutte le immagini di tutti gli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}}.
+1. Elenca tutte le immagini di tutti gli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud cr images

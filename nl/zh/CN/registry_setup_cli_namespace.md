@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -31,7 +31,7 @@ subcollection: registry
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
-开始之前，安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
+开始之前，安装 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
 ## 安装 `container-registry` CLI 插件
 {: #cli_namespace_registry_cli_install}
@@ -94,21 +94,21 @@ subcollection: registry
 
 **开始之前**
 
-- [安装 {{site.data.keyword.Bluemix_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
+- [安装 {{site.data.keyword.cloud_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [规划如何使用注册表名称空间并为其命名](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
 <br>
 要创建名称空间，请参阅“入门”文档中的[设置名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
-现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。要控制对 {{site.data.keyword.Bluemix_notm}} IAM 中名称空间的访问权，请参阅[创建策略](/docs/services/Registry?topic=registry-user#create)。
+现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。要控制对 {{site.data.keyword.cloud_notm}} IAM 中名称空间的访问权，请参阅[创建策略](/docs/services/Registry?topic=registry-user#create)。
 
 ## 除去名称空间
 {: #registry_remove}
 
-如果不再需要某个注册表名称空间，那么可以从 {{site.data.keyword.Bluemix_notm}} 帐户除去该名称空间。
+如果不再需要某个注册表名称空间，那么可以从 {{site.data.keyword.cloud_notm}} 帐户除去该名称空间。
 {:shortdesc}
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login
@@ -126,7 +126,7 @@ subcollection: registry
 
     **注意：**除去名称空间时，还会删除存储在该名称空间中的所有映像。此操作无法撤销。
 
-    将 `<my_namespace>` 替换为要除去的名称空间。
+    将 `<my_namespace>` 替换为您想要除去的名称空间。
 
     ```
     ibmcloud cr namespace-rm <my_namespace>

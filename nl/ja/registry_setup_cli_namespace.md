@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -31,7 +31,7 @@ subcollection: registry
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
-始めに、[{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。
+始めに、[{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。
 
 ## `container-registry` CLI プラグインのインストール
 {: #cli_namespace_registry_cli_install}
@@ -94,21 +94,21 @@ Docker イメージを {{site.data.keyword.registrylong_notm}} に保管する�
 
 **始めに**
 
-- [{{site.data.keyword.Bluemix_notm}} CLI と `container-registry` CLI プラグインをインストールします](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
+- [{{site.data.keyword.cloud_notm}} CLI および `container-registry` CLI プラグイン](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)をインストールします。
 - [レジストリー名前空間の使用方法と命名について計画します](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
 <br>
 名前空間を作成するには、概説資料内の[名前空間のセットアップ](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)を参照してください。
 
-これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。{{site.data.keyword.Bluemix_notm}} IAM で名前空間へのアクセスを制御するには、[ポリシーの作成](/docs/services/Registry?topic=registry-user#create)を参照してください。
+これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。 {{site.data.keyword.cloud_notm}} IAM で名前空間へのアクセスを制御するには、[ポリシーの作成](/docs/services/Registry?topic=registry-user#create)を参照してください。
 
 ## 名前空間の削除
 {: #registry_remove}
 
-レジストリーの名前空間が不要になったら、{{site.data.keyword.Bluemix_notm}} アカウントからその名前空間を削除することができます。
+レジストリーの名前空間が不要になったら、{{site.data.keyword.cloud_notm}} アカウントからその名前空間を削除することができます。
 {:shortdesc}
 
-1. {{site.data.keyword.Bluemix_notm}} にログインします。
+1. {{site.data.keyword.cloud_notm}} にログインします。
 
     ```
     ibmcloud login

@@ -17,6 +17,14 @@ IBM Cloud Container Registry
     {: .topicgroup}
     튜토리얼
         registry_tutorial_configure_iam.md
+        /tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+        /tutorials/solution-tutorials-multi-region-k8s-cis
+        /tutorials/solution-tutorials-continuous-deployment-to-kubernetes
+
+    {: .topicgroup}
+    관련 링크
+        [IBM Cloud Kubernetes Service 문서](/containers/containers-getting-started)
+        [Dockerfile 참조](https://docs.docker.com/engine/reference/builder/)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -31,6 +39,9 @@ IBM Cloud Container Registry
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
+    [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
+    registry_cli_list.md
     registry_cli_reference.md
     iam.md
     registry_at_events.md
@@ -41,4 +52,5 @@ IBM Cloud Container Registry
     {: .navgroup id="help"}
     ts_index.md
     registry_faq.md
+    registry_release_notes.md
     {: .navgroup-end}

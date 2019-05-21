@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -27,7 +27,7 @@ subcollection: registry
 
 Vous pouvez limiter le volume de stockage et de trafic d'extraction pouvant
 être utilisé dans votre compte
-{{site.data.keyword.Bluemix}} en
+{{site.data.keyword.cloud}} en
 définissant et en gérant des limites de quota personnalisées.
 {:shortdesc}
 
@@ -50,7 +50,7 @@ personnalisés dans le cadre du volume gratuit de stockage et de trafic d'extrac
 
 Pour définir un quota, procédez comme suit :
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -78,7 +78,7 @@ d'extraction (pull).
     ```
     {: screen}
 
-3. Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction (pull), indiquez l'option **traffic** et remplacez `<traffic_quota>` par la valeur en mégaoctets que vous voulez définir pour le quota de trafic d'extraction. Si vous voulez modifier le volume de stockage de votre compte, indiquez l'option **storage** et remplacez `<storage_quota>` par la valeur en mégaoctets que vous voulez définir.
+3. Modifiez la limite de quota pour le stockage et le trafic d'extraction. Pour modifier l'utilisation du trafic d'extraction (pull), indiquez l'option **traffic** et remplacez `<traffic_quota>` par la valeur en mégaoctets que vous voulez définir pour le quota de trafic d'extraction. Si vous souhaitez modifier le volume de stockage de votre compte, indiquez l'option **storage** et remplacez `<storage_quota>` par la valeur en mégaoctets que vous voulez définir.
 
     Si vous bénéficiez du plan gratuit, vous ne pouvez pas définir comme quota une
 quantité qui dépasse le niveau gratuit. La franchise du niveau gratuit pour le stockage
@@ -105,7 +105,7 @@ Vous pouvez examiner vos limites de quota et vérifier l'utilisation de votre
 stockage actuel et du trafic d'extraction (pull) pour votre compte.
 {:shortdesc}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -138,22 +138,22 @@ limites de quota dans le but de rester dans les limites de quota données
 {: #registry_quota_freeup}
 
 Si vous dépassez les limites de quota définies pour votre compte
-{{site.data.keyword.Bluemix_notm}}, vous
+{{site.data.keyword.cloud_notm}}, vous
 pouvez libérer du stockage et modifier votre plan de service ou les limites de quota pour
 continuer à envoyer des images par commande push ou à en extraire par commande pull vers
 et depuis votre espace de nom.
 {:shortdesc}
 
-Pour libérer du stockage d'images dans votre compte {{site.data.keyword.Bluemix_notm}} :
+Pour libérer du stockage d'images dans votre compte {{site.data.keyword.cloud_notm}} :
 
-1. Répertoriez toutes les images de tous vos espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.
+1. Répertoriez toutes les images de tous vos espaces de nom dans votre compte {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud cr images
     ```
     {: pre}
 
-2. Retirez une image de votre espace de nom. Remplacez `<image_name>` par le nom de l'image que vous voulez supprimer.
+2. Retirez une image de votre espace de nom. Remplacez `<image_name>` par le nom de l'image que vous souhaitez retirer.
 
     ```
     ibmcloud cr image-rm <image_name>

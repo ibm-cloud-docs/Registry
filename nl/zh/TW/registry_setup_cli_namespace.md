@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -31,7 +31,7 @@ subcollection: registry
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
-開始之前，請安裝 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
+開始之前，請安裝 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
 
 ## 安裝 `container-registry` CLI 外掛程式
 {: #cli_namespace_registry_cli_install}
@@ -94,21 +94,21 @@ subcollection: registry
 
 **開始之前**
 
-- [安裝 {{site.data.keyword.Bluemix_notm}} CLI 及 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
+- [安裝 {{site.data.keyword.cloud_notm}} CLI 及 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [計劃如何使用及命名您的登錄名稱空間](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
 <br>
 若要建立名稱空間，請參閱「開始使用」文件中的[設定名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 
-您現在可以[將 Docker 映像檔推送至{{site.data.keyword.registrylong_notm}} 中的名稱空間](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，並與您帳戶中的其他使用者共用這些映像檔。若要在 {{site.data.keyword.Bluemix_notm}} IAM 中控制名稱空間的存取權，請參閱[建立原則](/docs/services/Registry?topic=registry-user#create)。
+您現在可以[將 Docker 映像檔推送至{{site.data.keyword.registrylong_notm}} 中的名稱空間](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，並與您帳戶中的其他使用者共用這些映像檔。若要在 {{site.data.keyword.cloud_notm}} IAM 中控制名稱空間的存取權，請參閱[建立原則](/docs/services/Registry?topic=registry-user#create)。
 
 ## 移除名稱空間
 {: #registry_remove}
 
-如果您不再需要登錄名稱空間，則可以從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除名稱空間。
+如果您不再需要登錄名稱空間，則可以從 {{site.data.keyword.cloud_notm}} 帳戶中移除名稱空間。
 {:shortdesc}
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login

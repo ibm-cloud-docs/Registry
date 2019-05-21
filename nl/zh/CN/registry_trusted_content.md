@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} 提供可信内容技术，以便您可以对映像签名，以确保注册表名称空间中映像的完整性。通过拉出和推送签名的映像，可以验证映像是否由正确的参与方（例如，连续集成 (CI) 工具）推送。要使用此功能，您必须具有 Docker V18.03 或更高版本。您可以通过查看 [Docker Content Trust ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/security/trust/content_trust/) 和 [Notary 项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/theupdateframework/notary) 文档来了解更多信息。
 {:shortdesc}
 
-在启用了可信内容的情况下推送映像时，Docker 客户机还会将签名的元数据对象也推送到 {{site.data.keyword.Bluemix_notm}} 信任服务器中。在启用了 Docker Content Trust 的情况下拉出标记的映像时，Docker 客户机会联系信任服务器，以确定所请求标记的最新签名版本，验证内容签名，然后下载签名的映像。
+在启用了可信内容的情况下推送映像时，Docker 客户机还会将签名的元数据对象也推送到 {{site.data.keyword.cloud_notm}} 信任服务器中。在启用了 Docker Content Trust 的情况下拉出标记的映像时，Docker 客户机会联系信任服务器，以确定所请求标记的最新签名版本，验证内容签名，然后下载签名的映像。
 
 映像名称由存储库和标记组成。使用可信内容时，每个存储库都使用唯一的签名密钥。存储库中的每个标记都会使用属于该存储库的密钥。如果您有多个团队在发布内容，每个团队将内容发布到 {{site.data.keyword.registrylong_notm}} 名称空间内其自己的存储库，那么每个团队可以使用自己的密钥来对其内容进行签名，以便您可以验证各个映像是否由相应的团队生成。
 
@@ -63,7 +63,7 @@ set DOCKER_CONTENT_TRUST=1
     ```
    {: codeblock}
 
-2. 登录到 {{site.data.keyword.Bluemix_notm}} CLI。
+2. 登录到 {{site.data.keyword.cloud_notm}} CLI。
 
    ```
     ibmcloud login [--sso]
@@ -140,7 +140,7 @@ set DOCKER_CONTENT_TRUST=1
 
 1. [设置可信内容环境](#trustedcontent_setup)。
 
-2. 拉出映像。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
+2. 拉出映像。将 `<source_image>` 替换为映像的存储库，并将 `<tag>` 替换为要使用的映像标记，例如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
 
    ```
     docker pull <source_image>:<tag>
@@ -156,7 +156,7 @@ set DOCKER_CONTENT_TRUST=1
 要为新域名 `icr.io` 对映像重新签名，必须拉出、标记和推送该映像。
 {:shortdesc}
 
-1. 从旧域名中拉出已签名的映像。将 `<source_image>` 替换为映像的存储库，将 `<tag>` 替换为要使用的映像的标记，如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
+1. 从旧域名中拉出已签名的映像。将 `<source_image>` 替换为映像的存储库，并将 `<tag>` 替换为要使用的映像标记，例如 _latest_。要列出可拉出的可用映像，请运行 `ibmcloud cr image-list`。
 
    ```
     docker pull <source_image>:<tag>
@@ -166,7 +166,7 @@ set DOCKER_CONTENT_TRUST=1
     在推送或拉出签名的映像时指定标记。仅当禁用了内容信任时，才会缺省使用 `latest` 标记。
     {: tip}
 
-2. 针对新域名运行 `docker tag` 命令。将 `<old_domain_name>` 替换为旧域名，将 `<new_domain_name>` 替换为新域名，将 `<repository>` 替换为存储库的名称，并将 `<tag>` 替换为标记的名称。
+2. 针对新域名运行 `docker tag` 命令。将 `<old_domain_name>` 替换为旧域名，将 `<new_domain_name>` 替换为新域名，将 `<repository>` 替换为存储库的名称，将 `<tag>` 替换为标记的名称。
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>

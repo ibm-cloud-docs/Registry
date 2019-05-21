@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 스토리지 및 가져오기 트래픽의 할당량 한계 관리
 {: #registry_quota}
 
-사용자 정의 할당량 한계를 설정하고 관리하여 {{site.data.keyword.Bluemix}} 계정에서 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 제한할 수 있습니다.
+사용자 정의 할당량 한계를 설정하고 관리하여 {{site.data.keyword.cloud}} 계정에서 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 제한할 수 있습니다.
 {:shortdesc}
 
 ##  이미지를 저장하고 가져오기 위한 할당량 한계 설정
@@ -41,7 +41,7 @@ subcollection: registry
 
 할당량을 설정하려면 다음을 수행하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
     ```
     ibmcloud login
@@ -92,7 +92,7 @@ subcollection: registry
 할당량 한계를 검토하고 사용자의 계정에 대한 현재 스토리지 및 가져오기 트래픽 사용량을 검토할 수 있습니다.
 {:shortdesc}
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
     ```
     ibmcloud login
@@ -123,12 +123,12 @@ subcollection: registry
 ## 지정된 할당량 한계를 넘지 않도록 사용된 스토리지의 여유 공간을 확보하고 서비스 플랜 또는 할당량 한계 변경
 {: #registry_quota_freeup}
 
-{{site.data.keyword.Bluemix_notm}} 계정에 설정된 할당량 한계를 초과한 경우, 계속해서 네임스페이스로 이미지를 푸시하고 네임스페이스에서 이미지 가져오도록 스토리지의 여유 공간을 확보하고 서비스 플랜 또는 할당량 한계를 변경할 수 있습니다.
+{{site.data.keyword.cloud_notm}} 계정에 설정된 할당량 한계를 초과한 경우, 계속해서 네임스페이스로 이미지를 푸시하고 네임스페이스에서 이미지 가져오도록 스토리지의 여유 공간을 확보하고 서비스 플랜 또는 할당량 한계를 변경할 수 있습니다.
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} 계정에서 이미지 스토리지의 여유 공간을 확보하려면 다음을 수행하십시오.
+{{site.data.keyword.cloud_notm}} 계정에서 이미지 스토리지의 여유 공간을 확보하려면 다음을 수행하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에서 모든 이미지를 나열하십시오.
+1. {{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에서 모든 이미지를 나열하십시오.
 
     ```
     ibmcloud cr images

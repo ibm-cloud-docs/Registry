@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} proporciona tecnología de contenido de confianza para que pueda firmar imágenes para asegurar la integridad de las imágenes en el espacio de nombres de registro. Al extraer y enviar imágenes firmadas, puede verificar que las imágenes las ha enviado la parte correcta, como las herramientas de integración continua (CI). Para utilizar esta característica, debe tener Docker versión 18.03 o posterior. Para obtener más información, consulte la documentación de [Docker Content Trust ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/security/trust/content_trust/) y del [proyecto Notary ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/theupdateframework/notary).
 {:shortdesc}
 
-Al enviar la imagen con el contenido de confianza habilitado, el cliente de Docker también envía un objeto de metadatos firmado al servidor de confianza de {{site.data.keyword.Bluemix_notm}}. Al extraer una imagen etiquetada con Docker Content Trust habilitado, el cliente de Docker contacta con el servidor de confianza para establecer la última versión firmada de la etiqueta que ha solicitado, verifica la firma del contenido y descarga la imagen firmada.
+Al enviar la imagen con el contenido de confianza habilitado, el cliente de Docker también envía un objeto de metadatos firmado al servidor de confianza de {{site.data.keyword.cloud_notm}}. Al extraer una imagen etiquetada con Docker Content Trust habilitado, el cliente de Docker contacta con el servidor de confianza para establecer la última versión firmada de la etiqueta que ha solicitado, verifica la firma del contenido y descarga la imagen firmada.
 
 Un nombre de imagen se compone de un repositorio y de una etiqueta. Al utilizar contenido de confianza, cada repositorio utiliza una clave de firma exclusiva. Cada etiqueta de un repositorio utiliza la clave que pertenece al repositorio. Si tiene varios equipos que publican contenido, cada uno en su propio repositorio dentro de los espacios de nombres de {{site.data.keyword.registrylong_notm}}, cada equipo puede utilizar sus propias claves para firmar su contenido, de modo que pueda verificar que cada imagen la produzca el equipo apropiado.
 
@@ -63,7 +63,7 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
    ```
    {: codeblock}
 
-2. Inicie la sesión en la CLI de {{site.data.keyword.Bluemix_notm}}.
+2. Inicie la sesión en la CLI de {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login [--sso]
@@ -141,7 +141,7 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 
 1. [Configure su entorno de contenido de confianza](#trustedcontent_setup).
 
-2. Extraiga la imagen. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
+2. Extraiga la imagen. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -157,7 +157,7 @@ La primera vez que extraiga una imagen firmada con Docker Content Trust habilita
 Para volver a firmar la imagen para el nuevo nombre de dominio, `icr.io`, debe extraer, etiquetar y enviar la imagen.
 {:shortdesc}
 
-1. Extraiga la imagen firmada del nombre de dominio antiguo. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
+1. Extraiga la imagen firmada del nombre de dominio antiguo. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_. Para listar las imágenes disponibles a extraer, ejecute `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -167,7 +167,7 @@ Para volver a firmar la imagen para el nuevo nombre de dominio, `icr.io`, debe e
     Especifique la etiqueta cuando envíe o extraiga una imagen firmada. La etiqueta `latest` solo tiene el valor predeterminado cuando la confianza de contenido esté inhabilitada.
     {: tip}
 
-2. Ejecute al mandato `docker tag` para el nuevo nombre de dominio. Sustituya `<old_domain_name>` por su nombre de dominio antiguo, `<new_domain_name>` por su nombre de dominio nuevo, `<repository>` por el nombre de su repositorio y `<tag>` por el nombre de su etiqueta.
+2. Ejecute al mandato `docker tag` para el nuevo nombre de dominio. Sustituya `<old_domain_name>` por el nombre del dominio antiguo, `<new_domain_name>` por el nombre del dominio nuevo, `<repository>` por el nombre del repositorio y `<tag>` por el nombre de la etiqueta.
 
    ```
    docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
@@ -280,7 +280,7 @@ Para compartir las claves de firma:
 
 1. Si el nuevo firmante aún no ha generado un par de claves, este debe generarse y cargarse.
   
-    a. Generar la clave. Puede especificar cualquier nombre para `<NAME>`, sin embargo, el nombre que seleccione es visible cuando alguien inspeccione la confianza en el repositorio. Trabaje con el propietario del repositorio para satisfacer los convenios de denominación que pueden ser utilizados por la organización y para seleccionar un nombre que sea identificable para dicho firmante.
+    a. Generar la clave. Puede especificar cualquier nombre para `<NAME>`; sin embargo, el nombre que seleccione es visible cuando alguien inspeccione la confianza en el repositorio. Trabaje con el propietario del repositorio para satisfacer los convenios de denominación que pueden ser utilizados por la organización y para seleccionar un nombre que sea identificable para dicho firmante.
 
       ```
       docker trust key generate <NAME>

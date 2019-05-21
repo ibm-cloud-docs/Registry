@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -36,7 +36,7 @@ subcollection: registry
 
 Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfile 创建的，该文件包含构建映像的指令。Dockerfile 可能在其分开存储的指令中参考构建工件，如应用程序、应用程序的配置及其依赖关系。
 映像通常存储在可由公共（公共注册表）访问的注册表中，或者存储在针对一小组用户设置有限访问权（专用注册表）的注册表中。
-通过使用 {{site.data.keyword.registrylong_notm}}，只有那些有权访问 {{site.data.keyword.Bluemix_notm}} 帐户的用户才能访问您的映像。
+通过使用 {{site.data.keyword.registrylong_notm}}，只有那些有权访问 {{site.data.keyword.cloud_notm}} 帐户的用户才能访问您的映像。
 
 将映像推送到 {{site.data.keyword.registrylong_notm}} 时，可以利用内置的漏洞顾问程序功能部件来扫描潜在的安全问题和漏洞。漏洞顾问程序会检查特定 Docker 基本映像中是否存在易受攻击的软件包，以及在应用程序配置设置中是否存在已知漏洞。找到漏洞时，会提供有关该漏洞的信息。可以使用此信息来解决安全问题，以避免基于有漏洞的映像部署容器。
 
@@ -44,7 +44,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 |优点|描述|
 |-------|-----------|
-|具备高可用性和高可扩展性的专用注册表|<ul><li>在 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性和高可扩展性的多租户专用注册表中设置自己的映像名称空间。</li><li>存储专用 Docker 映像并与您 {{site.data.keyword.Bluemix_notm}} 帐户中的用户共享。</li></ul>|
+|具备高可用性和高可扩展性的专用注册表|<ul><li>在 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性和高可扩展性的多租户专用注册表中设置自己的映像名称空间。</li><li>存储专用 Docker 映像并与您 {{site.data.keyword.cloud_notm}} 帐户中的用户共享。</li></ul>|
 |使用漏洞顾问程序保障映像安全性合规|<ul><li>受益于对名称空间中映像的自动扫描。</li><li>查看特定于操作系统的建议，以修订潜在漏洞并保护容器免受破坏。</li></ul>|
 |存储量和拉出流量的配额限制|<ul><li>享受专用映像的不超过免费配额的免费存储量和拉出流量。</li><li>设置存储量和拉出流量的每月定制配额限制，以避免超过首选支付级别。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 优点" caption-side="top"}
@@ -52,11 +52,11 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ## 服务套餐
 {: #registry_plans}
 
-您可以选择免费或标准 {{site.data.keyword.registrylong_notm}} 服务套餐，来存储 Docker 映像并使 {{site.data.keyword.Bluemix_notm}} 帐户中的用户可以使用这些映像。
+您可以选择免费或标准 {{site.data.keyword.registrylong_notm}} 服务套餐，来存储 Docker 映像并使 {{site.data.keyword.cloud_notm}} 帐户中的用户可以使用这些映像。
 {:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} 服务套餐可确定您可以用于专用映像的存储量和拉出流量。
-服务套餐与 {{site.data.keyword.Bluemix_notm}} 帐户相关联，存储量限制和映像拉出流量适用于帐户中所设置的所有名称空间。
+服务套餐与 {{site.data.keyword.cloud_notm}} 帐户相关联，存储量限制和映像拉出流量适用于帐户中所设置的所有名称空间。
 
 
 下表显示可用的 {{site.data.keyword.registrylong_notm}} 服务套餐及其特征。
@@ -64,7 +64,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 |特征|免费|标准|
 |---------------|----|--------|
-|描述|试用 {{site.data.keyword.registrylong_notm}} 以存储和共享 Docker 映像。此套餐是您在 {{site.data.keyword.registrylong_notm}} 中设置第一个名称空间时使用的缺省服务套餐。|优点是可以使用无限的存储量和拉出流量，为 {{site.data.keyword.Bluemix_notm}} 帐户中的所有名称空间管理 Docker 映像。
+|描述|试用 {{site.data.keyword.registrylong_notm}} 以存储和共享 Docker 映像。此套餐是您在 {{site.data.keyword.registrylong_notm}} 中设置第一个名称空间时使用的缺省服务套餐。|优点是可以使用无限的存储量和拉出流量，为 {{site.data.keyword.cloud_notm}} 帐户中的所有名称空间管理 Docker 映像。
 |
 |映像的存储量|500 MB|无限制|
 |拉出流量|每月 5 GB|无限制|
@@ -80,7 +80,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 了解有关计费流程和配额限制在 {{site.data.keyword.registrylong_notm}} 中如何工作的信息和示例。
 {:shortdesc}
 
-每个映像都是通过多个层构建的，每个层表示相对于基本映像的一个递增更改。推送或拉出映像时，每个层需要的存储量和拉出流量会加到每月使用量中。相同层在 {{site.data.keyword.Bluemix_notm}} 帐户中的映像之间会自动共享，并且在创建其他映像时会复用这些层。每个相同层的存储量只收费一次，与帐户中有多少映像引用该层无关。
+每个映像都是通过多个层构建的，每个层表示相对于基本映像的一个递增更改。推送或拉出映像时，每个层需要的存储量和拉出流量会加到每月使用量中。相同层在 {{site.data.keyword.cloud_notm}} 帐户中的映像之间会自动共享，并且在创建其他映像时会复用这些层。每个相同层的存储量只收费一次，与帐户中有多少映像引用该层无关。
 
 映像推送示例：
 
@@ -96,7 +96,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 **存储量：**
 
-  每种 {{site.data.keyword.registrylong_notm}} 服务套餐都随附特定存储量，可用于在您 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中存储 Docker 映像。如果使用的是标准套餐，那么会按 GB-月使用量向您收费。第一个 0.5 GB-月免费。如果使用的是免费套餐，那么可以在 {{site.data.keyword.registrylong_notm}} 中免费存储的映像不超过免费套餐的配额限制。GB-月是一个月（730 小时）平均 1 GB 的存储量。
+  每种 {{site.data.keyword.registrylong_notm}} 服务套餐都随附特定存储量，可用于在您 {{site.data.keyword.cloud_notm}} 帐户的名称空间中存储 Docker 映像。如果使用的是标准套餐，那么会按 GB-月使用量向您收费。第一个 0.5 GB-月免费。如果使用的是免费套餐，那么可以在 {{site.data.keyword.registrylong_notm}} 中免费存储的映像不超过免费套餐的配额限制。GB-月是一个月（730 小时）平均 1 GB 的存储量。
 
   标准套餐示例：
 
@@ -128,17 +128,17 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 **存储量：**
 
-  达到或超过套餐的配额限制时，就不能将任何映像推送到 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间，除非[通过除去名称空间中的映像来释放空间](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升级到标准套餐](#registry_plan_upgrade)。如果在免费或标准套餐中设置了存储量配额限制，那么还可以[增大此配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)以再次允许推送新映像。
+  达到或超过套餐的配额限制时，就不能将任何映像推送到 {{site.data.keyword.cloud_notm}} 帐户的名称空间，除非[通过除去名称空间中的映像来释放空间](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升级到标准套餐](#registry_plan_upgrade)。如果在免费或标准套餐中设置了存储量配额限制，那么还可以[增大此配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)以再次允许推送新映像。
 
   标准套餐示例：
 
-  > 您当前的存储量配额限制设置为 1 GB。存储在您 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中的所有专用映像已经使用此存储量中的 900 MB。在达到配额限制之前，您还有 100 MB 存储量可用。一个用户希望在本地计算机上推送大小为 2 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户推送此映像。
+  > 您当前的存储量配额限制设置为 1 GB。存储在您 {{site.data.keyword.cloud_notm}} 帐户的名称空间中的所有专用映像已经使用此存储量中的 900 MB。在达到配额限制之前，您还有 100 MB 存储量可用。一个用户希望在本地计算机上推送大小为 2 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户推送此映像。
   >
   > 在推送后，{{site.data.keyword.registrylong_notm}} 会确定名称空间中映像的实际大小（可能与本地计算机上的大小不同），并检查是否达到了存储量限制。在此示例中，存储用量在 900 MB 的基础上又增加了 2 GB。由于当前的配额限制设置为 1 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您将更多映像推送到名称空间。
 
 **拉出流量：**
 
-  达到或超过套餐的配额限制时，就不能从 {{site.data.keyword.Bluemix_notm}} 帐户的名称空间中拉出任何映像，除非您等待下一个结算周期开始、[升级到标准套餐](#registry_plan_upgrade)或[增大拉出流量的配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)。
+  达到或超过套餐的配额限制时，就不能从 {{site.data.keyword.cloud_notm}} 帐户的名称空间中拉出任何映像，除非您等待下一个结算周期开始、[升级到标准套餐](#registry_plan_upgrade)或[增大拉出流量的配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)。
 
   标准套餐示例：
 
@@ -149,12 +149,12 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 估算成本
 {: #registry_estimating_costs}
 
-使用 {{site.data.keyword.Bluemix_notm}} 定价计算器估算套餐的成本。
+使用 {{site.data.keyword.cloud_notm}} 定价计算器估算套餐的成本。
 {:shortdesc}
 
-您可以使用由 {{site.data.keyword.Bluemix_notm}} 提供的成本计算器来计算应用程序价格。
+您可以使用由 {{site.data.keyword.cloud_notm}} 提供的成本计算器来计算应用程序价格。
 
-1. 打开价格表，查看 [{{site.data.keyword.Bluemix_notm}} 定价 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/pricing)。
+1. 打开价格表，查看 [{{site.data.keyword.cloud_notm}} 定价 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/pricing)。
 2. 在**现收现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
 3. 在**容器费用**部分中，滚动到**容器注册表**部分。
 4. 在提供的字段中输入估算的存储量和流量。
@@ -164,19 +164,19 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ## 升级服务套餐
 {: #registry_plan_upgrade}
 
-可以升级服务套餐，以享受无限的存储量和拉出流量使用量来管理 {{site.data.keyword.Bluemix_notm}} 帐户中所有名称空间的 Docker 映像。
+可以升级服务套餐，以享受无限的存储量和拉出流量使用量来管理 {{site.data.keyword.cloud_notm}} 帐户中所有名称空间的 Docker 映像。
 {:shortdesc}
 
 如果想知道自己拥有的是哪种服务套餐，请运行 `ibmcloud cr plan` 命令。
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
    ```
     ibmcloud login
     ```
    {: pre}
 
-   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.Bluemix_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.cloud_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
     
     {:tip}
 
@@ -187,7 +187,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
    {: pre}
 
-   如果拥有的是 {{site.data.keyword.Bluemix_notm}} 轻量帐户，那么必须先升级到 {{site.data.keyword.Bluemix_notm}} 现收现付或预订帐户，然后才能运行 `ibmcloud cr plan-upgrade`。
+   如果拥有的是 {{site.data.keyword.cloud_notm}} 轻量帐户，那么必须先升级到 {{site.data.keyword.cloud_notm}} 现收现付或预订帐户，然后才能运行 `ibmcloud cr plan-upgrade`。
 {:tip}
 
 ## 了解基本信息
@@ -215,9 +215,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 <dl>
   <dt>名称空间</dt>
-  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.Bluemix_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
+  <dd>名称空间是一种用于在 {{site.data.keyword.registrylong_notm}} 中组织映像存储库的方式。名称空间与 {{site.data.keyword.cloud_notm}} 帐户相关联。在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间时，名称空间会附加至注册表 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
-  {{site.data.keyword.Bluemix_notm}} 帐户中的每位用户都可以查看和使用存储在注册表名称空间中的映像。例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
+  {{site.data.keyword.cloud_notm}} 帐户中的每位用户都可以查看和使用存储在注册表名称空间中的映像。例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
 </dd>
 </dl>
 
@@ -251,7 +251,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 {:shortdesc}
 
 例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
-如果要在多个 {{site.data.keyword.Bluemix_notm}} 区域中使用注册表，那么必须为每个区域设置名称空间。
+如果要在多个 {{site.data.keyword.cloud_notm}} 区域中使用注册表，那么必须为每个区域设置名称空间。
 在区域中，名称空间名称是唯一的。您可以对每个区域使用相同的名称空间名称，除非别人已经在该区域中设置了使用该名称的名称空间。
 
 您可以使用 IAM 策略来控制对名称空间的访问权。有关更多信息，请参阅[定义用户访问角色策略](/docs/services/Registry?topic=registry-user#user)。
@@ -264,7 +264,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 选择名称空间时，请考虑以下规则：
 
 
-- 名称空间在 {{site.data.keyword.Bluemix_notm}} 区域中必须唯一。
+- 名称空间在 {{site.data.keyword.cloud_notm}} 区域中必须唯一。
 - 名称空间的长度必须为 4 - 30 个字符。
 - 名称空间必须至少以一个字母或数字开头。
 - 名称空间必须只包含小写字母、数字或下划线 (_)。

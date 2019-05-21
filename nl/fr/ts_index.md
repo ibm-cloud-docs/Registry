@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -57,19 +57,19 @@ La commande `ibmcloud cr login` échoue.
 
 - Le plug-in d'interface de ligne de commande `container-registry` est périmé et doit être mis à jour.
 - Docker n'est pas installé ou n'est pas en cours d'exécution sur votre ordinateur local.
-- Vos données d'identification {{site.data.keyword.Bluemix_notm}} ont expiré.
+- Vos données d'identification {{site.data.keyword.cloud_notm}} ont expiré.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
 - Effectuez une mise à niveau vers la version la plus récente du plug-in d'interface de ligne de commande `container-registry`. Voir [Mise à jour du plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Assurez-vous que Docker est installé sur votre ordinateur. S'il est déjà installé, redémarrez le démon Docker.
-- Exécutez à nouveau la commande `ibmcloud login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.Bluemix_notm}}.
+- Exécutez à nouveau la commande `ibmcloud login` pour actualiser vos données d'identification de connexion à {{site.data.keyword.cloud_notm}}.
 
 ## L'exécution d'une commande pour {{site.data.keyword.registrylong_notm}} échoue avec `ECHEC Vous n'êtes pas connecté à IBM Cloud.`
 {: #ts_login_cloud}
 
-Vous ne pouvez pas exécuter de commandes dans {{site.data.keyword.registrylong_notm}}, même si vous êtes connecté à {{site.data.keyword.Bluemix_notm}}.
+Vous ne pouvez pas exécuter de commandes dans {{site.data.keyword.registrylong_notm}}, même si vous êtes connecté à {{site.data.keyword.cloud_notm}}.
 
 {: tsSymptoms}
 Toutes les commandes `ibmcloud cr` échouent.
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - Si la génération locale ne fonctionne pas, vérifiez votre fichier Dockerfile.
-- Si la génération locale fonctionne, [contactez le support {{site.data.keyword.Bluemix_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
+- Si la génération locale fonctionne, [contactez le support {{site.data.keyword.cloud_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Echec de la configuration d'un espace de nom
 {: #ts_problem}
@@ -140,7 +140,7 @@ Lorsque vous exécutez `ibmcloud cr namespace-add`, vous ne parvenez pas à déf
 
 {: tsCauses}
 
-- Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autre organisation {{site.data.keyword.Bluemix_notm}}.
+- Vous avez entré une valeur d'espace de nom qui est déjà utilisée par une autre organisation {{site.data.keyword.cloud_notm}}.
 - Un espace de nom a récemment été supprimé et vous réutilisez son nom. Si l'espace de nom supprimé contenait de nombreuses ressources, la suppression n'a peut-être pas été entièrement traitée par {{site.data.keyword.registrylong_notm}}.
 - Vous avez utilisé des caractères non valides dans la valeur de l'espace de nom.
 
@@ -186,15 +186,15 @@ denied: requested access to the resource is denied
 
 - Docker n'est pas installé.
 - Le client Docker n'est pas connecté à {{site.data.keyword.registrylong_notm}}.
-- Il se peut que votre jeton d'accès {{site.data.keyword.Bluemix_notm}} ait expiré.
-- Vous avez dépassé la limite de quota pour le stockage ou le trafic d'extraction (pull) défini pour votre compte {{site.data.keyword.Bluemix_notm}}.
+- Il se peut que votre jeton d'accès {{site.data.keyword.cloud_notm}} ait expiré.
+- Vous avez dépassé la limite de quota pour le stockage ou le trafic d'extraction (pull) défini pour votre compte {{site.data.keyword.cloud_notm}}.
 
 {: tsResolve}
 Vous pouvez corriger ce problème en procédant ainsi :
 
 - [Assurez-vous que Docker est installé sur votre ordinateur](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - Vérifiez votre chemin d'installation Docker.
-- Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `ibmcloud login`. Connectez-vous ensuite à l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
+- Connectez-vous à {{site.data.keyword.cloud_notm}} en exécutant `ibmcloud login`. Connectez-vous ensuite à l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
 - [Examinez les limites de quota et l'utilisation du stockage et de l'extraction des images Docker dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## Impossible d'extraire l'image la plus récente avec l'étiquette `latest`
@@ -213,7 +213,7 @@ En général, il est préférable de définir explicitement chaque fois une bali
 {: #ts_ppa}
 
 {: tsSymptoms}
-Lorsque vous tentez d'importer du contenu que vous avez utilisé dans d'autres produits IBM tels que {{site.data.keyword.Bluemix_notm}} Private, vous ne parvenez pas à stocker vos images et autres logiciels sous licence depuis [IBM Passport Advantage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/index.html) dans le registre.
+Lorsque vous tentez d'importer du contenu que vous avez utilisé dans d'autres produits IBM tels que {{site.data.keyword.cloud_notm}} Private, vous ne parvenez pas à stocker vos images et autres logiciels sous licence depuis [IBM Passport Advantage ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/index.html) dans le registre.
 
 {: tsCauses}
 Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport Advantage doivent être importés dans le registre à l'aide de la commande `ibmcloud cr ppa-archive-load`.
@@ -221,13 +221,13 @@ Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport 
 {: tsResolve}
 **Avant de commencer**
 
-- Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant `ibmcloud login [--sso]`.
+- Connectez-vous à {{site.data.keyword.cloud_notm}} en exécutant `ibmcloud login [--sso]`.
 - Connectez-vous à {{site.data.keyword.registrylong_notm}} en exécutant `ibmcloud cr login`.
 - [Ciblez l'interface de ligne de commande `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) sur votre cluster.
-- Si vous n'avez pas déjà configuré Helm dans votre cluster, [configurez Helm dans votre cluster maintenant](/docs/containers?topic=containers-integrations#helm).
+- Si vous n'avez pas déjà configuré Helm dans votre cluster, [configurez Helm dans votre cluster maintenant](/docs/containers?topic=containers-helm#helm).
 - Si vous souhaitez partager les chartes au sein de votre organisation, vous pouvez installer le [projet open source Chart Museum ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/helm/charts/tree/master/stable/chartmuseum). Pour obtenir des instructions, voir cette [recette developerWorks ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
-### Importation de produits IBM Passport Advantage à utiliser dans {{site.data.keyword.Bluemix_notm}}
+### Importation de produits IBM Passport Advantage à utiliser dans {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
 
 1. Procurez-vous le fichier compressé à importer depuis [IBM Passport Advantage![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/index.html).
@@ -348,7 +348,7 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
    ```
    {: pre}
 
-5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Remplacez `<URL>` par l'URL de la commande d'exportation que vous avez noté à l'étape 2 et `<image>` par l'image dont la clé de référentiel est concernée.
+5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Remplacez `<URL>` par l'URL de la commande d'exportation que vous avez notée à l'étape 2 et `<image>` par l'image dont la clé de référentiel est affectée.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -369,9 +369,9 @@ Vous pouvez [supprimer les espaces de nom](/docs/services/Registry?topic=registr
 
 Si l'espace de nom contient des référentiels dont les clés racine ne sont pas affectées, comme un espace de nom pour des images de production, vous souhaiterez peut-être ne supprimer que les données sécurisées associées à la clé racine affectée. Ouvrez un ticket de demande de service.
 
-1. [Contactez le support {{site.data.keyword.Bluemix_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Incluez une brève description de votre problème, l'ID compte, ainsi que la liste des espaces de nom contenant les référentiels d'images avec les clés racine affectées.
+1. [Contactez le support {{site.data.keyword.cloud_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Incluez une brève description de votre problème, l'ID compte, ainsi que la liste des espaces de nom contenant les référentiels d'images avec les clés racine affectées.
 
-2. Une fois qu'{{site.data.keyword.Bluemix_notm}} a traité le problème, supprimez le référentiel Docker Content Trust sur votre ordinateur local.
+2. Une fois qu'{{site.data.keyword.cloud_notm}} a traité le problème, supprimez le référentiel Docker Content Trust sur votre ordinateur local.
 
    - Répertoire Linux et Mac : `~/.docker/trust/private` et `~/.docker/trust/tuf`
 
@@ -380,7 +380,7 @@ Si l'espace de nom contient des référentiels dont les clés racine ne sont pas
    Etant donné que la clé racine est affectée, cette étape supprime toutes les clés de signature, y compris pour les autres serveurs d'accréditation.
    {:tip}
 
-3. Si vous utilisez [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) dans votre cluster {{site.data.keyword.containershort_notm}}, redémarrez chaque pod de mise en application d'image. Pour déclencher Kubernetes afin d'effectuer automatiquement un redémarrage séquentiel des pods, vous pouvez changer certaines métadonnées sur le pod. Par exemple, [ciblez votre interface de ligne de commande Kubernetes sur votre cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) et modifiez le déploiement.
+3. Si vous utilisez [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) dans votre cluster {{site.data.keyword.containershort_notm}}, redémarrez chaque pod de mise en application d'image. Pour déclencher Kubernetes afin d'effectuer automatiquement un redémarrage séquentiel des pods, vous pouvez changer certaines métadonnées sur le pod. Par exemple, [ciblez votre interface de ligne de commande Kubernetes sur votre cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) et modifiez le déploiement.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -502,7 +502,7 @@ Le type de manifeste n'est pas pris en charge.
 {: tsResolve}
 Pour résoudre le problème, procédez comme suit :
 
-1. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source :
+1. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source.
 
    ```
    docker pull <source_image>
@@ -537,7 +537,7 @@ Pour résoudre le problème, procédez comme suit :
 
 1. Effectuez une mise à niveau vers Docker Engine version 1.12 ou ultérieure.
 
-2. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source :
+2. Procédez à l'extraction de l'image que vous avez essayé d'étiqueter en exécutant la commande suivante, où `<source_image>` correspond au nom de votre image source.
 
    ```
    docker pull <source_image>

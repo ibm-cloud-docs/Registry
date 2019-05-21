@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-09"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -32,8 +32,8 @@ subcollection: registry
 {: #registry}
 
 - [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
-- [{{site.data.keyword.registrylong_notm}} API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/apidocs/container-registry)
-- [ {{site.data.keyword.registrylong_notm}} API 的漏洞顾问程序 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/apidocs/container-registry/va)
+- [{{site.data.keyword.registrylong_notm}} API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/apidocs/container-registry)
+- [{{site.data.keyword.registrylong_notm}} API 的漏洞顾问程序 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}

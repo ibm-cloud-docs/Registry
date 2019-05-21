@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -25,12 +25,11 @@ subcollection: registry
 # Eventi {{site.data.keyword.cloudaccesstrailshort}}
 {: #at_events}
 
-Utilizza il servizio {{site.data.keyword.cloudaccesstrailfull}} per tracciare il modo in cui gli utenti e le applicazioni interagiscono con il servizio {{site.data.keyword.registrylong}} in {{site.data.keyword.Bluemix}}.
+Utilizza il servizio {{site.data.keyword.cloudaccesstrailfull}} per tracciare il modo in cui gli utenti e le applicazioni interagiscono con il servizio {{site.data.keyword.registrylong}} in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-Il servizio {{site.data.keyword.cloudaccesstrailfull_notm}} registra le attività avviate dall'utente che modificano lo stato di un servizio in {{site.data.keyword.Bluemix_notm}}.
-Per ulteriori informazioni, vedi [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla).
-
+Il servizio {{site.data.keyword.cloudaccesstrailfull_notm}} registra le attività avviate dall'utente che modificano lo stato di un servizio in {{site.data.keyword.cloud_notm}}.
+Per ulteriori informazioni, vedi [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 La seguente tabella elenca i metodi API che generano un evento quando vengono richiamati:
 
@@ -58,7 +57,7 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   </tr>
   <tr>
     <td>`container-registry.image.inspect`</td>
-	  <td>Visualizza i dettagli relativi a un'immagine. </td>
+	  <td>Visualizza i dettagli relativi a un'immagine.</td>
   </tr>
   <tr>
     <td>`container-registry.image.list`</td>
@@ -90,7 +89,7 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   </tr>
   <tr>
     <td>`container-registry.quota.get`</td>
-	  <td>Visualizza le quote correnti per traffico e archiviazione e le informazioni di utilizzo rispetto a queste quote. </td>
+	  <td>Visualizza le quote correnti per traffico e archiviazione e le informazioni di utilizzo rispetto a queste quote.</td>
   </tr>
   <tr>
     <td>`container-registry.quota.set`</td>
@@ -118,7 +117,7 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>
-	  <td>Visualizza le informazioni sul piano dei prezzi corrente. </td>
+	  <td>Visualizza le informazioni sul piano dei prezzi corrente.</td>
   </tr>
   <tr>
     <td>`container-registry.plan.set`</td>
@@ -129,6 +128,6 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
 ## Dove ricercare gli eventi
 {: #ui}
 
-Gli eventi di {{site.data.keyword.cloudaccesstrailshort}} sono disponibili nel {{site.data.keyword.cloudaccesstrailshort}} **dominio dell'account** che è disponibile nella regione {{site.data.keyword.Bluemix_notm}} in cui vengono generati gli eventi, ad eccezione di `ap-north`. Gli eventi per `ap-north` vengono mostrati in `ap-south`.
+Gli eventi di {{site.data.keyword.cloudaccesstrailshort}} sono disponibili nel {{site.data.keyword.cloudaccesstrailshort}} **dominio dell'account** che è disponibile nella regione {{site.data.keyword.cloud_notm}} in cui vengono generati gli eventi, ad eccezione di `ap-north`. Gli eventi per `ap-north` vengono mostrati in `ap-south`.
 
 La [regione](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in cui è disponibile un {{site.data.keyword.registrylong_notm}} o un evento del Controllo vulnerabilità corrisponde alla regione di {{site.data.keyword.registrylong_notm}} in cui è disponibile la risorsa (ad esempio, l'immagine o lo spazio dei nomi).

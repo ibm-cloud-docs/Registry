@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -57,19 +57,19 @@ subcollection: registry
 
 - `container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
 - Docker가 로컬 컴퓨터에 설치되어 있지 않거나 실행 중이 아닙니다.
-- {{site.data.keyword.Bluemix_notm}} 로그인 인증 정보가 만료되었습니다.
+- {{site.data.keyword.cloud_notm}} 로그인 인증 정보가 만료되었습니다.
 
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
 - 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 - Docker가 컴퓨터에 설치되어 있는지 확인하십시오. 이미 설치된 경우 Docker 디먼을 다시 시작하십시오.
-- `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.Bluemix_notm}} 로그인 인증 정보를 새로 고치십시오.
+- `ibmcloud login` 명령을 다시 실행하여 {{site.data.keyword.cloud_notm}} 로그인 인증 정보를 새로 고치십시오.
 
 ## {{site.data.keyword.registrylong_notm}}에 대한 명령 실행이 실패하며 `FAILED You are not logged in to IBM Cloud.`가 나타남
 {: #ts_login_cloud}
 
-{{site.data.keyword.Bluemix_notm}}에 로그인된 경우에도 {{site.data.keyword.registrylong_notm}}에서 명령을 실행할 수 없습니다.
+{{site.data.keyword.cloud_notm}}에 로그인된 경우에도 {{site.data.keyword.registrylong_notm}}에서 명령을 실행할 수 없습니다.
 
 {: tsSymptoms}
 모든 `ibmcloud cr` 명령이 실패합니다.
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - 로컬 빌드가 작동하지 않으면 Dockerfile에 문제가 없는지 확인하십시오.
-- 로컬 빌드가 작동하면 [{{site.data.keyword.Bluemix_notm}} 지원](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)에 문의하십시오.
+- 로컬 빌드가 작동하면 [{{site.data.keyword.cloud_notm}} 지원 팀에 문의](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)하십시오.
 
 ## 네임스페이스 설정 실패
 {: #ts_problem}
@@ -140,7 +140,7 @@ docker build --no-cache .
 
 {: tsCauses}
 
-- 다른 {{site.data.keyword.Bluemix_notm}} 조직에서 이미 사용 중인 네임스페이스 값을 입력했습니다.
+- 다른 {{site.data.keyword.cloud_notm}} 조직에서 이미 사용 중인 네임스페이스 값을 입력했습니다.
 - 네임스페이스가 최근에 삭제되었으며 그 이름을 재사용하고 있습니다. 삭제된 네임스페이스에
 많은 리소스가 포함되어 있는 경우, {{site.data.keyword.registrylong_notm}}에서 아직 삭제를 완전하게 처리하지 못했을 수 있습니다.
 - 네임스페이스 값에 올바르지 않은 문자를 사용했습니다.
@@ -188,15 +188,15 @@ denied: requested access to the resource is denied
 
 - Docker가 설치되지 않았습니다.
 - Docker 클라이언트가 {{site.data.keyword.registrylong_notm}}에 로그인되어 있지 않습니다.
-- {{site.data.keyword.Bluemix_notm}} 액세스 토큰이 만료되었습니다.
-- {{site.data.keyword.Bluemix_notm}} 계정에 설정된 스토리지 또는 가져오기 트래픽에 대한 할당량 한계를 초과했습니다.
+- {{site.data.keyword.cloud_notm}} 액세스 토큰이 만료되었습니다.
+- {{site.data.keyword.cloud_notm}} 계정에 설정된 스토리지 또는 가져오기 트래픽에 대한 할당량 한계를 초과했습니다.
 
 {: tsResolve}
 다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
 
 - [Docker가 사용자의 컴퓨터에 설치되어 있는지 확인](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)하십시오.
 - Docker 설치 경로를 확인하십시오.
-- `ibmcloud login`을 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 그 후 `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오.
+- `ibmcloud login`을 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오. 그 후 `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}} CLI에 로그인하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 Docker 이미지를 저장하고 가져오기 위한 할당량 한계 및 사용량을 검토](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)하십시오.
 
 ## `latest` 태그를 사용하여 최신 이미지를 가져올 수 없음
@@ -215,7 +215,7 @@ denied: requested access to the resource is denied
 {: #ts_ppa}
 
 {: tsSymptoms}
-다른 IBM 제품(예: {{site.data.keyword.Bluemix_notm}} 프라이빗)에서 사용한 컨텐츠를 가져오려는 경우, 레지스트리의 [IBM Passport Advantage ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/index.html)에서 이미지 및 기타 라이센스 부여된 소프트웨어를 저장할 수 없습니다.
+다른 IBM 제품(예: {{site.data.keyword.cloud_notm}} 프라이빗)에서 사용한 컨텐츠를 가져오려는 경우, 레지스트리의 [IBM Passport Advantage ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/index.html)에서 이미지 및 기타 라이센스 부여된 소프트웨어를 저장할 수 없습니다.
 
 {: tsCauses}
 IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 패키지는 `ibmcloud cr ppa-archive-load` 명령을 사용하여 레지스트리로 가져와야 합니다.
@@ -223,13 +223,13 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 {: tsResolve}
 **시작하기 전에**
 
-- `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+- `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 - `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 - 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
-- 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-integrations#helm)하십시오.
+- 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-helm#helm)하십시오.
 - 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
 
-### {{site.data.keyword.Bluemix_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
+### {{site.data.keyword.cloud_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
 {: #ts_ppa_import}
 
 1. [IBM Passport Advantage![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/index.html)에서 가져올 압축 파일을 얻으십시오.
@@ -250,7 +250,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
    이 명령은 압축 파일을 확장하고 포함된 이미지를 로컬 Docker 클라이언트로 로드한 다음 레지스트리의 네임스페이스로 이미지를 푸시합니다.
 
-   IBM Passport Advantage 아카이브의 Helm 차트를 Chart Museum에 업로드하려는 경우에는 명령에 다음 옵션을 포함하십시오. `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+   IBM Passport Advantage 아카이브의 Helm 차트를 Chart Museum에 업로드하려는 경우 명령에 다음 옵션을 포함하십시오. `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
    **출력 예**
@@ -371,9 +371,9 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
 네임스페이스에 손상되지 않은 루트 키를 사용하는 저장소가 있는 경우(예: 프로덕션 이미지의 네임스페이스) 손상된 루트 키와 연관된 신뢰 데이터만 삭제할 수 있습니다. 지원 티켓을 여십시오.
 
-1. [{{site.data.keyword.Bluemix_notm}} 지원에 문의](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)하십시오. 문제에 대한 간략한 설명, 계정 ID 및 손상된 루트 키를 사용하는 이미지 저장소가 포함된 네임스페이스 목록을 포함하십시오.
+1. [{{site.data.keyword.cloud_notm}} 지원 팀에 문의](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)하십시오. 문제에 대한 간략한 설명, 계정 ID 및 손상된 루트 키를 사용하는 이미지 저장소가 포함된 네임스페이스 목록을 포함하십시오.
 
-2. {{site.data.keyword.Bluemix_notm}}에서 문제를 처리한 후에는 로컬 컴퓨터에서 Docker Content Trust 저장소를 삭제하십시오.
+2. {{site.data.keyword.cloud_notm}}에서 문제를 처리한 후에는 로컬 컴퓨터에서 Docker Content Trust 저장소를 삭제하십시오.
 
    - Linux 및 Mac 디렉토리: `~/.docker/trust/private` 및 `~/.docker/trust/tuf`
 
@@ -382,7 +382,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
    루트 키가 손상되었으므로, 이 단계는 다른 신뢰 서버의 서명 키를 포함한 모든 서명 키를 삭제합니다.
    {:tip}
 
-3. {{site.data.keyword.containershort_notm}} 클러스터에서 [{{site.data.keyword.Bluemix_notm}} 이미지 적용](/docs/services/Registry?topic=registry-security_enforce#security_enforce)을 사용하는 경우, 각 이미지 적용 팟(Pod)을 다시 시작하십시오. 팟(Pod)의 롤링 다시 시작을 자동으로 수행하도록 Kubernetes를 트리거하려는 경우에는 팟(Pod)의 일부 메타데이터를 변경할 수 있습니다. 예를 들어, [대상 클러스터에 Kubernetes CLI를 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하고 배치를 수정하십시오.
+3. {{site.data.keyword.containershort_notm}} 클러스터에서 [{{site.data.keyword.cloud_notm}} 이미지 적용](/docs/services/Registry?topic=registry-security_enforce#security_enforce)을 사용하는 경우, 각 이미지 적용 팟(Pod)을 다시 시작하십시오. 팟(Pod)의 롤링 다시 시작을 자동으로 수행하도록 Kubernetes를 트리거하려는 경우에는 팟(Pod)의 일부 메타데이터를 변경할 수 있습니다. 예를 들어, [대상 클러스터에 Kubernetes CLI를 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하고 배치를 수정하십시오.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -505,14 +505,14 @@ Manifest 유형이 지원되지 않습니다.
 {: tsResolve}
 문제를 해결하려면 다음 단계를 완료하십시오.
 
-1. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서, `<source_image>`는 소스 이미지의 이름입니다.
+1. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서 `<source_image>`는 소스 이미지 이름입니다.
 
    ```
    docker pull <source_image>
    ```
    {: pre}
 
-2. 다음 명령을 실행하여 이전 단계에서 가져온 이미지의 로컬 사본에 태그를 지정하십시오. 여기서, `<target_image>`는 새 이미지의 이름입니다.
+2. 다음 명령을 실행하여 이전 단계에서 가져온 이미지의 로컬 사본에 태그를 지정하십시오. 여기서 `<target_image>`는 새 이미지 이름입니다.
 
    ```
    docker tag <source_image> <target_image>
@@ -540,7 +540,7 @@ Manifest 버전이 지원되지 않습니다.
 
 1. Docker Engine 버전 1.12 이상으로 업그레이드하십시오.
 
-2. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서, `<source_image>`는 소스 이미지의 이름입니다.
+2. 다음 명령을 실행하여 태그를 지정하려고 시도한 이미지를 가져오십시오. 여기서 `<source_image>`는 소스 이미지 이름입니다.
 
    ```
    docker pull <source_image>

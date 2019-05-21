@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -34,7 +34,7 @@ Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker priv�
 
 **Figure 1. Comment {{site.data.keyword.registrylong_notm}} interagit avec vos images Docker**
 
-Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances. Les images sont généralement stockées dans un registre qui peut être accessible au public (registre public) ou configuré de sorte à limiter l'accès à un petit groupe d'utilisateurs (registre privé). Lorsque vous utilisez {{site.data.keyword.registrylong_notm}}, seuls les utilisateurs habilités à accéder à votre compte {{site.data.keyword.Bluemix_notm}} peuvent accéder à vos images.
+Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances. Les images sont généralement stockées dans un registre qui peut être accessible au public (registre public) ou configuré de sorte à limiter l'accès à un petit groupe d'utilisateurs (registre privé). Lorsque vous utilisez {{site.data.keyword.registrylong_notm}}, seuls les utilisateurs habilités à accéder à votre compte {{site.data.keyword.cloud_notm}} peuvent accéder à vos images.
 
 Lorsque vous envoyez des images par commande push au registre, {{site.data.keyword.registrylong_notm}}, vous pouvez exploiter les fonctionnalités intégrées de Vulnerability Advisor qui les sonde pour détecter des vulnérabilités et des problèmes de sécurité potentiels. Vulnerability Advisor recherche les packages vulnérables dans des images de base Docker spécifiques et des vulnérabilités connues dans les paramètres de configuration des applications. Lorsque des vulnérabilités sont détectées, il fournit les informations correspondantes. Vous pouvez utiliser ces informations pour résoudre des problèmes de sécurité afin d'éviter le déploiement de conteneurs à partir d'images vulnérables.
 
@@ -42,7 +42,7 @@ Consultez le tableau suivant pour avoir une présentation des avantages liés à
 
 |Avantage|Description|
 |-------|-----------|
-|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformité en matière de sécurité d'image avec Vulnerability Advisor|<ul><li>Bénéficiez d'une analyse automatique des images dans votre espace de nom.</li><li>Consultez les recommandations spécifiques au système d'exploitation pour résoudre d'éventuelles vulnérabilités et protéger vos conteneurs contre la compromission.</li></ul>|
 |Limites de quota pour le stockage et le trafic d'extraction (pull)|<ul><li>Bénéficiez d'un stockage gratuit et d'un trafic d'extraction (pull) vers vos images privées jusqu'à ce que vous atteigniez votre quota gratuit.</li><li>Définissez des limites de quota personnalisées pour le volume de stockage et le trafic d'extraction (pull) par mois afin d'éviter de dépasser le niveau de paiement indiqué dans vos préférences.</li></ul>|
 {: caption="Table 1. Avantages d'{{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -51,16 +51,16 @@ Consultez le tableau suivant pour avoir une présentation des avantages liés à
 {: #registry_plans}
 
 Vous pouvez choisir le plan de service {{site.data.keyword.registrylong_notm}} gratuit ou le plan standard pour stocker vos images Docker et les rendre disponibles aux utilisateurs dans votre compte
-{{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-Le plan de service {{site.data.keyword.registrylong_notm}} détermine le volume de stockage et le trafic d'envoi d'images (commande pull) que vous pouvez utiliser pour vos images privées. Le plan de service est associé à votre compte {{site.data.keyword.Bluemix_notm}} et les limites de stockage et de trafic d'envoi d'images (commande pull) s'appliquent à tous les espaces de nom définis dans votre compte.
+Le plan de service {{site.data.keyword.registrylong_notm}} détermine le volume de stockage et le trafic d'envoi d'images (commande pull) que vous pouvez utiliser pour vos images privées. Le plan de service est associé à votre compte {{site.data.keyword.cloud_notm}} et les limites de stockage et de trafic d'envoi d'images (commande pull) s'appliquent à tous les espaces de nom définis dans votre compte.
 
 Le tableau suivant décrit les plans de service {{site.data.keyword.registrylong_notm}} disponibles et leurs caractéristiques. Pour plus d'informations sur la facturation et sur les conséquences du dépassement des limites du plan de service, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Caractéristiques|Gratuit|Standard|
 |---------------|----|--------|
-|Description|Essayez {{site.data.keyword.registrylong_notm}} pour stocker et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}}.|
+|Description|Essayez {{site.data.keyword.registrylong_notm}} pour stocker et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.cloud_notm}}.|
 |Volume de stockage pour les images|500 Mo|Illimité|
 |Trafic d'extraction (pull)|5 Go par mois|Illimité|
 |Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix.</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix. Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et la calculatrice de prix, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -72,7 +72,7 @@ Le tableau suivant décrit les plans de service {{site.data.keyword.registrylong
 Cette rubrique fournit des informations et des exemples de fonctionnement du processus de facturation et des limites de quota dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Chaque image est générée à partir de plusieurs couches, chacune d'entre elles représentant un changement incrémentiel à partir de l'image de base. Lorsque vous envoyez une image par commande push ou lorsque vous procédez à son extraction par commande pull, le volume de stockage et le trafic d'extraction (pull) nécessaires pour chaque couche sont ajoutés à votre utilisation mensuelle. Les couches identiques sont automatiquement partagées entre les images de votre compte {{site.data.keyword.Bluemix_notm}} et sont réutilisées lorsque vous créez d'autres images. Le stockage de chaque couche identique n'est facturé qu'une seule fois, quel que soit le nombre d'images de votre compte faisant référence à la couche.
+Chaque image est générée à partir de plusieurs couches, chacune d'entre elles représentant un changement incrémentiel à partir de l'image de base. Lorsque vous envoyez une image par commande push ou lorsque vous procédez à son extraction par commande pull, le volume de stockage et le trafic d'extraction (pull) nécessaires pour chaque couche sont ajoutés à votre utilisation mensuelle. Les couches identiques sont automatiquement partagées entre les images de votre compte {{site.data.keyword.cloud_notm}} et sont réutilisées lorsque vous créez d'autres images. Le stockage de chaque couche identique n'est facturé qu'une seule fois, quel que soit le nombre d'images de votre compte faisant référence à la couche.
 
 Exemple d'envoi d'images par commande push :
 
@@ -88,7 +88,7 @@ En fonction du plan de service que vous choisissez, vous êtes facturé pour le 
 
 **Stockage : **
 
-  Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
+  Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.cloud_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
 
   Exemple pour
 le plan standard :
@@ -122,12 +122,12 @@ En fonction du plan de service que vous choisissez, vous pouvez envoyer des imag
 
 **Stockage : **
 
-  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.Bluemix_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
+  Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.cloud_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
 
   Exemple pour
 le plan standard :
 
-  > Votre limite de quota en cours pour le stockage est définie sur 1 Go. Toutes les images privées stockées dans les espaces de nom de votre compte {{site.data.keyword.Bluemix_notm}} utilisent déjà 900 Mo de ce stockage. Vous disposez de 100 Mo de stockage disponible jusqu'à ce que vous atteigniez cette limite de quota. Un utilisateur souhaite envoyer par commande push une image de 2 Go située sur la machine locale. Puisque la limite de quota n'est pas encore atteinte, {{site.data.keyword.registrylong_notm}} autorise l'utilisateur à envoyer cette image par commande push.
+  > Votre limite de quota en cours pour le stockage est définie sur 1 Go. Toutes les images privées stockées dans les espaces de nom de votre compte {{site.data.keyword.cloud_notm}} utilisent déjà 900 Mo de ce stockage. Vous disposez de 100 Mo de stockage disponible jusqu'à ce que vous atteigniez cette limite de quota. Un utilisateur souhaite envoyer par commande push une image de 2 Go située sur la machine locale. Puisque la limite de quota n'est pas encore atteinte, {{site.data.keyword.registrylong_notm}} autorise l'utilisateur à envoyer cette image par commande push.
   >
   > Une fois la commande push
 terminée, {{site.data.keyword.registrylong_notm}}
@@ -142,7 +142,7 @@ empêche d'envoyer des images supplémentaires par commande push à l'espace de 
 
   Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez
 pas extraire d'image par commande pull à partir des espaces de nom de votre compte
-{{site.data.keyword.Bluemix_notm}}, sauf si
+{{site.data.keyword.cloud_notm}}, sauf si
 vous patientez jusqu'au début de la période de facturation suivante, si vous
 [procédez à la mise à niveau vers le plan
 standard](#registry_plan_upgrade) ou si vous [augmentez vos
@@ -170,12 +170,12 @@ vous empêche d'extraire des images par commande pull à partir de votre espace 
 ### Estimation des coûts
 {: #registry_estimating_costs}
 
-Utilisez la calculatrice de prix {{site.data.keyword.Bluemix_notm}} pour estimer le coût de votre plan.
+Utilisez la calculatrice de prix {{site.data.keyword.cloud_notm}} pour estimer le coût de votre plan.
 {:shortdesc}
 
-Vous pouvez estimer le coût de votre application à l'aide des calculatrices de prix fournies par {{site.data.keyword.Bluemix_notm}}.
+Vous pouvez estimer le coût de votre application à l'aide des calculatrices de prix fournies par {{site.data.keyword.cloud_notm}}.
 
-1. Ouvrez la fiche de prix. Voir [{{site.data.keyword.Bluemix_notm}} Pricing ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/pricing).
+1. Ouvrez la fiche de prix. Voir [{{site.data.keyword.cloud_notm}} Pricing ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/pricing).
 2. Dans la section **Paiement à la carte**, cliquez sur **Estimez vos coûts avec notre calculatrice**. La calculatrice s'ouvre.
 3. Accédez à la section **Container Registry** sous **Prix des conteneurs**.
 4. Entrez vos estimations de stockage et de trafic dans les zones à cet effet.
@@ -188,19 +188,19 @@ L'estimation de vos coûts est affichée dans la calculatrice.
 Vous pouvez mettre à niveau votre plan de service afin
 de tirer parti d'un stockage et d'un trafic d'extraction d'images (commande pull) illimités
 pour gérer les images Docker de tous les espaces de nom dans votre compte
-{{site.data.keyword.Bluemix_notm}}.
+{{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Si vous ne connaissez pas le plan de service dont vous disposez, exécutez la commande `ibmcloud cr plan`.
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
+   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
 et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
     {:tip}
 
@@ -211,7 +211,7 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
    ```
    {: pre}
 
-   Si vous disposez d'un compte {{site.data.keyword.Bluemix_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.Bluemix_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
+   Si vous disposez d'un compte {{site.data.keyword.cloud_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.cloud_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
    {:tip}
 
 ## Notions élémentaires
@@ -239,9 +239,9 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 <dl>
   <dt>Espace de nom</dt>
   <dd>Les espaces de nom sont une façon d'organiser les référentiels de vos images dans {{site.data.keyword.registrylong_notm}}. L'espace de nom est associé à votre compte
-{{site.data.keyword.Bluemix_notm}}. Lorsque vous configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}, l'espace de nom est ajouté à l'URL du registre comme suit : <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+{{site.data.keyword.cloud_notm}}. Lorsque vous configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}, l'espace de nom est ajouté à l'URL du registre comme suit : <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Chaque utilisateur dans votre compte {{site.data.keyword.Bluemix_notm}} peut visualiser et utiliser les images stockées dans l'espace de nom de votre registre. Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
+  Chaque utilisateur dans votre compte {{site.data.keyword.cloud_notm}} peut visualiser et utiliser les images stockées dans l'espace de nom de votre registre. Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
 environnement de transfert.</dd>
 </dl>
 
@@ -275,7 +275,7 @@ dans ce registre en configurant un espace de nom du registre.
 {:shortdesc}
 
 Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
-environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.Bluemix_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
+environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.cloud_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
 
 Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry?topic=registry-user#user).
 
@@ -286,7 +286,7 @@ Si vous ne savez pas si un espace de nom a déjà été défini pour votre compt
 
 Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
 
-- Votre espace de nom doit être unique dans une région {{site.data.keyword.Bluemix_notm}}.
+- Votre espace de nom doit être unique dans une région {{site.data.keyword.cloud_notm}}.
 - Votre espace de nom doit comporter de 4 à 30 caractères.
 - Votre espace de nom doit débuter par au moins une lettre ou un nombre.
 - Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
@@ -343,7 +343,7 @@ La portée de tous les artefacts de registre est celle du registre régional sp�
 
 Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `ibmcloud cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
 
-Pour exécuter la commande avec les paramètres, remplacez `<region>` par le nom de la région. Par exemple, `eu-central`.
+Pour exécuter la commande avec des paramètres, remplacez `<region>` par le nom de la région, par exemple `eu-central`.
 
 ```
 ibmcloud cr region-set <region>

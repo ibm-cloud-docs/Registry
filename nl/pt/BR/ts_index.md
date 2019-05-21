@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -61,19 +61,19 @@ O comando `ibmcloud cr login` falha.
 
 - O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
 - O Docker não está instalado no computador local ou não está em execução.
-- Suas credenciais de login do {{site.data.keyword.Bluemix_notm}} expiraram.
+- Suas credenciais de login do {{site.data.keyword.cloud_notm}} expiraram.
 
 {: tsResolve}
 É possível corrigir esse problema das maneiras a seguir:
 
 - Faça upgrade para a versão mais recente do plug-in da CLI `container-registry`. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 - Assegure-se de que o Docker esteja instalado no computador. Se ele já estiver instalado, reinicie o daemon do Docker.
-- Execute novamente o comando `ibmcloud login` para atualizar suas credenciais de login do {{site.data.keyword.Bluemix_notm}}.
+- Execute novamente o comando `ibmcloud login` para atualizar suas credenciais de login do {{site.data.keyword.cloud_notm}}.
 
 ## A execução de qualquer comando do {{site.data.keyword.registrylong_notm}} falha com `FAILED You are not logged in to IBM Cloud. `
 {: #ts_login_cloud}
 
-Não é possível executar comandos no {{site.data.keyword.registrylong_notm}}, mesmo que você esteja conectado ao {{site.data.keyword.Bluemix_notm}}.
+Não é possível executar comandos no {{site.data.keyword.registrylong_notm}}, mesmo que você esteja conectado ao {{site.data.keyword.cloud_notm}}.
 
 {: tsSymptoms}
 Todos os comandos `ibmcloud cr` falham.
@@ -134,7 +134,7 @@ docker build --no-cache .
 {:  pre}
 
 - Se a construção local não funcionar, verifique se há problemas no Dockerfile.
-- Se a construção local funcionar, [entre em contato com o suporte do {{site.data.keyword.Bluemix_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
+- Se a construção local funcionar, [entre em contato com o suporte do {{site.data.keyword.cloud_notm}}](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Falha na configuração de um namespace
 {: #ts_problem}
@@ -144,7 +144,7 @@ Ao executar `ibmcloud cr namespace-add`, não é possível configurar seu valor 
 
 {: tsCauses}
 
-- Você inseriu um valor de namespace que já está sendo usado por outra organização do {{site.data.keyword.Bluemix_notm}}.
+- Você inseriu um valor de namespace que já está sendo usado por outra organização do {{site.data.keyword.cloud_notm}}.
 - Um namespace foi excluído recentemente e você está reutilizando o seu nome. Se o namespace que foi excluído continha muitos recursos, a exclusão ainda não poderá ser totalmente processada pelo {{site.data.keyword.registrylong_notm}}.
 - Você usou caracteres inválidos no valor de namespace.
 
@@ -191,15 +191,15 @@ negado: o acesso solicitado ao recurso foi negado
 
 - O Docker não está instalado.
 - O cliente Docker não está com login efetuado no {{site.data.keyword.registrylong_notm}}.
-- Seu token de acesso do {{site.data.keyword.Bluemix_notm}} pode ter expirado.
-- Você excedeu o limite de cota para armazenamento ou tráfego extraído que está configurado para a sua conta do {{site.data.keyword.Bluemix_notm}}.
+- Seu token de acesso do {{site.data.keyword.cloud_notm}} pode ter expirado.
+- Você excedeu o limite de cota para armazenamento ou tráfego extraído que está configurado para a sua conta do {{site.data.keyword.cloud_notm}}.
 
 {: tsResolve}
 É possível corrigir esse problema das maneiras a seguir:
 
 - [Assegure-se de que o Docker esteja instalado em seu computador](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - Verifique seu caminho de instalação do Docker.
-- Efetue login no {{site.data.keyword.Bluemix_notm}} executando `ibmcloud login`. Em seguida, efetue login na CLI do {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
+- Efetue login no {{site.data.keyword.cloud_notm}} executando `ibmcloud login`. Em seguida, efetue login na CLI do {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
 - [Revise os limites de cota e o uso para armazenar e fazer pull de imagens do Docker no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get).
 
 ## Não é possível puxar a imagem mais recente usando a tag `latest`
@@ -218,7 +218,7 @@ Geralmente, é melhor definir explicitamente uma tag sequencial diferente para s
 {: #ts_ppa}
 
 {: tsSymptoms}
-Ao tentar importar conteúdo usado em outros produtos IBM, como o {{site.data.keyword.Bluemix_notm}} Private, você não é capaz de armazenar suas imagens e outro software licenciado do [IBM Passport Advantage ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/index.html) no registro.
+Ao tentar importar conteúdo usado em outros produtos IBM, como o {{site.data.keyword.cloud_notm}} Private, você não é capaz de armazenar suas imagens e outro software licenciado do [IBM Passport Advantage ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/index.html) no registro.
 
 {: tsCauses}
 Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advantage, devem ser importados para o registro com o comando `ibmcloud cr ppa-archive-load`.
@@ -226,13 +226,13 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
 {: tsResolve}
 **Antes de iniciar**
 
-- Efetue login no {{site.data.keyword.Bluemix_notm}} executando `ibmcloud login [--sso]`.
+- Efetue login no {{site.data.keyword.cloud_notm}} executando `ibmcloud login [--sso]`.
 - Efetue login no {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
 - [Direcione a CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) para seu cluster.
-- Se ainda não tiver configurado o Helm no cluster, [configure o Helm em seu cluster agora](/docs/containers?topic=containers-integrations#helm).
+- Se ainda não tiver configurado o Helm no cluster, [configure o Helm em seu cluster agora](/docs/containers?topic=containers-helm#helm).
 - Se desejar compartilhar os gráficos em sua organização, será possível instalar o [Projeto de software livre Chart Museum ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum). Para obter instruções, consulte esta [orientação do developerWorks ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
-### Importando produtos IBM Passport Advantage para uso no {{site.data.keyword.Bluemix_notm}}
+### Importando produtos IBM Passport Advantage para uso no {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
 
 1. Obtenha o arquivo compactado que você deseja importar do [IBM Passport Advantage![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/index.html).
@@ -253,7 +253,7 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
 
    Esse comando expande o arquivo compactado, carrega as imagens contidas para o cliente local do Docker e, em seguida, envia as imagens por push para o namespace em seu registro.
 
-   Se desejar fazer upload de gráficos de Helm do archive do IBM Passport Advantage para um museu de gráficos, inclua as opções a seguir no comando: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+   Se desejar fazer upload de gráficos do Helm do archive do IBM Passport Advantage para um museu de gráficos, inclua as opções a seguir no comando: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
    **Exemplo de saída**
@@ -278,7 +278,7 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
    ```
    {: screen}
 
-4. Se os arquivos compactados contiverem gráficos de Helm, esses gráficos serão colocados em um diretório de archive chamado `ppa-import`, criado no diretório atualmente em funcionamento. Abra o diretório para obter o nome do gráfico de Helm, `<helm_chart>`e, em seguida, inspecione seus valores.
+4. Se os arquivos compactados contiverem gráficos de Helm, esses gráficos serão colocados em um diretório de archive chamado `ppa-import`, criado no diretório atualmente em funcionamento. Abra o diretório para obter o nome do gráfico do Helm, `<helm_chart>` e, em seguida, inspecione seus valores.
 
    ```
    helm inspect values ppa-import/charts/<helm_chart>.tgz
@@ -288,9 +288,9 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
    Se você tiver transferido gráficos por upload para um museu de gráficos na etapa anterior, será possível usar `helm inspect` para inspecionar o gráfico no museu de gráficos.
    {: tip}
 
-5. Configure o gráfico Helm,`<helm_chart>`, de acordo com os valores gerados pelo comando `helm inspect values`.
+5. Configure o gráfico do Helm, `<helm_chart>`, de acordo com os valores que são emitidos pelo comando `helm inspect values`.
 
-6. Implemente o gráfico Helm, `<helm_chart>`, usando o `comando install` comando. Será possível substituir valores no gráfico, conforme necessário, usando a opção `--set`.
+6. Implemente o gráfico do Helm, `<helm_chart>`, usando o comando `helm install`. Será possível substituir valores no gráfico, conforme necessário, usando a opção `--set`.
 
    ```
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
@@ -353,9 +353,7 @@ Antes de iniciar, recupere a passphrase da chave raiz que você criou quando [en
    ```
    {: pre}
 
-5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Substitua `<URL>` pela URL
-do comando de exportação que você anotou na Etapa 2 e `<image>` pela imagem cuja chave do repositório
-é afetada.
+5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Substitua `<URL>` pela URL do comando de exportação que você anotou na Etapa 2 e `<image>` pela imagem cuja chave do repositório é afetada.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
@@ -376,9 +374,9 @@ Se a sua chave raiz estiver perdida ou comprometida, não será possível atuali
 
 Se o namespace contiver repositórios com chaves raízes não afetadas, como um namespace para imagens de produção, talvez você queira excluir apenas os dados de confiança associados à chave raiz afetada. Abra um chamado de suporte.
 
-1. [Entre em contato com o {{site.data.keyword.Bluemix_notm}} Suporte](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Inclua uma breve descrição de seu problema, o ID da conta e uma lista dos namespaces que contêm os repositórios de imagem com chaves raízes afetadas.
+1. [Entre em contato com o {{site.data.keyword.cloud_notm}} Suporte](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Inclua uma breve descrição de seu problema, o ID da conta e uma lista dos namespaces que contêm os repositórios de imagem com chaves raízes afetadas.
 
-2. Depois que o {{site.data.keyword.Bluemix_notm}} tratar do problema, exclua o repositório do Docker Content Trust no computador local.
+2. Depois que o {{site.data.keyword.cloud_notm}} tratar do problema, exclua o repositório do Docker Content Trust no computador local.
 
    - Diretório Linux e Mac: `~/.docker/trust/private` e `~/.docker/trust/tuf`
 
@@ -387,7 +385,7 @@ Se o namespace contiver repositórios com chaves raízes não afetadas, como um 
    Como a chave raiz é afetada, essa etapa excluirá todas as chaves de assinatura, incluindo para outros servidores de confiança.
    {:tip}
 
-3. Se você usar o [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) no cluster do {{site.data.keyword.containershort_notm}}, reinicie cada pod de cumprimento de imagem. Para acionar o Kubernetes para executar um reinício de rolagem dos pods automaticamente, é possível mudar alguns metadados no pod. Por exemplo, [tenha como destino a CLI do Kubernetes para o seu cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) e modifique a implementação.
+3. Se você usar o [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce) no cluster do {{site.data.keyword.containershort_notm}}, reinicie cada pod de cumprimento de imagem. Para acionar o Kubernetes para executar um reinício de rolagem dos pods automaticamente, é possível mudar alguns metadados no pod. Por exemplo, [tenha como destino a CLI do Kubernetes para o seu cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) e modifique a implementação.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -510,14 +508,14 @@ O tipo de manifest não é suportado.
 {: tsResolve}
 Para resolver o problema, conclua as etapas a seguir:
 
-1. Puxe a imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome de sua imagem de origem:
+1. Faça pull da imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome da sua imagem de origem:
 
    ```
    docker pull <source_image>
    ```
    {: pre}
 
-2. Identifique a cópia local da imagem que você puxou na etapa anterior, executando o comando a seguir, em que `<target_image>` é o nome de sua nova imagem:
+2. Identifique a cópia local da imagem que passou por pull na etapa anterior executando o comando a seguir, em que `<target_image>` é o nome da nova imagem:
 
    ```
    docker tag <source_image> <target_image>
@@ -545,7 +543,7 @@ Para resolver o problema, conclua as etapas a seguir:
 
 1. Faça upgrade para o Docker Engine versão 1.12 ou mais recente.
 
-2. Puxe a imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome de sua imagem de origem:
+2. Faça pull da imagem que você tentou identificar executando o comando a seguir, em que `<source_image>` é o nome da sua imagem de origem:
 
    ```
    docker pull <source_image>

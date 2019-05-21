@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -34,7 +34,7 @@ Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch
 
 **Abbildung 1. Interaktion von {{site.data.keyword.registrylong_notm}} mit den Docker-Images**
 
-Jeder von Ihnen erstellte Container basiert auf einem Docker-Image. Ein Image wird aus einer Dockerfile erstellt, die Anweisungen zum Erstellen des Images enthält. Eine Dockerfile kann in ihren Anweisungen Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App). Images werden normalerweise in einer Registry gespeichert, die entweder öffentlich zugänglich ist (öffentliche Registry) oder mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert wird (private Registry). Wenn Sie {{site.data.keyword.registrylong_notm}} verwenden, können ausschließlich Benutzer mit Zugriff auf Ihr {{site.data.keyword.Bluemix_notm}}-Konto auf Ihre Images zugreifen.
+Jeder von Ihnen erstellte Container basiert auf einem Docker-Image. Ein Image wird aus einer Dockerfile erstellt, die Anweisungen zum Erstellen des Images enthält. Eine Dockerfile kann in ihren Anweisungen Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App). Images werden normalerweise in einer Registry gespeichert, die entweder öffentlich zugänglich ist (öffentliche Registry) oder mit einem eingeschränkten Zugriff für eine begrenzte Gruppe von Benutzern konfiguriert wird (private Registry). Wenn Sie {{site.data.keyword.registrylong_notm}} verwenden, können ausschließlich Benutzer mit Zugriff auf Ihr {{site.data.keyword.cloud_notm}}-Konto auf Ihre Images zugreifen.
 
 Wenn Sie Images mit einer Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen, profitieren Sie von den integrierten Vulnerability Advisor-Funktionen, die nach potenziellen Sicherheitsproblemen und Schwachstellen suchen. Vulnerability Advisor prüft auf gefährdete Pakete in bestimmten Basis-Docker-Images und bekannte Sicherheitslücken in App-Einstellungen. Werden Sicherheitslücken gefunden, so werden Informationen zu der Sicherheitslücke bereitgestellt. Sie können diese Informationen verwenden, um Sicherheitsprobleme zu beheben, sodass Container nicht über gefährdete Images bereitgestellt werden.
 
@@ -42,7 +42,7 @@ Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung 
 
 |Nutzen|Beschreibung|
 |-------|-----------|
-|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren privaten Multi-Tenant-Registry, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird</li><li>Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto</li></ul>|
+|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren privaten Multi-Tenant-Registry, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird</li><li>Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.cloud_notm}}-Konto</li></ul>|
 |Einhaltung von Sicherheitsbestimmungen für Images mit Vulnerability Advisor|<ul><li>Vorteil des automatischen Scannens von Images in Ihrem Namensbereich</li><li>Überprüfen von Betriebssystem-spezifischen Empfehlungen, um potenzielle Sicherheitslücken zu beheben und Ihre Container vor Schäden zu schützen</li></ul>|
 |Kontingente für Speicher und Pull-Datenverkehr|<ul><li>Vorteil von kostenfreiem Speicherplatz und Pull-Datenverkehr zu Ihren privaten Images bis zur Obergrenze des kostenfreien Kontingents</li><li>Festlegen angepasster Kontingente für Speicher und Pull-Datenverkehr pro Monat, um ein Überziehen Ihres bevorzugten Zahlungsbetrags zu vermeiden</li></ul>|
 {: caption="Tabelle 1. Nutzen von {{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -50,16 +50,16 @@ Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung 
 ## Servicepläne
 {: #registry_plans}
 
-Sie können zwischen einem kostenfreien Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zur Verfügung zu stellen.
+Sie können zwischen einem kostenfreien Serviceplan und einem Standardserviceplan von {{site.data.keyword.registrylong_notm}} wählen, um Ihre Docker-Images zu speichern und für Benutzer in Ihrem {{site.data.keyword.cloud_notm}}-Konto zur Verfügung zu stellen.
 {:shortdesc}
 
-Der Serviceplan von {{site.data.keyword.registrylong_notm}} legt die Speicherkapazität und den Umfang des Pull-Datenverkehrs fest, die/den Sie für Ihre privaten Images verwenden können. Der Serviceplan ist Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Die Begrenzungen für den Speicher und den Pull-Datenverkehr für Images gelten für alle Namensbereiche, die Sie in Ihrem Konto einrichten.
+Der Serviceplan von {{site.data.keyword.registrylong_notm}} legt die Speicherkapazität und den Umfang des Pull-Datenverkehrs fest, die/den Sie für Ihre privaten Images verwenden können. Der Serviceplan ist Ihrem {{site.data.keyword.cloud_notm}}-Konto zugeordnet. Die Begrenzungen für den Speicher und den Pull-Datenverkehr für Images gelten für alle Namensbereiche, die Sie in Ihrem Konto einrichten.
 
 In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.keyword.registrylong_notm}} und deren Merkmale aufgeführt. Weitere Informationen zur Funktionsweise der Abrechnung und zu den Folgen einer Überschreitung von Serviceplangrenzwerten finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Merkmale|Kostenfrei|Standard|
 |---------------|----|--------|
-|Beschreibung|Testen von {{site.data.keyword.registrylong_notm}} zum Speichern und gemeinsamen Verwenden von Docker-Images. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto.|
+|Beschreibung|Testen von {{site.data.keyword.registrylong_notm}} zum Speichern und gemeinsamen Verwenden von Docker-Images. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.cloud_notm}}-Konto.|
 |Speicherkapazität für Images|500 MB|Unbegrenzt|
 |Pull-Datenverkehr|5 GB pro Monat|Unbegrenzt|
 |Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -71,7 +71,7 @@ In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.key
 Hier finden Sie Informationen und Beispiele zur Funktionsweise der Abrechnung und der Kontingente in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Jedes Image ist aus einer Anzahl von Ebenen aufgebaut, von der jede eine inkrementelle Änderung ausgehend vom Basisimage darstellt. Wenn Sie eine Push- oder Pull-Operation für ein Image durchführen, wird der für jede Ebene benötigte Speicher und Pull-Datenverkehr auf Ihre monatliche Nutzung angerechnet. Identische Ebenen werden automatisch von den Images in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto gemeinsam genutzt und bei der Erstellung weiterer Images wiederverwendet. Der Speicher für jede identische Ebene wird nur einmal berechnet, unabhängig davon, wie viele Images in Ihrem Konto auf die Ebene verweisen.
+Jedes Image ist aus einer Anzahl von Ebenen aufgebaut, von der jede eine inkrementelle Änderung ausgehend vom Basisimage darstellt. Wenn Sie eine Push- oder Pull-Operation für ein Image durchführen, wird der für jede Ebene benötigte Speicher und Pull-Datenverkehr auf Ihre monatliche Nutzung angerechnet. Identische Ebenen werden automatisch von den Images in Ihrem {{site.data.keyword.cloud_notm}}-Konto gemeinsam genutzt und bei der Erstellung weiterer Images wiederverwendet. Der Speicher für jede identische Ebene wird nur einmal berechnet, unabhängig davon, wie viele Images in Ihrem Konto auf die Ebene verweisen.
 
 Beispiel für Push-Operationen an Images:
 
@@ -87,7 +87,7 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
 
 **Speicher: **
 
-  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Speicherkontingent, das Sie nutzen können, um Ihre Docker-Images in den Namensbereichen Ihres {{site.data.keyword.Bluemix_notm}}-Kontos zu speichern. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro GB-Monat abgerechnet. Die ersten 0,5 GB-Monate sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images kostenfrei in {{site.data.keyword.registrylong_notm}} speichern, bis das Kontingent für den kostenfreien Plan erreicht ist. Ein GB-Monat ist der Durchschnittswert von 1 GB Speicher für einen Monat (730 Stunden).
+  Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Speicherkontingent, das Sie nutzen können, um Ihre Docker-Images in den Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos zu speichern. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro GB-Monat abgerechnet. Die ersten 0,5 GB-Monate sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images kostenfrei in {{site.data.keyword.registrylong_notm}} speichern, bis das Kontingent für den kostenfreien Plan erreicht ist. Ein GB-Monat ist der Durchschnittswert von 1 GB Speicher für einen Monat (730 Stunden).
 
   Beispiel für den Standardplan:
 
@@ -119,17 +119,17 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 
 **Speicher: **
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.Bluemix_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.cloud_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
 
   Beispiel für den Standardplan:
 
-  > Ihr aktuelles Speicherkontingent ist auf 1 GB festgelegt. Alle privaten Images zusammen, die in den Namensbereichen Ihres {{site.data.keyword.Bluemix_notm}}-Kontos gespeichert sind, belegen bereits 900 MB dieses Speicherplatzes. Es stehen Ihnen 100 MB Speicherplatz zur Verfügung, bis Sie Ihr Kontingent ausgeschöpft haben. Ein Benutzer möchte ein Image mit einer Größe von 2 GB auf der lokalen Maschine mit Push-Operation übertragen. Da das Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Push-Operation überträgt.
+  > Ihr aktuelles Speicherkontingent ist auf 1 GB festgelegt. Alle privaten Images zusammen, die in den Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos gespeichert sind, belegen bereits 900 MB dieses Speicherplatzes. Es stehen Ihnen 100 MB Speicherplatz zur Verfügung, bis Sie Ihr Kontingent ausgeschöpft haben. Ein Benutzer möchte ein Image mit einer Größe von 2 GB auf der lokalen Maschine mit Push-Operation übertragen. Da das Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Push-Operation überträgt.
   >
   > Nach der Push-Operation bestimmt {{site.data.keyword.registrylong_notm}} die tatsächliche Größe des Image in Ihrem Namensbereich, die je nach Größe auf Ihrer lokalen Maschine variieren kann, und prüft, ob der Grenzwert für den Speicher erreicht ist. In diesem Beispiel erhöht sich die Speicherbelegung von 900 MB um 2 GB. Ist das aktuelle Kontingent auf 1 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Push-Operation in den Namensbereich für weitere Images.
 
 **Pull-Datenverkehr:**
 
-  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.Bluemix_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.cloud_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Beispiel für den Standardplan:
 
@@ -140,12 +140,12 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
 ### Kosten schätzen
 {: #registry_estimating_costs}
 
-Verwenden Sie den {{site.data.keyword.Bluemix_notm}}-Preisrechner, um die Kosten für Ihren Plan zu schätzen.
+Verwenden Sie den {{site.data.keyword.cloud_notm}}-Preisrechner, um die Kosten für Ihren Plan zu schätzen.
 {:shortdesc}
 
-Sie können Ihre App mithilfe der Kostenberechnungsfunktionen, die von {{site.data.keyword.Bluemix_notm}} bereitgestellt wird, berechnen.
+Sie können Ihre App mithilfe der Kostenberechnungsfunktionen, die von {{site.data.keyword.cloud_notm}} bereitgestellt wird, berechnen.
 
-1. Öffnen Sie die Preisliste im Abschnitt zur [{{site.data.keyword.Bluemix_notm}}-Preisstruktur ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/pricing).
+1. Öffnen Sie die Preisliste im Abschnitt zur [{{site.data.keyword.cloud_notm}}-Preisstruktur ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/pricing).
 2. Im Abschnitt **Nutzungsabhängige Zahlung** klicken Sie auf **Kosten mit dem Preisrechner schätzen**. Der Preisrechner wird geöffnet.
 3. Blättern Sie zum Unterabschnitt **Container-Registry** im Abschnitt **Containergebühren**.
 4. Geben Sie die geschätzten Kosten für Speicher und Datenverkehr in die angezeigten Felder ein.
@@ -155,19 +155,19 @@ Ihre geschätzten Kosten werden im Preisrechner angezeigt.
 ## Upgrade für den Serviceplan durchführen
 {: #registry_plan_upgrade}
 
-Sie können ein Upgrade für Ihren Serviceplan durchführen, um von unbegrenztem Speicher und Pull-Datenverkehr zu profitieren und die Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zu verwalten.
+Sie können ein Upgrade für Ihren Serviceplan durchführen, um von unbegrenztem Speicher und Pull-Datenverkehr zu profitieren und die Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.cloud_notm}}-Konto zu verwalten.
 {:shortdesc}
 
 Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie den Befehl `ibmcloud cr plan` aus.
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.Bluemix_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.cloud_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
     {:tip}
 
 2. Führen Sie ein Upgrade auf den Standardplan durch.
@@ -177,7 +177,7 @@ Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie d
    ```
    {: pre}
 
-   Wenn Sie über ein {{site.data.keyword.Bluemix_notm}} Lite-Konto verfügen, müssen Sie zuerst ein Upgrade auf ein nutzungsabhängiges {{site.data.keyword.Bluemix_notm}}-Konto oder Abonnementkonto durchführen, bevor Sie den Befehl `ibmcloud cr plan-upgrade` ausführen.
+   Wenn Sie über ein {{site.data.keyword.cloud_notm}} Lite-Konto verfügen, müssen Sie zuerst ein Upgrade auf ein nutzungsabhängiges {{site.data.keyword.cloud_notm}}-Konto oder Abonnementkonto durchführen, bevor Sie den Befehl `ibmcloud cr plan-upgrade` ausführen.
    {:tip}
 
 ## Zentrale Aspekte
@@ -204,9 +204,9 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>Namensbereich</dt>
-  <dd>Namensbereiche sind eine Möglichkeit, Repositorys Ihrer Images innerhalb {{site.data.keyword.registrylong_notm}} zu organisieren. Der Namensbereich wird Ihrem {{site.data.keyword.Bluemix_notm}}-Konto zugeordnet. Wenn Sie in {{site.data.keyword.registrylong_notm}} einen eigenen Namensbereich einrichten, wird der Namensbereich wie folgt an die Registry-URL angehängt: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+  <dd>Namensbereiche sind eine Möglichkeit, Repositorys Ihrer Images innerhalb {{site.data.keyword.registrylong_notm}} zu organisieren. Der Namensbereich wird Ihrem {{site.data.keyword.cloud_notm}}-Konto zugeordnet. Wenn Sie in {{site.data.keyword.registrylong_notm}} einen eigenen Namensbereich einrichten, wird der Namensbereich wie folgt an die Registry-URL angehängt: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Jeder Benutzer in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto kann Images, die in Ihrem Registry-Namensbereich gespeichert sind, anzeigen und mit ihnen arbeiten. Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten.</dd>
+  Jeder Benutzer in Ihrem {{site.data.keyword.cloud_notm}}-Konto kann Images, die in Ihrem Registry-Namensbereich gespeichert sind, anzeigen und mit ihnen arbeiten. Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten.</dd>
 </dl>
 
 <dl>
@@ -237,7 +237,7 @@ Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glo
 {{site.data.keyword.registrylong_notm}} bietet eine private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. In dieser Registry können Sie Ihre Docker-Images speichern, indem Sie einen Registrynamensbereich einrichten.
 {:shortdesc}
 
-Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.Bluemix_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
+Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.cloud_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
 
 Sie können den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry?topic=registry-user#user).
 
@@ -248,7 +248,7 @@ Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto ein
 
 Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
 
-- Ihr Namensbereich muss innerhalb einer {{site.data.keyword.Bluemix_notm}}-Region eindeutig sein.
+- Ihr Namensbereich muss innerhalb einer {{site.data.keyword.cloud_notm}}-Region eindeutig sein.
 - Der Name muss 4 bis 30 Zeichen lang sein.
 - Der Name muss mit mindestens einem Buchstaben bzw. einer Ziffer beginnen.
 - Der Name darf ausschließlich Kleinbuchstaben, Ziffern oder Unterstreichungszeichen (_) enthalten.
@@ -280,7 +280,7 @@ Die Domänennamen werden in der folgenden Tabelle angezeigt.
 | `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Tabelle 3. Domänennamen für lokale Regionen." caption-side="top"}
 
-Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
 **Vulnerability Advisor - Domänennamen**
@@ -298,7 +298,7 @@ Die neuen Domänennamen werden in der folgenden Tabelle angezeigt.
 | `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="Tabelle 4. Domänennamen für lokale Regionen." caption-side="top"}
 
-Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
 Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
@@ -336,7 +336,7 @@ Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 | Global | `icr.io` | `registry.bluemix.net` |
 {: caption="Tabelle 5. Domänenname für die globale Registry." caption-side="top"}
 
-Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
 Sie können die globale Registry als Ziel verwenden, indem Sie den Befehl `ibmcloud cr region-set` ausführen.
@@ -363,7 +363,7 @@ Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 | Global | `icr.io/va` | `va.bluemix.net` |
 {: caption="Tabelle 6. Domänenname für die globale Registry für Vulnerability Advisor." caption-side="top"}
 
-Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekanntgegeben.
+Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
 ## Unterstützung für Docker

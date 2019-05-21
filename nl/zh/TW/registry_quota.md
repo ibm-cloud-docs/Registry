@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 管理儲存空間及取回資料流量的配額限制
 {: #registry_quota}
 
-您可以藉由設定及管理自訂配額限制，來限制可在 {{site.data.keyword.Bluemix}} 帳戶中使用的儲存空間及取回資料流量的數量。
+您可以藉由設定及管理自訂配額限制，來限制可在 {{site.data.keyword.cloud}} 帳戶中使用的儲存空間及取回資料流量的數量。
 {:shortdesc}
 
 ## 設定儲存及取回映像檔的配額限制
@@ -38,7 +38,7 @@ subcollection: registry
 
 若要設定配額，請執行下列動作：
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login
@@ -88,7 +88,7 @@ subcollection: registry
 您可以檢閱配額限制，以及檢查帳戶的現行儲存空間及取回資料流量用量。
 {:shortdesc}
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
     ```
     ibmcloud login
@@ -118,12 +118,12 @@ subcollection: registry
 ## 釋放已使用的儲存空間，並且變更服務方案或配額限制，以保持在給定配額限制內
 {: #registry_quota_freeup}
 
-如果您已超出針對 {{site.data.keyword.Bluemix_notm}} 帳戶所設定的配額限制，可以釋放儲存空間，並變更服務方案或配額限制，以繼續將映像檔推送至名稱空間以及從中取回映像檔。
+如果您已超出針對 {{site.data.keyword.cloud_notm}} 帳戶所設定的配額限制，可以釋放儲存空間，並變更服務方案或配額限制，以繼續將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
-若要釋放 {{site.data.keyword.Bluemix_notm}} 帳戶中的映像檔儲存空間，請執行下列動作：
+若要釋放 {{site.data.keyword.cloud_notm}} 帳戶中的映像檔儲存空間，請執行下列動作：
 
-1. 列出 {{site.data.keyword.Bluemix_notm}} 帳戶的所有名稱空間中的所有映像檔。
+1. 列出 {{site.data.keyword.cloud_notm}} 帳戶的所有名稱空間中的所有映像檔。
 
     ```
     ibmcloud cr images

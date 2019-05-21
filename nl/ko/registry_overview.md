@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -35,7 +35,7 @@ subcollection: registry
 **그림 1. {{site.data.keyword.registrylong_notm}}가 Docker 이미지와 상호작용하는 방법**
 
 Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이미지는 이미지를 빌드하는 지시사항이 포함된 파일인 Dockerfile에서 작성됩니다. Dockerfile은 앱, 해당 앱의 구성 및 그 종속 항목과 같이 개별적으로 저장되는 해당 지시사항의 빌드 아티팩트를 참조할 수 있습니다. 일반적으로 이미지는 공용으로 액세스 가능한 레지스트리(공용 레지스트리) 또는 소규모의 사용자 그룹에 대해
-제한된 액세스를 제공하는 레지스트리(개인용 레지스트리)에 저장됩니다. {{site.data.keyword.registrylong_notm}}를 사용하면 {{site.data.keyword.Bluemix_notm}} 계정에 대한 액세스 권한이 있는 사용자만 이미지에 액세스할 수 있습니다.
+제한된 액세스를 제공하는 레지스트리(개인용 레지스트리)에 저장됩니다. {{site.data.keyword.registrylong_notm}}를 사용하면 {{site.data.keyword.cloud_notm}} 계정에 대한 액세스 권한이 있는 사용자만 이미지에 액세스할 수 있습니다.
 
 {{site.data.keyword.registrylong_notm}}에 이미지를 푸시하는 경우, 잠재적 보안 문제 및 취약성을 확인하는 기본 제공 Vulnerability Advisor 기능을
 활용할 수 있습니다. Vulnerability Advisor는 특정 Docker 기본 이미지에서 취약한 패키지를 확인하고
@@ -46,7 +46,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 |이점|설명|
 |-------|-----------|
-|고가용성 및 확장 가능 개인용 레지스트리|<ul><li>{{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트, 고가용성 및 확장 가능 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정합니다.</li><li>개인용 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자들과 공유합니다.</li></ul>|
+|고가용성 및 확장 가능 개인용 레지스트리|<ul><li>{{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트, 고가용성 및 확장 가능 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정합니다.</li><li>개인용 Docker 이미지를 저장하고 {{site.data.keyword.cloud_notm}} 계정의 사용자들과 공유합니다.</li></ul>|
 |Vulnerability Advisor를 사용하여 이미지 보안 규제 준수|<ul><li>네임스페이스의 이미지에 대한 자동 스캔을 활용할 수 있습니다.</li><li>잠재적 취약성을 수정하고 컨테이너가 손상되지 않도록 보호하기 위해 운영 체제별 권장사항을 검토합니다.</li></ul>|
 |스토리지 및 가져오기 트래픽에 대한 할당량 한계|<ul><li>무료 할당량에 도달하기 전까지 개인용 이미지에 대한 스토리지 및 가져오기 트래픽을 활용할 수 있습니다.</li><li>선호하는 결제 레벨을 초과하지 않도록 월별 스토리지 및 가져오기 트래픽 양에 대한 사용자 정의 할당량 한계를 설정할 수 있습니다.</li></ul>|
 {: caption="표 1. {{site.data.keyword.registrylong_notm}} 이점" caption-side="top"}
@@ -54,16 +54,16 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ## 서비스 플랜
 {: #registry_plans}
 
-무료 또는 표준 {{site.data.keyword.registrylong_notm}} 서비스 플랜을 선택하여 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자에게 이미지를 제공할 수 있습니다.
+무료 또는 표준 {{site.data.keyword.registrylong_notm}} 서비스 플랜을 선택하여 Docker 이미지를 저장하고 {{site.data.keyword.cloud_notm}} 계정의 사용자에게 이미지를 제공할 수 있습니다.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 서비스 플랜은 개인용 이미지를 위해 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 판별합니다. 서비스 플랜은 {{site.data.keyword.Bluemix_notm}} 계정과 연관되어 있으며, 사용자의 계정에서 설정한 모든 네임스페이스에 대한 스토리지 및 이미지 가져오기 트래픽 적용을 제한합니다.
+{{site.data.keyword.registrylong_notm}} 서비스 플랜은 개인용 이미지를 위해 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 판별합니다. 서비스 플랜은 {{site.data.keyword.cloud_notm}} 계정과 연관되어 있으며, 사용자의 계정에서 설정한 모든 네임스페이스에 대한 스토리지 및 이미지 가져오기 트래픽 적용을 제한합니다.
 
 다음 표에 사용 가능한 {{site.data.keyword.registrylong_notm}} 서비스 플랜 및 해당 특성이 표시됩니다. 서비스 플랜 한계를 초과할 때 발생하는 문제와 비용 청구 방식에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계와 비용 청구](#registry_plan_billing)를 참조하십시오.
 
 |특성|무료|표준|
 |---------------|----|--------|
-|설명|Docker 이미지를 저장하고 공유하도록 {{site.data.keyword.registrylong_notm}}를 사용해 보십시오. 이 플랜은 {{site.data.keyword.registrylong_notm}}에서 첫 번째 네임스페이스를 설정할 때 기본으로 적용되는 서비스 플랜입니다.|무제한의 스토리지 및 가져오기 트래픽 사용량으로 {{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하십시오.|
+|설명|Docker 이미지를 저장하고 공유하도록 {{site.data.keyword.registrylong_notm}}를 사용해 보십시오. 이 플랜은 {{site.data.keyword.registrylong_notm}}에서 첫 번째 네임스페이스를 설정할 때 기본으로 적용되는 서비스 플랜입니다.|무제한의 스토리지 및 가져오기 트래픽 사용량으로 {{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하십시오.|
 |이미지의 스토리지 양|500MB|무제한|
 |가져오기 트래픽|월별 5GB|무제한|
 |청구|스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.|<ul><li>스토리지: 기가바이트-월 사용량을 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 그 후에는 가격 계산기에 설명된 대로 비용이 부과됩니다.</li><li>가져오기 트래픽: 월별 기가바이트 사용량을 기준으로 비용이 부과됩니다. 처음 5GB는 무료입니다. 그 후에는 가격 계산기에 설명된 대로 비용이 부과됩니다. 스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 스토리지, 가져오기 트래픽 및 가격 계산기에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.</li></ul>|
@@ -76,7 +76,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 {:shortdesc}
 
 모든 이미지는 각각 기본 이미지의 증분 변경을 나타내는 다수의 계층에서 빌드됩니다. 이미지를 푸시하거나 가져올 때 각 계층에 필요한 스토리지 및 가져오기 트래픽의 양이 월별 사용량에 추가됩니다. 동일한 계층이 자동으로
-{{site.data.keyword.Bluemix_notm}} 계정의 이미지 간에 공유되며 다른 이미지를 작성하는 경우
+{{site.data.keyword.cloud_notm}} 계정의 이미지 간에 공유되며 다른 이미지를 작성하는 경우
 재사용됩니다. 동일한 각 계층에 대한 스토리지는 사용자 계정에서 얼마나 많은 이미지가 해당 계층을 참조하는지에 상관없이 한 번만 청구됩니다.
 
 이미지 푸시에 대한 예:
@@ -93,7 +93,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 **스토리지: **
 
-  모든 {{site.data.keyword.registrylong_notm}} 서비스 플랜은 {{site.data.keyword.Bluemix_notm}} 계정의 네임스페이스에서 Docker 이미지를 저장하기 위해 사용할 수 있는 일정한 양의 스토리지와 함께 제공됩니다. 표준 플랜인 경우, GB-월 사용량 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 무료 플랜인 경우, 무료 플랜에 대한 할당량 한계에 도달할 때까지 {{site.data.keyword.registrylong_notm}}에서 이미지를 무료로 저장할 수 있습니다. GB-월은 한 달(730시간)에 대한 1GB 스토리지의 평균입니다.
+  모든 {{site.data.keyword.registrylong_notm}} 서비스 플랜은 {{site.data.keyword.cloud_notm}} 계정의 네임스페이스에서 Docker 이미지를 저장하기 위해 사용할 수 있는 일정한 양의 스토리지와 함께 제공됩니다. 표준 플랜인 경우, GB-월 사용량 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 무료 플랜인 경우, 무료 플랜에 대한 할당량 한계에 도달할 때까지 {{site.data.keyword.registrylong_notm}}에서 이미지를 무료로 저장할 수 있습니다. GB-월은 한 달(730시간)에 대한 1GB 스토리지의 평균입니다.
 
   표준 플랜에 대한 예:
 
@@ -125,11 +125,11 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 **스토리지: **
 
-  플랜에 대한 할당량 한계에 도달하거나 초과하면 네임스페이스에서 [이미지를 제거하여 여유 공간을 확보](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)하거나 [표준 플랜으로 업그레이드](#registry_plan_upgrade)할 때까지 {{site.data.keyword.Bluemix_notm}} 계정의 네임스페이스에 이미지를 푸시할 수 없습니다. 무료 또는 표준 플랜에서 스토리지에 대한 할당량 한계를 설정한 경우, [이 할당량 한계를 늘려](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 새 이미지를 푸시할 수 있습니다.
+  플랜에 대한 할당량 한계에 도달하거나 초과하면 네임스페이스에서 [이미지를 제거하여 여유 공간을 확보](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)하거나 [표준 플랜으로 업그레이드](#registry_plan_upgrade)할 때까지 {{site.data.keyword.cloud_notm}} 계정의 네임스페이스에 이미지를 푸시할 수 없습니다. 무료 또는 표준 플랜에서 스토리지에 대한 할당량 한계를 설정한 경우, [이 할당량 한계를 늘려](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 새 이미지를 푸시할 수 있습니다.
 
   표준 플랜에 대한 예:
 
-  > 스토리지에 대한 현재 할당량 한계는 1GB로 설정되어 있습니다. {{site.data.keyword.Bluemix_notm}} 계정의 네임스페이스에 저장된 모든 개인용 이미지는 이 스토리지 중에서 900MB를 이미 사용하고 있습니다. 할당량 한계에 도달할 때까지 100MB 스토리지가 사용 가능합니다. 한 사용자가 로컬 시스템의 2GB 크기의 이미지를 푸시하려고 합니다. 할당량 한계에 아직 도달하지 않았기 때문에 {{site.data.keyword.registrylong_notm}}는 사용자가 이 이미지를 푸시하도록 허용합니다.
+  > 스토리지에 대한 현재 할당량 한계는 1GB로 설정되어 있습니다. {{site.data.keyword.cloud_notm}} 계정의 네임스페이스에 저장된 모든 개인용 이미지는 이 스토리지 중에서 900MB를 이미 사용하고 있습니다. 할당량 한계에 도달할 때까지 100MB 스토리지가 사용 가능합니다. 한 사용자가 로컬 시스템의 2GB 크기의 이미지를 푸시하려고 합니다. 할당량 한계에 아직 도달하지 않았기 때문에 {{site.data.keyword.registrylong_notm}}는 사용자가 이 이미지를 푸시하도록 허용합니다.
   >
   > 푸시 후에 {{site.data.keyword.registrylong_notm}}는 네임스페이스에서 이미지의 실제 크기를 판별합니다(이 크기는 로컬 시스템에 대한 크기에 따라 달라질 수 있음). 그리고 스토리지 한계에 도달했는지 여부를 확인합니다. 이 예에서 스토리지 사용량은 900MB에서 2GB만큼 늘어납니다. 현재 할당량 한계가 1GB이기 때문에 {{site.data.keyword.registrylong_notm}}는 네임스페이스에 추가 이미지를 푸시하지 못하게 합니다.
 
@@ -137,7 +137,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
   플랜에 대한 할당량 한계에 도달하거나 이를 초과하면
 다음 청구 기간이 시작되기를 기다리거나, [표준 플랜으로 업그레이드](#registry_plan_upgrade)하거나, [가져오기 트래픽에 대한 할당량
-한계를 늘릴](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 때까지 {{site.data.keyword.Bluemix_notm}} 계정의
+한계를 늘릴](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) 때까지 {{site.data.keyword.cloud_notm}} 계정의
 네임스페이스에서 이미지를 가져올 수 없습니다.
 
   표준 플랜에 대한 예:
@@ -151,12 +151,12 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 비용 추정
 {: #registry_estimating_costs}
 
-{{site.data.keyword.Bluemix_notm}} 가격 계산기를 사용하여 플랜의 비용을 예상하십시오.
+{{site.data.keyword.cloud_notm}} 가격 계산기를 사용하여 플랜의 비용을 예상하십시오.
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}}에서 제공한 비용 계산기를 사용하여 앱의 가격을 책정할 수 있습니다.
+{{site.data.keyword.cloud_notm}}에서 제공한 비용 계산기를 사용하여 앱의 가격을 책정할 수 있습니다.
 
-1. 가격 시트를 열고 [{{site.data.keyword.Bluemix_notm}} 가격 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/cloud/pricing)을 확인하십시오.
+1. 가격 시트를 열고 [{{site.data.keyword.cloud_notm}} 가격 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/cloud/pricing)을 확인하십시오.
 2. **종량과금제(Pay As You Go)** 섹션에서 **계산기를 사용하여 비용 추정**을 클릭하십시오. 계산기가 열립니다.
 3. **컨테이너 비용** 섹션의 **컨테이너 레지스트리** 섹션으로 화면이동하십시오.
 4. 제공된 필드에 스토리지와 트래픽 추정값을 입력하십시오.
@@ -166,19 +166,19 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ## 서비스 플랜 업그레이드
 {: #registry_plan_upgrade}
 
-{{site.data.keyword.Bluemix_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다.
+{{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다.
 {:shortdesc}
 
 사용 중인 서비스 플랜을 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 {{site.data.keyword.Bluemix_notm}} CLI에 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
+   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 {{site.data.keyword.cloud_notm}} CLI에 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
     {:tip}
 
 2. 표준 플랜으로 업그레이드하십시오.
@@ -188,7 +188,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    ```
    {: pre}
 
-   {{site.data.keyword.Bluemix_notm}} Lite 계정이 있는 경우에는 `ibmcloud cr plan-upgrade`를 실행하기 전에 {{site.data.keyword.Bluemix_notm}} 종량과금제 또는 구독 계정으로 업그레이드해야 합니다.
+   {{site.data.keyword.cloud_notm}} Lite 계정이 있는 경우에는 `ibmcloud cr plan-upgrade`를 실행하기 전에 {{site.data.keyword.cloud_notm}} 종량과금제 또는 구독 계정으로 업그레이드해야 합니다.
    {:tip}
 
 ## 기본 사항 학습
@@ -215,9 +215,9 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>네임스페이스</dt>
-  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.cloud_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  {{site.data.keyword.Bluemix_notm}} 계정의 모든 사용자가 레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다.</dd>
+  {{site.data.keyword.cloud_notm}} 계정의 모든 사용자가 레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다.</dd>
 </dl>
 
 <dl>
@@ -248,7 +248,7 @@ Docker 특정 용어에 대해 자세히 알아보려면 [Docker 용어집 ![외
 {{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다. 레지스트리 네임스페이스를 설정하여 이 레지스트리에서 Docker 이미지를 저장하고 공유할 수 있습니다.
 {:shortdesc}
 
-예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.Bluemix_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
+예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.cloud_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
 
 IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry?topic=registry-user#user)를 참조하십시오.
 
@@ -259,7 +259,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
 
-- 네임스페이스는 {{site.data.keyword.Bluemix_notm}} 지역에서 고유해야 합니다.
+- 네임스페이스는 {{site.data.keyword.cloud_notm}} 지역에서 고유해야 합니다.
 - 네임스페이스의 길이는 4 - 30자여야 합니다.
 - 네임스페이스는 하나 이상의 문자 또는 숫자로 시작해야 합니다.
 - 네임스페이스에는 소문자, 숫자 또는 밑줄(_)만 포함되어야 합니다.
@@ -291,7 +291,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 | `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="표 3. 로컬 지역의 도메인 이름" caption-side="top"}
 
-기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 종료되는 날짜는 추후 공지될 예정입니다.
 {: deprecated}
 
 **취약성 어드바이저 도메인 이름**
@@ -309,7 +309,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 | `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="표 4. 로컬 지역의 도메인 이름" caption-side="top"}
 
-기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 종료되는 날짜는 추후 공지될 예정입니다.
 {: deprecated}
 
 모든 레지스트리 아티팩트의 범위는 현재 작업 중인 특정 지역 레지스트리로 지정됩니다. 예를 들어, 네임스페이스, 이미지, 토큰, 할당량 설정 및 플랜 설정은 모두 각 지역 레지스트리에서 개별적으로 관리해야 합니다.
@@ -347,7 +347,7 @@ ibmcloud cr region-set eu-central
 | 글로벌 | `icr.io` | `registry.bluemix.net` |
 {: caption="표 5. 글로벌 레지스트리의 도메인 이름" caption-side="top"}
 
-기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 종료되는 날짜는 추후 공지될 예정입니다.
 {: deprecated}
 
 `ibmcloud cr region-set` 명령을 실행하여 글로벌 레지스트리를 대상으로 지정할 수 있습니다.
@@ -374,7 +374,7 @@ ibmcloud cr region-set global
 | 글로벌 | `icr.io/va` | `va.bluemix.net` |
 {: caption="표 6. 취약성 어드바이저를 위한 글로벌 레지스트리의 도메인 이름" caption-side="top"}
 
-기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 중단되는 날짜는 나중에 알려드릴 예정입니다.
+기존 `bluemix.net` 도메인 이름은 더 이상 사용되지 않지만 당분간은 계속 사용할 수 있습니다. 지원이 종료되는 날짜는 추후 공지될 예정입니다.
 {: deprecated}
 
 ## Docker 지원

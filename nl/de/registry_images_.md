@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -102,7 +102,7 @@ Nachdem Sie das Image per Push-Operation an {{site.data.keyword.registrylong_not
 Sie können ein Image mit einer Pull-Operation aus einer Registry in einer Region extrahieren und es in eine Registry in einer anderen Region mit einer Push-Operation übertragen, sodass Sie das Image mit Benutzern in beiden Regionen gemeinsam nutzen können.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Image aus einer beliebigen privaten oder öffentlichen Registry in die private {{site.data.keyword.Bluemix_notm}}Registry kopieren."/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Kopieren Sie das Image aus einer beliebigen privaten oder öffentlichen Registry in die private {{site.data.keyword.cloud_notm}}-Registry."/>
 
 **Vorbereitung**
 
@@ -163,7 +163,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Image auf der Basis eines Q
 ## Docker-Images für die Verwendung mit dem eigenen Namensbereich erstellen
 {: #registry_images_creating}
 
-Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstellen oder ein eigenes Docker-Image auf Ihrem lokalen Computer erstellen und es in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
+Sie können ein Docker-Image direkt in {{site.data.keyword.cloud_notm}} erstellen oder ein eigenes Docker-Image auf Ihrem lokalen Computer erstellen und es in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 {:shortdesc}
 
 **Vorbereitung**
@@ -176,7 +176,7 @@ Sie können ein Docker-Image direkt in {{site.data.keyword.Bluemix_notm}} erstel
 
 Jeder Container, den Sie erstellen, basiert auf einem Docker-Image. Ein Image wird aus einer Dockerfile erstellt, die Anweisungen zum Erstellen des Images enthält. Eine Dockerfile kann in ihren Anweisungen Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App).
 
-Wenn Sie die Vorteile der {{site.data.keyword.Bluemix_notm}}-Berechnungsressourcen und der Internetverbindung nutzen möchten, oder wenn auf Ihrer Workstation Docker nicht installiert ist, erstellen Sie das Image direkt in {{site.data.keyword.Bluemix_notm}}. Wenn Sie in Ihrem Build auf Ressourcen auf Servern zugreifen müssen, die durch Ihre Firewall geschützt sind, erstellen Sie das Image lokal.
+Wenn Sie die Vorteile der {{site.data.keyword.cloud_notm}}-Berechnungsressourcen und der Internetverbindung nutzen möchten, oder wenn auf Ihrer Workstation Docker nicht installiert ist, erstellen Sie das Image direkt in {{site.data.keyword.cloud_notm}}. Wenn Sie in Ihrem Build auf Ressourcen auf Servern zugreifen müssen, die durch Ihre Firewall geschützt sind, erstellen Sie das Image lokal.
 
 Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen:
 
@@ -218,19 +218,19 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
    Dabei gibt `<my_namespace>` die Informationen zu Ihrem Namensbereich an, `<repo_name>` ist der Name des Repositorys und `<tag>` ist die Version, die für das Image verwendet werden soll. Führen Sie den Befehl `ibmcloud cr namespace-list` aus, um nach Ihrem Namensbereich zu suchen.
 
 4. Notieren Sie den Pfad zu dem Verzeichnis, das Ihre Dockerfile enthält. Wenn Sie die Befehle in den folgenden Schritten ausführen, während für das Arbeitsverzeichnis die Speicherposition des Buildkontexts festgelegt ist, können Sie `<directory>` durch einen Punkt (.) ersetzen.
-5. Entscheiden Sie, ob Sie das Image direkt in {{site.data.keyword.Bluemix_notm}} erstellen oder das Image zunächst lokal erstellen und testen möchten, bevor Sie es mit einer Push-Operation in {{site.data.keyword.Bluemix_notm}} übertragen.
-   - Führen Sie die folgenden Schritte aus, um das Image direkt in {{site.data.keyword.Bluemix_notm}} zu erstellen:
+5. Entscheiden Sie, ob Sie das Image direkt in {{site.data.keyword.cloud_notm}} erstellen oder das Image zunächst lokal erstellen und testen möchten, bevor Sie es mit einer Push-Operation in {{site.data.keyword.cloud_notm}} übertragen.
+   - Führen Sie die folgenden Schritte aus, um das Image direkt in {{site.data.keyword.cloud_notm}} zu erstellen:
 
      ```
      ibmcloud cr build -t <image_name> <directory>
      ```
      {: pre}
 
-     Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses. Wenn Sie den Befehl ausführen, während für das Arbeitsverzeichnis die Speicherposition des Buildkontexts festgelegt ist, können Sie `<directory>` durch einen Punkt (.) ersetzen.
+     Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses. Wenn Sie den Befehl ausführen, während das Arbeitsverzeichnis auf das Verzeichnis eingestellt ist, in dem Ihr Buildkontext gespeichert ist, können Sie `<directory>` durch einen Punkt (.) ersetzen.
   
      Weitere Informationen zum Befehl `ibmcloud cr build` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
-   - Führen Sie die folgenden Schritte aus, um Ihr Image zunächst lokal zu erstellen und zu testen, bevor Sie es mit einer Push-Operation in {{site.data.keyword.Bluemix_notm}} übertragen:
+   - Führen Sie die folgenden Schritte aus, um Ihr Image zunächst lokal zu erstellen und zu testen, bevor Sie es mit einer Push-Operation in {{site.data.keyword.cloud_notm}} übertragen:
       1. Erstellen Sie das Image aus Ihrer Dockerfile auf dem lokalen Computer und kennzeichnen Sie es mit dem Imagenamen.
 
          ```
@@ -238,7 +238,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
          ```
          {: pre}
 
-         Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses.
+         Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses. 
 
       2. Optional: Testen Sie Ihr Image auf dem lokalen Computer, bevor Sie es mit einer Push-Operation in Ihren Namensbereich übertragen.
 
@@ -253,7 +253,21 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
 
 Informationen zur Verwendung von Vulnerability Advisor zum Überprüfen der Sicherheit Ihres Images finden Sie im Abschnitt [Imagesicherheit mit Vulnerability Advisor verwalten](/docs/services/va?topic=va-va_index).
 
-## Images aus Ihrem privaten {{site.data.keyword.Bluemix_notm}}-Repository löschen
+## Images an {{site.data.keyword.registrylong_notm}} mithilfe eines API-Schlüssels mittels Push-Operation übertragen
+{: #registry_api_key_push_image}
+
+Erstellen Sie eine Service-ID, die einen API-Schlüssel verwendet, um Images an {{site.data.keyword.registrylong_notm}} mittels Push-Operation zu übertragen.
+{:shortdesc}
+
+1. Weitere Informationen zum Erstellen von Service-IDs finden Sie in [Service-IDs erstellen und damit arbeiten](/docs/iam?topic=iam-serviceids#serviceids).
+2. Informationen zum Erstellen einer Richtlinie, die der Service-ID die Berechtigung zum Zugriff auf die Registrierung erteilt, z. B. die Rollen `Administrator` und `Manager`, finden Sie in [Benutzerzugriff mit Identity and Access Management verwalten](/docs/services/Registry?topic=registry-iam#iam).
+3. Informationen zum Erstellen eines API-Schlüssels finden Sie in [API-Schlüssel für Service-ID erstellen](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+4. Informationen zur Verwendung des API-Schlüssels, um sich bei der Registry anzumelden und Images mittels Push-Operation an die Registry übertragen zu können, finden Sie in [Zugriff mithilfe eines API-Schlüssels automatisieren](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use).
+5. Informationen zum Übertragen von Images mittels Push-Operation finden Sie in [Docker-Images mit Push-Operation in eigenen Namensbereich übertragen](#registry_images_pushing_namespace).
+
+Informationen zum Verwenden von Clustern, um die Images mittels Pull-Operation zu extrahieren, finden Sie in [Aus Images Container erstellen](/docs/containers?topic=containers-images#other_registry_accounts).
+
+## Images aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository löschen
 {: #registry_images_remove}
 
 Sie können unerwünschte Images aus Ihrem privaten Repository über die grafische Benutzerschnittstelle (GUI) oder die Befehlszeilenschnittstelle (CLI) löschen.
@@ -261,12 +275,12 @@ Sie können unerwünschte Images aus Ihrem privaten Repository über die grafisc
 
 Wenn Sie ein privates Repository und die zugehörigen Images löschen möchten, lesen Sie den Abschnitt [Privates Repository und alle zugehörigen Images löschen](#registry_repo_remove).
 
-Öffentliche {{site.data.keyword.IBM_notm}}-Images können nicht aus Ihrem privaten {{site.data.keyword.Bluemix_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
+Öffentliche {{site.data.keyword.IBM_notm}}-Images können nicht aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
 
 Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
 {:tip}
 
-### Images aus dem privaten {{site.data.keyword.Bluemix_notm}}-Repository mithilfe der CLI löschen
+### Images aus dem privaten {{site.data.keyword.cloud_notm}}-Repository mithilfe der CLI löschen
 {: #registry_images_remove_cli}
 
 Sie können unerwünschte Images aus Ihrem privaten Repository über die CLI löschen.
@@ -277,7 +291,7 @@ Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen e
 
 Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an, indem Sie den Befehl `ibmcloud login` ausführen.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an, indem Sie den Befehl `ibmcloud login` ausführen.
 2. Führen Sie den folgenden Befehl aus, um ein Image zu löschen:
 
    ```
@@ -287,7 +301,7 @@ Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
 
    Dabei steht _IMAGE_ für den Namen des Images, das Sie entfernen möchten, im Format `repository:tag`.
 
-   Wenn ein Tag nicht im Imagenamen angegeben ist, wird standardmäßig das Image mit dem Tag `latest` gelöscht. Sie können mehrere Images löschen, indem Sie die einzelnen privaten {{site.data.keyword.Bluemix_notm}}-Registry-Pfade im Befehl auflisten und die Pfade jeweils durch ein Leerzeichen voneinander trennen.
+   Wenn ein Tag nicht im Imagenamen angegeben ist, wird standardmäßig das Image mit dem Tag `latest` gelöscht. Sie können mehrere Images löschen, indem Sie die einzelnen privaten {{site.data.keyword.cloud_notm}}-Registry-Pfade im Befehl auflisten und die Pfade jeweils durch ein Leerzeichen voneinander trennen.
 
    Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden.
    {:tip}
@@ -299,7 +313,7 @@ Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
    ```
    {: pre}
 
-### Images aus dem privaten {{site.data.keyword.Bluemix_notm}}-Repository mithilfe der grafischen Benutzerschnittstelle löschen
+### Images aus dem privaten {{site.data.keyword.cloud_notm}}-Repository mithilfe der grafischen Benutzerschnittstelle löschen
 {: #registry_images_remove_gui}
 
 Sie können unerwünschte Images aus Ihrem privaten Image-Repository mithilfe der grafischen Benutzerschnittstelle (GUI) löschen.
@@ -311,7 +325,7 @@ Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen e
 Führen Sie die folgenden Schritte aus, um ein Image über die grafische Benutzerschnittstelle zu löschen:
 
 1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ([https://cloud.ibm.com/login ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login)) mit Ihrer IBMid an.
-2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
+2. Wenn Sie über mehrere {{site.data.keyword.cloud_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
 5. Klicken Sie auf **Images**. Es wird eine Liste Ihrer Images angezeigt.
@@ -338,7 +352,7 @@ Sie müssen alle Images sichern, die Sie behalten möchten.
 Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen, führen Sie die folgenden Schritte aus:
 
 1. Melden Sie sich bei der {{site.data.keyword.cloud_notm}}-Konsole ([https://cloud.ibm.com/login ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/login)) mit Ihrer IBMid an.
-2. Wenn Sie über mehrere {{site.data.keyword.Bluemix_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
+2. Wenn Sie über mehrere {{site.data.keyword.cloud_notm}}-Konten verfügen, wählen Sie das Konto und die Region im Kontomenü aus, die Sie verwenden möchten.
 3. Klicken Sie auf **Katalog**.
 4. Wählen Sie die Kategorie **Container** aus und klicken Sie auf die Kachel **Container Registry**.
 5. Klicken Sie auf **Repositorys**. Es wird eine Liste Ihrer privaten Repositorys angezeigt.

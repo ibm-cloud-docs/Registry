@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -38,7 +38,7 @@ Un'immagine Docker è la base per ogni contenitore che crei. Un'immagine viene c
 Dockerfile, che è un file che contiene le istruzioni su come creare l'immagine. Nelle sue istruzioni, un Dockerfile
 potrebbe fare riferimento alle risorse di build che vengono memorizzate separatamente, quali ad esempio un'applicazione, la configurazione
 dell'applicazione e le relative dipendenze. Le immagini sono generalmente memorizzate in un registro che può essere accessibile al pubblico (registro
-pubblico) o configurato con un accesso limitato per un piccolo gruppo di utenti (registro privato). Utilizzando {{site.data.keyword.registrylong_notm}}, solo gli utenti che dispongono dell'accesso al tuo account {{site.data.keyword.Bluemix_notm}} possono accedere alle tue immagini.
+pubblico) o configurato con un accesso limitato per un piccolo gruppo di utenti (registro privato). Utilizzando {{site.data.keyword.registrylong_notm}}, solo gli utenti che dispongono dell'accesso al tuo account {{site.data.keyword.cloud_notm}} possono accedere alle tue immagini.
 
 Quando esegui il push delle immagini a {{site.data.keyword.registrylong_notm}}, usufruisci delle funzioni integrate del Controllo vulnerabilità
 che esegue la scansione per ricercare potenziali problemi di sicurezza e vulnerabilità. Il Controllo vulnerabilità
@@ -50,7 +50,7 @@ Esamina la seguente tabella per una panoramica dei vantaggi dell'utilizzo di {{s
 
 |Vantaggio|Descrizione|
 |-------|-----------|
-|Registro privato altamente disponibile e scalabile|<ul><li>Configura il tuo spazio dei nomi di immagini in un registro privato a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}.</li><li>Memorizza le tue immagini Docker private e condividile con gli utenti nel tuo account {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privato altamente disponibile e scalabile|<ul><li>Configura il tuo spazio dei nomi di immagini in un registro privato a più tenant, altamente disponibile e scalabile che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}.</li><li>Memorizza le tue immagini Docker private e condividile con gli utenti nel tuo account {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformità della sicurezza dell'immagine con il Controllo vulnerabilità|<ul><li>Vantaggio della scansione automatica delle immagini nel tuo spazio dei nomi.</li><li>Riesamina i suggerimenti specifici del sistema operativo per risolvere le vulnerabilità potenziali ed
 evitare che i tuoi contenitori vengano compromessi.</li></ul>|
 |Limiti di quota per l'archiviazione e il traffico di pull|<ul><li>Vantaggio dell'archiviazione e del traffico di pull gratuiti per le tue immagini private fino al raggiungimento
@@ -62,12 +62,12 @@ il tuo livello di pagamento preferito.</li></ul>|
 {: #registry_plans}
 
 Puoi scegliere tra i piani di servizio {{site.data.keyword.registrylong_notm}} gratuito e standard per memorizzare le tue immagini Docker
-e renderle disponibili agli utenti nel tuo account {{site.data.keyword.Bluemix_notm}}.
+e renderle disponibili agli utenti nel tuo account {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Il piano di servizio {{site.data.keyword.registrylong_notm}} determina
 la quantità di archiviazione e di traffico di pull che puoi utilizzare per le tue immagini private. Il piano di servizio è
-associato al tuo account {{site.data.keyword.Bluemix_notm}}
+associato al tuo account {{site.data.keyword.cloud_notm}}
 e limita l'archiviazione e il traffico di pull da applicare a tutti gli spazi dei nomi che hai configurato nel tuo
 account.
 
@@ -77,7 +77,7 @@ La seguente tabella mostra i piani di servizio {{site.data.keyword.registrylong_
 |---------------|----|--------|
 |Descrizione|Prova {{site.data.keyword.registrylong_notm}} per memorizzare e condividere le tue immagini Docker. Questo è il piano di servizio predefinito quando configuri il tuo primo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.|Beneficia di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi
 dei nomi nel tuo account
-{{site.data.keyword.Bluemix_notm}}.|
+{{site.data.keyword.cloud_notm}}.|
 |Quantità di archiviazione per le immagini|500 MB|Senza limiti|
 |Traffico di pull|5 GB al mese|Senza limiti|
 |Fatturazione|Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
@@ -94,7 +94,7 @@ Trova informazioni ed esempi sul funzionamento del processo di fatturazione e de
 {:shortdesc}
 
 Ogni immagine viene creata a partire da un certo numero di livelli che rappresentano ciascuno un cambiamento incrementale dall'immagine di base. Quando esegui il push o il pull di un'immagine, la quantità di archiviazione e di traffico di pull necessaria per ogni livello viene aggiunta al tuo utilizzo mensile. I livelli identici vengono condivisi automaticamente tra le immagini nel tuo account
-{{site.data.keyword.Bluemix_notm}} e vengono riutilizzati quando crei altre immagini. L'archiviazione per ogni livello identico viene addebitata solo una volta, a prescindere dal numero di immagini nel tuo account che si riferiscono al livello.
+{{site.data.keyword.cloud_notm}} e vengono riutilizzati quando crei altre immagini. L'archiviazione per ogni livello identico viene addebitata solo una volta, a prescindere dal numero di immagini nel tuo account che si riferiscono al livello.
 
 Esempio per il push di immagini:
 
@@ -111,7 +111,7 @@ pull che utilizzi al mese.
 
 **Archiviazione: **
 
-  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
+  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
 
   Esempio per il piano standard:
 
@@ -144,18 +144,18 @@ il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici de
 
 **Archiviazione: **
 
-  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) per riabilitare il push di nuove immagini.
+  Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) per riabilitare il push di nuove immagini.
 
   Esempio per il piano standard:
 
-  > Il tuo limite di quota corrente per l'archiviazione è impostato su 1 GB. Tutte le immagini private che sono memorizzate negli spazi dei nomi del tuo account {{site.data.keyword.Bluemix_notm}} utilizzano già 900 MB di questa archiviazione. Hai a disposizione 100 MB di archiviazione fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il push di un'immagine con una dimensione di 2 GB sulla macchina locale. Poiché il limite di quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente all'utente di eseguire il push di questa immagine.
+  > Il tuo limite di quota corrente per l'archiviazione è impostato su 1 GB. Tutte le immagini private che sono memorizzate negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}} utilizzano già 900 MB di questa archiviazione. Hai a disposizione 100 MB di archiviazione fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il push di un'immagine con una dimensione di 2 GB sulla macchina locale. Poiché il limite di quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente all'utente di eseguire il push di questa immagine.
   >
   > Dopo il push, {{site.data.keyword.registrylong_notm}} determina la dimensione effettiva dell'immagine nel tuo spazio dei nomi, che può variare dalla dimensione sulla tua macchina locale, e controlla se viene raggiunto il limite per l'archiviazione. In questo esempio, l'utilizzo dell'archiviazione aumenta da 900 MB a 2 GB. Con il tuo limite di quota corrente impostato su 1 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il push di altre immagini al tuo spazio dei nomi.
 
 **Traffico di pull: **
 
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il pull di alcuna immagine dagli
-spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}
+spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}
 finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'upgrade al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
 di quota per il traffico di pull](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
@@ -174,12 +174,12 @@ dal tuo spazio dei nomi.
 ### Stima dei costi
 {: #registry_estimating_costs}
 
-Utilizza il calcolatore del prezzo {{site.data.keyword.Bluemix_notm}} per stimare il costo del tuo piano.
+Utilizza il calcolatore del prezzo {{site.data.keyword.cloud_notm}} per stimare il costo del tuo piano.
 {:shortdesc}
 
-Puoi dare un prezzo alla tua applicazione utilizzando i calcolatori dei costi forniti da {{site.data.keyword.Bluemix_notm}}.
+Puoi dare un prezzo alla tua applicazione utilizzando i calcolatori dei costi forniti da {{site.data.keyword.cloud_notm}}.
 
-1. Apri il listino prezzi, vedi [Prezzi di {{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/cloud/pricing).
+1. Apri il listino prezzi, vedi [Prezzi di {{site.data.keyword.cloud_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/cloud/pricing).
 2. Nella sezione **Pagamento a consumo**, fai clic su **Stima i tuoi costi con i nostri calcolatori**. Viene aperto il calcolatore.
 3. Scorri fino alla sezione **Registro contenitore** nella sezione **Addebiti contenitore**.
 4. Immetti le tue stime di traffico e archiviazione nei campi forniti.
@@ -190,19 +190,19 @@ I tuoi costi stimati vengono visualizzati nel calcolatore.
 {: #registry_plan_upgrade}
 
 Puoi eseguire l'upgrade del tuo piano di servizio per beneficiare di un utilizzo illimitato di
-archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.Bluemix_notm}}.
+archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Se desideri conoscere qual è il piano dei servizi di cui disponi, esegui il comando `ibmcloud cr plan`.
 
-1. Accedi a {{site.data.keyword.Bluemix_notm}}.
+1. Accedi a {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso alla CLI {{site.data.keyword.Bluemix_notm}}. Immetti il tuo nome utente e usa
+   Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso alla CLI {{site.data.keyword.cloud_notm}}. Immetti il tuo nome utente e usa
 l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
     {:tip}
 
@@ -213,7 +213,7 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
    ```
    {: pre}
 
-   Se hai un account {{site.data.keyword.Bluemix_notm}} Lite, devi eseguire l'upgrade a un account Pagamento a consumo o Sottoscrizione {{site.data.keyword.Bluemix_notm}} prima di eseguire `ibmcloud cr plan-upgrade`.
+   Se hai un account {{site.data.keyword.cloud_notm}} Lite, devi eseguire l'upgrade a un account Pagamento a consumo o Sottoscrizione {{site.data.keyword.cloud_notm}} prima di eseguire `ibmcloud cr plan-upgrade`.
    {:tip}
 
 ## Apprendimento delle nozioni di base
@@ -241,9 +241,9 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 <dl>
   <dt>Spazio dei nomi</dt>
   <dd>Gli spazi dei nomi sono un modo per organizzare i repository delle tue immagini all'interno di {{site.data.keyword.registrylong_notm}}. Lo spazio dei nomi è associato al tuo account
-{{site.data.keyword.Bluemix_notm}}. Quando configuri il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}, lo spazio dei nomi viene aggiunto all'URL del registro nel seguente modo: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+{{site.data.keyword.cloud_notm}}. Quando configuri il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}, lo spazio dei nomi viene aggiunto all'URL del registro nel seguente modo: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Ogni utente nel tuo account {{site.data.keyword.Bluemix_notm}} può visualizzare e gestire le immagini
+  Ogni utente nel tuo account {{site.data.keyword.cloud_notm}} può visualizzare e gestire le immagini
 memorizzate nel tuo spazio dei nomi del registro. Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
 ambienti di produzione e di preparazione.</dd>
 </dl>
@@ -278,7 +278,7 @@ a più tenant che viene ospitato e gestito da IBM. Puoi memorizzare e condivider
 {:shortdesc}
 
 Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
-ambienti di produzione e di preparazione. Se vuoi utilizzare il registro in più regioni {{site.data.keyword.Bluemix_notm}}, devi configurare uno spazio dei nomi per
+ambienti di produzione e di preparazione. Se vuoi utilizzare il registro in più regioni {{site.data.keyword.cloud_notm}}, devi configurare uno spazio dei nomi per
 ogni regione. I nomi degli spazi dei nomi sono univoci nelle regioni. Puoi utilizzare lo stesso nome dello spazio dei nomi per ogni regione, a meno che
 qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale regione.
 
@@ -292,7 +292,7 @@ Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account,
 
 Quando scegli uno spazio dei nomi, considera le seguenti regole:
 
-- Il tuo spazio dei nomi deve essere univoco in una regione {{site.data.keyword.Bluemix_notm}}.
+- Il tuo spazio dei nomi deve essere univoco in una regione {{site.data.keyword.cloud_notm}}.
 - Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
 - Il tuo spazio dei nomi deve iniziare con almeno una lettera o un numero.
 - Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri o caratteri di sottolineatura (_).
@@ -350,7 +350,7 @@ Tutte le risorse del registro sono associate al registro regionale specifico con
 
 Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `ibmcloud cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
 
-Per eseguire il comando con i parametri, sostituisci `<region>` con il nome della regione, ad esempio `eu-central`.
+Per eseguire il comando con i parametri, sostituisci `<region>` con il nome della regione, ad esempio, `eu-central`.
 
 ```
 ibmcloud cr region-set <region>

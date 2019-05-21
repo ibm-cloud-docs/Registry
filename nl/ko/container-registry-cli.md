@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-`container-registry` CLI 플러그인에서 제공되는 {{site.data.keyword.registrylong}} CLI를 사용하여 {{site.data.keyword.Bluemix_notm}} 계정의 레지스트리 및 해당 리소스를 관리할 수 있습니다.
+`container-registry` CLI 플러그인에서 제공되는 {{site.data.keyword.registrylong}} CLI를 사용하여 {{site.data.keyword.cloud_notm}} 계정의 레지스트리 및 해당 리소스를 관리할 수 있습니다.
 {: shortdesc}
 
 **전제조건**
 
-* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. {{site.data.keyword.Bluemix_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
-* 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.Bluemix_notm}}에
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. {{site.data.keyword.cloud_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
+* 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.cloud_notm}}에
 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
 
 명령행에서 `ibmcloud` CLI 및 `container-registry` CLI 플러그인에 대한 업데이트가 사용 가능할 때 알림을 받습니다. 사용 가능한 모든 명령과 플래그를 사용할 수 있도록 CLI를 최신 상태로 유지해야 합니다.
@@ -123,7 +123,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>면제할 보안 문제의 유형입니다. 유효한 문제 유형을 찾으려면 `ibmcloud cr exemption-types`를 실행하십시오.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>면제할 보안 문제의 ID입니다. 문제 ID를 찾으려면 `ibmcloud cr va <image>`를 실행하십시오. 여기서 `<image>`는 이미지의 이름이며, **취약성 ID** 또는 **구성 문제 ID** 열에 있는 값 중 관련된 값을 사용하십시오.
+<dd>면제할 보안 문제의 ID입니다. 문제 ID를 찾으려면 `ibmcloud cr va <image>`(여기서 `<image>`는 이미지의 이름)를 실행하고 **취약성 ID** 또는 **구성 문제 ID** 열에 있는 값 중 관련된 값을 사용하십시오.
 </dd>
 </dl>
 
@@ -310,7 +310,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-{{site.data.keyword.Bluemix_notm}} 계정의 모든 이미지를 표시합니다.
+{{site.data.keyword.cloud_notm}} 계정의 모든 이미지를 표시합니다.
 
 이미지 이름은 `repository:tag` 형식으로 되어 있는 **저장소** 및 **태그** 열의 컨텐츠 조합입니다.
 {:tip}
@@ -467,7 +467,7 @@ ibmcloud cr login
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-네임스페이스의 이름을 선택하여 {{site.data.keyword.Bluemix_notm}} 계정에 추가합니다.
+네임스페이스의 이름을 선택하여 {{site.data.keyword.cloud_notm}} 계정에 추가합니다.
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -481,7 +481,7 @@ ibmcloud cr namespace-add NAMESPACE
 **명령 옵션**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>추가할 네임스페이스입니다. 동일한 지역의 모든 {{site.data.keyword.Bluemix_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈 및 밑줄만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
+<dd>추가할 네임스페이스입니다. 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈 및 밑줄만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
   
 <p>  
 <strong>팁</strong>: 네임스페이스 이름에 개인 정보를 입력하지 마십시오.
@@ -502,7 +502,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-{{site.data.keyword.Bluemix_notm}} 계정이 소유한 모든 네임스페이스를 표시합니다.
+{{site.data.keyword.cloud_notm}} 계정이 소유한 모든 네임스페이스를 표시합니다.
 
 ```
 ibmcloud cr namespace-list
@@ -516,7 +516,7 @@ ibmcloud cr namespace-list
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-{{site.data.keyword.Bluemix_notm}} 계정에서 네임스페이스를 제거합니다. 네임스페이스가 제거되면 이 네임스페이스의 이미지가 삭제됩니다.
+{{site.data.keyword.cloud_notm}} 계정에서 네임스페이스를 제거합니다. 네임스페이스가 제거되면 이 네임스페이스의 이미지가 삭제됩니다.
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -592,7 +592,7 @@ ibmcloud cr plan-upgrade standard
 ## `ibmcloud cr ppa-archive-load`
 {: #bx_cr_ppa_archive_load}
 
-[IBM Passport Advantage Online for customers ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 {{site.data.keyword.IBM_notm}} 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.
+[IBM Passport Advantage Online for customers ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키징된 {{site.data.keyword.IBM_notm}} 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.
 
 컨테이너 이미지가 개인용 {{site.data.keyword.registryshort_notm}} 네임스페이스로 푸시됩니다. Helm 차트는 명령을 실행하는 디렉토리에 작성된 `ppa-import` 디렉토리에 기록됩니다. 선택적으로 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum)를 사용하여 Helm 차트를 호스팅할 수 있습니다.
 
@@ -795,7 +795,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-{{site.data.keyword.Bluemix_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다.
+{{site.data.keyword.cloud_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다.
 
 ```
 ibmcloud cr token-list [--format FORMAT]

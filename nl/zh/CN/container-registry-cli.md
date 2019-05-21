@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-您可以使用在 `container-registry` CLI 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.Bluemix_notm}} 帐户的注册表及其资源。
+您可以使用在 `container-registry` CLI 插件中提供的 {{site.data.keyword.registrylong}} CLI 来管理 {{site.data.keyword.cloud_notm}} 帐户的注册表及其资源。
 {: shortdesc}
 
 **先决条件**
 
-* 安装 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.Bluemix_notm}} CLI 运行命令的前缀为 `ibmcloud`。
-* 在运行注册表命令之前，请使用 `ibmcloud login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成访问令牌并对会话进行认证。
+* 安装 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.cloud_notm}} CLI 运行命令的前缀为 `ibmcloud`。
+* 在运行注册表命令之前，请使用 `ibmcloud login` 命令登录到 {{site.data.keyword.cloud_notm}}，以生成访问令牌并对会话进行认证。
 
 在命令行中，`ibmcloud` CLI 和 `container-registry` CLI 插件更新可用时会通知您。请确保使 CLI 保持最新，以便可以使用所有可用的命令和标志。
 
@@ -122,7 +122,8 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>要豁免的安全问题的类型。要查找有效的问题类型，请运行 `ibmcloud cr exemption-types`。
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>要豁免的安全问题的标识。要查找问题标识，请运行 `ibmcloud cr va <image>`，其中 `<image>` 是映像的名称，并使用 **Vulnerability ID** 或 **Configuration Issue ID** 列中的相关值。</dd>
+<dd>要豁免的安全问题的标识。要找到问题标识，运行`ibmcloud cr va <image>`，其中 `<image>` 是映像的名称，并使用 **Vulnerability ID** 或 **Configuration Issue ID** 列中的相关值。
+</dd>
 </dl>
 
 **示例**
@@ -205,7 +206,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 
 **示例**
 
-针对 `us.icr.io/birds/bluebird` 存储库中的所有映像，为标识为 `CVE-2018-17929` 的 CVE 删除 CVE 豁免。 
+针对 `us.icr.io/birds/bluebird` 存储库中的所有映像，为标识为 `CVE-2018-17929` 的 CVE 删除 CVE 豁免。
 
 ```
 ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird --issue-type cve --issue-id CVE-2018-17929
@@ -306,7 +307,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-显示 {{site.data.keyword.Bluemix_notm}} 帐户中的所有映像。
+显示 {{site.data.keyword.cloud_notm}} 帐户中的所有映像。
 
 映像名称是**存储库**和**标记**列的内容组合，格式为 `repository:tag`。
 {:tip}
@@ -463,7 +464,7 @@ ibmcloud cr login
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-选择名称空间的名称，然后将其添加到 {{site.data.keyword.Bluemix_notm}} 帐户。
+选择名称空间的名称，然后将其添加到 {{site.data.keyword.cloud_notm}} 帐户。
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -477,7 +478,7 @@ ibmcloud cr namespace-add NAMESPACE
 **命令选项**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>要添加的名称空间。名称空间在同一区域的所有 {{site.data.keyword.Bluemix_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符和下划线。名称空间必须以字母或数字开头和结尾。
+<dd>要添加的名称空间。名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符和下划线。名称空间必须以字母或数字开头和结尾。
   
 <p>  
 <strong>提示</strong>：不要将个人信息放入名称空间名称中。
@@ -498,7 +499,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-显示 {{site.data.keyword.Bluemix_notm}} 帐户拥有的所有名称空间。
+显示 {{site.data.keyword.cloud_notm}} 帐户拥有的所有名称空间。
 
 ```
 ibmcloud cr namespace-list
@@ -512,7 +513,7 @@ ibmcloud cr namespace-list
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-从 {{site.data.keyword.Bluemix_notm}} 帐户中除去名称空间。除去名称空间时，将删除此名称空间中的映像。
+从 {{site.data.keyword.cloud_notm}} 帐户中除去名称空间。除去名称空间时，将删除此名称空间中的映像。
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -791,7 +792,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。
+显示 {{site.data.keyword.cloud_notm}} 帐户存在的所有令牌。
 
 ```
 ibmcloud cr token-list [--format FORMAT]

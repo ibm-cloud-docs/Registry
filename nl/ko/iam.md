@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세
 |`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. |관리자 |
 |`container-registry.registrytoken.delete` |[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 하나 이상의 지정된 토큰을 제거합니다. |관리자 |
 |`container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 레지스트리에서 지정된 토큰을 검색합니다. |관리자 |
-|`container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) {{site.data.keyword.Bluemix_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |
+|`container-registry.registrytoken.list` |[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) {{site.data.keyword.cloud_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |
 {: caption="표 2. {{site.data.keyword.registrylong_notm}}를 구성하기 위한 플랫폼 조치 및 오퍼레이션" caption-side="top"}
 
 ## 서비스 액세스 역할
@@ -130,7 +130,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) 특정 이미지에 대한 세부사항을 표시합니다. | 독자, 관리자 |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 컨테이너 이미지를 나열합니다. | 독자, 관리자 |
 | `container-registry.image.pull` | <ul><li>`docker pull` 이미지를 가져옵니다. </li><li>`docker trust inspect` 서명을 검사합니다. </li></ul> | 독자, 작성자, 관리자 |
-| `container-registry.image.push` | <ul><li>`docker push` 이미지를 푸시합니다.</li><li>`docker trust sign` 이미지에 서명합니다.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) [IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키지된 IBM 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.</li></ul> |작성자, 관리자 |
+| `container-registry.image.push` | <ul><li>`docker push` 이미지를 푸시합니다.</li><li>`docker trust sign` 이미지에 서명합니다.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) [IBM Passport Advantage Online for customers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/software/passportadvantage/pao_customer.html)에서 다운로드했으며 Helm과 함께 사용할 수 있도록 패키징된 IBM 소프트웨어를 {{site.data.keyword.registrylong_notm}} 네임스페이스로 가져옵니다.</li></ul> |작성자, 관리자 |
 | `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) 소스 이미지를 참조하는 새 이미지를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다. | 소스 이미지에 대한 독자, 작성자 또는 관리자. 대상 이미지에 대한 작성자 또는 관리자 |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) 이미지의 취약성 평가 보고서를 봅니다. | 독자, 관리자 |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) 네임스페이스를 추가합니다. |작성자, 관리자 |

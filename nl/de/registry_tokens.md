@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -28,10 +28,10 @@ subcollection: registry
 Sie können entweder Registry-Tokens oder einen {{site.data.keyword.iamlong}}-API-Schlüssel (IAM-API-Schlüssel) verwenden, um den Zugriff auf die {{site.data.keyword.registrylong_notm}}-Namensbereiche zu automatisieren, um so Push- und Pull-Operationen für Images auszuführen.
 {:shortdesc}
 
-Versuchen Sie, Ihre Registry-Images in Kubernetes-Implementierungen zu verwenden? Erfahren Sie, wie Sie [auf Images in anderen Kubernetes-Namensbereichen, {{site.data.keyword.Bluemix_notm}}-Regionen und -Konten](/docs/containers?topic=containers-images#other) zugreifen.
+Versuchen Sie, Ihre Registry-Images in Kubernetes-Implementierungen zu verwenden? Erfahren Sie, wie Sie [auf Images in anderen Kubernetes-Namensbereichen, {{site.data.keyword.cloud_notm}}-Regionen und -Konten](/docs/containers?topic=containers-images#other) zugreifen.
 {: tip}
 
-API-Schlüssel sind mit Ihrem Konto verknüpft und können im gesamten {{site.data.keyword.Bluemix_notm}} verwendet werden, sodass Sie nicht für jeden Service unterschiedliche Berechtigungsnachweise benötigen. Sie können den API-Schlüssel in der CLI oder als Teil der Automatisierung zur Anmeldung mit Ihrer Benutzeridentität verwenden.
+API-Schlüssel sind mit Ihrem Konto verknüpft und können im gesamten {{site.data.keyword.cloud_notm}} verwendet werden, sodass Sie nicht für jeden Service unterschiedliche Berechtigungsnachweise benötigen. Sie können den API-Schlüssel in der CLI oder als Teil der Automatisierung zur Anmeldung mit Ihrer Benutzeridentität verwenden.
 
 Registry-Tokens sind ausschließlich für {{site.data.keyword.registrylong_notm}} bereichsorientiert festgelegt. Sie können sie auf Lesezugriff begrenzen und Sie können auswählen, ob ein Ablaufdatum gelten soll.
 
@@ -64,7 +64,7 @@ Sie können API-Schlüssel für Benutzer und API-Schlüssel für Service-IDs ers
 Sie können den Zugriff auf Ihre Namensbereiche in {{site.data.keyword.registrylong_notm}} mithilfe eines API-Schlüssels automatisieren.
 {:shortdesc}
 
-Verwenden Sie den API-Schlüssel für die Anmeldung bei Ihrer Registry, indem Sie den folgenden Docker-Befehl ausführen. Ersetzen Sie `<your_apikey>` durch den API-Schlüssel und `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind.
+Verwenden Sie den API-Schlüssel für die Anmeldung bei Ihrer Registry, indem Sie den folgenden Docker-Befehl ausführen. Ersetzen Sie `<your_apikey>` durch Ihren API-Schlüssel und ersetzen Sie `<registry_url>` durch die URL der Registry, in der Ihre Namensbereiche eingerichtet sind.
 
 - Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Norden)': `jp.icr.io`
 - Verwenden Sie für Namensbereiche in der Region 'Asien-Pazifik (Süden)': `au.icr.io`
@@ -77,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.Bluemix_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
+Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.cloud_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ## Zugriff auf eigene Namensbereiche durch Tokens automatisieren (veraltet)
 {: #registry_tokens}
@@ -88,19 +88,19 @@ Durch die Verwendung von Tokens können Sie Push- und Pull-Operationen für Dock
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
 
-Jeder Benutzer, der über ein Registry-Token verfügt, kann auf auf geschützte Informationen zugreifen. Wenn Sie möchten, dass Benutzer außerhalb Ihres Kontos auf alle Ihre Namensbereiche zugreifen können, die Sie in einer Region eingerichtet haben, können Sie ein Token für Ihr {{site.data.keyword.Bluemix_notm}}-Konto erstellen. Jeder Benutzer bzw. jede App, der/die über dieses Token verfügt, kann Images per Push-Operation in Ihre Namensbereiche übertragen und Images per Pull-Operation aus Ihren Namensbereichen abrufen, ohne dass das `container-registry`-CLI-Plug-in installiert werden muss.
+Jeder Benutzer, der über ein Registry-Token verfügt, kann auf auf geschützte Informationen zugreifen. Wenn Sie möchten, dass Benutzer außerhalb Ihres Kontos auf alle Ihre Namensbereiche zugreifen können, die Sie in einer Region eingerichtet haben, können Sie ein Token für Ihr {{site.data.keyword.cloud_notm}}-Konto erstellen. Jeder Benutzer bzw. jede App, der/die über dieses Token verfügt, kann Images per Push-Operation in Ihre Namensbereiche übertragen und Images per Pull-Operation aus Ihren Namensbereichen abrufen, ohne dass das `container-registry`-CLI-Plug-in installiert werden muss.
 
-Wenn Sie ein Token für Ihr {{site.data.keyword.Bluemix_notm}}-Konto erstellen, können Sie entscheiden, ob das Token zum Lesezugriff (Pull-Operation) oder zum Schreibzugriff (Push- und Pull-Operation) auf die Registry berechtigen soll. Außerdem können Sie angeben, ob das Token permanent gültig sein oder nach 24 Stunden ablaufen soll. Sie können mehrere Tokens erstellen und verwenden, um unterschiedliche Zugriffstypen zu steuern.
+Wenn Sie ein Token für Ihr {{site.data.keyword.cloud_notm}}-Konto erstellen, können Sie entscheiden, ob das Token zum Lesezugriff (Pull-Operation) oder zum Schreibzugriff (Push- und Pull-Operation) auf die Registry berechtigen soll. Außerdem können Sie angeben, ob das Token permanent gültig sein oder nach 24 Stunden ablaufen soll. Sie können mehrere Tokens erstellen und verwenden, um unterschiedliche Zugriffstypen zu steuern.
 
 Wenn Sie sich mithilfe eines Registry-Tokens bei {{site.data.keyword.registrylong_notm}} anmelden, werden Ihre IAM-Zugriffsrichtlinien nicht umgesetzt. Wenn Sie den Zugriff auf einen oder mehrere Namensbereiche für eine ID beschränken möchten, die bei der Automatisierung verwendet wird, sollten Sie die Verwendung eines API-Schlüssels der IAM-Service-ID anstelle eines Registry-Tokens in Betracht ziehen. Weitere Informationen zum Erstellen eines API-Schlüssels und zum Verwenden des Schlüssels mit {{site.data.keyword.registrylong_notm}} finden Sie unter [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 
 Mit den folgenden Tasks können Sie Ihre Tokens verwalten:
 
-- [Token für das {{site.data.keyword.Bluemix_notm}}-Konto erstellen](#registry_tokens_create)
+- [Token für das {{site.data.keyword.cloud_notm}}-Konto erstellen](#registry_tokens_create)
 - [Zugriff auf Namensbereiche mit einem Token automatisieren](#registry_tokens_use)
-- [Token vom {{site.data.keyword.Bluemix_notm}}-Konto entfernen](#registry_tokens_remove)
+- [Token vom {{site.data.keyword.cloud_notm}}-Konto entfernen](#registry_tokens_remove)
 
-### Token für {{site.data.keyword.Bluemix_notm}}-Konto erstellen (veraltet)
+### Token für {{site.data.keyword.cloud_notm}}-Konto erstellen (veraltet)
 {: #registry_tokens_create}
 
 Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche in einer Region zu erteilen.
@@ -161,14 +161,14 @@ Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. Listen Sie alle Tokens in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie verwenden möchten.
+2. Listen Sie alle Tokens in Ihrem {{site.data.keyword.cloud_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie verwenden möchten.
 
    ```
    ibmcloud cr token-list
@@ -202,7 +202,7 @@ Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen fü
 
    Nachdem Sie sich unter Verwendung des Tokens bei Docker angemeldet haben, können Sie Push- oder Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
 
-### Token aus einem {{site.data.keyword.Bluemix_notm}}-Konto entfernen (veraltet)
+### Token aus einem {{site.data.keyword.cloud_notm}}-Konto entfernen (veraltet)
 {: #registry_tokens_remove}
 
 Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nicht mehr benötigen.
@@ -211,17 +211,17 @@ Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nic
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
 
-Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.Bluemix_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
+Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.cloud_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
 {:tip}
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. Listen Sie alle Tokens in Ihrem {{site.data.keyword.Bluemix_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie entfernen möchten.
+2. Listen Sie alle Tokens in Ihrem {{site.data.keyword.cloud_notm}}-Konto auf und merken Sie sich die ID des Tokens, das Sie entfernen möchten.
 
    ```
    ibmcloud cr token-list

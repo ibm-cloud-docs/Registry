@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
 | `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. | Amministratore |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Rimuovi uno o più token specificati. | Amministratore |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Richiama il token specificato dal registro. | Amministratore |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.Bluemix_notm}}. | Amministratore |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.cloud_notm}}. | Amministratore |
 {: caption="Tabella 2. Operazioni e azioni della piattaforma per la configurazione di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Ruoli di accesso al servizio

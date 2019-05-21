@@ -76,7 +76,7 @@ Nesta seção, você inclui um segundo usuário em sua conta e concede a eles a 
 
 2. Prove que o Usuário B pode ter como destino a conta do Usuário A, mas ainda não pode fazer nada com o {{site.data.keyword.registrylong_notm}}:
 
-    1. Efetue login como o Usuário B e execute o comando a seguir para ter como destino a conta do Usuário A, em que _`<YourAccountID>`_ é o ID da conta do Usuário A:
+    1. Efetue login como o Usuário B e execute o comando a seguir para ter a conta do Usuário A como o destino, em que _`<YourAccountID>`_ é o ID da conta do Usuário A:
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -149,7 +149,7 @@ Nesta seção, você inclui um segundo usuário em sua conta e concede a eles a 
         ```
         {: pre}
   
-    3. Exclua a política executando o comando a seguir, em que _`<Policy_ID>`_ é seu ID de Política:
+    3. Exclua a política executando o comando a seguir, em que _`<Policy_ID>`_ é o seu ID de Política:
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -224,8 +224,7 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
 
         Os três namespaces que você criou neste tutorial (`namespace_a`, `namespace_b` e `namespace_c`) são exibidos. Se você não vir esses namespaces, volte e siga as instruções para criá-los novamente.
 
-    3. Crie uma política que conceda a função de Leitor em `namespace_b` para o Usuário B executando o comando a seguir, em que _ `<Region>`_ é o nome de sua
-[região](/docs/services/Registry?topic=registry-registry_overview#registry_regions), por exemplo, `us-south`:
+    3. Crie uma política que conceda a função de Leitor em `namespace_b` para o Usuário B, executando o comando a seguir, em que _`<Region>`_ é o nome de sua [região](/docs/services/Registry?topic=registry-registry_overview#registry_regions), por exemplo, `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
@@ -427,7 +426,7 @@ Nesta seção, você configura um ID de serviço e concede a ele acesso ao names
         ```
         {: pre}
 
-2. Use o Docker para efetuar login com a chave de API do ID de serviço, em que _`<API_Key>`_ é sua chave API e interage com o registro:
+2. Use o Docker para efetuar login com a chave de API do ID de serviço, em que _`<API_Key>`_ é a chave de API, e interaja com o registro:
 
     1. Efetue login no {{site.data.keyword.registrylong_notm}} executando o comando a seguir:
 

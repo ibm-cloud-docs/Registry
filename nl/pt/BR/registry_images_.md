@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -115,7 +115,7 @@ para o cluster no {{site.data.keyword.containerlong_notm}}.
 compartilhar a imagem com usuários em ambas as regiões.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copie uma imagem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.Bluemix_notm}}."/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copie uma imagem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.cloud_notm}}."/>
 
 **Antes de iniciar**
 
@@ -162,7 +162,7 @@ Para criar uma nova imagem de uma imagem de origem, conclua as etapas a seguir:
    ```
    {: pre}
 
-2. Execute o comando a seguir para incluir a nova referência, em que `SOURCE_IMAGE` é o nome de sua imagem de origem e `TARGET_IMAGE` é o nome de sua imagem de destino. As imagens de origem e de destino devem estar na mesma região. `SOURCE_IMAGE` e `TARGET_IMAGE` devem estar no formato `<REPOSITORY>:<TAG>`, por exemplo:  ` us.icr.io/namespace/image:latest `
+2. Execute o comando a seguir para incluir a nova referência, em que `SOURCE_IMAGE` é o nome de sua imagem de origem e `TARGET_IMAGE` é o nome de sua imagem de destino. As imagens de origem e de destino devem estar na mesma região. `SOURCE_IMAGE` e `TARGET_IMAGE` devem estar no formato `<REPOSITORY>:<TAG>`, por exemplo: `us.icr.io/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -179,7 +179,7 @@ Para criar uma nova imagem de uma imagem de origem, conclua as etapas a seguir:
 ## Construindo imagens do Docker para usá-las com seu namespace
 {: #registry_images_creating}
 
-É possível construir uma imagem Docker diretamente no {{site.data.keyword.Bluemix_notm}} ou criar uma imagem Docker
+É possível construir uma imagem Docker diretamente no {{site.data.keyword.cloud_notm}} ou criar uma imagem Docker
 própria no computador local e transferi-la por upload (enviar por push) para o namespace no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
@@ -198,7 +198,7 @@ de um Dockerfile, que é um arquivo que contém instruções para construir a im
 referenciar os artefatos de construção em suas instruções que são armazenadas separadamente, como um app, a configuração
 do app e suas dependências.
 
-Se você deseja aproveitar os recursos de cálculo do {{site.data.keyword.Bluemix_notm}} e a conexão de Internet ou o Docker não está instalado em sua estação de trabalho, construa sua imagem diretamente no {{site.data.keyword.Bluemix_notm}}. Se você precisa acessar recursos em sua construção que estão em servidores sob seu firewall, construa sua imagem localmente.
+Se você deseja aproveitar os recursos de cálculo do {{site.data.keyword.cloud_notm}} e a conexão de Internet ou o Docker não está instalado em sua estação de trabalho, construa sua imagem diretamente no {{site.data.keyword.cloud_notm}}. Se você precisa acessar recursos em sua construção que estão em servidores sob seu firewall, construa sua imagem localmente.
 
 Para construir sua própria imagem do Docker, conclua as etapas a seguir:
 
@@ -211,7 +211,7 @@ Para construir sua própria imagem do Docker, conclua as etapas a seguir:
         ```
         {: pre}
 
-    2. Use um editor de texto para abrir o Dockerfile. Deve-se incluir, no mínimo, a imagem base para construir a imagem. Substitua `<source_image>`  e  `<tag>` pelo repositório de imagem e pela tag que você deseja usar. Se estiver usando uma imagem de outro registro privado, defina o caminho completo para a imagem no {{site.data.keyword.registrylong_notm}}.
+    2. Use um editor de texto para abrir o Dockerfile. Deve-se incluir, no mínimo, a imagem base para construir a imagem. Substitua `<source_image>` e `<tag>` pelo repositório de imagem e pela tag que você deseja usar. Se estiver usando uma imagem de outro registro privado, defina o caminho completo para a imagem no {{site.data.keyword.registrylong_notm}}.
 
        ```
        FROM <source_image>:<tag>
@@ -237,28 +237,23 @@ Para construir sua própria imagem do Docker, conclua as etapas a seguir:
    ```
    {: pre}
 
-   em que `<my_namespace>` são as informações do namespace, `<repo_name>` é o nome de seu repositório e `<tag>` é a versão que você deseja usar para a sua imagem. Para localizar seu namespace, execute o comando `ibmcloud cr namespace-list`.
+   em que `<my_namespace>` são as informações do seu namespace, `<repo_name>` é o nome do seu repositório e `<tag>` é a versão que você deseja usar para a sua imagem. Para localizar seu namespace, execute o comando `ibmcloud cr namespace-list`.
 
-4. Anote o caminho para o diretório que contém o Dockerfile. Se você executar os comandos nas etapas a seguir enquanto seu
-diretório ativo estiver configurado para o local em que o contexto de compilação está armazenado, será possível substituir `<directory>`
-por um ponto (.).
-5. Escolha construir a imagem diretamente no {{site.data.keyword.Bluemix_notm}} ou construir e testar a imagem localmente
-antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}.
-   - Para construir a imagem diretamente no {{site.data.keyword.Bluemix_notm}}, execute o comando a seguir:
+4. Anote o caminho para o diretório que contém o Dockerfile. Se você executar os comandos nas etapas a seguir enquanto seu diretório ativo estiver configurado como o local no qual seu contexto de compilação está armazenado, será possível substituir `<directory>` por um ponto-final (.).
+5. Escolha construir a imagem diretamente no {{site.data.keyword.cloud_notm}} ou construir e testar a imagem localmente
+antes de enviá-la por push para o {{site.data.keyword.cloud_notm}}.
+   - Para construir a imagem diretamente no {{site.data.keyword.cloud_notm}}, execute o comando a seguir:
 
      ```
      ibmcloud cr build -t <image_name> <directory>
      ```
      {: pre}
 
-     em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório. Se você
-executar o comando quando seu diretório ativo estiver configurado para o local em que seu contexto de compilação está
-armazenado, será possível substituir `<directory>`
-por um ponto (.).
+     em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório. Se você executar o comando quando seu diretório ativo estiver configurado como o local no qual seu contexto de compilação está armazenado, será possível substituir `<directory>` por um ponto-final (.).
   
      Para obter mais informações sobre o comando `ibmcloud cr build`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
-   - Para construir e testar sua imagem localmente antes de enviá-la por push para o {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
+   - Para construir e testar sua imagem localmente antes de enviá-la por push para o {{site.data.keyword.cloud_notm}}, conclua as etapas a seguir:
       1. Construa a imagem do Dockerfile no computador local e identifique-a com o nome da imagem.
 
          ```
@@ -266,7 +261,7 @@ por um ponto (.).
          ```
          {: pre}
 
-         em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório.
+         em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório. 
 
       2. Opcional: teste a imagem no computador local antes de enviá-la por push para o namespace.
 
@@ -281,7 +276,21 @@ por um ponto (.).
 
 Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, veja [Gerenciando a segurança de imagens com o Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
-## Excluindo imagens de seu repositório privado do  {{site.data.keyword.Bluemix_notm}}
+## Enviando imagens por push para o {{site.data.keyword.registrylong_notm}} usando uma chave de API
+{: #registry_api_key_push_image}
+
+Crie um ID de serviço que use uma chave de API para enviar imagens por push para o {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
+
+1. Crie um ID de serviço. Consulte [Criando e trabalhando com IDs de serviço](/docs/iam?topic=iam-serviceids#serviceids).
+2. Crie uma política que forneça a permissão de ID de serviço para acessar o registro, por exemplo, as funções `Administrator` e `Manager`. Consulte [Gerenciando o acesso de usuário com o Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
+3. Crie uma chave de API. Consulte [Criando uma chave de API para um ID de serviço](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+4. Use a chave de API para efetuar login no registro, a fim de que seja possível enviar imagens por push para o registro. Consulte [Usando uma chave de API para automatizar o acesso](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use).
+5. Envie suas imagens por push. Consulte [Enviando imagens por push do Docker para seu namespace](#registry_images_pushing_namespace).
+
+Agora é possível usar clusters para fazer pull das imagens. Consulte [Construindo contêineres por meio de imagens](/docs/containers?topic=containers-images#other_registry_accounts).
+
+## Excluindo imagens de seu repositório privado do  {{site.data.keyword.cloud_notm}}
 {: #registry_images_remove}
 
 É possível excluir imagens indesejadas de seu repositório privado usando a interface gráfica com o usuário (GUI) ou a CLI.
@@ -289,12 +298,12 @@ Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, vej
 
 Se desejar excluir um repositório privado e suas imagens associadas, consulte [Excluindo um repositório privado e quaisquer imagens associadas](#registry_repo_remove).
 
-As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas do seu repositório privado do {{site.data.keyword.Bluemix_notm}} e não são contabilizadas para sua cota.
+As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas do seu repositório privado do {{site.data.keyword.cloud_notm}} e não são contabilizadas para sua cota.
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
 {:tip}
 
-### Excluindo imagens de seu repositório privado do {{site.data.keyword.Bluemix_notm}} usando a CLI
+### Excluindo imagens de seu repositório privado do {{site.data.keyword.cloud_notm}} usando a CLI
 {: #registry_images_remove_cli}
 
 É possível excluir imagens indesejadas de seu repositório privado usando a CLI.
@@ -305,7 +314,7 @@ A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que 
 
 Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}} executando o comando `ibmcloud login`.
+1. Efetue login no {{site.data.keyword.cloud_notm}} executando o comando `ibmcloud login`.
 2. Para excluir uma imagem, execute o comando a seguir:
 
    ```
@@ -315,7 +324,7 @@ Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
 
    Em que _IMAGE_ é o nome da imagem que você deseja remover, no formato `repository:tag`.
 
-   Se uma tag não for especificada no nome da imagem, a imagem identificada por último (`latest`) será excluída, por padrão. É possível excluir múltiplas imagens listando cada caminho de registro privado do {{site.data.keyword.Bluemix_notm}} no comando com um espaço entre cada caminho.
+   Se uma tag não for especificada no nome da imagem, a imagem identificada por último (`latest`) será excluída, por padrão. É possível excluir múltiplas imagens listando cada caminho de registro privado do {{site.data.keyword.cloud_notm}} no comando com um espaço entre cada caminho.
 
    Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas Repositório e Tag para criar o nome da imagem no formato `repository:tag`.
    {:tip}
@@ -327,7 +336,7 @@ Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
    ```
    {: pre}
 
-### Excluindo imagens de seu repositório privado do {{site.data.keyword.Bluemix_notm}} usando a GUI
+### Excluindo imagens de seu repositório privado do {{site.data.keyword.cloud_notm}} usando a GUI
 {: #registry_images_remove_gui}
 
 É possível excluir imagens indesejadas de seu repositório de imagem privada usando a interface gráfica com o usuário (GUI).
@@ -341,7 +350,7 @@ Para excluir uma imagem usando a GUI, conclua as etapas a seguir:
 1. Efetue login no console do {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login))
 com o seu IBMid.
-2. Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
+2. Se você tiver múltiplas contas do {{site.data.keyword.cloud_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
 3. Clique em **Catálogo**.
 4. Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.
 5. Clique em **Imagens**. Uma lista de suas imagens é exibida.
@@ -370,7 +379,7 @@ Para excluir um repositório privado usando a GUI, conclua as etapas a seguir:
 1. Efetue login no console do {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login
 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login))
 com o seu IBMid.
-2. Se você tiver múltiplas contas do {{site.data.keyword.Bluemix_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
+2. Se você tiver múltiplas contas do {{site.data.keyword.cloud_notm}}, selecione a conta e região que você deseja usar por meio do menu de conta.
 3. Clique em **Catálogo**.
 4. Selecione a categoria **Contêineres** e clique no tile **Registro de contêiner**.
 5. Clique em **Repositórios**. Uma lista de seus repositórios privados é exibida.

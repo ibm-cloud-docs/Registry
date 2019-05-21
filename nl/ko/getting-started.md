@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,10 +25,10 @@ subcollection: registry
 # 시작하기 튜토리얼
 {: #getting-started}
 
-{{site.data.keyword.registrylong}}에서는 Docker 이미지를 저장하고 {{site.data.keyword.Bluemix_notm}} 계정의 사용자들과 공유하기 위해 사용할 수 있는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다.
+{{site.data.keyword.registrylong}}에서는 Docker 이미지를 저장하고 {{site.data.keyword.cloud_notm}} 계정의 사용자들과 공유하기 위해 사용할 수 있는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다.
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} 콘솔에는 간략한 빠른 시작이 포함되어 있습니다. {{site.data.keyword.Bluemix_notm}} 콘솔 사용 방법에 대해 자세히 알아보려면 [Vulnerability Advisor를 사용하여 이미지 보안 관리](/docs/services/va?topic=va-va_index)를 참조하십시오.
+{{site.data.keyword.cloud_notm}} 콘솔에는 간략한 빠른 시작이 포함되어 있습니다. {{site.data.keyword.cloud_notm}} 콘솔 사용 방법에 대해 자세히 알아보려면 [Vulnerability Advisor를 사용하여 이미지 보안 관리](/docs/services/va?topic=va-va_index)를 참조하십시오.
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {: important}
@@ -36,12 +36,12 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}} CLI 설치
 {: #gs_registry_cli_install}
 
-1. {{site.data.keyword.Bluemix_notm}} `ibmcloud` 명령을 실행할 수 있도록 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. 이를 설치하면 {{site.data.keyword.containerlong_notm}} 및 {{site.data.keyword.registrylong_notm}}용 CLI 플러그인도 설치됩니다.
+1. {{site.data.keyword.cloud_notm}} `ibmcloud` 명령을 실행할 수 있도록 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. 이를 설치하면 {{site.data.keyword.containerlong_notm}} 및 {{site.data.keyword.registrylong_notm}}용 CLI 플러그인도 설치됩니다.
 
 ## 네임스페이스 설정
 {: #gs_registry_namespace_add}
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
    ```
    ibmcloud login
@@ -88,7 +88,7 @@ subcollection: registry
    ```
    {: pre}
 
-3. 이미지에 태그를 지정하십시오. `<source_image>`는 저장소로 대체하고 `<tag>`는 이전에 가져온 로컬 이미지의 태그로 대체하십시오. `<region>`은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)의 이름으로 대체하십시오. `<my_namespace>`를 [네임스페이스 설정](/docs/services/Registry?topic=registry-index#registry_namespace_add)에서 작성한 네임스페이스로 대체하십시오. `<new_image_repo>`와 `<new_tag>`를 대체하여 네임스페이스에서 사용하려는 이미지의 저장소와 태그를 정의하십시오.
+3. 이미지에 태그를 지정하십시오. `<source_image>`는 저장소로 대체하고 `<tag>`는 이전에 가져온 로컬 이미지의 태그로 대체하십시오. `<region>`은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)의 이름으로 대체하십시오. `<my_namespace>`를 [네임스페이스 설정](#gs_registry_namespace_add)에서 작성한 네임스페이스로 대체하십시오. `<new_image_repo>`와 `<new_tag>`를 대체하여 네임스페이스에서 사용하려는 이미지의 저장소와 태그를 정의하십시오.
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
@@ -112,7 +112,7 @@ subcollection: registry
    ```
    {: pre}
 
-2. 네임스페이스에 이미지를 업로드(_푸시_)하십시오. `<my_namespace>`를 [네임스페이스 설정](/docs/services/Registry?topic=registry-index#registry_namespace_add)에서 작성한 네임스페이스로 대체하고 `<image_repo>`와 `<tag>`를 이미지 태그 지정 시 선택한 이미지의 저장소와 태그로 대체하십시오.
+2. 네임스페이스에 이미지를 업로드(_푸시_)하십시오. `<my_namespace>`를 [네임스페이스 설정](#gs_registry_namespace_add)에서 작성한 네임스페이스로 대체하고 `<image_repo>`와 `<tag>`를 이미지 태그 지정 시 선택한 이미지의 저장소와 태그로 대체하십시오.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>

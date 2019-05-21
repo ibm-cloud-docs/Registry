@@ -175,7 +175,7 @@ subcollection: registry
         ```
         {: pre}
 
-        名前空間の名前は、領域内で固有でなければなりません。
+        名前空間の名前は、地域内で固有でなければなりません。
         {: tip}
 
     3. 次のコマンドを実行して、別の名前空間 `namespace_c` を作成します。
@@ -221,7 +221,7 @@ subcollection: registry
 
         このチュートリアルで作成した 3 つの名前空間 (`namespace_a`、`namespace_b`、`namespace_c`) が表示されます。 これらの名前空間が表示されない場合は、戻って指示に従い、再度作成します。
 
-    3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与する、ポリシーを作成します。_`<Region>`_ は、`us-south` などの[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前です。
+    3. 次のコマンドを実行して、`namespace_b` に関するリーダーの役割を User B に付与する、ポリシーを作成します。_`<Region>`_ は、`us-south` などの[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前です。
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader

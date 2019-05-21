@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -25,12 +25,11 @@ subcollection: registry
 # {{site.data.keyword.cloudaccesstrailshort}} イベント
 {: #at_events}
 
-{{site.data.keyword.cloudaccesstrailfull}} サービスを使用して、ユーザーおよびアプリケーションが {{site.data.keyword.Bluemix}} の {{site.data.keyword.registrylong}} サービスとどのような対話を実行したのかを追跡できます。
+{{site.data.keyword.cloudaccesstrailfull}} サービスを使用して、ユーザーおよびアプリケーションが {{site.data.keyword.cloud}} の {{site.data.keyword.registrylong}} サービスと行った対話を追跡できます。
 {:shortdesc}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} サービスは、{{site.data.keyword.Bluemix_notm}} のサービスの状態を変更するアクティビティーをユーザーが開始すると、そのアクティビティーを記録します。
-詳細については、[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)を参照してください。
-
+{{site.data.keyword.cloudaccesstrailfull_notm}} サービスは、{{site.data.keyword.cloud_notm}} のサービスの状態を変更するアクティビティーをユーザーが開始すると、そのアクティビティーを記録します。
+詳細については、[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)を参照してください。
 
 次の表に、呼び出されるとイベントを生成する API メソッドをリストします。
 
@@ -129,6 +128,6 @@ subcollection: registry
 ## イベントを探す場所
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} イベントは、イベントが生成された {{site.data.keyword.Bluemix_notm}} 地域 (`ap-north` を除く) に存在する {{site.data.keyword.cloudaccesstrailshort}} **アカウント・ドメイン**で確認できます。`ap-north` でのイベントは `ap-south` 内に表示されます。
+{{site.data.keyword.cloudaccesstrailshort}} イベントは、イベントが生成される {{site.data.keyword.cloud_notm}} 地域 (`ap-north` 以外) で利用できる {{site.data.keyword.cloudaccesstrailshort}} **アカウント・ドメイン**で使用できます。`ap-north` でのイベントは `ap-south` 内に表示されます。
 
 {{site.data.keyword.registrylong_notm}} または脆弱性アドバイザーのイベントを確認できる[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)は、リソース (イメージや名前空間など) が存在する {{site.data.keyword.registrylong_notm}} の地域に対応します。

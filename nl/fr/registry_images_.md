@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -28,8 +28,7 @@ subcollection: registry
 Vous pouvez stocker et partager de manière sécurisée des images Docker avec d'autres utilisateurs en ajoutant ces images à votre espace de nom dans {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
-Chaque image que vous voulez ajouter à votre espace de nom doit d'abord exister sur votre ordinateur local. Vous pouvez télécharger une image sur votre ordinateur local (par commande pull) depuis un autre référentiel ou générer votre propre image depuis un fichier Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger
-(par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
+Chaque image que vous voulez ajouter à votre espace de nom doit d'abord exister sur votre ordinateur local. Vous pouvez télécharger une image sur votre ordinateur local (par commande pull) depuis un autre référentiel ou générer votre propre image depuis un fichier Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger (par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
@@ -95,8 +94,7 @@ Pour télécharger (par push) une image, procédez comme suit :
 Après avoir envoyé à {{site.data.keyword.registrylong_notm}} l'image par commande push, vous pouvez effectuer l'une des tâches suivantes :
 
 - [Gérer la sécurité avec Vulnerability Advisor](/docs/services/va?topic=va-va_index) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
-- [Créer un
-cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+- [Créer un cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Copie d'images entre registres
 {: #registry_images_copying}
@@ -104,7 +102,7 @@ cluster et utiliser cette image pour déployer un conteneur](/docs/containers?to
 Vous pouvez extraire une image depuis un registre dans une région donnée, puis la transférer par commande push vers une autre région afin de pouvoir partager l'image avec les utilisateurs dans les deux régions.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copier une image d'un registre privé ou public vers votre registre {{site.data.keyword.Bluemix_notm}} privé."/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copier une image depuis un registre privé ou public dans votre registre privé {{site.data.keyword.cloud_notm}}."/>
 
 **Avant de commencer**
 
@@ -122,8 +120,7 @@ Pour copier une image entre deux registres, procédez comme suit :
 Après avoir copié votre image, vous pouvez effectuer l'une des tâches suivantes :
 
 - [Gérer la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index) pour rechercher des informations sur les vulnérabilités et les problèmes de sécurité potentiels.
-- [Créer un
-cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
+- [Créer un cluster et utiliser cette image pour déployer un conteneur](/docs/containers?topic=containers-getting-started#getting-started) sur le cluster dans {{site.data.keyword.containerlong_notm}}.
 
 ## Création de nouvelles images qui font référence à une image source
 {: #registry_images_source}
@@ -166,7 +163,7 @@ Pour créer une nouvelle image à partir d'une image source, procédez comme sui
 ## Génération d'images Docker pour les utiliser avec votre espace de nom
 {: #registry_images_creating}
 
-Vous pouvez générer une image Docker directement dans {{site.data.keyword.Bluemix_notm}} ou créer votre propre image Docker sur votre ordinateur local et la télécharger (par commande push) dans votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
+Vous pouvez générer une image Docker directement dans {{site.data.keyword.cloud_notm}} ou créer votre propre image Docker sur votre ordinateur local et la télécharger (par commande push) dans votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 **Avant de commencer**
@@ -177,11 +174,9 @@ Vous pouvez générer une image Docker directement dans {{site.data.keyword.Blue
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
-Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un
-Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses
-instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances.
+Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances.
 
-Si vous voulez tirer profit des ressources de calcul d'{{site.data.keyword.Bluemix_notm}} ou d'une connexion internet ou si Docker n'est pas installé sur votre poste de travail, générez votre image directement sous {{site.data.keyword.Bluemix_notm}}. Si vous avez besoin d'accéder aux ressources de votre génération figurant sur des serveurs en dehors de votre pare-feu, générez votre image localement.
+Si vous voulez tirer profit des ressources de calcul d'{{site.data.keyword.cloud_notm}} ou d'une connexion internet ou si Docker n'est pas installé sur votre poste de travail, générez votre image directement sous {{site.data.keyword.cloud_notm}}. Si vous avez besoin d'accéder aux ressources de votre génération figurant sur des serveurs en dehors de votre pare-feu, générez votre image localement.
 
 Pour générer votre propre image Docker, procédez comme suit :
 
@@ -224,20 +219,20 @@ Pour générer votre propre image Docker, procédez comme suit :
 
 4. Prenez note du chemin d'accès au répertoire qui contient votre fichier Dockerfile. Si vous exécutez les commandes des procédures suivantes alors que votre répertoire de travail est défini sur l'emplacement où est stocké votre contexte de génération, vous pensez remplacer `<directory>` par un point (.).
 5. Vous pouvez générer directement votre image dans
-{{site.data.keyword.Bluemix_notm}} ou la générer et la tester localement avant de la transférer à
-{{site.data.keyword.Bluemix_notm}}.
-   - Pour générer l'image dans {{site.data.keyword.Bluemix_notm}}, exécutez la commande suivante :
+{{site.data.keyword.cloud_notm}} ou la générer et la tester localement avant de la transférer à
+{{site.data.keyword.cloud_notm}}.
+   - Pour générer l'image dans {{site.data.keyword.cloud_notm}}, exécutez la commande suivante :
 
      ```
      ibmcloud cr build -t <image_name> <directory>
      ```
      {: pre}
 
-     Où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire. Si vous exécutez la commande alors que votre répertoire de travail est défini sur l'emplacement où est stocké votre contexte de génération, vous pensez remplacer `<directory>` par un point (.).
+     où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire. Si vous exécutez la commande alors que votre répertoire de travail est défini sur l'emplacement où est stocké votre contexte de génération, vous pensez remplacer `<directory>` par un point (.).
   
      Pour plus d'informations sur la commande `ibmcloud cr build`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
-   - Pour générer et tester votre image localement avant de la transférer par push à {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
+   - Pour générer et tester votre image localement avant de la transférer par push à {{site.data.keyword.cloud_notm}}, procédez comme suit :
       1. Générez l'image depuis votre fichier Dockerfile sur votre ordinateur local et étiquetez-la avec votre nom d'image.
 
          ```
@@ -245,7 +240,7 @@ Pour générer votre propre image Docker, procédez comme suit :
          ```
          {: pre}
 
-         Où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire.
+         où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire. 
 
       2. Facultatif : testez votre image sur votre ordinateur local avant de la transférer par commande push vers votre espace de nom.
 
@@ -256,13 +251,25 @@ Pour générer votre propre image Docker, procédez comme suit :
 
          Remplacez `<image_name>` par le nom de votre image.
 
-      3. Après avoir créé votre image et l'avoir étiquetée
-pour votre espace de nom, [vous pouvez l'envoyer
-par commande push dans {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
+      3. Après avoir créé votre image et l'avoir étiquetée pour votre espace de nom, [vous pouvez l'envoyer par commande push dans {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
-## Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé
+## Envoi par commande push d'images à {{site.data.keyword.registrylong_notm}} en utilisant une clé d'API
+{: #registry_api_key_push_image}
+
+Créez un ID de service qui utilise une clé d'API pour envoyer des images par commande push à {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
+
+1. Créez un ID de service. Voir [Création et gestion des ID de service](/docs/iam?topic=iam-serviceids#serviceids).
+2. Créez une règle donnant à l'ID de service le droit d'accéder au registre, par exemple les rôles `Administrator` et `Manager`. Voir [Gestion des accès utilisateur à l'aide d'Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
+3. Créez une clé d'API. Voir [Création d'une clé d'API pour un ID de service](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
+4. Utilisez la clé d'API pour la connexion au registre afin de pouvoir envoyer par commande push des images au registre. Voir [Utilisation d'une clé d'API pour automatiser l'accès](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use).
+5. Envoyez vos images par commande push. Voir [Envoi par commande push d'images Docker à votre espace de nom](#registry_images_pushing_namespace).
+
+Vous pouvez à présent utiliser des clusters pour extraire les images. Voir [Génération de conteneurs à partir d'images](/docs/containers?topic=containers-images#other_registry_accounts).
+
+## Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé
 {: #registry_images_remove}
 
 Vous pouvez supprimer des images non désirées de votre référentiel privé en utilisant l'interface graphique ou l'interface de ligne de commande.
@@ -270,12 +277,12 @@ Vous pouvez supprimer des images non désirées de votre référentiel privé en
 
 Si vous souhaitez supprimer un référentiel privé et les pages qui lui sont associées, voir [Suppression d'un référentiel privé et des pages qui lui sont associées](#registry_repo_remove).
 
-Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.Bluemix_notm}} privé, et elles ne sont pas décomptées de votre quota.
+Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.cloud_notm}} privé, et elles ne sont pas décomptées de votre quota.
 
 La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
 {:tip}
 
-### Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé à l'aide de l'interface de ligne de commande
+### Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé à l'aide de l'interface de ligne de commande
 {: #registry_images_remove_cli}
 
 Vous pouvez supprimer des images non désirées de votre référentiel privé en utilisant l'interface de ligne de commande.
@@ -286,7 +293,7 @@ La suppression d'une image est irréversible. La suppression d'une image qui est
 
 Pour supprimer une image à l'aide de l'interface de ligne de commande, procédez comme suit :
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}} en exécutant la commande `ibmcloud login`.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}} en exécutant la commande `ibmcloud login`.
 2. Pour supprimer une image, exécutez la commande suivante :
 
    ```
@@ -296,7 +303,7 @@ Pour supprimer une image à l'aide de l'interface de ligne de commande, procéde
 
    Où _IMAGE_ est le nom de l'image que vous souhaitez retirer, au format `repository:tag`.
 
-   Si aucune étiquette n'est spécifiée dans le nom de l'image, l'image associée à l'étiquette `latest` est supprimée par défaut. Vous pouvez supprimer plusieurs images en listant dans la commande chaque chemin de registre {{site.data.keyword.Bluemix_notm}} privé et en les séparant par un espace.
+   Si aucune étiquette n'est spécifiée dans le nom de l'image, l'image associée à l'étiquette `latest` est supprimée par défaut. Vous pouvez supprimer plusieurs images en listant dans la commande chaque chemin de registre {{site.data.keyword.cloud_notm}} privé et en les séparant par un espace.
 
    Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes Repository et Tag pour créer le nom de l'image au format `repository:tag`.
    {:tip}
@@ -308,7 +315,7 @@ Pour supprimer une image à l'aide de l'interface de ligne de commande, procéde
    ```
    {: pre}
 
-### Suppression d'images de votre référentiel {{site.data.keyword.Bluemix_notm}} privé à l'aide de l'interface graphique
+### Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé à l'aide de l'interface graphique
 {: #registry_images_remove_gui}
 
 Vous pouvez supprimer des images non désirées de votre référentiel d'images privé en utilisant l'interface graphique.
@@ -320,7 +327,7 @@ La suppression d'une image est irréversible. La suppression d'une image qui est
 Pour supprimer une image à l'aide de l'interface graphique, procédez comme suit :
 
 1. Connectez-vous à la console {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/login)) avec votre IBMid.
-2. Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
+2. Si vous disposez de plusieurs comptes {{site.data.keyword.cloud_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
 5. Cliquez sur **Images**. La liste de vos images s'affiche.
@@ -347,7 +354,7 @@ Vous devez sauvegarder les images que vous souhaitez conserver.
 Pour supprimer un référentiel privé à l'aide de l'interface graphique, procédez comme suit :
 
 1. Connectez-vous à la console {{site.data.keyword.cloud_notm}} ([https://cloud.ibm.com/login ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/login)) avec votre IBMid.
-2. Si vous disposez de plusieurs comptes {{site.data.keyword.Bluemix_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
+2. Si vous disposez de plusieurs comptes {{site.data.keyword.cloud_notm}}, sélectionnez le compte et la région à utiliser dans le menu Compte.
 3. Cliquez sur **Catalogue**.
 4. Sélectionnez la catégorie **Conteneurs** et cliquez sur la vignette **Container Registry**.
 5. Cliquez sur **Référentiels**. La liste de vos référentiels privés s'affiche.

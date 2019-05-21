@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -28,10 +28,10 @@ subcollection: registry
 Vous pouvez utiliser des jetons de registre ou bien une clé d'API {{site.data.keyword.iamlong}} (IAM) pour automatiser l'accès à vos espaces de nom {{site.data.keyword.registrylong_notm}} pour pouvoir y transférer ou en extraire des images.
 {:shortdesc}
 
-Essayez-vous d'utiliser vos images de registre dans des déploiements Kubernetes ? Consultez la rubrique [Accès aux images dans d'autres espaces de nom Kubernetes, régions et comptes {{site.data.keyword.Bluemix_notm}}](/docs/containers?topic=containers-images#other).
+Essayez-vous d'utiliser vos images de registre dans des déploiements Kubernetes ? Consultez la rubrique [Accès aux images dans d'autres espaces de nom Kubernetes, régions et comptes {{site.data.keyword.cloud_notm}}](/docs/containers?topic=containers-images#other).
 {: tip}
 
-Les clés d'API sont liées à votre compte et peuvent être utilisées à travers {{site.data.keyword.Bluemix_notm}} de sorte que vous n'avez pas besoin de données d'identification différentes pour chaque service. Vous pouvez utiliser la clé d'API dans l'interface de ligne de commande ou dans le cadre de l'automatisation pour vous connecter sous votre identité utilisateur.
+Les clés d'API sont liées à votre compte et peuvent être utilisées à travers {{site.data.keyword.cloud_notm}} de sorte que vous n'avez pas besoin de données d'identification différentes pour chaque service. Vous pouvez utiliser la clé d'API dans l'interface de ligne de commande ou dans le cadre de l'automatisation pour vous connecter sous votre identité utilisateur.
 
 La portée des jetons du registre est limitée à {{site.data.keyword.registrylong_notm}}. Vous pouvez les limiter à un accès en lecture seule et spécifier s'ils doivent expirer ou non.
 
@@ -77,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-Pour des informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
+Pour des informations de référence sur la commande, voir [Créer une nouvelle clé d'API pour la plateforme {{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ## Automatisation de l'accès à vos espaces de nom à l'aide de jetons (obsolète)
 {: #registry_tokens}
@@ -88,20 +88,20 @@ Vous pouvez utiliser des jetons pour automatiser l'envoi et l'extraction d'image
 L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom est déprécié. Utilisez plutôt des clés d'API pour automatiser l'accès à vos espaces de nom (voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](#registry_api_key)).
 {: deprecated}
 
-Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. Si vous souhaitez que des utilisateurs ne faisant pas partie de votre compte puissent accéder à tous les espaces de nom configurés dans une région, vous pouvez créer un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images
+Quiconque est en possession d'un jeton de registre peut accéder à des informations sécurisées. Si vous souhaitez que des utilisateurs ne faisant pas partie de votre compte puissent accéder à tous les espaces de nom configurés dans une région, vous pouvez créer un jeton pour votre compte {{site.data.keyword.cloud_notm}}. Chaque utilisateur ou application en possession de ce jeton peut transférer des images
 vers vos espaces de nom, et en extraire, sans avoir à installer le plug-in d'interface de ligne de commande `container-registry`.
 
-Quand vous créez un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}, vous pouvez décider s'il octroie un accès en lecture seule (pull) ou en écriture (push et pull) au registre. Vous pouvez également spécifier s'il doit être permanent ou expirer au bout de 24 heures. Pour pouvez créer et utiliser plusieurs jetons destinés à des types d'accès différents.
+Quand vous créez un jeton pour votre compte {{site.data.keyword.cloud_notm}}, vous pouvez décider s'il octroie un accès en lecture seule (pull) ou en écriture (push et pull) au registre. Vous pouvez également spécifier s'il doit être permanent ou expirer au bout de 24 heures. Pour pouvez créer et utiliser plusieurs jetons destinés à des types d'accès différents.
 
 Si vous vous connectez à {{site.data.keyword.registrylong_notm}} à l'aide d'un jeton de registre, vos règles d'accès IAM ne sont pas appliquées. Si vous souhaitez limiter l'accès à un ou plusieurs espaces de nom pour un ID qui est utilisé dans l'automatisation, pensez à utiliser une clé d'API d'ID de service IAM à la place d'un jeton de registre. Pour plus d'informations sur la création d'une clé d'API et son utilisation avec {{site.data.keyword.registrylong_notm}}, voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](#registry_api_key).
 
 Utilisez les tâches suivantes pour gérer vos jetons :
 
-- [Création d'un jeton pour votre compte {{site.data.keyword.Bluemix_notm}}](#registry_tokens_create)
+- [Création d'un jeton pour votre compte {{site.data.keyword.cloud_notm}}](#registry_tokens_create)
 - [Utilisation d'un jeton pour automatiser l'accès à vos espaces de nom](#registry_tokens_use)
-- [Retrait d'un jeton de votre compte {{site.data.keyword.Bluemix_notm}}](#registry_tokens_remove)
+- [Retrait d'un jeton de votre compte {{site.data.keyword.cloud_notm}}](#registry_tokens_remove)
 
-### Création d'un jeton pour votre compte {{site.data.keyword.Bluemix_notm}} (obsolète)
+### Création d'un jeton pour votre compte {{site.data.keyword.cloud_notm}} (obsolète)
 {: #registry_tokens_create}
 
 Vous pouvez créer un jeton pour accorder un accès à tous vos espaces de nom {{site.data.keyword.registrylong_notm}} dans une région.
@@ -162,21 +162,21 @@ Vous pouvez utiliser un jeton dans votre commande `docker login` pour automatise
 L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom est déprécié. Utilisez plutôt des clés d'API pour automatiser l'accès à vos espaces de nom (voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](#registry_api_key)).
 {: deprecated}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
+2. Répertoriez tous les jetons dans votre compte {{site.data.keyword.cloud_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
    ```
    ibmcloud cr token-list
    ```
    {: pre}
 
-3. Extrayez la valeur de jeton de ce jeton. Remplacez `<token_id>` par l'ID du jeton.
+3. Extrayez la valeur de jeton de ce jeton. Remplacez `<token_id>` pr l'ID du jeton.
 
    ```
    ibmcloud cr token-get <token_id>
@@ -203,7 +203,7 @@ L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker
 
    Une fois que vous vous êtes connecté à Docker en utilisant le jeton, vous pouvez transférer dans vos espaces de nom des images (push) ou en extraire (pull).
 
-### Retrait d'un jeton de votre compte {{site.data.keyword.Bluemix_notm}} (obsolète)
+### Retrait d'un jeton de votre compte {{site.data.keyword.cloud_notm}} (obsolète)
 {: #registry_tokens_remove}
 
 Retirez un jeton {{site.data.keyword.registrylong_notm}} lorsque vous n'en n'avez plus besoin.
@@ -212,17 +212,17 @@ Retirez un jeton {{site.data.keyword.registrylong_notm}} lorsque vous n'en n'ave
 L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom est déprécié. Utilisez plutôt des clés d'API pour automatiser l'accès à vos espaces de nom (voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](#registry_api_key)).
 {: deprecated}
 
-Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.Bluemix_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.
+Les jetons {{site.data.keyword.registrylong_notm}} arrivés à expiration sont retirés automatiquement de votre compte {{site.data.keyword.cloud_notm}}, par conséquent, vous n'avez pas besoin de les retirer manuellement.
 {:tip}
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}.
+1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. Répertoriez tous les jetons dans votre compte {{site.data.keyword.Bluemix_notm}} et notez l'ID du jeton que vous voulez utiliser.
+2. Répertoriez tous les jetons dans votre compte {{site.data.keyword.cloud_notm}} et notez l'ID du jeton que vous voulez utiliser.
 
    ```
    ibmcloud cr token-list
@@ -262,6 +262,6 @@ ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docke
 ```
 {: pre}
 
-Remplacez `<apikey>` par votre clé d'API et remplacez `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` par votre espace de nom, et `<image_repo>` par le référentiel.
+Remplacez `<apikey>` par votre clé d'API, `<region>` par le nom de votre [région](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` par votre espace de nom, et `<image_repo>` par le référentiel.
 
 Pour plus d'informations, voir [Utilisation d'un registre d'images privé](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

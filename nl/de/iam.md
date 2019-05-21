@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ Für {{site.data.keyword.registrylong_notm}} sind die folgenden Aktionen vorhand
 | `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Hinzufügen eines Tokens zum Steuern des Zugriffs auf eine Registry. | Administrator |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Entfernen eines oder mehrerer angegebener Tokens. | Administrator |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Abrufen des angegebenen Tokens aus der Registry. | Administrator |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Anzeigen aller Tokens, die für Ihr {{site.data.keyword.Bluemix_notm}}-Konto vorhanden sind. | Administrator |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Anzeigen aller Tokens, die für Ihr {{site.data.keyword.cloud_notm}}-Konto vorhanden sind. | Administrator |
 {: caption="Tabelle 2. Plattformaktionen und -operationen für die Konfiguration von {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Servicezugriffsrollen

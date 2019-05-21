@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-29"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -99,10 +99,10 @@ subcollection: registry
 ## レジストリー間でのイメージのコピー
 {: #registry_images_copying}
 
-ある領域内のレジストリーからイメージをプルし、別の領域内のレジストリーにそれをプッシュすることで、両方の領域のユーザー間でそのイメージを共有することができます。
+ある地域内のレジストリーからイメージをプルし、別の地域内のレジストリーにそれをプッシュすることで、両方の地域のユーザー間でそのイメージを共有することができます。
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="任意のプライベート・レジストリーまたはパブリック・レジストリーから {{site.data.keyword.Bluemix_notm}} プライベート・レジストリーにイメージをコピーします。"/>
+<img src="images/images_copy.svg" width="800" style="width:800px;" alt="プライベート・レジストリーまたはパブリック・レジストリーのイメージをプライベート {{site.data.keyword.cloud_notm}} レジストリーにコピーします。"/>
 
 **始めに**
 
@@ -115,7 +115,7 @@ subcollection: registry
 2 つのレジストリー間でイメージをコピーするには、次の手順を実行します。
 
 1. [レジストリーからイメージをプルします](#registry_images_pulling_reg)。
-2. [イメージを別のレジストリーにプッシュします](#registry_images_pushing_namespace)。 対象となる新しい領域について、正しいドメイン・ネームを使用していることを確認してください。
+2. [イメージを別のレジストリーにプッシュします](#registry_images_pushing_namespace)。 対象となる新しい地域について、正しいドメイン・ネームを使用していることを確認してください。
 
 イメージをコピーした後、以下のいずれかのタスクを実行できます。
 
@@ -125,7 +125,7 @@ subcollection: registry
 ## ソース・イメージを参照する新しいイメージの作成
 {: #registry_images_source}
 
-ログインしている領域で、同じ領域にある既存のイメージを参照する新しいイメージを {{site.data.keyword.registrylong_notm}} 内に作成します。 この操作は、Docker Engine バージョン 1.12 以降を使用して作成したソース・イメージでのみサポートされます。
+ログインしている地域で、同じ地域にある既存のイメージを参照する新しいイメージを {{site.data.keyword.registrylong_notm}} 内に作成します。 この操作は、Docker Engine バージョン 1.12 以降を使用して作成したソース・イメージでのみサポートされます。
 
 このメカニズムを使用して作成した新しいイメージは、シグニチャーを保持しません。 新しいイメージに署名が必要な場合は、このメカニズムを使用しないでください。
 {: tip}
@@ -146,7 +146,7 @@ subcollection: registry
    ```
    {: pre}
 
-2. 以下のコマンドを実行して、新しい参照を追加します。`SOURCE_IMAGE` はソース・イメージの名前、`TARGET_IMAGE` はターゲット・イメージの名前です。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。 `SOURCE_IMAGE` および `TARGET_IMAGE` は `<REPOSITORY>:<TAG>` という形式である必要があります。例: `us.icr.io/namespace/image:latest`
+2. 以下のコマンドを実行して、新しい参照を追加します。`SOURCE_IMAGE` はソース・イメージの名前、`TARGET_IMAGE` はターゲット・イメージの名前です。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。 `SOURCE_IMAGE` および `TARGET_IMAGE` は `<REPOSITORY>:<TAG>` という形式である必要があります。例: `us.icr.io/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -163,7 +163,7 @@ subcollection: registry
 ## 名前空間で使用する Docker イメージのビルド
 {: #registry_images_creating}
 
-{{site.data.keyword.Bluemix_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
+{{site.data.keyword.cloud_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
 {:shortdesc}
 
 **始めに**
@@ -176,7 +176,7 @@ subcollection: registry
 
 Docker イメージは、作成するすべてのコンテナーの基礎となるものです。 イメージは、Dockerfile (イメージをビルドするための指示が入ったファイル) から作成されます。 Dockerfile の別個に保管されている指示の中で、ビルド成果物 (アプリ、アプリの構成、その従属関係) が参照されることもあります。
 
-{{site.data.keyword.Bluemix_notm}} の計算リソースとインターネット接続を利用する必要がある場合、または Docker がワークステーションにインストールされていない場合は、{{site.data.keyword.Bluemix_notm}} でイメージを直接ビルドします。 ファイアウォールの内側に存在するサーバーのリソースにビルドでアクセスする必要がある場合は、イメージをローカルでビルドします。
+{{site.data.keyword.cloud_notm}} の計算リソースとインターネット接続を利用する必要がある場合、または Docker がワークステーションにインストールされていない場合は、{{site.data.keyword.cloud_notm}} でイメージを直接ビルドします。 ファイアウォールの内側に存在するサーバーのリソースにビルドでアクセスする必要がある場合は、イメージをローカルでビルドします。
 
 独自の Docker イメージをビルドするには、以下の手順を実行します。
 
@@ -218,8 +218,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
    `<my_namespace>` は名前空間の情報、`<repo_name>` はリポジトリーの名前、`<tag>` はイメージに使用するバージョンです。 名前空間を見つけるには、`ibmcloud cr namespace-list` コマンドを実行します。
 
 4. Dockerfile を含むディレクトリーのパスをメモします。 作業ディレクトリーをビルド・コンテキストの保管場所に設定した状態で、以下の手順のコマンドを実行する場合は、`<directory>` をピリオド (.) に置き換えることができます。
-5. {{site.data.keyword.Bluemix_notm}} でイメージを直接ビルドするか、それとも、イメージをローカルでビルドしてテストしてから {{site.data.keyword.Bluemix_notm}} にプッシュするかを選択します。
-   - イメージを {{site.data.keyword.Bluemix_notm}} で直接ビルドする場合は、以下のコマンドを実行します。
+5. {{site.data.keyword.cloud_notm}} でイメージを直接ビルドするか、それとも、イメージをローカルでビルドしてテストしてから {{site.data.keyword.cloud_notm}} にプッシュするかを選択します。
+   - イメージを {{site.data.keyword.cloud_notm}} で直接ビルドする場合は、以下のコマンドを実行します。
 
      ```
      ibmcloud cr build -t <image_name> <directory>
@@ -230,7 +230,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
   
      `ibmcloud cr build` コマンドについて詳しくは、[{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) を参照してください。
 
-   - イメージをローカルでビルドしてテストしてから {{site.data.keyword.Bluemix_notm}} にプッシュする場合は、以下の手順を実行します。
+   - イメージをローカルでビルドしてテストしてから {{site.data.keyword.cloud_notm}} にプッシュする場合は、以下の手順を実行します。
       1. ローカル・コンピューターで Dockerfile からイメージをビルドし、イメージ名のタグを付けます。
 
          ```
@@ -253,7 +253,21 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 脆弱性アドバイザーを使用してイメージのセキュリティーをチェックする方法については、[脆弱性アドバイザーによるイメージのセキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
-## プライベート {{site.data.keyword.Bluemix_notm}} リポジトリーからのイメージの削除
+## API キーによるイメージの {{site.data.keyword.registrylong_notm}} へのプッシュ
+{: #registry_api_key_push_image}
+
+API キーを使用してイメージを {{site.data.keyword.registrylong_notm}} にプッシュするサービス ID を作成します。
+{:shortdesc}
+
+1. サービス ID を作成します。[サービス ID の作成と処理](/docs/iam?topic=iam-serviceids#serviceids)を参照してください。
+2. レジストリーにアクセスするためのサービス ID アクセス権 (例えば、`Administrator` 役割や `Manager` 役割など) を付与するポリシーを作成します。[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)を参照してください。
+3. API キーを作成します。[サービス ID 用の API キーの作成](/docs/iam?topic=iam-serviceidapikeys#create_service_key)を参照してください。
+4. API キーを使用してレジストリーにログインし、イメージをレジストリーにプッシュできるようにします。[API キーを使用したアクセスの自動化](/docs/services/Registry?topic=registry-registry_access#registry_api_key_use)を参照してください。
+5. イメージをプッシュします。[Docker イメージの名前空間へのプッシュ](#registry_images_pushing_namespace)を参照してください。
+
+これでクラスターを使用してイメージをプルできるようになりました。[イメージからのコンテナーのビルド](/docs/containers?topic=containers-images#other_registry_accounts)を参照してください。
+
+## プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove}
 
 グラフィカル・ユーザー・インターフェース (GUI) または CLI を使用して、不要なイメージをプライベート・リポジトリーから削除することができます。
@@ -261,12 +275,12 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 
 プライベート・リポジトリーとそれに関連したイメージを削除する場合は、[プライベート・リポジトリーおよび関連イメージの削除](#registry_repo_remove)を参照してください。
 
-パブリック {{site.data.keyword.IBM_notm}} イメージは、プライベート {{site.data.keyword.Bluemix_notm}} リポジトリーから削除できません。割り当て量までのカウントにも含まれません。
+パブリック {{site.data.keyword.IBM_notm}} イメージは、プライベート {{site.data.keyword.cloud_notm}} リポジトリーから削除できません。割り当て量までのカウントにも含まれません。
 
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
 {:tip}
 
-### CLI を使用したプライベート {{site.data.keyword.Bluemix_notm}} リポジトリーからのイメージの削除
+### CLI を使用したプライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove_cli}
 
 CLI を使用して、不要なイメージをプライベート・リポジトリーから削除できます。
@@ -277,7 +291,7 @@ CLI を使用して、不要なイメージをプライベート・リポジト�
 
 CLI を使用してイメージを削除するには、以下の手順を実行します。
 
-1. `ibmcloud login` コマンドを実行して {{site.data.keyword.Bluemix_notm}} にログインします。
+1. `ibmcloud login` コマンドを実行して {{site.data.keyword.cloud_notm}} にログインします。
 2. イメージを削除するには、次のコマンドを実行します。
 
    ```
@@ -287,7 +301,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 
    _IMAGE_ は、削除するイメージの名前 (形式は `repository:tag`) です。
 
-   イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.Bluemix_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
+   イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
    イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
    {:tip}
@@ -299,7 +313,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
    ```
    {: pre}
 
-### GUI を使用した、プライベート {{site.data.keyword.Bluemix_notm}} リポジトリーからのイメージの削除
+### GUI を使用した、プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove_gui}
 
 グラフィカル・ユーザー・インターフェース (GUI) を使用して、不要なイメージをプライベート・イメージ・リポジトリーから削除することができます。
@@ -311,7 +325,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 GUI を使用してイメージを削除するには、以下の手順を実行します。
 
 1. IBMid を使用して {{site.data.keyword.cloud_notm}} コンソール ([https://cloud.ibm.com/login ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login)) にログインします。
-2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
+2. 複数の {{site.data.keyword.cloud_notm}} アカウントをお持ちの場合は、使用するアカウントと地域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。
 5. **「イメージ」**をクリックします。 イメージのリストが表示されます。
@@ -338,7 +352,7 @@ GUI を使用してイメージを削除するには、以下の手順を実行�
 GUI を使用してプライベート・リポジトリーを削除するには、以下の手順を実行します。
 
 1. IBMid を使用して {{site.data.keyword.cloud_notm}} コンソール ([https://cloud.ibm.com/login ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login)) にログインします。
-2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
+2. 複数の {{site.data.keyword.cloud_notm}} アカウントをお持ちの場合は、使用するアカウントと地域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。
 5. **「リポジトリー」**をクリックします。 プライベート・リポジトリーのリストが表示されます。

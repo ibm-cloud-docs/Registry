@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -57,19 +57,19 @@ subcollection: registry
 
 - `container-registry` CLI 插件不是最新的，需要更新。
 - Docker 未安装在本地计算机上，或者未运行。
-- {{site.data.keyword.Bluemix_notm}} 登录凭证已到期。
+- {{site.data.keyword.cloud_notm}} 登录凭证已到期。
 
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
 - 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 - 确保 Docker 安装在您的计算机上。如果已安装，请重新启动 Docker 守护程序。
-- 重新运行 `ibmcloud login` 命令以刷新 {{site.data.keyword.Bluemix_notm}} 登录凭证。
+- 重新运行 `ibmcloud login` 命令以刷新 {{site.data.keyword.cloud_notm}} 登录凭证。
 
 ## 无法运行任何 {{site.data.keyword.registrylong_notm}} 命令，消息为：`失败 您未登录到 IBM Cloud。`
 {: #ts_login_cloud}
 
-尽管您已登录到 {{site.data.keyword.Bluemix_notm}}，还是无法运行任何 {{site.data.keyword.registrylong_notm}} 命令。
+尽管您已登录到 {{site.data.keyword.cloud_notm}}，还是无法在 {{site.data.keyword.registrylong_notm}} 中运行任何命令。
 
 {: tsSymptoms}
 所有 `ibmcloud cr` 命令都失败。
@@ -130,7 +130,7 @@ docker build --no-cache .
 {:  pre}
 
 - 如果本地构建不起作用，请检查是否 Dockerfile 有问题。
-- 如果本地构建正常运行，请[联系 {{site.data.keyword.Bluemix_notm}} 支持人员](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
+- 如果本地构建正常运行，请[联系 {{site.data.keyword.cloud_notm}} 支持人员](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。
 
 ## 设置名称空间失败
 {: #ts_problem}
@@ -140,7 +140,7 @@ docker build --no-cache .
 
 {: tsCauses}
 
-- 输入的名称空间值已经由其他 {{site.data.keyword.Bluemix_notm}} 组织在使用。
+- 输入的名称空间值已经由其他 {{site.data.keyword.cloud_notm}} 组织在使用。
 - 某个名称空间最近已删除，而您复用的是该名称空间的名称。如果已删除的名称空间包含大量资源，那么 {{site.data.keyword.registrylong_notm}} 可能尚未完全处理完删除操作。
 - 在名称空间值中使用了无效字符。
 
@@ -186,15 +186,15 @@ denied: requested access to the resource is denied
 
 - Docker 未安装。
 - Docker 客户机未登录到 {{site.data.keyword.registrylong_notm}}。
-- {{site.data.keyword.Bluemix_notm}} 访问令牌可能已到期。
-- 超过了为 {{site.data.keyword.Bluemix_notm}} 帐户设置的存储量或拉出流量的配额限制。
+- {{site.data.keyword.cloud_notm}} 访问令牌可能已到期。
+- 超过了为 {{site.data.keyword.cloud_notm}} 帐户设置的存储量或拉出流量的配额限制。
 
 {: tsResolve}
 可以通过以下方式来解决此问题：
 
 - [确保已在计算机上安装 Docker](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - 检查 Docker 安装路径。
-- 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.Bluemix_notm}}。然后，通过运行 `ibmcloud cr login` 登录到 {{site.data.keyword.registrylong_notm}} CLI。
+- 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.cloud_notm}}。然后，通过运行 `ibmcloud cr login` 登录到 {{site.data.keyword.registrylong_notm}} CLI。
 - [查看在 {{site.data.keyword.registrylong_notm}} 中存储和拉出 Docker 映像的配额限制和使用量](/docs/services/Registry?topic=registry-registry_quota#registry_quota_get)。
 
 ## 无法使用 `latest` 标记拉出最新的映像
@@ -213,7 +213,7 @@ denied: requested access to the resource is denied
 {: #ts_ppa}
 
 {: tsSymptoms}
-尝试导入您在其他 IBM 产品（例如，{{site.data.keyword.Bluemix_notm}} Private）中使用的内容时，无法将您的映像以及其他来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 的许可软件存储在注册表中。
+尝试导入您在其他 IBM 产品（例如，{{site.data.keyword.cloud_notm}} Private）中使用的内容时，无法将您的映像以及其他来自 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 的许可软件存储在注册表中。
 
 {: tsCauses}
 对于来自 IBM Passport Advantage 的软件包（例如，映像和 Helm chart），必须使用 `ibmcloud cr ppa-archive-load` 命令将它们导入到注册表中。
@@ -221,13 +221,13 @@ denied: requested access to the resource is denied
 {: tsResolve}
 **开始之前**
 
-- 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.Bluemix_notm}}。
+- 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.cloud_notm}}。
 - 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.registrylong_notm}}。
 - [将 `kubectl` CLI 的目标设定为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
-- 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers?topic=containers-integrations#helm)。
+- 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers?topic=containers-helm#helm)。
 - 如果要在组织内共享图表，可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。有关指示信息，请参阅此 [developerWorks 诀窍 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
-### 导入 IBM Passport Advantage 产品以在 {{site.data.keyword.Bluemix_notm}} 中使用
+### 导入 IBM Passport Advantage 产品以在 {{site.data.keyword.cloud_notm}} 中使用
 {: #ts_ppa_import}
 
 1. 从 [IBM Passport Advantage ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/software/passportadvantage/index.html) 获取要导入的压缩文件。
@@ -248,7 +248,7 @@ denied: requested access to the resource is denied
 
    此命令会解开压缩文件，将其中包含的所有映像都装入到本地 Docker 客户机中，然后将这些映像推送到注册表中的名称空间。
 
-   如果要将 IBM Passport Advantage 归档中的 Helm chart 上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+   如果要将 IBM Passport Advantage 归档中的 Helm Chart 上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
    **示例输出**
@@ -269,7 +269,7 @@ user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.
     ```
    {: screen}
 
-4. 如果压缩文件包含 Helm chart，这些图表会放在当前工作目录中创建的名为 `ppa-import` 的归档目录中。打开该目录以找到 Helm chart 名称 `<helm_chart>`，然后检查其值。
+4. 如果压缩文件包含 Helm chart，这些图表会放在当前工作目录中创建的名为 `ppa-import` 的归档目录中。打开该目录以找到 Helm Chart 名称 `<helm_chart>`，然后检查其值。
 
    ```
 helm inspect values ppa-import/charts/<helm_chart>.tgz
@@ -279,9 +279,9 @@ helm inspect values ppa-import/charts/<helm_chart>.tgz
    如果在上一步中已将图表上传到 Chart Museum，可以使用 `helm inspect` 在 Chart Museum 中检查图表。
     {: tip}
 
-5. 根据 `helm inspect values` 命令输出的值来配置 Helm chart `<helm_chart>`。
+5. 根据 `helm inspect values` 命令输出的值，配置 Helm Chart `<helm_chart>`。
 
-6. 使用 `helm install` 命令来部署 Helm chart `<helm_chart>`。可以根据需要使用 `--set` 选项来覆盖图表中的值。
+6. 使用 `helm install` 命令部署 Helm Chart `<helm_chart>`。可以根据需要使用 `--set` 选项来覆盖图表中的值。
 
    ```
 helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
@@ -367,9 +367,9 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
 
 如果名称空间包含使用不受影响的根密钥的存储库（例如，生产映像的名称空间），那么您可能希望仅删除与受影响的根密钥相关联的信任数据。请开具支持凭单。
 
-1. [联系 {{site.data.keyword.Bluemix_notm}} 支持](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
+1. [联系 {{site.data.keyword.cloud_notm}} 支持](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)。请包含问题的简短描述和帐户标识，以及包含使用受影响根密钥的映像存储库的名称空间列表。
 
-2. {{site.data.keyword.Bluemix_notm}} 解决此问题后，请删除本地计算机上的 Docker Content Trust 存储库。
+2. {{site.data.keyword.cloud_notm}} 解决此问题后，请删除本地计算机上的 Docker Content Trust 存储库。
 
    - Linux 和 Mac 目录：`~/.docker/trust/private` 和 `~/.docker/trust/tuf`
 
@@ -378,7 +378,7 @@ notary -s <URL> -d ~/.docker/trust key rotate <image> targets
    因为根密钥受到影响，所以此步骤将删除所有签名密钥，包括其他信任服务器的签名密钥。
     {:tip}
 
-3. 如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.Bluemix_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，然后修改部署。
+3. 如果在 {{site.data.keyword.containershort_notm}} 集群中使用了 [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，请重新启动每个映像强制实施 pod。要触发 Kubernetes 自动对 pod 执行滚动重新启动，可以更改 pod 上的一些元数据。例如，[设定 Kubernetes CLI 的目标为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，然后修改部署。
     
 
    ```
@@ -501,14 +501,14 @@ kubectl edit ValidatingWebhookConfiguration image-admission-config
 {: tsResolve}
 要解决此问题，请完成以下步骤：
 
-1. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是源映像名称：
+1. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是您的源映像名称：
 
    ```
    docker pull <source_image>
    ```
    {: pre}
 
-2. 通过运行以下命令，对上一步中拉出的映像的本地副本进行标记，其中 `<target_image>` 是新映像名称：
+2. 通过运行以下命令，对上一步中拉出的映像的本地副本进行标记，其中 `<target_image>` 是您的新映像名称：
 
    ```
    docker tag <source_image> <target_image>
@@ -536,7 +536,7 @@ kubectl edit ValidatingWebhookConfiguration image-admission-config
 
 1. 升级为 Docker Engine V1.12 或更高版本。
 
-2. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是源映像名称：
+2. 通过运行以下命令，拉出尝试对其进行标记的映像，其中 `<source_image>` 是您的源映像名称：
 
    ```
    docker pull <source_image>

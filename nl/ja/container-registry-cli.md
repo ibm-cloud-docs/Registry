@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-{{site.data.keyword.Bluemix_notm}} アカウントのレジストリーとそのリソースを管理するには、`container-registry` CLI プラグイン内に用意されている {{site.data.keyword.registrylong}} CLI を使用できます。
+`container-registry` CLI プラグインで提供されている {{site.data.keyword.registrylong}} CLI を使用して、{{site.data.keyword.cloud_notm}} アカウントのレジストリーとそのリソースを管理できます。
 {: shortdesc}
 
 **前提条件**
 
-* [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 {{site.data.keyword.Bluemix_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
-* レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
+* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 {{site.data.keyword.cloud_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
+* レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.cloud_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
 `ibmcloud` CLI および `container-registry` CLI プラグインの更新が使用可能になると、コマンド・ラインに通知が表示されます。 使用可能なすべてのコマンドとフラグを使用できるように、CLI を最新の状態に保つようにしてください。
 
@@ -260,7 +260,7 @@ ibmcloud cr iam-policies-enable
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
-ターゲットである {{site.data.keyword.registryshort_notm}} アカウントの IAM ポリシーの状況を表示します。詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)と[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)を参照してください。
+ターゲットである {{site.data.keyword.registryshort_notm}} アカウントの IAM ポリシーの状況を表示します。 詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)と[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)を参照してください。
 
 ```
 ibmcloud cr iam-policies-status
@@ -309,7 +309,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-{{site.data.keyword.Bluemix_notm}} アカウント内のすべてのイメージを表示します。
+{{site.data.keyword.cloud_notm}} アカウント内のすべてのイメージを表示します。
 
 イメージ名は、**Repository** 列と **Tag** 列の内容を `repository:tag` の形式で組み合わせたものです。
 {:tip}
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。
+{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}
@@ -466,7 +466,7 @@ ibmcloud cr login
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-名前空間の名前を選択して、{{site.data.keyword.Bluemix_notm}} アカウントに追加します。
+名前空間の名前を選択して、{{site.data.keyword.cloud_notm}} アカウントに追加します。
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -480,7 +480,7 @@ ibmcloud cr namespace-add NAMESPACE
 **コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.Bluemix_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。 名前空間は、文字または数値で開始および終了する必要があります。
+<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。 名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
 <strong>ヒント</strong>: 名前空間名に個人情報を含めないでください。
@@ -501,7 +501,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-{{site.data.keyword.Bluemix_notm}} アカウントが所有するすべての名前空間を表示します。
+{{site.data.keyword.cloud_notm}} アカウントが所有するすべての名前空間を表示します。
 
 ```
 ibmcloud cr namespace-list
@@ -515,7 +515,7 @@ ibmcloud cr namespace-list
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-{{site.data.keyword.Bluemix_notm}} アカウントから名前空間を削除します。 名前空間を削除すると、この名前空間内のイメージが削除されます。
+{{site.data.keyword.cloud_notm}} アカウントから名前空間を削除します。 名前空間を削除すると、この名前空間内のイメージが削除されます。
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -794,7 +794,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-{{site.data.keyword.Bluemix_notm}} アカウント用に存在するすべてのトークンを表示します。
+{{site.data.keyword.cloud_notm}} アカウント用に存在するすべてのトークンを表示します。
 
 ```
 ibmcloud cr token-list [--format FORMAT]

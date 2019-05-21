@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-05-09"
 
 keywords: IBM Cloud Container Registry, links, API docs, CLI, Docker,
 
@@ -32,8 +32,8 @@ Puede utilizar los siguientes enlaces relacionados para familiarizarse con {{sit
 {: #registry}
 
 - [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
-- [API de {{site.data.keyword.registrylong_notm}}![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/apidocs/container-registry)
-- [API de Vulnerability Advisor para {{site.data.keyword.registrylong_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/apidocs/container-registry/va)
+- [API de {{site.data.keyword.registrylong_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/container-registry)
+- [Vulnerability Advisor para {{site.data.keyword.registrylong_notm}} API ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/container-registry/va)
 
 ## {{site.data.keyword.containerlong_notm}}
 {: #containers}

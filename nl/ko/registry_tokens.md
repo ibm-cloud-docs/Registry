@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -28,10 +28,10 @@ subcollection: registry
 이미지를 푸시하고 가져올 수 있도록 레지스트리 토큰 또는 {{site.data.keyword.iamlong}}(IAM) API를 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 액세스를 자동화할 수 있습니다.
 {:shortdesc}
 
-Kubernetes 배치에서 레지스트리 이미지를 사용하시겠습니까? [기타 Kubernetes 네임스페이스, {{site.data.keyword.Bluemix_notm}} 지역 및 계정의 이미지에 액세스](/docs/containers?topic=containers-images#other)를 확인하십시오.
+Kubernetes 배치에서 레지스트리 이미지를 사용하시겠습니까? [기타 Kubernetes 네임스페이스, {{site.data.keyword.cloud_notm}} 지역 및 계정의 이미지에 액세스](/docs/containers?topic=containers-images#other)를 확인하십시오.
 {: tip}
 
-API 키가 계정에 연결되고 {{site.data.keyword.Bluemix_notm}}에서 사용할 수 있으므로 각 서비스에 대해 다른 인증 정보가 필요하지 않습니다. CLI에서 API 키를 사용하거나 사용자 ID로 로그인하기 위한 자동화의 일부로 API 키를 사용할 수 있습니다.
+API 키가 계정에 연결되고 {{site.data.keyword.cloud_notm}}에서 사용할 수 있으므로 각 서비스에 대해 다른 인증 정보가 필요하지 않습니다. CLI에서 API 키를 사용하거나 사용자 ID로 로그인하기 위한 자동화의 일부로 API 키를 사용할 수 있습니다.
 
 레지스트리 토큰의 범위는 {{site.data.keyword.registrylong_notm}}용으로만 지정됩니다. 레지스트리 토큰을 읽기 전용 액세스로 제한할 수 있으며 만료되는지 또는 만료되지 않는지 여부를 선택할 수 있습니다.
 
@@ -77,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-명령에 대한 참조 정보는 [새 {{site.data.keyword.Bluemix_notm}} 플랫폼 API 키 작성](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)을 참조하십시오.
+명령에 대한 참조 정보는 [새 {{site.data.keyword.cloud_notm}} 플랫폼 API 키 작성](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)을 참조하십시오.
 
 ## 토큰을 사용하여 네임스페이스에 대한 액세스 자동화(더 이상 사용되지 않음)
 {: #registry_tokens}
@@ -88,19 +88,19 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
 
-레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. 계정 외부의 사용자가 지역에서 설정한 모든 네임스페이스에 대해 액세스할 수 있도록 하려면 {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 `container-registry` CLI 플러그인을 설치하지 않고도 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
+레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. 계정 외부의 사용자가 지역에서 설정한 모든 네임스페이스에 대해 액세스할 수 있도록 하려면 {{site.data.keyword.cloud_notm}} 계정에 대한 토큰을 작성할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 `container-registry` CLI 플러그인을 설치하지 않고도 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
 
-{{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰을 작성할 때 해당 토큰이 레지스트리에 대한 읽기 전용(가져오기) 권한을 부여하는지 또는 쓰기(푸시 및 가져오기) 권한을 부여하는지 결정할 수 있습니다. 토큰이 영구적인지 또는 24시간 후에 만료되는지 여부를 지정할 수도 있습니다. 여러 토큰을 작성하고 사용하여 다양한 유형의 액세스를 제어할 수 있습니다.
+{{site.data.keyword.cloud_notm}} 계정에 대한 토큰을 작성할 때 해당 토큰이 레지스트리에 대한 읽기 전용(가져오기) 권한을 부여하는지 또는 쓰기(푸시 및 가져오기) 권한을 부여하는지 결정할 수 있습니다. 토큰이 영구적인지 또는 24시간 후에 만료되는지 여부를 지정할 수도 있습니다. 여러 토큰을 작성하고 사용하여 다양한 유형의 액세스를 제어할 수 있습니다.
 
 레지스트리 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}에 로그인하는 경우 IAM 액세스 정책이 적용되지 않습니다. 자동화에서 사용되는 ID에 대해 하나 이상의 네임스페이스에 대한 액세스를 제한하려면 레지스트리 토큰 대신에 IAM 서비스 ID API 키를 사용하는 것을 고려하십시오. API 키를 작성하여 {{site.data.keyword.registrylong_notm}}에 사용하는 방법에 대한 자세한 정보는 [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 
 토큰을 관리하려면 다음 태스크를 사용하십시오.
 
-- [{{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰 작성](#registry_tokens_create)
+- [{{site.data.keyword.cloud_notm}} 계정에 대한 토큰 작성](#registry_tokens_create)
 - [토큰을 사용하여 네임스페이스에 대한 액세스 자동화](#registry_tokens_use)
-- [{{site.data.keyword.Bluemix_notm}} 계정에서 토큰 제거](#registry_tokens_remove)
+- [{{site.data.keyword.cloud_notm}} 계정에서 토큰 제거](#registry_tokens_remove)
 
-### {{site.data.keyword.Bluemix_notm}} 계정에 대한 토큰 작성(더 이상 사용되지 않음)
+### {{site.data.keyword.cloud_notm}} 계정에 대한 토큰 작성(더 이상 사용되지 않음)
 {: #registry_tokens_create}
 
 지역의 모든 {{site.data.keyword.registrylong_notm}} 네임스페이스에 액세스 권한을 부여하기 위한 토큰을 작성할 수 있습니다.
@@ -161,14 +161,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. {{site.data.keyword.Bluemix_notm}} 계정의 모든 토큰을 나열하고 사용하려는 토큰 ID를 기록해 놓으십시오.
+2. {{site.data.keyword.cloud_notm}} 계정의 모든 토큰을 나열하고 사용하려는 토큰 ID를 기록해 놓으십시오.
 
    ```
    ibmcloud cr token-list
@@ -202,7 +202,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
    토큰을 사용하여 Docker에 로그인한 후에 이미지를 네임스페이스로 푸시하거나 이미지를 네임스페이스에서 가져올 수 있습니다.
 
-### {{site.data.keyword.Bluemix_notm}} 계정에서 토큰 제거(더 이상 사용되지 않음)
+### {{site.data.keyword.cloud_notm}} 계정에서 토큰 제거(더 이상 사용되지 않음)
 {: #registry_tokens_remove}
 
 더 이상 필요하지 않은 경우 {{site.data.keyword.registrylong_notm}} 토큰을 제거하십시오.
@@ -211,17 +211,17 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
 
-만료된 {{site.data.keyword.registrylong_notm}} 토큰은 {{site.data.keyword.Bluemix_notm}} 계정에서 자동으로 제거되며 수동으로 제거할 필요가 없습니다.
+만료된 {{site.data.keyword.registrylong_notm}} 토큰은 {{site.data.keyword.cloud_notm}} 계정에서 자동으로 제거되며 수동으로 제거할 필요가 없습니다.
 {:tip}
 
-1. {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
+1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-2. {{site.data.keyword.Bluemix_notm}} 계정의 모든 토큰을 나열하고 제거하려는 토큰 ID를 기록해 놓으십시오.
+2. {{site.data.keyword.cloud_notm}} 계정의 모든 토큰을 나열하고 제거하려는 토큰 ID를 기록해 놓으십시오.
 
    ```
    ibmcloud cr token-list

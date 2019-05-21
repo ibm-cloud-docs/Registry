@@ -38,7 +38,7 @@ subcollection: registry
 グラフィカル・ユーザー・インターフェースを表示するには、以下の手順を使用します。
 
 1. IBMid を使用して {{site.data.keyword.cloud_notm}} コンソール ([https://cloud.ibm.com/login ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login)) にログインします。
-2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと領域をアカウント・メニューから選択します。
+2. 複数の {{site.data.keyword.Bluemix_notm}} アカウントをお持ちの場合は、使用するアカウントと地域をアカウント・メニューから選択します。
 3. **「カタログ」**をクリックします。
 4. **「コンテナー」**カテゴリーを選択し、**「Container Registry」**タイルをクリックします。
 5. 専用リポジトリー内のイメージ関連情報を表示するには、**「イメージ」**をクリックします。 専用リポジトリー内のイメージのリストと各イメージのセキュリティー状況が表示されます。

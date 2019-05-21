@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -25,13 +25,13 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-您可以使用 {{site.data.keyword.registrylong}} CLI（其在 `container-registry` 外掛程式中提供），針對您的 {{site.data.keyword.Bluemix_notm}} 帳戶管理登錄及其資源。
+您可以使用 {{site.data.keyword.registrylong}} CLI（其在 `container-registry` 外掛程式中提供），針對您的 {{site.data.keyword.cloud_notm}} 帳戶管理登錄及其資源。
 {: shortdesc}
 
 **必要條件**
 
-* 安裝 [{{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.Bluemix_notm}} CLI 來執行指令的字首是 `ibmcloud`。
-* 在執行登錄指令之前，請先使用 `ibmcloud login` 指令登入 {{site.data.keyword.Bluemix_notm}}，以產生存取記號並鑑別您的階段作業。
+* 安裝 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.cloud_notm}} CLI 來執行指令的字首是 `ibmcloud`。
+* 在執行登錄指令之前，請先使用 `ibmcloud login` 指令登入 {{site.data.keyword.cloud_notm}}，以產生存取記號並鑑別您的階段作業。
 
 在指令行中，當有 `ibmcloud` CLI 及 `container-registry` CLI 外掛程式的更新可用時，即會通知您。請確定您保持最新的 CLI，讓您可以使用所有可用的指令及旗標。
 
@@ -308,7 +308,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-顯示 {{site.data.keyword.Bluemix_notm}} 帳戶中的所有映像檔。
+顯示 {{site.data.keyword.cloud_notm}} 帳戶中的所有映像檔。
 
 映像檔名稱是 **Repository** 及 **Tag** 直欄的內容組合，格式為：`repository:tag`
 {:tip}
@@ -465,7 +465,7 @@ ibmcloud cr login
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-選擇名稱空間的名稱，並將其新增至 {{site.data.keyword.Bluemix_notm}} 帳戶。
+選擇名稱空間的名稱，並將其新增至 {{site.data.keyword.cloud_notm}} 帳戶。
 
 ```
 ibmcloud cr namespace-add NAMESPACE
@@ -479,7 +479,7 @@ ibmcloud cr namespace-add NAMESPACE
 **指令選項**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>您要新增的名稱空間。此名稱空間在相同地區的所有 {{site.data.keyword.Bluemix_notm}} 帳戶中必須是唯一的。名稱空間必須有 4-30 個字元，且只能包含小寫字母、數字、連字號及底線。名稱空間的開頭和結尾必須是字母或數字。
+<dd>您要新增的名稱空間。此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4-30 個字元，且只能包含小寫字母、數字、連字號及底線。名稱空間的開頭和結尾必須是字母或數字。
   
 <p>  
 <strong>提示</strong>：請不要將個人資訊放在名稱空間名稱中。
@@ -500,7 +500,7 @@ ibmcloud cr namespace-add birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-顯示 {{site.data.keyword.Bluemix_notm}} 帳戶所擁有的所有名稱空間。
+顯示 {{site.data.keyword.cloud_notm}} 帳戶所擁有的所有名稱空間。
 
 ```
 ibmcloud cr namespace-list
@@ -514,7 +514,7 @@ ibmcloud cr namespace-list
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-從 {{site.data.keyword.Bluemix_notm}} 帳戶中移除名稱空間。移除名稱空間時，會刪除此名稱空間中的映像檔。
+從 {{site.data.keyword.cloud_notm}} 帳戶中移除名稱空間。移除名稱空間時，會刪除此名稱空間中的映像檔。
 
 ```
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
@@ -793,7 +793,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
 {: #bx_cr_token_list}
 
-顯示 {{site.data.keyword.Bluemix_notm}} 帳戶的所有現有記號。
+顯示 {{site.data.keyword.cloud_notm}} 帳戶的所有現有記號。
 
 ```
 ibmcloud cr token-list [--format FORMAT]

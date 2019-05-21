@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -28,10 +28,10 @@ subcollection: registry
 您可以使用注册表令牌或 {{site.data.keyword.iamlong}} (IAM) API 密钥，自动访问 {{site.data.keyword.registrylong_notm}} 名称空间，以便可推送和拉出映像。
 {:shortdesc}
 
-要尝试在 Kubernetes 部署中使用注册表映像吗？请查看[访问其他 Kubernetes 名称空间、{{site.data.keyword.Bluemix_notm}} 区域和帐户中的映像](/docs/containers?topic=containers-images#other)。
+要尝试在 Kubernetes 部署中使用注册表映像吗？请查看[访问其他 Kubernetes 名称空间、{{site.data.keyword.cloud_notm}} 区域和帐户中的映像](/docs/containers?topic=containers-images#other)。
 {: tip}
 
-API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中使用，从而不需要针对每种服务具有不同凭证。您可以在 CLI 中或者在自动化过程中使用 API 密钥，以使用您的用户身份登录。
+API 密钥链接到您的帐户，可在 {{site.data.keyword.cloud_notm}} 中使用，从而不需要针对每种服务具有不同凭证。您可以在 CLI 中或者在自动化过程中使用 API 密钥，以使用您的用户身份登录。
 
 注册表令牌仅限定用于 {{site.data.keyword.registrylong_notm}}。您可以对其进行限制以仅具有只读访问权，可选择其是会过期还是不过期。
 
@@ -64,7 +64,7 @@ API 密钥链接到您的帐户，可在 {{site.data.keyword.Bluemix_notm}} 中�
 您可以使用 API 密钥自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 {:shortdesc}
 
-通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 `<your_apikey>` 替换为 API 密钥，将 `<registry_url>` 替换为在其中设置名称空间的注册表的 URL。
+通过运行以下 Docker 命令，使用 API 密钥登录到注册表。将 `<your_apikey>` 替换为您的 API 密钥，将 `<registry_url>` 替换为在其中设置名称空间的注册表的 URL。
 
 - 对于在亚太北部设置的名称空间，请使用 `jp.icr.io`
 - 对于在亚太南部设置的名称空间，请使用 `au.icr.io`
@@ -77,7 +77,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ```
 {: pre}
 
-有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.Bluemix_notm}} 平台 API 密钥](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
+有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.cloud_notm}} 平台 API 密钥](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
 
 ## 使用令牌自动访问名称空间（不推荐）
 {: #registry_tokens}
@@ -88,20 +88,20 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
 
-拥有注册表令牌的所有人都可访问安全信息。如果您希望您的 {{site.data.keyword.Bluemix_notm}} 帐户外的用户能够访问您在区域中设置的所有名称空间，那么可以为您的帐户创建令牌。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 `container-registry` CLI 插件。
+拥有注册表令牌的所有人都可访问安全信息。如果您希望您的 {{site.data.keyword.cloud_notm}} 帐户外的用户能够访问您在区域中设置的所有名称空间，那么可以为您的帐户创建令牌。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 `container-registry` CLI 插件。
 
-为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
+为 {{site.data.keyword.cloud_notm}} 帐户创建令牌时，可以决定该令牌是授权对注册表的只读访问权（拉出）还是写访问权（推送和拉出）。您还可以指定令牌是永久性的还是在 24 小时后到期。您可以创建并使用多个令牌来控制不同类型的访问权。
 
 
 如果是使用注册表令牌登录到 {{site.data.keyword.registrylong_notm}}，那么不会强制实施 IAM 访问策略。如果要限制对自动化中使用的标识的一个或多个名称空间的访问，请考虑使用 IAM 服务标识 API 密钥，而不使用注册表令牌。有关创建 API 密钥并将其用于 {{site.data.keyword.registrylong_notm}} 的更多信息，请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 
 使用以下任务管理令牌：
 
-- [为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌](#registry_tokens_create)
+- [为 {{site.data.keyword.cloud_notm}} 帐户创建令牌](#registry_tokens_create)
 - [使用令牌自动访问名称空间](#registry_tokens_use)
-- [从 {{site.data.keyword.Bluemix_notm}} 帐户除去令牌](#registry_tokens_remove)
+- [从 {{site.data.keyword.cloud_notm}} 帐户除去令牌](#registry_tokens_remove)
 
-### 为 {{site.data.keyword.Bluemix_notm}} 帐户创建令牌（不推荐）
+### 为 {{site.data.keyword.cloud_notm}} 帐户创建令牌（不推荐）
 {: #registry_tokens_create}
 
 您可以创建令牌，以授予对区域中所有 {{site.data.keyword.registrylong_notm}} 名称空间的访问权。
@@ -164,14 +164,14 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
    ```
     ibmcloud login
     ```
    {: pre}
 
-2. 列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要使用的令牌标识。
+2. 列出 {{site.data.keyword.cloud_notm}} 帐户中的所有令牌，并记下要使用的令牌标识。
 
    ```
     ibmcloud cr token-list
@@ -187,7 +187,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
     令牌值会显示在 CLI 输出的**令牌**中。
 
-4. 将令牌用作 `docker login` 命令的一部分。将 `<token_value>` 替换为在上一步中检索到的令牌值，将 `<registry_url>` 替换为在其中设置名称空间的注册表的 URL。
+4. 将令牌用作 `docker login` 命令的一部分。将 `<token_value>` 替换为在上一步中检索到的令牌值，将 `<registry_url>` 替换为设置名称空间的注册表的 URL。
 
    - 对于在亚太北部设置的名称空间，请使用 `jp.icr.io`
    - 对于在亚太南部设置的名称空间，请使用 `au.icr.io`
@@ -205,7 +205,7 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
    使用令牌登录到 Docker 后，就可以将映像推送到名称空间或从名称空间拉出映像。
 
-### 从 {{site.data.keyword.Bluemix_notm}} 帐户中除去令牌（不推荐）
+### 从 {{site.data.keyword.cloud_notm}} 帐户中除去令牌（不推荐）
 {: #registry_tokens_remove}
 
 不再需要 {{site.data.keyword.registrylong_notm}} 令牌时，请除去该令牌。
@@ -214,17 +214,17 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
 
-到期的 {{site.data.keyword.registrylong_notm}} 令牌会自动从 {{site.data.keyword.Bluemix_notm}} 帐户除去，而无需手动除去。
+到期的 {{site.data.keyword.registrylong_notm}} 令牌会自动从 {{site.data.keyword.cloud_notm}} 帐户除去，而无需手动除去。
 {:tip}
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}。
+1. 登录到 {{site.data.keyword.cloud_notm}}。
 
    ```
     ibmcloud login
     ```
    {: pre}
 
-2. 列出 {{site.data.keyword.Bluemix_notm}} 帐户中的所有令牌，并记下要除去的令牌标识。
+2. 列出 {{site.data.keyword.cloud_notm}} 帐户中的所有令牌，并记下要除去的令牌标识。
 
    ```
     ibmcloud cr token-list
@@ -264,6 +264,6 @@ ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docke
 ```
 {: pre}
 
-将 `<apikey>` 替换为 API 密钥，将 `<region>` 替换为[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名称，将 `<my_namespace>` 替换为名称空间，将 `<image_repo>` 替换为存储库。
+将 `<apikey>` 替换为 API 密钥，将 `<region>` 替换为您的[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)名称，将 `<my_namespace>` 替换为名称空间，将 `<image_repo>` 替换为存储库。
 
 有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。

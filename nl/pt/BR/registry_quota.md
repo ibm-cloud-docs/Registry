@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Gerenciando os limites de cota para armazenamento e tráfego de pull
 {: #registry_quota}
 
-É possível limitar a quantia de armazenamento e tráfego extraído que pode ser usada em sua conta do {{site.data.keyword.Bluemix}} configurando e gerenciando os limites
+É possível limitar a quantia de armazenamento e tráfego extraído que pode ser usada em sua conta do {{site.data.keyword.cloud}} configurando e gerenciando os limites
 de cota customizados.
 {:shortdesc}
 
@@ -44,7 +44,7 @@ de serviço grátis, também poderá configurar cotas customizadas em sua quanti
 
 Para configurar uma cota:
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -72,10 +72,7 @@ saída é semelhante à mostrada a seguir.
     ```
     {: screen}
 
-3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso do tráfego de pull, especifique a opção **tráfego** e substitua `<traffic_quota>`
-pelo valor em megabytes que você deseja configurar para a cota de tráfego de pull. Se desejar mudar a quantia de
-armazenamento em sua conta, especifique a opção **armazenamento** e substitua `<storage_quota>`
-pelo valor em megabytes que você deseja configurar.
+3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso do tráfego de pull, especifique a opção **traffic** e substitua `<traffic_quota>` pelo valor em megabytes que você deseja configurar para a cota de tráfego de pull. Se desejar mudar a quantia de armazenamento em sua conta, especifique a opção **storage** e substitua `<storage_quota>` pelo valor em megabytes que você deseja configurar. 
 
     Se você estiver no plano grátis, não será possível configurar sua cota para uma quantia que excede a camada grátis. O abono da camada grátis para armazenamento é de 512 MB e o tráfego é de 5120 MB.
     {:tip}
@@ -99,7 +96,7 @@ pelo valor em megabytes que você deseja configurar.
 para a sua conta.
 {:shortdesc}
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud login
@@ -130,14 +127,14 @@ saída é semelhante à mostrada a seguir.
 ## Liberando o armazenamento usado e mudando planos de serviço ou limites de cota para permanecer dentro dos limites de cota fornecidos
 {: #registry_quota_freeup}
 
-Se você excedeu os seus limites de cota que estiverem configurados para a sua conta do {{site.data.keyword.Bluemix_notm}}, será possível liberar o armazenamento e
+Se você excedeu os seus limites de cota que estiverem configurados para a sua conta do {{site.data.keyword.cloud_notm}}, será possível liberar o armazenamento e
 mudar o seu plano de serviço ou os limites de cota para continuar enviando por push e puxando imagens para e de seu
 namespace.
 {:shortdesc}
 
-Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.Bluemix_notm}}:
+Para liberar o armazenamento de imagem em sua conta do {{site.data.keyword.cloud_notm}}:
 
-1. Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}.
+1. Liste todas as imagens em todos os seus namespaces de sua conta do {{site.data.keyword.cloud_notm}}.
 
     ```
     ibmcloud cr images

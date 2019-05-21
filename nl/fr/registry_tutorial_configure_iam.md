@@ -55,7 +55,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-    2. Invitez l'utilisateur B à accéder au compte de l'utilisateur A en exécutant la commande suivante, où _`<user.b@example.com>`_ est l'adresse électronique de l'utilisateur B :
+    2. Invitez l'utilisateur B à accéder au compte de l'utilisateur A en exécutant la commande suivante, où _`<user.b@example.com>`_ correspond à l'adresse électronique de l'utilisateur B :
 
         ```
         ibmcloud account user-invite <user.b@example.com>
@@ -73,7 +73,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
 
 2. Vérifiez que l'utilisateur B peut cibler le compte de l'utilisateur A mais qu'il ne peut pas encore effectuer quoi que ce soit avec {{site.data.keyword.registrylong_notm}} :
 
-    1. Connectez-vous en tant qu'utilisateur B et exécutez la commande suivante pour cible le compte de l'utilisateur A, où _`<YourAccountID>`_ est l'ID de compte de l'utilisateur A :
+    1. Connectez-vous en tant qu'utilisateur B et exécutez la commande suivante pour cibler le compte de l'utilisateur A, où _`<YourAccountID>`_ correspond à l'ID de compte de l'utilisateur A : 
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -146,7 +146,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
   
-    3. Supprimez la règle en exécutant la commande suivante, où _`<Policy_ID>`_ est votre ID de règle :
+    3. Supprimez la règle en exécutant la commande suivante, où _`<Policy_ID>`_ correspond à votre ID de règle :
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -373,7 +373,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
 
         Recherchez les règles que vous venez de créer et notez les ID de règle.
 
-    3. Supprimez les règles que vous venez de créer en exécutant la commande suivante, où _`<Policy_ID>`_ est l'ID de règle :
+    3. Supprimez les règles que vous venez de créer en exécutant la commande suivante, où _`<Policy_ID>`_ correspond à l'ID de règle :
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>

@@ -73,7 +73,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
 
 2. Compruebe que el Usuario B puede dirigirse a la cuenta del Usuario A, pero que aún no puede hacer nada con {{site.data.keyword.registrylong_notm}}:
 
-    1. Inicie una sesión como Usuario B y ejecute el siguiente mandato para elegir como destino la cuenta del Usuario A, donde _`<YourAccountID>`_ es el ID de la cuenta del Usuario A:
+    1. Inicie una sesión como Usuario B y ejecute el siguiente mandato para elegir como destino la cuenta del Usuario A, donde _`<YourAccountID>`_ es el ID de cuenta del Usuario A:
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -146,7 +146,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
         ```
         {: pre}
   
-    3. Suprima la política con el mandato siguiente, donde _`<Policy_ID>`_ es su ID de política:
+    3. Suprima la política con el mandato siguiente, donde _`<Policy_ID>`_ es el ID de política:
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -373,7 +373,7 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
 
         Busque las políticas que acaba de crear y anote los ID de política.
 
-    3. Suprima las políticas que acaba de crear con el mandato siguiente, donde _`<Policy_ID>`_ es el ID de política:
+    3. Suprima las políticas con el mandato siguiente, donde _`<Policy_ID>`_ es el ID de política:
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -423,7 +423,7 @@ En esta sección, configurará un ID de servicio y le otorgará acceso al espaci
         ```
         {: pre}
 
-2. Utilice Docker para iniciar una sesión con la clave de API del ID de servicio, donde _`<API_Key>`_ es su clave de API, e interactúe con el registro:
+2. Utilice Docker para iniciar una sesión con la clave de API del ID de servicio, donde _`<API_Key>`_ es la clave de API, e interactúe con el registro:
 
     1. Inicie una sesión en {{site.data.keyword.registrylong_notm}} con el siguiente mandato:
 

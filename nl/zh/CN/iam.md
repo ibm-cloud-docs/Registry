@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ subcollection: registry
 |`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。|管理员|
 |`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
 |`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
-|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)：显示 {{site.data.keyword.Bluemix_notm}} 帐户存在的所有令牌。|管理员|
+|`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)：显示 {{site.data.keyword.cloud_notm}} 帐户存在的所有令牌。|管理员|
 {: caption="表 2. 用于配置 {{site.data.keyword.registrylong_notm}} 的平台操作" caption-side="top"}
 
 ## 服务访问角色

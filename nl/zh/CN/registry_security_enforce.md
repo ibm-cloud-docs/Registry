@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -40,7 +40,7 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 
 请完成以下步骤：
 
-1. [在集群中设置 Helm](/docs/containers?topic=containers-integrations#helm)。
+1. [在集群中设置 Helm](/docs/containers?topic=containers-helm#helm)。
 
 2. 将 IBM 图表存储库添加到 Helm 客户机。
 
@@ -243,8 +243,8 @@ spec:
 2. 将 `.yaml` 文件应用于集群。
 
    ```
-kubectl apply -f <filepath>
-    ```
+   kubectl apply -f <filepath>
+   ```
    {: pre}
 
 ### 在定制策略中指定可信内容签署者
@@ -257,7 +257,6 @@ kubectl apply -f <filepath>
 
 1. 获取签署者名称（在 `docker trust signer add` 中使用的名称）和签署者的公用密钥。
 2. 使用签署者名称及其公用密钥生成 Kubernetes 私钥。
-    
 
    ```
     kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
@@ -265,7 +264,6 @@ kubectl apply -f <filepath>
    {: pre}
 
 3. 将该私钥添加到策略中存储库的 `signerSecrets` 列表。
-    
 
    ```yaml
    - name: example
@@ -313,7 +311,7 @@ kubectl apply -f <filepath>
 应用策略后，可以将内容正常部署到集群。策略由 Kubernetes 集群自动强制实施。如果部署与策略相匹配，并且该策略允许部署，那么部署会被集群接受并进行应用。
 {:shortdesc}
 
-如果 Container Image Security Enforcement 拒绝了部署，那么会创建部署，但它创建的 ReplicaSet 无法扩展，并且不会创建任何 pod。您可以通过运行 `kubectl describe deployment <deployment-name>` 来查找 ReplicaSet，然后通过运行 `kubectl describe rs <replicaset-name>`.
+如果 Container Image Security Enforcement 拒绝了部署，那么会创建部署，但它创建的 ReplicaSet 无法扩展，并且不会创建任何 pod。您可以通过运行 `kubectl describe deployment <deployment-name>` 找到 ReplicaSet，然后通过运行 `kubectl describe rs <replicaset-name>` 看到部署被拒绝的原因。
 
 **样本错误消息**
 

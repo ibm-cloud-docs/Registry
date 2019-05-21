@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # ストレージおよびプル・トラフィックの割り当て量制限の管理
 {: #registry_quota}
 
-カスタム割り当て量制限を設定および管理することにより、{{site.data.keyword.Bluemix}} アカウントで使用できるストレージとプル・トラフィックの量を制限することができます。
+カスタム割り当て量制限を設定および管理することにより、{{site.data.keyword.cloud}} アカウントで使用できるストレージとプル・トラフィックの量を制限することができます。
 {:shortdesc}
 
 ## イメージの保管およびプルのための割り当て量制限の設定
@@ -38,7 +38,7 @@ subcollection: registry
 
 割り当て量を設定するには、以下のようにします。
 
-1. {{site.data.keyword.Bluemix_notm}} にログインします。
+1. {{site.data.keyword.cloud_notm}} にログインします。
 
     ```
     ibmcloud login
@@ -88,7 +88,7 @@ subcollection: registry
 アカウントの割り当て量制限を検討し、現在のストレージおよびプル・トラフィックの使用量を確認することができます。
 {:shortdesc}
 
-1. {{site.data.keyword.Bluemix_notm}} にログインします。
+1. {{site.data.keyword.cloud_notm}} にログインします。
 
     ```
     ibmcloud login
@@ -118,12 +118,12 @@ subcollection: registry
 ## 指定された割り当て量制限内に収めるための、使用済みストレージの解放およびサービス・プランまたは割り当て量制限の変更
 {: #registry_quota_freeup}
 
-{{site.data.keyword.Bluemix_notm}} アカウントに設定されている割り当て量制限を超えた場合は、ストレージを解放し、サービス・プランまたは割り当て量制限を変更して、名前空間へのイメージのプッシュ、および名前空間からのイメージのプルを継続することができます。
+{{site.data.keyword.cloud_notm}} アカウントに設定されている割り当て量制限を超えた場合は、ストレージを解放し、サービス・プランまたは割り当て量制限を変更して、名前空間へのイメージのプッシュ、および名前空間からのイメージのプルを継続することができます。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix_notm}} アカウント内のイメージ・ストレージを解放するには、以下のようにします。
+{{site.data.keyword.cloud_notm}} アカウント内のイメージ・ストレージを解放するには、以下のようにします。
 
-1. {{site.data.keyword.Bluemix_notm}} アカウントのすべての名前空間内のすべてのイメージをリストします。
+1. {{site.data.keyword.cloud_notm}} アカウントのすべての名前空間内のすべてのイメージをリストします。
 
     ```
     ibmcloud cr images

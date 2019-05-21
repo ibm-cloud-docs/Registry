@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-26"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -25,11 +25,10 @@ subcollection: registry
 # {{site.data.keyword.cloudaccesstrailshort}} 事件
 {: #at_events}
 
-使用 {{site.data.keyword.cloudaccesstrailfull}} 服务可跟踪用户和应用程序如何与 {{site.data.keyword.Bluemix}} 中的 {{site.data.keyword.registrylong}} 服务进行交互。
+使用 {{site.data.keyword.cloudaccesstrailfull}} 服务可跟踪用户和应用程序如何与 {{site.data.keyword.cloud}} 中的 {{site.data.keyword.registrylong}} 服务进行交互。
 {:shortdesc}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} 服务会记录哪些用户发起的活动会更改 {{site.data.keyword.Bluemix_notm}} 中服务的状态。有关更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started-with-cla#getting-started-with-cla)。
-
+{{site.data.keyword.cloudaccesstrailfull_notm}} 服务会记录哪些用户发起的活动会更改 {{site.data.keyword.cloud_notm}} 中服务的状态。有关更多信息，请参阅 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)。
 
 下表列出了在调用时生成事件的 API 方法：
 
@@ -128,6 +127,6 @@ subcollection: registry
 ## 在何处查找事件
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} 事件可在事件生成所在 {{site.data.keyword.Bluemix_notm}} 区域（`ap-north` 除外）中的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中进行查找。`ap-north` 的事件显示在 `ap-south` 中。
+在生成事件的 {{site.data.keyword.cloud_notm}} 区域中可用的 {{site.data.keyword.cloudaccesstrailshort}} **帐户域**中，{{site.data.keyword.cloudaccesstrailshort}} 事件可用（`ap-north` 除外）。`ap-north` 的事件显示在 `ap-south` 中。
 
 {{site.data.keyword.registrylong_notm}} 或漏洞顾问程序事件所在的[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)对应于映像或名称空间等资源所在的 {{site.data.keyword.registrylong_notm}} 区域。

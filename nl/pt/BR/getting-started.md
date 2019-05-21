@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,10 +25,10 @@ subcollection: registry
 # Tutorial de Introdução
 {: #getting-started}
 
-O {{site.data.keyword.registrylong}} fornece um registro de imagem privada de diversos locatários que pode ser usada para armazenar e compartilhar as imagens do Docker com usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.
+O {{site.data.keyword.registrylong}} fornece um registro de imagem privada de diversos locatários que pode ser usada para armazenar e compartilhar as imagens do Docker com usuários em sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-O console do {{site.data.keyword.Bluemix_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.Bluemix_notm}}, consulte [Gerenciando a segurança da imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index).
+O console do {{site.data.keyword.cloud_notm}} inclui um resumo de Iniciação rápida. Para saber mais sobre como usar o console do {{site.data.keyword.cloud_notm}}, consulte [Gerenciando a segurança da imagem com o Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
@@ -37,12 +37,12 @@ exemplo, nomes ou rótulos de imagem).
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #gs_registry_cli_install}
 
-1. Instale a [CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para que seja possível executar os comandos `ibmcloud` do {{site.data.keyword.Bluemix_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
+1. Instale a [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para que seja possível executar os comandos `ibmcloud` do {{site.data.keyword.cloud_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
 
 ## Configurar um namespace
 {: #gs_registry_namespace_add}
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
@@ -56,8 +56,7 @@ exemplo, nomes ou rótulos de imagem).
    ```
    {: pre}
 
-2. Inclua um namespace para criar seu próprio repositório de imagem. Substitua `<my_namespace>` por seu namespace
-preferencial.
+2. Inclua um namespace para criar seu próprio repositório de imagem. Substitua `<my_namespace>` por seu namespace preferencial.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -90,17 +89,14 @@ preferencial.
    ```
    {: pre}
 
-3. Identifique a imagem. Substitua `<source_image>` pelo repositório e `<tag>` pela tag de sua
-imagem local cujo pull você fez anteriormente. Substitua `<region>` pelo nome de sua
-[região](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Substitua `<my_namespace>` pelo namespace criado em [Configurar
-um namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add). Defina o repositório e a tag da imagem que você deseja usar em seu namespace substituindo <new_image_repo>  e  <new_tag>.
+3. Identifique a imagem. Substitua `<source_image>` pelo repositório e `<tag>` pela tag da sua imagem local que passou por pull anteriormente. Substitua `<region>` pelo nome de sua [região](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Substitua `<my_namespace>` pelo namespace criado em [Configurar um namespace](#gs_registry_namespace_add). Defina o repositório e a tag da imagem que você deseja usar em seu namespace substituindo `<new_image_repo>` e `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
 
-   Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
+   Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>` é `uk`, `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
 
    ```
    docker tag hello-world:latest uk.icr.io/namespace1 /hw_repo: 1
@@ -117,15 +113,14 @@ um namespace](/docs/services/Registry?topic=registry-index#registry_namespace_ad
    ```
    {: pre}
 
-2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua `<my_namespace>` pelo
-namespace criado em [Configurar um namespace](/docs/services/Registry?topic=registry-index#registry_namespace_add) e `<image_repo>`  e  `<tag>` pelo repositório e pela tag da imagem escolhidos ao identificar a imagem.
+2. Faça upload (_enviar por push_) da imagem para seu namespace. Substitua `<my_namespace>` pelo namespace criado em [Configurar um namespace](#gs_registry_namespace_add) e `<image_repo>` e `<tag>` pelo repositório e pela tag da imagem que você escolheu ao identificar a imagem.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
    ```
    {: pre}
    
-   Veja este exemplo, em que `<region>`  é  ` uk `,  `<my_namespace>` é `namespace1`, `<image_repo>` é `hw_repo` e `<tag>` é `1`:
+   Veja este exemplo, em que `<region>` é `uk`, `<my_namespace>` é `namespace1`, `<image_repo>` é `hw_repo` e `<tag>` é `1`:
 
    ```
    docker push uk.icr.io/namespace1 /hw_repo: 1

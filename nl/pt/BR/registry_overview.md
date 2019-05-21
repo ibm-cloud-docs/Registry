@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -38,7 +38,7 @@ Uma imagem do Docker é a base para cada contêiner que você cria. Uma imagem �
 de um Dockerfile, que é um arquivo que contém instruções para construir a imagem. Um Dockerfile pode
 referenciar os artefatos de construção em suas instruções que são armazenadas separadamente, como um app, a configuração
 do app e suas dependências. As imagens geralmente são armazenadas em um registro que pode ser acessado pelo público (registro público) ou configurado com acesso
-limitado para um pequeno grupo de usuários (registro privado). Usando o {{site.data.keyword.registrylong_notm}}, apenas os usuários com acesso à sua conta do {{site.data.keyword.Bluemix_notm}} podem acessar as suas imagens.
+limitado para um pequeno grupo de usuários (registro privado). Usando o {{site.data.keyword.registrylong_notm}}, apenas os usuários com acesso à sua conta do {{site.data.keyword.cloud_notm}} podem acessar as suas imagens.
 
 Ao enviar por push imagens para o {{site.data.keyword.registrylong_notm}}, você se beneficia dos recursos integrados do
 Vulnerability Advisor que varrem potenciais problemas de segurança e vulnerabilidades. O Vulnerability Advisor verifica
@@ -51,7 +51,7 @@ Revise a tabela a seguir para localizar uma visão geral dos benefícios de uso 
 
 |Benefício|Descrição|
 |-------|-----------|
-|Registro privado altamente disponível e escalável|<ul><li>Configure o seu próprio namespace de imagem em um registro privado de diversos locatários, altamente disponível e escalável que seja hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}.</li><li>Armazene suas imagens privadas do Docker e compartilhe-as com os usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.</li></ul>|
+|Registro privado altamente disponível e escalável|<ul><li>Configure o seu próprio namespace de imagem em um registro privado de diversos locatários, altamente disponível e escalável que seja hospedado e gerenciado pela {{site.data.keyword.IBM_notm}}.</li><li>Armazene suas imagens privadas do Docker e compartilhe-as com os usuários em sua conta do {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformidade de segurança de imagem com o Vulnerability Advisor|<ul><li>Benefício da varredura automática de imagens em seu namespace.</li><li>Revise as recomendações que são específicas para o sistema operacional para corrigir potenciais
 vulnerabilidades e proteger os seus contêineres de serem comprometidos.</li></ul>|
 |Limites de cota para armazenamento e tráfego extraído|<ul><li>Benefício do armazenamento livre e de tráfego extraído para as suas imagens privadas até você atingir a sua
@@ -63,11 +63,11 @@ o seu nível de pagamento preferencial.</li></ul>|
 {: #registry_plans}
 
 É possível escolher entre os planos de serviço grátis ou padrão do {{site.data.keyword.registrylong_notm}}
-para armazenar suas imagens do Docker e disponibilizar essas imagens para os usuários em sua conta do {{site.data.keyword.Bluemix_notm}}.
+para armazenar suas imagens do Docker e disponibilizar essas imagens para os usuários em sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 O plano de serviço do {{site.data.keyword.registrylong_notm}} determina a quantidade de armazenamento e extrai o tráfego que pode
-ser usado para suas imagens privadas. O plano de serviço é associado à sua conta do {{site.data.keyword.Bluemix_notm}}
+ser usado para suas imagens privadas. O plano de serviço é associado à sua conta do {{site.data.keyword.cloud_notm}}
 e os limites de armazenamento e o tráfego de extração de imagem são aplicados a todos os namespaces configurados em sua conta.
 
 A tabela a seguir mostra os planos de serviço disponíveis do {{site.data.keyword.registrylong_notm}} e as suas características. Para obter mais informações sobre como o faturamento funciona e o que acontece ao exceder os limites do plano de serviço, veja [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
@@ -76,7 +76,7 @@ A tabela a seguir mostra os planos de serviço disponíveis do {{site.data.keywo
 |---------------|----|--------|
 |Descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
 primeiro namespace no {{site.data.keyword.registrylong_notm}}.|Benefícios do armazenamento ilimitado e uso de tráfego de extração para gerenciar as imagens do Docker para todos os namespaces em sua conta
-do {{site.data.keyword.Bluemix_notm}}.|
+do {{site.data.keyword.cloud_notm}}.|
 |Quantidade de armazenamento para imagens|500 MB|Ilimitado|
 |Tráfego extraído|5 GB por mês|Ilimitado|
 |Faturamento|Se você exceder seu armazenamento ou os limites de tráfego de extração, não será possível enviar por push nem
@@ -91,7 +91,7 @@ Localize informações e exemplos de como o processo de faturamento e limites de
 {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Cada imagem é construída por meio de uma série de camadas que representam, cada uma, uma mudança incremental da imagem base. Quando você enviar por push ou puxar uma imagem, a quantia de armazenamento e tráfego extraído necessária para cada camada será incluída em seu uso mensal. Camadas idênticas são compartilhadas automaticamente entre as imagens em sua conta do {{site.data.keyword.Bluemix_notm}} e serão reutilizadas ao criar outras imagens. O armazenamento para cada camada idêntica é cobrado somente uma vez, independentemente de quantas imagens em sua conta referenciam a camada.
+Cada imagem é construída por meio de uma série de camadas que representam, cada uma, uma mudança incremental da imagem base. Quando você enviar por push ou puxar uma imagem, a quantia de armazenamento e tráfego extraído necessária para cada camada será incluída em seu uso mensal. Camadas idênticas são compartilhadas automaticamente entre as imagens em sua conta do {{site.data.keyword.cloud_notm}} e serão reutilizadas ao criar outras imagens. O armazenamento para cada camada idêntica é cobrado somente uma vez, independentemente de quantas imagens em sua conta referenciam a camada.
 
 Exemplo para enviar imagens por push:
 
@@ -108,7 +108,7 @@ extraído que usa por mês.
 
 **Armazenamento: **
 
-  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} vem com uma determinada quantia de armazenamento que pode ser usada para armazenar as imagens do Docker nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
+  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} vem com uma determinada quantia de armazenamento que pode ser usada para armazenar as imagens do Docker nos namespaces de sua conta do {{site.data.keyword.cloud_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
 
   Exemplo para o plano padrão:
 
@@ -142,18 +142,18 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
 
 **Armazenamento: **
 
-  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.Bluemix_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para ativar o envio por push de novas imagens novamente.
+  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.cloud_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para ativar o envio por push de novas imagens novamente.
 
   Exemplo para o plano padrão:
 
-  > O seu limite de cota atual para armazenamento está configurado como 1 GB. Todas as imagens privadas que são armazenadas nos namespaces de sua conta do {{site.data.keyword.Bluemix_notm}} já usam 900 MB desse armazenamento. Você tem 100 MB de armazenamento disponível até atingir o seu limite de cota. Um usuário deseja enviar por push uma imagem com um tamanho de 2 GB na máquina local. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário envie por push esta imagem.
+  > O seu limite de cota atual para armazenamento está configurado como 1 GB. Todas as imagens privadas que são armazenadas nos namespaces de sua conta do {{site.data.keyword.cloud_notm}} já usam 900 MB desse armazenamento. Você tem 100 MB de armazenamento disponível até atingir o seu limite de cota. Um usuário deseja enviar por push uma imagem com um tamanho de 2 GB na máquina local. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário envie por push esta imagem.
   >
   > Após o envio por push, o {{site.data.keyword.registrylong_notm}} determina o tamanho real da imagem em seu namespace, que pode variar do tamanho em sua máquina local e verifica se o limite para armazenamento é atingido. Neste exemplo, o uso de armazenamento aumenta de 900 MB para 2 GB. Com o seu limite de cota atual configurado como 1 GB, o {{site.data.keyword.registrylong_notm}} impede que você envie por push imagens adicionais para o namespace.
 
 **Puxe o tráfego: **
 
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos
-namespaces em sua conta do {{site.data.keyword.Bluemix_notm}}
+namespaces em sua conta do {{site.data.keyword.cloud_notm}}
 até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites
 de cota para tráfego extraído](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
@@ -172,12 +172,12 @@ seu namespace.
 ### Estimando custos
 {: #registry_estimating_costs}
 
-Use a calculadora de precificação do {{site.data.keyword.Bluemix_notm}} para estimar o custo de seu plano.
+Use a calculadora de precificação do {{site.data.keyword.cloud_notm}} para estimar o custo de seu plano.
 {:shortdesc}
 
-É possível precificar seu app usando as calculadoras de custo que são fornecidas pelo {{site.data.keyword.Bluemix_notm}}.
+É possível precificar seu app usando as calculadoras de custo que são fornecidas pelo {{site.data.keyword.cloud_notm}}.
 
-1. Abra a planilha de precificação, consulte [{{site.data.keyword.Bluemix_notm}}Precificação![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo") ](https://www.ibm.com/cloud/pricing).
+1. Abra a folha de precificação. Consulte [Precificação do {{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/cloud/pricing).
 2. Na seção **Pagar conforme o uso**, clique em **Estimar seus custos com a nossa calculadora**. A calculadora é aberta.
 3. Role até a seção **Registro de contêiner** na seção **Encargos de contêiner**.
 4. Insira suas estimativas de armazenamento e de tráfego nos campos fornecidos.
@@ -188,19 +188,19 @@ Seus custos estimados são exibidos na calculadora.
 {: #registry_plan_upgrade}
 
 É possível fazer upgrade do seu plano de serviços para obter benefícios de armazenamento ilimitado e de uso de tráfego extraído para gerenciar
-as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.Bluemix_notm}}.
+as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmcloud cr plan`.
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.Bluemix_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.cloud_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
     {:tip}
 
 2. Faça upgrade para o plano padrão.
@@ -210,7 +210,7 @@ Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmclo
    ```
    {: pre}
 
-   Quando você tem uma conta Lite do {{site.data.keyword.Bluemix_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.Bluemix_notm}} antes de executar `ibmcloud cr plan-upgrade`.
+   Quando você tem uma conta Lite do {{site.data.keyword.cloud_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.cloud_notm}} antes de executar `ibmcloud cr plan-upgrade`.
    {:tip}
 
 ## Aprendendo o básico
@@ -239,9 +239,9 @@ exemplo, nomes ou rótulos de imagem).
 <dl>
   <dt>Namespace</dt>
   <dd>Os namespaces são uma maneira de organizar repositórios de suas imagens no {{site.data.keyword.registrylong_notm}}. O namespace está associado à sua
-conta do {{site.data.keyword.Bluemix_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexo à URL de registro como a seguir: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+conta do {{site.data.keyword.cloud_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexo à URL de registro como a seguir: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Cada usuário em sua conta do {{site.data.keyword.Bluemix_notm}} pode
+  Cada usuário em sua conta do {{site.data.keyword.cloud_notm}} pode
 visualizar e trabalhar com imagens que estão armazenadas em seu namespace de registro. É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção.</dd>
 </dl>
 
@@ -275,7 +275,7 @@ gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker 
 {:shortdesc}
 
 É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus
-ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.Bluemix_notm}}, deve-se configurar um namespace para
+ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.cloud_notm}}, deve-se configurar um namespace para
 cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que
 alguém já tenha um namespace com esse nome configurado nessa região.
 
@@ -289,7 +289,7 @@ Se você não tiver certeza se um namespace já está configurado para sua conta
 
 Considere as regras a seguir ao escolher um namespace:
 
-- O namespace deve ser exclusivo em uma região do {{site.data.keyword.Bluemix_notm}}.
+- O namespace deve ser exclusivo em uma região do {{site.data.keyword.cloud_notm}}.
 - O namespace deve ter de 4 a 30 caracteres de comprimento.
 - O namespace deve iniciar com pelo menos uma letra ou um número.
 - O namespace deve conter somente letras minúsculas, números ou sublinhados (_).

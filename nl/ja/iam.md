@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -69,7 +69,7 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 | `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) - レジストリーへのアクセスを制御するために使用できるトークンを追加します。 | 管理者 |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) - 指定した 1 つ以上のトークンを削除します。 | 管理者 |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) - 指定したトークンをレジストリーから取得します。 | 管理者 |
-| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) - {{site.data.keyword.Bluemix_notm}} アカウント用に存在するすべてのトークンを表示します。 | 管理者 |
+| `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) - {{site.data.keyword.cloud_notm}} アカウント用に存在するすべてのトークンを表示します。 | 管理者 |
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} の構成に関するプラットフォームのアクションと操作" caption-side="top"}
 
 ## サービス・アクセス役割
@@ -131,7 +131,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) - コンテナー・イメージをリストします。 | リーダー、管理者 |
 | `container-registry.image.pull` | <ul><li>`docker pull` イメージをプルします。 </li><li>`docker trust inspect` 署名を検査します。 </li></ul> | リーダー、ライター、管理者 |
 | `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>`docker trust sign` イメージに署名します。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、{{site.data.keyword.registrylong_notm}}名前空間にインポートします。</li></ul> | ライター、管理者 |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。 ソース・イメージとターゲット・イメージは、同一の領域内になければなりません。 | ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。 | ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) - イメージの脆弱性評価レポートを表示します。 | リーダー、管理者 |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) - 名前空間を追加します。 | ライター、管理者 |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) - 名前空間を削除します。 | ライター、管理者 |

@@ -94,8 +94,8 @@ subcollection: registry
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
 
         ```
-        ibmcloud login
-        ```
+    ibmcloud login
+    ```
         {: pre}
 
     2. 執行下列指令，建立原則以將「管理員」角色授與「使用者 B」：
@@ -135,8 +135,8 @@ subcollection: registry
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
   
         ```
-        ibmcloud login
-        ```
+    ibmcloud login
+    ```
         {: pre}
   
     2. 列出「使用者 B」的原則，並執行下列指令找到您剛才建立的原則，然後記下 ID：
@@ -164,8 +164,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」身分登入：
 
         ```
-        ibmcloud login
-        ```
+    ibmcloud login
+    ```
         {: pre}
 
     2. 執行下列指令，以建立名稱空間 `namespace_b`：
@@ -197,8 +197,8 @@ subcollection: registry
     2. 執行下列指令，嘗試以「使用者 B」身分列出映像檔：
 
         ```
-        ibmcloud cr images
-        ```
+    ibmcloud cr images
+    ```
         {: pre}
 
         它會傳回空清單，因為「使用者 B」無法存取任何名稱空間。
@@ -208,8 +208,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」的帳戶身分登入：
 
         ```
-        ibmcloud login
-        ```
+    ibmcloud login
+    ```
         {: pre}
 
     2. 執行下列指令，以確認至少列出三個名稱空間：
@@ -423,7 +423,7 @@ subcollection: registry
         ```
         {: pre}
 
-2. 使用 Docker 以利用「服務 ID」API 金鑰登入，其中，_`<API_Key>`_ 是 API 金鑰，並與登錄互動：
+2. 使用 Docker 搭配服務 ID API 金鑰來登入（其中 _`<API_Key>`_ 是 API 金鑰），並與登錄互動：
 
     1. 執行下列指令，以登入 {{site.data.keyword.registrylong_notm}}：
 

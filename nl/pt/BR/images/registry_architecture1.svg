@@ -474,7 +474,7 @@
 		<path class="st5" d="M238,807.4h-76.8c-2.6,0-4.8-2.2-4.8-4.8v-28.9c0-2.6,2.2-4.8,4.8-4.8H238c2.6,0,4.8,2.2,4.8,4.8v28.9
 			C242.8,805.2,240.7,807.4,238,807.4z"/>
 		<text transform="matrix(1 0 0 1 186.4206 795.2717)" class="st13 st14">da GUI</text>
-		<text transform="matrix(1 0 0 1 410.1844 795.2717)" class="st13 st14">CLI (interface da linha de comandos)</text>
+		<text transform="matrix(1 0 0 1 410.1844 795.2717)" class="st13 st14">CLI</text>
 		<text transform="matrix(1 0 0 1 597.5212 784.4711)"><tspan x="0" y="0" class="st13 st14">Armazenamento de</tspan><tspan x="27.2" y="21.6" class="st13 st14">imagem local</tspan></text>
 		<text transform="matrix(1 0 0 1 590.5526 141.1297)"><tspan x="0" y="0" class="st13 st14">Repositório privado do</tspan><tspan x="17.7" y="21.6" class="st13 st14">Docker</tspan></text>
 		<path class="st5" d="M463.6,168.1h-75.9c-2.2,0-4-1.8-4-4v-19.5c0-2.2,1.8-4,4-4h75.9c2.2,0,4,1.8,4,4v19.5

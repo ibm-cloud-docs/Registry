@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # コンテナー・イメージ・セキュリティーの適用
 {: #security_enforce}
 
-Container Image Security Enforcement を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
+Container Image Security Enforcement を使用すると、{{site.data.keyword.containerlong}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。 イメージがポリシーの要件を満たさない場合、ポッドはクラスターにデプロイされることも更新されることもありません。
 {:shortdesc}
 
 Container Image Security Enforcement は、イメージ・コンテンツの信頼性と脆弱性に関する情報を {{site.data.keyword.registrylong}} から取得します。 他のレジストリーに保管されているイメージについては、そのデプロイメントをブロックするか許可するかを選択することはできますが、それらのイメージに対して脆弱性や信頼性の制約を使用することはできません。
@@ -40,7 +40,7 @@ Container Image Security Enforcement は、イメージ・コンテンツの信�
 
 以下の手順を実行してください。
 
-1. [クラスターに Helm をセットアップします](/docs/containers?topic=containers-integrations#helm)。
+1. [クラスターに Helm をセットアップします](/docs/containers?topic=containers-helm#helm)。
 
 2. IBM のチャート・リポジトリーを Helm クライアントに追加します。
 

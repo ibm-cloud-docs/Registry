@@ -88,7 +88,7 @@ subcollection: registry
    ```
    {: pre}
 
-3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。 `<region>` を[領域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に置き換えます。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換えます。 `<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
+3. イメージにタグ付けします。 `<source_image>` を、先ほどプルしたローカル・イメージのリポジトリーに置き換え、`<tag>` を、そのイメージのタグに置き換えてください。 `<region>` を[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に置き換えます。 `<my_namespace>` を、[名前空間のセットアップ](/docs/services/Registry?topic=registry-index#registry_namespace_add)で作成した名前空間に置き換えます。 `<new_image_repo>` と `<new_tag>` を置き換えることで、名前空間で使用するイメージのリポジトリーとタグを定義します。
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>

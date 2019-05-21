@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -34,7 +34,7 @@ subcollection: registry
 
 **圖 1. {{site.data.keyword.registrylong_notm}} 如何與您的 Docker 映像檔互動**
 
-Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfile 建立，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。映像檔一般儲存在登錄中，而登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。使用 {{site.data.keyword.registrylong_notm}} 時，只有具有 {{site.data.keyword.Bluemix_notm}} 帳戶存取權的使用者才能存取映像檔。
+Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfile 建立，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。映像檔一般儲存在登錄中，而登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。使用 {{site.data.keyword.registrylong_notm}} 時，只有具有 {{site.data.keyword.cloud_notm}} 帳戶存取權的使用者才能存取映像檔。
 
 將映像檔推送至 {{site.data.keyword.registrylong_notm}} 時，您可以受益於內建的「漏洞警告器」特性，它們會掃描潛在的安全問題及漏洞。「漏洞警告器」會檢查特定 Docker 基礎映像檔以尋找有漏洞的套件，以及應用程式配置設定中的已知漏洞。發現漏洞時，會提供漏洞的相關資訊。您可以使用此資訊來解決安全問題，以避免從有漏洞的映像檔部署容器。
 
@@ -42,7 +42,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 |好處|說明|
 |-------|-----------|
-|高可用性且可擴充的專用登錄|<ul><li>在 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者共用。</li></ul>|
+|高可用性且可擴充的專用登錄|<ul><li>在 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.cloud_notm}} 帳戶中的使用者共用。</li></ul>|
 |漏洞警告器的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統特有的建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
 |儲存空間及取回資料流量的配額限制|<ul><li>受益於專用映像檔的免費儲存空間及取回資料流量，直到達到免費配額為止。</li><li>設定每個月的儲存空間量及取回資料流量的自訂配額限制，以避免超出偏好的付費等級。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 的好處" caption-side="top"}
@@ -50,16 +50,16 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ## 服務方案
 {: #registry_plans}
 
-您可以選擇免費或標準 {{site.data.keyword.registrylong_notm}} 服務方案來儲存 Docker 映像檔，並讓 {{site.data.keyword.Bluemix_notm}} 帳戶中的使用者可使用這些映像檔。
+您可以選擇免費或標準 {{site.data.keyword.registrylong_notm}} 服務方案來儲存 Docker 映像檔，並讓 {{site.data.keyword.cloud_notm}} 帳戶中的使用者可使用這些映像檔。
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 服務方案會決定可用於專用映像檔的儲存空間量及取回資料流量。服務方案與 {{site.data.keyword.Bluemix_notm}} 帳戶相關聯，而且儲存空間及映像檔取回資料流量的限制適用於帳戶中設定的所有名稱空間。
+{{site.data.keyword.registrylong_notm}} 服務方案會決定可用於專用映像檔的儲存空間量及取回資料流量。服務方案與 {{site.data.keyword.cloud_notm}} 帳戶相關聯，而且儲存空間及映像檔取回資料流量的限制適用於帳戶中設定的所有名稱空間。
 
 下表顯示可用的 {{site.data.keyword.registrylong_notm}} 服務方案及其特徵。如需計費運作方式以及您超出服務方案限制時會發生什麼情況的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。
 
 |特徵|免費|標準|
 |---------------|----|--------|
-|說明|試用 {{site.data.keyword.registrylong_notm}}，以儲存及共用 Docker 映像檔。當您在 {{site.data.keyword.registrylong_notm}} 中設定第一個名稱空間時，此方案是預設服務方案。|受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.Bluemix_notm}} 帳戶中所有名稱空間的 Docker 映像檔。|
+|說明|試用 {{site.data.keyword.registrylong_notm}}，以儲存及共用 Docker 映像檔。當您在 {{site.data.keyword.registrylong_notm}} 中設定第一個名稱空間時，此方案是預設服務方案。|受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.cloud_notm}} 帳戶中所有名稱空間的 Docker 映像檔。|
 |映像檔的儲存空間量|500 MB|無限制|
 |取回資料流量|每個月 5 GB|無限制|
 |計費|如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。|<ul><li>儲存空間：會依使用的 GB-月向您收費。前 0.5 GB-月免費。之後，會依定價計算機中所述向您收費。</li><li>取回資料流量：會依每個月使用的 GB 量向您收費。前 5 GB 免費。之後，會依定價計算機中所述向您收費。如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需儲存空間、取回資料流量及定價計算機的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。</li></ul>|
@@ -71,7 +71,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 尋找計費處理程序及配額限制在 {{site.data.keyword.registrylong_notm}} 中如何運作的資訊及範例。
 {:shortdesc}
 
-每個映像檔都是從數層建置而來，每一層都代表從基礎映像檔算起的漸進式變更。當您推送或取回映像檔時，會將每一層所需的儲存空間量及取回資料流量加到您的每月用量。相同的層會在 {{site.data.keyword.Bluemix_notm}} 帳戶中的映像檔之間自動共用，而且可以在建立其他映像檔時重複使用。每一個相同層的儲存空間都只收費一次，不論帳戶中有多少映像檔參照該層。
+每個映像檔都是從數層建置而來，每一層都代表從基礎映像檔算起的漸進式變更。當您推送或取回映像檔時，會將每一層所需的儲存空間量及取回資料流量加到您的每月用量。相同的層會在 {{site.data.keyword.cloud_notm}} 帳戶中的映像檔之間自動共用，而且可以在建立其他映像檔時重複使用。每一個相同層的儲存空間都只收費一次，不論帳戶中有多少映像檔參照該層。
 
 推送映像檔的範例：
 
@@ -87,7 +87,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **儲存空間：**
 
-  每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔儲存在 {{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間中。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是指一個月（730 小時）平均 1 GB 儲存空間。
+  每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔儲存在 {{site.data.keyword.cloud_notm}} 帳戶的名稱空間中。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是指一個月（730 小時）平均 1 GB 儲存空間。
 
   標準方案的範例：
 
@@ -119,17 +119,17 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 **儲存空間：**
 
-  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)，以重新啟用新映像檔的推送。
+  達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.cloud_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)，以重新啟用新映像檔的推送。
 
   標準方案的範例：
 
-  > 您的現行儲存空間配額限制設為 1 GB。{{site.data.keyword.Bluemix_notm}} 帳戶的名稱空間中所儲存的所有專用映像檔，已使用這個儲存空間中的 900 MB。在達到配額限制之前，您有 100 MB 的儲存空間可用。有一位使用者想要在本端機器上推送大小為 2 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者推送此映像檔。
+  > 您的現行儲存空間配額限制設為 1 GB。{{site.data.keyword.cloud_notm}} 帳戶的名稱空間中所儲存的所有專用映像檔，已使用這個儲存空間中的 900 MB。在達到配額限制之前，您有 100 MB 的儲存空間可用。有一位使用者想要在本端機器上推送大小為 2 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者推送此映像檔。
   >
   > 推送之後，{{site.data.keyword.registrylong_notm}} 會判斷名稱空間中映像檔的實際大小（這可能會與本端機器上的大小不同），並檢查是否達到儲存空間的限制。在此範例中，儲存空間用量會從 900 MB 增加 2 GB。在現行配額限制設為 1 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您將其他映像檔推送至名稱空間。
 
 **取回資料流量：**
 
-  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)之前，您無法從 {{site.data.keyword.Bluemix_notm}} 帳戶中的名稱空間取回任何映像檔。
+  達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)之前，您無法從 {{site.data.keyword.cloud_notm}} 帳戶中的名稱空間取回任何映像檔。
 
   標準方案的範例：
 
@@ -140,12 +140,12 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 預估成本
 {: #registry_estimating_costs}
 
-使用 {{site.data.keyword.Bluemix_notm}} 定價計算機來預估方案的成本。
+使用 {{site.data.keyword.cloud_notm}} 定價計算機來預估方案的成本。
 {:shortdesc}
 
-您可以使用 {{site.data.keyword.Bluemix_notm}} 提供的成本計算機來為應用程式定價。
+您可以使用 {{site.data.keyword.cloud_notm}} 提供的成本計算機來為應用程式定價。
 
-1. 開啟定價單，請參閱 [{{site.data.keyword.Bluemix_notm}} 定價 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/pricing)。
+1. 開啟定價單，請參閱 [{{site.data.keyword.cloud_notm}} 定價 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/pricing)。
 2. 在**隨收隨付制**區段中，按一下**使用計算機預估成本**。即會開啟計算機。
 3. 在**容器費用**區段中，捲動至 **Container Registry** 區段。
 4. 在提供的欄位中，輸入您的儲存空間及資料流量預估值。
@@ -155,19 +155,19 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ## 升級服務方案
 {: #registry_plan_upgrade}
 
-您可以升級服務方案，受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.Bluemix_notm}} 帳戶中所有名稱空間的 Docker 映像檔。
+您可以升級服務方案，受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.cloud_notm}} 帳戶中所有名稱空間的 Docker 映像檔。
 {:shortdesc}
 
 如果您要找出您所擁有的服務方案，請執行 `ibmcloud cr plan` 指令。
 
-1. 登入 {{site.data.keyword.Bluemix_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}。
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.Bluemix_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
+   如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.cloud_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
     {:tip}
 
 2. 升級為標準方案。
@@ -177,7 +177,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
    ```
    {: pre}
 
-   如果您有 {{site.data.keyword.Bluemix_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.Bluemix_notm}} 隨收隨付制或訂閱帳戶，然後才執行 `ibmcloud cr plan-upgrade`。
+   如果您有 {{site.data.keyword.cloud_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.cloud_notm}} 隨收隨付制或訂閱帳戶，然後才執行 `ibmcloud cr plan-upgrade`。
     {:tip}
 
 ## 學習基本觀念
@@ -204,9 +204,9 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 <dl>
   <dt>名稱空間 (Namespace)</dt>
-  <dd>名稱空間是在 {{site.data.keyword.registrylong_notm}} 內組織映像檔儲存庫的一種方式。名稱空間與 {{site.data.keyword.Bluemix_notm}} 帳戶相關聯。當您在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間時，會將名稱空間附加至登錄 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
+  <dd>名稱空間是在 {{site.data.keyword.registrylong_notm}} 內組織映像檔儲存庫的一種方式。名稱空間與 {{site.data.keyword.cloud_notm}} 帳戶相關聯。當您在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間時，會將名稱空間附加至登錄 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
-  您 {{site.data.keyword.Bluemix_notm}} 帳戶中的每個使用者都可以檢視及使用登錄名稱空間中所儲存的映像檔。例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。</dd>
+  您 {{site.data.keyword.cloud_notm}} 帳戶中的每個使用者都可以檢視及使用登錄名稱空間中所儲存的映像檔。例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。</dd>
 </dl>
 
 <dl>
@@ -237,7 +237,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 {{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中儲存及共用 Docker 映像檔。
 {:shortdesc}
 
-例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.Bluemix_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
+例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.cloud_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
 
 您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
 
@@ -248,7 +248,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 當您選擇名稱空間時，請考量下列規則：
 
-- 在 {{site.data.keyword.Bluemix_notm}} 地區中，名稱空間必須是唯一的。
+- 在 {{site.data.keyword.cloud_notm}} 地區中，名稱空間必須是唯一的。
 - 名稱空間的長度必須是 4 - 30 個字元。
 - 名稱空間的開頭必須至少使用一個字母或數字。
 - 名稱空間只能包含小寫字母、數字或底線 (_)。
