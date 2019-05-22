@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-05-22"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, 
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -49,10 +49,7 @@ ibmcloud cr images --include-ibm
 {: #faq_tools}
 {: faq}
 
-No, only tools that build Docker v2 image formats are supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
-
-The FAQs below are in staging only at the moment.
-{: tip}
+Yes, provided that the tool supports OCI image format and protocol.
 
 ## How do I use access control with IAM?
 {: #faq_access_control}
@@ -122,4 +119,4 @@ Security notices for Vulnerbaility Advisor are loaded from the vendors' operatin
 
 No. However, a version number is baked into the API, but this version is the version of the JSON that is returned.
 
-The different components (for example, the API, scanning tools, and database) are all updated independently. Given that the scans happen asynchronously to the requests for results, the set of components that give a result is variable. However, each scan does contain a timestamp that can be used to work out the components used for the scan.</staging>
+The different components (for example, the API, scanning tools, and database) are all updated independently. Given that the scans happen asynchronously to the requests for results, the set of components that give a result is variable. However, each scan does contain a timestamp that can be used to work out the components used for the scan.
