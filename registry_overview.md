@@ -198,6 +198,11 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 <dl>
+  <dt>Docker v2 images</dt>
+  <dd>Container images that are compliant with [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V 2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about suppport for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+</dl>
+
+<dl>
   <dt>Image</dt>
   <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the image is built by successive updates. The image does not retain state as the container executes.</dd>
 </dl>
@@ -211,7 +216,7 @@ Do not put personal information in your container images, namespace names, descr
 
 <dl>
   <dt>OCI container images</dt>
-  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec).</dd>
+  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec). The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
@@ -373,7 +378,9 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
 
-Docker v2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+Docker v2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
 
 Docker v1 images are deprecated.
 {: deprecated}
+
+For information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).
