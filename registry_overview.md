@@ -382,3 +382,5 @@ Docker v2 images are supported. Manifest lists are also supported. For more info
 
 Docker v1 images are deprecated.
 {: deprecated}
+
+For information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).
