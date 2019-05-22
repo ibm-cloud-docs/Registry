@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-22"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -372,3 +372,8 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
+
+Docker v2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+
+Docker v1 images are deprecated.
+{: deprecated}
