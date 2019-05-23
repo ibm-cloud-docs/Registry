@@ -96,4 +96,4 @@ The scanning of an image is triggered in one of the following ways:
 {: #faq_va_update_security_notice}
 {: faq}
 
-Security notices for Vulnerbaility Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
+Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
