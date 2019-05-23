@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-05-23"
 
 keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
 
@@ -63,19 +63,6 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 
 You can host images in [local regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions_local). IBM hosted public images are available in the [Global registry](/docs/services/Registry?topic=registry-registry_overview#registry_regions_global).
 
-## How do I update the Container Scanner when it is flagged with vulnerabilities?
-{: #faq_va_update_scan_flag}
-{: faq}
-
-To update the version of the Container Scanner that is running in a cluster, use Helm in the same way as for the installation, but with the `–upgrade` flag. For more information, see [Configure the Helm Chart](/docs/services/Registry?topic=va-va_index#va_install_container_scanner_helm).
-
-For example:
-
-```
-helm install -f config.yaml --name=<myscanner> ibm/ibmcloud-container-scanner -upgrade
-```
-{: pre}
-
 ## Why have I received a scan not found error message for a newly added image?
 {: #faq_va_new_scan_error}
 {: faq}
@@ -101,22 +88,12 @@ If you still see unacceptable performance, contact support, see [Getting help an
 
 The scanning of an image is triggered in one of the following ways:
 
-- If a new image is pushed to the registry, a priority request is issued to rescan the image.
-- If the image has not been scanned for 7 days, a background request is issued to rescan the image, which might take some time to complete.
-- If a new security notice is released for a package installed in the image, a background request is issued to rescan the image, which might take some time to complete.
-  Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
-  {:tip}
+- If a new image is pushed to the registry.
+- If the image has not been scanned for 7 days, it is queued for rescanning, which might take some time to complete.
+- If a new security notice is released for a package installed in the image, it is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}
 {: faq}
 
 Security notices for Vulnerbaility Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
-
-## Does Vulnerability Advisor have versions?
-{: #faq_va_versions}
-{: faq}
-
-No. However, a version number is baked into the API, but this version is the version of the JSON that is returned.
-
-The different components (for example, the API, scanning tools, and database) are all updated independently. Given that the scans happen asynchronously to the requests for results, the set of components that give a result is variable. However, each scan does contain a timestamp that can be used to work out the components used for the scan.
