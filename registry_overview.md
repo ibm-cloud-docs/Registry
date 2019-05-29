@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-29"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -62,7 +62,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 |Description|Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.|
 |Amount of storage for images|500 MB|Unlimited|
 |Pull traffic|5 GB per month|Unlimited|
-|Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the pricing calculator.</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the pricing calculator. If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the pricing calculator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry). If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
 
 ## Quota limits and billing
@@ -97,8 +97,6 @@ Depending on the service plan that you choose, you are charged for the storage a
   >
   > In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
-  
-
 **Pull traffic:**
 
   Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local machine. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
@@ -108,8 +106,6 @@ Depending on the service plan that you choose, you are charged for the storage a
   > In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as follows:
   >
   > In the standard plan, the first 5 GB per month is free, so you get charged for 9 GB (14 GB - 5 GB).
-
-  
 
 ### Quota limits for storage and pull traffic
 {: #registry_quota_limits}
@@ -137,20 +133,13 @@ Depending on the service plan that you choose, you can push and pull images to a
   >
   > After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
-### Estimating costs
+### Cost
 {: #registry_estimating_costs}
 
-Use the {{site.data.keyword.cloud_notm}} pricing calculator to estimate the cost of your plan.
+Find out about the cost of {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-You can price your app by using the cost calculators that are provided by {{site.data.keyword.cloud_notm}}.
-
-1. Open the pricing sheet, see [{{site.data.keyword.cloud_notm}} Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/pricing).
-2. In the **Pay As You Go** section, click **Estimate your costs with our calculator**. The calculator opens.
-3. Scroll to the **Container Registry** section in the **Container Charges** section.
-4. Enter your storage and traffic estimates in the fields provided.
-
-Your estimated costs are displayed in the calculator.
+You can see the costs of the pricing plans for {{site.data.keyword.registrylong_notm}} in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
