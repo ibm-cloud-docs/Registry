@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-29"
 
 keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
 
@@ -76,7 +76,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes between 30 seconds and 5 minutes after you've added the image to the registry, depending on variables like the image size and the amount of traffic that the registry is receiving.
+You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you've added the image to the registry, depending on variables like the image size and the amount of traffic that the registry is receiving.
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
