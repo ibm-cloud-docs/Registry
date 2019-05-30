@@ -136,10 +136,8 @@ Depending on the service plan that you choose, you can push and pull images to a
 ### Cost
 {: #registry_estimating_costs}
 
-Find out about the cost of {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
-
 You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
+{:shortdesc}
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
