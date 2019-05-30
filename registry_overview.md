@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-05-30"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -62,7 +62,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 |Description|Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}.|Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.|
 |Amount of storage for images|500 MB|Unlimited|
 |Pull traffic|5 GB per month|Unlimited|
-|Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the pricing calculator.</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the pricing calculator. If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the pricing calculator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Billing|If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry). If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
 
 ## Quota limits and billing
@@ -97,8 +97,6 @@ Depending on the service plan that you choose, you are charged for the storage a
   >
   > In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
-  
-
 **Pull traffic:**
 
   Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local machine. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
@@ -108,8 +106,6 @@ Depending on the service plan that you choose, you are charged for the storage a
   > In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as follows:
   >
   > In the standard plan, the first 5 GB per month is free, so you get charged for 9 GB (14 GB - 5 GB).
-
-  
 
 ### Quota limits for storage and pull traffic
 {: #registry_quota_limits}
@@ -137,20 +133,11 @@ Depending on the service plan that you choose, you can push and pull images to a
   >
   > After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
-### Estimating costs
+### Cost
 {: #registry_estimating_costs}
 
-Use the {{site.data.keyword.cloud_notm}} pricing calculator to estimate the cost of your plan.
+You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
-
-You can price your app by using the cost calculators that are provided by {{site.data.keyword.cloud_notm}}.
-
-1. Open the pricing sheet, see [{{site.data.keyword.cloud_notm}} Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/pricing).
-2. In the **Pay As You Go** section, click **Estimate your costs with our calculator**. The calculator opens.
-3. Scroll to the **Container Registry** section in the **Container Charges** section.
-4. Enter your storage and traffic estimates in the fields provided.
-
-Your estimated costs are displayed in the calculator.
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
@@ -198,8 +185,8 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 <dl>
-  <dt>Docker v2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V 2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about suppport for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+  <dt>Docker V2 images</dt>
+  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -332,7 +319,7 @@ After targeting a different region, log in to the registry again: `ibmcloud cr l
 A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by IBM are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-The domain name for the global registry has changed. The new domain name is available in the console and the CLI. 
+The domain name for the global registry has changed. The new domain name is available in the console and the CLI.
 
 The new domain name is shown in the following table.
 
@@ -374,11 +361,11 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 ## Support for Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
+{{site.data.keyword.registrylong_notm}} supports Docker Engine V1.12.6, or later.
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
 
-Docker v2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
 
-Docker v1 images are deprecated.
+Docker V1 images are deprecated.
 {: deprecated}
