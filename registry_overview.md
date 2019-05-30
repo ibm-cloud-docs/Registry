@@ -134,7 +134,7 @@ Depending on the service plan that you choose, you can push and pull images to a
   > After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
 ### Cost
-{: #registry_estimating_costs}
+{: #registry_cost}
 
 You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
