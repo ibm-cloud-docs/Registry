@@ -187,8 +187,8 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 <dl>
-  <dt>Docker v2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V 2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+  <dt>Docker V2 images</dt>
+  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -321,7 +321,7 @@ After targeting a different region, log in to the registry again: `ibmcloud cr l
 A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by IBM are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-The domain name for the global registry has changed. The new domain name is available in the console and the CLI. 
+The domain name for the global registry has changed. The new domain name is available in the console and the CLI.
 
 The new domain name is shown in the following table.
 
@@ -363,11 +363,11 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 ## Support for Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
+{{site.data.keyword.registrylong_notm}} supports Docker Engine V1.12.6, or later.
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
 
-Docker v2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest V 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
 
-Docker v1 images are deprecated.
+Docker V1 images are deprecated.
 {: deprecated}
