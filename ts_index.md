@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -330,6 +330,9 @@ Your options for recovering lost or affected keys depend on the type of key: rep
 
 If your repository key is lost or compromised, generate a new set of signing keys for your repository.
 {:shortdesc}
+
+The `ibmcloud cr token-add` command is deprecated.
+{: deprecated}
 
 The only signing role that you can rotate is `targets`, which is the repository admin. If other roles are affected, generate new keys for those roles, remove the old ones, and add the new ones as signers.
 {:tip}
