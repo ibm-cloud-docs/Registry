@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-30"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -136,7 +136,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 ### Cost
 {: #registry_cost}
 
-You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
+You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
 
 ## Upgrading your service plan
