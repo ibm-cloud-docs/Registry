@@ -562,7 +562,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 Upgrades you to the standard plan.
 
-For information about plans, see [Registry plans](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
+For more information about plans, see [Registry plans](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
