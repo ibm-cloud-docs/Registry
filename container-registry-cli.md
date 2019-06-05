@@ -355,6 +355,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
 
+Where multiple tags exist for the same image digest within a repository, this command removes the underlying image and all its tags. If the same image exists in a different repository (or namespace), that copy of the image is not removed.
+{: impportant}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
