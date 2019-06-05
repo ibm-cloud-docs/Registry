@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-05"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -79,11 +79,11 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--no-cache`</dt>
 <dd>(Optional)  If specified, cached image layers from previous builds are not used in this build.</dd>
 <dt>`--pull`</dt>
-<dd>(Optional) If specified, the base images are pulled even if an image with a matching tag already exists on the build host.</dd>
+<dd>(Optional) If specified, the base images are pulled, even if an image with a matching tag already exists on the build host.</dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) If specified, the build output is suppressed unless an error occurs.</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(Optional) Specify an additional build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this parameter multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
+<dd>(Optional) Specify an extra build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this parameter multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where PATH is the root of the build context.</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -172,7 +172,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 **Example**
 
-List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions scoped to the *`birds`* namespace, and exemptions scoped to the *`birds/bluebird`* repository but not any scoped to specific tags within the *`birds/bluebird`* repository.
+List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository, but not any that are scoped to specific tags within the *`birds/bluebird`* repository.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
@@ -338,7 +338,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace or namespace and repository. </dd>
 <dt>`--include-ibm`</dt>
-<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default private images only are listed.</dd>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default only private images are listed.</dd>
 </dl>
 
 **Example**
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Create a new image, TARGET_IMAGE, that refers to a source image, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
+Create an image, TARGET_IMAGE, that refers to a source image, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
 
 To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
 {: tip}
@@ -480,7 +480,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 **Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4-30 characters, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
+<dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
   
 <p>  
 <strong>Tip</strong> Do not put personal information in your namespace names.
@@ -879,7 +879,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 **Command options**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
+<dd>The name of the image for which you want to get a report. The report states whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
 
 <p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.</p>
 
