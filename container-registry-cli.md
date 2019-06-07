@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -354,9 +354,6 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 {: #bx_cr_image_rm}
 
 Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
-
-Where multiple tags exist for the same image digest within a repository, this command removes the underlying image and all its tags. If the same image exists in a different repository (or namespace), that copy of the image is not removed.
-{: important}
 
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
