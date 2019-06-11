@@ -22,7 +22,6 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Adding images to your namespace
 {: #registry_images_}
 
