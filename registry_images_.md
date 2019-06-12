@@ -280,6 +280,8 @@ Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
 {:tip}
 
+
+
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
 
