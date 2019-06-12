@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-12"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -434,6 +434,8 @@ Copy the image `us.icr.io/birds/bluebird:peck` to another namespace `animals` to
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
+
+
 
 ## `ibmcloud cr info`
 {: #bx_cr_info}
