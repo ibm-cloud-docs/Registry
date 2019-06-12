@@ -285,7 +285,7 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
 
-You can delete unwanted images from your private repository by using the CLI.
+You can delete unwanted images and all their tags from your private repository by using the CLI.
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
@@ -318,7 +318,7 @@ To delete an image by using the CLI, complete the following steps:
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
 
-You can delete unwanted images from your private image repository by using the graphical user interface (GUI).
+You can delete unwanted images and all their tags from your private image repository by using the graphical user interface (GUI).
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
