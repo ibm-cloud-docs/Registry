@@ -293,8 +293,6 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
    ```
    {: pre}
 
-
-
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
 
