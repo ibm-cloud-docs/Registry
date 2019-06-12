@@ -345,7 +345,7 @@ You can delete private repositories that are no longer required, and any associa
 {:shortdesc}
 
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
-{:tip}
+{: important}
 
 **Before you begin**
 
@@ -361,6 +361,6 @@ To delete a private repository by using the GUI, complete the following steps:
 6. In the row that contains the private repository that you want to delete, select the check box.
 
     Ensure that you've selected the correct repository because this action can't be undone.
-    {: tip}
+    {: important}
 
 7. Click **Delete Repository**.
