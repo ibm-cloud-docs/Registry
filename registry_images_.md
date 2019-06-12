@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-12"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -287,7 +287,7 @@ You can delete unwanted images from your private repository by using the CLI.
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
 
 To delete an image by using the CLI, complete the following steps:
 
@@ -299,11 +299,11 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-   Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`.
 
    If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
+   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
    {:tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
@@ -332,7 +332,7 @@ To delete an image by using the GUI, complete the following steps:
 6. In the row that contains the image that you want to delete, select the check box.
 
    Ensure that you've selected the correct image because this action can't be undone.
-   {: tip}
+   {: important}
 
 7. Click **Delete Image**.
 
