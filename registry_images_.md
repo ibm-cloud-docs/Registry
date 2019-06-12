@@ -278,7 +278,7 @@ If you want to delete a private repository and its associated images, see [Delet
 Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.cloud_notm}} repository, and do not count toward your quota.
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
 
 
 
@@ -322,7 +322,7 @@ You can delete unwanted images from your private image repository by using the g
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
 
 To delete an image by using the GUI, complete the following steps:
 
