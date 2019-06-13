@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -126,7 +126,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | Action | Operation on service | Role
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Build a container image. | Writer, Manager |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more images.</li><li>`docker trust revoke` Delete the signature. </li></ul> | Writer, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more images.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Delete the signature. </li></ul> | Writer, Manager |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Display details about a specific image. | Reader, Manager |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) List your container images. | Reader, Manager |
 | `container-registry.image.pull` | <ul><li>`docker pull` Pull the image. </li><li>`docker trust inspect` Inspect the signature. </li></ul> | Reader, Writer, Manager |

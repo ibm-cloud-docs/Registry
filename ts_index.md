@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -292,6 +292,18 @@ Software packages such as images and Helm charts from IBM Passport Advantage mus
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## I used the `ibmcloud cr image-rm` command to delete an image and all the tags that referenced that image got deleted too
+{: #ts_image-rm}
+
+{: tsSymptoms}
+You deleted an image by using the `ibmcloud cr image-rm` command and all the tags within the same repository that referenced the image also got deleted.
+
+{: tsCauses}
+Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed.
+
+{: tsResolve}
+If you want to remove a tag from an image, but leave the underlying image and any other tags, use the [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) and [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}

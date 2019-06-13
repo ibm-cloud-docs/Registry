@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -355,6 +355,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
 
+Where multiple tags exist for the same image digest within a repository, the `ibmcloud cr image-rm` command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](#bx_cr_image_untag) command.
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -386,7 +389,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Create an image, TARGET_IMAGE, that refers to a source image, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
+Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
 
 To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
 {: tip}
@@ -432,6 +435,43 @@ Copy the image `us.icr.io/birds/bluebird:peck` to another namespace `animals` to
 
 ```
 ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
+```
+{: pre}
+
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.
+
+To remove a specific tag from an image and leave the underlying image and any other tags in place, use the `ibmcloud cr image-untag` command. If you want to delete the underlying image, and all of its tags, use the [`ibmcloud cr image-rm`](#bx_cr_image_rm) command instead.
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**Prerequisites**
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+**Command options**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the command fails.</p>
+
+</dd>
+</dl>
+
+**Example**
+
+Remove the tag `1` from the image `us.icr.io/birds/bluebird:1`.
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -267,6 +267,39 @@ Create a service ID that uses an API key to push images to {{site.data.keyword.r
 
 You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images#other_registry_accounts).
 
+## Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository
+{: #registry_images_untag}
+
+You can remove a tag, or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
+{:shortdesc}
+
+Where multiple tags exist for the same image digest within a repository, to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
+{: tip}
+
+To remove a tag, or tags, by using the CLI, complete the following steps:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
+2. To remove a tag, run the following command:
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`.
+
+   If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
+
+   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+   {:tip}
+
+3. Verify that the tag was removed by running the following command, and check that the tag does not show in the list.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Deleting images from your private {{site.data.keyword.cloud_notm}} repository
 {: #registry_images_remove}
 
@@ -278,16 +311,19 @@ If you want to delete a private repository and its associated images, see [Delet
 Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.cloud_notm}} repository, and do not count toward your quota.
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
+
+Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](#registry_images_untag) command.
+{: tip}
 
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
 
-You can delete unwanted images from your private repository by using the CLI.
+You can delete unwanted images and all their tags from your private repository by using the CLI.
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
 
 To delete an image by using the CLI, complete the following steps:
 
@@ -299,11 +335,11 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-   Where _IMAGE_ is the name of the image that you want to remove, in the format `repository:tag`.
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`.
 
    If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the Repository and Tag columns to create the image name in the format `repository:tag`.
+   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
    {:tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
@@ -316,11 +352,11 @@ To delete an image by using the CLI, complete the following steps:
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
 
-You can delete unwanted images from your private image repository by using the graphical user interface (GUI).
+You can delete unwanted images and all their tags from your private image repository by using the graphical user interface (GUI).
 {:shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{:tip}
+{: important}
 
 To delete an image by using the GUI, complete the following steps:
 
@@ -332,7 +368,7 @@ To delete an image by using the GUI, complete the following steps:
 6. In the row that contains the image that you want to delete, select the check box.
 
    Ensure that you've selected the correct image because this action can't be undone.
-   {: tip}
+   {: important}
 
 7. Click **Delete Image**.
 
@@ -343,7 +379,7 @@ You can delete private repositories that are no longer required, and any associa
 {:shortdesc}
 
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
-{:tip}
+{: important}
 
 **Before you begin**
 
@@ -359,6 +395,6 @@ To delete a private repository by using the GUI, complete the following steps:
 6. In the row that contains the private repository that you want to delete, select the check box.
 
     Ensure that you've selected the correct repository because this action can't be undone.
-    {: tip}
+    {: important}
 
 7. Click **Delete Repository**.
