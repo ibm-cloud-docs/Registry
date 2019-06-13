@@ -80,7 +80,7 @@ The following table lists the API methods that generate an event when they are c
   </tr>
    <tr>
     <td>`container-registry.image.untag`</td>
-	  <td>Remove a tag from one specified image in {{site.data.keyword.registrylong_notm}}.</td>
+	  <td>Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
