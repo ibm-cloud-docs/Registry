@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -42,7 +42,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
 Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -520,10 +520,10 @@ To find out about the required permissions, see [Access roles for using {{site.d
 **Command options**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens, and underscores only. Namespaces must start and end with a letter or number.
+<dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
   
 <p>  
-<strong>Tip</strong> Do not put personal information in your namespace names.
+<strong>Important</strong> Do not put personal information in your namespace names.
 </p>
   
 </dd>
@@ -781,7 +781,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 <dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `ibmcloud cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes cluster name. In this case, the token is removed automatically when your cluster is removed.
   
 <p> 
-  <strong>Tip</strong> Do not put personal information in your token description.
+  <strong>Important</strong> Do not put personal information in your token description.
 </p>
 
 </dd>
