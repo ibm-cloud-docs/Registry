@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ You can fix this problem in the following ways:
 
 - Follow any instructions that are in the returned error message.
 - Check that you entered a valid namespace:
+  - Your namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region.
   - Your namespace must be 4 - 30 characters long.
-  - Your namespace must start with at least one letter or number.
-  - Your namespace must contain lowercase letters, numbers, or underscores (_) only.
+  - Your namespace must start and end with a letter or number.
+  - Your namespace must contain lowercase letters, numbers, hyphens (-), and underscores (_) only.
 - Choose a different value for your namespace.
 - If you are re-creating a namespace that was deleted, and it contained many images, try again later.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,7 +175,7 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-        Namespace names must be unique in the region.
+        The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
         {: tip}
 
     3. Create `namespace_b` by running the following command:
