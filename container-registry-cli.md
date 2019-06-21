@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -761,10 +761,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add` (deprecated)
 {: #bx_cr_token_add}
 
 Add a token that you can use to control access to a registry.
+
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
