@@ -766,7 +766,7 @@ ibmcloud cr region-set us-south
 
 Add a token that you can use to control access to a registry.
 
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](/docs/services/Registry?topic=registry-registry_access&locale=en#registry_api_key).
+Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
 {: deprecated}
 
 ```
