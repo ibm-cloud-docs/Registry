@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-06-24"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -586,7 +586,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-Displays your pricing plan.
+Displays your pricing plan for the region that you're logged in to.
 
 ```
 ibmcloud cr plan
@@ -600,7 +600,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-Upgrades you to the standard plan.
+Upgrades you to the standard plan for the region that you're logged in to.
 
 For more information about plans, see [Registry plans](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
@@ -670,7 +670,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-Displays your current quotas for traffic and storage, and usage information against those quotas.
+Displays your current quotas for traffic and storage, and usage information against those quotas for the region that you're logged in to.
 
 ```
 ibmcloud cr quota
@@ -684,7 +684,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-Modify the specified quota.
+Modify the specified quota for the region that you're logged in to.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]

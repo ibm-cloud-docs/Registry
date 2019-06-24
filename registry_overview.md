@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-06-24"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Example for pushing images:
 ### Billing for storage and pull traffic
 {: #registry_billing_traffic}
 
-Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month.
+Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month in each region.
 {:shortdesc}
 
 **Storage:**
@@ -110,7 +110,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 ### Quota limits for storage and pull traffic
 {: #registry_quota_limits}
 
-Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits.
+Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits for each region.
 {:shortdesc}
 
 **Storage:**
@@ -145,7 +145,7 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-If you want to find out what service plan you have, run the `ibmcloud cr plan` command.
+If you want to find out what service plan you have for the region that you're logged in to, run the `ibmcloud cr plan` command.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
