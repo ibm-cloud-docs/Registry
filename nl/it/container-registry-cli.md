@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -80,7 +80,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dt>`--no-cache`</dt>
 <dd>(Facoltativo)  Se specificato, i livelli di immagine memorizzati in cache dalle build precedenti non vengono utilizzati in questa build.</dd>
 <dt>`--pull`</dt>
-<dd>(Facoltativo) Se specificato, le immagini di base vengono estratte anche se sull'host di build esiste già un'immagine con una tag corrispondente.</dd>
+<dd>(Facoltativo) Se specificato, le immagini di base vengono estratte, anche se sull'host di build esiste già un'immagine con una tag corrispondente.</dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>(Facoltativo) Se specificato, l'output di build viene eliminato a meno che non si verifichi un errore.</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
@@ -287,7 +287,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
-Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -331,7 +331,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
-Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -387,7 +387,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crea una nuova immagine, TARGET_IMAGE, che fa riferimento a un'immagine di origine, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione.
+Crea un'immagine, TARGET_IMAGE, che fa riferimento a un'immagine di origine, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione.
 
 Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`.
 {: tip}
@@ -563,7 +563,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 
 Esegue il tuo upgrade al piano standard.
 
-Per informazioni sui piani, vedi [Piani del registro](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
+Per ulteriori informazioni sui piani, vedi [Piani del registro](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -811,7 +811,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dt>`--format FORMAT`</dt>
 <dd>(Facoltativo) Formatta gli elementi di output utilizzando un template Go.
 
-Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Per ulteriori informazioni, vedi [Formattazione e filtro dell'output della CLI per i comandi {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 </dl>
@@ -880,7 +880,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 **Opzioni del comando**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>Il nome dell'immagine per cui vuoi ottenere un report. Il report ti informa se l'immagine ha delle vulnerabilità di pacchetto note. Puoi richiedere report per più immagini contemporaneamente elencando ogni immagine nel comando con uno spazio tra ciascun nome.
+<dd>Il nome dell'immagine per cui vuoi ottenere un report. Il report indica se l'immagine ha delle vulnerabilità di pacchetto note. Puoi richiedere report per più immagini contemporaneamente elencando ogni immagine nel comando con uno spazio tra ciascun nome.
 
 <p>Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`. Se nel nome immagine non è specificata alcuna tag, il report valuta l'immagine contrassegnata con la tag `latest`.</p>
 

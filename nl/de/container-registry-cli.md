@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -286,7 +286,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Formatiert die Ausgabeelemente unter Verwendung einer Go-Vorlage.
 
-Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -330,7 +330,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Formatiert die Ausgabeelemente unter Verwendung einer Go-Vorlage.
 
-Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Erstellen Sie ein neues Image (ZIELIMAGE), das sich auf ein Quellenimage (QUELLENIMAGE) in {{site.data.keyword.registrylong_notm}} bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden.
+Erstellen Sie ein Image (ZIELIMAGE), das sich auf ein Quellenimage (QUELLENIMAGE) in {{site.data.keyword.registrylong_notm}} bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden.
 
 Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen.
 {: tip}
@@ -562,7 +562,7 @@ ibmcloud cr plan
 
 Führt ein Upgrade auf den Standardplan durch.
 
-Informationen zu den Plänen finden Sie unter [Registry-Pläne](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
+Weitere Informationen zu den Plänen finden Sie unter [Registry-Pläne](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -810,7 +810,7 @@ ibmcloud cr token-list [--format FORMAT]
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Formatiert die Ausgabeelemente unter Verwendung einer Go-Vorlage.
 
-Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Weitere Informationen finden Sie unter [CLI-Ausgabe für {{site.data.keyword.registrylong_notm}}-Befehle formatieren und filtern](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 </dl>

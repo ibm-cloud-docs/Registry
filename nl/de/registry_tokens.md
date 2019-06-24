@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 Referenzinformationen zu diesem Befehl finden Sie in [Neuen API-Schlüssel für die {{site.data.keyword.cloud_notm}}-Plattform erstellen](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
+## Authentifizierungsoptionen für alle Clients
+{: #registry_authentication}
+
+Sie können die Authentifizierung mit dem Befehl `docker login` oder mit anderen Registry-Clients durchführen.
+{:shortdesc}
+
+Die meisten Benutzer können den Befehl `ibmcloud cr login` verwenden, um den Befehl `docker login` zu vereinfachen; wenn Sie jedoch Automatisierung implementieren oder einen anderen Client verwenden, ist es möglicherweise empfehlenswert, die Authentifizierung manuell durchzuführen. Sie müssen einen Benutzernamen und ein Kennwort angeben. In {{site.data.keyword.registrylong_notm}} gibt der Benutzername den Typ des geheimen Schlüssels an, der im Kennwort angegeben wird.
+
+Die folgenden Benutzernamen sind gültig:
+
+- `iambearer`: Das Kennwort enthält ein IAM-Zugriffstoken. Diese Art der Authentifizierung ist nur kurze Zeit gültig, kann aber aus allen Typen der IAM-Identität abgeleitet werden.
+- `iamrefresh`: Das Kennwort muss ein IAM-Aktualisierungstoken enthalten, das intern verwendet wird, um ein IAM-Zugriffstoken zu generieren und zu aktualisieren. Diese Art der Authentifizierung ist länger gültig und wird vom Befehl `ibmcloud cr login` verwendet.
+- `iamapikey`: Das Kennwort ist ein IAM-API-Schlüssel. Diese Art der Authentifizierung wird für die Automatisierung bevorzugt. Sie können einen API-Schlüssel für Benutzer oder für Service-IDs verwenden; weitere Informationen finden Sie unter [API-Schlüssel erstellen](#registry_api_key_create).
+- `token`: (veraltet) Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
+
+  Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
+  {: deprecated}
+
+Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten.
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Ersetzen Sie `<apikey>` durch den API-Schlüssel, `<region>` durch den Namen Ihrer [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` durch Ihren Namensbereich und `<image_repo>` durch das Repository.
+
+Weitere Informationen finden Sie unter [Private Image-Registry verwenden](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
+
 ## Zugriff auf eigene Namensbereiche durch Tokens automatisieren (veraltet)
 {: #registry_tokens}
 
-Durch die Verwendung von Tokens können Sie Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche automatisieren.
-{:shortdesc}
-
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
+
+Durch die Verwendung von Tokens können Sie Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche automatisieren.
+{:shortdesc}
 
 Jeder Benutzer, der über ein Registry-Token verfügt, kann auf auf geschützte Informationen zugreifen. Wenn Sie möchten, dass Benutzer außerhalb Ihres Kontos auf alle Ihre Namensbereiche zugreifen können, die Sie in einer Region eingerichtet haben, können Sie ein Token für Ihr {{site.data.keyword.cloud_notm}}-Konto erstellen. Jeder Benutzer bzw. jede App, der/die über dieses Token verfügt, kann Images per Push-Operation in Ihre Namensbereiche übertragen und Images per Pull-Operation aus Ihren Namensbereichen abrufen, ohne dass das `container-registry`-CLI-Plug-in installiert werden muss.
 
@@ -103,11 +133,11 @@ Mit den folgenden Tasks können Sie Ihre Tokens verwalten:
 ### Token für {{site.data.keyword.cloud_notm}}-Konto erstellen (veraltet)
 {: #registry_tokens_create}
 
-Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche in einer Region zu erteilen.
-{:shortdesc}
-
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
+
+Sie können ein Token erstellen, um den Zugriff auf alle Ihre {{site.data.keyword.registrylong_notm}}-Namensbereiche in einer Region zu erteilen.
+{:shortdesc}
 
 1. Erstellen Sie ein Token. Im folgenden Beispiel wird ein nicht ablaufendes Token erstellt, das über Lese- und Schreibzugriff auf alle Namensbereiche verfügt, die in einer Region eingerichtet wurden.
 
@@ -155,11 +185,11 @@ Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen fü
 ### Zugriff auf Namensbereiche mit einem Token automatisieren (veraltet)
 {: #registry_tokens_use}
 
-Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den Zugriff auf Ihre Namensbereiche in {{site.data.keyword.registrylong_notm}} automatisieren. Abhängig davon, ob Sie für Ihr Token einen schreibgeschützten Zugriff oder einen Schreib-/Lesezugriff festgelegt haben, können Benutzer Push- und Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
-{:shortdesc}
-
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
+
+Durch die Verwendung eines Tokens in Ihrem `docker login`-Befehl können Sie den Zugriff auf Ihre Namensbereiche in {{site.data.keyword.registrylong_notm}} automatisieren. Abhängig davon, ob Sie für Ihr Token einen schreibgeschützten Zugriff oder einen Schreib-/Lesezugriff festgelegt haben, können Benutzer Push- und Pull-Operationen für Images in Bezug auf Ihre Namensbereiche ausführen.
+{:shortdesc}
 
 1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
@@ -205,11 +235,11 @@ Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen fü
 ### Token aus einem {{site.data.keyword.cloud_notm}}-Konto entfernen (veraltet)
 {: #registry_tokens_remove}
 
-Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nicht mehr benötigen.
-{:shortdesc}
-
 Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
 {: deprecated}
+
+Entfernen Sie ein {{site.data.keyword.registrylong_notm}}-Token, wenn Sie es nicht mehr benötigen.
+{:shortdesc}
 
 Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch aus Ihrem {{site.data.keyword.cloud_notm}}-Konto entfernt und müssen nicht manuell entfernt werden.
 {:tip}
@@ -234,33 +264,3 @@ Abgelaufene {{site.data.keyword.registrylong_notm}}-Tokens werden automatisch au
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## Authentifizierungsoptionen für alle Clients
-{: #registry_authentication}
-
-Sie können die Authentifizierung mit dem Befehl `docker login` oder mit anderen Registry-Clients durchführen.
-{:shortdesc}
-
-Die meisten Benutzer können den Befehl `ibmcloud cr login` verwenden, um den Befehl `docker login` zu vereinfachen; wenn Sie jedoch Automatisierung implementieren oder einen anderen Client verwenden, ist es möglicherweise empfehlenswert, die Authentifizierung manuell durchzuführen. Sie müssen einen Benutzernamen und ein Kennwort angeben. In {{site.data.keyword.registrylong_notm}} gibt der Benutzername den Typ des geheimen Schlüssels an, der im Kennwort angegeben wird.
-
-Die folgenden Benutzernamen sind gültig:
-
-- `iambearer`: Das Kennwort enthält ein IAM-Zugriffstoken. Diese Art der Authentifizierung ist nur kurze Zeit gültig, kann aber aus allen Typen der IAM-Identität abgeleitet werden.
-- `iamrefresh`: Das Kennwort muss ein IAM-Aktualisierungstoken enthalten, das intern verwendet wird, um ein IAM-Zugriffstoken zu generieren und zu aktualisieren. Diese Art der Authentifizierung ist länger gültig und wird vom Befehl `ibmcloud cr login` verwendet.
-- `iamapikey`: Das Kennwort ist ein IAM-API-Schlüssel. Diese Art der Authentifizierung wird für die Automatisierung bevorzugt. Sie können einen API-Schlüssel für Benutzer oder für Service-IDs verwenden; weitere Informationen finden Sie unter [API-Schlüssel erstellen](#registry_api_key_create).
-- `token`: (veraltet) Das Kennwort ist ein Registry-Token. Dieser Benutzername kann für die Automatisierung verwendet werden.
-
-  Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](#registry_api_key).
-  {: deprecated}
-
-Für die Authentifizierung bei der Registry muss nicht der Befehl `docker` verwendet werden. Beispielsweise können Sie Cloud Foundry-Apps aus Images in der Registry über die Cloud Foundry-Befehlszeilenschnittstelle starten.
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-Ersetzen Sie `<apikey>` durch den API-Schlüssel, `<region>` durch den Namen Ihrer [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` durch Ihren Namensbereich und `<image_repo>` durch das Repository.
-
-Weitere Informationen finden Sie unter [Private Image-Registry verwenden](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

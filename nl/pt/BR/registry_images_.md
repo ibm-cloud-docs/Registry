@@ -261,7 +261,7 @@ antes de enviá-la por push para o {{site.data.keyword.cloud_notm}}.
          ```
          {: pre}
 
-         em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório. 
+         em que `<image_name>` é o nome da sua imagem e `<directory>` é o caminho para o diretório.
 
       2. Opcional: teste a imagem no computador local antes de enviá-la por push para o namespace.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,12 +28,21 @@ subcollection: registry
 請使用這些版本注意事項，來瞭解 {{site.data.keyword.registrylong}} 及 Vulnerability Advisor 的最新變更。這些變更是依日期分組。
 {:shortdesc}
 
+## 2019 年 5 月 13 日
+{: #13may2019}
+
+- **「容器掃描器」的支援結束**
+
+  「容器掃描器」現已淘汰，再也無法使用。
+
+  如需相關資訊，請參閱[安裝容器掃描器（已淘汰）](/docs/services/Registry?topic=va-va_index#va_install_container_scanner)。
+
 ## 2019 年 4 月 2 日
 {: #2apr2019}
 
 - **正式發行 Container Image Security Enforcement**
 
-  請先使用 Container Image Security Enforcement 來驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong_notm}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。
+  請先使用 Container Image Security Enforcement 來驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong_notm}} 中的叢集。您可以控制從何處部署映像檔、強制執行 Vulnerability Advisor 原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。
 
   如需相關資訊，請參閱[強制執行容器映像檔安全](/docs/services/Registry?topic=registry-security_enforce#security_enforce)。
 
@@ -146,7 +155,7 @@ subcollection: registry
 
 - **Container Image Security Enforcement 測試版**
 
-  請先使用 Container Image Security Enforcement 測試版來驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong_notm}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。
+  請先使用 Container Image Security Enforcement 測試版來驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong_notm}} 中的叢集。您可以控制從何處部署映像檔、強制執行 Vulnerability Advisor 原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。
 
   如需相關資訊，請參閱[強制執行容器映像檔安全](/docs/services/Registry?topic=registry-security_enforce#security_enforce)。
 

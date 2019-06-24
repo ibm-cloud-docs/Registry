@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -286,7 +286,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 <dt>`--format FORMAT`</dt>
 <dd>(Facultatif) Formate la sortie en utilisant un modèle Go.
 
-Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -330,7 +330,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 <dt>`--format FORMAT`</dt>
 <dd>(Facultatif) Formate la sortie en utilisant un modèle Go.
 
-Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -338,7 +338,7 @@ Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interfac
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Facultatif) Limite la sortie pour n'afficher que les images dans l'espace de nom spécifié ou dans l'espace de nom et le référentiel. </dd>
 <dt>`--include-ibm`</dt>
-<dd>(Facultatif) Inclut dans la sortie les images publiques fournies par {{site.data.keyword.IBM_notm}}. Sans cette option, seules les images privées sont répertoriées par défaut.</dd>
+<dd>(Facultatif) Inclut dans la sortie les images publiques fournies par {{site.data.keyword.IBM_notm}}. Sans cette option, par défaut seules les images privées sont répertoriées.</dd>
 </dl>
 
 **Exemple**
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crée une nouvelle image, TARGET_IMAGE, qui fait référence à une image source, SOURCE_IMAGE, dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région.
+Crée une image, TARGET_IMAGE, qui fait référence à une image source, SOURCE_IMAGE, dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région.
 
 Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`.
 {: tip}
@@ -562,7 +562,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour la configu
 
 Effectue une mise à niveau vers le plan standard.
 
-Pour plus d'information sur les plans, voir [Plans de registre](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
+Pour plus d'informations sur les plans, voir [Plans de registre](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -812,7 +812,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles de gestion de plateforme
 <dt>`--format FORMAT`</dt>
 <dd>(Facultatif) Formate la sortie en utilisant un modèle Go.
 
-Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Pour plus d'informations, voir [Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 </dl>
@@ -881,7 +881,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 **Options de commande**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>Nom de l'image pour laquelle vous voulez obtenir un rapport. Le rapport vous signale si l'image comporte des vulnérabilités de package connues. Vous pouvez demander des rapports pour plusieurs images en même temps en les répertoriant dans la commande, séparées les unes des autres par un espace.
+<dd>Nom de l'image pour laquelle vous voulez obtenir un rapport. Le rapport indique si l'image comporte des vulnérabilités de package connues. Vous pouvez demander des rapports pour plusieurs images en même temps en les répertoriant dans la commande, séparées les unes des autres par un espace.
 
 <p>Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`. Si aucune étiquette n'est spécifiée dans le nom de l'image, le rapport évalue l'image associée à l'étiquette `latest`.</p>
 

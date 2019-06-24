@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 使用 {{site.data.keyword.registrylong}}，在高可用性且可擴充的架構中，儲存及存取專用 Docker 映像檔。
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 提供 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用 {{site.data.keyword.registrylong_notm}}。
+{{site.data.keyword.registrylong_notm}} 提供 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性、可擴充且加密的專用映像檔登錄。您可以藉由設定自己的映像檔名稱空間，並將 Docker 映像檔推送至名稱空間，來使用 {{site.data.keyword.registrylong_notm}}。
 
 <img src="images/registry_architecture1.svg" alt="顯示如何與 IBM Cloud Container Registry 互動的影像。Container Registry 同時包含專用及公用儲存庫，以及用來與服務互動的 API。您的本端 Docker 用戶端可以從登錄中的專用儲存庫取回映像檔以及將映像檔推送至其中，也可以取回公用儲存庫。IBM Cloud Web 使用者介面（主控台）可與 Container Registry API 互動，以列出映像檔。Container Registry CLI 可與 API 互動，以列出、建立、檢查及移除映像檔，以及其他管理功能。您的本端 Docker 用戶端也可以從本端映像檔儲存庫中取回映像檔，並將其推送至其他登錄。"/>
 
@@ -36,14 +36,14 @@ subcollection: registry
 
 Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfile 建立，而 Dockerfile 是包含映像檔建置指示的檔案。Dockerfile 可能會在其指示中參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。映像檔一般儲存在登錄中，而登錄可供公開存取（公用登錄）或設定一小群使用者的有限存取（專用登錄）。使用 {{site.data.keyword.registrylong_notm}} 時，只有具有 {{site.data.keyword.cloud_notm}} 帳戶存取權的使用者才能存取映像檔。
 
-將映像檔推送至 {{site.data.keyword.registrylong_notm}} 時，您可以受益於內建的「漏洞警告器」特性，它們會掃描潛在的安全問題及漏洞。「漏洞警告器」會檢查特定 Docker 基礎映像檔以尋找有漏洞的套件，以及應用程式配置設定中的已知漏洞。發現漏洞時，會提供漏洞的相關資訊。您可以使用此資訊來解決安全問題，以避免從有漏洞的映像檔部署容器。
+將映像檔推送至 {{site.data.keyword.registrylong_notm}} 時，您可以受益於內建的 Vulnerability Advisor 特性，它們會掃描潛在的安全問題及漏洞。Vulnerability Advisor 會檢查特定 Docker 基礎映像檔以尋找有漏洞的套件，以及應用程式配置設定中的已知漏洞。發現漏洞時，會提供漏洞的相關資訊。您可以使用此資訊來解決安全問題，以避免從有漏洞的映像檔部署容器。
 
 請檢閱下表，以查看使用 {{site.data.keyword.registrylong_notm}} 的好處概觀。
 
 |好處|說明|
 |-------|-----------|
-|高可用性且可擴充的專用登錄|<ul><li>在 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性且可擴充的專用登錄中，設定自己的映像檔名稱空間。</li><li>儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.cloud_notm}} 帳戶中的使用者共用。</li></ul>|
-|漏洞警告器的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統特有的建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
+|高可用性且可擴充的專用登錄|<ul><li>在 {{site.data.keyword.IBM_notm}} 所管理的多方承租戶、高可用性、可擴充且加密的專用登錄中，設定自己的映像檔名稱空間。</li><li>儲存專用 Docker 映像檔，並將它們與 {{site.data.keyword.cloud_notm}} 帳戶中的使用者共用。</li></ul>|
+|Vulnerability Advisor 的映像檔安全規範|<ul><li>受益於自動掃描名稱空間中的映像檔。</li><li>檢閱作業系統特有的建議，以修正潛在漏洞，並保護容器免於洩漏。</li></ul>|
 |儲存空間及取回資料流量的配額限制|<ul><li>受益於專用映像檔的免費儲存空間及取回資料流量，直到達到免費配額為止。</li><li>設定每個月的儲存空間量及取回資料流量的自訂配額限制，以避免超出偏好的付費等級。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 的好處" caption-side="top"}
 
@@ -62,7 +62,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 |說明|試用 {{site.data.keyword.registrylong_notm}}，以儲存及共用 Docker 映像檔。當您在 {{site.data.keyword.registrylong_notm}} 中設定第一個名稱空間時，此方案是預設服務方案。|受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.cloud_notm}} 帳戶中所有名稱空間的 Docker 映像檔。|
 |映像檔的儲存空間量|500 MB|無限制|
 |取回資料流量|每個月 5 GB|無限制|
-|計費|如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。|<ul><li>儲存空間：會依使用的 GB-月向您收費。前 0.5 GB-月免費。之後，會依定價計算機中所述向您收費。</li><li>取回資料流量：會依每個月使用的 GB 量向您收費。前 5 GB 免費。之後，會依定價計算機中所述向您收費。如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需儲存空間、取回資料流量及定價計算機的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。</li></ul>|
+|計費|如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。|<ul><li>儲存空間：會依使用的 GB-月向您收費。前 0.5 GB-月免費。之後，會依供應項目詳細資料頁面中所述向您收費，請參閱 [Container Registry ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/kubernetes/catalog/registry)。</li><li>取回資料流量：會依每個月使用的 GB 量向您收費。前 5 GB 免費。之後，會依供應項目詳細資料頁面中所述向您收費，請參閱 [Container Registry ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/kubernetes/catalog/registry)。如果您超出儲存空間或取回資料流量限制，便無法將映像檔推送至名稱空間或從中取回映像檔。如需儲存空間、取回資料流量及成本預估器的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} 中的配額限制及計費](#registry_plan_billing)。</li></ul>|
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} 方案" caption-side="top"}
 
 ## 配額限制及計費
@@ -97,8 +97,6 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   >
   > 在標準方案中，前 0.5 GB-月免費，因此會向您收取 7 GB-月（7.5 GB-月 - 0.5 GB-月）的費用。
 
-  
-
 **取回資料流量：**
 
   每個 {{site.data.keyword.registrylong_notm}} 服務方案都包括特定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
@@ -108,8 +106,6 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   > 在該月，您已取回包含大小總計 14 GB 之層的映像檔。您的每月用量計算如下：
   >
   > 在標準方案中，每個月的前 5 GB 免費，因此會向您收取 9 GB (14 GB - 5 GB) 的費用。
-
-  
 
 ### 儲存空間及取回資料流量的配額限制
 {: #registry_quota_limits}
@@ -137,20 +133,11 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   >
   > 取回映像檔之後，{{site.data.keyword.registrylong_notm}} 會判斷您在取回期間已使用的頻寬，並檢查是否已達到取回資料流量的限制。在此範例中，取回資料流量用量會從 4.5 GB 增加到 5.5 GB。在現行配額限制設為 5 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您從名稱空間取回映像檔。
 
-### 預估成本
-{: #registry_estimating_costs}
+### 成本
+{: #registry_cost}
 
-使用 {{site.data.keyword.cloud_notm}} 定價計算機來預估方案的成本。
+您可以在供應項目詳細資料頁面的定價方案區段中查看 {{site.data.keyword.registrylong_notm}} 的成本，請參閱 [Container Registry ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/kubernetes/catalog/registry)。
 {:shortdesc}
-
-您可以使用 {{site.data.keyword.cloud_notm}} 提供的成本計算機來為應用程式定價。
-
-1. 開啟定價單，請參閱 [{{site.data.keyword.cloud_notm}} 定價 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/pricing)。
-2. 在**隨收隨付制**區段中，按一下**使用計算機預估成本**。即會開啟計算機。
-3. 在**容器費用**區段中，捲動至 **Container Registry** 區段。
-4. 在提供的欄位中，輸入您的儲存空間及資料流量預估值。
-
-您的預估成本即會顯示在計算機中。
 
 ## 升級服務方案
 {: #registry_plan_upgrade}
@@ -194,7 +181,12 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，而基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。</dd>
+  <dd>Dockerfile 是包含 Docker 映像檔建置指示的文字檔。映像檔通常建置在基礎映像檔之上，而基礎映像檔中包含基礎作業系統，例如 Ubuntu。您可以利用 Dockerfile 指示漸進式地變更基礎映像檔，以定義應用程式執行所需的環境。基礎映像檔的每項變更都會說明新的一層映像檔，您可以在單一 Dockerfile 行中進行多項變更。Dockerfile 中的指示也可能參照個別儲存的建置構件，例如應用程式、應用程式的配置，以及其相依關係。如需 Dockerfile 的相關資訊，請參閱 [Dockerfile 參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/engine/reference/builder/)。</dd>
+</dl>
+
+<dl>
+  <dt>Docker 第 2 版映像檔</dt>
+  <dd>遵循 [Docker：映像檔資訊清單第 2 版綱目 2 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/registry/spec/manifest-v2-2/) 的容器映像檔。Docker 映像檔資訊清單第 2 版綱目 2 的媒體類型為 `application/vnd.docker.distribution.manifest.v2+json`，而資訊清單的媒體類型則為 `application/vnd.docker.distribution.manifest.list.v2+json`。如需 Docker 支援的相關資訊，請參閱 [Docker](/docs/services/Registry?topic=registry-registry_overview#docker)。</dd>
 </dl>
 
 <dl>
@@ -211,7 +203,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 <dl>
   <dt>OCI 容器映像檔 (OCI container images)</dt>
-  <dd>遵登 [OCI 映像檔格式規格 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/opencontainers/image-spec) 的容器映像檔。</dd>
+  <dd>遵循 [OCI 映像檔格式規格 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/opencontainers/image-spec) 的容器映像檔。OCI 容器映像檔的媒體類型為 `application/vnd.oci.image.manifest.v1+json`。</dd>
 </dl>
 
 <dl>
@@ -283,13 +275,13 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
 
-**漏洞警告器網域名稱**
+**Vulnerability Advisor 網域名稱**
 
-地區的漏洞警告器網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
+地區的 Vulnerability Advisor 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
 
 下表顯示新的網域名稱。
 
-|本端漏洞警告器地區|新的網域名稱|已淘汰的網域名稱|
+|本端 Vulnerability Advisor 地區|新的網域名稱|已淘汰的網域名稱|
 |-----|----|-----------|
 | `ap-north` | `jp.icr.io/va` |不適用|
 | `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
@@ -327,7 +319,7 @@ ibmcloud cr region-set eu-central
 有全球登錄可供使用，其名稱 (`icr.io`) 中不含地區。此登錄中僅管理 IBM 提供的公用映像檔。若要管理您自己的映像檔（例如設定名稱空間或標記映像檔並將映像檔推送至登錄），請使用[本端地區登錄](#registry_regions_local)。
 {:shortdesc}
 
-全球登錄的網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
+全球登錄的網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
 
 下表顯示新的網域名稱。
 
@@ -352,16 +344,16 @@ ibmcloud cr region-set global
 
 將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，以便您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。
 
-**漏洞警告器網域名稱**
+**Vulnerability Advisor 網域名稱**
 
-全球的漏洞警告器網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
+全球的 Vulnerability Advisor 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
 
 下表顯示新的網域名稱。
 
-|漏洞警告器|新的網域名稱|已淘汰的網域名稱|
+| Vulnerability Advisor |新的網域名稱|已淘汰的網域名稱|
 |-----|----|-----------|
 |全球| `icr.io/va` | `va.bluemix.net` |
-{: caption="表 6. 全球登錄的漏洞警告器網域名稱。" caption-side="top"}
+{: caption="表 6. 全球登錄的 Vulnerability Advisor 網域名稱。" caption-side="top"}
 
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
@@ -372,3 +364,8 @@ ibmcloud cr region-set global
 {{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
 
 只有在您要推送或取回映像檔，或者要執行 `ibmcloud cr ppa-archive-load` 指令時，才需要 Docker。
+
+支援 Docker 第 2 版綱目 2 映像檔。另外還支援資訊清單。F如需相關資訊，請參閱 [Docker：映像檔資訊清單第 2 版綱目 2 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/registry/spec/manifest-v2-2/)。
+
+Docker 第 1 版映像檔已遭淘汰。
+{: deprecated}

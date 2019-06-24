@@ -240,7 +240,7 @@ Pour générer votre propre image Docker, procédez comme suit :
          ```
          {: pre}
 
-         où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire. 
+         où `<image_name>` est le nom de votre image et `<directory>` le chemin d'accès au répertoire.
 
       2. Facultatif : testez votre image sur votre ordinateur local avant de la transférer par commande push vers votre espace de nom.
 

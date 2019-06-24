@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}}를 사용하여 높은 가용성과 확장성을 갖춘 아키텍처에 개인용 Docker 이미지를 저장하고 액세스하십시오.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}}에서는 {{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트의 높은 가용성과 확장성을 갖춘 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하고 네임스페이스에 Docker 이미지를 푸시하여 {{site.data.keyword.registrylong_notm}}를 사용할 수 있습니다.
+{{site.data.keyword.registrylong_notm}}에서는 {{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트의 높은 가용성과 확장성을 갖춘 암호화된 개인용 이미지 레지스트리를 제공합니다. 고유의 이미지 네임스페이스를 설정하고 네임스페이스에 Docker 이미지를 푸시하여 {{site.data.keyword.registrylong_notm}}를 사용할 수 있습니다.
 
 <img src="images/registry_architecture1.svg" alt="IBM Cloud Container Registry와 상호작용할 수 있는 방법을 보여주는 이미지입니다. Container Registry에는 개인용 및 공용 저장소가 둘 다 포함되어 있으며 서비스와 상호작용하기 위한 API가 포함되어 있습니다. 로컬 Docker 클라이언트는 레지스트리의 개인용 저장소와 양방향으로 이미지를 가져오고 푸시할 수 있으며, 공용 저장소를 가져올 수 있습니다. IBM Cloud 웹 UI(콘솔)는 Container Registry API와 상호작용하여 이미지를 나열합니다. Container Registry CLI는 기타 관리 기능은 물론 API와 상호작용하여 이미지를 나열, 작성, 검사 및 제거합니다. 로컬 Docker 클라이언트는 로컬 이미지 저장소에서 기타 레지스트리로 이미지를 가져오고 푸시할 수도 있습니다."/>
 
@@ -46,7 +46,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 |이점|설명|
 |-------|-----------|
-|고가용성 및 확장 가능 개인용 레지스트리|<ul><li>{{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트, 고가용성 및 확장 가능 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정합니다.</li><li>개인용 Docker 이미지를 저장하고 {{site.data.keyword.cloud_notm}} 계정의 사용자들과 공유합니다.</li></ul>|
+|고가용성 및 확장 가능 개인용 레지스트리|<ul><li>{{site.data.keyword.IBM_notm}}에서 호스팅하고 관리하는 멀티 테넌트의 높은 고가용성과 확장성을 갖춘 암호화된 개인용 레지스트리에서 고유의 이미지 네임스페이스를 설정합니다.</li><li>개인용 Docker 이미지를 저장하고 {{site.data.keyword.cloud_notm}} 계정의 사용자들과 공유합니다.</li></ul>|
 |Vulnerability Advisor를 사용하여 이미지 보안 규제 준수|<ul><li>네임스페이스의 이미지에 대한 자동 스캔을 활용할 수 있습니다.</li><li>잠재적 취약성을 수정하고 컨테이너가 손상되지 않도록 보호하기 위해 운영 체제별 권장사항을 검토합니다.</li></ul>|
 |스토리지 및 가져오기 트래픽에 대한 할당량 한계|<ul><li>무료 할당량에 도달하기 전까지 개인용 이미지에 대한 스토리지 및 가져오기 트래픽을 활용할 수 있습니다.</li><li>선호하는 결제 레벨을 초과하지 않도록 월별 스토리지 및 가져오기 트래픽 양에 대한 사용자 정의 할당량 한계를 설정할 수 있습니다.</li></ul>|
 {: caption="표 1. {{site.data.keyword.registrylong_notm}} 이점" caption-side="top"}
@@ -59,20 +59,20 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 {{site.data.keyword.registrylong_notm}} 서비스 플랜은 개인용 이미지를 위해 사용할 수 있는 스토리지 및 가져오기 트래픽의 양을 판별합니다. 서비스 플랜은 {{site.data.keyword.cloud_notm}} 계정과 연관되어 있으며, 사용자의 계정에서 설정한 모든 네임스페이스에 대한 스토리지 및 이미지 가져오기 트래픽 적용을 제한합니다.
 
-다음 표에 사용 가능한 {{site.data.keyword.registrylong_notm}} 서비스 플랜 및 해당 특성이 표시됩니다. 서비스 플랜 한계를 초과할 때 발생하는 문제와 비용 청구 방식에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계와 비용 청구](#registry_plan_billing)를 참조하십시오.
+다음 표에 사용 가능한 {{site.data.keyword.registrylong_notm}} 서비스 플랜 및 해당 특성이 표시됩니다. 서비스 플랜 한계를 초과할 때 발생하는 문제와 비용 청구 방식에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.
 
 |특성|무료|표준|
 |---------------|----|--------|
 |설명|Docker 이미지를 저장하고 공유하도록 {{site.data.keyword.registrylong_notm}}를 사용해 보십시오. 이 플랜은 {{site.data.keyword.registrylong_notm}}에서 첫 번째 네임스페이스를 설정할 때 기본으로 적용되는 서비스 플랜입니다.|무제한의 스토리지 및 가져오기 트래픽 사용량으로 {{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하십시오.|
 |이미지의 스토리지 양|500MB|무제한|
 |가져오기 트래픽|월별 5GB|무제한|
-|청구|스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.|<ul><li>스토리지: 기가바이트-월 사용량을 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 그 후에는 가격 계산기에 설명된 대로 비용이 부과됩니다.</li><li>가져오기 트래픽: 월별 기가바이트 사용량을 기준으로 비용이 부과됩니다. 처음 5GB는 무료입니다. 그 후에는 가격 계산기에 설명된 대로 비용이 부과됩니다. 스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 스토리지, 가져오기 트래픽 및 가격 계산기에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.</li></ul>|
+|비용 청구|스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.|<ul><li>스토리지: 기가바이트-월 사용량을 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.</li><li>가져오기 트래픽: 월별 기가바이트 사용량을 기준으로 비용이 부과됩니다. 처음 5GB는 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 스토리지, 가져오기 트래픽 및 비용 추정기에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.</li></ul>|
 {: caption="표 2. {{site.data.keyword.registrylong_notm}} 플랜" caption-side="top"}
 
-## 할당량 한계 및 청구
+## 할당량 한계 및 비용 청구
 {: #registry_plan_billing}
 
-{{site.data.keyword.registrylong_notm}}의 청구 프로세스 및 할당량 한계 방식에 대한 정보와 예제를 설명합니다.
+{{site.data.keyword.registrylong_notm}}의 비용 청구 프로세스 및 할당량 한계의 작동 방식에 대한 정보와 예제를 찾을 수 있습니다.
 {:shortdesc}
 
 모든 이미지는 각각 기본 이미지의 증분 변경을 나타내는 다수의 계층에서 빌드됩니다. 이미지를 푸시하거나 가져올 때 각 계층에 필요한 스토리지 및 가져오기 트래픽의 양이 월별 사용량에 추가됩니다. 동일한 계층이 자동으로
@@ -85,7 +85,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 >
 > 나중에 Ubuntu 이미지를 기반으로 하는 두 번째 이미지를 작성합니다. 예를 들면,  Dockerfile에 선택적 명령 또는 파일을 추가하여 Ubuntu 기본 이미지를 변경합니다. 각 변경사항은 새 이미지 계층을 나타냅니다. 두 번째 이미지를 푸시하면 {{site.data.keyword.registrylong_notm}}는 기본 Ubuntu 이미지의 모든 계층이 이미 사용자의 계정에 저장되었음을 인식합니다. 이미지를 다른 네임스페이스에 푸시했더라도 해당 계층을 두 번째 저장하는 데 비용이 부과되지는 않습니다. {{site.data.keyword.registrylong_notm}}는 모든 새 계층의 크기를 판별하고 스토리지의 양을 월별 사용량에 추가합니다.
 
-### 스토리지 및 가져오기 트래픽에 대한 청구
+### 스토리지 및 가져오기 트래픽에 대한 비용 청구
 {: #registry_billing_traffic}
 
 선택하는 서비스 플랜에 따라서 월별 사용하는 스토리지 및 가져오기 트래픽에 대해 비용이 부과됩니다.
@@ -103,8 +103,6 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   >
   > 표준 플랜에서 처음 0.5GB-월은 무료이므로 7GB-월에 대해 비용이 부과됩니다(7.5GB-월 - 0.5GB-월).
 
-  
-
 **가져오기 트래픽: **
 
   모든 {{site.data.keyword.registrylong_notm}} 서비스 플랜에는 네임스페이스에 저장된 개인용 이미지에 대한 일정한 양의 무료 가져오기 트래픽이 포함되어 있습니다. 가져오기 트래픽은 네임스페이스에서 사용자의 로컬 시스템으로 이미지의 계층을 가져올 때 사용하는 데이터 전송량입니다. 표준 플랜인 경우, 월별 GB 사용량 기준으로 비용이 부과됩니다. 매월 처음 5GB는 무료입니다. 무료 플랜인 경우, 무료 플랜에 대한 할당량 한계에 도달할 때까지 네임스페이스에서 이미지를 가져올 수 있습니다.
@@ -114,8 +112,6 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   > 해당 월에 전체 크기 14GB의 계층이 포함된 이미지를 가져왔습니다. 월별 사용량은 다음과 같이 계산됩니다.
   >
   > 표준 플랜에서 월별 처음 5GB는 무료이므로 9GB에 대해 비용이 부과됩니다(14GB - 5GB).
-
-  
 
 ### 스토리지 및 가져오기 트래픽에 대한 할당량 한계
 {: #registry_quota_limits}
@@ -148,20 +144,11 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
   > 이미지를 가져온 후에 {{site.data.keyword.registrylong_notm}}는 가져오기 중에 사용한 데이터 전송량을 판별하고
 가져오기 트래픽에 대한 한계에 도달했는지 여부를 확인합니다. 이 예에서 가져오기 트래픽 사용량은 4.5GB에서 5.5GB로 늘어납니다. 현재 할당량 한계가 5GB이기 때문에 {{site.data.keyword.registrylong_notm}}는 네임스페이스에서 이미지를 가져오지 못하게 합니다.
 
-### 비용 추정
-{: #registry_estimating_costs}
+### 비용
+{: #registry_cost}
 
-{{site.data.keyword.cloud_notm}} 가격 계산기를 사용하여 플랜의 비용을 예상하십시오.
+오퍼링 세부사항 페이지의 가격 플랜 절에서 {{site.data.keyword.registrylong_notm}}의 비용을 확인할 수 있습니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.
 {:shortdesc}
-
-{{site.data.keyword.cloud_notm}}에서 제공한 비용 계산기를 사용하여 앱의 가격을 책정할 수 있습니다.
-
-1. 가격 시트를 열고 [{{site.data.keyword.cloud_notm}} 가격 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/cloud/pricing)을 확인하십시오.
-2. **종량과금제(Pay As You Go)** 섹션에서 **계산기를 사용하여 비용 추정**을 클릭하십시오. 계산기가 열립니다.
-3. **컨테이너 비용** 섹션의 **컨테이너 레지스트리** 섹션으로 화면이동하십시오.
-4. 제공된 필드에 스토리지와 트래픽 추정값을 입력하십시오.
-
-추정 비용이 계산기에 표시됩니다.
 
 ## 서비스 플랜 업그레이드
 {: #registry_plan_upgrade}
@@ -205,7 +192,12 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Dockerfile은 Docker 이미지를 빌드하기 위한 지시사항을 포함하는 텍스트 파일입니다. 일반적으로 이미지는 Ubuntu와 같은 기본 운영 체제를 포함하는 기본 이미지를 기반으로 빌드됩니다. Dockerfile 지시사항을 사용하여 기본 이미지를 점진적으로 변경하여 앱에서 실행해야 하는 환경을 정의할 수 있습니다. 기본 이미지의 변경사항은 각각 새로운 이미지 계층을 설명하며 단일 Dockerfile 행에서 여러 사항을 변경할 수 있습니다. Dockerfile 앱의 지시사항은 앱, 앱의 구성 및 해당 종속 항목과 같이 개별적으로 저장되는 빌드 아티팩트도 참조할 수 있습니다.</dd>
+  <dd>Dockerfile은 Docker 이미지를 빌드하기 위한 지시사항을 포함하는 텍스트 파일입니다. 일반적으로 이미지는 Ubuntu와 같은 기본 운영 체제를 포함하는 기본 이미지를 기반으로 빌드됩니다. Dockerfile 지시사항을 사용하여 기본 이미지를 점진적으로 변경하여 앱에서 실행해야 하는 환경을 정의할 수 있습니다. 기본 이미지의 변경사항은 각각 새로운 이미지 계층을 설명하며 단일 Dockerfile 행에서 여러 사항을 변경할 수 있습니다. Dockerfile 앱의 지시사항은 앱, 앱의 구성 및 해당 종속 항목과 같이 개별적으로 저장되는 빌드 아티팩트도 참조할 수 있습니다. Dockerfile에 대한 자세한 정보는 [Dockerfile 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/engine/reference/builder/)를 참조하십시오.</dd>
+</dl>
+
+<dl>
+  <dt>Docker V2 이미지</dt>
+  <dd>[Docker: Image Manifest V2, Schema 2 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/registry/spec/manifest-v2-2/)와 호환되는 컨테이너 이미지입니다. Docker Image Manifest V2, Schema 2의 매체 유형은 `application/vnd.docker.distribution.manifest.v2+json`이고, Manifest 목록의 매체 유형은 `application/vnd.docker.distribution.manifest.list.v2+json`입니다. Docker 관련 지원에 대한 자세한 정보는 [Docker](/docs/services/Registry?topic=registry-registry_overview#docker)를 참조하십시오.</dd>
 </dl>
 
 <dl>
@@ -222,7 +214,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>OCI 컨테이너 이미지</dt>
-  <dd>[OCI 이미지 형식 스펙 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/opencontainers/image-spec)을 준수하는 컨테이너 이미지입니다.</dd>
+  <dd>[OCI 이미지 형식 스펙 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/opencontainers/image-spec)을 준수하는 컨테이너 이미지입니다. OCI 컨테이너의 매체 유형은 `application/vnd.oci.image.manifest.v1+json`입니다.</dd>
 </dl>
 
 <dl>
@@ -338,7 +330,7 @@ ibmcloud cr region-set eu-central
 글로벌 레지스트리가 사용 가능하며, 해당 이름(`icr.io`)에 포함된 지역은 없습니다. IBM에서 제공하는 공용 이미지만 이 레지스트리에서 호스팅됩니다. 네임스페이스를 설정하거나 이미지에 태그를 지정하고 이 이미지를 레지스트리로 푸시하여 고유 이미지를 관리하려면 [로컬 지역 레지스트리](#registry_regions_local)를 사용하십시오.
 {:shortdesc}
 
-글로벌 레지스트리의 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다. 
+글로벌 레지스트리의 도메인 이름이 변경되었습니다. 콘솔 및 CLI에서 새 도메인 이름이 사용 가능합니다.
 
 새 도메인 이름은 다음 표에 나와 있습니다.
 
@@ -380,6 +372,11 @@ ibmcloud cr region-set global
 ## Docker 지원
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
+{{site.data.keyword.registrylong_notm}}에서는 Docker Engine V1.12.6 이상을 지원합니다.
 
 이미지를 푸시하거나 가져오거나 `ibmcloud cr ppa-archive-load` 명령을 실행하는 경우에만 Docker가 필요합니다.
+
+Docker V2 Schema 2 이미지가 지원됩니다. Manifest 목록도 지원됩니다. 자세한 정보는 [Docker: Image Manifest 버전 2, Schema 2 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/registry/spec/manifest-v2-2/)를 참조하십시오.
+
+Docker V1 이미지는 더 이상 사용되지 않습니다.
+{: deprecated}

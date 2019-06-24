@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -22,11 +22,20 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Note sulla release 
+# Note sulla release
 {: #registry_release_notes}
 
 Utilizza queste note sulla release per ottenere informazioni sulle ultime modifiche a {{site.data.keyword.registrylong}} e al Controllo vulnerabilità. Le modifiche sono raggruppate per data.
 {:shortdesc}
+
+## 13 maggio 2019
+{: #13may2019}
+
+- **Fine del supporto per lo Scanner contenitori**
+
+  Lo Scanner contenitori è ora obsoleto e non è più utilizzabile.
+
+  Per ulteriori informazioni, vedi [Installazione dello Scanner contenitori (obsoleto)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 
 ## 2 aprile 2019
 {: #2apr2019}
@@ -135,7 +144,7 @@ Utilizza queste note sulla release per ottenere informazioni sulle ultime modifi
 
 - **Scanner contenitori**
 
-  Lo Scanner contenitori abilita Controllo vulnerabilità a segnalare gli eventuali problemi rilevati nei contenitori in esecuzione che non sono presenti nell'immagine di base del contenitore. 
+  Lo Scanner contenitori abilita Controllo vulnerabilità a segnalare gli eventuali problemi rilevati nei contenitori in esecuzione che non sono presenti nell'immagine di base del contenitore.
 
   Per ulteriori informazioni, vedi [Installazione dello Scanner contenitori](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 
@@ -187,6 +196,6 @@ Utilizza queste note sulla release per ottenere informazioni sulle ultime modifi
 
 - **Disponibilità generale di {{site.data.keyword.registrylong_notm}}**
 
-  {{site.data.keyword.registrylong_notm}} è generalmente disponibile come un servizio in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.registrylong_notm}} supporta {{site.data.keyword.containerlong_notm}}. 
+  {{site.data.keyword.registrylong_notm}} è generalmente disponibile come un servizio in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.registrylong_notm}} supporta {{site.data.keyword.containerlong_notm}}.
 
   Per ulteriori informazioni su {{site.data.keyword.containerlong_notm}}, vedi [Esercitazione introduttiva](/docs/containers?topic=containers-getting-started).

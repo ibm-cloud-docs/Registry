@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ Las imágenes tienen firmas separadas para los nombres de dominio antiguos (`reg
 
 Docker Content Trust utiliza un modelo de seguridad "trust on first use" ("confianza en el primer uso"). La clave de repositorio se extrae del servidor de confianza al extraer una imagen firmada de un repositorio por primera vez, y dicha clave se utiliza para verificar imágenes de ese repositorio en el futuro. Debe verificar que confíe en el servidor de confianza o en la imagen y su editor antes de extraer el repositorio por primera vez. Si la información de confianza del servidor está en peligro y no ha extraído una imagen del repositorio antes, el cliente de Docker podría extraer la información en peligro del servidor de confianza. Si los datos de confianza están en peligro después de extraer la imagen por primera vez, en extracciones posteriores, el cliente de Docker no podrá verificar los datos en peligro y no extraerá la imagen. Para obtener más información sobre cómo inspeccionar datos de confianza para una imagen, consulte [Visualización de imágenes firmadas](#trustedcontent_viewsigned).
 
-Para obtener más información sobre el modelo de seguridad "trust on first use" ("confianza en el primer uso"), consulte [The Update Framework (TUF) ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://theupdateframework.github.io/).
+Para obtener más información sobre el modelo de seguridad "trust on first use" ("confianza en el primer uso"), consulte [The Update Framework ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://theupdateframework.github.io/).
 
 ## Configuración del entorno de contenido de confianza
 {: #trustedcontent_setup}

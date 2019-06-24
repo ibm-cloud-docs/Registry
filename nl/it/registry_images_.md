@@ -259,7 +259,7 @@ Per creare la tua immagine Docker, completa la seguente procedura:
          ```
          {: pre}
 
-         dove `<image_name>` è il nome della tua immagine e `<directory>` è il percorso della directory. 
+         dove `<image_name>` è il nome della tua immagine e `<directory>` è il percorso della directory.
 
       2. Facoltativo: testa la tua immagine nel tuo computer locale prima di eseguirne il push al tuo spazio dei nomi.
 

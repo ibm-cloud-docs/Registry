@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -83,7 +83,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dt>`--quiet`, `-q`</dt>
 <dd>(オプション) 指定されている場合、エラーが発生しない限り、ビルド出力は抑止されます。</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(オプション) 「``」の形式で追加のビルド引数を指定します。 このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
+<dd>(オプション) 「`KEY=VALUE`」の形式で追加のビルド引数を指定します。このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(オプション) 複数のビルドのために複数の同じファイルを使用する場合は、別の Dockerfile のパスを選択できます。 ビルド・コンテキストに対する Dockerfile の相対位置を指定します。 指定しない場合、デフォルトは `PATH/Dockerfile` です。PATH は、ビルド・コンテキストのルートです。</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -172,7 +172,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 
 **例**
 
-*`birds/bluebird`* リポジトリー内のイメージに適用するセキュリティー問題に関する免除をすべてリストします。 出力には、アカウント規模の免除、*`birds`* 名前空間が適用範囲になる免除、*`birds/bluebird`* リポジトリーは適用範囲になるものの *`birds/bluebird`* リポジトリー内の特定のタグは適用範囲にならない免除が含まれます。
+*`birds/bluebird`* リポジトリー内のイメージに適用するセキュリティー問題に関する免除をすべてリストします。 出力には、アカウント規模の免除、*`birds`* 名前空間が適用範囲になる免除、および *`birds/bluebird`* リポジトリーが適用範囲になる免除は含まれますが、 *`birds/bluebird`* リポジトリー内の特定のタグが適用範囲になる免除は含まれません。
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
@@ -286,7 +286,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_list)を参照してください。
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -330,7 +330,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_list)を参照してください。
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照する新しいイメージ TARGET_IMAGE を作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
+{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照するイメージ TARGET_IMAGE を作成します。ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}
@@ -480,7 +480,7 @@ ibmcloud cr namespace-add NAMESPACE
 **コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、小文字、数字、ハイフン、下線のみを使用しなければなりません。 名前空間は、文字または数値で開始および終了する必要があります。
+<dd>追加する名前空間。名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン、下線のみです。名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
 <strong>ヒント</strong>: 名前空間名に個人情報を含めないでください。
@@ -810,7 +810,7 @@ ibmcloud cr token-list [--format FORMAT]
 <dt>`--format FORMAT`</dt>
 <dd>(オプション) Go テンプレートを使用して出力要素のフォーマットを設定します。
 
-詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)を参照してください。
+詳しくは、[{{site.data.keyword.registrylong_notm}} コマンドの CLI 出力のフォーマット設定およびフィルター操作](/docs/services/Registry?topic=registry-registry_cli_list)を参照してください。
 
 </dd>
 </dl>
@@ -879,7 +879,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 **コマンド・オプション**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージ脆弱性がイメージにあるかどうかがわかります。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
+<dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージの脆弱性がイメージにあるかどうかがわかります。このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
 
 <p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。</p>
 

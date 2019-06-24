@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 このコマンドの参照情報については、[新しい {{site.data.keyword.cloud_notm}} プラットフォーム API キーの作成](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)を参照してください。
 
+## すべてのクライアントに対する認証オプション
+{: #registry_authentication}
+
+`docker login` コマンドまたは他のレジストリー・クライアントを使用した認証が可能です。
+{:shortdesc}
+
+ほとんどのユーザーは、`docker login` をシンプルにするために `ibmcloud cr login` コマンドを使用できますが、自動化を実装している場合や別のクライアントを使用している場合は、手動で認証を行う必要があります。 ユーザー名とパスワードを提示する必要があります。 {{site.data.keyword.registrylong_notm}} では、ユーザー名は、パスワードで提示するシークレットのタイプを示します。
+
+次のユーザー名が有効です。
+
+- `iambearer`: パスワードには IAM アクセス・トークンが含まれています。 このタイプの認証は、存続時間は短いですが、あらゆるタイプの IAM ID から利用できます。
+- `iamrefresh`: パスワードには、IAM アクセス・トークンを生成して更新するために内部的に使用される IAM リフレッシュ・トークンが含まれている必要があります。 このタイプの認証は、存続時間が長く、`ibmcloud cr login` コマンドで使用されます。
+- `iamapikey`: パスワードは IAM API キーです。 このタイプの認証は、自動化に推奨されるタイプです。 ユーザー API キーまたはサービス ID API キーのどちらでも使用できます。[API キーの作成](#registry_api_key_create)を参照してください。
+- `token` (非推奨): パスワードはレジストリー・トークンです。 このユーザー名は自動化に使用できます。
+
+  トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
+  {: deprecated}
+
+レジストリーから認証を受けるために `docker` コマンドを使用する必要はありません。 例えば、以下のように Cloud Foundry CLI を使用してレジストリー内のイメージから Cloud Foundry アプリを開始できます。
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+`<apikey>` を API キーに、`<region>` を[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に、`<my_namespace>` を名前空間に、`<image_repo>` をリポジトリーに置き換えてください。
+
+詳しくは、[プライベート・イメージ・レジストリーの使用](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)を参照してください。
+
 ## トークンを使用した名前空間へのアクセスの自動化 (非推奨)
 {: #registry_tokens}
 
-トークンを使用して、{{site.data.keyword.registrylong_notm}} 名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
-{:shortdesc}
-
 トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 {: deprecated}
+
+トークンを使用して、{{site.data.keyword.registrylong_notm}} 名前空間との間で行う Docker イメージのプッシュとプルを自動化できます。
+{:shortdesc}
 
 レジストリー・トークンを所有していれば、だれでも保護された情報にアクセスできます。 地域内にセットアップしたすべての名前空間にアカウントの外部のユーザーがアクセスできるようにするため、{{site.data.keyword.cloud_notm}} アカウントのトークンを作成できます。 このトークンを所有するすべてのユーザーまたはアプリは、`container-registry` CLI プラグインをインストールせずに、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
 
@@ -103,11 +133,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### {{site.data.keyword.cloud_notm}} アカウント用のトークンの作成 (非推奨)
 {: #registry_tokens_create}
 
-地域内のすべての {{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを付与するトークンを作成できます。
-{:shortdesc}
-
 トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 {: deprecated}
+
+地域内のすべての {{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを付与するトークンを作成できます。
+{:shortdesc}
 
 1. トークンを作成します。 以下の例は、地域内にセットアップされているすべての名前空間への読み取りおよび書き込みアクセスを持つ、有効期限がないトークンを作成します。
 
@@ -155,11 +185,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### トークンを使用した名前空間へのアクセスの自動化 (非推奨)
 {: #registry_tokens_use}
 
-`docker login` コマンドでトークンを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化することができます。 トークンに読み取り専用アクセスを設定するか、または読み取り/書き込みアクセスを設定するかに応じて、ユーザーは、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。
-{:shortdesc}
-
 トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 {: deprecated}
+
+`docker login` コマンドでトークンを使用して、{{site.data.keyword.registrylong_notm}} の名前空間へのアクセスを自動化することができます。 トークンに読み取り専用アクセスを設定するか、または読み取り/書き込みアクセスを設定するかに応じて、ユーザーは、名前空間にイメージをプッシュしたり、名前空間からイメージをプルしたりすることができます。
+{:shortdesc}
 
 1. {{site.data.keyword.cloud_notm}} にログインします。
 
@@ -205,11 +235,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### {{site.data.keyword.cloud_notm}} アカウントからのトークンの削除 (非推奨)
 {: #registry_tokens_remove}
 
-{{site.data.keyword.registrylong_notm}} トークンが不要になったら、削除します。
-{:shortdesc}
-
 トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
 {: deprecated}
+
+{{site.data.keyword.registrylong_notm}} トークンが不要になったら、削除します。
+{:shortdesc}
 
 有効期限が切れた {{site.data.keyword.registrylong_notm}} トークンは {{site.data.keyword.cloud_notm}} アカウントから自動的に削除されるため、手動で削除する必要はありません。
 {:tip}
@@ -234,33 +264,3 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## すべてのクライアントに対する認証オプション
-{: #registry_authentication}
-
-`docker login` コマンドまたは他のレジストリー・クライアントを使用した認証が可能です。
-{:shortdesc}
-
-ほとんどのユーザーは、`docker login` をシンプルにするために `ibmcloud cr login` コマンドを使用できますが、自動化を実装している場合や別のクライアントを使用している場合は、手動で認証を行う必要があります。 ユーザー名とパスワードを提示する必要があります。 {{site.data.keyword.registrylong_notm}} では、ユーザー名は、パスワードで提示するシークレットのタイプを示します。
-
-次のユーザー名が有効です。
-
-- `iambearer`: パスワードには IAM アクセス・トークンが含まれています。 このタイプの認証は、存続時間は短いですが、あらゆるタイプの IAM ID から利用できます。
-- `iamrefresh`: パスワードには、IAM アクセス・トークンを生成して更新するために内部的に使用される IAM リフレッシュ・トークンが含まれている必要があります。 このタイプの認証は、存続時間が長く、`ibmcloud cr login` コマンドで使用されます。
-- `iamapikey`: パスワードは IAM API キーです。 このタイプの認証は、自動化に推奨されるタイプです。 ユーザー API キーまたはサービス ID API キーのどちらでも使用できます。[API キーの作成](#registry_api_key_create)を参照してください。
-- `token` (非推奨): パスワードはレジストリー・トークンです。 このユーザー名は自動化に使用できます。
-
-  トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](#registry_api_key)を参照してください。
-  {: deprecated}
-
-レジストリーから認証を受けるために `docker` コマンドを使用する必要はありません。 例えば、以下のように Cloud Foundry CLI を使用してレジストリー内のイメージから Cloud Foundry アプリを開始できます。
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-`<apikey>` を API キーに、`<region>` を[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)の名前に、`<my_namespace>` を名前空間に、`<image_repo>` をリポジトリーに置き換えてください。
-
-詳しくは、[プライベート・イメージ・レジストリーの使用](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)を参照してください。

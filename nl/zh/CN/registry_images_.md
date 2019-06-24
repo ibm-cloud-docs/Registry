@@ -225,7 +225,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
    其中 `<my_namespace>` 是名称空间信息，`<repo_name>` 是存储库的名称，`<tag>` 是要用于映像的版本。要查找名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 
-4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时运行以下步骤中的命令，那么可以将 `<directory>` 替换为句点 (.)。
+4. 记下包含 Dockerfile 的目录的路径。如果在工作目录设置为构建上下文的存储位置时运行以下步骤中的命令，那么可以将 `<directory>` 替换为句点 (.).
 5. 选择直接在 {{site.data.keyword.cloud_notm}} 中构建映像，或者先在本地构建并测试映像，然后再将其推送到 {{site.data.keyword.cloud_notm}}。
    - 要直接在 {{site.data.keyword.cloud_notm}} 中构建映像，请运行以下命令：
 
@@ -234,7 +234,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
      {: pre}
 
-     其中，`<image_name>` 是映像的名称，`<directory>` 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 `<directory>`。
+     其中，`<image_name>` 是映像的名称，`<directory>` 是目录的路径。如果在工作目录设置为构建上下文的存储位置时运行命令，那么可以用句点 (.) 替换 `<directory>`.
   
      有关 `ibmcloud cr build` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)。
 

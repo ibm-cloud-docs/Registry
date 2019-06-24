@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ subcollection: registry
 
 2. 证明用户 B 可以将用户 A 的帐户设为目标，但尚不能对 {{site.data.keyword.registrylong_notm}} 执行任何操作：
 
-    1. 以用户 B 的身份登录，并运行以下命令将用户 A 的帐户设定为目标，其中 _`<YourAccountID>`_ 是用户 A 的帐户标识：
+    1. 通过运行以下命令，以用户 B 的身份登录，并将用户 A 的帐户设为目标，其中 _`<YourAccountID>`_ 是用户 A 的帐户标识：
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ subcollection: registry
     ```
         {: pre}
 
-    2. 通过运行以下命令，创建名称空间 `namespace_b`：
+    2. 运行以下命令创建 `namespace_a`：
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         名称空间名称在区域中必须唯一。
         {: tip}
 
-    3. 通过运行以下命令，创建另一个名称空间 `namespace_c`：
+    3. 运行以下命令创建 `namespace_b`：
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. 运行以下命令创建 `namespace_c`：
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -438,8 +445,6 @@ subcollection: registry
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        此命令有效。
 
     3. 通过运行以下命令，将映像推送到 `namespace_a`：
 

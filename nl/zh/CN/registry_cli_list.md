@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -116,7 +116,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Repository`|字符串|显示映像的存储库。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`Tag`|字符串|显示映像的标记。|
-|`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：Status `string`、IssueCount `int` 和 ExemptionCount `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](/docs/services/Registry?topic=va-va_index#va_registry_cli)。|
+|`SecurityStatus`|结构|显示映像的漏洞状态。您可以过滤以下值，还可以为这些值设置格式：*Status*  `string`、*IssueCount*  `int` 和 *ExemptionCount*  `int`。有关可能的状态，请参阅[使用 CLI 查看漏洞报告](/docs/services/Registry?topic=va-va_index#va_registry_cli)。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> 命令中的可用字段和数据类型" caption-side="top"}
 
 ## `ibmcloud cr image-inspect` 命令中的 Go 模板选项和数据类型
@@ -132,19 +132,19 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Comment`|字符串|显示映像的描述。|
 |`Created`|字符串|显示映像创建时的 [UNIX 时间戳记 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`Container`|字符串|显示已创建映像的容器的标识。|
-|`ContainerConfig`|对象|显示基于此映像启动的容器的缺省配置。请参阅 [Config](#registry_cli_list_imageinspect_config) 中的字段详细信息。|
+|`ContainerConfig`|对象|显示基于此映像启动的容器的缺省配置。请参阅 [`Config`](#registry_cli_list_imageinspect_config) 中的字段详细信息。|
 |`DockerVersion`|字符串|显示用于构建此映像的 Docker 版本。|
 |`Author`|字符串|显示映像的创建者。|
-|`Config`|对象|显示映像的配置元数据。请参阅 [Config](#registry_cli_list_imageinspect_config) 中的字段详细信息。|
+|`Config`|对象|显示映像的配置元数据。请参阅 [`Config`](#registry_cli_list_imageinspect_config) 中的字段详细信息。|
 |`Architecture`|字符串|显示用于构建此映像以及运行此映像所需的处理器体系结构。|
 |`Os`|字符串|显示用于构建此映像以及运行此映像所需的操作系统系列。|
 |`OsVersion`|字符串|显示用于构建此映像的操作系统版本。|
 |`Size`|整数（64 位）|显示映像的大小（以字节为单位）。|
 |`VirtualSize`|整数（64 位）|显示映像中每层大小的总和（以字节为单位）。|
-|`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [RootFS](#registry_cli_list_imageinspect_rootfs) 中的字段详细信息。|
+|`RootFS`|对象|显示用于描述映像的根文件系统的元数据。请参阅 [`RootFS`](#registry_cli_list_imageinspect_rootfs) 中的字段详细信息。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> 命令中的可用字段和数据类型" caption-side="top"}
 
-### Config
+### `Config`
 {: #registry_cli_list_imageinspect_config}
 
 |字段|类型|描述|
@@ -161,7 +161,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`StdinOnce`|布尔值|如果标准输入流在所连接客户机断开连接后关闭，将显示 _true_；如果标准输入流保持打开，将显示 _false_。|
 |`Env`|字符串数组|显示环境变量的列表，格式为键值对。|
 |`Cmd`|字符串数组|描述传递给容器以在启动容器时运行的命令和自变量。|
-|`Healthcheck`|对象|描述如何检查容器是否正常工作。请参阅 [Healthcheck](#registry_cli_list_imageinspect_healthcheck) 中的字段详细信息。|
+|`Healthcheck`|对象|描述如何检查容器是否正常工作。请参阅 [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck) 中的字段详细信息。|
 |`ArgsEscaped`|布尔值|如果命令已经转义（特定于 Windows），将显示 true。|
 |`Image`|字符串|显示操作程序传递的映像的名称。|
 |`Volumes`|键值映射|显示安装到容器的卷安装的列表。|
@@ -169,14 +169,14 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Entrypoint`|字符串数组|描述在容器启动时运行的命令。|
 |`NetworkDisabled`|布尔值|如果容器禁用了联网，将显示 _true_；如果容器启用了联网，将显示 _false_。|
 |`MacAddress`|字符串|显示分配给容器的 MAC 地址。|
-|`OnBuild`|字符串数组|显示映像 Dockerfile 上定义的 ONBUILD 元数据。|
+|`OnBuild`|字符串数组|显示映像 Dockerfile 上定义的 `ONBUILD` 元数据。|
 |`Labels`|键值映射|显示作为键值对添加到映像的标签的列表。|
 |`StopSignal`|字符串|描述要停止容器时发送的 UNIX 停止信号。|
 |`StopTimeout`|整数|显示停止容器的超时（以秒为单位）。|
 |`Shell`|字符串数组|显示 shell 格式的 RUN、CMD 和 ENTRYPOINT。|
-{: caption="表 3. Config 中的可用字段和数据类型。" caption-side="top"}
+{: caption="表 3. <code>Config</code> 中的可用字段和数据类型。" caption-side="top"}
 
-### Healthcheck
+### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
 
 |字段|类型|描述|
@@ -185,9 +185,9 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Interval`|整数（64 位）|显示两次运行状况检查之间等待的时间（以纳秒为单位）。|
 |`Timeout`|整数（64 位）|显示将运行状况检查视为失败之前等待的时间（以纳秒为单位）。|
 |`Retries`|整数|显示将容器视为工作不正常所需的连续失败次数。|
-{: caption="表 4. Healthcheck 结构中的可用字段和数据类型" caption-side="top"}
+{: caption="表 4. <code>Healthcheck</code> 结构中的可用字段和数据类型。" caption-side="top"}
 
-### RootFS
+### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
 
 |选项|类型|描述|
@@ -195,7 +195,7 @@ ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} 
 |`Type`|字符串|显示文件系统的类型。|
 |`Layers`|字符串数组|显示每个映像层的描述符。|
 |`BaseLayer`|字符串|显示映像中基本层的描述符。|
-{: caption="表 5. RootFS 结构中的可用字段和数据类型" caption-side="top"}
+{: caption="表 5. <code>RootFS</code> 结构中的可用字段和数据类型。" caption-side="top"}
 
 ## `ibmcloud cr token-list` 命令中的 Go 模板选项和数据类型
 {: #registry_cli_list_tokenlist}

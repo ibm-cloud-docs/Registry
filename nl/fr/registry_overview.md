@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker privées et y accéder dans une architecture hautement disponible et évolutive.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser {{site.data.keyword.registrylong_notm}} en configurant votre propre espace de nom d'images et en envoyant des images Docker à votre espace de nom.
+{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé, hautement disponible, évolutif et chiffré, hébergé et géré par {{site.data.keyword.IBM_notm}}. Vous pouvez utiliser {{site.data.keyword.registrylong_notm}} en configurant votre propre espace de nom d'images et en envoyant des images Docker à votre espace de nom.
 
 <img src="images/registry_architecture1.svg" alt="Image montrant comment vous pouvez interagir avec IBM Cloud Container Registry. Un registre de conteneur contient des référentiels privés et publics et des API permettant d'interagir avec le service. Votre client Docker local peut extraire et envoyer des images depuis et vers vos référentiels privés dans le registre, et peuvent extraire des registres publics. L'interface utilisateur Web IBM Cloud (console) interagit avec l'API de registre de conteneur pour répertorier des images. L'interface de ligne de commande de registre de conteneur interagit avec l'API pour répertorier, créer, inspecter et retirer des images, mais aussi pour d'autres fonctions administratives. Votre client Docker local peut également extraire et envoyer des images depuis votre magasin d'images locales vers d'autres registres."/>
 
@@ -42,7 +42,7 @@ Consultez le tableau suivant pour avoir une présentation des avantages liés à
 
 |Avantage|Description|
 |-------|-----------|
-|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible et évolutif, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.cloud_notm}}.</li></ul>|
+|Registre privé hautement disponible et évolutif|<ul><li>Configurez votre propre espace de nom d'images dans un registre privé à service partagé, hautement disponible, évolutif et chiffré, hébergé et géré par {{site.data.keyword.IBM_notm}}.</li><li>Stockez vos images Docker privées et partagez-les avec les utilisateurs de votre compte {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformité en matière de sécurité d'image avec Vulnerability Advisor|<ul><li>Bénéficiez d'une analyse automatique des images dans votre espace de nom.</li><li>Consultez les recommandations spécifiques au système d'exploitation pour résoudre d'éventuelles vulnérabilités et protéger vos conteneurs contre la compromission.</li></ul>|
 |Limites de quota pour le stockage et le trafic d'extraction (pull)|<ul><li>Bénéficiez d'un stockage gratuit et d'un trafic d'extraction (pull) vers vos images privées jusqu'à ce que vous atteigniez votre quota gratuit.</li><li>Définissez des limites de quota personnalisées pour le volume de stockage et le trafic d'extraction (pull) par mois afin d'éviter de dépasser le niveau de paiement indiqué dans vos préférences.</li></ul>|
 {: caption="Table 1. Avantages d'{{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -63,7 +63,7 @@ Le tableau suivant décrit les plans de service {{site.data.keyword.registrylong
 |Description|Essayez {{site.data.keyword.registrylong_notm}} pour stocker et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.cloud_notm}}.|
 |Volume de stockage pour les images|500 Mo|Illimité|
 |Trafic d'extraction (pull)|5 Go par mois|Illimité|
-|Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix.</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la calculatrice de prix. Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et la calculatrice de prix, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et l'estimateur de coût, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tableau 2. Plans {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Limites de quota et facturation
@@ -99,8 +99,6 @@ le plan standard :
   >
   > Avec le plan standard, le premier demi-Go/mois est gratuit ; par conséquent, vous ne payez que 7 Go/mois (7,5 Go/mois - 0,5 Go/mois).
 
-  
-
 **Trafic d'extraction (Pull) : **
 
   Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut une certaine quantité de trafic d'extraction (pull) gratuite vers vos images privées stockées dans votre espace de nom. Le trafic d'extraction (pull) est la bande passante que vous utilisez lorsque vous procédez à l'extraction par commande pull d'une image à partir de votre espace de nom vers votre machine locale. Si vous bénéficiez du plan standard, vous êtes facturé en Go d'utilisation par mois. Les 5 premiers Go de chaque mois sont gratuits. Si vous bénéficiez du plan gratuit, vous pouvez extraire des images à partir de votre espace de nom jusqu'à ce que vous atteigniez la limite de quota du plan gratuit.
@@ -111,8 +109,6 @@ le plan standard :
   > Au cours du mois, vous avez extrait des images qui contenaient des couches d'une taille totale de 14 Go. Votre utilisation mensuelle est calculée comme suit :
   >
   > Dans le plan standard, les 5 premiers Go par mois sont gratuits ; vous êtes donc facturés pour 9 Go (14 Go - 5 Go).
-
-  
 
 ### Limites de quota pour le stockage et le trafic d'extraction (pull)
 {: #registry_quota_limits}
@@ -167,20 +163,11 @@ du trafic d'extraction (pull) est atteinte. Dans cet exemple, l'utilisation du t
 Go, {{site.data.keyword.registrylong_notm}}
 vous empêche d'extraire des images par commande pull à partir de votre espace de nom.
 
-### Estimation des coûts
-{: #registry_estimating_costs}
+### Coût
+{: #registry_cost}
 
-Utilisez la calculatrice de prix {{site.data.keyword.cloud_notm}} pour estimer le coût de votre plan.
+Vous pouvez voir les coûts d'{{site.data.keyword.registrylong_notm}} à la section des plans de tarification de la page des détails de l'offre. Voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
-
-Vous pouvez estimer le coût de votre application à l'aide des calculatrices de prix fournies par {{site.data.keyword.cloud_notm}}.
-
-1. Ouvrez la fiche de prix. Voir [{{site.data.keyword.cloud_notm}} Pricing ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/pricing).
-2. Dans la section **Paiement à la carte**, cliquez sur **Estimez vos coûts avec notre calculatrice**. La calculatrice s'ouvre.
-3. Accédez à la section **Container Registry** sous **Prix des conteneurs**.
-4. Entrez vos estimations de stockage et de trafic dans les zones à cet effet.
-
-L'estimation de vos coûts est affichée dans la calculatrice.
 
 ## Mise à niveau de votre plan de service
 {: #registry_plan_upgrade}
@@ -228,7 +215,12 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Un Dockerfile est un fichier texte contenant des instructions pour la construction d'une image Docker. Généralement, l'image est construite à partir d'une image de base contenant un système d'exploitation de base, comme Ubuntu. Vous pouvez modifier incrémentiellement l'image de base avec des instructions Dockerfile définissant l'environnement où doit s'exécuter l'application. Chaque modification de l'image de base décrit une nouvelle couche de l'image et vous pouvez apporter plusieurs modifications au même fichier Dockerfile. Les instructions dans un Dockerfile peuvent également référencer des artefacts de construction qui sont stockés séparément, tels qu'une application, sa configuration, et ses dépendances.</dd>
+  <dd>Un Dockerfile est un fichier texte contenant des instructions pour la construction d'une image Docker. Généralement, l'image est construite à partir d'une image de base contenant un système d'exploitation de base, comme Ubuntu. Vous pouvez modifier incrémentiellement l'image de base avec des instructions Dockerfile définissant l'environnement où doit s'exécuter l'application. Chaque modification de l'image de base décrit une nouvelle couche de l'image et vous pouvez apporter plusieurs modifications au même fichier Dockerfile. Les instructions dans un Dockerfile peuvent également référencer des artefacts de construction qui sont stockés séparément, tels qu'une application, sa configuration, et ses dépendances. Pour plus d'informations sur Dockerfile, voir [Dockerfile reference ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/engine/reference/builder/).</dd>
+</dl>
+
+<dl>
+  <dt>Images Docker V2</dt>
+  <dd>Images de conteneur conformes à [Docker: Image Manifest V2, Schema 2 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/registry/spec/manifest-v2-2/). Le type de support pour Docker Image Manifest V2, Schema 2 est `application/vnd.docker.distribution.manifest.v2+json` et le type de support de la liste du manifeste est `application/vnd.docker.distribution.manifest.list.v2+json`. Pour plus d'informations sur la prise en charge pour Docker, voir [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -247,7 +239,7 @@ environnement de transfert.</dd>
 
 <dl>
   <dt>Images de conteneur OCI</dt>
-  <dd>Images de conteneur conformes à la [Spécification de format d'image OCI ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/opencontainers/image-spec).</dd>
+  <dd>Images de conteneur conformes à la [Spécification de format d'image OCI ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/opencontainers/image-spec). Le type de support pour des images de conteneur OCI est `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
@@ -365,7 +357,7 @@ Après avoir ciblé une région différente, connectez-vous à nouveau au regist
 Une base de registre globale dont le nom ne comporte aucune région (`icr.io`) est disponible. Seules des images publiques fournies par IBM sont hébergées dans ce registre. Pour gérer vos propres images, par exemple pour définir des espaces de nom ou baliser et envoyer des images par commande push à un registre, utilisez un [registre régional local](#registry_regions_local).
 {:shortdesc}
 
-Le nom de domaine pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande. 
+Le nom de domaine pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande.
 
 Le nouveau nom de domaine est présenté dans le tableau suivant.
 
@@ -407,6 +399,11 @@ Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez to
 ## Prise en charge de Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
+{{site.data.keyword.registrylong_notm}} prend en charge Docker Engine version 1.12.6 ou ultérieure.
 
 Docker est requis uniquement si vous souhaitez envoyer ou extraire des images, ou si vous souhaitez exécuter la commande `ibmcloud cr ppa-archive-load`.
+
+Les images Docker V2 Schema 2 sont prises en charge. Les listes de manifestes sont également prises en charge. Pour plus d'informations, voir [Docker: Image Manifest Version 2, Schema 2 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+
+Les images Docker V1 sont obsolètes.
+{: deprecated}

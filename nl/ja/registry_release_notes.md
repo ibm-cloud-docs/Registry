@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -25,15 +25,24 @@ subcollection: registry
 # リリース・ノート
 {: #registry_release_notes}
 
-このリリース・ノートをお読みになり、{{site.data.keyword.registrylong}} と脆弱性アドバイザーの最新の変更点をご確認ください。変更点は日付別に分類されています。
+このリリース・ノートをお読みになり、{{site.data.keyword.registrylong}} と脆弱性アドバイザーの最新の変更点をご確認ください。 変更点は日付別に分類されています。
 {:shortdesc}
+
+## 2019 年 5 月 13 日
+{: #13may2019}
+
+- **Container Scanner のサポート終了**
+
+  Container Scanner が非推奨になり、使用できなくなりました。
+
+  詳しくは、[Container Scanner のインストール (非推奨)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner) を参照してください。
 
 ## 2019 年 4 月 2 日
 {: #2apr2019}
 
 - **Container Image Security Enforcement の一般出荷版**
 
-  Container Image Security Enforcement を使用すると、{{site.data.keyword.containerlong_notm}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。
+  Container Image Security Enforcement を使用すると、{{site.data.keyword.containerlong_notm}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。
 
   詳しくは、[コンテナー・イメージ・セキュリティーの適用](/docs/services/Registry?topic=registry-security_enforce#security_enforce)を参照してください。
 
@@ -51,19 +60,19 @@ subcollection: registry
 
 - **新しい DNS 名**
 
-  {{site.data.keyword.registrylong_notm}} で新しいドメイン・ネームが導入されました。新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。新しい `icr.io` というドメイン・ネームを利用できるようになりました。既存の `registry.bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。詳しくは、[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)および[新しい IBM Cloud Container Registry ドメイン・ネームの導入![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names)を参照してください。
+  {{site.data.keyword.registrylong_notm}} で新しいドメイン・ネームが導入されました。 新しいドメイン・ネームは、コンソールおよび CLI で使用可能です。 新しい `icr.io` というドメイン・ネームを利用できるようになりました。 既存の `registry.bluemix.net` ドメイン・ネームは非推奨となっていますが、当面の間は使用を継続できます。サポートの終了日は後に公表されます。 詳しくは、[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)および[新しい IBM Cloud Container Registry ドメイン・ネームの導入![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names)を参照してください。
 
-  コンテント・トラストを使用している場合、署名はドメイン・ネームを含むすべてのイメージ名に適用されるため、新しい署名を追加し、新しいドメイン・ネームでコンテント・トラストを使用できるようにする必要があります。イメージの署名について詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent)を参照してください。
+  コンテント・トラストを使用している場合、署名はドメイン・ネームを含むすべてのイメージ名に適用されるため、新しい署名を追加し、新しいドメイン・ネームでコンテント・トラストを使用できるようにする必要があります。 イメージの署名について詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent)を参照してください。
 
 - **{{site.data.keyword.containerlong_notm}} クラスター用の IAM API キーのプル・シークレット**
 
-  `icr.io` ドメイン用の新しいクラスター・イメージのプル・シークレットは IAM API キーを使用して許可されるので、{{site.data.keyword.registrylong_notm}} リソースに対するアクセスの制御を強化する場合、IAM ポリシーを追加できます。例えば、クラスターのプル・シークレットの API キー・ポリシーを変更して、イメージが特定のレジストリー地域または名前空間からのみプルされるようにできます。
+  `icr.io` ドメイン用の新しいクラスター・イメージのプル・シークレットは IAM API キーを使用して許可されるので、{{site.data.keyword.registrylong_notm}} リソースに対するアクセスの制御を強化する場合、IAM ポリシーを追加できます。 例えば、クラスターのプル・シークレットの API キー・ポリシーを変更して、イメージが特定のレジストリー地域または名前空間からのみプルされるようにできます。
   
   詳しくは、[{{site.data.keyword.registrylong_notm}} からのイメージのプルをクラスターに許可する方法](/docs/containers?topic=containers-images#cluster_registry_auth)を参照してください。
 
 - **ap-north の新しい地域**
 
-  `ap-north` で新しい地域を利用できるようになりました。新しい地域はドメイン・ネーム `jp.icr.io` で使用できます。
+  `ap-north` で新しい地域を利用できるようになりました。 新しい地域はドメイン・ネーム `jp.icr.io` で使用できます。
   
   詳しくは、[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)を参照してください。
 
@@ -72,7 +81,7 @@ subcollection: registry
 
 - **名前空間へのアクセスの自動化**
 
-  トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化することは、非推奨となりました。API キーを使用して、{{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを自動化し、イメージのプッシュとプルを可能にすることが必要です。
+  トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化することは、非推奨となりました。 API キーを使用して、{{site.data.keyword.registrylong_notm}} 名前空間へのアクセスを自動化し、イメージのプッシュとプルを可能にすることが必要です。
 
   詳しくは、[API キーを使用した名前空間へのアクセスの自動化](/docs/services/Registry?topic=registry-registry_access#registry_api_key)を参照してください。
 
@@ -81,7 +90,7 @@ subcollection: registry
 
 - **脆弱性アドバイザー API バージョン 2 のサポート終了**
 
-  脆弱性アドバイザーの API バージョン 2 が非推奨になり、使用できなくなりました。API バージョン 3 を使用してください。詳細については、[{{site.data.keyword.registrylong_notm}} API の脆弱性アドバイザー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/apidocs/container-registry/va)を参照してください。
+  脆弱性アドバイザーの API バージョン 2 が非推奨になり、使用できなくなりました。 API バージョン 3 を使用してください。詳細については、[{{site.data.keyword.registrylong_notm}} API の脆弱性アドバイザー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/apidocs/container-registry/va)を参照してください。
 
   詳細については、[脆弱性アドバイザー v2 API は非推奨 ![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/) を参照してください。
 
@@ -90,7 +99,7 @@ subcollection: registry
 
 - **ユーザー・アクセスの管理**
 
-  {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) を使用して、{{site.data.keyword.registrylong_notm}} に対するご使用のアカウント内のユーザーによるアクセスを制御できます。{{site.data.keyword.registrylong_notm}} 内のご使用のアカウントを対象に IAM ポリシーを有効にする際には、アカウント内の {{site.data.keyword.registrylong_notm}} サービスにアクセスするすべてのユーザーに、IAM ユーザー役割が定義されたアクセス・ポリシーを割り当てる必要があります。 そのポリシーによって、サービスのコンテキスト内でユーザーが持つ役割や、ユーザーが実行できるアクションが決まります。
+  {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) を使用して、{{site.data.keyword.registrylong_notm}} に対するご使用のアカウント内のユーザーによるアクセスを制御できます。 {{site.data.keyword.registrylong_notm}} 内のご使用のアカウントを対象に IAM ポリシーを有効にする際には、アカウント内の {{site.data.keyword.registrylong_notm}} サービスにアクセスするすべてのユーザーに、IAM ユーザー役割が定義されたアクセス・ポリシーを割り当てる必要があります。 そのポリシーによって、サービスのコンテキスト内でユーザーが持つ役割や、ユーザーが実行できるアクションが決まります。
 
   詳しくは、[{{site.data.keyword.iamshort}} を使用したユーザー・アクセスの管理](/docs/services/Registry?topic=registry-iam#iam)、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)、および[チュートリアル: IBM Cloud Container Registry リソースに対するアクセス権を付与する](/docs/services/Registry?topic=registry-iam_access#iam_access)を参照してください。
 
@@ -99,7 +108,7 @@ subcollection: registry
 
 - **脆弱性アドバイザーで適用除外ポリシーを使用可能**
 
-  {{site.data.keyword.cloud_notm}} 組織のセキュリティーを管理する場合は、ポリシー設定を使用して、問題を適用除外するかどうかを決定できます。Container Image Security Enforcement を使用して、ポリシーによって適用除外される問題と判断された後はセキュリティー問題が含まれないイメージからのみデプロイメントを許可するという選択もできます。
+  {{site.data.keyword.cloud_notm}} 組織のセキュリティーを管理する場合は、ポリシー設定を使用して、問題を適用除外するかどうかを決定できます。 Container Image Security Enforcement を使用して、ポリシーによって適用除外される問題と判断された後はセキュリティー問題が含まれないイメージからのみデプロイメントを許可するという選択もできます。
 
   詳しくは、[組織の適用除外ポリシーの設定](/docs/services/Registry?topic=va-va_index#va_managing_policy)を参照してください。
 
@@ -117,7 +126,7 @@ subcollection: registry
 
 - **脆弱性アドバイザー API バージョン 3**
 
-  API バージョン 3 では、適用除外をリストするのに使用する API エンドポイントの動作が変更されました。現在使用している API がバージョン 2 の動作に依存していないことを確認する必要があります。
+  API バージョン 3 では、適用除外をリストするのに使用する API エンドポイントの動作が変更されました。 現在使用している API がバージョン 2 の動作に依存していないことを確認する必要があります。
 
   詳細については、[{{site.data.keyword.registrylong_notm}} の脆弱性アドバイザー ![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/apidocs/container-registry/va) を参照してください。
 
@@ -144,7 +153,7 @@ subcollection: registry
 
 - **Container Image Security Enforcement ベータ版**
 
-  Container Image Security Enforcement ベータ版を使用すると、{{site.data.keyword.containerlong_notm}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。
+  Container Image Security Enforcement ベータ版を使用すると、{{site.data.keyword.containerlong_notm}} のクラスターにコンテナー・イメージをデプロイする前に、コンテナー・イメージを検査できます。 イメージのデプロイ元を制御し、脆弱性アドバイザーのポリシーを適用して、[コンテント・トラスト](/docs/services/Registry?topic=registry-registry_trustedcontent)をイメージに適切に適用することができます。
 
   詳しくは、[コンテナー・イメージ・セキュリティーの適用](/docs/services/Registry?topic=registry-security_enforce#security_enforce)を参照してください。
 
@@ -171,7 +180,7 @@ subcollection: registry
 
 - **Docker イメージのビルド**
 
-  `ibmcloud cr build` コマンドを使用してコンテナーのビルドを実行できるようになりました。{{site.data.keyword.cloud_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
+  `ibmcloud cr build` コマンドを使用してコンテナーのビルドを実行できるようになりました。 {{site.data.keyword.cloud_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
 
   詳細については、[名前空間で使用する Docker イメージのビルド](/docs/services/Registry?topic=registry-registry_images_#registry_images_creating)および [`ibmcloud cr build`](/docs/container-registry-cli-plugin?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) を参照してください。
 
@@ -187,6 +196,6 @@ subcollection: registry
 
 - **{{site.data.keyword.registrylong_notm}} の一般出荷版**
 
-  {{site.data.keyword.registrylong_notm}} が {{site.data.keyword.cloud_notm}} 内のサービスとして一般出荷可能になりました。{{site.data.keyword.registrylong_notm}} は {{site.data.keyword.containerlong_notm}} をサポートします。
+  {{site.data.keyword.registrylong_notm}} が {{site.data.keyword.cloud_notm}} 内のサービスとして一般出荷可能になりました。 {{site.data.keyword.registrylong_notm}} は {{site.data.keyword.containerlong_notm}} をサポートします。
 
   {{site.data.keyword.containerlong_notm}} の詳細については、[入門チュートリアル](/docs/containers?topic=containers-getting-started)を参照してください。

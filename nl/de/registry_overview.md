@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 Verwenden Sie {{site.data.keyword.registrylong}}, um Docker-Images in einer hoch verfügbaren und skalierbaren Architektur zu speichern und auf sie zuzugreifen.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können {{site.data.keyword.registrylong_notm}} verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
+{{site.data.keyword.registrylong_notm}} bietet eine hoch verfügbare, skalierbare und verschlüsselte private Multi-Tenant-Registry für Images, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird. Sie können {{site.data.keyword.registrylong_notm}} verwenden, indem Sie Ihren eigenen Imagenamensbereich einrichten und Docker-Images mit Push-Operation an Ihren Namensbereich übertragen.
 
 <img src="images/registry_architecture1.svg" alt="Abbildung, die darstellt, wie Sie mit IBM Cloud Container Registry interagieren können. Container Registry enthält private und öffentliche Repositorys sowie APIs, die mit dem Service interagieren. Der lokale Docker-Client kann Images aus Ihren privaten Repositorys mit Push- und Pull-Operationen in die Registry übertragen oder aus ihr abrufen und kann Images mit Pull-Operationen aus öffentlichen Repositorys abrufen. Die IBM Cloud-Webschnittstelle (Konsole) interagiert mit der Container Registry-API, um die Images aufzulisten. Die Container Registry-CLI interagiert mit der API, um Images aufzulisten, zu erstellen, zu überprüfen und zu entfernen und weitere Verwaltungsfunktionen auszuführen. Der lokale Docker-Client kann darüber hinaus Images aus dem lokalen Imagespeicher mit Push- und Pull-Operationen in andere Registrys übertragen oder aus ihnen abrufen."/>
 
@@ -42,7 +42,7 @@ Die folgende Tabelle enthält eine Übersicht über die Vorteile der Verwendung 
 
 |Nutzen|Beschreibung|
 |-------|-----------|
-|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren privaten Multi-Tenant-Registry, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird</li><li>Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.cloud_notm}}-Konto</li></ul>|
+|Hoch verfügbare und skalierbare private Registry|<ul><li>Einrichtung eines eigenen Imagenamensbereichs in einer hoch verfügbaren, skalierbaren, verschlüsselten privaten Multi-Tenant-Registry, die von {{site.data.keyword.IBM_notm}} gehostet und verwaltet wird</li><li>Speichern Ihrer privaten Docker-Images und deren gemeinsame Nutzung mit Benutzern in Ihrem {{site.data.keyword.cloud_notm}}-Konto</li></ul>|
 |Einhaltung von Sicherheitsbestimmungen für Images mit Vulnerability Advisor|<ul><li>Vorteil des automatischen Scannens von Images in Ihrem Namensbereich</li><li>Überprüfen von Betriebssystem-spezifischen Empfehlungen, um potenzielle Sicherheitslücken zu beheben und Ihre Container vor Schäden zu schützen</li></ul>|
 |Kontingente für Speicher und Pull-Datenverkehr|<ul><li>Vorteil von kostenfreiem Speicherplatz und Pull-Datenverkehr zu Ihren privaten Images bis zur Obergrenze des kostenfreien Kontingents</li><li>Festlegen angepasster Kontingente für Speicher und Pull-Datenverkehr pro Monat, um ein Überziehen Ihres bevorzugten Zahlungsbetrags zu vermeiden</li></ul>|
 {: caption="Tabelle 1. Nutzen von {{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -62,7 +62,7 @@ In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.key
 |Beschreibung|Testen von {{site.data.keyword.registrylong_notm}} zum Speichern und gemeinsamen Verwenden von Docker-Images. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.cloud_notm}}-Konto.|
 |Speicherkapazität für Images|500 MB|Unbegrenzt|
 |Pull-Datenverkehr|5 GB pro Monat|Unbegrenzt|
-|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner.</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung im Preisrechner. Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Preisrechner finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry). </li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry). Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Kostenschätzer finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabelle 2. Pläne in {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Kontingente und Abrechnung
@@ -97,8 +97,6 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
   >
   > Im Standardplan sind die ersten 0,5 GB-Monate kostenfrei, d. h., es werden 7 GB-Monate (7,5 GB-Monate - 0,5 GB-Monate) berechnet.
 
-  
-
 **Pull-Datenverkehr:**
 
   Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Kontingent an kostenfreiem Pull-Datenverkehr zu Ihren privaten Images, die in Ihrem Namensbereich gespeichert sind. Pull-Datenverkehr ist die Bandbreite, die Sie verwenden, wenn Sie eine Ebene eines Image aus Ihrem Namensbereich mit Pull-Operation an Ihre lokale Maschine übertragen. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro Monat in GB abgerechnet. Die ersten 5 GB jeden Monat sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images mit Pull-Operation aus Ihrem Namensbereich übertragen, bis Sie das Kontingent für den kostenfreien Plan ausgeschöpft haben.
@@ -108,8 +106,6 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
   > In einem Monat haben Sie Images mit Ebenen von 14 GB Gesamtgröße mit Pull-Operation extrahiert. Ihre monatliche Nutzung wird wie folgt berechnet:
   >
   > Im Standardplan sind die ersten 5 GB pro Monat kostenfrei, sodass Ihnen 9 GB (14 GB - 5 GB) berechnet werden.
-
-  
 
 ### Kontingente für Speicher und Pull-Datenverkehr
 {: #registry_quota_limits}
@@ -137,20 +133,11 @@ Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pul
   >
   > Nachdem das Image mit Pull-Operation übertragen wurde, bestimmt {{site.data.keyword.registrylong_notm}} die Bandbreite, die Sie während der Pull-Operation verwendet haben, und prüft, ob der Grenzwert für den Pull-Datenverkehr erreicht ist. In diesem Beispiel erhöht sich der Pull-Datenverkehr von 4,5 GB auf 5,5 GB. Ist das aktuelle Kontingent auf 5 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Pull-Operation aus Ihrem Namensbereich für weitere Images.
 
-### Kosten schätzen
-{: #registry_estimating_costs}
+### Kosten
+{: #registry_cost}
 
-Verwenden Sie den {{site.data.keyword.cloud_notm}}-Preisrechner, um die Kosten für Ihren Plan zu schätzen.
+Informationen zu den Kosten für {{site.data.keyword.registrylong_notm}} sind im Abschnitt mit Preisstrukturplänen auf der Angebotsdetailseite aufgeführt. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
-
-Sie können Ihre App mithilfe der Kostenberechnungsfunktionen, die von {{site.data.keyword.cloud_notm}} bereitgestellt wird, berechnen.
-
-1. Öffnen Sie die Preisliste im Abschnitt zur [{{site.data.keyword.cloud_notm}}-Preisstruktur ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/pricing).
-2. Im Abschnitt **Nutzungsabhängige Zahlung** klicken Sie auf **Kosten mit dem Preisrechner schätzen**. Der Preisrechner wird geöffnet.
-3. Blättern Sie zum Unterabschnitt **Container-Registry** im Abschnitt **Containergebühren**.
-4. Geben Sie die geschätzten Kosten für Speicher und Datenverkehr in die angezeigten Felder ein.
-
-Ihre geschätzten Kosten werden im Preisrechner angezeigt.
 
 ## Upgrade für den Serviceplan durchführen
 {: #registry_plan_upgrade}
@@ -194,7 +181,12 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Eine Dockerfile ist eine Textdatei, die Anweisungen zur Erstellung eines Docker-Image enthält. Typischerweise wird ein Image auf einem Basisimage erstellt, das ein Basisbetriebssystem, z. B. Ubuntu enthält. Sie können mit den Dockerfile-Anweisungen schrittweise das Basisimage ändern, um die Umgebung zu definieren, die die App für die Ausführung benötigt. Jede Änderung am Basisimage beschreibt eine neue Imageebene und Sie können mehrere Änderungen in einer einzelnen Dockerfilezeile vornehmen. Die Anweisungen in einer Dockerfile können Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App).</dd>
+  <dd>Eine Dockerfile ist eine Textdatei, die Anweisungen zur Erstellung eines Docker-Image enthält. Typischerweise wird ein Image auf einem Basisimage erstellt, das ein Basisbetriebssystem, z. B. Ubuntu enthält. Sie können mit den Dockerfile-Anweisungen schrittweise das Basisimage ändern, um die Umgebung zu definieren, die die App für die Ausführung benötigt. Jede Änderung am Basisimage beschreibt eine neue Imageebene und Sie können mehrere Änderungen in einer einzelnen Dockerfilezeile vornehmen. Die Anweisungen in einer Dockerfile können Buildartefakte referenzieren, die separat gespeichert sind (z. B. eine App, die Konfiguration der App und die Abhängigkeiten der App). Weitere Informationen zur Dockerfile finden Sie in den [Dockerfile-Referenzinformationen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/engine/reference/builder/).</dd>
+</dl>
+
+<dl>
+  <dt>Docker V2-Images</dt>
+  <dd>Container-Images, die den Vorgaben von [Docker: Image Manifest V2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/) entsprechen. Der Medientyp für Docker Image Manifest V2, Schema 2 ist `application/vnd.docker.distribution.manifest.v2+json` und der Medientyp für die Manifestliste ist `application/vnd.docker.distribution.manifest.list.v2+json`. Weitere Informationen zur Untersützung für Docker finden Sie in [Docker](/docs/services/Registry?topic=registry-registry_overview#docker). </dd>
 </dl>
 
 <dl>
@@ -211,7 +203,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>OCI-Container-Images</dt>
-  <dd>Container-Images, die der [OCI Image Format Specification ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/opencontainers/image-spec) entsprechen.</dd>
+  <dd>Container-Images, die der [OCI Image Format Specification ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/opencontainers/image-spec) entsprechen. Der Medientyp für OCI-Container-Images ist `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
@@ -327,7 +319,7 @@ Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Re
 Es ist eine globale Registry ist verfügbar; in deren Name ist keine Region integriert (`icr.io`). Nur von IBM bereitgestellte öffentliche Images befinden sich in dieser Registry. Um Ihre eigenen Images zu verwalten, z. B. durch Festlegen von Namensbereichen, Taggen von Images und Übertragen an eine Registry mittels Push-Operation, verwenden Sie eine [lokale regionale Registry](#registry_regions_local).
 {:shortdesc}
 
-Der Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar. 
+Der Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar.
 
 Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 
@@ -369,6 +361,11 @@ Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet,
 ## Unterstützung für Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
+{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine V1.12.6 oder eine höhere Version. 
 
 Docker ist nur für die Ausführung von Push- oder Pull-Operationen für Images oder für die Ausführung des Befehls `ibmcloud cr ppa-archive-load` erforderlich.
+
+Docker V2 Schema 2-Images werden unterstützt. Manifestlisten werden ebenfalls unterstützt. Weitere Informationen finden Sie in [Docker: Image Manifest Version 2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/). 
+
+Docker V1-Images werden nicht weiterverwendet.
+{: deprecated}

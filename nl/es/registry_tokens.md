@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 Para obtener información acerca del mandato, consulte [Creación de una nueva clave de API de plataforma {{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
+## Opciones de autenticación para todos los clientes
+{: #registry_authentication}
+
+Puede autenticarse mediante el mandato `docker login` u otros clientes de registro.
+{:shortdesc}
+
+La mayoría de los usuarios pueden utilizar el mandato `ibmcloud cr login` para simplificar `docker login`, pero si está implementando la automatización o está utilizando un cliente diferente, es posible que quiera autenticarse manualmente. Debe presentar un nombre de usuario y una contraseña. En {{site.data.keyword.registrylong_notm}}, el nombre de usuario indica el tipo de secreto que se presenta en la contraseña.
+
+Son válidos los siguientes nombres de usuarios:
+
+- `iambearer` La contraseña contiene un señal de acceso a IAM. Este tipo de autenticación es de corta duración, pero puede derivarse de todos los tipos de identidad IAM.
+- `iamrefresh` La contraseña debe contener un señal de actualización de IAM que se utiliza internamente para generar y actualizar un señal de acceso a IAM. Este tipo de autenticación es más duradero y es utilizado por el mandato `ibmcloud cr login`.
+- `iamapikey` La contraseña es una clave de API de IAM. Este tipo de autenticación es el preferido para la automatización. Puede utilizar una clave de API de usuario o de ID de servicio, consulte [Creación de una clave de API](#registry_api_key_create).
+- `token` La contraseña es una señal de registro (en desuso). Puede utilizar este nombre de usuario para la automatización.
+
+  Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
+  {: deprecated}
+
+No es necesario utilizar el mandato `docker` para autenticarse con el registro. Por ejemplo, puede iniciar apps de Cloud Foundry desde las imágenes del registro utilizando la CLI de Cloud Foundry:
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+Sustituya `<apikey>` por la clave de API, `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` por su espacio de nombres y `<image_repo>` por el repositorio.
+
+Para obtener más información, consulte [Uso de un registro de imagen privado](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
+
 ## Automatización del acceso a sus espacios de nombres mediante señales (en desuso)
 {: #registry_tokens}
 
-Puede utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
-
 Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
 {: deprecated}
+
+Puede utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 Cualquiera que tenga una señal de registro puede acceder a la información protegida. Si desea que los usuarios de fuera de su cuenta puedan acceder a todos los espacios de nombres que ha configurado en una región, puede crear una señal para su cuenta de {{site.data.keyword.cloud_notm}}. Cada usuario o app en posesión de esta señal puede enviar por push o extraer imágenes a espacios de nombres sin tener que instalar el plugin de CLI `container-registry`.
 
@@ -104,11 +134,11 @@ Utilice las siguientes tareas para gestionar sus señales:
 ### Creación de una señal para su cuenta de {{site.data.keyword.cloud_notm}} (en desuso)
 {: #registry_tokens_create}
 
-Puede crear una señal para otorgar acceso a todos los espacios de nombres {{site.data.keyword.registrylong_notm}} en una región.
-{:shortdesc}
-
 Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
 {: deprecated}
+
+Puede crear una señal para otorgar acceso a todos los espacios de nombres {{site.data.keyword.registrylong_notm}} en una región.
+{:shortdesc}
 
 1. Cree una señal. En el ejemplo siguiente se crea una señal que no caduca que tiene acceso de lectura y escritura a todos los espacios de nombres que se encuentran configurados en una región.
 
@@ -156,11 +186,11 @@ Utilizar señales para automatizar el envío por push y la extracción de imáge
 ### Utilización de una señal para automatizar el acceso a su espacio de nombres (en desuso)
 {: #registry_tokens_use}
 
-Puede utilizar una señal en su mandato `login docker` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de lectura/escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
-{:shortdesc}
-
 Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
 {: deprecated}
+
+Puede utilizar una señal en su mandato `docker login` para automatizar el acceso a sus espacios de nombres en {{site.data.keyword.registrylong_notm}}. Dependiendo de si establece un acceso de sólo lectura o de lectura/escritura para la señal, los usuarios pueden enviar por push y extraer imágenes a y desde los espacios de nombres.
+{:shortdesc}
 
 1. Inicie una sesión en {{site.data.keyword.cloud_notm}}.
 
@@ -206,11 +236,11 @@ Utilizar señales para automatizar el envío por push y la extracción de imáge
 ### Eliminación de una señal desde su cuenta de {{site.data.keyword.cloud_notm}} (en desuso)
 {: #registry_tokens_remove}
 
-Elimine una señal de {{site.data.keyword.registrylong_notm}} cuando ya no la necesite.
-{:shortdesc}
-
 Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
 {: deprecated}
+
+Elimine una señal de {{site.data.keyword.registrylong_notm}} cuando ya no la necesite.
+{:shortdesc}
 
 Las señales caducadas de {{site.data.keyword.registrylong_notm}} se eliminan automáticamente desde su cuenta de {{site.data.keyword.cloud_notm}} y no es necesario eliminarlas manualmente.
 {:tip}
@@ -235,33 +265,3 @@ Las señales caducadas de {{site.data.keyword.registrylong_notm}} se eliminan au
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## Opciones de autenticación para todos los clientes
-{: #registry_authentication}
-
-Puede autenticarse mediante el mandato `docker login` u otros clientes de registro.
-{:shortdesc}
-
-La mayoría de los usuarios pueden utilizar el mandato `ibmcloud cr login` para simplificar `docker login`, pero si está implementando la automatización o está utilizando un cliente diferente, es posible que quiera autenticarse manualmente. Debe presentar un nombre de usuario y una contraseña. En {{site.data.keyword.registrylong_notm}}, el nombre de usuario indica el tipo de secreto que se presenta en la contraseña.
-
-Son válidos los siguientes nombres de usuarios:
-
-- `iambearer` La contraseña contiene un señal de acceso a IAM. Este tipo de autenticación es de corta duración, pero puede derivarse de todos los tipos de identidad IAM.
-- `iamrefresh` La contraseña debe contener un señal de actualización de IAM que se utiliza internamente para generar y actualizar un señal de acceso a IAM. Este tipo de autenticación es más duradero y es utilizado por el mandato `ibmcloud cr login`.
-- `iamapikey` La contraseña es una clave de API de IAM. Este tipo de autenticación es el preferido para la automatización. Puede utilizar una clave de API de usuario o de ID de servicio, consulte [Creación de una clave de API](#registry_api_key_create).
-- `token` La contraseña es una señal de registro (en desuso). Puede utilizar este nombre de usuario para la automatización.
-
-  Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](#registry_api_key).
-  {: deprecated}
-
-No es necesario utilizar el mandato `docker` para autenticarse con el registro. Por ejemplo, puede iniciar apps de Cloud Foundry desde las imágenes del registro utilizando la CLI de Cloud Foundry:
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-Sustituya `<apikey>` por la clave de API, `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions), `<my_namespace>` por su espacio de nombres y `<image_repo>` por el repositorio.
-
-Para obtener más información, consulte [Uso de un registro de imagen privado](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).

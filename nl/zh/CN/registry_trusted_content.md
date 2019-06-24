@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ subcollection: registry
 
 Docker Content Trust 使用“首次使用时信任”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
 
-有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework (TUF) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://theupdateframework.github.io/)。
+有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://theupdateframework.github.io/)。
 
 ## 设置可信内容环境
 {: #trustedcontent_setup}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 Utilice {{site.data.keyword.registrylong}} para almacenar y acceder a imágenes privadas de Docker en una arquitectura escalable y de alta disponibilidad.
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario, escalable y de alta disponibilidad que {{site.data.keyword.IBM_notm}} aloja y gestiona. Puede utilizar {{site.data.keyword.registrylong_notm}} configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
+{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado, cifrado, multiarrendatario, escalable y de alta disponibilidad que {{site.data.keyword.IBM_notm}} aloja y gestiona. Puede utilizar {{site.data.keyword.registrylong_notm}} configurando su propio espacio de nombres de imágenes y transmitir imágenes de Docker imágenes a su espacio de nombres.
 
 <img src="images/registry_architecture1.svg" alt="Imagen que muestra cómo puede interactuar con IBM Cloud Container Registry. Container Registry contiene repositorios privados y públicos y API para interactuar con el servicio. El cliente Docker puede extraer y enviar imágenes a y desde los repositorios privados del registro y puede extraer repositorios públicos. La interfaz de usuario web (consola) de IBM Cloud interactúa con la API de Container Registry para listar imágenes. La CLI de Container Registry interactúa con la API para listar, crear, inspeccionar y eliminar imágenes, así como otras funciones administrativas. El cliente Docker local también puede extraer y enviar imágenes del almacén de imágenes local a otros registros."/>
 
@@ -42,7 +42,7 @@ Revise la siguiente tabla para ver una visión general de las ventajas de utiliz
 
 |Ventaja|Descripción|
 |-------|-----------|
-|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por {{site.data.keyword.IBM_notm}}.</li><li>Almacene sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.cloud_notm}}.</li></ul>|
+|Registro privado escalable y de alta disponibilidad|<ul><li>Configure su propio espacio de nombres de imágenes en un registro privado, cifrado, multiarrendatario, escalable y de alta disponibilidad alojado y gestionado por {{site.data.keyword.IBM_notm}}.</li><li>Almacene sus imágenes privadas de Docker y compártalas con usuarios en su cuenta de {{site.data.keyword.cloud_notm}}.</li></ul>|
 |Conformidad con la seguridad de imágenes con Vulnerability Advisor|<ul><li>Benefíciese de la exploración automática de imágenes en el espacio de nombres.</li><li>Revise las recomendaciones específicas del sistema operativo para solucionar posibles vulnerabilidades y proteger la seguridad de los contenedores.</li></ul>|
 |Límites de almacenamiento para almacenamiento y tráfico de extracción|<ul><li>Aproveche las ventajas del almacenamiento gratuito y del tráfico de extracción de sus imágenes privadas hasta alcanzar su cuota gratuita.</li><li>Configure límites de cuota personalizados para la cantidad de almacenamiento y tráfico de extracción mensual para no superar el nivel de pago elegido.</li></ul>|
 {: caption="Tabla 1. Ventajas de {{site.data.keyword.registrylong_notm}}" caption-side="top"}
@@ -62,7 +62,7 @@ La tabla siguiente muestra los planes de servicio {{site.data.keyword.registrylo
 |Descripción|Pruebe {{site.data.keyword.registrylong_notm}} para almacenar y compartir las imágenes de Docker. Este plan es el plan de servicio predeterminado cuando configura el primer espacio de nombres en {{site.data.keyword.registrylong_notm}}.|Saque partido del almacenamiento ilimitado y extraiga el uso de tráfico para gestionar las imágenes de Docker para todos los espacios de nombres en su cuenta de {{site.data.keyword.cloud_notm}}.|
 |Cantidad de almacenamiento para las imágenes|500 MB|Ilimitado|
 |Tráfico de extracción|5 GB por mes|Ilimitado|
-|Facturación|Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Almacenamiento: Se le facturará por Gigabyte-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas.</li><li>Tráfico de extracción: Se le facturará por Gigabyte uso mensual. Los primeros 5 GB son gratuitos. Luego se le facturará como se indica en la calculadora de tarifas. Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información acerca de almacenamiento, tráfico de extracción y el calculador de precios, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Facturación|Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Almacenamiento: Se le facturará por Gigabyte-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Luego se le facturará como se indica en la página de detalles de la oferta, consulte [Container Registry ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Tráfico de extracción: Se le facturará por Gigabyte uso mensual. Los primeros 5 GB son gratuitos. Luego se le facturará como se indica en la página de detalles de la oferta, consulte [Container Registry ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/kubernetes/catalog/registry). Si supera los límites de almacenamiento o los límites de extracción de tráfico, no puede enviar por push ni extraer imágenes a y desde el espacio de nombres. Para obtener más información acerca de almacenamiento, tráfico de extracción y el estimador de costes, consulte [Límites de cuota y facturación en {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabla 2. Planes de {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Límites de cuota y facturación
@@ -97,8 +97,6 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
   >
   > En el plan estándar, los primeros 0,5 GB-mes son gratuitos, de modo que se le facturan 7 GB-mes (7,5 GB-mes - 0,5 GB-mes).
 
-  
-
 **Tráfico de extracción:**
 
   Cada plan de servicio de {{site.data.keyword.registrylong_notm}} incluye una determinada cantidad de tráfico de extracción gratuito de imágenes privadas almacenadas en el espacio de nombres. El tráfico de extracción es el ancho de banda que se utiliza para extraer una capa de una imagen del espacio de nombres en la máquina local. Si tiene el plan estándar, se le facturará por GB de uso al mes. Los 5 primeros GB son gratuitos. Si tiene el plan gratuito, puede extraer imágenes del espacio de nombres hasta alcanzar el límite de cuota del plan gratuito.
@@ -108,8 +106,6 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
   > En el mes, ha extraído imágenes que contienen capas con un tamaño total de 14 GB. El uso mensual se calcula del siguiente modo:
   >
   > En el plan estándar, los 5 primeros GB al mes son gratuitos, por lo que se le facturan 9 GB (14 GB - 5 GB).
-
-  
 
 ### Límites de almacenamiento para almacenamiento y tráfico de extracción
 {: #registry_quota_limits}
@@ -138,20 +134,11 @@ En función del plan de servicio que elija, puede transferir imágenes al espaci
   >
   > Una vez extraída la imagen, {{site.data.keyword.registrylong_notm}} determina el ancho de banda que ha utilizado durante la extracción y comprueba si se ha alcanzado el límite del tráfico de extracción. En este ejemplo, el uso del tráfico de extracción ha aumentado de 4,5 GB a 5,5 GB. Como el límite de cuota actual está establecido en 5 GB, {{site.data.keyword.registrylong_notm}} le impide extraer imágenes del espacio de nombres.
 
-### Estimación de costes
-{: #registry_estimating_costs}
+### Coste
+{: #registry_cost}
 
-Utilice la calculadora de tarifas de {{site.data.keyword.cloud_notm}} para estimar el coste de su plan.
+Puede ver los costes {{site.data.keyword.registrylong_notm}} en la sección de planes de tarifas de la página de detalles de la oferta, consulte [Container Registry ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
-
-Puede establecer el precio de su app utilizando las calculadores de coste proporcionadas por {{site.data.keyword.cloud_notm}}.
-
-1. Abra la hoja de precios, consulte [Precios de {{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/pricing).
-2. En la sección **Pago según uso**, pulse **Calcule sus costes con nuestra calculadora**. Se abre la calculadora.
-3. Desplácese hasta la sección **Container Registry** dentro de **Cargos por contenedor**.
-4. Escriba las estimaciones de almacenamiento y de tráfico en los campos proporcionados.
-
-Los costes estimados se muestran en la calculadora.
 
 ## Actualización del plan de servicio
 {: #registry_plan_upgrade}
@@ -195,7 +182,12 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Un Dockerfile es un archivo de texto que contiene instrucciones sobre cómo crear una imagen de Docker. Típicamente, una imagen se crea sobre una imagen base que contiene un sistema operativo base, como Ubuntu. Puede cambiar esta imagen base incrementalmente con las instrucciones del Dockerfile para definir el entorno en que la app necesita ejecutarse. Cada cambio de la imagen base describe una nueva capa de la imagen, y puede realizar varios cambios en una sola línea de Dockerfile. Las instrucciones de un Dockerfile también podrían hacer referencia a los artefactos de compilación que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias.</dd>
+  <dd>Un Dockerfile es un archivo de texto que contiene instrucciones sobre cómo crear una imagen de Docker. Típicamente, una imagen se crea sobre una imagen base que contiene un sistema operativo base, como Ubuntu. Puede cambiar esta imagen base incrementalmente con las instrucciones del Dockerfile para definir el entorno en que la app necesita ejecutarse. Cada cambio de la imagen base describe una nueva capa de la imagen, y puede realizar varios cambios en una sola línea de Dockerfile. Las instrucciones de un Dockerfile también podrían hacer referencia a los artefactos de compilación que se almacenan por separado, como por ejemplo una app, la configuración de la app y sus dependencias. Para obtener más información sobre Dockerfile, consulte [Referencia de Dockerfile ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/engine/reference/builder/).</dd>
+</dl>
+
+<dl>
+  <dt>Imágenes de Docker V2</dt>
+  <dd>Las imágenes de contenedor que son compatibles con [Docker: Image Manifest V2, Schema 2 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/registry/spec/manifest-v2-2/). El tipo de soporte para Docker Image Manifest V2, Schema 2 es `application/vnd.docker.distribution.manifest.v2+json` y el tipo de soporte para la lista de manifiesto es `application/vnd.docker.distribution.manifest.list.v2+json`. Para obtener más información sobre el soporte para Docker, consulte [Regiones](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -212,7 +204,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 <dl>
   <dt>Imágenes de contenedor OCI</dt>
-  <dd>Las imágenes de contenedor que son compatibles con la [Especificación de formato de imágenes de OCI ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/opencontainers/image-spec).</dd>
+  <dd>Las imágenes de contenedor que son compatibles con la [Especificación de formato de imágenes de OCI ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/opencontainers/image-spec). El tipo de medio para las imágenes de contenedor OCI es `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
@@ -328,7 +320,7 @@ Después de elegir una región distinta, inicie sesión en el registro de nuevo:
 Hay disponible un registro global, que no tiene ninguna región incluida en su nombre (`icr.io`). Sólo las imágenes públicas que son proporcionadas por IBM están alojadas en este registro. Para gestionar sus propias imágenes como por ejemplo estableciendo espacios de nombres o etiquetando y enviando imágenes a un registro, utilice un [registro regional local](#registry_regions_local).
 {:shortdesc}
 
-El nombre del dominio para el registro global ha cambiado. El nuevo nombre de dominio está disponible en la consola y en la CLI. 
+El nombre del dominio para el registro global ha cambiado. El nuevo nombre de dominio está disponible en la consola y en la CLI.
 
 El nuevo nombre de dominio se muestra en la siguiente tabla.
 
@@ -370,6 +362,11 @@ Los nombres de dominio `bluemix.net` existentes están obsoletos, pero puede con
 ## Soporte para Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
+{{site.data.keyword.registrylong_notm}} es compatible con Docker Engine V1.12.6 o posterior.
 
 Docker solo es necesario si desea enviar por push o extraer imágenes, o si desea ejecutar el mandato `ibmcloud cr ppa-archive-load`.
+
+Se da soporte a imágenes de Docker V2 Schema 2. También se da soporte a las listas de manifiesto. Para obtener más información, consulte [Docker: Image Manifest Version 2, Schema 2 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+
+Las imágenes de Docker V1 están en desuso.
+{: deprecated}

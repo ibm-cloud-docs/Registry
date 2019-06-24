@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ subcollection: registry
 
 2. 證明「使用者 B」可以將「使用者 A」的帳戶設為目標，但還不能使用 {{site.data.keyword.registrylong_notm}} 執行任何作業：
 
-    1. 以「使用者 B」身分登入，並執行下列指令以將「使用者 A」的帳戶設為目標，其中 _`<YourAccountID>`_ 是「使用者 A」的「帳戶 ID」：
+    1. 以「使用者 B」身分登入，並執行下列指令將「使用者 A」的帳戶設為目標，其中 _`<YourAccountID>`_ 是「使用者 A」的「帳戶 ID」：
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ subcollection: registry
     ```
         {: pre}
 
-    2. 執行下列指令，以建立名稱空間 `namespace_b`：
+    2. 執行下列指令，以建立 `namespace_a`：
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         名稱空間名稱在地區中必須是唯一的。
         {: tip}
 
-    3. 執行下列指令，以建立另一個名稱空間 `namespace_c`：
+    3. 執行下列指令，以建立 `namespace_b`：
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. 執行下列指令，以建立 `namespace_c`：
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -197,8 +204,8 @@ subcollection: registry
     2. 執行下列指令，嘗試以「使用者 B」身分列出映像檔：
 
         ```
-    ibmcloud cr images
-    ```
+        ibmcloud cr images
+        ```
         {: pre}
 
         它會傳回空清單，因為「使用者 B」無法存取任何名稱空間。
@@ -208,8 +215,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」的帳戶身分登入：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以確認至少列出三個名稱空間：
@@ -438,8 +445,6 @@ subcollection: registry
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        此指令會運作。
 
     3. 執行下列指令，以將映像檔推送至 `namespace_a`：
 

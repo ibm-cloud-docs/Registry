@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -160,7 +160,7 @@ docker build --no-cache .
 {: #ts_pushpull}
 
 {: tsSymptoms}
-Docker 이미지를 푸시하거나 가져오기 위해 명령을 실행할 때 오류 메시지를 수신합니다. 오류
+Docker 이미지를 푸시하거나 가져오기 위해 명령을 실행할 때 오류 메시지가 표시됩니다. 오류
 메시지는 근본 원인에 따라 다양합니다. 잠재적 오류 메시지는 다음과 같습니다.
 
 ```
@@ -404,7 +404,7 @@ docker trust sign <image>:<tag>
 {: #ts_install_cise_fail}
 
 {: tsSymptoms}
-Container Image Security Enforcement 설치가 실패했으며 다음 메시지를 수신했습니다.
+Container Image Security Enforcement 설치가 실패했으며 다음과 같은 메시지가 표시되었습니다.
 
 ```
 helm install ibm-incubator/ibmcloud-image-enforcement --name cise 
@@ -497,7 +497,7 @@ RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 �
 {: #ts_manifest_error_type}
 
 {: tsSymptoms}
-이미지에 태그를 지정하려고 시도했으나 다음 오류가 수신되었습니다. `The manifest type for this image is not supported for tagging.`
+이미지에 태그를 지정하려고 시도했으나 다음 오류 메시지가 표시됩니다. `The manifest type for this image is not supported for tagging.`
 
 {: tsCauses}
 Manifest 유형이 지원되지 않습니다.
@@ -530,7 +530,7 @@ Manifest 유형이 지원되지 않습니다.
 {: #ts_manifest_error_version}
 
 {: tsSymptoms}
-이미지에 태그를 지정하려고 시도했으나 다음 오류가 수신되었습니다. `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
+이미지에 태그를 지정하려고 시도했으나 다음 오류 메시지가 표시됩니다. `The manifest version for this image is not supported for tagging. To upgrade to a supported manifest version, pull and push this image by using Docker version 1.12 or later, then run the 'ibmcloud cr image-tag' command again.`
 
 {: tsCauses}
 Manifest 버전이 지원되지 않습니다.
@@ -560,7 +560,7 @@ Manifest 버전이 지원되지 않습니다.
 {: #ts_docker_mac}
 
 {: tsSymptoms}
-Mac에서 `ibmcloud cr login` 명령을 실행하려고 할 때 다음 오류 메시지가 수신됩니다. `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
+Mac에서 `ibmcloud cr login` 명령을 실행하려고 하면 다음과 같은 오류 메시지가 표시됩니다. `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 
 {: tsCauses}
 Docker for Mac에 문제가 있어 macOS 키 체인에 인증 정보가 저장되지 않습니다.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-05-15"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -45,14 +45,14 @@ Completa la seguente procedura:
 2. Aggiungi il repository di grafici IBM al tuo client Helm.
 
    ```
-   helm repo add ibm https://icr.io/helm/ibm
+   helm repo add iks-charts https://icr.io/helm/iks-charts
    ```
    {: pre}
 
 3. Installa il grafico Container Image Security Enforcement Helm nel tuo cluster. Denominalo come `cise`.
 
    ```
-   helm install --name cise ibm/ibmcloud-image-enforcement
+   helm install --name cise iks-charts/ibmcloud-image-enforcement
    ```
    {: pre}
 

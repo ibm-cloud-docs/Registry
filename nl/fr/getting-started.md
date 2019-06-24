@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -62,6 +62,9 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    ```
    {: pre}
 
+   Les noms d'espace de nom doivent être uniques dans la région.
+   {: tip}
+
 3. Pour vérifier que votre espace de nom a bien été créé, exécutez la commande `ibmcloud cr namespace-list`.
 
    ```
@@ -94,6 +97,9 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   Pour trouver le nom de votre région, exécutez la commande `ibmcloud cr region`.
+   {: tip}
 
    Exemple, où `<source_image>` est `hello-world`, `<tag>` est `latest`, `<region>` est `uk`, `<my_namespace>` est `namespace1`, `<new_image_repo>` est `hw_repo` et `<new_tag>` est `1` :
 

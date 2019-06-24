@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -40,8 +40,7 @@ As imagens têm assinaturas separadas para nomes de domínio antigos (`registry.
 
 O Docker Content Trust usa um modelo de segurança "confiança no primeiro uso". A chave do repositório é puxada do servidor de confiança ao puxar uma imagem assinada de um repositório pela primeira vez e essa chave é usada para verificar imagens desse repositório no futuro. Deve-se verificar se você confia no servidor de confiança ou na imagem e em seu publicador antes de puxar o repositório pela primeira vez. Se as informações de confiança no servidor estiverem comprometidas e você não tiver puxado uma imagem do repositório antes, seu cliente Docker poderá puxar as informações comprometidas do servidor de confiança. Se os dados de confiança estiverem comprometidos depois que você puxar a imagem pela primeira vez, nos pulls subsequentes, o cliente Docker não verificará os dados comprometidos e não puxará a imagem. Para obter mais informações sobre como inspecionar dados de confiança para uma imagem, consulte [Visualizando imagens assinadas](#trustedcontent_viewsigned).
 
-Para obter mais informações sobre o modelo de segurança "confiança no primeiro uso", consulte
-[The Update Framework (TUF) ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://theupdateframework.github.io/).
+Para obter mais informações sobre o modelo de segurança "confiar no primeiro uso", consulte [A Estrutura de atualização ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://theupdateframework.github.io/).
 
 ## Configurando seu ambiente de conteúdo confiável
 {: #trustedcontent_setup}

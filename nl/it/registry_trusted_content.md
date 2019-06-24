@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ Le immagini hanno firme separate per il vecchio nome del dominio (`registry.blue
 
 Docker Content Trust usa un modello di sicurezza di "attendibilità al primo utilizzo". La chiave di repository viene estratta dal server di attendibilità quando esegui per la prima volta il pull di un'immagine firmata da un repository e tale chiave viene utilizzata per verificare le immagini da quel repository in futuro. Devi verificare di considerare attendibile il server di attendibilità o l'immagine e il relativo editore prima di eseguire il pull dal repository per la prima volta. Se le informazioni sull'attendibilità nel server sono compromesse e non hai ancora eseguito il pull di un'immagine dal repository, il client Docker potrebbe estrarre le informazioni compromesse dal server di attendibilità. Se i dati di attendibilità vengono compromessi dopo che hai eseguito il pull dell'immagine per la prima volta, durante i pull successivi, il client Docker non riesce a verificare i dati compromessi e non esegue il pull dell'immagine. Per ulteriori informazioni su come controllare i dati di attendibilità per un'immagine, vedi [Visualizzazione delle immagini firmate](#trustedcontent_viewsigned).
 
-Per ulteriori informazioni sul modello di sicurezza di "attendibilità al primo utilizzo" vedi [The Update Framework (TUF) ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://theupdateframework.github.io/).
+Per ulteriori informazioni sul modello di sicurezza di "attendibilità al primo utilizzo" vedi [The Update Framework ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://theupdateframework.github.io/).
 
 ## Configurazione del tuo ambiente di contenuti attendibili
 {: #trustedcontent_setup}

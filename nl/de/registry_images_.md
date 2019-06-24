@@ -238,7 +238,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
          ```
          {: pre}
 
-         Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses. 
+         Dabei gibt `<image_name>` den Namen des Images an und `<directory>` ist der Pfad des Verzeichnisses.
 
       2. Optional: Testen Sie Ihr Image auf dem lokalen Computer, bevor Sie es mit einer Push-Operation in Ihren Namensbereich übertragen.
 

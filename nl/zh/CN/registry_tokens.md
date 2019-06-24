@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 有关命令的参考信息，请参阅[创建新的 {{site.data.keyword.cloud_notm}} 平台 API 密钥](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
 
+## 认证选项（适用于所有客户机）
+{: #registry_authentication}
+
+您可以使用 `docker login` 命令或其他注册表客户机进行认证。
+{:shortdesc}
+
+大多数用户都可使用 `ibmcloud cr login` 命令来简化 `docker login`，但如果您是实施自动化或使用不同的客户机，那么可能需要手动认证。您必须提供用户名和密码。在 {{site.data.keyword.registrylong_notm}} 中，用户名会指示密码中提供的私钥类型。
+
+以下用户名有效：
+
+- `iambearer` 密码包含 IAM 访问令牌。此类型认证的有效时间较短，但可从所有类型的 IAM 身份派生。
+- `iamrefresh` 密码必须包含在内部用于生成和刷新 IAM 访问令牌的 IAM 刷新令牌。此类型认证的有效时间较长，由 `ibmcloud cr login` 命令来使用。
+- `iamapikey` 密码是 IAM API 密钥。此类型认证是实施自动化情况的首选类型。您可以使用用户或服务标识 API 密钥，请参阅[创建 API 密钥](#registry_api_key_create)。
+- `token` （不推荐）该密码是注册表令牌。您可以使用此用户名来实施自动化。
+
+  不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
+  {: deprecated}
+
+您无需使用 `docker` 命令来向注册表进行认证。例如，您可以使用 Cloud Foundry CLI 通过注册表中的映像来启动 Cloud Foundry 应用程序：
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+将 `<apikey>` 替换为 API 密钥，将 `<region>` 替换为您的[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)名称，将 `<my_namespace>` 替换为名称空间，将 `<image_repo>` 替换为存储库。
+
+有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。
+
 ## 使用令牌自动访问名称空间（不推荐）
 {: #registry_tokens}
 
-您可以使用令牌，将 Docker 映像自动推送到 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
-{:shortdesc}
-
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
+
+您可以使用令牌，将 Docker 映像自动推送到 {{site.data.keyword.registrylong_notm}} 名称空间，以及从名称空间自动拉出 Docker 映像。
+{:shortdesc}
 
 拥有注册表令牌的所有人都可访问安全信息。如果您希望您的 {{site.data.keyword.cloud_notm}} 帐户外的用户能够访问您在区域中设置的所有名称空间，那么可以为您的帐户创建令牌。拥有此令牌的每一位用户或每一个应用程序都可以将映像推送到名称空间，以及从名称空间拉出映像，而无需安装 `container-registry` CLI 插件。
 
@@ -104,11 +134,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 为 {{site.data.keyword.cloud_notm}} 帐户创建令牌（不推荐）
 {: #registry_tokens_create}
 
-您可以创建令牌，以授予对区域中所有 {{site.data.keyword.registrylong_notm}} 名称空间的访问权。
-{:shortdesc}
-
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
+
+您可以创建令牌，以授予对区域中所有 {{site.data.keyword.registrylong_notm}} 名称空间的访问权。
+{:shortdesc}
 
 1. 创建令牌。以下示例创建非到期令牌，其具有对区域中所设置的所有名称空间的读写访问权。
 
@@ -157,12 +187,12 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 使用令牌自动访问名称空间（不推荐）
 {: #registry_tokens_use}
 
+不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
+{: deprecated}
+
 您可以在 `docker login` 命令中使用令牌，以自动访问 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 根据您为令牌设置的是只读还是读/写访问权，用户可以将映像推送到名称空间，以及从名称空间拉出映像。
 {:shortdesc}
-
-不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
-{: deprecated}
 
 1. 登录到 {{site.data.keyword.cloud_notm}}。
 
@@ -208,11 +238,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 从 {{site.data.keyword.cloud_notm}} 帐户中除去令牌（不推荐）
 {: #registry_tokens_remove}
 
-不再需要 {{site.data.keyword.registrylong_notm}} 令牌时，请除去该令牌。
-{:shortdesc}
-
 不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
 {: deprecated}
+
+不再需要 {{site.data.keyword.registrylong_notm}} 令牌时，请除去该令牌。
+{:shortdesc}
 
 到期的 {{site.data.keyword.registrylong_notm}} 令牌会自动从 {{site.data.keyword.cloud_notm}} 帐户除去，而无需手动除去。
 {:tip}
@@ -237,33 +267,3 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
     ibmcloud cr token-rm <token_id>
     ```
    {: pre}
-
-## 认证选项（适用于所有客户机）
-{: #registry_authentication}
-
-您可以使用 `docker login` 命令或其他注册表客户机进行认证。
-{:shortdesc}
-
-大多数用户都可使用 `ibmcloud cr login` 命令来简化 `docker login`，但如果您是实施自动化或使用不同的客户机，那么可能需要手动认证。您必须提供用户名和密码。在 {{site.data.keyword.registrylong_notm}} 中，用户名会指示密码中提供的私钥类型。
-
-以下用户名有效：
-
-- `iambearer` 密码包含 IAM 访问令牌。此类型认证的有效时间较短，但可从所有类型的 IAM 身份派生。
-- `iamrefresh` 密码必须包含在内部用于生成和刷新 IAM 访问令牌的 IAM 刷新令牌。此类型认证的有效时间较长，由 `ibmcloud cr login` 命令来使用。
-- `iamapikey` 密码是 IAM API 密钥。此类型认证是实施自动化情况的首选类型。您可以使用用户或服务标识 API 密钥，请参阅[创建 API 密钥](#registry_api_key_create)。
-- `token` （不推荐）该密码是注册表令牌。您可以使用此用户名来实施自动化。
-
-  不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](#registry_api_key)。
-  {: deprecated}
-
-您无需使用 `docker` 命令来向注册表进行认证。例如，您可以使用 Cloud Foundry CLI 通过注册表中的映像来启动 Cloud Foundry 应用程序：
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-将 `<apikey>` 替换为 API 密钥，将 `<region>` 替换为您的[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)名称，将 `<my_namespace>` 替换为名称空间，将 `<image_repo>` 替换为存储库。
-
-有关更多信息，请参阅[使用专用映像注册表](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。

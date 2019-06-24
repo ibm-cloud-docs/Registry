@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -40,11 +40,11 @@ subcollection: registry
   </tr>
   <tr>
     <td>`container-registry.exemption.create`</td>
-	  <td>建立漏洞警告器豁免。</td>
+	  <td>建立 Vulnerability Advisor 豁免。</td>
   </tr>
   <tr>
     <td>`container-registry.exemption.delete`</td>
-	  <td>刪除漏洞警告器豁免。</td>
+	  <td>刪除 Vulnerability Advisor 豁免。</td>
   </tr>
   <tr>
     <td>`container-registry.image.build`</td>

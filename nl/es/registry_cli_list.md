@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -116,7 +116,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Repository`|Serie|Muestra el repositorio de la imagen.|
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`Tag`|Serie|Muestra la etiqueta de la imagen.|
-|`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: Status  `string`, IssueCount  `int`, y ExemptionCount  `int`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
+|`SecurityStatus`|Estructura|Muestra el estado de vulnerabilidad de la imagen. Puede filtrar y formatear los valores siguientes: *Status*  `serie`, *IssueCount*  `entero` y *ExemptionCount*  `entero`. Los estados posibles se describen en [Revisión de un informe de vulnerabilidad mediante la CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
 {: caption="Tabla 1. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-list</code>." caption-side="top"}
 
 ## Opciones de plantilla de Go y tipos de datos en el mandato `ibmcloud cr image-inspect`
@@ -132,19 +132,19 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Comment`|Serie|Muestra la descripción de la imagen.|
 |`Created`|Serie|Muestra la [indicación de fecha y hora de UNIX ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://en.wikipedia.org/wiki/Unix_time) en la que se creó la imagen.|
 |`Container`|Serie|Muestra el ID del contenedor que ha creado la imagen.|
-|`ContainerConfig`|Objeto|Muestra la configuración predeterminada de los contenedores iniciados desde esta imagen. Consulte los detalles del campo en [Config](#registry_cli_list_imageinspect_config).|
+|`ContainerConfig`|Objeto|Muestra la configuración predeterminada de los contenedores iniciados desde esta imagen. Consulte los detalles del campo en [`Config`](#registry_cli_list_imageinspect_config).|
 |`DockerVersion`|Serie|Muestra la versión de Docker utilizada para crear esta imagen.|
 |`Author`|Serie|Muestra el autor de la imagen.|
-|`Config`|Objeto|Muestra los metadatos de configuración para la imagen. Consulte los detalles del campo en [Config](#registry_cli_list_imageinspect_config).|
+|`Config`|Objeto|Muestra los metadatos de configuración para la imagen. Consulte los detalles del campo en [`Config`](#registry_cli_list_imageinspect_config).|
 |`Architecture`|Serie|Muestra la arquitectura de procesador que se ha utilizado para crear esta imagen y que se necesita para ejecutar la imagen.|
 |`Os`|Serie|Muestra la familia de sistema operativo que se ha utilizado para crear esta imagen y que se necesita para ejecutar la imagen.|
 |`OsVersion`|Serie|Muestra la versión del sistema operativo que se ha utilizado para crear esta imagen.|
 |`Size`|Entero (64 bits)|Muestra el tamaño de la imagen en bytes.|
 |`VirtualSize`|Entero (64 bits)|Muestra la suma del tamaño de cada capa de la imagen en bytes.|
-|`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [RootFS](#registry_cli_list_imageinspect_rootfs).|
+|`RootFS`|Objeto|Muestra metadatos que describen el sistema de archivos raíz correspondiente a la imagen. Consulte los detalles del campo en [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 {: caption="Tabla 2. Campos y tipos de datos disponibles en el mandato <code>ibmcloud cr image-inspect</code>." caption-side="top"}
 
-### Config
+### `Config`
 {: #registry_cli_list_imageinspect_config}
 
 |Campo|Tipo|Descripción|
@@ -161,7 +161,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`StdinOnce`|Booleano|Muestra _true_ si la corriente de entrada estándar se cierra cuando el cliente conectado se desconecta y _false_ si la corriente de entrada estándar permanece abierta.|
 |`Env`|Matriz de series|Muestra la lista de variables de entorno en formato de pares clave-valor.|
 |`Cmd`|Matriz de series|Describe los mandatos y argumentos que se pasan a un contenedor para que se ejecuten cuando se inicie el contenedor.|
-|`Healthcheck`|Objeto|Describe cómo comprobar que el contenedor está funcionando correctamente. Consulte los detalles del campo en [Healthcheck](#registry_cli_list_imageinspect_healthcheck).|
+|`Healthcheck`|Objeto|Describe cómo comprobar que el contenedor está funcionando correctamente. Consulte los detalles del campo en [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
 |`ArgsEscaped`|Booleano|Muestra true si el mandato ya está entre caracteres de escape (específico de Windows).|
 |`Image`|Serie|Muestra el nombre de la imagen que se ha pasado el operador.|
 |`Volumes`|Correlación de clave-valor|Muestra la lista de montajes de volúmenes que se han montado en un contenedor.|
@@ -169,14 +169,14 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Entrypoint`|Matriz de series|Describe el mandato que se ejecuta cuando se inicia el contenedor.|
 |`NetworkDisabled`|Booleano|Muestra _true_ si la conexión en red está inhabilitado para el contenedor y _false_ si la conexión en red está habilitada para el contenedor.|
 |`MacAddress`|Serie|Muestra la dirección MAC asignada al contenedor.|
-|`OnBuild`|Matriz de series|Muestra los metadatos ONBUILD que se han definido en el archivo Docker de la imagen.|
+|`OnBuild`|Matriz de series|Muestra los metadatos `ONBUILD` que se han definido en el archivo Docker de la imagen.|
 |`Labels`|Correlación de clave-valor|Muestra la lista de etiquetas que se han añadido a la imagen como pares clave-valor.|
 |`StopSignal`|Serie|Describe la señal de detención de UNIX que se debe enviar cuando se desee detener el contenedor.|
 |`StopTimeout`|Entero|Muestra el tiempo de espera excedido en segundos para detener un contenedor.|
 |`Shell`|Matriz de series|Muestra el formato de shell de RUN, CMD, ENTRYPOINT.|
-{: caption="Tabla 3. Campos y tipos de datos disponibles en Config. " caption-side="top"}
+{: caption="Tabla 3. Campos y tipos de datos disponibles en <code>Config</code>. " caption-side="top"}
 
-### Healthcheck
+### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
 
 |Campo|Tipo|Descripción|
@@ -185,9 +185,9 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Interval`|Entero (64 bits)|Visualiza el tiempo que se debe esperar entre dos comprobaciones de estado en nanosegundos.|
 |`Timeout`|Entero (64 bits)|Muestra el tiempo que se debe esperar antes de considerar que una comprobación de estado ha fallado en nanosegundos.|
 |`Retries`|Entero|Muestra el número de errores consecutivos que se necesitan para considerar que un contenedor no está funcionando correctamente.|
-{: caption="Tabla 4. Campos y tipos de datos disponibles en la estructura Healthcheck." caption-side="top"}
+{: caption="Tabla 4. Campos y tipos de datos disponibles en la estructura <code>Healthcheck</code>." caption-side="top"}
 
-### RootFS
+### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
 
 |Opción|Tipo|Descripción|
@@ -195,7 +195,7 @@ Revise la tabla siguiente para ver las opciones de plantilla de Go disponibles y
 |`Type`|Serie|Muestra el tipo de sistema de archivos.|
 |`Layers`|Matriz de series|Muestra los descriptores de cada capa de la imagen.|
 |`BaseLayer`|Serie|Muestra el descriptor de la capa base de la imagen.|
-{: caption="Tabla 5. Campos y tipos de datos disponibles en la estructura RootFS." caption-side="top"}
+{: caption="Tabla 5. Campos y tipos de datos disponibles en la estructura <code>RootFS</code>." caption-side="top"}
 
 ## Opciones de plantilla de Go y tipos de datos en el mandato `ibmcloud cr token-list`
 {: #registry_cli_list_tokenlist}

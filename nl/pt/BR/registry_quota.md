@@ -72,7 +72,7 @@ saída é semelhante à mostrada a seguir.
     ```
     {: screen}
 
-3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso do tráfego de pull, especifique a opção **traffic** e substitua `<traffic_quota>` pelo valor em megabytes que você deseja configurar para a cota de tráfego de pull. Se desejar mudar a quantia de armazenamento em sua conta, especifique a opção **storage** e substitua `<storage_quota>` pelo valor em megabytes que você deseja configurar. 
+3. Mude o limite de cota para armazenamento e tráfego extraído. Para mudar o uso do tráfego de pull, especifique a opção **traffic** e substitua `<traffic_quota>` pelo valor em megabytes que você deseja configurar para a cota de tráfego de pull. Se desejar mudar a quantia de armazenamento em sua conta, especifique a opção **storage** e substitua `<storage_quota>` pelo valor em megabytes que você deseja configurar.
 
     Se você estiver no plano grátis, não será possível configurar sua cota para uma quantia que excede a camada grátis. O abono da camada grátis para armazenamento é de 512 MB e o tráfego é de 5120 MB.
     {:tip}

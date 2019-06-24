@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
 
 2. Vérifiez que l'utilisateur B peut cibler le compte de l'utilisateur A mais qu'il ne peut pas encore effectuer quoi que ce soit avec {{site.data.keyword.registrylong_notm}} :
 
-    1. Connectez-vous en tant qu'utilisateur B et exécutez la commande suivante pour cibler le compte de l'utilisateur A, où _`<YourAccountID>`_ correspond à l'ID de compte de l'utilisateur A : 
+    1. Connectez-vous en tant qu'utilisateur B et ciblez le compte de l'utilisateur A en exécutant la commande suivante, où _`<YourAccountID>`_ est l'ID compte de l'utilisateur A :
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-    2. Créez un espace de nom, `namespace_b`, en exécutant la commande suivante :
+    2. Créez `namespace_a` en exécutant la commande suivante :
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         Les noms d'espace de nom doivent être uniques dans la région.
         {: tip}
 
-    3. Créez un autre espace de nom, `namespace_c`, en exécutant la commande suivante :
+    3. Créez `namespace_b` en exécutant la commande suivante :
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. Créez `namespace_c` en exécutant la commande suivante :
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -438,8 +445,6 @@ Dans cette section, vous allez configurer un ID de service et lui octroyer les d
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        Cette commande aboutit.
 
     3. Envoyez votre image à `namespace_a` en exécutant la commande suivante :
 

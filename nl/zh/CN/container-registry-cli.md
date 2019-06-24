@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -83,7 +83,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dt>`--quiet`, `-q`</dt>
 <dd>（可选）如果指定此项，将禁止构建输出，除非发生错误。</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>（可选）以“`KEY=VALUE`”格式指定其他构建自变量。通过包含此参数多次可以指定多个构建自变量。指定与 Dockerfile 中的密钥相匹配的 ARG 行时，每个构建自变量的值都可用作环境变量。</dd>
+<dd>（可选）以 `KEY=VALUE` 格式指定其他构建自变量。通过包含此参数多次可以指定多个构建自变量。指定与 Dockerfile 中的密钥相匹配的 ARG 行时，每个构建自变量的值都可用作环境变量。</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>（可选）如果对多个构建使用相同的文件，那么可以选择指向其他 Dockerfile 的路径。指定 Dockerfile 相对于构建上下文的位置。如果未指定此项，缺省值为 `PATH/Dockerfile`，其中 PATH 是构建上下文的根目录。</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -284,7 +284,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>`--format FORMAT`</dt>
 <dd>（可选）使用 Go 模板来设置输出元素的格式。
 
-有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
+有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_list)。
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -328,7 +328,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--format FORMAT`</dt>
 <dd>（可选）使用 Go 模板来设置输出元素的格式。
 
-有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
+有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_list)。
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -336,7 +336,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--restrict RESTRICTION`</dt>
 <dd>（可选）将输出限制为仅显示指定名称空间或名称空间和存储库中的映像。</dd>
 <dt>`--include-ibm`</dt>
-<dd>（可选）在输出中包含 {{site.data.keyword.IBM_notm}} 提供的公用映像。不使用此选项时，缺省情况下仅列出专用映像。</dd>
+<dd>（可选）在输出中包含 {{site.data.keyword.IBM_notm}} 提供的公用映像。如果不使用此选项，缺省情况下仅列出专用映像。</dd>
 </dl>
 
 **示例**
@@ -560,7 +560,7 @@ ibmcloud cr plan
 
 升级到标准套餐。
 
-有关套餐的信息，请参阅[注册表套餐](/docs/services/Registry?topic=registry-registry_overview#registry_plans)。
+有关套餐的更多信息，请参阅[注册表套餐](/docs/services/Registry?topic=registry-registry_overview#registry_plans)。
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -808,7 +808,7 @@ ibmcloud cr token-list [--format FORMAT]
 <dt>`--format FORMAT`</dt>
 <dd>（可选）使用 Go 模板来设置输出元素的格式。
 
-有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)。
+有关更多信息，请参阅[对 {{site.data.keyword.registrylong_notm}} 命令的 CLI 输出进行格式设置和过滤](/docs/services/Registry?topic=registry-registry_cli_list)。
 
 </dd>
 </dl>
@@ -877,7 +877,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 **命令选项**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>要获取其报告的映像的名称。此报告指示该映像是否具有任何已知的包漏洞。可以通过在命令中列出每个映像（各名称之间用一个空格分隔）来同时请求多个映像的报告。
+<dd>要获取其报告的映像的名称。此报告指出该映像是否有任何已知的包漏洞。可以通过在命令中列出每个映像（各名称之间用一个空格分隔）来同时请求多个映像的报告。
 
 <p>要查找映像的名称，请运行 `ibmcloud cr image-list`。将**存储库**和**标记**列的内容组合在一起，以创建格式为 `repository:tag` 的映像名称。如果未在映像名称中指定标记，那么报告会评估标记为 `latest` 的映像。</p>
 

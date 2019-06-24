@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,15 @@ subcollection: registry
 
 使用这些发行说明了解 {{site.data.keyword.registrylong}} 和漏洞顾问程序的最新更改。更改按日期分组。
 {:shortdesc}
+
+## 2019 年 5 月 13 日
+{: #13may2019}
+
+- **终止对容器扫描程序的支持**
+
+  容器扫描程序已被弃用且不再可用。
+
+  有关更多信息，请参阅[安装容器扫描程序（已弃用）](/docs/services/Registry?topic=va-va_index#va_install_container_scanner)。
 
 ## 2019 年 4 月 2 日 
 {: #2apr2019}

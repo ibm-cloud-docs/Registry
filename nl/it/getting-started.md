@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -62,6 +62,9 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
    ```
    {: pre}
 
+   I nomi dello spazio dei nomi devono essere univoci nella regione.
+   {: tip}
+
 3. Per assicurati che il tuo spazio dei nomi sia stato creato, esegui il comando `ibmcloud cr namespace-list`.
 
    ```
@@ -94,6 +97,9 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   Per trovare il nome della tua regione, esegui il comando `ibmcloud cr region`.
+   {: tip}
 
    Esempio, dove `<source_image>` è `hello-world`, `<tag>` è `latest`, `<region>` è `uk`, `<my_namespace>` è `namespace1`, `<new_image_repo>` è `hw_repo` e `<new_tag>` è `1`:
 

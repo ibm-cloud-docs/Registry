@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ subcollection: registry
 
 2. User B は User A のアカウントをターゲットにできるものの、まだ {{site.data.keyword.registrylong_notm}} で何も行えないことを確認します。
 
-    1. User B としてログインし、次のコマンドを実行して User A のアカウントをターゲットにします。_`<YourAccountID>`_ は User A のアカウント ID です。
+    1. 次のコマンドを実行して、User B としてログインして User A のアカウントをターゲットにします。_`<YourAccountID>`_ は User A のアカウント ID です。
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ subcollection: registry
         ```
         {: pre}
 
-    2. 次のコマンドを実行して、名前空間 `namespace_b` を作成します。
+    2. 次のコマンドを実行して、`namespace_a` を作成します。
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         名前空間の名前は、地域内で固有でなければなりません。
         {: tip}
 
-    3. 次のコマンドを実行して、別の名前空間 `namespace_c` を作成します。
+    3. 次のコマンドを実行して、`namespace_b` を作成します。
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. 次のコマンドを実行して、`namespace_c` を作成します。
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -438,8 +445,6 @@ subcollection: registry
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        このコマンドは正常に実行されます。
 
     3. 次のコマンドを実行して、ご使用のイメージを `namespace_a` にプッシュします。
 

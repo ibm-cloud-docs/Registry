@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -116,7 +116,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Repository`|文字列|イメージのリポジトリーを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`Tag`|文字列|イメージのタグを表示します。|
-|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 Status `string`、IssueCount `int`、および ExemptionCount `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/Registry?topic=va-va_index#va_registry_cli)に記載しています。|
+|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 *Status*  `string`、*IssueCount*  `int`、および *ExemptionCount *  `int` の値をフィルタリングおよびフォーマット設定できます。状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/Registry?topic=va-va_index#va_registry_cli)に記載しています。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 ## `ibmcloud cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
@@ -132,19 +132,19 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Comment`|文字列|イメージの説明を表示します。|
 |`Created`|文字列|イメージが作成された時刻の [UNIX タイム・スタンプ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/Unix_time) を表示します。|
 |`Container`|文字列|イメージを作成したコンテナーの ID を表示します。|
-|`ContainerConfig`|オブジェクト|このイメージから開始されるコンテナーのデフォルト構成を表示します。 [Config](#registry_cli_list_imageinspect_config) でフィールドの詳細を参照してください。|
+|`ContainerConfig`|オブジェクト|このイメージから開始されるコンテナーのデフォルト構成を表示します。 [`Config`](#registry_cli_list_imageinspect_config) でフィールドの詳細を参照してください。|
 |`DockerVersion`|文字列|このイメージのビルドに使用された Docker のバージョンを表示します。|
 |`Author`|文字列|イメージの作成者を表示します。|
-|`Config`|オブジェクト|イメージの構成メタデータを表示します。 [Config](#registry_cli_list_imageinspect_config) でフィールドの詳細を参照してください。|
+|`Config`|オブジェクト|イメージの構成メタデータを表示します。 [`Config`](#registry_cli_list_imageinspect_config) でフィールドの詳細を参照してください。|
 |`Architecture`|文字列|このイメージのビルドに使用された、およびこのイメージの実行に必要なプロセッサー・アーキテクチャーを表示します。|
 |`Os`|文字列|このイメージのビルドに使用された、およびこのイメージの実行に必要なオペレーティング・システム・ファミリーを表示します。|
 |`OsVersion`|文字列|このイメージのビルドに使用されたオペレーティング・システムのバージョンを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`VirtualSize`|整数 (64 ビット)|イメージ内の各レイヤーのサイズの合計をバイト単位で表示します。|
-|`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [RootFS](#registry_cli_list_imageinspect_rootfs) でフィールドの詳細を参照してください。|
+|`RootFS`|オブジェクト|イメージのルート・ファイルシステムを記述するメタデータを表示します。 [`RootFS`](#registry_cli_list_imageinspect_rootfs) でフィールドの詳細を参照してください。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
-### Config
+### `Config`
 {: #registry_cli_list_imageinspect_config}
 
 |フィールド|タイプ|説明|
@@ -161,7 +161,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`StdinOnce`|ブール|付加されたクライアントが切断した後に標準入力ストリームがクローズされた場合は _true_ を表示し、標準入力ストリームがオープンしたままの場合は _false_ を表示します。|
 |`Env`|文字列の配列|キーと値のペアの形式で環境変数のリストを表示します。|
 |`Cmd`|文字列の配列|コンテナーの開始時に実行するためにコンテナーに渡されるコマンドと引数を表します。|
-|`Healthcheck`|オブジェクト|コンテナーが正常に動作しているか確認する方法を表します。 [Healthcheck](#registry_cli_list_imageinspect_healthcheck) でフィールドの詳細を参照してください。|
+|`Healthcheck`|オブジェクト|コンテナーが正常に動作しているか確認する方法を表します。 [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck) でフィールドの詳細を参照してください。|
 |`ArgsEscaped`|ブール|コマンドが既にエスケープされている場合、true を表示します (Windows のみ)。|
 |`Image`|文字列|演算子によって渡されたイメージの名前を表示します。|
 |`Volumes`|キーと値のマップ|コンテナーにマウントされているボリューム・マウントのリストを表示します。|
@@ -169,14 +169,14 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Entrypoint`|文字列の配列|コンテナーの開始時に実行されるコマンドを記述します。|
 |`NetworkDisabled`|ブール|コンテナーでネットワーキングが無効になっている場合は _true_ を表示し、コンテナーでネットワーキングが有効になっている場合は _false_ を表示します。|
 |`MacAddress`|文字列|コンテナーに割り当てられている MAC アドレスを表示します。|
-|`OnBuild`|文字列の配列|イメージの Dockerfile に定義された ONBUILD メタデータを表示します。|
+|`OnBuild`|文字列の配列|イメージの Dockerfile に定義された `ONBUILD` メタデータを表示します。|
 |`Labels`|キーと値のマップ|鍵と値のペアとして、イメージに追加されたラベルのリストを表示します。|
 |`StopSignal`|文字列|コンテナーを停止するタイミングを送信するための UNIX ストップ信号を記述します。|
 |`StopTimeout`|整数|コンテナーを停止するためのタイムアウトを秒単位で表示します。|
 |`Shell`|文字列の配列|シェル形式の RUN、CMD、ENTRYPOINT を表示します。|
-{: caption="表 3. Config で使用可能なフィールドとデータ・タイプ。 " caption-side="top"}
+{: caption="表 3. <code>Config</code> で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
-### Healthcheck
+### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
 
 |フィールド|タイプ|説明|
@@ -185,9 +185,9 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Interval`|整数 (64 ビット)|2 つのヘルス・チェック間の待ち時間をナノ秒で表示します。|
 |`Timeout`|整数 (64 ビット)|ヘルス・チェックが失敗したと見なすまでの待ち時間をナノ秒で表示します。|
 |`Retries`|整数|コンテナーが正常に機能していないと見なされるまでの連続失敗回数を表示します。|
-{: caption="表 4. Healthcheck 構造体で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 4. <code>Healthcheck</code> 構造体で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
-### RootFS
+### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
 
 |オプション|タイプ|説明|
@@ -195,7 +195,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Type`|文字列|ファイル・システムのタイプを表示します。|
 |`Layers`|文字列の配列|各イメージ・レイヤーの記述子を表示します。|
 |`BaseLayer`|文字列|イメージ内の基本レイヤーの記述子を表示します。|
-{: caption="表 5. RootFS 構造体で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 5. <code>RootFS</code> 構造体で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 ## `ibmcloud cr token-list` コマンド内の Go テンプレートのオプションおよびデータ・タイプ
 {: #registry_cli_list_tokenlist}

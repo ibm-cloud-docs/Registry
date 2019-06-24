@@ -93,7 +93,7 @@ subcollection: registry
 
 在將映像檔推送至 {{site.data.keyword.registrylong_notm}} 之後，您可以執行下列其中一項作業：
 
-- [使用漏洞警告器管理安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
+- [使用 Vulnerability Advisor 管理安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
 - [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
 
 ## 在登錄之間複製映像檔
@@ -119,7 +119,7 @@ subcollection: registry
 
 複製映像檔之後，您可以執行下列其中一項作業：
 
-- [使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
+- [使用 Vulnerability Advisor 管理映像檔安全](/docs/services/va?topic=va-va_index)，以尋找潛在安全問題及漏洞的相關資訊。
 - [建立叢集以及使用此映像檔來部署容器](/docs/containers?topic=containers-getting-started#getting-started)至 {{site.data.keyword.containerlong_notm}} 中的叢集。
 
 ## 建立參照來源映像檔的新映像檔
@@ -251,7 +251,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
       3. 在您建立映像檔並針對名稱空間標記它之後，[可以將映像檔推送至 {{site.data.keyword.registrylong_notm}} 中的名稱空間](#registry_images_pushing_namespace)。
 
-若要使用「漏洞警告器」來檢查映像檔的安全，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)。
+若要使用 Vulnerability Advisor 來檢查映像檔的安全，請參閱[使用 Vulnerability Advisor 管理映像檔安全](/docs/services/va?topic=va-va_index)。
 
 ## 使用 API 金鑰將映像檔推送至 {{site.data.keyword.registrylong_notm}}
 {: #registry_api_key_push_image}

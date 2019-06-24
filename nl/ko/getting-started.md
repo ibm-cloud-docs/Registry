@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -62,6 +62,9 @@ subcollection: registry
    ```
    {: pre}
 
+   네임스페이스 이름은 지역에서 고유해야 합니다.
+   {: tip}
+
 3. 네임스페이스가 작성되었는지 확인하려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
 
    ```
@@ -94,6 +97,9 @@ subcollection: registry
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   지역의 이름을 찾으려면 `ibmcloud cr region` 명령을 실행하십시오.
+   {: tip}
 
    예를 들어, 여기서 `<source_image>`는 `hello-world`, `<tag>`는 `latest`, `<region>`은 `uk`, `<my_namespace>`는 `namespace1`, `<new_image_repo>`는 `hw_repo`, `<new_tag>`는 `1`입니다.
 

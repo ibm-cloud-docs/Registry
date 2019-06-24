@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-05-15"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # 強制執行容器映像檔安全
 {: #security_enforce}
 
-使用 Container Image Security Enforcement，您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行「漏洞警告器」原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
+使用 Container Image Security Enforcement，您可以先驗證容器映像檔，再將它們部署到 {{site.data.keyword.containerlong}} 中的叢集。您可以控制從何處部署映像檔、強制執行 Vulnerability Advisor 原則，以及確定[內容信任](/docs/services/Registry?topic=registry-registry_trustedcontent)已適當地套用至映像檔。如果映像檔不符合原則需求，則不會將 Pod 部署至叢集，也不會更新 Pod。
 {:shortdesc}
 
 Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} 擷取映像檔內容信任及漏洞的相關資訊。您可以選擇封鎖或容許部署儲存在其他登錄中的映像檔，但無法針對這些映像檔使用漏洞或信任強制執行。
@@ -45,14 +45,14 @@ Container Image Security Enforcement 會從 {{site.data.keyword.registrylong}} �
 2. 將 IBM 圖表儲存庫新增至 Helm 用戶端。
 
    ```
-   helm repo add ibm https://icr.io/helm/ibm
+   helm repo add iks-charts https://icr.io/helm/iks-charts
    ```
    {: pre}
 
 3. 將 Container Image Security Enforcement Helm 圖表安裝至您的叢集。將它命名為例如 `cise`。
 
    ```
-   helm install --name cise ibm/ibmcloud-image-enforcement
+   helm install --name cise iks-charts/ibmcloud-image-enforcement
    ```
    {: pre}
 
@@ -74,7 +74,7 @@ Container Image Security Enforcement 依預設會安裝部分原則，為您提�
 ### 叢集層面原則
 {: #cluster-wide}
 
-依預設，叢集層面的原則會強制所有登錄中的所有映像檔都具有信任資訊，且在「漏洞警告器」中沒有已報告的漏洞。
+依預設，叢集層面的原則會強制所有登錄中的所有映像檔都具有信任資訊，且在 Vulnerability Advisor 中沒有已報告的漏洞。
 {:shortdesc}
 
 **預設的叢集層面原則 `.yaml` 檔案**
@@ -235,7 +235,7 @@ spec:
     </tr>
     <tr>
     <td><code>../../../../va/enabled</code></td>
-    <td>設為 `true`，只容許通過[漏洞警告器](/docs/services/va?topic=va-va_index)掃描的映像檔。設為 `false` 會忽略「漏洞警告器」掃描。</td>
+    <td>設為 `true`，只容許通過 [Vulnerability Advisor](/docs/services/va?topic=va-va_index) 掃描的映像檔。設為 `false` 會忽略 Vulnerability Advisor 掃描。</td>
     </tr>
     </tbody>
     </table>
@@ -243,8 +243,8 @@ spec:
 2. 將 `.yaml` 檔案套用至您的叢集。
 
    ```
-kubectl apply -f <filepath>
-    ```
+   kubectl apply -f <filepath>
+   ```
    {: pre}
 
 ### 在自訂原則中指定受信任內容簽章者
@@ -324,7 +324,7 @@ kubectl apply -f <filepath>
    ```
    {: screen}
 
-* 如果您的映像檔符合原則，但不滿足該原則的「漏洞警告器」需求。
+* 如果您的映像檔符合原則，但不滿足該原則的 Vulnerability Advisor 需求。
 
    ```
    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
@@ -346,7 +346,7 @@ kubectl apply -f <filepath>
    ```
    {: screen}
 
-您可以在原則中啟用 `va` 選項，以強制在部署映像檔之前，先通過「漏洞警告器」掃描。容許「漏洞警告器」不支援的映像檔。
+您可以在原則中啟用 `va` 選項，以強制在部署映像檔之前，先通過 Vulnerability Advisor 掃描。容許 Vulnerability Advisor 不支援的映像檔。
 
 您可以在原則中啟用 `trust` 選項，以強制執行內容信任。如果您未指定任何 `signerSecret`，則會容許部署任何人簽署的映像檔。如果您指定 `signerSecret`，則映像檔的最新簽署版本必須已由您指定的所有簽章者簽署。Container Image Security Enforcement 會驗證所提供的公開金鑰屬於簽章者。如需內容信任的相關資訊，請參閱[簽署受信任內容的映像檔](/docs/services/Registry?topic=registry-registry_trustedcontent)。
 

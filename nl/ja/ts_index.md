@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -370,7 +370,7 @@ denied: requested access to the resource is denied
 
 実動イメージ用の名前空間のように、ルート鍵が影響を受けていないリポジトリーが名前空間に含まれている場合、影響を受けたルート鍵に関連付けられているトラスト・データだけを削除する必要があります。 サポート・チケットをオープンしてください。
 
-1. [{{site.data.keyword.cloud_notm}} サポート](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)にお問い合わせください。問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
+1. [{{site.data.keyword.cloud_notm}} サポート](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)にお問い合わせください。 問題の簡単な説明、アカウント ID、ルート鍵が影響を受けたイメージ・リポジトリーが含まれている名前空間のリストをお知らせください。
 
 2. {{site.data.keyword.cloud_notm}} で問題が解決されたら、ローカル・コンピューター上の Docker コンテント・トラストのリポジトリーを削除します。
 

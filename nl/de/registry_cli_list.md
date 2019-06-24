@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -116,7 +116,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Repository`|Zeichenfolge|Zeigt das Repository des Image an.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`Tag`|Zeichenfolge|Zeigt den Tag für das Image an.|
-|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: Status `string`, IssueCount `int` und ExemptionCount `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](/docs/services/Registry?topic=va-va_index#va_registry_cli) beschrieben.|
+|`SecurityStatus`|Struct|Zeigt den Sicherheitsstatus für das Image an. Sie können folgende Werte filtern und formatieren: *Status* `string`, *IssueCount* `int` und *ExemptionCount* `int`. Die möglichen Status sind in [Sicherheitslückenbericht mittels CLI prüfen](/docs/services/Registry?topic=va-va_index#va_registry_cli) beschrieben.|
 {: caption="Tabelle 1. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-list</code>." caption-side="top"}>
 
 ## Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr image-inspect`
@@ -132,19 +132,19 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Comment`|Zeichenfolge|Zeigt die Beschreibung des Image an.|
 |`Created`|Zeichenfolge|Zeigt die [UNIX-Zeitmarke ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://en.wikipedia.org/wiki/Unix_time) für den Erstellungszeitpunkt des Images an.|
 |`Container`|Zeichenfolge|Zeigt die ID des Containers an, der das Image erstellt hat.|
-|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [Config](#registry_cli_list_imageinspect_config).|
+|`ContainerConfig`|Objekt|Zeigt die Standardkonfiguration für Container an, die über dieses Image gestartet werden. Siehe Felddetails in [`Config`](#registry_cli_list_imageinspect_config).|
 |`DockerVersion`|Zeichenfolge|Zeigt die Docker-Version an, die zum Erstellen dieses Image verwendet wurde.|
 |`Author`|Zeichenfolge|Zeigt den Autor des Image an.|
-|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [Config](#registry_cli_list_imageinspect_config).|
+|`Config`|Objekt|Zeigt Konfigurationsmetadaten für das Image an. Siehe Felddetails in [`Config`](#registry_cli_list_imageinspect_config).|
 |`Architecture`|Zeichenfolge|Zeigt die Prozessorarchitektur an, die verwendet wurde, um dieses Image zu erstellen, und die erforderlich ist, um das Image auszuführen.|
 |`Os`|Zeichenfolge|Zeigt die Betriebssystemfamilie, die verwendet wurde, um dieses Image zu erstellen, und die zur Ausführung des Image erforderlich ist.|
 |`OsVersion`|Zeichenfolge|Zeigt die Version des Betriebssystems an, die verwendet wurde, um dieses Image zu erstellen.|
 |`Size`|Ganzzahl (64-Bit)|Zeigt die Größe des Image in Byte an.|
 |`VirtualSize`|Ganzzahl (64-Bit)|Zeigt die summierte Größe der einzelnen Ebenen des Image in Byte an.|
-|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [RootFS](#registry_cli_list_imageinspect_rootfs).|
+|`RootFS`|Objekt|Zeigt Metadaten an, die das Stammdateisystem für das Image beschreiben. Siehe Felddetails in [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 {: caption="Tabelle 2. Verfügbare Felder und Datentypen im Befehl <codeibmcloud cr image-inspect</code>." caption-side="top"}>
 
-### Config
+### `Config`
 {: #registry_cli_list_imageinspect_config}
 
 |Feld|Typ|Beschreibung|
@@ -161,7 +161,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`StdinOnce`|Boolesch|Zeigt _true_ an, wenn der Standardeingabedatenstrom nach dem Trennen des angefügten Clients geschlossen wird, und _false_, wenn er geöffnet bleibt.|
 |`Env`|Array von Zeichenfolgen|Zeigt die Liste der Umgebungsvariablen in Form von Schlüssel-Wert-Paaren an.|
 |`Cmd`|Array von Zeichenfolgen|Beschreibt die Befehle und Argumente, die an einen Container übergeben werden, um beim Starten des Containers ausgeführt zu werden.|
-|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [Healthcheck](#registry_cli_list_imageinspect_healthcheck).|
+|`Healthcheck`|Objekt|Beschreibt, wie Sie überprüfen, ob der Container korrekt ausgeführt wird. Siehe Felddetails in [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
 |`ArgsEscaped`|Boolesch|Zeigt 'true' an, wenn der Befehl bereits mit Escapezeichen versehen ist (Windows-spezifisch).|
 |`Image`|Zeichenfolge|Zeigt den Namen des Image an, das vom Operator übergeben wurde.|
 |`Volumes`|Schlüssel-Wert-Zuordnung|Zeigt die Liste der Datenträgermounts an, die an einen Container angehängt sind.|
@@ -169,14 +169,14 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Entrypoint`|Array von Zeichenfolgen|Beschreibt den Befehl, der beim Starten des Containers ausgeführt wird.|
 |`NetworkDisabled`|Boolesch|Zeigt _true_ an, wenn Netzbetrieb für den Container inaktiviert ist, und _false_, wenn Netzbetrieb für den Container aktiviert ist.|
 |`MacAddress`|Zeichenfolge|Zeigt die MAC-Adresse an, die dem Container zugewiesen ist.|
-|`OnBuild`|Array von Zeichenfolgen|Zeigt die ONBUILD-Metadaten an, die für die Image-Dockerfile definiert wurden.|
+|`OnBuild`|Array von Zeichenfolgen|Zeigt die `ONBUILD`-Metadaten an, die für die Image-Dockerfile definiert wurden.|
 |`Labels`|Schlüssel-Wert-Zuordnung|Zeigt die Liste von Bezeichnungen an, die dem Image als Schlüssel-Wert-Paare hinzugefügt wurden.|
 |`StopSignal`|Zeichenfolge|Beschreibt das UNIX-Stoppsignal, das zu senden ist, wenn der Container gestoppt werden soll.|
 |`StopTimeout`|Ganzzahl|Zeigt das Zeitlimit in Sekunden an, innerhalb dessen ein Container gestoppt werden soll.|
 |`Shell`|Array von Zeichenfolgen|Zeigt die Shell-Formen RUN, CMD und ENTRYPOINT an.|
-{: caption="Tabelle 3. Verfügbare Felder und Datentypen in 'Config'. " caption-side="top"}
+{: caption="Tabelle 3. Verfügbare Felder und Datentypen in <codeConfig</code>. " caption-side="top"}>
 
-### Healthcheck
+### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
 
 |Feld|Typ|Beschreibung|
@@ -185,9 +185,9 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Interval`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die zwischen zwei Statusprüfungen gewartet werden soll.|
 |`Timeout`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die gewartet werden soll, bevor die Statusprüfung als fehlgeschlagen eingestuft wird.|
 |`Retries`|Ganzzahl|Zeigt die Anzahl der aufeinanderfolgenden Fehlversuche an, die erforderlich sind, damit die Ausführung eines Containers als nicht korrekt eingestuft wird.|
-{: caption="Tabelle 4. Verfügbare Felder und Datentypen im Healthcheck-Struct." caption-side="top"}
+{: caption="Tabelle 4. Verfügbare Felder und Datentypen im <codeHealthcheck</code>-Konstrukt. " caption-side="top"}>
 
-### RootFS
+### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
 
 |Option|Typ|Beschreibung|
@@ -195,7 +195,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Type`|Zeichenfolge|Zeigt den Typ des Dateisystems an.|
 |`Layers`|Array von Zeichenfolgen|Zeigt die Deskriptoren der einzelnen Image-Ebenen an.|
 |`BaseLayer`|Zeichenfolge|Zeigt den Deskriptor für die Basisebene im Image an.|
-{: caption="Tabelle 5. Verfügbare Felder und Datentypen im RootFS-Struct." caption-side="top"}
+{: caption="Tabelle 5. Verfügbare Felder und Datentypen im <codeRootFS</code>-Konstrukt. " caption-side="top"}>
 
 ## Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr token-list`
 {: #registry_cli_list_tokenlist}

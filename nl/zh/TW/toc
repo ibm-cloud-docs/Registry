@@ -17,11 +17,13 @@ IBM Cloud Container Registry
     {: .topicgroup}
     指導教學
         registry_tutorial_configure_iam.md
+        /tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+        /tutorials/solution-tutorials-multi-region-k8s-cis
+        /tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
     {: .topicgroup}
     相關鏈結
-        [IBM Cloud Kubernetes Service documentation](/containers/containers-getting-started)
-        [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+        [IBM Cloud Kubernetes Service 文件](/containers/containers-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -39,10 +41,8 @@ IBM Cloud Container Registry
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
     registry_cli_list.md
-    registry_cli_reference.md
     iam.md
     registry_at_events.md
-    rellinks.md
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
     {: .navgroup-end}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -168,17 +168,24 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
         ```
         {: pre}
 
-    2. Erstellen Sie einen Namensbereich, `namensbereich_b`, indem Sie den folgenden Befehl ausführen:
+    2. Erstellen Sie `namespace_a`, indem Sie den folgenden Befehl ausführen: 
 
         ```
-        ibmcloud cr namespace-add namensbereich_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         Die Namen von Namensbereichen müssen in der Region eindeutig sein.
         {: tip}
 
-    3. Erstellen Sie einen weiteren Namensbereich, `namensbereich_c`, indem Sie den folgenden Befehl ausführen:
+    3. Erstellen Sie `namespace_b`, indem Sie den folgenden Befehl ausführen: 
+
+        ```
+        ibmcloud cr namespace-add namensbereich_b
+        ```
+        {: pre}
+            
+    4. Erstellen Sie `namespace_c`, indem Sie den folgenden Befehl ausführen: 
 
         ```
         ibmcloud cr namespace-add namensbereich_c
@@ -438,8 +445,6 @@ In diesem Abschnitt konfigurieren Sie eine Service-ID und erteilen ihr Zugriff a
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        Dieser Befehl funktioniert.
 
     3. Übertragen Sie Ihr Image per Push-Operation an `namensbereich_a`, indem Sie den folgenden Befehl ausführen:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -287,7 +287,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
 
-자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)을 참조하십시오.
+자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_list)을 참조하십시오.
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -331,7 +331,7 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
 
-자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)을 참조하십시오.
+자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_list)을 참조하십시오.
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -387,7 +387,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}}에서 소스 이미지 SOURCE_IMAGE를 참조하는 새 이미지 TARGET_IMAGE를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다.
+{{site.data.keyword.registrylong_notm}}에서 소스 이미지 SOURCE_IMAGE를 참조하는 이미지 TARGET_IMAGE를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다.
 
 이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
 {: tip}
@@ -563,7 +563,7 @@ ibmcloud cr plan
 
 표준 플랜으로 업그레이드합니다.
 
-플랜에 대한 정보는 [레지스트리 플랜](/docs/services/Registry?topic=registry-registry_overview#registry_plans)을 참조하십시오.
+플랜에 대한 자세한 정보는 [레지스트리 플랜](/docs/services/Registry?topic=registry-registry_overview#registry_plans)을 참조하십시오.
 
 ```
 ibmcloud cr plan-upgrade [PLAN]
@@ -811,7 +811,7 @@ ibmcloud cr token-list [--format FORMAT]
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
 
-자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing)을 참조하십시오.
+자세한 정보는 [{{site.data.keyword.registrylong_notm}} 명령에 대한 CLI 출력 형식화 및 필터링](/docs/services/Registry?topic=registry-registry_cli_list)을 참조하십시오.
 
 </dd>
 </dl>
@@ -880,7 +880,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 **명령 옵션**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>보고서를 가져올 이미지의 이름입니다. 보고서에서는 이미지에 알려진 패키지 취약성이 있는지 여부를 알립니다. 각 이름 사이에 공백을 사용하여 명령에 각 이미지를 나열하면 동시에 여러 이미지에 대한 보고서를 요청할 수 있습니다.
+<dd>보고서를 가져올 이미지의 이름입니다. 보고서에는 이미지에 알려진 패키지 취약성이 있는지 여부가 명시됩니다. 각 이름 사이에 공백을 사용하여 명령에 각 이미지를 나열하면 동시에 여러 이미지에 대한 보고서를 요청할 수 있습니다.
 
 <p>이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오. 이미지 이름에 태그를 지정하지 않은 경우 보고서에서는 `latest`로 태그 지정된 이미지를 평가합니다.</p>
 

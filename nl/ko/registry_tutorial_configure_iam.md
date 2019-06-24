@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -73,7 +73,7 @@ subcollection: registry
 
 2. User B가 User A의 계정을 대상으로 지정할 수 있지만 아직 {{site.data.keyword.registrylong_notm}}에 대해 어떤 작업도 수행할 수 없음을 입증하십시오.
 
-    1. User B로 로그인하고 다음 명령을 실행하여 User A의 계정을 대상으로 지정하십시오. 여기서 _`<YourAccountID>`_는 User A의 계정 ID입니다.
+    1. 다음 명령을 실행하여 User B로 로그인하고 User A의 계정을 대상으로 지정하십시오. 여기서 _`<YourAccountID>`_는 User A의 계정 ID입니다.
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -168,17 +168,24 @@ subcollection: registry
         ```
         {: pre}
 
-    2. 다음 명령을 실행하여 네임스페이스 `namespace_b`를 작성하십시오.
+    2. 다음 명령을 실행하여 `namespace_a`를 작성하십시오. 
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         네임스페이스 이름은 지역에서 고유해야 합니다.
         {: tip}
 
-    3. 다음 명령을 실행하여 다른 네임스페이스 `namespace_c`를 작성하십시오.
+    3. 다음 명령을 실행하여 `namespace_b`를 작성하십시오. 
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. 다음 명령을 실행하여 `namespace_c`를 작성하십시오. 
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -438,8 +445,6 @@ subcollection: registry
         docker pull <Region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        이 명령이 작동합니다.
 
     3. 다음 명령을 실행하여 이미지를 `namespace_a`에 푸시하십시오.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ Les images ont des signatures distinctes pour les anciens (`registry.bluemix.net
 
 Docker Content Trust utilise un modèle de sécurité de type "approuver à la première utilisation". La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
 
-Pour plus d'informations sur le modèle de sécurité "approuver à la première utilisation", voir [The Update Framework (TUF) ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://theupdateframework.github.io/).
+Pour plus d'informations sur le modèle de sécurité "approuver à la première utilisation", voir [The Update Framework ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://theupdateframework.github.io/).
 
 ## Configuration de votre environnement de contenu sécurisé
 {: #trustedcontent_setup}

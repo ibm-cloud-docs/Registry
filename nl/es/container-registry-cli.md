@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de
 
 **Requisitos previos**
 
-* Instale la [CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). El prefijo para ejecutar mandatos utilizando la CLI de {{site.data.keyword.cloud_notm}} es `ibmcloud`.
+* Instale la [CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). El prefijo para ejecutar mandatos mediante la CLI de {{site.data.keyword.cloud_notm}} es `ibmcloud`.
 * Antes de ejecutar los mandatos de registro, inicie sesión en {{site.data.keyword.cloud_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
 
 En la línea de mandatos, se le notifica cuando hay actualizaciones de la CLI de `ibmcloud` y de los plugins de CLI `container-registry` disponibles. Asegúrese de mantener la CLI actualizada para poder utilizar todos los mandatos y distintivos disponibles.
@@ -172,7 +172,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 
 **Ejemplo**
 
-Enumera todas las exenciones para los problemas de seguridad que se aplican a las imágenes del repositorio *`birds/bluebird`*. La salida incluye las exenciones de toda la cuenta, las exenciones limitadas al espacio de nombres *`birds`* y las exenciones limitadas al repositorio *`birds/bluebird`*, pero no las limitadas a etiquetas específicas dentro del repositorio *`birds/bluebird`*.
+Enumera todas las exenciones para los problemas de seguridad que se aplican a las imágenes del repositorio *`birds/bluebird`*. La salida incluye las exenciones que son de toda la cuenta, las exenciones que están limitadas al espacio de nombres *`birds`* y las exenciones que están limitadas al repositorio *`birds/bluebird`*, pero no las que están limitadas a etiquetas específicas dentro del repositorio *`birds/bluebird`*.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
@@ -286,7 +286,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
 
-Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -330,7 +330,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
 
-Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -386,7 +386,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crea una nueva imagen, TARGET_IMAGE, que haga referencia a una imagen de origen, SOURCE_IMAGE, en {{site.data.keyword.registrylong_notm}}. Las imágenes de origen y de destino deben estar en la misma región.
+Crea una imagen, TARGET_IMAGE, que haga referencia a una imagen de origen, SOURCE_IMAGE, en {{site.data.keyword.registrylong_notm}}. Las imágenes de origen y de destino deben estar en la misma región.
 
 Para encontrar los nombres de sus imágenes, ejecute `ibmcloud cr image-list`. Combine el contenido de las columnas **Repositorio** y **Etiqueta** para crear el nombre de imagen en el formato `repository:tag`.
 {: tip}
@@ -810,7 +810,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de gest
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
 
-Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_reference#registry_cli_listing).
+Para obtener más información, consulte [Formateo y filtrado de la salida de la CLI para mandatos de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_cli_list).
 
 </dd>
 </dl>

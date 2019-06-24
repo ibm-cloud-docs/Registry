@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 如需指令的相關參考資訊，請參閱[建立新的 {{site.data.keyword.cloud_notm}} 平台 API 金鑰](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)。
 
+## 所有用戶端的鑑別選項
+{: #registry_authentication}
+
+您可以使用 `docker login` 指令或其他登錄用戶端來進行鑑別。
+{:shortdesc}
+
+大部分使用者可以使用 `ibmcloud cr login` 指令，以簡化 `docker login`，但如果您實作自動化，或是您使用不同的用戶端，則建議您進行手動鑑別。您必須提出使用者名稱及密碼。在 {{site.data.keyword.registrylong_notm}} 中，使用者名稱指出在密碼 (password) 中所呈現的密碼 (secret) 類型。
+
+以下是有效的使用者名稱：
+
+- `iambearer` 密碼包含 IAM 存取記號。這種鑑別存在時間很短，但可以從所有類型的 IAM 身分衍生。
+- `iamrefresh` 密碼必須包含 IAM 重新整理記號，其在內部用來產生及重新整理 IAM 存取記號。這種鑑別存在時間較長，並且由 `ibmcloud cr login` 指令使用。
+- `iamapikey` 密碼是一個 IAM API 金鑰。這種鑑別是自動化的偏好類型。您可以使用使用者或服務 ID API 金鑰，請參閱[建立 API 金鑰](#registry_api_key_create)。
+- `token`（已淘汰）密碼是一個登錄記號。您可以將這個使用者名稱用於自動化。
+
+  使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
+  {: deprecated}
+
+您不需要使用 `docker` 指令即可向登錄進行鑑別。例如，您可以使用 Cloud Foundry CLI，從登錄的映像檔中啟動 Cloud Foundry 應用程式：
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+請將 `<apikey>` 取代為您的 API 金鑰、將 `<region>` 取代為[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名稱、將 `<my_namespace>` 取代為名稱空間，以及將 `<image_repo>` 取代為儲存庫。
+
+如需相關資訊，請參閱[使用專用映像檔登錄](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。
+
 ## 使用記號自動化名稱空間的存取（已淘汰）
 {: #registry_tokens}
 
-您可以使用記號，以自動化將 Docker 映像檔推送至 {{site.data.keyword.registrylong_notm}} 名稱空間以及從其中取回 Docker 映像檔的作業。
-{:shortdesc}
-
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
+
+您可以使用記號，以自動化將 Docker 映像檔推送至 {{site.data.keyword.registrylong_notm}} 名稱空間以及從其中取回 Docker 映像檔的作業。
+{:shortdesc}
 
 擁有登錄記號的每個人都可以存取受保護的資訊。如果想要讓帳戶外的使用者可以存取您在某一地區中設定的所有名稱空間，您可以針對 {{site.data.keyword.cloud_notm}} 帳戶建立一個記號。每個擁有此記號的使用者或應用程式都可以將映像檔推送至名稱空間以及從中取回映像檔，而不需要安裝 `container-registry` CLI 外掛程式。
 
@@ -103,11 +133,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 建立 {{site.data.keyword.cloud_notm}} 帳戶的記號（已淘汰）
 {: #registry_tokens_create}
 
-您可以建立記號，來授與對地區中所有 {{site.data.keyword.registrylong_notm}} 名稱空間的存取權。
-{:shortdesc}
-
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
+
+您可以建立記號，來授與對地區中所有 {{site.data.keyword.registrylong_notm}} 名稱空間的存取權。
+{:shortdesc}
 
 1. 建立記號。下列範例會建立不會到期的記號，它具有對地區中已設定之所有名稱空間的讀寫權。
 
@@ -155,11 +185,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 使用記號自動化名稱空間的存取（已淘汰）
 {: #registry_tokens_use}
 
-您可以在 `docker login` 指令中使用記號，以自動化 {{site.data.keyword.registrylong_notm}} 名稱空間的存取。取決於您設定記號的唯讀權還是讀寫權，使用者可以將映像檔推送至名稱空間以及從中取回映像檔。
-{:shortdesc}
-
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
+
+您可以在 `docker login` 指令中使用記號，以自動化 {{site.data.keyword.registrylong_notm}} 名稱空間的存取。取決於您設定記號的唯讀權還是讀寫權，使用者可以將映像檔推送至名稱空間以及從中取回映像檔。
+{:shortdesc}
 
 1. 登入 {{site.data.keyword.cloud_notm}}。
 
@@ -205,11 +235,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 從 {{site.data.keyword.cloud_notm}} 帳戶中移除記號（已淘汰）
 {: #registry_tokens_remove}
 
-當您不再需要 {{site.data.keyword.registrylong_notm}} 記號時，請將它移除。
-{:shortdesc}
-
 使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
 {: deprecated}
+
+當您不再需要 {{site.data.keyword.registrylong_notm}} 記號時，請將它移除。
+{:shortdesc}
 
 系統會自動從 {{site.data.keyword.cloud_notm}} 帳戶中移除到期的 {{site.data.keyword.registrylong_notm}} 記號，不需要手動移除。
 {:tip}
@@ -234,33 +264,3 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## 所有用戶端的鑑別選項
-{: #registry_authentication}
-
-您可以使用 `docker login` 指令或其他登錄用戶端來進行鑑別。
-{:shortdesc}
-
-大部分使用者可以使用 `ibmcloud cr login` 指令，以簡化 `docker login`，但如果您實作自動化，或是您使用不同的用戶端，則建議您進行手動鑑別。您必須提出使用者名稱及密碼。在 {{site.data.keyword.registrylong_notm}} 中，使用者名稱指出在密碼 (password) 中所呈現的密碼 (secret) 類型。
-
-以下是有效的使用者名稱：
-
-- `iambearer` 密碼包含 IAM 存取記號。這種鑑別存在時間很短，但可以從所有類型的 IAM 身分衍生。
-- `iamrefresh` 密碼必須包含 IAM 重新整理記號，其在內部用來產生及重新整理 IAM 存取記號。這種鑑別存在時間較長，並且由 `ibmcloud cr login` 指令使用。
-- `iamapikey` 密碼是一個 IAM API 金鑰。這種鑑別是自動化的偏好類型。您可以使用使用者或服務 ID API 金鑰，請參閱[建立 API 金鑰](#registry_api_key_create)。
-- `token`（已淘汰）密碼是一個登錄記號。您可以將這個使用者名稱用於自動化。
-
-  使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](#registry_api_key)。
-  {: deprecated}
-
-您不需要使用 `docker` 指令即可向登錄進行鑑別。例如，您可以使用 Cloud Foundry CLI，從登錄的映像檔中啟動 Cloud Foundry 應用程式：
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-請將 `<apikey>` 取代為您的 API 金鑰、將 `<region>` 取代為[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)的名稱、將 `<my_namespace>` 取代為名稱空間，以及將 `<image_repo>` 取代為儲存庫。
-
-如需相關資訊，請參閱[使用專用映像檔登錄](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)。

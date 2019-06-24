@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ subcollection: registry
 
 Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
 
-"trust on first use" 보안 모델에 대한 자세한 정보는 [TUF(The Update Framework) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.
+"trust on first use" 보안 모델에 대한 자세한 정보는 [The Update Framework ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.
 
 ## 신뢰할 수 있는 컨텐츠 환경 설정
 {: #trustedcontent_setup}

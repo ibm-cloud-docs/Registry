@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,15 @@ subcollection: registry
 
 Utilisez ces notes sur l'édition pour prendre connaissance des modifications les plus récentes apportées à {{site.data.keyword.registrylong}} et Vulnerability Advisor. Les changements sont classés par date.
 {:shortdesc}
+
+## 13 mai 2019
+{: #13may2019}
+
+- **Fin du support pour Container Scanner**
+
+  Container Scanner est obsolète et n'est plus utilisable.
+
+  Pour plus d'informations, voir [Installation de Container Scanner (obsolète)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 
 ## 2 avril 2019
 {: #2apr2019}
@@ -102,7 +111,6 @@ Utilisez ces notes sur l'édition pour prendre connaissance des modifications le
 
   Si vous souhaitez gérer la sécurité d'une organisation {{site.data.keyword.cloud_notm}}, vous pouvez utiliser votre paramètre de règle pour déterminer si un problème est exempt ou non. Vous pouvez décider d'utiliser Container Image Security Enforcement pour garantir que le déploiement n'est permis qu'à partir d'images ne présentant pas de problèmes de sécurité une fois que ceux exemptés par votre règle ont été pris en compte.
 
-
   Pour plus d'informations, voir [Définition de règles d'exemption organisationnelles](/docs/services/Registry?topic=va-va_index#va_managing_policy).
 
 ## 25 juillet 2018
@@ -137,7 +145,7 @@ Utilisez ces notes sur l'édition pour prendre connaissance des modifications le
 
 - **Container Scanner**
 
-  Container Scanner active Vulnerability Advisor pour signaler tout problème lié à l'exécution de conteneurs ne se trouvant pas dans l'image de base du conteneur. 
+  Container Scanner active Vulnerability Advisor pour signaler tout problème lié à l'exécution de conteneurs ne se trouvant pas dans l'image de base du conteneur.
 
   Pour plus d'informations, voir [Installation de Container Scanner](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 

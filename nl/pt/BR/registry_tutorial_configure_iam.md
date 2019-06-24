@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-05-20"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -76,7 +76,7 @@ Nesta seção, você inclui um segundo usuário em sua conta e concede a eles a 
 
 2. Prove que o Usuário B pode ter como destino a conta do Usuário A, mas ainda não pode fazer nada com o {{site.data.keyword.registrylong_notm}}:
 
-    1. Efetue login como o Usuário B e execute o comando a seguir para ter a conta do Usuário A como o destino, em que _`<YourAccountID>`_ é o ID da conta do Usuário A:
+    1. Efetue login como o Usuário B e destine a conta do Usuário A executando o comando a seguir, em que _`<YourAccountID>`_ é o ID da conta do Usuário A:
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -171,17 +171,24 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
         ```
         {: pre}
 
-    2. Crie um namespace, `namespace_b`, executando o comando a seguir:
+    2. Crie `namespace_a` executando o comando a seguir:
 
         ```
-        ibmcloud cr namespace-add namespace_b
+        ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
         Os nomes de namespace devem ser exclusivos na região.
         {: tip}
 
-    3. Crie outro namespace, `namespace_c`, executando o comando a seguir:
+    3. Crie `namespace_b` executando o comando a seguir:
+
+        ```
+        ibmcloud cr namespace-add namespace_b
+        ```
+        {: pre}
+            
+    4. Crie `namespace_c` executando o comando a seguir:
 
         ```
         ibmcloud cr namespace-add namespace_c
@@ -441,8 +448,6 @@ Nesta seção, você configura um ID de serviço e concede a ele acesso ao names
         docker pull < Region> .icr.io/namespace_a/hello-world
         ```
         {: pre}
-
-        Esse comando funciona.
 
     3. Envie por push sua imagem para `namespace_a` executando o comando a seguir:
 

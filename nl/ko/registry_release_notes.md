@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,15 @@ subcollection: registry
 
 다음 릴리스 정보를 사용하여 {{site.data.keyword.registrylong}} 및 Vulnerability Advisor의 최신 변경사항에 대해 알아보십시오. 변경사항은 날짜별로 그룹화되어 있습니다.
 {:shortdesc}
+
+## 2019년 5월 13일
+{: #13may2019}
+
+- **컨테이너 스캐너에 대한 지원 종료**
+
+  이제 컨테이너 스캐너는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 
+
+  자세한 정보는 [컨테이너 스캐너 설치(더 이상 사용되지 않음)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner)를 참조하십시오.
 
 ## 2019년 4월 2일
 {: #2apr2019}

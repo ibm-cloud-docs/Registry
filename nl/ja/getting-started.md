@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} には、{{site.data.keyword.cloud_notm}} アカウント内で Docker イメージを保管したり、他のユーザーと Docker イメージを共有したりするために使用できる、マルチテナントの専用イメージ・レジストリーが用意されています。
 {:shortdesc}
 
-{{site.data.keyword.cloud_notm}} コンソールには、簡単なクイック・スタートが用意されています。{{site.data.keyword.cloud_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
+{{site.data.keyword.cloud_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.cloud_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
@@ -62,6 +62,9 @@ subcollection: registry
    ```
    {: pre}
 
+   名前空間の名前は、地域内で固有でなければなりません。
+   {: tip}
+
 3. 名前空間が作成されたことを確認するために、`ibmcloud cr namespace-list` コマンドを実行します。
 
    ```
@@ -94,6 +97,9 @@ subcollection: registry
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   地域の名前を検索するには、`ibmcloud cr region` コマンドを実行します。
+   {: tip}
 
    `<source_image>` が `hello-world`、`<tag>` が `latest`、`<region>` が `uk`、`<my_namespace>` が `namespace1`、`<new_image_repo>` が `hw_repo`、`<new_tag>` が `1` の場合の例:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -79,14 +79,44 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 
 명령에 대한 참조 정보는 [새 {{site.data.keyword.cloud_notm}} 플랫폼 API 키 작성](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create)을 참조하십시오.
 
+## 모든 클라이언트에 대한 인증 옵션
+{: #registry_authentication}
+
+`docker login` 명령이나 기타 레지스트리 클라이언트를 사용하여 인증할 수 있습니다.
+{:shortdesc}
+
+대부분의 사용자는 `ibmcloud cr login` 명령을 사용하여 `docker login`을 단순화하지만, 자동화를 구현 중이거나 다른 클라이언트를 사용 중이면 수동 인증을 원할 수 있습니다. 사용자 이름과 비밀번호를 제시해야 합니다. {{site.data.keyword.registrylong_notm}}에서 사용자 이름은 비밀번호에서 제시된 시크릿의 유형을 표시합니다.
+
+다음의 사용자 이름이 유효합니다.
+
+- `iambearer`: 비밀번호에 IAM 액세스 토큰이 포함됩니다. 이 인증 유형은 단기간 유효하지만, 모든 유형의 IAM ID에서 파생될 수 있습니다.
+- `iamrefresh`: 비밀번호에 IAM 액세스 토큰을 생성하고 새로 고치기 위해 내부적으로 사용되는 IAM 새로 고치기 토큰이 포함되어야 합니다. 이 인증 유형은 더 오래 사용되며 `ibmcloud cr login` 명령에 의해 사용됩니다.
+- `iamapikey`: 비밀번호가 IAM API 키입니다. 이 인증 유형은 자동화에 선호되는 유형입니다. 사용자 또는 서비스 ID API 키를 사용할 수 있습니다. [API 키 작성](#registry_api_key_create)을 참조하십시오.
+- `token`(더 이상 사용되지 않음) 비밀번호가 레지스트리 토큰입니다. 자동화에 이 사용자 이름을 사용할 수 있습니다.
+
+  토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
+  {: deprecated}
+
+`docker` 명령을 사용하여 레지스트리를 인증할 필요는 없습니다. 예를 들어, Cloud Foundry CLI를 사용하여 레지스트리의 이미지에서 Cloud Foundry 앱을 시작할 수 있습니다.
+
+```
+export CF_DOCKER_PASSWORD=<apikey>
+ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
+```
+{: pre}
+
+`<apikey>`는 API 키로, `<region>`은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions) 이름으로, `<my_namespace>`는 네임스페이스로, `<image_repo>`는 저장소로 대체하십시오.
+
+자세한 정보는 [개인용 이미지 레지스트리 사용](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)을 참조하십시오.
+
 ## 토큰을 사용하여 네임스페이스에 대한 액세스 자동화(더 이상 사용되지 않음)
 {: #registry_tokens}
 
-토큰을 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
-{:shortdesc}
-
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
+
+토큰을 사용하여 {{site.data.keyword.registrylong_notm}} 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화할 수 있습니다.
+{:shortdesc}
 
 레지스트리 토큰을 보유한 모든 사용자는 보안 정보에 액세스할 수 있습니다. 계정 외부의 사용자가 지역에서 설정한 모든 네임스페이스에 대해 액세스할 수 있도록 하려면 {{site.data.keyword.cloud_notm}} 계정에 대한 토큰을 작성할 수 있습니다. 이 토큰을 소유하고 있는 모든 사용자 또는 앱은 `container-registry` CLI 플러그인을 설치하지 않고도 이미지를 네임스페이스에 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
 
@@ -103,11 +133,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### {{site.data.keyword.cloud_notm}} 계정에 대한 토큰 작성(더 이상 사용되지 않음)
 {: #registry_tokens_create}
 
-지역의 모든 {{site.data.keyword.registrylong_notm}} 네임스페이스에 액세스 권한을 부여하기 위한 토큰을 작성할 수 있습니다.
-{:shortdesc}
-
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
+
+지역의 모든 {{site.data.keyword.registrylong_notm}} 네임스페이스에 액세스 권한을 부여하기 위한 토큰을 작성할 수 있습니다.
+{:shortdesc}
 
 1. 토큰을 작성하십시오. 다음 예는 지역에 설정된 모든 네임스페이스에 읽기 및 쓰기 액세스 권한이 있는 만료되지 않는 토큰을 작성합니다.
 
@@ -155,11 +185,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### 토큰을 사용하여 네임스페이스에 대한 액세스 자동화(더 이상 사용되지 않음)
 {: #registry_tokens_use}
 
-`docker login` 명령에서 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스를 자동화할 수 있습니다. 토큰에 대한 읽기 전용 또는 읽기/쓰기 액세스 권한 설정 여부에 따라, 사용자는 이미지를 네임스페이스에서 가져오고 이미지를 네임스페이스로 푸시할 수 있습니다.
-{:shortdesc}
-
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
+
+`docker login` 명령에서 토큰을 사용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 대한 액세스를 자동화할 수 있습니다. 토큰에 대한 읽기 전용 또는 읽기/쓰기 액세스 권한 설정 여부에 따라, 사용자는 이미지를 네임스페이스에서 가져오고 이미지를 네임스페이스로 푸시할 수 있습니다.
+{:shortdesc}
 
 1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
@@ -205,11 +235,11 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
 ### {{site.data.keyword.cloud_notm}} 계정에서 토큰 제거(더 이상 사용되지 않음)
 {: #registry_tokens_remove}
 
-더 이상 필요하지 않은 경우 {{site.data.keyword.registrylong_notm}} 토큰을 제거하십시오.
-{:shortdesc}
-
 토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
 {: deprecated}
+
+더 이상 필요하지 않은 경우 {{site.data.keyword.registrylong_notm}} 토큰을 제거하십시오.
+{:shortdesc}
 
 만료된 {{site.data.keyword.registrylong_notm}} 토큰은 {{site.data.keyword.cloud_notm}} 계정에서 자동으로 제거되며 수동으로 제거할 필요가 없습니다.
 {:tip}
@@ -234,33 +264,3 @@ docker login -u iamapikey -p <your_apikey> <registry_url>
    ibmcloud cr token-rm <token_id>
    ```
    {: pre}
-
-## 모든 클라이언트에 대한 인증 옵션
-{: #registry_authentication}
-
-`docker login` 명령이나 기타 레지스트리 클라이언트를 사용하여 인증할 수 있습니다.
-{:shortdesc}
-
-대부분의 사용자는 `ibmcloud cr login` 명령을 사용하여 `docker login`을 단순화하지만, 자동화를 구현 중이거나 다른 클라이언트를 사용 중이면 수동 인증을 원할 수 있습니다. 사용자 이름과 비밀번호를 제시해야 합니다. {{site.data.keyword.registrylong_notm}}에서 사용자 이름은 비밀번호에서 제시된 시크릿의 유형을 표시합니다.
-
-다음의 사용자 이름이 유효합니다.
-
-- `iambearer`: 비밀번호에 IAM 액세스 토큰이 포함됩니다. 이 인증 유형은 단기간 유효하지만, 모든 유형의 IAM ID에서 파생될 수 있습니다.
-- `iamrefresh`: 비밀번호에 IAM 액세스 토큰을 생성하고 새로 고치기 위해 내부적으로 사용되는 IAM 새로 고치기 토큰이 포함되어야 합니다. 이 인증 유형은 더 오래 사용되며 `ibmcloud cr login` 명령에 의해 사용됩니다.
-- `iamapikey`: 비밀번호가 IAM API 키입니다. 이 인증 유형은 자동화에 선호되는 유형입니다. 사용자 또는 서비스 ID API 키를 사용할 수 있습니다. [API 키 작성](#registry_api_key_create)을 참조하십시오.
-- `token`(더 이상 사용되지 않음) 비밀번호가 레지스트리 토큰입니다. 자동화에 이 사용자 이름을 사용할 수 있습니다.
-
-  토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](#registry_api_key)를 참조하십시오.
-  {: deprecated}
-
-`docker` 명령을 사용하여 레지스트리를 인증할 필요는 없습니다. 예를 들어, Cloud Foundry CLI를 사용하여 레지스트리의 이미지에서 Cloud Foundry 앱을 시작할 수 있습니다.
-
-```
-export CF_DOCKER_PASSWORD=<apikey>
-ibmcloud cf push appname  -o <region>.icr.io/<my_namespace>/<image_repo> --docker-username iamapikey
-```
-{: pre}
-
-`<apikey>`는 API 키로, `<region>`은 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions) 이름으로, `<my_namespace>`는 네임스페이스로, `<image_repo>`는 저장소로 대체하십시오.
-
-자세한 정보는 [개인용 이미지 레지스트리 사용](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry)을 참조하십시오.

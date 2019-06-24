@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-06-07"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -128,6 +128,6 @@ subcollection: registry
 ## イベントを探す場所
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} イベントは、イベントが生成される {{site.data.keyword.cloud_notm}} 地域 (`ap-north` 以外) で利用できる {{site.data.keyword.cloudaccesstrailshort}} **アカウント・ドメイン**で使用できます。`ap-north` でのイベントは `ap-south` 内に表示されます。
+{{site.data.keyword.cloudaccesstrailshort}} イベントは、イベントが生成される {{site.data.keyword.cloud_notm}} 地域 (`ap-north` 以外) で利用できる {{site.data.keyword.cloudaccesstrailshort}} **アカウント・ドメイン**で使用できます。 `ap-north` でのイベントは `ap-south` 内に表示されます。
 
 {{site.data.keyword.registrylong_notm}} または脆弱性アドバイザーのイベントを確認できる[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)は、リソース (イメージや名前空間など) が存在する {{site.data.keyword.registrylong_notm}} の地域に対応します。

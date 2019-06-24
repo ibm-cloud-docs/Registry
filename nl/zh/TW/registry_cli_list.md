@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -116,7 +116,7 @@ subcollection: registry
 |`Repository`|字串|顯示映像檔的儲存庫。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`Tag`|字串|顯示映像檔的標籤。|
-|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：Status  `string`、IssueCount  `int` 及 ExemptionCount  `int`。[使用 CLI 檢閱漏洞報告](/docs/services/Registry?topic=va-va_index#va_registry_cli)中會說明可能的狀態。|
+|`SecurityStatus`|結構|顯示映像檔的漏洞狀態。您可以過濾及格式化下列值：*Status*  `string`、*IssueCount*  `int`，以及 *ExemptionCount*  `int`。[使用 CLI 檢閱漏洞報告](/docs/services/Registry?topic=va-va_index#va_registry_cli)中會說明可能的狀態。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
 ## `ibmcloud cr image-inspect` 指令中的 Go 範本選項及資料類型
@@ -132,19 +132,19 @@ subcollection: registry
 |`Comment`|字串|顯示映像檔的說明。|
 |`Created`|字串|顯示建立映像檔時的 [UNIX 時間戳記 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Unix_time)。|
 |`Container`|字串|顯示已建立映像檔之容器的 ID。|
-|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [Config](#registry_cli_list_imageinspect_config) 中的欄位詳細資料。|
+|`ContainerConfig`|物件|顯示已從此映像檔啟動之容器的預設配置。請參閱 [`Config`](#registry_cli_list_imageinspect_config) 中的欄位詳細資料。|
 |`DockerVersion`|字串|顯示用來建置此映像檔的 Docker 版本。|
 |`Author`|字串|顯示映像檔的作者。|
-|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [Config](#registry_cli_list_imageinspect_config) 中的欄位詳細資料。|
+|`Config`|物件|顯示映像檔的配置 meta 資料。請參閱 [`Config`](#registry_cli_list_imageinspect_config) 中的欄位詳細資料。|
 |`Architecture`|字串|顯示用來建置此映像檔、且為執行映像檔所需的處理器架構。|
 |`Os`|字串|顯示用來建置此映像檔、且為執行映像檔所需的作業系統系列。|
 |`OsVersion`|字串|顯示用來建置此映像檔的作業系統版本。|
 |`Size`|整數（64 位元）|顯示映像檔的大小（以位元組為單位）。|
 |`VirtualSize`|整數（64 位元）|顯示映像檔中每一層的大小總和（以位元組為單位）。|
-|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [RootFS](#registry_cli_list_imageinspect_rootfs) 中的欄位詳細資料。|
+|`RootFS`|物件|顯示說明映像檔根檔案系統的 meta 資料。請參閱 [`RootFS`](#registry_cli_list_imageinspect_rootfs) 中的欄位詳細資料。|
 {: caption="表 2. <code>ibmcloud cr image-inspect</code> 指令中的可用欄位及資料類型。" caption-side="top"}
 
-### Config
+### `Config`
 {: #registry_cli_list_imageinspect_config}
 
 |欄位|類型|說明|
@@ -161,7 +161,7 @@ subcollection: registry
 |`StdinOnce`|布林|如果在連接的用戶端中斷連線之後關閉標準輸入串流，會顯示 _true_，如果標準輸入串流保持開啟，會顯示 _false_。|
 |`Env`|字串陣列|以鍵值配對形式顯示環境變數清單。|
 |`Cmd`|字串陣列|說明傳遞給容器以在容器啟動時執行的指令及引數。|
-|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [Healthcheck](#registry_cli_list_imageinspect_healthcheck) 中的欄位詳細資料。|
+|`Healthcheck`|物件|說明如何確認容器正確運作。請參閱 [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck) 中的欄位詳細資料。|
 |`ArgsEscaped`|布林|如果已跳出指令（Windows 特有），會顯示 true。|
 |`Image`|字串|顯示操作員所傳遞之映像檔的名稱。|
 |`Volumes`|鍵值對映|顯示已裝載至容器的磁區裝載清單。|
@@ -169,14 +169,14 @@ subcollection: registry
 |`Entrypoint`|字串陣列|說明容器啟動時所執行的指令。|
 |`NetworkDisabled`|布林|如果已停用容器的網路，會顯示 _true_，如果已啟用容器的網路，會顯示 _false_。|
 |`MacAddress`|字串|顯示指派給容器的 MAC 位址。|
-|`OnBuild`|字串陣列|顯示已在映像檔 Dockerfile 上定義的 ONBUILD meta 資料。|
+|`OnBuild`|字串陣列|顯示已在映像檔 Dockerfile 上定義的 `ONBUILD` meta 資料。|
 |`Labels`|鍵值對映|以鍵值配對形式顯示新增至映像檔的標籤清單。|
 |`StopSignal`|字串|說明停止容器時所傳送的 UNIX 停止信號。|
 |`StopTimeout`|整數|顯示停止容器的逾時（以秒為單位）。|
 |`Shell`|字串陣列|顯示 Shell 形式的 RUN、CMD、ENTRYPOINT。|
-{: caption="表 3. Config 中的可用欄位及資料類型。" caption-side="top"}
+{: caption="表 3. <code>Config</code> 中的可用欄位及資料類型。" caption-side="top"}
 
-### Healthcheck
+### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}
 
 |欄位|類型|說明|
@@ -185,9 +185,9 @@ subcollection: registry
 |`Interval`|整數（64 位元）|顯示在兩次性能檢查之間等待的時間（以十億分之一秒為單位）。|
 |`Timeout`|整數（64 位元）|顯示將性能檢查視為失敗之前等待的時間（以十億分之一秒為單位）。|
 |`Retries`|整數|顯示將容器視為未正確運作所需的連續失敗次數。|
-{: caption="表 4. Healthcheck 結構中的可用欄位及資料類型。" caption-side="top"}
+{: caption="表 4. <code>Healthcheck</code> 結構中的可用欄位及資料類型。" caption-side="top"}
 
-### RootFS
+### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
 
 |選項|類型|說明|
@@ -195,7 +195,7 @@ subcollection: registry
 |`Type`|字串|顯示檔案系統的類型。|
 |`Layers`|字串陣列|顯示每一個映像檔層的描述子。|
 |`BaseLayer`|字串|顯示映像檔中基礎層的描述子。|
-{: caption="表 5. RootFS 結構中的可用欄位及資料類型。" caption-side="top"}
+{: caption="表 5. <code>RootFS</code> 結構中的可用欄位及資料類型。" caption-side="top"}
 
 ## `ibmcloud cr token-list` 指令中的 Go 範本選項及資料類型
 {: #registry_cli_list_tokenlist}

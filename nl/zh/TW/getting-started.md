@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} 提供多方承租戶專用映像檔登錄，可用來儲存 Docker 映像檔，並與 {{site.data.keyword.cloud_notm}} 帳戶中的使用者共用。
 {:shortdesc}
 
-{{site.data.keyword.cloud_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.cloud_notm}} 主控台的詳細資訊，請參閱[使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)。
+{{site.data.keyword.cloud_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.cloud_notm}} 主控台的詳細資訊，請參閱[使用 Vulnerability Advisor 管理映像檔安全](/docs/services/va?topic=va-va_index)。
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
@@ -62,6 +62,9 @@ subcollection: registry
    ```
    {: pre}
 
+   名稱空間名稱在地區中必須是唯一的。
+        {: tip}
+
 3. 若要確定已建立名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
 
    ```
@@ -94,6 +97,9 @@ subcollection: registry
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   若要尋找地區的名稱，請執行 `ibmcloud cr region` 指令。
+   {: tip}
 
    例如，其中 `<source_image>` 是 `hello-world`、`<tag>` 是 `latest`、`<region>` 是 `uk`、`<my_namespace>` 是 `namespace1`、`<new_image_repo>` 是 `hw_repo`，而 `<new_tag>` 是 `1`：
 
@@ -138,7 +144,7 @@ subcollection: registry
 ## 後續步驟
 {: #gs_get_start_next}
 
-- [使用漏洞警告器管理映像檔安全](/docs/services/va?topic=va-va_index)
+- [使用 Vulnerability Advisor 管理映像檔安全](/docs/services/va?topic=va-va_index)
 - [檢閱服務方案及用量](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
 - [儲存及管理名稱空間中的其他映像檔](/docs/services/Registry?topic=registry-registry_images_)
 - [定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)

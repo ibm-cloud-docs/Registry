@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -62,6 +62,9 @@ subcollection: registry
     ```
    {: pre}
 
+   名称空间名称在区域中必须唯一。
+        {: tip}
+
 3. 要确保创建了名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 
    ```
@@ -94,6 +97,9 @@ subcollection: registry
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   要查找区域名称，请运行 `ibmcloud cr region` 命令。
+   {: tip}
 
    例如，其中 `<source_image>` 是 `hello-world`，`<tag>` 是 `latest`，`<region>` 是 `uk`，
 `<my_namespace>` 是 `namespace1`，`<new_image_repo>` 是 `hw_repo`，`<new_tag>` 是 `1`：

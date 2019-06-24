@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ Images weisen separate Signaturen für alte (`registry.bluemix.net`) und für ne
 
 Docker Content Trust verwendet ein "trust on first use"-Sicherheitsmodell ("Vertrauen bei erster Verwendung"). Der Repository-Schlüssel wird aus dem Trust-Server mit Pull-Operation extrahiert, wenn Sie erstmalig ein signiertes Image mit Pull-Operation aus einem Repository extrahieren, und dieser Schlüssel wird künftig verwendet, um Images aus diesem Repository zu überprüfen. Sie müssen darauf achten, entweder dem Trust-Server oder dem Image und seinem Veröffentlicher zu vertrauen, bevor Sie das Repository zum ersten Mal mit Pull-Operation extrahieren. Wenn die vertrauenswürdigen Informationen im Server beeinträchtigt sind und Sie vorher noch kein Image aus dem Repository mit Pull-Operation extrahiert haben, kann es sein, dass Ihr Docker-Client die beeinträchtigten Daten vom Trust-Server mit Pull-Operation extrahiert. Werden die Trust-Daten beschädigt, nachdem Sie das Image zum ersten Mal mit Pull-Operation extrahiert haben, kann Ihr Docker-Client bei späteren Extraktionen die beschädigten Daten nicht prüfen und extrahiert das Image nicht. Weitere Informationen dazu, wie Trust-Daten für ein Image untersucht werden, finden Sie unter [Signierte Images anzeigen](#trustedcontent_viewsigned).
 
-Weitere Informationen zum Sicherheitsmodell "trust on first use" finden Sie in [The Update Framework (TUF) ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://theupdateframework.github.io/).
+Weitere Informationen zum Sicherheitsmodell "trust on first use" finden Sie in [The Update Framework ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://theupdateframework.github.io/).
 
 ## Umgebung mit vertrauenswürdigen Inhalten einrichten
 {: #trustedcontent_setup}

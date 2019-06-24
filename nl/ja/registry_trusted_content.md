@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-16"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -39,7 +39,7 @@ subcollection: registry
 
 Docker コンテント・トラストでは、「Trust on first use」セキュリティー・モデルが使用されます。 リポジトリーから初めて署名付きのイメージをプルするときに、リポジトリーの鍵がトラスト・サーバーからプルされ、それ以降はその鍵がそのリポジトリーのイメージの検証に使用されます。 初めてリポジトリーをプルする前に、トラスト・サーバー、またはイメージとそのパブリッシャーを信頼することをユーザーが確認する必要があります。 サーバー内のトラスト情報が改ざんされている場合、まだそのリポジトリーからイメージをプルしたことがなければ、Docker クライアントは改ざんされた情報をトラスト・サーバーからプルする可能性があります。 初めてイメージをプルした後にトラスト・データが改ざんされた場合、それ以降のプルでは、Docker クライアントは、改ざんされたデータを検証できないので、イメージをプルしません。 イメージのトラスト・データの詳細を表示する方法について詳しくは、[署名付きのイメージを表示する](#trustedcontent_viewsigned)を参照してください。
 
-「trust on first use」セキュリティー・モデルについて詳しくは、[The Update Framework (TUF) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://theupdateframework.github.io/) を参照してください。
+「trust on first use」セキュリティー・モデルについて詳しくは、[The Update Framework![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://theupdateframework.github.io/) を参照してください。
 
 ## 信頼できるコンテンツ環境をセットアップする
 {: #trustedcontent_setup}

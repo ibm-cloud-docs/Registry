@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-13"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -63,6 +63,9 @@ exemplo, nomes ou rótulos de imagem).
    ```
    {: pre}
 
+   Os nomes de namespace devem ser exclusivos na região.
+   {: tip}
+
 3. Para verificar se o namespace foi criado, execute o comando `ibmcloud cr namespace-list`.
 
    ```
@@ -95,6 +98,9 @@ exemplo, nomes ou rótulos de imagem).
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
    ```
    {: pre}
+
+   Para localizar o nome de sua região, execute o comando `ibmcloud cr region`.
+   {: tip}
 
    Veja este exemplo, em que `<source_image>` é `hello-world`, `<tag>` é `latest`, `<region>` é `uk`, `<my_namespace>` é `namespace1`, `<new_image_repo>` é `hw_repo` e `<new_tag>` é `1`:
 

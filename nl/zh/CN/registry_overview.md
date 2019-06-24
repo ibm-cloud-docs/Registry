@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-31"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 使用 {{site.data.keyword.registrylong}} 可在具备高可用性和高可扩展性的体系结构中存储和访问专用 Docker 映像。
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} 提供由 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性和高可扩展性的多租户专用映像注册表。可以通过设置自己的映像名称空间，然后将 Docker 映像推送到自己的名称空间来使用 {{site.data.keyword.registrylong_notm}}。
+{{site.data.keyword.registrylong_notm}} 提供了由 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性、高可扩展性和加密的多租户专用映像注册表。可以通过设置自己的映像名称空间，然后将 Docker 映像推送到自己的名称空间来使用 {{site.data.keyword.registrylong_notm}}。
 
 <img src="images/registry_architecture1.svg" alt="显示如何与 IBM Cloud Container Registry 进行交互的图像。Container Registry 包含专用和公共存储库以及与服务交互的 API。本地 Docker 客户机可以从注册表的专用存储库中拉出映像，也可以向注册表的专用存储库推送映像，另外还可以拉取公共存储库。IBM Cloud Web UI（控制台）与 Container Registry API 交互可列出映像。Container Registry CLI 与该 API 交互可列出、创建、检查和除去映像，也可执行其他管理功能。本地 Docker 客户机还可以从本地映像存储中拉取映像，然后将其推送到其他注册表。"/>
 
@@ -44,7 +44,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 |优点|描述|
 |-------|-----------|
-|具备高可用性和高可扩展性的专用注册表|<ul><li>在 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性和高可扩展性的多租户专用注册表中设置自己的映像名称空间。</li><li>存储专用 Docker 映像并与您 {{site.data.keyword.cloud_notm}} 帐户中的用户共享。</li></ul>|
+|具备高可用性和高可扩展性的专用注册表|<ul><li>在 {{site.data.keyword.IBM_notm}} 托管和管理的具备高可用性、高可扩展性和加密的多租户专用注册表中设置您自己的映像名称空间。</li><li>存储专用 Docker 映像并与您 {{site.data.keyword.cloud_notm}} 帐户中的用户共享。</li></ul>|
 |使用漏洞顾问程序保障映像安全性合规|<ul><li>受益于对名称空间中映像的自动扫描。</li><li>查看特定于操作系统的建议，以修订潜在漏洞并保护容器免受破坏。</li></ul>|
 |存储量和拉出流量的配额限制|<ul><li>享受专用映像的不超过免费配额的免费存储量和拉出流量。</li><li>设置存储量和拉出流量的每月定制配额限制，以避免超过首选支付级别。</li></ul>|
 {: caption="表 1. {{site.data.keyword.registrylong_notm}} 优点" caption-side="top"}
@@ -69,9 +69,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 |映像的存储量|500 MB|无限制|
 |拉出流量|每月 5 GB|无限制|
 |计费|如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。
-有关更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。|<ul><li>存储量：按 GB-月使用量收费。第一个 0.5 GB-月免费。然后，按照定价计算器中所述进行收费。</li><li>拉出流量：每月按使用的 GB 使用量收费。第一个 5 GB 免费。
-然后，按照定价计算器中所述进行收费。如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。
-有关存储量、拉出流量、定价计算器的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。</li></ul>|
+有关更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。|<ul><li>存储量：按 GB-月使用量收费。第一个 0.5 GB-月免费。然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。</li><li>拉出流量：每月按使用的 GB 使用量收费。第一个 5 GB 免费。
+然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。
+有关存储量、拉出流量和成本估算工具的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}}](#registry_plan_billing) 中的配额限制和计费。</li></ul>|
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} 套餐" caption-side="top"}
 
 ## 配额限制和计费
@@ -106,8 +106,6 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   >
   > 在标准套餐中，第一个 0.5 GB-月是免费的，所以将向您收取 7 GB-月的费用（7.5 GB-月 - 0.5 GB-月）。
 
-  
-
 **拉出流量：**
 
   每种 {{site.data.keyword.registrylong_notm}} 服务套餐都包含名称空间中存储的专用映像的特定免费拉出流量。拉出流量是指将名称空间中某个映像的一个层拉出到本地计算机时使用的带宽。如果使用的是标准套餐，那么会按每月的 GB 使用量向您收费。每月前 5 GB 免费。如果使用的是免费套餐，那么可以从名称空间中拉出的映像不超过免费套餐的配额限制。
@@ -117,8 +115,6 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   > 在该月，您拉出的映像中所包含层的总大小为 14 GB。您每月使用量的计算方法如下所示：
   >
   > 在标准套餐中，每月的前 5 GB 是免费的，所以将向您收取 9 GB 的费用 (14 GB - 5 GB)。
-
-  
 
 ### 存储量和拉出流量的配额限制
 {: #registry_quota_limits}
@@ -146,20 +142,11 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   >
   > 在拉出此映像后，{{site.data.keyword.registrylong_notm}} 会确定在拉出期间使用的带宽，并检查是否达到了拉出流量的限制。在此示例中，拉出流量使用量从 4.5 GB 增加到 5.5 GB。由于当前的配额限制设置为 5 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您从名称空间拉出映像。
 
-### 估算成本
-{: #registry_estimating_costs}
+### 成本
+{: #registry_cost}
 
-使用 {{site.data.keyword.cloud_notm}} 定价计算器估算套餐的成本。
+您可以在产品详细信息页面的价格套餐部分查看 {{site.data.keyword.registrylong_notm}} 的成本，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。
 {:shortdesc}
-
-您可以使用由 {{site.data.keyword.cloud_notm}} 提供的成本计算器来计算应用程序价格。
-
-1. 打开价格表，查看 [{{site.data.keyword.cloud_notm}} 定价 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/pricing)。
-2. 在**现收现付**部分，单击**使用我们的计算器估算您的成本**。此时将打开计算器。
-3. 在**容器费用**部分中，滚动到**容器注册表**部分。
-4. 在提供的字段中输入估算的存储量和流量。
-
-您的估算成本会显示在计算器中。
 
 ## 升级服务套餐
 {: #registry_plan_upgrade}
@@ -205,7 +192,12 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 <dl>
   <dt>Dockerfile</dt>
   <dd>Dockerfile 是一个文本文件，其中包含关于构建 Docker 映像的指示信息。通常情况下，映像是基于基本映像构建的，基本映像中包含基本操作系统（如 Ubuntu）。您可以利用 Dockerfile 指示信息以递增方式更改基本映像，以便定义出应用程序运行所需的环境。对基本映像的每个更改都描述了该映像的一个新层，您可以在 Dockerfile 的一行中进行多个更改。Dockerfile 中的指示信息也可能引用分开存储的构建工件，如应用程序、应用程序的配置及其依赖关系。
-</dd>
+有关 Dockerfile 的更多信息，请参阅 [Dockerfile reference ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/engine/reference/builder/)。</dd>
+</dl>
+
+<dl>
+  <dt>Docker V2 映像</dt>
+  <dd>符合 [Docker：Image Manifest V2，Schema 2 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/registry/spec/manifest-v2-2/) 的容器映像。Docker Image Manifest V2，Schema 2 的介质类型为 `application/vnd.docker.distribution.manifest.v2+json`，清单列表的介质类型为 `application/vnd.docker.distribution.manifest.list.v2+json`。有关 Docker 支持的更多信息，请参阅 [Docker](/docs/services/Registry?topic=registry-registry_overview#docker)。</dd>
 </dl>
 
 <dl>
@@ -223,7 +215,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 <dl>
   <dt>OCI 容器映像</dt>
-  <dd>符合 [OCI 映像格式规范 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/opencontainers/image-spec) 的容器映像。</dd>
+  <dd>符合 [OCI 映像格式规范 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/opencontainers/image-spec) 的容器映像。OCI 容器映像的介质类型为 `application/vnd.oci.image.manifest.v1+json`。</dd>
 </dl>
 
 <dl>
@@ -343,7 +335,7 @@ ibmcloud cr region-set eu-central
 我们为您提供了全局注册表，其名称 `icr.io` 中不包含区域。此注册表中仅托管 IBM 提供的公共映像。要管理您自己的映像（例如，设置名称空间，或标记映像并将其推送到注册表），请使用[本地区域注册表](#registry_regions_local)。
 {:shortdesc}
 
-全局注册表的域名已更改。控制台和 CLI 中提供了新域名。 
+全局注册表的域名已更改。控制台和 CLI 中提供了新域名。
 
 新域名显示在下表中。
 
@@ -388,3 +380,8 @@ ibmcloud cr region-set global
 {{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
 
 仅当您要推送或拉出映像，或者要运行 `ibmcloud cr ppa-archive-load` 命令时，才需要 Docker。
+
+支持 Docker V2 Schema 2 映像。还支持清单列表。有关更多信息，请参阅 [Docker：Image Manifest V2，Schema 2 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/registry/spec/manifest-v2-2/)。
+
+已弃用 Docker V1 映像。
+{: deprecated}

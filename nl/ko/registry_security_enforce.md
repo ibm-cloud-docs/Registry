@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-01"
+lastupdated: "2019-05-15"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -45,14 +45,14 @@ Container Image Security Enforcement는 {{site.data.keyword.registrylong}}에서
 2. Helm 클라이언트에 IBM 차트 저장소를 추가하십시오.
 
    ```
-   helm repo add ibm https://icr.io/helm/ibm
+   helm repo add iks-charts https://icr.io/helm/iks-charts
    ```
    {: pre}
 
 3. 클러스터에 Container Image Security Enforcement Helm 차트를 설치하십시오. 이 차트에 `cise`와 같은 이름을 지정하십시오.
 
    ```
-   helm install --name cise ibm/ibmcloud-image-enforcement
+   helm install --name cise iks-charts/ibmcloud-image-enforcement
    ```
    {: pre}
 

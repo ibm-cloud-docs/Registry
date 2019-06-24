@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,6 +28,15 @@ subcollection: registry
 In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen bei {{site.data.keyword.registrylong}} und Vulnerability Advisor. Die Änderungen sind nach Datum gruppiert.
 {:shortdesc}
 
+## 13. Mai 2019
+{: #13may2019}
+
+- **Ende der Unterstützung für Container Scanner**
+
+  Container Scanner ist nun veraltet und kann nicht mehr verwendet werden. 
+
+  Weitere Informationen finden Sie in [Container Scanner installieren (veraltet)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
+
 ## 2. April 2019
 {: #2apr2019}
 
@@ -51,8 +60,7 @@ In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen 
 
 - **Neue DNS-Namen**
 
-  {{site.data.keyword.registrylong_notm}} übernimmt neue Domänennamen. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar. Sie können jetzt die neuen `icr.io`-Domänennamen verwenden. Die bereits vorhandenen Domänennamen des Typs `registry.bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
-Weitere Informationen finden Sie in [Regionen](/docs/services/Registry?topic=registry-registry_overview#registry_regions) und [Einführung neuer IBM Cloud Container Registry-Domänennamen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
+  {{site.data.keyword.registrylong_notm}} übernimmt neue Domänennamen. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar. Sie können jetzt die neuen `icr.io`-Domänennamen verwenden. Die bereits vorhandenen Domänennamen des Typs `registry.bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben. Weitere Informationen finden Sie in [Regionen](/docs/services/Registry?topic=registry-registry_overview#registry_regions) und [Einführung neuer IBM Cloud Container Registry-Domänennamen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
 
   Wenn Sie Content Trust verwenden, müssen Sie neue Signaturen hinzufügen, damit Sie Content Trust unter dem neuen Domänennamen verwenden können, da Signaturen für den gesamten Imagenamen einschließlich des Domänennamens gelten. Weitere Informationen zu Content Trust finden Sie unter [Images für vertrauenswürdige Inhalte signieren](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-17"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,15 @@ subcollection: registry
 
 Use estas notas sobre a liberação para conhecer as mudanças mais recentes no {{site.data.keyword.registrylong}} e no Vulnerability Advisor. As mudanças são agrupadas por data.
 {:shortdesc}
+
+## 13 de maio de 2019
+{: #13may2019}
+
+- **Fim de suporte para o Container Scanner**
+
+  O Container Scanner agora está descontinuado e não é mais utilizável.
+
+  Para obter mais informações, consulte [Instalando o Container Scanner (descontinuado)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 
 ## 2 de abril de 2019
 {: #2apr2019}
