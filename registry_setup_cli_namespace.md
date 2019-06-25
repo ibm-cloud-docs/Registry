@@ -122,7 +122,7 @@ You must create a namespace to store your Docker images in {{site.data.keyword.r
 **Before you begin**
 
 - [Install the {{site.data.keyword.cloud_notm}} CLI and the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
-- [Plan how to use and name your registry namespaces](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
+- [Plan how to use and name your registry namespaces](#registry_setup_cli_namespace_plan).
 
 To create a namespace, see [Set up a namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in the Getting Started documentation.
 
