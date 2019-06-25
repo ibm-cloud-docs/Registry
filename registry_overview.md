@@ -145,7 +145,10 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-If you want to find out what service plan you have for the region that you're logged in to, run the `ibmcloud cr plan` command.
+If you want to find out what service plan you have for the registry region that you're targeting, run the `ibmcloud cr plan` command.
+{: tip}
+
+To upgrade your service plan, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
