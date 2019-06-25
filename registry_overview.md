@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-06-25"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Example for pushing images:
 ### Billing for storage and pull traffic
 {: #registry_billing_traffic}
 
-Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month.
+Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month in each region.
 {:shortdesc}
 
 **Storage:**
@@ -110,7 +110,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 ### Quota limits for storage and pull traffic
 {: #registry_quota_limits}
 
-Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits.
+Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits for each region.
 {:shortdesc}
 
 **Storage:**
@@ -145,7 +145,10 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
-If you want to find out what service plan you have, run the `ibmcloud cr plan` command.
+If you want to find out what service plan you have for the registry region that you're targeting, run the `ibmcloud cr plan` command.
+{: tip}
+
+To upgrade your service plan, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -157,7 +160,16 @@ If you want to find out what service plan you have, run the `ibmcloud cr plan` c
    If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {:tip}
 
-2. Upgrade to the standard plan.
+2. Target the region for which you want to upgrade the plan:
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   For more information, see [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
+3. Upgrade to the standard plan.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -166,6 +178,8 @@ If you want to find out what service plan you have, run the `ibmcloud cr plan` c
 
    If you have an {{site.data.keyword.cloud_notm}} Lite account, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
    {:tip}
+
+   For more information, see [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
 ## Learning the basics
 {: #registry_planning}
