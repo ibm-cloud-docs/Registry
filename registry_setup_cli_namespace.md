@@ -87,7 +87,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
     The `container-registry` CLI plug-in is not displayed in the results.
 
 ## Planning namespaces
-{: ##registry_setup_cli_namespace_plan}
+{: #registry_setup_cli_namespace_plan}
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 {:shortdesc}
