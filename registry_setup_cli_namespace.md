@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-06-26"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -111,7 +111,7 @@ Consider the following rules when you choose a namespace:
 Do not put personal information in your namespace names.
 {: important}
 
-After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
+After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
 
 ## Setting up a namespace
 {: #registry_namespace_setup}
