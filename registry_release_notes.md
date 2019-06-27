@@ -33,7 +33,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **Container Scanner no longer available**
 
-  Container Scanner is now discontinued.
+  The Container Scanner is discontinued.
 
 ## 13 June 2019
 {: #13jun2019}
