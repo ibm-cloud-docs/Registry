@@ -369,11 +369,11 @@ Before you begin, retrieve the root key passphrase that you created when you fir
    ```
    {: pre}
 
-8. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
+9. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
 
-9. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
+10. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
-10. (Optional) When you've finished, if you want to revoke your API key, run the following command:
+11. (Optional) When you've finished, if you want to revoke your API key, run the following command:
 
     ```
     ibmcloud iam api-key-delete notary-auth
