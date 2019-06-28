@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-06-28"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,13 +27,6 @@ subcollection: registry
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
-
-## 27 June 2019
-{: #27jun2019}
-
-- **Container Scanner is no longer available**
-
-  The Container Scanner is discontinued.
 
 ## 13 June 2019
 {: #13jun2019}
