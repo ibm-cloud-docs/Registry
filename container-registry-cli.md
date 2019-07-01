@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
-Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ## `ibmcloud cr api`

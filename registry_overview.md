@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -187,7 +187,7 @@ To upgrade your service plan, complete the following steps:
 Prepare to store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
-Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
