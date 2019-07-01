@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-06-28"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -355,23 +355,30 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 3. Note the URL from the export command in the previous step. For example, `https://us.icr.io:4443`
 
-4. Generate a registry token.
+6. Generate a registry token.
 
    ```
    ibmcloud cr token-add --readwrite
    ```
    {: pre}
 
-5. Rotate your keys so that content that was signed with those keys is no longer trusted. Replace `<URL>` with the URL of the export command that you noted in Step 2, and `<image>` with the image whose repository key is affected.
+7. Rotate your keys so that content that was signed with those keys is no longer trusted. Replace `<URL>` with the URL of the export command that you noted in Step 2, and `<image>` with the image whose repository key is affected.
 
    ```
    notary -s <URL> -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
-6. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
+9. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
 
-7. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
+10. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
+
+11. (Optional) When you've finished, if you want to revoke your API key, run the following command:
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### Root keys
 {: #trustedcontent_lostrootkey}
