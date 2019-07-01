@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,13 @@ subcollection: registry
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 01 July 2019
+{: #01jul2019}
+
+- **`ibmcloud cr token-add` command is no longer available**
+
+  The `ibmcloud cr token-add` command is discontinued. You can't add registry tokens in either the CLI or the API anymore.
 
 ## 13 June 2019
 {: #13jun2019}
