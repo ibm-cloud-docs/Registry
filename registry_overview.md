@@ -240,7 +240,7 @@ To learn more about Docker-specific terms, see [Docker glossary ![External link 
 Prepare to store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
-Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ### Planning Namespaces

@@ -41,7 +41,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
-Do not put personal information in your container images, namespace names, description fields (for example, in registry tokens), or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ## `ibmcloud cr api`
@@ -758,50 +758,6 @@ Target the US South region.
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (deprecated)
-{: #bx_cr_token_add}
-
-Add a token that you can use to control access to a registry.
-
-Using tokens to automate the pushing and pulling of Docker images to and from your namespaces is deprecated. Use API keys to automate access to your namespaces instead, see [Automating access to your namespaces by using API keys](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**Prerequisites**
-
-To find out about the required permissions, see [Platform management roles](/docs/services/Registry?topic=registry-iam#platform_management_roles).
-
-**Command options**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `ibmcloud cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes cluster name. In this case, the token is removed automatically when your cluster is removed.
-  
-<p> 
-  <strong>Important</strong> Do not put personal information in your token description.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Optional) Displays the token only, without any surrounding text.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(Optional) Creates a token with access that does not expire. Without this parameter set, access from a token expires after 24 hours by default.</dd>
-<dt>`--readwrite`</dt>
-<dd>(Optional) Creates a token that grants read and write access. Without this option, access is read-only by default.</dd>
-</dl>
-
-**Example**
-
-Add a token with the description *Token for my account* that does not expire and has read/write access.
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 
