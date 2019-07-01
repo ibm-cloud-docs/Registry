@@ -181,14 +181,17 @@ To upgrade your service plan, complete the following steps:
 
    For more information, see [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Understanding the terms used in {{site.data.keyword.registrylong_notm}}
-{: #terms}
+## Learning the basics
+{: #registry_planning}
 
-Descriptions of the terms used in {{site.data.keyword.registrylong_notm}}.
+Prepare to store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
 {:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
+
+### Understanding the terms used in {{site.data.keyword.registrylong_notm}}
+{: #terms}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -233,15 +236,6 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
-
-## Learning the basics
-{: #registry_planning}
-
-Prepare to store and share your Docker images with {{site.data.keyword.registrylong_notm}} by learning registry basics.
-{:shortdesc}
-
-Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
-{: important}
 
 ### Planning Namespaces
 {: #registry_namespaces}
