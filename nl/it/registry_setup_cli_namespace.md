@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -26,13 +26,13 @@ subcollection: registry
 del tuo spazio dei nomi del registro
 {: #registry_setup_cli_namespace}
 
-Prima di poter memorizzare le tue immagini Docker in {{site.data.keyword.registrylong}}, devi creare uno spazio dei nomi. Per utilizzare gli spazi dei nomi, installa il plugin CLI `container-registry`.
+Per gestire le tue immagini Docker in {{site.data.keyword.registrylong}}, devi installare il plugin CLI `container-registry` e creare uno spazio dei nomi.
 {:shortdesc}
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {: important}
 
-Prima di iniziare, installa la [CLI {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Prima di cominciare, installa la CLI {{site.data.keyword.cloud_notm}}, vedi [Introduzione alla CLI {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started). 
 
 ## Installazione del plugin CLI `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -43,7 +43,7 @@ Installa il plugin CLI `container-registry` per utilizzare la riga di comando pe
 1. [Installa il plugin CLI `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Facoltativo: [Configura il tuo client Docker per eseguire i comandi senza autorizzazioni root ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/install/linux/linux-postinstall/). Se non effettui questo passo, devi eseguire i comandi `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` con `sudo` o come root.
 
-Puoi ora configurare il tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
+Puoi ora [configurare il tuo [spazio dei nomi](#registry_namespace_setup) in {{site.data.keyword.registrylong_notm}}.
 
 ## Aggiornamento del plugin CLI `container-registry`
 {: #registry_cli_update}
@@ -98,8 +98,10 @@ Devi creare uno spazio dei nomi per memorizzare le tue immagini Docker in {{site
 - [Installa la CLI {{site.data.keyword.cloud_notm}} e il plugin CLI `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Pianifica come utilizzare e denominare i tuoi spazi dei nomi del registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-<br>
 Per creare uno spazio dei nomi, vedi [Configura uno spazio dei nomi](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) nella documentazione introduttiva.
+
+Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_). Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
+{: tip}
 
 Puoi ora [eseguire il push delle immagini Docker al tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) e condividere queste immagini con altri utenti nel tuo account. Per controllare l'accesso agli spazi dei nomi in {{site.data.keyword.cloud_notm}} IAM, vedi [Creazione delle politiche](/docs/services/Registry?topic=registry-user#create).
 

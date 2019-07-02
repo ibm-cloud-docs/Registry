@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -25,13 +25,13 @@ subcollection: registry
 # Configuration de l'interface de ligne de commande d'{{site.data.keyword.registrylong_notm}} et de l'espace de nom du registre
 {: #registry_setup_cli_namespace}
 
-Avant de pouvoir stocker vos images Docker dans {{site.data.keyword.registrylong}}, vous devez créer un espace de nom. Pour gérer des espaces de nom, installez le plug-in d'interface de ligne de commande `container-registry`.
+Pour gérer vos images Docker dans {{site.data.keyword.registrylong}}, vous devez installer le plug-in d'interface de ligne de commande `container-registry` et créer un espace de nom.
 {:shortdesc}
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
-Avant de commencer, installez l'[interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Avant de commencer, installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} (voir [Initiation à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started)).
 
 ## Installation du plug-in d'interface de ligne de commande `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -42,7 +42,7 @@ Installez le plug-in d'interface de ligne de commande `container-registry` afin 
 1. [Installez le plug-in d'interface de ligne de commande `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Facultatif : [Configurez votre client Docker pour exécuter des commandes sans autorisations de niveau root![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/install/linux/linux-postinstall/). Si vous n'effectuez pas cette étape, vous devez exécuter les commandes `ibmcloud login`, `ibmcloud cr login`, `docker pull` et `docker push` avec `sudo` ou en tant qu'utilisateur root.
 
-Vous pouvez à présent configurer votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}.
+Vous pouvez maintenant configurer votre propre [espace de nom](#registry_namespace_setup) dans {{site.data.keyword.registrylong_notm}}.
 
 ## Mise à jour du plug-in d'interface de ligne de commande `container-registry`
 {: #registry_cli_update}
@@ -97,8 +97,10 @@ Vous devez créer un espace de nom pour stocker vos images Docker dans {{site.da
 - [Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifiez comment utiliser et nommer vos espaces de nom du registre](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-<br>
 Pour créer un espace de nom, voir [Configurez un espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) dans la documentation Initiation.
+
+Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets (-) et des traits de soulignement (_). Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
+{: tip}
 
 Vous pouvez à présent [envoyer par commande push des images Docker à votre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) et partager ces images avec d'autres utilisateurs dans votre compte. Pour contrôler l'accès aux espaces de nom dans {{site.data.keyword.cloud_notm}} IAM, voir [Création de règles](/docs/services/Registry?topic=registry-user#create).
 

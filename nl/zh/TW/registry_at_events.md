@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -70,9 +70,16 @@ subcollection: registry
     <td>`container-registry.image.push`</td>
 	  <td>將映像檔推送至 {{site.data.keyword.registrylong_notm}}。</td>
   </tr>
+    <td>`container-registry.image.rm`</td>
+	  <td>從 {{site.data.keyword.registrylong_notm}} 中刪除一個以上的指定映像檔。</td>
+  </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
 	  <td>新增參照既存 {{site.data.keyword.registrylong_notm}} 映像檔的標籤。</td>
+  </tr>
+   <tr>
+    <td>`container-registry.image.untag`</td>
+	  <td>從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
@@ -96,7 +103,7 @@ subcollection: registry
   </tr>
   <tr>
     <td>`container-registry.registrytoken.create`</td>
-	  <td>建立新的登錄記號。</td>
+	  <td>建立新的登錄記號。（已淘汰）</td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

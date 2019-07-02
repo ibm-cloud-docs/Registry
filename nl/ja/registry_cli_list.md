@@ -116,7 +116,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`Repository`|文字列|イメージのリポジトリーを表示します。|
 |`Size`|整数 (64 ビット)|イメージのサイズをバイト単位で表示します。|
 |`Tag`|文字列|イメージのタグを表示します。|
-|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 *Status*  `string`、*IssueCount*  `int`、および *ExemptionCount *  `int` の値をフィルタリングおよびフォーマット設定できます。状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/Registry?topic=va-va_index#va_registry_cli)に記載しています。|
+|`SecurityStatus`|構造体|イメージの脆弱性の状況を表示します。 *Status*  `string`、*IssueCount*  `int`、および *ExemptionCount *  `int` の値をフィルタリングおよびフォーマット設定できます。 状況の種類については、[CLI を使用した脆弱性レポートの検討](/docs/services/Registry?topic=va-va_index#va_registry_cli)に記載しています。|
 {: caption="表 1. <code>ibmcloud cr image-list</code> コマンドで使用可能なフィールドとデータ・タイプ。" caption-side="top"}
 
 ## `ibmcloud cr image-inspect` コマンドの Go テンプレートのオプションおよびデータ・タイプ
@@ -174,7 +174,7 @@ format オプションは、次の {{site.data.keyword.registrylong_notm}} コ�
 |`StopSignal`|文字列|コンテナーを停止するタイミングを送信するための UNIX ストップ信号を記述します。|
 |`StopTimeout`|整数|コンテナーを停止するためのタイムアウトを秒単位で表示します。|
 |`Shell`|文字列の配列|シェル形式の RUN、CMD、ENTRYPOINT を表示します。|
-{: caption="表 3. <code>Config</code> で使用可能なフィールドとデータ・タイプ。" caption-side="top"}
+{: caption="表 3. <code>Config</code> で使用可能なフィールドとデータ・タイプ。 " caption-side="top"}
 
 ### `Healthcheck`
 {: #registry_cli_list_imageinspect_healthcheck}

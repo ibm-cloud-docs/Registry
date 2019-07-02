@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,18 @@ subcollection: registry
 
 請使用這些版本注意事項，來瞭解 {{site.data.keyword.registrylong}} 及 Vulnerability Advisor 的最新變更。這些變更是依日期分組。
 {:shortdesc}
+
+## 2019 年 6 月 13 日
+{: #13jun2019}
+
+- **從映像檔移除標籤**
+
+  從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。
+
+  若要從映像檔移除一個或數個標籤，而讓基礎映像檔及任何其他標籤保留原樣，請使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 指令。如果您想要刪除基礎映像檔及其所有標籤，請改用 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 指令。
+
+
+  如需相關資訊，請參閱[從專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔移除標籤](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)。
 
 ## 2019 年 5 月 13 日
 {: #13may2019}
@@ -93,7 +105,7 @@ subcollection: registry
 
   Vulnerability Advisor API 第 2 版已淘汰，再也無法使用。請使用第 3 版 API。如需相關資訊，請參閱 [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/apidocs/container-registry/va)。
 
-  如需相關資訊，請參閱 [Vulnerability Advisor 第 2 版 API 淘汰 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/)。
+  如需相關資訊，請參閱 [Vulnerability Advisor 第 2 版 API 淘汰 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/)。
 
 ## 2018 年 10 月 4 日
 {: #4oct2018}

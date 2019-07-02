@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ docker build --no-cache .
 
 - 按照返回的错误消息中的所有指示信息进行操作。
 - 检查输入的名称空间是否有效：
+  - 您的名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。
   - 名称空间的长度必须为 4 - 30 个字符。
-  - 名称空间必须至少以一个字母或数字开头。
-  - 名称空间必须只包含小写字母、数字或下划线 (_)。
+  - 您的名称空间必须以字母或数字开头和结尾。
+  - 您的名称空间必须只包含小写字母、数字、连字符 (-) 和下划线 (_)。
 - 为名称空间选择其他值。
 - 如果要重新创建已删除的名称空间，而该名称空间含有大量映像，请稍后重试。
 
@@ -287,6 +288,19 @@ helm inspect values ppa-import/charts/<helm_chart>.tgz
 helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
     ```
    {: pre}
+
+## 我使用 `ibmcloud cr image-rm` 命令删除了一个映像，引用该映像的所有标记也被删除了
+{: #ts_image-rm}
+
+{: tsSymptoms}
+您使用 `ibmcloud cr image-rm` 命令删除了一个映像，同一存储库中引用该映像的所有标记也被删除了。
+
+{: tsCauses}
+存储库中对于相同的映像摘要存在多个标记时，[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 命令会除去底层的映像及其所有标记。如果不同的存储库或名称空间中存在相同的映像，那么不会除去该映像副本。
+
+{: tsResolve}
+如果您想要从映像除去一个标记，但保留底层的映像和其他任何标记，请使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 命令。
+有关更多信息，请参阅[从专用 {{site.data.keyword.cloud_notm}} 存储库中的映像除去标记](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)和[从专用 {{site.data.keyword.cloud_notm}} 存储库删除映像](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)。
 
 ## 使用定制防火墙访问注册表失败
 {: #ts_firewall}

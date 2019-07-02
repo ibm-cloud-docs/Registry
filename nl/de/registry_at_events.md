@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -71,9 +71,16 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
     <td>`container-registry.image.push`</td>
 	  <td>Führt für ein Image eine Push-Operation nach {{site.data.keyword.registrylong_notm}} durch.</td>
   </tr>
+    <td>`container-registry.image.rm`</td>
+	  <td>Löschen Sie ein angegebenes Image oder mehrere angegebene Images aus {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
 	  <td>Fügt einen neuen Tag hinzu, der sich auf ein bereits bestehendes {{site.data.keyword.registrylong_notm}}-Image bezieht.</td>
+  </tr>
+   <tr>
+    <td>`container-registry.image.untag`</td>
+	  <td>Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
@@ -97,7 +104,7 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
   </tr>
   <tr>
     <td>`container-registry.registrytoken.create`</td>
-	  <td>Erstellt ein neues Registry-Token.</td>
+	  <td>Erstellt ein neues Registry-Token. (Nicht mehr verwendet.) </td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

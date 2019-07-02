@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,12 +28,24 @@ subcollection: registry
 In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen bei {{site.data.keyword.registrylong}} und Vulnerability Advisor. Die Änderungen sind nach Datum gruppiert.
 {:shortdesc}
 
+## 13. Juni 2019
+{: #13jun2019}
+
+- **Tags aus Images entfernen**
+
+  Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.
+
+  Um ein Tag aus einem Image zu entfernen, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, verwenden Sie den Befehl [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Wenn Sie das zugrunde liegende Image und alle seine Tages löschen möchten, verwenden Sie stattdessen den Befehl [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm).
+
+
+  Weitere Informationen finden Sie im Abschnitt [Tags aus Images in Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository entfernen](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag).
+
 ## 13. Mai 2019
 {: #13may2019}
 
 - **Ende der Unterstützung für Container Scanner**
 
-  Container Scanner ist nun veraltet und kann nicht mehr verwendet werden. 
+  Container Scanner ist nun veraltet und kann nicht mehr verwendet werden.
 
   Weitere Informationen finden Sie in [Container Scanner installieren (veraltet)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).
 
@@ -92,7 +104,7 @@ In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen 
 
   Die API-Version 2 von Vulnerability Advisor ist veraltet und wird nicht mehr weiterentwickelt. Verwenden Sie die Version 3 der API, siehe [Vulnerability Advisor für {{site.data.keyword.registrylong_notm}}-API ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/apidocs/container-registry/va).
 
-  Weitere Informationen finden Sie in [Vulnerability Advisor - Version 2-API veraltet ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/).
+  Weitere Informationen finden Sie in [Vulnerability Advisor - Version 2-API veraltet ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/).
 
 ## 4. Oktober 2018
 {: #4oct2018}

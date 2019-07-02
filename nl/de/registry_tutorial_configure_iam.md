@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -168,24 +168,24 @@ In diesem Abschnitt erstellen Sie einige Namensbereiche mit Beispiel-Images und 
         ```
         {: pre}
 
-    2. Erstellen Sie `namespace_a`, indem Sie den folgenden Befehl ausführen: 
+    2. Erstellen Sie `namespace_a`, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
-        Die Namen von Namensbereichen müssen in der Region eindeutig sein.
+        Der Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. Namensbereiche müssen 4 bis 30 Zeichen lang sein und dürfen nur Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten. Namensbereiche müssen mit einem Buchstaben oder einer Zahl beginnen und enden.
         {: tip}
 
-    3. Erstellen Sie `namespace_b`, indem Sie den folgenden Befehl ausführen: 
+    3. Erstellen Sie `namespace_b`, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud cr namespace-add namensbereich_b
         ```
         {: pre}
             
-    4. Erstellen Sie `namespace_c`, indem Sie den folgenden Befehl ausführen: 
+    4. Erstellen Sie `namespace_c`, indem Sie den folgenden Befehl ausführen:
 
         ```
         ibmcloud cr namespace-add namensbereich_c

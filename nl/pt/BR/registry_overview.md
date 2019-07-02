@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -208,7 +208,7 @@ Prepare-se para armazenar e compartilhar as imagens do Docker com o {{site.data.
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
-{:tip}
+{: important}
 
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -281,13 +281,13 @@ Se você não tiver certeza se um namespace já está configurado para sua conta
 
 Considere as regras a seguir ao escolher um namespace:
 
-- O namespace deve ser exclusivo em uma região do {{site.data.keyword.cloud_notm}}.
-- O namespace deve ter de 4 a 30 caracteres de comprimento.
-- O namespace deve iniciar com pelo menos uma letra ou um número.
-- O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
+- Seu namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região.
+- Seu namespace deve ter entre 4 e 30 caracteres.
+- Seu namespace deve começar e terminar com uma letra ou número.
+- Seu namespace deve conter apenas letras minúsculas, números, hifens (-) e sublinhados (_).
 
 Não coloque informações pessoais nos nomes de namespace.
-{:tip}
+{: important}
 
 Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](#registry_plan_upgrade).
 

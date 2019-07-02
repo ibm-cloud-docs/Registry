@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ subcollection: container-registry-cli-plugin
 
 **전제조건**
 
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. {{site.data.keyword.cloud_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
+* {{site.data.keyword.cloud_notm}} CLI를 설치하십시오. [{{site.data.keyword.cloud_notm}} CLI 시작하기](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오. {{site.data.keyword.cloud_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
 * 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.cloud_notm}}에
 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
 
@@ -43,7 +43,7 @@ subcollection: container-registry-cli-plugin
 일부 명령에 필요한 IAM 플랫폼 및 서비스 액세스 역할에 대한 자세한 정보는 [IAM(Identity and Access Management)으로 사용자 액세스 관리](/docs/services/Registry?topic=registry-iam#iam)를 참조하십시오.
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -356,6 +356,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 {{site.data.keyword.registrylong_notm}}에서 하나 이상의 지정된 이미지를 삭제합니다.
 
+저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 `ibmcloud cr image-rm` 명령은 기본 이미지와 해당 태그를 모두 제거합니다. 동일한 이미지가 다른 저장소 또는 네임스페이스에 있으면 해당 이미지 사본이 제거되지 않습니다. 이미지에서 태그를 제거하고 기본 이미지 및 기타 모든 태그를 그대로 남겨두려면 [`ibmcloud cr image-untag`](#bx_cr_image_untag) 명령을 사용하십시오.
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -387,7 +390,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}}에서 소스 이미지 SOURCE_IMAGE를 참조하는 이미지 TARGET_IMAGE를 작성합니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다.
+명령에 지정하는 태그를 기존 이미지에 추가하거나 태그를 다른 저장소 또는 다른 네임스페이스의 저장소로 복사하십시오. 대상 이미지 `TARGET_IMAGE`는 새 이미지이며 소스 이미지 `SOURCE_IMAGE`는 {{site.data.keyword.registrylong_notm}}의 기존 이미지입니다. 소스 및 대상 이미지가 동일한 지역에 있어야 합니다.
 
 이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
 {: tip}
@@ -436,6 +439,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+{{site.data.keyword.registrylong_notm}}의 각 지정된 이미지에서 태그를 제거합니다.
+
+특정 태그를 이미지에서 제거하고 기본 이미지 및 기타 모든 태그를 그대로 남겨두려면 `ibmcloud cr image-untag` 명령을 사용하십시오. 기본 이미지 및 해당 태그를 모두 삭제하려면 대신 [`ibmcloud cr image-rm`](#bx_cr_image_rm) 명령을 사용하십시오.
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**전제조건**
+
+필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
+
+**명령 옵션**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>태그를 제거할 이미지의 이름입니다. 각 이름 사이에 공백을 사용하여 명령에 각 이미지를 나열하면 동시에 여러 이미지에서 태그를 삭제할 수 있습니다. `IMAGE`는 `repository:tag` 형식이어야 합니다(예: `us.icr.io/namespace/image:latest`).
+
+<p>이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오. 이미지 이름에 태그를 지정하지 않은 경우 명령이 실패합니다.</p>
+
+</dd>
+</dl>
+
+**예**
+
+`us.icr.io/birds/bluebird:1` 이미지에서 태그 `1`을 제거합니다.
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -481,10 +521,10 @@ ibmcloud cr namespace-add NAMESPACE
 **명령 옵션**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>추가할 네임스페이스입니다. 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈 및 밑줄만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
+<dd>추가할 네임스페이스입니다. 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
   
 <p>  
-<strong>팁</strong>: 네임스페이스 이름에 개인 정보를 입력하지 마십시오.
+<strong>중요</strong>: 네임스페이스 이름에 개인 정보를 입력하지 마십시오.
 </p>
   
 </dd>
@@ -722,10 +762,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add`(더 이상 사용되지 않음)
 {: #bx_cr_token_add}
 
 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다.
+
+토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](/docs/services/Registry?topic=registry-registry_access#registry_api_key)를 참조하십시오.
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -742,7 +785,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring
 <dd>(선택사항) `ibmcloud cr token-list` 실행 시 표시되는 토큰에 대한 설명으로 값을 지정합니다. {{site.data.keyword.containerlong_notm}}에서 자동으로 토큰이 작성된 경우 설명이 Kubernetes 클러스터 이름으로 설정됩니다. 이 경우 클러스터가 제거되면 토큰이 자동으로 제거됩니다.
   
 <p> 
-  <strong>팁</strong>: 토큰 설명에 개인 정보를 입력하지 마십시오.
+  <strong>중요</strong>: 토큰 설명에 개인 정보를 입력하지 마십시오.
 </p>
 
 </dd>

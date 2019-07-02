@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -150,9 +150,10 @@ docker build --no-cache .
 
 - 리턴된 오류 메시지에 있는 지시사항을 따르십시오.
 - 올바른 네임스페이스를 입력했는지 확인하십시오.
+  - 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다. 
   - 네임스페이스의 길이는 4 - 30자여야 합니다.
-  - 네임스페이스는 하나 이상의 문자 또는 숫자로 시작해야 합니다.
-  - 네임스페이스에는 소문자, 숫자 또는 밑줄(_)만 포함되어야 합니다.
+  - 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
+  - 네임스페이스에는 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함되어야 합니다.
 - 네임스페이스에 대한 다른 값을 선택하십시오.
 - 삭제했던 네임스페이스를 다시 작성 중이며 여기에 다수의 이미지가 포함된 경우, 나중에 다시 시도하십시오.
 
@@ -293,6 +294,18 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## `ibmcloud cr image-rm` 명령을 사용하여 이미지를 삭제했으며 해당 이미지를 참조한 모든 태그도 삭제됨
+{: #ts_image-rm}
+
+{: tsSymptoms}
+`ibmcloud cr image-rm` 명령을 사용하여 이미지를 삭제했으며 해당 이미지를 참조한 동일한 저장소 내의 모든 태그도 삭제되었습니다.
+
+{: tsCauses}
+저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 명령은 기본 이미지와 해당 태그를 모두 제거합니다. 동일한 이미지가 다른 저장소 또는 네임스페이스에 있으면 해당 이미지 사본이 제거되지 않습니다. 
+
+{: tsResolve}
+이미지에서 태그를 제거하고 기본 이미지 및 기타 모든 태그를 남겨두려면 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 명령을 사용하십시오. 자세한 정보는 [개인용 {{site.data.keyword.cloud_notm}} 저장소에 있는 이미지에서 태그 제거](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) 및 [개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)를 참조하십시오.
 
 ## 사용자 정의 방화벽이 있는 레지스트리 액세스에 실패
 {: #ts_firewall}
@@ -445,8 +458,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers?topic=containers-users#rbac) 및 [Kubernetes - Using RBAC Authorization
-![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)을 참조하십시오.
+RBAC에 대한 자세한 정보는 [사용자 정의 Kubernetes RBAC 역할을 사용하여 사용자에게 권한 부여](/docs/containers?topic=containers-users#rbac) 및 [Kubernetes - Using RBAC Authorization ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)을 참조하십시오.
 
 실패 시 작동 중지 대신 실패 시 작동으로 웹훅 구성을 변경한 후 하나 이상의 Container Image Security Enforcement 팟(Pod)이 실행 중인 경우 실패 시 작동 중지로 웹훅 구성을 복원하려면 다음 단계를 완료하십시오.
 
@@ -569,4 +581,4 @@ Docker for Mac에 문제가 있어 macOS 키 체인에 인증 정보가 저장�
 이 문제는 Mac을 다시 부팅하여 해결할 수 있습니다. Mac을 다시 부팅해도 문제가 해결되지 않으면 Mac 키 체인의 로그인 스토리지를 비활성화할 수 있습니다.
 
 1. 메뉴에서 **Docker** 아이콘을 클릭하고 **환경 설정**을 선택합니다.
-2. **macOS 키 체인에 Docker 로그인 안전하게 저장** 선택란을 취소합니다.
+2. **macOS 키 체인에 Docker 로그인 안전하게 저장** 선택란을 선택 취소합니다.

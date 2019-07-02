@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -174,7 +174,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 {:shortdesc}
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
-{:tip}
+{: important}
 
 ### 瞭解 {{site.data.keyword.registrylong_notm}} 中使用的術語
 {: #terms}
@@ -240,13 +240,13 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 當您選擇名稱空間時，請考量下列規則：
 
-- 在 {{site.data.keyword.cloud_notm}} 地區中，名稱空間必須是唯一的。
-- 名稱空間的長度必須是 4 - 30 個字元。
-- 名稱空間的開頭必須至少使用一個字母或數字。
-- 名稱空間只能包含小寫字母、數字或底線 (_)。
+- 您的名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。
+- 名稱空間必須有 4 - 30 個字元。
+- 您的名稱空間的開頭和結尾必須是字母或數字。
+- 名稱空間只能包含小寫字母、數字及底線 (_)。
 
 請不要將個人資訊放在名稱空間名稱中。
-{:tip}
+{: important}
 
 在設定第一個名稱空間之後，您會獲指派免費 {{site.data.keyword.registrylong_notm}} 服務方案（如果您尚未[升級方案](#registry_plan_upgrade)的話）。
 

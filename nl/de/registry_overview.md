@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -62,7 +62,7 @@ In der folgenden Tabelle sind die verfügbaren Servicepläne von {{site.data.key
 |Beschreibung|Testen von {{site.data.keyword.registrylong_notm}} zum Speichern und gemeinsamen Verwenden von Docker-Images. Dieser Plan ist der Standardserviceplan, wenn Sie Ihren ersten Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.|Bei diesem Serviceplan profitieren Sie von einer unbegrenzten Speichernutzung und einem unbegrenzten Pull-Datenverkehr bei der Verwaltung der Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.cloud_notm}}-Konto.|
 |Speicherkapazität für Images|500 MB|Unbegrenzt|
 |Pull-Datenverkehr|5 GB pro Monat|Unbegrenzt|
-|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry). </li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry). Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Kostenschätzer finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Abrechnung|Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Speicher: Die Abrechnung erfolgt auf der Grundlage der Nutzung von GB-Monaten. Die ersten 0,5 GB-Monate sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Pull-Datenverkehr: Die Abrechnung erfolgt auf der Grundlage der Nutzung in GB pro Monat. Die ersten 5 GB sind kostenfrei. Anschließend erfolgt die Abrechnung gemäß der Festlegung auf der Seite mit den Angebotsdetails. Siehe hierzu [Container Registry ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/kubernetes/catalog/registry). Falls Sie die Grenzwerte für den Speicher oder den Pull-Datenverkehr überschreiten, können Sie keine Push- oder Pull-Operationen für Images in Bezug auf Ihren Namensbereich ausführen. Weitere Informationen zum Speicher, zu Pull-Datenverkehr und zum Kostenschätzer finden Sie im Abschnitt [Kontingente und Abrechnung in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabelle 2. Pläne in {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Kontingente und Abrechnung
@@ -174,7 +174,7 @@ Bereiten Sie die Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{si
 {:shortdesc}
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{:tip}
+{: important}
 
 ### Erläuterung zu den in {{site.data.keyword.registrylong_notm}} verwendeten Begriffen
 {: #terms}
@@ -186,7 +186,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 <dl>
   <dt>Docker V2-Images</dt>
-  <dd>Container-Images, die den Vorgaben von [Docker: Image Manifest V2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/) entsprechen. Der Medientyp für Docker Image Manifest V2, Schema 2 ist `application/vnd.docker.distribution.manifest.v2+json` und der Medientyp für die Manifestliste ist `application/vnd.docker.distribution.manifest.list.v2+json`. Weitere Informationen zur Untersützung für Docker finden Sie in [Docker](/docs/services/Registry?topic=registry-registry_overview#docker). </dd>
+  <dd>Container-Images, die den Vorgaben von [Docker: Image Manifest V2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/) entsprechen. Der Medientyp für Docker Image Manifest V2, Schema 2 ist `application/vnd.docker.distribution.manifest.v2+json` und der Medientyp für die Manifestliste ist `application/vnd.docker.distribution.manifest.list.v2+json`. Weitere Informationen zur Untersützung für Docker finden Sie in [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -240,13 +240,13 @@ Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto ein
 
 Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
 
-- Ihr Namensbereich muss innerhalb einer {{site.data.keyword.cloud_notm}}-Region eindeutig sein.
-- Der Name muss 4 bis 30 Zeichen lang sein.
-- Der Name muss mit mindestens einem Buchstaben bzw. einer Ziffer beginnen.
-- Der Name darf ausschließlich Kleinbuchstaben, Ziffern oder Unterstreichungszeichen (_) enthalten.
+- Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. 
+- Ihr Namensbereich muss 4 bis 30 Zeichen lang sein.
+- Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
+- Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
-{:tip}
+{: important}
 
 Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenfreien Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
 
@@ -361,11 +361,11 @@ Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet,
 ## Unterstützung für Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine V1.12.6 oder eine höhere Version. 
+{{site.data.keyword.registrylong_notm}} unterstützt Docker Engine V1.12.6 oder eine höhere Version.
 
 Docker ist nur für die Ausführung von Push- oder Pull-Operationen für Images oder für die Ausführung des Befehls `ibmcloud cr ppa-archive-load` erforderlich.
 
-Docker V2 Schema 2-Images werden unterstützt. Manifestlisten werden ebenfalls unterstützt. Weitere Informationen finden Sie in [Docker: Image Manifest Version 2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/). 
+Docker V2 Schema 2-Images werden unterstützt. Manifestlisten werden ebenfalls unterstützt. Weitere Informationen finden Sie in [Docker: Image Manifest Version 2, Schema 2 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/registry/spec/manifest-v2-2/).
 
 Docker V1-Images werden nicht weiterverwendet.
 {: deprecated}

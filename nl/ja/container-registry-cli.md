@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ subcollection: container-registry-cli-plugin
 
 **前提条件**
 
-* [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) をインストールします。 {{site.data.keyword.cloud_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
+* {{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。{{site.data.keyword.cloud_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
 * レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.cloud_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
 `ibmcloud` CLI および `container-registry` CLI プラグインの更新が使用可能になると、コマンド・ラインに通知が表示されます。 使用可能なすべてのコマンドとフラグを使用できるように、CLI を最新の状態に保つようにしてください。
@@ -42,7 +42,7 @@ subcollection: container-registry-cli-plugin
 一部のコマンドにとって必要な IAM プラットフォームとサービス・アクセス役割について詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)を参照してください。
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -83,7 +83,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dt>`--quiet`, `-q`</dt>
 <dd>(オプション) 指定されている場合、エラーが発生しない限り、ビルド出力は抑止されます。</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(オプション) 「`KEY=VALUE`」の形式で追加のビルド引数を指定します。このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
+<dd>(オプション) 「`KEY=VALUE`」の形式で追加のビルド引数を指定します。 このパラメーターを複数回指定して複数のビルド引数を指定することができます。 キーに一致する ARG 行を Dockerfile 内に指定すれば、各ビルド引数の値を環境変数として使用できます。</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(オプション) 複数のビルドのために複数の同じファイルを使用する場合は、別の Dockerfile のパスを選択できます。 ビルド・コンテキストに対する Dockerfile の相対位置を指定します。 指定しない場合、デフォルトは `PATH/Dockerfile` です。PATH は、ビルド・コンテキストのルートです。</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -355,6 +355,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 指定した 1 つ以上のイメージを {{site.data.keyword.registrylong_notm}} から削除します。
 
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、`ibmcloud cr image-rm` コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。イメージから 1 つのタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、[`ibmcloud cr image-untag`](#bx_cr_image_untag)コマンドを使用します。
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -386,7 +389,8 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-{{site.data.keyword.registrylong_notm}} で、ソース・イメージ SOURCE_IMAGE を参照するイメージ TARGET_IMAGE を作成します。ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
+コマンドに指定したタグを既存のイメージに追加するか、タグを別のリポジトリーにコピーするか、またはタグを別の名前空間内のリポジトリーにコピーします。ターゲット・イメージ `TARGET_IMAGE` は新しいイメージで、
+ソース・イメージ `SOURCE_IMAGE` は {{site.data.keyword.registrylong_notm}} にある既存のイメージです。ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}
@@ -435,6 +439,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+{{site.data.keyword.registrylong_notm}} 内の指定された各イメージから 1 つまたは複数のタグを削除します。
+
+イメージから指定されたタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、`ibmcloud cr image-untag`コマンドを使用します。基になるイメージとそのすべてのタグを削除する場合は、代わりに [`ibmcloud cr image-rm`](#bx_cr_image_rm) コマンドを使用します。
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**前提条件**
+
+必要な許可について調べるには、[{{site.data.keyword.registrylong_notm}} の使用に関するアクセス役割](/docs/services/Registry?topic=registry-iam#access_roles_using)を参照してください。
+
+**コマンド・オプション**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>タグを削除するイメージの名前。このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージからタグを同時に削除できます。`IMAGE` は `repository:tag` という形式である必要があります。例: `us.icr.io/namespace/image:latest`
+
+<p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しないと、コマンドが失敗します。</p>
+
+</dd>
+</dl>
+
+**例**
+
+イメージ `us.icr.io/birds/bluebird:1` からタグ `1` を削除します。
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -480,10 +521,10 @@ ibmcloud cr namespace-add NAMESPACE
 **コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン、下線のみです。名前空間は、文字または数値で開始および終了する必要があります。
+<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
-<strong>ヒント</strong>: 名前空間名に個人情報を含めないでください。
+<strong>重要</strong> 名前空間名に個人情報を含めないでください。
 </p>
   
 </dd>
@@ -721,10 +762,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add` (非推奨)
 {: #bx_cr_token_add}
 
 レジストリーへのアクセスを制御するために使用できるトークンを追加します。
+
+トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](/docs/services/Registry?topic=registry-registry_access#registry_api_key)を参照してください。
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -741,7 +785,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring
 <dd>(オプション) トークンの説明としての値を指定します。これは、`ibmcloud cr token-list` を実行したときに表示されます。 {{site.data.keyword.containerlong_notm}} が自動的に作成するトークンの場合は、Kubernetes クラスター名が説明として設定されます。 この場合、クラスターが削除されると、トークンは自動的に削除されます。
   
 <p> 
-  <strong>ヒント</strong>: トークンの説明に個人情報を含めないでください。
+  <strong>重要</strong> トークンの説明に個人情報を含めないでください。
 </p>
 
 </dd>
@@ -879,7 +923,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 **コマンド・オプション**
 <dl>
 <dt>`IMAGE`</dt>
-<dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージの脆弱性がイメージにあるかどうかがわかります。このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
+<dd>レポートを取得するイメージの名前。 このレポートから、既知のパッケージの脆弱性がイメージにあるかどうかがわかります。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージについてのレポートを同時に要求できます。
 
 <p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しない場合は、`latest` というタグが付いたイメージを評価したレポートになります。</p>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -66,7 +66,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 |설명|Docker 이미지를 저장하고 공유하도록 {{site.data.keyword.registrylong_notm}}를 사용해 보십시오. 이 플랜은 {{site.data.keyword.registrylong_notm}}에서 첫 번째 네임스페이스를 설정할 때 기본으로 적용되는 서비스 플랜입니다.|무제한의 스토리지 및 가져오기 트래픽 사용량으로 {{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하십시오.|
 |이미지의 스토리지 양|500MB|무제한|
 |가져오기 트래픽|월별 5GB|무제한|
-|비용 청구|스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.|<ul><li>스토리지: 기가바이트-월 사용량을 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.</li><li>가져오기 트래픽: 월별 기가바이트 사용량을 기준으로 비용이 부과됩니다. 처음 5GB는 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 스토리지, 가져오기 트래픽 및 비용 추정기에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.</li></ul>|
+|비용 청구|스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.|<ul><li>스토리지: 기가바이트-월 사용량을 기준으로 비용이 부과됩니다. 처음 0.5GB-월은 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오.</li><li>가져오기 트래픽: 월별 기가바이트 사용량을 기준으로 비용이 부과됩니다. 처음 5GB는 무료입니다. 그 후에는 오퍼링 세부사항 페이지에 설명된 대로 비용이 부과됩니다. [Container Registry ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/kubernetes/catalog/registry)를 참조하십시오. 스토리지 또는 가져오기 트래픽 한계를 초과하는 경우, 이미지를 네임스페이스에 푸시하거나 이미지를 네임스페이스에서 가져올 수 없습니다. 스토리지, 가져오기 트래픽 및 비용 추정기에 대한 자세한 정보는 [{{site.data.keyword.registrylong_notm}}의 할당량 한계 및 비용 청구](#registry_plan_billing)를 참조하십시오.</li></ul>|
 {: caption="표 2. {{site.data.keyword.registrylong_notm}} 플랜" caption-side="top"}
 
 ## 할당량 한계 및 비용 청구
@@ -185,7 +185,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 {:shortdesc}
 
 컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
-{:tip}
+{: important}
 
 ### {{site.data.keyword.registrylong_notm}}에서 사용되는 용어의 이해
 {: #terms}
@@ -207,7 +207,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 
 <dl>
   <dt>네임스페이스</dt>
-  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.cloud_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+  <dd>네임스페이스는 {{site.data.keyword.registrylong_notm}}에서 이미지의 저장소를 구성하는 방법입니다. 네임스페이스는 {{site.data.keyword.cloud_notm}} 계정과 연관됩니다. {{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정할 때 다음과 같이 네임스페이스가 레지스트리 URL에 추가됩니다. <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
   {{site.data.keyword.cloud_notm}} 계정의 모든 사용자가 레지스트리 네임스페이스에 저장된 이미지를 보고 해당 이미지로 작업할 수 있습니다. 예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다.</dd>
 </dl>
@@ -251,13 +251,13 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
 
-- 네임스페이스는 {{site.data.keyword.cloud_notm}} 지역에서 고유해야 합니다.
-- 네임스페이스의 길이는 4 - 30자여야 합니다.
-- 네임스페이스는 하나 이상의 문자 또는 숫자로 시작해야 합니다.
-- 네임스페이스에는 소문자, 숫자 또는 밑줄(_)만 포함되어야 합니다.
+- 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다. 
+- 네임스페이스는 4 - 30자여야 합니다.
+- 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
+- 네임스페이스에는 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함되어야 합니다.
 
 네임스페이스 이름에 개인 정보를 입력하지 마십시오.
-{:tip}
+{: important}
 
 아직 [플랜 업그레이드](#registry_plan_upgrade)를 수행하지 않은 경우 첫 번째 네임스페이스를 설정하고 나면 무료 {{site.data.keyword.registrylong_notm}} 서비스 플랜이 지정됩니다.
 

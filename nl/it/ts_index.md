@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -150,9 +150,10 @@ Puoi risolvere questo problema nei seguenti modi:
 
 - Segui le istruzioni visualizzate nel messaggio di errore restituito.
 - Controlla di aver immesso uno spazio dei nomi valido:
+  - Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. 
   - Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
-  - Il tuo spazio dei nomi deve iniziare con almeno una lettera o un numero.
-  - Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri o caratteri di sottolineatura (_).
+  - Il tuo spazio dei nomi deve iniziare e terminare con una lettera o un numero.
+  - Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_).
 - Scegli un valore diverso per il tuo spazio dei nomi.
 - Se stai ricreando uno spazio dei nomi che era stato eliminato e che conteneva molte immagini, riprova più tardi.
 
@@ -297,6 +298,18 @@ I pacchetti software come immagini e grafici Helm forniti da IBM Passport Advant
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## Ho utilizzato il comando `ibmcloud cr image-rm` per eliminare un'immagine e anche tutte le tag che facevano riferimento a tale immagine sono state eliminate
+{: #ts_image-rm}
+
+{: tsSymptoms}
+Hai eliminato un'immagine utilizzando il comando `ibmcloud cr image-rm` e sono state eliminate anche tutte le tag nello stesso repository che facevano riferimento all'immagine.
+
+{: tsCauses}
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il [comando `ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. 
+
+{: tsResolve}
+Se vuoi rimuovere una tag da un'immagine ma lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizza il [comando `ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Per ulteriori informazioni, vedi [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) e [Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## Accesso al registro con un firewall personalizzato non riuscito
 {: #ts_firewall}
@@ -451,8 +464,7 @@ su queste risorse:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Per ulteriori informazioni su RBAC, consulta [Autorizzazione di utenti con ruoli personalizzati di RBAC Kubernetes](/docs/containers?topic=containers-users#rbac) e [Kubernetes - Using RBAC Authorization
-![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+Per ulteriori informazioni su RBAC, vedi [Autorizzazione di utenti con ruoli personalizzati di RBAC Kubernetes](/docs/containers?topic=containers-users#rbac) e [Kubernetes - Using RBAC Authorization ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Completa la seguente procedura per modificare la configurazione webhook in modo che sia in errore di apertura invece che chiusa e poi, quando almeno un pod di Container Image Security Enforcement è in esecuzione, ripristina la configurazione webhook in modo che sia in errore di chiusura:
 

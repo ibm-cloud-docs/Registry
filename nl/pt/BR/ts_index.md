@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -153,9 +153,10 @@ Ao executar `ibmcloud cr namespace-add`, não é possível configurar seu valor 
 
 - Siga as instruções que estão na mensagem de erro retornada.
 - Verifique se você inseriu um namespace válido:
+  - Seu namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região.
   - O namespace deve ter de 4 a 30 caracteres de comprimento.
-  - O namespace deve iniciar com pelo menos uma letra ou um número.
-  - O namespace deve conter somente letras minúsculas, números ou sublinhados (_).
+  - Seu namespace deve começar e terminar com uma letra ou número.
+  - Seu namespace deve conter apenas letras minúsculas, números, hifens (-) e sublinhados (_).
 - Escolha um valor diferente para o seu namespace.
 - Se você estiver recriando um namespace que foi excluído e ele continha muitas imagens, tente novamente mais tarde.
 
@@ -296,6 +297,18 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## Usei o comando `ibmcloud cr image-rm` para excluir uma imagem e todas as tags que faziam referência a ela também foram excluídas
+{: #ts_image-rm}
+
+{: tsSymptoms}
+Você excluiu uma imagem usando o comando `ibmcloud cr image-rm` e todas as tags no mesmo repositório que faziam referência a ela também foram excluídas.
+
+{: tsCauses}
+Onde houver diversas tags para a mesma compilação de imagens em um repositório, o comando [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) remove a imagem subjacente e todas as suas tags. Se a mesma imagem existir em um repositório ou namespace diferente, essa cópia não será removida.
+
+{: tsResolve}
+Se desejar remover uma tag de uma imagem, mas manter a imagem subjacente e quaisquer outras tags, use o comando [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Para obter mais informações, consulte [Removendo tags de imagens em seu repositório privado do {{site.data.keyword.cloud_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) e [Excluindo imagens de seu repositório privado do {{site.data.keyword.cloud_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## O acesso ao registro com um firewall customizado falha
 {: #ts_firewall}
@@ -448,8 +461,7 @@ nesses recursos:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Para obter mais informações sobre o RBAC, consulte [Autorizando usuários com funções RBAC customizadas do Kubernetes](/docs/containers?topic=containers-users#rbac) e [Kubernetes - Usando a autorização RBAC
-![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+Para obter mais informações sobre o RBAC, consulte [Autorizando usuários com funções customizadas do Kubernetes RBAC](/docs/containers?topic=containers-users#rbac) e [Kubernetes - Usando a autorização do RBAC ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Conclua as etapas a seguir para mudar a configuração do webhook para que ele falhe aberto em vez de fechado e, em seguida, quando pelo menos um pod do Container Image Security Enforcement estiver em execução, restaure a configuração do webhook para que ele falhe fechado:
 

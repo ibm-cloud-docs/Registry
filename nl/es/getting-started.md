@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,8 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Instale de la CLI de {{site.data.keyword.registrylong_notm}}
 {: #gs_registry_cli_install}
 
-1. Instale la [CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para poder ejecutar mandatos `ibmcloud` de {{site.data.keyword.cloud_notm}}. Esta instalación también instala los plugins de CLI para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
+1. Instale la CLI de {{site.data.keyword.cloud_notm}} para poder ejecutar los mandatos de
+{{site.data.keyword.cloud_notm}} `ibmcloud`; consulte [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started). Esta instalación también instala los plugins de CLI para {{site.data.keyword.containerlong_notm}} y {{site.data.keyword.registrylong_notm}}.
 
 ## Configure un espacio de nombres
 {: #gs_registry_namespace_add}
@@ -62,7 +63,9 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-   Los nombres de los espacios de nombres deben ser exclusivos en la región.
+   El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región. Los
+espacios de nombres deben tener entre 4 y 30 caracteres y solo deben contener letras en minúsculas, números, guiones (-)
+y guiones bajos (_). Los espacios de nombres deben empezar y finalizar con una letra o un número.
    {: tip}
 
 3. Para asegurar que se ha creado su espacio de nombre, ejecute el mandato `ibmcloud cr namespace-list`.
@@ -75,7 +78,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Extraiga imágenes de otro registro a su máquina local
 {: #gs_registry_images_pulling}
 
-1. [Instale la CLI de Docker Engine ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/products/docker-engine#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
+1. [Instale la CLI de Docker Engine ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/products/container-runtime#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
 
 2. Descargue (_pull_) la imagen en su máquina local. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_.
 

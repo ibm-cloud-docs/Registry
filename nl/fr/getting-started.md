@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Installation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}
 {: #gs_registry_cli_install}
 
-1. Installez l'[interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) de manière à pouvoir exécuter les commandes {{site.data.keyword.cloud_notm}} `ibmcloud`. Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
+1. Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} de manière à pouvoir exécuter les commandes {{site.data.keyword.cloud_notm}} `ibmcloud`, (voir [Initiation à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started)). Cette installation installe également les plug-in d'interface de ligne de commande pour {{site.data.keyword.containerlong_notm}} et {{site.data.keyword.registrylong_notm}}.
 
 ## Configuration d'un espace de nom
 {: #gs_registry_namespace_add}
@@ -62,7 +62,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
    ```
    {: pre}
 
-   Les noms d'espace de nom doivent être uniques dans la région.
+   Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets (-) et des traits de soulignement (_). Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
    {: tip}
 
 3. Pour vérifier que votre espace de nom a bien été créé, exécutez la commande `ibmcloud cr namespace-list`.
@@ -75,7 +75,7 @@ Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'e
 ## Extraction d'images d'un autre registre vers votre machine locale
 {: #gs_registry_images_pulling}
 
-1. [Installez l'interface de ligne de commande de Docker Engine ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/products/docker-engine#/download). Si vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
+1. [Installez l'interface de ligne de commande de Docker Engine ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.docker.com/products/container-runtime#/download). Si vous utilisez Windows 8, ou OS X Yosemite 10.10.x ou une version antérieure, installez [Docker Toolbox ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/toolbox/) à la place. {{site.data.keyword.registrylong_notm}} prend en charge Docker Engine v1.12.6 ou ultérieur.
 
 2. Téléchargez (par commande _pull_) l'image vers votre machine locale. Remplacez `<source_image>` par le référentiel de l'image et `<tag>` par l'étiquette de l'image que vous voulez utiliser, par exemple, _latest_.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -267,6 +267,39 @@ Erstellen Sie eine Service-ID, die einen API-Schlüssel verwendet, um Images an 
 
 Informationen zum Verwenden von Clustern, um die Images mittels Pull-Operation zu extrahieren, finden Sie in [Aus Images Container erstellen](/docs/containers?topic=containers-images#other_registry_accounts).
 
+## Tags aus Images in Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository entfernen
+{: #registry_images_untag}
+
+Sie können ein Tag oder mehrere Tags aus einem Image entfernen, aber das zugrunde liegende Image und alle anderen Tags jedoch beibehalten, wenn Sie den Befehl [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) verwenden.
+{:shortdesc}
+
+Wenn im selben Image-Auszug in einem Repository mehrere Tags vorhanden sind und Sie das zugrunde liegende Image und alle seine Tags entfernen möchten, siehe [Images aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository löschen](#registry_images_remove).
+{: tip}
+
+Führen Sie die folgenden Schritte aus, um ein Tag oder mehrere Tags über die CLI zu löschen:
+
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an, indem Sie den Befehl `ibmcloud login` ausführen.
+2. Führen Sie den folgenden Befehl aus, um ein Tag zu löschen:
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   Dabei steht `IMAGE` für den Namen des Images, das Sie entfernen möchten, im Format `repository:tag`.
+
+   Wenn im Imagenamen kein Tag angegeben ist, schlägt der Befehl fehl. Sie können die Tags mehrerer Images löschen, indem Sie die einzelnen privaten {{site.data.keyword.cloud_notm}}-Registry-Pfade im Befehl auflisten und die Pfade jeweils durch ein Leerzeichen voneinander trennen.
+
+   Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen.
+   {:tip}
+
+3. Überprüfen Sie, ob das Tag entfernt wurde, indem Sie den folgenden Befehl ausführen, und stellen Sie sicher, dass das Tag nicht in der Liste angezeigt wird.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Images aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository löschen
 {: #registry_images_remove}
 
@@ -278,16 +311,19 @@ Wenn Sie ein privates Repository und die zugehörigen Images löschen möchten, 
 Öffentliche {{site.data.keyword.IBM_notm}}-Images können nicht aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
 
 Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
-{:tip}
+{: important}
+
+Wenn im selben Image-Auszug in einem Repository mehrere Tags vorhanden sind, entfernt der Befehl [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) das zugrunde liegende Image und alle seine Tags. Wenn dasselbe Image in einem anderen Repository oder Namensbereich vorhanden ist, wird diese Kopie des Images nicht entfernt. Wenn Sie ein Tag aus einem Image entfernen möchten, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, siehe [Tags aus Images in Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository entfernen](#registry_images_untag).
+{: tip}
 
 ### Images aus dem privaten {{site.data.keyword.cloud_notm}}-Repository mithilfe der CLI löschen
 {: #registry_images_remove_cli}
 
-Sie können unerwünschte Images aus Ihrem privaten Repository über die CLI löschen.
+Sie können unerwünschte Images und alle seine Tags aus Ihrem privaten Repository über die CLI löschen.
 {:shortdesc}
 
 Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
-{:tip}
+{: important}
 
 Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
 
@@ -299,11 +335,11 @@ Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
    ```
    {: pre}
 
-   Dabei steht _IMAGE_ für den Namen des Images, das Sie entfernen möchten, im Format `repository:tag`.
+   Dabei steht `IMAGE` für den Namen des Images, das Sie entfernen möchten, im Format `repository:tag`.
 
    Wenn ein Tag nicht im Imagenamen angegeben ist, wird standardmäßig das Image mit dem Tag `latest` gelöscht. Sie können mehrere Images löschen, indem Sie die einzelnen privaten {{site.data.keyword.cloud_notm}}-Registry-Pfade im Befehl auflisten und die Pfade jeweils durch ein Leerzeichen voneinander trennen.
 
-   Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt des Repositorys und der Tagspalten, um den Imagenamen im Format `repository:tag` zu bilden.
+   Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen.
    {:tip}
 
 3. Überprüfen Sie, ob das Image gelöscht wurde, indem Sie den folgenden Befehl ausführen, und stellen Sie sicher, dass das Image nicht in der Liste angezeigt wird.
@@ -316,11 +352,11 @@ Führen Sie die folgenden Schritte aus, um ein Image über die CLI zu löschen:
 ### Images aus dem privaten {{site.data.keyword.cloud_notm}}-Repository mithilfe der grafischen Benutzerschnittstelle löschen
 {: #registry_images_remove_gui}
 
-Sie können unerwünschte Images aus Ihrem privaten Image-Repository mithilfe der grafischen Benutzerschnittstelle (GUI) löschen.
+Sie können unerwünschte Images und alle seine Tags aus Ihrem privaten Image-Repository mithilfe der grafischen Benutzerschnittstelle (GUI) löschen.
 {:shortdesc}
 
 Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
-{:tip}
+{: important}
 
 Führen Sie die folgenden Schritte aus, um ein Image über die grafische Benutzerschnittstelle zu löschen:
 
@@ -332,7 +368,7 @@ Führen Sie die folgenden Schritte aus, um ein Image über die grafische Benutze
 6. Markieren Sie in der Zeile, die das Image enthält, das Sie löschen möchten, das Kontrollkästchen.
 
    Stellen Sie sicher, dass Sie das richtige Image ausgewählt haben, da diese Aktion nicht rückgängig gemacht werden kann.
-   {: tip}
+   {: important}
 
 7. Klicken Sie auf **Image löschen**.
 
@@ -343,7 +379,7 @@ Sie können private Repositorys, die nicht mehr benötigt werden, und alle zugeh
 {:shortdesc}
 
 Wenn Sie ein Repository löschen, werden alle Images in diesem Repository gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.
-{:tip}
+{: important}
 
 **Vorbereitung**
 
@@ -359,6 +395,6 @@ Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen
 6. Markieren Sie in der Zeile, die das private Repository enthält, das Sie löschen möchten, das Kontrollkästchen.
 
     Stellen Sie sicher, dass Sie das richtige Repository ausgewählt haben, da diese Aktion nicht rückgängig gemacht werden kann.
-    {: tip}
+    {: important}
 
 7. Klicken Sie auf **Repository löschen**.

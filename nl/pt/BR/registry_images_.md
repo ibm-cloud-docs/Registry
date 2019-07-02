@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -290,6 +290,39 @@ Crie um ID de serviço que use uma chave de API para enviar imagens por push par
 
 Agora é possível usar clusters para fazer pull das imagens. Consulte [Construindo contêineres por meio de imagens](/docs/containers?topic=containers-images#other_registry_accounts).
 
+## Removendo tags de imagens em seu repositório privado do {{site.data.keyword.cloud_notm}}
+{: #registry_images_untag}
+
+É possível remover uma ou diversas tag de uma imagem, mas manter a imagem subjacente e quaisquer outras tags, usando o comando [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag).
+{:shortdesc}
+
+Onde houver diversas tags para a mesma compilação de imagens em um repositório, consulte [Excluindo imagens do seu repositório privado do {{site.data.keyword.cloud_notm}}](#registry_images_remove) para remover a imagem subjacente e todas as suas tags.
+{: tip}
+
+Para remover uma ou diversas tags usando a CLI, conclua as etapas a seguir:
+
+1. Efetue login no {{site.data.keyword.cloud_notm}} executando o comando `ibmcloud login`.
+2. Para remover uma tag, execute o seguinte comando:
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   Em que `IMAGE` é o nome da imagem que você deseja remover, no formato `repository:tag`.
+
+   Se uma tag não estiver especificada no nome da imagem, o comando falhará. É possível excluir as tags de diversas imagens listando cada caminho de registro privado do {{site.data.keyword.cloud_notm}} no comando com um espaço entre eles.
+
+   Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas **Repositório** e **Tag** para criar o nome da imagem no formato `repository:tag`.
+   {:tip}
+
+3. Verifique se a tag foi removida executando o seguinte comando e verifique se ela não é mostrada na lista.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Excluindo imagens de seu repositório privado do  {{site.data.keyword.cloud_notm}}
 {: #registry_images_remove}
 
@@ -301,16 +334,19 @@ Se desejar excluir um repositório privado e suas imagens associadas, consulte [
 As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas do seu repositório privado do {{site.data.keyword.cloud_notm}} e não são contabilizadas para sua cota.
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
-{:tip}
+{: important}
+
+Onde houver diversas tags para a mesma compilação de imagens em um repositório, o comando [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) remove a imagem subjacente e todas as suas tags. Se a mesma imagem existir em um repositório ou namespace diferente, essa cópia não será removida. Se desejar remover uma tag de uma imagem, mas manter a imagem subjacente e quaisquer outras tags, consulte o comando em [Removendo tags de imagens em seu repositório privado do {{site.data.keyword.cloud_notm}}](#registry_images_untag).
+{: tip}
 
 ### Excluindo imagens de seu repositório privado do {{site.data.keyword.cloud_notm}} usando a CLI
 {: #registry_images_remove_cli}
 
-É possível excluir imagens indesejadas de seu repositório privado usando a CLI.
+É possível excluir imagens indesejadas e todas as suas tags de seu repositório privado usando a CLI.
 {:shortdesc}
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
-{:tip}
+{: important}
 
 Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
 
@@ -322,11 +358,11 @@ Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
    ```
    {: pre}
 
-   Em que _IMAGE_ é o nome da imagem que você deseja remover, no formato `repository:tag`.
+   Em que `IMAGE` é o nome da imagem que você deseja remover, no formato `repository:tag`.
 
    Se uma tag não for especificada no nome da imagem, a imagem identificada por último (`latest`) será excluída, por padrão. É possível excluir múltiplas imagens listando cada caminho de registro privado do {{site.data.keyword.cloud_notm}} no comando com um espaço entre cada caminho.
 
-   Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas Repositório e Tag para criar o nome da imagem no formato `repository:tag`.
+   Para localizar os nomes de suas imagens, execute `ibmcloud cr image-list`. Combine o conteúdo das colunas **Repositório** e **Tag** para criar o nome da imagem no formato `repository:tag`.
    {:tip}
 
 3. Execute o comando a seguir para ver se a imagem foi excluída e verifique se ela não é mostrada na lista.
@@ -339,11 +375,11 @@ Para excluir uma imagem usando a CLI, conclua as etapas a seguir:
 ### Excluindo imagens de seu repositório privado do {{site.data.keyword.cloud_notm}} usando a GUI
 {: #registry_images_remove_gui}
 
-É possível excluir imagens indesejadas de seu repositório de imagem privada usando a interface gráfica com o usuário (GUI).
+É possível excluir imagens indesejadas e todas as suas tags de seu repositório de imagem privada usando a interface gráfica com o usuário (GUI).
 {:shortdesc}
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
-{:tip}
+{: important}
 
 Para excluir uma imagem usando a GUI, conclua as etapas a seguir:
 
@@ -357,7 +393,7 @@ com o seu IBMid.
 6. Na linha que contém a imagem que você deseja excluir, selecione a caixa de opção.
 
    Assegure-se de selecionar a imagem correta, porque essa ação não pode ser desfeita.
-   {: tip}
+   {: important}
 
 7. Clique em **Excluir imagem**.
 
@@ -368,7 +404,7 @@ com o seu IBMid.
 {:shortdesc}
 
 Quando você exclui um repositório, todas as imagens nesse repositório são excluídas. Essa ação não pode ser desfeita.
-{:tip}
+{: important}
 
 **Antes de iniciar**
 
@@ -386,6 +422,6 @@ com o seu IBMid.
 6. Na linha que contém o repositório privado que você deseja excluir, selecione a caixa de opção.
 
     Assegure-se de que tenha selecionado o repositório correto, porque essa ação não pode ser desfeita.
-    {: tip}
+    {: important}
 
 7. Clique em **Excluir repositório**.

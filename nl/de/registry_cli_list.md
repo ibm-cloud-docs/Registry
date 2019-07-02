@@ -185,7 +185,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Interval`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die zwischen zwei Statusprüfungen gewartet werden soll.|
 |`Timeout`|Ganzzahl (64-Bit)|Zeigt die Zeit in Nanosekunden an, die gewartet werden soll, bevor die Statusprüfung als fehlgeschlagen eingestuft wird.|
 |`Retries`|Ganzzahl|Zeigt die Anzahl der aufeinanderfolgenden Fehlversuche an, die erforderlich sind, damit die Ausführung eines Containers als nicht korrekt eingestuft wird.|
-{: caption="Tabelle 4. Verfügbare Felder und Datentypen im <codeHealthcheck</code>-Konstrukt. " caption-side="top"}>
+{: caption="Tabelle 4. Verfügbare Felder und Datentypen im <codeHealthcheck</code>-Konstrukt." caption-side="top"}>
 
 ### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
@@ -195,7 +195,7 @@ In der folgenden Tabelle finden Sie die verfügbaren Go-Vorlagenoptionen und Dat
 |`Type`|Zeichenfolge|Zeigt den Typ des Dateisystems an.|
 |`Layers`|Array von Zeichenfolgen|Zeigt die Deskriptoren der einzelnen Image-Ebenen an.|
 |`BaseLayer`|Zeichenfolge|Zeigt den Deskriptor für die Basisebene im Image an.|
-{: caption="Tabelle 5. Verfügbare Felder und Datentypen im <codeRootFS</code>-Konstrukt. " caption-side="top"}>
+{: caption="Tabelle 5. Verfügbare Felder und Datentypen im <codeRootFS</code>-Konstrukt." caption-side="top"}>
 
 ## Go-Vorlagenoptionen und Datentypen im Befehl `ibmcloud cr token-list`
 {: #registry_cli_list_tokenlist}

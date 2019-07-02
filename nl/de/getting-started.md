@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## {{site.data.keyword.registrylong_notm}}-CLI installieren
 {: #gs_registry_cli_install}
 
-1. Installieren Sie die [{{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle (CLI)](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli), damit Sie die `ibmcloud`-Befehle von {{site.data.keyword.cloud_notm}} ausführen können. Bei dieser Installation werden auch die Plug-ins der Befehlszeilenschnittstelle für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert.
+1. Installieren Sie die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle (CLI), damit Sie die {{site.data.keyword.cloud_notm}} `ibmcloud`-Befehle ausführen können. Siehe dazu auch [Einführung in die Befehlszeilenschnittstelle von {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started). Bei dieser Installation werden auch die Plug-ins der Befehlszeilenschnittstelle für {{site.data.keyword.containerlong_notm}} und {{site.data.keyword.registrylong_notm}} installiert.
 
 ## Namensbereich einrichten
 {: #gs_registry_namespace_add}
@@ -62,7 +62,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-   Die Namen von Namensbereichen müssen in der Region eindeutig sein.
+   Der Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. Namensbereiche müssen 4 bis 30 Zeichen lang sein und dürfen nur Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten. Namensbereiche müssen mit einem Buchstaben oder einer Zahl beginnen und enden.
    {: tip}
 
 3. Führen Sie den Befehl `ibmcloud cr namespace-list` aus, um sicherzustellen, dass der Namensbereich erstellt wurde.
@@ -75,7 +75,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## Images mit einer Pull-Operation aus einer anderen Registry auf die lokale Maschine mit Pull-Operation extrahieren
 {: #gs_registry_images_pulling}
 
-1. [Installieren Sie die Docker Engine-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/products/docker-engine#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
+1. [Installieren Sie die Docker Engine-CLI ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.docker.com/products/container-runtime#/download). Für Windows 8 oder OS X Yosemite 10.10.x oder frühere Versionen installieren Sie stattdessen die [Docker-Toolbox ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} unterstützt Docker Engine v1.12.6 oder eine höhere Version.
 
 2. Laden Sie das Image auf Ihre lokale Maschine herunter (_mit Pull-Operation extrahieren_). Ersetzen Sie `<source_image>` durch das Repository des Images und `<tag>` durch den Tag des Images, das verwendet werden soll, z. B. _latest_.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ Vous pouvez utiliser l'interface de ligne de commande d'{{site.data.keyword.regi
 
 **Prérequis**
 
-* Installez l'interface de ligne de commande [{{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Le préfixe pour l'exécution de commandes via l'interface CLI d'{{site.data.keyword.cloud_notm}} est `ibmcloud`.
+* Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} (voir [Initiation à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started)). Le préfixe pour l'exécution de commandes via l'interface CLI d'{{site.data.keyword.cloud_notm}} est `ibmcloud`.
 * Avant d'exécuter les commandes de registre, connectez-vous à {{site.data.keyword.cloud_notm}} à l'aide de la commande `ibmcloud login` pour générer un jeton d'accès et authentifier votre session.
 
 En ligne de commande, vous êtes averti lorsque les mises à jour de l'interface de ligne de commande `ibmcloud` et des plug-in d'interface de ligne de commande `container-registry` sont disponibles. Prenez soin de maintenir votre interface de ligne de commande à jour afin de pouvoir utiliser toutes les commandes et options disponibles.
@@ -42,7 +42,7 @@ Pour vous familiariser avec l'utilisation de l'interface de ligne de commande {{
 Pour plus d'informations sur les rôles d'accès aux services et aux plateformes IAM qui sont requis pour certaines commandes, voir [Gestion des accès utilisateur à l'aide d'Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -355,6 +355,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Supprime une ou plusieurs images spécifiées de votre registre {{site.data.keyword.registrylong_notm}}.
 
+Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, la commande `ibmcloud cr image-rm` supprime l'image sous-jacente ainsi que toutes ses étiquettes. Si la même image existe dans un autre référentiel ou espace de nom, cette copie de l'image n'est pas supprimée. Si vous voulez supprimer une étiquette d'une image et conserver l'image sous-jacente ainsi que toutes les étiquettes définies, utilisez la commande [`ibmcloud cr image-untag`](#bx_cr_image_untag).
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -386,7 +389,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crée une image, TARGET_IMAGE, qui fait référence à une image source, SOURCE_IMAGE, dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région.
+Ajoutez à une image existante une étiquette que vous spécifiez dans la commande, copiez l'étiquette dans un autre référentiel ou dans un référentiel d'un autre espace de nom. L'image cible, `TARGET_IMAGE`, est la nouvelle image et l'image source, `SOURCE_IMAGE`, est l'image existante dans {{site.data.keyword.registrylong_notm}}. Les images source et cible doivent se trouver dans la même région.
 
 Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`.
 {: tip}
@@ -435,6 +438,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+Supprimez une ou des étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.
+
+Pour supprimer une étiquette d'une image et conserver l'image sous-jacente ainsi que toutes les étiquettes définies, utilisez la commande `ibmcloud cr image-untag`. Si vous voulez supprimer l'image sous-jacente ainsi que toutes ses étiquettes, utilisez la commande [`ibmcloud cr image-rm`](#bx_cr_image_rm).
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**Prérequis**
+
+Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisation d'{{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+**Options de commande**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>Nom de l'image dont vous voulez supprimer l'étiquette. Vous pouvez supprimer l'étiquette de plusieurs images en même temps en les répertoriant dans la commande, séparées les unes des autres par un espace. `IMAGE` doit être au format `repository:tag`, par exemple : `us.icr.io/namespace/image:latest`
+
+<p>Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`. Si aucune étiquette n'est spécifiée dans le nom de l'image, la commande échoue.</p>
+
+</dd>
+</dl>
+
+**Exemple**
+
+Supprimez l'étiquette `1` de l'image `us.icr.io/birds/bluebird:1`.
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -480,10 +520,10 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour l'utilisat
 **Options de commande**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>Espace de nom à ajouter. Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets et des traits de soulignement. Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
+<dd>Espace de nom à ajouter. Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets (-) et des traits de soulignement (_). Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
   
 <p>  
-<strong>Astuce</strong> ne placez pas d'informations personnelles dans vos noms d'espace de nom.
+<strong>Important</strong> : ne placez pas d'informations personnelles dans vos noms d'espace de nom.
 </p>
   
 </dd>
@@ -723,10 +763,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add` (obsolète)
 {: #bx_cr_token_add}
 
 Ajoute un jeton que vous pouvez utiliser pour contrôler l'accès à un registre.
+
+L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom est déprécié. Utilisez plutôt des clés d'API pour automatiser l'accès à vos espaces de nom (voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](/docs/services/Registry?topic=registry-registry_access#registry_api_key)).
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -743,7 +786,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles de gestion de plateforme
 <dd>(Facultatif) Permet de spécifier la description du jeton qui s'affiche lorsque vous exécutez `ibmcloud cr token-list`. Si votre jeton est créé automatiquement par {{site.data.keyword.containerlong_notm}}, la description est définie sur votre nom de cluster Kubernetes. Dans ce cas, le jeton est retiré automatiquement lorsque votre cluster est retiré.
   
 <p> 
-  <strong>Astuce</strong> : ne placez pas d'informations personnelles dans votre description de jeton.
+  <strong>Important</strong> : ne placez pas d'informations personnelles dans votre description de jeton.
 </p>
 
 </dd>

@@ -185,7 +185,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Interval`|Entier (64 bits)|Affiche la durée d'attente entre deux diagnostics d'intégrité en nanosecondes.|
 |`Timeout`|Entier (64 bits)|Affiche la durée d'attente avant que le diagnostic d'intégrité ne soit considéré comme ayant échoué en nanosecondes.|
 |`Retries`|Entier|Affiche le nombre d'échecs consécutifs à prendre en compte pour déterminer qu'un conteneur ne fonctionne pas correctement.|
-{: caption="Tableau 4. Zones et types de données disponibles dans la structure <codeHealthcheck</code>. " caption-side="top"}
+{: caption="Tableau 4. Zones et types de données disponibles dans la structure <codeHealthcheck</code>." caption-side="top"}
 
 ### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
@@ -195,7 +195,7 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Type`|Chaîne|Affiche le type du système de fichiers.|
 |`Layers`|Tableau de chaînes|Affiche les descripteurs de chaque couche de l'image.|
 |`BaseLayer`|Chaîne|Affiche le descripteur de la couche de base de l'image.|
-{: caption="Tableau 5. Zones et types de données disponibles dans la structure <codeRootFS</code>. " caption-side="top"}
+{: caption="Tableau 5. Zones et types de données disponibles dans la structure <codeRootFS</code>." caption-side="top"}
 
 ## Options du modèle Go et types de données dans la commande `ibmcloud cr token-list`
 {: #registry_cli_list_tokenlist}

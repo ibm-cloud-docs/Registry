@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -71,9 +71,16 @@ subcollection: registry
     <td>`container-registry.image.push`</td>
 	  <td>이미지를 {{site.data.keyword.registrylong_notm}}에 푸시합니다.</td>
   </tr>
+    <td>`container-registry.image.rm`</td>
+	  <td>{{site.data.keyword.registrylong_notm}}에서 하나 이상의 지정된 이미지를 삭제합니다.</td>
+  </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
 	  <td>기존 {{site.data.keyword.registrylong_notm}} 이미지를 참조하는 새 태그를 추가합니다.</td>
+  </tr>
+   <tr>
+    <td>`container-registry.image.untag`</td>
+	  <td>{{site.data.keyword.registrylong_notm}}의 각 지정된 이미지에서 태그를 제거합니다.</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
@@ -97,7 +104,7 @@ subcollection: registry
   </tr>
   <tr>
     <td>`container-registry.registrytoken.create`</td>
-	  <td>새 레지스트리 토큰을 작성합니다.</td>
+	  <td>새 레지스트리 토큰을 작성합니다. (더 이상 사용되지 않음)</td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -37,7 +37,7 @@ exemplo, nomes ou rótulos de imagem).
 ## Instalar a CLI do {{site.data.keyword.registrylong_notm}}
 {: #gs_registry_cli_install}
 
-1. Instale a [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli) para que seja possível executar os comandos `ibmcloud` do {{site.data.keyword.cloud_notm}}. Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
+1. Instale a CLI do {{site.data.keyword.cloud_notm}} para que seja possível executar os comandos `ibmcloud` do {{site.data.keyword.cloud_notm}}. Consulte [Introdução à CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started). Essa instalação também instala os plug-ins da CLI para o {{site.data.keyword.containerlong_notm}} e o {{site.data.keyword.registrylong_notm}}.
 
 ## Configurar um namespace
 {: #gs_registry_namespace_add}
@@ -63,7 +63,7 @@ exemplo, nomes ou rótulos de imagem).
    ```
    {: pre}
 
-   Os nomes de namespace devem ser exclusivos na região.
+   O namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região. Os namespaces devem ter de 4 a 30 caracteres e conter apenas letras minúsculas, números, hífens (-) e sublinhados (_). Os namespaces devem iniciar e terminar com uma letra ou número.
    {: tip}
 
 3. Para verificar se o namespace foi criado, execute o comando `ibmcloud cr namespace-list`.
@@ -76,7 +76,7 @@ exemplo, nomes ou rótulos de imagem).
 ## Puxar imagens de outro registro para sua máquina local
 {: #gs_registry_images_pulling}
 
-1. [Instale a CLI do Docker Engine ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.docker.com/products/docker-engine#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
+1. [Instale a CLI do Docker Engine ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.docker.com/products/container-runtime#/download). Para Windows 8, ou OS X Yosemite 10.10.x ou anterior, instale o [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/). O {{site.data.keyword.registrylong_notm}} suporta o Docker Engine v1.12.6 ou mais recente.
 
 2. Faça download (_puxe_) da imagem para sua máquina local. Substitua `<source_image>` pelo repositório da imagem e `<tag>` pela tag da imagem que você deseja usar, por exemplo, _latest_.
 

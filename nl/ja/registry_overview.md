@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} を使用して、可用性が高く、高度にスケーラブルなアーキテクチャーでプライベート Docker イメージを保管およびアクセスします。
 {:shortdesc}
 
-{{site.data.keyword.registrylong_notm}} には、{{site.data.keyword.IBM_notm}} によってホストおよび管理されている、マルチテナントの、可用性が高く、スケーラブルで、暗号化された専用イメージ・レジストリーが用意されています。{{site.data.keyword.registrylong_notm}} を使用し、独自のイメージ名前空間をセットアップして名前空間に Docker イメージをプッシュすることができます。
+{{site.data.keyword.registrylong_notm}} には、{{site.data.keyword.IBM_notm}} によってホストおよび管理されている、マルチテナントの、可用性が高く、スケーラブルで、暗号化された専用イメージ・レジストリーが用意されています。 {{site.data.keyword.registrylong_notm}} を使用し、独自のイメージ名前空間をセットアップして名前空間に Docker イメージをプッシュすることができます。
 
 <img src="images/registry_architecture1.svg" alt="IBM Cloud Container Registry コンテナーとの対話方法を示すイメージ。コンテナー・レジストリーにはプライベート・リポジトリーとパブリック・リポジトリーの両方、およびサービスと対話するための API が含まれています。ローカルの Docker クライアントはレジストリー内のプライベート・リポジトリーへ、またはプライベート・リポジトリーからイメージをプルまたはプッシュでき、パブリック・リポジトリーをプルできます。IBM Cloud の Web UI (コンソール) はコンテナー・レジストリー API と対話してイメージのリストを作成します。コンテナー・レジストリー CLI は API と対話して、イメージおよび他の管理機能の一覧表示、作成、調査、削除を行います。ローカルの Docker クライアントはローカル・イメージ・ストアから他のレジストリーにイメージをプルまたはプッシュすることもできます。"/>
 
@@ -62,7 +62,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 |説明|Docker イメージを保管し、共有するために、{{site.data.keyword.registrylong_notm}} をお試しください。 このプランは、{{site.data.keyword.registrylong_notm}} で最初の名前空間をセットアップする際のデフォルトのサービス・プランです。|無制限のストレージおよびプル・トラフィック使用量の利点を享受し、{{site.data.keyword.cloud_notm}} アカウント内のすべての名前空間の Docker イメージを管理します。|
 |イメージ用のストレージ量|500 MB|無制限|
 |プル・トラフィック|1 カ月当たり 5 GB|無制限|
-|請求処理|ストレージまたはプル・トラフィックの制限を超えると、名前空間にイメージをプッシュすることも、名前空間からイメージをプルすることもできなくなります。 詳細については、[{{site.data.keyword.registrylong_notm}} の割り当て量制限および課金](#registry_plan_billing)を参照してください。|<ul><li>ストレージ: 1 カ月当たりの GB 使用量によって料金が請求されます。 最初の 0.5 GB/月は無料です。 その後、オファリングの詳細ページの記載に従って料金が請求されます。[コンテナー・レジストリー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/kubernetes/catalog/registry) を参照してください。</li><li>プル・トラフィック: 1 カ月当たりの GB 使用量によって料金が請求されます。 最初の 5 GB は無料です。 その後、オファリングの詳細ページの記載に従って料金が請求されます。[コンテナー・レジストリー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/kubernetes/catalog/registry) を参照してください。ストレージまたはプル・トラフィックの制限を超えると、名前空間にイメージをプッシュすることも、名前空間からイメージをプルすることもできなくなります。 ストレージ、プル・トラフィック、コスト見積もりツールについて詳しくは、[{{site.data.keyword.registrylong_notm}} の割り当て量制限および課金](#registry_plan_billing)を参照してください。</li></ul>|
+|請求処理|ストレージまたはプル・トラフィックの制限を超えると、名前空間にイメージをプッシュすることも、名前空間からイメージをプルすることもできなくなります。 詳細については、[{{site.data.keyword.registrylong_notm}} の割り当て量制限および課金](#registry_plan_billing)を参照してください。|<ul><li>ストレージ: 1 カ月当たりの GB 使用量によって料金が請求されます。 最初の 0.5 GB/月は無料です。 その後、オファリングの詳細ページの記載に従って料金が請求されます。[コンテナー・レジストリー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/kubernetes/catalog/registry) を参照してください。</li><li>プル・トラフィック: 1 カ月当たりの GB 使用量によって料金が請求されます。 最初の 5 GB は無料です。 その後、オファリングの詳細ページの記載に従って料金が請求されます。[コンテナー・レジストリー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/kubernetes/catalog/registry) を参照してください。 ストレージまたはプル・トラフィックの制限を超えると、名前空間にイメージをプッシュすることも、名前空間からイメージをプルすることもできなくなります。 ストレージ、プル・トラフィック、コスト見積もりツールについて詳しくは、[{{site.data.keyword.registrylong_notm}} の割り当て量制限および課金](#registry_plan_billing)を参照してください。</li></ul>|
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} プラン" caption-side="top"}
 
 ## 割り当て量制限および請求処理
@@ -174,20 +174,19 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 {:shortdesc}
 
 コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
-{:tip}
+{: important}
 
 ### {{site.data.keyword.registrylong_notm}} で使用される用語の説明
 {: #terms}
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>Dockerfile は、Docker イメージをビルドするための指示が含まれるテキスト・ファイルです。 イメージは通常、基本オペレーティング・システム (Ubuntu など) が含まれる基本イメージを元にビルドされます。 アプリの実行に必要な環境を定義する Dockerfile の指示の基本イメージを徐々に変更することができます。 基本イメージの変更のたびに、イメージの新規レイヤーが記述されます。Dockerfile の単一の行に複数の変更を加えることができます。 Dockerfile 内の指示は、別個に保管されたビルド成果物 (アプリ、アプリの構成、その従属関係など) を参照していることもあります。Dockerfile の詳細については、[Dockerfile リファレンス![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://docs.docker.com/engine/reference/builder/)を参照してください。</dd>
+  <dd>Dockerfile は、Docker イメージをビルドするための指示が含まれるテキスト・ファイルです。 イメージは通常、基本オペレーティング・システム (Ubuntu など) が含まれる基本イメージを元にビルドされます。 アプリの実行に必要な環境を定義する Dockerfile の指示の基本イメージを徐々に変更することができます。 基本イメージの変更のたびに、イメージの新規レイヤーが記述されます。Dockerfile の単一の行に複数の変更を加えることができます。 Dockerfile 内の指示は、別個に保管されたビルド成果物 (アプリ、アプリの構成、その従属関係など) を参照していることもあります。 Dockerfile の詳細については、[Dockerfile リファレンス![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://docs.docker.com/engine/reference/builder/)を参照してください。</dd>
 </dl>
 
 <dl>
   <dt>Docker V2 イメージ</dt>
-  <dd>[Docker: Image Manifest V2, Schema 2![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/registry/spec/manifest-v2-2/) に準拠したコンテナー・イメージ。Docker Image Manifest V2, Schema 2 のメディア・タイプは `application/vnd.docker.distribution.manifest.v2+json` で、マニフェスト・リストのメディア・タイプは `application/vnd.docker.distribution.manifest.list.v2+json` です。
-Docker のサポートについて詳しくは、[Docker](/docs/services/Registry?topic=registry-registry_overview#docker) を参照してください。</dd>
+  <dd>[Docker: Image Manifest V2, Schema 2![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/registry/spec/manifest-v2-2/) に準拠したコンテナー・イメージ。 Docker Image Manifest V2, Schema 2 のメディア・タイプは `application/vnd.docker.distribution.manifest.v2+json` で、マニフェスト・リストのメディア・タイプは `application/vnd.docker.distribution.manifest.list.v2+json` です。 Docker のサポートについて詳しくは、[Docker](/docs/services/Registry?topic=registry-registry_overview#docker) を参照してください。</dd>
 </dl>
 
 <dl>
@@ -204,7 +203,7 @@ Docker のサポートについて詳しくは、[Docker](/docs/services/Registr
 
 <dl>
   <dt>OCI コンテナー・イメージ</dt>
-  <dd>[OCI イメージ・フォーマット仕様![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/opencontainers/image-spec) に準拠したコンテナー・イメージ。OCI コンテナー・イメージのメディア・タイプは `application/vnd.oci.image.manifest.v1+json` です。</dd>
+  <dd>[OCI イメージ・フォーマット仕様![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/opencontainers/image-spec) に準拠したコンテナー・イメージ。 OCI コンテナー・イメージのメディア・タイプは `application/vnd.oci.image.manifest.v1+json` です。</dd>
 </dl>
 
 <dl>
@@ -241,13 +240,13 @@ IBM 提供のパブリック・イメージのみを使用して作業する場�
 
 名前空間を選択する際は、以下のルールを考慮してください。
 
-- 名前空間は、{{site.data.keyword.cloud_notm}} 地域内で固有でなければなりません。
-- 名前空間は、4 文字から 30 文字の長さでなければなりません。
-- 名前空間は、文字または数字で始まる必要があります。
-- 名前空間には、小文字、数字、またはアンダースコアー (_) のみを使用できます。
+- 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。
+- 名前空間は、4 文字から 30 文字でなければなりません。
+- 名前空間は、文字または数値で開始および終了する必要があります。
+- 名前空間には、小文字、数字、ハイフン (-) およびアンダースコアー (_) のみを使用できます。
 
 名前空間名に個人情報を含めないでください。
-{:tip}
+{: important}
 
 最初の名前空間を設定した後、無料の {{site.data.keyword.registrylong_notm}} サービス・プランが割り当てられます ([プランのアップグレード](#registry_plan_upgrade)をまだ実行していない場合)。
 
@@ -366,8 +365,7 @@ ibmcloud cr region-set global
 
 Docker が必要になるのは、イメージをプッシュまたはプルするとき、または `ibmcloud cr ppa-archive-load` コマンドを実行するときだけです。
 
-Docker V2 Schema 2 イメージがサポートされています。マニフェスト・リストもサポートされています。
-詳細については、[Docker: Image Manifest Version 2,Schema 2 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/registry/spec/manifest-v2-2/)を参照してください。
+Docker V2 Schema 2 イメージがサポートされています。 マニフェスト・リストもサポートされています。 詳細については、[Docker: Image Manifest Version 2,Schema 2 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.docker.com/registry/spec/manifest-v2-2/)を参照してください。
 
 Docker V1 イメージは非推奨です。
 {: deprecated}

@@ -37,11 +37,9 @@ subcollection: registry
 
 다음 {{site.data.keyword.registrylong_notm}} 명령과 함께 형식화 옵션을 사용할 수 있습니다. 사용 가능한 필드와 해당 데이터 유형의 목록을 보려면 명령을 클릭하십시오.
 
-- [`    ibmcloud cr image-list
-   ](#registry_cli_list_imagelist)
+- [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
-- [`    ibmcloud cr token-list
-   ](#registry_cli_list_tokenlist)
+- [`ibmcloud cr token-list`](#registry_cli_list_tokenlist)
 
 다음 코드 예제는 형식화 및 필터링 옵션을 어떻게 사용할 수 있는지를 보여줍니다.
 

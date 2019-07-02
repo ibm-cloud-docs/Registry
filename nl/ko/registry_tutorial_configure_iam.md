@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -168,24 +168,24 @@ subcollection: registry
         ```
         {: pre}
 
-    2. 다음 명령을 실행하여 `namespace_a`를 작성하십시오. 
+    2. 다음 명령을 실행하여 `namespace_a`를 작성하십시오.
 
         ```
         ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
 
-        네임스페이스 이름은 지역에서 고유해야 합니다.
+        동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
         {: tip}
 
-    3. 다음 명령을 실행하여 `namespace_b`를 작성하십시오. 
+    3. 다음 명령을 실행하여 `namespace_b`를 작성하십시오.
 
         ```
         ibmcloud cr namespace-add namespace_b
         ```
         {: pre}
             
-    4. 다음 명령을 실행하여 `namespace_c`를 작성하십시오. 
+    4. 다음 명령을 실행하여 `namespace_c`를 작성하십시오.
 
         ```
         ibmcloud cr namespace-add namespace_c

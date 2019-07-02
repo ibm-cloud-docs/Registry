@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ Puede solucionar este problema de las siguientes maneras:
 
 - Siga las instrucciones que aparecen en el mensaje de error devuelto.
 - Compruebe que ha especificado un espacio de nombres válido:
+  - Su espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región.
   - Su espacio de nombres debe tener entre 4 y 30 caracteres.
-  - El espacio de nombres debe empezar por al menos una letra o un número.
-  - Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.
+  - Su espacio de nombres deben empezar y finalizar con una letra o un número.
+  - Su espacio de nombres solo debe incluir minúsculas, números, guiones (-) y subrayados (_).
 - Elija otro valor para el espacio de nombres.
 - Si va a volver a crear un espacio de nombres que se ha suprimido y que contenía muchas imágenes, inténtelo de nuevo más tarde.
 
@@ -291,6 +292,26 @@ Los paquetes de software como las imágenes y las gráficas de Helm de IBM Passp
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## He utilizado el mandato `ibmcloud cr image-rm` para suprimir una imagen y también se han suprimido todas las etiquetas que hacían referencia a la imagen
+{: #ts_image-rm}
+
+{: tsSymptoms}
+Ha suprimido una imagen utilizando el mandato `ibmcloud cr image-rm` y también se han suprimido
+todas las etiquetas
+del mismo repositorio que hacían referencia a la imagen.
+
+{: tsCauses}
+Cuando haya varias etiquetas para el mismo resumen de imagen dentro de un repositorio,
+el mandato [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) elimina todas las imágenes subyacentes y todas sus
+etiquetas. Si existe una imagen igual en un otro repositorio o espacio de nombres,
+dicha copia de la imagen se elimina.
+
+{: tsResolve}
+Si quiere eliminar una etiqueta de una imagen pero dejar la imagen
+subyacente y el resto de las etiquetas, utilice el mandato
+[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Para obtener más información, consulte
+[Eliminación de etiquetas de imágenes en su repositorio privado de {{site.data.keyword.cloud_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) y [Supresión de imágenes en su repositorio privado de {{site.data.keyword.cloud_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## El acceso al registro con un cortafuegos personalizado falla
 {: #ts_firewall}

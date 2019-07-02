@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ docker build --no-cache .
 
 - 遵循所傳回錯誤訊息中的所有指示。
 - 確認您已輸入有效的名稱空間：
+  - 您的名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。
   - 名稱空間的長度必須是 4 - 30 個字元。
-  - 名稱空間的開頭必須至少使用一個字母或數字。
-  - 名稱空間只能包含小寫字母、數字或底線 (_)。
+  - 您的名稱空間的開頭和結尾必須是字母或數字。
+  - 名稱空間只能包含小寫字母、數字及底線 (_)。
 - 為名稱空間選擇不同的值。
 - 如果您要重建已刪除的名稱空間，而且它包含許多映像檔，請稍後再試一次。
 
@@ -253,23 +254,19 @@ denied: requested access to the resource is denied
    **輸出範例**
 
    ```
-   user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
-   Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
+    Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
    The push refers to repository [us.icr.io/mynamespace/iib-prod]
    1ecda25d51a8: Preparing
    369bf331939e: Preparing
    ...
    369bf331939e: Pushed
-   1ecda25d51a8: Pushed
-   10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
-
-   Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
-
-   OK
-   ```
+    1ecda25d51a8: Pushed
+    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.OK
+    ```
    {: screen}
 
 4. 如果壓縮檔包含 Helm 圖表，這些圖表會放在您現行工作目錄中建立的保存目錄，稱為 `ppa-import`。開啟目錄以取得 Helm 圖表 `<helm_chart>` 的名稱，然後檢查其值。
@@ -290,6 +287,18 @@ denied: requested access to the resource is denied
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## 我使用了 `ibmcloud cr image-rm` 指令來刪除映像檔，參照該映像檔的所有標籤也被刪除了
+{: #ts_image-rm}
+
+{: tsSymptoms}
+您使用了 `ibmcloud cr image-rm` 指令來刪除映像檔，相同儲存庫內參照該映像檔的所有標籤也會被刪除。
+
+{: tsCauses}
+若儲存庫內的相同映像檔摘要有多個標籤存在，[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 指令會移除基礎映像檔及其所有標籤。如果相同的映像檔存在於不同的儲存庫或名稱空間，則映像檔的該副本不會移除。
+
+{: tsResolve}
+如果您想要從映像檔移除一個標籤，但保留基礎映像檔及任何其他標籤，請使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 指令。如需相關資訊，請參閱[從專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔移除標籤](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)及[刪除專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)。
 
 ## 使用自訂防火牆存取登錄失敗
 {: #ts_firewall}
@@ -443,7 +452,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-如需 RBAC 的相關資訊，請參閱[授權具有自訂 Kubernetes RBAC 角色的使用者](/docs/containers?topic=containers-users#rbac)及 [Kubernetes - 使用 RBAC 授權 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
+如需 RBAC 的相關資訊，請參閱[使用自訂 Kubernetes RBAC 角色授權使用者](/docs/containers?topic=containers-users#rbac)及 [Kubernetes - Using RBAC Authorization ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。
 
 請完成下列步驟來變更 Webhook 配置，以讓開啟失敗，而非關閉，然後，至少一個 Container Image Security Enforcement Pod 正在執行時，請還原 Webhook 配置，以讓關閉失敗：
 

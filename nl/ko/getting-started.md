@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,7 @@ subcollection: registry
 ## {{site.data.keyword.registrylong_notm}} CLI 설치
 {: #gs_registry_cli_install}
 
-1. {{site.data.keyword.cloud_notm}} `ibmcloud` 명령을 실행할 수 있도록 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)를 설치하십시오. 이를 설치하면 {{site.data.keyword.containerlong_notm}} 및 {{site.data.keyword.registrylong_notm}}용 CLI 플러그인도 설치됩니다.
+1. {{site.data.keyword.cloud_notm}} `ibmcloud` 명령을 실행할 수 있도록 {{site.data.keyword.cloud_notm}} CLI를 설치하십시오. [{{site.data.keyword.cloud_notm}} CLI 시작하기](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오. 이를 설치하면 {{site.data.keyword.containerlong_notm}} 및 {{site.data.keyword.registrylong_notm}}용 CLI 플러그인도 설치됩니다.
 
 ## 네임스페이스 설정
 {: #gs_registry_namespace_add}
@@ -62,7 +62,7 @@ subcollection: registry
    ```
    {: pre}
 
-   네임스페이스 이름은 지역에서 고유해야 합니다.
+   동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
    {: tip}
 
 3. 네임스페이스가 작성되었는지 확인하려면 `ibmcloud cr namespace-list` 명령을 실행하십시오.
@@ -75,7 +75,7 @@ subcollection: registry
 ## 다른 레지스트리의 이미지를 로컬 시스템으로 가져오기
 {: #gs_registry_images_pulling}
 
-1. [Docker Engine CLI를 설치 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.docker.com/products/docker-engine#/download)하십시오. Windows 8 또는 OS X Yosemite 10.10.x 이하의 경우 [Docker Toolbox ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/toolbox/)를 대신 설치하십시오. {{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
+1. [Docker Engine CLI를 설치 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.docker.com/products/container-runtime#/download)하십시오. Windows 8 또는 OS X Yosemite 10.10.x 이하의 경우 [Docker Toolbox ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/toolbox/)를 대신 설치하십시오. {{site.data.keyword.registrylong_notm}}에서는 Docker Engine v1.12.6 이상을 지원합니다.
 
 2. 로컬 시스템에 이미지를 다운로드(_가져오기_)하십시오. `<source_image>`를 이미지의 저장소로 바꾸고 `<tag>`를 사용할 이미지(예: _latest_)로 바꾸십시오.
 

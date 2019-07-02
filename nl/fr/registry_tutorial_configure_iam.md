@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,7 +175,7 @@ Dans cette section, vous allez créer des espaces de nom avec des exemples d'ima
         ```
         {: pre}
 
-        Les noms d'espace de nom doivent être uniques dans la région.
+        Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région. Les espaces de nom doivent comporter entre 4 et 30 caractères et contenir uniquement des lettres minuscules, des chiffres, des tirets (-) et des traits de soulignement (_). Les espaces de nom doivent commencer et se terminer par une lettre ou un chiffre.
         {: tip}
 
     3. Créez `namespace_b` en exécutant la commande suivante :

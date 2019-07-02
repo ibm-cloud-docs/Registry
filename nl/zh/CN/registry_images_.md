@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -53,7 +53,7 @@ subcollection: registry
 下载映像；请参阅“入门”文档中的[拉出映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)。
 
 如果您收到`未获授权：需要认证`或`被拒绝：请求的资源访问权被拒绝`消息，请运行 `ibmcloud cr login` 命令。
-   {:tip}
+{:tip}
 
 拉出映像并针对名称空间对其进行标记后，可以将该映像从本地计算机上传（推送）至名称空间。
 
@@ -275,6 +275,39 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 您现在可以使用集群拉出映像，请参阅[从映像构建容器](/docs/containers?topic=containers-images#other_registry_accounts)。
 
+## 从专用 {{site.data.keyword.cloud_notm}} 存储库中的映像除去标记
+{: #registry_images_untag}
+
+通过使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 命令，您可以从映像除去一个或多个标记，并将底层的映像以及其他任何标记保持不变。
+{:shortdesc}
+
+存储库中对于相同映像摘要存在多个标记时，要除去底层的映像及其所有标记，请参阅[从专用 {{site.data.keyword.cloud_notm}} 存储库删除映像](#registry_images_remove)。
+{: tip}
+
+要使用 CLI 除去一个或多个标记，请完成以下步骤：
+
+1. 通过运行 `ibmcloud login` 命令登录到 {{site.data.keyword.cloud_notm}}。
+2. 要除去标记，运行以下命令：
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   其中，`IMAGE` 是要除去的映像的名称，格式为 `repository:tag`。
+
+   如果映像名称中未指定标记，那么命令将失败。可以通过在命令中列出每个专用 {{site.data.keyword.cloud_notm}} 注册表路径（各路径之间用一个空格分隔）来从多个映像删除标记。
+
+   要查找映像的名称，请运行 `ibmcloud cr image-list`。将**存储库**和**标记**列的内容组合在一起，以创建格式为 `repository:tag` 的映像名称。
+   {:tip}
+
+3. 通过运行以下命令，验证是否已除去标记，然后检查该标记是否不再出现在列表中。
+
+   ```
+    ibmcloud cr image-list
+    ```
+   {: pre}
+
 ## 从专用 {{site.data.keyword.cloud_notm}} 存储库中删除映像
 {: #registry_images_remove}
 
@@ -285,17 +318,20 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 公共 {{site.data.keyword.IBM_notm}} 映像无法从专用 {{site.data.keyword.cloud_notm}} 存储库中删除，也不会计入配额。
 
-删除映像操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
-{:tip}
+删除映像的操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
+{: important}
+
+存储库中对于相同的映像摘要存在多个标记时，[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 命令会除去底层的映像及其所有标记。如果不同的存储库或名称空间中存在相同的映像，那么不会除去该映像副本。如果想要从映像除去一个标记，并将底层的映像和其他任何标记保持不变，请参阅[从专用 {{site.data.keyword.cloud_notm}} 存储库中的映像除去标记](#registry_images_untag)命令。
+{: tip}
 
 ### 使用 CLI 从专用 {{site.data.keyword.cloud_notm}} 存储库中删除映像
 {: #registry_images_remove_cli}
 
-您可以使用 CLI 从专用存储库中删除不需要的映像。
+您可以使用 CLI 从专用存储库中删除不需要的映像及其所有标记。
 {:shortdesc}
 
-删除映像操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
-{:tip}
+删除映像的操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
+{: important}
 
 要使用 CLI 删除映像，请完成以下步骤：
 
@@ -307,12 +343,12 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
   ```
    {: pre}
 
-   其中，_IMAGE_ 是要除去的映像的名称，格式为 `repository:tag`。
+   其中，`IMAGE` 是要除去的映像的名称，格式为 `repository:tag`。
 
    如果未在映像名称中指定标记，那么缺省情况下会删除标记为 `latest` 的映像。可以通过在命令中列出每个专用 {{site.data.keyword.cloud_notm}} 注册表路径（各路径之间用一个空格分隔）来删除多个映像。
 
-   要查找映像的名称，请运行 `ibmcloud cr image-list`。将 Repository 和 Tag 列的内容组合在一起，以创建格式为 `repository:tag` 的映像名称。
- {:tip}
+   要查找映像的名称，请运行 `ibmcloud cr image-list`。将**存储库**和**标记**列的内容组合在一起，以创建格式为 `repository:tag` 的映像名称。
+   {:tip}
 
 3. 通过运行以下命令，验证是否已删除映像，然后检查该映像是否不再出现在列表中。
 
@@ -324,11 +360,11 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 使用 GUI 从专用 {{site.data.keyword.cloud_notm}} 存储库中删除映像
 {: #registry_images_remove_gui}
 
-您可以使用图形用户界面 (GUI) 从专用映像存储库中删除不需要的映像。
+您可以使用图形用户界面 (GUI) 从专用映像存储库删除不需要的映像及其所有标记。
 {:shortdesc}
 
-删除映像操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
-{:tip}
+删除映像的操作无法撤销。删除现有部署正在使用的映像可能会导致扩展和/或重新安排失败。
+{: important}
 
 要使用 GUI 删除映像，请完成以下步骤：
 
@@ -340,7 +376,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 6. 在包含要删除的映像的行中，选中相应复选框。
 
    确保选择的是正确映像，因为此操作无法撤消。
-   {: tip}
+   {: important}
 
 7. 单击**删除映像**。
 
@@ -351,7 +387,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 {:shortdesc}
 
 删除存储库时，将删除该存储库中的所有映像。此操作无法撤销。
-{:tip}
+{: important}
 
 **开始之前**
 
@@ -367,6 +403,6 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 6. 在包含要删除的专用存储库的行中，选中相应复选框。
 
     确保选择的是正确存储库，因为此操作无法撤消。
-    {: tip}
+    {: important}
 
 7. 单击**删除存储库**。

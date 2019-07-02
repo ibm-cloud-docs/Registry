@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -66,7 +66,7 @@ subcollection: registry
 
 |動作|對服務的作業| 角色
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 新增可用來控制登錄存取權的記號。| 管理者 |
+| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 新增可用來控制登錄存取權的記號。（已淘汰）| 管理者 |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 移除一個以上的指定記號。| 管理者 |
 | `container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 從登錄擷取指定的記號。| 管理者 |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) 顯示 {{site.data.keyword.cloud_notm}} 帳戶的所有現有記號。| 管理者 |
@@ -126,7 +126,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 |動作|對服務的作業| 角色
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) 建置容器映像檔。| 撰寫者、管理員 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 刪除一個以上的映像檔。</li><li> `docker trust revoke` 刪除簽章。</li></ul> | 撰寫者、管理員 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 刪除一個以上的映像檔。<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。</li><li> `docker trust revoke` 刪除簽章。</li></ul> | 撰寫者、管理員 |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) 顯示特定映像檔的詳細資料。| 讀者、管理員 |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 列出容器映像檔。| 讀者、管理員 |
 | `container-registry.image.pull` | <ul><li> `docker pull` 取回映像檔。</li><li> `docker trust inspect` 檢查簽章。</li></ul> | 讀者、撰寫者、管理員 |

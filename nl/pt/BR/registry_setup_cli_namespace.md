@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -26,14 +26,14 @@ subcollection: registry
 o seu namespace de registro
 {: #registry_setup_cli_namespace}
 
-Antes de ser possível armazenar as imagens do Docker no {{site.data.keyword.registrylong}}, deve-se criar um namespace. Para trabalhar com namespaces, instale o plug-in da CLI `container-registry`.
+Para gerenciar suas imagens do Docker no {{site.data.keyword.registrylong}}, será preciso instalar o plug-in da CLI `container-registry` e criar um namespace.
 {:shortdesc}
 
 Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
 exemplo, nomes ou rótulos de imagem).
 {: important}
 
-Antes de iniciar, instale a [CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Antes de começar, para instalar a CLI do {{site.data.keyword.cloud_notm}}, consulte [Introdução à CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started).
 
 ## Instalando o plug-in da CLI `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -44,7 +44,7 @@ Instale o plug-in da CLI `container-registry` para usar a linha de comandos para
 1. [Instale o plug-in da CLI `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Opcional: [configure o cliente Docker para executar comandos sem permissões raiz ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/install/linux/linux-postinstall/). Se você não realizar essa etapa, deverá executar os comandos `ibmcloud login`, `ibmcloud cr login`, `docker pull` e `docker push` com `sudo` ou como raiz.
 
-Agora é possível configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}.
+Agora, é possível configurar seu próprio [namespace](#registry_namespace_setup) no {{site.data.keyword.registrylong_notm}}.
 
 ## Atualizando o plug-in da CLI `container-registry`
 {: #registry_cli_update}
@@ -99,8 +99,10 @@ Deve-se criar um namespace para armazenar as imagens do Docker no {{site.data.ke
 - [Instale a CLI do {{site.data.keyword.cloud_notm}} e o plug-in `container-registry` da CLI](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planeje como usar e nomear seus namespaces de registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-<br>
 Para criar um namespace, veja [Configurar um namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)na documentação de Introdução.
+
+O namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região. Os namespaces devem ter de 4 a 30 caracteres e conter apenas letras minúsculas, números, hífens (-) e sublinhados (_). Os namespaces devem iniciar e terminar com uma letra ou número.
+{: tip}
 
 Agora é possível [enviar por push imagens do Docker para seu namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) e compartilhar essas imagens com outros usuários em sua conta. Para controlar o acesso aos namespaces no IAM do {{site.data.keyword.cloud_notm}}, consulte [Criando políticas](/docs/services/Registry?topic=registry-user#create).
 

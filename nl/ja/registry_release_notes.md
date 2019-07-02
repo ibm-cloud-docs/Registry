@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,18 @@ subcollection: registry
 
 このリリース・ノートをお読みになり、{{site.data.keyword.registrylong}} と脆弱性アドバイザーの最新の変更点をご確認ください。 変更点は日付別に分類されています。
 {:shortdesc}
+
+## 2019 年 6 月 13 日
+{: #13jun2019}
+
+- **イメージからのタグの削除**
+
+  {{site.data.keyword.registrylong_notm}} 内の指定された各イメージから 1 つまたは複数のタグを削除します。
+
+  イメージから指定されたタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)コマンドを使用します。基になるイメージとそのすべてのタグを削除する場合は、代わりに [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを使用します。
+
+
+  詳しくは、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーのイメージからのタグの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)を参照してください。
 
 ## 2019 年 5 月 13 日
 {: #13may2019}
@@ -92,7 +104,7 @@ subcollection: registry
 
   脆弱性アドバイザーの API バージョン 2 が非推奨になり、使用できなくなりました。 API バージョン 3 を使用してください。詳細については、[{{site.data.keyword.registrylong_notm}} API の脆弱性アドバイザー![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://cloud.ibm.com/apidocs/container-registry/va)を参照してください。
 
-  詳細については、[脆弱性アドバイザー v2 API は非推奨 ![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/) を参照してください。
+  詳細については、[脆弱性アドバイザー v2 API は非推奨 ![外部リンクのアイコン](../../icons/launch-glyph.svg "外部リンクのアイコン")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/) を参照してください。
 
 ## 2018 年 10 月 4 日
 {: #4oct2018}

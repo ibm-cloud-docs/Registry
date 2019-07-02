@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -175,7 +175,7 @@ Prepárese para almacenar y compartir sus imágenes de Docker con {{site.data.ke
 {:shortdesc}
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
-{:tip}
+{: important}
 
 ### Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -241,13 +241,13 @@ Si no está seguro de si ya se ha establecido un espacio de nombres para su cuen
 
 Considere las reglas siguientes al elegir un espacio de nombres:
 
-- Su espacio de nombres debe ser exclusivo en una región de {{site.data.keyword.cloud_notm}}.
+- Su espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región.
 - Su espacio de nombres debe tener entre 4 y 30 caracteres.
-- El espacio de nombres debe empezar por al menos una letra o un número.
-- Su espacio de nombres debe contener letras minúsculas, números, o subrayados (_) sólo.
+- Su espacio de nombres deben empezar y finalizar con una letra o un número.
+- Su espacio de nombres solo debe incluir minúsculas, números, guiones (-) y subrayados (_).
 
 No coloque información personal en los nombres del espacio de nombres.
-{:tip}
+{: important}
 
 Después de establecer su primer espacio de nombres, se le asigna el plan de servicio gratuito de {{site.data.keyword.registrylong_notm}} si todavía no ha [actualizado su plan](#registry_plan_upgrade).
 

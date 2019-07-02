@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -267,6 +267,39 @@ API キーを使用してイメージを {{site.data.keyword.registrylong_notm}}
 
 これでクラスターを使用してイメージをプルできるようになりました。[イメージからのコンテナーのビルド](/docs/containers?topic=containers-images#other_registry_accounts)を参照してください。
 
+## プライベート {{site.data.keyword.cloud_notm}} リポジトリーのイメージからのタグの削除
+{: #registry_images_untag}
+
+[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)コマンドを使用することにより、イメージから指定された 1 つまたは複数のタグを削除し、基になるイメージとその他のタグはそのまま残しておくことができます。
+{:shortdesc}
+
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、基になるイメージとそのすべてのタグを削除するには、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](#registry_images_remove)を参照してください。
+{: tip}
+
+CLI を使用して 1 つまたは複数のタグを削除するには、以下の手順を実行します。
+
+1. `ibmcloud login` コマンドを実行して {{site.data.keyword.cloud_notm}} にログインします。
+2. タグを削除するには、次のコマンドを実行します。
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   `IMAGE` は、削除するイメージの名前 (形式は `repository:tag`) です。
+
+   イメージ名の中にタグを指定しないと、コマンドが失敗します。複数のイメージのタグを削除するには、各プライベート {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
+
+   イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
+{:tip}
+
+3. 以下のコマンドを実行してタグが削除されたことを検証し、リスト内にタグが表示されないことを確認します。
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove}
 
@@ -278,16 +311,19 @@ API キーを使用してイメージを {{site.data.keyword.registrylong_notm}}
 パブリック {{site.data.keyword.IBM_notm}} イメージは、プライベート {{site.data.keyword.cloud_notm}} リポジトリーから削除できません。割り当て量までのカウントにも含まれません。
 
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
-{:tip}
+{: important}
+
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。イメージから 1 つのタグを削除し、基になるイメージと設定されているその他のタグはそのまま残しておく場合は、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](#registry_images_untag)を参照してください。
+{: tip}
 
 ### CLI を使用したプライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove_cli}
 
-CLI を使用して、不要なイメージをプライベート・リポジトリーから削除できます。
+CLI を使用して、不要なイメージとそのすべてのタグをプライベート・リポジトリーから削除できます。
 {:shortdesc}
 
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
-{:tip}
+{: important}
 
 CLI を使用してイメージを削除するには、以下の手順を実行します。
 
@@ -299,12 +335,12 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
    ```
    {: pre}
 
-   _IMAGE_ は、削除するイメージの名前 (形式は `repository:tag`) です。
+   `IMAGE` は、削除するイメージの名前 (形式は `repository:tag`) です。
 
    イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
-   イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 Repository 列と Tag 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
-   {:tip}
+   イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
+{:tip}
 
 3. 以下のコマンドを実行し、リスト中にイメージが表示されないことを確認して、イメージが削除されたことを検証します。
 
@@ -316,11 +352,11 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
 ### GUI を使用した、プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
 {: #registry_images_remove_gui}
 
-グラフィカル・ユーザー・インターフェース (GUI) を使用して、不要なイメージをプライベート・イメージ・リポジトリーから削除することができます。
+グラフィカル・ユーザー・インターフェース (GUI) を使用して、不要なイメージとそのすべてのタグをプライベート・イメージ・リポジトリーから削除することができます。
 {:shortdesc}
 
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
-{:tip}
+{: important}
 
 GUI を使用してイメージを削除するには、以下の手順を実行します。
 
@@ -332,7 +368,7 @@ GUI を使用してイメージを削除するには、以下の手順を実行�
 6. 削除しようとしているイメージを含む行で、チェック・ボックスを選択します。
 
    この操作は元に戻せないので、正しいイメージを選択したことを確認してください。
-   {: tip}
+   {: important}
 
 7. **「イメージの削除 (Delete Image)」**をクリックします。
 
@@ -343,7 +379,7 @@ GUI を使用してイメージを削除するには、以下の手順を実行�
 {:shortdesc}
 
 リポジトリーを削除すると、そのリポジトリー内のすべてのイメージも削除されます。 このアクションは元に戻せません。
-{:tip}
+{: important}
 
 **始めに**
 
@@ -359,6 +395,6 @@ GUI を使用してプライベート・リポジトリーを削除するには�
 6. 削除しようとしているプライベート・リポジトリーを含む行で、チェック・ボックスを選択します。
 
     この操作は元に戻せないので、正しいリポジトリーを選択したことを確認してください。
-    {: tip}
+    {: important}
 
 7. **「リポジトリーの削除 (Delete Repository)」**をクリックします。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -25,13 +25,13 @@ subcollection: registry
 # Configuración de la CLI de {{site.data.keyword.registrylong_notm}} y del espacio de nombres de registro
 {: #registry_setup_cli_namespace}
 
-Para poder almacenar las imágenes de Docker en {{site.data.keyword.registrylong}}, debe crear un espacio de nombres. Para trabajar con espacios de nombres, instale el plugin de CLI `container-registry`.
+Para gestionar sus imágenes de Docker en {{site.data.keyword.registrylong}}, debe instalar el plugin de la CLI de `container-registry` y crear un espacio de nombres.
 {:shortdesc}
 
 No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {: important}
 
-Antes de empezar, instale la [CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Antes de empezar, instale la CLI de {{site.data.keyword.cloud_notm}}; consulte [Guía de inicio de la CLI de {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started).
 
 ## Instalación del plugin de CLI `container-registry`
 {: #cli_namespace_registry_cli_install}
@@ -42,7 +42,7 @@ Instale el plugin de CLI `container-registry` para utilizar la línea de mandato
 1. [Instale el plugin de CLI `container-registry`.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Opcional: [Configure su cliente de Docker para que ejecute mandatos sin permisos root ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/install/linux/linux-postinstall/). Si no lleva a cabo este paso, debe ejecutar los mandatos `ibmcloud login`, `ibmcloud cr login`, `docker pull` y `docker push` con `sudo` o como root.
 
-Ahora puede configurar su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}.
+Ahora puede [configurar su propio [espacio de nombres](#registry_namespace_setup) en {{site.data.keyword.registrylong_notm}}.
 
 ## Actualización del plugin de CLI `container-registry`
 {: #registry_cli_update}
@@ -97,8 +97,10 @@ Debe crear un espacio de nombres para almacenar las imágenes de Docker en {{sit
 - [Instale la CLI de {{site.data.keyword.cloud_notm}} y el plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifique cómo utilizar y denominar los espacios de nombres de su registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-<br>
 Para crear un espacio de nombres, consulte [Configure un espacio de nombres](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) en la documentación de iniciación.
+
+El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región. Los espacios de nombres deben tener entre 4 y 30 caracteres y solo deben contener letras en minúsculas, números, guiones (-) y guiones bajos (_). Los espacios de nombres deben empezar y finalizar con una letra o un número.
+{: tip}
 
 Ahora puede [enviar por push imágenes de Docker a su espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) y compartir estas imágenes con otros usuarios en su cuenta. Para controlar el acceso a los espacios de nombres en {{site.data.keyword.cloud_notm}} IAM, consulte [Creación de políticas](/docs/services/Registry?topic=registry-user#create).
 

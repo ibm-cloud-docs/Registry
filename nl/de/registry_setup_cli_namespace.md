@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -25,13 +25,13 @@ subcollection: registry
 # {{site.data.keyword.registrylong_notm}}-CLI und eigenen Registry-Namensbereich einrichten
 {: #registry_setup_cli_namespace}
 
-Bevor Sie Ihre Docker-Images in {{site.data.keyword.registrylong}} speichern können, müssen Sie einen Namensbereich erstellen. Installieren Sie das `container-registry`-CLI-Plug-in, um mit Namensbereichen zu arbeiten.
+Um Ihre Docker-Images in {{site.data.keyword.registrylong}} verwalten zu können, müssen Sie das CLI-Plug-in `container-registry` installieren und einen Namensbereich erstellen.
 {:shortdesc}
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {: important}
 
-Bevor Sie beginnen, installieren Sie die Befehlszeilenschnittstelle (CLI) von [{{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Bevor Sie beginnen, installieren Sie die Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.cloud_notm}}. Informationen finden Sie im Abschnitt [Einführung in die Befehlszeilenschnittstelle von {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started).
 
 ## `container-registry`-CLI-Plug-in installieren
 {: #cli_namespace_registry_cli_install}
@@ -42,7 +42,7 @@ Installieren Sie das `container-registry`-CLI-Plug-in, um Namensbereiche und Doc
 1. [Installieren Sie das `container-registry`-CLI-Plug-in. ](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Optional: [Konfigurieren Sie den Docker-Client für die Ausführung von Befehlen ohne Rootberechtigungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/install/linux/linux-postinstall/). Falls Sie diesen Schritt nicht ausführen, müssen Sie die Befehle `ibmcloud login`, `ibmcloud cr login`, `docker pull` und `docker push` mit `sudo` oder als Root ausführen.
 
-Sie können jetzt einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}} einrichten.
+Sie können jetzt einen eigenen [Namensbereich](#registry_namespace_setup) in {{site.data.keyword.registrylong_notm}} einrichten.
 
 ## `container-registry`-CLI-Plug-in aktualisieren
 {: #registry_cli_update}
@@ -97,8 +97,10 @@ Sie müssen einen Namensbereich erstellen, um Docker-Images in {{site.data.keywo
 - [{{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle und das Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Verwendung und Benennung der Registry-Namensbereiche planen](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
 
-<br>
 Informationen zum Erstellen eines Namensbereichs finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in der Dokumentation zur Einführung.
+
+Der Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. Namensbereiche müssen 4 bis 30 Zeichen lang sein und dürfen nur Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten. Namensbereiche müssen mit einem Buchstaben oder einer Zahl beginnen und enden.
+{: tip}
 
 Sie können nun [Docker-Images per Push-Operation in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace) übertragen und diese Images mit anderen Benutzern in Ihrem Konto gemeinsam nutzen. Informationen zur Steuerung des Zugriffs auf Namensbereich in {{site.data.keyword.cloud_notm}} IAM finden Sie in [Richtlinien erstellen](/docs/services/Registry?topic=registry-user#create).
 

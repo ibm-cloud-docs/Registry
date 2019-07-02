@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -178,7 +178,7 @@ Nesta seção, você cria alguns namespaces com imagens de amostra e concede ace
         ```
         {: pre}
 
-        Os nomes de namespace devem ser exclusivos na região.
+        O namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região. Os namespaces devem ter de 4 a 30 caracteres e conter apenas letras minúsculas, números, hífens (-) e sublinhados (_). Os namespaces devem iniciar e terminar com uma letra ou número.
         {: tip}
 
     3. Crie `namespace_b` executando o comando a seguir:

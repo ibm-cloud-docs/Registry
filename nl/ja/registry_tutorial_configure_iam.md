@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,8 +175,7 @@ subcollection: registry
         ```
         {: pre}
 
-        名前空間の名前は、地域内で固有でなければなりません。
-        {: tip}
+        名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。名前空間は、文字または数値で開始および終了する必要があります。{: tip}
 
     3. 次のコマンドを実行して、`namespace_b` を作成します。
 

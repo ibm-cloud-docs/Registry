@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -184,7 +184,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 {:shortdesc}
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
-{:tip}
+{: important}
 
 ### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
 {: #terms}
@@ -256,13 +256,13 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 选择名称空间时，请考虑以下规则：
 
 
-- 名称空间在 {{site.data.keyword.cloud_notm}} 区域中必须唯一。
-- 名称空间的长度必须为 4 - 30 个字符。
-- 名称空间必须至少以一个字母或数字开头。
-- 名称空间必须只包含小写字母、数字或下划线 (_)。
+- 您的名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。
+- 您的名称空间必须为 4 - 30 个字符。
+- 您的名称空间必须以字母或数字开头和结尾。
+- 您的名称空间必须只包含小写字母、数字、连字符 (-) 和下划线 (_)。
 
 不要将个人信息放入名称空间名称中。
-{:tip}
+{: important}
 
 设置第一个名称空间后，如果您尚未[升级套餐](#registry_plan_upgrade)，那么为您分配的是免费的 {{site.data.keyword.registrylong_notm}} 服务套餐。
 

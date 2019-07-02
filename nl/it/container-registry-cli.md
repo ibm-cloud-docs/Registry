@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ Puoi utilizzare la CLI {{site.data.keyword.registrylong}}, che è fornita nel pl
 
 **Prerequisiti**
 
-* Installa la [CLI {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.cloud_notm}} è `ibmcloud`.
+* Installa la CLI {{site.data.keyword.cloud_notm}}, vedi [Introduzione alla CLI {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started). Il prefisso per l'esecuzione dei comandi utilizzando la CLI {{site.data.keyword.cloud_notm}} è `ibmcloud`.
 * Prima di eseguire i comandi del registro, effettua l'accesso a {{site.data.keyword.cloud_notm}}
  con il comando `ibmcloud login` per generare un token di accesso e autenticare la tua sessione.
 
@@ -43,7 +43,7 @@ Per informazioni su come utilizzare la CLI {{site.data.keyword.registrylong_notm
 Per ulteriori informazioni sui ruoli della piattaforma IAM e di accesso al servizio necessari per alcuni comandi, consulta [Gestione dell'accesso utente con Identity and Access Management (IAM)](/docs/services/Registry?topic=registry-iam#iam).
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -356,6 +356,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Elimina una o più immagini specificate da {{site.data.keyword.registrylong_notm}}.
 
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il comando `ibmcloud cr image-rm` rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. Se vuoi rimuovere una tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizza il [comando `ibmcloud cr image-untag`](#bx_cr_image_untag).
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -387,7 +390,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Crea un'immagine, TARGET_IMAGE, che fa riferimento a un'immagine di origine, SOURCE_IMAGE, in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione.
+Aggiungi una tag che specifichi nel comando a un'immagine esistente, copia la tag in un altro repository oppure in un repository in uno spazio dei nomi diverso. L'immagine di destinazione, `TARGET_IMAGE`, è la nuova immagine e l'immagine di origine, `SOURCE_IMAGE`, è l'immagine esistente in {{site.data.keyword.registrylong_notm}}. Le immagini di origine e di destinazione devono essere nella stessa regione.
 
 Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`.
 {: tip}
@@ -436,6 +439,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+Rimuove una tag o delle tag da ogni immagine specificata in {{site.data.keyword.registrylong_notm}}.
+
+Per rimuovere una specifica tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizza il comando `ibmcloud cr image-untag`. Se vuoi eliminare l'immagine sottostante e tutte le relative tag, utilizza invece il [comando `ibmcloud cr image-rm`](#bx_cr_image_rm).
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**Prerequisiti**
+
+Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli di accesso per l'utilizzo di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+**Opzioni del comando**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>Il nome dell'immagine per cui vuoi rimuovere la tag. Puoi eliminare la tag da più immagini contemporaneamente elencando ogni immagine nel comando con uno spazio tra ciascun nome. `IMMAGE` deve essere nel formato `repository:tag`, ad esempio: `us.icr.io/namespace/image:latest`
+
+<p>Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`. Se nel nome immagine non è specificata alcuna tag, il comando ha esito negativo.</p>
+
+</dd>
+</dl>
+
+**Esempio**
+
+Rimuovi la tag `1` dall'immagine `us.icr.io/birds/bluebird:1`.
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -481,10 +521,10 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 **Opzioni del comando**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>Lo spazio dei nomi che desideri aggiungere. Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini e caratteri di sottolineatura. Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
+<dd>Lo spazio dei nomi che desideri aggiungere. Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_). Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
   
 <p>  
-<strong>Suggerimento</strong> non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
+<strong>Importante</strong> non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
 </p>
   
 </dd>
@@ -722,10 +762,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add` (obsoleto)
 {: #bx_cr_token_add}
 
 Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro.
+
+L'utilizzo dei token per automatizzare l'esecuzione del push e del pull delle immagini Docker da e verso i tuoi spazi dei nomi è obsoleto. Utilizza invece le chiavi API per automatizzare l'accesso ai tuoi spazi dei nomi, consulta [Automazione dell'accesso ai tuoi spazi dei nomi utilizzando le chiavi API](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -742,7 +785,7 @@ Per trovare delle informazioni sulle autorizzazioni necessarie, consulta [Ruoli 
 <dd>(Facoltativo) Specifica il valore come una descrizione per il token, che viene visualizzata quando esegui `ibmcloud cr token-list`. Se il tuo token viene creato automaticamente da {{site.data.keyword.containerlong_notm}}, la descrizione viene impostata sul nome del tuo cluster Kubernetes. In questo caso, il token viene rimosso automaticamente alla rimozione del cluster.
   
 <p> 
-  <strong>Suggerimento</strong> non inserire informazioni personali nella tua descrizione del token.
+  <strong>Importante</strong> non inserire informazioni personali nella tua descrizione del token.
 </p>
 
 </dd>

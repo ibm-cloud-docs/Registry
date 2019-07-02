@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -25,13 +25,13 @@ subcollection: registry
 # 设置 {{site.data.keyword.registrylong_notm}} CLI 和注册表名称空间
 {: #registry_setup_cli_namespace}
 
-必须创建名称空间后，才能在 {{site.data.keyword.registrylong}} 中存储 Docker 映像。要使用名称空间，请安装 `container-registry` CLI 插件。
+要管理 {{site.data.keyword.registrylong}} 中的 Docker 映像，您必须安装 `container-registry` CLI 插件并创建名称空间。
 {:shortdesc}
 
 不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
-开始之前，安装 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。
+开始之前，安装 {{site.data.keyword.cloud_notm}} CLI，具体请参阅 [{{site.data.keyword.cloud_notm}} CLI 使用入门](/docs/cli?topic=cloud-cli-getting-started)。
 
 ## 安装 `container-registry` CLI 插件
 {: #cli_namespace_registry_cli_install}
@@ -42,7 +42,7 @@ subcollection: registry
 1. [安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 2. 可选：[配置 Docker 客户机以在没有 root 用户许可权的情况下运行命令 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/install/linux/linux-postinstall/)。如果未执行此步骤，那么必须以 `sudo` 或以 root 用户身份运行 `ibmcloud login`、`ibmcloud cr login`、`docker pull` 和 `docker push` 命令。
 
-现在，您可以在 {{site.data.keyword.registrylong_notm}} 中设置自己的名称空间。
+现在，您可以在 {{site.data.keyword.registrylong_notm}} 中设置您自己的[名称空间](#registry_namespace_setup)。
 
 ## 更新 `container-registry` CLI 插件
 {: #registry_cli_update}
@@ -97,8 +97,10 @@ subcollection: registry
 - [安装 {{site.data.keyword.cloud_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [规划如何使用注册表名称空间并为其命名](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
 
-<br>
 要创建名称空间，请参阅“入门”文档中的[设置名称空间](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
+
+名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符 (-) 和下划线 (_)。名称空间必须以字母或数字开头和结尾。
+{: tip}
 
 现在，您可以[将 Docker 映像推送到 {{site.data.keyword.registrylong_notm}} 中的名称空间](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)，并与帐户中的其他用户共享这些映像。要控制对 {{site.data.keyword.cloud_notm}} IAM 中名称空间的访问权，请参阅[创建策略](/docs/services/Registry?topic=registry-user#create)。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -44,7 +44,7 @@ subcollection: registry
 **시작하기 전에**
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -67,7 +67,7 @@ subcollection: registry
 **시작하기 전에**
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - 로컬 컴퓨터에서 이미지 [가져오기](#registry_images_pulling_reg) 또는 [빌드](#registry_images_creating)를 수행하고 네임스페이스 정보로 이미지에 태그를 지정하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
@@ -108,7 +108,7 @@ subcollection: registry
 **시작하기 전에**
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -171,7 +171,7 @@ subcollection: registry
 **시작하기 전에**
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
-- [{{site.data.keyword.registrylong_notm}}에서 고유 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
+- [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
 - [루트 권한 없이 Docker 명령을 실행할 수 있는지 확인 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.docker.com/install/linux/linux-postinstall/)하십시오. 루트 권한이 필요하도록 Docker 클라이언트가 설정된 경우, `sudo`를 사용하여 `ibmcloud login`, `ibmcloud cr login`, `docker pull` 및 `docker push` 명령을 실행해야 합니다.
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
@@ -269,6 +269,39 @@ API 키를 사용하여 이미지를 {{site.data.keyword.registrylong_notm}}에 
 
 이제 클러스터를 사용하여 이미지를 가져올 수 있습니다. [이미지에서 컨테이너 빌드](/docs/containers?topic=containers-images#other_registry_accounts)를 참조하십시오.
 
+## 개인용 {{site.data.keyword.cloud_notm}} 저장소에 있는 이미지에서 태그 제거
+{: #registry_images_untag}
+
+[`mcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 명령을 사용하여 태그를 이미지에서 제거하고 기본 이미지 및 기타 모든 태그를 그대로 남겨둘 수 있습니다.
+{:shortdesc}
+
+저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 기본 이미지 및 해당 태그를 모두 제거하려면 [개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제](#registry_images_remove)를 참조하십시오.
+{: tip}
+
+CLI를 사용하여 태그를 제거하려면 다음 단계를 완료하십시오.
+
+1. `ibmcloud login` 명령을 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오.
+2. 태그를 제거하려면 다음 명령을 실행하십시오.
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   여기서 `IMAGE`는 `repository:tag` 형식으로 된 제거할 이미지의 이름입니다.
+
+   이미지 이름에 태그를 지정하지 않은 경우 명령이 실패합니다. 명령에 각 개인용 {{site.data.keyword.cloud_notm}} 레지스트리 경로를 공백으로 구분하여 나열함으로써 여러 이미지에 대한 태그를 삭제할 수 있습니다.
+
+   이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
+   {:tip}
+
+3. 다음 명령을 실행하여 태그가 제거되었는지 확인하고 태그가 목록에 표시되지 않는지 검사하십시오.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove}
 
@@ -280,16 +313,19 @@ API 키를 사용하여 이미지를 {{site.data.keyword.registrylong_notm}}에 
 공용 {{site.data.keyword.IBM_notm}} 이미지는 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 삭제할 수 없으며 할당량에 대해 계산되지 않습니다.
 
 이미지 삭제는 실행 취소할 수 없습니다. 기존 배치에서 사용 중인 이미지를 삭제하면 스케일 업 또는 재스케줄(또는 둘 다)이 실패할 수 있습니다.
-{:tip}
+{: important}
+
+저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 명령은 기본 이미지와 해당 태그를 모두 제거합니다. 동일한 이미지가 다른 저장소 또는 네임스페이스에 있으면 해당 이미지 사본이 제거되지 않습니다. 이미지에서 태그를 제거하고 기본 이미지 및 기타 모든 태그를 그대로 남겨두려면 [개인용 {{site.data.keyword.cloud_notm}} 저장소에 있는 이미지에서 태그 제거](#registry_images_untag) 명령을 참조하십시오.
+{: tip}
 
 ### CLI를 사용하여 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove_cli}
 
-CLI를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제할 수 있습니다.
+CLI를 사용하여 개인용 저장소에서 원치 않는 이미지 및 해당 태그를 모두 삭제할 수 있습니다.
 {:shortdesc}
 
 이미지 삭제는 실행 취소할 수 없습니다. 기존 배치에서 사용 중인 이미지를 삭제하면 스케일 업 또는 재스케줄(또는 둘 다)이 실패할 수 있습니다.
-{:tip}
+{: important}
 
 CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십시오.
 
@@ -301,11 +337,11 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
    ```
    {: pre}
 
-   여기서 _IMAGE_는 `repository:tag` 형식으로 된 제거할 이미지의 이름입니다.
+   여기서 `IMAGE`는 `repository:tag` 형식으로 된 제거할 이미지의 이름입니다.
 
    이미지 이름에 태그가 지정되지 않은 경우에는 `latest`로 태그 지정된 이미지가 기본적으로 삭제됩니다. 명령에 각 개인용 {{site.data.keyword.cloud_notm}} 레지스트리 경로를 공백으로 구분하여 나열함으로써 여러 이미지를 삭제할 수 있습니다.
 
-   이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. 저장소 및 태그 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
+   이미지의 이름을 찾으려면 `ibmcloud cr image-list`를 실행하십시오. **저장소** 및 **태그** 열의 컨텐츠를 결합하여 `repository:tag` 형식의 이미지 이름을 작성하십시오.
    {:tip}
 
 3. 다음 명령을 실행하여 이미지가 삭제되었는지 확인하고 이미지가 목록에 표시되지 않는지 검사하십시오.
@@ -318,11 +354,11 @@ CLI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 ### GUI를 사용하여 개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제
 {: #registry_images_remove_gui}
 
-그래픽 사용자 인터페이스(GUI)를 사용하여 개인용 저장소에서 원치 않는 이미지를 삭제할 수 있습니다.
+그래픽 사용자 인터페이스(GUI)를 사용하여 개인용 이미지 저장소에서 원치 않는 이미지 및 해당 태그를 모두 삭제할 수 있습니다.
 {:shortdesc}
 
 이미지 삭제는 실행 취소할 수 없습니다. 기존 배치에서 사용 중인 이미지를 삭제하면 스케일 업 또는 재스케줄(또는 둘 다)이 실패할 수 있습니다.
-{:tip}
+{: important}
 
 GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십시오.
 
@@ -334,7 +370,7 @@ GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 6. 삭제할 이미지가 포함된 행에서 선택란을 선택하십시오.
 
    이 조치는 실행 취소할 수 없으므로 올바른 이미지를 선택했는지 확인하십시오.
-   {: tip}
+   {: important}
 
 7. **이미지 삭제**를 클릭하십시오.
 
@@ -345,7 +381,7 @@ GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 {:shortdesc}
 
 특정 저장소를 삭제하면 해당 저장소의 모든 이미지가 삭제됩니다. 이 조치는 실행 취소할 수 없습니다.
-{:tip}
+{: important}
 
 **시작하기 전에**
 
@@ -361,6 +397,6 @@ GUI를 사용하여 개인용 저장소를 삭제하려면 다음 단계를 완�
 6. 삭제할 개인용 저장소가 포함된 행에서 선택란을 선택하십시오.
 
     이 조치는 실행 취소할 수 없으므로 올바른 저장소를 선택했는지 확인하십시오.
-    {: tip}
+    {: important}
 
 7. **저장소 삭제**를 클릭하십시오.

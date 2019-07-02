@@ -78,7 +78,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 
 Vous recevez ce message parce que les images sont analysées de manière asynchrone par rapport aux demandes de résultats, et l'exécution du processus d'analyse prend un certain temps. En fonctionnement normal, l'analyse se déroule durant les quelques minutes qui suivent l'ajout de l'image au registre, en fonction de variables telles que la taille d'image et la quantité de trafic reçue par le registre.
 
-Si vous recevez ce message dans le cadre d'un pipeline de génération et que cette erreur se produit régulièrement, essayez d'ajouter de la logique de relance comportant une courte pause. 
+Si vous recevez ce message dans le cadre d'un pipeline de génération et que cette erreur se produit régulièrement, essayez d'ajouter de la logique de relance comportant une courte pause.
 
 Si les performances restent inacceptables, prenez contact avec le support. Voir [Aide et support pour {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-ts_index#gettinghelp).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -288,6 +288,39 @@ Crea un ID servizio che utilizza una chiave API per eseguire il push dell'immagi
 
 Puoi ora utilizzare i cluster per eseguire il pull delle immagini, vedi [Creazione dei contenitori dalle immagini](/docs/containers?topic=containers-images#other_registry_accounts).
 
+## Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato
+{: #registry_images_untag}
+
+Puoi rimuovere una tag o delle tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizzando il comando [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag).
+{:shortdesc}
+
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, per rimuovere l'immagine sottostante e tutte le relative tag, vedi [Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato](#registry_images_remove).
+{: tip}
+
+Per rimuovere una tag o delle tag utilizzando la CLI, completa la seguente procedura:
+
+1. Effettua l'accesso a {{site.data.keyword.cloud_notm}} eseguendo il comando `ibmcloud login`.
+2. Per rimuovere una tag, esegui questo comando:
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   Dove `IMMAGINE` è il nome dell'immagine che vuoi rimuovere, nel formato `repository:tag`.
+
+   Se nel nome immagine non è specificata alcuna tag, il comando ha esito negativo. Puoi eliminare le tag per più immagini elencando ogni percorso del registro {{site.data.keyword.cloud_notm}} privato nel comando con uno spazio tra ogni percorso.
+
+   Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`.
+   {:tip}
+
+3. Verifica che la tag sia stata rimossa immettendo il seguente comando e controlla che l'immagine non sia visualizzata nell'elenco.
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato
 {: #registry_images_remove}
 
@@ -299,16 +332,19 @@ Se vuoi eliminare un repository privato e le relative immagini associate, consul
 Le immagini {{site.data.keyword.IBM_notm}} pubbliche non possono essere eliminate dal tuo repository {{site.data.keyword.cloud_notm}} privato e non vengono conteggiate nella tua quota.
 
 L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'immagine utilizzata da una distribuzione esistente potrebbe causare la mancata riuscita di un ridimensionamento, di una ripianificazione o di entrambe le operazioni.
-{:tip}
+{: important}
+
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il comando [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. Se vuoi rimuovere una tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, vedi il comando [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](#registry_images_untag).
+{: tip}
 
 ### Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato utilizzando la CLI
 {: #registry_images_remove_cli}
 
-Puoi eliminare le immagini indesiderate dal tuo repository privato utilizzando la CLI.
+Puoi eliminare le immagini e tutte le relative tag indesiderate dal tuo repository privato utilizzando la CLI.
 {:shortdesc}
 
 L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'immagine utilizzata da una distribuzione esistente potrebbe causare la mancata riuscita di un ridimensionamento, di una ripianificazione o di entrambe le operazioni.
-{:tip}
+{: important}
 
 Per eliminare un'immagine utilizzando la CLI, completa la seguente procedura:
 
@@ -320,11 +356,11 @@ Per eliminare un'immagine utilizzando la CLI, completa la seguente procedura:
    ```
    {: pre}
 
-   Dove _IMMAGINE_ è il nome dell'immagine che vuoi rimuovere, nel formato `repository:tag`.
+   Dove `IMMAGINE` è il nome dell'immagine che vuoi rimuovere, nel formato `repository:tag`.
 
    Se nel nome dell'immagine non è specificata alcuna tag, per impostazione predefinita verrà eliminata l'immagine con tag `latest`. Puoi eliminare più immagini elencando ogni percorso del registro {{site.data.keyword.cloud_notm}} privato nel comando con uno spazio tra ogni percorso.
 
-   Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne Repository e Tag per creare il nome dell'immagine nel formato `repository:tag`.
+   Per trovare i nomi delle tue immagini, esegui `ibmcloud cr image-list`. Combina il contenuto delle colonne **Repository** e **Tag** per creare il nome dell'immagine nel formato `repository:tag`.
    {:tip}
 
 3. Verifica che l'immagine sia stata eliminata immettendo il seguente comando e controlla che l'immagine non sia visualizzata nell'elenco.
@@ -337,11 +373,11 @@ Per eliminare un'immagine utilizzando la CLI, completa la seguente procedura:
 ### Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato utilizzando la GUI
 {: #registry_images_remove_gui}
 
-Puoi eliminare le immagini indesiderate dal tuo repository di immagini privato utilizzando la GUI (graphical user interface).
+Puoi eliminare le immagini e tutte le relative tag indesiderate dal tuo repository di immagini privato utilizzando la GUI (graphical user interface).
 {:shortdesc}
 
 L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'immagine utilizzata da una distribuzione esistente potrebbe causare la mancata riuscita di un ridimensionamento, di una ripianificazione o di entrambe le operazioni.
-{:tip}
+{: important}
 
 Per eliminare un'immagine utilizzando la GUI, completa la seguente procedura:
 
@@ -353,7 +389,7 @@ Per eliminare un'immagine utilizzando la GUI, completa la seguente procedura:
 6. Nella riga che contiene l'immagine che vuoi eliminare, seleziona la casella di spunta.
 
    Assicurati di aver selezionato l'immagine corretta perché questa azione non può essere annullata.
-   {: tip}
+   {: important}
 
 7. Fai clic su **Elimina immagine**.
 
@@ -364,7 +400,7 @@ Puoi eliminare i repository privati che non sono più necessari, e le eventuali 
 {:shortdesc}
 
 Quando elimini un repository, tutte le immagini in tale repository vengono eliminate. Questa azione non può essere annullata.
-{:tip}
+{: important}
 
 **Prima di iniziare**
 
@@ -380,6 +416,6 @@ Per eliminare un repository privato utilizzando la GUI, completa la seguente pro
 6. Nella riga che contiene il repository privato che vuoi eliminare, seleziona la casella di spunta.
 
     Assicurati di aver selezionato il repository corretto perché questa azione non può essere annullata.
-    {: tip}
+    {: important}
 
 7. Fai clic su **Elimina repository**.

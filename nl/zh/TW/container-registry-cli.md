@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ subcollection: container-registry-cli-plugin
 
 **必要條件**
 
-* 安裝 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)。使用 {{site.data.keyword.cloud_notm}} CLI 來執行指令的字首是 `ibmcloud`。
+* 安裝 {{site.data.keyword.cloud_notm}} CLI，請參閱[開始使用 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)。使用 {{site.data.keyword.cloud_notm}} CLI 來執行指令的字首是 `ibmcloud`。
 * 在執行登錄指令之前，請先使用 `ibmcloud login` 指令登入 {{site.data.keyword.cloud_notm}}，以產生存取記號並鑑別您的階段作業。
 
 在指令行中，當有 `ibmcloud` CLI 及 `container-registry` CLI 外掛程式的更新可用時，即會通知您。請確定您保持最新的 CLI，讓您可以使用所有可用的指令及旗標。
@@ -42,7 +42,7 @@ subcollection: container-registry-cli-plugin
 如需部分指令所需 IAM 平台及服務存取角色的相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry?topic=registry-iam#iam)。
 
 請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -354,6 +354,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 從 {{site.data.keyword.registrylong_notm}} 中刪除一個以上的指定映像檔。
 
+若儲存庫內的相同映像檔摘要有多個標籤存在，`ibmcloud cr image-rm` 指令會移除基礎映像檔及其所有標籤。如果相同的映像檔存在於不同的儲存庫或名稱空間，則映像檔的該副本不會移除。如果您想要從映像檔移除一個或數個標籤，而讓基礎映像檔及任何其他標籤保留原樣，請使用 [`ibmcloud cr image-untag`](#bx_cr_image_untag) 指令。
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -385,7 +388,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-在 {{site.data.keyword.registrylong_notm}} 中，建立一個映像檔 TARGET_IMAGE，其參照來源映像檔 SOURCE_IMAGE。來源及目標映像檔必須位於相同地區。
+將指令中所指定的標籤新增至現有的映像檔、將標籤複製到另一個儲存庫，或將標籤複製到不同名稱空間中的儲存庫。目標映像檔 `TARGET_IMAGE` 是新的映像檔，而來源映像檔 `SOURCE_IMAGE` 是 {{site.data.keyword.registrylong_notm}} 中的現有映像檔。來源及目標映像檔必須位於相同地區。
 
 若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 **Repository** 及 **Tag** 直欄的內容，以建立映像檔名稱。
 {: tip}
@@ -434,6 +437,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。
+
+若要從映像檔移除一個或數個標籤，而讓基礎映像檔及任何其他標籤保留原樣，請使用 `ibmcloud cr image-untag` 指令。如果您想要刪除基礎映像檔及其所有標籤，請改用 [`ibmcloud cr image-rm`](#bx_cr_image_rm) 指令。
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**必要條件**
+
+若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
+
+**指令選項**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>您要移除標籤的映像檔名稱。您可以藉由在指令中列出每一個映像檔，並以空格隔開每一個名稱，來同時刪除多個映像檔的標籤。`IMAGE` 的格式必須為 `repository:tag`，例如：`us.icr.io/namespace/image:latest`
+
+<p>若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 **Repository** 及 **Tag** 直欄的內容，以建立映像檔名稱。如果映像檔名稱中未指定標籤，指令會失敗。</p>
+
+</dd>
+</dl>
+
+**範例**
+
+從映像 `us.icr.io/birds/bluebird:1` 移除標籤 `1`。
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -479,10 +519,10 @@ ibmcloud cr namespace-add NAMESPACE
 **指令選項**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>您要新增的名稱空間。此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4 - 30 個字元，且只能包含小寫字母、數字、連字號及底線。名稱空間的開頭和結尾必須是字母或數字。
+<dd>您要新增的名稱空間。此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4 - 30 個字元，且只能包含小寫字母、數字、連字號 (-) 及底線 (_)。名稱空間的開頭和結尾必須是字母或數字。
   
 <p>  
-<strong>提示</strong>：請不要將個人資訊放在名稱空間名稱中。
+<strong>重要事項</strong>：請不要將個人資訊放在名稱空間名稱中。
 </p>
   
 </dd>
@@ -720,10 +760,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add`（已淘汰）
 {: #bx_cr_token_add}
 
 新增可用來控制登錄存取權的記號。
+
+使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](/docs/services/Registry?topic=registry-registry_access#registry_api_key)。
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -740,7 +783,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring
 <dd>（選用）指定值作為記號說明，這會在您執行 `ibmcloud cr token-list` 時顯示。如果 {{site.data.keyword.containerlong_notm}} 自動建立您的記號，則會將說明設為 Kubernetes 叢集名稱。在此情況下，移除您的叢集時，即會自動移除此記號。
   
 <p> 
-  <strong>提示</strong>：請不要將個人資訊放在記號說明中。
+  <strong>重要事項</strong>：請不要將個人資訊放在記號說明中。
 </p>
 
 </dd>

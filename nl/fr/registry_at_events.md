@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -71,9 +71,16 @@ Le tableau suivant répertorie les méthodes d'API générant un événement lor
     <td>`container-registry.image.push`</td>
 	  <td>Envoie une image par commande push vers {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
+    <td>`container-registry.image.rm`</td>
+	  <td>Supprime une ou plusieurs images spécifiées de votre registre {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
 	  <td>Ajoute une nouvelle étiquette qui fait référence à une image {{site.data.keyword.registrylong_notm}} préexistante.</td>
+  </tr>
+   <tr>
+    <td>`container-registry.image.untag`</td>
+	  <td>Supprime une ou plusieurs étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
@@ -97,7 +104,7 @@ Le tableau suivant répertorie les méthodes d'API générant un événement lor
   </tr>
   <tr>
     <td>`container-registry.registrytoken.create`</td>
-	  <td>Crée un nouveau jeton de registre.</td>
+	  <td>Crée un nouveau jeton de registre. (obsolète)</td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

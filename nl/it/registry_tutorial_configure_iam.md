@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,7 +175,7 @@ In questa sezione, crea alcuni spazi dei nomi con immagini di esempio e concedi 
         ```
         {: pre}
 
-        I nomi dello spazio dei nomi devono essere univoci nella regione.
+        Lo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. Gli spazi dei nomi devono avere tra i 4 e i 30 caratteri e contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_). Gli spazi dei nomi devono iniziare e terminare con una lettera o un numero.
         {: tip}
 
     3. Crea `namespace_b` immettendo il seguente comando:

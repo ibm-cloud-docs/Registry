@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -267,6 +267,39 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 
 您現在可以使用叢集來取回映像檔。如需相關資訊，請參閱[從映像檔建置容器](/docs/containers?topic=containers-images#other_registry_accounts)。
 
+## 從專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔移除標籤
+{: #registry_images_untag}
+
+您可以使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 指令，從映像檔移除一個或數個標籤，而讓基礎映像檔及任何其他標籤保留原樣。
+{:shortdesc}
+
+若儲存庫內的相同映像檔摘要有多個標籤存在，要移除基礎映像檔及其所有標籤，請參閱[刪除專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔](#registry_images_remove)。
+{: tip}
+
+若要移除一個或數個標籤，請完成下列步驟：
+
+1. 執行 `ibmcloud login` 指令，以登入 {{site.data.keyword.cloud_notm}}。
+2. 若要移除一個標籤，請執行下列指令：
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   其中 `IMAGE` 是您要移除之映像檔的名稱，格式為 `repository:tag`。
+
+   如果映像檔名稱中未指定標籤，指令會失敗。您可以藉由在指令中列出每一個專用 {{site.data.keyword.cloud_notm}} 登錄路徑，並以空格隔開每一個路徑，來刪除多個映像檔的標籤。
+
+   若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 **Repository** 及 **Tag** 直欄的內容，以建立映像檔名稱。
+{:tip}
+
+3. 執行下列指令，驗證已移除標籤，並確認標籤未顯示在清單中。
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## 刪除專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔
 {: #registry_images_remove}
 
@@ -278,16 +311,19 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 無法刪除您專用 {{site.data.keyword.cloud_notm}} 儲存庫中的公用 {{site.data.keyword.IBM_notm}} 映像檔，且它們不會計入您的配額。
 
 刪除映像檔無法復原。刪除現有部署正在使用的映像檔，可能會導致擴增及（或）重新排程失敗。
-{:tip}
+{: important}
+
+若儲存庫內的相同映像檔摘要有多個標籤存在，[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 指令會移除基礎映像檔及其所有標籤。如果相同的映像檔存在於不同的儲存庫或名稱空間，則映像檔的該副本不會移除。如果您想要從映像檔移除一個或數個標籤，而讓基礎映像檔及任何其他標籤保留原樣，請參閱[從專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔移除標籤](#registry_images_untag)。
+{: tip}
 
 ### 使用 CLI 刪除專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔
 {: #registry_images_remove_cli}
 
-您可以使用 CLI 刪除專用儲存庫中不想要的映像檔。
+您可以使用 CLI 刪除專用儲存庫中不想要的映像檔及其所有標籤。
 {:shortdesc}
 
 刪除映像檔無法復原。刪除現有部署正在使用的映像檔，可能會導致擴增及（或）重新排程失敗。
-{:tip}
+{: important}
 
 若要使用 CLI 刪除映像檔，請完成下列步驟：
 
@@ -299,12 +335,12 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
    ```
    {: pre}
 
-   其中 _IMAGE_ 是您要移除之映像檔的名稱，格式為 `repository:tag`。
+   其中 `IMAGE` 是您要移除之映像檔的名稱，格式為 `repository:tag`。
 
    如果映像檔名稱中未指定標籤，則依預設會刪除以 `latest` 標記的映像檔。您可以藉由在指令中列出每一個專用 {{site.data.keyword.cloud_notm}} 登錄路徑，並以空格隔開每一個路徑，來刪除多個映像檔。
 
-       若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 Repository 及 Tag 直欄的內容，以建立映像檔名稱。
-   {:tip}
+       若要尋找映像檔的名稱，請執行 `ibmcloud cr image-list`。請以 `repository:tag` 格式，結合 **Repository** 及 **Tag** 直欄的內容，以建立映像檔名稱。
+{:tip}
 
 3. 執行下列指令，驗證已刪除映像檔，並確認映像檔未顯示在清單中。
 
@@ -316,11 +352,11 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 ### 使用 GUI 刪除專用 {{site.data.keyword.cloud_notm}} 儲存庫中的映像檔
 {: #registry_images_remove_gui}
 
-您可以使用圖形使用者介面 (GUI) 刪除專用映像檔儲存庫中不想要的映像檔。
+您可以使用圖形使用者介面 (GUI) 刪除專用映像檔儲存庫中不想要的映像檔及其所有標籤。
 {:shortdesc}
 
 刪除映像檔無法復原。刪除現有部署正在使用的映像檔，可能會導致擴增及（或）重新排程失敗。
-{:tip}
+{: important}
 
 若要使用 GUI 刪除映像檔，請完成下列步驟：
 
@@ -332,7 +368,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 6. 在包含您要刪除之映像檔的列中，選取勾選框。
 
    請確定您已選取正確的映像檔，因為此動作無法復原。
-   {: tip}
+   {: important}
 
 7. 按一下**刪除映像檔**。
 
@@ -343,7 +379,7 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 {:shortdesc}
 
 當您刪除儲存庫時，會刪除該儲存庫中的所有映像檔。此動作無法復原。
-{:tip}
+{: important}
 
 **開始之前**
 
@@ -359,6 +395,6 @@ Docker 映像檔是每個您建立的容器的基準。映像檔是從 Dockerfil
 6. 在包含您要刪除之專用儲存庫的列中，選取勾選框。
 
     請確定您已選取正確的儲存庫，因為此動作無法復原。
-    {: tip}
+    {: important}
 
 7. 按一下**刪除儲存庫**。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -66,7 +66,7 @@ Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
 
 | Azione| Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. | Amministratore |
+| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. (Obsoleto) | Amministratore |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Rimuovi uno o più token specificati. | Amministratore |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Richiama il token specificato dal registro. | Amministratore |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.cloud_notm}}. | Amministratore |
@@ -126,7 +126,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | Azione | Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Crea un'immagine contenitore. | Scrittore, Gestore |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Elimina una o più immagini.</li><li>`docker trust revoke` Elimina la firma. </li></ul> | Scrittore, Gestore |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Elimina una o più immagini.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Rimuove una tag o delle tag da ogni immagine specificata in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Elimina la firma. </li></ul> | Scrittore, Gestore |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Visualizza i dettagli di un'immagine specifica. | Lettore, Gestore |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Elenca le tue immagini contenitore. | Lettore, Gestore |
 | `container-registry.image.pull` | <ul><li>`docker pull` Esegui il pull dell'immagine. </li><li>`docker trust inspect` Controlla la firma. </li></ul> | Lettore, Scrittore e Gestore |

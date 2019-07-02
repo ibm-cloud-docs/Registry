@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -81,7 +81,7 @@ dei nomi nel tuo account
 |Quantità di archiviazione per le immagini|500 MB|Senza limiti|
 |Traffico di pull|5 GB al mese|Senza limiti|
 |Fatturazione|Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
-da e verso il tuo spazio dei nomi. Per ulteriori informazioni, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Archiviazione: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 0,5 GB al mese sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Traffico di pull: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 5 GB sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
+da e verso il tuo spazio dei nomi. Per ulteriori informazioni, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Archiviazione: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 0,5 GB al mese sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Traffico di pull: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 5 GB sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry). Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
 da e verso il tuo spazio dei nomi. Per ulteriori informazioni su archiviazione, traffico di pull e stimatore costi, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabella 2. Piani {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
@@ -209,7 +209,7 @@ Preparati per memorizzare e condividere le tue immagini Docker con {{site.data.k
 {:shortdesc}
 
 Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
-{:tip}
+{: important}
 
 ### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -283,13 +283,13 @@ Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account,
 
 Quando scegli uno spazio dei nomi, considera le seguenti regole:
 
-- Il tuo spazio dei nomi deve essere univoco in una regione {{site.data.keyword.cloud_notm}}.
+- Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. 
 - Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
-- Il tuo spazio dei nomi deve iniziare con almeno una lettera o un numero.
-- Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri o caratteri di sottolineatura (_).
+- Il tuo spazio dei nomi deve iniziare e terminare con una lettera o un numero.
+- Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_).
 
 Non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
-{:tip}
+{: important}
 
 Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
 gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).

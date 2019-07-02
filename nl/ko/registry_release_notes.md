@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,12 +28,23 @@ subcollection: registry
 다음 릴리스 정보를 사용하여 {{site.data.keyword.registrylong}} 및 Vulnerability Advisor의 최신 변경사항에 대해 알아보십시오. 변경사항은 날짜별로 그룹화되어 있습니다.
 {:shortdesc}
 
+## 2019년 6월 13일
+{: #13jun2019}
+
+- **이미지에서 태그 제거**
+
+  {{site.data.keyword.registrylong_notm}}의 각 지정된 이미지에서 태그를 제거합니다.
+
+  특정 태그를 이미지에서 제거하고 기본 이미지 및 기타 모든 태그를 그대로 남겨두려면 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 명령을 사용하십시오. 기본 이미지 및 해당 태그를 모두 삭제하려면 대신 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 명령을 사용하십시오.
+
+  자세한 정보는 [개인용 {{site.data.keyword.cloud_notm}} 저장소에 있는 이미지에서 태그 제거](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)를 참조하십시오.
+
 ## 2019년 5월 13일
 {: #13may2019}
 
 - **컨테이너 스캐너에 대한 지원 종료**
 
-  이제 컨테이너 스캐너는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 
+  이제 컨테이너 스캐너는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다.
 
   자세한 정보는 [컨테이너 스캐너 설치(더 이상 사용되지 않음)](/docs/services/Registry?topic=va-va_index#va_install_container_scanner)를 참조하십시오.
 
@@ -92,7 +103,7 @@ subcollection: registry
 
   Vulnerability Advisor API 버전 2는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. API 버전 3을 사용하십시오. [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/container-registry/va)를 참조하십시오.
 
-  자세한 정보는 [Vulnerability Advisor v2 API Deprecation ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/)을 참조하십시오.
+  자세한 정보는 [Vulnerability Advisor v2 API Deprecation ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/)을 참조하십시오.
 
 ## 2018년 10월 4일
 {: #4oct2018}

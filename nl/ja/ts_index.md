@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ docker build --no-cache .
 
 - 返されたエラー・メッセージに示されている指示に従います。
 - 以下を参照して、有効な名前空間を入力したか確認します。
+  - 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。
   - 名前空間は、4 文字から 30 文字の長さでなければなりません。
-  - 名前空間は、文字または数字で始まる必要があります。
-  - 名前空間には、小文字、数字、またはアンダースコアー (_) のみを使用できます。
+  - 名前空間は、文字または数値で開始および終了する必要があります。
+  - 名前空間には、小文字、数字、ハイフン (-) およびアンダースコアー (_) のみを使用できます。
 - 名前空間に別の値を選択します。
 - 削除された名前空間を再作成しており、その名前空間に多くのイメージが含まれていた場合は、後で再試行してください。
 
@@ -292,6 +293,18 @@ denied: requested access to the resource is denied
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## `ibmcloud cr image-rm` コマンドでイメージを削除したところ、そのイメージを参照するすべてのタグも削除されました
+{: #ts_image-rm}
+
+{: tsSymptoms}
+`ibmcloud cr image-rm` コマンドを使用してイメージを削除したところ、そのイメージを参照する同じリポジトリー内のすべてのタグも削除されてしまいました。
+
+{: tsCauses}
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。
+
+{: tsResolve}
+イメージから 1 つのタグを削除するものの、基になるイメージとその他のタグは残しておくという場合は、[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)コマンドを使用します。詳しくは、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーのイメージからのタグの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)および[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)を参照してください。
 
 ## カスタム・ファイアウォールを設定したレジストリーへのアクセスが失敗する
 {: #ts_firewall}
@@ -444,8 +457,7 @@ kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers?topic=containers-users#rbac)と、[Kubernetes -  RBAC 許可の使用
-![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) を参照してください。
+RBAC の詳細については、[カスタム Kubernetes RBAC 役割によるユーザーの許可](/docs/containers?topic=containers-users#rbac)と、[Kubernetes - RBAC 許可の使用![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)を参照してください。
 
 以下の手順を実行して、エラー時にクローズするのではなくオープンするように Web フックの構成を変更した後、少なくとも 1 つの Container Image Security Enforcement ポッドが稼働中になったら、障害時にクローズするように Web フックの構成を元に戻します。
 

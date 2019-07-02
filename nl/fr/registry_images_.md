@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -269,6 +269,39 @@ Créez un ID de service qui utilise une clé d'API pour envoyer des images par c
 
 Vous pouvez à présent utiliser des clusters pour extraire les images. Voir [Génération de conteneurs à partir d'images](/docs/containers?topic=containers-images#other_registry_accounts).
 
+## Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé
+{: #registry_images_untag}
+
+Vous pouvez supprimer une ou plusieurs étiquettes d'une image et conserver l'image sous-jacente ainsi que toutes les autres étiquettes définies à l'aide de la commande [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag).
+{:shortdesc}
+
+Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, pour supprimer l'image sous-jacente ainsi que toutes ses étiquettes, voir [Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé](#registry_images_remove).
+{: tip}
+
+Pour supprimer une ou plusieurs étiquettes, depuis l'interface de ligne de commande, procédez comme suit :
+
+1. Connectez-vous à {{site.data.keyword.cloud_notm}} en exécutant la commande `ibmcloud login`.
+2. Pour supprimer une étiquette, exécutez la commande suivante :
+
+   ```
+   ibmcloud cr image-untag IMAGE
+   ```
+   {: pre}
+
+   Où `IMAGE` est le nom de l'image que vous souhaitez retirer, au format `repository:tag`.
+
+   Si aucune étiquette n'est spécifiée dans le nom de l'image, la commande échoue. Vous pouvez supprimer les étiquettes de plusieurs images en répertoriant chaque chemin d'accès de registre {{site.data.keyword.cloud_notm}} privé dans la commande en séparant les chemins par un espace.
+
+   Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`.
+   {:tip}
+
+3. Vérifiez que l'étiquette a bien été supprimée en exécutant la commande suivante, puis assurez-vous que l'étiquette ne figure plus dans la liste :
+
+   ```
+   ibmcloud cr image-list
+   ```
+   {: pre}
+
 ## Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé
 {: #registry_images_remove}
 
@@ -280,16 +313,19 @@ Si vous souhaitez supprimer un référentiel privé et les pages qui lui sont as
 Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.cloud_notm}} privé, et elles ne sont pas décomptées de votre quota.
 
 La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
-{:tip}
+{: important}
+
+Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) supprime l'image sous-jacente ainsi que toutes ses étiquettes. Si la même image existe dans un autre référentiel ou espace de nom, cette copie de l'image n'est pas supprimée. Si vous voulez supprimer une étiquette d'une image et conserver l'image sous-jacente ainsi que toutes les étiquettes définies, voir [Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé](#registry_images_untag).
+{: tip}
 
 ### Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé à l'aide de l'interface de ligne de commande
 {: #registry_images_remove_cli}
 
-Vous pouvez supprimer des images non désirées de votre référentiel privé en utilisant l'interface de ligne de commande.
+Vous pouvez supprimer des images non désirées de votre référentiel d'images privé en utilisant l'interface de ligne de commande.
 {:shortdesc}
 
 La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
-{:tip}
+{: important}
 
 Pour supprimer une image à l'aide de l'interface de ligne de commande, procédez comme suit :
 
@@ -301,14 +337,14 @@ Pour supprimer une image à l'aide de l'interface de ligne de commande, procéde
    ```
    {: pre}
 
-   Où _IMAGE_ est le nom de l'image que vous souhaitez retirer, au format `repository:tag`.
+   Où `IMAGE` est le nom de l'image que vous souhaitez retirer, au format `repository:tag`.
 
    Si aucune étiquette n'est spécifiée dans le nom de l'image, l'image associée à l'étiquette `latest` est supprimée par défaut. Vous pouvez supprimer plusieurs images en listant dans la commande chaque chemin de registre {{site.data.keyword.cloud_notm}} privé et en les séparant par un espace.
 
-   Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes Repository et Tag pour créer le nom de l'image au format `repository:tag`.
+   Pour trouver les noms de vos images, exécutez `ibmcloud cr image-list`. Associez le contenu des colonnes **Repository** et **Tag** pour créer le nom de l'image au format `repository:tag`.
    {:tip}
 
-3. Vérifiez que l'image a bien été supprimée en exécutant la commande suivant, puis assurez-vous que l'image n'apparaît pas dans la liste :
+3. Vérifiez que l'image a bien été supprimée en exécutant la commande suivante, puis assurez-vous que l'image n'apparaît pas dans la liste :
 
    ```
    ibmcloud cr image-list
@@ -318,11 +354,11 @@ Pour supprimer une image à l'aide de l'interface de ligne de commande, procéde
 ### Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé à l'aide de l'interface graphique
 {: #registry_images_remove_gui}
 
-Vous pouvez supprimer des images non désirées de votre référentiel d'images privé en utilisant l'interface graphique.
+Vous pouvez supprimer des images non désirées ainsi que toutes leurs étiquettes de votre référentiel d'images privé à l'aide de l'interface graphique.
 {:shortdesc}
 
 La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
-{:tip}
+{: important}
 
 Pour supprimer une image à l'aide de l'interface graphique, procédez comme suit :
 
@@ -334,7 +370,7 @@ Pour supprimer une image à l'aide de l'interface graphique, procédez comme sui
 6. Sur la ligne qui contient l'image à supprimer, cochez la case.
 
    Cette action ne peut pas être annulée, par conséquent, vérifiez que l'image sélectionnée est bien celle que vous souhaitez supprimer.
-   {: tip}
+   {: important}
 
 7. Cliquez sur **Supprimer l'image**.
 
@@ -345,7 +381,7 @@ Vous pouvez supprimer les référentiels privés dont vous n'avez plus besoin, a
 {:shortdesc}
 
 Lorsque vous supprimez un référentiel, toutes les images qu'il contient sont également supprimées. Cette action est irréversible.
-{:tip}
+{: important}
 
 **Avant de commencer**
 
@@ -361,6 +397,6 @@ Pour supprimer un référentiel privé à l'aide de l'interface graphique, proc�
 6. Sur la ligne qui contient le référentiel privé à supprimer, cochez la case.
 
     Cette action ne peut pas être annulée, par conséquent, vérifiez que le référentiel sélectionné est bien celui que vous souhaitez supprimer.
-    {: tip}
+    {: important}
 
 7. Cliquez sur **Supprimer le référentiel**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,7 +175,9 @@ En esta sección, creará algunos espacios de nombres con imágenes de ejemplo y
         ```
         {: pre}
 
-        Los nombres de los espacios de nombres deben ser exclusivos en la región.
+        El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región. Los
+espacios de nombres deben tener entre 4 y 30 caracteres y solo deben contener letras en minúsculas, números, guiones (-)
+y guiones bajos (_). Los espacios de nombres deben empezar y finalizar con una letra o un número.
         {: tip}
 
     3. Cree `namespace_b` ejecutando el mandato siguiente:

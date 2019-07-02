@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -66,7 +66,7 @@ UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세
 
 |조치| 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. |관리자 |
+|`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. (더 이상 사용되지 않음) |관리자 |
 |`container-registry.registrytoken.delete` |[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 하나 이상의 지정된 토큰을 제거합니다. |관리자 |
 |`container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 레지스트리에서 지정된 토큰을 검색합니다. |관리자 |
 |`container-registry.registrytoken.list` |[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) {{site.data.keyword.cloud_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |
@@ -126,7 +126,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | 조치 | 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) 컨테이너 이미지를 빌드합니다. |작성자, 관리자 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> |작성자, 관리자 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 하나 이상의 이미지를 삭제합니다.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) {{site.data.keyword.registrylong_notm}}의 각 지정된 이미지에서 태그를 제거합니다.</li><li>`docker trust revoke` 서명을 삭제합니다. </li></ul> |작성자, 관리자 |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) 특정 이미지에 대한 세부사항을 표시합니다. | 독자, 관리자 |
 | `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 컨테이너 이미지를 나열합니다. | 독자, 관리자 |
 | `container-registry.image.pull` | <ul><li>`docker pull` 이미지를 가져옵니다. </li><li>`docker trust inspect` 서명을 검사합니다. </li></ul> | 독자, 작성자, 관리자 |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,18 @@ subcollection: registry
 
 Utilisez ces notes sur l'édition pour prendre connaissance des modifications les plus récentes apportées à {{site.data.keyword.registrylong}} et Vulnerability Advisor. Les changements sont classés par date.
 {:shortdesc}
+
+## 13 juin 2019
+{: #13jun2019}
+
+- **Suppression d'étiquettes d'images**
+
+  Supprimer une ou plusieurs étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.
+
+  Pour supprimer une étiquette d'une image et conserver l'image sous-jacente ainsi que toutes les étiquettes définies, utilisez la commande [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Si vous voulez supprimer l'image sous-jacente ainsi que toutes ses étiquettes, utilisez la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm).
+
+
+  Pour plus d'informations, voir [Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag).
 
 ## 13 mai 2019
 {: #13may2019}
@@ -93,7 +105,7 @@ Utilisez ces notes sur l'édition pour prendre connaissance des modifications le
 
   La version 2 de l'API Vulnerability Advisor est obsolète et n'est plus utilisable. Servez-vous de la version 3 de l'API. Voir [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/apidocs/container-registry/va).
 
-  Pour plus d'informations, voir [Vulnerability Advisor v2 API Deprecation ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/).
+  Pour plus d'informations, voir [Vulnerability Advisor v2 API Deprecation ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/).
 
 ## 4 octobre 2018
 {: #4oct2018}

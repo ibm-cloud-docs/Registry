@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ Sie können dieses Problem wie folgt beheben:
 
 - Befolgen Sie die Anweisungen, die in der zurückgegebenen Fehlernachricht enthalten sind.
 - Prüfen Sie, ob Sie einen gültigen Namensbereich eingegeben haben:
+  - Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. 
   - Der Name muss 4 bis 30 Zeichen lang sein.
-  - Der Name muss mit mindestens einem Buchstaben bzw. einer Ziffer beginnen.
-  - Der Name darf ausschließlich Kleinbuchstaben, Ziffern oder Unterstreichungszeichen (_) enthalten.
+  - Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
+  - Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.
 - Wählen Sie einen anderen Wert für Ihren Namensbereich.
 - Wenn Sie einen Namensbereich, der viele Images enthielt und gelöscht wurde, neu erstellen, versuchen Sie es zu einem späteren Zeitpunkt erneut.
 
@@ -291,6 +292,18 @@ Softwarepakete wie Images und Helm-Diagramme von IBM Passport Advantage müssen 
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## Ich habe den Befehl `ibmcloud cr image-rm` verwendet, um ein Image löschen. Alle Tags, die dieses Image referenzieren, wurden ebenfalls gelöscht.
+{: #ts_image-rm}
+
+{: tsSymptoms}
+Sie haben ein Image mithilfe des Befehls `ibmcloud cr image-rm` gelöscht. Alle Tags im selben Repository, die das Image referenzieren, wurden ebenfalls gelöscht.
+
+{: tsCauses}
+Wenn im selben Image-Auszug in einem Repository mehrere Tags vorhanden sind, entfernt der Befehl [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) das zugrunde liegende Image und alle seine Tags. Wenn dasselbe Image in einem anderen Repository oder Namensbereich vorhanden ist, wird diese Kopie des Images nicht entfernt.
+
+{: tsResolve}
+Wenn Sie ein Tag aus einem Image entfernen möchten, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, verwenden Sie den Befehl [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Weitere Informationen finden Sie im Abschnitt [Tags aus Images in Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository entfernen](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) und [Images aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository löschen](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## Zugriff auf die Registry über eine angepasste Firewall schlägt fehl
 {: #ts_firewall}
@@ -443,8 +456,7 @@ Für die folgenden Ressourcen:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers?topic=containers-users#rbac) und [Kubernetes - RBAC-Berechtigung verwenden
-![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers?topic=containers-users#rbac) und [Kubernetes - RBAC-Berechtigung verwenden ![Symbol für externen Link](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). 
 
 Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail closed' in 'fail open' zu ändern und sie dann, wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, wieder auf 'fail closed' zurückzusetzen:
 

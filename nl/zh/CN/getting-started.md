@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,7 @@ subcollection: registry
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
 {: #gs_registry_cli_install}
 
-1. 安装 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)，以便可以运行 {{site.data.keyword.cloud_notm}} `ibmcloud` 命令。此安装还会安装 {{site.data.keyword.containerlong_notm}} 和 {{site.data.keyword.registrylong_notm}} 的 CLI 插件。
+1. 安装 {{site.data.keyword.cloud_notm}} CLI，以便可以运行 {{site.data.keyword.cloud_notm}} `ibmcloud` 命令，具体请参阅 [{{site.data.keyword.cloud_notm}} CLI 使用入门](/docs/cli?topic=cloud-cli-getting-started)。此安装还会安装 {{site.data.keyword.containerlong_notm}} 和 {{site.data.keyword.registrylong_notm}} 的 CLI 插件。
 
 ## 设置名称空间
 {: #gs_registry_namespace_add}
@@ -62,8 +62,7 @@ subcollection: registry
     ```
    {: pre}
 
-   名称空间名称在区域中必须唯一。
-        {: tip}
+   名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符 (-) 和下划线 (_)。名称空间必须以字母或数字开头和结尾。{: tip}
 
 3. 要确保创建了名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 
@@ -75,7 +74,7 @@ subcollection: registry
 ## 将映像从其他注册表拉出到本地计算机
 {: #gs_registry_images_pulling}
 
-1. [安装 Docker Engine CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/products/docker-engine#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
+1. [安装 Docker Engine CLI ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.docker.com/products/container-runtime#/download)。对于 Windows 8 或 OS X Yosemite 10.10.x 或更低版本，请改为安装 [Docker Toolbox ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支持 Docker Engine V1.12.6 或更高版本。
 
 2. 将映像下载（_拉出_）到本地计算机。将 `<source_image>` 替换为映像的存储库，并将 `<tag>` 替换为要使用的映像标记，例如 _latest_。
 

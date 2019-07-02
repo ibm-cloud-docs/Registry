@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ Sie können die {{site.data.keyword.registrylong}}-CLI, die im `container-regist
 
 **Voraussetzungen**
 
-* Installieren Sie die [{{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli). Das Präfix für die Ausführung von Befehlen unter Verwendung der {{site.data.keyword.cloud_notm}}-CLI lautet `ibmcloud`.
+* Installieren Sie die {{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle (CLI). Informationen finden Sie im Abschnitt [Einführung in die Befehlszeilenschnittstelle von {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started). Das Präfix für die Ausführung von Befehlen unter Verwendung der {{site.data.keyword.cloud_notm}}-CLI lautet `ibmcloud`.
 * Bevor Sie die Registry-Befehle ausführen, melden Sie sich bei {{site.data.keyword.cloud_notm}} an, wobei Sie den Befehl `ibmcloud login` verwenden, um ein Zugriffstoken zu generieren und Ihre Sitzung zu authentifizieren.
 
 Sobald Aktualisierungen für die `ibmcloud`-CLI und `container-registry`-CLI-Plug-ins verfügbar sind, erhalten Sie eine Benachrichtigung über die Befehlszeile. Stellen Sie sicher, dass Sie Ihre CLI aktuell halten, damit Sie alle verfügbaren Befehle und Flags verwenden können.
@@ -42,7 +42,7 @@ Informationen zur Verwendung der {{site.data.keyword.registrylong_notm}}-CLI fin
 Weitere Informationen zur IAM-Plattform und zu den Servicezugriffsrollen, die für einige Befehle erforderlich sind, finden Sie unter [Benutzerzugriff mit Identity and Access Management verwalten](/docs/services/Registry?topic=registry-iam#iam).
 
 Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{:tip}
+{: important}
 
 ## `ibmcloud cr api`
 {: #bx_cr_api}
@@ -355,6 +355,9 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 Löschen Sie ein angegebenes Image oder mehrere angegebene Images aus {{site.data.keyword.registrylong_notm}}.
 
+Wenn im selben Image-Auszug in einem Repository mehrere Tags vorhanden sind, entfernt der Befehl `ibmcloud cr image-rm` das zugrunde liegende Image und alle seine Tags. Wenn dasselbe Image in einem anderen Repository oder Namensbereich vorhanden ist, wird diese Kopie des Images nicht entfernt. Wenn Sie ein Tag aus einem Image entfernen möchten, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, verwenden Sie den Befehl [`ibmcloud cr image-untag`](#bx_cr_image_untag).
+{: tip}
+
 ```
 ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
@@ -386,7 +389,7 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Erstellen Sie ein Image (ZIELIMAGE), das sich auf ein Quellenimage (QUELLENIMAGE) in {{site.data.keyword.registrylong_notm}} bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden.
+Fügen Sie einem vorhandenen Image ein Tag hinzu, das Sie im Befehl angegeben haben, kopieren Sie das Tag in ein anderes Repository oder kopieren Sie das Tag in ein Repository in einem anderen Namensbereich. Das Zielimage `TARGET_IMAGE` ist das neue Image und das Quellimage `SOURCE_IMAGE` ist das vorhandene Image in {{site.data.keyword.registrylong_notm}}. Die Quellen- und Zielimages müssen sich in derselben Region befinden.
 
 Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen.
 {: tip}
@@ -435,6 +438,43 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 ```
 {: pre}
 
+## `ibmcloud cr image-untag`
+{: #bx_cr_image_untag}
+
+Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.
+
+Um ein Tag aus einem Image zu entfernen, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, verwenden Sie den Befehl `ibmcloud cr image-untag`. Wenn Sie das zugrunde liegende Image und alle seine Tages löschen möchten, verwenden Sie stattdessen den Befehl [`ibmcloud cr image-rm`](#bx_cr_image_rm).
+{: tip}
+
+```
+ibmcloud cr image-untag IMAGE [IMAGE...]
+```
+{: codeblock}
+
+**Voraussetzungen**
+
+[Zugriffsrollen für die Verwendung von {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using) enthält weitere Informationen zu den erforderlichen Berechtigungen.
+
+**Befehlsoptionen**
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>Der Name des Images, aus dem Sie ein Tag entfernen möchten. Sie können ein Tag aus mehreren Images gleichzeitig löschen, indem Sie jedes Image im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten. `IMAGE` muss dasselbe Format wie `repository:tag` haben, z. B. `us.icr.io/namespace/image:latest`.
+
+<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen. Wenn im Imagenamen kein Tag angegeben ist, schlägt der Befehl fehl. </p>
+
+</dd>
+</dl>
+
+**Beispiel**
+
+Entfernen Sie das Tag `1` aus dem Image `us.icr.io/birds/bluebird:1`.
+
+```
+ibmcloud cr image-untag us.icr.io/birds/bluebird:1
+```
+{: pre}
+
 ## `ibmcloud cr info`
 {: #bx_cr_info}
 
@@ -480,10 +520,10 @@ ibmcloud cr namespace-add NAMESPACE
 **Befehlsoptionen**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>Der hinzuzufügende Namensbereich. Der Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. Namensbereiche müssen 4 bis 30 Zeichen lang sein und dürfen nur Kleinbuchstaben, Zahlen, Bindestriche und Unterstreichungszeichen enthalten. Namensbereiche müssen mit einem Buchstaben oder einer Zahl beginnen und enden.
+<dd>Der hinzuzufügende Namensbereich. Der Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. Namensbereiche müssen 4 bis 30 Zeichen lang sein und dürfen nur Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten. Namensbereiche müssen mit einem Buchstaben oder einer Zahl beginnen und enden.
   
 <p>  
-<strong>Tipp</strong> Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
+<strong>Wichtig</strong> Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
 </p>
   
 </dd>
@@ -721,10 +761,13 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
-## `ibmcloud cr token-add`
+## `ibmcloud cr token-add` (nicht mehr verwendet)
 {: #bx_cr_token_add}
 
 Fügen Sie ein Token hinzu, mit dem Sie den Zugriff auf eine Registry kontrollieren können.
+
+Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
+{: deprecated}
 
 ```
 ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
@@ -741,7 +784,7 @@ ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring
 <dd>(Optional) Gibt den Wert als Beschreibung für das Token an, das angezeigt wird, wenn Sie `ibmcloud cr token-list` ausführen. Wenn Ihr Token automatisch von {{site.data.keyword.containerlong_notm}} erstellt wird, wird die Beschreibung auf den Namen Ihres Kubernetes-Clusters festgelegt. In diesem Fall wird das Token automatisch entfernt, wenn Ihr Cluster entfernt wird.
   
 <p> 
-  <strong>Tipp</strong> Beziehen Sie keine personenbezogenen Daten in Ihre Tokenbeschreibung ein.
+  <strong>Wichtig</strong> Beziehen Sie keine personenbezogenen Daten in Ihre Tokenbeschreibung ein.
 </p>
 
 </dd>

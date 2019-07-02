@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -36,7 +36,7 @@ subcollection: registry
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI
 {: #gs_registry_cli_install}
 
-1. 安裝 [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli)，讓您可以執行 {{site.data.keyword.cloud_notm}} `ibmcloud` 指令。此安裝也會安裝 {{site.data.keyword.containerlong_notm}} 及 {{site.data.keyword.registrylong_notm}} 的 CLI 外掛程式。
+1. 安裝 {{site.data.keyword.cloud_notm}} CLI，讓您可以執行 {{site.data.keyword.cloud_notm}} `ibmcloud` 指令。請參閱[開始使用 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)。此安裝也會安裝 {{site.data.keyword.containerlong_notm}} 及 {{site.data.keyword.registrylong_notm}} 的 CLI 外掛程式。
 
 ## 設定名稱空間
 {: #gs_registry_namespace_add}
@@ -62,8 +62,8 @@ subcollection: registry
    ```
    {: pre}
 
-   名稱空間名稱在地區中必須是唯一的。
-        {: tip}
+   此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4 - 30 個字元，且只能包含小寫字母、數字、連字號 (-) 及底線 (_)。名稱空間的開頭和結尾必須是字母或數字。
+   {: tip}
 
 3. 若要確定已建立名稱空間，請執行 `ibmcloud cr namespace-list` 指令。
 
@@ -75,7 +75,7 @@ subcollection: registry
 ## 將映像檔從另一個登錄取回到本端機器
 {: #gs_registry_images_pulling}
 
-1. [安裝 Docker 引擎 CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/products/docker-engine#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
+1. [安裝 Docker 引擎 CLI ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.docker.com/products/container-runtime#/download)。若為 Windows 8 或是 OS X Yosemite 10.10.x 或更早版本，請改為安裝 [Docker 工具箱 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/toolbox/)。{{site.data.keyword.registrylong_notm}} 支援 Docker Engine 1.12.6 版或更新版本。
 
 2. 將映像檔下載（_取回_）至本端機器。將 `<source_image>` 取代為映像檔的儲存庫，並將 `<tag>` 取代為您要使用之映像檔的標籤，例如 _latest_。
 

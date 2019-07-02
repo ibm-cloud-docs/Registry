@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-13"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,19 @@ subcollection: registry
 
 使用这些发行说明了解 {{site.data.keyword.registrylong}} 和漏洞顾问程序的最新更改。更改按日期分组。
 {:shortdesc}
+
+## 2019 年 6 月 13 日
+{: #13jun2019}
+
+- **从映像除去标记**
+
+  从 {{site.data.keyword.registrylong_notm}} 中的每个指定映像除去一个或多个标记。
+
+  要从映像除去特定标记，并将底层的映像和其他任何标记保持不变，请使用 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 命令。
+如果想要删除底层的映像及其所有标记，请改为使用 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 命令。
+
+
+  有关更多信息，请参阅[从专用 {{site.data.keyword.cloud_notm}} 存储库中的映像除去标记](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)。
 
 ## 2019 年 5 月 13 日
 {: #13may2019}
@@ -94,7 +107,7 @@ subcollection: registry
 
   不推荐使用漏洞顾问程序的 API V2，并且该版本已不再可用。使用 API V3，请参阅[ {{site.data.keyword.registrylong_notm}} API 的漏洞顾问程序 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/apidocs/container-registry/va)。
 
-  有关更多信息，请参阅[不推荐使用漏洞顾问程序 V2 API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/bluemix/2018/12/vulnerability-advisor-v2-api-deprecation/)。
+  有关更多信息，请参阅[不推荐使用漏洞顾问程序 V2 API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/)。
 
 ## 2018 年 10 月 4 日
 {: #4oct2018}

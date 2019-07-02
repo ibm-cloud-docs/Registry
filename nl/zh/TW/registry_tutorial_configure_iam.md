@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -175,7 +175,7 @@ subcollection: registry
         ```
         {: pre}
 
-        名稱空間名稱在地區中必須是唯一的。
+        此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4 - 30 個字元，且只能包含小寫字母、數字、連字號 (-) 及底線 (_)。名稱空間的開頭和結尾必須是字母或數字。
         {: tip}
 
     3. 執行下列指令，以建立 `namespace_b`：

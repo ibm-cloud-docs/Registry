@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,9 +149,10 @@ Vous pouvez corriger ce problème en procédant ainsi :
 
 - Suivez les instructions contenues dans le message d'erreur renvoyé.
 - Vérifiez que vous avez saisi un espace de nom valide :
+  - Votre espace de nom doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région.
   - Votre espace de nom doit comporter de 4 à 30 caractères.
-  - Votre espace de nom doit débuter par au moins une lettre ou un nombre.
-  - Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
+  - Votre espace de nom doit commencer et se terminer par une lettre ou un chiffre.
+  - Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres, des tirets (-) et des traits de soulignement (_).
 - Choisissez une autre valeur pour votre espace de nom.
 - Si vous recréez un espace de nom qui a été supprimé, et que ce dernier contenait de nombreuses images, faites une nouvelle tentative ultérieurement.
 
@@ -291,6 +292,18 @@ Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport 
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
    ```
    {: pre}
+
+## J'ai utilisé la commande `ibmcloud cr image-rm` pour supprimer une image et toutes les étiquettes qui font référence à cette image ont également été supprimées
+{: #ts_image-rm}
+
+{: tsSymptoms}
+Vous avez supprimé une image en utilisant la commande `ibmcloud cr image-rm` et toutes les étiquettes qui se trouvent dans le même référentiel et qui font référence à l'image ont également été supprimées.
+
+{: tsCauses}
+Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) supprime l'image sous-jacente ainsi que toutes ses étiquettes. Si la même image existe dans un autre référentiel ou espace de nom, cette copie de l'image n'est pas supprimée. 
+
+{: tsResolve}
+Si vous voulez supprimer une étiquette d'une image mais conserver l'image sous-jacente ainsi que toutes les autres étiquettes, utilisez la commande [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Pour plus d'informations, voir [Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) et[Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
 ## L'accès au registre avec un pare-feu personnalisé échoue
 {: #ts_firewall}
@@ -443,7 +456,7 @@ sur les ressources suivantes :
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Pour plus d'informations sur le contrôle d'accès à base de rôles, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers?topic=containers-users#rbac) et [Kubernetes - Using RBAC Authorization ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+Pour plus d'informations sur RBAC, voir [Autorisation des utilisateurs avec des droits RBAC Kubernetes personnalisés](/docs/containers?topic=containers-users#rbac) et [Kubernetes - Using RBAC Authorization ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Procédez comme suit pour changer la configuration de webhook afin d'ignorer l'échec (fail open) au lieu de procéder à la fermeture en cas d'échec (fail closed) ; puis, lorsqu'au moins un pod Container Image Security Enforcement est en cours d'exécution, restaurez la configuration de webhook pour une fermeture en cas d'échec :
 

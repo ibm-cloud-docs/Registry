@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-19"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -63,7 +63,7 @@ Le tableau suivant décrit les plans de service {{site.data.keyword.registrylong
 |Description|Essayez {{site.data.keyword.registrylong_notm}} pour stocker et partager vos images Docker. Il s'agit du plan de service par défaut lorsque vous configurez votre premier espace de nom dans {{site.data.keyword.registrylong_notm}}.|Tirez parti d'un stockage et d'un trafic d'envoi d'images (commande pull) illimités pour gérer les images Docker pour tous les espaces de nom dans votre compte {{site.data.keyword.cloud_notm}}.|
 |Volume de stockage pour les images|500 Mo|Illimité|
 |Trafic d'extraction (pull)|5 Go par mois|Illimité|
-|Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et l'estimateur de coût, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Facturation|Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Stockage : vous êtes facturé par Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Trafic d'extraction (pull) : vous êtes facturé par gigaoctets utilisés par mois. Les 5 premiers Go sont gratuits. Vous êtes ensuite facturé comme indiqué dans la page des détails de l'offre ; voir [Container Registry ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/kubernetes/catalog/registry). Si vous dépassez vos limites de stockage ou de trafic pull, vous ne pouvez plus transférer ou extraire d'images de votre espace de nom. Pour plus d'informations sur le stockage, le trafic d'extraction (pull) et l'estimateur de coût, voir [Limites de quota et facturation dans {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tableau 2. Plans {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Limites de quota et facturation
@@ -208,7 +208,7 @@ Préparez-vous à stocker et à partager vos images Docker avec {{site.data.keyw
 {:shortdesc}
 
 Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
-{:tip}
+{: important}
 
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -278,13 +278,13 @@ Si vous ne savez pas si un espace de nom a déjà été défini pour votre compt
 
 Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
 
-- Votre espace de nom doit être unique dans une région {{site.data.keyword.cloud_notm}}.
-- Votre espace de nom doit comporter de 4 à 30 caractères.
-- Votre espace de nom doit débuter par au moins une lettre ou un nombre.
-- Votre espace de nom ne doit comporter que des lettres en minuscules, des chiffres ou des traits de soulignement (_).
+- Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région.
+- Il doit comporter de 4 à 30 caractères.
+- Il doit commencer et se terminer par une lettre ou un chiffre.
+- Il ne doit comporter que des lettres en minuscules, des chiffres, des tirets (-) et des traits de soulignement (_).
 
 Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
-{:tip}
+{: important}
 
 Après avoir configuré votre premier espace de nom, le plan de service {{site.data.keyword.registrylong_notm}} gratuit vous est affecté si vous n'avez pas encore [procédé à une mise à niveau de votre plan](#registry_plan_upgrade).
 
