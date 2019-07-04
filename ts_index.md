@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -353,34 +353,32 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 2. [Set up your trusted content environment](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Note the URL from the export command in the previous step. For example, `https://us.icr.io:4443`
-
-4. Create an IAM API key:
+3. Create an IAM API key:
 
    ```
    ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Set NOTARY_AUTH:
+4. Set NOTARY_AUTH:
 
    ```
    export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
    ```
    {: pre}
 
-6. Rotate your keys so that content that was signed with those keys is no longer trusted. Use the trust server variable that you set up in Step 2, and replace`<image>` with the image whose repository key is affected.
+5. Rotate your keys so that content that was signed with those keys is no longer trusted. Use the trust server variable that you set up in Step 2, and replace`<image>` with the image whose repository key is affected.
 
    ```
    notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
-7. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
+6. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
 
-8. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
+7. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
-9.  (Optional) When you've finished, if you want to revoke your API key, run the following command:
+8.  (Optional) When you've finished, if you want to revoke your API key, run the following command:
 
     ```
     ibmcloud iam api-key-delete notary-auth

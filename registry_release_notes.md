@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -34,6 +34,13 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 - **`ibmcloud cr token-add` command is no longer available**
 
   The `ibmcloud cr token-add` command is discontinued. You can't add registry tokens in either the CLI or the API anymore.
+
+## 27 June 2019
+{: #27jun2019}
+
+- **Container Scanner is no longer available**
+
+  The Container Scanner is discontinued. Vulnerability Advisor will continue to scan images that are pushed to {{site.data.keyword.registrylong_notm}}.
 
 ## 13 June 2019
 {: #13jun2019}
