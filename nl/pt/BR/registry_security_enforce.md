@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Impondo segurança da imagem do contêiner
+# Cumprindo a segurança de imagem do contêiner
 {: #security_enforce}
 
 Com o Container Image Security Enforcement, é possível verificar suas imagens de contêiner antes de implementá-las em seu cluster no {{site.data.keyword.containerlong}}. É possível controlar de onde as imagens serão implementadas, aplicar as políticas do Vulnerability Advisor e assegurar-se de que a [confiança de conteúdo](/docs/services/Registry?topic=registry-registry_trustedcontent) seja aplicada corretamente à imagem. Se uma imagem não atender a seus requisitos de política, o pod não será implementado em seu cluster nem atualizado.

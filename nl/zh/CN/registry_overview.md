@@ -64,14 +64,10 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 |特征|免费|标准|
 |---------------|----|--------|
-|描述|试用 {{site.data.keyword.registrylong_notm}} 以存储和共享 Docker 映像。此套餐是您在 {{site.data.keyword.registrylong_notm}} 中设置第一个名称空间时使用的缺省服务套餐。|优点是可以使用无限的存储量和拉出流量，为 {{site.data.keyword.cloud_notm}} 帐户中的所有名称空间管理 Docker 映像。
-|
+|描述|试用 {{site.data.keyword.registrylong_notm}} 以存储和共享 Docker 映像。此套餐是您在 {{site.data.keyword.registrylong_notm}} 中设置第一个名称空间时使用的缺省服务套餐。|优点是可以使用无限的存储量和拉出流量，为 {{site.data.keyword.cloud_notm}} 帐户中的所有名称空间管理 Docker 映像。|
 |映像的存储量|500 MB|无限制|
 |拉出流量|每月 5 GB|无限制|
-|计费|如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。
-有关更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。|<ul><li>存储量：按 GB-月使用量收费。第一个 0.5 GB-月免费。然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。</li><li>拉出流量：每月按使用的 GB 使用量收费。第一个 5 GB 免费。
-然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。
-有关存储量、拉出流量和成本估算工具的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}}](#registry_plan_billing) 中的配额限制和计费。</li></ul>|
+|计费|如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。有关更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。|<ul><li>存储量：按 GB-月使用量收费。第一个 0.5 GB-月免费。然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。</li><li>拉出流量：每月按使用的 GB 使用量收费。第一个 5 GB 免费。然后，按照产品详细信息页面中所述进行收费，请参阅 [Container Registry ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/kubernetes/catalog/registry)。如果您超过存储量或拉出流量限制，那么您无法将映像推送到名称空间或从名称空间拉出映像。有关存储量、拉出流量和成本估算工具的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} 中的配额限制和计费](#registry_plan_billing)。</li></ul>|
 {: caption="表 2. {{site.data.keyword.registrylong_notm}} 套餐" caption-side="top"}
 
 ## 配额限制和计费

@@ -64,7 +64,7 @@ A tabela a seguir detalha as ações que são mapeadas para funções de gerenci
 
 Para {{site.data.keyword.registrylong_notm}}, existem as seguintes ações:
 
-| Action| Operação em serviço | Função
+| Ação| Operação em serviço | Função
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Inclua um token que possa ser usado para controlar o acesso a um registro. (Descontinuado) | Administrador |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Remova um ou mais tokens especificados. | Administrador |
@@ -98,7 +98,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 ```
 {: pre}
 
-| Action| Operação em serviço | Função
+| Ação| Operação em serviço | Função
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Ative o cumprimento de política do IAM. | Gerente |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Crie uma isenção para um problema de segurança.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) Listar suas isenções para problemas de segurança.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Excluir uma isenção para um problema de segurança.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) Listar os tipos de problemas de segurança que podem ser isentados.</li></ul> | Gerente |
@@ -123,7 +123,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 ```
 {: pre}
 
-| Action | Operação em serviço | Função
+| Ação | Operação em serviço | Função
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Construa uma imagem de contêiner. | Gravador, Gerente |
 | `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Exclua uma ou mais imagens.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remover uma ou diversas tags de cada imagem especificada no {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Exclua a assinatura. </li></ul> | Gravador, Gerente |

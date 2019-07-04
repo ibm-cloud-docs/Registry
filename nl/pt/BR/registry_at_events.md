@@ -37,7 +37,7 @@ A tabela a seguir lista os métodos de API que geram um evento quando eles são 
 <table>
   <caption>Tabela 1. Ações que geram eventos</caption>
   <tr>
-    <th>Action</th>
+    <th>Ação</th>
 	  <th>Descrição</th>
   </tr>
   <tr>
