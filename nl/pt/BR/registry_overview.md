@@ -34,61 +34,41 @@ O {{site.data.keyword.registrylong_notm}} fornece um registro de imagem privado 
 
 **Figura 1. Como o {{site.data.keyword.registrylong_notm}} interage com as imagens do Docker**
 
-Uma imagem do Docker é a base para cada contêiner que você cria. Uma imagem é criada por meio
-de um Dockerfile, que é um arquivo que contém instruções para construir a imagem. Um Dockerfile pode
-referenciar os artefatos de construção em suas instruções que são armazenadas separadamente, como um app, a configuração
-do app e suas dependências. As imagens geralmente são armazenadas em um registro que pode ser acessado pelo público (registro público) ou configurado com acesso
-limitado para um pequeno grupo de usuários (registro privado). Usando o {{site.data.keyword.registrylong_notm}}, apenas os usuários com acesso à sua conta do {{site.data.keyword.cloud_notm}} podem acessar as suas imagens.
+Uma imagem do Docker é a base para cada contêiner que você cria. Uma imagem é criada por meio de um Dockerfile, que é um arquivo que contém instruções para construir a imagem. Um Dockerfile pode referenciar os artefatos de construção em suas instruções que são armazenadas separadamente, como um app, a configuração do app e suas dependências. As imagens geralmente são armazenadas em um registro que pode ser acessado pelo público (registro público) ou configurado com acesso limitado para um pequeno grupo de usuários (registro privado). Usando o {{site.data.keyword.registrylong_notm}}, apenas os usuários com acesso à sua conta do {{site.data.keyword.cloud_notm}} podem acessar as suas imagens.
 
-Ao enviar por push imagens para o {{site.data.keyword.registrylong_notm}}, você se beneficia dos recursos integrados do
-Vulnerability Advisor que varrem potenciais problemas de segurança e vulnerabilidades. O Vulnerability Advisor verifica
-se há pacotes vulneráveis em imagens base específicas do Docker e vulnerabilidades conhecidas em definições
-de configuração do app. Quando vulnerabilidades forem localizadas, informações sobre a vulnerabilidade serão
-fornecidas. É possível usar essas informações para resolver problemas de segurança para que contêineres não sejam implementados
-por meio de imagens vulneráveis.
+Ao enviar por push imagens para o {{site.data.keyword.registrylong_notm}}, você se beneficia dos recursos integrados do Vulnerability Advisor que varrem potenciais problemas de segurança e vulnerabilidades. O Vulnerability Advisor verifica se há pacotes vulneráveis em imagens base específicas do Docker e vulnerabilidades conhecidas em definições de configuração do app. Quando vulnerabilidades forem localizadas, informações sobre a vulnerabilidade serão fornecidas. É possível usar essas informações para resolver problemas de segurança para que contêineres não sejam implementados por meio de imagens vulneráveis.
 
 Revise a tabela a seguir para localizar uma visão geral dos benefícios de uso do {{site.data.keyword.registrylong_notm}}.
 
 |Benefício|Descrição|
 |-------|-----------|
 |Registro privado altamente disponível e escalável|<ul><li>Configure seu próprio namespace de imagem em um registro privado de múltiplos locatários, altamente disponível, escalável e criptografado que é hospedado e gerenciado pelo {{site.data.keyword.IBM_notm}}.</li><li>Armazene suas imagens privadas do Docker e compartilhe-as com os usuários em sua conta do {{site.data.keyword.cloud_notm}}.</li></ul>|
-|Conformidade de segurança de imagem com o Vulnerability Advisor|<ul><li>Benefício da varredura automática de imagens em seu namespace.</li><li>Revise as recomendações que são específicas para o sistema operacional para corrigir potenciais
-vulnerabilidades e proteger os seus contêineres de serem comprometidos.</li></ul>|
-|Limites de cota para armazenamento e tráfego extraído|<ul><li>Benefício do armazenamento livre e de tráfego extraído para as suas imagens privadas até você atingir a sua
-cota grátis.</li><li>Configure os limites de cota customizados para a quantia de armazenamento e de tráfego extraído por mês para evitar exceder
-o seu nível de pagamento preferencial.</li></ul>|
+|Conformidade de segurança de imagem com o Vulnerability Advisor|<ul><li>Benefício da varredura automática de imagens em seu namespace.</li><li>Revise as recomendações que são específicas para o sistema operacional para corrigir potenciais vulnerabilidades e proteger os seus contêineres de serem comprometidos.</li></ul>|
+|Limites de cota para armazenamento e tráfego extraído|<ul><li>Benefício do armazenamento livre e de tráfego extraído para as suas imagens privadas até você atingir a sua cota grátis.</li><li>Configure os limites de cota customizados para a quantia de armazenamento e de tráfego extraído por mês para evitar exceder o seu nível de pagamento preferencial.</li></ul>|
 {: caption="Tabela 1. Benefícios do {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Planos de serviço
 {: #registry_plans}
 
-É possível escolher entre os planos de serviço grátis ou padrão do {{site.data.keyword.registrylong_notm}}
-para armazenar suas imagens do Docker e disponibilizar essas imagens para os usuários em sua conta do {{site.data.keyword.cloud_notm}}.
+É possível escolher entre os planos de serviço grátis ou padrão do {{site.data.keyword.registrylong_notm}} para armazenar suas imagens do Docker e disponibilizar essas imagens para os usuários em sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-O plano de serviço do {{site.data.keyword.registrylong_notm}} determina a quantidade de armazenamento e extrai o tráfego que pode
-ser usado para suas imagens privadas. O plano de serviço é associado à sua conta do {{site.data.keyword.cloud_notm}}
-e os limites de armazenamento e o tráfego de extração de imagem são aplicados a todos os namespaces configurados em sua conta.
+O plano de serviço do {{site.data.keyword.registrylong_notm}} determina a quantidade de armazenamento e extrai o tráfego que pode ser usado para suas imagens privadas. O plano de serviço é associado à sua conta do {{site.data.keyword.cloud_notm}} e os limites de armazenamento e o tráfego de extração de imagem são aplicados a todos os namespaces configurados em sua conta.
 
 A tabela a seguir mostra os planos de serviço disponíveis do {{site.data.keyword.registrylong_notm}} e as suas características. Para obter mais informações sobre como o faturamento funciona e o que acontece ao exceder os limites do plano de serviço, veja [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Características|Livre|Padrão|
 |---------------|----|--------|
-|Descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu
-primeiro namespace no {{site.data.keyword.registrylong_notm}}.|Benefícios do armazenamento ilimitado e uso de tráfego de extração para gerenciar as imagens do Docker para todos os namespaces em sua conta
-do {{site.data.keyword.cloud_notm}}.|
+|Descrição|Experimente o {{site.data.keyword.registrylong_notm}} para armazenar e compartilhar suas imagens do Docker. Esse plano será o plano de serviço padrão ao configurar o seu primeiro namespace no {{site.data.keyword.registrylong_notm}}.|Benefícios do armazenamento ilimitado e uso de tráfego de extração para gerenciar as imagens do Docker para todos os namespaces em sua conta do {{site.data.keyword.cloud_notm}}.|
 |Quantidade de armazenamento para imagens|500 MB|Ilimitado|
 |Tráfego extraído|5 GB por mês|Ilimitado|
-|Faturamento|Se você exceder seu armazenamento ou os limites de tráfego de extração, não será possível enviar por push nem
-extrair imagens do seu namespace. Para obter mais informações, veja [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Armazenamento: você é cobrado por Gigabyte/Meses de uso. Os primeiros 0,5 GB/mês são gratuitos. Em seguida, você é cobrado conforme indicado na página de detalhes da oferta. Consulte [Container Registry ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Tráfego integral: você é cobrado por uso de Gigabyte por mês. Os primeiros 5 GB são livres. Em seguida, você é cobrado conforme indicado na página de detalhes da oferta. Consulte [Container Registry ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/kubernetes/catalog/registry). Se você exceder seu armazenamento ou os limites de tráfego de extração, não será possível enviar por push nem
-extrair imagens do seu namespace. Para obter mais informações sobre o armazenamento, o tráfego de pull e o estimador de custos, consulte [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Faturamento|Se você exceder seu armazenamento ou os limites de tráfego de extração, não será possível enviar por push nem extrair imagens do seu namespace. Para obter mais informações, veja [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Armazenamento: você é cobrado por Gigabyte/Meses de uso. Os primeiros 0,5 GB/mês são gratuitos. Em seguida, você é cobrado conforme indicado na página de detalhes da oferta. Consulte [Container Registry ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Tráfego integral: você é cobrado por uso de Gigabyte por mês. Os primeiros 5 GB são livres. Em seguida, você é cobrado conforme indicado na página de detalhes da oferta. Consulte [Container Registry ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/kubernetes/catalog/registry). Se você exceder seu armazenamento ou os limites de tráfego de extração, não será possível enviar por push nem extrair imagens do seu namespace. Para obter mais informações sobre o armazenamento, o tráfego de pull e o estimador de custos, consulte [Limites de cota e faturamento no {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabela 2. Planos do {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Limites de cota e faturamento
 {: #registry_plan_billing}
 
-Localize informações e exemplos de como o processo de faturamento e limites de cota funcionam no
-{{site.data.keyword.registrylong_notm}}.
+Localize informações e exemplos de como o processo de faturamento e limites de cota funcionam no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Cada imagem é construída por meio de uma série de camadas que representam, cada uma, uma mudança incremental da imagem base. Quando você enviar por push ou puxar uma imagem, a quantia de armazenamento e tráfego extraído necessária para cada camada será incluída em seu uso mensal. Camadas idênticas são compartilhadas automaticamente entre as imagens em sua conta do {{site.data.keyword.cloud_notm}} e serão reutilizadas ao criar outras imagens. O armazenamento para cada camada idêntica é cobrado somente uma vez, independentemente de quantas imagens em sua conta referenciam a camada.
@@ -102,11 +82,10 @@ Exemplo para enviar imagens por push:
 ### Faturamento para armazenamento e tráfego extraído
 {: #registry_billing_traffic}
 
-Dependendo do plano de serviço que escolher, você será cobrado pelo armazenamento e tráfego
-extraído que usa por mês.
+Dependendo do plano de serviço que escolher, você será cobrado pelo armazenamento e tráfego extraído que usa por mês.
 {:shortdesc}
 
-**Armazenamento: **
+**Armazenamento:**
 
   Cada plano de serviço do {{site.data.keyword.registrylong_notm}} vem com uma determinada quantia de armazenamento que pode ser usada para armazenar as imagens do Docker nos namespaces de sua conta do {{site.data.keyword.cloud_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
 
@@ -118,10 +97,9 @@ extraído que usa por mês.
   >
   > No plano padrão, os primeiros 0,5 GB/meses são grátis; portanto, você será cobrado por 7 GB/meses (7,5 GB/meses - 0,5 GB/meses).
 
-**Puxe o tráfego: **
+**Puxe o tráfego:**
 
-  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} inclui uma determinada quantia de tráfego
-extraído grátis para as suas imagens privadas que são armazenadas em seu namespace. Tráfego extraído é a largura da banda que você usa quando puxa uma camada de uma imagem do seu namespace para a sua máquina local. Se você estiver no plano padrão, será cobrado por GB de uso por mês. Os primeiros 5 GB cada mês são grátis. Se você estiver no plano grátis, será possível puxar imagens do seu namespace até atingir o limite de cota para o plano grátis.
+  Cada plano de serviço do {{site.data.keyword.registrylong_notm}} inclui uma determinada quantia de tráfego extraído grátis para as suas imagens privadas que são armazenadas em seu namespace. Tráfego extraído é a largura da banda que você usa quando puxa uma camada de uma imagem do seu namespace para a sua máquina local. Se você estiver no plano padrão, será cobrado por GB de uso por mês. Os primeiros 5 GB cada mês são grátis. Se você estiver no plano grátis, será possível puxar imagens do seu namespace até atingir o limite de cota para o plano grátis.
 
   Exemplo para o plano padrão:
 
@@ -132,11 +110,10 @@ extraído grátis para as suas imagens privadas que são armazenadas em seu name
 ### Limites de cota para armazenamento e tráfego extraído
 {: #registry_quota_limits}
 
-Dependendo do plano de serviço que você escolher, será possível enviar por push e puxar imagens para e de
-seu namespace até que você atinja os seus limites de cota específicos do plano ou customizados.
+Dependendo do plano de serviço que você escolher, será possível enviar por push e puxar imagens para e de seu namespace até que você atinja os seus limites de cota específicos do plano ou customizados.
 {:shortdesc}
 
-**Armazenamento: **
+**Armazenamento:**
 
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.cloud_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para ativar o envio por push de novas imagens novamente.
 
@@ -146,24 +123,15 @@ seu namespace até que você atinja os seus limites de cota específicos do plan
   >
   > Após o envio por push, o {{site.data.keyword.registrylong_notm}} determina o tamanho real da imagem em seu namespace, que pode variar do tamanho em sua máquina local e verifica se o limite para armazenamento é atingido. Neste exemplo, o uso de armazenamento aumenta de 900 MB para 2 GB. Com o seu limite de cota atual configurado como 1 GB, o {{site.data.keyword.registrylong_notm}} impede que você envie por push imagens adicionais para o namespace.
 
-**Puxe o tráfego: **
+**Puxe o tráfego:**
 
-  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos
-namespaces em sua conta do {{site.data.keyword.cloud_notm}}
-até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites
-de cota para tráfego extraído](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos namespaces em sua conta do {{site.data.keyword.cloud_notm}} até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites de cota para tráfego extraído](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
 
   Exemplo para o plano padrão:
 
-  > No mês, seu limite de cota para tráfego extraído está configurado para 5 GB. Você já puxou imagens de seus namespaces e usou
-4,5 GB desse tráfego extraído. Você tem 0,5 GB de tráfego extraído disponível até atingir o seu limite
-de cota. Um usuário deseja puxar uma imagem do seu namespace com um tamanho de 1 GB. Como o limite de
-cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite
-que o usuário puxe essa imagem.
+  > No mês, seu limite de cota para tráfego extraído está configurado para 5 GB. Você já puxou imagens de seus namespaces e usou 4,5 GB desse tráfego extraído. Você tem 0,5 GB de tráfego extraído disponível até atingir o seu limite de cota. Um usuário deseja puxar uma imagem do seu namespace com um tamanho de 1 GB. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário puxe essa imagem.
   >
-  > Após a imagem ser puxada, o {{site.data.keyword.registrylong_notm}} determina a largura da banda que você usou
-durante a extração e verifica se o limite para o tráfego extraído é atingido. Nesse exemplo, o uso do tráfego de extração aumenta de 4,5 GB para 5,5 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do
-seu namespace.
+  > Após a imagem ser puxada, o {{site.data.keyword.registrylong_notm}} determina a largura da banda que você usou durante a extração e verifica se o limite para o tráfego extraído é atingido. Nesse exemplo, o uso do tráfego de extração aumenta de 4,5 GB para 5,5 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do seu namespace.
 
 ### Custo
 {: #registry_cost}
@@ -174,8 +142,7 @@ seu namespace.
 ## Fazendo upgrade de seu plano de serviço
 {: #registry_plan_upgrade}
 
-É possível fazer upgrade do seu plano de serviços para obter benefícios de armazenamento ilimitado e de uso de tráfego extraído para gerenciar
-as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.cloud_notm}}.
+É possível fazer upgrade do seu plano de serviços para obter benefícios de armazenamento ilimitado e de uso de tráfego extraído para gerenciar as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmcloud cr plan`.
@@ -206,8 +173,7 @@ Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmclo
 Prepare-se para armazenar e compartilhar as imagens do Docker com o {{site.data.keyword.registrylong_notm}} aprendendo os conceitos básicos do registro.
 {:shortdesc}
 
-Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
-exemplo, nomes ou rótulos de imagem).
+Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por exemplo, nomes ou rótulos de imagem).
 {: important}
 
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
@@ -230,11 +196,9 @@ exemplo, nomes ou rótulos de imagem).
 
 <dl>
   <dt>Namespace</dt>
-  <dd>Os namespaces são uma maneira de organizar repositórios de suas imagens no {{site.data.keyword.registrylong_notm}}. O namespace está associado à sua
-conta do {{site.data.keyword.cloud_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexo à URL de registro como a seguir: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
+  <dd>Os namespaces são uma maneira de organizar repositórios de suas imagens no {{site.data.keyword.registrylong_notm}}. O namespace está associado à sua conta do {{site.data.keyword.cloud_notm}}. Ao configurar seu próprio namespace no {{site.data.keyword.registrylong_notm}}, o namespace é anexo à URL de registro como a seguir: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>.
 
-  Cada usuário em sua conta do {{site.data.keyword.cloud_notm}} pode
-visualizar e trabalhar com imagens que estão armazenadas em seu namespace de registro. É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção.</dd>
+  Cada usuário em sua conta do {{site.data.keyword.cloud_notm}} pode visualizar e trabalhar com imagens que estão armazenadas em seu namespace de registro. É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção.</dd>
 </dl>
 
 <dl>
@@ -262,19 +226,14 @@ Para saber mais sobre os termos específicos do Docker, consulte o [Glossário d
 ### Planejando namespaces
 {: #registry_namespaces}
 
-O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagem de vários locatários que é hospedado e
-gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker nesse registro, configurando um namespace de registro.
+O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagem de vários locatários que é hospedado e gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker nesse registro, configurando um namespace de registro.
 {:shortdesc}
 
-É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus
-ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.cloud_notm}}, deve-se configurar um namespace para
-cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que
-alguém já tenha um namespace com esse nome configurado nessa região.
+É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.cloud_notm}}, deve-se configurar um namespace para cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que alguém já tenha um namespace com esse nome configurado nessa região.
 
 É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry?topic=registry-user#user).
 
-Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um
-namespace.
+Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um namespace.
 
 Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace.
 {:tip}
