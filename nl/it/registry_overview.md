@@ -51,11 +51,8 @@ Esamina la seguente tabella per una panoramica dei vantaggi dell'utilizzo di {{s
 |Vantaggio|Descrizione|
 |-------|-----------|
 |Registro privato altamente disponibile e scalabile|<ul><li>Configura il tuo spazio dei nomi di immagini in un registro privato a più tenant, altamente disponibile, scalabile e crittografato che viene ospitato e gestito da {{site.data.keyword.IBM_notm}}.</li><li>Memorizza le tue immagini Docker private e condividile con gli utenti nel tuo account {{site.data.keyword.cloud_notm}}.</li></ul>|
-|Conformità della sicurezza dell'immagine con il Controllo vulnerabilità|<ul><li>Vantaggio della scansione automatica delle immagini nel tuo spazio dei nomi.</li><li>Riesamina i suggerimenti specifici del sistema operativo per risolvere le vulnerabilità potenziali ed
-evitare che i tuoi contenitori vengano compromessi.</li></ul>|
-|Limiti di quota per l'archiviazione e il traffico di pull|<ul><li>Vantaggio dell'archiviazione e del traffico di pull gratuiti per le tue immagini private fino al raggiungimento
-della tua quota gratuita.</li><li>Imposta limiti di quota personalizzati per la quantità mensile di archiviazione e di traffico di pull per evitare di superare
-il tuo livello di pagamento preferito.</li></ul>|
+|Conformità della sicurezza dell'immagine con il Controllo vulnerabilità|<ul><li>Vantaggio della scansione automatica delle immagini nel tuo spazio dei nomi.</li><li>Riesamina i suggerimenti specifici del sistema operativo per risolvere le vulnerabilità potenziali ed evitare che i tuoi contenitori vengano compromessi.</li></ul>|
+|Limiti di quota per l'archiviazione e il traffico di pull|<ul><li>Vantaggio dell'archiviazione e del traffico di pull gratuiti per le tue immagini private fino al raggiungimento della tua quota gratuita.</li><li>Imposta limiti di quota personalizzati per la quantità mensile di archiviazione e di traffico di pull per evitare di superare il tuo livello di pagamento preferito.</li></ul>|
 {: caption="Tabella 1. Vantaggi di {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Piani di servizio
@@ -80,9 +77,7 @@ dei nomi nel tuo account
 {{site.data.keyword.cloud_notm}}.|
 |Quantità di archiviazione per le immagini|500 MB|Senza limiti|
 |Traffico di pull|5 GB al mese|Senza limiti|
-|Fatturazione|Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
-da e verso il tuo spazio dei nomi. Per ulteriori informazioni, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Archiviazione: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 0,5 GB al mese sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Traffico di pull: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 5 GB sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry). Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini
-da e verso il tuo spazio dei nomi. Per ulteriori informazioni su archiviazione, traffico di pull e stimatore costi, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
+|Fatturazione|Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini da e verso il tuo spazio dei nomi. Per ulteriori informazioni, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Archiviazione: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 0,5 GB al mese sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Traffico di pull: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 5 GB sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry). Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini da e verso il tuo spazio dei nomi. Per ulteriori informazioni su archiviazione, traffico di pull e stimatore costi, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
 {: caption="Tabella 2. Piani {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ## Limiti di quota e fatturazione
@@ -104,8 +99,7 @@ Esempio per il push di immagini:
 ### Fatturazione per l'archiviazione e il traffico di pull
 {: #registry_billing_traffic}
 
-A seconda del piano di servizio scelto, gli addebiti a tuo carico sono basati sull'archiviazione e sul traffico di
-pull che utilizzi al mese.
+A seconda del piano di servizio scelto, gli addebiti a tuo carico sono basati sull'archiviazione e sul traffico di pull che utilizzi al mese.
 {:shortdesc}
 
 **Archiviazione: **
