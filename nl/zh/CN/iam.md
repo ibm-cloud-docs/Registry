@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ subcollection: registry
 |查看者|不支持| |
 |编辑者|不支持| |
 |操作员|不支持| |
-|管理员| <ul><li>为其他用户配置访问权</li><li>配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。</li><li>添加、列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers?topic=containers-clusters#cluster_prepare)。</li></ul> |
+|管理员| <ul><li>为其他用户配置访问权</li><li>配置注册表令牌</li><li>创建集群</li></ul> | <ul><li>有关在 UI 中分配用户角色的信息，请参阅[管理 IAM 访问权](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。</li><li>列出、检索和除去注册表令牌</li><li>要在 {{site.data.keyword.containerlong_notm}} 中创建集群，必须将 {{site.data.keyword.registrylong_notm}} 的“管理员”角色分配给用户；请参阅[准备创建集群](/docs/containers?topic=containers-clusters#cluster_prepare)。</li></ul> |
 {: caption="表 1. IAM 用户角色和操作" caption-side="top"}
 
 对于 {{site.data.keyword.registrylong_notm}}，存在以下操作：
 
 |操作|服务上的操作|角色
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create`|[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add)：添加可用于控制对注册表的访问权的令牌。（不推荐）|管理员|
 |`container-registry.registrytoken.delete`|[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)：除去一个或多个指定的令牌。|管理员|
 |`container-registry.registrytoken.get`|[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)：从注册表中检索指定的令牌。|管理员|
 |`container-registry.registrytoken.list`|[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)：显示 {{site.data.keyword.cloud_notm}} 帐户存在的所有令牌。|管理员|

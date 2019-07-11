@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -36,7 +36,7 @@ Utilisez {{site.data.keyword.registrylong}} pour stocker vos images Docker priv�
 
 Une image Docker est la base de chaque conteneur que vous créez. L'image est créée depuis un Dockerfile, lequel est un fichier contenant des instructions pour générer l'image. Un Dockerfile peut référencer dans ses instructions des artefacts de génération stockés séparément, comme une application, sa configuration, et ses dépendances. Les images sont généralement stockées dans un registre qui peut être accessible au public (registre public) ou configuré de sorte à limiter l'accès à un petit groupe d'utilisateurs (registre privé). Lorsque vous utilisez {{site.data.keyword.registrylong_notm}}, seuls les utilisateurs habilités à accéder à votre compte {{site.data.keyword.cloud_notm}} peuvent accéder à vos images.
 
-Lorsque vous envoyez des images par commande push au registre, {{site.data.keyword.registrylong_notm}}, vous pouvez exploiter les fonctionnalités intégrées de Vulnerability Advisor qui les sonde pour détecter des vulnérabilités et des problèmes de sécurité potentiels. Vulnerability Advisor recherche les packages vulnérables dans des images de base Docker spécifiques et des vulnérabilités connues dans les paramètres de configuration des applications. Lorsque des vulnérabilités sont détectées, il fournit les informations correspondantes. Vous pouvez utiliser ces informations pour résoudre des problèmes de sécurité afin d'éviter le déploiement de conteneurs à partir d'images vulnérables.
+Lorsque vous envoyez des images par commande push à {{site.data.keyword.registrylong_notm}}, vous pouvez exploiter les fonctionnalités intégrées de Vulnerability Advisor qui les sonde pour détecter des vulnérabilités et des problèmes de sécurité potentiels. Vulnerability Advisor recherche les packages vulnérables dans des images de base Docker spécifiques et des vulnérabilités connues dans les paramètres de configuration des applications. Lorsque des vulnérabilités sont détectées, il fournit les informations correspondantes. Vous pouvez utiliser ces informations pour résoudre des problèmes de sécurité afin d'éviter le déploiement de conteneurs à partir d'images vulnérables.
 
 Consultez le tableau suivant pour avoir une présentation des avantages liés à l'utilisation d'{{site.data.keyword.registrylong_notm}} :
 
@@ -83,7 +83,7 @@ Exemple d'envoi d'images par commande push :
 ### Facturation du stockage et du trafic d'extraction (pull)
 {: #registry_billing_traffic}
 
-En fonction du plan de service que vous choisissez, vous êtes facturé pour le stockage et le trafic d'extraction (pull) que vous utilisez par mois.
+En fonction du plan de service que vous choisissez, vous êtes facturé pour le stockage et le trafic d'extraction que vous utilisez par mois dans chaque région.
 {:shortdesc}
 
 **Stockage : **
@@ -113,7 +113,7 @@ le plan standard :
 ### Limites de quota pour le stockage et le trafic d'extraction (pull)
 {: #registry_quota_limits}
 
-En fonction du plan de service que vous choisissez, vous pouvez envoyer des images par commande push et en extraire par commande pull vers et depuis votre espace de nom jusqu'à ce que vous atteigniez vos limites de quota personnalisées ou spécifiques à votre plan.
+En fonction du plan de service que vous choisissez, vous pouvez envoyer des images par commande push et en extraire par commande pull vers et depuis votre espace de nom jusqu'à ce que vous atteigniez vos limites de quota personnalisées ou spécifiques à votre plan pour chaque région.
 {:shortdesc}
 
 **Stockage : **
@@ -178,7 +178,10 @@ pour gérer les images Docker de tous les espaces de nom dans votre compte
 {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-Si vous ne connaissez pas le plan de service dont vous disposez, exécutez la commande `ibmcloud cr plan`.
+Si vous ne connaissez pas le plan de service dont vous disposez pour la région de registre que vous ciblez, exécutez la commande `ibmcloud cr plan`.
+{: tip}
+
+Pour mettre à niveau votre plan de service, procédez comme suit :
 
 1. Connectez-vous à {{site.data.keyword.cloud_notm}}.
 
@@ -191,7 +194,16 @@ Si vous ne connaissez pas le plan de service dont vous disposez, exécutez la co
 et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
     {:tip}
 
-2. Effectuez une mise à niveau vers le plan standard.
+2. Ciblez la région pour laquelle vous souhaitez mettre à niveau le plan :
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   Pour plus d'informations, voir [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) et [Régions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
+3. Effectuez une mise à niveau vers le plan standard.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -201,13 +213,15 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
    Si vous disposez d'un compte {{site.data.keyword.cloud_notm}} Lite, vous devez effectuer une mise à niveau vers un compte {{site.data.keyword.cloud_notm}} de type Paiement à la carte ou Abonnement avant d'exécuter la commande `ibmcloud cr plan-upgrade`.
    {:tip}
 
+   Pour plus d'informations, voir [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+
 ## Notions élémentaires
 {: #registry_planning}
 
 Préparez-vous à stocker et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
 {:shortdesc}
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
 ### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}

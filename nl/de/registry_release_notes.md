@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,6 +28,20 @@ subcollection: registry
 In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen bei {{site.data.keyword.registrylong}} und Vulnerability Advisor. Die Änderungen sind nach Datum gruppiert.
 {:shortdesc}
 
+## 01. Juli 2019
+{: #01jul2019}
+
+- Der Befehl **`ibmcloud cr token-add` ist nicht mehr verfügbar**
+
+  Die Unterstützung für den Befehl `ibmcloud cr token-add` wird eingestellt. Sie können weder in der CLI noch in der API weiterhin Registry-Tokens hinzufügen.
+
+## 27. Juni 2019
+{: #27jun2019}
+
+- **Container Scanner ist nicht mehr verfügbar**
+
+  Die Unterstützung für den Container Scanner wird eingestellt. Mit dem Vulnerability Advisor können weiterhin Images gescannt werden, die per Push-Operation an {{site.data.keyword.registrylong_notm}} übertragen werden.
+
 ## 13. Juni 2019
 {: #13jun2019}
 
@@ -36,7 +50,6 @@ In diesen Releaseinformationen erfahren Sie mehr über die neuesten Änderungen 
   Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.
 
   Um ein Tag aus einem Image zu entfernen, das zugrunde liegende Image und alle anderen Tags jedoch beibehalten möchten, verwenden Sie den Befehl [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Wenn Sie das zugrunde liegende Image und alle seine Tages löschen möchten, verwenden Sie stattdessen den Befehl [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm).
-
 
   Weitere Informationen finden Sie im Abschnitt [Tags aus Images in Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository entfernen](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag).
 

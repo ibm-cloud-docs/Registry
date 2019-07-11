@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}}에서 Docker 이미지를 관리하려면 `container-registry` CLI 플러그인을 설치하고 네임스페이스를 작성해야 합니다.
 {:shortdesc}
 
-컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
+컨테이너 이미지, 네임스페이스 이름, 설명 필드 또는 모든 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {: important}
 
 시작하기 전에 {{site.data.keyword.cloud_notm}} CLI를 설치하십시오. [{{site.data.keyword.cloud_notm}} CLI 시작하기](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오.
@@ -86,6 +86,33 @@ subcollection: registry
 
     `container-registry` CLI 플러그인이 결과에 표시되지 않습니다.
 
+## 네임스페이스 계획
+{: #registry_setup_cli_namespace_plan}
+
+{{site.data.keyword.registrylong_notm}}에서는 IBM에서 호스팅하고 관리하는 멀티 테넌트 개인용 이미지 레지스트리를 제공합니다. 레지스트리 네임스페이스를 설정하여 이 레지스트리에서 Docker 이미지를 저장하고 공유할 수 있습니다.
+{:shortdesc}
+
+예를 들면, 프로덕션 및 스테이징 환경용으로 개별 저장소를 갖도록 여러 네임스페이스를 설정할 수 있습니다. 여러 {{site.data.keyword.cloud_notm}} 지역에서 레지스트리를 사용하려는 경우, 각 지역에 대해 네임스페이스를 설정해야 합니다. 네임스페이스 이름은 지역에서 고유합니다. 다른 사용자가 지역에서 이미 해당 이름을 사용하여 네임스페이스를 설정한 경우가 아니면 각 지역에 대해 동일한 네임스페이스 이름을 사용해야 합니다.
+
+IAM 정책을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 자세한 정보는 [사용자 액세스 역할 정책 정의](/docs/services/Registry?topic=registry-user#user)를 참조하십시오.
+
+IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설정하지 않아도 됩니다.
+
+계정에 대한 네임스페이스 설정 여부가 확실하지 않은 경우에는 `ibmcloud cr namespace-list` 명령을 실행하여 기존 네임스페이스 정보를 검색하십시오.
+{:tip}
+
+네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
+
+- 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다.
+- 네임스페이스는 4 - 30자여야 합니다.
+- 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
+- 네임스페이스에는 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함되어야 합니다.
+
+네임스페이스 이름에 개인 정보를 입력하지 마십시오.
+{: important}
+
+아직 [플랜 업그레이드](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)를 수행하지 않은 경우 첫 번째 네임스페이스를 설정하고 나면 무료 {{site.data.keyword.registrylong_notm}} 서비스 플랜이 지정됩니다.
+
 ## 네임스페이스 설정
 {: #registry_namespace_setup}
 
@@ -95,7 +122,7 @@ subcollection: registry
 **시작하기 전에**
 
 - [{{site.data.keyword.cloud_notm}} CLI 및 `container-registry` CLI 플러그인을 설치](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)하십시오.
-- [레지스트리 네임스페이스의 사용 방법 및 이름 지정 방법을 계획](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)하십시오.
+- [레지스트리 네임스페이스의 사용 방법 및 이름 지정 방법을 계획](#registry_setup_cli_namespace_plan)하십시오.
 
 네임스페이스를 작성하려면 시작 문서의 [네임스페이스 설정](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)을 참조하십시오.
 

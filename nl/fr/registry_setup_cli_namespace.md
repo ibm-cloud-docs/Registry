@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 Pour gérer vos images Docker dans {{site.data.keyword.registrylong}}, vous devez installer le plug-in d'interface de ligne de commande `container-registry` et créer un espace de nom.
 {:shortdesc}
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
 Avant de commencer, installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} (voir [Initiation à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started)).
@@ -86,6 +86,33 @@ Si vous n'avez plus besoin du plug-in d'interface de ligne de commande `containe
 
     Le plug-in d'interface de ligne de commande `container-registry` n'apparaît pas dans les résultats.
 
+## Planification d'espaces de nom
+{: #registry_setup_cli_namespace_plan}
+
+{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé qui est hébergé et géré par IBM. Vous pouvez stocker et partager vos images Docker dans ce registre en configurant un espace de nom du registre.
+{:shortdesc}
+
+Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.cloud_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
+
+Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry?topic=registry-user#user).
+
+Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
+
+Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants.
+{:tip}
+
+Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
+
+- Votre espace de nom doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région.
+- Il doit comporter de 4 à 30 caractères.
+- Il doit commencer et se terminer par une lettre ou un chiffre.
+- Il ne doit comporter que des lettres en minuscules, des chiffres, des tirets (-) et des traits de soulignement (_).
+
+Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
+{: important}
+
+Après avoir configuré votre premier espace de nom, le plan de service {{site.data.keyword.registrylong_notm}} gratuit vous est affecté si vous n'avez pas encore [procédé à une mise à niveau de votre plan](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
+
 ## Configuration d'un espace de nom
 {: #registry_namespace_setup}
 
@@ -95,7 +122,7 @@ Vous devez créer un espace de nom pour stocker vos images Docker dans {{site.da
 **Avant de commencer**
 
 - [Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
-- [Planifiez comment utiliser et nommer vos espaces de nom du registre](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
+- [Planifiez comment utiliser et nommer vos espaces de nom du registre](#registry_setup_cli_namespace_plan).
 
 Pour créer un espace de nom, voir [Configurez un espace de nom](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) dans la documentation Initiation.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 La console {{site.data.keyword.cloud_notm}} inclut une brève section Démarrage rapide. Pour plus d'informations sur l'utilisation de la console {{site.data.keyword.cloud_notm}}, voir [Gestion de la sécurité des images avec Vulnerability Advisor](/docs/services/va?topic=va-va_index).
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
 ## Installation de l'interface de ligne de commande {{site.data.keyword.registrylong_notm}}

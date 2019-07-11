@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 Um Ihre Docker-Images in {{site.data.keyword.registrylong}} verwalten zu können, müssen Sie das CLI-Plug-in `container-registry` installieren und einen Namensbereich erstellen.
 {:shortdesc}
 
-Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {: important}
 
 Bevor Sie beginnen, installieren Sie die Befehlszeilenschnittstelle (CLI) von {{site.data.keyword.cloud_notm}}. Informationen finden Sie im Abschnitt [Einführung in die Befehlszeilenschnittstelle von {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started).
@@ -86,6 +86,33 @@ Wenn Sie das `container-registry`-CLI-Plug-in nicht mehr benötigen, können Sie
 
     Das `container-registry`-CLI-Plug-in wird in den Ergebnissen nicht angezeigt.
 
+## Namensbereiche planen
+{: #registry_setup_cli_namespace_plan}
+
+{{site.data.keyword.registrylong_notm}} bietet eine private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. In dieser Registry können Sie Ihre Docker-Images speichern, indem Sie einen Registrynamensbereich einrichten.
+{:shortdesc}
+
+Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.cloud_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
+
+Sie können den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry?topic=registry-user#user).
+
+Wenn Sie ausschließlich mit den von IBM bereitgestellten öffentlichen Images arbeiten möchten, ist die Einrichtung eines Namensbereichs nicht erforderlich.
+
+Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `ibmcloud cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen.
+{:tip}
+
+Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
+
+- Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein.
+- Ihr Namensbereich muss 4 bis 30 Zeichen lang sein.
+- Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
+- Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.
+
+Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
+{: important}
+
+Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenfreien Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade) durchgeführt haben.
+
 ## Namensbereich einrichten
 {: #registry_namespace_setup}
 
@@ -95,7 +122,7 @@ Sie müssen einen Namensbereich erstellen, um Docker-Images in {{site.data.keywo
 **Vorbereitung**
 
 - [{{site.data.keyword.cloud_notm}}-Befehlszeilenschnittstelle und das Plug-in `container-registry` der Befehlszeilenschnittstelle installieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
-- [Verwendung und Benennung der Registry-Namensbereiche planen](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
+- [Verwendung und Benennung der Registry-Namensbereiche planen](#registry_setup_cli_namespace_plan).
 
 Informationen zum Erstellen eines Namensbereichs finden Sie im Abschnitt [Namensbereich konfigurieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add) in der Dokumentation zur Einführung.
 

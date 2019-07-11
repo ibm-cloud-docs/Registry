@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -42,8 +42,7 @@ Para descobrir sobre como usar a CLI do {{site.data.keyword.registrylong_notm}},
 
 Para obter mais informações sobre a plataforma IAM e as funções de acesso de serviço que são necessárias para alguns comandos, consulte [Gerenciando acesso de usuário com o Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
-Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
-exemplo, nomes ou rótulos de imagem).
+Não coloque informações pessoais em suas imagens de contêiner, nomes de namespace, campos de descrição ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
 {: important}
 
 ## `ibmcloud cr api`
@@ -587,7 +586,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-Exibe seu plano de precificação.
+Exibe seu plano de precificação para a região de registro que você está usando como destino.
 
 ```
 ibmcloud cr plan
@@ -601,7 +600,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-Upgrades para você o plano padrão.
+Faz upgrade para o plano padrão para a região de registro que você está usando como destino.
 
 Para obter mais informações sobre os planos, consulte [Planos de registro](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
@@ -672,7 +671,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-Exibe suas cotas atuais para tráfego e armazenamento e informações de uso com relação a essas cotas.
+Exibe suas cotas atuais para tráfego e armazenamento e as informações de uso relacionadas a essas cotas para a região de registro que você está usando como destino.
 
 ```
 ibmcloud cr quota
@@ -686,7 +685,7 @@ Para saber mais sobre as permissões necessárias, consulte [Funções de acesso
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-Modifique a cota especificada.
+Modifique a cota especificada para a região de registro que você está usando como destino.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -760,50 +759,6 @@ Tenha como destino a região Sul dos EUA.
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (descontinuado)
-{: #bx_cr_token_add}
-
-Inclua um token que possa ser usado para controlar o acesso a um registro.
-
-O uso de tokens para automatizar o envio por push e o pull de imagens do Docker para e de seus namespaces foi descontinuado. Como alternativa, use chaves de API para automatizar o acesso aos namespaces. Consulte [Automatizando o acesso a seus namespaces usando chaves de API](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**Pré-requisitos**
-
-Para saber mais sobre as permissões necessárias, consulte [Funções de gerenciamento da plataforma](/docs/services/Registry?topic=registry-iam#platform_management_roles).
-
-**Opções de comandos**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(Opcional) Especifica o valor como uma descrição para o token, que é exibido quando você executa `ibmcloud cr token-list`. Se o seu token for criado automaticamente pelo {{site.data.keyword.containerlong_notm}}, a descrição será configurada para o nome do cluster do Kubernetes. Nesse caso, o token é removido automaticamente quando o cluster é removido.
-  
-<p> 
-  <strong>Importante</strong> Não utilize informações pessoais na descrição de seu token.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Opcional) Exibe o token somente, sem nenhum texto circundante.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(Opcional) Cria um token com acesso que não expira. Sem esse conjunto de parâmetros, o acesso por meio de um token expirará após 24 horas, por padrão.</dd>
-<dt>`--readwrite`</dt>
-<dd>(Opcional) Cria um token que concede acesso de leitura e gravação. Sem essa opção, o acesso será somente leitura, por padrão.</dd>
-</dl>
-
-**Exemplo**
-
-Inclua um token com a descrição *Token para minha conta* que não expire e tenha acesso de leitura/gravação.
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

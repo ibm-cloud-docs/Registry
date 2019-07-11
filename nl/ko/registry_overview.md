@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -88,7 +88,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 스토리지 및 가져오기 트래픽에 대한 비용 청구
 {: #registry_billing_traffic}
 
-선택하는 서비스 플랜에 따라서 월별 사용하는 스토리지 및 가져오기 트래픽에 대해 비용이 부과됩니다.
+선택하는 서비스 플랜에 따라서 각 지역에서 월별 사용하는 스토리지 및 가져오기 트래픽에 대해 비용이 부과됩니다.
 {:shortdesc}
 
 **스토리지: **
@@ -116,7 +116,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 ### 스토리지 및 가져오기 트래픽에 대한 할당량 한계
 {: #registry_quota_limits}
 
-선택하는 서비스 플랜에 따라서 플랜별 또는 사용자 정의 할당량 한계에 도달할 때까지 네임스페이스에 이미지를 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
+선택하는 서비스 플랜에 따라서 각 지역의 플랜별 또는 사용자 정의 할당량 한계에 도달할 때까지 네임스페이스에 이미지를 푸시하고 네임스페이스에서 이미지를 가져올 수 있습니다.
 {:shortdesc}
 
 **스토리지: **
@@ -156,7 +156,10 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
 {{site.data.keyword.cloud_notm}} 계정의 모든 네임스페이스에 대한 Docker 이미지를 관리하기 위해 무제한의 스토리지 및 가져오기 트래픽 사용량의 혜택을 활용하도록 서비스 플랜을 업그레이드할 수 있습니다.
 {:shortdesc}
 
-사용 중인 서비스 플랜을 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오.
+대상으로 지정하는 레지스트리 지역에 대해 어떤 서비스 플랜이 있는지 알아보려면 `ibmcloud cr plan` 명령을 실행하십시오.
+{: tip}
+
+서비스 플랜을 업그레이드하려면 다음 단계를 완료하십시오.
 
 1. {{site.data.keyword.cloud_notm}}에 로그인하십시오.
 
@@ -168,7 +171,16 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 {{site.data.keyword.cloud_notm}} CLI에 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
     {:tip}
 
-2. 표준 플랜으로 업그레이드하십시오.
+2. 플랜을 업그레이드하려는 지역을 대상으로 지정하십시오.
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   자세한 정보는 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 및 [지역](/docs/services/Registry?topic=registry-registry_overview#registry_regions)을 참조하십시오.
+
+3. 표준 플랜으로 업그레이드하십시오.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -178,13 +190,15 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    {{site.data.keyword.cloud_notm}} Lite 계정이 있는 경우에는 `ibmcloud cr plan-upgrade`를 실행하기 전에 {{site.data.keyword.cloud_notm}} 종량과금제 또는 구독 계정으로 업그레이드해야 합니다.
    {:tip}
 
+   자세한 정보는 [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)를 참조하십시오.
+
 ## 기본 사항 학습
 {: #registry_planning}
 
 레지스트리 기본 사항을 학습하여 {{site.data.keyword.registrylong_notm}}에 Docker 이미지를 저장하고 공유하도록 준비하십시오.
 {:shortdesc}
 
-컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
+컨테이너 이미지, 네임스페이스 이름, 설명 필드 또는 모든 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {: important}
 
 ### {{site.data.keyword.registrylong_notm}}에서 사용되는 용어의 이해
@@ -251,7 +265,7 @@ IBM 제공 공용 이미지로만 작업하는 경우 네임스페이스를 설�
 
 네임스페이스를 선택할 때 다음 규칙을 고려하십시오.
 
-- 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다. 
+- 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다.
 - 네임스페이스는 4 - 30자여야 합니다.
 - 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
 - 네임스페이스에는 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함되어야 합니다.

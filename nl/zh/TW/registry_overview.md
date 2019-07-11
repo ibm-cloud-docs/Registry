@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 儲存空間及取回資料流量的計費
 {: #registry_billing_traffic}
 
-取決於選擇的服務方案而定，會根據每個月使用的儲存空間及取回資料流量向您收費。
+視選擇的服務方案而定，會根據每個地區中每個月使用的儲存空間及取回資料流量向您收費。
 {:shortdesc}
 
 **儲存空間：**
@@ -110,7 +110,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 ### 儲存空間及取回資料流量的配額限制
 {: #registry_quota_limits}
 
-視選擇的服務方案而定，您可以在達到方案特定或自訂配額限制之前，將映像檔推送至名稱空間以及從中取回映像檔。
+視選擇的服務方案而定，您可以在達到每個地區的方案特定或自訂配額限制之前，將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
 **儲存空間：**
@@ -145,7 +145,10 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 您可以升級服務方案，受益於無限制的儲存空間及取回資料流量用量，以管理 {{site.data.keyword.cloud_notm}} 帳戶中所有名稱空間的 Docker 映像檔。
 {:shortdesc}
 
-如果您要找出您所擁有的服務方案，請執行 `ibmcloud cr plan` 指令。
+如果您要針對您設為目標的登錄地區找出有什麼服務方案，請執行 `ibmcloud cr plan` 指令。
+{: tip}
+
+若要升級您的服務方案，請完成下列步驟：
 
 1. 登入 {{site.data.keyword.cloud_notm}}。
 
@@ -157,7 +160,16 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
    如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.cloud_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
     {:tip}
 
-2. 升級為標準方案。
+2. 以您要升級方案的地區為目標：
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   如需相關資訊，請參閱 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 及[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。
+
+3. 升級為標準方案。
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -167,13 +179,15 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
    如果您有 {{site.data.keyword.cloud_notm}} 精簡帳戶，則必須先升級至 {{site.data.keyword.cloud_notm}} 隨收隨付制或訂閱帳戶，然後才執行 `ibmcloud cr plan-upgrade`。
     {:tip}
 
+   如需相關資訊，請參閱 [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)。
+
 ## 學習基本觀念
 {: #registry_planning}
 
 學習登錄基本觀念，以準備好使用 {{site.data.keyword.registrylong_notm}} 來儲存及共用 Docker 映像檔。
 {:shortdesc}
 
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
 ### 瞭解 {{site.data.keyword.registrylong_notm}} 中使用的術語

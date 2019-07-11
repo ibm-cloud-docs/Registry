@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 您要新增至名稱空間的每個映像檔都必須先存在於本端電腦上。您可以將映像檔從另一個儲存庫下載（取回）至本端電腦，或使用 Docker `build` 指令，以從 Dockerfile 建置自己的映像檔。若要將映像檔新增至名稱空間，您必須將本端映像檔上傳（推送）至 {{site.data.keyword.registrylong_notm}} 中的名稱空間。
 
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
 ## 從另一個登錄取回映像檔

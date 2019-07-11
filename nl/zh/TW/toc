@@ -3,7 +3,7 @@
 
 {: .toc subcollection="registry" category="containers" audience="compute" arm="2413616" href="/docs/services/Registry?topic=registry-getting-started" path="services/Registry"}
 IBM Cloud Container Registry
-   
+
     {: .navgroup id="learn"}
     getting-started.md
     registry_overview.md
@@ -13,10 +13,14 @@ IBM Cloud Container Registry
     公用映像檔
         registry_public_images.md
         /RegistryImages/toc
-    
+
     {: .topicgroup}
     指導教學
+        
         registry_tutorial_configure_iam.md
+        /tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+        /tutorials/solution-tutorials-multi-region-k8s-cis
+        /tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
     {: .topicgroup}
     相關鏈結

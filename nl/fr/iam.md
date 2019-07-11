@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ Le tableau suivant détaille les actions mappées sur les rôles de gestion de p
 | Afficheur | Non pris en charge | |
 | Editeur | Non pris en charge | |
 | Opérateur | Non pris en charge | |
-| Administrateur | <ul><li>Configurer l'accès pour les autres utilisateurs</li><li>Configurer des jetons de registre</li><li>Créer des clusters</li></ul> | <ul><li>Pour plus d'informations sur l'affectation de rôles utilisateur dans l'interface utilisateur, voir [Gestion de l'accès IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Ajouter, répertorier, extraire et retirer des jetons de registre</li><li>Pour créer des clusters dans {{site.data.keyword.containerlong_notm}}, vous devez affecter le rôle Administrateur pour {{site.data.keyword.registrylong_notm}} à l'utilisateur. Voir [Préparation à la création de clusters](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
+| Administrateur | <ul><li>Configurer l'accès pour les autres utilisateurs</li><li>Configurer des jetons de registre</li><li>Créer des clusters</li></ul> | <ul><li>Pour plus d'informations sur l'affectation de rôles utilisateur dans l'interface utilisateur, voir [Gestion de l'accès IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Répertorier, extraire et retirer des jetons de registre</li><li>Pour créer des clusters dans {{site.data.keyword.containerlong_notm}}, vous devez affecter le rôle Administrateur pour {{site.data.keyword.registrylong_notm}} à l'utilisateur. Voir [Préparation à la création de clusters](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
 {: caption="Tableau 1. Rôles et actions des utilisateurs IAM" caption-side="top"}
 
 Pour {{site.data.keyword.registrylong_notm}}, les actions suivantes existent :
 
 | Action| Opération sur le service | Rôle
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Ajoute un jeton que vous pouvez utiliser pour contrôler l'accès à un registre. (obsolète)| Administrateur |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Retire un ou plusieurs jetons spécifiés. | Administrateur |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Extrait le jeton spécifié du registre. | Administrateur |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Affiche tous les jetons qui existent pour votre compte {{site.data.keyword.cloud_notm}}. | Administrateur |

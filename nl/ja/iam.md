@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 | ビューアー | サポートなし | |
 | エディター | サポートなし | |
 | オペレーター | サポートなし | |
-| 管理者 | <ul><li>他のユーザー用のアクセス権の構成</li><li>レジストリー・トークンの構成</li><li>クラスターの作成</li></ul> | <ul><li>UI でのユーザー役割の割り当てについては、[IAM アクセス権限の管理](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)を参照してください。</li><li>レジストリー・トークンの追加、リスト、取得、削除</li><li>{{site.data.keyword.containerlong_notm}} でクラスターを作成するには、{{site.data.keyword.registrylong_notm}} の管理者の役割をユーザーに割り当てなければなりません。[クラスターの作成の準備](/docs/containers?topic=containers-clusters#cluster_prepare) を参照してください。</li></ul> |
+| 管理者 | <ul><li>他のユーザー用のアクセス権の構成</li><li>レジストリー・トークンの構成</li><li>クラスターの作成</li></ul> | <ul><li>UI でのユーザー役割の割り当てについては、[IAM アクセス権限の管理](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)を参照してください。</li><li>レジストリー・トークンのリスト、取得、削除</li><li>{{site.data.keyword.containerlong_notm}} でクラスターを作成するには、{{site.data.keyword.registrylong_notm}} の管理者の役割をユーザーに割り当てなければなりません。[クラスターの作成の準備](/docs/containers?topic=containers-clusters#cluster_prepare) を参照してください。</li></ul> |
 {: caption="表 1. IAM ユーザーの役割とアクション" caption-side="top"}
 
 {{site.data.keyword.registrylong_notm}} のために、以下のアクションが用意されています。
 
 | 操作| サービスに対する操作 | 役割
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) - レジストリーへのアクセスを制御するために使用できるトークンを追加します。 (非推奨) | 管理者 |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) - 指定した 1 つ以上のトークンを削除します。 | 管理者 |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) - 指定したトークンをレジストリーから取得します。 | 管理者 |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) - {{site.data.keyword.cloud_notm}} アカウント用に存在するすべてのトークンを表示します。 | 管理者 |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -150,7 +150,7 @@ docker build --no-cache .
 
 - 리턴된 오류 메시지에 있는 지시사항을 따르십시오.
 - 올바른 네임스페이스를 입력했는지 확인하십시오.
-  - 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다. 
+  - 네임스페이스는 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 고유해야 합니다.
   - 네임스페이스의 길이는 4 - 30자여야 합니다.
   - 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
   - 네임스페이스에는 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함되어야 합니다.
@@ -302,7 +302,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 `ibmcloud cr image-rm` 명령을 사용하여 이미지를 삭제했으며 해당 이미지를 참조한 동일한 저장소 내의 모든 태그도 삭제되었습니다.
 
 {: tsCauses}
-저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 명령은 기본 이미지와 해당 태그를 모두 제거합니다. 동일한 이미지가 다른 저장소 또는 네임스페이스에 있으면 해당 이미지 사본이 제거되지 않습니다. 
+저장소 내에 동일한 이미지 요약에 대한 여러 태그가 존재하는 경우 [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 명령은 기본 이미지와 해당 태그를 모두 제거합니다. 동일한 이미지가 다른 저장소 또는 네임스페이스에 있으면 해당 이미지 사본이 제거되지 않습니다.
 
 {: tsResolve}
 이미지에서 태그를 제거하고 기본 이미지 및 기타 모든 태그를 남겨두려면 [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 명령을 사용하십시오. 자세한 정보는 [개인용 {{site.data.keyword.cloud_notm}} 저장소에 있는 이미지에서 태그 제거](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) 및 [개인용 {{site.data.keyword.cloud_notm}} 저장소에서 이미지 삭제](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)를 참조하십시오.
@@ -354,25 +354,37 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
 2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)하십시오.
 
-3. 이전 단계에서 사용한 내보내기 명령의 URL을 기록하십시오. 예를 들면, `https://us.icr.io:4443`입니다.
-
-4. 레지스트리 토큰을 생성하십시오.
+3. IAM API 키를 작성하십시오. 
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. 이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. `<URL>`을 2단계에서 기록한 내보내기 명령의 URL로 바꾸고 `<image>`를 저장소 키가 손상된 이미지로 바꾸십시오.
+4. NOTARY_AUTH를 설정하십시오.
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. 이 키로 서명된 컨텐츠를 더 이상 신뢰하지 않도록 키를 순환시키십시오. 2단계에서 설정한 신뢰 서버 변수를 사용하고 `<image>`를 저장소 키가 손상된 이미지로 바꾸십시오.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. 프롬프트가 표시되면 루트 키 비밀번호 문구를 입력하십시오. 그런 다음, 프롬프트가 표시되면 새 저장소의 새 루트 키 비밀번호 문구를 입력하십시오.
 
 7. 새 서명 키를 사용하는 [서명된 이미지를 푸시](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)하십시오.
+
+8.  (선택사항) 완료했으면 API 키를 취소하려는 경우 다음 명령을 실행하십시오.
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### 루트 키
 {: #trustedcontent_lostrootkey}

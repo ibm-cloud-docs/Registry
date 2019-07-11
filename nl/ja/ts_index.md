@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -301,10 +301,10 @@ denied: requested access to the resource is denied
 `ibmcloud cr image-rm` コマンドを使用してイメージを削除したところ、そのイメージを参照する同じリポジトリー内のすべてのタグも削除されてしまいました。
 
 {: tsCauses}
-リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。 同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。
 
 {: tsResolve}
-イメージから 1 つのタグを削除するものの、基になるイメージとその他のタグは残しておくという場合は、[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)コマンドを使用します。詳しくは、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーのイメージからのタグの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)および[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)を参照してください。
+イメージから 1 つのタグを削除するものの、基になるイメージとその他のタグは残しておくという場合は、[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)コマンドを使用します。 詳しくは、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーのイメージからのタグの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag)および[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove)を参照してください。
 
 ## カスタム・ファイアウォールを設定したレジストリーへのアクセスが失敗する
 {: #ts_firewall}
@@ -353,25 +353,37 @@ denied: requested access to the resource is denied
 
 2. [信頼できるコンテンツ環境をセットアップします](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)。
 
-3. 前の手順の export コマンドの URL をメモします。 例えば、`https://us.icr.io:4443` となります。
-
-4. レジストリー・トークンを生成します。
+3. IAM API キーを作成します。
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. 問題の鍵で署名されたコンテンツが信頼されなくなるように、鍵をローテーションします。 `<URL>` を、手順 2 でメモした export コマンドの URL に置き換え、`<image>` を、リポジトリー鍵が影響を受けたイメージに置き換えます。
+4. NOTARY_AUTH を設定します。
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. 問題の鍵で署名されたコンテンツが信頼されなくなるように、鍵をローテーションします。 手順 2 でセットアップしたトラスト・サーバー変数を使用し、`<image>` をリポジトリー鍵が影響を受けたイメージに置き換えます。
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. プロンプトが出たら、ルート鍵のパスフレーズを入力します。 次に、新しいリポジトリー鍵のための新しいルート鍵のパスフレーズをプロンプトに応じて入力します。
 
 7. 新しい署名鍵を使用する[署名付きのイメージをプッシュ](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)します。
+
+8.  (オプション) 完了したときに、API キーを取り消す場合は、以下のコマンドを実行します。
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### ルート鍵
 {: #trustedcontent_lostrootkey}

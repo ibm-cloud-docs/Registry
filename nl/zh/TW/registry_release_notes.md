@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,20 @@ subcollection: registry
 
 請使用這些版本注意事項，來瞭解 {{site.data.keyword.registrylong}} 及 Vulnerability Advisor 的最新變更。這些變更是依日期分組。
 {:shortdesc}
+
+## 2019 年 7 月 1 日
+{: #01jul2019}
+
+- **`ibmcloud cr token-add` 指令不再可用**
+
+  `ibmcloud cr token-add` 指令已停止使用。您無法再從 CLI 或 API 新增登錄記號。
+
+## 2019 年 6 月 27 日
+{: #27jun2019}
+
+- **容器掃描器不再可用**
+
+  容器掃描器已停止使用。Vulnerability Advisor 將繼續掃描推送至 {{site.data.keyword.registrylong_notm}} 的映像檔。
 
 ## 2019 年 6 月 13 日
 {: #13jun2019}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} 内の Docker イメージを管理するには、`container-registry` CLI プラグインをインストールして、名前空間を作成する必要があります。
 {:shortdesc}
 
-コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
 始めに、{{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。
@@ -86,6 +86,33 @@ subcollection: registry
 
     `container-registry` CLI プラグインは結果に表示されません。
 
+## 名前空間の計画
+{: #registry_setup_cli_namespace_plan}
+
+{{site.data.keyword.registrylong_notm}} には、IBM によってホストおよび管理されているマルチテナントの専用イメージ・レジストリーが用意されています。 レジストリー名前空間をセットアップすることにより、このレジストリー内で Docker イメージを保管および共有することができます。
+{:shortdesc}
+
+複数の名前空間をセットアップし、例えば、実動用とステージング環境用に別々のリポジトリーを用意することができます。 レジストリーを複数の {{site.data.keyword.cloud_notm}} 地域で使用する場合は、地域ごとに名前空間をセットアップする必要があります。 名前空間名は、それぞれの地域内で固有です。 同じ名前空間名を各地域で使用できますが、別のユーザーが既にその名前で名前空間を設定している地域では使用できません。
+
+IAM ポリシーを使用して、名前空間へのアクセスを制御できます。 詳しくは、[ユーザー・アクセスの役割ポリシーの定義](/docs/services/Registry?topic=registry-user#user)を参照してください。
+
+IBM 提供のパブリック・イメージのみを使用して作業する場合、名前空間をセットアップする必要はありません。
+
+アカウントに名前空間が既に設定されているかどうかが不明な場合は、`ibmcloud cr namespace-list` コマンドを実行して、既存の名前空間に関する情報を取得してください。
+{:tip}
+
+名前空間を選択する際は、以下のルールを考慮してください。
+
+- 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。
+- 名前空間は、4 文字から 30 文字でなければなりません。
+- 名前空間は、文字または数値で開始および終了する必要があります。
+- 名前空間には、小文字、数字、ハイフン (-) およびアンダースコアー (_) のみを使用できます。
+
+名前空間名に個人情報を含めないでください。
+{: important}
+
+最初の名前空間を設定した後、無料の {{site.data.keyword.registrylong_notm}} サービス・プランが割り当てられます ([プランのアップグレード](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)をまだ実行していない場合)。
+
 ## 名前空間のセットアップ
 {: #registry_namespace_setup}
 
@@ -95,11 +122,11 @@ Docker イメージを {{site.data.keyword.registrylong_notm}} に保管する�
 **始めに**
 
 - [{{site.data.keyword.cloud_notm}} CLI および `container-registry` CLI プラグイン](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)をインストールします。
-- [レジストリー名前空間の使用方法と命名について計画します](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
+- [レジストリー名前空間の使用方法と命名について計画します](#registry_setup_cli_namespace_plan)。
 
 名前空間を作成するには、概説資料内の[名前空間のセットアップ](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)を参照してください。
 
-名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。名前空間は、文字または数値で開始および終了する必要があります。
+名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。 名前空間は、文字または数値で開始および終了する必要があります。
 {: tip}
 
 これで、[{{site.data.keyword.registrylong_notm}} 内の名前空間に Docker イメージをプッシュし](/docs/services/Registry?topic=registry-registry_images_#registry_images_pushing_namespace)、それらのイメージをアカウント内の他のユーザーと共有できるようになりました。 {{site.data.keyword.cloud_notm}} IAM で名前空間へのアクセスを制御するには、[ポリシーの作成](/docs/services/Registry?topic=registry-user#create)を参照してください。

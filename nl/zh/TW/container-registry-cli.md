@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ subcollection: container-registry-cli-plugin
 
 如需部分指令所需 IAM 平台及服務存取角色的相關資訊，請參閱[使用 Identity and Access Management 管理使用者存取](/docs/services/Registry?topic=registry-iam#iam)。
 
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
 ## `ibmcloud cr api`
@@ -585,7 +585,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-顯示定價方案。
+針對您設為目標的登錄地區顯示定價方案。
 
 ```
 ibmcloud cr plan
@@ -599,7 +599,7 @@ ibmcloud cr plan
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-升級為標準方案。
+針對您設為目標的登錄地區將您升級為標準方案。
 
 如需方案的相關資訊，請參閱[登錄方案](/docs/services/Registry?topic=registry-registry_overview#registry_plans)。
 
@@ -620,11 +620,11 @@ ibmcloud cr plan-upgrade [PLAN]
 
 **範例**
 
-升級至標準定價方案。
+升級為標準定價方案。
 
 ```
-   ibmcloud cr plan-upgrade standard
-   ```
+ibmcloud cr plan-upgrade standard
+```
 {: pre}
 
 ## `ibmcloud cr ppa-archive-load`
@@ -669,7 +669,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-顯示資料流量及儲存空間的現行配額，以及這些配額的用量資訊。
+針對您設為目標的登錄地區，顯示資料流量及儲存空間的現行配額，以及這些配額的用量資訊。
 
 ```
 ibmcloud cr quota
@@ -683,7 +683,7 @@ ibmcloud cr quota
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-修改指定的配額。
+針對您設為目標的登錄地區修改指定的配額。
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -757,50 +757,6 @@ ibmcloud cr region-set [REGION]
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add`（已淘汰）
-{: #bx_cr_token_add}
-
-新增可用來控制登錄存取權的記號。
-
-使用記號，以自動化將 Docker 映像檔推送至名稱空間以及從其中取回 Docker 映像檔的作法已淘汰。請改用 API 金鑰自動化名稱空間的存取，請參閱[使用 API 金鑰自動化名稱空間的存取](/docs/services/Registry?topic=registry-registry_access#registry_api_key)。
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**必要條件**
-
-若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
-
-**指令選項**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>（選用）指定值作為記號說明，這會在您執行 `ibmcloud cr token-list` 時顯示。如果 {{site.data.keyword.containerlong_notm}} 自動建立您的記號，則會將說明設為 Kubernetes 叢集名稱。在此情況下，移除您的叢集時，即會自動移除此記號。
-  
-<p> 
-  <strong>重要事項</strong>：請不要將個人資訊放在記號說明中。
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>（選用）僅顯示記號，不含任何周圍文字。</dd>
-<dt>`--non-expiring`</dt>
-<dd>（選用）建立具有不會到期之存取權的記號。若未設定此參數，記號的存取權依預設會在 24 小時之後到期。</dd>
-<dt>`--readwrite`</dt>
-<dd>（選用）建立授與讀取權及寫入權的記號。若未使用此選項，則依預設為唯讀存取權。</dd>
-</dl>
-
-**範例**
-
-新增說明為 *Token for my account* 且未到期並具有讀寫存取權的記號。
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

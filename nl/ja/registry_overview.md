@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ### ストレージおよびプル・トラフィックの請求処理
 {: #registry_billing_traffic}
 
-選択しているサービス・プランに応じて、1 カ月当たりに使用するストレージおよびプル・トラフィックに対して課金されます。
+選択しているサービス・プランに応じて、各地域で 1 カ月当たりに使用するストレージおよびプル・トラフィックに対して課金されます。
 {:shortdesc}
 
 **ストレージ: **
@@ -110,7 +110,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 ### ストレージおよびプル・トラフィックの割り当て量制限
 {: #registry_quota_limits}
 
-選択しているサービス・プランに応じて、プラン固有の割り当て量制限またはカスタム割り当て量制限に達するまで、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
+選択しているサービス・プランに応じて、各地域のプラン固有の割り当て量制限またはカスタム割り当て量制限に達するまで、名前空間にイメージをプッシュしたり名前空間からイメージをプルしたりすることができます。
 {:shortdesc}
 
 **ストレージ: **
@@ -145,7 +145,10 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 サービス・プランをアップグレードして、無制限のストレージおよびプル・トラフィック使用量という利点を活用し、{{site.data.keyword.cloud_notm}} アカウント内のすべての名前空間の Docker イメージを管理することができます。
 {:shortdesc}
 
-使用中のサービス・プランを確認するには、`ibmcloud cr plan` コマンドを実行します。
+ターゲットにしているレジストリー地域の使用中のサービス・プランを確認するには、`ibmcloud cr plan` コマンドを実行します。
+{: tip}
+
+サービス・プランをアップグレードするには、以下の手順を実行します。
 
 1. {{site.data.keyword.cloud_notm}} にログインします。
 
@@ -157,7 +160,16 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
    フェデレーテッド ID がある場合は、`ibmcloud login --sso` を使用して、{{site.data.keyword.cloud_notm}} CLI にログインします。 ユーザー名を入力し、CLI 出力に示された URL を使用してワンタイム・パスコードを取得します。 `--sso` なしではログインに失敗し、`--sso` オプションを指定すると成功する場合、フェデレーテッド ID があることがわかります。
     {:tip}
 
-2. 標準プランにアップグレードします。
+2. プランをアップグレードする地域をターゲットにするには、以下のようにします。
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   詳しくは、[`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) および[地域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)を参照してください。
+
+3. 標準プランにアップグレードします。
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -167,13 +179,15 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
    {{site.data.keyword.cloud_notm}} Lite アカウントを使用している場合は、`ibmcloud cr plan-upgrade` を実行する前に、{{site.data.keyword.cloud_notm}} の従量課金 (PAYG) アカウントまたはサブスクリプション・アカウントにアップグレードする必要があります。
    {:tip}
 
+   詳しくは、[`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade) を参照してください。
+
 ## 基礎の学習
 {: #registry_planning}
 
 レジストリーの基礎を知ることで、{{site.data.keyword.registrylong_notm}} を使用して Docker イメージを保管し共有できるようにします。
 {:shortdesc}
 
-コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
 ### {{site.data.keyword.registrylong_notm}} で使用される用語の説明

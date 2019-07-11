@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -30,7 +30,7 @@ subcollection: container-registry-cli-plugin
 
 **前提条件**
 
-* {{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。{{site.data.keyword.cloud_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
+* {{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。 {{site.data.keyword.cloud_notm}} CLI を使用してコマンドを実行するための接頭部は、`ibmcloud` です。
 * レジストリー・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.cloud_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
 `ibmcloud` CLI および `container-registry` CLI プラグインの更新が使用可能になると、コマンド・ラインに通知が表示されます。 使用可能なすべてのコマンドとフラグを使用できるように、CLI を最新の状態に保つようにしてください。
@@ -41,7 +41,7 @@ subcollection: container-registry-cli-plugin
 
 一部のコマンドにとって必要な IAM プラットフォームとサービス・アクセス役割について詳しくは、[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)を参照してください。
 
-コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
 ## `ibmcloud cr api`
@@ -355,7 +355,7 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 
 指定した 1 つ以上のイメージを {{site.data.keyword.registrylong_notm}} から削除します。
 
-リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、`ibmcloud cr image-rm` コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。イメージから 1 つのタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、[`ibmcloud cr image-untag`](#bx_cr_image_untag)コマンドを使用します。
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、`ibmcloud cr image-rm` コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。 同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。 イメージから 1 つのタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、[`ibmcloud cr image-untag`](#bx_cr_image_untag)コマンドを使用します。
 {: tip}
 
 ```
@@ -389,8 +389,8 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-コマンドに指定したタグを既存のイメージに追加するか、タグを別のリポジトリーにコピーするか、またはタグを別の名前空間内のリポジトリーにコピーします。ターゲット・イメージ `TARGET_IMAGE` は新しいイメージで、
-ソース・イメージ `SOURCE_IMAGE` は {{site.data.keyword.registrylong_notm}} にある既存のイメージです。ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
+コマンドに指定したタグを既存のイメージに追加するか、タグを別のリポジトリーにコピーするか、またはタグを別の名前空間内のリポジトリーにコピーします。 ターゲット・イメージ `TARGET_IMAGE` は新しいイメージで、
+ソース・イメージ `SOURCE_IMAGE` は {{site.data.keyword.registrylong_notm}} にある既存のイメージです。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。
 
 イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
 {: tip}
@@ -444,7 +444,7 @@ ibmcloud cr image-tag us.icr.io/birds/bluebird:peck us.icr.io/animals/dog:bark
 
 {{site.data.keyword.registrylong_notm}} 内の指定された各イメージから 1 つまたは複数のタグを削除します。
 
-イメージから指定されたタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、`ibmcloud cr image-untag`コマンドを使用します。基になるイメージとそのすべてのタグを削除する場合は、代わりに [`ibmcloud cr image-rm`](#bx_cr_image_rm) コマンドを使用します。
+イメージから指定されたタグを削除し、基になるイメージとその他のタグはそのまま残しておく場合は、`ibmcloud cr image-untag`コマンドを使用します。 基になるイメージとそのすべてのタグを削除する場合は、代わりに [`ibmcloud cr image-rm`](#bx_cr_image_rm) コマンドを使用します。
 {: tip}
 
 ```
@@ -460,7 +460,7 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>タグを削除するイメージの名前。このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージからタグを同時に削除できます。`IMAGE` は `repository:tag` という形式である必要があります。例: `us.icr.io/namespace/image:latest`
+<dd>タグを削除するイメージの名前。 このコマンドに複数のイメージの名前をスペースで区切ってリストすると、複数のイメージからタグを同時に削除できます。 `IMAGE` は `repository:tag` という形式である必要があります。例: `us.icr.io/namespace/image:latest`
 
 <p>イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。 イメージ名の中にタグを指定しないと、コマンドが失敗します。</p>
 
@@ -521,7 +521,7 @@ ibmcloud cr namespace-add NAMESPACE
 **コマンド・オプション**
 <dl>
 <dt>`NAMESPACE`</dt>
-<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。名前空間は、文字または数値で開始および終了する必要があります。
+<dd>追加する名前空間。 名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。 名前空間は、文字または数値で開始および終了する必要があります。
   
 <p>  
 <strong>重要</strong> 名前空間名に個人情報を含めないでください。
@@ -587,7 +587,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-価格プランを表示します。
+ターゲットにしているレジストリー地域の価格プランを表示します。
 
 ```
 ibmcloud cr plan
@@ -601,7 +601,7 @@ ibmcloud cr plan
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-標準プランにアップグレードします。
+ターゲットにしているレジストリー地域の標準プランにアップグレードします。
 
 プランについて詳しくは、[レジストリーのプラン](/docs/services/Registry?topic=registry-registry_overview#registry_plans)を参照してください。
 
@@ -671,7 +671,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-トラフィックおよびストレージの現在の割り当て量、およびそれらの割り当て量に対する使用量の情報を表示します。
+ターゲットにしているレジストリー地域の、トラフィックおよびストレージの現在の割り当て量、およびそれらの割り当て量に対する使用量の情報を表示します。
 
 ```
 ibmcloud cr quota
@@ -685,7 +685,7 @@ ibmcloud cr quota
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-指定された割り当て量を変更します。
+ターゲットにしているレジストリー地域の指定された割り当て量を変更します。
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -759,50 +759,6 @@ ibmcloud cr region-set [REGION]
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (非推奨)
-{: #bx_cr_token_add}
-
-レジストリーへのアクセスを制御するために使用できるトークンを追加します。
-
-トークンを使用して、名前空間への Docker イメージのプッシュ、および名前空間からの Docker イメージのプルを自動化する方法は、非推奨となりました。 代わりに API キーを使用して名前空間へのアクセスを自動化します。[API キーを使用した名前空間へのアクセスの自動化](/docs/services/Registry?topic=registry-registry_access#registry_api_key)を参照してください。
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**前提条件**
-
-必要な許可について調べるには、[プラットフォーム管理の役割](/docs/services/Registry?topic=registry-iam#platform_management_roles)を参照してください。
-
-**コマンド・オプション**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(オプション) トークンの説明としての値を指定します。これは、`ibmcloud cr token-list` を実行したときに表示されます。 {{site.data.keyword.containerlong_notm}} が自動的に作成するトークンの場合は、Kubernetes クラスター名が説明として設定されます。 この場合、クラスターが削除されると、トークンは自動的に削除されます。
-  
-<p> 
-  <strong>重要</strong> トークンの説明に個人情報を含めないでください。
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(オプション) 周囲のテキストを含めずに、トークンのみを表示します。</dd>
-<dt>`--non-expiring`</dt>
-<dd>(オプション) 有効期限なしでアクセスできるトークンを作成します。 このパラメーターを設定しないと、デフォルトでは、トークンからのアクセスは 24 時間後に無効になります。</dd>
-<dt>`--readwrite`</dt>
-<dd>(オプション) 読み取り権限および書き込み権限を付与するトークンを作成します。 このオプションを指定しないと、デフォルトでは、読み取り専用のアクセスになります。</dd>
-</dl>
-
-**例**
-
-トークンと説明 *Token for my account* を追加します。このトークンには有効期限はありません。読み取り/書き込みアクセス権限があります。
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -29,8 +29,7 @@ o seu namespace de registro
 Para gerenciar suas imagens do Docker no {{site.data.keyword.registrylong}}, será preciso instalar o plug-in da CLI `container-registry` e criar um namespace.
 {:shortdesc}
 
-Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
-exemplo, nomes ou rótulos de imagem).
+Não coloque informações pessoais em suas imagens de contêiner, nomes de namespace, campos de descrição ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
 {: important}
 
 Antes de começar, para instalar a CLI do {{site.data.keyword.cloud_notm}}, consulte [Introdução à CLI do {{site.data.keyword.cloud_notm}}](/docs/cli?topic=cloud-cli-getting-started).
@@ -88,6 +87,33 @@ Se você não precisar mais do plug-in da CLI `container-registry`, será possí
 
     O plug-in da CLI `container-registry` não é exibido nos resultados.
 
+## Planejando namespaces
+{: #registry_setup_cli_namespace_plan}
+
+O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagem de vários locatários que é hospedado e gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker nesse registro, configurando um namespace de registro.
+{:shortdesc}
+
+É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.cloud_notm}}, deve-se configurar um namespace para cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que alguém já tenha um namespace com esse nome configurado nessa região.
+
+É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry?topic=registry-user#user).
+
+Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um namespace.
+
+Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace.
+{:tip}
+
+Considere as regras a seguir ao escolher um namespace:
+
+- Seu namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região.
+- Seu namespace deve ter entre 4 e 30 caracteres.
+- Seu namespace deve começar e terminar com uma letra ou número.
+- Seu namespace deve conter apenas letras minúsculas, números, hifens (-) e sublinhados (_).
+
+Não coloque informações pessoais nos nomes de namespace.
+{: important}
+
+Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
+
 ## Configurando um namespace
 {: #registry_namespace_setup}
 
@@ -97,7 +123,7 @@ Deve-se criar um namespace para armazenar as imagens do Docker no {{site.data.ke
 **Antes de iniciar**
 
 - [Instale a CLI do {{site.data.keyword.cloud_notm}} e o plug-in `container-registry` da CLI](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
-- [Planeje como usar e nomear seus namespaces de registro](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces).
+- [Planeje como usar e nomear seus namespaces de registro](#registry_setup_cli_namespace_plan).
 
 Para criar um namespace, veja [Configurar um namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)na documentação de Introdução.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -87,7 +87,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 对存储量和拉出流量计费
 {: #registry_billing_traffic}
 
-根据选择的服务套餐，会根据每月使用的存储量和拉出流量向您收费。
+根据选择的服务套餐，会根据每个区域每月使用的存储量和拉出流量向您收费。
 {:shortdesc}
 
 **存储量：**
@@ -115,7 +115,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 ### 存储量和拉出流量的配额限制
 {: #registry_quota_limits}
 
-根据选择的服务套餐，可以向名称空间推送的映像和从名称空间中拉出的映像不超过特定于套餐的配额限制或定制配额限制。
+根据选择的服务套餐，您可以向名称空间推送映像并从名称空间中拉出映像，直到超过每个区域特定于套餐的配额限制或定制配额限制为止。
 {:shortdesc}
 
 **存储量：**
@@ -150,7 +150,10 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 可以升级服务套餐，以享受无限的存储量和拉出流量使用量来管理 {{site.data.keyword.cloud_notm}} 帐户中所有名称空间的 Docker 映像。
 {:shortdesc}
 
-如果想知道自己拥有的是哪种服务套餐，请运行 `ibmcloud cr plan` 命令。
+如果您想知道您设置为目标的注册表区域有哪些服务套餐，请运行 `ibmcloud cr plan` 命令。
+{: tip}
+
+要升级服务套餐，请完成以下步骤：
 
 1. 登录到 {{site.data.keyword.cloud_notm}}。
 
@@ -163,7 +166,16 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     
     {:tip}
 
-2. 升级到标准套餐。
+2. 将要为其升级套餐的区域设置为目标：
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   有关更多信息，请参阅 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 和[区域](/docs/services/Registry?topic=registry-registry_overview#registry_regions)。
+
+3. 升级到标准套餐。
 
    ```
     ibmcloud cr plan-upgrade standard
@@ -173,13 +185,15 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
    如果拥有的是 {{site.data.keyword.cloud_notm}} 轻量帐户，那么必须先升级到 {{site.data.keyword.cloud_notm}} 现收现付或预订帐户，然后才能运行 `ibmcloud cr plan-upgrade`。
 {:tip}
 
+   有关更多信息，请参阅 [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)。
+
 ## 了解基本信息
 {: #registry_planning}
 
 通过了解注册表基本信息，准备好使用 {{site.data.keyword.registrylong_notm}} 来存储和共享 Docker 映像。
 {:shortdesc}
 
-不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
+不要将个人信息放入容器映像、名称空间名称、描述字段或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
 ### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语

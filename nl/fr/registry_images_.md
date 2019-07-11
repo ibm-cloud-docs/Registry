@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ Vous pouvez stocker et partager de manière sécurisée des images Docker avec d
 
 Chaque image que vous voulez ajouter à votre espace de nom doit d'abord exister sur votre ordinateur local. Vous pouvez télécharger une image sur votre ordinateur local (par commande pull) depuis un autre référentiel ou générer votre propre image depuis un fichier Dockerfile à l'aide de la commande Docker `build`. Pour ajouter une image à votre espace de nom, vous devez la télécharger (par commande push) vers votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
 ## Extraction d'images depuis un autre registre

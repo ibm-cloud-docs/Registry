@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -62,19 +62,17 @@ Puoi scegliere tra i piani di servizio {{site.data.keyword.registrylong_notm}} g
 e renderle disponibili agli utenti nel tuo account {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-Il piano di servizio {{site.data.keyword.registrylong_notm}} determina
-la quantità di archiviazione e di traffico di pull che puoi utilizzare per le tue immagini private. Il piano di servizio è
+Il piano del servizio {{site.data.keyword.registrylong_notm}} determina
+la quantità di archiviazione e di traffico di pull che puoi utilizzare per le tue immagini private. Il piano del servizio è
 associato al tuo account {{site.data.keyword.cloud_notm}}
 e limita l'archiviazione e il traffico di pull da applicare a tutti gli spazi dei nomi che hai configurato nel tuo
 account.
 
-La seguente tabella mostra i piani di servizio {{site.data.keyword.registrylong_notm}} disponibili e le relative caratteristiche. Per ulteriori informazioni su come funziona la fatturazione e su cosa succede se superi i limiti del piano di servizio, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
+La seguente tabella mostra i piani di servizio {{site.data.keyword.registrylong_notm}} disponibili e le relative caratteristiche. Per ulteriori informazioni su come funziona la fatturazione e su cosa succede se superi i limiti del piano del servizio, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 |Caratteristiche|Gratuito|Standard|
 |---------------|----|--------|
-|Descrizione|Prova {{site.data.keyword.registrylong_notm}} per memorizzare e condividere le tue immagini Docker. Questo è il piano di servizio predefinito quando configuri il tuo primo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.|Beneficia di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi
-dei nomi nel tuo account
-{{site.data.keyword.cloud_notm}}.|
+|Descrizione|Prova {{site.data.keyword.registrylong_notm}} per memorizzare e condividere le tue immagini Docker. Questo è il piano del servizio predefinito quando configuri il tuo primo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.|Beneficia di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}.|
 |Quantità di archiviazione per le immagini|500 MB|Senza limiti|
 |Traffico di pull|5 GB al mese|Senza limiti|
 |Fatturazione|Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini da e verso il tuo spazio dei nomi. Per ulteriori informazioni, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).|<ul><li>Archiviazione: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 0,5 GB al mese sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).</li><li>Traffico di pull: il tuo addebito si basa sui Gigabyte di utilizzo al mese. I primi 5 GB sono gratuiti. Quindi, ti verrà addebitato secondo quanto indicato nella pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry). Se superi i tuoi limiti di archiviazione e traffico di pull, non puoi eseguire il push o il pull delle immagini da e verso il tuo spazio dei nomi. Per ulteriori informazioni su archiviazione, traffico di pull e stimatore costi, vedi [Limiti di quota e fatturazione in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).</li></ul>|
@@ -83,8 +81,7 @@ dei nomi nel tuo account
 ## Limiti di quota e fatturazione
 {: #registry_plan_billing}
 
-Trova informazioni ed esempi sul funzionamento del processo di fatturazione e dei limiti di quota in
-{{site.data.keyword.registrylong_notm}}.
+Trova informazioni ed esempi sul funzionamento del processo di fatturazione e dei limiti di quota in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 Ogni immagine viene creata a partire da un certo numero di livelli che rappresentano ciascuno un cambiamento incrementale dall'immagine di base. Quando esegui il push o il pull di un'immagine, la quantità di archiviazione e di traffico di pull necessaria per ogni livello viene aggiunta al tuo utilizzo mensile. I livelli identici vengono condivisi automaticamente tra le immagini nel tuo account
@@ -99,12 +96,12 @@ Esempio per il push di immagini:
 ### Fatturazione per l'archiviazione e il traffico di pull
 {: #registry_billing_traffic}
 
-A seconda del piano di servizio scelto, gli addebiti a tuo carico sono basati sull'archiviazione e sul traffico di pull che utilizzi al mese.
+A seconda del piano del servizio scelto, gli addebiti a tuo carico sono basati sull'archiviazione e sul traffico di pull che utilizzi al mese in ogni regione.
 {:shortdesc}
 
 **Archiviazione: **
 
-  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
+  Ogni piano del servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
 
   Esempio per il piano standard:
 
@@ -116,7 +113,7 @@ A seconda del piano di servizio scelto, gli addebiti a tuo carico sono basati su
 
 **Traffico di pull: **
 
-  Ogni piano di servizio {{site.data.keyword.registrylong_notm}} include una certa quantità di traffico di pull gratuito per le tue immagini private memorizzate nel tuo spazio dei nomi. Il traffico di pull è la larghezza di banda che utilizzi quando esegui il pull di un livello di un'immagine dal tuo spazio dei nomi alla tua macchina locale. Se utilizzi il piano standard, il tuo addebito si basa sui GB di utilizzo al mese. I primi 5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi eseguire il pull di immagini dal tuo spazio dei nomi finché non raggiungi il limite di quota previsto per tale piano.
+  Ogni piano del servizio {{site.data.keyword.registrylong_notm}} include una certa quantità di traffico di pull gratuito per le tue immagini private memorizzate nel tuo spazio dei nomi. Il traffico di pull è la larghezza di banda che utilizzi quando esegui il pull di un livello di un'immagine dal tuo spazio dei nomi alla tua macchina locale. Se utilizzi il piano standard, il tuo addebito si basa sui GB di utilizzo al mese. I primi 5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi eseguire il pull di immagini dal tuo spazio dei nomi finché non raggiungi il limite di quota previsto per tale piano.
 
   Esempio per il piano standard:
 
@@ -127,8 +124,7 @@ A seconda del piano di servizio scelto, gli addebiti a tuo carico sono basati su
 ### Limiti di quota per l'archiviazione e il traffico di pull
 {: #registry_quota_limits}
 
-A seconda del piano di servizio scelto, puoi eseguire il push e il pull di immagini da e verso
-il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici del piano o personalizzati.
+A seconda del piano del servizio scelto, puoi eseguire il push e il pull di immagini da e verso il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici del piano o personalizzati per ogni regione.
 {:shortdesc}
 
 **Archiviazione: **
@@ -166,14 +162,16 @@ dal tuo spazio dei nomi.
 Puoi visualizzare i costi di {{site.data.keyword.registrylong_notm}} nella sezione dei piani di prezzi della pagina dei dettagli dell'offerta, vedi [Container Registry ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/kubernetes/catalog/registry).
 {:shortdesc}
 
-## Aggiornamento del tuo piano di servizio
+## Aggiornamento del tuo piano del servizio
 {: #registry_plan_upgrade}
 
-Puoi eseguire l'upgrade del tuo piano di servizio per beneficiare di un utilizzo illimitato di
-archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}.
+Puoi eseguire l'upgrade del tuo piano del servizio per beneficiare di un utilizzo illimitato di archiviazione e di traffico di pull per gestire le immagini Docker per tutti gli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-Se desideri conoscere qual è il piano dei servizi di cui disponi, esegui il comando `ibmcloud cr plan`.
+Se desideri conoscere qual è il piano del servizio di cui disponi per la regione del registro di destinazione, esegui il comando `ibmcloud cr plan`.
+{: tip}
+
+Per eseguire l'upgrade del tuo piano del servizio, completa la seguente procedura:
 
 1. Accedi a {{site.data.keyword.cloud_notm}}.
 
@@ -186,7 +184,16 @@ Se desideri conoscere qual è il piano dei servizi di cui disponi, esegui il com
 l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
     {:tip}
 
-2. Esegue l'upgrade al piano standard.
+2. Seleziona la regione per cui vuoi eseguire l'upgrade del piano:
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   Per ulteriori informazioni, vedi [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) e [Regioni](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
+3. Esegue l'upgrade al piano standard.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -196,13 +203,15 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
    Se hai un account {{site.data.keyword.cloud_notm}} Lite, devi eseguire l'upgrade a un account Pagamento a consumo o Sottoscrizione {{site.data.keyword.cloud_notm}} prima di eseguire `ibmcloud cr plan-upgrade`.
    {:tip}
 
+   Per ulteriori informazioni, vedi [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+
 ## Apprendimento delle nozioni di base
 {: #registry_planning}
 
 Preparati per memorizzare e condividere le tue immagini Docker con {{site.data.keyword.registrylong_notm}} apprendendo le basi del registro.
 {:shortdesc}
 
-Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione (ad esempio, nei token di registro) o in qualsiasi dato di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
+Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione o nei dati di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
 {: important}
 
 ### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
@@ -277,7 +286,7 @@ Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account,
 
 Quando scegli uno spazio dei nomi, considera le seguenti regole:
 
-- Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. 
+- Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione.
 - Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
 - Il tuo spazio dei nomi deve iniziare e terminare con una lettera o un numero.
 - Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_).
@@ -285,7 +294,7 @@ Quando scegli uno spazio dei nomi, considera le seguenti regole:
 Non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
 {: important}
 
-Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano di servizio {{site.data.keyword.registrylong_notm}}
+Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano del servizio {{site.data.keyword.registrylong_notm}}
 gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
 
 ## Regioni

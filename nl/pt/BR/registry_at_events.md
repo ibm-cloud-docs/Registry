@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -102,10 +102,6 @@ A tabela a seguir lista os métodos de API que geram um evento quando eles são 
   <tr>
     <td>`container-registry.quota.set`</td>
 	  <td>Modifica as cotas.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.create`</td>
-	  <td>Cria um novo token de registro. (Reprovado)</td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ subcollection: container-registry-cli-plugin
 
 有关某些命令所需的 IAM 平台和服务访问角色的更多信息，请参阅[使用 Identity and Access Management 管理用户访问权](/docs/services/Registry?topic=registry-iam#iam)。
 
-不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
+不要将个人信息放入容器映像、名称空间名称、描述字段或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
 ## `ibmcloud cr api`
@@ -586,7 +586,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-显示您的价格套餐。
+显示您设置为目标的注册表区域的价格套餐。
 
 ```
 ibmcloud cr plan
@@ -600,7 +600,7 @@ ibmcloud cr plan
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-升级到标准套餐。
+为您将设置为目标的注册表区域升级为标准套餐。
 
 有关套餐的更多信息，请参阅[注册表套餐](/docs/services/Registry?topic=registry-registry_overview#registry_plans)。
 
@@ -670,7 +670,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-显示流量和存储的当前配额以及这些配额的使用情况信息。
+显示流量和存储的当前配额，以及您设置为目标的注册表区域的这些配额的使用情况信息。
 
 ```
 ibmcloud cr quota
@@ -684,7 +684,7 @@ ibmcloud cr quota
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-修改指定的配额。
+为您设置为目标的注册表区域修改指定的配额。
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -758,50 +758,6 @@ ibmcloud cr region-set [REGION]
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add`（不推荐）
-{: #bx_cr_token_add}
-
-添加可用于控制对注册表的访问权的令牌。
-
-不推荐使用令牌将 Docker 映像自动推送到名称空间，以及从名称空间自动拉出 Docker 映像。请改为使用 API 密钥自动访问名称空间，具体请参阅[使用 API 密钥自动访问名称空间](/docs/services/Registry?topic=registry-registry_access#registry_api_key)。
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**先决条件**
-
-要了解有关必需许可权的信息，请参阅[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
-
-**命令选项**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>（可选）指定此值作为运行 `ibmcloud cr token-list` 时显示的令牌描述。如果令牌是由 {{site.data.keyword.containerlong_notm}} 自动创建的，那么描述会设置为 Kubernetes 集群名称。在这种情况下，除去集群时会自动除去该令牌。
-  
-<p> 
-  <strong>重要信息</strong>：不要将个人信息放入令牌描述中。
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>（可选）仅显示令牌，不显示任何周围的文本。</dd>
-<dt>`--non-expiring`</dt>
-<dd>（可选）创建具有不会到期的访问权的令牌。未设置此参数时，缺省情况下令牌的访问权将在 24 小时后到期。</dd>
-<dt>`--readwrite`</dt>
-<dd>（可选）创建用于授予读写访问权的令牌。不使用此选项时，缺省情况下访问权为只读。</dd>
-</dl>
-
-**示例**
-
-为不会到期且具有读/写访问权的令牌添加描述 *Token for my account*。
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

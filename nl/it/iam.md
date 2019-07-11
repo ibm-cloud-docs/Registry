@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ La seguente tabella illustra le azioni che sono associate ai ruoli di gestione d
 | Visualizzatore | Non supportato | |
 | Editor | Non supportato | |
 | Operatore | Non supportato | |
-| Amministratore | <ul><li>Configura l'accesso per altri utenti</li><li>Configura i token di registro</li><li>Crea i cluster</li></ul> | <ul><li>Per informazioni sull'assegnazione dei ruoli utente nell'IU, consulta [Gestione dell'accesso IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Aggiungi, elenca, richiama e rimuovi i token di registro</li><li>Per creare i cluster in {{site.data.keyword.containerlong_notm}}, devi assegnare all'utente il ruolo Amministratore per {{site.data.keyword.registrylong_notm}}, consulta [Preparazione per la creazione dei cluster](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
+| Amministratore | <ul><li>Configura l'accesso per altri utenti</li><li>Configura i token di registro</li><li>Crea i cluster</li></ul> | <ul><li>Per informazioni sull'assegnazione dei ruoli utente nell'IU, consulta [Gestione dell'accesso IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Elenca, richiama e rimuovi i token di registro</li><li>Per creare i cluster in {{site.data.keyword.containerlong_notm}}, devi assegnare all'utente il ruolo Amministratore per {{site.data.keyword.registrylong_notm}}, consulta [Preparazione per la creazione dei cluster](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
 {: caption="Tabella 1. Azioni e ruoli utente IAM" caption-side="top"}
 
 Per {{site.data.keyword.registrylong_notm}}, sono possibili le seguenti azioni:
 
 | Azione| Operazione sul servizio | Ruolo
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Aggiungi un token che puoi utilizzare per controllare l'accesso a un registro. (Obsoleto) | Amministratore |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Rimuovi uno o più token specificati. | Amministratore |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Richiama il token specificato dal registro. | Amministratore |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizza tutti i token esistenti per il tuo account {{site.data.keyword.cloud_notm}}. | Amministratore |

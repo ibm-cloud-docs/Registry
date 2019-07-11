@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -300,7 +300,7 @@ Les progiciels tels que les images et les chartes Helm provenant d'IBM Passport 
 Vous avez supprimé une image en utilisant la commande `ibmcloud cr image-rm` et toutes les étiquettes qui se trouvent dans le même référentiel et qui font référence à l'image ont également été supprimées.
 
 {: tsCauses}
-Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) supprime l'image sous-jacente ainsi que toutes ses étiquettes. Si la même image existe dans un autre référentiel ou espace de nom, cette copie de l'image n'est pas supprimée. 
+Lorsqu'un référentiel contient plusieurs étiquettes pour le même historique des images, la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) supprime l'image sous-jacente ainsi que toutes ses étiquettes. Si la même image existe dans un autre référentiel ou espace de nom, cette copie de l'image n'est pas supprimée.
 
 {: tsResolve}
 Si vous voulez supprimer une étiquette d'une image mais conserver l'image sous-jacente ainsi que toutes les autres étiquettes, utilisez la commande [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Pour plus d'informations, voir [Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) et[Suppression d'images de votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
@@ -352,25 +352,37 @@ Avant de commencer, récupérez la phrase passe de clé racine que vous avez cr�
 
 2. [Configurez votre environnement de contenu sécurisé](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Notez l'URL figurant dans la commande d'exportation à l'étape précédente. Par exemple, `https://us.icr.io:4443`
-
-4. Générez un jeton de registre.
+3. Créez une clé d'API IAM :
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Remplacez `<URL>` par l'URL de la commande d'exportation que vous avez notée à l'étape 2 et `<image>` par l'image dont la clé de référentiel est affectée.
+4. Définissez le paramètre NOTARY_AUTH :
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. Faites pivoter ces clés afin que le contenu signé à l'aide de ces clés ne soit plus sécurisé. Utilisez la variable du serveur d'accréditation que vous avez définie à l'étape 2 et remplacez `<image>` par l'image dont la clé de référentiel est affectée.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. Si vous y êtes invité, entrez la phrase passe de clé racine. Entrez ensuite une nouvelle phrase passe pour la nouvelle clé de référentiel lorsque vous y êtes invité.
 
 7. [Envoyez par commande push une image signée](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) qui utilise les nouvelles clés de signature.
+
+8.  (Facultatif) Lorsque vous avez terminé, si vous souhaitez révoquer votre clé d'API, exécutez la commande suivante :
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### Clés racine (root)
 {: #trustedcontent_lostrootkey}

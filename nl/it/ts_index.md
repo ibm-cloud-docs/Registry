@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -150,7 +150,7 @@ Puoi risolvere questo problema nei seguenti modi:
 
 - Segui le istruzioni visualizzate nel messaggio di errore restituito.
 - Controlla di aver immesso uno spazio dei nomi valido:
-  - Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione. 
+  - Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione.
   - Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
   - Il tuo spazio dei nomi deve iniziare e terminare con una lettera o un numero.
   - Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_).
@@ -306,7 +306,7 @@ I pacchetti software come immagini e grafici Helm forniti da IBM Passport Advant
 Hai eliminato un'immagine utilizzando il comando `ibmcloud cr image-rm` e sono state eliminate anche tutte le tag nello stesso repository che facevano riferimento all'immagine.
 
 {: tsCauses}
-Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il [comando `ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. 
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il [comando `ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa.
 
 {: tsResolve}
 Se vuoi rimuovere una tag da un'immagine ma lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizza il [comando `ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Per ulteriori informazioni, vedi [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) e [Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
@@ -360,25 +360,37 @@ Prima di iniziare, richiama la passphrase della chiave root che hai creato quand
 
 2. [Configura il tuo ambiente di contenuti attendibili](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Annota l'URL dal comando di esportazione nel passo precedente. Ad esempio, `https://us.icr.io:4443`
-
-4. Genera un token di registro.
+3. Crea una chiave API IAM:
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Ruota le tue chiavi in modo che il contenuto firmato con quelle chiavi non sia più attendibile. Sostituisci `<URL>` con l'URL del comando di esportazione che hai annotato nel passo 2 e `<image>` con l'immagine la cui chiave di repository è interessata.
+4. Imposta NOTARY_AUTH:
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. Ruota le tue chiavi in modo che il contenuto firmato con quelle chiavi non sia più attendibile. Utilizza la variabile del server di attendibilità che hai impostato nel passo 2 e sostituisci `<image>` con l'immagine la cui chiave di repository è interessata.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. Se richiesto, immetti la passphrase della chiave root. Quindi, immetti una nuova passphrase della chiave root per la nuova chiave di repository quando viene richiesto.
 
 7. [Esegui il push di un'immagine firmata](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) che utilizza le nuovi chiavi di firma.
+
+8.  (Facoltativo) Quando hai finito, se vuoi revocare la tua chiave API, immetti il seguente comando:
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### Chiavi root
 {: #trustedcontent_lostrootkey}

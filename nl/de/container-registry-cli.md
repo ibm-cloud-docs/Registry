@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ Informationen zur Verwendung der {{site.data.keyword.registrylong_notm}}-CLI fin
 
 Weitere Informationen zur IAM-Plattform und zu den Servicezugriffsrollen, die für einige Befehle erforderlich sind, finden Sie unter [Benutzerzugriff mit Identity and Access Management verwalten](/docs/services/Registry?topic=registry-iam#iam).
 
-Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {: important}
 
 ## `ibmcloud cr api`
@@ -461,7 +461,7 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 <dt>`IMAGE`</dt>
 <dd>Der Name des Images, aus dem Sie ein Tag entfernen möchten. Sie können ein Tag aus mehreren Images gleichzeitig löschen, indem Sie jedes Image im Befehl mit einem Leerzeichen zwischen den einzelnen Namen auflisten. `IMAGE` muss dasselbe Format wie `repository:tag` haben, z. B. `us.icr.io/namespace/image:latest`.
 
-<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen. Wenn im Imagenamen kein Tag angegeben ist, schlägt der Befehl fehl. </p>
+<p>Um die Namen Ihrer Images zu ermitteln, führen Sie `ibmcloud cr image-list` aus. Kombinieren Sie den Inhalt der Spalten **Repository** und **Tag**, um den Imagenamen im Format `repository:tag` zu erstellen. Wenn im Imagenamen kein Tag angegeben ist, schlägt der Befehl fehl.</p>
 
 </dd>
 </dl>
@@ -586,7 +586,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-Zeigt Ihren Preisstrukturplan an.
+Zeigt Ihren Preistarif für die von Ihnen anvisierte Registry-Region an.
 
 ```
 ibmcloud cr plan
@@ -600,7 +600,7 @@ ibmcloud cr plan
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-Führt ein Upgrade auf den Standardplan durch.
+Führt ein Upgrade auf den Standardplan für die von Ihnen anvisierte Registry-Region durch.
 
 Weitere Informationen zu den Plänen finden Sie unter [Registry-Pläne](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
@@ -670,7 +670,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-Zeigt Ihre aktuellen Kontingente für Datenverkehr und Speicher sowie Informationen zu diesen Kontingenten an.
+Zeigt Ihre aktuellen Kontingente für Datenverkehr und Speicher sowie Informationen zu diesen Kontingenten für die Registry-Region an, die Sie anvisieren.
 
 ```
 ibmcloud cr quota
@@ -684,7 +684,7 @@ ibmcloud cr quota
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-Modifiziert das angegebene Kontingent.
+Ändern Sie das angegebene Kontingent für die von Ihnen anvisierte Registry-Region.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -758,50 +758,6 @@ Richten Sie die Region 'Vereinigte Staaten (Süden)' (us-south) als Zielregion e
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (nicht mehr verwendet)
-{: #bx_cr_token_add}
-
-Fügen Sie ein Token hinzu, mit dem Sie den Zugriff auf eine Registry kontrollieren können.
-
-Die Verwendung von Tokens zur Automatisierung von Push- und Pull-Operationen für Docker-Images in Bezug auf Ihre Namensbereiche ist veraltet. Verwenden Sie zur Automatisierung des Zugriffs auf Ihre Namensbereiche stattdessen API-Schlüssel; Informationen hierzu finden Sie in [Zugriff auf eigene Namensbereiche mithilfe von API-Schlüsseln automatisieren](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**Voraussetzungen**
-
-[Plattformmanagementrollen](/docs/services/Registry?topic=registry-iam#platform_management_roles) enthält weitere Informationen zu den erforderlichen Berechtigungen.
-
-**Befehlsoptionen**
-<dl>
-<dt>`--description BESCHREIBUNG`</dt>
-<dd>(Optional) Gibt den Wert als Beschreibung für das Token an, das angezeigt wird, wenn Sie `ibmcloud cr token-list` ausführen. Wenn Ihr Token automatisch von {{site.data.keyword.containerlong_notm}} erstellt wird, wird die Beschreibung auf den Namen Ihres Kubernetes-Clusters festgelegt. In diesem Fall wird das Token automatisch entfernt, wenn Ihr Cluster entfernt wird.
-  
-<p> 
-  <strong>Wichtig</strong> Beziehen Sie keine personenbezogenen Daten in Ihre Tokenbeschreibung ein.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Optional) Zeigt nur das Token an, ohne einschließenden Text.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(Optional) Erstellt ein Token mit zeitlich unbeschränkter Gültigkeit. Ist dieser Parameter nicht festgelegt, läuft der Zugriff von einem Token standardmäßig nach 24 Stunden ab.</dd>
-<dt>`--readwrite`</dt>
-<dd>(Optional) Erstellt ein Token, das Lese- und Schreibzugriff erteilt. Ohne diese Option ist der Zugriff standardmäßig schreibgeschützt.</dd>
-</dl>
-
-**Beispiel**
-
-Fügen Sie ein Token mit der Beschreibung *Token für mein Konto* hinzu, das nicht abläuft und über Schreib-/Lesezugriff verfügt.
-
-```
-ibmcloud cr token-add --description "Token für mein Konto" --non-expiring --readwrite
 ```
 {: pre}
 

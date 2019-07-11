@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -351,25 +351,37 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 2. [设置可信内容环境](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)。
 
-3. 记下先前步骤中 export 命令中的 URL。例如，`https://us.icr.io:4443`
-
-4. 生成注册表令牌。
+3. 创建 IAM API 密钥：
 
    ```
-    ibmcloud cr token-add --readwrite
-    ```
+   ibmcloud iam api-key-create notary-auth --file notary-auth
+   ```
    {: pre}
 
-5. 轮换密钥，以便不再信任已使用这些密钥签名的内容。将 `<URL>` 替换为在步骤 2 中记录的 export 命令的 URL，并将 `<image>` 替换为其存储库密钥受影响的映像。
+4. 设置 NOTARY_AUTH：
 
    ```
-notary -s <URL> -d ~/.docker/trust key rotate <image> targets
-    ```
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. 轮换密钥，以便不再信任已使用这些密钥签名的内容。使用您在步骤 2 中设置的信任服务器变量，并将 `<image>` 替换为其存储库受影响的映像。
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
+   ```
    {: pre}
 
 6. 如果出现提示，请输入根密钥口令。然后，在提示时，输入新的根密钥口令用于新的存储库密钥。
 
 7. [推送签名的映像](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)，此映像将使用新的签名密钥。
+
+8.  （可选）完成后，如果您想要撤销 API 密钥，请运行以下命令：
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### 根密钥
 {: #trustedcontent_lostrootkey}

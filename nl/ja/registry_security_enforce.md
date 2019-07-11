@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-06-27"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -373,10 +373,14 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
 1. Container Image Security Enforcement を無効にします。
 
    ```
-   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
    ```
-   {: codeblock}
+   {: pre}
+
+   ```
+   kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   ```
+   {: pre}
 
 2. チャートを削除します。
 

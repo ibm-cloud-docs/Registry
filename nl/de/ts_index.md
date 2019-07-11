@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -149,7 +149,7 @@ Sie können dieses Problem wie folgt beheben:
 
 - Befolgen Sie die Anweisungen, die in der zurückgegebenen Fehlernachricht enthalten sind.
 - Prüfen Sie, ob Sie einen gültigen Namensbereich eingegeben haben:
-  - Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. 
+  - Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein.
   - Der Name muss 4 bis 30 Zeichen lang sein.
   - Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
   - Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.
@@ -352,25 +352,37 @@ Bevor Sie anfangen, rufen Sie die Rootschlüssel-Kennphrase ab, die Sie erstellt
 
 2. [Richten Sie die Umgebung für vertrauenswürdige Inhalte ein](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Vermerken Sie die URL aus dem Exportbefehl im vorherigen Schritt. Beispiel: `https://us.icr.io:4443`
-
-4. Generieren Sie ein Registry-Token.
+3. Erstellen Sie einen IAM-API-Schlüssel:
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Ersetzen Sie `<URL>` durch die URL des Exportbefehls, die Sie in Schritt 2 notiert haben, und `<image>` durch das Image, dessen Repository-Schlüssel betroffen ist.
+4. Legen Sie NOTARY_AUTH fest:
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. Rotieren Sie Ihre Schlüssel, sodass Inhalte, die mit diesen Schlüsseln signiert wurden, nicht länger vertrauenswürdig sind. Verwenden Sie die Variable für vertrauenswürdige Server, die Sie in Schritt 2 festgelegt haben, und ersetzen Sie `<image>` durch das Image, dessen Repository-Schlüssel betroffen ist.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. In der Eingabeaufforderung geben Sie die Kennphrase des Rootschlüssels ein. Anschließend geben Sie in die Eingabeaufforderung eine neue Rootschlüssel-Kennphrase für das neue Repository ein.
 
 7. [Übertragen Sie mit Push-Operation ein signiertes Image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push), das die neuen Signierschlüssel verwendet.
+
+8.  (Optional) Wenn Sie fertig sind und Ihren API-Schlüssel widerrufen möchten, müssen Sie den folgenden Befehl ausführen:
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### Rootschlüssel
 {: #trustedcontent_lostrootkey}
@@ -456,7 +468,7 @@ Für die folgenden Ressourcen:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers?topic=containers-users#rbac) und [Kubernetes - RBAC-Berechtigung verwenden ![Symbol für externen Link](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). 
+Weitere Informationen zu RBAC finden Sie in [Benutzerberechtigungen mit angepassten Kubernetes-RBAC-Rollen erteilen](/docs/containers?topic=containers-users#rbac) und [Kubernetes - RBAC-Berechtigung verwenden ![Symbol für externen Link](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
 Führen Sie die folgenden Schritte aus, um die Webhookkonfiguration von 'fail closed' in 'fail open' zu ändern und sie dann, wenn mindestens ein Container Image Security Enforcement-Pod aktiv ist, wieder auf 'fail closed' zurückzusetzen:
 

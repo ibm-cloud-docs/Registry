@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 名前空間に追加するすべてのイメージは、まずローカル・コンピューターに存在していなければなりません。 別のリポジトリーからローカル・コンピューターにイメージをダウンロード (プル) するか、または Docker `build` コマンドを使用して Dockerfile から独自のイメージをビルドすることができます。 名前空間にイメージを追加するには、{{site.data.keyword.registrylong_notm}} 内の名前空間にローカル・イメージをアップロード (プッシュ) する必要があります。
 
-コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
 ## 別のレジストリーからのイメージのプル
@@ -288,10 +288,10 @@ CLI を使用して 1 つまたは複数のタグを削除するには、以下�
 
    `IMAGE` は、削除するイメージの名前 (形式は `repository:tag`) です。
 
-   イメージ名の中にタグを指定しないと、コマンドが失敗します。複数のイメージのタグを削除するには、各プライベート {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
+   イメージ名の中にタグを指定しないと、コマンドが失敗します。 複数のイメージのタグを削除するには、各プライベート {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
    イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
-{:tip}
+   {:tip}
 
 3. 以下のコマンドを実行してタグが削除されたことを検証し、リスト内にタグが表示されないことを確認します。
 
@@ -313,7 +313,7 @@ CLI を使用して 1 つまたは複数のタグを削除するには、以下�
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
 {: important}
 
-リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。イメージから 1 つのタグを削除し、基になるイメージと設定されているその他のタグはそのまま残しておく場合は、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](#registry_images_untag)を参照してください。
+リポジトリー内で同じイメージ・ダイジェストに複数のタグが存在する場合、[`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) コマンドを実行すると、基になるイメージとそのすべてのタグが削除されます。 同じイメージが異なるリポジトリーまたは名前空間に存在する場合は、イメージのそのコピーは削除されません。 イメージから 1 つのタグを削除し、基になるイメージと設定されているその他のタグはそのまま残しておく場合は、[プライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除](#registry_images_untag)を参照してください。
 {: tip}
 
 ### CLI を使用したプライベート {{site.data.keyword.cloud_notm}} リポジトリーからのイメージの削除
@@ -340,7 +340,7 @@ CLI を使用してイメージを削除するには、以下の手順を実行�
    イメージ名の中にタグを指定しない場合、デフォルトでは、`latest` というタグが付いたイメージが削除されます。 複数のイメージを削除するには、各専用 {{site.data.keyword.cloud_notm}} レジストリー・パスをスペースで区切ってコマンドにリストします。
 
    イメージの名前を調べるには、`ibmcloud cr image-list` を実行します。 **Repository** 列と **Tag** 列の内容を組み合わせると、`repository:tag` の形式のイメージ名になります。
-{:tip}
+   {:tip}
 
 3. 以下のコマンドを実行し、リスト中にイメージが表示されないことを確認して、イメージが削除されたことを検証します。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,6 +28,20 @@ subcollection: registry
 Utilisez ces notes sur l'édition pour prendre connaissance des modifications les plus récentes apportées à {{site.data.keyword.registrylong}} et Vulnerability Advisor. Les changements sont classés par date.
 {:shortdesc}
 
+## 1er juillet 2019
+{: #01jul2019}
+
+- **La commande `ibmcloud cr token-add` n'est plus disponible**
+
+  La commande `ibmcloud cr token-add` n'est plus utilisée. Vous ne pouvez plus ajouter des jetons de registre dans l'interface de ligne de commande ou dans l'API.
+
+## 27 juin 2019
+{: #27jun2019}
+
+- **Container Scanner n'est plus disponible**
+
+  L'outil Container Scanner n'est plus utilisé. Vulnerability Advisor continue à analyser les images insérées par commande push dans {{site.data.keyword.registrylong_notm}}.
+
 ## 13 juin 2019
 {: #13jun2019}
 
@@ -36,7 +50,6 @@ Utilisez ces notes sur l'édition pour prendre connaissance des modifications le
   Supprimer une ou plusieurs étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.
 
   Pour supprimer une étiquette d'une image et conserver l'image sous-jacente ainsi que toutes les étiquettes définies, utilisez la commande [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Si vous voulez supprimer l'image sous-jacente ainsi que toutes ses étiquettes, utilisez la commande [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm).
-
 
   Pour plus d'informations, voir [Suppression d'étiquettes d'images dans votre référentiel {{site.data.keyword.cloud_notm}} privé](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag).
 

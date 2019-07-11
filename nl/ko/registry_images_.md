@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 네임스페이스에 추가할 모든 이미지는 먼저 로컬 컴퓨터에 있어야 합니다. 다른 저장소에서 로컬 컴퓨터로 이미지를 다운로드(가져오기)하거나, Docker `build` 명령을 사용하여 Dockerfile에서 고유의 이미지를 빌드할 수 있습니다. 네임스페이스에 이미지를 추가하려면 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 로컬 이미지를 업로드(푸시)해야 합니다.
 
-컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
+컨테이너 이미지, 네임스페이스 이름, 설명 필드 또는 모든 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {: important}
 
 ## 다른 레지스트리에서 이미지 가져오기

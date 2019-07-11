@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -28,7 +28,7 @@ subcollection: registry
 若要在 {{site.data.keyword.registrylong}} 中管理 Docker 映像檔，您必須安裝 `container-registry` CLI 外掛程式並建立名稱空間。
 {:shortdesc}
 
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
 開始之前，請安裝 {{site.data.keyword.cloud_notm}} CLI，請參閱[開始使用 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)。
@@ -86,6 +86,33 @@ subcollection: registry
 
     `container-registry` CLI 外掛程式未顯示在結果中。
 
+## 規劃名稱空間
+{: #registry_setup_cli_namespace_plan}
+
+{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中儲存及共用 Docker 映像檔。
+{:shortdesc}
+
+例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.cloud_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
+
+您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
+
+若只要使用 IBM 提供的公用映像檔，您不需要設定名稱空間。
+
+如果您不確定是否已為您的帳戶設定名稱空間，請執行 `ibmcloud cr namespace-list` 指令來擷取現有名稱空間資訊。
+{:tip}
+
+當您選擇名稱空間時，請考量下列規則：
+
+- 您的名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。
+- 名稱空間必須有 4 - 30 個字元。
+- 您的名稱空間的開頭和結尾必須是字母或數字。
+- 名稱空間只能包含小寫字母、數字及底線 (_)。
+
+請不要將個人資訊放在名稱空間名稱中。
+{: important}
+
+在設定第一個名稱空間之後，您會獲指派免費 {{site.data.keyword.registrylong_notm}} 服務方案（如果您尚未[升級方案](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade)的話）。
+
 ## 設定名稱空間
 {: #registry_namespace_setup}
 
@@ -95,7 +122,7 @@ subcollection: registry
 **開始之前**
 
 - [安裝 {{site.data.keyword.cloud_notm}} CLI 及 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
-- [計劃如何使用及命名您的登錄名稱空間](/docs/services/Registry?topic=registry-registry_overview#registry_namespaces)。
+- [計劃如何使用及命名您的登錄名稱空間](#registry_setup_cli_namespace_plan)。
 
 若要建立名稱空間，請參閱「開始使用」文件中的[設定名稱空間](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add)。
 

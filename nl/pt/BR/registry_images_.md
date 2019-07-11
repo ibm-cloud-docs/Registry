@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -33,8 +33,7 @@ Todas as imagens que desejar incluir no namespace deverão existir primeiro no c
 (puxar) de uma imagem de outro repositório para o computador local ou construir a sua própria imagem de um Dockerfile usando o comando `build` do Docker. Para incluir uma imagem em seu namespace, deve-se fazer upload da (enviar por push) imagem local para seu namespace no
 {{site.data.keyword.registrylong_notm}}.
 
-Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por
-exemplo, nomes ou rótulos de imagem).
+Não coloque informações pessoais em suas imagens de contêiner, nomes de namespace, campos de descrição ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
 {: important}
 
 ## Puxando imagens de outro registro

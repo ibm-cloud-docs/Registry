@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -101,10 +101,6 @@ subcollection: registry
   <tr>
     <td>`container-registry.quota.set`</td>
 	  <td>割り当て量を変更します。</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.create`</td>
-	  <td>新規レジストリー・トークンを作成します。(非推奨) </td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>

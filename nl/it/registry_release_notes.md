@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,6 +28,20 @@ subcollection: registry
 Utilizza queste note sulla release per ottenere informazioni sulle ultime modifiche a {{site.data.keyword.registrylong}} e al Controllo vulnerabilità. Le modifiche sono raggruppate per data.
 {:shortdesc}
 
+## 01 luglio 2019
+{: #01jul2019}
+
+- Il comando **`ibmcloud cr token-add` non è più disponibile**
+
+  Il comando `ibmcloud cr token-add` è stato sospeso. Non puoi più aggiungere i token del registro alla CLI o all'API.
+
+## 27 giugno 2019
+{: #27jun2019}
+
+- **Lo Scanner contenitori non è più disponibile**
+
+  Lo Scanner contenitori è stato sospeso. Il Controllo vulnerabilità continuerà a scansionare le immagini di cui viene eseguito il push a {{site.data.keyword.registrylong_notm}}.
+
 ## 13 giugno 2019
 {: #13jun2019}
 
@@ -36,7 +50,6 @@ Utilizza queste note sulla release per ottenere informazioni sulle ultime modifi
   Rimuovi una tag o delle tag da ogni immagine specificata in {{site.data.keyword.registrylong_notm}}.
 
   Per rimuovere una specifica tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, utilizza il comando [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag). Se vuoi eliminare l'immagine sottostante e tutte le relative tag, utilizza invece il [comando `ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm).
-
 
   Per ulteriori informazioni, vedi [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag).
 

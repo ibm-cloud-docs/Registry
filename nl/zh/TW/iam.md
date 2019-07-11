@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ subcollection: registry
 | 檢視者 | 不支援 | |
 | 編輯者 | 不支援 | |
 | 操作員 | 不支援 | |
-| 管理者 | <ul><li>配置其他使用者的存取權</li><li>配置登錄記號</li><li>建立叢集</li></ul> | <ul><li>如需在使用者介面中指派使用者角色的相關資訊，請參閱[管理 IAM 存取](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。</li><li>新增、列出、擷取及移除登錄記號</li><li>若要在 {{site.data.keyword.containerlong_notm}} 中建立叢集，您必須將 {{site.data.keyword.registrylong_notm}} 的「管理者」角色指派給使用者，請參閱[準備建立叢集](/docs/containers?topic=containers-clusters#cluster_prepare)。</li></ul> |
+| 管理者 | <ul><li>配置其他使用者的存取權</li><li>配置登錄記號</li><li>建立叢集</li></ul> | <ul><li>如需在使用者介面中指派使用者角色的相關資訊，請參閱[管理 IAM 存取](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)。</li><li>列出、擷取及移除登錄記號</li><li>若要在 {{site.data.keyword.containerlong_notm}} 中建立叢集，您必須將 {{site.data.keyword.registrylong_notm}} 的「管理者」角色指派給使用者，請參閱[準備建立叢集](/docs/containers?topic=containers-clusters#cluster_prepare)。</li></ul> |
 {: caption="表 1. IAM 使用者角色及動作" caption-side="top"}
 
 對於 {{site.data.keyword.registrylong_notm}}，存在下列動作：
 
 |動作|對服務的作業| 角色
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 新增可用來控制登錄存取權的記號。（已淘汰）| 管理者 |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 移除一個以上的指定記號。| 管理者 |
 | `container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 從登錄擷取指定的記號。| 管理者 |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) 顯示 {{site.data.keyword.cloud_notm}} 帳戶的所有現有記號。| 管理者 |

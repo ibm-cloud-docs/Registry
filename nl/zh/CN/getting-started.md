@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 {{site.data.keyword.cloud_notm}} 控制台中有简要的“快速入门”。要了解有关如何使用 {{site.data.keyword.cloud_notm}} 控制台的更多信息，请参阅[使用漏洞顾问程序管理映像安全性](/docs/services/va?topic=va-va_index)。
 
-不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
+不要将个人信息放入容器映像、名称空间名称、描述字段或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
 ## 安装 {{site.data.keyword.registrylong_notm}} CLI
@@ -62,7 +62,8 @@ subcollection: registry
     ```
    {: pre}
 
-   名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符 (-) 和下划线 (_)。名称空间必须以字母或数字开头和结尾。{: tip}
+   名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。名称空间必须具有 4 到 30 个字符，并且只能包含小写字母、数字、连字符 (-) 和下划线 (_)。名称空间必须以字母或数字开头和结尾。
+   {: tip}
 
 3. 要确保创建了名称空间，请运行 `ibmcloud cr namespace-list` 命令。
 

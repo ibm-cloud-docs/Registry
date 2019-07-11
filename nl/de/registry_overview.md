@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Beispiel für Push-Operationen an Images:
 ### Abrechnung für Speicher und Pull-Datenverkehr
 {: #registry_billing_traffic}
 
-Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte Speicher und Pull-Datenverkehr in Rechnung gestellt.
+In Abhängigkeit von dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte Speicher und Pull-Datenverkehr in den einzelnen Regionen in Rechnung gestellt.
 {:shortdesc}
 
 **Speicher: **
@@ -110,7 +110,7 @@ Je nach dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte S
 ### Kontingente für Speicher und Pull-Datenverkehr
 {: #registry_quota_limits}
 
-Je nach dem Serviceplan, die Sie auswählen, können Sie Images mit Push-und Pull-Operationen in und aus Ihrem Namensbereich übertragen, bis Ihr planspezifisches oder angepasstes Kontingent erreicht ist.
+In Abhängigkeit von dem Serviceplan, den Sie auswählen, können Sie für die einzelnen Regionen Images mit Push- und Pull-Operationen in und aus Ihrem Namensbereich übertragen, bis Ihr planspezifisches oder angepasstes Kontingent erreicht ist.
 {:shortdesc}
 
 **Speicher: **
@@ -145,7 +145,10 @@ Informationen zu den Kosten für {{site.data.keyword.registrylong_notm}} sind im
 Sie können ein Upgrade für Ihren Serviceplan durchführen, um von unbegrenztem Speicher und Pull-Datenverkehr zu profitieren und die Docker-Images für alle Namensbereiche in Ihrem {{site.data.keyword.cloud_notm}}-Konto zu verwalten.
 {:shortdesc}
 
-Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie den Befehl `ibmcloud cr plan` aus.
+Wenn Sie herausfinden möchten, welchen Serviceplan Sie für die Registry-Region verwenden, die Sie anvisieren, führen Sie den Befehl `ibmcloud cr plan` aus.
+{: tip}
+
+Führen Sie die folgenden Schritte aus, um für Ihren Serviceplan ein Upgrade durchzuführen:
 
 1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
 
@@ -157,7 +160,16 @@ Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie d
    Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.cloud_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
     {:tip}
 
-2. Führen Sie ein Upgrade auf den Standardplan durch.
+2. Visieren Sie die Region an, für die Sie ein Planupgrade durchführen möchten:
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   Weitere Informationen finden Sie in [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) und in [Regionen](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
+3. Führen Sie ein Upgrade auf den Standardplan durch.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -167,13 +179,15 @@ Wenn Sie herausfinden möchten, welchen Serviceplan Sie verwenden, führen Sie d
    Wenn Sie über ein {{site.data.keyword.cloud_notm}} Lite-Konto verfügen, müssen Sie zuerst ein Upgrade auf ein nutzungsabhängiges {{site.data.keyword.cloud_notm}}-Konto oder Abonnementkonto durchführen, bevor Sie den Befehl `ibmcloud cr plan-upgrade` ausführen.
    {:tip}
 
+   Weitere Informationen finden Sie in [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+
 ## Zentrale Aspekte
 {: #registry_planning}
 
 Bereiten Sie die Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{site.data.keyword.registrylong_notm}} vor, indem Sie sich mit grundlegenden Registry-Informationen vertraut machen.
 {:shortdesc}
 
-Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {: important}
 
 ### Erläuterung zu den in {{site.data.keyword.registrylong_notm}} verwendeten Begriffen
@@ -240,7 +254,7 @@ Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto ein
 
 Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
 
-- Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein. 
+- Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein.
 - Ihr Namensbereich muss 4 bis 30 Zeichen lang sein.
 - Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
 - Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 {{site.data.keyword.cloud_notm}} 主控台包含了簡短的「快速入門」。若要找出如何使用 {{site.data.keyword.cloud_notm}} 主控台的詳細資訊，請參閱[使用 Vulnerability Advisor 管理映像檔安全](/docs/services/va?topic=va-va_index)。
 
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位（例如，在登錄記號中）或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
+請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
 {: important}
 
 ## 安裝 {{site.data.keyword.registrylong_notm}} CLI

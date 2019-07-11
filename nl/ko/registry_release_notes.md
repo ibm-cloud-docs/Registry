@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -28,6 +28,20 @@ subcollection: registry
 다음 릴리스 정보를 사용하여 {{site.data.keyword.registrylong}} 및 Vulnerability Advisor의 최신 변경사항에 대해 알아보십시오. 변경사항은 날짜별로 그룹화되어 있습니다.
 {:shortdesc}
 
+## 2019년 7월 1일
+{: #01jul2019}
+
+- **`ibmcloud cr token-add` 명령은 더 이상 사용할 수 없음**
+
+  `ibmcloud cr token-add` 명령은 사용이 중단되었습니다. CLI 또는 API에서 레지스트리 토큰을 더 이상 추가할 수 없습니다.
+
+## 2019년 6월 27일
+{: #27jun2019}
+
+- **컨테이너 스캐너는 더 이상 사용할 수 없음**
+
+  컨테이너 스캐너는 사용이 중단되었습니다. Vulnerability Advisor는 {{site.data.keyword.registrylong_notm}}에 푸시되는 이미지를 계속 스캔합니다.
+
 ## 2019년 6월 13일
 {: #13jun2019}
 
@@ -51,7 +65,7 @@ subcollection: registry
 ## 2019년 4월 2일
 {: #2apr2019}
 
-- **Container Image Security Enforcement GA(General Availability)**
+- **Container Image Security Enforcement의 GA(General Availability)**
 
   Container Image Security Enforcement를 사용하면 컨테이너 이미지를 {{site.data.keyword.containerlong_notm}}의 클러스터에 배치하기 전에 확인할 수 있습니다. 이미지가 배치되는 위치를 제어하고 Vulnerability Advisor 정책을 적용하며 [컨텐츠 신뢰](/docs/services/Registry?topic=registry-registry_trustedcontent)가 올바르게 이미지에 적용되었는지 확인할 수 있습니다.
 
@@ -60,7 +74,7 @@ subcollection: registry
 ## 2019년 3월 14일
 {: #14mar2019}
 
-- **{{site.data.keyword.registrylong_notm}}에 사용 가능한 {{site.data.keyword.cloudaccesstrailfull_notm}}**
+- **{{site.data.keyword.registrylong_notm}}에 {{site.data.keyword.cloudaccesstrailfull_notm}} 사용 가능**
 
   {{site.data.keyword.cloudaccesstraillong_notm}} 서비스를 사용하여 사용자와 애플리케이션이 {{site.data.keyword.cloud}}에서 {{site.data.keyword.registrylong_notm}} 서비스와 상호작용하는 방법을 추적할 수 있습니다.
 
@@ -117,16 +131,16 @@ subcollection: registry
 ## 2018년 8월 7일
 {: #7aug2018}
 
-- **Vulnerability Advisor에서 사용 가능한 면제 정책**
+- **Vulnerability Advisor에서 면제 정책 사용 가능**
 
-  {{site.data.keyword.cloud_notm}} 조직의 보안을 관리하려는 경우 정책 설정을 사용하여 문제 면제 여부를 판별할 수 있습니다. Container Image Security Enforcement를 사용하여 사용자 정책에 따라 면제된 문제를 처리한 후 보안 문제가 없는 이미지에서만 배치가 허용되도록 선택할 수 있습니다.
+  {{site.data.keyword.cloud_notm}} 조직의 보안을 관리하려는 경우 정책 설정을 사용하여 문제의 면제 여부를 판별할 수 있습니다. Container Image Security Enforcement를 사용하여 사용자 정책에 따라 면제된 문제를 처리한 후 보안 문제가 없는 이미지에서만 배치가 허용되도록 선택할 수 있습니다.
 
   자세한 정보는 [조직 면제 정책 설정](/docs/services/Registry?topic=va-va_index#va_managing_policy)을 참조하십시오.
 
 ## 2018년 7월 25일
 {: #25jul2018}
 
-- **Vulnerability Advisor에 사용 가능한 {{site.data.keyword.cloudaccesstrailfull_notm}}**
+- **Vulnerability Advisor에 {{site.data.keyword.cloudaccesstrailfull_notm}} 사용 가능**
 
   {{site.data.keyword.cloudaccesstrailfull_notm}} 서비스를 사용하여 사용자와 애플리케이션이 {{site.data.keyword.cloud}}에서 {{site.data.keyword.registrylong_notm}} 서비스와 상호작용하는 방법을 추적할 수 있습니다.
 

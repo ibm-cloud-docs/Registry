@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,20 @@ subcollection: registry
 
 使用这些发行说明了解 {{site.data.keyword.registrylong}} 和漏洞顾问程序的最新更改。更改按日期分组。
 {:shortdesc}
+
+## 2019 年 7 月 1 日
+{: #01jul2019}
+
+- **`ibmcloud cr token-add` 命令不再可用**
+
+  `ibmcloud cr token-add` 命令已停用。您无法再通过 CLI 或 API 添加注册表令牌。
+
+## 2019 年 6 月 27 日
+{: #27jun2019}
+
+- **容器扫描程序不再可用**
+
+  容器扫描程序已停用。漏洞顾问程序将继续扫描推送到 {{site.data.keyword.registrylong_notm}} 的映像。
 
 ## 2019 年 6 月 13 日
 {: #13jun2019}

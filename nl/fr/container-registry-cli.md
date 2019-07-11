@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ Pour vous familiariser avec l'utilisation de l'interface de ligne de commande {{
 
 Pour plus d'informations sur les rôles d'accès aux services et aux plateformes IAM qui sont requis pour certaines commandes, voir [Gestion des accès utilisateur à l'aide d'Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description (par exemple, dans des jetons de registre), ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
+Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
 {: important}
 
 ## `ibmcloud cr api`
@@ -586,7 +586,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-Affiche votre plan de tarification.
+Affiche votre plan de tarification pour la région de registre que vous ciblez.
 
 ```
 ibmcloud cr plan
@@ -600,7 +600,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour la configu
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-Effectue une mise à niveau vers le plan standard.
+Effectue une mise à niveau vers le plan standard pour la région de registre que vous ciblez.
 
 Pour plus d'informations sur les plans, voir [Plans de registre](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
@@ -670,7 +670,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-Affiche vos quotas actuels de trafic et de stockage, ainsi que les informations d'utilisation de ces quotas.
+Affiche vos quotas actuels de trafic et de stockage, ainsi que les informations d'utilisation par rapport à ces quotas pour la région de registre que vous ciblez.
 
 ```
 ibmcloud cr quota
@@ -684,7 +684,7 @@ Pour en savoir plus sur les droits requis, voir [Rôles d'accès pour la configu
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-Modifie le quota spécifié.
+Modifie le quota indiqué pour la région de registre que vous ciblez.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -760,50 +760,6 @@ Ciblez la région Sud des Etats-Unis.
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (obsolète)
-{: #bx_cr_token_add}
-
-Ajoute un jeton que vous pouvez utiliser pour contrôler l'accès à un registre.
-
-L'utilisation de jetons pour automatiser l'envoi et l'extraction d'images Docker vers et depuis vos espaces de nom est déprécié. Utilisez plutôt des clés d'API pour automatiser l'accès à vos espaces de nom (voir [Automatisation de l'accès à vos espaces de nom à l'aide de clés d'API](/docs/services/Registry?topic=registry-registry_access#registry_api_key)).
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**Prérequis**
-
-Pour en savoir plus sur les droits requis, voir [Rôles de gestion de plateforme](/docs/services/Registry?topic=registry-iam#platform_management_roles).
-
-**Options de commande**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(Facultatif) Permet de spécifier la description du jeton qui s'affiche lorsque vous exécutez `ibmcloud cr token-list`. Si votre jeton est créé automatiquement par {{site.data.keyword.containerlong_notm}}, la description est définie sur votre nom de cluster Kubernetes. Dans ce cas, le jeton est retiré automatiquement lorsque votre cluster est retiré.
-  
-<p> 
-  <strong>Important</strong> : ne placez pas d'informations personnelles dans votre description de jeton.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Facultatif) Affiche le jeton uniquement, sans aucun autre texte.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(Facultatif) Crée un jeton dont l'accès n'expire jamais. Si ce paramètre n'est pas défini, l'accès à l'aide d'un jeton expire au bout de 24 heures par défaut.</dd>
-<dt>`--readwrite`</dt>
-<dd>(Facultatif) Crée un jeton qui accorde l'accès en lecture et en écriture. Sans cette option, l'accès est en lecture seule par défaut.</dd>
-</dl>
-
-**Exemple**
-
-Ajoutez un jeton avec la description *Token for my account* qui n'expire pas et qui dispose de droits d'accès en lecture/écriture.
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -357,25 +357,37 @@ Antes de iniciar, recupere a passphrase da chave raiz que você criou quando [en
 
 2. [Configurar o ambiente de conteúdo confiável](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Observe a URL do comando de exportação na etapa anterior. Por exemplo,  ` https://us.icr.io:4443 `
-
-4. Gere um token de registro.
+3. Criar uma chave de API do IAM:
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Substitua `<URL>` pela URL do comando de exportação que você anotou na Etapa 2 e `<image>` pela imagem cuja chave do repositório é afetada.
+4. Configurar o NOTARY_AUTH:
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. Gire as chaves para que o conteúdo assinado com elas não seja mais confiável. Use a variável do servidor de confiança configurado na Etapa 2 e substitua `<image>` pela imagem cuja chave do repositório é afetada.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. Se solicitado, insira a passphrase da chave raiz. Em seguida, insira uma nova passphrase de chave raiz para a nova chave de repositório, quando solicitada.
 
 7. [Envie uma imagem assinada por push](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) que use as novas chaves de assinatura.
+
+8.  (Opcional) Quando tiver concluído, se desejar revogar sua chave de API, execute o comando a seguir:
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### As chaves raiz
 {: #trustedcontent_lostrootkey}

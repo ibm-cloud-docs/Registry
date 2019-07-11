@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-06-27"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -292,7 +292,7 @@ spec:
 ```
 {: codeblock}
 
-您可以建立多個角色來控制使用者可以採取的動作。例如，變更 `verbs`，讓部分使用者只能使用 `get` 或 `list` 原則。或者，您也可以從 `resources` 清單中省略 `clusterimagepolicies`，只授與對 Kubbernetes 名稱空間原則的存取權。
+您可以建立多個角色來控制使用者可以採取的動作。例如，變更 `verbs`，讓部分使用者只能使用 `get` 或 `list` 原則。或者，您也可以從 `resources` 清單中省略 `clusterimagepolicies`，只授與對 Kubernetes 名稱空間原則的存取權。
 {:tip}
 
 具有刪除自訂資源定義 (CRD) 之存取權的使用者，可以刪除安全原則的資源定義，這也會刪除您的安全原則。請務必控制被允許刪除 CRD 的人員。若要授與刪除 CRD 的存取權，請新增規則：
@@ -362,10 +362,14 @@ spec:
 1. 停用 Container Image Security Enforcement。
 
    ```
-   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
-   $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
    ```
-   {: codeblock}
+   {: pre}
+
+   ```
+   kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   ```
+   {: pre}
 
 2. 移除圖表。
 

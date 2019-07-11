@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세
 |뷰어 |지원되지 않음 | |
 |편집자 |지원되지 않음 | |
 |운영자 |지원되지 않음 | |
-|관리자 | <ul><li>다른 사용자에 대한 액세스 구성</li><li>레지스트리 토큰 구성</li><li>클러스터 작성</li></ul> | <ul><li>UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세스 관리](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)를 참조하십시오.</li><li>레지스트리 토큰 추가, 나열, 검색 및 제거</li><li>{{site.data.keyword.containerlong_notm}}에서 클러스터를 작성하려면 사용자에게 {{site.data.keyword.registrylong_notm}}에 대한 관리자 역할을 지정해야 합니다. [클러스터 작성 준비](/docs/containers?topic=containers-clusters#cluster_prepare)를 참조하십시오.</li></ul> |
+|관리자 | <ul><li>다른 사용자에 대한 액세스 구성</li><li>레지스트리 토큰 구성</li><li>클러스터 작성</li></ul> | <ul><li>UI에서 사용자 역할을 지정하는 방법에 대한 정보는 [IAM 액세스 관리](/docs/iam?topic=iam-iammanidaccser#iammanidaccser)를 참조하십시오.</li><li>레지스트리 토큰 나열, 검색 및 제거</li><li>{{site.data.keyword.containerlong_notm}}에서 클러스터를 작성하려면 사용자에게 {{site.data.keyword.registrylong_notm}}에 대한 관리자 역할을 지정해야 합니다. [클러스터 작성 준비](/docs/containers?topic=containers-clusters#cluster_prepare)를 참조하십시오.</li></ul> |
 {: caption="표 1. IAM 사용자 역할 및 조치" caption-side="top"}
 
 {{site.data.keyword.registrylong_notm}}의 경우에는 다음 조치가 존재합니다.
 
 |조치| 서비스에 대한 오퍼레이션 | 역할
 |:-----------------|:-----------------|:--------------|
-|`container-registry.registrytoken.create` |[`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) 레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다. (더 이상 사용되지 않음) |관리자 |
 |`container-registry.registrytoken.delete` |[`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 하나 이상의 지정된 토큰을 제거합니다. |관리자 |
 |`container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 레지스트리에서 지정된 토큰을 검색합니다. |관리자 |
 |`container-registry.registrytoken.list` |[`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) {{site.data.keyword.cloud_notm}} 계정에 대해 존재하는 모든 토큰을 표시합니다. |관리자 |

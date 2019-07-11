@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -42,7 +42,7 @@ subcollection: container-registry-cli-plugin
 
 일부 명령에 필요한 IAM 플랫폼 및 서비스 액세스 역할에 대한 자세한 정보는 [IAM(Identity and Access Management)으로 사용자 액세스 관리](/docs/services/Registry?topic=registry-iam#iam)를 참조하십시오.
 
-컨테이너 이미지, 네임스페이스 이름, 설명 필드(예: 레지스트리 토큰) 또는 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
+컨테이너 이미지, 네임스페이스 이름, 설명 필드 또는 모든 이미지 구성 데이터(예: 이미지 이름 또는 이미지 레이블)에 개인 정보를 입력하지 마십시오.
 {: important}
 
 ## `ibmcloud cr api`
@@ -587,7 +587,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-가격 플랜을 표시합니다.
+대상으로 지정하는 레지스트리 지역에 대한 가격 플랜을 표시합니다.
 
 ```
 ibmcloud cr plan
@@ -601,7 +601,7 @@ ibmcloud cr plan
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-표준 플랜으로 업그레이드합니다.
+대상으로 지정하는 레지스트리 지역에 대한 표준 플랜으로 업그레이드합니다.
 
 플랜에 대한 자세한 정보는 [레지스트리 플랜](/docs/services/Registry?topic=registry-registry_overview#registry_plans)을 참조하십시오.
 
@@ -671,7 +671,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-트래픽과 스토리지에 대한 현재 할당량 및 이 할당량에 대한 사용량 정보를 표시합니다.
+대상으로 지정하는 레지스트리 지역의 트래픽과 스토리지에 대한 현재 할당량 및 이 할당량에 대한 사용량 정보를 표시합니다.
 
 ```
 ibmcloud cr quota
@@ -685,7 +685,7 @@ ibmcloud cr quota
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-지정된 할당량을 수정합니다.
+대상으로 지정하는 레지스트리 지역에 대한 지정된 할당량을 수정합니다.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -759,50 +759,6 @@ ibmcloud cr region-set [REGION]
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add`(더 이상 사용되지 않음)
-{: #bx_cr_token_add}
-
-레지스트리에 대한 액세스를 제어하는 데 사용할 수 있는 토큰을 추가합니다.
-
-토큰을 사용하여 네임스페이스에 대한 Docker 이미지의 푸시 및 가져오기를 자동화합니다. 그 대신 API 키를 사용하여 네임스페이스에 대한 액세스를 자동화하십시오. [API 키를 사용하여 네임스페이스에 대한 액세스 자동화](/docs/services/Registry?topic=registry-registry_access#registry_api_key)를 참조하십시오.
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**전제조건**
-
-필수 권한에 대한 정보를 찾으려면 [플랫폼 관리 역할](/docs/services/Registry?topic=registry-iam#platform_management_roles)을 참조하십시오.
-
-**명령 옵션**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(선택사항) `ibmcloud cr token-list` 실행 시 표시되는 토큰에 대한 설명으로 값을 지정합니다. {{site.data.keyword.containerlong_notm}}에서 자동으로 토큰이 작성된 경우 설명이 Kubernetes 클러스터 이름으로 설정됩니다. 이 경우 클러스터가 제거되면 토큰이 자동으로 제거됩니다.
-  
-<p> 
-  <strong>중요</strong>: 토큰 설명에 개인 정보를 입력하지 마십시오.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(선택사항) 주변 텍스트 없이 토큰만 표시합니다.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(선택사항) 만료되지 않는 액세스 권한이 있는 토큰을 작성합니다. 이 매개변수를 설정하지 않으면 기본적으로 24시간 후에 토큰의 액세스 권한이 만료됩니다.</dd>
-<dt>`--readwrite`</dt>
-<dd>(선택사항) 읽기 및 쓰기 액세스 권한이 부여된 토큰을 작성합니다. 이 옵션을 사용하지 않는 경우 기본적으로 액세스 권한은 읽기 전용입니다.</dd>
-</dl>
-
-**예**
-
-만료되지 않고 읽기/쓰기 액세스 권한이 있는 토큰을 *Token for my account*라는 설명과 함께 추가합니다.
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

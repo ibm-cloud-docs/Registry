@@ -40,8 +40,7 @@ Quando esegui l'aggiornamento al piano standard {{site.data.keyword.registryshor
 puoi beneficiare di quantità illimitate di archiviazione e traffico di pull per le tue immagini
 private. Per evitare di superare il tuo livello di pagamento preferito, puoi impostare delle quote individuali per la
 quantità di archiviazione e traffico di pull. I limiti di quota vengono applicati a tutti gli spazi dei nomi che hai configurato
-in {{site.data.keyword.registrylong_notm}}. Se stai utilizzando il piano di
-servizio gratuito, puoi anche impostare quote personalizzate all'interno della tua quantità gratuita di archiviazione e traffico di pull.
+in {{site.data.keyword.registrylong_notm}}. Se stai utilizzando il piano del servizio gratuito, puoi anche impostare quote personalizzate all'interno della tua quantità gratuita di archiviazione e traffico di pull.
 
 Per impostare una quota:
 
@@ -130,7 +129,7 @@ sarà simile al seguente.
 {: #registry_quota_freeup}
 
 Se hai superato i limiti di quota impostati per il tuo account {{site.data.keyword.cloud_notm}}, puoi liberare lo spazio di archiviazione
-e modificare il tuo piano di servizio o i tuoi limiti di quota per continuare a eseguire il push e il pull delle immagini da e verso
+e modificare il tuo piano del servizio o i tuoi limiti di quota per continuare a eseguire il push e il pull delle immagini da e verso
 il tuo spazio dei nomi.
 {:shortdesc}
 
@@ -166,7 +165,7 @@ Per liberare lo spazio di archiviazione delle immagini nel tuo account {{site.da
     Per continuare a eseguire il pull di immagini dai tuoi spazi dei nomi, scegli tra le seguenti opzioni.
 
     - Attendi l'inizio del nuovo ciclo di fatturazione.
-    - Se hai un piano gratuito, [esegui l'upgrade al piano di servizio
+    - Se hai un piano gratuito, [esegui l'upgrade al piano del servizio
 standard](/docs/services/Registry?topic=registry-registry_overview#registry_plan_upgrade).
     - Se hai già un piano standard, [imposta i nuovi limiti
 di quota per il traffico di pull](#registry_quota_set).

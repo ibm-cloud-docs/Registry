@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ Wenn Sie Images zu Ihrem eigenen Namensbereich in {{site.data.keyword.registrylo
 
 Jedes Image, das Sie zu Ihrem Namensbereich hinzufügen wollen, muss zuvor auf Ihrem lokalen Computer vorhanden sein. Sie können entweder ein Image aus einem anderen Repository auf Ihren lokalen Computer herunterladen (Pull-Operation) oder mit dem Docker-Befehl `build` Ihr eigenes Image aus einer Dockerfile erstellen. Um ein Image zu Ihrem Namensbereich hinzuzufügen, müssen Sie das lokale Image in Ihren Namensbereich von {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 
-Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder (z. B. in Registry-Tokens) oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
+Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
 {: important}
 
 ## Images aus einer anderen Registry mit Pull-Operation extrahieren

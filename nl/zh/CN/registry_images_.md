@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -30,7 +30,7 @@ subcollection: registry
 
 您要添加到名称空间的每个映像首先必须在您的本地计算机上存在。您可以将映像从其他存储库下载（拉出）到本地计算机，或者使用 Docker `build` 命令通过 Dockerfile 构建自己的映像。要将映像添加到名称空间，必须将本地映像上传（推送）到 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 
-不要将个人信息放入容器映像、名称空间名称、描述字段（例如，注册表令牌）或任何映像配置数据（例如，映像名称或映像标签）中。
+不要将个人信息放入容器映像、名称空间名称、描述字段或任何映像配置数据（例如，映像名称或映像标签）中。
 {: important}
 
 ## 从其他注册表拉出映像

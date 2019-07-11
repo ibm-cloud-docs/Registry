@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -30,13 +30,13 @@ subcollection: registry
 
 {{site.data.keyword.cloud_notm}} コンソールには、簡単なクイック・スタートが用意されています。 {{site.data.keyword.cloud_notm}} コンソールの使用方法について詳しくは、[脆弱性アドバイザーを使用したイメージ・セキュリティーの管理](/docs/services/va?topic=va-va_index)を参照してください。
 
-コンテナー・イメージ、名前空間名、(レジストリー・トークンなどの) 説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
+コンテナー・イメージ、名前空間名、説明フィールド、イメージ構成データ (イメージ名やイメージ・ラベルなど) に個人情報を含めないでください。
 {: important}
 
 ## {{site.data.keyword.registrylong_notm}} CLI のインストール
 {: #gs_registry_cli_install}
 
-1. {{site.data.keyword.cloud_notm}} `ibmcloud` コマンドを実行できるように、{{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
+1. {{site.data.keyword.cloud_notm}} `ibmcloud` コマンドを実行できるように、{{site.data.keyword.cloud_notm}} CLI をインストールします。[{{site.data.keyword.cloud_notm}} CLI の概要](/docs/cli?topic=cloud-cli-getting-started)を参照してください。 このインストールでは、{{site.data.keyword.containerlong_notm}} と {{site.data.keyword.registrylong_notm}} の CLI プラグインもインストールされます。
 
 ## 名前空間のセットアップ
 {: #gs_registry_namespace_add}
@@ -62,7 +62,8 @@ subcollection: registry
    ```
    {: pre}
 
-   名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。名前空間は、文字または数値で開始および終了する必要があります。{: tip}
+   名前空間は、同じ地域内のすべての {{site.data.keyword.cloud_notm}} アカウントにおいて固有でなければなりません。 名前空間は 4 文字から 30 文字までで、含めることができるのは、小文字、数字、ハイフン (-)、下線 (_) のみです。 名前空間は、文字または数値で開始および終了する必要があります。
+   {: tip}
 
 3. 名前空間が作成されたことを確認するために、`ibmcloud cr namespace-list` コマンドを実行します。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -347,25 +347,37 @@ denied: requested access to the resource is denied
 
 2. [設定受信任內容環境](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)。
 
-3. 記下前一個步驟中，匯出指令的 URL。例如，`https://us.icr.io:4443`
-
-4. 產生登錄記號。
+3. 建立 API 金鑰：
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. 替換您的金鑰，讓使用那些金鑰所簽署的內容不再受到信任。將 `<URL>` 取代為您在步驟 2 中記下的匯出指令 URL，並將 `<image>` 取代為儲存庫金鑰受到影響的映像檔。
+4. 設定 NOTARY_AUTH：
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. 替換您的金鑰，讓使用那些金鑰所簽署的內容不再受到信任。請使用您在步驟 2 中設定的信任伺服器變數，並將 `<image>` 取代為儲存庫金鑰受到影響的映像檔。
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. 系統提示時，請輸入主要金鑰通行詞組。然後，在系統提示時，輸入新的儲存庫金鑰的新主要金鑰通行詞組。
 
 7. [推送使用新簽署金鑰的已簽署映像檔](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push)。
+
+8.  （選用）當您完成時，如果想要撤銷 API 金鑰，請執行下列指令：
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### 主要金鑰
 {: #trustedcontent_lostrootkey}

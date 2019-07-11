@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -82,7 +82,7 @@ Exemplo para enviar imagens por push:
 ### Faturamento para armazenamento e tráfego extraído
 {: #registry_billing_traffic}
 
-Dependendo do plano de serviço que escolher, você será cobrado pelo armazenamento e tráfego extraído que usa por mês.
+Dependendo do plano de serviço escolhido, você será cobrado pelo armazenamento e pelo tráfego de pull usados por mês em cada região.
 {:shortdesc}
 
 **Armazenamento:**
@@ -110,7 +110,7 @@ Dependendo do plano de serviço que escolher, você será cobrado pelo armazenam
 ### Limites de cota para armazenamento e tráfego extraído
 {: #registry_quota_limits}
 
-Dependendo do plano de serviço que você escolher, será possível enviar por push e puxar imagens para e de seu namespace até que você atinja os seus limites de cota específicos do plano ou customizados.
+Dependendo do plano de serviço escolhido, será possível enviar imagens por push e fazer pull de imagens para e de seu namespace, até atingir seus limites de cota específicos do plano ou customizados para cada região.
 {:shortdesc}
 
 **Armazenamento:**
@@ -145,7 +145,10 @@ Dependendo do plano de serviço que você escolher, será possível enviar por p
 É possível fazer upgrade do seu plano de serviços para obter benefícios de armazenamento ilimitado e de uso de tráfego extraído para gerenciar as imagens do Docker para todos os namespaces na sua conta do {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmcloud cr plan`.
+Se desejar descobrir qual plano de serviço você tem para a região de registro para a qual você está usando como destino, execute o comando `ibmcloud cr plan`.
+{: tip}
+
+Para fazer upgrade do seu plano de serviço, conclua as etapas a seguir:
 
 1. Efetue login no {{site.data.keyword.cloud_notm}}.
 
@@ -157,7 +160,17 @@ Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmclo
    Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.cloud_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
     {:tip}
 
-2. Faça upgrade para o plano padrão.
+2. Use como destino a região para a qual você deseja fazer upgrade do plano:
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+   Para obter mais informações, consulte [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)
+e [Regiões](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
+3. Faça upgrade para o plano padrão.
 
    ```
    ibmcloud cr plan-upgrade standard
@@ -167,13 +180,15 @@ Se desejar descobrir qual plano de serviço você tem, execute o comando `ibmclo
    Quando você tem uma conta Lite do {{site.data.keyword.cloud_notm}}, deve-se fazer upgrade para uma conta Pay As You Go ou de Assinatura do {{site.data.keyword.cloud_notm}} antes de executar `ibmcloud cr plan-upgrade`.
    {:tip}
 
+   Para obter mais informações, consulte [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+
 ## Aprendendo o básico
 {: #registry_planning}
 
 Prepare-se para armazenar e compartilhar as imagens do Docker com o {{site.data.keyword.registrylong_notm}} aprendendo os conceitos básicos do registro.
 {:shortdesc}
 
-Não coloque informações pessoais em imagens de contêiner, nomes de namespace, campos de descrição (por exemplo, em tokens de registro) ou em qualquer dado de configuração de imagem (por exemplo, nomes ou rótulos de imagem).
+Não coloque informações pessoais em suas imagens de contêiner, nomes de namespace, campos de descrição ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
 {: important}
 
 ### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}

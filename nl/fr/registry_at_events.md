@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
 
@@ -101,10 +101,6 @@ Le tableau suivant répertorie les méthodes d'API générant un événement lor
   <tr>
     <td>`container-registry.quota.set`</td>
 	  <td>Modifie les quotas.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.create`</td>
-	  <td>Crée un nouveau jeton de registre. (obsolète)</td>
   </tr>
   <tr>
     <td>`container-registry.registrytoken.delete`</td>
