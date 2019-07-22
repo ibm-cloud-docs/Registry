@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -59,14 +59,13 @@ En la tabla siguiente se muestran acciones que se correlacionan con los roles de
 | Visor | No soportado | |
 | Editor | No soportado | |
 | Operador | No soportado | |
-| Administrador | <ul><li>Configurar acceso para otros usuarios</li><li>Configurar señales de registro</li><li>Crear clústeres</li></ul> | <ul><li>Para obtener información sobre la asignación de roles de usuario en la interfaz de usuario, consulte [Gestión del acceso de IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Añadir, listar, recuperar y eliminar señales de registro</li><li>Para crear clústeres en {{site.data.keyword.containerlong_notm}}, debe asignar el rol de Administrador para {{site.data.keyword.registrylong_notm}} al usuario; consulte [Preparación para crear clústeres](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
+| Administrador | <ul><li>Configurar acceso para otros usuarios</li><li>Configurar señales de registro</li><li>Crear clústeres</li></ul> | <ul><li>Para obtener información sobre la asignación de roles de usuario en la interfaz de usuario, consulte [Gestión del acceso de IAM](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</li><li>Listar, recuperar y eliminar señales de registro</li><li>Para crear clústeres en {{site.data.keyword.containerlong_notm}}, debe asignar el rol de Administrador para {{site.data.keyword.registrylong_notm}} al usuario; consulte [Preparación para crear clústeres](/docs/containers?topic=containers-clusters#cluster_prepare).</li></ul> |
 {: caption="Tabla 1. Roles de usuario y acciones de IAM" caption-side="top"}
 
 Para {{site.data.keyword.registrylong_notm}}, existen las acciones siguientes:
 
 | Acción| Operación sobre el servicio | Rol
 |:-----------------|:-----------------|:--------------|
-| `container-registry.registrytoken.create` | [`ibmcloud cr token-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_add) Añadir una señal que puede utilizar para controlar el acceso a un registro. (En desuso) | Administrador |
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Eliminar una o varias señales especificadas. | Administrador |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Recuperar la señal especificada del registro. | Administrador |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Visualizar todas las señales que existen para su cuenta de {{site.data.keyword.cloud_notm}}. | Administrador |

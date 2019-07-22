@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,20 @@ subcollection: registry
 
 Utilice estas notas del release para obtener información sobre los últimos cambios realizados en {{site.data.keyword.registrylong}} y en Vulnerability Advisor. Los cambios están agrupados por fecha.
 {:shortdesc}
+
+## 01 de julio de 2019
+{: #01jul2019}
+
+- El mandato **`ibmcloud cr token-add` ya no está disponible**
+
+  El mandato `ibmcloud cr token-add` se ha retirado. Ya no puede añadir señales de registro ni en la CLI ni en la API.
+
+## 27 de junio de 2019
+{: #27jun2019}
+
+- **Container Scanner ya no está disponible**
+
+  Container Scanner se ha retirado. Vulnerability Advisor seguirá explorando las imágenes que se envíen a {{site.data.keyword.registrylong_notm}}.
 
 ## 13 de junio de 2019
 {: #13jun2019}

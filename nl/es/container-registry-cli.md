@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -41,7 +41,7 @@ Para obtener más información sobre cómo utilizar la CLI de {{site.data.keywor
 
 Para obtener más información sobre la plataforma IAM y los roles de acceso al servicio necesarios para algunos mandatos, consulte [Gestión del acceso de usuario con Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 
-No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción (por ejemplo, en señales de registro), o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
+No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción, o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
 {: important}
 
 ## `ibmcloud cr api`
@@ -601,7 +601,7 @@ ibmcloud cr namespace-rm birds
 ## `ibmcloud cr plan`
 {: #bx_cr_plan}
 
-Visualiza su plan de precios.
+Muestra el plan de precios de la región de registro que está estableciendo como destino.
 
 ```
 ibmcloud cr plan
@@ -615,7 +615,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
 
-Actualiza al plan estándar.
+Actualiza al plan estándar para la región de registro que está estableciendo como destino.
 
 Para obtener más información sobre los planes, consulte [Planes de registro](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
@@ -685,7 +685,7 @@ ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace
 ## `ibmcloud cr quota`
 {: #bx_cr_quota}
 
-Visualiza sus cuotas actuales de tráfico y almacenamiento, así como información de utilización relacionada con las mismas.
+Muestra sus cuotas actuales de tráfico y almacenamiento, así como información de utilización relacionada con dichas cuotas para la región de registro que está estableciendo como destino.
 
 ```
 ibmcloud cr quota
@@ -699,7 +699,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
 
-Modifica la cuota especificada.
+Modifica la cuota especificada para la región de registro que está estableciendo como destino.
 
 ```
 ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
@@ -773,50 +773,6 @@ Establece como destino la región EE.UU. sur.
 
 ```
 ibmcloud cr region-set us-south
-```
-{: pre}
-
-## `ibmcloud cr token-add` (deprecated)
-{: #bx_cr_token_add}
-
-Añade una señal que sirva para controlar el acceso a un registro.
-
-Utilizar señales para automatizar el envío por push y la extracción de imágenes Docker a y desde los espacios de nombres está en desuso. Utilice claves de API para automatizar el acceso al espacio de nombres, consulte [Automatización del acceso a los espacios de nombres mediante claves de API](/docs/services/Registry?topic=registry-registry_access#registry_api_key).
-{: deprecated}
-
-```
-ibmcloud cr token-add [--description DESCRIPTION] [--quiet | -q] [--non-expiring] [--readwrite]
-```
-{: codeblock}
-
-**Requisitos previos**
-
-Para obtener información sobre los permisos necesarios, consulte [Roles de gestión de plataforma](/docs/services/Registry?topic=registry-iam#platform_management_roles).
-
-**Opciones del mandato**
-<dl>
-<dt>`--description DESCRIPTION`</dt>
-<dd>(Opcional) Especifica el valor como una descripción para la señal, que se visualiza cuando se ejecuta `ibmcloud cr token-list`. Si la señal la crea automáticamente {{site.data.keyword.containerlong_notm}}, la descripción se establecerá en el nombre de clúster de Kubernetes. En este caso, la señal se elimina de forma automática al eliminar su clúster.
-  
-<p> 
-  <strong>Importante</strong> No coloque información personal en la descripción de la señal.
-</p>
-
-</dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Opcional) Visualiza únicamente la señal, sin ningún texto a su alrededor.</dd>
-<dt>`--non-expiring`</dt>
-<dd>(Opcional) Crea una señal con un acceso que no caduca. Si no se establece este parámetro, de forma predeterminada el acceso con la señal caduca después de 24 horas.</dd>
-<dt>`--readwrite`</dt>
-<dd>(Opcional) Crea una señal que otorga acceso de lectura y escritura. Sin esta opción, de forma predeterminada el acceso es de solo lectura.</dd>
-</dl>
-
-**Ejemplo**
-
-Añade una señal con la descripción *Token for my account* que no caduque y que tenga acceso de lectura/escritura.
-
-```
-ibmcloud cr token-add --description "Token for my account" --non-expiring --readwrite
 ```
 {: pre}
 

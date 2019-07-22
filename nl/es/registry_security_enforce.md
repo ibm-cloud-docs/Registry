@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-06-27"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -360,10 +360,14 @@ Antes de empezar, [establezca la CLI de `kubectl`](/docs/containers?topic=contai
 1. Inhabilite Container Image Security Enforcement.
 
    ```
-   $ kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config 
-    $ kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
    ```
-   {: codeblock}
+   {: pre}
+
+   ```
+   kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+   ```
+   {: pre}
 
 2. Elimine la gráfica.
 

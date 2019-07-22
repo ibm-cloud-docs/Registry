@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-07-04"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -364,25 +364,37 @@ Antes de empezar, recupere la frase de contraseña de clave raíz que ha creado 
 
 2. [Configure su entorno de contenido de confianza](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Anota el URL desde el mandato export en el paso anterior. Por ejemplo, `https://us.icr.io:4443`
-
-4. Genere una señal de registro.
+3. Cree una clave de API de IAM:
 
    ```
-   ibmcloud cr token-add --readwrite
+   ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-5. Rote las claves para que el contenido que se ha firmado con dichas claves ya no sea fiable. Sustituya `<URL>` por el URL del mandato export que ha anotado en el Paso 2, y `<image>` por la imagen cuya clave de repositorio se ve afectada.
+4. Establezca NOTARY_AUTH:
 
    ```
-   notary -s <URL> -d ~/.docker/trust key rotate <image> targets
+   export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
+   ```
+   {: pre}
+
+5. Rote las claves para que el contenido que se ha firmado con dichas claves ya no sea fiable. Utilice el servidor de confianza que ha configurado en el Paso 2 y sustituya `<image>` por la imagen cuya clave de repositorio se ve afectada.
+
+   ```
+   notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
    ```
    {: pre}
 
 6. Si se le solicita, especifique la frase de contraseña de clave raíz. A continuación, especifique una nueva frase de contraseña de clave raíz para la nueva clave de repositorio cuando se le solicite.
 
 7. [Envíe una imagen firmada](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) que utilice las nuevas claves de firma.
+
+8.  (Opcional) Cuando haya finalizado, si desea revocar su clave de API, ejecute el siguiente mandato:
+
+    ```
+    ibmcloud iam api-key-delete notary-auth
+    ```
+    {:pre}
 
 ### Claves raíz
 {: #trustedcontent_lostrootkey}
