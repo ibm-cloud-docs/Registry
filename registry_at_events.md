@@ -25,7 +25,7 @@ subcollection: registry
 # {{site.data.keyword.cloudaccesstrailshort}} events
 {: #at_events}
 
-Track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
