@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-07-25"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -28,7 +28,7 @@ subcollection: registry
 Track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-The {{site.data.keyword.at_short}} service or, for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
+The {{site.data.keyword.at_full_notm}} service or, for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
 For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) or, for existing users, [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 The following table lists the API methods that generate an event when they are called:
