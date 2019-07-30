@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-07-30"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -236,33 +236,6 @@ Do not put personal information in your container images, namespace names, descr
 </dl>
 
 To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
-
-### Planning Namespaces
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
-{:shortdesc}
-
-You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
-
-You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
-
-To work with the IBM-provided public images only, you do not need to set up a namespace.
-
-If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command to retrieve existing namespace information.
-{:tip}
-
-Consider the following rules when you choose a namespace:
-
-- Your namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region.
-- Your namespace must have 4 - 30 characters.
-- Your namespace must start and end with a letter or number.
-- Your namespace must contain lowercase letters, numbers, hyphens (-), and underscores (_) only.
-
-Do not put personal information in your namespace names.
-{: important}
-
-After you set your first namespace, you are assigned the free {{site.data.keyword.registrylong_notm}} service plan if you have not already [upgraded your plan](#registry_plan_upgrade).
 
 ## Regions
 {: #registry_regions}
