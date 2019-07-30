@@ -187,9 +187,6 @@ To upgrade your service plan, complete the following steps:
 Descriptions of the terms used in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
-{: important}
-
 <dl>
   <dt>Dockerfile</dt>
   <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).</dd>
