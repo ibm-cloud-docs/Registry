@@ -31,9 +31,9 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 25 July 2019
 {: #25jul2019}
 
-- **{{site.data.keyword.at_short}} available for {{site.data.keyword.registrylong_notm}}**
+- **{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}**
 
-  Use the {{site.data.keyword.at_short}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).
 
