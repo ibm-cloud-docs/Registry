@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-01"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -21,7 +21,6 @@ subcollection: container-registry-cli-plugin
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
@@ -759,6 +758,51 @@ Target the US South region.
 
 ```
 ibmcloud cr region-set us-south
+```
+{: pre}
+
+## `ibmcloud cr retention-run`
+{: #bx_cr_retention_run}
+
+Cleans up a namespace by retaining images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
+{: shortdesc}
+
+Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{: important}
+
+Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
+
+```
+ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+```
+{: codeblock}
+
+**Prerequisites**
+
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+
+**Command options**
+<dl>
+<dt>`NAMESPACE`</dt>
+<dd>The namespace that you want to clean up.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Optional) Force the command to run with no user prompts.</dd>
+<dt>`--json`</dt>
+<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with '--force'.</dd>
+<dt>`--images`</dt>
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain.
+</dd>
+</dl>
+
+**Example**
+
+Return the newest 20 images within each repository, in the namespace `birds`.
+
+```
+ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
 

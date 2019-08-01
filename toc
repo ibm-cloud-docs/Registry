@@ -35,6 +35,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
+    registry_retention.md
     /va/toc
     {: .navgroup-end}
 
