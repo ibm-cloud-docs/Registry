@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-08-01"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -78,9 +78,9 @@ The following table details actions that are mapped to service access roles. Ser
 
 | Service access role | Description of actions | Example actions|
 |:-----------------|:-----------------|:-----------------|
-| Reader | The Reader role can view information. | <ul><li>View, inspect, and pull images</li><li>View namespaces</li><li>View quotas</li><li>View vulnerability reports</li><li>View image signatures</li></ul>|
-| Writer | The Writer role can edit information. |<ul><li>Build, push, and delete images</li><li>View quotas</li><li>Sign images</li><li>Add and remove namespaces</li></ul> |
-| Manager | The Manager role can perform all actions. | <ul><li>View, inspect, pull, build, push, and delete images</li><li>View, add, and remove namespaces</li><li>View and set quotas</li><li>View vulnerability reports</li><li>View and create image signatures</li><li>Review and change pricing plans</li><li>Enable IAM policy enforcement</li><li>Manage Vulnerability Advisor exemptions</li></ul> |
+| Reader | The Reader role can view information. | <ul><li>View, inspect, and pull images</li><li>View namespaces</li><li>View quotas</li><li>View vulnerability reports</li><li>View image signatures</li><li>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Writer role.)</li></ul>|
+| Writer | The Writer role can edit information. |<ul><li>Build, push, and delete images</li><li>View quotas</li><li>Sign images</li><li>Add and remove namespaces</li><li>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Reader role)</li></ul> |
+| Manager | The Manager role can perform all actions. | <ul><li>View, inspect, pull, build, push, and delete images</li><li>View, add, and remove namespaces</li><li>View and set quotas</li><li>View vulnerability reports</li><li>View and create image signatures</li><li>Review and change pricing plans</li><li>Enable IAM policy enforcement</li><li>Manage Vulnerability Advisor exemptions</li><li>Clean up your namespaces by retaining only images that meet your criteria.</li></ul> |
 {: caption="Table 3. IAM service access roles and actions" caption-side="top"}
 
  For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}} you must create a policy where the service name is `container-registry`, the service instance is empty, and the region is the region that you want to grant access to, or empty to give access to all regions.
@@ -125,9 +125,9 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | Action | Operation on service | Role |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Build a container image. | Writer, Manager |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more images.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Delete the signature. </li></ul> | Writer, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more images.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Delete the signature. </li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only images that meet your criteria.</li></ul> | Writer, Manager</br></br>To run `ibmcloud cr retention-run` you must have both Reader and Writer, or Manager. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Display details about a specific image. | Reader, Manager |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) List your container images. | Reader, Manager |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) List your container images.</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only images that meet your criteria.</li></ul> | Reader, Manager</br></br>To run `ibmcloud cr retention-run` you must have both Reader and Writer, or Manager. |
 | `container-registry.image.pull` | <ul><li>`docker pull` Pull the image. </li><li>`docker trust inspect` Inspect the signature. </li></ul> | Reader, Writer, Manager |
 | `container-registry.image.push` | <ul><li>`docker push` Push the image.</li><li>`docker trust sign` Sign the image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) Imports IBM software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.</li></ul> | Writer, Manager |
 | `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Create a new image that refers to a source image. The source and target images must be in the same region. | Reader, Writer, or Manager for the source image.</br></br>Writer or Manager for the target image. |

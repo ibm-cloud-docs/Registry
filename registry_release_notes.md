@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-01"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,15 @@ subcollection: registry
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 1 August 2019
+{: #01aug2019}
+
+- **`ibmcloud cr retention-run` command is available**
+
+  The `ibmcloud cr retention-run` command cleans up your namespaces by retaining images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
+  
+  For more information, see [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
 
 ## 25 July 2019
 {: #25jul2019}
