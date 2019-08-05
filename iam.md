@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -90,7 +90,7 @@ The following table details actions that are mapped to service access roles. Ser
 
 To grant a user permission to configure your {{site.data.keyword.registrylong_notm}} in your account, you must create a policy that grants one or more of the roles in the following table. When creating your policy, you must not specify a `resource type` or `resource`.
 
-**Example**
+For example, use the following command, where `<user_email>` is the user's email address:
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
@@ -115,7 +115,7 @@ To grant a user permission to access {{site.data.keyword.registrylong_notm}} con
 You cannot organize and assign access to registry namespaces in resource groups.
 {: note}
 
-**Example**
+For example, use the following command, where `<user_email>` is the user's email address:
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]

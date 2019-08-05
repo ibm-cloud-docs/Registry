@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -33,10 +33,10 @@ Container Image Security Enforcement retrieves information about image content t
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
-* [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
-* [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
+- [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+- [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
 Complete the following steps:
 
@@ -66,8 +66,8 @@ Container Image Security Enforcement installs some policies by default to provid
 
 To override these policies, use one of the following options:
 
-* Write a new policy document and apply it to your cluster by using `kubectl apply`
-* Edit the default policy by using `kubectl edit`
+- Write a new policy document and apply it to your cluster by using `kubectl apply`
+- Edit the default policy by using `kubectl edit`
 
 For more information about writing security policies, see [Customizing policies](#customize_policies).
 
@@ -77,7 +77,7 @@ For more information about writing security policies, see [Customizing policies]
 By default, a cluster-wide policy enforces that all images in all registries have trust information and have no reported vulnerabilities in Vulnerability Advisor.
 {:shortdesc}
 
-**Default cluster-wide policy `.yaml` file**
+The following code shows the default cluster-wide policy `.yaml` file:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -106,7 +106,7 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
 {:shortdesc}
 
-**Default `kube-system` policy `.yaml` file**
+The following code shows the default `kube-system` policy `.yaml` file:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -137,7 +137,7 @@ spec:
 By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Container Image Security Enforcement.
 {:shortdesc}
 
-**Default `ibm-system` policy `.yaml` file**
+The following code shows the default `ibm-system` policy `.yaml` file:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -313,9 +313,9 @@ When a policy is applied, you can deploy content to your cluster normally. Your 
 
 If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 
-**Sample error messages**
+The following code shows examples of typical error messages:
 
-* If your image does not match any policies, or there are no policies in the namespace or the cluster.
+- If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
    ```
    admission webhook
@@ -325,7 +325,7 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
    ```
    {: screen}
 
-* If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
+- If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
 
    ```
    admission webhook
@@ -337,7 +337,7 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
    ```
    {: screen}
 
-* If your image matches a policy but does not satisfy that policy's trust requirements.
+- If your image matches a policy but does not satisfy that policy's trust requirements.
 
    ```
    admission webhook
@@ -347,7 +347,7 @@ If Container Image Security Enforcement denies a Deployment, the Deployment is c
    ```
    {: screen}
 
-* If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
+- If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
    ```
    admission webhook

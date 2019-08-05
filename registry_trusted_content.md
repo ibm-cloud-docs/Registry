@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ A repository can contain both signed and unsigned content. If you have Docker Co
 Images have separate signatures for old (`registry.bluemix.net`) and new (`icr.io`) domain names. Existing signatures work when the image is pulled from the old domain name. If you want to pull signed content from the new domain name, you must re-sign the image on the new domain name, `icr.io`, see [Re-signing an image for the new domain name](#trustedcontent_resign).
 {: note}
 
-Docker Content Trust uses a "trust on first use" security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
+Docker Content Trust uses a trust on first use (TOFU) security model. The repository key is pulled from the trust server when you  pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before pulling the repository for the first time. If the trust information in the server is compromised and you haven't pulled an image from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and does not pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
-For more information about the "trust on first use" security model, see [The Update Framework ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://theupdateframework.github.io/).
+For more information about the TOFU security model, see [The Update Framework ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://theupdateframework.github.io/).
 
 ## Setting up your trusted content environment
 {: #trustedcontent_setup}
@@ -89,7 +89,7 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
 
    The output instructs you to export the Docker Content Trust environment variable.
 
-   **Example**
+   For example:
 
    ```
    user:~ user$ ibmcloud cr login
@@ -131,7 +131,10 @@ Before you begin, [set up your registry namespace](/docs/services/Registry?topic
    ```
    {: screen}
 
-3. **First time pushing a signed repository.** When you push a signed image to a new repository, the command creates two signing keys, root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+
+   This action is only required the first time that you push a signed repository.
+   {: tip}
 
 ## Pulling a signed image
 {: #trustedcontent_pull}
@@ -267,7 +270,7 @@ You can add and remove signers from signing images in a repository.
 To allow other users to sign images in a repository, add the signing keys for those users to that repository.
 {:shortdesc}
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - Image signers must have permission to push images to the namespace.
 - Repository owners and additional signers must have Docker 18.03 or later installed.

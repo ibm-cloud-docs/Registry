@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -30,13 +30,16 @@ Use this tutorial to find out how to grant access to your resources by configuri
 
 This tutorial takes approximately 45 minutes.
 
-**Before you begin**
+## Before you begin
+{: #iam_access_prereq}
+
+Before you begin, you must complete the following tasks:
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- You must have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
+- Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 
 - If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your IBM Cloud account, use a different account as User A to prevent disruption to their access.
 
@@ -87,7 +90,7 @@ In this section, you add a second user to your account and grant them the abilit
         ```
         {: pre}
 
-        The command fails because User B doesn't have the right access.
+        The command fails because User B doesn't have the correct access.
 
 3. Grant User B the Manager role so that User B can configure {{site.data.keyword.registrylong_notm}}:
 
@@ -121,7 +124,7 @@ In this section, you add a second user to your account and grant them the abilit
         ```
         {: pre}
 
-        It works because User B has the right type of access.
+        It works because User B has the correct type of access.
 
     3. Now change the quota back by running the following command:
   
@@ -533,4 +536,4 @@ In this section, you remove the resources that you created in previous sections 
    ```
    {: pre}
 
-Well done! You've successfully completed this tutorial.
+You've successfully completed this tutorial.
