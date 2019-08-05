@@ -54,6 +54,7 @@ You cannot log in to {{site.data.keyword.registrylong_notm}}.
 The `ibmcloud cr login` command fails.
 
 {: tsCauses}
+The following reasons are possible causes:
 
 - The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
@@ -75,13 +76,10 @@ You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even tho
 All `ibmcloud cr` commands fail.
 
 {: tsCauses}
-
-- The `container-registry` CLI plug-in is out of date and needs updating.
+The `container-registry` CLI plug-in is out of date and needs updating.
 
 {: tsResolve}
-You can fix this problem in the following way:
-
-- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
+Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
@@ -104,13 +102,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- The `container-registry` CLI plug-in is not installed.
+The `container-registry` CLI plug-in is not installed.
 
 {: tsResolve}
-You can fix this problem in the following way:
-
-- Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## The `ibmcloud cr build` command fails
 {: #ts_build_fails}
@@ -139,6 +134,7 @@ docker build --no-cache .
 When you run `ibmcloud cr namespace-add`, you are unable to set your entered value as the namespace.
 
 {: tsCauses}
+The following reasons are possible causes:
 
 - You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registrylong_notm}}.
@@ -185,6 +181,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
+The following reasons are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
@@ -316,7 +313,6 @@ You set up an additional firewall in your development environment with custom se
 Your custom firewall requires certain network groups to be opened for inbound and outbound network traffic to allow communication to and from the registry.
 
 {: tsResolve}
-
 Let your cluster access infrastructure resources and services from behind a firewall, see [Allowing the cluster to access infrastructure resources and other services](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 For INBOUND connectivity to your computer, allow incoming network traffic from the source network groups to the destination public IP address of your computer.
