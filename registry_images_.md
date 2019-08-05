@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ You can pull (download) an image from any private or public registry source, and
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -64,7 +64,7 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Push an image from your computer to {{site.data.keyword.registrylong_notm}}."/>
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -104,7 +104,7 @@ You can pull an image from a registry in one region and push it to a registry in
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copy an image from any  private or public registry to your private {{site.data.keyword.cloud_notm}} registry."/>
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -130,7 +130,7 @@ In the region that you're logged into, create a new image in {{site.data.keyword
 New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
 {: tip}
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
@@ -166,7 +166,7 @@ To create a new image from a source image, complete the following steps:
 You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -196,8 +196,7 @@ To build your own Docker image, complete the following steps:
        ```
        {: pre}
 
-       **Example**
-       To create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following code:
+       For example, to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following command:
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -381,9 +380,8 @@ You can delete private repositories that are no longer required, and any associa
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
 {: important}
 
-**Before you begin**
-
-You must back up any images that you want to keep.
+Before you begin, you must back up any images that you want to keep.
+{: tip}
 
 To delete a private repository by using the GUI, complete the following steps:
 
