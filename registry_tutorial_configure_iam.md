@@ -536,4 +536,4 @@ In this section, you remove the resources that you created in previous sections 
    ```
    {: pre}
 
-Well done! You've successfully completed this tutorial.
+You've successfully completed this tutorial.
