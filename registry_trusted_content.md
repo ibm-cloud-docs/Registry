@@ -133,7 +133,7 @@ Before you begin, [set up your registry namespace](/docs/services/Registry?topic
 
 3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
-   This step is required only on the first time that you push to a signed repository.
+   This action is only required the first time that you push a signed repository.
    {: tip}
 
 ## Pulling a signed image
@@ -270,7 +270,7 @@ You can add and remove signers from signing images in a repository.
 To allow other users to sign images in a repository, add the signing keys for those users to that repository.
 {:shortdesc}
 
-**Before you begin**
+Before you begin, complete the following tasks:
 
 - Image signers must have permission to push images to the namespace.
 - Repository owners and additional signers must have Docker 18.03 or later installed.
