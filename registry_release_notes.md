@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -46,8 +46,8 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).
 
-## 01 July 2019
-{: #01jul2019}
+## 1 July 2019
+{: #1jul2019}
 
 - **`ibmcloud cr token-add` command is no longer available**
 
@@ -232,7 +232,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **Graphical User Interface released**
 
-  The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the Catalog, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
+  The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
 
 ## 27 June 2017
 {: #27jun2017}
