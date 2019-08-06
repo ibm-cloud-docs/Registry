@@ -33,12 +33,15 @@ Container Image Security Enforcement retrieves information about image content t
 ## Installing Container Image Security Enforcement in your cluster
 {: #sec_enforce_install}
 
+Install Container Image Security Enforcement in your cluster by setting up Helm and installing the Container Image Security Enforcement Helm chart.
+{:shortdesc}
+
 Before you begin, complete the following tasks:
 
-- [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
-- [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
+1. [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+2. [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
-Complete the following steps:
+To install Container Image Security Enforcement in your cluster, complete the following steps:
 
 1. [Set up Helm in your cluster](/docs/containers?topic=containers-helm#helm).
 
