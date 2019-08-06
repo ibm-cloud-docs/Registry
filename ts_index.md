@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -54,7 +54,7 @@ You cannot log in to {{site.data.keyword.registrylong_notm}}.
 The `ibmcloud cr login` command fails.
 
 {: tsCauses}
-The following reasons are possible causes:
+The following alternatives are possible causes:
 
 - The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
@@ -134,7 +134,7 @@ docker build --no-cache .
 When you run `ibmcloud cr namespace-add`, you are unable to set your entered value as the namespace.
 
 {: tsCauses}
-The following reasons are possible causes:
+The following alternatives are possible causes:
 
 - You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registrylong_notm}}.
@@ -181,7 +181,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
-The following reasons are possible causes:
+The following alternatives are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
@@ -218,7 +218,7 @@ When you try to import content that you used in other IBM products, such as {{si
 Software packages such as images and Helm charts from IBM Passport Advantage must be imported to the registry with the `ibmcloud cr ppa-archive-load` command.
 
 {: tsResolve}
-Before you begin, complete the following tasks:
+Before you begin to import a product from IBM Passport Advantage, complete the following tasks:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login [--sso]`.
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.

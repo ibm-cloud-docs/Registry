@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -89,6 +89,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 {: #registry_billing_traffic_storage}
 
   Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+  {:shortdesc}
 
   Example for the standard plan:
 
@@ -102,6 +103,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 {: #registry_billing_traffic_pull_traffic}
 
   Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local machine. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
+  {:shortdesc}
 
   Example for the standard plan:
 
@@ -119,6 +121,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 {: #registry_quota_limits_storage}
 
   When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
+  {:shortdesc}
 
   Example for the standard plan:
 
@@ -130,6 +133,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 {: #registry_quota_limits_pull_traffic}
 
   When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Example for the standard plan:
 
@@ -241,10 +245,13 @@ To learn more about Docker-specific terms, see [Docker glossary ![External link 
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
 {:shortdesc}
 
+All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
+
 ### Local regions
 {: #registry_regions_local}
 
 A local region is a geographic area that is accessed by a dedicated endpoint. The {{site.data.keyword.registrylong_notm}} domain names for the regions have changed. The new domain names are available in the console and the CLI.
+{:shortdesc}
 
 The domain names are shown in the following table.
 
@@ -260,9 +267,11 @@ The domain names are shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-**Vulnerability Advisor domain names**
+#### Vulnerability Advisor domain names
+{: #registry_regions_local_va}
 
 Vulnerability Advisor domain names for the regions have changed. The new domain names are available in the console and the CLI.
+{:shortdesc}
 
 The new domain names are shown in the following table.
 
@@ -278,25 +287,27 @@ The new domain names are shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
+#### Targeting a local region
+{: #registry_regions_local_target}
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `ibmcloud cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+{:shortdesc}
 
-To run the command with parameters, replace `<region>` with the name of the region, for example, `eu-central`.
+1. To run the command with parameters, replace `<region>` with the name of the [region](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-For example, to target the eu-central region, run the following command:
+   For example, to target the `eu-central` region, run the following command:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-After targeting a different region, log in to the registry again: `ibmcloud cr login`.
+2. Log in to the registry by running the `ibmcloud cr login` command.
 
 ### Global registry
 {: #registry_regions_global}
@@ -316,22 +327,11 @@ The new domain name is shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-You can target the global registry by running the `ibmcloud cr region-set` command.
+#### Vulnerability Advisor domain names
+{: #registry_regions_global_va}
 
-For example, to target the global registry, run the following command:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
-
-**Vulnerability Advisor domain names**
-
-The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI. 
+The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI.
+{:shortdesc}
 
 The new domain name is shown in the following table.
 
@@ -342,6 +342,21 @@ The new domain name is shown in the following table.
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
+
+#### Targeting the global registry
+{: #registry_regions_global_target}
+
+You can target the global registry by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+{:shortdesc}
+
+1. To target the global registry, run the following command:
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images by running the `ibmcloud cr login` command.
 
 ## Support for Docker
 {: #docker}
