@@ -135,7 +135,7 @@ Do not put personal information in your container images, namespace names, descr
    ```
    {: pre}
 
-Good work! You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
+You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed your first image to your namespace.
 
 ## Next steps
 {: #gs_get_start_next}

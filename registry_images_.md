@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -49,10 +49,10 @@ Before you begin, complete the following tasks:
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-Download the image, see [Pull an image](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
+1. Download the image, see [Pull an image](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
-If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
-{:tip}
+   If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
+   {:tip}
 
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
 
@@ -258,6 +258,8 @@ To use Vulnerability Advisor to check the security of your image, see [Managing 
 Create a service ID that uses an API key to push images to {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+Complete the following steps:
+
 1. Create a service ID, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 3. Create an API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
@@ -307,7 +309,7 @@ You can delete unwanted images from your private repository by using either the 
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
-Public {{site.data.keyword.IBM_notm}} images cannot be deleted from your private {{site.data.keyword.cloud_notm}} repository, and do not count toward your quota.
+Public {{site.data.keyword.IBM_notm}} images can't be deleted from your private {{site.data.keyword.cloud_notm}} repository, and don't count toward your quota.
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
 {: important}

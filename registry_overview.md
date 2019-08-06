@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -241,6 +241,8 @@ To learn more about Docker-specific terms, see [Docker glossary ![External link 
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
 {:shortdesc}
 
+All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
+
 ### Local regions
 {: #registry_regions_local}
 
@@ -260,7 +262,8 @@ The domain names are shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-**Vulnerability Advisor domain names**
+#### Vulnerability Advisor domain names
+{: #registry_regions_local_va}
 
 Vulnerability Advisor domain names for the regions have changed. The new domain names are available in the console and the CLI.
 
@@ -278,25 +281,26 @@ The new domain names are shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
+### Targeting a region
+{: #registry_regions_local_target}
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the `ibmcloud cr region-set`  command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
 
-To run the command with parameters, replace `<region>` with the name of the region, for example, `eu-central`.
+1. To run the command with parameters, replace `<region>` with the name of the [region](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-For example, to target the eu-central region, run the following command:
+   For example, to target the `eu-central` region, run the following command:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-After targeting a different region, log in to the registry again: `ibmcloud cr login`.
+2. After targeting a different region, log in to the registry again: `ibmcloud cr login`.
 
 ### Global registry
 {: #registry_regions_global}
@@ -316,22 +320,21 @@ The new domain name is shown in the following table.
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
 
-You can target the global registry by running the `ibmcloud cr region-set` command.
+1. You can target the global registry by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
 
-For example, to target the global registry, run the following command:
+   For example, to target the global registry, run the following command:
 
-```
-ibmcloud cr region-set global
-```
-{: pre}
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
 
-For more information about the `ibmcloud cr region-set` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
+2. After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
 
-After you have targeted the global registry, run the `ibmcloud cr login` command to log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images.
+#### Vulnerability Advisor domain names
+{: #registry_regions_global_va}
 
-**Vulnerability Advisor domain names**
-
-The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI. 
+The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI.
 
 The new domain name is shown in the following table.
 

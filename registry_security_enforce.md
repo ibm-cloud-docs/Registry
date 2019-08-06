@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -281,29 +281,29 @@ To configure the policy to verify that an image is signed by a particular signer
 If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [the  {{site.data.keyword.containerlong_notm}} docs](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
-In your role, add a rule for security policies:
+- In your role, add a rule for security policies:
 
-```yaml
-- apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
-  resources: ["imagepolicies", "clusterimagepolicies"]
-  verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+    resources: ["imagepolicies", "clusterimagepolicies"]
+    verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+  ```
+  {: codeblock}
 
-You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only use the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
-{:tip}
+  You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only use the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
+  {:tip}
 
-Users who have access to delete custom resource definitions (CRDs) can delete the resource definition for security policies, which also deletes your security policies. Make sure to control who is allowed to delete CRDs. To grant access to delete CRDs, add a rule:
+- Users who have access to delete custom resource definitions (CRDs) can delete the resource definition for security policies, which also deletes your security policies. Make sure to control who is allowed to delete CRDs. To grant access to delete CRDs, add a rule:
 
-```yaml
-- apiGroups: ["apiextensions.k8s.io/v1beta1"]
-  resources: ["CustomResourceDefinition"]
-  verbs: ["delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+    resources: ["CustomResourceDefinition"]
+    verbs: ["delete"]
+  ```
+  {: codeblock}
 
-Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
-{:tip}
+  Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
+  {:tip}
 
 ## Deploying container images with enforced security
 {: #deploy_containers}
@@ -311,55 +311,55 @@ Users and Service Accounts with the `cluster-admin` role have access to all reso
 When a policy is applied, you can deploy content to your cluster normally. Your policy is automatically enforced by the Kubernetes cluster. If your deployment matches a policy and is allowed by that policy, your deployment is accepted by the cluster and applied.
 {:shortdesc}
 
-If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
+- If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 
-The following code shows examples of typical error messages:
+  The following code shows examples of typical error messages:
 
-- If your image does not match any policies, or there are no policies in the namespace or the cluster.
+  - If your image does not match any policies, or there are no policies in the namespace or the cluster.
 
-   ```
-   admission webhook
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com"
-   denied the request: Deny, no image policies or cluster
-   polices for <image-name>
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Deny, no image policies or cluster
+    polices for <image-name>
+    ```
+    {: screen}
 
-- If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
+  - If your image matches a policy but does not satisfy that policy's Vulnerability Advisor requirements.
 
-   ```
-   admission webhook
-   "va.hooks.securityenforcement.admission.cloud.ibm.com"
-   denied the request: The Vulnerability Advisor image scan
-   assessment found issues with the container image that
-   are not exempted. Refer to your image vulnerability report
-   for more details by using the command `ibmcloud cr va`.
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "va.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: The Vulnerability Advisor image scan
+    assessment found issues with the container image that
+    are not exempted. Refer to your image vulnerability report
+    for more details by using the command `ibmcloud cr va`.
+    ```
+    {: screen}
 
-- If your image matches a policy but does not satisfy that policy's trust requirements.
+  - If your image matches a policy but does not satisfy that policy's trust requirements.
 
-   ```
-   admission webhook
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com"
-   denied the request: Deny, failed to get content trust information:
-   No valid trust data for latest
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Deny, failed to get content trust information:
+    No valid trust data for latest
+    ```
+    {: screen}
 
-- If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
+  - If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
-   ```
-   admission webhook
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com"
-   denied the request: Trust is not supported for images
-   from this registry
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Trust is not supported for images
+    from this registry
+    ```
+    {: screen}
 
-You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
+- You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
 
-You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent).
+- You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 A deployment is allowed only if all images pass the Container Image Security Enforcement checks.
 
@@ -382,7 +382,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
    ```
    {: pre}
 
-2. Remove the chart.
+1. Remove the chart.
 
    ```
    helm delete --purge cise
