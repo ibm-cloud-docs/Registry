@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -41,20 +41,15 @@ Do not put personal information in your container images, namespace names, descr
 ## Set up a namespace
 {: #gs_registry_namespace_add}
 
-1. 
-   - Log in to {{site.data.keyword.cloud_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}:
 
-     ```
-     ibmcloud login
-     ```
-     {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
-   - If you have a federated ID, log in by using the following command:
-
-     ```
-     ibmcloud login --sso
-     ```
-     {: pre}
+   If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
+   {: tip}
 
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
