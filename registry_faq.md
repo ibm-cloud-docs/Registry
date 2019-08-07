@@ -29,7 +29,7 @@ subcollection: registry
 Frequently asked questions about {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## How do I list public images?
+## How do you list public images?
 {: #faq_list_public_images}
 {: faq}
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Can I use non-docker tools to build my images and push them to the registry?
+## Can you use non-docker tools to build my images and push them to the registry?
 {: #faq_tools}
 {: faq}
 
 Yes, if the tool supports OCI image format and protocol.
 
-## How do I use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
+## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
 
@@ -76,7 +76,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time it takes to complete depends on variables like the image size and the amount of traffic that the registry is receiving.
+You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time that it takes to complete depends on variables like the image size and the amount of traffic that the registry is receiving.
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
@@ -90,7 +90,7 @@ The scanning of an image is triggered in one of the following ways:
 
 - If a new image is pushed to the registry.
 - If the last scan is more than 7 days ago, the image is queued for rescanning, which might take some time to complete.
-- If a new security notice is released for a package thta is installed in the image, the image is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
+- If a new security notice is released for a package that is installed in the image, the image is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}
