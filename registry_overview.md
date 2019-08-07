@@ -356,7 +356,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
    ```
    {: pre}
 
-2. To pull {{site.data.keyword.IBM_notm}}-provided public images, log your local Docker daemon into the global registry by running the `ibmcloud cr login` command.
+2. To log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images, run the `ibmcloud cr login` command.
 
 ## Support for Docker
 {: #docker}
