@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -28,8 +28,8 @@ subcollection: registry
 Track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-The {{site.data.keyword.at_full_notm}} service or, for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
-For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) or, for existing users, [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+The {{site.data.keyword.at_full_notm}} service or for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
+For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) or for existing users, [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 The following table lists the API methods that generate an event when they are called:
 
@@ -80,7 +80,7 @@ The following table lists the API methods that generate an event when they are c
   </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
-	  <td>Add a new tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image.</td>
+	  <td>Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image.</td>
   </tr>
    <tr>
     <td>`container-registry.image.untag`</td>
@@ -123,7 +123,7 @@ The following table lists the API methods that generate an event when they are c
 	  <td>Delete multiple registry tokens.</td>
   </tr><tr>
     <td>`container-registry.retentionanalysis`</td>
-	  <td>Clean up your namespaces by retaining only images that meet your criteria. Retain images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted. </br> The request to get the list of images to delete is a `post` action to a `retentionanalysis` event type, and the delete is a single `bulkdelete` action to an `images` event type and also a `delete` action for each individual image.</td>
+	  <td>Clean up your namespaces by retaining only images that meet your criteria. Retain images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted. </br> The request to get the list of images to delete is a `post` action to a `retentionanalysis` event type. The deletion is a single `bulkdelete` action to an `images` event type and also a `delete` action for each individual image.</td>
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>

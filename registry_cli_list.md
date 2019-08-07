@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -50,7 +50,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: pre}
 
-  The following message is an example of the ouptut from the command:
+  The following message is an example of the output from the command:
 
   ```
   example-<region>.icr.io/user1/ibmliberty:latest No Issues
@@ -67,7 +67,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: pre}
 
-  The following message is an example of the ouptut from the command:
+  The following message is an example of the output from the command:
 
   ```
   map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
@@ -81,7 +81,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: pre}
 
-  The following message is an example of the ouptut from the command:
+  The following message is an example of the output from the command:
 
   ```
   map[9080/tcp: 9443/tcp:]
@@ -95,7 +95,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: pre}
 
-  The following message is an example of the ouptut from the command:
+  The following message is an example of the output from the command:
 
   ```
   0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo

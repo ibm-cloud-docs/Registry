@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -49,9 +49,9 @@ ibmcloud cr images --include-ibm
 {: #faq_tools}
 {: faq}
 
-Yes, provided that the tool supports OCI image format and protocol.
+Yes, if the tool supports OCI image format and protocol.
 
-## How do I use access control with IAM?
+## How do I use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
 
@@ -67,7 +67,7 @@ You can host images in [local regions](/docs/services/Registry?topic=registry-re
 {: #faq_va_new_scan_error}
 {: faq}
 
-If you get the vulnerability report immediately after adding the image to the registry, you might receive the following error:
+If you get the vulnerability report immediately after you add the image to the registry, you might receive the following error:
 
 ```
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
@@ -76,7 +76,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you've added the image to the registry, depending on variables like the image size and the amount of traffic that the registry is receiving.
+You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time it takes to complete depends on variables like the image size and the amount of traffic that the registry is receiving.
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
@@ -89,8 +89,8 @@ If you still see unacceptable performance, contact support, see [Getting help an
 The scanning of an image is triggered in one of the following ways:
 
 - If a new image is pushed to the registry.
-- If the image has not been scanned for 7 days, it is queued for rescanning, which might take some time to complete.
-- If a new security notice is released for a package installed in the image, it is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
+- If the last scan is more than 7 days ago, the image is queued for rescanning, which might take some time to complete.
+- If a new security notice is released for a package thta is installed in the image, the image is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}

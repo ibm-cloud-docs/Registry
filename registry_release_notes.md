@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Release notes
 {: #registry_release_notes}
 
-Use these release notes to learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
+Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
 
 ## 1 August 2019
@@ -61,7 +61,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Container Scanner is no longer available</dt>
-  <dd>The Container Scanner is discontinued. Vulnerability Advisor will continue to scan images that are pushed to {{site.data.keyword.registrylong_notm}}.</dd>
+  <dd>The Container Scanner is discontinued. Vulnerability Advisor still scans images that are pushed to {{site.data.keyword.registrylong_notm}}.</dd>
 </dl>
 
 ## 13 June 2019
@@ -111,15 +111,15 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #25feb2019}
 
 <dl>
-  <dt>New DNS names</dt>
-  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later. For more information, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
+  <dt>New domain names</dt>
+  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
 
-  If you are using content trust then, because signatures apply to the whole image name including the domain name, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).</dd>
+  Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).</dd>
 </dl>
 
 <dl>
   <dt>IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters</dt>
-  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an IAM API key, therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
   
   For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-images#cluster_registry_auth).</dd>
 </dl>
@@ -131,7 +131,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
   For more information, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).</dd>
 </dl>
 
-## 21 Feb 2019
+## 21 February 2019
 {: #21feb2019}
 
 <dl>
@@ -156,7 +156,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Managing user access</dt>
-  <dd>Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
+  <dd>Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
   For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/services/Registry?topic=registry-iam#iam), [Defining user access role policies](/docs/services/Registry?topic=registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/services/Registry?topic=registry-iam_access#iam_access).</dd>
 </dl>
@@ -166,7 +166,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Exemption policies available in Vulnerability Advisor</dt>
-  <dd>If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can choose to use Container Image Security Enforcement to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
+  <dd>If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can use Container Image Security Enforcement to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
 
   For more information, see [Setting organizational exemption policies](/docs/services/Registry?topic=va-va_index#va_managing_policy).</dd>
 </dl>
@@ -186,7 +186,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Vulnerability Advisor API version 3</dt>
-  <dd>Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You should check that your use of the API does not rely on the behavior of version 2.
+  <dd>Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You must check that your use of the API does not rely on the behavior of version 2.
 
   For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).</dd>
 </dl>
@@ -206,7 +206,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Container Scanner</dt>
-  <dd>Container Scanner enables Vulnerability Advisor to report any problems found in running containers that are not present in the container's base image.
+  <dd>Container Scanner enables Vulnerability Advisor to report any problems that are found in running containers that are not present in the container's base image.
 
   For more information, see [Installing the Container Scanner](/docs/services/Registry?topic=va-va_index#va_install_container_scanner).</dd>
 </dl>
@@ -236,7 +236,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 <dl>
   <dt>Global registry</dt>
-  <dd>A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by IBM are hosted in this registry.
+  <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by IBM are hosted in this registry.
 
   For more information, see [Global registry](/docs/services/Registry?topic=registry-registry_overview#registry_regions_global).</dd>
 </dl>
