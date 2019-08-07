@@ -143,15 +143,15 @@ The following table lists the API methods that generate an event when they are c
 
 {{site.data.keyword.at_full_notm}} events are available in the {{site.data.keyword.at_full_notm}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource (for example, the image or namespace) is available.
+The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
 |:-----------------|:-----------------|:-----------------|
-| us-south | `us.icr.io` | `Dallas (us-south)` |
-| eu-central | `de.icr.io` | `Frankfurt (eu-de)` |
-| uk-south | `uk.icr.io` | `London (eu-gb)` |
-| ap-south | `au.icr.io` | `Tokyo (jp-tok)` |
-| ap-north | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
+| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
 | Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
@@ -167,4 +167,4 @@ The [region](/docs/services/Registry?topic=registry-registry_overview#registry_r
 {{site.data.keyword.cloudaccesstrailfull_notm}} is deprecated. As of 9 May 2019, you cannot provision new {{site.data.keyword.cloudaccesstrailshort}} instances. Existing premium plan instances are supported until 30 September 2019. To continue monitoring the activity of your {{site.data.keyword.cloud_notm}} account, provision an instance of the [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
 {: deprecated}
 
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource (for example, the image or namespace) is available.
+The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
