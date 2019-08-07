@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -356,7 +356,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
    ```
    {: pre}
 
-2. Log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images by running the `ibmcloud cr login` command.
+2. To pull {{site.data.keyword.IBM_notm}}-provided public images, log your local Docker daemon into the global registry by running the `ibmcloud cr login` command.
 
 ## Support for Docker
 {: #docker}
