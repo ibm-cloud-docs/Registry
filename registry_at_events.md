@@ -123,7 +123,7 @@ The following table lists the API methods that generate an event when they are c
 	  <td>Delete multiple registry tokens.</td>
   </tr><tr>
     <td>`container-registry.retentionanalysis`</td>
-	  <td>Clean up your namespaces by retaining only images that meet your criteria. Retain images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted. </br> The request to get the list of images to delete is a `post` action to a `retentionanalysis` event type. The deletion is a single `bulkdelete` action to an `images` event type and also a `delete`action for each individual image.</td>
+	  <td>Clean up your namespaces by retaining only images that meet your criteria. Retain images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted. </br> The request to get the list of images to delete is a `post` action to a `retentionanalysis` event type. The deletion is a single `bulkdelete` action to an `images` event type and also a `delete` action for each individual image.</td>
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>
