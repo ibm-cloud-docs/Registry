@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -339,7 +339,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc]
 ```
 {: codeblock}
 
@@ -352,8 +352,6 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_list_option}
 
 <dl>
-<dt>`--no-trunc`</dt>
-<dd>(Optional) Do not truncate the image digests.</dd>
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
@@ -366,6 +364,8 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Limit the output to display only images in the specified namespace or namespace and repository. </dd>
 <dt>`--include-ibm`</dt>
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default only private images are listed.</dd>
+<dt>`--no-trunc`</dt>
+<dd>(Optional) Do not truncate the image digests.</dd>
 </dl>
 
 ### Example
