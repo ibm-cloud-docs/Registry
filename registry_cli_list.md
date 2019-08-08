@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}
 
-You can format and filter the CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
+You can format and filter the CLI output for supported {{site.data.keyword.registrylong}} commands.
 {:shortdesc}
 
 By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
@@ -60,7 +60,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: screen}
 
-- Run the following `ibmcloud cr image-inspect` command to display where IBM documentation is hosted for a specified IBM public image:
+- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image:
 
   ```
   ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -105,7 +105,7 @@ The following code examples demonstrate how you might use the formatting and fil
 ## Go template options and data types in the `ibmcloud cr image-list` command
 {: #registry_cli_list_imagelist}
 
-Review the following table to find available Go template options and data types for the `ibmcloud cr image-list` command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
 {:shortdesc}
 
 |Field|Type|Description|
@@ -114,34 +114,34 @@ Review the following table to find available Go template options and data types 
 |`Digest`|String|Displays the unique identifier for an image.|
 |`Namespace`|String|Displays the namespace where the image is stored.|
 |`Repository`|String|Displays the repository of the image.|
+|`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`Tag`|String|Displays the tag for the image.|
-|`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
 
 ## Go template options and data types in the `ibmcloud cr image-inspect` command
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available Go template options and data types for the `ibmcloud cr image-inspect` command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
 {:shortdesc}
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`ID`|String|Displays the unique identifier for an image.|
-|`Parent`|String|Displays the ID of the parent image that was used to build this image.|
+|`Architecture`|String|Displays the processor architecture that was used to build this image, and that is required to run the image.|
+|`Author`|String|Displays the author of the image.|
 |`Comment`|String|Displays the description of the image.|
-|`Created`|String|Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
+|`Config`|Object|Displays configuration metadata for the image. See the field details in [`Config`](#registry_cli_list_imageinspect_config).|
 |`Container`|String|Displays the ID of the container that created the image.|
 |`ContainerConfig`|Object|Displays the default configuration for containers that are started from this image. See the field details in [`Config`](#registry_cli_list_imageinspect_config).|
+|`Created`|String|Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created.|
 |`DockerVersion`|String|Displays the Docker version that was used to build this image.|
-|`Author`|String|Displays the author of the image.|
-|`Config`|Object|Displays configuration metadata for the image. See the field details in [`Config`](#registry_cli_list_imageinspect_config).|
-|`Architecture`|String|Displays the processor architecture that was used to build this image, and that is required to run the image.|
+|`ID`|String|Displays the unique identifier for an image.|
 |`Os`|String|Displays the operating system family that was used to build this image, and that is required to run the image.|
 |`OsVersion`|String|Displays the version of the operating system that was used to build this image.|
+|`Parent`|String|Displays the ID of the parent image that was used to build this image.|
+|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 |`Size`|Integer (64 bit)|Displays the size of the image in bytes.|
 |`VirtualSize`|Integer (64 bit)|Displays the sum of the size of each layer in the image in bytes.|
-|`RootFS`|Object|Displays metadata that describe the root file system for the image. See the field details in [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 {: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-inspect</code> command." caption-side="top"}
 
 ### `Config`
@@ -149,31 +149,31 @@ Review the following table to find available Go template options and data types 
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`Hostname`|String|Displays the host name of the container.|
-|`Domainname`|String|Displays the fully qualified domain name of the container.|
-|`User`|String|Displays the user that runs commands inside the container where the image is used.|
+|`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
+|`AttachStderr`|Boolean|Displays _true_ if the standard error stream is attached to the container and _false_ if not.|
 |`AttachStdin`|Boolean|Displays _true_ if the standard input stream is attached to the container and _false_ if not.|
 |`AttachStdout`|Boolean|Displays _true_ if the standard output stream is attached to the container and _false_ if not.|
-|`AttachStderr`|Boolean|Displays _true_ if the standard error stream is attached to the container and _false_ if not.|
-|`ExposedPorts`|Key-value map|Displays the list of exposed ports in the format `[123:,456:]`.|
-|`Tty`|Boolean|Displays _true_ if a `pseudo-tty` is allocated to the container and _false_ if not.|
-|`OpenStdin`|Boolean|Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed.|
-|`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
-|`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
 |`Cmd`|Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started.|
-|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
-|`ArgsEscaped`|Boolean|Displays true if the command is already escaped (Windows specific).|
-|`Image`|String|Displays the name of the image that was passed by the operator.|
-|`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
-|`WorkingDir`|String|Displays the working directory inside the container where specified commands are run.|
+|`Domainname`|String|Displays the fully qualified domain name of the container.|
 |`Entrypoint`|Array of strings|Describes the command that is run when the container starts.|
-|`NetworkDisabled`|Boolean|Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container.|
-|`MacAddress`|String|Displays the MAC address that is assigned to the container.|
-|`OnBuild`|Array of strings|Displays the `ONBUILD` metadata that were defined on the image Dockerfile.|
+|`Env`|Array of strings|Displays the list of environment variables in the form of key-value pairs.|
+|`ExposedPorts`|Key-value map|Displays the list of exposed ports in the format `[123:,456:]`.|
+|`Healthcheck`|Object|Describes how to check that the container is working correctly. See the field details in [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
+|`Hostname`|String|Displays the host name of the container.|
+|`Image`|String|Displays the name of the image that was passed by the operator.|
 |`Labels`|Key-value map|Displays the list of labels that were added to the image as key-value pairs.|
+|`MacAddress`|String|Displays the MAC address that is assigned to the container.|
+|`NetworkDisabled`|Boolean|Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container.|
+|`OnBuild`|Array of strings|Displays the `ONBUILD` metadata that were defined on the image Dockerfile.|
+|`OpenStdin`|Boolean|Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed.|
+|`Shell`|Array of strings|Displays the shell-form of RUN, CMD, ENTRYPOINT.|
+|`StdinOnce`|Boolean|Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open.|
 |`StopSignal`|String|Describes the UNIX stop signal to send when to stop the container.|
 |`StopTimeout`|Integer|Displays the timeout in seconds to stop a container.|
-|`Shell`|Array of strings|Displays the shell-form of RUN, CMD, ENTRYPOINT.|
+|`Tty`|Boolean|Displays _true_ if a `pseudo-tty` is allocated to the container and _false_ if not.|
+|`User`|String|Displays the user that runs commands inside the container where the image is used.|
+|`Volumes`|Key-Value map|Displays the list of volume mounts that are mounted to a container.|
+|`WorkingDir`|String|Displays the working directory inside the container where specified commands are run.|
 {: caption="Table 3. Available fields and data types in <code>Config</code>. " caption-side="top"}
 
 ### `Healthcheck`
@@ -181,10 +181,10 @@ Review the following table to find available Go template options and data types 
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>`{}`: inherit the health check</li><li>`{"NONE"}`: the health check is disabled</li><li>`{"CMD", args...}`: exec arguments directly</li><li>`{"CMD-SHELL", command}`: run the command with the system's default shell</li></ul>|
 |`Interval`|Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds.|
-|`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
 |`Retries`|Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly.|
+|`Test`|Array of strings|Displays how to run the health check test. Available options are:<ul><li>`{}`: inherit the health check</li><li>`{"NONE"}`: the health check is disabled</li><li>`{"CMD", args...}`: exec arguments directly</li><li>`{"CMD-SHELL", command}`: run the command with the system's default shell</li></ul>|
+|`Timeout`|Integer (64 bit)|Displays the time to wait before considering the health check to have failed in nanoseconds.|
 {: caption="Table 4. Available fields and data types in the <code>Healthcheck</code> struct." caption-side="top"}
 
 ### `RootFS`
@@ -192,21 +192,21 @@ Review the following table to find available Go template options and data types 
 
 |Option|Type|Description|
 |------|----|-----------|
-|`Type`|String|Displays the type of file system.|
-|`Layers`|Array of strings|Displays the descriptors of each image layer.|
 |`BaseLayer`|String|Displays the descriptor for the base layer in the image.|
+|`Layers`|Array of strings|Displays the descriptors of each image layer.|
+|`Type`|String|Displays the type of file system.|
 {: caption="Table 5. Available fields and data types in the <code>RootFS</code> struct." caption-side="top"}
 
 ## Go template options and data types in the `ibmcloud cr token-list` command
 {: #registry_cli_list_tokenlist}
 
-Review the following table to find available Go template options and data types for the `ibmcloud cr token-list` command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) command.
 {:shortdesc}
 
 |Field|Type|Description|
 |-----|----|-----------|
-|`ID`|String|Displays the unique identifier for a token.|
-|`Expiry`|Integer (64 bit)|Displays [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
-|`ReadOnly`|Boolean|Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 |`Description`|String|Displays the description of the token.|
+|`Expiry`|Integer (64 bit)|Displays [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the token expires.|
+|`ID`|String|Displays the unique identifier for a token.|
+|`ReadOnly`|Boolean|Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 {: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}
