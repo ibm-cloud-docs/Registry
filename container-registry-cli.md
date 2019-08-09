@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-08-09"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -872,7 +872,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ### Example
 {: #bx_cr_retention_run_example}
 
-Return the newest 20 images within each repository, in the namespace `birds`.
+Retain the newest 20 images within each repository, in the namespace `birds`.
 
 ```
 ibmcloud cr retention-run --images 20 birds
