@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-12"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -27,6 +27,7 @@ subcollection: container-registry-cli-plugin
 
 You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
+
 
 ## Prerequisites
 {: #containerregcli_prereq}
