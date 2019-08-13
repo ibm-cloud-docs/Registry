@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-13"
 
 keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
@@ -72,7 +72,7 @@ If you get the vulnerability report immediately after you add the image to the r
 ```
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
 If this issue persists, contact support for help;
-see https://console.bluemix.net/docs/support/index.html#contacting-support
+see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
 ```
 {: screen}
 
