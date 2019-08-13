@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-13"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -48,7 +48,7 @@ For information about opening an {{site.data.keyword.IBM_notm}} support ticket, 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
 
-You cannot log in to {{site.data.keyword.registrylong_notm}}.
+You can't log in to {{site.data.keyword.registrylong_notm}}.
 
 {: tsSymptoms}
 The `ibmcloud cr login` command fails.
@@ -70,7 +70,7 @@ You can fix this problem in the following ways:
 ## Running any command for {{site.data.keyword.registrylong_notm}} fails with `FAILED You are not logged in to IBM Cloud.`
 {: #ts_login_cloud}
 
-You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.cloud_notm}}.
+You can't run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.cloud_notm}}.
 
 {: tsSymptoms}
 All `ibmcloud cr` commands fail.
@@ -84,7 +84,7 @@ Upgrade to the most recent version of the `container-registry` CLI plug-in, see 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
 
-You cannot run a `ibmcloud cr` command because `cr` is not a registered `ibmcloud` command.
+You can't run a `ibmcloud cr` command because `cr` is not a registered `ibmcloud` command.
 
 {: tsSymptoms}
 You see an error message similar to one of the following error messages:
@@ -93,13 +93,13 @@ You see an error message similar to one of the following error messages:
 ibmcloud cr login
 'cr' is not a registered command. See 'ibmcloud help'.
 ```
-{: pre}
+{: screen}
 
 ```
 ibmcloud cr namespace
 'cr' is not a registered command. See 'ibmcloud help'.
 ```
-{: pre}
+{: screen}
 
 {: tsCauses}
 The `container-registry` CLI plug-in is not installed.
@@ -384,7 +384,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 ### Root keys
 {: #trustedcontent_lostrootkey}
 
-If your root key is lost or compromised, you cannot update any trusted content repositories that used that root key.
+If your root key is lost or compromised, you can't update any trusted content repositories that used that root key.
 {:shortdesc}
 
 You can [delete the namespaces](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
@@ -516,7 +516,7 @@ Complete the following steps to change the webhook configuration to make it fail
 {: #ts_manifest_error_type}
 
 {: tsSymptoms}
-You tried to tag your image, but you receive the following error message, `The manifest type for this image is not supported for tagging.`.
+You tried to tag your image, but you receive the following error message: `The manifest type for this image is not supported for tagging.`
 
 {: tsCauses}
 The manifest type is not supported.
