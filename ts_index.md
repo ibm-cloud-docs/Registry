@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-08-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -302,6 +302,21 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 
 {: tsResolve}
 If you want to remove a tag from an image, but leave the underlying image and any other tags, use the [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) and [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
+
+## An image does not show in the list produced by the `ibmcloud cr retention-run` command
+{: #ts_image_list}
+
+{: tsSymptoms}
+You ran the [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command and an image that you're expecting to see in the list is not displayed.
+
+{: tsCauses}
+You might have a distroless image. Some distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
+
+{: tsResolve}
+You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private IBM Cloud repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
+
+To check the creation date of an image, you can run the [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command. If the image doesn't have a creation date, the date is shown in the `ibmcloud cr image-inspect` output as `1970-01-01` and the image is excluded from the results for `ibmcloud cr retention-run`.
+{: tip}
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
