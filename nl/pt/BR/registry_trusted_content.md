@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -38,9 +38,9 @@ Um repositório pode conter tanto conteúdo assinado quanto não assinado. Quand
 As imagens têm assinaturas separadas para nomes de domínio antigos (`registry.bluemix.net`) e novos (`icr.io`). As assinaturas existentes funcionam quando a imagem é extraída do nome de domínio antigo. Se você desejar puxar o conteúdo assinado por meio do novo nome de domínio, deverá assinar novamente a imagem no novo nome de domínio, `icr.io`; consulte [Assinando novamente uma imagem para o novo nome de domínio](#trustedcontent_resign).
 {: note}
 
-O Docker Content Trust usa um modelo de segurança "confiança no primeiro uso". A chave do repositório é puxada do servidor de confiança ao puxar uma imagem assinada de um repositório pela primeira vez e essa chave é usada para verificar imagens desse repositório no futuro. Deve-se verificar se você confia no servidor de confiança ou na imagem e em seu publicador antes de puxar o repositório pela primeira vez. Se as informações de confiança no servidor estiverem comprometidas e você não tiver puxado uma imagem do repositório antes, seu cliente Docker poderá puxar as informações comprometidas do servidor de confiança. Se os dados de confiança estiverem comprometidos depois que você puxar a imagem pela primeira vez, nos pulls subsequentes, o cliente Docker não verificará os dados comprometidos e não puxará a imagem. Para obter mais informações sobre como inspecionar dados de confiança para uma imagem, consulte [Visualizando imagens assinadas](#trustedcontent_viewsigned).
+O Docker Content Trust usa um modelo de segurança trust on first (TOFU). A chave do repositório é puxada do servidor de confiança ao puxar uma imagem assinada de um repositório pela primeira vez e essa chave é usada para verificar imagens desse repositório no futuro. Deve-se verificar se você confia no servidor de confiança ou na imagem e em seu publicador antes de puxar o repositório pela primeira vez. Se as informações de confiança no servidor estiverem comprometidas e você não tiver puxado uma imagem do repositório antes, seu cliente Docker poderá puxar as informações comprometidas do servidor de confiança. Se os dados de confiança estiverem comprometidos depois que você puxar a imagem pela primeira vez, nos pulls subsequentes, o cliente Docker não verificará os dados comprometidos e não puxará a imagem. Para obter mais informações sobre como inspecionar dados de confiança para uma imagem, consulte [Visualizando imagens assinadas](#trustedcontent_viewsigned).
 
-Para obter mais informações sobre o modelo de segurança "confiar no primeiro uso", consulte [A Estrutura de atualização ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://theupdateframework.github.io/).
+Para obter mais informações sobre o modelo de segurança TOFU, consulte [A estrutura de atualização ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://theupdateframework.github.io/).
 
 ## Configurando seu ambiente de conteúdo confiável
 {: #trustedcontent_setup}
@@ -71,7 +71,7 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
    ```
    {: pre}
 
-   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
+   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Se você tiver um ID federado, o login falhará sem o `--sso` e será bem-sucedido com a opção `--sso`.
    {: tip}
 
 3. Tenha como destino a região que você deseja usar. Se você não souber o nome da região, execute o comando sem a região e escolha uma.
@@ -90,7 +90,7 @@ Por padrão, o Docker Content Trust fica desativado. Ative o ambiente do Content
 
    A saída instrui você a exportar a variável de ambiente do Docker Content Trust.
 
-   **Exemplo**
+   Por exemplo:
 
    ```
    user:~ user$ ibmcloud cr login
@@ -133,7 +133,10 @@ Antes de iniciar, [configure o namespace de registro](/docs/services/Registry?to
    ```
    {: screen}
 
-3. **Enviando um repositório assinado por push pela primeira vez.** Quando você envia uma imagem assinada por push para um novo repositório, o comando cria duas chaves de assinatura, chave raiz e chave do repositório, e armazena-as na máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) são limitadas.
+3. Na primeira vez em que você enviar por push uma imagem assinada para um novo repositório, o comando criará duas chaves de assinatura, a chave raiz e a chave do repositório, e as armazenará em sua máquina local. Insira e salve passphrases seguras para cada chave e, em seguida, [faça backup das chaves](#trustedcontent_backupkeys). Fazer backup das chaves é crítico porque as [opções de recuperação](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) são limitadas.
+
+   Essa ação é necessária somente na primeira vez em que você enviar por push um repositório assinado.
+   {: tip}
 
 ## Puxando uma imagem assinada
 {: #trustedcontent_pull}
@@ -270,7 +273,7 @@ Para fazer backup das chaves, consulte [Documentação do Docker Content Trust !
 Para permitir que outros usuários assinem imagens em um repositório, inclua as chaves de assinatura para esses usuários nesse repositório.
 {:shortdesc}
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - Os assinantes de imagem devem ter permissão para enviar imagens por push para o namespace.
 - Os proprietários do repositório e os assinantes adicionais devem ter o Docker 18.03 ou mais recente instalado.

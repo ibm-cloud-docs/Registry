@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -41,19 +41,16 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
 ## Configura uno spazio dei nomi
 {: #gs_registry_namespace_add}
 
-1. Accedi a {{site.data.keyword.cloud_notm}}.
+1. Accedi a {{site.data.keyword.cloud_notm}}:
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Se hai un ID federato, accedi utilizzando il seguente comando:
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
+l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Se hai un ID federato, l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+   {: tip}
 
 2. Aggiungi uno spazio dei nomi per creare il tuo proprio repository di immagini. Sostituisci `<my_namespace>` con il tuo spazio dei nomi preferito.
 
@@ -139,7 +136,7 @@ Non inserire informazioni personali nelle immagini del contenitore, nei nomi deg
    ```
    {: pre}
 
-Ottimo lavoro! Hai configurato uno spazio dei nomi in {{site.data.keyword.registrylong_notm}} e hai eseguito il push della tua prima immagine allo
+Hai configurato uno spazio dei nomi in {{site.data.keyword.registrylong_notm}} e hai eseguito il push della tua prima immagine allo
 spazio dei nomi.
 
 ## Passi successivi

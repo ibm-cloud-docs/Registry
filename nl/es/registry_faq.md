@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ subcollection: registry
 Preguntas frecuentes sobre {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## ¿Cómo listo imágenes públicas?
+## ¿Cómo puedo listar imágenes públicas?
 {: #faq_list_public_images}
 {: faq}
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## ¿Puedo utilizar herramientas que no sean docker para crear mis imágenes y enviarlas por push al registro?
+## ¿Se pueden utilizar herramientas que no sean docker para crear mis imágenes y enviarlas por push al registro?
 {: #faq_tools}
 {: faq}
 
-Sí, siempre que la herramienta admita el formato y el protocolo de la imagen OCI.
+Sí, si la herramienta admite el formato y el protocolo de imagen OCI.
 
-## ¿Cómo puedo utilizar el control de acceso con IAM?
+## ¿Cómo puedo utilizar el control de acceso con {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
 
@@ -76,7 +76,7 @@ consulte https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-Este mensaje se recibe porque las imágenes se exploran de forma asíncrona a las solicitudes de resultados, y el proceso de exploración tarda un tiempo en completarse. En circunstancias normales, la exploración se completa unos minutos después de añadir la imagen en el registro, en función de variables como el tamaño de la imagen y la cantidad de tráfico que está recibiendo el registro.
+Este mensaje se recibe porque las imágenes se exploran de forma asíncrona a las solicitudes de resultados, y el proceso de exploración tarda un tiempo en completarse. Durante el funcionamiento normal, la exploración se completa unos minutos después de añadir la imagen en el registro. El tiempo que tarda en completarse depende de variables como el tamaño de la imagen y la cantidad de tráfico que está recibiendo el registro.
 
 Si recibe este mensaje como parte de un conducto de compilación y el error se produce regularmente, intente añadir alguna lógica de reintento que incluya una breve pausa.
 
@@ -89,8 +89,8 @@ Si sigue experimentando un rendimiento inaceptable, póngase en contacto con sop
 La exploración de una imagen se desencadena de una de las siguientes formas:
 
 - Si se envía por push una nueva imagen al registro.
-- Si la imagen no se ha explorado durante 7 días, se pone en cola para reexplorar, lo que puede tardar algún tiempo en completarse.
-- Si se publica un aviso de seguridad para un paquete instalado en la imagen, se pone en cola para reexplorar, lo que puede tardar algún tiempo en completarse. Las reexploraciones que se desencadenan al publicarse nuevos avisos de seguridad solo están disponibles en imágenes de Ubuntu y Debian.
+- Si la última exploración es de hace más de 7 días, la imagen se pone en cola para reexplorar, lo que puede tardar algún tiempo en completarse.
+- Si se publica un aviso de seguridad para un paquete que está instalado en la imagen, la imagen se pone en cola para reexplorar, lo que puede tardar algún tiempo en completarse. Las reexploraciones que se desencadenan al publicarse nuevos avisos de seguridad solo están disponibles en imágenes de Ubuntu y Debian.
 
 ## ¿Con qué frecuencia se actualizan los avisos de seguridad?
 {: #faq_va_update_security_notice}

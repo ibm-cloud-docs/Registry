@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ Un référentiel peut comporter du contenu signé et du contenu non signé. Si D
 Les images ont des signatures distinctes pour les anciens (`registry.bluemix.net`) et les nouveaux (`icr.io`) noms de domaine. Les signatures existantes fonctionnent lorsque l'image est extraite de l'ancien nom de domaine. Si vous voulez extraire du contenu signé d'un nouveau nom de domaine, vous devez re-signer l'image sur le nouveau nom de domaine, `icr.io` (voir [Re-signature d'une image pour un nouveau nom de domaine](#trustedcontent_resign)).
 {: note}
 
-Docker Content Trust utilise un modèle de sécurité de type "approuver à la première utilisation". La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
+Docker Content Trust utilise un modèle de sécurité de type TOFU (Trust On First Use = approuver à la première utilisation). La clé de référentiel est extraite du serveur d'accréditation lorsque vous extrayez une image signée d'un référentiel pour la première fois, et cette clé est utilisée pour vérifier ultérieurement les images provenant de ce référentiel. Vous devez vous assurer de la fiabilité du serveur d'accréditation ou de l'image et de son diffuseur avant d'extraire le référentiel pour la première fois. Si les informations de confiance sur le serveur sont compromises et que vous n'avez pas extrait une image du référentiel auparavant, votre client Docker risque d'extraire des informations compromises du serveur d'accréditation. Si les données de confiance sont compromises après que vous avez extrait l'image pour la première fois, lors des extractions suivantes, votre client Docker ne parvient pas à vérifier les données compromises et n'extrait pas l'image. Pour plus d'informations sur le mode d'inspection des données de confiance d'une image, voir [Affichage d'images signées](#trustedcontent_viewsigned).
 
-Pour plus d'informations sur le modèle de sécurité "approuver à la première utilisation", voir [The Update Framework ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://theupdateframework.github.io/).
+Pour en savoir plus sur le modèle de sécurité TOFU, voir [The Update Framework ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://theupdateframework.github.io/).
 
 ## Configuration de votre environnement de contenu sécurisé
 {: #trustedcontent_setup}
@@ -70,8 +70,7 @@ Par défaut, Docker Content Trust est désactivé. Activez l'environnement Conte
    ```
    {: pre}
 
-   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
-et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
+   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si vous disposez d'un ID fédéré, la connexion échoue sans l'option `--sso` et réussit avec l'option `--sso`.
    {: tip}
 
 3. Ciblez la région à utiliser. Si vous ne connaissez pas le nom de la région, vous pouvez exécuter la commande sans la région puis en sélectionner une.
@@ -90,7 +89,7 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 
    La sortie vous explique comment exporter la variable d'environnement Docker Content Trust.
 
-   **Exemple**
+   Par exemple :
 
    ```
    user:~ user$ ibmcloud cr login
@@ -132,7 +131,10 @@ Avant de commencer, [configurez votre espace de nom de registre](/docs/services/
    ```
    {: screen}
 
-3. **Commencez par envoyer par commande push un référentiel signé.** Lorsque vous envoyez une image signée à un nouveau référentiel, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegarder des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sont limitées.
+3. Lorsque vous envoyez une image signée à un nouveau référentiel pour la première fois, la commande crée deux clés de signature, la clé racine (root) et la clé de référentiel, et stocke ces clés sur votre machine locale. Entrez et sauvegardez des phrases passe pour chaque clé, puis [sauvegardez vos clés](#trustedcontent_backupkeys). La sauvegarde de vos clés est essentielle car vos [options de récupération](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sont limitées.
+
+   Cette action est uniquement requise la première fois que vous envoyez un référentiel signé.
+   {: tip}
 
 ## Extraction d'une image signée
 {: #trustedcontent_pull}
@@ -268,7 +270,7 @@ Vous pouvez ajouter et retirer des signataires pour la signature des images d'un
 Pour autoriser d'autres utilisateurs à signer des images d'un référentiel, ajoutez les clés de signature de ces utilisateurs à ce référentiel.
 {:shortdesc}
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - Les signataires d'image doivent disposer du droit d'envoi par commande push d'images à l'espace de nom.
 - Les propriétaires de référentiel et autres signataires doivent disposer de Docker version 18.03 ou ultérieure.

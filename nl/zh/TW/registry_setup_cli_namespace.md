@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -92,7 +92,7 @@ subcollection: registry
 {{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中儲存及共用 Docker 映像檔。
 {:shortdesc}
 
-例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.cloud_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
+例如，您可以設定多個名稱空間，讓正式作業及暫置環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.cloud_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
 
 您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
 
@@ -119,7 +119,7 @@ subcollection: registry
 您必須建立名稱空間，才能在 {{site.data.keyword.registrylong_notm}} 中儲存您的 Docker 映像檔。
 {:shortdesc}
 
-**開始之前**
+開始之前，請完成下列作業：
 
 - [安裝 {{site.data.keyword.cloud_notm}} CLI 及 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [計劃如何使用及命名您的登錄名稱空間](#registry_setup_cli_namespace_plan)。

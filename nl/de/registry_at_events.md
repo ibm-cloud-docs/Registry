@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -22,14 +22,14 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse
+# Aktivität Tracker-Ereignisse
 {: #at_events}
 
-Verwenden Sie den {{site.data.keyword.cloudaccesstrailfull}}-Service, um zu verfolgen, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.cloud}} interagieren.
+Verfolgen Sie, wie Benutzer und Anwendungen mit dem {{site.data.keyword.registrylong}}-Service in {{site.data.keyword.cloud}} interagieren.
 {:shortdesc}
 
-Der {{site.data.keyword.cloudaccesstrailfull_notm}} zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.cloud_notm}} ändern.
-Weitere Informationen finden Sie unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+Der {{site.data.keyword.at_full_notm}}-Service bzw. der {{site.data.keyword.cloudaccesstrailfull_notm}}-Service für ausschließlich bestehende Benutzer zeichnet die vom Benutzer gestarteten Aktivitäten auf, die den Status eines Service in {{site.data.keyword.cloud_notm}} ändern.
+Weitere Informationen finden Sie unter [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) oder unter [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started) für bestehende Benutzer.
 
 In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis auslösen, wenn sie aufgerufen werden:
 
@@ -50,6 +50,10 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
   <tr>
     <td>`container-registry.image.build`</td>
 	  <td>Erstellt ein Docker-Image in {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.bulkdelete`</td>
+	  <td>Löscht mehrere Images aus {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.image.delete`</td>
@@ -76,7 +80,7 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
   </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
-	  <td>Fügt einen neuen Tag hinzu, der sich auf ein bereits bestehendes {{site.data.keyword.registrylong_notm}}-Image bezieht.</td>
+	  <td>Fügt einen Tag hinzu, der sich auf ein bereits bestehendes {{site.data.keyword.registrylong_notm}}-Image bezieht.</td>
   </tr>
    <tr>
     <td>`container-registry.image.untag`</td>
@@ -117,6 +121,9 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
   <tr>
     <td>`container-registry.registrytokens.delete`</td>
 	  <td>Löscht mehrere Registry-Tokens.</td>
+  </tr><tr>
+    <td>`container-registry.retentionanalysis`</td>
+	  <td>Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen. Bewahren Sie Images für jedes Repository innerhalb eines Namensbereichs in {{site.data.keyword.registrylong_notm}} durch Anwenden angegebener Kriterien auf. Alle anderen Images im Namensbereich werden gelöscht. </br> Die Anforderung, die Liste der zu löschenden Images abzurufen, ist eine Aktion des Typs `post` für ein Ereignis des Typs `retentionanalysis`. Beim Löschen handelt es sich um eine einzelne Aktion des Typs `bulkdelete` für ein Ereignis des Typs `images` sowie eine Aktion des Typs `delete` für jedes einzelne Image.</td>
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>
@@ -131,6 +138,33 @@ In der folgenden Tabelle werden die API-Methoden aufgelistet, die ein Ereignis a
 ## Speicherposition der Ereignisse
 {: #ui}
 
-Die {{site.data.keyword.cloudaccesstrailshort}}-Ereignisse sind in der {{site.data.keyword.cloudaccesstrailshort}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.cloud_notm}}-Region befindet, in der die Ereignisse generiert wurden; eine Ausnahme bildet `ap-north`. Ereignisse für `ap-north` werden in `ap-south` angezeigt.
+### {{site.data.keyword.at_full_notm}}-Ereignisse
+{: #ui_atlogdna}
 
-Die [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), in der ein {{site.data.keyword.registrylong_notm}}- oder Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource (z. B. das Image oder der Namensbereich) verfügbar ist.
+Die {{site.data.keyword.at_full_notm}}-Ereignisse sind in der {{site.data.keyword.at_full_notm}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.cloud_notm}}-Region befindet, in der die Ereignisse generiert wurden; eine Ausnahme bildet `ap-south`. Ereignisse für `ap-south` werden in `Tokio (jp-tok)` angezeigt.
+
+Die [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), in der ein {{site.data.keyword.registrylong_notm}}- oder Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource verfügbar ist. Images und Namensbereiche sind Beispiele für Ressourcen.
+
+| Region für die Registry Ihres Kontos | Domänenname Ihrer Registry | Position von {{site.data.keyword.at_full_notm}}-Ereignissen |
+|:-----------------|:-----------------|:-----------------|
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `ap-south` | `au.icr.io` | `Tokio (jp-tok)` |
+| `ap-north` | `jp.icr.io` | `Tokio (jp-tok)` |
+{: caption="Tabelle 2. Position von {{site.data.keyword.at_full_notm}}-Ereignissen" caption-side="top"}
+
+| Registry | Globale Registry | Position von {{site.data.keyword.at_full_notm}}-Ereignissen |
+|:-----------------|:-----------------|:-----------------|
+| Global | `icr.io` | `Dallas (us-south)` |
+{: caption="Tabelle 3. Position der {{site.data.keyword.at_full_notm}}-Ereignisse der globalen Registry" caption-side="top"}
+
+### {{site.data.keyword.cloudaccesstraillong_notm}}-Ereignisse
+{: #ui_at}
+
+Die {{site.data.keyword.cloudaccesstraillong_notm}}-Ereignisse für ausschließlich bestehende Benutzer sind in der {{site.data.keyword.cloudaccesstraillong_notm}}-**Kontodomäne** verfügbar, die sich in der {{site.data.keyword.cloud_notm}}-Region befindet, in der die Ereignisse generiert wurden; eine Ausnahme bildet `ap-north`. Ereignisse für `ap-north` werden in `ap-south` angezeigt.
+
+{{site.data.keyword.cloudaccesstrailfull_notm}} wird nicht weiter verwendet. Ab dem 9. Mai 2019 können Sie keine neuen {{site.data.keyword.cloudaccesstrailshort}}-Instanzen bereitstellen. Bestehende Premiumplaninstanzen werden bis zum 30. September 2019 unterstützt. Wenn Sie die Überwachung der Aktivität Ihres {{site.data.keyword.cloud_notm}}-Kontos fortsetzen möchten, müssen Sie eine Instanz von [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started) bereitstellen.
+{: deprecated}
+
+Die [Region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), in der ein {{site.data.keyword.registrylong_notm}}- oder Vulnerability Advisor-Ereignis verfügbar ist, entspricht der Region von {{site.data.keyword.registrylong_notm}}, in der die Ressource verfügbar ist. Images und Namensbereiche sind Beispiele für Ressourcen.

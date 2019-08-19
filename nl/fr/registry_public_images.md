@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, public IBM images, images, accessing images,
 
@@ -34,7 +34,7 @@ Vous pouvez accéder aux images qui sont fournies par {{site.data.keyword.IBM}} 
 Vous pouvez accéder aux images {{site.data.keyword.IBM_notm}} publiques à l'aide de la ligne de commande.
 {:shortdesc}
 
-**Avant de commencer**
+Avant de commencer, exécutez la tâche suivante :
 
 - Connectez-vous à [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login) :
 

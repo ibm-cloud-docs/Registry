@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -41,7 +41,7 @@ subcollection: registry
 - 如果您在使用 {{site.data.keyword.registrylong_notm}} 開發或部署應用程式時有技術方面的問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry)，並使用 `ibm-cloud` 和 `container-registry` 來標記問題。
 - 若為服務及開始使用指示的相關問題，請使用 [IBM Developer Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/container-registry.html) 討論區。請包含 `ibm-cloud` 及 `container-registry` 標籤。
 
-如需有關使用討論區的詳細資料，請參閱[使用支援中心](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)。
+如需使用討論區的詳細資料，請參閱[使用支援中心](/docs/get-support?topic=get-support-getting-customer-support#using-avatar)。
 
 如需開立 {{site.data.keyword.IBM_notm}} 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[如何取得所需的支援？](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)
 
@@ -54,6 +54,7 @@ subcollection: registry
 `ibmcloud cr login` 指令失敗。
 
 {: tsCauses}
+下列選項是可能的原因：
 
 - `container-registry` CLI 外掛程式已過期，需要更新。
 - Docker 未安裝在您的本端電腦上，或是不在執行中。
@@ -75,13 +76,10 @@ subcollection: registry
 所有 `ibmcloud cr` 指令都失敗。
 
 {: tsCauses}
-
-- `container-registry` CLI 外掛程式已過期，需要更新。
+`container-registry` CLI 外掛程式已過期，需要更新。
 
 {: tsResolve}
-您可以使用下列方式修正此問題：
-
-- 升級至最新版的 `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
+升級至最新版的 `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
 ## {{site.data.keyword.registrylong_notm}} 指令失敗，並傳回 `'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -104,13 +102,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- 未安裝 `container-registry` CLI 外掛程式。
+未安裝 `container-registry` CLI 外掛程式。
 
 {: tsResolve}
-您可以使用下列方式修正此問題：
-
-- 安裝 `container-registry` CLI 外掛程式，請參閱[安裝 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
+安裝 `container-registry` CLI 外掛程式，請參閱[安裝 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 
 ## `ibmcloud cr build` 指令失敗
 {: #ts_build_fails}
@@ -139,6 +134,7 @@ docker build --no-cache .
 當您執行 `ibmcloud cr namespace-add` 時，無法將所輸入的值設定為名稱空間。
 
 {: tsCauses}
+下列選項是可能的原因：
 
 - 您輸入的名稱空間值已由另一個 {{site.data.keyword.cloud_notm}} 組織使用中。
 - 最近已刪除名稱空間，而您要重複使用其名稱。如果已刪除的名稱空間包含許多資源，則 {{site.data.keyword.registrylong_notm}} 可能尚未完全處理這項刪除作業。
@@ -183,6 +179,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
+下列選項是可能的原因：
 
 - 未安裝 Docker。
 - Docker 用戶端未登入 {{site.data.keyword.registrylong_notm}}。
@@ -216,16 +213,16 @@ denied: requested access to the resource is denied
 當您嘗試匯入您在其他 IBM 產品（例如 {{site.data.keyword.cloud_notm}} Private）中所使用的內容時，您無法將來自 [IBM Passport Advantage ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/index.html) 的映像檔及其他授權軟體儲存在登錄中。
 
 {: tsCauses}
-軟體套件（例如來自 IBM Passport Advantage 的映像檔及 Helm 圖表）必須使用 `ibmcloud cr ppa-archive-load` 指令匯入至登錄中。
+軟體套件（例如來自 IBM Passport Advantage 的映像檔及 Helm Chart）必須使用 `ibmcloud cr ppa-archive-load` 指令匯入至登錄中。
 
 {: tsResolve}
-**開始之前**
+在開始從 IBM Passport Advantage 匯入產品之前，請完成下列作業：
 
-- 執行 `ibmcloud login [--sso]`，以登入 {{site.data.keyword.cloud_notm}}。
-- 執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}}。
-- [將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
-- 如果您尚未在叢集中設定 Helm，請[立即在叢集中設定 Helm](/docs/containers?topic=containers-helm#helm)。
-- 如果您要在組織內共用圖表，可以安裝 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。如需指示，請參閱此 [developerWorks 秘訣 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
+1. 執行 `ibmcloud login [--sso]`，以登入 {{site.data.keyword.cloud_notm}}。
+2. 執行 `ibmcloud cr login`，以登入 {{site.data.keyword.registrylong_notm}}。
+3. [將 `kubectl` CLI 的目標](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)設為叢集。
+4. 如果您尚未在叢集中設定 Helm，請[立即在叢集中設定 Helm](/docs/containers?topic=containers-helm#helm)。
+5. 如果您要在組織內共用圖表，可以安裝 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。如需指示，請參閱此 [developerWorks 秘訣 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
 ### 匯入 IBM Passport Advantage 產品，以用於 {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
@@ -248,28 +245,32 @@ denied: requested access to the resource is denied
 
    這個指令會展開壓縮檔、將任何包含的映像檔載入至本端 Docker 用戶端，然後將映像檔推送至登錄中的名稱空間。
 
-   如果您要將 Helm 圖表從 IBM Passport Advantage 保存檔上傳至 Chart Museum，請在指令中包括下列選項：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
+   如果您要將 Helm Chart 從 IBM Passport Advantage 保存檔上傳至 Chart Museum，請在指令中包括下列選項：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
-   **輸出範例**
+   下列訊息是指令輸出的範例：
 
    ```
-    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
-    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+   user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
+   Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
-    Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
+   Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
    The push refers to repository [us.icr.io/mynamespace/iib-prod]
    1ecda25d51a8: Preparing
    369bf331939e: Preparing
    ...
    369bf331939e: Pushed
-    1ecda25d51a8: Pushed
-    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.OK
-    ```
+   1ecda25d51a8: Pushed
+   10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+
+   Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
+
+   OK
+   ```
    {: screen}
 
-4. 如果壓縮檔包含 Helm 圖表，這些圖表會放在您現行工作目錄中建立的保存目錄，稱為 `ppa-import`。開啟目錄以取得 Helm 圖表 `<helm_chart>` 的名稱，然後檢查其值。
+4. 如果壓縮檔包含 Helm Chart，這些圖表會放在您現行工作目錄中建立的保存目錄，稱為 `ppa-import`。開啟目錄以取得 Helm Chart `<helm_chart>` 的名稱，然後檢查其值。
 
    ```
    helm inspect values ppa-import/charts/<helm_chart>.tgz
@@ -279,9 +280,9 @@ denied: requested access to the resource is denied
    如果您已在前一個步驟中將圖表上傳至 Chart Museum，則可以使用 `helm inspect` 在 Chart Museum 中檢查圖表。
     {: tip}
 
-5. 根據 `helm inspect values` 指令輸出的值，配置 Helm 圖表 `<helm_chart>`。
+5. 根據 `helm inspect values` 指令輸出的值，配置 Helm Chart `<helm_chart>`。
 
-6. 使用 `helm install` 指令來部署 Helm 圖表 `<helm_chart>`。您可以使用 `--set` 選項，視需要置換圖表中的值。
+6. 使用 `helm install` 指令來部署 Helm Chart `<helm_chart>`。您可以使用 `--set` 選項，視需要置換圖表中的值。
 
    ```
    helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
@@ -310,7 +311,6 @@ denied: requested access to the resource is denied
 您的自訂防火牆需要針對入埠及出埠網路資料流量開啟特定的網路群組，才能容許與登錄之間的通訊。
 
 {: tsResolve}
-
 讓您的叢集存取基礎架構資源及服務不受防火牆保護，請參閱[容許叢集存取基礎架構資源及其他服務](/docs/containers?topic=containers-firewall#firewall_outbound)。
 
 針對電腦的「入埠」連線功能，容許從來源網路群組到您電腦之目的地公用 IP 位址的送入網路資料流量。
@@ -401,7 +401,6 @@ denied: requested access to the resource is denied
     {:tip}
 
 3. 如果您在 {{site.data.keyword.containershort_notm}} 叢集中使用 [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/services/Registry?topic=registry-security_enforce#security_enforce)，請重新啟動每一個映像檔強制執行 Pod。若要觸發 Kubernetes 以自動執行 Pod 的漸進式重新啟動，您可以變更 Pod 上的部分 meta 資料。例如，[將您的 Kubernetes CLI 目標設為叢集](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)，並修改部署。
-    
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system

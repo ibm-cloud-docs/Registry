@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ Puede extraer (descargar) una imagen desde cualquier origen de registro privado 
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Extraiga una imagen desde un registro privado o público a su sistema."/>
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -49,10 +49,10 @@ Puede extraer (descargar) una imagen desde cualquier origen de registro privado 
 
   Si cambia sus permisos para ejecutar mandatos Docker sin privilegios root, debe ejecutar de nuevo el mandato `ibmcloud login`.
 
-Para descargar la imagen, consulte [Extraiga una imagen](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) en la documentación de iniciación.
+1. Para descargar la imagen, consulte [Extraiga una imagen](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) en la documentación de iniciación.
 
-Si obtiene el mensaje `No autorizado: se necesita autorización` o el mensaje `denegado: se ha denegado el acceso al recurso`, ejecute el mandato `ibmcloud cr login`.
-{:tip}
+   Si obtiene el mensaje `No autorizado: se necesita autorización` o el mensaje `denegado: se ha denegado el acceso al recurso`, ejecute el mandato `ibmcloud cr login`.
+   {:tip}
 
 Después de extraer una imagen y de etiquetarla para su espacio de nombres, puede subir (enviar por push) la imagen del sistema local al espacio de nombres.
 
@@ -64,7 +64,7 @@ Puede enviar por push (cargar) una imagen a su espacio de nombres en {{site.data
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Enviar una imagen por push desde el sistema a {{site.data.keyword.registrylong_notm}}."/>
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -105,7 +105,7 @@ Puede extraer una imagen de un registro en una región y enviarla por push a un 
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copiar una imagen de un registro privado o público en su registro privado de {{site.data.keyword.cloud_notm}}."/>
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -132,7 +132,7 @@ En la región en la que tiene la sesión iniciada, cree una imagen nueva en {{si
 Las imágenes nuevas que se crean mediante este mecanismo no retienen firmas. Si necesita que la imagen nueva esté firmada, no utilice este mecanismo.
 {: tip}
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - Asegúrese de que tiene acceso a un espacio de nombres privado en {{site.data.keyword.registrylong_notm}} que contiene una imagen de origen a la que desea hacer referencia desde otra imagen.
@@ -168,7 +168,7 @@ Para crear una imagen nueva desde una imagen de origen, siga estos pasos:
 Puede crear una imagen de Docker directamente en {{site.data.keyword.cloud_notm}} o crear su propia imagen de Docker en su sistema local y subirla (enviar por push) a su espacio de nombres en {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - [Instale la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabajar con imágenes en el espacio de nombres.
 - [Configure su propio espacio de nombres en {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -198,8 +198,7 @@ Para crear su propia imagen de Docker, siga estos pasos:
        ```
        {: pre}
 
-       **Ejemplo**
-    Para crear un Dockerfile que se basa en la imagen pública de {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilice el siguiente código:
+       Por ejemplo, para crear un Dockerfile que se basa en la imagen pública de {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilice el siguiente código:
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -260,6 +259,8 @@ Puede utilizar Vulnerability Advisor para comprobar la seguridad de su imagen; c
 
 Cree un ID de servicio que utilice una clave de API para enviar imágenes a {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
+
+Realice los pasos siguientes:
 
 1. Cree un ID de servicio; consulte [Cómo crear y trabajar con ID de servicio](/docs/iam?topic=iam-serviceids#serviceids).
 2. Cree una política que otorgue al ID de servicio permiso para acceder al registro, por ejemplo los roles de `Administrador` y de `Gestor`; consulte [Gestión de acceso de usuario con Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
@@ -392,9 +393,8 @@ Puede suprimir los repositorios privados que ya no son necesarios y las imágene
 Cuando se suprime un repositorio, se suprimen todas las imágenes de dicho repositorio. Esta acción no se puede deshacer.
 {: important}
 
-**Antes de empezar**
-
-Debe hacer una copia de seguridad de las imágenes que desee conservar.
+Antes de empezar, debe hacer una copia de seguridad de las imágenes que desee conservar.
+{: tip}
 
 Complete los siguientes pasos para suprimir un repositorio privado utilizando la interfaz gráfica de usuario (GUI):
 

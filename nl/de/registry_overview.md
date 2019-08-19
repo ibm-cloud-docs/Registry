@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -75,9 +75,9 @@ Jedes Image ist aus einer Anzahl von Ebenen aufgebaut, von der jede eine inkreme
 
 Beispiel für Push-Operationen an Images:
 
-> Sie führen eine Push-Operation für ein Image in Ihren Namensbereich durch, das auf dem Ubuntu-Image basiert. Das Ubuntu-Image enthält mehrere Ebenen. Da Sie diese Ebenen noch nicht in Ihrem Konto haben, wird der Speicher, den diese Ebenen erfordern, auf Ihre monatliche Nutzung angerechnet.
->
-> Zu einem späteren Zeitpunkt erstellen Sie ein zweites Image, das auf dem Ubuntu-Image basiert. Sie nehmen Änderungen am Ubuntu-Basisimage vor, beispielsweise durch Hinzufügen zusätzlicher Befehle oder Dateien zu Ihrer Dockerfile. Jede Änderung stellt eine neue Image-Ebene dar. Wenn Sie das zweite Image mit Push-Operation übertragen, erkennt {{site.data.keyword.registrylong_notm}}, dass alle Ebenen des Basis-Ubuntu-Image bereits in Ihrem Konto gespeichert wurden. Das Speichern dieser Ebenen wird Ihnen kein zweites Mal in Rechnung gestellt, selbst wenn Sie Ihr Image mit Push-Operation in einen anderen Namensbereich übertragen haben. {{site.data.keyword.registrylong_notm}} bestimmt die Größe aller neuer Ebenen und rechnet den Speicher auf Ihre monatliche Nutzung an.
+Sie führen eine Push-Operation für ein Image in Ihren Namensbereich durch, das auf dem Ubuntu-Image basiert. Das Ubuntu-Image enthält mehrere Ebenen. Da Sie diese Ebenen noch nicht in Ihrem Konto haben, wird der Speicher, den diese Ebenen erfordern, auf Ihre monatliche Nutzung angerechnet.
+
+Zu einem späteren Zeitpunkt erstellen Sie ein zweites Image, das auf dem Ubuntu-Image basiert. Sie nehmen Änderungen am Ubuntu-Basisimage vor, beispielsweise durch Hinzufügen zusätzlicher Befehle oder Dateien zu Ihrer Dockerfile. Jede Änderung stellt eine neue Image-Ebene dar. Wenn Sie das zweite Image mit Push-Operation übertragen, erkennt {{site.data.keyword.registrylong_notm}}, dass alle Ebenen des Basis-Ubuntu-Image bereits in Ihrem Konto gespeichert wurden. Das Speichern dieser Ebenen wird Ihnen kein zweites Mal in Rechnung gestellt, selbst wenn Sie Ihr Image mit Push-Operation in einen anderen Namensbereich übertragen haben. {{site.data.keyword.registrylong_notm}} bestimmt die Größe aller neuer Ebenen und rechnet den Speicher auf Ihre monatliche Nutzung an.
 
 ### Abrechnung für Speicher und Pull-Datenverkehr
 {: #registry_billing_traffic}
@@ -85,27 +85,31 @@ Beispiel für Push-Operationen an Images:
 In Abhängigkeit von dem Serviceplan, den Sie auswählen, wird Ihnen der monatlich genutzte Speicher und Pull-Datenverkehr in den einzelnen Regionen in Rechnung gestellt.
 {:shortdesc}
 
-**Speicher: **
+#### Speicher
+{: #registry_billing_traffic_storage}
 
   Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Speicherkontingent, das Sie nutzen können, um Ihre Docker-Images in den Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos zu speichern. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro GB-Monat abgerechnet. Die ersten 0,5 GB-Monate sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images kostenfrei in {{site.data.keyword.registrylong_notm}} speichern, bis das Kontingent für den kostenfreien Plan erreicht ist. Ein GB-Monat ist der Durchschnittswert von 1 GB Speicher für einen Monat (730 Stunden).
+  {:shortdesc}
 
   Beispiel für den Standardplan:
 
-  > Sie nutzen 5 GB für genau die Hälfte des Monats, dann übertragen Sie einige Images mit Push-Operation an Ihren Namensbereich und nutzen 10 GB für den Rest des Monats. Ihre monatliche Nutzung wird wie folgt berechnet:
-  >
-  > (5 GB x 0,5 (Monate)) + (10 GB x 0,5 (Monate)) = 2,5 + 5 = 7,5 GB-Monate
-  >
-  > Im Standardplan sind die ersten 0,5 GB-Monate kostenfrei, d. h., es werden 7 GB-Monate (7,5 GB-Monate - 0,5 GB-Monate) berechnet.
+  Sie nutzen 5 GB für genau die Hälfte des Monats, dann übertragen Sie einige Images mit Push-Operation an Ihren Namensbereich und nutzen 10 GB für den Rest des Monats. Ihre monatliche Nutzung wird wie folgt berechnet:
+  
+  (5 GB x 0,5 (Monate)) + (10 GB x 0,5 (Monate)) = 2,5 + 5 = 7,5 GB-Monate
+  
+  Im Standardplan sind die ersten 0,5 GB-Monate kostenfrei, d. h., es werden 7 GB-Monate (7,5 GB-Monate - 0,5 GB-Monate) berechnet.
 
-**Pull-Datenverkehr:**
+#### Pull-Datenverkehr
+{: #registry_billing_traffic_pull_traffic}
 
   Jeder {{site.data.keyword.registrylong_notm}}-Serviceplan beinhaltet ein bestimmtes Kontingent an kostenfreiem Pull-Datenverkehr zu Ihren privaten Images, die in Ihrem Namensbereich gespeichert sind. Pull-Datenverkehr ist die Bandbreite, die Sie verwenden, wenn Sie eine Ebene eines Image aus Ihrem Namensbereich mit Pull-Operation an Ihre lokale Maschine übertragen. Wenn Sie den Standardplan verwenden, wird nach Nutzung pro Monat in GB abgerechnet. Die ersten 5 GB jeden Monat sind kostenfrei. Wenn Sie den kostenfreien Plan verwenden, können Sie Ihre Images mit Pull-Operation aus Ihrem Namensbereich übertragen, bis Sie das Kontingent für den kostenfreien Plan ausgeschöpft haben.
+  {:shortdesc}
 
   Beispiel für den Standardplan:
 
-  > In einem Monat haben Sie Images mit Ebenen von 14 GB Gesamtgröße mit Pull-Operation extrahiert. Ihre monatliche Nutzung wird wie folgt berechnet:
-  >
-  > Im Standardplan sind die ersten 5 GB pro Monat kostenfrei, sodass Ihnen 9 GB (14 GB - 5 GB) berechnet werden.
+  In einem Monat haben Sie Images mit Ebenen von 14 GB Gesamtgröße mit Pull-Operation extrahiert. Ihre monatliche Nutzung wird wie folgt berechnet:
+  
+  Im Standardplan sind die ersten 5 GB pro Monat kostenfrei, sodass Ihnen 9 GB (14 GB - 5 GB) berechnet werden.
 
 ### Kontingente für Speicher und Pull-Datenverkehr
 {: #registry_quota_limits}
@@ -113,25 +117,29 @@ In Abhängigkeit von dem Serviceplan, den Sie auswählen, wird Ihnen der monatli
 In Abhängigkeit von dem Serviceplan, den Sie auswählen, können Sie für die einzelnen Regionen Images mit Push- und Pull-Operationen in und aus Ihrem Namensbereich übertragen, bis Ihr planspezifisches oder angepasstes Kontingent erreicht ist.
 {:shortdesc}
 
-**Speicher: **
+#### Speicher
+{: #registry_quota_limits_storage}
 
   Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Push-Operation in die Namensbereiche Ihres {{site.data.keyword.cloud_notm}}-Kontos übertragen, bis Sie entweder [Speicherplatz freigeben durch Entfernen von Images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) aus Ihrem Namensbereich oder ein [Upgrade auf den Standard-Plan durchführen](#registry_plan_upgrade). Wenn Sie Kontingente für den Speicher in Ihrem kostenfreien oder Standardplan festlegen, können Sie auch [dieses Kontingent erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set), um Push-Operationen zu den neuen Images wieder zu ermöglichen.
+  {:shortdesc}
 
   Beispiel für den Standardplan:
 
-  > Ihr aktuelles Speicherkontingent ist auf 1 GB festgelegt. Alle privaten Images zusammen, die in den Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos gespeichert sind, belegen bereits 900 MB dieses Speicherplatzes. Es stehen Ihnen 100 MB Speicherplatz zur Verfügung, bis Sie Ihr Kontingent ausgeschöpft haben. Ein Benutzer möchte ein Image mit einer Größe von 2 GB auf der lokalen Maschine mit Push-Operation übertragen. Da das Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Push-Operation überträgt.
-  >
-  > Nach der Push-Operation bestimmt {{site.data.keyword.registrylong_notm}} die tatsächliche Größe des Image in Ihrem Namensbereich, die je nach Größe auf Ihrer lokalen Maschine variieren kann, und prüft, ob der Grenzwert für den Speicher erreicht ist. In diesem Beispiel erhöht sich die Speicherbelegung von 900 MB um 2 GB. Ist das aktuelle Kontingent auf 1 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Push-Operation in den Namensbereich für weitere Images.
+  Ihr aktuelles Speicherkontingent ist auf 1 GB festgelegt. Alle privaten Images zusammen, die in den Namensbereichen Ihres {{site.data.keyword.cloud_notm}}-Kontos gespeichert sind, belegen bereits 900 MB dieses Speicherplatzes. Es stehen Ihnen 100 MB Speicherplatz zur Verfügung, bis Sie Ihr Kontingent ausgeschöpft haben. Ein Benutzer möchte ein Image mit einer Größe von 2 GB auf der lokalen Maschine mit Push-Operation übertragen. Da das Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Push-Operation überträgt.
+  
+  Nach der Push-Operation bestimmt {{site.data.keyword.registrylong_notm}} die tatsächliche Größe des Image in Ihrem Namensbereich, die je nach Größe auf Ihrer lokalen Maschine variieren kann, und prüft, ob der Grenzwert für den Speicher erreicht ist. In diesem Beispiel erhöht sich die Speicherbelegung von 900 MB um 2 GB. Ist das aktuelle Kontingent auf 1 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Push-Operation in den Namensbereich für weitere Images.
 
-**Pull-Datenverkehr:**
+#### Pull-Datenverkehr
+{: #registry_quota_limits_pull_traffic}
 
   Wenn Sie das Kontingent für Ihren Plan erreichen oder überschreiten, können Sie keine Images mehr mit Pull-Operation aus den Namensbereichen in Ihr {{site.data.keyword.cloud_notm}}-Konto übertragen, bis entweder der nächste Abrechnungszeitraum beginnt, Sie ein [Upgrade auf den Standardplan durchführen](#registry_plan_upgrade) oder Sie Ihr [Kontingent für Pull-Datenverkehr erhöhen](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Beispiel für den Standardplan:
 
-  > In einem Monat ist Ihr Kontingent für Pull-Datenverkehr auf 5 GB festgelegt. Sie haben bereits Images mit Pull-Operation aus Ihren Namensbereichen übertragen und 4,5 GB dieses Pull-Datenverkehrs genutzt. Es stehen Ihnen 0,5 GB für den Pull-Datenverkehr zur Verfügung, bis das Kontingent ausgeschöpft ist. Ein Benutzer möchte ein Image aus Ihrem Namensbereich mit einer Größe von 1 GB mit Pull-Operation übertragen. Da die Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Pull-Operation überträgt.
-  >
-  > Nachdem das Image mit Pull-Operation übertragen wurde, bestimmt {{site.data.keyword.registrylong_notm}} die Bandbreite, die Sie während der Pull-Operation verwendet haben, und prüft, ob der Grenzwert für den Pull-Datenverkehr erreicht ist. In diesem Beispiel erhöht sich der Pull-Datenverkehr von 4,5 GB auf 5,5 GB. Ist das aktuelle Kontingent auf 5 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Pull-Operation aus Ihrem Namensbereich für weitere Images.
+  In einem Monat ist Ihr Kontingent für Pull-Datenverkehr auf 5 GB festgelegt. Sie haben bereits Images mit Pull-Operation aus Ihren Namensbereichen übertragen und 4,5 GB dieses Pull-Datenverkehrs genutzt. Es stehen Ihnen 0,5 GB für den Pull-Datenverkehr zur Verfügung, bis das Kontingent ausgeschöpft ist. Ein Benutzer möchte ein Image aus Ihrem Namensbereich mit einer Größe von 1 GB mit Pull-Operation übertragen. Da die Kontingentgrenze noch nicht erreicht ist, lässt {{site.data.keyword.registrylong_notm}} zu, dass der Benutzer dieses Image mit einer Pull-Operation überträgt.
+  
+  Nachdem das Image mit Pull-Operation übertragen wurde, bestimmt {{site.data.keyword.registrylong_notm}} die Bandbreite, die Sie während der Pull-Operation verwendet haben, und prüft, ob der Grenzwert für den Pull-Datenverkehr erreicht ist. In diesem Beispiel erhöht sich der Pull-Datenverkehr von 4,5 GB auf 5,5 GB. Ist das aktuelle Kontingent auf 5 GB gesetzt, verhindert {{site.data.keyword.registrylong_notm}} die Pull-Operation aus Ihrem Namensbereich für weitere Images.
 
 ### Kosten
 {: #registry_cost}
@@ -157,8 +165,8 @@ Führen Sie die folgenden Schritte aus, um für Ihren Serviceplan ein Upgrade du
    ```
    {: pre}
 
-   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.cloud_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
-    {:tip}
+   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `v`, um sich bei der {{site.data.keyword.cloud_notm}}-CLI anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Wenn Sie über eine eingebundene ID verfügen, schlägt die Anmeldung ohne die Option `--sso` fehl; mit der Option `--sso` ist sie erfolgreich.
+   {:tip}
 
 2. Visieren Sie die Region an, für die Sie ein Planupgrade durchführen möchten:
 
@@ -181,17 +189,11 @@ Führen Sie die folgenden Schritte aus, um für Ihren Serviceplan ein Upgrade du
 
    Weitere Informationen finden Sie in [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Zentrale Aspekte
-{: #registry_planning}
-
-Bereiten Sie die Speicherung und gemeinsame Nutzung Ihrer Docker-Images mit {{site.data.keyword.registrylong_notm}} vor, indem Sie sich mit grundlegenden Registry-Informationen vertraut machen.
-{:shortdesc}
-
-Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensbereichsnamen, Beschreibungsfelder oder in Image-Konfigurationsdaten (z. B. Imagenamen oder Imagebezeichnungen) ein.
-{: important}
-
-### Erläuterung zu den in {{site.data.keyword.registrylong_notm}} verwendeten Begriffen
+## Erläuterung zu den in {{site.data.keyword.registrylong_notm}} verwendeten Begriffen
 {: #terms}
+
+Beschreibungen der Begriffe, die in {{site.data.keyword.registrylong_notm}} verwendet werden.
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -237,43 +239,19 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 
 Weitere Informationen zu Docker-spezifischen Begriffen finden Sie im [Docker-Glossar ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.docker.com/glossary/).
 
-### Namensbereiche planen
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} bietet eine private Multi-Tenant-Registry für Images, die von IBM gehostet und verwaltet wird. In dieser Registry können Sie Ihre Docker-Images speichern, indem Sie einen Registrynamensbereich einrichten.
-{:shortdesc}
-
-Wenn Sie separate Repositorys verwenden möchten (beispielsweise für Ihre Produktions- und Ihre Staging-Umgebungen), können Sie mehrere Namensbereiche einrichten. Falls Sie die Registry in mehreren {{site.data.keyword.cloud_notm}}-Regionen verwenden möchten, müssen Sie für jede Region einen eigenen Namensbereich einrichten. Namensbereiche sind innerhalb Regionen eindeutig. Sie können denselben Namensbereichsnamen für jede Region verwenden, solange niemand anderes einen Namensbereich mit diesem Namen in dieser Region eingerichtet hat.
-
-Sie können den Zugriff auf Ihre Namensbereiche mithilfe von IAM-Richtlinien steuern. Weitere Informationen finden Sie unter [Richtlinien für Benutzerzugriffsrollen definieren](/docs/services/Registry?topic=registry-user#user).
-
-Wenn Sie ausschließlich mit den von IBM bereitgestellten öffentlichen Images arbeiten möchten, ist die Einrichtung eines Namensbereichs nicht erforderlich.
-
-Wenn Sie sich nicht sicher sind, ob bereits ein Namensbereich für Ihr Konto eingerichtet ist, führen Sie den Befehl `ibmcloud cr namespace-list` aus, um vorhandene Namensbereichsinformationen abzurufen.
-{:tip}
-
-Beachten Sie bei der Wahl eines Namens für den Namensbereich die folgenden Regeln:
-
-- Ihr Namensbereich muss in allen {{site.data.keyword.cloud_notm}}-Konten derselben Region eindeutig sein.
-- Ihr Namensbereich muss 4 bis 30 Zeichen lang sein.
-- Ihr Namensbereich muss mit einem Buchstaben oder einer Zahl beginnen und enden.
-- Ihr Namensbereich darf ausschließlich Kleinbuchstaben, Zahlen, Bindestriche (-) und Unterstreichungszeichen (_) enthalten.
-
-Beziehen Sie keine personenbezogenen Daten in Ihre Namensbereichsnamen ein.
-{: important}
-
-Nachdem Sie Ihren ersten Namensbereich eingerichtet haben, werden Sie dem kostenfreien Serviceplan für {{site.data.keyword.registrylong_notm}} zugewiesen, wenn Sie noch kein [Upgrade für Ihren Plan](#registry_plan_upgrade) durchgeführt haben.
-
 ## Regionen
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}}-Registrys sind in mehreren Regionen verfügbar.
 {:shortdesc}
 
+Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
+
 ### Lokale Regionen
 {: #registry_regions_local}
 
 Eine lokale Region ist ein geografischer Bereich, auf den über einen dedizierten Endpunkt zugegriffen wird. Die {{site.data.keyword.registrylong_notm}}-Domänennamen für die Regionen wurden geändert. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar.
+{:shortdesc}
 
 Die Domänennamen werden in der folgenden Tabelle angezeigt.
 
@@ -289,9 +267,11 @@ Die Domänennamen werden in der folgenden Tabelle angezeigt.
 Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
-**Vulnerability Advisor - Domänennamen**
+#### Vulnerability Advisor - Domänennamen
+{: #registry_regions_local_va}
 
 Die Vulnerability Advisor-Domänennamen für die Regionen wurden geändert. Die neuen Domänennamen sind in der Konsole und in der CLI verfügbar.
+{:shortdesc}
 
 Die neuen Domänennamen werden in der folgenden Tabelle angezeigt.
 
@@ -307,25 +287,27 @@ Die neuen Domänennamen werden in der folgenden Tabelle angezeigt.
 Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
-Alle Registry-Artefakte sind bereichsorientiert in Bezug auf die bestimmte regionale Registry, mit der Sie aktuell arbeiten. Namensbereiche, Images, Tokens, Kontingenteinstellungen und Planeinstellungen müssen beispielsweise für jede regionale Registry jeweils separat verwaltet werden.
+#### Lokale Region anvisieren
+{: #registry_regions_local_target}
 
-Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl `ibmcloud cr region-set` verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.
+Wenn Sie eine andere als Ihre lokale Region verwenden möchten, können Sie die Region, auf die Sie zugreifen möchten, ansteuern, indem Sie den Befehl [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) verwenden. Sie können den Befehl ohne Parameter ausführen, um eine Liste der verfügbaren Regionen abzurufen, oder Sie können die Region als Parameter angeben.
+{:shortdesc}
 
-Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie `<Region>` durch den Namen der jeweiligen Region, z. B. `eu-central`.
+1. Wenn Sie den Befehl mit Parametern ausführen möchten, ersetzen Sie `<region>` durch den Namen der jeweiligen [Region](#registry_regions_local).
 
-```
-ibmcloud cr region-set <Region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-Wenn Sie z. B. die Region 'eu-central' verwenden möchten, führen Sie den folgenden Befehl aus:
+   Wenn Sie z. B. die Region `eu-central` verwenden möchten, führen Sie den folgenden Befehl aus:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-Nach der Auswahl einer anderen Region als Ziel melden Sie sich erneut bei der Registry an: `ibmcloud cr login`.
+2. Melden Sie sich bei der Registry an, indem Sie den Befehl `ibmcloud cr login` ausführen.
 
 ### Globale Registry
 {: #registry_regions_global}
@@ -345,22 +327,11 @@ Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
 
-Sie können die globale Registry als Ziel verwenden, indem Sie den Befehl `ibmcloud cr region-set` ausführen.
+#### Vulnerability Advisor - Domänennamen
+{: #registry_regions_global_va}
 
-Um z. B. die globale Registry als Ziel auszuwählen, führen Sie folgenden Befehl aus:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-Weitere Informationen zum Befehl `ibmcloud cr region-set` finden Sie im Abschnitt [{{site.data.keyword.registrylong_notm}}-CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-Nach der Angabe der globalen Registry führen Sie den Befehl `ibmcloud cr login` aus, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
-
-**Vulnerability Advisor - Domänennamen**
-
-Der Vulnerability Advisor-Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar. 
+Der Vulnerability Advisor-Domänenname für die globale Registry wurde geändert. Der neue Domänenname ist in der Konsole und in der CLI verfügbar.
+{:shortdesc}
 
 Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 
@@ -371,6 +342,21 @@ Der neue Domänenname wird in der folgenden Tabelle angezeigt.
 
 Die bereits vorhandenen Domänennamen des Typs `bluemix.net` sind zwar veraltet, doch Sie können sie noch nutzen; ein Datum, an dem die Unterstützung endet, wird zu einem späteren Zeitpunkt bekannt gegeben.
 {: deprecated}
+
+#### Globale Registry anvisieren
+{: #registry_regions_global_target}
+
+Sie können die globale Registry als Ziel verwenden, indem Sie den Befehl [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) ausführen.
+{:shortdesc}
+
+1. Um die globale Registry als Ziel auszuwählen, führen Sie folgenden Befehl aus:
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Sie müssen den Befehl `ibmcloud cr login` ausführen, um den lokalen Docker-Dämon bei der globalen Registry anzumelden, sodass die von {{site.data.keyword.IBM_notm}} bereitgestellten öffentlichen Images mit Pull-Operation abgerufen werden können.
 
 ## Unterstützung für Docker
 {: #docker}

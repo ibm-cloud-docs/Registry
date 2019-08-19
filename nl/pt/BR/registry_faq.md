@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Posso usar ferramentas que não são do Docker para construir minhas imagens e enviá-las por push para o registro?
+## É possível usar ferramentas que não são do Docker para construir minhas imagens e enviá-las por push para o registro?
 {: #faq_tools}
 {: faq}
 
-Sim, desde que a ferramenta suporte o formato e o protocolo de imagem do OCI.
+Sim, se a ferramenta suportar o formato e o protocolo de imagem do OCI.
 
-## Como utilizo o controle de acesso com o IAM?
+## Como usar o controle de acesso com o {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
 
@@ -67,7 +67,7 @@ Sim, desde que a ferramenta suporte o formato e o protocolo de imagem do OCI.
 {: #faq_va_new_scan_error}
 {: faq}
 
-Se você receber o relatório de vulnerabilidade imediatamente após incluir a imagem no registro, você poderá receber o erro a seguir:
+Se você receber o relatório de vulnerabilidade imediatamente depois de incluir a imagem no registro, poderá receber o erro a seguir:
 
 ```
 BXNVA0009E:  <imagename> não foi varrida. Tente novamente mais tarde.
@@ -75,7 +75,7 @@ Se esse problema persistir, entre em contato com o suporte para obter ajuda; vej
 ```
 {: screen}
 
-Você recebe essa mensagem porque os resultados das imagens são varridos assincronicamente para as solicitações e o processo de varredura leva algum tempo para ser concluído. Durante a operação normal, a varredura é concluída dentro dos primeiros minutos após a inclusão da imagem no registro, dependendo de variáveis como o tamanho da imagem e a quantia de tráfego que o registro está recebendo.
+Você recebe essa mensagem porque os resultados das imagens são varridos assincronicamente para as solicitações e o processo de varredura leva algum tempo para ser concluído. Durante a operação normal, a varredura é concluída nos primeiros minutos após você incluir a imagem no registro. O tempo que leva para ser concluído depende de variáveis, como o tamanho da imagem e a quantia de tráfego que o registro está recebendo.
 
 Se você receber essa mensagem como parte de um pipeline de construção e vir esse erro regularmente, tente incluir alguma lógica de nova tentativa que contenha uma pausa curta.
 
@@ -88,8 +88,8 @@ Se você ainda vir um desempenho inaceitável, entre em contato com o suporte. C
 A varredura de uma imagem é acionada de uma das maneiras a seguir:
 
 - Se uma nova imagem for enviada por push para o registro.
-- Se a imagem não tiver sido varrida por 7 dias, ela será enfileirada para nova varredura, o que pode levar algum tempo para ser concluído.
-- Se um novo aviso de segurança for liberado para um pacote instalado na imagem, ele será enfileirado para nova varredura, o que pode levar algum tempo para ser concluído. As novas varreduras que são acionadas pela liberação de novos avisos de segurança estão disponíveis somente para imagens do Ubuntu e do Debian.
+- Se a última varredura aconteceu há mais de sete dias, a imagem será enfileirada para uma nova varredura, que pode levar algum tempo para ser concluída.
+- Se um novo aviso de segurança for liberado para um pacote que está instalado na imagem, a imagem será enfileirada para nova varredura, que poderá levar algum tempo para ser concluída. As novas varreduras que são acionadas pela liberação de novos avisos de segurança estão disponíveis somente para imagens do Ubuntu e do Debian.
 
 ## Com que frequência os avisos de segurança são atualizados?
 {: #faq_va_update_security_notice}

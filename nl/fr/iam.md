@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -64,7 +64,7 @@ Le tableau suivant détaille les actions mappées sur les rôles de gestion de p
 
 Pour {{site.data.keyword.registrylong_notm}}, les actions suivantes existent :
 
-| Action| Opération sur le service | Rôle
+| Action| Opération sur le service | Rôle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Retire un ou plusieurs jetons spécifiés. | Administrateur |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Extrait le jeton spécifié du registre. | Administrateur |
@@ -78,9 +78,9 @@ Le tableau ci-dessous détaille les actions qui sont mappées aux rôles d'accè
 
 | Rôle Accès au service | Description des actions | Exemples d'action|
 |:-----------------|:-----------------|:-----------------|
-| Lecteur | Peut afficher des informations. | <ul><li>Afficher, inspecter et extraire les images</li><li>Afficher les espaces de nom</li><li>Afficher les quotas</li><li>Afficher les rapports de vulnérabilité</li><li>Afficher les signatures d'image</li></ul>|
-| Auteur | Peut éditer des informations. |<ul><li>Générer, envoyer et supprimer des images</li><li>Afficher les quotas</li><li>Signer les images</li><li>Ajouter et retirer des espaces de nom</li></ul> |
-| Responsable | Peut effectuer toutes les actions. | <ul><li>Afficher, inspecter, extraire, générer, envoyer et supprimer des images</li><li>Afficher, ajouter et retirer des espaces de nom</li><li>Afficher des définir des quotas</li><li>Afficher les rapports de vulnérabilité</li><li>Afficher et créer des signatures d'image</li><li>Réviser et modifier les plans de tarification</li><li>Activer l'application des règles IAM</li><li>Gérer des exemptions Vulnerability Advisor</li></ul> |
+| Lecteur | Peut afficher des informations. | <ul><li>Afficher, inspecter et extraire les images</li><li>Afficher les espaces de nom</li><li>Afficher les quotas</li><li>Afficher les rapports de vulnérabilité</li><li>Afficher les signatures d'image</li><li>Nettoyez vos espaces de nom en conservant uniquement les images qui répondent à vos critères. (Vous devez également avoir le rôle d'auteur.)</li></ul>|
+| Auteur | Peut éditer des informations. |<ul><li>Générer, envoyer et supprimer des images</li><li>Afficher les quotas</li><li>Signer les images</li><li>Ajouter et retirer des espaces de nom</li><li>Nettoyez vos espaces de nom en conservant uniquement les images qui répondent à vos critères. (Vous devez également avoir le rôle de lecteur)</li></ul> |
+| Responsable | Peut effectuer toutes les actions. | <ul><li>Afficher, inspecter, extraire, générer, envoyer et supprimer des images</li><li>Afficher, ajouter et retirer des espaces de nom</li><li>Afficher des définir des quotas</li><li>Afficher les rapports de vulnérabilité</li><li>Afficher et créer des signatures d'image</li><li>Réviser et modifier les plans de tarification</li><li>Activer l'application des règles IAM</li><li>Gérer des exemptions Vulnerability Advisor</li><li>Nettoyez vos espaces de nom en conservant uniquement les images qui répondent à vos critères. </li></ul> |
 {: caption="Tableau 3. Rôles et actions d'accès au service IAM" caption-side="top"}
 
  Pour les commandes {{site.data.keyword.registrylong_notm}}, vous devez disposer au minimum de l'un des rôles spécifiés, comme indiqué dans les tableaux ci-après. Dans le cadre de la création d'une règle qui permet d'accéder à {{site.data.keyword.registrylong_notm}}, cette règle doit comporter le nom de service `container-registry`, l'instance de service doit être vide et la région doit être celle à laquelle vous souhaitez autoriser l'accès, ou elle doit être vide si vous souhaitez accorder l'accès à toutes les régions.
@@ -90,14 +90,14 @@ Le tableau ci-dessous détaille les actions qui sont mappées aux rôles d'accè
 
 Pour accorder à un utilisateur les droits nécessaires pour configurer votre {{site.data.keyword.registrylong_notm}} dans votre compte, vous devez créer une règle qui accorde un ou plusieurs des rôles répertoriés dans le tableau ci-après. Lorsque vous créez votre règle, vous ne devez pas spécifier un élément `resource type` ni un élément `resource`.
 
-**Exemple**
+Par exemple, utilisez la commande suivante, où `<user_email>` est l'adresse e-mail de l'utilisateur :
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
-| Action| Opération sur le service | Rôle
+| Action| Opération sur le service | Rôle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Activer l'application des règles IAM. | Responsable |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Créer une exemption pour un problème de sécurité.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) Répertorier vos exemptions pour les problèmes de sécurité.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Supprimer une exemption pour un problème de sécurité.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) Répertorier les types de problèmes de sécurité que vous pouvez exempter.</li></ul> | Responsable |
@@ -115,22 +115,22 @@ Pour accorder à un utilisateur les droits nécessaires pour accéder au contenu
 Vous ne pouvez pas organiser et affecter un accès aux espaces de nom de registre dans des groupes de ressources.
 {: note}
 
-**Exemple**
+Par exemple, utilisez la commande suivante, où `<user_email>` est l'adresse e-mail de l'utilisateur :
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
-| Action | Opération sur le service | Rôle
+| Action | Opération sur le service | Rôle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Générer une image de conteneur. | Editeur, Responsable |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Supprimer une ou plusieurs images.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Supprime une ou plusieurs étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Supprimer la signature. </li></ul> | Editeur, Responsable |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Supprimer une ou plusieurs images.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Supprime une ou plusieurs étiquettes de chaque image spécifiée dans {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Supprimer la signature. </li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Nettoyez vos espaces de nom en conservant uniquement les images qui répondent à vos critères.</li></ul> | Auteur, Responsable</br></br>Pour exécuter `ibmcloud cr retention-run`, vous devez avoir le rôle de lecteur et d'auteur ou le rôle de responsable. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Afficher les détails d'une image spécifique. | Lecteur, Responsable |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Répertorier les images de votre conteneur. | Lecteur, Responsable |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Répertorier vos images de conteneur.</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Nettoyez vos espaces de nom en conservant uniquement les images qui répondent à vos critères.</li></ul> | Lecteur, Responsable</br></br>Pour exécuter `ibmcloud cr retention-run`, vous devez avoir le rôle de lecteur et d'auteur ou le rôle de responsable. |
 | `container-registry.image.pull` | <ul><li>`docker pull` Extraire l'image. </li><li>`docker trust inspect` Inspecter la signature. </li></ul> | Lecteur, Editeur, Responsable |
 | `container-registry.image.push` | <ul><li>`docker push` Envoyer l'image.</li><li>`docker trust sign` Signer l'image.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) Importer le logiciel IBM qui est téléchargé depuis [IBM Passport Advantage Online pour les clients ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/software/passportadvantage/pao_customer.html) et conditionné pour une utilisation avec Helm dans votre espace de nom d'{{site.data.keyword.registrylong_notm}}.</li></ul> | Editeur, Responsable |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Créer une nouvelle image qui fait référence à une image source. Les images source et cible doivent se trouver dans la même région. | Lecteur, auteur ou responsable pour l'image source ; auteur ou responsable pour l'image cible |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Créer une nouvelle image qui fait référence à une image source. Les images source et cible doivent se trouver dans la même région. | Lecteur, auteur ou responsable pour l'image source.</br></br>Auteur ou responsable pour l'image cible. |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) Afficher un rapport d'évaluation des vulnérabilités pour votre image. | Lecteur, Responsable |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) Ajouter un espace de nom. | Editeur, Responsable |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) Retirer un espace de nom. | Editeur, Responsable |

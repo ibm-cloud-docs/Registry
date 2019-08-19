@@ -309,7 +309,7 @@
 		<text transform="matrix(1 0 0 1 151.8846 122.2208)" class="st13 st14">IBM Cloud Container Registry 及 Container Registry</text>
 		<path class="st5" d="M1068.4,806.4H907c-3.8,0-6.9-3.1-6.9-6.9v-24.9c0-3.8,3.1-6.9,6.9-6.9h161.4c3.8,0,6.9,3.1,6.9,6.9v24.9
 			C1075.2,803.4,1072.2,806.4,1068.4,806.4z"/>
-		<text transform="matrix(1 0 0 1 901.6677 122.2211)" class="st13 st14">Kubernetes 服務</text>
+		<text transform="matrix(1 0 0 1 901.6677 122.2211)" class="st13 st14">Kubernetes Service</text>
 		<text transform="matrix(1 0 0 1 941.4966 784.4711)"><tspan x="0" y="0" class="st13 st14">Docker Hub</tspan><tspan x="0" y="21.6" class="st13 st14">其他登錄</tspan></text>
 		<circle class="st15" cx="76.7" cy="514" r="27.9"/>
 		<path d="M88.6,540.5H65.9c-2.8,0-5.1-2.3-5.1-5.1l0,0c0-2.8,2.3-5.1,5.1-5.1h22.6c2.8,0,5.1,2.3,5.1,5.1l0,0

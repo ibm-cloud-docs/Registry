@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## 我可以使用非 Docker 工具來建置映像檔並將它們推送至登錄嗎？
+## 是否可以使用非 Docker 工具來建置映像檔並將映像檔推送到登錄中？
 {: #faq_tools}
 {: faq}
 
-可以，如果工具支援 OCI 映像檔格式和通訊協定的話。
+可以，只要工具支援 OCI 影像格式和通訊協定即可。
 
-## 如何使用存取控制與 IAM 搭配？
+## 如何使用存取控制和 {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}？
 {: #faq_access_control}
 {: faq}
 
@@ -67,7 +67,7 @@ ibmcloud cr images --include-ibm
 {: #faq_va_new_scan_error}
 {: faq}
 
-如果您在將映像檔新增至登錄後立即取得漏洞報告，可能會收到下列錯誤：
+如果您在將映像檔新增到登錄後立即收到漏洞報告，則可能會收到下列錯誤訊息：
 
 ```
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
@@ -76,7 +76,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-您收到此訊息是因為映像檔會以非同步方式掃描來要求結果，而掃描處理程序需要一些時間才完成。在正常作業期間，掃描會在您將映像檔新增至登錄後的前幾分鐘內完成，視映像檔大小及登錄收到的資料流量數量之類的變數而定。
+您收到此訊息是因為映像檔會以非同步方式掃描來要求結果，而掃描處理程序需要一些時間才完成。正常作業期間，在您將映像檔新增到登錄後的幾分鐘內即會完成掃描。完成所需時間視映像檔大小和登錄收到的資料流量數量之類的變數而定。
 
 如果您在建置管線期間收到此訊息，並且經常看到這個錯誤，請嘗試新增包含短暫暫停的某個重試邏輯。
 
@@ -89,8 +89,8 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 您可以使用下列其中一種方式觸發映像檔的掃描：
 
 - 如果將新的映像檔推送至登錄。
-- 如果未掃描映像檔長達 7 天，映像檔會排入佇列等待重新掃描，這可能需要一些時間才能完成。
-- 如果針對映像檔中安裝的套件發行新的安全注意事項，映像檔會排入佇列等待重新掃描，這可能需要一些時間才能完成。發行新的安全注意事項所觸發的重新掃描僅可用於 Ubuntu 及 Debian 映像檔。
+- 如果前次掃描是在 7 天之前，則映像檔會佇列等待以進行重新掃描，這可能需要一些時間才能完成。
+- 針對映像檔中安裝的套件發佈了新的安全通知，該映像檔將佇列等待重新掃描，這可能需要一些時間才能完成。發行新的安全注意事項所觸發的重新掃描僅可用於 Ubuntu 及 Debian 映像檔。
 
 ## 安全注意事項的更新頻率為何？
 {: #faq_va_update_security_notice}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Tutoriel : Octroi de droits d'accès aux ressources {{site.data.keyword.registrylong_notm}}
+# Tutoriel sur l'octroi de droits d'accès aux ressources {{site.data.keyword.registrylong_notm}}
 {: #iam_access}
 
 Utilisez ce tutoriel pour apprendre comment accorder des droits d'accès à vos ressources en configurant {{site.data.keyword.iamlong}} (IAM) pour {{site.data.keyword.registrylong_notm}}.
@@ -30,13 +30,16 @@ Utilisez ce tutoriel pour apprendre comment accorder des droits d'accès à vos 
 
 Ce tutoriel dure environ 45 minutes.
 
-**Avant de commencer**
+## Avant de commencer
+{: #iam_access_prereq}
+
+Avant de commencer, vous devez effectuer les tâches suivantes :
 
 - Suivez les instructions décrites dans la rubrique [Initiation à {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Assurez-vous que vous disposez de la version la plus récente du plug-in d'interface de ligne de commande `container-registry` pour l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Voir [Mise à jour du plug-in d'interface de ligne de commande`container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- Vous devez avoir accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/login) que vous pouvez utiliser pour ce tutoriel, un pour l'utilisateur A et un pour l'utilisateur B, chacun utilisant une adresse de courrier électronique unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
+- Vérifiez que vous avez accès à deux comptes [{{site.data.keyword.cloud_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/login) que vous pouvez utiliser pour ce tutoriel : un pour l'utilisateur A et un pour l'utilisateur B, chacun devant utiliser une adresse e-mail unique. Vous travaillez dans votre propre compte ('utilisateur A) et vous invitez un autre utilisateur (utilisateur B) à utiliser votre compte. Vous pouvez choisir de créer un deuxième compte {{site.data.keyword.cloud_notm}} ou vous pouvez travailler avec un collègue qui possède un compte {{site.data.keyword.cloud_notm}}.
 
 - Si vous avez commencé à utiliser {{site.data.keyword.registrylong_notm}} dans votre compte avant le 4 octobre 2018, vous devez activer l'application des règles IAM en exécutant la commande `ibmcloud cr iam-policies-enable`. Si vous avez invité d'autres utilisateurs à utiliser vos espaces de nom {{site.data.keyword.registrylong_notm}} dans votre compte IBM Cloud, utilisez un autre compte en tant qu'utilisateur A pour empêcher que leurs accès ne soient interrompus.
 
@@ -87,7 +90,7 @@ Dans cette section, vous allez ajouter un deuxième utilisateur à votre compte 
         ```
         {: pre}
 
-        La commande échoue car l'utilisateur B ne dispose pas des droits appropriés.
+        La commande échoue car l'utilisateur B ne dispose pas d'un droit d'accès approprié.
 
 3. Accordez à l'utilisateur B le rôle Responsable afin qu'il puisse configurer {{site.data.keyword.registrylong_notm}} :
 
@@ -533,4 +536,4 @@ Dans cette section, vous allez retirer les resources que vous avez créées au c
    ```
    {: pre}
 
-Félicitations ! Vous avez terminé ce tutoriel.
+Vous avez terminé ce tutoriel.

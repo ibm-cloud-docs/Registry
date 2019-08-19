@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ subcollection: registry
 针对旧 (`registry.bluemix.net`) 域名和新 (`icr.io`) 域名，映像具有不同的签名。从旧域名中拉出该映像后，现有签名才会有效。如果想要从新域名中拉出签名的内容，必须为新域名 `icr.io` 对该映像重新签名，请参阅[为新域名对映像重新签名](#trustedcontent_resign)。
 {: note}
 
-Docker Content Trust 使用“首次使用时信任”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
+Docker Content Trust 使用“首次使用时信任 (TOFU)”安全模型。首次从存储库拉出签名的映像时，将从信任服务器中拉出存储库密钥，该密钥未来将用于对来自该存储库中的映像进行验证。首次拉出存储库之前，必须确定您是信任信任服务器还是信任映像及其发布程序。如果服务器中的信任信息遭到破坏，并且您之前尚未从存储库中拉出映像，那么 Docker 客户机可能会从信任服务器中拉出遭到破坏的信息。如果首次拉出映像后信任数据遭到破坏，那么后续拉出时，Docker 客户机将无法验证遭到破坏的数据，并且不会拉出映像。有关如何检查映像的信任数据的更多信息，请参阅[查看签名的映像](#trustedcontent_viewsigned)。
 
-有关“首次使用时信任”安全模型的更多信息，请参阅 [The Update Framework ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://theupdateframework.github.io/)。
+有关 TOFU 安全模型的更多信息，请参阅 [The Update Framework ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://theupdateframework.github.io/)。
 
 ## 设置可信内容环境
 {: #trustedcontent_setup}
@@ -70,7 +70,7 @@ set DOCKER_CONTENT_TRUST=1
     ```
    {: pre}
 
-   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
+   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
     {: tip}
 
 3. 将要使用的区域设定为目标。如果您不知道区域名称，可以运行不带区域的命令，然后选择区域。
@@ -89,7 +89,7 @@ set DOCKER_CONTENT_TRUST=1
 
    输出会指示您导出 Docker Content Trust 环境变量。
 
-   **示例**
+   例如：
 
    ```
    user:~ user$ ibmcloud cr login
@@ -130,7 +130,10 @@ set DOCKER_CONTENT_TRUST=1
    ```
    {: screen}
 
-3. **首次推送签名的存储库**。将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
+3. 第一次将签名的映像推送到新存储库时，命令会创建两个签名密钥 - 根密钥和存储库密钥，并将它们存储在本地计算机中。为每个密钥输入并保存安全口令，然后[备份密钥](#trustedcontent_backupkeys)。由于[恢复选项](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制，因此备份密钥非常重要。
+
+   只有在第一次推送签名存储库时才需要执行此操作。
+   {: tip}
 
 ## 拉出签名的映像
 {: #trustedcontent_pull}
@@ -266,7 +269,7 @@ docker trust revoke <image>:<tag>
 要允许其他用户对存储库中的映像签名，请将这些用户的签名密钥添加到该存储库。
 {:shortdesc}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - 映像签署者必须具有将映像推送到名称空间的许可权。
 - 存储库所有者和其他签署者必须安装了 Docker 18.03 或更高版本。

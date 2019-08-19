@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -48,12 +48,8 @@ subcollection: registry
    ```
    {: pre}
 
-   연합 ID가 있는 경우, 다음 명령을 사용하여 로그인하십시오.
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 연합 ID가 있는 경우 로그인은 `--sso` 옵션이 없으면 실패하고 `--sso` 옵션이 있으면 성공합니다.
+   {: tip}
 
 2. 네임스페이스를 추가하여 고유의 이미지 저장소를 작성하십시오. `<my_namespace>`를 선호하는 네임스페이스로 대체하십시오.
 
@@ -139,7 +135,7 @@ subcollection: registry
    ```
    {: pre}
 
-과정이 완료되었습니다! {{site.data.keyword.registrylong_notm}}에 네임스페이스를 설정하고 첫 번째 이미지를 사용자의 네임스페이스로 푸시했습니다.
+{{site.data.keyword.registrylong_notm}}에 네임스페이스를 설정하고 첫 번째 이미지를 사용자의 네임스페이스로 푸시했습니다.
 
 ## 다음 단계
 {: #gs_get_start_next}

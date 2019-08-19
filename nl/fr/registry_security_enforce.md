@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -33,12 +33,15 @@ Container Image Security Enforcement extrait les informations relatives à la s�
 ## Installation de Container Image Security Enforcement dans votre cluster
 {: #sec_enforce_install}
 
-**Avant de commencer**
+Installez Container Image Security Enforcement dans votre cluster en configurant la charte Helm et en installant la charte Helm Container Image Security Enforcement.
+{:shortdesc}
 
-* [Créez](/docs/containers?topic=containers-clusters#clusters_ui) ou [mettez à jour](/docs/containers?topic=containers-update#update) le cluster à utiliser avec **Kubernetes version 1.9 ou ultérieure**.
-* [Ciblez votre interface de ligne de commande `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) sur le cluster.
+Avant de commencer, exécutez les tâches suivantes :
 
-Procédez comme suit :
+1. [Créez](/docs/containers?topic=containers-clusters#clusters_ui) ou [mettez à jour](/docs/containers?topic=containers-update#update) le cluster à utiliser avec **Kubernetes version 1.9 ou ultérieure**.
+2. [Ciblez votre interface de ligne de commande `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) sur le cluster.
+
+Pour installer Container Image Security Enforcement dans votre cluster, exécutez les étapes suivantes :
 
 1. [Configurez Helm dans votre cluster](/docs/containers?topic=containers-helm#helm).
 
@@ -66,8 +69,8 @@ Container Image Security Enforcement installe des règles par défaut afin que v
 
 Pour remplacer ces règles, utilisez l'une des options suivantes :
 
-* Ecrivez un nouveau document de règle et appliquez-le à votre cluster en utilisant `kubectl apply`
-* Editez la règle par défaut en utilisant `kubectl edit`
+- Ecrivez un nouveau document de règle et appliquez-le à votre cluster en utilisant `kubectl apply`
+- Editez la règle par défaut en utilisant `kubectl edit`
 
 Pour plus d'informations sur l'écriture de règles de sécurité, voir [Personnalisation des règles](#customize_policies).
 
@@ -77,7 +80,7 @@ Pour plus d'informations sur l'écriture de règles de sécurité, voir [Personn
 Par défaut, une règle à l'échelle du cluster est appliquée à l'ensemble des images de tous les registres comportant des informations de confiance et pour lesquels aucune vulnérabilité n'a été signalée dans Vulnerability Advisor.
 {:shortdesc}
 
-**Fichier `.yaml` de règle à l'échelle du cluster**
+Le code suivant montre le fichier `.yaml` de la politique par défaut du cluster :
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -106,7 +109,7 @@ Lorsque vous définissez `va` ou `trust` sur `enabled: true` pour un registre de
 Par défaut, une règle à l'échelle de l'espace de nom est installée pour l'espace de nom `kube-system`. Elle permet à toutes les images d'un registre de conteneur d'être déployées sur le `kube-system` sans contrôle, mais vous pouvez modifier cette partie de la règle. La règle par défaut inclut également certains référentiels que vous devez conserver pour que votre cluster puisse être correctement configuré.
 {:shortdesc}
 
-**Fichier `.yaml` de règle `kube-system`**
+Le code suivant montre le fichier `.yaml` de la politique `kube-system` par défaut :
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -137,7 +140,7 @@ spec:
 Par défaut, une règle à l'échelle de l'espace de nom est installée pour l'espace de nom `ibm-system`. Elle permet à toutes les images d'un registre de conteneur d'être déployées sur le `ibm-system` sans contrôle, mais vous pouvez modifier cette partie de la règle. La règle par défaut inclut également certains référentiels que vous devez conserver pour que votre cluster puisse être correctement configuré et puisse installer ou mettre à niveau Container Image Security Enforcement.
 {:shortdesc}
 
-**Fichier `.yaml` de règle `ibm-system`**
+Le code suivant montre le fichier `.yaml` de la politique `ibm-system` par défaut :
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -281,29 +284,29 @@ Pour configurer la règle destinée à vérifier qu'une image est signée par un
 Si le contrôle d'accès basé sur les rôles (RBAC) est activé sur votre cluster Kubernetes, vous pouvez créer un rôle pour décider qui a la possibilité d'administrer les règles de sécurité sur votre cluster. Pour plus d'informations sur l'application de règles de contrôle d'accès basé sur les rôles (RBAC) à votre cluster, voir [la documentation {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
-Dans votre rôle, ajoutez une règle pour les règles de sécurité :
+- Dans votre rôle, ajoutez une règle pour les règles de sécurité :
 
-```yaml
-- apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+  ```yaml
+  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-```
-{: codeblock}
+  ```
+  {: codeblock}
 
-Vous pouvez créer plusieurs rôles afin de contrôler quelles actions les utilisateurs peuvent effectuer. Par exemple, changez les instructions (`verbs`) afin que certains utilisateurs puissent uniquement obtenir (`get`) ou répertorier (`list`) des règles. Ou bien, vous pouvez omettre des règles `clusterimagepolicies` provenant de la liste `resources` pour accorder l'accès uniquement aux règles d'espace de nom Kubernetes.
-{:tip}
+  Vous pouvez créer plusieurs rôles afin de contrôler quelles actions les utilisateurs peuvent effectuer. Par exemple, changez les instructions (`verbs`) afin que certains utilisateurs puissent uniquement obtenir (`get`) ou répertorier (`list`) des règles. Ou bien, vous pouvez omettre des règles `clusterimagepolicies` provenant de la liste `resources` pour accorder l'accès uniquement aux règles d'espace de nom Kubernetes.
+  {:tip}
 
-Les utilisateurs disposant d'un accès pour supprimer des définitions de ressource personnalisée (CRD) peuvent supprimer la définition de ressource pour des règles de sécurité, ce qui supprime également vos règles de sécurité. Veillez à contrôler qui est autorisé à supprimer des CRD. Pour accorder l'accès pour supprimer des CRD, ajoutez une règle :
+- Les utilisateurs disposant d'un accès pour supprimer des définitions de ressource personnalisée (CRD) peuvent supprimer la définition de ressource pour des règles de sécurité, ce qui supprime également vos règles de sécurité. Veillez à contrôler qui est autorisé à supprimer des CRD. Pour accorder l'accès pour supprimer des CRD, ajoutez une règle :
 
-```yaml
-- apiGroups: ["apiextensions.k8s.io/v1beta1"]
-  resources: ["CustomResourceDefinition"]
+  ```yaml
+  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+    resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
-```
-{: codeblock}
+  ```
+  {: codeblock}
 
-Les utilisateurs et comptes de service avec le rôle `cluster-admin` ont accès à l'ensemble des ressources. Le rôle cluster-admin accorde l'accès pour administrer des règles de sécurité, même si vous n'éditez pas le rôle. Veillez à contrôler qui dispose du rôle `cluster-admin`, et accordez l'accès uniquement aux personnes que vous souhaitez autoriser à modifier des règles de sécurité.
-{:tip}
+  Les utilisateurs et comptes de service avec le rôle `cluster-admin` ont accès à l'ensemble des ressources. Le rôle cluster-admin accorde l'accès pour administrer des règles de sécurité, même si vous n'éditez pas le rôle. Veillez à contrôler qui dispose du rôle `cluster-admin`, et accordez l'accès uniquement aux personnes que vous souhaitez autoriser à modifier des règles de sécurité.
+  {:tip}
 
 ## Déploiement d'images de conteneur avec la sécurité appliquée
 {: #deploy_containers}
@@ -311,42 +314,42 @@ Les utilisateurs et comptes de service avec le rôle `cluster-admin` ont accès 
 Lorsqu'une règle est appliquée, vous pouvez déployer normalement du contenu sur votre cluster. Votre règle est automatiquement appliquée par le cluster Kubernetes. Si votre déploiement correspond à une règle et est autorisé par celle-ci, il est accepté par le cluster et est appliqué.
 {:shortdesc}
 
-Si Container Image Security Enforcement refuse un déploiement, le déploiement (Deployment) est créé mais le jeu de répliques (ReplicaSet) qu'il crée n'est pas mis à l'échelle et aucun pod n'est créé. Pour rechercher le ReplicaSet, exécutez `kubectl describe deployment <deployment-name>`, puis examinez la raison pour laquelle le déploiement a été refusé en exécutant `kubectl describe rs <replicaset-name>`.
+- Si Container Image Security Enforcement refuse un déploiement, le déploiement (Deployment) est créé mais le jeu de répliques (ReplicaSet) qu'il crée n'est pas mis à l'échelle et aucun pod n'est créé. Pour rechercher le ReplicaSet, exécutez `kubectl describe deployment <deployment-name>`, puis examinez la raison pour laquelle le déploiement a été refusé en exécutant `kubectl describe rs <replicaset-name>`.
 
-**Exemples de message d'erreur**
+  Le code suivant montre des exemples de messages d'erreur typiques :
 
-* Si votre image ne correspond pas à une règle, ou s'il n'existe aucune règle dans l'espace de nom ou le cluster.
+  - Si votre image ne correspond pas à une règle, ou s'il n'existe aucune règle dans l'espace de nom ou le cluster.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
+    ```
+    {: screen}
 
-* Si votre image correspond à une règle mais ne satisfait pas les exigences Vulnerability Advisor de la règle.
+  - Si votre image correspond à une règle mais ne satisfait pas les exigences Vulnerability Advisor de la règle.
 
-   ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
-   for more details by using the command `ibmcloud cr va`.
-   ```
-   {: screen}
+    ```
+    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report
+    for more details by using the command `ibmcloud cr va`.
+    ```
+    {: screen}
 
-* Si votre image correspond à une règle mais ne satisfait pas les exigences de confiance de la règle.
+  - Si votre image correspond à une règle mais ne satisfait pas les exigences de confiance de la règle.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
+    ```
+    {: screen}
 
-* Si votre règle spécifie un contrôle de confiance pour votre image, mais que celle-ci ne provient pas d'un registre pris en charge.
+  - Si votre règle spécifie un contrôle de confiance pour votre image, mais que celle-ci ne provient pas d'un registre pris en charge.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
+    ```
+    {: screen}
 
-Vous pouvez activer l'option `va` dans votre règle afin d'imposer la réussite de l'analyse Vulnerability Advisor avant qu'une image ne puisse être déployée. Les images non prise en charge par Vulnerability Advisor sont autorisées.
+- Vous pouvez activer l'option `va` dans votre règle afin d'imposer la réussite de l'analyse Vulnerability Advisor avant qu'une image ne puisse être déployée. Les images non prise en charge par Vulnerability Advisor sont autorisées.
 
-Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](/docs/services/Registry?topic=registry-registry_trustedcontent).
+- Vous pouvez activer l'option `trust` dans votre règle afin d'imposer la sécurité du contenu. Si vous ne spécifiez pas `signerSecrets`, le déploiement est autorisé si l'image est signée par quelqu'un. Si vous spécifiez `signerSecrets`, la version signée la plus récente de l'image doit avoir été signée par tous les signataires spécifiés. Container Image Security Enforcement vérifie que la clé publique fournie appartient au signataire. Pour plus d'informations sur la sécurité du contenu, voir [Signature d'images pour du contenu sécurisé](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Un déploiement est autorisé uniquement si toutes les images réussissent les vérifications de Container Image Security Enforcement.
 
@@ -369,7 +372,7 @@ Avant de commencer, [ciblez votre interface de ligne de commande `kubectl` sur l
    ```
    {: pre}
 
-2. Retirez la charte.
+1. Retirez la charte.
 
    ```
    helm delete --purge cise

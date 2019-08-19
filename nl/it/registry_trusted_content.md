@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ Un repository può contenere sia contenuti firmati che non firmati. Se hai abili
 Le immagini hanno firme separate per il vecchio nome del dominio (`registry.bluemix.net`) e quello nuovo (`icr.io`). Le firme esistenti funzionano quando viene eseguito il pull dell'immagine dal vecchio nome del dominio. Se vuoi eseguire il pull del contenuto firmato dal nuovo nome del dominio, devi rifirmare l'immagine sul nuovo nome del dominio, `icr.io`, consulta [Rifirmare un'immagine per il nuovo nome del dominio](#trustedcontent_resign).
 {: note}
 
-Docker Content Trust usa un modello di sicurezza di "attendibilità al primo utilizzo". La chiave di repository viene estratta dal server di attendibilità quando esegui per la prima volta il pull di un'immagine firmata da un repository e tale chiave viene utilizzata per verificare le immagini da quel repository in futuro. Devi verificare di considerare attendibile il server di attendibilità o l'immagine e il relativo editore prima di eseguire il pull dal repository per la prima volta. Se le informazioni sull'attendibilità nel server sono compromesse e non hai ancora eseguito il pull di un'immagine dal repository, il client Docker potrebbe estrarre le informazioni compromesse dal server di attendibilità. Se i dati di attendibilità vengono compromessi dopo che hai eseguito il pull dell'immagine per la prima volta, durante i pull successivi, il client Docker non riesce a verificare i dati compromessi e non esegue il pull dell'immagine. Per ulteriori informazioni su come controllare i dati di attendibilità per un'immagine, vedi [Visualizzazione delle immagini firmate](#trustedcontent_viewsigned).
+Docker Content Trust usa un modello di sicurezza di attendibilità al primo utilizzo (TOFU). La chiave di repository viene estratta dal server di attendibilità quando esegui per la prima volta il pull di un'immagine firmata da un repository e tale chiave viene utilizzata per verificare le immagini da quel repository in futuro. Devi verificare di considerare attendibile il server di attendibilità o l'immagine e il relativo editore prima di eseguire il pull dal repository per la prima volta. Se le informazioni sull'attendibilità nel server sono compromesse e non hai ancora eseguito il pull di un'immagine dal repository, il client Docker potrebbe estrarre le informazioni compromesse dal server di attendibilità. Se i dati di attendibilità vengono compromessi dopo che hai eseguito il pull dell'immagine per la prima volta, durante i pull successivi, il client Docker non riesce a verificare i dati compromessi e non esegue il pull dell'immagine. Per ulteriori informazioni su come controllare i dati di attendibilità per un'immagine, vedi [Visualizzazione delle immagini firmate](#trustedcontent_viewsigned).
 
-Per ulteriori informazioni sul modello di sicurezza di "attendibilità al primo utilizzo" vedi [The Update Framework ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://theupdateframework.github.io/).
+Per ulteriori informazioni sul modello di sicurezza TOFU, vedi [The Update Framework ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://theupdateframework.github.io/).
 
 ## Configurazione del tuo ambiente di contenuti attendibili
 {: #trustedcontent_setup}
@@ -71,7 +71,7 @@ Per impostazione predefinita, Docker Content Trust è disabilitato. Abilita l'am
    {: pre}
 
    Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso. Immetti il tuo nome utente e usa
-l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Se hai un ID federato, l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
    {: tip}
 
 3. Specifica la regione che vuoi utilizzare come destinazione. Se non conosci il nome della regione, puoi eseguire il comando senza la regione e sceglierne una.
@@ -90,7 +90,7 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
 
    L'output ti indica di esportare la variabile di ambiente Docker Content Trust.
 
-   **Esempio**
+   Ad esempio:
 
    ```
    user:~ user$ ibmcloud cr login
@@ -132,7 +132,10 @@ Prima di iniziare, [configura il tuo spazio dei nomi del registro](/docs/service
    ```
    {: screen}
 
-3. **Esecuzione del push di un repository firmato per la prima volta.** Quando esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, chiave root e chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sono limitate.
+3. La prima volta che esegui il push di un'immagine firmata in un nuovo repository, il comando crea due chiavi di firma, la chiave root e la chiave di repository, e le memorizza nella tua macchina locale. Immetti e salva passphrase sicure per ogni chiave, quindi [esegui il backup delle tue chiavi](#trustedcontent_backupkeys). Il backup delle tue chiavi è fondamentale perché le [opzioni di ripristino](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) sono limitate.
+
+   Questa azione è necessaria solo la prima volta che esegui il push di un repository firmato.
+   {: tip}
 
 ## Esecuzione del pull di un'immagine firmata
 {: #trustedcontent_pull}
@@ -268,7 +271,7 @@ Puoi aggiungere e rimuovere firmatari dalla firma di immagini in un repository.
 Per consentire ad altri utenti di firmare le immagini in un repository, aggiungi le chiavi di firma per quegli utenti al repository.
 {:shortdesc}
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - I firmatari di immagini devono disporre dell'autorizzazione per eseguire il push delle immagini nello spazio dei nomi.
 - I proprietari del repository e i firmatari aggiuntivi devono avere installato Docker 18.03 o successive.

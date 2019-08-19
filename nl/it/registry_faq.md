@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ subcollection: registry
 Domande frequenti su {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## Come elenco le immagini pubbliche?
+## Come elenchi le immagini pubbliche?
 {: #faq_list_public_images}
 {: faq}
 
@@ -49,9 +49,9 @@ ibmcloud cr images --include-ibm
 {: #faq_tools}
 {: faq}
 
-Sì, a condizione che lo strumento supporti il protocollo e il formato l'immagine OCI.
+Sì, se lo strumento supporta il protocollo e il formato dell'immagine OCI.
 
-## Come utilizzo il controllo dell'accesso con IAM?
+## Come utilizzi il controllo dell'accesso con {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
 
@@ -76,7 +76,7 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-Ricevi questo messaggio perché le immagini vengono scansionate in modo asincrono rispetto alle richieste per i risultati e il processo di scansione impiega del tempo per essere completato. Durante un'operazione normale, la scansione viene completata nei primi minuti dopo che hai aggiunto l'immagine al registro, a seconda di variabili come la dimensione dell'immagine e la quantità di traffico ricevuta dal registro.
+Ricevi questo messaggio perché le immagini vengono scansionate in modo asincrono rispetto alle richieste per i risultati e il processo di scansione impiega del tempo per essere completato. Durante un'operazione normale, la scansione viene completata nei primi minuti dopo che hai aggiunto l'immagine al registro. Il tempo necessario per il completamento dipende da variabili come la dimensione dell'immagine e la quantità di traffico ricevuta dal registro.
 
 Se ricevi questo messaggio come parte di una pipeline di creazione e visualizzi questo errore regolarmente, prova ad aggiungere una logica di nuovo tentativo che contiene una breve pausa.
 
@@ -89,8 +89,8 @@ Se ancora hai delle prestazioni non accettabili, contatta il supporto, vedi [Com
 La scansione di un'immagine viene attivata in uno dei seguenti modi:
 
 - Se viene eseguito il push di una nuova immagine al registro.
-- Se non è stata eseguita la scansione dell'immagine per 7 giorni, viene accodata per la nuova scansione, che potrebbe comportare del tempo per il completamento.
-- Se viene rilasciato un nuovo avviso di sicurezza per un pacchetto installato nell'immagine, viene accodata per la nuova scansione, che potrebbe comportare del tempo per il completamento. Le nuove scansioni vengono attivate quando sono disponibili delle release di nuovi avvisi di sicurezza solo per le immagini Ubuntu e Debian.
+- Se l'ultima scansione è più vecchia di 7 giorni, l'immagine viene accodata per la nuova scansione, che potrebbe comportare del tempo per il completamento.
+- Se viene rilasciato un nuovo avviso di sicurezza per un pacchetto installato nell'immagine, l'immagine viene accodata per la nuova scansione, che potrebbe comportare del tempo per il completamento. Le nuove scansioni vengono attivate quando sono disponibili delle release di nuovi avvisi di sicurezza solo per le immagini Ubuntu e Debian.
 
 ## Quanto spesso gli avvisi di sicurezza vengono aggiornati?
 {: #faq_va_update_security_notice}

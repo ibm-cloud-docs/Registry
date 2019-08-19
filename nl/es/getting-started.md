@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -42,19 +42,15 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 ## Configure un espacio de nombres
 {: #gs_registry_namespace_add}
 
-1. Inicie una sesión en {{site.data.keyword.cloud_notm}}.
+1. Inicie una sesión en {{site.data.keyword.cloud_notm}}:
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Si tiene un ID federado, inicie sesión con el mandato siguiente:
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar la sesión. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Si tiene un ID federado, el inicio de sesión falla sin la opción `--sso` y funciona correctamente con la opción `--sso`.
+   {: tip}
 
 2. Añada un espacio de nombres para crear su propio repositorio de imágenes. Sustituya `<my_namespace>` por el espacio de nombres que desee.
 
@@ -142,7 +138,7 @@ y guiones bajos (_). Los espacios de nombres deben empezar y finalizar con una l
    ```
    {: pre}
 
-Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registrylong_notm}} y ha transmitido su primera imagen al espacio de nombres.
+Ha configurado un espacio de nombres en {{site.data.keyword.registrylong_notm}} y ha transmitido su primera imagen al espacio de nombres.
 
 ## Pasos siguientes
 {: #gs_get_start_next}
@@ -151,4 +147,4 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 - [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
 - [Almacene y gestione más imágenes en el espacio de nombres](/docs/services/Registry?topic=registry-registry_images_)
 - [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user)
-- [Configuración de clústeres y nodos de trabajador](/docs/containers?topic=containers-clusters#clusters)
+- [Configuración de clústeres y nodos trabajadores](/docs/containers?topic=containers-clusters#clusters)

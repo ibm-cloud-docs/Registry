@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -22,14 +22,14 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Eventi {{site.data.keyword.cloudaccesstrailshort}}
+# Eventi di Activity Tracker
 {: #at_events}
 
-Utilizza il servizio {{site.data.keyword.cloudaccesstrailfull}} per tracciare il modo in cui gli utenti e le applicazioni interagiscono con il servizio {{site.data.keyword.registrylong}} in {{site.data.keyword.cloud}}.
+Tieni traccia del modo in cui gli utenti e le applicazioni interagiscono con il servizio {{site.data.keyword.registrylong}} in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-Il servizio {{site.data.keyword.cloudaccesstrailfull_notm}} registra le attività avviate dall'utente che modificano lo stato di un servizio in {{site.data.keyword.cloud_notm}}.
-Per ulteriori informazioni, vedi [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+Il servizio {{site.data.keyword.at_full_notm}} o soltanto per gli utenti esistenti, il servizio {{site.data.keyword.cloudaccesstrailfull_notm}} registra le attività avviate dall'utente che modificano lo stato di un servizio in {{site.data.keyword.cloud_notm}}.
+Per ulteriori informazioni, vedi [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) o per gli utenti esistenti, [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
 
 La seguente tabella elenca i metodi API che generano un evento quando vengono richiamati:
 
@@ -50,6 +50,10 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   <tr>
     <td>`container-registry.image.build`</td>
 	  <td>Crea un'immagine Docker in {{site.data.keyword.registrylong_notm}}.</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.bulkdelete`</td>
+	  <td>Elimina diverse immagini da {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.image.delete`</td>
@@ -76,11 +80,11 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
-	  <td>Aggiunge una nuova tag che fa riferimento a un'immagine {{site.data.keyword.registrylong_notm}} preesistente.</td>
+	  <td>Aggiunge una tag che fa riferimento a un'immagine {{site.data.keyword.registrylong_notm}} preesistente.</td>
   </tr>
    <tr>
     <td>`container-registry.image.untag`</td>
-	  <td>Rimuove una tag o delle tag da ogni immagine specificata in {{site.data.keyword.registrylong_notm}}.</td>
+	  <td>Rimuovi una tag o delle tag da ogni immagine specificata in {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.namespace.create`</td>
@@ -117,6 +121,9 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
   <tr>
     <td>`container-registry.registrytokens.delete`</td>
 	  <td>Elimina più token di registro.</td>
+  </tr><tr>
+    <td>`container-registry.retentionanalysis`</td>
+	  <td>Ripulisci i tuoi spazi dei nomi conservando solo le immagini che soddisfano i tuoi criteri. Conserva le immagini di ogni repository all'interno di uno spazio dei nomi in {{site.data.keyword.registrylong_notm}} applicando dei criteri specificati. Tutte le altre immagini nello spazio dei nomi vengono eliminate. </br> La richiesta per ottenere l'elenco di immagini da eliminare è un'azione `post` su un tipo di evento `retentionanalysis`. L'eliminazione è una singola azione `bulkdelete` su un tipo di evento `images` e anche un'azione `delete` per ogni singola immagine.</td>
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>
@@ -131,6 +138,33 @@ La seguente tabella elenca i metodi API che generano un evento quando vengono ri
 ## Dove ricercare gli eventi
 {: #ui}
 
-Gli eventi di {{site.data.keyword.cloudaccesstrailshort}} sono disponibili nel {{site.data.keyword.cloudaccesstrailshort}} **dominio dell'account** che è disponibile nella regione {{site.data.keyword.cloud_notm}} in cui vengono generati gli eventi, ad eccezione di `ap-north`. Gli eventi per `ap-north` vengono mostrati in `ap-south`.
+### Eventi {{site.data.keyword.at_full_notm}}
+{: #ui_atlogdna}
 
-La [regione](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in cui è disponibile un {{site.data.keyword.registrylong_notm}} o un evento del Controllo vulnerabilità corrisponde alla regione di {{site.data.keyword.registrylong_notm}} in cui è disponibile la risorsa (ad esempio, l'immagine o lo spazio dei nomi).
+Gli eventi di {{site.data.keyword.at_full_notm}} sono disponibili nel {{site.data.keyword.at_full_notm}} **dominio dell'account** che è disponibile nella regione {{site.data.keyword.cloud_notm}} in cui vengono generati gli eventi, ad eccezione di `ap-south`. Gli eventi per `ap-south` vengono mostrati in `Tokyo (jp-tok)`.
+
+La [regione](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in cui è disponibile un {{site.data.keyword.registrylong_notm}} o un evento del Controllo vulnerabilità corrisponde alla regione di {{site.data.keyword.registrylong_notm}} in cui è disponibile la risorsa. Le immagini e gli spazi dei nomi sono esempi di risorse.
+
+| Regione per il registro del tuo account | Nome di dominio del tuo registro | Ubicazione degli eventi {{site.data.keyword.at_full_notm}} |
+|:-----------------|:-----------------|:-----------------|
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
+| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+{: caption="Tabella 2. Ubicazione degli eventi {{site.data.keyword.at_full_notm}} " caption-side="top"}
+
+| Registro | Registro globale | Ubicazione degli eventi {{site.data.keyword.at_full_notm}} |
+|:-----------------|:-----------------|:-----------------|
+| Globale | `icr.io` | `Dallas (us-south)` |
+{: caption="Tabella 3. Ubicazione degli eventi {{site.data.keyword.at_full_notm}} del registro globale" caption-side="top"}
+
+### Eventi {{site.data.keyword.cloudaccesstraillong_notm}}
+{: #ui_at}
+
+Gli eventi di {{site.data.keyword.cloudaccesstraillong_notm}}, soltanto per gli utenti esistenti, sono disponibili nel {{site.data.keyword.cloudaccesstraillong_notm}} **dominio dell'account** che è disponibile nella regione {{site.data.keyword.cloud_notm}} in cui vengono generati gli eventi, ad eccezione di `ap-north`. Gli eventi per `ap-north` vengono mostrati in `ap-south`.
+
+{{site.data.keyword.cloudaccesstrailfull_notm}} è obsoleto. A partire dal 9 maggio 2019, non puoi eseguire il provisioning di nuove istanze di {{site.data.keyword.cloudaccesstrailshort}}. Le istanze del piano Premium esistenti sono supportate fino al 30 settembre 2019. Per continuare a monitorare l'attività del tuo account {{site.data.keyword.cloud_notm}}, esegui il provisioning di un'istanza di [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
+{: deprecated}
+
+La [regione](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in cui è disponibile un {{site.data.keyword.registrylong_notm}} o un evento del Controllo vulnerabilità corrisponde alla regione di {{site.data.keyword.registrylong_notm}} in cui è disponibile la risorsa. Le immagini e gli spazi dei nomi sono esempi di risorse.

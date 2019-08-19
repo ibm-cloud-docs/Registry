@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ subcollection: registry
 Foire aux questions concernant {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## Comment établir la liste des images publiques ?
+## Comment doit-on répertorier les images publiques ?
 {: #faq_list_public_images}
 {: faq}
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Puis-je utiliser des outils non Docker pour générer mes images et les envoyer (push) au registre ?
+## Peut-on utiliser des outils non Docker pour générer des images et les envoyer au registre ?
 {: #faq_tools}
 {: faq}
 
-Oui, sous réserve que l'outil prenne en charge le protocole et le format d'image OCI.
+Oui, si l'outil prend en charge le protocole et le format d'image OCI.
 
-## Comment utiliser le contrôle d'accès avec IAM ?
+## Comment utilise-t-on le contrôle d'accès avec {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} ?
 {: #faq_access_control}
 {: faq}
 
@@ -67,7 +67,7 @@ Vous pouvez héberger des images dans des [régions locales](/docs/services/Regi
 {: #faq_va_new_scan_error}
 {: faq}
 
-Si vous générez le rapport de vulnérabilité immédiatement après avoir ajout l'image au registre, il est possible que vous receviez l'erreur suivante :
+Si vous obtenez le rapport de vulnérabilité immédiatement après avoir ajouté l'image au registre, il est possible que l'erreur suivante s'affiche :
 
 ```
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
@@ -76,9 +76,9 @@ see https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-Vous recevez ce message parce que les images sont analysées de manière asynchrone par rapport aux demandes de résultats, et l'exécution du processus d'analyse prend un certain temps. En fonctionnement normal, l'analyse se déroule durant les quelques minutes qui suivent l'ajout de l'image au registre, en fonction de variables telles que la taille d'image et la quantité de trafic reçue par le registre.
+Vous recevez ce message parce que les images sont analysées de manière asynchrone par rapport aux demandes de résultats, et l'exécution du processus d'analyse prend un certain temps. En mode de fonctionnement normal, l'analyse se termine dans les premières minutes qui suivent l'ajout de l'image au registre. Le temps qu'il faut pour terminer dépend de variables comme la taille de l'image et la quantité de trafic que le registre reçoit.
 
-Si vous recevez ce message dans le cadre d'un pipeline de génération et que cette erreur se produit régulièrement, essayez d'ajouter de la logique de relance comportant une courte pause.
+Si vous recevez ce message dans le cadre d'un pipeline de génération et que cette erreur se produit régulièrement, essayez de faire appel à une logique de relance qui comporte une courte pause.
 
 Si les performances restent inacceptables, prenez contact avec le support. Voir [Aide et support pour {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-ts_index#gettinghelp).
 
@@ -89,11 +89,11 @@ Si les performances restent inacceptables, prenez contact avec le support. Voir 
 L'analyse d'une image est déclenchée de l'une des façons suivantes :
 
 - Si une nouvelle image est envoyée par commande push au registre.
-- Si l'image n'a pas été analysée depuis 7 jours, elle est placée en file d'attente pour réanalyse, ce qui peut prendre un certain temps.
-- Si un nouvel avis de sécurité est publié pour un module installé dans l'image, elle est placée en file d'attente pour réanalyse, ce qui peut prendre un certain temps. Les réanalyses déclenchées par l'édition de nouveaux avis de sécurité sont disponibles pour les images Ubuntu et Debian uniquement.
+- Si la dernière analyse remonte à plus de 7 jours, l'image est mise en file d'attente pour une nouvelle analyse, ce qui peut prendre un certain temps.
+- Si un nouvel avis de sécurité est publié pour un paquet qui est installé dans l'image, l'image est mise en file d'attente pour une nouvelle analyse, ce qui peut prendre un certain temps. Les réanalyses déclenchées par l'édition de nouveaux avis de sécurité sont disponibles pour les images Ubuntu et Debian uniquement.
 
 ## A quelle fréquences les avis de sécurité sont-ils mis à jour ?
 {: #faq_va_update_security_notice}
 {: faq}
 
-Les avis de sécurité pour Vulnerability Advisor sont chargés depuis les sites de système d'exploitation des fournisseurs toutes les 12 heures environ.
+Les avis de sécurité de Vulnerability Advisor sont chargés depuis les sites de système d'exploitation des fournisseurs toutes les 12 heures environ.

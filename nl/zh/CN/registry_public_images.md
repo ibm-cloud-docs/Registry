@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, public IBM images, images, accessing images,
 
@@ -34,7 +34,7 @@ subcollection: registry
 您可以使用命令行来访问公共 {{site.data.keyword.IBM_notm}} 映像。
 {:shortdesc}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - 登录到 [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)：
 

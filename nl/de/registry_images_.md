@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryq
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Rufen Sie ein Image mit einer Pull-Operation aus einer privaten oder öffentlichen Registry auf Ihren Computer ab."/>
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
@@ -49,10 +49,10 @@ Sie können ein Image aus einer beliebigen privaten oder öffentlichen Registryq
 
   Wenn Sie Ihre Berechtigungen ändern, um Docker-Befehle ohne Rootberechtigungen auszuführen, müssen Sie den Befehl `ibmcloud login` erneut ausführen.
 
-Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in der Dokumentation zur Einführung.
+1. Laden Sie das Image herunter. Informationen dazu finden Sie im Abschnitt [Image mit Pull-Operation extrahieren](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) in der Dokumentation zur Einführung.
 
-Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
-{:tip}
+   Wenn die Nachricht `Berechtigung nicht vorhanden: Authentifizierung erforderlich` oder `Zugriff verweigert: Angeforderter Zugriff auf die Ressource wurde verweigert` ausgegeben wird, führen Sie den Befehl `ibmcloud cr login` aus.
+   {:tip}
 
 Nachdem Sie ein Image mit einer Pull-Operation extrahiert und für Ihren Namensbereich gekennzeichnet haben, können Sie das Image aus Ihrem lokalen Computer in Ihren Namensbereich hochladen (Push-Operation).
 
@@ -64,7 +64,7 @@ Sie können ein Image mit einer Push-Operation in Ihren eigenen Namensbereich in
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Image per Push-Operation vom Computer an {{site.data.keyword.registrylong_notm}} übertragen. "/>
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
@@ -104,7 +104,7 @@ Sie können ein Image mit einer Pull-Operation aus einer Registry in einer Regio
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Kopieren Sie das Image aus einer beliebigen privaten oder öffentlichen Registry in die private {{site.data.keyword.cloud_notm}}-Registry."/>
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
@@ -130,7 +130,7 @@ Erstellen Sie in der Region, an der Sie angemeldet sind, ein neues Image in {{si
 Neue Images, die mit diesem Verfahren erstellt werden, behalten keine Signaturen bei. Wenn das neue Image signiert werden soll, verwenden Sie dieses Verfahren nicht.
 {: tip}
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - Stellen Sie sicher, dass Sie über Zugriff auf einen privaten Namensbereich in {{site.data.keyword.registrylong_notm}} verfügen, der ein Quellenimage enthält, auf das sich ein anderes Image beziehen soll.
@@ -166,7 +166,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Image auf der Basis eines Q
 Sie können ein Docker-Image direkt in {{site.data.keyword.cloud_notm}} erstellen oder ein eigenes Docker-Image auf Ihrem lokalen Computer erstellen und es in Ihren Namensbereich in {{site.data.keyword.registrylong_notm}} hochladen (Push-Operation).
 {:shortdesc}
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - [Installieren Sie die CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install), damit Sie in Ihrem Namensbereich mit Images arbeiten können.
 - [Richten Sie einen eigenen Namensbereich in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup) ein.
@@ -196,8 +196,7 @@ Führen Sie die folgenden Schritte aus, um ein eigenes Docker-Image zu erstellen
        ```
        {: pre}
 
-       **Beispiel**
-     Zum Erstellen einer Dockerfile, die auf dem öffentlichen Image von {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) basiert, den folgenden Code verwenden:
+       Beispiel: Zum Erstellen einer Dockerfile, die auf dem öffentlichen Image von {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) basiert, verwenden Sie den folgenden Befehl:
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -259,6 +258,8 @@ Informationen zur Verwendung von Vulnerability Advisor zum Überprüfen der Sich
 Erstellen Sie eine Service-ID, die einen API-Schlüssel verwendet, um Images an {{site.data.keyword.registrylong_notm}} mittels Push-Operation zu übertragen.
 {:shortdesc}
 
+Führen Sie die folgenden Schritte aus:
+
 1. Weitere Informationen zum Erstellen von Service-IDs finden Sie in [Service-IDs erstellen und damit arbeiten](/docs/iam?topic=iam-serviceids#serviceids).
 2. Informationen zum Erstellen einer Richtlinie, die der Service-ID die Berechtigung zum Zugriff auf die Registrierung erteilt, z. B. die Rollen `Administrator` und `Manager`, finden Sie in [Benutzerzugriff mit Identity and Access Management verwalten](/docs/services/Registry?topic=registry-iam#iam).
 3. Informationen zum Erstellen eines API-Schlüssels finden Sie in [API-Schlüssel für Service-ID erstellen](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
@@ -308,7 +309,7 @@ Sie können unerwünschte Images aus Ihrem privaten Repository über die grafisc
 
 Wenn Sie ein privates Repository und die zugehörigen Images löschen möchten, lesen Sie den Abschnitt [Privates Repository und alle zugehörigen Images löschen](#registry_repo_remove).
 
-Öffentliche {{site.data.keyword.IBM_notm}}-Images können nicht aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
+Öffentliche {{site.data.keyword.IBM_notm}} Images können nicht aus Ihrem privaten {{site.data.keyword.cloud_notm}}-Repository gelöscht werden und zählen nicht zu Ihrem Kontingent.
 
 Das Löschen eines Images kann nicht rückgängig gemacht werden. Das Löschen eines Images, das von einer vorhandenen Bereitstellung verwendet wird, kann zu einem Scale-up, einem neuen Zeitplan oder beidem führen, um fehlzuschlagen.
 {: important}
@@ -381,9 +382,8 @@ Sie können private Repositorys, die nicht mehr benötigt werden, und alle zugeh
 Wenn Sie ein Repository löschen, werden alle Images in diesem Repository gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.
 {: important}
 
-**Vorbereitung**
-
-Sie müssen alle Images sichern, die Sie behalten möchten.
+Bevor Sie beginnen, müssen Sie alle Images sichern, die beibehalten werden sollen.
+{: tip}
 
 Um ein privates Repository über die grafische Benutzerschnittstelle zu löschen, führen Sie die folgenden Schritte aus:
 

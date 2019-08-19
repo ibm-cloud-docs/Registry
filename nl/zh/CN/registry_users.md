@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ subcollection: registry
 您无法组织资源组中的注册表名称空间，以及分配对这些名称空间的访问权。
 {: note}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - 决定每个用户需要的角色以及这些角色是针对 {{site.data.keyword.registrylong_notm}} 中的哪些资源；请参阅 [IAM 角色](/docs/services/Registry?topic=registry-iam#iam)。请考虑您可以创建多个策略的情况；例如，可以授予对某个资源的写访问权，但仅授予对另一资源的读访问权，并且不授予对另一资源的访问权。策略是可叠加的，这意味着全局读策略和作用域限定为资源的写策略会授予对该资源的读和写访问权。
 

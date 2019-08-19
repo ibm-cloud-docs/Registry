@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Guía de aprendizaje: Cómo otorgar acceso a los recursos de {{site.data.keyword.registrylong_notm}}
+# Guía de aprendizaje para otorgar acceso a los recursos de {{site.data.keyword.registrylong_notm}}
 {: #iam_access}
 
 Utilice esta guía de aprendizaje para ver cómo se otorgan acceso a sus recursos mediante la configuración de {{site.data.keyword.iamlong}} (IAM) para {{site.data.keyword.registrylong_notm}}.
@@ -30,13 +30,16 @@ Utilice esta guía de aprendizaje para ver cómo se otorgan acceso a sus recurso
 
 Esta guía de aprendizaje dura aproximadamente 45 minutos.
 
-**Antes de empezar**
+## Antes de empezar
+{: #iam_access_prereq}
+
+Antes de empezar, debe completar las siguientes tareas:
 
 - Siga las instrucciones de [Iniciación a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Asegúrese de que tiene la versión más reciente del plugin de CLI `container-registry` para la CLI de {{site.data.keyword.cloud_notm}}. Consulte [Actualización del plugin de CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- Debe tener acceso a dos cuentas de [{{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
+- Asegúrese de tener acceso a dos cuentas de [{{site.data.keyword.cloud_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/login) que puede utilizar para esta guía de aprendizaje, una para el Usuario A y otra para el Usuario B, y cada una debe utilizar una dirección de correo electrónico exclusiva. Trabajará en su propia cuenta, Usuario A, e invitará a otro usuario, Usuario B, a utilizar su cuenta. Puede optar por crear una segunda cuenta de {{site.data.keyword.cloud_notm}}, o puede trabajar con un compañero que tenga una cuenta de {{site.data.keyword.cloud_notm}}.
 
 - Si ha empezado a utilizar {{site.data.keyword.registrylong_notm}} en su cuenta antes del 4 de octubre de 2018, debe habilitar la imposición de políticas de IAM ejecutando el mandato `ibmcloud cr iam-policies-enable`. Si ha invitado a otros usuarios que utilizan sus espacios de nombres de {{site.data.keyword.registrylong_notm}} en su cuenta de IBM Cloud, utilice una cuenta distinta como Usuario A para evitar la interrupción de su acceso.
 
@@ -87,7 +90,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
         ```
         {: pre}
 
-        El mandato falla porque el Usuario B no tiene el acceso adecuado.
+        El mandato falla porque el Usuario B no tiene el acceso correcto.
 
 3. Otorgue al Usuario B el rol de Gestor para que el Usuario B pueda configurar {{site.data.keyword.registrylong_notm}}:
 
@@ -121,7 +124,7 @@ En esta sección, añadirá un segundo usuario a su cuenta y le otorgará la pos
         ```
         {: pre}
 
-        Funciona porque el Usuario B tiene el tipo de acceso adecuado.
+        Funciona porque el Usuario B tiene el tipo de acceso correcto.
 
     3. Ahora cambie la cuota de nuevo con el mandato siguiente:
   
@@ -535,4 +538,4 @@ En esta sección, eliminará los recursos que ha creado en las secciones anterio
    ```
    {: pre}
 
-¡Enhorabuena! Ha completado correctamente esta guía de aprendizaje.
+Ha completado correctamente esta guía de aprendizaje.

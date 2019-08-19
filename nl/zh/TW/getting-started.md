@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -41,19 +41,15 @@ subcollection: registry
 ## 設定名稱空間
 {: #gs_registry_namespace_add}
 
-1. 登入 {{site.data.keyword.cloud_notm}}。
+1. 登入 {{site.data.keyword.cloud_notm}}：
 
    ```
   ibmcloud login
   ```
    {: pre}
 
-   如果您有聯合 ID，請使用下列指令來登入：
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。如果您有聯合 ID，則未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功。
+   {: tip}
 
 2. 新增名稱空間，以建立自己的映像檔儲存庫。將 `<my_namespace>` 取代為您偏好的名稱空間。
 
@@ -139,7 +135,7 @@ subcollection: registry
    ```
    {: pre}
 
-做得好！您已在 {{site.data.keyword.registrylong_notm}} 中設定名稱空間，並將您的第一個映像檔推送至名稱空間。
+您已在 {{site.data.keyword.registrylong_notm}} 中設定名稱空間，並將您的第一個映像檔推送至名稱空間。
 
 ## 後續步驟
 {: #gs_get_start_next}

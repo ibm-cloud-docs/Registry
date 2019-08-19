@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Lernprogramm: Zugriff auf {{site.data.keyword.registrylong_notm}}-Ressourcen erteilen
+# Zugriff auf das Lernprogramm zu den {{site.data.keyword.registrylong_notm}}-Ressourcen gewähren
 {: #iam_access}
 
 Verwenden Sie dieses Lernprogramm, um zu erfahren, wie Sie Zugriff auf Ihre Ressourcen erteilen, indem Sie {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong_notm}} konfigurieren.
@@ -30,7 +30,10 @@ Verwenden Sie dieses Lernprogramm, um zu erfahren, wie Sie Zugriff auf Ihre Ress
 
 Dieses Lernprogramm dauert ca. Minuten.
 
-**Vorbereitung**
+## Vorbereitungen
+{: #iam_access_prereq}
+
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - Führen Sie die Anweisungen im Abschnitt [Erste Schritte mit {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started) aus.
 
@@ -121,7 +124,7 @@ In diesem Abschnitt fügen Sie einen zweiten Benutzer zu Ihrem Konto hinzu und g
         ```
         {: pre}
 
-        Das funktioniert, weil Benutzer B über den richtigen Typ von Zugriff verfügt.
+        Diese Aktion ist erfolgreich, weil Benutzer B über den korrekten Typ von Zugriff verfügt.
 
     3. Ändern Sie jetzt das Kontingent zurück, indem Sie den folgenden Befehl ausführen:
   
@@ -533,4 +536,4 @@ In diesem Abschnitt entfernen Sie die Ressourcen, die Sie in den vorherigen Absc
    ```
    {: pre}
 
-Gut gemacht! Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
+Sie haben dieses Lernprogramm erfolgreich abgeschlossen.

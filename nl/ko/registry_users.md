@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,11 +45,11 @@ subcollection: registry
 리소스 그룹에서 레지스트리 네임스페이스에 대한 액세스 권한을 구성하고 지정할 수 없습니다.
 {: note}
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 각 사용자에게 필요한 역할과 {{site.data.keyword.registrylong_notm}}의 리소스를 결정하십시오. [IAM 역할](/docs/services/Registry?topic=registry-iam#iam)의 내용을 참조하십시오. 여러 정책을 작성할 수 있음을 고려하십시오. 예를 들어, 하나의 리소스에 대한 쓰기 액세스를 부여하지만 다른 리소스에 대해서는 읽기 액세스만 부여하고 또 다른 리소스에 대해서는 액세스를 부여하지 않을 수 있습니다. 정책은 가산적입니다. 이는 글로벌 읽기 정책 및 리소스 범위의 쓰기 정책이 해당 리소스에 대한 읽기 및 쓰기 액세스를 둘 다 부여함을 의미합니다.
 
-- [사용자를 초대하고 액세스를 지정하십시오](/docs/iam?topic=iam-iamuserinv#iamuserinv).
+- [사용자를 초대하고 액세스를 지정](/docs/iam?topic=iam-iamuserinv#iamuserinv)하십시오.
 
   사용자가 {{site.data.keyword.containerlong_notm}}에서 클러스터를 작성할 수 있도록 하려면 해당 사용자에게 {{site.data.keyword.registrylong_notm}} 관리자 역할을 지정하고 리소스 그룹을 지정하지 않았는지 확인하십시오. [클러스터 작성 준비](/docs/containers?topic=containers-clusters#cluster_prepare)를 참조하십시오.
   {: tip}

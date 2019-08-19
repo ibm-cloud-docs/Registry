@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -29,7 +29,7 @@ subcollection: registry
 Häufig gestellte Fragen zu {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## Wie liste ich öffentliche Images auf?
+## Wie werden öffentliche Images aufgelistet?
 {: #faq_list_public_images}
 {: faq}
 
@@ -45,13 +45,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Kann ich Tools verwenden, die nicht von Docker bereitgestellt werden, um meine Images zu generieren und sie mit einer Push-Operation in der Registry zu speichern?
+## Können Tools verwendet werden, die nicht von Docker bereitgestellt werden, um eigene Images zu generieren und sie mit einer Push-Operation in der Registry zu speichern?
 {: #faq_tools}
 {: faq}
 
-Ja, sofern diese Tools das OCI-Bildformat und das OCI-Protokoll unterstützen.
+Ja, wenn das Tool das OCI-Imageformat und das OCI-Protokoll unterstützt.
 
-## Wie verwende ich die Zugriffssteuerung mit IAM?
+## Wie wird die Zugriffssteuerung mit {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} verwendet?
 {: #faq_access_control}
 {: faq}
 
@@ -67,7 +67,7 @@ Images können in [lokalen Regionen](/docs/services/Registry?topic=registry-regi
 {: #faq_va_new_scan_error}
 {: faq}
 
-Wenn unmittelbar nach dem Hinzufügen des Images zur Registry der Sicherheitslückenbericht abgerufen wird, wird möglicherweise die folgende Fehlernachricht ausgegeben:
+Wenn unmittelbar nach dem Hinzufügen des Image zur Registry der Sicherheitslückenbericht abgerufen wird, wird möglicherweise die folgende Fehlernachricht ausgegeben:
 
 ```
 BXNVA0009E:  <Imagename> wurde nicht gescannt. Wiederholen Sie den Vorgang zu einem späteren Zeitpunkt.
@@ -76,7 +76,7 @@ https://console.bluemix.net/docs/support/index.html#contacting-support
 ```
 {: screen}
 
-Sie erhalten diese Nachricht, da das Scannen der Images asynchron zu den Ergebnisabfragen verläuft und der Scanvorgang einige Zeit in Anspruch nimmt. Während des normalen Betriebs wird der Scan innerhalb der ersten Minuten nach dem Hinzufügen des Images zur Registry abgeschlossen, wobei die Imagegröße und die Menge des Datenverkehrs in der Registry eine Rolle spielen.
+Sie erhalten diese Nachricht, da das Scannen der Images asynchron zu den Ergebnisabfragen verläuft und der Scanvorgang einige Zeit in Anspruch nimmt. Während des normalen Betriebs wird der Scan innerhalb der ersten Minuten nach dem Hinzufügen des Image zur Registry abgeschlossen. Die Zeit, die für die Ausführung benötigt wird, hängt von Variablen wie der Imagegröße und der Menge des Datenverkehrs ab, die die Registry empfängt.
 
 Wenn diese Nachricht als Teil einer Build-Pipeline ausgegeben wird und dies regelmäßig der Fall ist, fügen Sie Wiederholungslogik hinzu, die eine kurze Pause enthält.
 
@@ -90,7 +90,7 @@ Das Scannen eines Image wird in den folgenden Fällen ausgelöst:
 
 - Wenn ein neues Image mit einer Push-Operation in die Registry übertragen wird.
 - Wenn das Image über einen Zeitraum von 7 Tagen nicht gescannt wurde, wird es in die Warteschlange für das erneute Scannen gestellt. Dies kann einige Zeit in Anspruch nehmen.
-- Wenn für ein innerhalb des Images installiertes Paket ein neuer Sicherheitshinweis veröffentlicht wird, wird das Image in die Warteschlange für das erneute Scannen gestellt. Dies kann einige Zeit in Anspruch nehmen. Erneute Scans, die durch die Veröffentlichung neuer Sicherheitshinweise ausgelöst werden, stehen nur für Ubuntu- und Debian-Images zur Verfügung.
+- Wenn für ein innerhalb des Image installiertes Paket ein neuer Sicherheitshinweis veröffentlicht wird, wird das Image in die Warteschlange für das erneute Scannen gestellt. Dies kann einige Zeit in Anspruch nehmen. Erneute Scans, die durch die Veröffentlichung neuer Sicherheitshinweise ausgelöst werden, stehen nur für Ubuntu- und Debian-Images zur Verfügung.
 
 ## Wie häufig werden die Sicherheitshinweise aktualisiert?
 {: #faq_va_update_security_notice}

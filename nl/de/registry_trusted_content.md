@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ Ein Repository kann sowohl signierten als auch nicht signierten Inhalt enthalten
 Images weisen separate Signaturen für alte (`registry.bluemix.net`) und für neue (`icr.io`) Domänennamen auf. Bereits vorhandene Signaturen funktionieren, wenn das Image aus dem alten Domänennamen extrahiert wird. Wenn Sie signierten Inhalt per Pull-Operation aus dem neuen Domänennamen extrahieren möchten, müssen Sie das Image beim neuen Domänennamen `icr.io` erneut signieren; Informationen hierzu finden Sie im Abschnitt zum [Erneuten Signieren eines Image für den neuen Domänennamen](#trustedcontent_resign).
 {: note}
 
-Docker Content Trust verwendet ein "trust on first use"-Sicherheitsmodell ("Vertrauen bei erster Verwendung"). Der Repository-Schlüssel wird aus dem Trust-Server mit Pull-Operation extrahiert, wenn Sie erstmalig ein signiertes Image mit Pull-Operation aus einem Repository extrahieren, und dieser Schlüssel wird künftig verwendet, um Images aus diesem Repository zu überprüfen. Sie müssen darauf achten, entweder dem Trust-Server oder dem Image und seinem Veröffentlicher zu vertrauen, bevor Sie das Repository zum ersten Mal mit Pull-Operation extrahieren. Wenn die vertrauenswürdigen Informationen im Server beeinträchtigt sind und Sie vorher noch kein Image aus dem Repository mit Pull-Operation extrahiert haben, kann es sein, dass Ihr Docker-Client die beeinträchtigten Daten vom Trust-Server mit Pull-Operation extrahiert. Werden die Trust-Daten beschädigt, nachdem Sie das Image zum ersten Mal mit Pull-Operation extrahiert haben, kann Ihr Docker-Client bei späteren Extraktionen die beschädigten Daten nicht prüfen und extrahiert das Image nicht. Weitere Informationen dazu, wie Trust-Daten für ein Image untersucht werden, finden Sie unter [Signierte Images anzeigen](#trustedcontent_viewsigned).
+Docker Content Trust verwendet ein TOFU-Sicherheitsmodell (Trust on Tirst Use, Vertrauen bei erster Verwendung). Der Repository-Schlüssel wird aus dem Trust-Server mit Pull-Operation extrahiert, wenn Sie erstmalig ein signiertes Image mit Pull-Operation aus einem Repository extrahieren, und dieser Schlüssel wird künftig verwendet, um Images aus diesem Repository zu überprüfen. Sie müssen darauf achten, entweder dem Trust-Server oder dem Image und seinem Veröffentlicher zu vertrauen, bevor Sie das Repository zum ersten Mal mit Pull-Operation extrahieren. Wenn die vertrauenswürdigen Informationen im Server beeinträchtigt sind und Sie vorher noch kein Image aus dem Repository mit Pull-Operation extrahiert haben, kann es sein, dass Ihr Docker-Client die beeinträchtigten Daten vom Trust-Server mit Pull-Operation extrahiert. Werden die Trust-Daten beschädigt, nachdem Sie das Image zum ersten Mal mit Pull-Operation extrahiert haben, kann Ihr Docker-Client bei späteren Extraktionen die beschädigten Daten nicht prüfen und extrahiert das Image nicht. Weitere Informationen dazu, wie Trust-Daten für ein Image untersucht werden, finden Sie unter [Signierte Images anzeigen](#trustedcontent_viewsigned).
 
-Weitere Informationen zum Sicherheitsmodell "trust on first use" finden Sie in [The Update Framework ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://theupdateframework.github.io/).
+Weitere Informationen zum TOFU-Sicherheitsmodell finden Sie in [The Update Framework ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://theupdateframework.github.io/).
 
 ## Umgebung mit vertrauenswürdigen Inhalten einrichten
 {: #trustedcontent_setup}
@@ -70,7 +70,7 @@ Standardmäßig ist Docker Content Trust inaktiviert. Aktivieren Sie die Content
    ```
    {: pre}
 
-   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `ibmcloud login --sso`, um sich anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Sie erkennen, ob Sie über eine eingebundene ID verfügen, wenn die Anmeldung ohne die Option `--sso` fehlschlägt und mit der Option `--sso` erfolgreich ist.
+   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `ibmcloud login --sso`, um sich anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Wenn Sie über eine eingebundene ID verfügen, schlägt die Anmeldung ohne die Option `--sso` fehl; mit der Option `--sso` ist sie erfolgreich.
    {: tip}
 
 3. Wählen Sie die Region aus, die Sie als Ziel verwenden möchten. Wenn Sie den Regionsnamen nicht kennen, führen Sie den Befehl ohne die Region aus und wählen Sie danach eine Region.
@@ -89,7 +89,7 @@ Standardmäßig ist Docker Content Trust inaktiviert. Aktivieren Sie die Content
 
    Die Ausgabe weist Sie an, die Umgebungsvariable Docker Content Trust zu exportieren.
 
-   **Beispiel**
+   Beispiel:
 
    ```
    user:~ user$ ibmcloud cr login
@@ -130,7 +130,10 @@ Bevor Sie anfangen, [richten Sie Ihren Registry-Namensbereich ein](/docs/service
    ```
    {: screen}
 
-3. **Erstmalige Übertragung eines signierten Repositorys mit Push-Operation.** Wenn Sie ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) begrenzt sind.
+3. Wenn Sie zum ersten Mal ein signiertes Image mit Push-Operation an ein neues Repository übertragen, erstellt der Befehl zwei Signierschlüssel, den Rootschlüssel und den Repository-Schlüssel, und speichert diese in Ihrem lokalen System. Geben Sie für jeden Schlüssel eine sichere Kennphrase ein und speichern Sie sie. Anschließend [erstellen Sie eine Sicherungskopie für Ihre Schlüssel](#trustedcontent_backupkeys). Das Erstellen einer Sicherungskopie Ihrer Schlüssel ist kritisch, da Ihre [Wiederherstellungsoptionen](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) begrenzt sind.
+
+   Diese Aktion ist nur beim ersten Mal erforderlich, wenn Sie ein signiertes Repository mit Push-Operation übertragen.
+   {: tip}
 
 ## Signiertes Image mit Pull-Operation extrahieren
 {: #trustedcontent_pull}
@@ -163,7 +166,7 @@ Um das Image für den neuen Domänennamen `icr.io` erneut zu signieren, müssen 
    ```
    {: pre}
 
-    Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag ` latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
+    Geben Sie den Tag an, wenn Sie an einem signierten Image Push- oder Pull-Operation durchführen. Der Tag `latest` hat nur dann den Standardwert, wenn Content Trust inaktiviert ist.
     {: tip}
 
 2. Führen Sie den Befehl `docker tag` für den neuen Domänennamen aus. Ersetzen Sie `<old_domain_name>` durch den alten Domänennamen, `<new_domain_name>` durch den neuen Domänennamen, `<repository>` durch den Namen des Repositorys und `<tag>` durch den Namen des Tags.
@@ -266,7 +269,7 @@ Sie können Unterzeichner zum Unterzeichnen von Images in einem Repository hinzu
 Damit andere Benutzer Images in einem Repository signieren können, fügen Sie die Signierschlüssel für diese Benutzer zu diesem Repository hinzu.
 {:shortdesc}
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - Image-Unterzeichner müssen über die Berechtigung zum Übertragen von Images an den Namensbereich mit Push-Operation verfügen.
 - Für Repository-Eigner und zusätzliche Unterzeichner muss Docker 18.03 oder höher installiert sein.

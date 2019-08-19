@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ subcollection: registry
 이미지에는 이전 (`registry.bluemix.net`) 및 새 (`icr.io`) 도메인 이름에 대한 별도의 서명이 있습니다. 기존 서명은 이전 도메인 이름에서 이미지를 가져올 때 수행됩니다. 새 도메인 이름에서 서명된 컨텐츠를 가져오려면 새 도메인 이름인 `icr.io`의 이미지를 다시 서명해야 합니다. [새 도메인 이름의 이미지 다시 서명](#trustedcontent_resign)을 참조하십시오.
 {: note}
 
-Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
+Docker Content Trust는 TOFU(Trust On First Use) 보안 모델을 사용합니다. 처음 저장소에서 서명된 이미지를 가져올 때 저장소 키를 신뢰 서버에서 가져오게 되며, 이 키는 향후 이 저장소에서 이미지를 확인하는 데 사용됩니다. 처음 저장소를 가져오려면 먼저 신뢰 서버 또는 이미지 및 해당 공개자를 신뢰하는지 확인해야 합니다. 서버의 신뢰 정보가 손상되었으며 전에 저장소에서 이미지를 가져오지 않은 경우 Docker 클라이언트가 신뢰 서버에서 손상된 정보를 가져올 수 있습니다. 처음 이미지를 가져온 후 신뢰 데이터가 손상된 경우 후속 가져오기에서 Docker 클라이언트가 손상된 데이터를 확인하는 데 실패하며 이미지를 가져오지 않습니다. 이미지의 신뢰 데이터를 검사하는 방법에 대한 자세한 정보는 [서명된 이미지 보기](#trustedcontent_viewsigned)를 참조하십시오.
 
-"trust on first use" 보안 모델에 대한 자세한 정보는 [The Update Framework ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.
+TOFU 보안 모델에 대한 자세한 정보는 [The Update Framework ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://theupdateframework.github.io/)를 참조하십시오.
 
 ## 신뢰할 수 있는 컨텐츠 환경 설정
 {: #trustedcontent_setup}
@@ -70,7 +70,7 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
    ```
    {: pre}
 
-   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 로그인이 `--sso`가 없으면 실패하고 `--sso` 옵션이 있으면 성공하는 경우 연합 ID가 있는 것입니다.
+   연합 ID가 있는 경우에는 `ibmcloud login --sso`를 사용하여 로그인하십시오. 사용자 이름을 입력하고 CLI 출력에서 제공된 URL을 사용하여 일회성 패스코드를 검색하십시오. 연합 ID가 있는 경우 로그인은 `--sso` 옵션이 없으면 실패하고 `--sso` 옵션이 있으면 성공합니다.
    {: tip}
 
 3. 사용할 지역을 대상으로 지정하십시오. 지역 이름을 모르는 경우 지역 없이 명령을 실행한 다음 지역을 선택할 수 있습니다.
@@ -89,7 +89,7 @@ Docker Content Trust는 "trust on first use" 보안 모델을 사용합니다. �
 
    출력에서는 Docker Content Trust 환경 변수를 내보내도록 지시합니다.
 
-   **예**
+   예를 들어, 다음과 같습니다.
 
    ```
    user:~ user$ ibmcloud cr login
@@ -131,9 +131,12 @@ Docker Content Trust가 사용으로 설정된 세션 중에 신뢰할 수 있�
    ```
    {: screen}
 
-3. **서명된 저장소를 처음으로 푸시**하십시오. 새 저장소에 서명된 이미지를 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
+3. 새 저장소에 서명된 이미지를 처음 푸시하면 명령이 두 개의 서명 키인 루트 키와 저장소 키를 작성하고 로컬 시스템에 저장합니다. 각 키에 대해 보안 비밀번호 문구를 입력하고 저장한 다음 [키를 백업](#trustedcontent_backupkeys)하십시오. [복구 옵션](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)이 제한되어 있으므로 키 백업이 중요합니다.
 
-## 서명된 이미지 가져오기
+   이 조치는 서명된 저장소를 처음 푸시하는 경우에만 필요합니다.
+   {: tip}
+
+## 117서명된 이미지 가져오기
 {: #trustedcontent_pull}
 
 Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때 Docker 클라이언트가 서명을 신뢰할 수 있음으로 인식합니다. Docker 클라이언트가 사용자가 지정한 최신 서명 버전의 이미지를 가져옵니다. 서명되지 않은 이미지 또는 신뢰할 수 없는 컨텐츠는 가져오지 않습니다.
@@ -267,7 +270,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
 다른 사용자가 저장소의 이미지에 서명할 수 있게 하려면 이 저장소에 해당 사용자의 서명 키를 추가하십시오.
 {:shortdesc}
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 이미지 서명자에게 네임스페이스에 이미지를 푸시하는 권한이 있어야 합니다.
 - 저장소 소유자 및 추가 서명자의 경우 Docker 18.03 이상이 설치되어 있어야 합니다.
@@ -283,7 +286,7 @@ Docker Content Trust가 사용되는 서명된 이미지를 처음 가져올 때
     a. 키를 생성하십시오. `<NAME>`에 대해 임의의 이름을 입력할 수 있지만 다른 사용자가 저장소에 대한 신뢰를 검사할 때 선택한 이름이 표시됩니다. 저장소 소유자와 함께 작업하여 조직이 사용할 수 있는 이름 지정 규칙을 충족시키고 이 서명자에 대해 식별 가능한 이름을 선택하십시오.
 
       ```
-docker trust key generate <NAME>
+      docker trust key generate <NAME>
       ```
       {: pre}
   
@@ -298,7 +301,7 @@ docker trust key generate <NAME>
     b. 저장소에 서명자의 키를 추가하십시오.
 
       ```
-docker trust signer add --key <NAME>.pub <NAME> <repository>
+      docker trust signer add --key <NAME>.pub <NAME> <repository>
       ```
       {: pre}
 
@@ -309,7 +312,7 @@ docker trust signer add --key <NAME>.pub <NAME> <repository>
     b. 서명자는 이미지에 서명해야 합니다. 프롬프트가 표시되면 개인 키의 비밀번호 문구를 입력하십시오.
 
       ```
-docker trust sign <repository>:<tag>
+      docker trust sign <repository>:<tag>
       ```
       {: pre}
 

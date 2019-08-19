@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -119,7 +119,7 @@ Après avoir configuré votre premier espace de nom, le plan de service {{site.d
 Vous devez créer un espace de nom pour stocker vos images Docker dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande {{site.data.keyword.cloud_notm}} et le plug-in d'interface de ligne de commande `container-registry`](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install).
 - [Planifiez comment utiliser et nommer vos espaces de nom du registre](#registry_setup_cli_namespace_plan).

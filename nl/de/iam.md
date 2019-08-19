@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -64,7 +64,7 @@ In der folgenden Tabelle sind die Aktionen, die Plattformmanagementrollen zugeor
 
 Für {{site.data.keyword.registrylong_notm}} sind die folgenden Aktionen vorhanden:
 
-| Aktion| Operation für Service | Rolle
+| Aktion| Operation für Service | Rolle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Entfernen eines oder mehrerer angegebener Tokens. | Administrator |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Abrufen des angegebenen Tokens aus der Registry. | Administrator |
@@ -78,9 +78,9 @@ In der folgenden Tabelle sind die Aktionen, die Servicezugriffsrollen zugeordnet
 
 | Servicezugriffsrolle | Beschreibung der Aktionen | Beispielaktionen|
 |:-----------------|:-----------------|:-----------------|
-| Leseberechtigter | Die Rolle 'Leseberechtigter' kann Informationen anzeigen. | <ul><li>Images anzeigen, überprüfen und extrahieren</li><li>Namensbereiche anzeigen</li><li>Kontingente anzeigen</li><li>Sicherheitslückenberichte anzeigen</li><li>Imagesignaturen anzeigen</li></ul>|
-| Schreibberechtigter | Die Rolle 'Schreibberechtigter' kann Informationen bearbeiten. |<ul><li>Images erstellen, mit Push-Operation übertragen und löschen</li><li>Kontingente anzeigen</li><li>Images signieren</li><li>Namensbereiche hinzufügen und entfernen</li></ul> |
-| Manager | Die Rolle 'Manager' kann alle Aktionen ausführen. | <ul><li>Images anzeigen, extrahieren, erstellen, mit Push-Operation übertragen und löschen</li><li>Namensbereiche anzeigen, hinzufügen und entfernen</li><li>Kontingente anzeigen und festlegen</li><li>Sicherheitslückenberichte anzeigen</li><li>Imagesignaturen anzeigen und erstellen</li><li>Preisstrukturpläne überprüfen und ändern</li><li>IAM-Richtliniendurchsetzung aktivieren</li><li>Vulnerability Advisor-Ausnahmen verwalten</li></ul> |
+| Leseberechtigter | Die Rolle 'Leseberechtigter' kann Informationen anzeigen. | <ul><li>Images anzeigen, überprüfen und extrahieren</li><li>Namensbereiche anzeigen</li><li>Kontingente anzeigen</li><li>Sicherheitslückenberichte anzeigen</li><li>Imagesignaturen anzeigen</li><li>Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen. (Sie müssen außerdem über die Rolle des Schreibberechtigten verfügen.)</li></ul>|
+| Schreibberechtigter | Die Rolle 'Schreibberechtigter' kann Informationen bearbeiten. |<ul><li>Images erstellen, mit Push-Operation übertragen und löschen</li><li>Kontingente anzeigen</li><li>Images signieren</li><li>Namensbereiche hinzufügen und entfernen</li><li>Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen. (Sie müssen außerdem über die Rolle des Leseberechtigten verfügen.)</li></ul> |
+| Manager | Die Rolle 'Manager' kann alle Aktionen ausführen. | <ul><li>Images anzeigen, extrahieren, erstellen, mit Push-Operation übertragen und löschen</li><li>Namensbereiche anzeigen, hinzufügen und entfernen</li><li>Kontingente anzeigen und festlegen</li><li>Sicherheitslückenberichte anzeigen</li><li>Imagesignaturen anzeigen und erstellen</li><li>Preisstrukturpläne überprüfen und ändern</li><li>IAM-Richtliniendurchsetzung aktivieren</li><li>Vulnerability Advisor-Ausnahmen verwalten</li><li>Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen. </li></ul> |
 {: caption="Tabelle 3. IAM-Servicezugriffsrollen und Aktionen" caption-side="top"}
 
  Für die folgenden {{site.data.keyword.registrylong_notm}}-Befehle muss Ihnen mindestens eine der angegebenen Rollen zugeordnet sein, wie in der folgenden Tabellen dargestellt. Zum Erstellen einer Richtlinie für den Zugriff auf {{site.data.keyword.registrylong_notm}}, müssen Sie eine Richtlinie erstellen, bei der der Servicename `container-registry` lautet, die Serviceinstanz leer ist und als Region die Region angegeben ist, für die Sie Zugriff erteilen möchten, bzw. bei der keine Region angegeben ist, um Zugriff auf alle Regionen zu erteilen.
@@ -90,14 +90,14 @@ In der folgenden Tabelle sind die Aktionen, die Servicezugriffsrollen zugeordnet
 
 Um einem Benutzer die Berechtigung zum Konfigurieren von {{site.data.keyword.registrylong_notm}} in Ihrem Account zu erteilen, müssen Sie eine Richtlinie erstellen, die eine oder mehrere der Rollen in der folgenden Tabelle zuordnet. Beim Erstellen Ihrer Richtlinie dürfen Sie keinen Ressourcentyp (`resource-type`) bzw. keine Ressource (`resource`) angeben.
 
-**Beispiel**
+Verwenden Sie beispielsweise den folgenden Befehl; dabei ist `<user_email>` die E-Mail-Adresse des Benutzers:
 
 ```
-ibmcloud iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
-| Aktion| Operation für Service | Rolle
+| Aktion| Operation für Service | Rolle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) IAM-Richtliniendurchsetzung aktivieren. | Manager |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Freistellung für ein Sicherheitsproblem erstellen.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) Freistellungen für Sicherheitsprobleme auflisten.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Freistellung für ein Sicherheitsproblem löschen.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) Typen der Sicherheitsprobleme auflisten, die Sie freistellen können.</li></ul> | Manager |
@@ -115,22 +115,22 @@ Um einem Benutzer die Berechtigung zum Zugriff auf {{site.data.keyword.registryl
 Eine Organisation und Zuweisung von Zugriff zu Registry-Namensbereichen in Ressourcengruppen ist nicht möglich.
 {: note}
 
-**Beispiel**
+Verwenden Sie beispielsweise den folgenden Befehl; dabei ist `<user_email>` die E-Mail-Adresse des Benutzers:
 
 ```
-ibmcloud iam user-policy-create <benutzer-e-mail> --service-name container-registry --region <us-south> --roles <Leseberechtigter> [--resource-type namespace --resource <name_von_namensbereich>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
-| Aktion | Operation für Service | Rolle
+| Aktion | Operation für Service | Rolle |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Container-Image erstellen. | Schreibberechtigter, Manager |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Ein Image oder mehrere Images löschen.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Signatur löschen. </li></ul> | Schreibberechtigter, Manager |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Ein Image oder mehrere Images löschen.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Entfernen Sie ein Tag oder mehrere Tags aus jedem angegebenen Image in {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Signatur löschen. </li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen.</li></ul> | Schreibberechtigter, Manager</br></br>Zur Ausführung des Befehls `ibmcloud cr retention-run` müssen Sie sowohl ein Lese- als auch ein Schreibberechtigter oder Manager sein. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Details zu einem bestimmten Image anzeigen. | Leseberechtigter, Manager |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Container-Images auflisten. | Leseberechtigter, Manager |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Ihre Container-Images auflisten.</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Bereinigen Sie Ihre Namensbereiche, indem Sie nur Images beibehalten, die Ihren Kriterien entsprechen.</li></ul> | Leseberechtigter, Manager</br></br>Zur Ausführung des Befehls `ibmcloud cr retention-run` müssen Sie sowohl ein Lese- als auch ein Schreibberechtigter oder Manager sein. |
 | `container-registry.image.pull` | <ul><li>`docker pull` Image extrahieren. </li><li>`docker trust inspect` Signatur überprüfen. </li></ul> | Leseberechtigter, Schreibberechtigter, Manager |
 | `container-registry.image.push` | <ul><li>`docker push` Image mit Push-Operation übertragen.</li><li>`docker trust sign` Image signieren.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) IBM Software, die von [IBM Passport Advantage Online für Kunden ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/software/passportadvantage/pao_customer.html) heruntergeladen und zur Verwendung mit Helm paketiert wurde, in Ihren {{site.data.keyword.registrylong_notm}}-Namensbereich importieren.</li></ul> | Schreibberechtigter, Manager |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Neues Image erstellen, das sich auf ein Quellenimage bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden. | Leseberechtigter, Schreibberechtigter oder Manager für das Quellenimage; Schreibberechtigter oder Manager für das Zielimage |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Neues Image erstellen, das sich auf ein Quellenimage bezieht. Die Quellen- und Zielimages müssen sich in derselben Region befinden. | Leseberechtigter, Schreibberechtigter oder Manager für das Quellenimage.</br></br>Schreibberechtigter oder Manager für das Zielimage. |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) Schwachstellenanalysebericht für Ihr Image anzeigen. | Leseberechtigter, Manager |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) Namensbereich hinzufügen. | Schreibberechtigter, Manager |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) Namensbereich entfernen. | Schreibberechtigter, Manager |

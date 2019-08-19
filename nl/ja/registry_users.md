@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ subcollection: registry
 リソース・グループにおけるレジストリー名前空間へのアクセス権限を編成して割り当てることはできません。
 {: note}
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 各ユーザーが {{site.data.keyword.registrylong_notm}} 内のどのリソースに対してどの役割が必要か判別するには、[IAM 役割](/docs/services/Registry?topic=registry-iam#iam)を参照してください。 複数のポリシーを作成できるということを考慮してください。例えば、あるリソースに対して書き込みアクセス権限を付与し、別のリソースに対しては読み取りアクセス権限のみを付与し、さらに別のリソースに対してはアクセス権限を付与しないようにすることができます。 ポリシーは加算的です。つまり、グローバルな読み取りポリシーとリソースを有効範囲とする書き込みポリシーがあると、そのリソースに対する読み取りアクセス権限と書き込みアクセス権限が両方とも付与されます。
 

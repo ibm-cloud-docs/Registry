@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 튜토리얼: {{site.data.keyword.registrylong_notm}} 리소스에 대한 액세스 부여
+# {{site.data.keyword.registrylong_notm}} 리소스 튜토리얼에 대한 액세스 권한 부여
 {: #iam_access}
 
 {{site.data.keyword.registrylong_notm}}용 {{site.data.keyword.iamlong}}(IAM)를 구성하여 리소스에 대한 액세스를 부여하는 방법을 알아보려면 이 튜토리얼을 사용하십시오.
@@ -30,13 +30,16 @@ subcollection: registry
 
 이 튜토리얼은 완료하는 데 약 45분이 소요됩니다.
 
-**시작하기 전에**
+## 시작하기 전에
+{: #iam_access_prereq}
+
+시작하기 전에 다음 태스크를 완료해야 합니다.
 
 - [{{site.data.keyword.registrylong_notm}} 시작하기](/docs/services/Registry?topic=registry-getting-started#getting-started)의 지시사항을 완료하십시오.
 
 - {{site.data.keyword.cloud_notm}} CLI용 `container-registry` CLI 플러그인의 최신 버전이 있는지 확인하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 
-- 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login)에 대한 액세스 권한이 있어야 합니다. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
+- 이 튜토리얼에 사용할 수 있는 두 개의 [{{site.data.keyword.cloud_notm}} 계정 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/login)에 대한 액세스 권한이 있는지 확인하십시오. 하나는 User A이고 다른 하나는 User B이며 각각은 고유한 이메일 주소를 사용해야 합니다. 사용자는 고유 계정인 User A에서 작업하며 계정을 사용하도록 다른 사용자 User B를 초대합니다. 두 번째 {{site.data.keyword.cloud_notm}} 계정을 작성하도록 선택하거나 {{site.data.keyword.cloud_notm}} 계정이 있는 동료와 함께 작업할 수 있습니다.
 
 - 2018년 10월 4일 이전에 계정에서 {{site.data.keyword.registrylong_notm}}를 사용하기 시작한 경우 `ibmcloud cr iam-policies-enable` 명령을 실행하여 IAM 정책 적용을 사용으로 설정해야 합니다. {{site.data.keyword.registrylong_notm}} 네임스페이스를 사용하는 다른 사용자를 IBM Cloud 계정으로 초대한 경우 액세스가 중단되지 않도록 하려면 User A와 다른 계정을 사용하십시오.
 
@@ -51,7 +54,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 User A의 계정에 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -94,7 +97,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 사용자 자신(User A)으로 사용자 계정에 다시 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -135,7 +138,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 사용자 자신(User A)으로 사용자 계정에 다시 로그인하십시오.
   
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
   
@@ -164,7 +167,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 User A로 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -204,7 +207,7 @@ subcollection: registry
     2. 다음 명령을 실행하여 User B로 이미지를 나열해 보십시오.
 
         ```
-    ibmcloud cr images
+        ibmcloud cr images
         ```
         {: pre}
 
@@ -215,7 +218,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 User A의 계정으로 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -271,7 +274,7 @@ subcollection: registry
     4. 다음 명령을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 
         ```
-  ibmcloud cr login
+        ibmcloud cr login
         ```
         {: pre}
 
@@ -308,7 +311,7 @@ subcollection: registry
     3. 다음 명령을 실행하여 이미지를 나열하십시오.
 
         ```
-    ibmcloud cr images
+        ibmcloud cr images
         ```
         {: pre}
 
@@ -317,7 +320,7 @@ subcollection: registry
     4. 다음 명령을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
 
         ```
-  ibmcloud cr login
+        ibmcloud cr login
         ```
         {: pre}
 
@@ -367,7 +370,7 @@ subcollection: registry
     1. 다음 명령을 실행하여 User A의 계정에 다시 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -398,7 +401,7 @@ subcollection: registry
     1. 다음 명령을 사용하여 User A의 계정에 로그인하십시오.
 
         ```
-    ibmcloud login
+        ibmcloud login
         ```
         {: pre}
 
@@ -492,7 +495,7 @@ subcollection: registry
     4. User A로 {{site.data.keyword.registrylong_notm}}에 다시 로그인하십시오.
 
         ```
-  ibmcloud cr login
+        ibmcloud cr login
         ```
         {: pre}
 
@@ -533,4 +536,4 @@ subcollection: registry
    ```
    {: pre}
 
-수고하셨습니다! 이 튜토리얼을 완료했습니다.
+이 튜토리얼을 완료했습니다.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ subcollection: registry
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="将映像从专用或公共注册表拉出到您的计算机。"/>
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
@@ -50,9 +50,9 @@ subcollection: registry
 
   如果将许可权更改为在没有 root 用户特权的情况下运行 Docker 命令，那么必须重新运行 `ibmcloud login` 命令。
 
-下载映像；请参阅“入门”文档中的[拉出映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)。
+1. 下载映像；请参阅“入门”文档中的[拉出映像](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)。
 
-如果您收到`未获授权：需要认证`或`被拒绝：请求的资源访问权被拒绝`消息，请运行 `ibmcloud cr login` 命令。
+   如果您收到`未获授权：需要认证`或`被拒绝：请求的资源访问权被拒绝`消息，请运行 `ibmcloud cr login` 命令。
 {:tip}
 
 拉出映像并针对名称空间对其进行标记后，可以将该映像从本地计算机上传（推送）至名称空间。
@@ -65,7 +65,7 @@ subcollection: registry
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="将计算机中的映像推送到 {{site.data.keyword.registrylong_notm}}。"/>
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
@@ -107,7 +107,7 @@ subcollection: registry
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="将任何专用或公共注册表的映像复制到专用 {{site.data.keyword.cloud_notm}} 注册表。"/>
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
@@ -134,7 +134,7 @@ subcollection: registry
 使用此机制创建的新映像不会保留签名。如果需要对新映像进行签名，请不要使用此机制。
 {: tip}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
@@ -172,7 +172,7 @@ subcollection: registry
 您可以直接在 {{site.data.keyword.cloud_notm}} 中构建 Docker 映像，也可以在本地计算机上创建自己的 Docker 映像，然后将其上传（推送）至 {{site.data.keyword.registrylong_notm}} 中的名称空间。
 {:shortdesc}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) 以在名称空间中使用映像。
 
@@ -204,8 +204,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
        ```
        {: pre}
 
-       **示例**
-     要创建基于公共 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) 映像的 Dockerfile，请使用以下代码：
+       例如，要创建基于公共 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) 映像的 Dockerfile，请使用以下命令：
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -266,6 +265,8 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 创建使用 API 密钥的服务标识，以将映像推送到 {{site.data.keyword.registrylong_notm}}。
 {:shortdesc}
+
+请完成以下步骤：
 
 1. 要创建服务标识，请参阅[创建和使用服务标识](/docs/iam?topic=iam-serviceids#serviceids)。
 2. 要创建授予服务标识许可权以访问注册表的策略，例如`管理员`和`管理者`角色，请参阅[使用 Identity and Access Management 管理用户访问权](/docs/services/Registry?topic=registry-iam#iam)。
@@ -389,9 +390,8 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 删除存储库时，将删除该存储库中的所有映像。此操作无法撤销。
 {: important}
 
-**开始之前**
-
-必须备份要保留的任何映像。
+在开始之前，必须备份要保留的任何映像。
+{: tip}
 
 要使用 GUI 删除专用存储库，请完成以下步骤：
 

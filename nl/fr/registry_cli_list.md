@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Formatage et filtrage de la sortie de l'interface de ligne de commande pour les commandes {{site.data.keyword.registrylong_notm}}
 {: #registry_cli_list}
 
-Vous pouvez formater et filtrer la sortie de l'interface de ligne de commande des commandes {{site.data.keyword.registrylong_notm}} prises en charge.
+Vous pouvez formater et filtrer la sortie de l'interface de ligne de commande des commandes {{site.data.keyword.registrylong}} prises en charge.
 {:shortdesc}
 
 Par défaut, la sortie de l'interface de ligne de commande s'affiche dans un format lisible par l'utilisateur. Cependant, cette vue risque de limiter votre capacité à utiliser la sortie, particulièrement si la commande est exécutée à l'aide d'un programme. Ainsi, dans la sortie de l'interface de ligne de commande `ibmcloud cr image-list`, vous souhaiterez peut-être trier la zone `Size` par ordre de taille numérique, mais la commande renvoie une description de la taille sous forme de chaîne. Le plug-in d'interface de ligne de commande `container-registry` fournit l'option format qui vous permet d'appliquer un modèle Go à la sortie de l'interface de ligne de commande. Le modèle Go est une fonction du [langage de programmation Go ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://golang.org/pkg/text/template/) que vous pouvez utiliser pour personnaliser la sortie de l'interface de ligne de commande.
@@ -50,7 +50,7 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
   ```
   {: pre}
 
-  **Exemple de sortie**
+  Le message suivant est un exemple de sortie de la commande :
 
   ```
   example-<region>.icr.io/user1/ibmliberty:latest No Issues
@@ -60,14 +60,14 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
   ```
   {: screen}
 
-- Exécutez la commande `ibmcloud cr image-inspect` suivante pour afficher l'emplacement d'hébergement de la documentation IBM pour une image publique IBM spécifique :
+- Exécutez la commande `ibmcloud cr image-inspect` suivante pour afficher l'emplacement où la documentation {{site.data.keyword.IBM_notm}} est hébergée pour une image publique {{site.data.keyword.IBM_notm}} spécifiée :
 
   ```
   ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
   ```
   {: pre}
 
-  **Exemple de sortie**
+  Le message suivant est un exemple de sortie de la commande :
 
   ```
   map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
@@ -81,7 +81,7 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
   ```
   {: pre}
 
-  **Exemple de sortie**
+  Le message suivant est un exemple de sortie de la commande :
 
   ```
   map[9080/tcp: 9443/tcp:]
@@ -95,7 +95,7 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
   ```
   {: pre}
 
-  **Exemple de sortie**
+  Le message suivant est un exemple de sortie de la commande :
 
   ```
   0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
@@ -105,7 +105,7 @@ Les exemples de code suivants illustrent la manière dont vous pouvez utiliser l
 ## Options du modèle Go et types de données dans la commande `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
-Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr image-list`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list).
 {:shortdesc}
 
 |Zone|Type|Description|
@@ -114,34 +114,34 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 |`Digest`|Chaîne|Affiche l'identificateur unique de l'image.|
 |`Namespace`|Chaîne|Affiche l'espace de nom dans lequel l'image est stockée.|
 |`Repository`|Chaîne|Affiche le référentiel de l'image.|
+|`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : *Status*  `string`, *IssueCount*  `int` et *ExemptionCount*  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface de ligne de commande](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`Tag`|Chaîne|Affiche l'étiquette de l'image.|
-|`SecurityStatus`|Struct|Affiche le statut de vulnérabilité de l'image. Vous pouvez filtrer et mettre en forme les valeurs suivantes : *Status*  `string`, *IssueCount*  `int` et *ExemptionCount*  `int`. Les statuts possibles sont décrits dans [Examen d'un rapport de vulnérabilité via l'interface de ligne de commande](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
 {: caption="Tableau 1. Zones et types de données disponibles dans la commande <codeibmcloud cr image-list</code>." caption-side="top"}
 
 ## Options du modèle Go et types de données dans la commande `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
-Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr image-inspect`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect).
 {:shortdesc}
 
 |Zone|Type|Description|
 |-----|----|-----------|
-|`ID`|Chaîne|Affiche l'identificateur unique de l'image.|
-|`Parent`|Chaîne|Affiche l'ID de l'image parent qui a été utilisée pour la génération de cette image.|
+|`Architecture`|Chaîne|Affiche l'architecture de processeur utilisée pour la génération de cette image et requise pour son exécution.|
+|`Author`|Chaîne|Affiche l'auteur de l'image.|
 |`Comment`|Chaîne|Affiche la description de l'image.|
-|`Created`|Chaîne|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où l'image a été créée.|
+|`Config`|Objet|Affiche les métadonnées de configuration de l'image. Pour plus de détails sur cette zone, voir [`Config`](#registry_cli_list_imageinspect_config).|
 |`Container`|Chaîne|Affiche l'ID du conteneur ayant créé l'image.|
 |`ContainerConfig`|Objet|Affiche la configuration par défaut des conteneurs démarrés à partir de cette image. Pour plus de détails sur cette zone, voir [`Config`](#registry_cli_list_imageinspect_config).|
+|`Created`|Chaîne|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où l'image a été créée.|
 |`DockerVersion`|Chaîne|Affiche la version de Docker utilisée pour la génération de cette image.|
-|`Author`|Chaîne|Affiche l'auteur de l'image.|
-|`Config`|Objet|Affiche les métadonnées de configuration de l'image. Pour plus de détails sur cette zone, voir [`Config`](#registry_cli_list_imageinspect_config).|
-|`Architecture`|Chaîne|Affiche l'architecture de processeur utilisée pour la génération de cette image et requise pour son exécution.|
+|`ID`|Chaîne|Affiche l'identificateur unique de l'image.|
 |`Os`|Chaîne|Affiche la famille de système d'exploitation utilisée pour la génération de cette image et requise pour son exécution.|
 |`OsVersion`|Chaîne|Affiche la version du système d'exploitation utilisé pour la génération de cette image.|
+|`Parent`|Chaîne|Affiche l'ID de l'image parent qui a été utilisée pour la génération de cette image.|
+|`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 |`Size`|Entier (64 bits)|Affiche la taille de l'image en octets.|
 |`VirtualSize`|Entier (64 bits)|Affiche la somme des tailles de chaque couche de l'image en octets.|
-|`RootFS`|Objet|Affiche les métadonnées qui décrivent le système de fichiers racine de l'image. Pour plus de détails sur cette zone, voir [`RootFS`](#registry_cli_list_imageinspect_rootfs).|
 {: caption="Tableau 2. Zones et types de données disponibles dans la commande <codeibmcloud cr image-inspect</code>." caption-side="top"}
 
 ### `Config`
@@ -149,31 +149,31 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 
 |Zone|Type|Description|
 |-----|----|-----------|
-|`Hostname`|Chaîne|Affiche le nom d’hôte du conteneur.|
-|`Domainname`|Chaîne|Affiche le nom de domaine complet du conteneur.|
-|`User`|Chaîne|Affiche l'utilisateur qui exécute les commandes dans le conteneur dans lequel l'image est utilisée.|
+|`ArgsEscaped`|Booléen|Affiche true si la commande fait déjà l'objet d'un échappement (spécifique à Windows).|
+|`AttachStderr`|Booléen|Affiche _true_ si le flux d'erreur standard est associé au conteneur, et _false_ dans le cas contraire.|
 |`AttachStdin`|Booléen|Affiche _true_ si le flux d'entrée standard est associé au conteneur, et _false_ dans le cas contraire.|
 |`AttachStdout`|Booléen|Affiche _true_ si le flux de sortie standard est associé au conteneur, et _false_ dans le cas contraire.|
-|`AttachStderr`|Booléen|Affiche _true_ si le flux d'erreur standard est associé au conteneur, et _false_ dans le cas contraire.|
-|`ExposedPorts`|Mappe de valeur de clé|Affiche la liste des ports exposés au format `[123:,456:]`.|
-|`Tty`|Booléen|Affiche _true_ si une unité `pseudo-tty` est allouée au conteneur, et _false_ dans le cas contraire.|
-|`OpenStdin`|Booléen|Affiche _true_ si le flux d'entrée standard est ouvert, et _false_ si le flux d'entrée standard est fermé.|
-|`StdinOnce`|Booléen|Affiche _true_ si le flux d'entrée standard est fermé après la déconnexion du client associé, et _false_ si le flux d'entrée standard reste ouvert.|
-|`Env`|Tableau de chaînes|Affiche la liste des variables d'environnement sous la forme de paires clé-valeur.|
 |`Cmd`|Tableau de chaînes|Décrit les commandes et les arguments transmis à un conteneur et à exécuter au démarrage de ce dernier.|
-|`Healthcheck`|Objet|Décrit comment vérifier que le conteneur fonctionne correctement. Pour plus de détails sur cette zone, voir [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
-|`ArgsEscaped`|Booléen|Affiche true si la commande fait déjà l'objet d'un échappement (spécifique à Windows).|
-|`Image`|Chaîne|Affiche le nom de l'image transmise par l'opérateur.|
-|`Volumes`|Mappe de valeur de clé|Affiche la liste des montages de volume montés sur un conteneur.|
-|`WorkingDir`|Chaîne|Affiche le répertoire de travail au sein du conteneur dans lequel les commandes spécifiées sont exécutées.|
+|`Domainname`|Chaîne|Affiche le nom de domaine complet du conteneur.|
 |`=Entrypoint`|Tableau de chaînes|Décrit la commande exécutée au démarrage du conteneur.|
-|`NetworkDisabled`|Booléen|Affiche _true_ si la mise en réseau est désactivée pour le conteneur, et _false_ si la mise en réseau est activée pour le conteneur.|
-|`MacAddress`|Chaîne|Affiche l'adresse MAC affectée au conteneur.|
-|`OnBuild`|Tableau de chaînes|Affiche les métadonnées `ONBUILD` définies sur le fichier Dockerfile de l'image.|
+|`Env`|Tableau de chaînes|Affiche la liste des variables d'environnement sous la forme de paires clé-valeur.|
+|`ExposedPorts`|Mappe de valeur de clé|Affiche la liste des ports exposés au format `[123:,456:]`.|
+|`Healthcheck`|Objet|Décrit comment vérifier que le conteneur fonctionne correctement. Pour plus de détails sur cette zone, voir [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck).|
+|`Hostname`|Chaîne|Affiche le nom d’hôte du conteneur.|
+|`Image`|Chaîne|Affiche le nom de l'image transmise par l'opérateur.|
 |`Labels`|Mappe de valeur de clé|Affiche la liste des libellés ajoutés à l'image sous forme de paires clé-valeur.|
+|`MacAddress`|Chaîne|Affiche l'adresse MAC affectée au conteneur.|
+|`NetworkDisabled`|Booléen|Affiche _true_ si la mise en réseau est désactivée pour le conteneur, et _false_ si la mise en réseau est activée pour le conteneur.|
+|`OnBuild`|Tableau de chaînes|Affiche les métadonnées `ONBUILD` définies sur le fichier Dockerfile de l'image.|
+|`OpenStdin`|Booléen|Affiche _true_ si le flux d'entrée standard est ouvert, et _false_ si le flux d'entrée standard est fermé.|
+|`Shell`|Tableau de chaînes|Affiche le format shell de RUN, CMD, ENTRYPOINT.|
+|`StdinOnce`|Booléen|Affiche _true_ si le flux d'entrée standard est fermé après la déconnexion du client associé, et _false_ si le flux d'entrée standard reste ouvert.|
 |`StopSignal`|Chaîne|Décrit le signal d'arrêt UNIX à envoyer lorsqu'il faut arrêter le conteneur.|
 |`StopTimeout`|Entier|Affiche le délai en secondes avant l'arrêt d'un conteneur.|
-|`Shell`|Tableau de chaînes|Affiche le format shell de RUN, CMD, ENTRYPOINT.|
+|`Tty`|Booléen|Affiche _true_ si une unité `pseudo-tty` est allouée au conteneur, et _false_ dans le cas contraire.|
+|`User`|Chaîne|Affiche l'utilisateur qui exécute les commandes dans le conteneur dans lequel l'image est utilisée.|
+|`Volumes`|Mappe de valeur de clé|Affiche la liste des montages de volume montés sur un conteneur.|
+|`WorkingDir`|Chaîne|Affiche le répertoire de travail au sein du conteneur dans lequel les commandes spécifiées sont exécutées.|
 {: caption="Tableau 3. Zones et types de données disponibles dans <codeConfig</code>. " caption-side="top"}
 
 ### `Healthcheck`
@@ -181,10 +181,10 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 
 |Zone|Type|Description|
 |-----|----|-----------|
-|`Test`|Tableau de chaînes|Affiche le mode d'exécution du diagnostic d'intégrité. Options disponibles :<ul><li>`{}` : hérite du diagnostic d'intégrité</li><li>`{"NONE"}` : le diagnostic d'intégrité est désactivé</li><li>`{"CMD", args...}` : arguments exec directement</li><li>`{"CMD-SHELL", command}` : exécute la commande avec le shell par défaut du système</li></ul>|
 |`Interval`|Entier (64 bits)|Affiche la durée d'attente entre deux diagnostics d'intégrité en nanosecondes.|
-|`Timeout`|Entier (64 bits)|Affiche la durée d'attente avant que le diagnostic d'intégrité ne soit considéré comme ayant échoué en nanosecondes.|
 |`Retries`|Entier|Affiche le nombre d'échecs consécutifs à prendre en compte pour déterminer qu'un conteneur ne fonctionne pas correctement.|
+|`Test`|Tableau de chaînes|Affiche le mode d'exécution du diagnostic d'intégrité. Options disponibles :<ul><li>`{}` : hérite du diagnostic d'intégrité</li><li>`{"NONE"}` : le diagnostic d'intégrité est désactivé</li><li>`{"CMD", args...}` : arguments exec directement</li><li>`{"CMD-SHELL", command}` : exécute la commande avec le shell par défaut du système</li></ul>|
+|`Timeout`|Entier (64 bits)|Affiche la durée d'attente avant que le diagnostic d'intégrité ne soit considéré comme ayant échoué en nanosecondes.|
 {: caption="Tableau 4. Zones et types de données disponibles dans la structure <codeHealthcheck</code>." caption-side="top"}
 
 ### `RootFS`
@@ -192,21 +192,21 @@ Consultez le tableau suivant pour connaître les options du modèle Go et les ty
 
 |Option|Type|Description|
 |------|----|-----------|
-|`Type`|Chaîne|Affiche le type du système de fichiers.|
-|`Layers`|Tableau de chaînes|Affiche les descripteurs de chaque couche de l'image.|
 |`BaseLayer`|Chaîne|Affiche le descripteur de la couche de base de l'image.|
+|`Layers`|Tableau de chaînes|Affiche les descripteurs de chaque couche de l'image.|
+|`Type`|Chaîne|Affiche le type du système de fichiers.|
 {: caption="Tableau 5. Zones et types de données disponibles dans la structure <codeRootFS</code>." caption-side="top"}
 
 ## Options du modèle Go et types de données dans la commande `ibmcloud cr token-list`
 {: #registry_cli_list_tokenlist}
 
-Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande `ibmcloud cr token-list`.
+Consultez le tableau suivant pour connaître les options du modèle Go et les types de données disponibles pour la commande [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list).
 {:shortdesc}
 
 |Zone|Type|Description|
 |-----|----|-----------|
-|`ID`|Chaîne|Affiche l'identificateur unique d'un jeton.|
-|`Expiry`|Entier (64 bits)|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où le jeton arrive à expiration.|
-|`ReadOnly`|Booléen|Affiche _true_ lorsque vous pouvez uniquement extraire des images, et _false_ lorsque vous pouvez envoyer des images par commande push et en extraire vers et depuis votre espace de nom.|
 |`Description`|Chaîne|Affiche la description du jeton.|
+|`Expiry`|Entier (64 bits)|Affiche l'[horodatage UNIX ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://en.wikipedia.org/wiki/Unix_time) correspondant au moment où le jeton arrive à expiration.|
+|`ID`|Chaîne|Affiche l'identificateur unique d'un jeton.|
+|`ReadOnly`|Booléen|Affiche _true_ lorsque vous pouvez uniquement extraire des images, et _false_ lorsque vous pouvez envoyer des images par commande push et en extraire vers et depuis votre espace de nom.|
 {: caption="Tableau 6. Zones et types de données disponibles dans la commande <codeibmcloud cr token-list</code>." caption-side="top"}

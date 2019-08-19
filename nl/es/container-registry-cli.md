@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -28,10 +28,11 @@ subcollection: container-registry-cli-plugin
 La CLI de {{site.data.keyword.registrylong}}, que se proporciona en el plugin de CLI `container-registry`, sirve para gestionar su registro y sus recursos para su cuenta de {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-**Requisitos previos**
+## Requisitos previos
+{: #containerregcli_prereq}
 
-* Instale la CLI de {{site.data.keyword.cloud_notm}}; consulte [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started). El prefijo para ejecutar mandatos mediante la CLI de {{site.data.keyword.cloud_notm}} es `ibmcloud`.
-* Antes de ejecutar los mandatos de registro, inicie sesión en {{site.data.keyword.cloud_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
+- Instale la CLI de {{site.data.keyword.cloud_notm}}; consulte [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started). El prefijo para ejecutar mandatos mediante la CLI de {{site.data.keyword.cloud_notm}} es `ibmcloud`.
+- Antes de ejecutar los mandatos de registro, inicie sesión en {{site.data.keyword.cloud_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
 
 En la línea de mandatos, se le notifica cuando hay actualizaciones de la CLI de `ibmcloud` y de los plugins de CLI `container-registry` disponibles. Asegúrese de mantener la CLI actualizada para poder utilizar todos los mandatos y distintivos disponibles.
 
@@ -54,7 +55,8 @@ ibmcloud cr api
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_api_prereq}
 
 Ninguno
 
@@ -68,11 +70,14 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_build_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_build_option}
+
 <dl>
 <dt>`DIRECTORY`</dt>
 <dd>La ubicación de su contexto de construcción, que contiene los archivos Dockerfile y de requisito previo. Si ejecuta el mandato cuando el directorio de trabajo está establecido en el lugar en el que está almacenado el contexto de compilación, puede sustituir `DIRECTORY` por un punto (.).</dd>
@@ -90,7 +95,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dd>El nombre completo de la imagen que desea compilar, que incluye el espacio de nombres y el URL de registro.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_build_example}
 
 Crea una imagen de Docker que no utiliza una memoria caché de compilación, en la que la salida de compilación está suprimida, la etiqueta es *`us.icr.io/birds/bluebird:1`* y el directorio es su directorio de trabajo.
 
@@ -109,11 +115,14 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_exemption_add_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_exemption_add_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>Para establecer su cuenta como ámbito, utilice el valor `"*"`. Para establecer un espacio de nombres, un repositorio o una etiqueta como ámbito, especifique el valor en uno de los siguientes formatos: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -126,7 +135,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 </dd>
 </dl>
 
-**Ejemplos**
+### Ejemplos
+{: #bx_cr_exemption_add_example}
 
 Crea una exención para CVE con el ID `CVE-2018-17929` para todas las imágenes del repositorio `us.icr.io/birds/bluebird`.
 
@@ -159,18 +169,22 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_exemption_list_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_exemption_list_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>(Opcional) Únicamente muestra una lista de las exenciones que se aplican a este ámbito. Para establecer un espacio de nombres, un repositorio o una etiqueta como ámbito, especifique el valor en uno de los siguientes formatos: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_exemption_list_example}
 
 Enumera todas las exenciones para los problemas de seguridad que se aplican a las imágenes del repositorio *`birds/bluebird`*. La salida incluye las exenciones que son de toda la cuenta, las exenciones que están limitadas al espacio de nombres *`birds`* y las exenciones que están limitadas al repositorio *`birds/bluebird`*, pero no las que están limitadas a etiquetas específicas dentro del repositorio *`birds/bluebird`*.
 
@@ -189,11 +203,14 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_exemption_rm_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_exemption_rm_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>Para establecer su cuenta como ámbito, utilice el valor `"*"`. Para establecer un espacio de nombres, un repositorio o una etiqueta como ámbito, especifique el valor en uno de los siguientes formatos: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -206,7 +223,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 </dd>
 </dl>
 
-**Ejemplos**
+### Ejemplos
+{: #bx_cr_exemption_rm_example}
 
 Suprime una exención para CVE con el ID `CVE-2018-17929` para todas las imágenes del repositorio `us.icr.io/birds/bluebird`.
 
@@ -239,7 +257,8 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_exemption_types_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
@@ -253,7 +272,8 @@ ibmcloud cr iam-policies-enable
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_iam_policies_enable_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
@@ -277,11 +297,14 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_image_inspect_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_image_inspect_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
@@ -297,7 +320,8 @@ Para obtener más información, consulte [Formateo y filtrado de la salida de la
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_image_inspect_example}
 
 Visualiza detalles sobre los puertos expuestos para la imagen *`us.icr.io/birds/bluebird:1`* mediante la directriz de formateo *`"{{ .Config.ExposedPorts }}"`*.
 
@@ -315,18 +339,19 @@ El nombre de imagen es la combinación del contenido de las columnas **Repositor
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_image_list_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_image_list_option}
+
 <dl>
-<dt>`--no-trunc`</dt>
-<dd>(Opcional) No truncar los resúmenes de imagen.</dd>
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
 
@@ -339,9 +364,12 @@ Para obtener más información, consulte [Formateo y filtrado de la salida de la
 <dd>(Opcional) Limitar la salida para visualizar solo imágenes en el espacio de nombres y repositorio o el espacio de nombres especificado. </dd>
 <dt>`--include-ibm`</dt>
 <dd>(Opcional) Incluye en la salida las imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}. Sin esta opción, de forma predeterminada solo se muestran en la lista las imágenes privadas.</dd>
+<dt>`--no-trunc`</dt>
+<dd>(Opcional) No truncar los resúmenes de imagen.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_image_list_example}
 
 Visualiza las imágenes del espacio de nombres *`birds`* en el formato `repository:tag`, sin truncar los resúmenes de imagen.
 
@@ -368,11 +396,13 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_image_rm_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_image_rm_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -383,8 +413,10 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 </dd>
 </dl>
 
-**Ejemplo**
-Suprime la imagen `us.icr.io/birds/bluebird:1`.
+### Ejemplo
+{: #bx_cr_image_rm_example}
+
+Suprima la imagen `us.icr.io/birds/bluebird:1`.
 
 ```
 ibmcloud cr image-rm us.icr.io/birds/bluebird:1
@@ -407,11 +439,14 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_image_tag_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_image_tag_option}
+
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
 <dd>El nombre de la imagen de origen. `SOURCE_IMAGE` debe estar en el formato `repository:tag`, por ejemplo: `us.icr.io/namespace/image:latest`
@@ -423,7 +458,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 </dd>
 </dl>
 
-**Ejemplos**
+### Ejemplos
+{: #bx_cr_image_tag_example}
 
 Añade otra referencia de etiqueta, `latest`, a la imagen `us.icr.io/birds/bluebird:1`.
 
@@ -463,11 +499,13 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_image_untag_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_image_untag_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -479,7 +517,8 @@ el mandato falla.</p>
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_image_untag_example}
 
 Eliminar la etiqueta `1` de la imagen `us.icr.io/birds/bluebird:1`.
 
@@ -498,7 +537,8 @@ ibmcloud cr info
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_info_prereq}
 
 Ninguno
 
@@ -512,7 +552,8 @@ ibmcloud cr login
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_login_prereq}
 
 Ninguno
 
@@ -526,11 +567,14 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_namespace_add_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_namespace_add_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>El espacio de nombres que desea añadir. El espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región. Los
@@ -544,7 +588,8 @@ y guiones bajos (_). Los espacios de nombres deben empezar y finalizar con una l
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_namespace_add_example}
 
 Crea un espacio de nombres con el nombre *`birds`*.
 
@@ -563,7 +608,8 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_namespace_list_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
@@ -577,11 +623,14 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_namespace_rm_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_namespace_rm_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>El espacio de nombres que desea eliminar.</dd>
@@ -589,7 +638,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dd>(Opcional) Forzar la ejecución del mandato sin que el usuario lo solicite.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_namespace_rm_example}
 
 Elimina el espacio de nombres *`birds`*.
 
@@ -608,7 +658,8 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_plan_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
@@ -624,17 +675,21 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_plan_upgrade_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_plan_upgrade_option}
+
 <dl>
 <dt>`PLAN`</dt>
 <dd>(Opcional) El nombre del plan de precios al que desea actualizar. Si no se especifica `PLAN`, el valor predeterminado será `standard`.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_plan_upgrade_example}
 
 Actualiza al plan de precios estándar.
 
@@ -648,18 +703,21 @@ ibmcloud cr plan-upgrade standard
 
 Importa software de {{site.data.keyword.IBM_notm}} que se descarga desde [IBM Passport Advantage Online para clientes ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) y que se empaqueta para utilizarlo con Helm en el espacio de nombres de {{site.data.keyword.registrylong_notm}}.
 
-Las imágenes de contenedor se envían al espacio de nombres privado de {{site.data.keyword.registryshort_notm}}. Las gráficas de Helm se graban en un directorio `ppa-import` que se crea en el directorio desde el que ejecuta el mandato. Opcionalmente, puede utilizar el [proyecto de código abierto de Chart Museum ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum) para alojar gráficas de helm.
+Las imágenes de contenedor se envían al espacio de nombres privado de {{site.data.keyword.registryshort_notm}}. Las gráficas de Helm se escriben en un directorio `ppa-import` que se crea en el directorio desde el que ejecuta el mandato. Opcionalmente, puede utilizar el [proyecto de código abierto de Chart Museum ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum) para alojar gráficas de helm.
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_ppa_archive_load_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_ppa_archive_load_option}
+
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>La vía de acceso al archivo comprimido que se descarga desde IBM Passport Advantage.</dd>
@@ -673,7 +731,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
   <dd>(Opcional) La contraseña de [Chart Museum ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum).</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_ppa_archive_load_example}
 
 Importa el software y el paquete de IBM para utilizarlo con Helm en el espacio de nombres de {{site.data.keyword.registrylong_notm}} *`birds`*, donde la vía de acceso al archivo comprimido es *`downloads/compressed_file.tgz`*.
 
@@ -692,7 +751,8 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_quota_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
@@ -706,11 +766,14 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_quota_set_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_quota_set_option}
+
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>(Opcional) Cambia su cuota de tráfico al valor que especifique en megabytes. La operación falla si no está autorizado a establecer cuotas de tráfico, o si establece un valor por encima del que permite su plan de precios actual.</dd>
@@ -718,7 +781,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dd>(Opcional) Cambia su cuota de almacenamiento al valor que especifique en megabytes. La operación falla si no está autorizado a establecer cuotas de almacenamiento, o si establece un valor por encima del que permite su plan de precios actual.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_quota_set_example}
 
 Establece el límite de cuota para el tráfico de extracción en *7000* megabytes y el almacenamiento en *600* megabytes.
 
@@ -737,7 +801,8 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_region_prereq}
 
 Ninguno
 
@@ -753,11 +818,14 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_region_set_prereq}
 
 Ninguno
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_region_set_option}
+
 <dl>
 <dt>`REGION`</dt>
 <dd>(Opcional) El nombre de su región de destino, por ejemplo, `us-south`.
@@ -767,12 +835,62 @@ Para obtener más información, consulte [Regiones](/docs/services/Registry?topi
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_region_set_example}
 
 Establece como destino la región EE.UU. sur.
 
 ```
 ibmcloud cr region-set us-south
+```
+{: pre}
+
+## `ibmcloud cr retention-run`
+{: #bx_cr_retention_run}
+
+Limpia un espacio de nombres reteniendo imágenes de cada uno de los repositorios de {{site.data.keyword.registrylong_notm}} según los criterios especificados. Todas las demás imágenes del espacio de nombres se suprimen.
+{: shortdesc}
+
+La supresión de una imagen no se puede deshacer. La supresión de una imagen que un despliegue existente utiliza puede provocar que un escalado, una replanificación, o ambas tareas, fallen.
+{: important}
+
+Cuando se hace referencia a una imagen desde varias etiquetas, dentro de un mismo repositorio, esa imagen sólo se cuenta una vez. Se retienen las imágenes más nuevas. La antigüedad viene determinada por el momento en que se creó la imagen, no por el momento en que se envió al registro.
+{: tip}
+
+Para obtener más información sobre cómo utilizar el mandato `ibmcloud cr retention-run`, consulte [Retención de imágenes](/docs/services/Registry?topic=registry-registry_retention).
+
+```
+ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+```
+{: codeblock}
+
+### Requisitos previos
+{: #bx_cr_retention_run_prereq}
+
+Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para configurar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+
+### Opciones de mandato
+{: #bx_cr_retention_run_option}
+
+<dl>
+<dt>`NAMESPACE`</dt>
+<dd>El espacio de nombres que desea limpiar.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(Opcional) Forzar la ejecución del mandato sin que el usuario lo solicite.</dd>
+<dt>`--json`</dt>
+<dd>(Opcional) Genera JSON que contiene los resultados de limpiar el espacio de nombres. Este distintivo se tiene que utilizar con'--force'.</dd>
+<dt>`--images`</dt>
+<dd>Determina cuántas imágenes se deben guardar dentro de cada repositorio en el espacio de nombres especificado. Se retienen las imágenes más nuevas. La antigüedad de las imágenes viene determinada por su fecha de compilación. `IMAGECOUNT` es el número de imágenes que desea retener.
+</dd>
+</dl>
+
+### Ejemplo
+{: #bx_cr_retention_run_example}
+
+Para devolver las 20 imágenes más recientes de cada repositorio en el espacio de nombres `birds`.
+
+```
+ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
 
@@ -786,17 +904,21 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_token_get_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de gestión de plataforma](/docs/services/Registry?topic=registry-iam#platform_management_roles).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_token_get_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>Identificador exclusivo de la señal que desea recuperar. Para obtener una lista de sus señales, ejecute `ibmcloud cr token-list`.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_token_get_example}
 
 Recupera la señal *10101010-101x-1x10-x1xx-x10xx10xxx10*.
 
@@ -815,11 +937,14 @@ ibmcloud cr token-list [--format FORMAT]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_token_list_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de gestión de plataforma](/docs/services/Registry?topic=registry-iam#platform_management_roles).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_token_list_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(Opcional) Formatear los elementos de salida mediante una plantilla de Go.
@@ -829,7 +954,8 @@ Para obtener más información, consulte [Formateo y filtrado de la salida de la
 </dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_token_list_example}
 
 Visualiza todas las señales que son solo de lectura mediante el uso de la directriz de formateo *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`*.
 
@@ -855,11 +981,14 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_token_rm_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de gestión de plataforma](/docs/services/Registry?topic=registry-iam#platform_management_roles).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_token_rm_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN puede ser la propia señal, o el identificador exclusivo de la señal, tal como se muestra en `ibmcloud cr token-list`. Es posible especificar varias señales separándolas con espacios en blanco.</dd>
@@ -867,7 +996,8 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de gest
 <dd>(Opcional) Forzar la ejecución del mandato sin que el usuario lo solicite.</dd>
 </dl>
 
-**Ejemplo**
+### Ejemplo
+{: #bx_cr_token_rm_example}
 
 Elimina la señal *10101010-101x-1x10-x1xx-x10xx10xxx10*.
 
@@ -886,11 +1016,14 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**Requisitos previos**
+### Requisitos previos
+{: #bx_cr_va_prereq}
 
 Para obtener información sobre los permisos necesarios, consulte [Roles de acceso para utilizar {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
-**Opciones del mandato**
+### Opciones de mandato
+{: #bx_cr_va_option}
+
 <dl>
 <dt>`IMAGE`</dt>
 <dd>El nombre de la imagen de la que desea obtener un informe. El informe indica si la imagen tiene vulnerabilidades de empaquetamiento conocidas. Puede solicitar informes para varias imágenes al mismo tiempo creando una lista de cada imagen en el mandato con un espacio entre cada nombre.
@@ -928,7 +1061,8 @@ Para obtener más información, consulte [Gestión de imágenes de seguridad con
 </dd>
 </dl>
 
-**Ejemplos**
+### Ejemplos
+{: #bx_cr_va_example}
 
 Muestra un informe de evaluación de vulnerabilidad estándar para su imagen.
 

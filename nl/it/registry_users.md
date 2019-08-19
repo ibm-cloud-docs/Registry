@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ Se vuoi concedere l'accesso a tutto, non specificare un tipo di risorsa o una ri
 Non puoi organizzare e assegnare l'accesso agli spazi dei nomi del registro nei gruppi di risorse.
 {: note}
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - Decidi di quali ruoli e risorse ha bisogno ogni utente in {{site.data.keyword.registrylong_notm}}, consulta [Ruoli IAM](/docs/services/Registry?topic=registry-iam#iam). Prendi in considerazione che puoi creare più politiche, ad esempio, puoi concedere l'accesso in scrittura a una risorsa ma concedere solo l'accesso in lettura a un'altra risorsa e non concedere l'accesso a un'altra risorsa. Le politiche sono addizionali, il che significa che una politica di lettura globale e una politica di scrittura dedicata alla risorsa concedono sia l'accesso in lettura che in scrittura a quella risorsa.
 

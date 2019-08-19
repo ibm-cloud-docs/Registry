@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -33,12 +33,15 @@ Container Image Security Enforcement richiama le informazioni sull'attendibilit�
 ## Installazione di Container Image Security Enforcement nel tuo cluster
 {: #sec_enforce_install}
 
-**Prima di iniziare**
+Installa Container Image Security Enforcement nel tuo cluster configurando Helm e installando il grafico Container Image Security Enforcement Helm.
+{:shortdesc}
 
-* [Crea](/docs/containers?topic=containers-clusters#clusters_ui) o [aggiorna](/docs/containers?topic=containers-update#update) il cluster che vuoi utilizzare con **Kubernetes versione 1.9 o successive**.
-* [Indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.
+Prima di cominciare, completa le seguenti attività:
 
-Completa la seguente procedura:
+1. [Crea](/docs/containers?topic=containers-clusters#clusters_ui) o [aggiorna](/docs/containers?topic=containers-update#update) il cluster che vuoi utilizzare con **Kubernetes versione 1.9 o successive**.
+2. [Indirizza la tua CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) al cluster.
+
+Per installare Container Image Security Enforcement nel tuo cluster, completa la seguente procedura:
 
 1. [Configura Helm nel tuo cluster](/docs/containers?topic=containers-helm#helm).
 
@@ -66,8 +69,8 @@ Container Image Security Enforcement installa alcune politiche per impostazione 
 
 Per sovrascrivere queste politiche, utilizza una delle seguenti opzioni:
 
-* Scrivi un nuovo documento di politiche e applicalo al tuo cluster utilizzando `kubectl apply`
-* Modifica la politica predefinita utilizzando `kubectl edit`
+- Scrivi un nuovo documento di politiche e applicalo al tuo cluster utilizzando `kubectl apply`
+- Modifica la politica predefinita utilizzando `kubectl edit`
 
 Per ulteriori informazioni su come scrivere le politiche di sicurezza, vedi [Personalizzazione delle politiche](#customize_policies).
 
@@ -77,7 +80,7 @@ Per ulteriori informazioni su come scrivere le politiche di sicurezza, vedi [Per
 Per impostazione predefinita, una politica a livello di cluster impone che tutte le immagini in tutti i registri dispongano di informazioni sull'attendibilità e non abbiano vulnerabilità segnalate in Controllo vulnerabilità.
 {:shortdesc}
 
-**File `.yaml` della politica a livello di cluster predefinita**
+Il seguente codice mostra il file `.yaml` della politica al livello del cluster:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -106,7 +109,7 @@ Quando imposti `va` o `trust` su `enabled: true` per un registro contenitori div
 Per impostazione predefinita, una politica a livello di spazio dei nomi viene installata per lo spazio dei nomi `kube-system`. Questa politica consente la distribuzione di tutte le immagini da qualsiasi registro contenitori in `kube-system` senza applicazione, ma puoi modificare questa parte della politica. La politica predefinita include anche dei repository che è necessario lasciare al proprio posto in modo che il tuo cluster sia configurato correttamente.
 {:shortdesc}
 
-**File `.yaml` della politica di `kube-system` predefinita**
+Il seguente codice mostra il file `.yaml` della politica `kube-system`:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -137,7 +140,7 @@ spec:
 Per impostazione predefinita, una politica a livello di spazio dei nomi viene installata per lo spazio dei nomi `ibm-system`. Questa politica consente la distribuzione di tutte le immagini da qualsiasi registro contenitori in `ibm-system` senza applicazione, ma puoi modificare questa parte della politica. La politica predefinita include anche dei repository che è necessario lasciare al proprio posto in modo che il tuo cluster sia configurato correttamente e possa installare o eseguire l'upgrade di Container Image Security Enforcement.
 {:shortdesc}
 
-**File `.yaml` della politica di `ibm-system` predefinita**
+Il seguente codice mostra il file `.yaml` della politica `ibm-system`:
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -281,29 +284,29 @@ Per configurare la politica per verificare che un'immagine sia firmata da un det
 Se sul tuo cluster Kubernetes hai abilitato il controllo degli accessi in base al ruolo (RBAC), puoi creare un ruolo per controllare chi ha la capacità di amministrare le politiche di sicurezza sul tuo cluster. Per ulteriori informazioni sull'applicazione di regole RBAC al tuo cluster, vedi [la documentazione di {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
-Nel tuo ruolo, aggiungi una regola per le politiche di sicurezza:
+- Nel tuo ruolo, aggiungi una regola per le politiche di sicurezza:
 
-```yaml
-- apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+  ```yaml
+  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
   resources: ["imagepolicies", "clusterimagepolicies"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-```
-{: codeblock}
+  ```
+  {: codeblock}
 
-Puoi creare più ruoli per controllare quali azioni possono essere eseguite dagli utenti. Ad esempio, modifica i `verbs` in modo che alcuni utenti possano utilizzare solo le politiche `get` o `list`. In alternativa, puoi omettere `clusterimagepolicies` dall'elenco `resources` per concedere l'accesso solo alle politiche degli spazi dei nomi Kubernetes.
-{:tip}
+  Puoi creare più ruoli per controllare quali azioni possono essere eseguite dagli utenti. Ad esempio, modifica i `verbs` in modo che alcuni utenti possano utilizzare solo le politiche `get` o `list`. In alternativa, puoi omettere `clusterimagepolicies` dall'elenco `resources` per concedere l'accesso solo alle politiche degli spazi dei nomi Kubernetes.
+  {:tip}
 
-Gli utenti che hanno accesso per eliminare le definizioni di risorse personalizzate (CRD) possono eliminare la definizione di risorsa per le politiche di sicurezza, il che elimina anche le tue politiche di sicurezza. Assicurati di controllare chi è autorizzato a eliminare le CRD. Per concedere l'accesso per eliminare le CRD, aggiungi una regola:
+- Gli utenti che hanno accesso per eliminare le definizioni di risorse personalizzate (CRD) possono eliminare la definizione di risorsa per le politiche di sicurezza, il che elimina anche le tue politiche di sicurezza. Assicurati di controllare chi è autorizzato a eliminare le CRD. Per concedere l'accesso per eliminare le CRD, aggiungi una regola:
 
-```yaml
-- apiGroups: ["apiextensions.k8s.io/v1beta1"]
-  resources: ["CustomResourceDefinition"]
+  ```yaml
+  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+    resources: ["CustomResourceDefinition"]
   verbs: ["delete"]
-```
-{: codeblock}
+  ```
+  {: codeblock}
 
-Gli utenti e gli account del servizio con il ruolo `cluster-admin` hanno accesso a tutte le risorse. Il ruolo cluster-admin concede l'accesso per amministrare le politiche di sicurezza, anche se non modifichi il ruolo. Assicurati di controllare chi ha il ruolo `cluster-admin` e concedi l'accesso solo alle persone a cui desideri consentire di modificare le politiche di sicurezza.
-{:tip}
+  Gli utenti e gli account del servizio con il ruolo `cluster-admin` hanno accesso a tutte le risorse. Il ruolo cluster-admin concede l'accesso per amministrare le politiche di sicurezza, anche se non modifichi il ruolo. Assicurati di controllare chi ha il ruolo `cluster-admin` e concedi l'accesso solo alle persone a cui desideri consentire di modificare le politiche di sicurezza.
+  {:tip}
 
 ## Distribuzione di immagini del contenitore con la sicurezza applicata
 {: #deploy_containers}
@@ -311,42 +314,42 @@ Gli utenti e gli account del servizio con il ruolo `cluster-admin` hanno accesso
 Quando viene applicata una politica, puoi distribuire normalmente il contenuto nel tuo cluster. La tua politica viene applicata automaticamente dal cluster Kubernetes. Se la tua distribuzione corrisponde a una politica ed è consentita da tale politica, la distribuzione viene accettata dal cluster e applicata.
 {:shortdesc}
 
-Se Container Image Security Enforcement nega una distribuzione, la distribuzione viene creata ma la serie di repliche creata non può essere incrementata e non viene creato alcun pod. Puoi trovare la serie di repliche eseguendo `kubectl describe deployment <deployment-name>` e quindi vedere il motivo per cui la distribuzione è stata negata eseguendo `kubectl describe rs <replicaset-name>`.
+- Se Container Image Security Enforcement nega una distribuzione, la distribuzione viene creata ma la serie di repliche creata non può essere incrementata e non viene creato alcun pod. Puoi trovare la serie di repliche eseguendo `kubectl describe deployment <deployment-name>` e quindi vedere il motivo per cui la distribuzione è stata negata eseguendo `kubectl describe rs <replicaset-name>`.
 
-**Messaggi di errore di esempio**
+  Il seguente codice mostra degli esempi di messaggi di errore tipici: 
 
-* Se la tua immagine non corrisponde ad alcuna politica o non ci sono politiche nello spazio dei nomi o nel cluster.
+  - Se la tua immagine non corrisponde ad alcuna politica o non ci sono politiche nello spazio dei nomi o nel cluster.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
+    ```
+    {: screen}
 
-* Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di Controllo vulnerabilità di tale politica.
+  - Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di Controllo vulnerabilità di tale politica.
 
-   ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report
-   for more details by using the command `ibmcloud cr va`.
-   ```
-   {: screen}
+    ```
+    admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report
+    for more details by using the command `ibmcloud cr va`.
+    ```
+    {: screen}
 
-* Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di attendibilità di tale politica.
+  - Se la tua immagine corrisponde a una politica ma non soddisfa i requisiti di attendibilità di tale politica.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
+    ```
+    {: screen}
 
-* Se la tua politica specifica l'applicazione dell'attendibilità per la tua immagine, ma l'immagine non proviene da un registro supportato.
+  - Se la tua politica specifica l'applicazione dell'attendibilità per la tua immagine, ma l'immagine non proviene da un registro supportato.
 
-   ```
-   admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
-   ```
-   {: screen}
+    ```
+    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
+    ```
+    {: screen}
 
-Puoi abilitare l'opzione `va` nella tua politica per applicare l'approvazione del Controllo vulnerabilità prima che un'immagine possa essere distribuita. Le immagini che non sono supportate dal Controllo vulnerabilità sono consentite.
+- Puoi abilitare l'opzione `va` nella tua politica per applicare l'approvazione del Controllo vulnerabilità prima che un'immagine possa essere distribuita. Le immagini che non sono supportate dal Controllo vulnerabilità sono consentite.
 
-Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](/docs/services/Registry?topic=registry-registry_trustedcontent).
+- Puoi abilitare l'opzione `trust` nella tua politica per applicare l'attendibilità dei contenuti. Se non specifichi alcun `signerSecrets`, la distribuzione viene consentita se l'immagine è firmata da chiunque. Se specifichi `signerSecrets`, l'ultima versione firmata dell'immagine deve essere stata firmata da tutti i firmatari specificati. Container Image Security Enforcement verifica che la chiave pubblica fornita appartenga al firmatario. Per ulteriori informazioni sull'attendibilità dei contenuti, vedi [Firma di immagini per contenuti attendibili](/docs/services/Registry?topic=registry-registry_trustedcontent).
 
 Una distribuzione viene consentita solo se tutte le immagini superano i controlli di Container Image Security Enforcement.
 
@@ -369,7 +372,7 @@ Prima di iniziare, [indirizza la tua CLI `kubectl`](/docs/containers?topic=conta
    ```
    {: pre}
 
-2. Rimuovi il grafico.
+1. Rimuovi il grafico.
 
    ```
    helm delete --purge cise

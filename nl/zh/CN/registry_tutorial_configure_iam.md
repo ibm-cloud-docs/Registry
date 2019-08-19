@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 教程：授予对 {{site.data.keyword.registrylong_notm}} 资源的访问权
+# 授权访问 {{site.data.keyword.registrylong_notm}} 资源教程
 {: #iam_access}
 
 使用本教程可了解如何通过为 {{site.data.keyword.registrylong_notm}} 配置 {{site.data.keyword.iamlong}} (IAM) 来授予对资源的访问权。
@@ -30,13 +30,16 @@ subcollection: registry
 
 本教程大约需要 45 分钟。
 
-**开始之前**
+## 在开始之前
+{: #iam_access_prereq}
+
+在开始之前，必须完成以下任务：
 
 - 完成 [{{site.data.keyword.registrylong_notm}} 入门](/docs/services/Registry?topic=registry-getting-started#getting-started)中的指示信息。
 
 - 确保您具有 {{site.data.keyword.cloud_notm}} CLI 的 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
-- 您必须有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
+- 确保您有权访问可用于本教程的两个 [{{site.data.keyword.cloud_notm}} 帐户 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/login)，一个是用户 A 的帐户，一个是用户 B 的帐户，每个帐户必须使用唯一的电子邮件地址。您在自己的帐户（用户 A）中工作，并邀请另一个用户（用户 B）使用您的帐户。您可以选择创建第二个 {{site.data.keyword.cloud_notm}} 帐户，也可以与有 {{site.data.keyword.cloud_notm}} 帐户的同事一起合作。
 
 - 如果您在 2018 年 10 月 4 日之前就开始使用 {{site.data.keyword.registrylong_notm}}，那么必须通过运行 `ibmcloud cr iam-policies-enable` 命令来启用 IAM 策略强制实施。如果您邀请了其他使用您的 {{site.data.keyword.registrylong_notm}} 名称空间的用户加入您的 IBM Cloud 帐户，请以用户 A 的身份使用其他帐户以防止其访问中断。
 
@@ -533,4 +536,4 @@ subcollection: registry
    ```
    {: pre}
 
-做得不错！您已成功完成本教程。
+您已成功完成本教程。

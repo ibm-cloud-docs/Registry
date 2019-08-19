@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ Un repositorio puede contener contenido firmado y no firmado. Si tiene Docker Co
 Las imágenes tienen firmas separadas para los nombres de dominio antiguos (`registry.bluemix.net`) y nuevos (`icr.io`). Las firmas existentes funcionan cuando la imagen se extrae del nombre de dominio antiguo. Si desea extraer contenido firmado del nuevo nombre de dominio, debe volver a firmar la imagen en el nuevo nombre de dominio, `icr.io`, consulte [Redefinir una imagen para el nuevo nombre de dominio](#trustedcontent_resign).
 {: note}
 
-Docker Content Trust utiliza un modelo de seguridad "trust on first use" ("confianza en el primer uso"). La clave de repositorio se extrae del servidor de confianza al extraer una imagen firmada de un repositorio por primera vez, y dicha clave se utiliza para verificar imágenes de ese repositorio en el futuro. Debe verificar que confíe en el servidor de confianza o en la imagen y su editor antes de extraer el repositorio por primera vez. Si la información de confianza del servidor está en peligro y no ha extraído una imagen del repositorio antes, el cliente de Docker podría extraer la información en peligro del servidor de confianza. Si los datos de confianza están en peligro después de extraer la imagen por primera vez, en extracciones posteriores, el cliente de Docker no podrá verificar los datos en peligro y no extraerá la imagen. Para obtener más información sobre cómo inspeccionar datos de confianza para una imagen, consulte [Visualización de imágenes firmadas](#trustedcontent_viewsigned).
+Docker Content Trust utiliza un modelo de seguridad de confianza en el primer uso (TOFU - "trust on first use"). La clave de repositorio se extrae del servidor de confianza al extraer una imagen firmada de un repositorio por primera vez, y dicha clave se utiliza para verificar imágenes de ese repositorio en el futuro. Debe verificar que confíe en el servidor de confianza o en la imagen y su editor antes de extraer el repositorio por primera vez. Si la información de confianza del servidor está en peligro y no ha extraído una imagen del repositorio antes, el cliente de Docker podría extraer la información en peligro del servidor de confianza. Si los datos de confianza están en peligro después de extraer la imagen por primera vez, en extracciones posteriores, el cliente de Docker no podrá verificar los datos en peligro y no extraerá la imagen. Para obtener más información sobre cómo inspeccionar datos de confianza para una imagen, consulte [Visualización de imágenes firmadas](#trustedcontent_viewsigned).
 
-Para obtener más información sobre el modelo de seguridad "trust on first use" ("confianza en el primer uso"), consulte [The Update Framework ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://theupdateframework.github.io/).
+Para obtener más información sobre el modelo de seguridad TOFU, consulte [The Update Framework ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://theupdateframework.github.io/).
 
 ## Configuración del entorno de contenido de confianza
 {: #trustedcontent_setup}
@@ -70,7 +70,7 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
    ```
    {: pre}
 
-   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar la sesión. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
+   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar la sesión. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Si tiene un ID federado, el inicio de sesión falla sin la opción `--sso` y funciona correctamente con la opción `--sso`.
    {: tip}
 
 3. Establezca la región que desee utilizar. Si no conoce el nombre de la región, puede ejecutar el mandato sin la región y elegir uno.
@@ -89,7 +89,7 @@ De forma predeterminada, Docker Content Trust está inhabilitado. Habilite el en
 
    La salida le indica que exporte la variable de entorno de Docker Content Trust.
 
-   **Ejemplo**
+   Por ejemplo:
 
    ```
    user:~ user$ ibmcloud cr login
@@ -131,7 +131,10 @@ Antes de empezar, [configure su espacio de nombres de registro](/docs/services/R
    ```
    {: screen}
 
-3. **Enviando por primera vez un repositorio firmado.** Al enviar una imagen firmada a un repositorio nuevo, el mandato creará dos claves de firma, clave raíz y clave de repositorio, y las almacenará en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) son limitadas.
+3. La primera vez que envía una imagen firmada a un repositorio nuevo, el mandato crea dos claves de firma, la clave raíz y la clave de repositorio, y las almacena en la máquina local. Especifique y guarde frases de contraseña seguras para cada clave, y a continuación [haga copia de seguridad de sus claves](#trustedcontent_backupkeys). La copia de seguridad de sus claves es fundamental porque sus [opciones de recuperación](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) son limitadas.
+
+   Esta acción sólo es necesaria la primera vez que envía a un repositorio firmado.
+   {: tip}
 
 ## Extracción de una imagen firmada
 {: #trustedcontent_pull}
@@ -267,7 +270,7 @@ Puede añadir y eliminar firmantes de las imágenes de firma en un repositorio.
 Para permitir que otros usuarios firmen imágenes en un repositorio, añada las claves de firma para dichos usuarios a dicho repositorio.
 {:shortdesc}
 
-**Antes de empezar**
+Antes de empezar, complete las tareas siguientes:
 
 - Los firmantes de imágenes deben tener permiso para enviar imágenes al espacio de nombres.
 - Los propietarios del repositorio y los firmantes adicionales deben tener Docker 18.03 o posterior instalado.

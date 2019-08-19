@@ -85,7 +85,7 @@ subcollection: registry
 ## 檢閱儲存及取回映像檔的配額限制及用量
 {: #registry_quota_get}
 
-您可以檢閱配額限制，以及檢查帳戶的現行儲存空間及取回資料流量用量。
+您可以檢閱配額限制，以及檢閱帳戶的現行儲存空間及取回資料流量用量。
 {:shortdesc}
 
 1. 登入 {{site.data.keyword.cloud_notm}}。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -76,9 +76,9 @@ Chaque image est générée à partir de plusieurs couches, chacune d'entre elle
 
 Exemple d'envoi d'images par commande push :
 
-> Vous envoyez une image par commande push à votre espace de nom basé sur l'image Ubuntu. L'image Ubuntu contient plusieurs couches. Comme vous ne disposez pas encore de ces couches dans votre compte, le volume de stockage requis pour ces couches est ajouté à votre utilisation mensuelle.
->
-> Plus tard, vous créez une seconde image basée sur l'image. Vous apportez des changements à l'image de base Ubuntu, en ajoutant, par exemple, des commandes ou des fichiers supplémentaires à votre fichier Dockerfile. Chaque changement représente une nouvelle couche d'image. Lorsque vous envoyez la seconde image par commande push, {{site.data.keyword.registrylong_notm}} reconnaît que toutes les couches de l'image Ubuntu de base sont déjà stockées dans votre compte. Vous n'êtes alors pas facturé pour le stockage de ces couches une seconde fois, même si vous avez envoyé votre image par commande push à un autre espace de nom. {{site.data.keyword.registrylong_notm}} détermine la taille de toutes les nouvelles couches et ajoute le volume de stockage à votre utilisation mensuelle.
+Vous envoyez une image par commande push à votre espace de nom basé sur l'image Ubuntu. L'image Ubuntu contient plusieurs couches. Comme vous ne disposez pas encore de ces couches dans votre compte, le volume de stockage requis pour ces couches est ajouté à votre utilisation mensuelle.
+
+Plus tard, vous créez une seconde image basée sur l'image. Vous apportez des changements à l'image de base Ubuntu, en ajoutant, par exemple, des commandes ou des fichiers supplémentaires à votre fichier Dockerfile. Chaque changement représente une nouvelle couche d'image. Lorsque vous envoyez la seconde image par commande push, {{site.data.keyword.registrylong_notm}} reconnaît que toutes les couches de l'image Ubuntu de base sont déjà stockées dans votre compte. Vous n'êtes alors pas facturé pour le stockage de ces couches une seconde fois, même si vous avez envoyé votre image par commande push à un autre espace de nom. {{site.data.keyword.registrylong_notm}} détermine la taille de toutes les nouvelles couches et ajoute le volume de stockage à votre utilisation mensuelle.
 
 ### Facturation du stockage et du trafic d'extraction (pull)
 {: #registry_billing_traffic}
@@ -86,29 +86,33 @@ Exemple d'envoi d'images par commande push :
 En fonction du plan de service que vous choisissez, vous êtes facturé pour le stockage et le trafic d'extraction que vous utilisez par mois dans chaque région.
 {:shortdesc}
 
-**Stockage : **
+#### Stockage
+{: #registry_billing_traffic_storage}
 
   Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut un certain volume de stockage que vous pouvez utiliser pour stocker vos images Docker dans les espaces de nom de votre compte {{site.data.keyword.cloud_notm}}. Si vous bénéficiez du plan standard, vous êtes facturé en Go/mois d'utilisation. Le premier demi-Go/mois est gratuit. Si vous bénéficiez du plan gratuit, vous pouvez stocker vos images dans {{site.data.keyword.registrylong_notm}} gratuitement jusqu'à ce que vous atteigniez les limites de quota du plan gratuit. Un Go/mois correspond à une moyenne d'1 Go de stockage pour un mois (730 heures).
+  {:shortdesc}
 
   Exemple pour
 le plan standard :
 
-  > Vous utilisez 5 Go pour exactement la moitié du mois, puis envoyez par commande push plusieurs images dans votre espace de nom et utilisez 10 Go pour le reste du mois. Votre utilisation mensuelle est calculée comme suit :
-  >
-  > (5 Go x 0,5 (mois)) + (10 Go x 0,5 (mois)) = 2,5 + 5 = 7,5 Go/mois
-  >
-  > Avec le plan standard, le premier demi-Go/mois est gratuit ; par conséquent, vous ne payez que 7 Go/mois (7,5 Go/mois - 0,5 Go/mois).
+  Vous utilisez 5 Go pour exactement la moitié du mois, puis envoyez par commande push plusieurs images dans votre espace de nom et utilisez 10 Go pour le reste du mois. Votre utilisation mensuelle est calculée comme suit :
+  
+  (5 Go x 0,5 (mois)) + (10 Go x 0,5 (mois)) = 2,5 + 5 = 7,5 Go/mois
+  
+  Avec le plan standard, le premier demi-Go/mois est gratuit ; par conséquent, vous ne payez que 7 Go/mois (7,5 Go/mois - 0,5 Go/mois).
 
-**Trafic d'extraction (Pull) : **
+#### Trafic d'extraction (pull)
+{: #registry_billing_traffic_pull_traffic}
 
   Chaque plan de service {{site.data.keyword.registrylong_notm}} inclut une certaine quantité de trafic d'extraction (pull) gratuite vers vos images privées stockées dans votre espace de nom. Le trafic d'extraction (pull) est la bande passante que vous utilisez lorsque vous procédez à l'extraction par commande pull d'une image à partir de votre espace de nom vers votre machine locale. Si vous bénéficiez du plan standard, vous êtes facturé en Go d'utilisation par mois. Les 5 premiers Go de chaque mois sont gratuits. Si vous bénéficiez du plan gratuit, vous pouvez extraire des images à partir de votre espace de nom jusqu'à ce que vous atteigniez la limite de quota du plan gratuit.
+  {:shortdesc}
 
   Exemple pour
 le plan standard :
 
-  > Au cours du mois, vous avez extrait des images qui contenaient des couches d'une taille totale de 14 Go. Votre utilisation mensuelle est calculée comme suit :
-  >
-  > Dans le plan standard, les 5 premiers Go par mois sont gratuits ; vous êtes donc facturés pour 9 Go (14 Go - 5 Go).
+  Au cours du mois, vous avez extrait des images qui contenaient des couches d'une taille totale de 14 Go. Votre utilisation mensuelle est calculée comme suit :
+  
+  Dans le plan standard, les 5 premiers Go par mois sont gratuits ; vous êtes donc facturés pour 9 Go (14 Go - 5 Go).
 
 ### Limites de quota pour le stockage et le trafic d'extraction (pull)
 {: #registry_quota_limits}
@@ -116,16 +120,18 @@ le plan standard :
 En fonction du plan de service que vous choisissez, vous pouvez envoyer des images par commande push et en extraire par commande pull vers et depuis votre espace de nom jusqu'à ce que vous atteigniez vos limites de quota personnalisées ou spécifiques à votre plan pour chaque région.
 {:shortdesc}
 
-**Stockage : **
+#### Stockage
+{: #registry_quota_limits_storage}
 
   Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez pas envoyer d'image par commande push aux espaces de nom dans votre compte {{site.data.keyword.cloud_notm}} tant que vous n'avez pas [libéré d'espace en supprimant des images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de vos espaces de nom ou que vous n'avez pas [procédé à une mise à niveau vers le plan standard](#registry_plan_upgrade). Si vous définissez des limites de quota pour le stockage dans votre plan gratuit ou standard, vous pouvez aussi [augmenter cette limite de quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) pour réactiver l'envoi de nouvelles images par commande push.
+  {:shortdesc}
 
   Exemple pour
 le plan standard :
 
-  > Votre limite de quota en cours pour le stockage est définie sur 1 Go. Toutes les images privées stockées dans les espaces de nom de votre compte {{site.data.keyword.cloud_notm}} utilisent déjà 900 Mo de ce stockage. Vous disposez de 100 Mo de stockage disponible jusqu'à ce que vous atteigniez cette limite de quota. Un utilisateur souhaite envoyer par commande push une image de 2 Go située sur la machine locale. Puisque la limite de quota n'est pas encore atteinte, {{site.data.keyword.registrylong_notm}} autorise l'utilisateur à envoyer cette image par commande push.
-  >
-  > Une fois la commande push
+  Votre limite de quota en cours pour le stockage est définie sur 1 Go. Toutes les images privées stockées dans les espaces de nom de votre compte {{site.data.keyword.cloud_notm}} utilisent déjà 900 Mo de ce stockage. Vous disposez de 100 Mo de stockage disponible jusqu'à ce que vous atteigniez cette limite de quota. Un utilisateur souhaite envoyer par commande push une image de 2 Go située sur la machine locale. Puisque la limite de quota n'est pas encore atteinte, {{site.data.keyword.registrylong_notm}} autorise l'utilisateur à envoyer cette image par commande push.
+  
+  Une fois la commande push
 terminée, {{site.data.keyword.registrylong_notm}}
 détermine la taille réelle de l'image dans votre espace de nom, qui peut varier de la
 taille sur la machine locale, et vérifie si la limite du stockage est atteinte. Dans cet
@@ -134,7 +140,8 @@ exemple, l'utilisation du stockage passe de 900 Mo à 2 Go. La limite de quota e
 {{site.data.keyword.registrylong_notm}} vous
 empêche d'envoyer des images supplémentaires par commande push à l'espace de nom.
 
-**Trafic d'extraction (Pull) : **
+#### Trafic d'extraction (pull)
+{: #registry_quota_limits_pull_traffic}
 
   Lorsque vous atteignez et dépassez les limites de quota de votre plan, vous ne pouvez
 pas extraire d'image par commande pull à partir des espaces de nom de votre compte
@@ -143,11 +150,12 @@ vous patientez jusqu'au début de la période de facturation suivante, si vous
 [procédez à la mise à niveau vers le plan
 standard](#registry_plan_upgrade) ou si vous [augmentez vos
 limites de quota pour le trafic d'extraction (pull)](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Exemple pour
 le plan standard :
 
-  > Pour le mois, votre limite de quota pour le trafic
+  Pour le mois, votre limite de quota pour le trafic
 d'extraction
 (pull) est définie sur 5 Go. Vous avez déjà extrait des images depuis vos espaces de nom
 et avez utilisé 4,5 Go de ce trafic d'extraction (pull). Vous disposez de 0,5 Go de trafic d'extraction (pull) disponible avant d'atteindre votre limite de quota. Un utilisateur souhaite
@@ -155,8 +163,8 @@ extraire une image d'une taille de 1 Go depuis votre espace de nom. Puisque la l
 quota n'est pas encore atteinte,
 {{site.data.keyword.registrylong_notm}} autorise
 l'utilisateur à extraire cette image par commande pull.
-  >
-  > Une fois l'image extraite,
+  
+  Une fois l'image extraite,
 {{site.data.keyword.registrylong_notm}} détermine la
 bande passante que vous avez utilisée lors de l'extraction (pull) et vérifie si la limite
 du trafic d'extraction (pull) est atteinte. Dans cet exemple, l'utilisation du trafic d'extraction (pull) passe de 4,5 Go à 5,5 Go. Votre limite de quota en cours étant définie sur 5
@@ -190,9 +198,8 @@ Pour mettre à niveau votre plan de service, procédez comme suit :
    ```
    {: pre}
 
-   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si la connexion échoue alors que vous omettez l'option `--sso`
-et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré.
-    {:tip}
+   Si vous disposez d'un ID fédéré, utilisez `ibmcloud login --sso` pour vous connecter à l'interface de ligne de commande {{site.data.keyword.cloud_notm}}. Entrez votre nom d'utilisateur et utilisez l'URL fournie dans votre sortie d'interface de ligne de commande pour extraire votre code d'accès à usage unique. Si vous disposez d'un ID fédéré, la connexion échoue sans l'option `--sso` et réussit avec l'option `--sso`.
+   {:tip}
 
 2. Ciblez la région pour laquelle vous souhaitez mettre à niveau le plan :
 
@@ -215,17 +222,11 @@ et aboutit en incluant l'option `--sso`, ceci indique que votre ID est fédéré
 
    Pour plus d'informations, voir [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Notions élémentaires
-{: #registry_planning}
-
-Préparez-vous à stocker et à partager vos images Docker avec {{site.data.keyword.registrylong_notm}} en vous familiarisant avec les notions élémentaires du registre.
-{:shortdesc}
-
-Ne placez pas d'informations personnelles dans vos images de conteneur, noms d'espace de nom, zones de description, ou dans des données de configuration d'image (par exemple, dans des noms d'image ou des libellés d'image).
-{: important}
-
-### Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
+## Explication des termes utilisés dans {{site.data.keyword.registrylong_notm}}
 {: #terms}
+
+Descriptions des termes utilisés dans {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -273,45 +274,19 @@ environnement de transfert.</dd>
 
 Pour en savoir plus sur des termes spécifiques à Docker, voir le [glossaire Docker ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.docker.com/glossary/).
 
-### Planification d'espaces de nom
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} fournit un registre d'images privé à service partagé qui est hébergé et géré par IBM. Vous pouvez stocker et partager vos images Docker
-dans ce registre en configurant un espace de nom du registre.
-{:shortdesc}
-
-Vous pouvez définir plusieurs espaces de nom, par exemple pour disposer de référentiels distincts pour votre environnement de production et votre
-environnement de transfert. Si vous désirez utiliser le registre dans plusieurs régions {{site.data.keyword.cloud_notm}}, vous devez définir un espace de nom pour chaque région. Les noms d'espace de nom sont uniques dans chaque région. Vous pouvez utiliser le même nom d'espace de nom dans chaque région, sauf si quelqu'un d'autre l'a déjà utilisé pour définir un espace de nom dans la région concernée.
-
-Vous pouvez contrôler l'accès à vos espaces de nom à l'aide de règles IAM. Pour plus d'informations, voir [Définition de règles de rôle d'accès utilisateur](/docs/services/Registry?topic=registry-user#user).
-
-Si vous comptez utiliser seulement les images publiques fournies par IBM, vous n'avez pas besoin de définir un espace de nom.
-
-Si vous ne savez pas si un espace de nom a déjà été défini pour votre compte, exécutez la commande `ibmcloud cr namespace-list` afin d'extraire les informations sur les espaces de nom existants.
-{:tip}
-
-Prenez en compte les règles suivantes lorsque vous choisissez un espace de nom :
-
-- Il doit être unique sur tous les comptes {{site.data.keyword.cloud_notm}} d'une même région.
-- Il doit comporter de 4 à 30 caractères.
-- Il doit commencer et se terminer par une lettre ou un chiffre.
-- Il ne doit comporter que des lettres en minuscules, des chiffres, des tirets (-) et des traits de soulignement (_).
-
-Ne placez pas d'informations personnelles dans vos noms d'espace de nom.
-{: important}
-
-Après avoir configuré votre premier espace de nom, le plan de service {{site.data.keyword.registrylong_notm}} gratuit vous est affecté si vous n'avez pas encore [procédé à une mise à niveau de votre plan](#registry_plan_upgrade).
-
 ## Régions
 {: #registry_regions}
 
 Les registres {{site.data.keyword.registrylong_notm}} sont disponibles dans plusieurs régions.
 {:shortdesc}
 
+La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
+
 ### Régions locales
 {: #registry_regions_local}
 
 Une région locale est une zone géographique dont l'accès s'effectue par un noeud final dédié. Les noms de domaine {{site.data.keyword.registrylong_notm}} pour les régions ont été modifiés. Les nouveaux noms de domaine sont disponibles sur la console et sur l'interface de ligne de commande.
+{:shortdesc}
 
 Les noms de domaine sont présentés dans le tableau suivant.
 
@@ -327,9 +302,11 @@ Les noms de domaine sont présentés dans le tableau suivant.
 Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
 {: deprecated}
 
-**Noms de domaine de l'assistant de détection des vulnérabilités (Vulnerability Advisor)**
+#### Noms de domaine de Vulnerability Advisor
+{: #registry_regions_local_va}
 
 Les noms de domaine Vulnerability Advisor pour les régions ont été modifiés. Les nouveaux noms de domaine sont disponibles sur la console et sur l'interface de ligne de commande.
+{:shortdesc}
 
 Les nouveaux noms de domaine sont présentés dans le tableau suivant.
 
@@ -345,25 +322,27 @@ Les nouveaux noms de domaine sont présentés dans le tableau suivant.
 Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
 {: deprecated}
 
-La portée de tous les artefacts de registre est celle du registre régional spécifique avec lequel vous travaillez actuellement. Ainsi, les espaces de nom, les images, les jetons, les paramètres de quota et de plan doivent tous être gérés séparément pour chaque registre régional.
+#### Ciblage d'une région locale
+{: #registry_regions_local_target}
 
-Si vous désirez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle accéder en exécutant la commande `ibmcloud cr region-set`. Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
+Si vous souhaitez utiliser une région autre que votre région locale, vous pouvez cibler la région à laquelle vous souhaitez accéder en exécutant la commande [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set). Vous pouvez exécuter la commande sans spécifier de paramètres afin d'obtenir la liste de toutes les régions disponibles ou spécifier la région comme paramètre.
+{:shortdesc}
 
-Pour exécuter la commande avec des paramètres, remplacez `<region>` par le nom de la région, par exemple `eu-central`.
+1. Pour exécuter la commande avec des paramètres, remplacez `<region>` par le nom de la [région](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-Pour cibler, par exemple, la région eu-central (Europe centrale), exécutez la commande suivante :
+   Par exemple, pour cibler la région `eu-central`, exécutez la commande suivante :
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-Après avoir ciblé une région différente, connectez-vous à nouveau au registre : `ibmcloud cr login`.
+2. Connectez-vous au registre en exécutant la commande `ibmcloud cr login`.
 
 ### Base de registre globale
 {: #registry_regions_global}
@@ -383,22 +362,11 @@ Le nouveau nom de domaine est présenté dans le tableau suivant.
 Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
 {: deprecated}
 
-Vous pouvez cibler la base de registre globale en exécutant la commande `ibmcloud cr region-set`.
+#### Noms de domaine de Vulnerability Advisor
+{: #registry_regions_global_va}
 
-Ainsi, pour cibler la base de registre globale, exécutez la commande suivante :
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-Pour plus d'informations sur la commande `ibmcloud cr region-set`, voir [Interface de ligne de commande {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-Une fois la base de registre globale ciblée, exécutez la commande `ibmcloud cr login` pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire des images publiques fournies par {{site.data.keyword.IBM_notm}}.
-
-**Noms de domaine de l'assistant de détection des vulnérabilités (Vulnerability Advisor)**
-
-Le nom de domaine de Vulnerability Advisor pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande. 
+Le nom de domaine de Vulnerability Advisor pour la base de registre globale a été modifié. Le nouveau nom de domaine est disponible sur la console et sur l'interface de ligne de commande.
+{:shortdesc}
 
 Le nouveau nom de domaine est présenté dans le tableau suivant.
 
@@ -409,6 +377,21 @@ Le nouveau nom de domaine est présenté dans le tableau suivant.
 
 Les noms de domaine `bluemix.net` existants sont obsolètes, mais vous pouvez toujours les utiliser pour l'instant ; la date de fin de prise en charge de ces noms vous sera communiquée ultérieurement.
 {: deprecated}
+
+#### Ciblage de la base de registre globale
+{: #registry_regions_global_target}
+
+Vous pouvez cibler la base de registre globale en exécutant la commande [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
+{:shortdesc}
+
+1. Pour cibler la base de registre globale, exécutez la commande suivante :
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Pour connecter votre démon Docker local à la base de registre globale afin de pouvoir extraire les images publiques fournies par {{site.data.keyword.IBM_notm}}, exécutez la commande `ibmcloud cr login`.
 
 ## Prise en charge de Docker
 {: #docker}

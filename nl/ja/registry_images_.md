@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ subcollection: registry
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="プライベート・レジストリーまたはパブリック・レジストリーからコンピューターにイメージをプルします。"/>
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
@@ -49,10 +49,10 @@ subcollection: registry
 
   root 権限なしで Docker コマンドを実行できるように権限を変更した場合は、再度 `ibmcloud login` コマンドを実行する必要があります。
 
-概説資料の[イメージのプル](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)を参照して、イメージをダウンロードします。
+1. 概説資料の[イメージのプル](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)を参照して、イメージをダウンロードします。
 
-「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
-{:tip}
+   「`unauthorized: authentication required`」または「`denied: requested access to the resource is denied`」というメッセージを受け取った場合は、`ibmcloud cr login` コマンドを実行してください。
+   {:tip}
 
 イメージをプルして名前空間のタグを付けたら、イメージをローカル・コンピューターから名前空間にアップロード (プッシュ) できます。
 
@@ -64,7 +64,7 @@ subcollection: registry
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="イメージをコンピューターから {{site.data.keyword.registrylong_notm}} にプッシュします。"/>
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
@@ -104,7 +104,7 @@ subcollection: registry
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="プライベート・レジストリーまたはパブリック・レジストリーのイメージをプライベート {{site.data.keyword.cloud_notm}} レジストリーにコピーします。"/>
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
@@ -130,7 +130,7 @@ subcollection: registry
 このメカニズムを使用して作成した新しいイメージは、シグニチャーを保持しません。 新しいイメージに署名が必要な場合は、このメカニズムを使用しないでください。
 {: tip}
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 - 別のイメージの参照に使用するソース・イメージを含む専用名前空間 {{site.data.keyword.registrylong_notm}} へのアクセス権限があることを確認してください。
@@ -166,7 +166,7 @@ subcollection: registry
 {{site.data.keyword.cloud_notm}} で Docker イメージを直接ビルドするか、ローカル・コンピューターで独自の Docker イメージを作成してから {{site.data.keyword.registrylong_notm}} の名前空間にアップロード (プッシュ) することができます。
 {:shortdesc}
 
-**始めに**
+始める前に、以下の作業を実行します。
 
 - 名前空間内のイメージを処理するための [CLI をインストールします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 - [独自の名前空間を {{site.data.keyword.registrylong_notm}} にセットアップします](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)。
@@ -196,8 +196,7 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
        ```
        {: pre}
 
-       **例**
-     パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile を作成するには、次のコードを使用してください。
+       例えば、パブリック {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) イメージをベースとする Dockerfile を作成するには、次のコマンドを使用します。
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -259,6 +258,8 @@ Docker イメージは、作成するすべてのコンテナーの基礎とな�
 API キーを使用してイメージを {{site.data.keyword.registrylong_notm}} にプッシュするサービス ID を作成します。
 {:shortdesc}
 
+以下の手順を実行してください。
+
 1. サービス ID を作成します。[サービス ID の作成と処理](/docs/iam?topic=iam-serviceids#serviceids)を参照してください。
 2. レジストリーにアクセスするためのサービス ID アクセス権 (例えば、`Administrator` 役割や `Manager` 役割など) を付与するポリシーを作成します。[Identity and Access Management を使用したユーザー・アクセス権限の管理](/docs/services/Registry?topic=registry-iam#iam)を参照してください。
 3. API キーを作成します。[サービス ID 用の API キーの作成](/docs/iam?topic=iam-serviceidapikeys#create_service_key)を参照してください。
@@ -308,7 +309,7 @@ CLI を使用して 1 つまたは複数のタグを削除するには、以下�
 
 プライベート・リポジトリーとそれに関連したイメージを削除する場合は、[プライベート・リポジトリーおよび関連イメージの削除](#registry_repo_remove)を参照してください。
 
-パブリック {{site.data.keyword.IBM_notm}} イメージは、プライベート {{site.data.keyword.cloud_notm}} リポジトリーから削除できません。割り当て量までのカウントにも含まれません。
+パブリック {{site.data.keyword.IBM_notm}} イメージを、プライベート {{site.data.keyword.cloud_notm}} リポジトリーから削除することはできません。また、割り当て量のカウントにも含まれません。
 
 イメージの削除は元に戻せません。 既存のデプロイメントで使用されているイメージを削除すると、スケールアップ、スケジュール変更、またはその両方が失敗する場合があります。
 {: important}
@@ -381,9 +382,8 @@ GUI を使用してイメージを削除するには、以下の手順を実行�
 リポジトリーを削除すると、そのリポジトリー内のすべてのイメージも削除されます。 このアクションは元に戻せません。
 {: important}
 
-**始めに**
-
-保持する必要のあるイメージをすべてバックアップしなければなりません。
+始める前に、保持するイメージをすべてバックアップしておく必要があります。
+{: tip}
 
 GUI を使用してプライベート・リポジトリーを削除するには、以下の手順を実行します。
 

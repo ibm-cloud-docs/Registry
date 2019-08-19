@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -33,12 +33,15 @@ Container Image Security Enforcement は、イメージ・コンテンツの信�
 ## クラスターへの Container Image Security Enforcement のインストール
 {: #sec_enforce_install}
 
-**始めに**
+Helm をセットアップし、Container Image Security Enforcement Helm チャートをインストールすることにより、クラスターに Container Image Security Enforcement をインストールします。
+{:shortdesc}
 
-* **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](/docs/containers?topic=containers-clusters#clusters_ui)または[更新](/docs/containers?topic=containers-update#update)します。
-* クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
+始める前に、以下の作業を実行します。
 
-以下の手順を実行してください。
+1. **Kubernetes バージョン 1.9 以降**で使用するクラスターを [作成](/docs/containers?topic=containers-clusters#clusters_ui)または[更新](/docs/containers?topic=containers-update#update)します。
+2. クラスターを [`kubectl` CLI のターゲットとして設定します](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
+
+クラスターに Container Image Security Enforcement をインストールするには、次の手順を実行します。
 
 1. [クラスターに Helm をセットアップします](/docs/containers?topic=containers-helm#helm)。
 
@@ -66,8 +69,8 @@ Container Image Security Enforcement は、セキュリティー・ポリシー�
 
 これらのポリシーをオーバーライドする方法としては、以下の選択肢があります。
 
-* 新しいポリシー文書を作成し、`kubectl apply` を使用してクラスターに適用する。
-* `kubectl edit` を使用してデフォルトのポリシーを編集する。
+- 新しいポリシー文書を作成し、`kubectl apply` を使用してクラスターに適用する。
+- `kubectl edit` を使用してデフォルトのポリシーを編集する。
 
 セキュリティー・ポリシーの作成方法について詳しくは、[ポリシーのカスタマイズ](#customize_policies)を参照してください。
 
@@ -77,7 +80,7 @@ Container Image Security Enforcement は、セキュリティー・ポリシー�
 デフォルトでは、クラスター規模のポリシーにより、すべてのレジストリー内のすべてのイメージに、トラスト情報を保持していること、および脆弱性アドバイザーで脆弱性が報告されていないことが求められます。
 {:shortdesc}
 
-**クラスター規模のデフォルトのポリシー `.yaml` ファイル**
+次のコードは、クラスターを対象としたデフォルトのポリシー `.yaml` ファイルを示しています。
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -106,7 +109,7 @@ spec:
 デフォルトでは、`kube-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `kube-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。 デフォルト・ポリシーに含まれるいくつかのリポジトリーは、クラスターが正しく構成されるようにするためにそのまま残しておく必要があります。
 {:shortdesc}
 
-**デフォルトの `kube-system` ポリシーの `.yaml` ファイル**
+次のコードは、デフォルトの `kube-system` ポリシー `.yaml` ファイルを示しています。
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -137,7 +140,7 @@ spec:
 デフォルトでは、`ibm-system` 名前空間に対して名前空間規模のポリシーがインストールされます。 このポリシーは、制約なしですべてのコンテナー・レジストリーのすべてのイメージを `ibm-system` にデプロイすることを許可します。ただし、ポリシーのこの部分は変更可能です。 デフォルト・ポリシーの中には、クラスターを正しく構成し、Container Image Security Enforcement をインストールまたはアップグレードできるようにするためにそのまま残しておく必要のあるリポジトリーもいくつか含まれています。
 {:shortdesc}
 
-**デフォルトの `ibm-system` ポリシー `.yaml` ファイル**
+次のコードは、デフォルトの `ibm-system` ポリシー `.yaml` ファイルを示しています。
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -281,28 +284,28 @@ spec:
 Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有効にしている場合は、役割を作成して、クラスターのセキュリティー・ポリシーを管理できるユーザーを制御できます。 クラスターに RBAC ルールを適用する方法について詳しくは、[{{site.data.keyword.containerlong_notm}} の資料](/docs/containers?topic=containers-users#rbac)を参照してください。
 {:shortdesc}
 
-役割にセキュリティー・ポリシーのルールを追加します。
+- 役割にセキュリティー・ポリシーのルールを追加します。
 
-```yaml
-- apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
-  resources: ["imagepolicies", "clusterimagepolicies"]
-  verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+    resources: ["imagepolicies", "clusterimagepolicies"]
+    verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+  ```
+  {: codeblock}
 
-複数の役割を作成して、ユーザーが実行できるアクションを制御できます。 例えば、`verbs` を変更して、一部のユーザーが `get` または `list` ポリシーだけを使用できるようにしたりします。 また、`resources` リストから `clusterimagepolicies` を省いて、Kubernetes 名前空間ポリシーへのアクセスだけを付与することもできます。
+  複数の役割を作成して、ユーザーが実行できるアクションを制御できます。 例えば、`verbs` を変更して、一部のユーザーが `get` または `list` ポリシーだけを使用できるようにしたりします。 また、`resources` リストから `clusterimagepolicies` を省いて、Kubernetes 名前空間ポリシーへのアクセスだけを付与することもできます。
 {:tip}
 
-カスタム・リソース定義 (CRD) を削除する権限を持つユーザーは、セキュリティー・ポリシーのリソース定義を削除できます。これにより、セキュリティー・ポリシーも削除されます。 CRD を削除できるユーザーの制御は、必ず行ってください。 CRD を削除する権限を付与するには、以下のようにルールを追加します。
+- カスタム・リソース定義 (CRD) を削除する権限を持つユーザーは、セキュリティー・ポリシーのリソース定義を削除できます。これにより、セキュリティー・ポリシーも削除されます。 CRD を削除できるユーザーの制御は、必ず行ってください。 CRD を削除する権限を付与するには、以下のようにルールを追加します。
 
-```yaml
-- apiGroups: ["apiextensions.k8s.io/v1beta1"]
-  resources: ["CustomResourceDefinition"]
-  verbs: ["delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+    resources: ["CustomResourceDefinition"]
+    verbs: ["delete"]
+  ```
+  {: codeblock}
 
-`cluster-admin` 役割を持つユーザーおよびサービス・アカウントは、すべてのリソースにアクセスできます。 cluster-admin 役割は、編集を行わなくても、セキュリティー・ポリシーを管理する権限を付与します。 `cluster-admin` 役割を持つユーザーの制御を必ず行い、セキュリティー・ポリシーの変更を許可するユーザーだけにアクセス権限を付与するようにしてください。
+  `cluster-admin` 役割を持つユーザーおよびサービス・アカウントは、すべてのリソースにアクセスできます。 cluster-admin 役割は、編集を行わなくても、セキュリティー・ポリシーを管理する権限を付与します。 `cluster-admin` 役割を持つユーザーの制御を必ず行い、セキュリティー・ポリシーの変更を許可するユーザーだけにアクセス権限を付与するようにしてください。
 {:tip}
 
 ## セキュリティーを強化したコンテナー・イメージのデプロイ
@@ -311,55 +314,55 @@ Kubernetes クラスターで役割ベースのアクセス制御 (RBAC) を有�
 ポリシーを適用した後は、通常どおりにコンテンツをクラスターにデプロイできます。 ポリシーは、Kubernetes クラスターによって自動的に適用されます。 デプロイメントがポリシーに一致し、そのポリシーで許可されると、そのデプロイメントはクラスターに承認され、適用されます。
 {:shortdesc}
 
-Container Image Security Enforcement がデプロイメントを拒否した場合、デプロイメントは作成されますが、そのデプロイメントによって作成された ReplicaSet はスケールアップできず、ポッドは作成されません。 `kubectl describe deployment <deployment-name>` を実行することで ReplicaSet を見つけられます。また `kubectl describe rs<replicaset-name>` を実行することでデプロイメントが拒否された理由を確認できます。
+- Container Image Security Enforcement がデプロイメントを拒否した場合、デプロイメントは作成されますが、そのデプロイメントによって作成された ReplicaSet はスケールアップできず、ポッドは作成されません。 `kubectl describe deployment <deployment-name>` を実行することで ReplicaSet を見つけられます。また `kubectl describe rs<replicaset-name>` を実行することでデプロイメントが拒否された理由を確認できます。
 
-**エラー・メッセージの例**
+  次のコードは、典型的なエラー・メッセージの例を示しています。
 
-* イメージがどのポリシーにも一致しない場合、または名前空間にもクラスターにもポリシーがない場合。
+  - イメージがどのポリシーにも一致しない場合、または名前空間にもクラスターにもポリシーがない場合。
 
-   ```
-   admission webhook 
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Deny, no image policies or cluster 
-   polices for <image-name>
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Deny, no image policies or cluster
+    polices for <image-name>
+    ```
+    {: screen}
 
-* イメージがポリシーに一致するが、そのポリシーの脆弱性アドバイザーの要件を満たしていない場合。
+  - イメージがポリシーに一致するが、そのポリシーの脆弱性アドバイザーの要件を満たしていない場合。
 
-   ```
-   admission webhook 
-   "va.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: The Vulnerability Advisor image scan 
-   assessment found issues with the container image that 
-   are not exempted. Refer to your image vulnerability report 
-   for more details by using the command `ibmcloud cr va`.
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "va.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: The Vulnerability Advisor image scan
+    assessment found issues with the container image that
+    are not exempted. Refer to your image vulnerability report
+    for more details by using the command `ibmcloud cr va`.
+    ```
+    {: screen}
 
-* イメージがポリシーに一致するが、そのポリシーのトラスト要件を満たしていない場合。
+  - イメージがポリシーに一致するが、そのポリシーのトラスト要件を満たしていない場合。
 
-   ```
-   admission webhook 
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Deny, failed to get content trust information: 
-   No valid trust data for latest
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Deny, failed to get content trust information:
+    No valid trust data for latest
+    ```
+    {: screen}
 
-* イメージに対するトラスト制約がポリシーに指定されているが、イメージがサポート対象レジストリーからのものではない場合。
+  - イメージに対するトラスト制約がポリシーに指定されているが、イメージがサポート対象レジストリーからのものではない場合。
 
-   ```
-   admission webhook 
-   "trust.hooks.securityenforcement.admission.cloud.ibm.com" 
-   denied the request: Trust is not supported for images 
-   from this registry
-   ```
-   {: screen}
+    ```
+    admission webhook
+    "trust.hooks.securityenforcement.admission.cloud.ibm.com"
+    denied the request: Trust is not supported for images
+    from this registry
+    ```
+    {: screen}
 
-ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
+- ポリシーで `va` オプションを有効にすると、脆弱性アドバイザーに合格したイメージだけがデプロイできるようになります。 脆弱性アドバイザーでサポートされないイメージは許可されます。
 
-ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry?topic=registry-registry_trustedcontent)を参照してください。
+- ポリシーで `trust` オプションを有効にすると、コンテント・トラストを適用できます。 `signerSecrets` を指定しない場合、だれの署名であろうと署名があるイメージは、デプロイメントを許可されます。 `signerSecrets` を指定する場合は、署名付きの最新バージョンのイメージに、指定したすべての署名者の署名がなければなりません。 Container Image Security Enforcement は、提供された公開鍵が署名者のものかどうかを検証します。 コンテント・トラストについて詳しくは、[信頼できるコンテンツのイメージへの署名](/docs/services/Registry?topic=registry-registry_trustedcontent)を参照してください。
 
 すべてのイメージが Container Image Security Enforcement の検査に合格した場合に限り、デプロイメントは許可されます。
 
@@ -382,7 +385,7 @@ Container Image Security Enforcement がデプロイメントを拒否した場�
    ```
    {: pre}
 
-2. チャートを削除します。
+1. チャートを削除します。
 
    ```
    helm delete --purge cise

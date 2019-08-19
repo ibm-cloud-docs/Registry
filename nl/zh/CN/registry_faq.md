@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, public images, commands, questions, registry, faq, Vulnerability Advisor,
+keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
 subcollection: registry
 
@@ -51,7 +51,7 @@ ibmcloud cr images --include-ibm
 
 可以，只要工具支持 OCI 图像格式和协议即可。
 
-## 如何使用 IAM 控制访问权？
+## 如何使用访问控制和 {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}？
 {: #faq_access_control}
 {: faq}
 
@@ -76,7 +76,7 @@ BXNVA0009E: 扫描未找到 <imagename>。请稍后重试。
 ```
 {: screen}
 
-您收到此消息是因为图像扫描与结果请求不是同步的，而扫描过程需要一段时间才能完成。正常操作期间，在您将映像添加到注册表后的几分钟内即会完成扫描，具体花费的时间取决于映像大小和进入注册表的流量等可变因素。
+您收到此消息是因为图像扫描与结果请求不是同步的，而扫描过程需要一段时间才能完成。正常操作期间，在您将映像添加到注册表后的几分钟内即会完成扫描。具体花费的时间取决于映像大小和进入注册表的流量等可变因素。
 
 如果您是在构建管道流程中收到此消息，并且此错误定期出现，请尝试添加包含短暂停顿的重试逻辑。
 
@@ -89,7 +89,7 @@ BXNVA0009E: 扫描未找到 <imagename>。请稍后重试。
 如果出现下列其中一种情况，就会触发映像扫描：
 
 - 有新的映像推送到注册表。
-- 某个映像已经有 7 天没被扫描过，它将排队等待重新扫描，这可能需要一些时间才能完成。
+- 如果距最后一次扫描的已经超过 7 天，那么映像会排队等待重新扫描，这可能需要一些时间才能完成。
 - 针对映像中安装的包发布了新的安全通知，该映像将排队等待重新扫描，这可能需要一些时间才能完成。因发布新的安全通知而触发的重新扫描仅适用于 Ubuntu 和 Debian 映像。
 
 ## 安全通知多久更新一次？

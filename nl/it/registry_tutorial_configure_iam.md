@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Esercitazione: concessione dell'accesso alle risorse {{site.data.keyword.registrylong_notm}}
+# Concessione dell'accesso all'esercitazione sulle risorse {{site.data.keyword.registrylong_notm}} 
 {: #iam_access}
 
 Utilizza questa esercitazione per scoprire come concedere l'accesso alle tue risorse configurando {{site.data.keyword.iamlong}} (IAM) per {{site.data.keyword.registrylong_notm}}.
@@ -30,13 +30,16 @@ Utilizza questa esercitazione per scoprire come concedere l'accesso alle tue ris
 
 Questa esercitazione dura circa 45 minuti.
 
-**Prima di iniziare**
+## Prima di cominciare
+{: #iam_access_prereq}
+
+Prima di iniziare, devi completare le seguenti attività:
 
 - Completa le istruzioni in [Introduzione a {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Assicurati di avere la versione più recente del plug-in CLI `container-registry` per la CLI {{site.data.keyword.cloud_notm}}, consulta [Aggiornamento del plug-in `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- Devi avere accesso a due [account {{site.data.keyword.cloud_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/login) che puoi utilizzare con questa esercitazione, uno per l'utente A e uno per l'utente B, ognuno dei quali deve utilizzare un indirizzo email univoco. Utilizza il tuo account, come utente A e invita un altro utente, l'utente B, ad utilizzare il tuo account. Puoi scegliere di creare un secondo account {{site.data.keyword.cloud_notm}}, oppure di collaborare con un collega che dispone di un account {{site.data.keyword.cloud_notm}}.
+- Assicurati di avere accesso a due [account {{site.data.keyword.cloud_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/login) che puoi utilizzare con questa esercitazione, uno per l'utente A e uno per l'utente B, ognuno dei quali deve utilizzare un indirizzo email univoco. Utilizza il tuo account, come utente A e invita un altro utente, l'utente B, ad utilizzare il tuo account. Puoi scegliere di creare un secondo account {{site.data.keyword.cloud_notm}}, oppure di collaborare con un collega che dispone di un account {{site.data.keyword.cloud_notm}}.
 
 - Se hai iniziato ad utilizzare {{site.data.keyword.registrylong_notm}} nel tuo account prima del 4 ottobre 2018, devi abilitare l'applicazione della politica IAM eseguendo il comando `ibmcloud cr iam-policies-enable`. Se hai invitato altri utenti che utilizzano i tuoi spazi dei nomi {{site.data.keyword.registrylong_notm}} nel tuo account IBM Cloud, utilizza un account diverso come utente A per evitare l'interruzione del loro accesso.
 
@@ -87,7 +90,7 @@ In questa sezione, aggiungi un secondo utente al tuo account e concedi la capaci
         ```
         {: pre}
 
-        Il comando ha esito negativo perché l'utente B non dispone dei diritti di accesso.
+        Il comando ha esito negativo perché l'utente B non dispone dell'accesso corretto.
 
 3. Concedi all'utente B il ruolo di Gestore in modo che possa configurare {{site.data.keyword.registrylong_notm}}:
 
@@ -533,4 +536,4 @@ In questa sezione, elimini le risorse che hai creato nelle sezioni precedenti pe
    ```
    {: pre}
 
-Complimenti. L'esercitazione è stata completata correttamente.
+L'esercitazione è stata completata correttamente.

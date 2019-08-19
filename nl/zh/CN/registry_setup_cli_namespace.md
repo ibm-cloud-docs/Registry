@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
 
@@ -123,7 +123,7 @@ subcollection: registry
 必须创建名称空间才能在 {{site.data.keyword.registrylong_notm}} 中存储 Docker 映像。
 {:shortdesc}
 
-**开始之前**
+在开始之前，请完成以下任务：
 
 - [安装 {{site.data.keyword.cloud_notm}} CLI 和 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)。
 - [规划如何使用注册表名称空间并为其命名](#registry_setup_cli_namespace_plan)。

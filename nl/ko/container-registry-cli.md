@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -28,10 +28,11 @@ subcollection: container-registry-cli-plugin
 `container-registry` CLI 플러그인에서 제공되는 {{site.data.keyword.registrylong}} CLI를 사용하여 {{site.data.keyword.cloud_notm}} 계정의 레지스트리 및 해당 리소스를 관리할 수 있습니다.
 {: shortdesc}
 
-**전제조건**
+## 전제조건
+{: #containerregcli_prereq}
 
-* {{site.data.keyword.cloud_notm}} CLI를 설치하십시오. [{{site.data.keyword.cloud_notm}} CLI 시작하기](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오. {{site.data.keyword.cloud_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
-* 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.cloud_notm}}에
+- {{site.data.keyword.cloud_notm}} CLI를 설치하십시오. [{{site.data.keyword.cloud_notm}} CLI 시작하기](/docs/cli?topic=cloud-cli-getting-started)를 참조하십시오. {{site.data.keyword.cloud_notm}} CLI를 사용하여 명령을 실행하기 위한 접두부는 `ibmcloud`입니다.
+- 레지스트리 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.cloud_notm}}에
 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
 
 명령행에서 `ibmcloud` CLI 및 `container-registry` CLI 플러그인에 대한 업데이트가 사용 가능할 때 알림을 받습니다. 사용 가능한 모든 명령과 플래그를 사용할 수 있도록 CLI를 최신 상태로 유지해야 합니다.
@@ -55,7 +56,8 @@ ibmcloud cr api
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_api_prereq}
 
 없음
 
@@ -69,11 +71,14 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_build_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_build_option}
+
 <dl>
 <dt>`DIRECTORY`</dt>
 <dd>빌드 컨텍스트의 위치이며, Dockerfile 및 전제조건 파일을 포함합니다. 작업 디렉토리를 빌드 컨텍스트가 저장된 위치로 설정한 경우 명령을 실행하면 `DIRECTORY`를 점(.)으로 바꿀 수 있습니다.</dd>
@@ -91,9 +96,10 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dd>빌드할 이미지의 전체 이름이며, 레지스트리 URL 및 네임스페이스를 포함합니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_build_example}
 
-이전 빌드의 빌드 캐시를 사용하지 않는 Docker 이미지를 빌드하십시오. 이 경우 빌드 출력이 억제되고 태그는 *`us.icr.io/birds/bluebird:1`*이며 디렉토리는 사용자의 작업 디렉토리입니다.
+이전 빌드의 빌드 캐시를 사용하지 않는 Docker 이미지를 빌드합니다. 여기서 빌드 출력은 억제되고 태그는 *`us.icr.io/birds/bluebird:1`*이며 디렉토리는 사용자의 작업 디렉토리입니다.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
@@ -110,11 +116,14 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_exemption_add_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_exemption_add_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>범위를 계정으로 설정하려면 `"*"`를 값으로 사용하십시오. 네임스페이스, 저장소 또는 태그를 범위로 설정하려면 다음 형식 중 하나로 값을 입력하십시오: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -127,7 +136,8 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_exemption_add_example}
 
 `us.icr.io/birds/bluebird` 저장소에 있는 모든 이미지에 대해 ID가 `CVE-2018-17929`인 CVE에 대한 CVE 면제 항목을 작성합니다.
 
@@ -160,18 +170,22 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_exemption_list_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_exemption_list_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>(선택사항) 이 범위에 적용되는 면제 항목만을 나열합니다. 네임스페이스, 저장소 또는 태그를 범위로 설정하려면 다음 형식 중 하나로 값을 입력하십시오: `namespace`, `namespace/repository`, `namespace/repository:tag`
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_exemption_list_example}
 
 *`birds/bluebird`* 저장소에 있는 이미지에 적용되는 보안 문제에 대한 모든 면제 항목을 나열합니다. 출력에는 계정 전체의 면제 항목, *`birds`* 네임스페이스로 범위가 지정된 면제 항목 및 *`birds/bluebird`* 저장소로 범위가 지정되었지만 *`birds/bluebird`* 저장소 내의 특정 태그로 범위가 지정되지 않은 면제 항목이 포함됩니다.
 
@@ -190,11 +204,14 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_exemption_rm_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_exemption_rm_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>범위를 계정으로 설정하려면 `"*"`를 값으로 사용하십시오. 네임스페이스, 저장소 또는 태그를 범위로 설정하려면 다음 형식 중 하나로 값을 입력하십시오: `namespace`, `namespace/repository`, `namespace/repository:tag`
@@ -207,7 +224,8 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_exemption_rm_example}
 
 `us.icr.io/birds/bluebird` 저장소에 있는 모든 이미지에 대해 ID가 `CVE-2018-17929`인 CVE에 대한 CVE 면제 항목을 삭제합니다.
 
@@ -240,7 +258,8 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_exemption_types_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
@@ -254,7 +273,8 @@ ibmcloud cr iam-policies-enable
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_iam_policies_enable_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
@@ -278,11 +298,14 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_image_inspect_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_image_inspect_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
@@ -298,7 +321,8 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_image_inspect_example}
 
 형식화 지시문 *`"{{ .Config.ExposedPorts }}"`*를 사용하여 *`us.icr.io/birds/bluebird:1`* 이미지용으로 노출된 포트에 대한 세부사항을 표시합니다.
 
@@ -316,18 +340,19 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_image_list_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_image_list_option}
+
 <dl>
-<dt>`--no-trunc`</dt>
-<dd>(선택사항) 이미지 요약을 자르지 않습니다.</dd>
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
 
@@ -340,9 +365,12 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dd>(선택사항) 지정된 네임스페이스 또는 네임스페이스와 저장소의 이미지만 표시하도록 출력을 제한합니다. </dd>
 <dt>`--include-ibm`</dt>
 <dd>(선택사항) 출력에 {{site.data.keyword.IBM_notm}} 제공 공용 이미지를 포함합니다. 이 옵션을 사용하지 않으면 기본적으로 개인용 이미지만 나열됩니다.</dd>
+<dt>`--no-trunc`</dt>
+<dd>(선택사항) 이미지 요약을 자르지 않습니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_image_list_example}
 
 이미지 요약을 자르지 않고 `repository:tag` 형식으로 *`birds`* 네임스페이스의 이미지를 표시합니다.
 
@@ -364,11 +392,13 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_image_rm_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_image_rm_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -379,7 +409,9 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_image_rm_example}
+
 `us.icr.io/birds/bluebird:1` 이미지를 삭제합니다.
 
 ```
@@ -400,11 +432,14 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_image_tag_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_image_tag_option}
+
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
 <dd>소스 이미지의 이름입니다. `SOURCE_IMAGE`는 `repository:tag` 형식이어야 합니다(예: `us.icr.io/namespace/image:latest`).
@@ -416,9 +451,10 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_image_tag_example}
 
-또 다른 태그 참조 `latest`를 `us.icr.io/birds/bluebird:1` 이미지에 추가하십시오.
+또 다른 태그 참조 `latest`를 `us.icr.io/birds/bluebird:1` 이미지에 추가합니다.
 
 ```
 ibmcloud cr image-tag  us.icr.io/birds/bluebird:1 us.icr.io/birds/bluebird:latest
@@ -452,11 +488,13 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_image_untag_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_image_untag_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -467,7 +505,8 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_image_untag_example}
 
 `us.icr.io/birds/bluebird:1` 이미지에서 태그 `1`을 제거합니다.
 
@@ -486,7 +525,8 @@ ibmcloud cr info
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_info_prereq}
 
 없음
 
@@ -500,7 +540,8 @@ ibmcloud cr login
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_login_prereq}
 
 없음
 
@@ -514,11 +555,14 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_namespace_add_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_namespace_add_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>추가할 네임스페이스입니다. 동일한 지역의 모든 {{site.data.keyword.cloud_notm}} 계정에서 네임스페이스가 고유해야 합니다. 네임스페이스는 4 - 30자이고 소문자, 숫자, 하이픈(-) 및 밑줄(_)만 포함해야 합니다. 네임스페이스는 문자 또는 숫자로 시작하고 끝나야 합니다.
@@ -530,7 +574,8 @@ ibmcloud cr namespace-add NAMESPACE
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_namespace_add_example}
 
 이름이 *`birds`*인 네임스페이스를 작성합니다.
 
@@ -549,7 +594,8 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_namespace_list_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
@@ -563,11 +609,14 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_namespace_rm_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_namespace_rm_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>제거할 네임스페이스입니다.</dd>
@@ -575,7 +624,8 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 <dd>(선택사항) 명령이 사용자 프롬프트 없이 실행되도록 강제 실행합니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_namespace_rm_example}
 
 네임스페이스 *`birds`*를 제거합니다.
 
@@ -594,7 +644,8 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_plan_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
@@ -610,17 +661,21 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_plan_upgrade_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_plan_upgrade_option}
+
 <dl>
 <dt>`PLAN`</dt>
 <dd>(선택사항) 업그레이드할 가격 플랜의 이름입니다. `PLAN`을 지정하지 않은 경우 기본값은 `standard`입니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_plan_upgrade_example}
 
 표준 가격 플랜으로 업그레이드합니다.
 
@@ -641,11 +696,14 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_ppa_archive_load_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_ppa_archive_load_option}
+
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>IBM Passport Advantage에서 다운로드한 압축 파일의 경로입니다.</dd>
@@ -659,7 +717,8 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
   <dd>(선택사항) [Chart Museum ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum) 비밀번호입니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_ppa_archive_load_example}
 
 IBM 소프트웨어를 가져오고 Helm과 함께 사용하도록  {{site.data.keyword.registrylong_notm}} 네임스페이스 *`birds`*에 패키지합니다. 여기서 압축된 파일의 경로는 *`downloads/compressed_file.tgz`*입니다.
 
@@ -678,7 +737,8 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_quota_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
@@ -692,11 +752,14 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_quota_set_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_quota_set_option}
+
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>(선택사항) 트래픽 할당량을 지정된 값(MB)으로 변경합니다. 트래픽 설정 권한을 부여받지 않았거나 현재 가격 플랜을 초과하는 값을 설정한 경우 조작이 실패합니다.</dd>
@@ -704,7 +767,8 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 <dd>(선택사항) 스토리지 할당량을 지정된 값(MB)으로 변경합니다. 스토리지 할당량 설정 권한을 부여받지 않았거나 현재 가격 플랜을 초과하는 값을 설정한 경우 조작이 실패합니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_quota_set_example}
 
 가져오기 트래픽에 대한 할당량 한계를 *7000*MB로 설정하고 스토리지를 *600*MB로 설정합니다.
 
@@ -723,7 +787,8 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_region_prereq}
 
 없음
 
@@ -739,11 +804,14 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_region_set_prereq}
 
 없음
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_region_set_option}
+
 <dl>
 <dt>`REGION`</dt>
 <dd>(선택사항) 대상 지역의 이름(예: `us-south`)입니다.
@@ -753,12 +821,62 @@ ibmcloud cr region-set [REGION]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_region_set_example}
 
 미국 남부 지역을 대상으로 지정합니다.
 
 ```
 ibmcloud cr region-set us-south
+```
+{: pre}
+
+## `ibmcloud cr retention-run`
+{: #bx_cr_retention_run}
+
+지정된 기준을 적용하여 {{site.data.keyword.registrylong_notm}}의 네임스페이스 내 저장소마다 이미지를 보관하여 네임스페이스를 정리합니다. 네임스페이스의 기타 모든 이미지가 삭제됩니다.
+{: shortdesc}
+
+이미지 삭제는 실행 취소할 수 없습니다. 기존 배치에서 사용 중인 이미지를 삭제하면 스케일 업 또는 재스케줄(또는 둘 다)이 실패할 수 있습니다.
+{: important}
+
+저장소 내의 이미지는 여러 태그로 참조되며, 해당 이미지는 한 번만 계수됩니다. 최신 이미지가 보관됩니다. 수명은 레지스트리에 푸시되는 시간이 아닌 이미지가 작성된 시간에 따라 결정됩니다.
+{: tip}
+
+`ibmcloud cr retention-run` 명령 사용 방법에 대한 자세한 정보는 [이미지 보관](/docs/services/Registry?topic=registry-registry_retention)을 참조하십시오.
+
+```
+ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+```
+{: codeblock}
+
+### 전제조건
+{: #bx_cr_retention_run_prereq}
+
+필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 구성하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_configure)을 참조하십시오.
+
+### 명령 옵션
+{: #bx_cr_retention_run_option}
+
+<dl>
+<dt>`NAMESPACE`</dt>
+<dd>정리할 네임스페이스입니다.</dd>
+<dt>`--force`, `-f`</dt>
+<dd>(선택사항) 명령이 사용자 프롬프트 없이 실행되도록 강제 실행합니다.</dd>
+<dt>`--json`</dt>
+<dd>(선택사항) 이미지 정리의 결과가 포함된 JSON을 출력합니다. 이 플래그는 '--force'가 함께 사용되어야 합니다.</dd>
+<dt>`--images`</dt>
+<dd>지정된 네임스페이스의 각 저장소 내에 보관할 이미지의 수를 결정합니다. 최신 이미지가 보관됩니다. 이미지의 수명은 빌드 날짜에 따라 달라집니다. `IMAGECOUNT`는 보관할 이미지의 수입니다.
+</dd>
+</dl>
+
+### 예
+{: #bx_cr_retention_run_example}
+
+네임스페이스 `birds`에서 각 저장소 내 최신 20개의 이미지를 리턴합니다.
+
+```
+ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
 
@@ -772,17 +890,21 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_token_get_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [플랫폼 관리 역할](/docs/services/Registry?topic=registry-iam#platform_management_roles)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_token_get_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>검색할 토큰의 고유 ID입니다. 토큰을 나열하려면 `ibmcloud cr token-list`를 실행하십시오.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_token_get_example}
 
 *10101010-101x-1x10-x1xx-x10xx10xxx10* 토큰을 검색합니다.
 
@@ -801,11 +923,14 @@ ibmcloud cr token-list [--format FORMAT]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_token_list_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [플랫폼 관리 역할](/docs/services/Registry?topic=registry-iam#platform_management_roles)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_token_list_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>(선택사항) Go 템플리트를 사용하여 출력 요소를 형식화합니다.
@@ -815,7 +940,8 @@ ibmcloud cr token-list [--format FORMAT]
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_token_list_example}
 
 형식화 지시문 *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`*를 사용하여 읽기 전용인 모든 토큰을 표시합니다.
 
@@ -841,11 +967,14 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_token_rm_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [플랫폼 관리 역할](/docs/services/Registry?topic=registry-iam#platform_management_roles)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_token_rm_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>`ibmcloud cr token-list`에 표시되는 바와 같이, TOKEN은 토큰 자체이거나 토큰의 고유 ID일 수 있습니다. 여러 토큰을 지정할 수 있으며 공백으로 구분해야 합니다.</dd>
@@ -853,7 +982,8 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 <dd>(선택사항) 명령이 사용자 프롬프트 없이 실행되도록 강제 실행합니다.</dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_token_rm_example}
 
 *10101010-101x-1x10-x1xx-x10xx10xxx10* 토큰을 제거합니다.
 
@@ -872,11 +1002,14 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**전제조건**
+### 전제조건
+{: #bx_cr_va_prereq}
 
 필수 권한에 대한 정보를 찾으려면 [{{site.data.keyword.registrylong_notm}}를 사용하기 위한 액세스 역할](/docs/services/Registry?topic=registry-iam#access_roles_using)을 참조하십시오.
 
-**명령 옵션**
+### 명령 옵션
+{: #bx_cr_va_option}
+
 <dl>
 <dt>`IMAGE`</dt>
 <dd>보고서를 가져올 이미지의 이름입니다. 보고서에는 이미지에 알려진 패키지 취약성이 있는지 여부가 명시됩니다. 각 이름 사이에 공백을 사용하여 명령에 각 이미지를 나열하면 동시에 여러 이미지에 대한 보고서를 요청할 수 있습니다.
@@ -914,7 +1047,8 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </dd>
 </dl>
 
-**예**
+### 예
+{: #bx_cr_va_example}
 
 이미지에 대한 표준 취약성 평가 보고서를 봅니다.
 

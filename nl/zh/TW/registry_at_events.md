@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker events, Activity Tracker events, events, track,
+keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
 subcollection: registry
 
@@ -22,13 +22,13 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# {{site.data.keyword.cloudaccesstrailshort}} 事件
+# Activity Tracker 事件
 {: #at_events}
 
-請使用 {{site.data.keyword.cloudaccesstrailfull}} 服務，追蹤使用者和應用程式在 {{site.data.keyword.cloud}} 中與 {{site.data.keyword.registrylong}} 服務互動的情況。
+追蹤使用者和應用程式如何與 {{site.data.keyword.cloud}} 中的 {{site.data.keyword.registrylong}} 服務互動。
 {:shortdesc}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} 服務會記錄由使用者起始，且會變更 {{site.data.keyword.cloud_notm}} 中服務狀態的活動。如需相關資訊，請參閱 [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)。
+{{site.data.keyword.at_full_notm}} 服務或（僅針對現有使用者）{{site.data.keyword.cloudaccesstrailfull_notm}} 服務會記錄由使用者起始，且會變更 {{site.data.keyword.cloud_notm}} 中服務狀態的活動。如需相關資訊，請參閱 [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started)，或者（針對現有使用者）[{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started)。
 
 下表列出呼叫時會產生事件的 API 方法：
 
@@ -49,6 +49,10 @@ subcollection: registry
   <tr>
     <td>`container-registry.image.build`</td>
 	  <td>在 {{site.data.keyword.registrylong_notm}} 中建置 Docker 映像檔。</td>
+  </tr>
+  <tr>
+    <td>`container-registry.image.bulkdelete`</td>
+	  <td>從 {{site.data.keyword.registrylong_notm}} 中刪除數個映像檔。</td>
   </tr>
   <tr>
     <td>`container-registry.image.delete`</td>
@@ -75,7 +79,7 @@ subcollection: registry
   </tr>
   <tr>
     <td>`container-registry.image.tag`</td>
-	  <td>新增參照既存 {{site.data.keyword.registrylong_notm}} 映像檔的標籤。</td>
+	  <td>新增指示預先存在的 {{site.data.keyword.registrylong_notm}} 映像檔的標籤。</td>
   </tr>
    <tr>
     <td>`container-registry.image.untag`</td>
@@ -116,6 +120,9 @@ subcollection: registry
   <tr>
     <td>`container-registry.registrytokens.delete`</td>
 	  <td>刪除多個登錄記號。</td>
+  </tr><tr>
+    <td>`container-registry.retentionanalysis`</td>
+	  <td>清除您的名稱空間，只保留符合準則的映像檔。請套用指定的準則，以在 {{site.data.keyword.registrylong_notm}} 中為名稱空間內的每個儲存庫保留映像檔。名稱空間中的所有其他映像檔都會刪除。</br> 取得要刪除的映像檔清單的要求是一個針對 `retentionanalysis` 事件類型的 `post` 動作。而刪除是針對 `images` 事件類型的單一 `bulkdelete` 動作，也是針對每個個別映像檔的 `delete` 動作。</td>
   </tr>
   <tr>
     <td>`container-registry.plan.get`</td>
@@ -130,6 +137,33 @@ subcollection: registry
 ## 尋找事件的位置
 {: #ui}
 
-{{site.data.keyword.cloudaccesstrailshort}} 事件位於 {{site.data.keyword.cloudaccesstrailshort}} **帳戶網域**，而此帳戶網域位於產生事件的 {{site.data.keyword.cloud_notm}} 地區（`ap-north` 除外）。`ap-north` 的事件會顯示於 `ap-south`。
+### {{site.data.keyword.at_full_notm}} 事件
+{: #ui_atlogdna}
 
-提供 {{site.data.keyword.registrylong_notm}} 或 Vulnerability Advisor 事件的[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)，會對應於提供資源（例如映像檔或名稱空間）的 {{site.data.keyword.registrylong_notm}}。
+{{site.data.keyword.at_full_notm}} 事件在 {{site.data.keyword.at_full_notm}} **帳戶網域**中可用，該帳戶網域在產生事件的 {{site.data.keyword.cloud_notm}} 地區中可用（`ap-south` 除外）。`ap-south` 的事件顯示在 `Tokyo (jp-tok)` 中。
+
+提供 {{site.data.keyword.registrylong_notm}} 或 Vulnerability Advisor 事件的[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)，會對應於提供資源的 {{site.data.keyword.registrylong_notm}}。資源的範例包括映像檔及名稱空間。
+
+|帳戶登錄的地區|登錄的網域名稱|{{site.data.keyword.at_full_notm}} 事件的位置|
+|:-----------------|:-----------------|:-----------------|
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
+| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+{: caption="表 2. {{site.data.keyword.at_full_notm}} 事件的位置" caption-side="top"}
+
+|登錄|全球登錄|{{site.data.keyword.at_full_notm}} 事件的位置|
+|:-----------------|:-----------------|:-----------------|
+|全球| `icr.io` | `Dallas (us-south)` |
+{: caption="表 3. 全球登錄 {{site.data.keyword.at_full_notm}} 事件的位置" caption-side="top"}
+
+### {{site.data.keyword.cloudaccesstraillong_notm}} 事件
+{: #ui_at}
+
+{{site.data.keyword.cloudaccesstraillong_notm}} 事件（僅針對現有使用者）在 {{site.data.keyword.cloudaccesstraillong_notm}} **帳戶網域**中可用，該帳戶網域在產生事件的 {{site.data.keyword.cloud_notm}} 地區中可用（`ap-north` 除外）。`ap-north` 的事件會顯示於 `ap-south`。
+
+淘汰使用 {{site.data.keyword.cloudaccesstrailfull_notm}}。從 2019 年 5 月 9 日開始，無法佈建新的 {{site.data.keyword.cloudaccesstrailshort}} 實例。現有的超值方案實例將支援到 2019 年 9 月 30 日為止。若要繼續監視 {{site.data.keyword.cloud_notm}} 帳戶的活動，請佈建 [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started) 的實例。
+{: deprecated}
+
+提供 {{site.data.keyword.registrylong_notm}} 或 Vulnerability Advisor 事件的[地區](/docs/services/Registry?topic=registry-registry_overview#registry_regions)，會對應於提供資源的 {{site.data.keyword.registrylong_notm}}。資源的範例包括映像檔及名稱空間。

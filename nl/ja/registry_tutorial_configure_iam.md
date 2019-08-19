@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# チュートリアル: {{site.data.keyword.registrylong_notm}} リソースに対するアクセス権限の付与
+# {{site.data.keyword.registrylong_notm}} リソースへのアクセス付与のチュートリアル
 {: #iam_access}
 
 このチュートリアルには、{{site.data.keyword.iamlong}} (IAM) を {{site.data.keyword.registrylong_notm}} 用に構成して、リソースへのアクセス権限を付与する方法が示されています。
@@ -30,13 +30,16 @@ subcollection: registry
 
 このチュートリアルの完了には、約 45 分間かかります。
 
-**始めに**
+## 始めに
+{: #iam_access_prereq}
+
+開始する前に、以下のタスクを完了しておく必要があります。
 
 - [{{site.data.keyword.registrylong_notm}} の概説](/docs/services/Registry?topic=registry-getting-started#getting-started)の指示を完了します。
 
 - {{site.data.keyword.cloud_notm}} CLI に関する `container-registry` CLI プラグインの最新バージョンがあることを確認します。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 
-- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login) へのアクセス権限がなければなりません。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用しなければなりません。 自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択することも、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と作業することもできます。
+- このチュートリアルで使用できる 2 つの [{{site.data.keyword.cloud_notm}} アカウント ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/login) へのアクセス権限があることを確認してください。User A 用に 1 つと User B 用に 1 つで、それぞれ固有の E メール・アドレスを使用していなければなりません。自分のアカウントの User A で作業し、そのアカウントを使用するように別のユーザー User B を招待します。 2 つ目の {{site.data.keyword.cloud_notm}} アカウントを作成することを選択することも、{{site.data.keyword.cloud_notm}} アカウントを持つ同僚と作業することもできます。
 
 - 2018 年 10 月 4 日より前にご使用のアカウントで {{site.data.keyword.registrylong_notm}} の使用を開始した場合は、`ibmcloud cr iam-policies-enable` コマンドを実行して、IAM ポリシーの制約を有効にしなければなりません。 {{site.data.keyword.registrylong_notm}} 名前空間を使用する他のユーザーをご使用の IBM Cloud アカウントに招待した場合は、そのユーザーのアクセスの途絶を防ぐために、User A とは別のアカウントを使用してください。
 
@@ -87,7 +90,7 @@ subcollection: registry
         ```
         {: pre}
 
-        User B には正しいアクセス権限がないので、コマンドは失敗します。
+        User B には適切なアクセス権限がないため、コマンドは失敗します。
 
 3. 以下のように、User B が {{site.data.keyword.registrylong_notm}} を構成できるように、User B にマネージャーの役割を付与します。
 
@@ -121,7 +124,7 @@ subcollection: registry
         ```
         {: pre}
 
-        User B には正しいタイプのアクセス権限があるので、このコマンドは正常に実行されます。
+        User B には適切なタイプのアクセス権限があるので、正常に実行されます。
 
     3. この時点で次のコマンドを実行し、割り当て量を変更して元に戻します。
   
@@ -533,4 +536,4 @@ subcollection: registry
    ```
    {: pre}
 
-お疲れ様でした。 このチュートリアルが正常に完了しました。
+このチュートリアルが正常に完了しました。

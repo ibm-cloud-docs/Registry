@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -58,6 +58,7 @@ Não é possível efetuar login no {{site.data.keyword.registrylong_notm}}.
 O comando `ibmcloud cr login` falha.
 
 {: tsCauses}
+As alternativas a seguir são possíveis causas:
 
 - O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
 - O Docker não está instalado no computador local ou não está em execução.
@@ -79,13 +80,10 @@ Não é possível executar comandos no {{site.data.keyword.registrylong_notm}}, 
 Todos os comandos `ibmcloud cr` falham.
 
 {: tsCauses}
-
-- O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
+O plug-in da CLI `container-registry` está desatualizado e precisa ser atualizado.
 
 {: tsResolve}
-É possível corrigir esse problema da maneira a seguir:
-
-- Faça upgrade para a versão mais recente do plug-in da CLI `container-registry`. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
+Faça upgrade para a versão mais recente do plug-in da CLI `container-registry`. Consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## Os comandos do {{site.data.keyword.registrylong_notm}} falham com `'cr' is not a registered command. Consulte 'ibmcloud help'. `
 {: #ts_login_error}
@@ -108,13 +106,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- O plug-in da CLI `container-registry` não está instalado.
+O plug-in da CLI `container-registry` não está instalado.
 
 {: tsResolve}
-É possível corrigir esse problema da maneira a seguir:
-
-- Instale o plug-in da CLI `container-registry`; consulte [Instalando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+Instale o plug-in da CLI `container-registry`; consulte [Instalando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## O comando `ibmcloud cr build` falha
 {: #ts_build_fails}
@@ -143,6 +138,7 @@ docker build --no-cache .
 Ao executar `ibmcloud cr namespace-add`, não é possível configurar seu valor inserido como o namespace.
 
 {: tsCauses}
+As alternativas a seguir são possíveis causas:
 
 - Você inseriu um valor de namespace que já está sendo usado por outra organização do {{site.data.keyword.cloud_notm}}.
 - Um namespace foi excluído recentemente e você está reutilizando o seu nome. Se o namespace que foi excluído continha muitos recursos, a exclusão ainda não poderá ser totalmente processada pelo {{site.data.keyword.registrylong_notm}}.
@@ -189,6 +185,7 @@ negado: o acesso solicitado ao recurso foi negado
 {: screen}
 
 {: tsCauses}
+As alternativas a seguir são possíveis causas:
 
 - O Docker não está instalado.
 - O cliente Docker não está com login efetuado no {{site.data.keyword.registrylong_notm}}.
@@ -225,13 +222,13 @@ Ao tentar importar conteúdo usado em outros produtos IBM, como o {{site.data.ke
 Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advantage, devem ser importados para o registro com o comando `ibmcloud cr ppa-archive-load`.
 
 {: tsResolve}
-**Antes de iniciar**
+Antes de iniciar a importação de um produto do IBM Passport Advantage, conclua as tarefas a seguir:
 
-- Efetue login no {{site.data.keyword.cloud_notm}} executando `ibmcloud login [--sso]`.
-- Efetue login no {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
-- [Direcione a CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) para seu cluster.
-- Se ainda não tiver configurado o Helm no cluster, [configure o Helm em seu cluster agora](/docs/containers?topic=containers-helm#helm).
-- Se desejar compartilhar os gráficos em sua organização, será possível instalar o [Projeto de software livre Chart Museum ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum). Para obter instruções, consulte esta [orientação do developerWorks ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+1. Efetue login no {{site.data.keyword.cloud_notm}} executando `ibmcloud login [--sso]`.
+2. Efetue login no {{site.data.keyword.registrylong_notm}} executando `ibmcloud cr login`.
+3. [Direcione a CLI `kubectl`](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) para seu cluster.
+4. Se ainda não tiver configurado o Helm no cluster, [configure o Helm em seu cluster agora](/docs/containers?topic=containers-helm#helm).
+5. Se desejar compartilhar os gráficos em sua organização, será possível instalar o [Projeto de software livre Chart Museum ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/helm/charts/tree/master/stable/chartmuseum). Para obter instruções, consulte esta [orientação do developerWorks ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
 
 ### Importando produtos IBM Passport Advantage para uso no {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
@@ -257,7 +254,7 @@ Os pacotes de software, como imagens e gráficos de Helm do IBM Passport Advanta
    Se desejar fazer upload de gráficos do Helm do archive do IBM Passport Advantage para um museu de gráficos, inclua as opções a seguir no comando: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
-   **Exemplo de saída**
+   A mensagem a seguir é um exemplo da saída do comando:
 
    ```
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
@@ -320,7 +317,6 @@ Você configura um firewall adicional em seu ambiente de desenvolvimento com con
 Seu firewall customizado requer que determinados grupos de rede sejam abertos para o tráfego de rede de entrada e de saída para permitir a comunicação para e do registro.
 
 {: tsResolve}
-
 Permita que seu cluster acesse recursos e serviços de infraestrutura por trás de um firewall, consulte [Permitindo que o cluster acesse recursos de infraestrutura e outros serviços](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 Para conectividade INBOUND para seu computador, permita o tráfego de rede de entrada dos grupos de rede de origem para o endereço IP público de destino de seu computador.

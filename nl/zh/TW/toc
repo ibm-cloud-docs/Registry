@@ -18,6 +18,9 @@ IBM Cloud Container Registry
     指導教學
         
         registry_tutorial_configure_iam.md
+        /tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+        /tutorials/solution-tutorials-multi-region-k8s-cis
+        /tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
     {: .topicgroup}
     相關鏈結
@@ -32,6 +35,7 @@ IBM Cloud Container Registry
     registry_users.md
     registry_trusted_content.md
     registry_security_enforce.md
+    registry_retention.md
     /va/toc
     {: .navgroup-end}
 

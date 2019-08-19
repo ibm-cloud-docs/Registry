@@ -55,7 +55,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-2. Añada un espacio de nombres para crear su propio repositorio de imágenes. Sustituya `<my_namespace>` por su espacio de nombres favorito.
+2. Añada un espacio de nombres para crear su propio repositorio de imágenes. Sustituya `<my_namespace>` por el espacio de nombres que desee.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -74,7 +74,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 1. [Instale la CLI de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.docker.com/community-edition#/download). Para Windows 8 u OS X Yosemite 10.10.x o anterior, instale [Docker Toolbox ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/toolbox/). {{site.data.keyword.registrylong_notm}} es compatible con Docker Engine v1.12.6 o posterior.
 
-2. Descargue (_pull_) la imagen en su máquina local. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, por ejemplo _latest_.
+2. Descargue (_pull_) la imagen en su máquina local. Sustituya `<source_image>` por el repositorio de la imagen y `<tag>` por la etiqueta de la imagen que desea utilizar, como por ejemplo _latest_.
 
    ```
    docker pull <source_image>:<tag>
@@ -88,7 +88,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-3. Etiquete la imagen. Sustituya `<source_image>` por el repositorio y `<tag>` por la etiqueta de la imagen local que ha extraído anteriormente. Sustituya `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add). Defina el repositorio y etiquete la imagen que desea utilizar en su espacio de nombres y sustituya `<new_image_repo>` y `<new_tag>`.
+3. Etiquete la imagen. Sustituya `<source_image>` por el repositorio y `<tag>` por la etiqueta de la imagen local que ha extraído antes. Sustituya `<region>` por el nombre de su [región](/docs/services/Registry?topic=registry-registry_overview#registry_regions). Sustituya `<my_namespace>` por el espacio de nombres que ha creado en el apartado [Configurar un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add). Defina el repositorio y la etiqueta de la imagen que desea utilizar en el espacio de nombres sustituyendo `<new_image_repo>` y `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
@@ -112,7 +112,7 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
    ```
    {: pre}
 
-2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya `<my_namespace>` por el espacio de nombres que ha creado en [Configure un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add) y `<image_repo>` y `<tag>` por el repositorio y la etiqueta de la imagen que ha elegido cuando ha etiquetado la imagen.
+2. Cargue (_push_) la imagen a su espacio de nombres. Sustituya `<my_namespace>` por el espacio de nombres que ha creado en el apartado [Configurar un espacio de nombres](/docs/services/Registry?topic=registry-index#registry_namespace_add) y `<image_repo>` y `<tag>` por el repositorio y la etiqueta de la imagen que ha elegido al etiquetar la imagen.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
@@ -142,4 +142,4 @@ Enhorabuena. Ha configurado un espacio de nombres en {{site.data.keyword.registr
 - [Revise sus planes de servicio y el uso de los mismos](/docs/services/Registry?topic=registry-registry_overview#registry_plans)
 - [Almacene y gestione más imágenes en el espacio de nombres](/docs/services/Registry?topic=registry-registry_images_)
 - [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user)
-- [Configuración de clústeres y nodos de trabajador](/docs/containers?topic=containers-clusters#clusters)
+- [Configuración de clústeres y nodos trabajadores](/docs/containers?topic=containers-clusters#clusters)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -33,12 +33,15 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 ## 在集群中安装 Container Image Security Enforcement
 {: #sec_enforce_install}
 
-**开始之前**
+通过设置 Helm 并安装 Container Image Security Enforcement Helm 图表，将 Container Image Security Enforcement 安装在集群中。
+{:shortdesc}
 
-* [创建](/docs/containers?topic=containers-clusters#clusters_ui)或[更新](/docs/containers?topic=containers-update#update)要与 **Kubernetes V1.9 或更高版本**配合使用的集群。
-* [设定 `kubectl` CLI 的目标](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)为集群。
+在开始之前，请完成以下任务：
 
-请完成以下步骤：
+1. [创建](/docs/containers?topic=containers-clusters#clusters_ui)或[更新](/docs/containers?topic=containers-update#update)要与 **Kubernetes V1.9 或更高版本**配合使用的集群。
+2. [设定 `kubectl` CLI 的目标](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)为集群。
+
+要在集群中安装 Container Image Security Enforcement，请完成以下步骤：
 
 1. [在集群中设置 Helm](/docs/containers?topic=containers-helm#helm)。
 
@@ -66,8 +69,8 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 
 要覆盖这些策略，请使用下列其中一个选项：
 
-* 编写新的策略文档，然后使用 `kubectl apply` 将其应用于集群
-* 使用 `kubectl edit` 编辑缺省策略
+- 编写新的策略文档，然后使用 `kubectl apply` 将其应用于集群
+- 使用 `kubectl edit` 编辑缺省策略
 
 有关编写安全策略的更多信息，请参阅[定制策略](#customize_policies)。
 
@@ -77,7 +80,7 @@ Container Image Security Enforcement 从 {{site.data.keyword.registrylong}} 检�
 缺省情况下，集群范围的策略会强制所有注册表中的所有映像都包含信任信息，并且在漏洞顾问程序中没有报告的漏洞。
 {:shortdesc}
 
-**缺省集群范围的策略 `.yaml` 文件**
+以下代码显示缺省的集群范围的策略 `.yaml` 文件：
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -106,7 +109,7 @@ spec:
 缺省情况下，将为 `kube-system` 名称空间安装名称空间范围的策略。此策略允许将任何容器注册表中的所有映像部署到 `kube-system` 中，而无需强制实施，但您可以更改策略的此部分。缺省策略还包含必须保留不变的某些存储库，以便正确配置集群。
 {:shortdesc}
 
-**缺省 `kube-system` 策略 `.yaml` 文件**
+以下代码显示缺省的 `kube-system` 策略 `.yaml` 文件：
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -137,7 +140,7 @@ spec:
 缺省情况下，将为 `ibm-system` 名称空间安装名称空间范围的策略。此策略允许将任何容器注册表中的所有映像部署到 `ibm-system` 中，而无需强制实施，但您可以更改策略的此部分。缺省策略中还包含一些特定存储库，这些存储库必须保留不动才能正确配置集群，也才能安装或升级 Container Image Security Enforcement。
 {:shortdesc}
 
-**缺省 `ibm-system` 策略 `.yaml` 文件**
+以下代码显示缺省的 `ibm-system` 策略 `.yaml` 文件：
 
 ```yaml
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -281,29 +284,29 @@ spec:
 如果在 Kubernetes 集群上启用了基于角色的访问控制 (RBAC)，那么可以创建角色来控制谁能够管理集群上的安全策略。有关将 RBAC 规则应用于集群的更多信息，请参阅 [{{site.data.keyword.containerlong_notm}} 文档](/docs/containers?topic=containers-users#rbac)。
 {:shortdesc}
 
-在角色中，添加安全策略的规则：
+- 在角色中，添加安全策略的规则：
 
-```yaml
-- apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
-  resources: ["imagepolicies", "clusterimagepolicies"]
-  verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+    resources: ["imagepolicies", "clusterimagepolicies"]
+    verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+  ```
+  {: codeblock}
 
-可以创建多个角色来控制用户可以执行的操作。例如，更改 `verbs`，使得某些用户只能使用 `get` 或 `list` 策略。或者，可以省略 `resources` 列表中的 `clusterimagepolicies`，以仅授予对 Kubernetes 名称空间策略的访问权。
+  可以创建多个角色来控制用户可以执行的操作。例如，更改 `verbs`，使得某些用户只能使用 `get` 或 `list` 策略。或者，可以省略 `resources` 列表中的 `clusterimagepolicies`，以仅授予对 Kubernetes 名称空间策略的访问权。
 {:tip}
 
-有权删除定制资源定义 (CRD) 的用户可以删除安全策略的资源定义，这样还会删除安全策略。确保控制允许谁来删除 CRD。要授予删除 CRD 的访问权，请添加规则：
+- 有权删除定制资源定义 (CRD) 的用户可以删除安全策略的资源定义，这样还会删除安全策略。确保控制允许谁来删除 CRD。要授予删除 CRD 的访问权，请添加规则：
 
-```yaml
-- apiGroups: ["apiextensions.k8s.io/v1beta1"]
-  resources: ["CustomResourceDefinition"]
-  verbs: ["delete"]
-```
-{: codeblock}
+  ```yaml
+  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+    resources: ["CustomResourceDefinition"]
+    verbs: ["delete"]
+  ```
+  {: codeblock}
 
-具有 `cluster-admin` 角色的用户和服务帐户有权访问所有资源。即使您不编辑 cluster-admin 角色，该角色也会授予管理安全策略的访问权。确保控制谁具有 `cluster-admin` 角色，并仅向您希望允许其修改安全策略的人员授予访问权。
-{:tip}
+  具有 `cluster-admin` 角色的用户和服务帐户有权访问所有资源。即使您不编辑 cluster-admin 角色，该角色也会授予管理安全策略的访问权。确保控制谁具有 `cluster-admin` 角色，并仅向您希望允许其修改安全策略的人员授予访问权。
+  {:tip}
 
 ## 部署强制实施了安全性的容器映像
 {: #deploy_containers}
@@ -311,42 +314,41 @@ spec:
 应用策略后，可以将内容正常部署到集群。策略由 Kubernetes 集群自动强制实施。如果部署与策略相匹配，并且该策略允许部署，那么部署会被集群接受并进行应用。
 {:shortdesc}
 
-如果 Container Image Security Enforcement 拒绝了部署，那么会创建部署，但它创建的 ReplicaSet 无法扩展，并且不会创建任何 pod。您可以通过运行 `kubectl describe deployment <deployment-name>` 找到 ReplicaSet，然后通过运行 `kubectl describe rs <replicaset-name>` 看到部署被拒绝的原因。
+- 如果 Container Image Security Enforcement 拒绝了部署，那么会创建部署，但它创建的 ReplicaSet 无法扩展，并且不会创建任何 pod。您可以通过运行 `kubectl describe deployment <deployment-name>` 找到 ReplicaSet，然后通过运行 `kubectl describe rs <replicaset-name>` 看到部署被拒绝的原因。
 
-**样本错误消息**
+  以下代码显示典型错误消息的示例：
 
-* 如果映像与任何策略都不匹配，或者名称空间或集群中没有任何策略。
+  - 如果映像与任何策略都不匹配，或者名称空间或集群中没有任何策略。
 
-   ```
+    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, no image policies or cluster polices for <image-name>
    ```
-   {: screen}
+    {: screen}
 
-* 如果映像与策略相匹配，但不满足策略的漏洞顾问程序需求。
+  - 如果映像与策略相匹配，但不满足策略的漏洞顾问程序需求。
 
-   ```
-   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. Refer to your image vulnerability report 
-   for more details by using the command `ibmcloud cr va`.
-   ```
-   {: screen}
+    ```
+   admission webhook "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: The Vulnerability Advisor image scan assessment found issues with the container image that are not exempted. 请使用 `ibmcloud cr va` 命令参阅映像漏洞报告以了解更多详细信息。
+    ```
+    {: screen}
 
-* 如果映像与策略相匹配，但不满足该策略的信任需求。
+  - 如果映像与策略相匹配，但不满足该策略的信任需求。
 
-   ```
+    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Deny, failed to get content trust information: No valid trust data for latest
    ```
-   {: screen}
+    {: screen}
 
-* 如果策略为映像指定了信任强制实施，但映像并不是来自支持的注册表。
+  - 如果策略为映像指定了信任强制实施，但映像并不是来自支持的注册表。
 
-   ```
+    ```
    admission webhook "trust.hooks.securityenforcement.admission.cloud.ibm.com" denied the request: Trust is not supported for images from this registry
    ```
-   {: screen}
+    {: screen}
 
-可以在策略中启用 `va` 选项以强制漏洞顾问程序在部署映像之前通过。这将允许漏洞顾问程序不支持的映像。
+- 可以在策略中启用 `va` 选项以强制漏洞顾问程序在部署映像之前通过。这将允许漏洞顾问程序不支持的映像。
 
-可以在策略中启用 `trust` 选项来强制实施内容信任。如果未指定任何 `signerSecrets`，那么允许部署由任何人签名的映像。如果指定 `signerSecrets`，那么最近签名的映像版本必须已由您指定的所有签署者签名。Container Image Security Enforcement 会验证提供的公用密钥是否属于签署者。有关内容信任的更多信息，请参阅[对映像签名以实现可信内容](/docs/services/Registry?topic=registry-registry_trustedcontent)。
+- 可以在策略中启用 `trust` 选项来强制实施内容信任。如果未指定任何 `signerSecrets`，那么允许部署由任何人签名的映像。如果指定 `signerSecrets`，那么最近签名的映像版本必须已由您指定的所有签署者签名。Container Image Security Enforcement 会验证提供的公用密钥是否属于签署者。有关内容信任的更多信息，请参阅[对映像签名以实现可信内容](/docs/services/Registry?topic=registry-registry_trustedcontent)。
 
 仅当所有映像都通过了 Container Image Security Enforcement 检查时，才允许部署。
 
@@ -369,7 +371,7 @@ spec:
    ```
    {: pre}
 
-2. 除去图表。
+1. 除去图表。
 
    ```
 helm delete --purge cise

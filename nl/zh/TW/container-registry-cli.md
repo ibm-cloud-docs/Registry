@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-08"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -28,10 +28,11 @@ subcollection: container-registry-cli-plugin
 您可以使用 {{site.data.keyword.registrylong}} CLI（其在 `container-registry` 外掛程式中提供），針對您的 {{site.data.keyword.cloud_notm}} 帳戶管理登錄及其資源。
 {: shortdesc}
 
-**必要條件**
+## 必要條件
+{: #containerregcli_prereq}
 
-* 安裝 {{site.data.keyword.cloud_notm}} CLI，請參閱[開始使用 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)。使用 {{site.data.keyword.cloud_notm}} CLI 來執行指令的字首是 `ibmcloud`。
-* 在執行登錄指令之前，請先使用 `ibmcloud login` 指令登入 {{site.data.keyword.cloud_notm}}，以產生存取記號並鑑別您的階段作業。
+- 安裝 {{site.data.keyword.cloud_notm}} CLI，請參閱[開始使用 {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started)。使用 {{site.data.keyword.cloud_notm}} CLI 來執行指令的字首是 `ibmcloud`。
+- 在執行登錄指令之前，請先使用 `ibmcloud login` 指令登入 {{site.data.keyword.cloud_notm}}，以產生存取記號並鑑別您的階段作業。
 
 在指令行中，當有 `ibmcloud` CLI 及 `container-registry` CLI 外掛程式的更新可用時，即會通知您。請確定您保持最新的 CLI，讓您可以使用所有可用的指令及旗標。
 
@@ -54,7 +55,8 @@ ibmcloud cr api
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_api_prereq}
 
 無
 
@@ -68,14 +70,17 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_build_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_build_option}
+
 <dl>
 <dt>`DIRECTORY`</dt>
-<dd>建置環境定義的位置，其中包含您的 Dockerfile 及必要檔案。如果您在工作目錄設為建置環境定義儲存所在的位置時執行指令，則可以將 `DIRECTORY` 取代為句號 (.)。</dd>
+<dd>建置環境定義的位置，其中包含您的 Dockerfile 及必要檔案。如果在工作目錄設定為建置環境定義的儲存位置時執行指令，則可以用句點 (.) 取代 `DIRECTORY`.</dd>
 <dt>`--no-cache`</dt>
 <dd>（選用）如果指定，這個建置中不會使用來自先前建置的已快取映像檔層。</dd>
 <dt>`--pull`</dt>
@@ -90,7 +95,8 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 <dd>您要建置之映像檔的完整名稱，其中包含登錄 URL 及名稱空間。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_build_example}
 
 建置不使用先前建置之建置快取的 Docker 映像檔，其中會暫停建置輸出、標籤為 *`us.icr.io/birds/bluebird:1`*，且目錄是您的工作目錄。
 
@@ -109,11 +115,14 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_exemption_add_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_exemption_add_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>若要將帳戶設定為範圍，請使用 `"*"` 作為值。若要將名稱空間、儲存庫或標籤設定為範圍，請以下列其中一種格式來輸入值：`namespace`、`namespace/repository`、`namespace/repository:tag`
@@ -125,7 +134,8 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 <dd>您要豁免的安全問題 ID。若要尋找問題 ID，請執行 `ibmcloud cr va <image>`，其中 `<image>` 是您映像檔的名稱，並且使用**漏洞 ID** 或**配置問題 ID** 直欄中的相關值。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_exemption_add_example}
 
 對於 `us.icr.io/birds/bluebird` 儲存庫中的所有映像檔，建立 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
 
@@ -158,18 +168,22 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_exemption_list_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_exemption_list_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>（選用）僅列出適用於此範圍的豁免。若要將名稱空間、儲存庫或標籤設定為範圍，請以下列其中一種格式來輸入值：`namespace`、`namespace/repository`、`namespace/repository:tag`
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_exemption_list_example}
 
 列出套用至 *`birds/bluebird`* 儲存庫中映像檔之安全問題的所有豁免。輸出包括帳戶層面的豁免、範圍限於 *`birds`* 名稱空間的豁免，以及範圍限於 *`birds/bluebird`* 儲存庫的豁免，但不包括所有範圍限於 *`birds/bluebird`* 儲存庫內特定標籤的豁免。
 
@@ -188,11 +202,14 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_exemption_rm_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_exemption_rm_option}
+
 <dl>
 <dt>`--scope SCOPE`</dt>
 <dd>若要將帳戶設定為範圍，請使用 `"*"` 作為值。若要將名稱空間、儲存庫或標籤設定為範圍，請以下列其中一種格式來輸入值：`namespace`、`namespace/repository`、`namespace/repository:tag`
@@ -205,7 +222,8 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_exemption_rm_example}
 
 對於 `us.icr.io/birds/bluebird` 儲存庫中的所有映像檔，刪除 ID 為 `CVE-2018-17929` 之 CVE 的 CVE 豁免。
 
@@ -238,7 +256,8 @@ ibmcloud cr exemption-types
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_exemption_types_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
@@ -252,7 +271,8 @@ ibmcloud cr iam-policies-enable
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_iam_policies_enable_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
@@ -276,11 +296,14 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_image_inspect_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_image_inspect_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
@@ -296,7 +319,8 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_image_inspect_example}
 
 使用格式化指引 *`"{{ .Config.ExposedPorts }}"`*，以顯示映像檔 *`us.icr.io/birds/bluebird:1`* 之已公開埠的詳細資料。
 
@@ -314,18 +338,19 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 {:tip}
 
 ```
-ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_image_list_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_image_list_option}
+
 <dl>
-<dt>`--no-trunc`</dt>
-<dd>（選用）不要截斷映像檔摘要。</dd>
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
 
@@ -338,9 +363,12 @@ ibmcloud cr image-list [--no-trunc] [--format FORMAT] [--quiet | -q ] [--restric
 <dd>（選用）限制輸出，只顯示所指定名稱空間或名稱空間及儲存庫中的映像檔。</dd>
 <dt>`--include-ibm`</dt>
 <dd>（選用）將 {{site.data.keyword.IBM_notm}} 提供的公用映像檔包括在輸出中。若不使用此選項，依預設只會列出專用映像檔。</dd>
+<dt>`--no-trunc`</dt>
+<dd>（選用）不要截斷映像檔摘要。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_image_list_example}
 
 顯示 *`birds`* 名稱空間中的映像檔，格式為 `repository:tag`，而不截斷映像檔摘要。
 
@@ -362,11 +390,13 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_image_rm_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_image_rm_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -377,7 +407,9 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_image_rm_example}
+
 刪除映像檔 `us.icr.io/birds/bluebird:1`。
 
 ```
@@ -398,11 +430,14 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_image_tag_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_image_tag_option}
+
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
 <dd>來源映像檔的名稱。`SOURCE_IMAGE` 的格式必須為 `repository:tag`，例如：`us.icr.io/namespace/image:latest`
@@ -414,7 +449,8 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_image_tag_example}
 
 將另一個標記參照 `latest` 新增至映像檔 `us.icr.io/birds/bluebird:1`。
 
@@ -450,11 +486,13 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_image_untag_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_image_untag_option}
 
 <dl>
 <dt>`IMAGE`</dt>
@@ -465,7 +503,8 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_image_untag_example}
 
 從映像 `us.icr.io/birds/bluebird:1` 移除標籤 `1`。
 
@@ -484,7 +523,8 @@ ibmcloud cr info
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_info_prereq}
 
 無
 
@@ -498,7 +538,8 @@ ibmcloud cr login
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_login_prereq}
 
 無
 
@@ -512,11 +553,14 @@ ibmcloud cr namespace-add NAMESPACE
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_namespace_add_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_namespace_add_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>您要新增的名稱空間。此名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。名稱空間必須有 4 - 30 個字元，且只能包含小寫字母、數字、連字號 (-) 及底線 (_)。名稱空間的開頭和結尾必須是字母或數字。
@@ -528,7 +572,8 @@ ibmcloud cr namespace-add NAMESPACE
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_namespace_add_example}
 
 建立名稱為 *`birds`* 的名稱空間。
 
@@ -547,7 +592,8 @@ ibmcloud cr namespace-list
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_namespace_list_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
@@ -561,11 +607,14 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_namespace_rm_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_namespace_rm_option}
+
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>您要移除的名稱空間。</dd>
@@ -573,7 +622,8 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 <dd>（選用）強制執行指令而不產生使用者提示。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_namespace_rm_example}
 
 移除名稱空間 *`birds`*。
 
@@ -592,7 +642,8 @@ ibmcloud cr plan
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_plan_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
@@ -608,17 +659,21 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_plan_upgrade_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_plan_upgrade_option}
+
 <dl>
 <dt>`PLAN`</dt>
 <dd>（選用）您要升級到的定價方案名稱。如果未指定 `PLAN`，則預設值為 `standard`。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_plan_upgrade_example}
 
 升級為標準定價方案。
 
@@ -632,18 +687,21 @@ ibmcloud cr plan-upgrade standard
 
 將從 [IBM Passport Advantage Online for customers ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下載並包裝以與 Helm 搭配使用的 {{site.data.keyword.IBM_notm}} 軟體，匯入到您的 {{site.data.keyword.registrylong_notm}} 名稱空間。
 
-容器映像檔會推送至您的專用 {{site.data.keyword.registryshort_notm}} 名稱空間。Helm 圖表會寫入至您執行指令所在目錄中建立的 `ppa-import` 目錄。您可以選擇使用 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum) 來管理 helm 圖表。
+容器映像檔會推送至您的專用 {{site.data.keyword.registryshort_notm}} 名稱空間。Helm Chart 會寫入至您執行指令所在目錄中建立的 `ppa-import` 目錄。您可以選擇使用 [Chart Museum 開放程式碼專案 ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum) 來管理 Helm Chart。
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_ppa_archive_load_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_ppa_archive_load_option}
+
 <dl>
   <dt>`--archive FILE`</dt>
   <dd>從 IBM Passport Advantage 下載之壓縮檔的路徑。</dd>
@@ -657,7 +715,8 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
   <dd>（選用）您的 [Chart Museum ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/helm/charts/tree/master/stable/chartmuseum) 密碼。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_ppa_archive_load_example}
 
 匯入 IBM 軟體，並將它包裝至您的 {{site.data.keyword.registrylong_notm}} 名稱空間 *`birds`* 以與 Helm 搭配使用，其中，壓縮檔的路徑為 *`downloads/compressed_file.tgz`*。
 
@@ -676,7 +735,8 @@ ibmcloud cr quota
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_quota_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
@@ -690,11 +750,14 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_quota_set_prereq}
 
 若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_quota_set_option}
+
 <dl>
 <dt>`--traffic TRAFFIC`</dt>
 <dd>（選用）將資料流量配額變更為指定的值 (MB)。如果您未獲授權，無法設定資料流量，或是設定了超出現行定價方案的值，則作業會失敗。</dd>
@@ -702,7 +765,8 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 <dd>（選用）將儲存空間配額變更為指定的值 (MB)。如果您未獲授權，無法設定儲存空間配額，或是設定了超出現行定價方案的值，則作業會失敗。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_quota_set_example}
 
 將取回資料流量的配額限制設為 *7000* MB，並將儲存空間設為 *600* MB。
 
@@ -721,7 +785,8 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_region_prereq}
 
 無
 
@@ -737,11 +802,14 @@ ibmcloud cr region-set [REGION]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_region_set_prereq}
 
 無
 
-**指令選項**
+### 指令選項
+{: #bx_cr_region_set_option}
+
 <dl>
 <dt>`REGION`</dt>
 <dd>（選用）目標地區的名稱，例如 `us-south`。
@@ -751,12 +819,62 @@ ibmcloud cr region-set [REGION]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_region_set_example}
 
 將「美國南部」地區設為目標。
 
 ```
 ibmcloud cr region-set us-south
+```
+{: pre}
+
+## `ibmcloud cr retention-run`
+{: #bx_cr_retention_run}
+
+請套用指定的準則，以在 {{site.data.keyword.registrylong_notm}} 中為名稱空間內的每個儲存庫保留映像檔，而清理名稱空間。名稱空間中的所有其他映像檔都會刪除。
+{: shortdesc}
+
+刪除映像檔無法復原。刪除現有部署正在使用的映像檔，可能會導致擴增及（或）重新排程失敗。
+{: important}
+
+儲存庫內的某個映像檔由多個標籤參照時，該映像檔只會計算一次。會保留最新的映像檔。經歷時間是由映像檔的建立時間所決定，而不是它推送到登錄的時間。
+{: tip}
+
+如需如何使用 `ibmcloud cr retention-run` 指令的相關資訊，請參閱[保留映像檔](/docs/services/Registry?topic=registry-registry_retention)。
+
+```
+ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+```
+{: codeblock}
+
+### 必要條件
+{: #bx_cr_retention_run_prereq}
+
+若要瞭解必要的許可權，請參閱[配置 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_configure)。
+
+### 指令選項
+{: #bx_cr_retention_run_option}
+
+<dl>
+<dt>`NAMESPACE`</dt>
+<dd>要清除的名稱空間。</dd>
+<dt>`--force`, `-f`</dt>
+<dd>（選用）強制執行指令而不產生使用者提示。</dd>
+<dt>`--json`</dt>
+<dd>（選用）包含清除名稱空間結果的輸出 JSON。此旗標必須與 "--force" 一起使用。</dd>
+<dt>`--images`</dt>
+<dd>決定在指定的名稱空間中每個儲存庫內要保留多少個映像檔。將保留最新的映像檔。映像檔的生命週期是由其建置日期決定的。`IMAGECOUNT` 是您要保留的映像檔數。
+</dd>
+</dl>
+
+### 範例
+{: #bx_cr_retention_run_example}
+
+在 `birds` 名稱空間中，傳回每個儲存庫中最新的 20 個映像檔。
+
+```
+ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
 
@@ -770,17 +888,21 @@ ibmcloud cr token-get TOKEN
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_token_get_prereq}
 
 若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_token_get_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>您要擷取之記號的唯一 ID。若要列出記號，請執行 `ibmcloud cr token-list`。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_token_get_example}
 
 擷取記號 *10101010-101x-1x10-x1xx-x10xx10xxx10*。
 
@@ -799,11 +921,14 @@ ibmcloud cr token-list [--format FORMAT]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_token_list_prereq}
 
 若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_token_list_option}
+
 <dl>
 <dt>`--format FORMAT`</dt>
 <dd>（選用）使用 Go 範本來將輸出元素格式化。
@@ -813,7 +938,8 @@ ibmcloud cr token-list [--format FORMAT]
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_token_list_example}
 
 使用格式化指引 *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`*，以顯示所有唯讀記號。
 
@@ -839,11 +965,14 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_token_rm_prereq}
 
 若要瞭解必要的許可權，請參閱[平台管理角色](/docs/services/Registry?topic=registry-iam#platform_management_roles)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_token_rm_option}
+
 <dl>
 <dt>`TOKEN`</dt>
 <dd>TOKEN 可以是記號本身，或記號的唯一 ID（如 `ibmcloud cr token-list` 中所示）。您可以指定多個記號，且必須以空格予以區隔。</dd>
@@ -851,7 +980,8 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 <dd>（選用）強制執行指令而不產生使用者提示。</dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_token_rm_example}
 
 移除記號 *10101010-101x-1x10-x1xx-x10xx10xxx10*。
 
@@ -870,11 +1000,14 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ```
 {: codeblock}
 
-**必要條件**
+### 必要條件
+{: #bx_cr_va_prereq}
 
 若要瞭解必要的許可權，請參閱[使用 {{site.data.keyword.registrylong_notm}} 時所適用的存取角色](/docs/services/Registry?topic=registry-iam#access_roles_using)。
 
-**指令選項**
+### 指令選項
+{: #bx_cr_va_option}
+
 <dl>
 <dt>`IMAGE`</dt>
 <dd>您要取得其報告的映像檔名稱。報告會指出映像檔是否有任何已知的套件漏洞。您可以藉由在指令中列出每一個映像檔，並以空格隔開每一個名稱，來同時要求多個映像檔的報告。
@@ -912,7 +1045,8 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 </dd>
 </dl>
 
-**範例**
+### 範例
+{: #bx_cr_va_example}
 
 檢視映像檔的標準漏洞評量報告。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -89,9 +89,9 @@ Ogni immagine viene creata a partire da un certo numero di livelli che rappresen
 
 Esempio per il push di immagini:
 
-> Esegui il push di un'immagine al tuo spazio dei nomi che si basa sull'immagine Ubuntu. L'immagine Ubuntu contiene diversi livelli. Poiché nel tuo account non hai ancora questi livelli, la quantità di archiviazione richiesta dai livelli viene aggiunta al tuo utilizzo mensile.
->
-> Successivamente, crea una seconda immagine basata sull'immagine Ubuntu. Modifica l'immagine di base Ubuntu, ad esempio aggiungendo ulteriori comandi o file al tuo Dockerfile. Ogni modifica rappresenta un nuovo livello dell'immagine. Quando esegui il push della seconda immagine, {{site.data.keyword.registrylong_notm}} riconosce che tutti i livelli dell'immagine Ubuntu di base sono già memorizzati nel tuo account. La seconda volta che memorizzi questi livelli non ti viene addebitato nulla, anche se hai eseguito il push della tua immagine in un altro spazio dei nomi. {{site.data.keyword.registrylong_notm}} determina la dimensione di tutti i nuovi livelli e aggiunge la quantità di archiviazione al tuo utilizzo mensile.
+Esegui il push di un'immagine al tuo spazio dei nomi che si basa sull'immagine Ubuntu. L'immagine Ubuntu contiene diversi livelli. Poiché nel tuo account non hai ancora questi livelli, la quantità di archiviazione richiesta dai livelli viene aggiunta al tuo utilizzo mensile.
+
+Successivamente, crea una seconda immagine basata sull'immagine Ubuntu. Modifica l'immagine di base Ubuntu, ad esempio aggiungendo ulteriori comandi o file al tuo Dockerfile. Ogni modifica rappresenta un nuovo livello dell'immagine. Quando esegui il push della seconda immagine, {{site.data.keyword.registrylong_notm}} riconosce che tutti i livelli dell'immagine Ubuntu di base sono già memorizzati nel tuo account. La seconda volta che memorizzi questi livelli non ti viene addebitato nulla, anche se hai eseguito il push della tua immagine in un altro spazio dei nomi. {{site.data.keyword.registrylong_notm}} determina la dimensione di tutti i nuovi livelli e aggiunge la quantità di archiviazione al tuo utilizzo mensile.
 
 ### Fatturazione per l'archiviazione e il traffico di pull
 {: #registry_billing_traffic}
@@ -99,27 +99,31 @@ Esempio per il push di immagini:
 A seconda del piano del servizio scelto, gli addebiti a tuo carico sono basati sull'archiviazione e sul traffico di pull che utilizzi al mese in ogni regione.
 {:shortdesc}
 
-**Archiviazione: **
+#### Archiviazione
+{: #registry_billing_traffic_storage}
 
   Ogni piano del servizio {{site.data.keyword.registrylong_notm}} viene fornito con una certa quantità di archiviazione che puoi utilizzare per memorizzare le tue immagini Docker negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}}. Se utilizzi il piano standard, il tuo addebito si basa sui GB al mese di utilizzo. I primi 0,5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi memorizzare gratuitamente le tue immagini in {{site.data.keyword.registrylong_notm}} finché non raggiungi i limiti di quota per tale piano. Un GB al mese è una media di 1 GB di archiviazione al mese (730 ore).
+  {:shortdesc}
 
   Esempio per il piano standard:
 
-  > Utilizzi 5 GB per esattamente mezzo mese e quindi trasmetti diverse immagini al tuo spazio dei nomi e utilizzi 10 GB per il resto del mese. Il tuo utilizzo mensile viene calcolato come segue:
-  >
-  > (5 GB x 0.5 (mesi)) + (10 GB x 0.5 (mesi)) = 2,5 + 5 = 7,5 GB al mese
-  >
-  > Nel piano standard, i primi 0,5 GB al mese sono gratuiti, pertanto ti vengono addebitati 7 GB al mese (7,5 GB al mese - 0,5 GB al mese).
+  Utilizzi 5 GB per esattamente mezzo mese e quindi trasmetti diverse immagini al tuo spazio dei nomi e utilizzi 10 GB per il resto del mese. Il tuo utilizzo mensile viene calcolato come segue:
+  
+  (5 GB x 0.5 (mesi)) + (10 GB x 0.5 (mesi)) = 2,5 + 5 = 7,5 GB al mese
+  
+  Nel piano standard, i primi 0,5 GB al mese sono gratuiti, pertanto ti vengono addebitati 7 GB al mese (7,5 GB al mese - 0,5 GB al mese).
 
-**Traffico di pull: **
+#### Traffico di pull
+{: #registry_billing_traffic_pull_traffic}
 
   Ogni piano del servizio {{site.data.keyword.registrylong_notm}} include una certa quantità di traffico di pull gratuito per le tue immagini private memorizzate nel tuo spazio dei nomi. Il traffico di pull è la larghezza di banda che utilizzi quando esegui il pull di un livello di un'immagine dal tuo spazio dei nomi alla tua macchina locale. Se utilizzi il piano standard, il tuo addebito si basa sui GB di utilizzo al mese. I primi 5 GB al mese sono gratuiti. Se utilizzi il piano gratuito, puoi eseguire il pull di immagini dal tuo spazio dei nomi finché non raggiungi il limite di quota previsto per tale piano.
+  {:shortdesc}
 
   Esempio per il piano standard:
 
-  > Nel mese, hai eseguito il pull di immagini che contengono dei livelli con una dimensione totale di 14 GB. Il tuo utilizzo mensile viene calcolato come segue:
-  >
-  > Nel piano standard, i primi 5 GB al mese sono gratuiti, pertanto ti vengono addebitati 9 GB (14 GB - 5 GB).
+  Nel mese, hai eseguito il pull di immagini che contengono dei livelli con una dimensione totale di 14 GB. Il tuo utilizzo mensile viene calcolato come segue:
+  
+  Nel piano standard, i primi 5 GB al mese sono gratuiti, pertanto ti vengono addebitati 9 GB (14 GB - 5 GB).
 
 ### Limiti di quota per l'archiviazione e il traffico di pull
 {: #registry_quota_limits}
@@ -127,32 +131,36 @@ A seconda del piano del servizio scelto, gli addebiti a tuo carico sono basati s
 A seconda del piano del servizio scelto, puoi eseguire il push e il pull di immagini da e verso il tuo spazio dei nomi finché non raggiungi i tuoi limiti di quota specifici del piano o personalizzati per ogni regione.
 {:shortdesc}
 
-**Archiviazione: **
+#### Archiviazione
+{: #registry_quota_limits_storage}
 
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il push di alcuna immagine agli spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}} finché non [liberi dello spazio rimuovendo le immagini](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) dai tuoi spazi dei nomi o [esegui l'upgrade al piano standard](#registry_plan_upgrade). Se imposti dei limiti di quota per l'archiviazione nel tuo piano gratuito o standard, puoi anche [aumentare questo limite di quota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) per riabilitare il push di nuove immagini.
+  {:shortdesc}
 
   Esempio per il piano standard:
 
-  > Il tuo limite di quota corrente per l'archiviazione è impostato su 1 GB. Tutte le immagini private che sono memorizzate negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}} utilizzano già 900 MB di questa archiviazione. Hai a disposizione 100 MB di archiviazione fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il push di un'immagine con una dimensione di 2 GB sulla macchina locale. Poiché il limite di quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente all'utente di eseguire il push di questa immagine.
-  >
-  > Dopo il push, {{site.data.keyword.registrylong_notm}} determina la dimensione effettiva dell'immagine nel tuo spazio dei nomi, che può variare dalla dimensione sulla tua macchina locale, e controlla se viene raggiunto il limite per l'archiviazione. In questo esempio, l'utilizzo dell'archiviazione aumenta da 900 MB a 2 GB. Con il tuo limite di quota corrente impostato su 1 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il push di altre immagini al tuo spazio dei nomi.
+  Il tuo limite di quota corrente per l'archiviazione è impostato su 1 GB. Tutte le immagini private che sono memorizzate negli spazi dei nomi del tuo account {{site.data.keyword.cloud_notm}} utilizzano già 900 MB di questa archiviazione. Hai a disposizione 100 MB di archiviazione fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il push di un'immagine con una dimensione di 2 GB sulla macchina locale. Poiché il limite di quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente all'utente di eseguire il push di questa immagine.
+  
+  Dopo il push, {{site.data.keyword.registrylong_notm}} determina la dimensione effettiva dell'immagine nel tuo spazio dei nomi, che può variare dalla dimensione sulla tua macchina locale, e controlla se viene raggiunto il limite per l'archiviazione. In questo esempio, l'utilizzo dell'archiviazione aumenta da 900 MB a 2 GB. Con il tuo limite di quota corrente impostato su 1 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il push di altre immagini al tuo spazio dei nomi.
 
-**Traffico di pull: **
+#### Traffico di pull
+{: #registry_quota_limits_pull_traffic}
 
   Quando raggiungi o superi i limiti di quota per il tuo piano, non puoi eseguire il pull di alcuna immagine dagli
 spazi dei nomi nel tuo account {{site.data.keyword.cloud_notm}}
 finché non attendi che inizi il periodo di fatturazione successivo, [esegui l'upgrade al piano standard](#registry_plan_upgrade) o [aumenti i tuoi limiti
 di quota per il traffico di pull](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Esempio per il piano standard:
 
-  > Nel mese, il
+  Nel mese, il
 tuo limite di quota per il traffico di pull è impostato su 5 GB. Hai già eseguito il pull di immagini dai tuoi spazi dei nomi e hai utilizzato
 4,5 GB di questo traffico di pull. Hai a disposizione 0,5 GB di traffico di pull fino al raggiungimento del tuo limite di quota. Un utente vuole eseguire il pull di un'immagine con una dimensione di 1 GB dal tuo spazio dei nomi. Poiché il limite di
 quota non è stato ancora raggiunto, {{site.data.keyword.registrylong_notm}} consente
 all'utente di eseguire il pull di questa immagine.
-  >
-  > Una volta eseguito il pull dell'immagine, {{site.data.keyword.registrylong_notm}} determina la larghezza di banda che hai utilizzato
+  
+  Una volta eseguito il pull dell'immagine, {{site.data.keyword.registrylong_notm}} determina la larghezza di banda che hai utilizzato
 durante il pull e controlla se è stato raggiunto il limite per il traffico di pull. In questo esempio, l'utilizzo del traffico di pull aumenta da 4,5 GB a 5,5 GB. Con il tuo limite di quota corrente impostato su 5 GB, {{site.data.keyword.registrylong_notm}} ti impedisce di eseguire il pull delle immagini
 dal tuo spazio dei nomi.
 
@@ -181,8 +189,8 @@ Per eseguire l'upgrade del tuo piano del servizio, completa la seguente procedur
    {: pre}
 
    Se hai un ID federato, utilizza `ibmcloud login --sso` per eseguire l'accesso alla CLI {{site.data.keyword.cloud_notm}}. Immetti il tuo nome utente e usa
-l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai di avere un ID federato se l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
-    {:tip}
+l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Se hai un ID federato, l'accesso non riesce senza `--sso` e riesce con l'opzione `--sso`.
+   {:tip}
 
 2. Seleziona la regione per cui vuoi eseguire l'upgrade del piano:
 
@@ -205,17 +213,11 @@ l'URL fornito nell'output della CLI per richiamare la tua passcode monouso. Sai 
 
    Per ulteriori informazioni, vedi [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Apprendimento delle nozioni di base
-{: #registry_planning}
-
-Preparati per memorizzare e condividere le tue immagini Docker con {{site.data.keyword.registrylong_notm}} apprendendo le basi del registro.
-{:shortdesc}
-
-Non inserire informazioni personali nelle immagini del contenitore, nei nomi degli spazi dei nomi, nei campi di descrizione o nei dati di configurazione dell'immagine (ad esempio, nomi o etichette dell'immagine).
-{: important}
-
-### Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
+## Comprendere i termini utilizzati in {{site.data.keyword.registrylong_notm}}
 {: #terms}
+
+Descrizione dei termini di utilizzo in {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -264,49 +266,19 @@ ambienti di produzione e di preparazione.</dd>
 
 Per ulteriori informazioni sui termini specifici Docker, vedi il [glossario Docker ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.docker.com/glossary/).
 
-### Pianificazione degli spazi dei nomi
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} fornisce un registro delle immagini privato
-a più tenant che viene ospitato e gestito da IBM. Puoi memorizzare e condividere le tue immagini Docker in questo registro configurando uno spazio dei nomi del registro.
-{:shortdesc}
-
-Puoi configurare più spazi dei nomi per avere, ad esempio, repository separati per i tuoi
-ambienti di produzione e di preparazione. Se vuoi utilizzare il registro in più regioni {{site.data.keyword.cloud_notm}}, devi configurare uno spazio dei nomi per
-ogni regione. I nomi degli spazi dei nomi sono univoci nelle regioni. Puoi utilizzare lo stesso nome dello spazio dei nomi per ogni regione, a meno che
-qualcun altro abbia già configurato uno spazio dei nomi con quel nome in tale regione.
-
-Puoi controllare l'accesso ai tuoi spazi dei nomi utilizzando le politiche IAM. Per ulteriori informazioni, consulta [Definizione delle politiche del ruolo di accesso utente](/docs/services/Registry?topic=registry-user#user).
-
-Per lavorare solo con le immagini pubbliche fornite da IBM, non hai bisogno di configurare uno
-spazio dei nomi.
-
-Se non sei sicuro che uno spazio dei nomi sia già impostato per il tuo account, esegui il comando `ibmcloud cr namespace-list` per richiamare le informazioni sugli spazi dei nomi esistenti.
-{:tip}
-
-Quando scegli uno spazio dei nomi, considera le seguenti regole:
-
-- Il tuo spazio dei nomi deve essere univoco tra tutti gli account {{site.data.keyword.cloud_notm}} nella stessa regione.
-- Il tuo spazio dei nomi deve avere una lunghezza compresa tra 4 e 30 caratteri.
-- Il tuo spazio dei nomi deve iniziare e terminare con una lettera o un numero.
-- Il tuo spazio dei nomi deve contenere solo lettere minuscole, numeri, trattini (-) e caratteri di sottolineatura (_).
-
-Non inserire informazioni personali nei tuoi nomi dello spazio dei nomi.
-{: important}
-
-Dopo aver impostato il tuo primo spazio dei nomi, ti verrà assegnato il piano del servizio {{site.data.keyword.registrylong_notm}}
-gratuito se non hai già [aggiornato il tuo piano](#registry_plan_upgrade).
-
 ## Regioni
 {: #registry_regions}
 
 I registri di {{site.data.keyword.registrylong_notm}} sono disponibili in diverse regioni.
 {:shortdesc}
 
+Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
+
 ### Regioni locali
 {: #registry_regions_local}
 
 Una regione locale è un'area geografica a cui si accede da un endpoint dedicato. I nomi del dominio {{site.data.keyword.registrylong_notm}} per le regioni sono stati modificati. I nuovi nomi del dominio sono disponibili nella console e nella CLI.
+{:shortdesc}
 
 I nomi del dominio vengono mostrati nella seguente tabella.
 
@@ -322,9 +294,11 @@ I nomi del dominio vengono mostrati nella seguente tabella.
 I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
 {: deprecated}
 
-**Nomi del dominio del controllo vulnerabilità**
+#### Nomi del dominio del controllo vulnerabilità 
+{: #registry_regions_local_va}
 
 I nomi del dominio del controllo vulnerabilità per le regioni sono stati modificati. I nuovi nomi del dominio sono disponibili nella console e nella CLI.
+{:shortdesc}
 
 I nuovi nomi del dominio vengono mostrati nella seguente tabella.
 
@@ -340,25 +314,27 @@ I nuovi nomi del dominio vengono mostrati nella seguente tabella.
 I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
 {: deprecated}
 
-Tutte le risorse del registro sono associate al registro regionale specifico con cui stai attualmente lavorando. Ad esempio, spazi dei nomi, immagini, token, impostazioni di quote e impostazioni dei piani devono essere gestiti separatamente per ogni registro regionale.
+#### Selezione di una regione locale
+{: #registry_regions_local_target}
 
-Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando `ibmcloud cr region-set`. Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
+Se vuoi utilizzare una regione diversa dalla tua regione locale, puoi scegliere come destinazione la regione a cui desideri accedere eseguendo il comando [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set). Puoi eseguire il comando senza parametri per ottenere un elenco delle regioni disponibili o puoi specificare la regione come un parametro.
+{:shortdesc}
 
-Per eseguire il comando con i parametri, sostituisci `<region>` con il nome della regione, ad esempio, `eu-central`.
+1. Per eseguire il comando con i parametri, sostituisci `<region>` con il nome della [regione](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-Ad esempio, per scegliere la regione eu-central, immetti il seguente comando:
+   Ad esempio, per scegliere la regione `eu-central`, immetti il seguente comando:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-Dopo aver specificato una diversa regione di destinazione, effettua nuovamente l'accesso al registro: `ibmcloud cr login`.
+2. Accedi al registro eseguendo il comando `ibmcloud cr login`.
 
 ### Registro globale
 {: #registry_regions_global}
@@ -378,22 +354,11 @@ Il nuovo nome del dominio viene mostrato nella seguente tabella.
 I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
 {: deprecated}
 
-Puoi indicare come destinazione il registro locale eseguendo il comando `ibmcloud cr region-set`.
+#### Nomi del dominio del controllo vulnerabilità 
+{: #registry_regions_global_va}
 
-Ad esempio, per specificare il registro globale, immetti il seguente comando:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-Per ulteriori informazioni sul comando `ibmcloud cr region-set`, vedi [CLI di {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-Dopo aver specificato come destinazione il registro globale, esegui il comando `ibmcloud cr login` per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}.
-
-**Nomi del dominio del controllo vulnerabilità**
-
-Il nome del dominio del controllo vulnerabilità globale è stato modificato. Il nuovo nome del dominio è disponibile nella console e nella CLI. 
+Il nome del dominio del controllo vulnerabilità globale è stato modificato. Il nuovo nome del dominio è disponibile nella console e nella CLI.
+{:shortdesc}
 
 Il nuovo nome del dominio viene mostrato nella seguente tabella.
 
@@ -404,6 +369,21 @@ Il nuovo nome del dominio viene mostrato nella seguente tabella.
 
 I nomi del dominio `bluemix.net` esistenti sono obsoleti, ma puoi continuare ad utilizzarli per il momento e la data di termine del supporto sarà annunciata più avanti.
 {: deprecated}
+
+#### Selezione del registro globale
+{: #registry_regions_global_target}
+
+Puoi indicare come destinazione il registro locale eseguendo il comando [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
+{:shortdesc}
+
+1. Per specificare il registro globale, immetti il seguente comando:
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Per registrare il tuo daemon Docker locale nel registro globale in modo da poter eseguire il pull delle immagini pubbliche fornite da {{site.data.keyword.IBM_notm}}, esegui il comando `ibmcloud cr login`.
 
 ## Supporto per Docker
 {: #docker}

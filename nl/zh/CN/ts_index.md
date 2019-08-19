@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -54,6 +54,7 @@ subcollection: registry
 `ibmcloud cr login` 命令失败。
 
 {: tsCauses}
+下列替代方法是可能的原因：
 
 - `container-registry` CLI 插件不是最新的，需要更新。
 - Docker 未安装在本地计算机上，或者未运行。
@@ -75,13 +76,10 @@ subcollection: registry
 所有 `ibmcloud cr` 命令都失败。
 
 {: tsCauses}
-
-- `container-registry` CLI 插件不是最新的，需要更新。
+`container-registry` CLI 插件不是最新的，需要更新。
 
 {: tsResolve}
-可以通过以下方式来解决此问题：
-
-- 升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
+升级到 `container-registry` CLI 插件的最新版本；请参阅[更新 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
 ## {{site.data.keyword.registrylong_notm}} 命令失败，消息为：`'cr' is not a registered command. See 'ibmcloud help'. `
 {: #ts_login_error}
@@ -104,13 +102,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- 未安装 `container-registry` CLI 插件。
+未安装 `container-registry` CLI 插件。
 
 {: tsResolve}
-可以通过以下方式来解决此问题：
-
-- 安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
+安装 `container-registry` CLI 插件；请参阅[安装 `container-registry` CLI 插件](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)。
 
 ## `ibmcloud cr build` 命令失败
 {: #ts_build_fails}
@@ -139,6 +134,7 @@ docker build --no-cache .
 运行 `ibmcloud cr namespace-add` 时，无法将输入的值设置为名称空间。
 
 {: tsCauses}
+下列替代方法是可能的原因：
 
 - 输入的名称空间值已经由其他 {{site.data.keyword.cloud_notm}} 组织在使用。
 - 某个名称空间最近已删除，而您复用的是该名称空间的名称。如果已删除的名称空间包含大量资源，那么 {{site.data.keyword.registrylong_notm}} 可能尚未完全处理完删除操作。
@@ -184,6 +180,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
+下列替代方法是可能的原因：
 
 - Docker 未安装。
 - Docker 客户机未登录到 {{site.data.keyword.registrylong_notm}}。
@@ -220,13 +217,13 @@ denied: requested access to the resource is denied
 对于来自 IBM Passport Advantage 的软件包（例如，映像和 Helm chart），必须使用 `ibmcloud cr ppa-archive-load` 命令将它们导入到注册表中。
 
 {: tsResolve}
-**开始之前**
+在开始从 IBM Passport Advantage 导入产品之前，请完成以下任务：
 
-- 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.cloud_notm}}。
-- 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.registrylong_notm}}。
-- [将 `kubectl` CLI 的目标设定为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
-- 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers?topic=containers-helm#helm)。
-- 如果要在组织内共享图表，可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。有关指示信息，请参阅此 [developerWorks 诀窍 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
+1. 通过运行 `ibmcloud login [--sso]` 登录到 {{site.data.keyword.cloud_notm}}。
+2. 通过运行 `ibmcloud login` 登录到 {{site.data.keyword.registrylong_notm}}。
+3. [将 `kubectl` CLI 的目标设定为集群](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)。
+4. 如果尚未在集群中设置 Helm，请[立即在集群中设置 Helm](/docs/containers?topic=containers-helm#helm)。
+5. 如果要在组织内共享图表，可以安装 [Chart Museum 开放式源代码项目 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/helm/charts/tree/master/stable/chartmuseum)。有关指示信息，请参阅此 [developerWorks 诀窍 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)。
 
 ### 导入 IBM Passport Advantage 产品以在 {{site.data.keyword.cloud_notm}} 中使用
 {: #ts_ppa_import}
@@ -252,7 +249,7 @@ denied: requested access to the resource is denied
    如果要将 IBM Passport Advantage 归档中的 Helm Chart 上传到 Chart Museum，请在命令中包含以下选项：`ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
-   **示例输出**
+   以下消息是命令输出的示例：
 
    ```
 user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
@@ -314,7 +311,6 @@ helm install ppa-import/charts/<helm_chart>.tgz --set license=accept
 
 
 {: tsResolve}
-
 支持集群从防火墙后访问基础架构资源和服务，请参阅[允许集群访问基础架构资源和其他服务](/docs/containers?topic=containers-firewall#firewall_outbound)。
 
 对于指向计算机的 INBOUND 连接，允许入局网络流量从源网络组流向计算机的目标公共 IP 地址。

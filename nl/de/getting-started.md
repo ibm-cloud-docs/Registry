@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -41,19 +41,15 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
 ## Namensbereich einrichten
 {: #gs_registry_namespace_add}
 
-1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an.
+1. Melden Sie sich bei {{site.data.keyword.cloud_notm}} an:
 
    ```
    ibmcloud login
    ```
    {: pre}
 
-   Wenn Sie über eine föderierte ID verfügen, melden Sie sich mit dem folgenden Befehl an:
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   Wenn Sie über eine eingebundene ID verfügen, verwenden Sie `ibmcloud login --sso`, um sich anzumelden. Geben Sie Ihren Benutzernamen ein und verwenden Sie die bereitgestellte URL in der CLI-Ausgabe zum Abrufen Ihres einmaligen Kenncodes. Wenn Sie über eine eingebundene ID verfügen, schlägt die Anmeldung ohne die Option `--sso` fehl; mit der Option `--sso` ist sie erfolgreich.
+   {: tip}
 
 2. Fügen Sie einen Namensbereich hinzu, um Ihr eigenes Image-Repository zu erstellen. Ersetzen Sie `<my_namespace>` durch den gewünschten Namensbereich.
 
@@ -139,7 +135,7 @@ Beziehen Sie keine personenbezogenen Daten in Ihre Container-Images, Namensberei
    ```
    {: pre}
 
-Herzlichen Glückwunsch! Sie haben einen Namensbereich in {{site.data.keyword.registrylong_notm}} konfiguriert und mit Push-Operation Ihr erstes Image an Ihren Namensbereich übertragen.
+Sie haben einen Namensbereich in {{site.data.keyword.registrylong_notm}} konfiguriert und mit Push-Operation Ihr erstes Image an Ihren Namensbereich übertragen.
 
 ## Weitere Schritte
 {: #gs_get_start_next}

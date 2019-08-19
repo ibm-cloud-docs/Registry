@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ subcollection: registry
 您無法組織及指派對資源群組中之登錄名稱空間的存取權。
 {: note}
 
-**開始之前**
+開始之前，請完成下列作業：
 
 - 決定每位使用者所需的角色，以及 {{site.data.keyword.registrylong_notm}} 中的資源，請參閱 [IAM 角色](/docs/services/Registry?topic=registry-iam#iam)。請考量您可以建立多個原則，例如，您可以授與資源的寫入權，但只授與另一個資源的讀取權，而且無法授與另一個資源的存取權。原則是加總性的，表示廣域讀取原則及資源範圍寫入原則會授與該資源的讀取權及寫入權。
 

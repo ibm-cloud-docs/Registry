@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ Si vous souhaitez accorder un accès à tout, ne spécifiez pas un type de resso
 Vous ne pouvez pas organiser et affecter un accès aux espaces de nom de registre dans des groupes de ressources.
 {: note}
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - Déterminez les rôles à affecter à chaque utilisateur et sur quelles ressources {{site.data.keyword.registrylong_notm}}. Voir [Rôles IAM](/docs/services/Registry?topic=registry-iam#iam). Tenez compte du fait que vous pouvez créer plusieurs règles, par exemple, vous pouvez accorder des droits d'accès en écriture sur une ressource, accorder des droits d'accès en lecture seule sur une autre ressource, et n'accorder aucun droit d'accès sur une autre ressource. Les règles s'additionnent, ce qui signifie qu'une règle d'accès en lecture globale et une règle d'accès en écriture limitée à une ressource octroient des droits d'accès en lecture et en écriture sur cette ressource.
 

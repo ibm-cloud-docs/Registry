@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -65,6 +65,7 @@ subcollection: registry
 對於 {{site.data.keyword.registrylong_notm}}，存在下列動作：
 
 |動作|對服務的作業| 角色
+|
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) 移除一個以上的指定記號。| 管理者 |
 | `container-registry.registrytoken.get` |[`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) 從登錄擷取指定的記號。| 管理者 |
@@ -78,9 +79,9 @@ subcollection: registry
 
 | 服務存取角色 | 動作的說明 | 範例動作 |
 |:-----------------|:-----------------|:-----------------|
-| 讀者 |「讀者」角色可以檢視資訊。| <ul><li>檢視、檢查及取回映像檔</li><li>檢視名稱空間</li><li>檢視配額</li><li>檢視漏洞報告</li><li>檢視映像檔簽章</li></ul>|
-| 撰寫者 |「撰寫者」角色可以編輯資訊。|<ul><li>建置、推送及刪除映像檔</li><li>檢視配額</li><li>簽署映像檔</li><li>新增及移除名稱空間</li></ul> |
-| 管理員 |「管理員」角色可以執行所有動作。| <ul><li>檢視、檢查、取回、建置、推送及刪除映像檔</li><li>檢視、新增及移除名稱空間</li><li>檢視及設定配額</li><li>檢視漏洞報告</li><li>檢視及建立映像檔簽章</li><li>檢閱及變更定價方案</li><li>啟用 IAM 原則強制執行</li><li>管理 Vulnerability Advisor 豁免</li></ul> |
+| 讀者 |「讀者」角色可以檢視資訊。| <ul><li>檢視、檢查及取回映像檔</li><li>檢視名稱空間</li><li>檢視配額</li><li>檢視漏洞報告</li><li>檢視映像檔簽章</li><li>清除您的名稱空間，只保留符合準則的映像檔。（您也必須具有撰寫者角色。）</li></ul>|
+| 撰寫者 |「撰寫者」角色可以編輯資訊。|<ul><li>建置、推送及刪除映像檔</li><li>檢視配額</li><li>簽署映像檔</li><li>新增及移除名稱空間</li><li>清除您的名稱空間，只保留符合準則的映像檔。（您也必須具有讀者角色。）</li></ul> |
+| 管理員 |「管理員」角色可以執行所有動作。| <ul><li>檢視、檢查、取回、建置、推送及刪除映像檔</li><li>檢視、新增及移除名稱空間</li><li>檢視及設定配額</li><li>檢視漏洞報告</li><li>檢視及建立映像檔簽章</li><li>檢閱及變更定價方案</li><li>啟用 IAM 原則強制執行</li><li>管理 Vulnerability Advisor 豁免</li><li>清除您的名稱空間，只保留符合準則的映像檔。</li></ul> |
 {: caption="表 3. IAM 服務存取角色及動作" caption-side="top"}
 
  對於下列 {{site.data.keyword.registrylong_notm}} 指令，您必須至少具有下列各表格中所顯示的其中一個指定角色。若要建立容許存取 {{site.data.keyword.registrylong_notm}} 的原則，您必須建立原則，其中，服務名稱是 `container-registry`、服務實例是空的，而且地區是您要授與存取權的地區，或是空的地區以授與對所有地區的存取權。
@@ -90,7 +91,7 @@ subcollection: registry
 
 若要將在您帳戶中配置 {{site.data.keyword.registrylong_notm}} 的許可權授與給使用者，您必須建立原則，以授與下表中的一個以上角色。建立原則時，您不得指定 `resource-type` 或 `resource`。
 
-**範例**
+例如，請使用下列指令，其中 `<user_email>` 是使用者的電子郵件位址：
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
@@ -98,6 +99,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 {: pre}
 
 |動作|對服務的作業| 角色
+|
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) 啟用 IAM 原則強制執行。| 管理員 |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) 建立安全問題的豁免。</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) 列出安全問題的豁免。</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) 刪除安全問題的豁免。</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) 列出您可豁免的安全問題類型。</li></ul> | 管理員 |
@@ -115,7 +117,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 您無法組織及指派對資源群組中之登錄名稱空間的存取權。
 {: note}
 
-**範例**
+例如，請使用下列指令，其中 `<user_email>` 是使用者的電子郵件位址：
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
@@ -123,14 +125,15 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 {: pre}
 
 |動作|對服務的作業| 角色
+|
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) 建置容器映像檔。| 撰寫者、管理員 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 刪除一個以上的映像檔。<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。</li><li> `docker trust revoke` 刪除簽章。</li></ul> | 撰寫者、管理員 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 刪除一個以上的映像檔。<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) 從 {{site.data.keyword.registrylong_notm}} 中的每個指令映像檔移除一個標籤或數個標籤。</li><li> `docker trust revoke` 刪除簽章。</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) 清除您的名稱空間，只保留符合準則的映像檔。</li></ul> |撰寫者、管理員</br></br>若要執行 `ibmcloud cr retention-run`，必須同時具有「讀者」和「撰寫者」角色，或者具有「管理員」角色。|
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) 顯示特定映像檔的詳細資料。| 讀者、管理員 |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 列出容器映像檔。| 讀者、管理員 |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) 列出容器映像檔。</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) 清除您的名稱空間，只保留符合準則的映像檔。</li></ul> |讀者、管理員</br></br>若要執行 `ibmcloud cr retention-run`，必須同時具有「讀者」和「撰寫者」角色，或者具有「管理員」角色。|
 | `container-registry.image.pull` | <ul><li> `docker pull` 取回映像檔。</li><li> `docker trust inspect` 檢查簽章。</li></ul> | 讀者、撰寫者、管理員 |
 | `container-registry.image.push` | <ul><li>`docker push` 推送映像檔。</li><li>`docker trust sign` 簽署映像檔。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) 將從 [IBM Passport Advantage Online for customers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/software/passportadvantage/pao_customer.html) 下載並包裝以與 Helm 搭配使用的 IBM 軟體，匯入到您的 {{site.data.keyword.registrylong_notm}} 名稱空間。</li></ul> | 撰寫者、管理員 |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) 建立參照來源映像檔的新映像檔。來源及目標映像檔必須位於相同地區。|來源映像檔的「讀者」、「撰寫者」或「管理員」；目標映像檔的「撰寫者」或「管理員」|
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) 建立參照來源映像檔的新映像檔。來源及目標映像檔必須位於相同地區。|對於來源映像檔，為讀者、撰寫者或管理員。</br></br>對於目標映像檔，為撰寫者或管理員。|
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) 檢視映像檔的漏洞評量報告。| 讀者、管理員 |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) 新增名稱空間。| 撰寫者、管理員 |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) 移除名稱空間。| 撰寫者、管理員 |

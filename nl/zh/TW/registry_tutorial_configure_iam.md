@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# 指導教學：授與 {{site.data.keyword.registrylong_notm}} 資源存取權
+# 授權存取 {{site.data.keyword.registrylong_notm}} 資源指導教學
 {: #iam_access}
 
 使用本指導教學，瞭解如何配置 {{site.data.keyword.registrylong_notm}} 的 {{site.data.keyword.iamlong}} (IAM) 以授與資源存取權。
@@ -30,13 +30,16 @@ subcollection: registry
 
 本指導教學大約需要 45 分鐘。
 
-**開始之前**
+## 在開始之前
+{: #iam_access_prereq}
+
+在開始之前，必須完成下列作業：
 
 - 完成[開始使用 {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started) 中的指示。
 
 - 確保您具有最新版的 {{site.data.keyword.cloud_notm}} CLI `container-registry` CLI 外掛程式，請參閱[更新 `container-registry` CLI 外掛程式](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)。
 
-- 您必須有權存取可用於本指導教學的兩個 [{{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/login)：一個適用於「使用者 A」，一個適用於「使用者 B」，而且每個都必須使用唯一的電子郵件位址。您使用自己的帳戶（使用者 A）工作，並邀請另一位使用者（使用者 B）使用您的帳戶。您可以選擇建立第二個 {{site.data.keyword.cloud_notm}} 帳戶，也可以與具有 {{site.data.keyword.cloud_notm}} 帳戶的同事一起工作。
+- 確保您有權存取可用於本指導教學的兩個 [{{site.data.keyword.cloud_notm}} 帳戶 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/login)，一個是使用者 A 的帳戶，一個是使用者 B 的帳戶，每個帳戶必須使用唯一的電子郵件位址。您使用自己的帳戶（使用者 A）工作，並邀請另一位使用者（使用者 B）使用您的帳戶。您可以選擇建立第二個 {{site.data.keyword.cloud_notm}} 帳戶，也可以與具有 {{site.data.keyword.cloud_notm}} 帳戶的同事一起工作。
 
 - 如果您在 2018 年 10 月 4 日之前開始在帳戶中使用 {{site.data.keyword.registrylong_notm}}，則必須執行 `ibmcloud cr iam-policies-enable` 指令來啟用 IAM 原則強制執行。如果您已邀請其他使用您 {{site.data.keyword.registrylong_notm}} 名稱空間的使用者加入您的 IBM Cloud 帳戶，則請使用與「使用者 A」不同的帳戶來防止中斷其存取。
 
@@ -87,15 +90,15 @@ subcollection: registry
         ```
         {: pre}
 
-        因為「使用者 B」沒有正確的存取權，所以指令失敗。
+        此指令失敗，因為使用者 B 沒有正確的存取權。
 
 3. 將「管理員」角色授與「使用者 B」，讓「使用者 B」可以配置 {{site.data.keyword.registrylong_notm}}：
 
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，建立原則以將「管理員」角色授與「使用者 B」：
@@ -121,7 +124,7 @@ subcollection: registry
         ```
         {: pre}
 
-        其運作原因是「使用者 B」具有正確的存取權類型。
+        此指令有效，因為使用者 B 有正確類型的存取權。
 
     3. 現在，執行下列指令，以變更回配額：
   
@@ -135,8 +138,8 @@ subcollection: registry
     1. 執行下列指令，以您自己的身分（使用者 A）重新登入帳戶：
   
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
   
     2. 列出「使用者 B」的原則，並執行下列指令找到您剛才建立的原則，然後記下 ID：
@@ -164,8 +167,8 @@ subcollection: registry
     1. 執行下列指令，以「使用者 A」身分登入：
 
         ```
-    ibmcloud login
-    ```
+        ibmcloud login
+        ```
         {: pre}
 
     2. 執行下列指令，以建立 `namespace_a`：
@@ -402,7 +405,7 @@ subcollection: registry
         ```
         {: pre}
 
-    2. 執行下列指令，以建立名為 `cr-roles-tutorial` 的服務 ID，且說明為 `"Created during the access control tutorial for Container Registry"`：
+    2. 執行下列指令，以建立名稱為 `cr-roles-tutorial` 的服務 ID，且說明為 `"Created during the access control tutorial for Container Registry"`：
 
         ```
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
@@ -533,4 +536,4 @@ subcollection: registry
    ```
    {: pre}
 
-很好！您已順利完成本指導教學。
+您已順利完成本指導教學。

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -48,12 +48,8 @@ subcollection: registry
    ```
    {: pre}
 
-   フェデレーテッド ID がある場合は、次のコマンドを使用してログインします。
-
-   ```
-   ibmcloud login --sso
-   ```
-   {: pre}
+   フェデレーテッド ID がある場合は、`ibmcloud login --sso` を使用してログインします。 ユーザー名を入力し、CLI 出力に示された URL を使用してワンタイム・パスコードを取得します。 フェデレーテッド ID がある場合、`--sso` がなければログインは失敗し、`--sso` オプションを付ければログインが成功します。
+　 {: tip}
 
 2. 名前空間を追加して、独自のイメージ・リポジトリーを作成します。 `<my_namespace>` を、使用したい名前空間に置き換えてください。
 
@@ -139,7 +135,7 @@ subcollection: registry
    ```
    {: pre}
 
-おつかれさまでした。 これで、{{site.data.keyword.registrylong_notm}} 内に名前空間がセットアップされ、最初のイメージが名前空間にプッシュされました。
+これで、{{site.data.keyword.registrylong_notm}} 内に名前空間がセットアップされ、最初のイメージが名前空間にプッシュされました。
 
 ## 次のステップ
 {: #gs_get_start_next}

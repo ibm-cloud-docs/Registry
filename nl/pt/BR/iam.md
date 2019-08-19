@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -64,7 +64,7 @@ A tabela a seguir detalha as ações que são mapeadas para funções de gerenci
 
 Para {{site.data.keyword.registrylong_notm}}, existem as seguintes ações:
 
-| Ação| Operação em serviço | Função
+| Ação| Operação em serviço | Função |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Remova um ou mais tokens especificados. | Administrador |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Recupere o token especificado por meio do registro. | Administrador |
@@ -78,9 +78,9 @@ A tabela a seguir detalha as ações que são mapeadas para as funções de aces
 
 | Função de acesso de serviço | Descrição das ações | Ações de exemplo|
 |:-----------------|:-----------------|:-----------------|
-| Leitor | A função de Leitor pode visualizar informações. | <ul><li>Visualizar, inspecionar e fazer pull de imagens</li><li>Visualizar namespaces</li><li>Visualizar cotas</li><li>Visualizar relatórios de vulnerabilidade</li><li>Visualizar assinaturas de imagem</li></ul>|
-| Gravador | A função de Gravador pode editar informações. |<ul><li>Construir, enviar por push e excluir imagens</li><li>Visualizar cotas</li><li>Assinar imagens</li><li>Incluir e remover namespaces</li></ul> |
-| Gerente | A função de Gerenciador pode executar todas as ações. | <ul><li>Visualizar, inspecionar, fazer pull, construir, enviar por push e excluir imagens</li><li>Visualizar, incluir e remover namespaces</li><li>Visualizar e configurar cotas</li><li>Visualizar relatórios de vulnerabilidade</li><li>Visualizar e criar assinaturas de imagem</li><li>Revisar e mudar planos de precificação</li><li>Ativar o cumprimento de política do IAM</li><li>Gerenciar isenções do Vulnerability Advisor</li></ul> |
+| Leitor | A função de Leitor pode visualizar informações. | <ul><li>Visualizar, inspecionar e fazer pull de imagens</li><li>Visualizar namespaces</li><li>Visualizar cotas</li><li>Visualizar relatórios de vulnerabilidade</li><li>Visualizar assinaturas de imagem</li><li>Limpe seus namespaces, retendo apenas imagens que atendam aos seus critérios. (Deve-se também ter a função Gravador).</li></ul>|
+| Gravador | A função de Gravador pode editar informações. |<ul><li>Construir, enviar por push e excluir imagens</li><li>Visualizar cotas</li><li>Assinar imagens</li><li>Incluir e remover namespaces</li><li>Limpe seus namespaces, retendo apenas imagens que atendam aos seus critérios. (Deve-se também ter a função Leitor).</li></ul> |
+| Gerente | A função de Gerenciador pode executar todas as ações. | <ul><li>Visualizar, inspecionar, fazer pull, construir, enviar por push e excluir imagens</li><li>Visualizar, incluir e remover namespaces</li><li>Visualizar e configurar cotas</li><li>Visualizar relatórios de vulnerabilidade</li><li>Visualizar e criar assinaturas de imagem</li><li>Revisar e mudar planos de precificação</li><li>Ativar o cumprimento de política do IAM</li><li>Gerenciar isenções do Vulnerability Advisor</li><li>Limpe seus namespaces, retendo apenas imagens que atendam aos seus critérios. </li></ul> |
 {: caption="Tabela 3. Funções e ações de acesso do serviço IAM" caption-side="top"}
 
  Para os comandos do {{site.data.keyword.registrylong_notm}} a seguir, deve-se ter pelo menos uma das funções especificadas, conforme mostrado nas tabelas a seguir. Para criar uma política que permita acesso ao {{site.data.keyword.registrylong_notm}}, deve-se criar uma política em que o nome do serviço seja `container-registry`, a instância de serviço esteja vazia e a região seja a região à qual você deseja conceder acesso ou esteja vazia para conceder acesso a todas as regiões.
@@ -90,14 +90,14 @@ A tabela a seguir detalha as ações que são mapeadas para as funções de aces
 
 Para conceder a um usuário permissão para configurar seu {{site.data.keyword.registrylong_notm}} em sua conta, deve-se criar uma política que conceda uma ou mais funções na tabela a seguir. Ao criar sua política, não se deve especificar um `resource type` nem um `resource`.
 
-**Exemplo**
+Por exemplo, use o comando a seguir, em que `<user_email>` é o endereço de e-mail do usuário:
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
-| Ação| Operação em serviço | Função
+| Ação| Operação em serviço | Função |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Ative o cumprimento de política do IAM. | Gerente |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Crie uma isenção para um problema de segurança.</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) Listar suas isenções para problemas de segurança.</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Excluir uma isenção para um problema de segurança.</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) Listar os tipos de problemas de segurança que podem ser isentados.</li></ul> | Gerente |
@@ -115,22 +115,24 @@ Para conceder a um usuário permissão para acessar o conteúdo do {{site.data.k
 Não é possível organizar e designar acesso aos namespaces de registros em grupos de recursos.
 {: note}
 
-**Exemplo**
+Por exemplo, use o comando a seguir, em que `<user_email>` é o endereço de e-mail do usuário:
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
-| Ação | Operação em serviço | Função
+| Ação | Operação em serviço | Função |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Construa uma imagem de contêiner. | Gravador, Gerente |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Exclua uma ou mais imagens.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remover uma ou diversas tags de cada imagem especificada no {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Exclua a assinatura. </li></ul> | Gravador, Gerente |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Exclua uma ou mais imagens.<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remover uma ou diversas tags de cada imagem especificada no {{site.data.keyword.registrylong_notm}}.</li><li>`docker trust revoke` Exclua a assinatura. </li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Limpe seus namespaces,
+retendo apenas imagens que atendam seus critérios.</li></ul> | Gravador, Gerenciador</br></br>Para executar `ibmcloud cr retention-run`, deve-se ter ambos, Leitor e Gravador ou Gerenciador. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Exiba detalhes sobre uma imagem específica. | Leitor, Gerenciador |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Liste suas imagens de contêiner. | Leitor, Gerenciador |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) Liste suas imagens de contêiner.</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Limpe seus namespaces,
+retendo apenas imagens que atendam seus critérios.</li></ul> | Leitor, Gerenciador</br></br>Para executar `ibmcloud cr retention-run`, deve-se ter ambos, Leitor e Gravador ou Gerenciador. |
 | `container-registry.image.pull` | <ul><li>`docker pull` Faça pull da imagem. </li><li>`docker trust inspect` Inspecione a assinatura. </li></ul> | Leitor, Gravador, Gerenciador |
 | `container-registry.image.push` | <ul><li>`docker push` Envie a imagem por push.</li><li>`docker trust sign` Assine a imagem.</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) Importa software da IBM que é transferido por download por meio do [IBM Passport Advantage Online para clientes ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) e empacotado para uso com o Helm no namespace do {{site.data.keyword.registrylong_notm}}.</li></ul> | Gravador, Gerente |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Crie uma nova imagem que se refira a uma imagem de origem. As imagens de origem e de destino devem estar na mesma região. | Leitor, Gravador ou Gerenciador para a imagem de origem; Gravador ou Gerenciador para a imagem de destino |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) Crie uma nova imagem que se refira a uma imagem de origem. As imagens de origem e de destino devem estar na mesma região. | Leitor, Gravador ou Gerenciador para a imagem de origem.</br></br>Gravador ou Gerenciador para a imagem de destino. |
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) Visualize um relatório de avaliação de vulnerabilidade para sua imagem. | Leitor, Gerenciador |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) Inclua um namespace. | Gravador, Gerente |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) Remova um namespace. | Gravador, Gerente |

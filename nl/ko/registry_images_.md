@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ subcollection: registry
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리의 이미지를 컴퓨터로 가져옵니다."/>
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
@@ -49,10 +49,10 @@ subcollection: registry
 
   루트 권한 없이 Docker 명령을 실행하도록 권한을 변경하는 경우 `ibmcloud login` 명령을 다시 실행해야 합니다.
 
-이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)를 참조하십시오.
+1. 이미지를 다운로드하고 시작하기 문서에서 [이미지 가져오기](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling)를 참조하십시오.
 
-`unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
-{:tip}
+   `unauthorized: authentication required` 또는 `denied: requested access to the resource is denied` 메시지가 표시되면 `ibmcloud cr login` 명령을 실행하십시오.
+   {:tip}
 
 이미지를 가져와 네임스페이스에 대한 태그를 지정한 후에는 로컬 컴퓨터에서 네임스페이스로 이미지를 업로드(푸시)할 수 있습니다.
 
@@ -64,7 +64,7 @@ subcollection: registry
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="사용자의 컴퓨터에서 {{site.data.keyword.registrylong_notm}}로 이미지 푸시"/>
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
@@ -105,7 +105,7 @@ subcollection: registry
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="개인용 또는 공용 레지스트리의 이미지를 개인용 {{site.data.keyword.cloud_notm}} 레지스트리에 복사합니다."/>
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
@@ -132,7 +132,7 @@ subcollection: registry
 이 메커니즘을 사용하여 작성된 새 이미지는 서명을 보유하지 않습니다. 새 이미지에 서명을 해야 하는 경우, 이 메커니즘을 사용하지 마십시오.
 {: tip}
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - 다른 이미지를 참조할 소스 이미지를 포함하는 {{site.data.keyword.registrylong_notm}}의 개인용 네임스페이스에 대한 액세스 권한이 있는지 확인하십시오.
@@ -168,7 +168,7 @@ subcollection: registry
 {{site.data.keyword.cloud_notm}}에서 직접 Docker 이미지를 빌드하거나 로컬 컴퓨터에 고유 Docker 이미지를 작성하고 {{site.data.keyword.registrylong_notm}}의 네임스페이스에 업로드(푸시)할 수 있습니다.
 {:shortdesc}
 
-**시작하기 전에**
+시작하기 전에 다음 태스크를 완료하십시오.
 
 - 네임스페이스의 이미지로 작업하려면 [CLI를 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)하십시오.
 - [{{site.data.keyword.registrylong_notm}}에서 고유의 네임스페이스를 설정](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup)하십시오.
@@ -187,19 +187,18 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
     1. 로컬 디렉토리에 Dockerfile을 작성하십시오.
 
         ```
-    touch Dockerfile
+        touch Dockerfile
         ```
         {: pre}
 
     2. 텍스트 편집기를 사용하여 Dockerfile을 여십시오. 최소한, 이미지를 빌드하려면 기본 이미지를 추가해야 합니다. `<source_image>`와 `<tag>`를 사용하려는 이미지 저장소와 태그로 대체하십시오. 다른 개인용 레지스트리의 이미지를 사용하는 경우, 이 {{site.data.keyword.registrylong_notm}}에서 이미지에 대한 전체 경로를 정의하십시오.
 
        ```
-    FROM <source_image>:<tag>
+       FROM <source_image>:<tag>
        ```
        {: pre}
 
-       **예제**
-     공용 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty(ibmliberty) 이미지를 기반으로 하는 Dockerfile을 작성하려면 다음 코드를 사용하십시오.
+       예를 들어, 공용 {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty(ibmliberty) 이미지를 기반으로 하는 Dockerfile을 작성하려면 다음 명령을 사용하십시오.
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -224,7 +223,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
    - {{site.data.keyword.cloud_notm}}에서 직접 이미지를 빌드하려면 다음 명령을 실행하십시오.
 
      ```
-    ibmcloud cr build -t <image_name> <directory>
+     ibmcloud cr build -t <image_name> <directory>
      ```
      {: pre}
 
@@ -236,7 +235,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
       1. 로컬 컴퓨터의 Dockerfile에서 이미지를 빌드하고 이미지 이름으로 태그를 지정하십시오.
 
          ```
-      docker build -t <image_name> <directory>
+         docker build -t <image_name> <directory>
          ```
          {: pre}
 
@@ -245,7 +244,7 @@ Docker 이미지는 작성하는 모든 컨테이너의 기초가 됩니다. 이
       2. 선택사항: 네임스페이스에 이미지를 푸시하기 전에 로컬 컴퓨터에서 이를 테스트하십시오.
 
          ```
-      docker run <image_name>
+         docker run <image_name>
          ```
          {: pre}
 
@@ -260,6 +259,8 @@ Vulnerability Advisor를 사용하여 이미지의 보안을 확인하려면 [Vu
 
 API 키를 사용하여 이미지를 {{site.data.keyword.registrylong_notm}}에 푸시하는 서비스 ID를 작성하십시오.
 {:shortdesc}
+
+다음 단계를 완료하십시오.
 
 1. 서비스 ID를 작성하십시오. [서비스 ID 작성 및 관련 작업 수행](/docs/iam?topic=iam-serviceids#serviceids)을 참조하십시오.
 2. 레지스트리에 액세스할 수 있는 권한을 서비스 ID에 제공하는 정책을 작성하십시오(예: `Administrator` 및 `Manager` 역할). [Identity and Access Management를 사용한 사용자 액세스 관리](/docs/services/Registry?topic=registry-iam#iam)를 참조하십시오.
@@ -383,9 +384,8 @@ GUI를 사용하여 이미지를 삭제하려면 다음 단계를 완료하십�
 특정 저장소를 삭제하면 해당 저장소의 모든 이미지가 삭제됩니다. 이 조치는 실행 취소할 수 없습니다.
 {: important}
 
-**시작하기 전에**
-
-보존할 이미지를 백업해야 합니다.
+시작하기 전에 보존할 이미지를 백업해야 합니다.
+{: tip}
 
 GUI를 사용하여 개인용 저장소를 삭제하려면 다음 단계를 완료하십시오.
 

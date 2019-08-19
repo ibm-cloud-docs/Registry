@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -75,9 +75,9 @@ Cada imagem é construída por meio de uma série de camadas que representam, ca
 
 Exemplo para enviar imagens por push:
 
-> Você envia por push uma imagem para o seu namespace que é baseada na imagem do Ubuntu. A imagem do Ubuntu contém várias camadas. Como você ainda não tem essas camadas em sua conta, a quantia de armazenamento que essas camadas requerem será incluída em seu uso mensal.
->
-> Posteriormente, você cria uma segunda imagem que é baseada na imagem do Ubuntu. Você muda a imagem base do Ubuntu, por exemplo, incluindo comandos ou arquivos adicionais em seu Dockerfile. Cada mudança representa uma nova camada de imagem. Quando você enviar por push a segunda imagem, o {{site.data.keyword.registrylong_notm}} reconhecerá que todas as camadas da imagem base do Ubuntu já estão armazenadas em sua conta. Você não será cobrado por armazenar essas camadas uma segunda vez, mesmo que tenha enviado por push a sua imagem para outro namespace. O {{site.data.keyword.registrylong_notm}} determina o tamanho de todas as novas camadas e inclui a quantia de armazenamento em seu uso mensal.
+Você envia por push uma imagem para o seu namespace que é baseada na imagem do Ubuntu. A imagem do Ubuntu contém várias camadas. Como você ainda não tem essas camadas em sua conta, a quantia de armazenamento que essas camadas requerem será incluída em seu uso mensal.
+
+Posteriormente, você cria uma segunda imagem que é baseada na imagem do Ubuntu. Você muda a imagem base do Ubuntu, por exemplo, incluindo comandos ou arquivos adicionais em seu Dockerfile. Cada mudança representa uma nova camada de imagem. Quando você enviar por push a segunda imagem, o {{site.data.keyword.registrylong_notm}} reconhecerá que todas as camadas da imagem base do Ubuntu já estão armazenadas em sua conta. Você não será cobrado por armazenar essas camadas uma segunda vez, mesmo que tenha enviado por push a sua imagem para outro namespace. O {{site.data.keyword.registrylong_notm}} determina o tamanho de todas as novas camadas e inclui a quantia de armazenamento em seu uso mensal.
 
 ### Faturamento para armazenamento e tráfego extraído
 {: #registry_billing_traffic}
@@ -85,27 +85,31 @@ Exemplo para enviar imagens por push:
 Dependendo do plano de serviço escolhido, você será cobrado pelo armazenamento e pelo tráfego de pull usados por mês em cada região.
 {:shortdesc}
 
-**Armazenamento:**
+#### Memória
+{: #registry_billing_traffic_storage}
 
   Cada plano de serviço do {{site.data.keyword.registrylong_notm}} vem com uma determinada quantia de armazenamento que pode ser usada para armazenar as imagens do Docker nos namespaces de sua conta do {{site.data.keyword.cloud_notm}}. Se você estiver no plano padrão, você será cobrado por GB/mês de uso. Os primeiros 0,5 GB/mês são gratuitos. Se você estiver no plano grátis, será possível armazenar as suas imagens no {{site.data.keyword.registrylong_notm}} de graça até atingir os limites de cota para o plano grátis. Um GB-Mês é uma média de 1 GB de armazenamento por um mês (730 horas).
+  {:shortdesc}
 
   Exemplo para o plano padrão:
 
-  > Você usa 5 GB em exatamente metade do mês e, depois, você envia várias imagens para o seu namespace e usa 10 GB pelo restante do mês. O seu uso mensal é calculado como segue:
-  >
-  > (5 GB x 0,5 (meses)) + (10 GB x 0,5 (meses)) = 2,5 + 5 = 7,5 GB/meses
-  >
-  > No plano padrão, os primeiros 0,5 GB/meses são grátis; portanto, você será cobrado por 7 GB/meses (7,5 GB/meses - 0,5 GB/meses).
+  Você usa 5 GB em exatamente metade do mês e, depois, você envia várias imagens para o seu namespace e usa 10 GB pelo restante do mês. O seu uso mensal é calculado como segue:
+  
+  (5 GB x 0,5 (meses)) + (10 GB x 0,5 (meses)) = 2,5 + 5 = 7,5 GB/meses
+  
+  No plano padrão, os primeiros 0,5 GB/meses são grátis; portanto, você será cobrado por 7 GB/meses (7,5 GB/meses - 0,5 GB/meses).
 
-**Puxe o tráfego:**
+#### Tráfego extraído
+{: #registry_billing_traffic_pull_traffic}
 
   Cada plano de serviço do {{site.data.keyword.registrylong_notm}} inclui uma determinada quantia de tráfego extraído grátis para as suas imagens privadas que são armazenadas em seu namespace. Tráfego extraído é a largura da banda que você usa quando puxa uma camada de uma imagem do seu namespace para a sua máquina local. Se você estiver no plano padrão, será cobrado por GB de uso por mês. Os primeiros 5 GB cada mês são grátis. Se você estiver no plano grátis, será possível puxar imagens do seu namespace até atingir o limite de cota para o plano grátis.
+  {:shortdesc}
 
   Exemplo para o plano padrão:
 
-  > No mês, você extraiu imagens que contêm camadas com um tamanho total de 14 GB. O seu uso mensal é calculado como segue:
-  >
-  > No plano padrão, os primeiros 5 GB por mês são grátis; portanto, você será cobrado por 9 GB (14 GB - 5 GB).
+  No mês, você extraiu imagens que contêm camadas com um tamanho total de 14 GB. O seu uso mensal é calculado como segue:
+  
+  No plano padrão, os primeiros 5 GB por mês são grátis; portanto, você será cobrado por 9 GB (14 GB - 5 GB).
 
 ### Limites de cota para armazenamento e tráfego extraído
 {: #registry_quota_limits}
@@ -113,25 +117,29 @@ Dependendo do plano de serviço escolhido, você será cobrado pelo armazenament
 Dependendo do plano de serviço escolhido, será possível enviar imagens por push e fazer pull de imagens para e de seu namespace, até atingir seus limites de cota específicos do plano ou customizados para cada região.
 {:shortdesc}
 
-**Armazenamento:**
+#### Memória
+{: #registry_quota_limits_storage}
 
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível enviar por push qualquer imagem para os namespaces em sua conta do {{site.data.keyword.cloud_notm}} até você [liberar espaço removendo imagens](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de seus namespaces ou [fazer upgrade para o plano padrão](#registry_plan_upgrade). Se você configurar os limites de cota para armazenamento em seu plano grátis ou padrão, também será possível [aumentar esse limite de cota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para ativar o envio por push de novas imagens novamente.
+  {:shortdesc}
 
   Exemplo para o plano padrão:
 
-  > O seu limite de cota atual para armazenamento está configurado como 1 GB. Todas as imagens privadas que são armazenadas nos namespaces de sua conta do {{site.data.keyword.cloud_notm}} já usam 900 MB desse armazenamento. Você tem 100 MB de armazenamento disponível até atingir o seu limite de cota. Um usuário deseja enviar por push uma imagem com um tamanho de 2 GB na máquina local. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário envie por push esta imagem.
-  >
-  > Após o envio por push, o {{site.data.keyword.registrylong_notm}} determina o tamanho real da imagem em seu namespace, que pode variar do tamanho em sua máquina local e verifica se o limite para armazenamento é atingido. Neste exemplo, o uso de armazenamento aumenta de 900 MB para 2 GB. Com o seu limite de cota atual configurado como 1 GB, o {{site.data.keyword.registrylong_notm}} impede que você envie por push imagens adicionais para o namespace.
+  O seu limite de cota atual para armazenamento está configurado como 1 GB. Todas as imagens privadas que são armazenadas nos namespaces de sua conta do {{site.data.keyword.cloud_notm}} já usam 900 MB desse armazenamento. Você tem 100 MB de armazenamento disponível até atingir o seu limite de cota. Um usuário deseja enviar por push uma imagem com um tamanho de 2 GB na máquina local. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário envie por push esta imagem.
+  
+  Após o envio por push, o {{site.data.keyword.registrylong_notm}} determina o tamanho real da imagem em seu namespace, que pode variar do tamanho em sua máquina local e verifica se o limite para armazenamento é atingido. Neste exemplo, o uso de armazenamento aumenta de 900 MB para 2 GB. Com o seu limite de cota atual configurado como 1 GB, o {{site.data.keyword.registrylong_notm}} impede que você envie por push imagens adicionais para o namespace.
 
-**Puxe o tráfego:**
+#### Tráfego extraído
+{: #registry_quota_limits_pull_traffic}
 
   Quando você atingir ou exceder os limites de cota para o seu plano, não será possível puxar qualquer imagem dos namespaces em sua conta do {{site.data.keyword.cloud_notm}} até que você espere o próximo período de faturamento iniciar, [faça upgrade para o plano padrão](#registry_plan_upgrade) ou [aumente os seus limites de cota para tráfego extraído](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Exemplo para o plano padrão:
 
-  > No mês, seu limite de cota para tráfego extraído está configurado para 5 GB. Você já puxou imagens de seus namespaces e usou 4,5 GB desse tráfego extraído. Você tem 0,5 GB de tráfego extraído disponível até atingir o seu limite de cota. Um usuário deseja puxar uma imagem do seu namespace com um tamanho de 1 GB. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário puxe essa imagem.
-  >
-  > Após a imagem ser puxada, o {{site.data.keyword.registrylong_notm}} determina a largura da banda que você usou durante a extração e verifica se o limite para o tráfego extraído é atingido. Nesse exemplo, o uso do tráfego de extração aumenta de 4,5 GB para 5,5 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do seu namespace.
+  No mês, seu limite de cota para tráfego extraído está configurado para 5 GB. Você já puxou imagens de seus namespaces e usou 4,5 GB desse tráfego extraído. Você tem 0,5 GB de tráfego extraído disponível até atingir o seu limite de cota. Um usuário deseja puxar uma imagem do seu namespace com um tamanho de 1 GB. Como o limite de cota ainda não foi atingido, o {{site.data.keyword.registrylong_notm}} permite que o usuário puxe essa imagem.
+  
+  Após a imagem ser puxada, o {{site.data.keyword.registrylong_notm}} determina a largura da banda que você usou durante a extração e verifica se o limite para o tráfego extraído é atingido. Nesse exemplo, o uso do tráfego de extração aumenta de 4,5 GB para 5,5 GB. Com o seu limite de cota atual configurado como 5 GB, o {{site.data.keyword.registrylong_notm}} impede que você puxe imagens do seu namespace.
 
 ### Custo
 {: #registry_cost}
@@ -157,8 +165,8 @@ Para fazer upgrade do seu plano de serviço, conclua as etapas a seguir:
    ```
    {: pre}
 
-   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.cloud_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Você sabe que tem um ID federado quando o login falha sem a opção `--sso` e é bem-sucedido com a opção `--sso`.
-    {:tip}
+   Se você tiver um ID federado, use `ibmcloud login --sso` para efetuar login na CLI do {{site.data.keyword.cloud_notm}}. Insira seu nome do usuário e use a URL fornecida na saída da CLI para recuperar sua senha descartável. Se você tiver um ID federado, o login falhará sem o `--sso` e será bem-sucedido com a opção `--sso`.
+   {:tip}
 
 2. Use como destino a região para a qual você deseja fazer upgrade do plano:
 
@@ -182,17 +190,11 @@ e [Regiões](/docs/services/Registry?topic=registry-registry_overview#registry_r
 
    Para obter mais informações, consulte [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Aprendendo o básico
-{: #registry_planning}
-
-Prepare-se para armazenar e compartilhar as imagens do Docker com o {{site.data.keyword.registrylong_notm}} aprendendo os conceitos básicos do registro.
-{:shortdesc}
-
-Não coloque informações pessoais em suas imagens de contêiner, nomes de namespace, campos de descrição ou em quaisquer dados de configuração de imagem (por exemplo, nomes de imagem ou rótulos de imagem).
-{: important}
-
-### Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
+## Entendendo os termos usados no {{site.data.keyword.registrylong_notm}}
 {: #terms}
+
+Descrições dos termos usados no {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -238,43 +240,19 @@ Não coloque informações pessoais em suas imagens de contêiner, nomes de name
 
 Para saber mais sobre os termos específicos do Docker, consulte o [Glossário do Docker ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.docker.com/glossary/).
 
-### Planejando namespaces
-{: #registry_namespaces}
-
-O {{site.data.keyword.registrylong_notm}} fornece um registro privado de imagem de vários locatários que é hospedado e gerenciado pela IBM. É possível armazenar e compartilhar as imagens do Docker nesse registro, configurando um namespace de registro.
-{:shortdesc}
-
-É possível configurar múltiplos namespaces, por exemplo, para ter repositórios separados para seus ambientes temporários e de produção. Se você deseja usar o registro em múltiplas regiões do {{site.data.keyword.cloud_notm}}, deve-se configurar um namespace para cada região. Os nomes de namespace são exclusivos dentro de regiões. É possível usar o mesmo nome de namespace para cada região, a menos que alguém já tenha um namespace com esse nome configurado nessa região.
-
-É possível controlar o acesso a seus namespaces usando políticas do IAM. Para obter mais informações, consulte [Definindo políticas de função de acesso de usuário](/docs/services/Registry?topic=registry-user#user).
-
-Para trabalhar somente com as imagens públicas fornecidas pela IBM, você não precisa configurar um namespace.
-
-Se você não tiver certeza se um namespace já está configurado para sua conta, execute o comando `ibmcloud cr namespace-list` para recuperar informações existentes de namespace.
-{:tip}
-
-Considere as regras a seguir ao escolher um namespace:
-
-- Seu namespace deve ser exclusivo em todas as contas do {{site.data.keyword.cloud_notm}} na mesma região.
-- Seu namespace deve ter entre 4 e 30 caracteres.
-- Seu namespace deve começar e terminar com uma letra ou número.
-- Seu namespace deve conter apenas letras minúsculas, números, hifens (-) e sublinhados (_).
-
-Não coloque informações pessoais nos nomes de namespace.
-{: important}
-
-Depois de configurar seu primeiro namespace, você é designado ao plano de serviço grátis do {{site.data.keyword.registrylong_notm}}, se ainda não tiver [feito upgrade de seu plano](#registry_plan_upgrade).
-
 ## Regiões
 {: #registry_regions}
 
 Os registros do {{site.data.keyword.registrylong_notm}} estão disponíveis em várias regiões.
 {:shortdesc}
 
+Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
+
 ### Regiões locais
 {: #registry_regions_local}
 
 Uma região local é uma área geográfica que é acessada por um terminal dedicado. Os nomes de domínio do {{site.data.keyword.registrylong_notm}} para as regiões que mudaram. Os novos nomes de domínio estão disponíveis no console e na CLI.
+{:shortdesc}
 
 Os nomes de domínio são mostrados na tabela a seguir.
 
@@ -290,9 +268,11 @@ Os nomes de domínio são mostrados na tabela a seguir.
 Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
 {: deprecated}
 
-** Nomes de domínio do Vulnerability Advisor **
+#### Nomes de domínio do Vulnerability Advisor
+{: #registry_regions_local_va}
 
 Os nomes de domínio do Vulnerability Advisor para as regiões mudaram. Os novos nomes de domínio estão disponíveis no console e na CLI.
+{:shortdesc}
 
 Os novos nomes de domínio são mostrados na tabela a seguir.
 
@@ -308,25 +288,27 @@ Os novos nomes de domínio são mostrados na tabela a seguir.
 Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
 {: deprecated}
 
-Todos os artefatos de registro estão com escopo definido para o registro regional específico com o qual você está trabalhando atualmente. Por exemplo, namespaces, imagens, tokens, configurações de cota e configurações do plano devem ser gerenciados separadamente para cada registro regional.
+#### Definindo uma região local como destino
+{: #registry_regions_local_target}
 
-Se desejar usar uma região diferente de sua região local, será possível destinar a região que você deseja acessar executando o comando `ibmcloud cr region-set`. É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
+Se desejar usar uma região diferente de sua região local, será possível destinar a região que você deseja acessar executando o comando [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set). É possível executar o comando sem parâmetros para obter uma lista de regiões disponíveis ou especificar a região como um parâmetro.
+{:shortdesc}
 
-Para executar o comando com parâmetros, substitua `<region>` pelo nome da região, por exemplo, `eu-central`.
+1. Para executar o comando com parâmetros, substitua `<region>` pelo nome da [região](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-Por exemplo, para ter como destino a região eu-central, execute o comando a seguir:
+   Por exemplo, para definir a região `eu-central` como destino, execute o comando a seguir:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-Depois de destinar uma região diferente, efetue login no registro novamente: `ibmcloud cr login`.
+2. Efetue login no registro executando o comando `ibmcloud cr login`.
 
 ### Registro Global
 {: #registry_regions_global}
@@ -346,22 +328,11 @@ O novo nome de domínio é mostrado na tabela a seguir.
 Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
 {: deprecated}
 
-É possível destinar o registro global executando o comando `ibmcloud cr region-set`.
+#### Nomes de domínio do Vulnerability Advisor
+{: #registry_regions_global_va}
 
-Por exemplo, para ter como destino o registro global, execute o comando a seguir:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-Para obter mais informações sobre o comando `ibmcloud cr region-set`, consulte [CLI do {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-Depois de ter destinado o registro global, execute o comando `ibmcloud cr login` para registrar seu daemon local do Docker no registro global para que possa puxar as imagens públicas fornecidas pela {{site.data.keyword.IBM_notm}}.
-
-** Nomes de domínio do Vulnerability Advisor **
-
-O nome de domínio do Vulnerability Advisor para global mudou. O novo nome de domínio está disponível no console e na CLI. 
+O nome de domínio do Vulnerability Advisor para global mudou. O novo nome de domínio está disponível no console e na CLI.
+{:shortdesc}
 
 O novo nome de domínio é mostrado na tabela a seguir.
 
@@ -372,6 +343,21 @@ O novo nome de domínio é mostrado na tabela a seguir.
 
 Os nomes de domínio `bluemix.net` existentes foram descontinuados, mas é possível continuar a usá-los por enquanto. Uma data final de suporte será anunciada posteriormente.
 {: deprecated}
+
+#### Definindo o registro global como destino
+{: #registry_regions_global_target}
+
+É possível destinar o registro global executando o comando [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
+{:shortdesc}
+
+1. Para definir o registro global como destino, execute o comando a seguir:
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Para registrar seu daemon local do Docker no registro global, para que seja possível fazer pull das imagens públicas fornecidas pelo {{site.data.keyword.IBM_notm}}, execute o comando `ibmcloud cr login`.
 
 ## Suporte para o Docker
 {: #docker}

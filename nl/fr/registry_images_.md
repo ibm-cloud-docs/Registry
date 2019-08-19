@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -41,7 +41,7 @@ Vous pouvez extraire (par commande pull) une image depuis n'importe quelle sourc
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Extraction d'une image depuis un registre privé ou public vers votre ordinateur."/>
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -49,10 +49,10 @@ Vous pouvez extraire (par commande pull) une image depuis n'importe quelle sourc
 
   Si vous modifiez vos autorisations pour pouvoir exécuter des commandes Docker sans privilèges d'utilisateur root, vous devez exécuter à nouveau la commande `ibmcloud login`.
 
-Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) dans le guide de mise en route.
+1. Téléchargez l'image ; voir la rubrique relative à l'[extraction des images](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) dans le guide de mise en route.
 
-Si le message `unauthorized: authentication required` ou `denied: requested access to the resource is denied` s'affiche, exécutez la commande `ibmcloud cr login`.
-{:tip}
+   Si le message `unauthorized: authentication required` ou `denied: requested access to the resource is denied` s'affiche, exécutez la commande `ibmcloud cr login`.
+   {:tip}
 
 Après avoir extrait une image et lui avoir attribué une étiquette pour votre espace de nom, vous pouvez la transférer (par commande push) depuis votre ordinateur local vers votre espace de nom.
 
@@ -64,7 +64,7 @@ Vous pouvez transférer par commande push une image à votre espace de nom dans 
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Transfert par commande push d'une image depuis votre ordinateur vers {{site.data.keyword.registrylong_notm}}."/>
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -104,7 +104,7 @@ Vous pouvez extraire une image depuis un registre dans une région donnée, puis
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copier une image depuis un registre privé ou public dans votre registre privé {{site.data.keyword.cloud_notm}}."/>
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -130,7 +130,7 @@ Dans la région dans laquelle vous êtes connecté, créez une nouvelle image da
 Les nouvelles images qui sont créées au moyen de ce mécanisme ne conservent pas de signatures. Si la nouvelle image doit être signée, n'utilisez pas ce mécanisme.
 {: tip}
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - Assurez-vous que vous avez accès à un espace de nom privé dans {{site.data.keyword.registrylong_notm}} qui contient une image source à laquelle une autre image doit faire référence.
@@ -166,7 +166,7 @@ Pour créer une nouvelle image à partir d'une image source, procédez comme sui
 Vous pouvez générer une image Docker directement dans {{site.data.keyword.cloud_notm}} ou créer votre propre image Docker sur votre ordinateur local et la télécharger (par commande push) dans votre espace de nom dans {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Avant de commencer**
+Avant de commencer, exécutez les tâches suivantes :
 
 - [Installez l'interface de ligne de commande](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) pour utiliser des images présentes dans votre espace de nom.
 - [Configurez votre propre espace de nom dans {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -196,8 +196,7 @@ Pour générer votre propre image Docker, procédez comme suit :
        ```
        {: pre}
 
-       **Exemple**
-     Pour créer un fichier Dockerfile basé sur l'image publique {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilisez le code suivant :
+       Par exemple, pour créer un fichier Docker basé sur l'image publique {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilisez la commande suivante :
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -261,6 +260,8 @@ Pour utiliser Vulnerability Advisor pour vérifier la sécurité de votre image,
 Créez un ID de service qui utilise une clé d'API pour envoyer des images par commande push à {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+Procédez comme suit :
+
 1. Créez un ID de service. Voir [Création et gestion des ID de service](/docs/iam?topic=iam-serviceids#serviceids).
 2. Créez une règle donnant à l'ID de service le droit d'accéder au registre, par exemple les rôles `Administrator` et `Manager`. Voir [Gestion des accès utilisateur à l'aide d'Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 3. Créez une clé d'API. Voir [Création d'une clé d'API pour un ID de service](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
@@ -310,7 +311,7 @@ Vous pouvez supprimer des images non désirées de votre référentiel privé en
 
 Si vous souhaitez supprimer un référentiel privé et les pages qui lui sont associées, voir [Suppression d'un référentiel privé et des pages qui lui sont associées](#registry_repo_remove).
 
-Les images {{site.data.keyword.IBM_notm}} publiques ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.cloud_notm}} privé, et elles ne sont pas décomptées de votre quota.
+Les images publiques {{site.data.keyword.IBM_notm}} ne peuvent pas être supprimées de votre référentiel {{site.data.keyword.cloud_notm}} privé et elles ne sont pas décomptées de votre quota.
 
 La suppression d'une image est irréversible. La suppression d'une image qui est utilisée par un déploiement existant peut entraîner l'échec d'une augmentation et/ou d'une replanification.
 {: important}
@@ -383,9 +384,8 @@ Vous pouvez supprimer les référentiels privés dont vous n'avez plus besoin, a
 Lorsque vous supprimez un référentiel, toutes les images qu'il contient sont également supprimées. Cette action est irréversible.
 {: important}
 
-**Avant de commencer**
-
-Vous devez sauvegarder les images que vous souhaitez conserver.
+Avant de commencer, vous devez sauvegarder les images que vous souhaitez conserver.
+{: tip}
 
 Pour supprimer un référentiel privé à l'aide de l'interface graphique, procédez comme suit :
 

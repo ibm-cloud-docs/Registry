@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -75,9 +75,9 @@ Cada imagen se crea a partir de un número de capas, cada una de las cuales repr
 
 Ejemplo de transferencia de imágenes:
 
-> Transfiere una imagen al espacio de nombres que se basa en la imagen Ubuntu. La imagen Ubuntu contiene varias capas. Puesto que aún no tiene estas capas en la cuenta, la cantidad de almacenamiento que necesitan dichas capas se añade a su uso mensual.
->
-> Más tarde, crea una segunda imagen que se basa en la imagen Ubuntu. Cambia la imagen base Ubuntu, por ejemplo, añade mandatos o archivos al Dockerfile. Cada cambio representa una nueva capa de la imagen. Cuando transfiere la segunda imagen, {{site.data.keyword.registrylong_notm}} reconoce que todas las capas de la imagen Ubuntu base ya están almacenadas en la cuenta. No se le factura por almacenar dichas capas una segunda vez, aunque haya transferido la imagen a otro espacio de nombres. {{site.data.keyword.registrylong_notm}} determina el tamaño de todas las nuevas capas y añade la cantidad de almacenamiento al uso mensual.
+Transfiere una imagen al espacio de nombres que se basa en la imagen Ubuntu. La imagen Ubuntu contiene varias capas. Puesto que aún no tiene estas capas en la cuenta, la cantidad de almacenamiento que necesitan dichas capas se añade a su uso mensual.
+
+Más tarde, crea una segunda imagen que se basa en la imagen Ubuntu. Cambia la imagen base Ubuntu, por ejemplo, añade mandatos o archivos al Dockerfile. Cada cambio representa una nueva capa de la imagen. Cuando transfiere la segunda imagen, {{site.data.keyword.registrylong_notm}} reconoce que todas las capas de la imagen Ubuntu base ya están almacenadas en la cuenta. No se le factura por almacenar dichas capas una segunda vez, aunque haya transferido la imagen a otro espacio de nombres. {{site.data.keyword.registrylong_notm}} determina el tamaño de todas las nuevas capas y añade la cantidad de almacenamiento al uso mensual.
 
 ### Facturación del almacenamiento y el tráfico de extracción
 {: #registry_billing_traffic}
@@ -85,27 +85,31 @@ Ejemplo de transferencia de imágenes:
 En función del plan de servicio que elija, se le facturará el almacenamiento y el tráfico de extracción que utilice al mes en cada región.
 {:shortdesc}
 
-**Almacenamiento:**
+#### Almacenamiento
+{: #registry_billing_traffic_storage}
 
   Cada plan de servicio de {{site.data.keyword.registrylong_notm}} viene con una determinada cantidad de almacenamiento que puede utilizar para almacenar las imágenes de Docker en los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}}. Si tiene el plan estándar, se le facturará por GB-mes de uso. Los primeros 0,5 GB-mes son gratuitos. Si tiene el plan gratuito, pueda almacenar sus imágenes en {{site.data.keyword.registrylong_notm}} gratuitamente hasta alcanzar los límites de cuota del plan gratuito. Un GB-mes es un promedio de 1 GB de almacenamiento durante un mes (730 horas).
+  {:shortdesc}
 
   Ejemplo para el plan estándar:
 
-  > Utiliza 5 GB para exactamente la mitad del mes y entonces envía por push varias imágenes a su espacio de nombres y utiliza 10 GB el resto del mes. El uso mensual se calcula del siguiente modo:
-  >
-  > (5 GB x 0,5 (meses)) + (10 GB x 0,5 (meses)) = 2,5 + 5 = 7,5 GB-mes
-  >
-  > En el plan estándar, los primeros 0,5 GB-mes son gratuitos, de modo que se le facturan 7 GB-mes (7,5 GB-mes - 0,5 GB-mes).
+  Utiliza 5 GB para exactamente la mitad del mes y entonces envía por push varias imágenes a su espacio de nombres y utiliza 10 GB el resto del mes. El uso mensual se calcula del siguiente modo:
+  
+  (5 GB x 0,5 (meses)) + (10 GB x 0,5 (meses)) = 2,5 + 5 = 7,5 GB-mes
+  
+  En el plan estándar, los primeros 0,5 GB-mes son gratuitos, de modo que se le facturan 7 GB-mes (7,5 GB-mes - 0,5 GB-mes).
 
-**Tráfico de extracción:**
+#### Tráfico de extracción
+{: #registry_billing_traffic_pull_traffic}
 
   Cada plan de servicio de {{site.data.keyword.registrylong_notm}} incluye una determinada cantidad de tráfico de extracción gratuito de imágenes privadas almacenadas en el espacio de nombres. El tráfico de extracción es el ancho de banda que se utiliza para extraer una capa de una imagen del espacio de nombres en la máquina local. Si tiene el plan estándar, se le facturará por GB de uso al mes. Los 5 primeros GB son gratuitos. Si tiene el plan gratuito, puede extraer imágenes del espacio de nombres hasta alcanzar el límite de cuota del plan gratuito.
+  {:shortdesc}
 
   Ejemplo para el plan estándar:
 
-  > En el mes, ha extraído imágenes que contienen capas con un tamaño total de 14 GB. El uso mensual se calcula del siguiente modo:
-  >
-  > En el plan estándar, los 5 primeros GB al mes son gratuitos, por lo que se le facturan 9 GB (14 GB - 5 GB).
+  En el mes, ha extraído imágenes que contienen capas con un tamaño total de 14 GB. El uso mensual se calcula del siguiente modo:
+  
+  En el plan estándar, los 5 primeros GB al mes son gratuitos, por lo que se le facturan 9 GB (14 GB - 5 GB).
 
 ### Límites de almacenamiento para almacenamiento y tráfico de extracción
 {: #registry_quota_limits}
@@ -113,26 +117,30 @@ En función del plan de servicio que elija, se le facturará el almacenamiento y
 En función del plan de servicio que elija, puede transferir imágenes al espacio de nombres y extraer imágenes del mismo hasta alcanzar los límites de cuota específicos del plan o personalizados para cada región.
 {:shortdesc}
 
-**Almacenamiento:**
+#### Almacenamiento
+{: #registry_quota_limits_storage}
 
   Cuando alcance o supere los límites de cuota de su plan, no puede transferir imágenes a los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}} hasta que [libere espacio eliminando imágenes](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) de los espacios de nombres o [actualice al plan estándar](#registry_plan_upgrade). Si establece límites de cuota para el almacenamiento en el plan gratuito o estándar, también puede [aumentar este límite de cuota](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) para volver a permitir la transferencia de nuevas imágenes.
+  {:shortdesc}
 
   Ejemplo para el plan estándar:
 
-  > Su límite de cuota actual para el almacenamiento está establecido en 1 GB. Todas las imágenes privadas que se han almacenado en los espacios de nombres de su cuenta de {{site.data.keyword.cloud_notm}} ya utilizan 900 MB de este almacenamiento. Tiene 100 MB de almacenamiento disponible hasta alcanzar el límite de cuota. Un usuario desea transferir una imagen con un tamaño de 2 GB en la máquina local. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario transfiera esta imagen.
-  >
-  > Después de la transferencia, {{site.data.keyword.registrylong_notm}} determina el tamaño real de la imagen en el espacio de nombres, que puede variar con respecto al tamaño en la máquina local, y comprueba si se ha alcanzado el límite de almacenamiento. En este ejemplo, el uso de almacenamiento aumenta de 900 MB a 2 GB. Como el límite de cuota actual está establecido en 1 GB, {{site.data.keyword.registrylong_notm}} le impide transferir más imágenes al espacio de nombres.
+  Su límite de cuota actual para el almacenamiento está establecido en 1 GB. Todas las imágenes privadas que se han almacenado en los espacios de nombres de su cuenta de {{site.data.keyword.cloud_notm}} ya utilizan 900 MB de este almacenamiento. Tiene 100 MB de almacenamiento disponible hasta alcanzar el límite de cuota. Un usuario desea transferir una imagen con un tamaño de 2 GB en la máquina local. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario transfiera esta imagen.
+  
+  Después de la transferencia, {{site.data.keyword.registrylong_notm}} determina el tamaño real de la imagen en el espacio de nombres, que puede variar con respecto al tamaño en la máquina local, y comprueba si se ha alcanzado el límite de almacenamiento. En este ejemplo, el uso de almacenamiento aumenta de 900 MB a 2 GB. Como el límite de cuota actual está establecido en 1 GB, {{site.data.keyword.registrylong_notm}} le impide transferir más imágenes al espacio de nombres.
 
-**Tráfico de extracción:**
+#### Tráfico de extracción
+{: #registry_quota_limits_pull_traffic}
 
   Cuando alcanza o supera los límites de cuota del plan, no puede extraer imágenes de los espacios de nombres de la cuenta de {{site.data.keyword.cloud_notm}} hasta que comienza el siguiente periodo de facturación, [actualiza al plan estándar](#registry_plan_upgrade) o [aumenta los límites de cuota para el tráfico de extracción](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  {:shortdesc}
 
   Ejemplo para el plan estándar:
 
-  > En el mes, el límite de cuota para el tráfico de extracción está establecido en 5 GB. Ya ha extraído imágenes de los espacios de nombres y ha utilizado
+  En el mes, el límite de cuota para el tráfico de extracción está establecido en 5 GB. Ya ha extraído imágenes de los espacios de nombres y ha utilizado
 4,5 GB de este tráfico de extracción. Tiene 0,5 GB de tráfico de extracción disponible hasta alcanzar el límite de cuota. Un usuario desea extraer una imagen de 1 GB del espacio de nombres. Puesto que aún no se ha alcanzado el límite de cuota, {{site.data.keyword.registrylong_notm}} permite que el usuario extraiga esta imagen.
-  >
-  > Una vez extraída la imagen, {{site.data.keyword.registrylong_notm}} determina el ancho de banda que ha utilizado durante la extracción y comprueba si se ha alcanzado el límite del tráfico de extracción. En este ejemplo, el uso del tráfico de extracción ha aumentado de 4,5 GB a 5,5 GB. Como el límite de cuota actual está establecido en 5 GB, {{site.data.keyword.registrylong_notm}} le impide extraer imágenes del espacio de nombres.
+  
+  Una vez extraída la imagen, {{site.data.keyword.registrylong_notm}} determina el ancho de banda que ha utilizado durante la extracción y comprueba si se ha alcanzado el límite del tráfico de extracción. En este ejemplo, el uso del tráfico de extracción ha aumentado de 4,5 GB a 5,5 GB. Como el límite de cuota actual está establecido en 5 GB, {{site.data.keyword.registrylong_notm}} le impide extraer imágenes del espacio de nombres.
 
 ### Coste
 {: #registry_cost}
@@ -158,8 +166,8 @@ Para actualizar el plan de servicio, siga estos pasos:
    ```
    {: pre}
 
-   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.cloud_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Sabe tiene un ID federado cuando el inicio de sesión falla sin el `--sso` y se lleva a cabo correctamente con la opción `--sso`.
-    {:tip}
+   Si tiene un ID federado, utilice `ibmcloud login --sso` para iniciar sesión en la CLI de {{site.data.keyword.cloud_notm}}. Especifique el nombre de usuario y utilice el URL proporcionado en su salida de CLI para recuperar el código de acceso de un solo uso. Si tiene un ID federado, el inicio de sesión falla sin la opción `--sso` y funciona correctamente con la opción `--sso`.
+   {:tip}
 
 2. Establezca como destino la región cuyo plan desea actualizar:
 
@@ -182,17 +190,11 @@ Para actualizar el plan de servicio, siga estos pasos:
 
    Para obtener más información, consulte [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Conceptos básicos
-{: #registry_planning}
-
-Prepárese para almacenar y compartir sus imágenes de Docker con {{site.data.keyword.registrylong_notm}} aprendiendo los conceptos básicos del registro.
-{:shortdesc}
-
-No coloque información personal en las imágenes de contenedor, nombres de espacio de nombres, campos de descripción, o en cualesquiera datos de configuración de imágenes (por ejemplo, nombres de imágenes o etiquetas de imagen).
-{: important}
-
-### Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
+## Visión general de los términos utilizados en {{site.data.keyword.registrylong_notm}}
 {: #terms}
+
+Descripciones de los términos utilizados en {{site.data.keyword.registrylong_notm}}.
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -238,43 +240,19 @@ No coloque información personal en las imágenes de contenedor, nombres de espa
 
 Para obtener más información sobre los términos específicos de Docker, consulte el [glosario de Docker ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.docker.com/glossary/).
 
-### Planificación de espacios de nombres
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} proporciona un registro de imágenes privado multiarrendatario que IBM aloja y gestiona. Puede almacenar y compartir las imágenes de Docker en este registro estableciendo un espacio de nombres del registro.
-{:shortdesc}
-
-Puede configurar varios espacios de nombres, por ejemplo, para tener diferentes repositorios para los entornos de producción y de transferencia. Si desea utilizar el registro en varias regiones de {{site.data.keyword.cloud_notm}}, debe configurar un espacio de nombres para cada región. Los espacios de nombres son exclusivos dentro de las regiones. Puede utilizar el mismo espacio de nombres para cada región, a menos que otra persona ya tenga un espacio de nombres con ese nombre configurado en esa región.
-
-Puede controlar el acceso a los espacios de nombres utilizando políticas de IAM. Para obtener más información, consulte [Definición de políticas de rol de acceso de usuario](/docs/services/Registry?topic=registry-user#user).
-
-Para trabajar sólo con imágenes públicas proporcionadas por IBM, no tiene que volver a configurar un espacio de nombres.
-
-Si no está seguro de si ya se ha establecido un espacio de nombres para su cuenta, ejecute el mandato `ibmcloud cr namespace-list` para recuperar la información de espacio de nombres existente.
-{:tip}
-
-Considere las reglas siguientes al elegir un espacio de nombres:
-
-- Su espacio de nombres debe ser exclusivo entre todas las cuentas de {{site.data.keyword.cloud_notm}} en la misma región.
-- Su espacio de nombres debe tener entre 4 y 30 caracteres.
-- Su espacio de nombres deben empezar y finalizar con una letra o un número.
-- Su espacio de nombres solo debe incluir minúsculas, números, guiones (-) y subrayados (_).
-
-No coloque información personal en los nombres del espacio de nombres.
-{: important}
-
-Después de establecer su primer espacio de nombres, se le asigna el plan de servicio gratuito de {{site.data.keyword.registrylong_notm}} si todavía no ha [actualizado su plan](#registry_plan_upgrade).
-
 ## Regiones
 {: #registry_regions}
 
 Los registros de {{site.data.keyword.registrylong_notm}} están disponibles en varias regiones.
 {:shortdesc}
 
+Todos los artefactos de registro abarcan el registro regional específico con el que está trabajando actualmente. Por ejemplo, espacios de nombres, imágenes, señales, valores de cuota y valores de plan deben ser gestionados independientemente para cada registro regional.
+
 ### Regiones locales
 {: #registry_regions_local}
 
 Una región local es un área geográfica a la que se accede mediante un punto final dedicado. Los nombres de dominio de {{site.data.keyword.registrylong_notm}} para las regiones han cambiado. Los nuevos nombres de dominio están disponibles en la consola y en la CLI.
+{:shortdesc}
 
 Los nombres de dominio se muestran en la siguiente tabla.
 
@@ -290,9 +268,11 @@ Los nombres de dominio se muestran en la siguiente tabla.
 Los nombres de dominio `bluemix.net` existentes están obsoletos, pero puede continuar usándolos por el momento, una fecha de finalización de soporte se anunciará más tarde.
 {: deprecated}
 
-**Nombres de dominio de Vulnerability Advisor**
+#### Nombres de dominio de Vulnerability Advisor
+{: #registry_regions_local_va}
 
 Los nombres de dominio de Vulnerability Advisor para las regiones han cambiado. Los nuevos nombres de dominio están disponibles en la consola y en la CLI.
+{:shortdesc}
 
 Los nuevos nombres de dominio se muestran en la siguiente tabla.
 
@@ -308,25 +288,27 @@ Los nuevos nombres de dominio se muestran en la siguiente tabla.
 Los nombres de dominio `bluemix.net` existentes están obsoletos, pero puede continuar usándolos por el momento, una fecha de finalización de soporte se anunciará más tarde.
 {: deprecated}
 
-Todos los artefactos de registro abarcan el registro regional específico con el que está trabajando actualmente. Por ejemplo, espacios de nombres, imágenes, señales, valores de cuota y valores de plan deben ser gestionados independientemente para cada registro regional.
+#### Establecer como destino una región local
+{: #registry_regions_local_target}
 
-Si desea utilizar una región diferente a su región local, puede acceder a la región que desea, si ejecuta el mandato `ibmcloud cr region-set`. Puede ejecutar el mandato sin parámetros para obtener una lista de regiones disponibles, o puede especificar la región como un parámetro.
+Si desea utilizar una región diferente a su región local, puede acceder a la región que desea, si ejecuta el mandato [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set). Puede ejecutar el mandato sin parámetros para obtener una lista de regiones disponibles, o puede especificar la región como un parámetro.
+{:shortdesc}
 
-Para ejecutar el mandato con parámetros, sustituya `<region>` por el nombre de la región, por ejemplo, `eu-central`.
+1. Para ejecutar el mandato con parámetros, sustituya `<region>` por el nombre de la región de [](#registry_regions_local).
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-Por ejemplo, para acceder a la región de UE central, ejecute el mandato siguiente:
+   Por ejemplo, para acceder a la región `eu-central`, ejecute el mandato siguiente:
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-Después de elegir una región distinta, inicie sesión en el registro de nuevo: `ibmcloud cr login`.
+2. Inicie sesión en el registro ejecutando el mandato `ibmcloud cr login`.
 
 ### Registro global
 {: #registry_regions_global}
@@ -346,22 +328,11 @@ El nuevo nombre de dominio se muestra en la siguiente tabla.
 Los nombres de dominio `bluemix.net` existentes están obsoletos, pero puede continuar usándolos por el momento, una fecha de finalización de soporte se anunciará más tarde.
 {: deprecated}
 
-Puede acceder al registro global ejecutando el mandato `ibmcloud cr region-set`.
+#### Nombres de dominio de Vulnerability Advisor
+{: #registry_regions_global_va}
 
-Por ejemplo, para acceder al registro global, ejecute el mandato siguiente:
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-Para obtener más información acerca del mandato `ibmcloud cr region-set`, consulte [CLI de {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
-
-Después de haber accedido al registro global, ejecute el mandato `ibmcloud cr login` para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}.
-
-**Nombres de dominio de Vulnerability Advisor**
-
-El nombre del dominio de Vulnerability Advisor para global ha cambiado. El nuevo nombre de dominio está disponible en la consola y en la CLI. 
+El nombre del dominio de Vulnerability Advisor para global ha cambiado. El nuevo nombre de dominio está disponible en la consola y en la CLI.
+{:shortdesc}
 
 El nuevo nombre de dominio se muestra en la siguiente tabla.
 
@@ -372,6 +343,21 @@ El nuevo nombre de dominio se muestra en la siguiente tabla.
 
 Los nombres de dominio `bluemix.net` existentes están obsoletos, pero puede continuar usándolos por el momento, una fecha de finalización de soporte se anunciará más tarde.
 {: deprecated}
+
+#### Establecer como destino el registro global
+{: #registry_regions_global_target}
+
+Puede acceder al registro global ejecutando el mandato [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set).
+{:shortdesc}
+
+1. Para establecer como destino el registro global, ejecute el mandato siguiente:
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. Para registrar su daemon Docker local en el registro global para que pueda extraer imágenes públicas proporcionadas por {{site.data.keyword.IBM_notm}}, ejecute el mandato `ibmcloud cr login`.
 
 ## Soporte para Docker
 {: #docker}

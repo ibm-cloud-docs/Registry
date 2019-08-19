@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -64,7 +64,7 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 
 {{site.data.keyword.registrylong_notm}} のために、以下のアクションが用意されています。
 
-| 操作| サービスに対する操作 | 役割
+| 操作| サービスに対する操作 | 役割 |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) - 指定した 1 つ以上のトークンを削除します。 | 管理者 |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) - 指定したトークンをレジストリーから取得します。 | 管理者 |
@@ -78,9 +78,9 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 
 | サービス・アクセス役割 | アクションの説明 | アクションの例|
 |:-----------------|:-----------------|:-----------------|
-| リーダー | リーダーの役割は情報を表示できます。 | <ul><li>イメージの表示、検査、プル</li><li>名前空間の表示</li><li>割り当て量の表示</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示</li></ul>|
-| ライター | ライターの役割は情報を編集できます。 |<ul><li>イメージのビルド、プッシュ、削除</li><li>割り当て量の表示</li><li>イメージへの署名</li><li>名前空間の追加と削除</li></ul> |
-| 管理者 | マネージャーの役割はすべてのアクションを実行できます。 | <ul><li>イメージの表示、検査、プル、ビルド、プッシュ、削除</li><li>名前空間の表示、追加、削除</li><li>割り当て量の表示と設定</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示と作成</li><li>料金プランの確認と変更</li><li>IAM ポリシーの制約の有効化</li><li>脆弱性アドバイザーの免除の管理</li></ul> |
+| リーダー | リーダーの役割は情報を表示できます。 | <ul><li>イメージの表示、検査、プル</li><li>名前空間の表示</li><li>割り当て量の表示</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示</li><li>指定する基準を満たすイメージだけを保持することにより、名前空間をクリーンアップします。(ライター役割も必要です。)</li></ul>|
+| ライター | ライターの役割は情報を編集できます。 |<ul><li>イメージのビルド、プッシュ、削除</li><li>割り当て量の表示</li><li>イメージへの署名</li><li>名前空間の追加と削除</li><li>指定する基準を満たすイメージだけを保持することにより、名前空間をクリーンアップします。(リーダー役割も必要です。)</li></ul> |
+| 管理者 | マネージャーの役割はすべてのアクションを実行できます。 | <ul><li>イメージの表示、検査、プル、ビルド、プッシュ、削除</li><li>名前空間の表示、追加、削除</li><li>割り当て量の表示と設定</li><li>脆弱性レポートの表示</li><li>イメージの署名の表示と作成</li><li>料金プランの確認と変更</li><li>IAM ポリシーの制約の有効化</li><li>脆弱性アドバイザーの免除の管理</li><li>指定する基準を満たすイメージだけを保持することにより、名前空間をクリーンアップします。</li></ul> |
 {: caption="表 3. IAM のサービス・アクセス役割とアクション" caption-side="top"}
 
  以下の {{site.data.keyword.registrylong_notm}} コマンドの場合、以下の表に示されているように、1 つ以上の役割が指定されていなければなりません。 {{site.data.keyword.registrylong_notm}} へのアクセスを許可するポリシーを作成するには、サービス名 `container-registry`、空のサービス・インスタンス、アクセス権限を付与しようとしている地域または空の地域 (すべての地域にアクセス権限を付与する) を指定してポリシーを作成しなければなりません。
@@ -90,14 +90,14 @@ UI でのユーザー役割の割り当てについては、[IAM アクセス権
 
 アカウント内で {{site.data.keyword.registrylong_notm}} を構成するユーザー権限を付与するには、以下の表にある役割を 1 つ以上付与するポリシーを作成しなければなりません。 ポリシーの作成時に `resource type` 、および `resource` を指定することはできません。
 
-**例**
+例えば、次のコマンドを使用します (`<user_email>` はユーザーの E メール・アドレス)。
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
 ```
 {: pre}
 
-| 操作| サービスに対する操作 | 役割
+| 操作| サービスに対する操作 | 役割 |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) IAM ポリシーの制約を有効化します。 | 管理者 |
 | `container-registry.exemption.manager` | <ul><li>[`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) - セキュリティー問題の免除を作成します。</li><li>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) - セキュリティー問題の免除をリストします。</li><li>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) - セキュリティー問題の免除を削除します。</li><li>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) - 免除できるセキュリティー問題のタイプをリストします。</li></ul> | 管理者 |
@@ -115,22 +115,25 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 リソース・グループにおけるレジストリー名前空間へのアクセス権限を編成して割り当てることはできません。
 {: note}
 
-**例**
+例えば、次のコマンドを使用します (`<user_email>` はユーザーの E メール・アドレス)。
 
 ```
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
-| アクション | サービスに対する操作 | 役割
+| アクション | サービスに対する操作 | 役割 |
 |:-----------------|:-----------------|:--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) - コンテナー・イメージを構築します。 | ライター、管理者 |
-| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 1 つ以上のイメージを削除します。<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) {{site.data.keyword.registrylong_notm}} 内の指定された各イメージから 1 つまたは複数のタグを削除します。</li><li>`docker trust revoke` - 署名を削除します。 </li></ul> | ライター、管理者 |
+| `container-registry.image.delete` | <ul><li> [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) 1 つ以上のイメージを削除します。<li>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) {{site.data.keyword.registrylong_notm}} 内の指定された各イメージから 1 つまたは複数のタグを削除します。</li><li>`docker trust revoke` - 署名を削除します。 </li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) 指定する基準を満たすイメージだけを保持することにより、名前空間をクリーンアップします。
+</li></ul> |ライター、管理者</br></br>`ibmcloud cr retention-run` を実行するには、リーダーとライターの両方、または管理者が必要です。|
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) - 特定のイメージに関する詳細を表示します。 | リーダー、管理者 |
-| `container-registry.image.list` | [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) - コンテナー・イメージをリストします。 | リーダー、管理者 |
+| `container-registry.image.list` | <ul><li>[`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) コンテナー・イメージのリストを出力します。
+</li><li>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) 指定する基準を満たすイメージだけを保持することにより、名前空間をクリーンアップします。
+</li></ul> |リーダー、管理者</br></br>`ibmcloud cr retention-run` を実行するには、リーダーとライターの両方、または管理者が必要です。|
 | `container-registry.image.pull` | <ul><li>`docker pull` イメージをプルします。 </li><li>`docker trust inspect` 署名を検査します。 </li></ul> | リーダー、ライター、管理者 |
 | `container-registry.image.push` | <ul><li>`docker push` - イメージをプッシュします。</li><li>`docker trust sign` イメージに署名します。</li><li>[`ibmcloud cr ppa-archive-load`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) - [IBM お客様向けパスポート・アドバンテージ・オンライン ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/software/passportadvantage/pao_customer.html) からダウンロードした、Helm で使用できるようにパッケージ化された IBM ソフトウェアを、{{site.data.keyword.registrylong_notm}}名前空間にインポートします。</li></ul> | ライター、管理者 |
-| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。 | ソース・イメージのリーダー、ライター、または管理者; ターゲット・イメージのリーダー、ライター、または管理者 |
+| `container-registry.image.tag` | [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) ソース・イメージを参照する新しいイメージを作成します。 ソース・イメージとターゲット・イメージは、同一の地域内になければなりません。 |ソース・イメージに対するリーダー、ライター、または管理者。</br></br>ターゲット・イメージに対するライターまたは管理者。|
 | `container-registry.image.vulnerabilities` | [`ibmcloud cr vulnerability-assessment`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) - イメージの脆弱性評価レポートを表示します。 | リーダー、管理者 |
 | `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) - 名前空間を追加します。 | ライター、管理者 |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) - 名前空間を削除します。 | ライター、管理者 |

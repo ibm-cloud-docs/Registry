@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -54,6 +54,7 @@ subcollection: registry
 `ibmcloud cr login` 명령이 실패합니다.
 
 {: tsCauses}
+가능한 원인은 다음 중 하나입니다.
 
 - `container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
 - Docker가 로컬 컴퓨터에 설치되어 있지 않거나 실행 중이 아닙니다.
@@ -75,13 +76,10 @@ subcollection: registry
 모든 `ibmcloud cr` 명령이 실패합니다.
 
 {: tsCauses}
-
-- `container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
+`container-registry` CLI 플러그인의 유효 기간이 지났으므로 업데이트해야 합니다.
 
 {: tsResolve}
-다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
-
-- 최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
+최신 버전의 `container-registry` CLI 플러그인으로 업그레이드하십시오. [`container-registry` CLI 플러그인 업데이트](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)를 참조하십시오.
 
 ## {{site.data.keyword.registrylong_notm}} 명령이 `'cr' is not a registered command. See 'ibmcloud help'.`라는 메시지가 출력되며 실패함
 {: #ts_login_error}
@@ -104,13 +102,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- `container-registry` CLI 플러그인이 설치되지 않았습니다.
+`container-registry` CLI 플러그인이 설치되지 않았습니다.
 
 {: tsResolve}
-다음과 같은 방법으로 이 문제점을 해결할 수 있습니다.
-
-- `container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)를 참조하십시오.
+`container-registry` CLI 플러그인을 설치하십시오. [`container-registry` CLI 플러그인 설치](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)를 참조하십시오.
 
 ## `ibmcloud cr build` 명령이 실패합니다.
 {: #ts_build_fails}
@@ -139,10 +134,10 @@ docker build --no-cache .
 `ibmcloud cr namespace-add`를 실행할 때 입력한 값을 네임스페이스로 설정할 수 없습니다.
 
 {: tsCauses}
+가능한 원인은 다음 중 하나입니다.
 
 - 다른 {{site.data.keyword.cloud_notm}} 조직에서 이미 사용 중인 네임스페이스 값을 입력했습니다.
-- 네임스페이스가 최근에 삭제되었으며 그 이름을 재사용하고 있습니다. 삭제된 네임스페이스에
-많은 리소스가 포함되어 있는 경우, {{site.data.keyword.registrylong_notm}}에서 아직 삭제를 완전하게 처리하지 못했을 수 있습니다.
+- 네임스페이스가 최근에 삭제되었으며 그 이름을 재사용하고 있습니다. 삭제된 네임스페이스에 많은 리소스가 포함되어 있는 경우, {{site.data.keyword.registrylong_notm}}에서 아직 삭제를 완전하게 처리하지 못했을 수 있습니다.
 - 네임스페이스 값에 올바르지 않은 문자를 사용했습니다.
 
 {: tsResolve}
@@ -186,6 +181,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
+가능한 원인은 다음 중 하나입니다.
 
 - Docker가 설치되지 않았습니다.
 - Docker 클라이언트가 {{site.data.keyword.registrylong_notm}}에 로그인되어 있지 않습니다.
@@ -222,13 +218,13 @@ denied: requested access to the resource is denied
 IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 패키지는 `ibmcloud cr ppa-archive-load` 명령을 사용하여 레지스트리로 가져와야 합니다.
 
 {: tsResolve}
-**시작하기 전에**
+IBM Passport Advantage에서 제품 가져오기를 시작하기 전에 다음 태스크를 완료하십시오.
 
-- `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오.
-- `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
-- 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
-- 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-helm#helm)하십시오.
-- 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
+1. `ibmcloud login [--sso]`를 실행하여 {{site.data.keyword.cloud_notm}}에 로그인하십시오.
+2. `ibmcloud cr login`을 실행하여 {{site.data.keyword.registrylong_notm}}에 로그인하십시오.
+3. 사용자의 클러스터로 [`kubectl` CLI의 대상을 지정](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)하십시오.
+4. 클러스터에서 Helm을 아직 설정하지 않은 경우 [이제 클러스터에서 Helm을 설정](/docs/containers?topic=containers-helm#helm)하십시오.
+5. 조직 내에서 차트를 공유하려는 경우 [Chart Museum 오픈 소스 프로젝트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/helm/charts/tree/master/stable/chartmuseum)를 설치할 수 있습니다. 지시사항은 이 [developerWorks 레시피 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/)를 참조하십시오.
 
 ### {{site.data.keyword.cloud_notm}}에 사용할 IBM Passport Advantage 제품 가져오기
 {: #ts_ppa_import}
@@ -254,7 +250,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
    IBM Passport Advantage 아카이브의 Helm 차트를 Chart Museum에 업로드하려는 경우 명령에 다음 옵션을 포함하십시오. `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
-   **출력 예**
+   다음 메시지는 명령으로 생성된 출력의 예입니다.
 
    ```
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
@@ -317,7 +313,6 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 사용자 정의 트래픽에서 인바운드 및 아웃바운드 네트워크 트래픽용으로 특정 네트워크 그룹을 열어야 레지스트리와 통신할 수 있습니다.
 
 {: tsResolve}
-
 클러스터가 방화벽 뒤에서 인프라 리소스 및 서비스에 액세스하도록 하십시오. [클러스터가 인프라 리소스 및 기타 서비스에 액세스하도록 허용](/docs/containers?topic=containers-firewall#firewall_outbound)을 참조하십시오.
 
 사용자의 컴퓨터에 대한 인바운드 연결의 경우, 소스 네트워크 그룹에서 컴퓨터의 대상 공인 IP 주소로의 수신 네트워크 트래픽을 허용하십시오.
@@ -354,7 +349,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
 
 2. [신뢰할 수 있는 컨텐츠 환경을 설정](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup)하십시오.
 
-3. IAM API 키를 작성하십시오. 
+3. IAM API 키를 작성하십시오.
 
    ```
    ibmcloud iam api-key-create notary-auth --file notary-auth
@@ -421,7 +416,7 @@ IBM Passport Advantage의 이미지 및 Helm 차트와 같은 소프트웨어 �
     - 이전 신뢰할 수 있는 컨텐츠를 변경하지 않으려는 경우에는 레지스트리의 최신 이미지에 서명을 추가하십시오.
 
       ```
-docker trust sign <image>:<tag>
+      docker trust sign <image>:<tag>
       ```
       {: pre}
 

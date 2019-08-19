@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -80,9 +80,9 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 映像推送示例：
 
-> 您将映像推送到基于 Ubuntu 映像的名称空间。该 Ubuntu 映像包含多个层。由于您的帐户中还没有这些层，因此这些层需要的存储量会加到您的每月使用量中。
->
-> 然后，您创建基于该 Ubuntu 映像的第二个映像。您更改了 Ubuntu 基本映像，例如通过向 Dockerfile 添加其他命令或文件来进行更改。每个更改都表示一个新的映像层。推送第二个映像时，{{site.data.keyword.registrylong_notm}} 识别到基本 Ubuntu 映像的所有层都已存储在您的帐户中。因此，第二次存储这些层时不会向您收费，即便您将映像推送到其他名称空间也不例外。{{site.data.keyword.registrylong_notm}} 会确定所有新层的大小，并将相应存储量加到您的每月使用量中。
+您将映像推送到基于 Ubuntu 映像的名称空间。该 Ubuntu 映像包含多个层。由于您的帐户中还没有这些层，因此这些层需要的存储量会加到您的每月使用量中。
+
+然后，您创建基于该 Ubuntu 映像的第二个映像。您更改了 Ubuntu 基本映像，例如通过向 Dockerfile 添加其他命令或文件来进行更改。每个更改都表示一个新的映像层。推送第二个映像时，{{site.data.keyword.registrylong_notm}} 识别到基本 Ubuntu 映像的所有层都已存储在您的帐户中。因此，第二次存储这些层时不会向您收费，即便您将映像推送到其他名称空间也不例外。{{site.data.keyword.registrylong_notm}} 会确定所有新层的大小，并将相应存储量加到您的每月使用量中。
 
 ### 对存储量和拉出流量计费
 {: #registry_billing_traffic}
@@ -90,27 +90,31 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 根据选择的服务套餐，会根据每个区域每月使用的存储量和拉出流量向您收费。
 {:shortdesc}
 
-**存储量：**
+#### 存储量
+{: #registry_billing_traffic_storage}
 
   每种 {{site.data.keyword.registrylong_notm}} 服务套餐都随附特定存储量，可用于在您 {{site.data.keyword.cloud_notm}} 帐户的名称空间中存储 Docker 映像。如果使用的是标准套餐，那么会按 GB-月使用量向您收费。第一个 0.5 GB-月免费。如果使用的是免费套餐，那么可以在 {{site.data.keyword.registrylong_notm}} 中免费存储的映像不超过免费套餐的配额限制。GB-月是一个月（730 小时）平均 1 GB 的存储量。
+  {:shortdesc}
 
   标准套餐示例：
 
-  > 您正好半个月使用 5 GB，然后您将几个映像推送到名称空间并在剩下的半个月中使用 10 GB。您每月使用量的计算方法如下所示：
-  >
-  > (5 GB x 0.5 (月数)) + (10 GB x 0.5 (月数)) = 2.5 + 5 = 7.5 GB-月 
-  >
-  > 在标准套餐中，第一个 0.5 GB-月是免费的，所以将向您收取 7 GB-月的费用（7.5 GB-月 - 0.5 GB-月）。
+  您正好半个月使用 5 GB，然后您将几个映像推送到名称空间并在剩下的半个月中使用 10 GB。您每月使用量的计算方法如下所示：
+  
+  (5 GB x 0.5 (月数)) + (10 GB x 0.5 (月数)) = 2.5 + 5 = 7.5 GB-月 
+  
+  在标准套餐中，第一个 0.5 GB-月是免费的，所以将向您收取 7 GB-月的费用（7.5 GB-月 - 0.5 GB-月）。
 
-**拉出流量：**
+#### 拉出流量
+{: #registry_billing_traffic_pull_traffic}
 
   每种 {{site.data.keyword.registrylong_notm}} 服务套餐都包含名称空间中存储的专用映像的特定免费拉出流量。拉出流量是指将名称空间中某个映像的一个层拉出到本地计算机时使用的带宽。如果使用的是标准套餐，那么会按每月的 GB 使用量向您收费。每月前 5 GB 免费。如果使用的是免费套餐，那么可以从名称空间中拉出的映像不超过免费套餐的配额限制。
+  {:shortdesc}
 
   标准套餐示例：
 
-  > 在该月，您拉出的映像中所包含层的总大小为 14 GB。您每月使用量的计算方法如下所示：
-  >
-  > 在标准套餐中，每月的前 5 GB 是免费的，所以将向您收取 9 GB 的费用 (14 GB - 5 GB)。
+  在该月，您拉出的映像中所包含层的总大小为 14 GB。您每月使用量的计算方法如下所示：
+  
+  在标准套餐中，每月的前 5 GB 是免费的，所以将向您收取 9 GB 的费用 (14 GB - 5 GB)。
 
 ### 存储量和拉出流量的配额限制
 {: #registry_quota_limits}
@@ -118,25 +122,29 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 根据选择的服务套餐，您可以向名称空间推送映像并从名称空间中拉出映像，直到超过每个区域特定于套餐的配额限制或定制配额限制为止。
 {:shortdesc}
 
-**存储量：**
+#### 存储量
+{: #registry_quota_limits_storage}
 
   达到或超过套餐的配额限制时，就不能将任何映像推送到 {{site.data.keyword.cloud_notm}} 帐户的名称空间，除非[通过除去名称空间中的映像来释放空间](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升级到标准套餐](#registry_plan_upgrade)。如果在免费或标准套餐中设置了存储量配额限制，那么还可以[增大此配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)以再次允许推送新映像。
+  {:shortdesc}
 
   标准套餐示例：
 
-  > 您当前的存储量配额限制设置为 1 GB。存储在您 {{site.data.keyword.cloud_notm}} 帐户的名称空间中的所有专用映像已经使用此存储量中的 900 MB。在达到配额限制之前，您还有 100 MB 存储量可用。一个用户希望在本地计算机上推送大小为 2 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户推送此映像。
-  >
-  > 在推送后，{{site.data.keyword.registrylong_notm}} 会确定名称空间中映像的实际大小（可能与本地计算机上的大小不同），并检查是否达到了存储量限制。在此示例中，存储用量在 900 MB 的基础上又增加了 2 GB。由于当前的配额限制设置为 1 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您将更多映像推送到名称空间。
+  您当前的存储量配额限制设置为 1 GB。存储在您 {{site.data.keyword.cloud_notm}} 帐户的名称空间中的所有专用映像已经使用此存储量中的 900 MB。在达到配额限制之前，您还有 100 MB 存储量可用。一个用户希望在本地计算机上推送大小为 2 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户推送此映像。
+  
+  在推送后，{{site.data.keyword.registrylong_notm}} 会确定名称空间中映像的实际大小（可能与本地计算机上的大小不同），并检查是否达到了存储量限制。在此示例中，存储用量在 900 MB 的基础上又增加了 2 GB。由于当前的配额限制设置为 1 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您将更多映像推送到名称空间。
 
-**拉出流量：**
+#### 拉出流量
+{: #registry_quota_limits_pull_traffic}
 
   达到或超过套餐的配额限制时，就不能从 {{site.data.keyword.cloud_notm}} 帐户的名称空间中拉出任何映像，除非您等待下一个结算周期开始、[升级到标准套餐](#registry_plan_upgrade)或[增大拉出流量的配额限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)。
+  {:shortdesc}
 
   标准套餐示例：
 
-  > 在该月，您的拉出流量配额限制设置为 5 GB。您已经从名称空间拉出过映像，并使用了此拉出流量中的 4.5 GB。在达到配额限制之前，您还有 0.5 GB 拉出流量可用。一个用户希望从名称空间中拉出大小为 1 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户拉出此映像。
-  >
-  > 在拉出此映像后，{{site.data.keyword.registrylong_notm}} 会确定在拉出期间使用的带宽，并检查是否达到了拉出流量的限制。在此示例中，拉出流量使用量从 4.5 GB 增加到 5.5 GB。由于当前的配额限制设置为 5 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您从名称空间拉出映像。
+  在该月，您的拉出流量配额限制设置为 5 GB。您已经从名称空间拉出过映像，并使用了此拉出流量中的 4.5 GB。在达到配额限制之前，您还有 0.5 GB 拉出流量可用。一个用户希望从名称空间中拉出大小为 1 GB 的映像。由于还未达到配额限制，因此 {{site.data.keyword.registrylong_notm}} 允许该用户拉出此映像。
+  
+  在拉出此映像后，{{site.data.keyword.registrylong_notm}} 会确定在拉出期间使用的带宽，并检查是否达到了拉出流量的限制。在此示例中，拉出流量使用量从 4.5 GB 增加到 5.5 GB。由于当前的配额限制设置为 5 GB，因此 {{site.data.keyword.registrylong_notm}} 会阻止您从名称空间拉出映像。
 
 ### 成本
 {: #registry_cost}
@@ -162,8 +170,7 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
     ```
    {: pre}
 
-   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.cloud_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么应该知道不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
-    
+   如果拥有的是联合标识，请使用 `ibmcloud login --sso` 登录到 {{site.data.keyword.cloud_notm}} CLI。输入您的用户名，并使用 CLI 输出中提供的 URL 来检索一次性密码。如果您有联合标识，那么不使用 `--sso` 会登录失败，使用 `--sso` 选项会登录成功。
     {:tip}
 
 2. 将要为其升级套餐的区域设置为目标：
@@ -187,17 +194,11 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
    有关更多信息，请参阅 [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)。
 
-## 了解基本信息
-{: #registry_planning}
-
-通过了解注册表基本信息，准备好使用 {{site.data.keyword.registrylong_notm}} 来存储和共享 Docker 映像。
-{:shortdesc}
-
-不要将个人信息放入容器映像、名称空间名称、描述字段或任何映像配置数据（例如，映像名称或映像标签）中。
-{: important}
-
-### 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
+## 了解 {{site.data.keyword.registrylong_notm}} 中使用的术语
 {: #terms}
+
+在 {{site.data.keyword.registrylong_notm}} 中使用的术语的描述。
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -245,47 +246,19 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 
 要了解有关 Docker 特定术语的更多信息，请参阅 [Docker 词汇表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.docker.com/glossary/)。
 
-### 规划名称空间
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} 提供由 IBM 托管和管理的多租户专用映像注册表。
-您可以通过设置注册表名称空间，在此注册表中存储和共享 Docker 映像。
-{:shortdesc}
-
-例如，您可以设置多个名称空间，以针对生产和打包编译环境具有不同的存储库。
-如果要在多个 {{site.data.keyword.cloud_notm}} 区域中使用注册表，那么必须为每个区域设置名称空间。
-在区域中，名称空间名称是唯一的。您可以对每个区域使用相同的名称空间名称，除非别人已经在该区域中设置了使用该名称的名称空间。
-
-您可以使用 IAM 策略来控制对名称空间的访问权。有关更多信息，请参阅[定义用户访问角色策略](/docs/services/Registry?topic=registry-user#user)。
-
-要仅使用 IBM 提供的公共映像，您无需设置名称空间。
-
-如果您不确定是否已为帐户设置名称空间，请运行 `ibmcloud cr namespace-list` 命令以检索现有名称空间信息。
-{:tip}
-
-选择名称空间时，请考虑以下规则：
-
-
-- 您的名称空间在同一区域的所有 {{site.data.keyword.cloud_notm}} 帐户中必须唯一。
-- 您的名称空间必须为 4 - 30 个字符。
-- 您的名称空间必须以字母或数字开头和结尾。
-- 您的名称空间必须只包含小写字母、数字、连字符 (-) 和下划线 (_)。
-
-不要将个人信息放入名称空间名称中。
-{: important}
-
-设置第一个名称空间后，如果您尚未[升级套餐](#registry_plan_upgrade)，那么为您分配的是免费的 {{site.data.keyword.registrylong_notm}} 服务套餐。
-
 ## 区域
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} 注册表在多个区域中可用。
 {:shortdesc}
 
+所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
+
 ### 本地区域
 {: #registry_regions_local}
 
 本地区域是指由专用端点访问的地理区域。该区域的 {{site.data.keyword.registrylong_notm}} 域名已更改。控制台和 CLI 中提供了新域名。
+{:shortdesc}
 
 域名显示在下表中。
 
@@ -301,9 +274,11 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
 {: deprecated}
 
-**漏洞顾问程序域名**
+#### 漏洞顾问程序域名
+{: #registry_regions_local_va}
 
 区域的漏洞顾问程序域名已更改。控制台和 CLI 中提供了新域名。
+{:shortdesc}
 
 新域名显示在下表中。
 
@@ -319,25 +294,27 @@ Docker 映像是您所创建的每个容器的基础。映像是通过 Dockerfil
 不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
 {: deprecated}
 
-所有注册表工件的范围均限定为您当前使用的特定区域注册表。例如，名称空间、映像、令牌、配额设置和套餐设置全都必须针对每个区域注册表分别管理。
+#### 以本地区域为目标
+{: #registry_regions_local_target}
 
-如果要使用您本地区域以外的区域，可以通过运行 `ibmcloud cr region-set` 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。
+如果要使用您本地区域以外的区域，可以通过运行 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 命令将要访问的区域设定为目标。可以不带任何参数运行该命令来获取可用区域的列表，或者可以将此区域指定为参数。
+{:shortdesc}
 
-要运行带参数的命令，请将 `<region>` 替换为区域的名称，例如 `eu-central`。
+1. 要运行带参数的命令，请将 `<region>` 替换为[区域](#registry_regions_local)的名称。
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+    ibmcloud cr region-set <region>
+    ```
+   {: pre}
 
-例如，要将 eu-central 区域设定为目标，请运行以下命令：
+   例如，要将 `eu-central` 区域设定为目标，请运行以下命令：
 
-```
+   ```
 ibmcloud cr region-set eu-central
 ```
-{: pre}
+   {: pre}
 
-将其他区域设定为目标后，请再次登录到注册表：`ibmcloud cr login`。
+2. 通过运行 `ibmcloud cr login` 命令登录到注册表。
 
 ### 全局注册表
 {: #registry_regions_global}
@@ -357,22 +334,11 @@ ibmcloud cr region-set eu-central
 不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
 {: deprecated}
 
-可以通过运行 `ibmcloud cr region-set` 命令将全局注册表设定为目标。
+#### 漏洞顾问程序域名
+{: #registry_regions_global_va}
 
-例如，要将全局注册表设定为目标，请运行以下命令：
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-有关 `ibmcloud cr region-set` 命令的更多信息，请参阅 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)。
-
-将全局注册表设定为目标后，运行 `ibmcloud cr login` 命令，使本地 Docker 守护程序登录到全局注册表，这样就可以拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像。
-
-**漏洞顾问程序域名**
-
-全局注册表的漏洞顾问程序域名已更改。控制台和 CLI 中提供了新域名。 
+全局注册表的漏洞顾问程序域名已更改。控制台和 CLI 中提供了新域名。
+{:shortdesc}
 
 新域名显示在下表中。
 
@@ -383,6 +349,21 @@ ibmcloud cr region-set global
 
 不推荐使用现有的 `bluemix.net` 域名，但暂时您可以继续使用它们，稍后会通知其支持结束日期。
 {: deprecated}
+
+#### 以全局注册表为目标
+{: #registry_regions_global_target}
+
+可以通过运行 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 命令将全局注册表设定为目标。
+{:shortdesc}
+
+1. 要将全局注册表设定为目标，请运行以下命令：
+
+   ```
+ibmcloud cr region-set global
+```
+   {: pre}
+
+2. 要将本地 Docker 守护程序登录到全局注册表以拉出 {{site.data.keyword.IBM_notm}} 提供的公共映像，请运行 `ibmcloud cr login` 命令。
 
 ## 对 Docker 的支持
 {: #docker}

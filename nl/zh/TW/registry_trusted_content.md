@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, Docker Content Trust, keys, trusted content, signing, signing images, repository keys, 
 
@@ -37,9 +37,9 @@ subcollection: registry
 映像檔針對舊網域名稱 (`registry.bluemix.net`) 及新網域名稱 (`icr.io`) 有不同的簽章。現有的簽章適用於從舊網域名稱取回映像檔時。如果您要從新的網域名稱取回已簽署的內容，必須在新的網域名稱 `icr.io` 上重新簽署映像檔，請參閱[針對新網域名稱重新簽署映像檔](#trustedcontent_resign)。
 {: note}
 
-Docker Content Trust 使用「首次使用時信任」的安全模型。第一次從儲存庫取回已簽署的映像檔時，會從信任伺服器取回儲存庫金鑰，並在未來使用該金鑰來驗證來自該儲存庫的映像檔。第一次取回儲存庫之前，您必須先驗證您信任信任伺服器，或是信任映像檔及其發佈者。如果伺服器中的信任資訊已洩漏，且您之前未曾從儲存庫取回映像檔，則 Docker 用戶端可能會從信任伺服器取回已洩漏的資訊。如果信任資料在您第一次取回映像檔之後洩漏，則在後續取回時，您的 Docker 用戶端將無法驗證已洩漏的資料，而不會取回映像檔。如需如何檢查映像檔信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。
+docker Content Trust 使用「首次使用時信任 (TOFU)」安全模型。第一次從儲存庫取回已簽署的映像檔時，會從信任伺服器取回儲存庫金鑰，並在未來使用該金鑰來驗證來自該儲存庫的映像檔。第一次取回儲存庫之前，您必須先驗證您信任信任伺服器，或是信任映像檔及其發佈者。如果伺服器中的信任資訊已洩漏，且您之前未曾從儲存庫取回映像檔，則 Docker 用戶端可能會從信任伺服器取回已洩漏的資訊。如果信任資料在您第一次取回映像檔之後洩漏，則在後續取回時，您的 Docker 用戶端將無法驗證已洩漏的資料，而不會取回映像檔。如需如何檢查映像檔信任資料的相關資訊，請參閱[檢視已簽署的映像檔](#trustedcontent_viewsigned)。
 
-如需「首次使用時信任」安全模型的相關資訊，請參閱 [The Update Framework ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://theupdateframework.github.io/)。
+如需 TOFU 安全模型的相關資訊，請參閱 [The Update Framework ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://theupdateframework.github.io/)。
 
 ## 設定受信任內容環境
 {: #trustedcontent_setup}
@@ -70,8 +70,8 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
    ```
    {: pre}
 
-   如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
-    {: tip}
+   如果您有聯合 ID，請使用 `ibmcloud login --sso` 來登入。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。如果您有聯合 ID，則未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功。
+   {: tip}
 
 3. 將目標設為您要使用的地區。如果您不知道地區名稱，則可以執行不含地區的指令，然後選擇地區。
 
@@ -89,7 +89,7 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
 
    輸出會指示您匯出 Docker Content Trust 環境變數。
 
-   **範例**
+   例如：
 
    ```
    user:~ user$ ibmcloud cr login
@@ -131,7 +131,10 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
    ```
    {: screen}
 
-3. **首次推送已簽署的儲存庫。**將已簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰：主要金鑰及儲存庫金鑰，並將它們儲存在您的本端機器。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制。
+3. 第一次將簽署的映像檔推送至新儲存庫時，指令會建立兩個簽署金鑰 - 根金鑰及儲存庫金鑰，並將它們儲存在本端機器中。請輸入並儲存每一個金鑰的安全通行詞組，然後[備份金鑰](#trustedcontent_backupkeys)。備份金鑰很重要，因為您的[回復選項](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent)受到限制。
+
+   只有在第一次推送已簽署的儲存庫時才需要執行此動作。
+   {: tip}
 
 ## 取回已簽署的映像檔
 {: #trustedcontent_pull}
@@ -267,7 +270,7 @@ Docker Content Trust 使用「首次使用時信任」的安全模型。第一�
 若要容許其他使用者在儲存庫中簽署映像檔，請將那些使用者的簽署金鑰新增至該儲存庫。
 {:shortdesc}
 
-**開始之前**
+開始之前，請完成下列作業：
 
 - 映像檔簽章者必須具有將映像檔推送至名稱空間的許可權。
 - 儲存庫擁有者及其他簽章者必須已安裝 Docker 18.03 或更新版本。

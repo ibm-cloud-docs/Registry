@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, public IBM images, images, accessing images,
 
@@ -34,7 +34,7 @@ subcollection: registry
 您可以使用指令行來存取公用 {{site.data.keyword.IBM_notm}} 映像檔。
 {:shortdesc}
 
-**開始之前**
+在開始之前，請完成下列作業：
 
 - 登入 [{{site.data.keyword.cloud_notm}}](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_login)：
 
@@ -45,7 +45,7 @@ subcollection: registry
 
 若要列出公用映像檔，請完成下列步驟：
 
-1. 將廣域登錄設為目標：
+1. 將全球登錄設為目標：
 
    ```
    ibmcloud cr region-set global

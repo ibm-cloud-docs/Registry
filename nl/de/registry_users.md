@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-27"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access role policies, access policies, policies, policy enforcement,
 
@@ -45,7 +45,7 @@ Wenn Sie Zugriff auf alles erteilen möchten, geben Sie keinen Ressourcentyp bzw
 Eine Organisation und Zuweisung von Zugriff zu Registry-Namensbereichen in Ressourcengruppen ist nicht möglich.
 {: note}
 
-**Vorbereitung**
+Führen Sie die folgenden Tasks aus, bevor Sie beginnen:
 
 - Entscheiden Sie, welche Rollen die einzelnen Benutzer benötigen und für welche Ressourcen in {{site.data.keyword.registrylong_notm}} sie diese benötigen. Siehe [IAM-Rollen](/docs/services/Registry?topic=registry-iam#iam). Bedenken Sie, dass Sie mehrere Richtlinien erstellen können. Sie können beispielsweise Schreibzugriff für eine Ressource erteilen, für eine andere Ressource nur Lesezugriff, und für eine dritte Ressource gar keinen Zugriff. Richtlinien sind additiv, d. h. dass mit einer globalen Leserichtlinie und einer ressourcenbezogenen Schreibrichtlinie sowohl Lese- als auch Schreibzugriff für eine bestimmte Ressource erteilt wird.
 

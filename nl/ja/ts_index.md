@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -54,6 +54,7 @@ subcollection: registry
 `ibmcloud cr login` コマンドが失敗します。
 
 {: tsCauses}
+考えられる原因は次のとおりです。
 
 - `container-registry` CLI プラグインが古いため、更新する必要がある。
 - Docker がローカル・コンピューターにインストールされていないか、稼働していない。
@@ -75,13 +76,10 @@ subcollection: registry
 すべての `ibmcloud cr` コマンドが失敗します。
 
 {: tsCauses}
-
-- `container-registry` CLI プラグインが古いため、更新する必要がある。
+`container-registry` CLI プラグインが古いため、更新する必要がある。
 
 {: tsResolve}
-この問題は、以下の方法で解決できます。
-
-- `container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
+`container-registry` CLI プラグインの最新バージョンにアップグレードします。[`container-registry` CLI プラグインの更新](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update)を参照してください。
 
 ## {{site.data.keyword.registrylong_notm}} コマンドが「`'cr' is not a registered command. See 'ibmcloud help'`」で失敗する
 {: #ts_login_error}
@@ -104,13 +102,10 @@ ibmcloud cr namespace
 {: pre}
 
 {: tsCauses}
-
-- `container-registry` CLI プラグインがインストールされていません。
+`container-registry` CLI プラグインがインストールされていません。
 
 {: tsResolve}
-この問題は、以下の方法で解決できます。
-
-- `container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)を参照してください。
+`container-registry` CLI プラグインをインストールします。[`container-registry` CLI プラグインのインストール](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)を参照してください。
 
 ## `ibmcloud cr build` コマンドが失敗する
 {: #ts_build_fails}
@@ -139,6 +134,7 @@ docker build --no-cache .
 `ibmcloud cr namespace-add` を実行するときに、入力した値を名前空間として設定できない。
 
 {: tsCauses}
+考えられる原因は次のとおりです。
 
 - 別の {{site.data.keyword.cloud_notm}} 組織によって既に使用されている名前空間値を入力した。
 - 名前空間は最近削除されており、その名前を再使用している。 削除された名前空間に多くのリソースが含まれていた場合、その削除が {{site.data.keyword.registrylong_notm}} によってまだ完全に処理されていない可能性があります。
@@ -185,6 +181,7 @@ denied: requested access to the resource is denied
 {: screen}
 
 {: tsCauses}
+考えられる原因は次のとおりです。
 
 - Docker がインストールされていない。
 - Docker クライアントが {{site.data.keyword.registrylong_notm}} にログインしていない。
@@ -221,13 +218,13 @@ denied: requested access to the resource is denied
 イメージや IBM パスポート・アドバンテージから取得した Helm チャートなどのソフトウェア・パッケージは、`ibmcloud cr ppa-archive-load` コマンドを使用してレジストリーにインポートする必要があります。
 
 {: tsResolve}
-**始めに**
+IBM パスポート・アドバンテージからの製品インポートを開始する前に、次のタスクを実行します。
 
-- `ibmcloud login [--sso]` を実行して {{site.data.keyword.cloud_notm}} にログインします。
-- `ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} にログインします。
-- クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)します。
-- クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers?topic=containers-helm#helm)。
-- 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/helm/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
+1. `ibmcloud login [--sso]` を実行して {{site.data.keyword.cloud_notm}} にログインします。
+2. `ibmcloud cr login` を実行して {{site.data.keyword.registrylong_notm}} にログインします。
+3. クラスターを [`kubectl` CLI のターゲットとして設定](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)します。
+4. クラスターにまだ Helm をセットアップしていない場合は、[ここでクラスターに Helm をセットアップします](/docs/containers?topic=containers-helm#helm)。
+5. 組織内でチャートを共有する場合は、[Chart Museum オープン・ソース・プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/helm/charts/tree/master/stable/chartmuseum) をインストールできます。 その手順については、この [developerWorks レシピ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/) を参照してください。
 
 ### {{site.data.keyword.cloud_notm}} で使用するための IBM パスポート・アドバンテージ製品のインポート
 {: #ts_ppa_import}
@@ -253,11 +250,11 @@ denied: requested access to the resource is denied
    IBM パスポート・アドバンテージ・アーカイブの Helm チャートを Chart Museum にアップロードする場合は、コマンドに次のオプションを含めます: `ibmcloud cr ppa-archive-load --archive </path/to/archive.tgz> --namespace <namespace> --chartmuseum-uri <URI> --chartmuseum-user <user_name> --chartmuseum-password <password>`
    {: tip}
 
-   **出力例**
+   以下のメッセージは、コマンドからの出力の例です。
 
    ```
    user:~ user$ ibmcloud cr ppa-archive-load --archive IBM_INTEGRATION_BUS_V10.0.0.10_FO.tar.gz  --namespace mynamespace
-    Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
+   Unpacking archive to '/Users/user/Downloads/ppa-import/50ab12ea-2d4e-402b-9d9c-61708fcb0720'...
    Found 1 image(s) and 1 chart(s) to import.
    Importing 'iib-prod:10.0.0.10' and pushing it to 'us.icr.io/mynamespace/iib-prod:10.0.0.10'...
    Loaded image: iib-prod:10.0.0.10
@@ -266,8 +263,8 @@ denied: requested access to the resource is denied
    369bf331939e: Preparing
    ...
    369bf331939e: Pushed
-    1ecda25d51a8: Pushed
-    10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
+   1ecda25d51a8: Pushed
+   10.0.0.10: digest: sha256:8fbe4b0a33b061da38c0081ca86673f24073fbafeca3b49099367e70a20f88cz size: 3444
 
    Extracting chart 'charts/ibm-integration-bus-prod-1.0.0.tgz' to '/Users/user/Downloads/ppa-import/charts'.
 
@@ -316,7 +313,6 @@ denied: requested access to the resource is denied
 インバウンドとアウトバウンドのネットワーク・トラフィックでレジストリーとの間の通信を可能にするには、カスタム・ファイアウォールにおいて特定のネットワーク・グループを開く必要があります。
 
 {: tsResolve}
-
 [クラスターからインフラストラクチャー・リソースや他のサービスへのアクセスを許可](/docs/containers?topic=containers-firewall#firewall_outbound)します。
 
 コンピューターへのインバウンド接続については、ソース・ネットワーク・グループからコンピューターの宛先パブリック IP アドレスへの着信ネットワーク・トラフィックを許可します。

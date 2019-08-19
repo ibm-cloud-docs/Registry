@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-08-05"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Tutorial: concedendo acesso a recursos do {{site.data.keyword.registrylong_notm}}
+# Tutorial Concedendo acesso aos recursos do {{site.data.keyword.registrylong_notm}}
 {: #iam_access}
 
 Use este tutorial para descobrir como conceder acesso a seus recursos configurando o {{site.data.keyword.iamlong}} (IAM) para {{site.data.keyword.registrylong_notm}}.
@@ -30,16 +30,16 @@ Use este tutorial para descobrir como conceder acesso a seus recursos configuran
 
 Este tutorial leva aproximadamente 45 minutos.
 
-**Antes de iniciar**
+## Antes de Come╬ar
+{: #iam_access_prereq}
+
+Antes de iniciar, você deve concluir as seguintes tarefas:
 
 - Conclua as instruções em [Introdução ao {{site.data.keyword.registrylong_notm}} ](/docs/services/Registry?topic=registry-getting-started#getting-started).
 
 - Assegure-se de que você tenha a versão mais recente do plug-in da CLI `container-registry` para a CLI do {{site.data.keyword.cloud_notm}}, consulte [Atualizando o plug-in da CLI `container-registry`](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- Deve-se ter acesso a duas contas do [{{site.data.keyword.cloud_notm}}
-![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login)
-que podem ser usadas para este tutorial: uma para o Usuário A e outra para o Usuário B. Cada uma delas deve usar um
-endereço de e-mail exclusivo. Você trabalha em sua própria conta, Usuário A, e convida outro usuário, Usuário B, para usar sua conta. É possível optar por criar uma segunda conta {{site.data.keyword.cloud_notm}} ou trabalhar com um colega que tenha uma conta {{site.data.keyword.cloud_notm}}.
+- Assegure-se de ter acesso a duas contas do [contas do{{site.data.keyword.cloud_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/login) que podem ser usadas para este tutorial, uma para o Usuário A e uma para o Usuário B, sendo que cada uma deve usar um endereço de e-mail exclusivo. Você trabalha em sua própria conta, Usuário A, e convida outro usuário, Usuário B, para usar sua conta. É possível optar por criar uma segunda conta {{site.data.keyword.cloud_notm}} ou trabalhar com um colega que tenha uma conta {{site.data.keyword.cloud_notm}}.
 
 - Se você começou a usar o {{site.data.keyword.registrylong_notm}} em sua conta antes de 4 de outubro de 2018, deverá ativar o cumprimento de política do IAM executando o comando `ibmcloud cr iam-policies-enable`. Se você convidou outros usuários que usam seus namespaces do {{site.data.keyword.registrylong_notm}} em sua conta do IBM Cloud, use uma conta diferente como Usuário A para evitar a interrupção de seu acesso.
 
@@ -536,4 +536,4 @@ Nesta seção, você remove os recursos que você criou em seções anteriores p
    ```
    {: pre}
 
-Bom trabalho! Você concluiu com êxito este tutorial.
+Você concluiu com êxito este tutorial.

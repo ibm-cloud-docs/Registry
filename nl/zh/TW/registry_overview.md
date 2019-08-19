@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-07"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -75,9 +75,9 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 推送映像檔的範例：
 
-> 您將映像檔推送至以 Ubuntu 映像檔為其礎的名稱空間。Ubuntu 映像檔包含數層。因為您的帳戶中還沒有這些層，所以會將這些層所需的儲存空間量加到您的每月用量。
->
-> 後來，您建立了第二個以 Ubuntu 映像檔為其礎的映像檔。您變更 Ubuntu 基礎映像檔，例如，藉由將其他指令或檔案新增至 Dockerfile 來變更。每一個變更都代表新的映像檔層。當您推送第二個映像檔時，{{site.data.keyword.registrylong_notm}} 會認出基礎 Ubuntu 映像檔的所有層都已儲存在帳戶中。第二次儲存這些層時不會向您收費，即使您已將映像檔推送至另一個名稱空間。{{site.data.keyword.registrylong_notm}} 會判斷所有新層的大小，並將儲存空間量加到您的每月用量。
+您將映像檔推送至以 Ubuntu 映像檔為其礎的名稱空間。Ubuntu 映像檔包含數層。因為您的帳戶中還沒有這些層，所以會將這些層所需的儲存空間量加到您的每月用量。
+
+後來，您建立了第二個以 Ubuntu 映像檔為其礎的映像檔。您變更 Ubuntu 基礎映像檔，例如，藉由將其他指令或檔案新增至 Dockerfile 來變更。每一個變更都代表新的映像檔層。當您推送第二個映像檔時，{{site.data.keyword.registrylong_notm}} 會認出基礎 Ubuntu 映像檔的所有層都已儲存在帳戶中。第二次儲存這些層時不會向您收費，即使您已將映像檔推送至另一個名稱空間。{{site.data.keyword.registrylong_notm}} 會判斷所有新層的大小，並將儲存空間量加到您的每月用量。
 
 ### 儲存空間及取回資料流量的計費
 {: #registry_billing_traffic}
@@ -85,27 +85,31 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 視選擇的服務方案而定，會根據每個地區中每個月使用的儲存空間及取回資料流量向您收費。
 {:shortdesc}
 
-**儲存空間：**
+#### 儲存空間
+{: #registry_billing_traffic_storage}
 
   每個 {{site.data.keyword.registrylong_notm}} 服務方案都有一定的儲存空間量，可用來將 Docker 映像檔儲存在 {{site.data.keyword.cloud_notm}} 帳戶的名稱空間中。如果您使用標準方案，則會依使用的 GB-月向您收費。前 0.5 GB-月免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以將映像檔免費儲存在 {{site.data.keyword.registrylong_notm}} 中。GB-月是指一個月（730 小時）平均 1 GB 儲存空間。
+  {:shortdesc}
 
   標準方案的範例：
 
-  > 您正好半個月使用 5 GB，然後將數個映像檔推送至名稱空間，並在剩下的半個月使用 10 GB。您的每月用量計算如下：
-  >
-  > (5 GB x 0.5（月）) + (10 GB x 0.5（月）) = 2.5 + 5 = 7.5 GB-月
-  >
-  > 在標準方案中，前 0.5 GB-月免費，因此會向您收取 7 GB-月（7.5 GB-月 - 0.5 GB-月）的費用。
+  您正好半個月使用 5 GB，然後將數個映像檔推送至名稱空間，並在剩下的半個月使用 10 GB。您的每月用量計算如下：
+  
+  (5 GB x 0.5（月）) + (10 GB x 0.5（月）) = 2.5 + 5 = 7.5 GB-月
+  
+  在標準方案中，前 0.5 GB-月免費，因此會向您收取 7 GB-月（7.5 GB-月 - 0.5 GB-月）的費用。
 
-**取回資料流量：**
+#### 取回資料流量
+{: #registry_billing_traffic_pull_traffic}
 
   每個 {{site.data.keyword.registrylong_notm}} 服務方案都包括特定數量的專用映像檔（儲存在名稱空間中）免費取回資料流量。取回資料流量是您在將映像檔層從名稱空間取回至本端機器時使用的頻寬。如果您使用標準方案，則會依每個月使用的 GB 量向您收費。每個月的前 5 GB 免費。如果您使用免費方案，則在達到免費方案的配額限制之前，可以從名稱空間取回映像檔。
+  {:shortdesc}
 
   標準方案的範例：
 
-  > 在該月，您已取回包含大小總計 14 GB 之層的映像檔。您的每月用量計算如下：
-  >
-  > 在標準方案中，每個月的前 5 GB 免費，因此會向您收取 9 GB (14 GB - 5 GB) 的費用。
+  在該月，您已取回包含大小總計 14 GB 之層的映像檔。您的每月用量計算如下：
+  
+  在標準方案中，每個月的前 5 GB 免費，因此會向您收取 9 GB (14 GB - 5 GB) 的費用。
 
 ### 儲存空間及取回資料流量的配額限制
 {: #registry_quota_limits}
@@ -113,25 +117,29 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 視選擇的服務方案而定，您可以在達到每個地區的方案特定或自訂配額限制之前，將映像檔推送至名稱空間以及從中取回映像檔。
 {:shortdesc}
 
-**儲存空間：**
+#### 儲存空間
+{: #registry_quota_limits_storage}
 
   達到或超出方案的配額限制時，在從名稱空間[移除映像檔來釋放空間](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup)或[升級至標準方案](#registry_plan_upgrade)之前，您無法將任何映像檔推送至 {{site.data.keyword.cloud_notm}} 帳戶中的名稱空間。如果您設定了免費或標準方案中的儲存空間配額限制，您也可以[增加此配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)，以重新啟用新映像檔的推送。
+  {:shortdesc}
 
   標準方案的範例：
 
-  > 您的現行儲存空間配額限制設為 1 GB。{{site.data.keyword.cloud_notm}} 帳戶的名稱空間中所儲存的所有專用映像檔，已使用這個儲存空間中的 900 MB。在達到配額限制之前，您有 100 MB 的儲存空間可用。有一位使用者想要在本端機器上推送大小為 2 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者推送此映像檔。
-  >
-  > 推送之後，{{site.data.keyword.registrylong_notm}} 會判斷名稱空間中映像檔的實際大小（這可能會與本端機器上的大小不同），並檢查是否達到儲存空間的限制。在此範例中，儲存空間用量會從 900 MB 增加 2 GB。在現行配額限制設為 1 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您將其他映像檔推送至名稱空間。
+  您的現行儲存空間配額限制設為 1 GB。{{site.data.keyword.cloud_notm}} 帳戶的名稱空間中所儲存的所有專用映像檔，已使用這個儲存空間中的 900 MB。在達到配額限制之前，您有 100 MB 的儲存空間可用。有一位使用者想要在本端機器上推送大小為 2 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者推送此映像檔。
+  
+  推送之後，{{site.data.keyword.registrylong_notm}} 會判斷名稱空間中映像檔的實際大小（這可能會與本端機器上的大小不同），並檢查是否達到儲存空間的限制。在此範例中，儲存空間用量會從 900 MB 增加 2 GB。在現行配額限制設為 1 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您將其他映像檔推送至名稱空間。
 
-**取回資料流量：**
+#### 取回資料流量
+{: #registry_quota_limits_pull_traffic}
 
   達到或超出方案的配額限制時，在等待下一個計費期間開始、[升級至標準方案](#registry_plan_upgrade)或[增加取回資料流量的配額限制](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set)之前，您無法從 {{site.data.keyword.cloud_notm}} 帳戶中的名稱空間取回任何映像檔。
+  {:shortdesc}
 
   標準方案的範例：
 
-  > 在該月，取回資料流量的配額限制設為 5 GB。您已從名稱空間取回映像檔，並已使用這個取回資料流量中的 4.5 GB。在達到配額限制之前，您有 0.5 GB 的取回資料流量可用。一位使用者想要從名稱空間取回大小為 1 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者取回此映像檔。
-  >
-  > 取回映像檔之後，{{site.data.keyword.registrylong_notm}} 會判斷您在取回期間已使用的頻寬，並檢查是否已達到取回資料流量的限制。在此範例中，取回資料流量用量會從 4.5 GB 增加到 5.5 GB。在現行配額限制設為 5 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您從名稱空間取回映像檔。
+  在該月，取回資料流量的配額限制設為 5 GB。您已從名稱空間取回映像檔，並已使用這個取回資料流量中的 4.5 GB。在達到配額限制之前，您有 0.5 GB 的取回資料流量可用。一位使用者想要從名稱空間取回大小為 1 GB 的映像檔。因為尚未達到配額限制，所以 {{site.data.keyword.registrylong_notm}} 容許使用者取回此映像檔。
+  
+  取回映像檔之後，{{site.data.keyword.registrylong_notm}} 會判斷您在取回期間已使用的頻寬，並檢查是否已達到取回資料流量的限制。在此範例中，取回資料流量用量會從 4.5 GB 增加到 5.5 GB。在現行配額限制設為 5 GB 的情況下，{{site.data.keyword.registrylong_notm}} 會阻止您從名稱空間取回映像檔。
 
 ### 成本
 {: #registry_cost}
@@ -157,8 +165,8 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
    ```
    {: pre}
 
-   如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.cloud_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。若未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功，即表示您有聯合 ID。
-    {:tip}
+   如果您有聯合 ID，請使用 `ibmcloud login --sso` 登入 {{site.data.keyword.cloud_notm}} CLI。請輸入您的使用者名稱，並使用 CLI 輸出中提供的 URL，來擷取一次性密碼。如果您有聯合 ID，則未使用 `--sso` 時登入失敗，而有使用 `--sso` 選項時登入成功。
+   {:tip}
 
 2. 以您要升級方案的地區為目標：
 
@@ -181,17 +189,11 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
    如需相關資訊，請參閱 [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)。
 
-## 學習基本觀念
-{: #registry_planning}
-
-學習登錄基本觀念，以準備好使用 {{site.data.keyword.registrylong_notm}} 來儲存及共用 Docker 映像檔。
-{:shortdesc}
-
-請不要將個人資訊放在容器映像檔、名稱空間名稱、說明欄位或任何映像檔配置資料（例如，映像檔名稱或映像檔標籤）中。
-{: important}
-
-### 瞭解 {{site.data.keyword.registrylong_notm}} 中使用的術語
+## 瞭解 {{site.data.keyword.registrylong_notm}} 中使用的術語
 {: #terms}
+
+在 {{site.data.keyword.registrylong_notm}} 中使用的術語的說明。
+{:shortdesc}
 
 <dl>
   <dt>Dockerfile</dt>
@@ -212,7 +214,7 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
   <dt>名稱空間 (Namespace)</dt>
   <dd>名稱空間是在 {{site.data.keyword.registrylong_notm}} 內組織映像檔儲存庫的一種方式。名稱空間與 {{site.data.keyword.cloud_notm}} 帳戶相關聯。當您在 {{site.data.keyword.registrylong_notm}} 中設定自己的名稱空間時，會將名稱空間附加至登錄 URL，如下所示：<code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>。
 
-  您 {{site.data.keyword.cloud_notm}} 帳戶中的每個使用者都可以檢視及使用登錄名稱空間中所儲存的映像檔。例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。</dd>
+  您 {{site.data.keyword.cloud_notm}} 帳戶中的每個使用者都可以檢視及使用登錄名稱空間中所儲存的映像檔。例如，您可以設定多個名稱空間，讓正式作業及暫置環境具有不同的儲存庫。</dd>
 </dl>
 
 <dl>
@@ -237,43 +239,19 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 
 若要進一步瞭解 Docker 特有術語，請參閱 [Docker 名詞解釋 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.docker.com/glossary/)。
 
-### 規劃名稱空間
-{: #registry_namespaces}
-
-{{site.data.keyword.registrylong_notm}} 提供 IBM 所管理的多方承租戶專用映像檔登錄。您可以藉由設定登錄名稱空間，以在此登錄中儲存及共用 Docker 映像檔。
-{:shortdesc}
-
-例如，您可以設定多個名稱空間，讓正式作業及編譯打包環境具有不同的儲存庫。如果您要將登錄用於多個 {{site.data.keyword.cloud_notm}} 地區，則必須設定每一個地區的名稱空間。名稱空間名稱在地區內是唯一的。您可以針對每一個地區使用相同的名稱空間名稱，除非他人已在該地區中設定了具有該名稱的名稱空間。
-
-您可以使用 IAM 原則來控制名稱空間的存取。如需相關資訊，請參閱[定義使用者存取角色原則](/docs/services/Registry?topic=registry-user#user)。
-
-若只要使用 IBM 提供的公用映像檔，您不需要設定名稱空間。
-
-如果您不確定是否已為您的帳戶設定名稱空間，請執行 `ibmcloud cr namespace-list` 指令來擷取現有名稱空間資訊。
-{:tip}
-
-當您選擇名稱空間時，請考量下列規則：
-
-- 您的名稱空間在相同地區的所有 {{site.data.keyword.cloud_notm}} 帳戶中必須是唯一的。
-- 名稱空間必須有 4 - 30 個字元。
-- 您的名稱空間的開頭和結尾必須是字母或數字。
-- 名稱空間只能包含小寫字母、數字及底線 (_)。
-
-請不要將個人資訊放在名稱空間名稱中。
-{: important}
-
-在設定第一個名稱空間之後，您會獲指派免費 {{site.data.keyword.registrylong_notm}} 服務方案（如果您尚未[升級方案](#registry_plan_upgrade)的話）。
-
 ## 地區
 {: #registry_regions}
 
 {{site.data.keyword.registrylong_notm}} 登錄可在數個地區中使用。
 {:shortdesc}
 
+所有登錄構件的範圍設定為您目前使用中的特定地區登錄。例如，名稱空間、映像檔、記號、配額設定及方案設定必須全都針對每一個地區登錄個別管理。
+
 ### 本端地區
 {: #registry_regions_local}
 
 本端地區是專用端點存取的地理區域。地區的 {{site.data.keyword.registrylong_notm}} 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
+{:shortdesc}
 
 下表顯示網域名稱。
 
@@ -289,9 +267,11 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
 
-**Vulnerability Advisor 網域名稱**
+#### Vulnerability Advisor 網域名稱
+{: #registry_regions_local_va}
 
 地區的 Vulnerability Advisor 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
+{:shortdesc}
 
 下表顯示新的網域名稱。
 
@@ -307,25 +287,27 @@ Docker 映像檔是每個您建立之容器的基準。映像檔是從 Dockerfil
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
 
-所有登錄構件的範圍設定為您目前使用中的特定地區登錄。例如，名稱空間、映像檔、記號、配額設定及方案設定必須全都針對每一個地區登錄個別管理。
+#### 以本端地區為目標
+{: #registry_regions_local_target}
 
-如果您要使用非本端地區的地區，則可以執行 `ibmcloud cr region-set` 指令，將目標設定為您要存取的地區。您可以在不含任何參數的情況下執行指令來取得可用地區的清單，也可以將地區指定為參數。
+如果您要使用非本端地區的地區，則可以執行 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 指令，將目標設定為您要存取的地區。您可以在不含任何參數的情況下執行指令來取得可用地區的清單，也可以將地區指定為參數。
+{:shortdesc}
 
-若要搭配參數執行指令，請將 `<region>` 取代為地區的名稱，例如 `eu-central`。
+1. 若要執行具有參數的指令，請將 `<region>` 取代為[地區](#registry_regions_local)的名稱。
 
-```
-ibmcloud cr region-set <region>
-```
-{: pre}
+   ```
+   ibmcloud cr region-set <region>
+   ```
+   {: pre}
 
-例如，若要將目標設定為 eu-central 地區，請執行下列指令：
+   例如，要將 `eu-central` 地區設定為目標，請執行下列指令：
 
-```
-ibmcloud cr region-set eu-central
-```
-{: pre}
+   ```
+   ibmcloud cr region-set eu-central
+   ```
+   {: pre}
 
-將目標設定為不同的地區之後，請重新登入登錄：`ibmcloud cr login`。
+2. 執行 `ibmcloud cr login` 指令，登入登錄。
 
 ### 全球登錄
 {: #registry_regions_global}
@@ -345,22 +327,11 @@ ibmcloud cr region-set eu-central
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
 
-您可以執行 `ibmcloud cr region-set` 指令，將目標設定為全球登錄。
+#### Vulnerability Advisor 網域名稱
+{: #registry_regions_global_va}
 
-例如，若要將目標設定為全球登錄，請執行下列指令：
-
-```
-ibmcloud cr region-set global
-```
-{: pre}
-
-如需 `ibmcloud cr region-set` 指令的相關資訊，請參閱 [{{site.data.keyword.registrylong_notm}} CLI](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)。
-
-將目標設定為全球登錄之後，請執行 `ibmcloud cr login` 指令，將本端 Docker 常駐程式登入全球登錄，以便您可以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔。
-
-**Vulnerability Advisor 網域名稱**
-
-全球的 Vulnerability Advisor 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。 
+全球的 Vulnerability Advisor 網域名稱已變更。新的網域名稱提供於主控台及 CLI 中。
+{:shortdesc}
 
 下表顯示新的網域名稱。
 
@@ -371,6 +342,21 @@ ibmcloud cr region-set global
 
 現有的 `bluemix.net` 網域名稱已淘汰，但您目前可以繼續使用它們，以後將會公布支援結束日期。
 {: deprecated}
+
+#### 以全球登錄為目標
+{: #registry_regions_global_target}
+
+您可以執行 [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) 指令，將目標設定為全球登錄。
+{:shortdesc}
+
+1. 若要將全球登錄設定為目標，請執行下列指令：
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. 若要將本端 Docker 常駐程式登入到全球登錄，以取回 {{site.data.keyword.IBM_notm}} 提供的公用映像檔，請執行 `ibmcloud cr login` 指令。
 
 ## Docker 支援
 {: #docker}

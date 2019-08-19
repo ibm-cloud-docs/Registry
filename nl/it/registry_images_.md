@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -46,7 +46,7 @@ per un uso successivo in {{site.data.keyword.registrylong_notm}}.
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Passa un'immagine da un registro pubblico o privato al tuo computer."/>
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
@@ -56,10 +56,10 @@ il tuo client Docker è configurato per richiedere le autorizzazioni root, devi 
 
   Se modifichi le tue autorizzazioni per eseguire i comandi Docker senza i privilegi root, devi eseguire di nuovo il comando `ibmcloud login`.
 
-Scarica l'immagine; consulta [Esegui il pull di un'immagine](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) nella documentazione introduttiva.
+1. Scarica l'immagine; consulta [Esegui il pull di un'immagine](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) nella documentazione introduttiva.
 
-Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
-{:tip}
+   Se ricevi un messaggio del tipo `unauthorized: authentication required` o `denied: requested access to the resource is denied`, esegui il comando `ibmcloud cr login`.
+   {:tip}
 
 Dopo aver eseguito il pull di un'immagine e averla contrassegnata con una tag per il tuo spazio dei nomi, puoi caricare (push) l'immagine dal tuo computer locale al tuo spazio dei nomi.
 
@@ -71,7 +71,7 @@ Puoi eseguire il push (caricare) di un'immagine nel tuo spazio dei nomi in {{sit
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Push di un'immagine dal tuo computer a {{site.data.keyword.registrylong_notm}}."/>
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
@@ -115,7 +115,7 @@ condividere l'immagine in entrambe le regioni.
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copia un'immagine da un qualsiasi registro privato o pubblico nel tuo registro {{site.data.keyword.cloud_notm}} privato."/>
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
@@ -145,7 +145,7 @@ Nella regione in cui hai eseguito l'accesso, crea una nuova immagine in {{site.d
 Le nuove immagini create utilizzando questo meccanismo non conservano le firme. Se hai bisogno che la nuova immagine sia firmata, non utilizzare questo meccanismo.
 {: tip}
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
@@ -182,7 +182,7 @@ Per creare una nuova immagine da un'immagine di origine, completa la seguente pr
 Puoi creare un'immagine Docker direttamente in {{site.data.keyword.cloud_notm}} o creare la tua propria immagine Docker sul tuo computer locale e caricarla nel tuo spazio dei nomi in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Prima di iniziare**
+Prima di cominciare, completa le seguenti attività:
 
 - [Installa la CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) per lavorare con le immagini nel tuo
 spazio dei nomi.
@@ -217,8 +217,7 @@ Per creare la tua immagine Docker, completa la seguente procedura:
        ```
        {: pre}
 
-       **Esempio**
-     Per creare un Dockerfile basato sull'immagine pubblica {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilizza il seguente codice:
+       Ad esempio, per creare un Dockerfile basato sull'immagine pubblica {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), utilizza il seguente comando:
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -280,6 +279,8 @@ Per utilizzare il Controllo vulnerabilità per verificare la sicurezza della tua
 Crea un ID servizio che utilizza una chiave API per eseguire il push dell'immagine a {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+Completa la seguente procedura:
+
 1. Crea un ID servizio, vedi [Creazione e gestione degli ID servizio](/docs/iam?topic=iam-serviceids#serviceids).
 2. Crea una politica che fornisce l'autorizzazione all'ID servizio per accedere al registro, ad esempio, i ruoli `Administrator` e `Manager`, vedi [Gestione dell'accesso utente con Identity and Access Management (IAM)](/docs/services/Registry?topic=registry-iam#iam).
 3. Crea una chiave API, consulta [Creazione di una chiave API per un ID servizio](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
@@ -334,7 +335,7 @@ Le immagini {{site.data.keyword.IBM_notm}} pubbliche non possono essere eliminat
 L'eliminazione di un'immagine non può essere annullata. L'eliminazione di un'immagine utilizzata da una distribuzione esistente potrebbe causare la mancata riuscita di un ridimensionamento, di una ripianificazione o di entrambe le operazioni.
 {: important}
 
-Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il comando [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. Se vuoi rimuovere una tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, vedi il comando [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](#registry_images_untag).
+Dove sono presenti più tag per lo stesso digest immagine all'interno di un repository, il [comando `ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) rimuove l'immagine sottostante e tutte le relative tag. Se la stessa immagine è presente in uno spazio dei nomi o repository diversi, tale copia dell'immagine non viene rimossa. Se vuoi rimuovere una tag da un'immagine e lasciare in vigore l'immagine sottostante e tutte le altre tag, vedi il comando [Rimozione delle tag dalle immagini nel tuo repository {{site.data.keyword.cloud_notm}} privato](#registry_images_untag).
 {: tip}
 
 ### Eliminazione di immagini dal tuo repository {{site.data.keyword.cloud_notm}} privato utilizzando la CLI
@@ -402,9 +403,8 @@ Puoi eliminare i repository privati che non sono più necessari, e le eventuali 
 Quando elimini un repository, tutte le immagini in tale repository vengono eliminate. Questa azione non può essere annullata.
 {: important}
 
-**Prima di iniziare**
-
-Devi eseguire il backup di tutte immagini che vuoi conservare.
+Prima di cominciare, devi eseguire il backup di tutte immagini che vuoi conservare.
+{: tip}
 
 Per eliminare un repository privato utilizzando la GUI, completa la seguente procedura:
 

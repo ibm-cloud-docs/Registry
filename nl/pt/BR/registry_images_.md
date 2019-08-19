@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-08-06"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -45,7 +45,7 @@ uso posterior no {{site.data.keyword.registrylong_notm}}.
 
 <img src="images/images_pull.svg" width="800" style="width:800px;" alt="Puxe uma imagem de um registro privado ou público para o seu computador."/>
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -55,10 +55,10 @@ uso posterior no {{site.data.keyword.registrylong_notm}}.
   Caso as permissões para executar comandos do Docker mudem sem privilégios de administrador,
 deve-se executar o comando `ibmcloud login` novamente.
 
-Faça download da imagem, veja [Puxar uma imagem](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) na documentação de Introdução.
+1. Faça download da imagem, veja [Puxar uma imagem](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pulling) na documentação de Introdução.
 
-Se você receber uma mensagem `unauthorized: authentication required` ou `denied: requested access to the resource is denied`, execute o comando `ibmcloud cr login`.
-{:tip}
+   Se você receber uma mensagem `unauthorized: authentication required` ou `denied: requested access to the resource is denied`, execute o comando `ibmcloud cr login`.
+   {:tip}
 
 Depois de puxar uma imagem e identificá-la para o namespace, é possível fazer upload (enviar por
 push) da imagem do computador local para o namespace.
@@ -71,7 +71,7 @@ push) da imagem do computador local para o namespace.
 
 <img src="images/images_push.svg" width="800" style="width:800px;" alt="Enviar por push uma imagem de seu computador para o {{site.data.keyword.registrylong_notm}}."/>
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -116,7 +116,7 @@ compartilhar a imagem com usuários em ambas as regiões.
 
 <img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copie uma imagem de qualquer registro privado ou público para seu registro privado do {{site.data.keyword.cloud_notm}}."/>
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -145,7 +145,7 @@ Na região em que você está conectado, crie uma nova imagem no {{site.data.key
 Novas imagens criadas usando esse mecanismo não retêm assinaturas. Se você precisar que a nova imagem seja assinada, não use esse mecanismo.
 {: tip}
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - Assegure-se de que tenha acesso a um namespace privado no {{site.data.keyword.registrylong_notm}} que contenha uma imagem de origem à qual você deseja fazer referência a outra imagem.
@@ -182,7 +182,7 @@ Para criar uma nova imagem de uma imagem de origem, conclua as etapas a seguir:
 própria no computador local e transferi-la por upload (enviar por push) para o namespace no {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-**Antes de iniciar**
+Antes de iniciar, conclua as tarefas a seguir:
 
 - [Instale a CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) para trabalhar com imagens em seu namespace.
 - [Configure seu próprio namespace no {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
@@ -217,8 +217,7 @@ Para construir sua própria imagem do Docker, conclua as etapas a seguir:
        ```
        {: pre}
 
-       **Exemplo**
-     Para criar um Dockerfile que seja baseado na imagem pública do {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty), use o código a seguir:
+       Por exemplo, para criar um Dockerfile que seja baseado na imagem pública do {{site.data.keyword.IBM_notm}}{{site.data.keyword.appserver_short}} Liberty (ibmliberty), use o comando a seguir:
 
        ```
        FROM <region>.icr.io/ibmliberty:latest
@@ -281,6 +280,8 @@ Para usar o Vulnerability Advisor para verificar a segurança de sua imagem, vej
 Crie um ID de serviço que use uma chave de API para enviar imagens por push para o {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+Conclua as etapas a seguir:
+
 1. Crie um ID de serviço. Consulte [Criando e trabalhando com IDs de serviço](/docs/iam?topic=iam-serviceids#serviceids).
 2. Crie uma política que forneça a permissão de ID de serviço para acessar o registro, por exemplo, as funções `Administrator` e `Manager`. Consulte [Gerenciando o acesso de usuário com o Identity and Access Management](/docs/services/Registry?topic=registry-iam#iam).
 3. Crie uma chave de API. Consulte [Criando uma chave de API para um ID de serviço](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
@@ -330,7 +331,7 @@ Para remover uma ou diversas tags usando a CLI, conclua as etapas a seguir:
 
 Se desejar excluir um repositório privado e suas imagens associadas, consulte [Excluindo um repositório privado e quaisquer imagens associadas](#registry_repo_remove).
 
-As imagens públicas da {{site.data.keyword.IBM_notm}} não podem ser excluídas do seu repositório privado do {{site.data.keyword.cloud_notm}} e não são contabilizadas para sua cota.
+As imagens públicas do {{site.data.keyword.IBM_notm}} não podem ser excluídas de seu repositório privado do {{site.data.keyword.cloud_notm}} e não contam para sua cota.
 
 A exclusão de uma imagem não pode ser desfeita. A exclusão de uma imagem que está sendo usada por uma implementação existente pode causar falha de aumento de capacidade, reagendamento ou ambos.
 {: important}
@@ -405,9 +406,8 @@ com o seu IBMid.
 Quando você exclui um repositório, todas as imagens nesse repositório são excluídas. Essa ação não pode ser desfeita.
 {: important}
 
-**Antes de iniciar**
-
-Deve-se fazer backup de todas as imagens que deseja manter.
+Antes de iniciar, deve-se fazer backup de todas as imagens que se deseja manter.
+{: tip}
 
 Para excluir um repositório privado usando a GUI, conclua as etapas a seguir:
 

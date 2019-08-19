@@ -123,7 +123,7 @@ Para obtener información sobre los permisos necesarios, consulte [Roles de acce
 <dd>El tipo del problema de seguridad que desea eximir. Ejecute `ibmcloud cr exemption-types` para averiguar los tipos de problema válidos.
 </dd>
 <dt>`--issue-id ISSUE_ID`</dt>
-<dd>El ID del problema de seguridad que desea eximir. Para encontrar un ID de problema, ejecute `ibmcloud cr va <image>`, donde `<image>` es el nombre de la imagen. Utilice el valor que corresponda de la columna **ID de vulnerabilidad** o **ID de problema de configuración**.
+<dd>El ID del problema de seguridad que desea eximir. Para localizar un ID de problema, ejecute `ibmcloud cr va <image>`, donde `<image>` es el nombre de la imagen, o utilice el valor relevante de la columna **ID de vulnerabilidad** o **ID de problema de configuración**.
 </dd>
 </dl>
 
@@ -584,7 +584,7 @@ ibmcloud cr plan-upgrade standard
 
 Importa software de {{site.data.keyword.IBM_notm}} que se descarga desde [IBM Passport Advantage Online para clientes ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/software/passportadvantage/pao_customer.html) y que se empaqueta para utilizarlo con Helm en el espacio de nombres de {{site.data.keyword.registrylong_notm}}.
 
-Las imágenes de contenedor se envían al espacio de nombres privado de {{site.data.keyword.registryshort_notm}}. Las gráficas de Helm se graban en un directorio `ppa-import` que se crea en el directorio desde el que ejecuta el mandato. Opcionalmente, puede utilizar el [proyecto de código abierto de Chart Museum ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) para alojar gráficas de helm.
+Las imágenes de contenedor se envían al espacio de nombres privado de {{site.data.keyword.registryshort_notm}}. Las gráficas de Helm se escriben en un directorio `ppa-import` que se crea en el directorio desde el que ejecuta el mandato. Opcionalmente, puede utilizar el [proyecto de código abierto de Chart Museum ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/kubernetes/charts/tree/master/stable/chartmuseum) para alojar gráficas de helm.
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
