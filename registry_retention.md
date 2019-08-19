@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-14"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 

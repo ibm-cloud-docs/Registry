@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-19"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -48,7 +48,7 @@ For information about opening an {{site.data.keyword.IBM_notm}} support ticket, 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
 
-You cannot log in to {{site.data.keyword.registrylong_notm}}.
+You can't log in to {{site.data.keyword.registrylong_notm}}.
 
 {: tsSymptoms}
 The `ibmcloud cr login` command fails.
@@ -70,7 +70,7 @@ You can fix this problem in the following ways:
 ## Running any command for {{site.data.keyword.registrylong_notm}} fails with `FAILED You are not logged in to IBM Cloud.`
 {: #ts_login_cloud}
 
-You cannot run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.cloud_notm}}.
+You can't run any commands in {{site.data.keyword.registrylong_notm}}, even though you are logged in to {{site.data.keyword.cloud_notm}}.
 
 {: tsSymptoms}
 All `ibmcloud cr` commands fail.
@@ -84,7 +84,7 @@ Upgrade to the most recent version of the `container-registry` CLI plug-in, see 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
 
-You cannot run a `ibmcloud cr` command because `cr` is not a registered `ibmcloud` command.
+You can't run a `ibmcloud cr` command because `cr` is not a registered `ibmcloud` command.
 
 {: tsSymptoms}
 You see an error message similar to one of the following error messages:
@@ -93,13 +93,13 @@ You see an error message similar to one of the following error messages:
 ibmcloud cr login
 'cr' is not a registered command. See 'ibmcloud help'.
 ```
-{: pre}
+{: screen}
 
 ```
 ibmcloud cr namespace
 'cr' is not a registered command. See 'ibmcloud help'.
 ```
-{: pre}
+{: screen}
 
 {: tsCauses}
 The `container-registry` CLI plug-in is not installed.
@@ -303,6 +303,21 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 {: tsResolve}
 If you want to remove a tag from an image, but leave the underlying image and any other tags, use the [`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_untag) and [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
 
+## An image does not show in the list produced by the `ibmcloud cr retention-run` command
+{: #ts_image_list}
+
+{: tsSymptoms}
+You ran the [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command and an image that you're expecting to see in the list is not displayed.
+
+{: tsCauses}
+You might have a distroless image. Some distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
+
+{: tsResolve}
+You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private IBM Cloud repository](/docs/services/Registry?topic=registry-registry_images_#registry_images_remove).
+
+To check the creation date of an image, you can run the [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command. If the image doesn't have a creation date, the date is shown in the `ibmcloud cr image-inspect` output as `1970-01-01` and the image is excluded from the results for `ibmcloud cr retention-run`.
+{: tip}
+
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
 
@@ -384,7 +399,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 ### Root keys
 {: #trustedcontent_lostrootkey}
 
-If your root key is lost or compromised, you cannot update any trusted content repositories that used that root key.
+If your root key is lost or compromised, you can't update any trusted content repositories that used that root key.
 {:shortdesc}
 
 You can [delete the namespaces](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
@@ -516,7 +531,7 @@ Complete the following steps to change the webhook configuration to make it fail
 {: #ts_manifest_error_type}
 
 {: tsSymptoms}
-You tried to tag your image, but you receive the following error message, `The manifest type for this image is not supported for tagging.`.
+You tried to tag your image, but you receive the following error message: `The manifest type for this image is not supported for tagging.`
 
 {: tsCauses}
 The manifest type is not supported.

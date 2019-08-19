@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-09"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -125,6 +125,9 @@ After you copy your image, you can do one of the following tasks:
 ## Creating new images that refer to a source image
 {: #registry_images_source}
 
+Create a new image by using the [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command.
+{:shortdesc}
+
 In the region that you're logged into, create a new image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images created by using Docker Engine version 1.12, or later, only.
 
 New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
@@ -134,8 +137,6 @@ Before you begin, complete the following tasks:
 
 - [Install the CLI](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
-
-For more information about the command, see [`ibmcloud cr image-tag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag).
 
 To create a new image from a source image, complete the following steps:
 
