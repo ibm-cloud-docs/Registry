@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-08-14"
+lastupdated: "2019-08-20"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -71,11 +71,11 @@ To reduce the number of images in each repository within your namespace by using
 3. To retain some images and delete the others, run the following command:
 
    ```
-  ibmcloud cr retention-run --images IMAGECOUNT NAMESPACE
+  ibmcloud cr retention-run --images <image_count> <namespace>
    ```
    {: pre}
 
-   Where `IMAGECOUNT` is the number of images that you want to retain for each repository within your namespace, `NAMESPACE`.
+   Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
 3. Verify that the images were deleted by running the following command, and check that the images do not show in the list.
 
