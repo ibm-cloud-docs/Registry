@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-08-20"
+lastupdated: "2019-08-21"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -47,7 +47,7 @@ You gain the following advantages by using this technique:
 ## Clean up your namespaces by retaining only images that meet your criteria
 {: #retention_images}
 
-Retain images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
+Clean up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 {:shortdesc}
 
 The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command lists the images that will be deleted and gives you the option to cancel before deletion.
