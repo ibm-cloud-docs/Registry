@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-21"
+lastupdated: "2019-08-22"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -653,12 +653,12 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 Upgrades you to the standard plan for the registry region that you're targeting.
 
-For more information about plans, see [Registry plans](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
-
 ```
 ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
+
+For more information about plans, see [Registry plans](/docs/services/Registry?topic=registry-registry_overview#registry_plans).
 
 ### Prerequisites
 {: #bx_cr_plan_upgrade_prereq}
@@ -786,12 +786,12 @@ ibmcloud cr region
 ```
 {: codeblock}
 
+For more information, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+
 ### Prerequisites
 {: #bx_cr_region_prereq}
 
 None
-
-For more information, see [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
 
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
@@ -842,12 +842,12 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
-
 ```
 ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
+
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
 
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
