@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-08-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -27,7 +27,6 @@ subcollection: container-registry-cli-plugin
 
 You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
-
 
 ## Prerequisites
 {: #containerregcli_prereq}
@@ -834,7 +833,7 @@ ibmcloud cr region-set us-south
 ## `ibmcloud cr retention-run`
 {: #bx_cr_retention_run}
 
-Cleans up a namespace by retaining images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
+Cleans up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 {: shortdesc}
 
 Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.

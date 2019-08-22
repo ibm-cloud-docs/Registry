@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-22"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -266,5 +266,5 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>General availability of {{site.data.keyword.registrylong_notm}}</dt>
   <dd>{{site.data.keyword.registrylong_notm}} is generally available as a service in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.registrylong_notm}} supports {{site.data.keyword.containerlong_notm}}.
 
-  For more information about {{site.data.keyword.containerlong_notm}}, see [Getting started tutorial](/docs/containers?topic=containers-getting-started).</dd>
+  For more information about {{site.data.keyword.containerlong_notm}}, see [Getting started with {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started).</dd>
 </dl>
