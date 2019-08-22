@@ -133,7 +133,7 @@ The following table lists the API methods that generate an event when they are c
   </tr>
   <tr>
     <td>`container-registry.retention.analyze`</td>
-	  <td>List the images that would be deleted by applying a given retention policy.</td>
+	  <td>List the images that are deleted if you apply a given retention policy.</td>
   </tr>
  </table>
 
