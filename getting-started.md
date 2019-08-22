@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
 
