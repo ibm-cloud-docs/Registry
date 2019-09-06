@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-09-06"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -112,6 +112,7 @@ Review the following table to find available Go template options and data types 
 |-----|----|-----------|
 |`Created`|Integer (64 bit)|Displays when the image was created, expressed in number of seconds in [UNIX time ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time).|
 |`Digest`|String|Displays the unique identifier for an image.|
+|`ManifestType`|String|Displays the image manifest type.|
 |`Namespace`|String|Displays the namespace where the image is stored.|
 |`Repository`|String|Displays the repository of the image.|
 |`SecurityStatus`|Struct|Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli).|
