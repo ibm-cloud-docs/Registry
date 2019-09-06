@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-22"
+lastupdated: "2019-09-06"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -339,7 +339,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 {:tip}
 
 ```
-ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type]
 ```
 {: codeblock}
 
@@ -366,6 +366,8 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default only private images are listed.</dd>
 <dt>`--no-trunc`</dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
+<dt>`--show-type`</dt>
+<dd>(Optional) Displays the image manifest type.</dd>
 </dl>
 
 ### Example
