@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-09-10"
 
-keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, 
+keywords: IBM Cloud Container Registry, namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces,
 
 subcollection: registry
 
@@ -42,7 +42,7 @@ Install the `container-registry` CLI plug-in to use the command line to manage y
 1. [Install the `container-registry` CLI plug-in.](/docs/services/Registry?topic=registry-getting-started#gs_registry_cli_install)
 2. Optional: [Configure your Docker client to run commands without root permissions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/install/linux/linux-postinstall/). If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
 
-You can now [set up your own [namespace](#registry_namespace_setup) in {{site.data.keyword.registrylong_notm}}.
+You can now [set up your own namespace](#registry_namespace_setup) in {{site.data.keyword.registrylong_notm}}.
 
 ## Updating the `container-registry` CLI plug-in
 {: #registry_cli_update}
