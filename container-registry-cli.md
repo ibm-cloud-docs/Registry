@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-13"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -849,8 +849,6 @@ ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
 
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
-
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
@@ -880,6 +878,8 @@ Retain the newest 20 images within each repository, in the namespace `birds`.
 ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
+
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
 
 ## `ibmcloud cr token-get`
 {: #bx_cr_token_get}
