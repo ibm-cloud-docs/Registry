@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-09-16"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -852,7 +852,7 @@ ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_retention_run_option}
