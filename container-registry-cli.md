@@ -865,7 +865,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--json`</dt>
 <dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with '--force'.</dd>
 <dt>`--images`</dt>
-<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain.
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
 </dd>
 </dl>
 
