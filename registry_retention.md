@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-18"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -31,7 +31,8 @@ You can decide whether to delete or retain images.
 ## Planning retention
 {: #retention_plan}
 
-The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) commands operate on a per-namespace basis, therefore if you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
+
+The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command operates on a per-namespace basis, therefore if you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
 
 Consider a typical delivery pipeline with development, staging, and production environments. As code is delivered, continuous integration and continuous deployment pushes images into the registry and then deploys them straight to your development environment. After testing, some builds from development are promoted to staging, and then potentially onto production. In this scenario, the rate of image change is fastest in development and slowest in production. If all of your environments pull images from the same namespace, it can be difficult to choose an appropriate number of images to retain due to this difference in velocity.
 
