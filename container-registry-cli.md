@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-16"
+lastupdated: "2019-09-18"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -863,7 +863,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--force`, `-f`</dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 <dt>`--json`</dt>
-<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with '--force'.</dd>
+<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with `--force`.</dd>
 <dt>`--images`</dt>
 <dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
 </dd>
