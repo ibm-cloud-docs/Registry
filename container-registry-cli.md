@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-16"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -849,12 +849,10 @@ ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
 
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
-
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_retention_run_option}
@@ -867,7 +865,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 <dt>`--json`</dt>
 <dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with '--force'.</dd>
 <dt>`--images`</dt>
-<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain.
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
 </dd>
 </dl>
 
@@ -880,6 +878,8 @@ Retain the newest 20 images within each repository, in the namespace `birds`.
 ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
+
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
 
 ## `ibmcloud cr token-get`
 {: #bx_cr_token_get}
