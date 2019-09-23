@@ -55,7 +55,7 @@ The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-regist
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-If you want to restore a deleted image, you can list the comtemts of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
 To reduce the number of images in each repository within your namespace by using the CLI, complete the following steps:
