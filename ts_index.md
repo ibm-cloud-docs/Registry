@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-19"
+lastupdated: "2019-09-23"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -317,6 +317,18 @@ You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/
 
 To check the creation date of an image, you can run the [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command. If the image doesn't have a creation date, the date is shown in the `ibmcloud cr image-inspect` output as `1970-01-01` and the image is excluded from the results for `ibmcloud cr retention-run`.
 {: tip}
+
+## You want to restore an image from the trash, but you get a 409 error: `The tagged image already exists. You can restore this image by using the digest.`
+{: #ts_image_restore}
+
+{: tsSymptoms}
+You receive the following error message when you run the [`ibmcloud cr image-restore`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command: `The tagged image already exists. You can restore this image by using the digest.`
+
+{: tsCauses}
+An image with the same name exists in your live repository. You can't overwrite a live image with an image that is in the trash.
+
+{: tsResolve}
+You can restore this image by restoring by digest and then, if required, you can use the `ibmcloud cr image-tag` command to tag the image, see [Restoring images by digest](/docs/services/Registry?topic=registry-registry_images_#registry_images_restore_digest).
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
