@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-09-23"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -373,6 +373,112 @@ To delete an image by using the GUI, complete the following steps:
    {: important}
 
 7. Click **Delete Image**.
+
+## Listing images in the trash
+{: #registry_images_list_trash}
+
+You can list deleted images that are in the trash and see when they expire.
+{:shortdesc}
+
+To find out which images are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days after deletion.
+
+To list the images in the trash, complete the following steps:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
+2. List the images in the trash by running the following command:
+
+   ```
+   ibmcloud cr trash-list
+   ```
+   {: pre}
+
+3. List only the images in the trash for the namespace that you're interested in by running the following command, where `<namespace>` is your namespace:
+
+   ```
+   ibmcloud cr trash-list --restrict <namespace>
+   ```
+   {: pre}
+
+## Restoring images
+{: #registry_images_restore}
+
+You can restore images that were deleted in the last 30 days.
+{:shortdesc}
+
+You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days after deletion.
+
+You can restore images by using one of the following methods:
+- [Restoring images by digest](#registry_images_restore_digest)
+- [Restoring images by tag](#registry_images_restore_tag)
+
+### Restoring images by digest
+{: #registry_images_restore_digest}
+
+When you restore an image by digest, only the digest is copied out of the trash into your live repository, any tags for that digest remain in the trash. The digest continues to show in the trash because a copy is restored.
+
+To restore an image by digest from the trash, complete the following steps:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
+2. List the images in the trash by running the following command:
+
+   ```
+   ibmcloud cr trash-list
+   ```
+   {: pre}
+
+   A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
+
+3. Note the digest for the image that you want to restore.
+4. Run the following command to restore the image to your repository, where `<digest>` is the digest of the image that you want to restore.
+
+   ```
+   ibmcloud cr image-restore <digest>
+   ```
+   {: pre}
+
+   In your live repository, you can pull the image by digest. If you run the `ibmcloud cr image-list` command, the image doesn't show in the output because the image is untagged.
+   {: tip}
+
+5. To tag the image in your live repository run the following command, where `<repo>` is the repository and `<tag>` is the tag that you want to link to the digest:
+
+   ```
+   ibmcloud cr image-tag <digest> <repo>:<tag>
+   ```
+   {: pre}
+
+   If you run the `ibmcloud cr image-list` command, the image shows in the output because the image is tagged.
+   {: tip}
+
+### Restoring images by tag
+{: #registry_images_restore_tag}
+
+When you restore an image by tag, only that specific tag is moved out of the trash into your live repository.
+
+To restore an image by tag from the trash, complete the following steps:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
+2. List the images in the trash by running the following command:
+
+   ```
+   ibmcloud cr trash-list
+   ```
+   {: pre}
+
+   A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
+
+3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (@), This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>`  is the repository.
+4. For the image that you want to restore, make a note of the tag, `<tag>`.
+5. Run the following command to restore the image to your repository, where `<dns>/<namespace>/<repo>` is the name of the image that you want to restore and `<tag>` is the tag.
+
+   ```
+   ibmcloud cr image-restore <dns>/<namespace>/<repo>:<tag>
+   ```
+   {: pre}
+
+   In your live repository, you can pull the image by tag.
+
+   If you run the `ibmcloud cr trash-list` command, the digest and any other tags show in the output but the tag is no longer displayed.
+   {: tip}
 
 ## Deleting a private repository and any associated images
 {: #registry_repo_remove}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-09-18"
+lastupdated: "2019-09-23"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -31,8 +31,7 @@ You can decide whether to delete or retain images.
 ## Planning retention
 {: #retention_plan}
 
-
-The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command operates on a per-namespace basis, therefore if you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
+The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) commands operate on a per-namespace basis, therefore if you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
 
 Consider a typical delivery pipeline with development, staging, and production environments. As code is delivered, continuous integration and continuous deployment pushes images into the registry and then deploys them straight to your development environment. After testing, some builds from development are promoted to staging, and then potentially onto production. In this scenario, the rate of image change is fastest in development and slowest in production. If all of your environments pull images from the same namespace, it can be difficult to choose an appropriate number of images to retain due to this difference in velocity.
 
@@ -56,8 +55,8 @@ The [`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-regist
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{: important}
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+{: tip}
 
 To reduce the number of images in each repository within your namespace by using the CLI, complete the following steps:
 
@@ -84,3 +83,70 @@ To reduce the number of images in each repository within your namespace by using
    ibmcloud cr image-list
    ```
    {: pre}
+
+## Set a retention policy for your namespaces to retain only images that meet your criteria
+{: #retention_policy_set}
+
+You can set a retention policy that runs automatically to clean up your namespaces.
+{:shortdesc}
+
+You can use the [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images in a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, subsequently it runs on a daily basis. You can set only one policy in each namespace.
+
+Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+If you delete an image in error, you can restore the image by using the [`ibmcloud cr trash-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) and [`ibmcloud cr image-restore`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) commands.
+{: tip}
+
+To set a policy and immediately move your deleted images to the trash, complete the following steps:
+
+1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
+2. Choose the registry in which you want to clean up your images by running the following command and selecting the appropriate region:
+
+   ```
+   ibmcloud cr region-set
+   ```
+   {: pre}
+
+3. To set a policy, run the following command:
+
+   ```
+   ibmcloud cr retention-policy-set --images <image_count> <namespace>
+   ```
+   {: pre}
+
+   Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
+
+   A list of images to delete is displayed. 
+
+4. Review the list of images. To run the policy and delete the images, confirm that you want to set the policy. 
+
+   If you don't want to delete those images, choose `No`. The policy is not set and the images are not deleted.
+   {: tip}
+  
+5. Verify that the images were deleted by running the following command, and check that the images show in the list.
+
+   ```
+   ibmcloud cr trash-list
+   ```
+   {: pre}
+
+6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that policy that you set for the namespace retains the required number of images:
+
+   ```
+   ibmcloud cr retention-policy-list
+   ```
+   {: pre}
+
+## Updating a retention policy so that it keeps all your images
+{: #retention_policy_keep}
+
+All namespaces have a default policy that keeps all images. You can return a policy to the default state.
+{:shortdesc}
+
+You can use the [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
+
+  ```
+  ibmcloud cr retention-policy-set --images All <namespace>
+  ```
+  {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-22"
+lastupdated: "2019-09-23"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,33 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 23 September 2019
+{: #23sep2019}
+
+<dl>
+  <dt>You can create retention policies for your images. Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.</dt>
+  <dd>The following commands are available for you to use to create retention policies so that you can manage your images:
+  
+  <ul>
+    <li>The [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command sets up a policy for retaining images for each repository within a namespace.</li>
+    <li>The [`ibmcloud cr retention-policy-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command lists the image retention policies for your account. </li>
+  </ul>
+  
+  For more information, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).</dd>
+</dl>
+
+<dl>
+  <dt>You can restore deleted images from the trash. All deleted images are stored in the trash for 30 days.</dt>
+  <dd>The following commands are available for you to use to restore images:
+  
+  <ul>
+    <li>The [`ibmcloud cr trash-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. Images remain in the trash for 30 days after they've been deleted.</li>
+    <li>The [`ibmcloud cr image-restore`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.</li>
+  </ul>
+  
+  For more information, see [Listing images in the trash](/docs/services/Registry?topic=registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/services/Registry?topic=registry-registry_images_#registry_images_restore).</dd>
+</dl>
 
 ## 1 August 2019
 {: #01aug2019}

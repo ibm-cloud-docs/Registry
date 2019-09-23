@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-09-23"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -380,12 +380,57 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ```
 {: pre}
 
+## `ibmcloud cr image-restore`
+{: #bx_cr_image_restore}
+
+Restore a deleted image from the trash. To find out what is in the trash, run the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command.
+{: shortdesc}
+
+```
+ibmcloud cr image-restore IMAGE
+```
+{: codeblock}
+
+### Prerequisites
+{: #bx_cr_image_restore_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_image_restore_option}
+
+<dl>
+<dt>`IMAGE`</dt>
+<dd>The name of the image that you want to restore from the trash.
+<p>To find the names of your images in the trash, run [`ibmcloud cr trash-list`](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest `<dns>/<namespace>/<repo>@<digest>` or by tag
+`<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>`  is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+
+Images are stored in the trash for 30 days.</p>
+
+</dd>
+</dl>
+
+### Example
+{: #bx_cr_image_restore_example}
+
+To restore the image `us.icr.io/birds/bluebird:1`, run the following command.
+
+```
+ibmcloud cr image-restore us.icr.io/birds/bluebird:1
+```
+{: pre}
+
+For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/services/Registry?topic=registry-registry_images_#registry_images_restore).
+
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
 Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
 
 Where multiple tags exist for the same image digest within a repository, the `ibmcloud cr image-rm` command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](#bx_cr_image_untag) command.
+{: tip}
+
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
 ```
@@ -832,6 +877,90 @@ ibmcloud cr region-set us-south
 ```
 {: pre}
 
+## `ibmcloud cr retention-policy-list`
+{: #bx_cr_retention_policy_list}
+
+List the image retention policies for your account. Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
+{: shortdesc}
+
+Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+```
+ibmcloud cr retention-policy-list
+```
+{: codeblock}
+
+### Prerequisites
+{: #bx_cr_retention_policy_list_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Example
+{: #bx_cr_retention_policy_list_example}
+
+List the retention policies in your account.
+
+```
+ibmcloud cr retention-policy-list
+```
+{: pre}
+
+For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
+
+## `ibmcloud cr retention-policy-set`
+{: #bx_cr_retention_policy_set}
+
+Set a policy to retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. When you set a policy it runs interactively, subsequently it runs on a daily basis. You can set only one policy in each namespace.
+{: shortdesc}
+
+Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+If a retention policy deletes an image that you want to keep, you can restore the image by using the [`ibmcloud cr trash-list`](#bx_cr_trash_list) and [`ibmcloud cr image-restore`](#bx_cr_image_restore) commands.
+{: tip}
+
+If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/services/Registry?topic=registry-registry_retention#retention_policy_keep).
+
+```
+ibmcloud cr retention-policy-set --images IMAGECOUNT NAMESPACE
+```
+{: codeblock}
+
+### Prerequisites
+{: #bx_cr_retention_policy_set_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_retention_policy_set_option}
+
+<dl>
+<dt>`NAMESPACE`</dt>
+<dd>The namespace for which you want to create a policy.</dd>
+<dt>`--images`</dt>
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images, set `IMAGECOUNT` to `All`.</dd>
+</dl>
+
+### Examples
+{: #bx_cr_retention_policy_set_example}
+
+Set a policy that retains the newest 20 images within each repository in the namespace `birds`.
+
+```
+ibmcloud cr retention-policy-set --images 20 birds
+```
+{: pre}
+
+Set the policy back to the default state so that you keep all your images in the namespace `birds`.
+
+```
+ibmcloud cr retention-policy-set --images All birds
+```
+{: pre}
+  
+For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
+
 ## `ibmcloud cr retention-run`
 {: #bx_cr_retention_run}
 
@@ -842,6 +971,9 @@ Deleting an image can't be undone. Deleting an image that is being used by an ex
 {: important}
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
+{: tip}
+
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
 ```
@@ -990,6 +1122,43 @@ Remove the token *10101010-101x-1x10-x1xx-x10xx10xxx10*.
 
 ```
 ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
+```
+{: pre}
+
+## `ibmcloud cr trash-list`
+{: #bx_cr_trash_list}
+
+Displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. You can also see the number of days left until the image is removed from the trash. The number of days left until removal is rounded up, therefore if the time left until removal is 2 hours, it will show as 1 day. Images remain in the trash for 30 days after they've been deleted from your live repository.
+
+If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/services/Registry?topic=registry-registry_images_#registry_images_restore).
+
+```
+ibmcloud cr trash-list [--restrict NAMESPACE] [--json]
+```
+{: codeblock}
+
+### Prerequisites
+{: #bx_cr_trash_list_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_trash_list_option}
+
+<dl>
+<dt>`--restrict NAMESPACE`</dt>
+<dd>(Optional) Limit the output to display only images in the specified namespace. </dd>
+<dt>`--json`</dt>
+<dd>(Optional) Outputs JSON that contains the details of the contents of the trash.</dd>
+</dl>
+
+### Example
+{: #bx_cr_trash_list_example}
+
+Display the images that are in the trash in the *`birds`* namespace.
+
+```
+ibmcloud cr trash-list --restrict birds
 ```
 {: pre}
 
