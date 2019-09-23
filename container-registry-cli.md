@@ -917,7 +917,7 @@ Set a policy to retain the specified number of images for each repository within
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-If a retention policy deletes an image that you want to keep, you can restore the image by using the [`ibmcloud cr trash-list`](#bx_cr_trash_list) and [`ibmcloud cr image-restore`](#bx_cr_image_restore) commands.
+If a retention policy deletes an image that you want to keep, you can restore the image. To identify the image, list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore the selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
 If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/services/Registry?topic=registry-registry_retention#retention_policy_keep).
@@ -966,9 +966,6 @@ For more information about how to use the `ibmcloud cr retention-policy-set` com
 
 Cleans up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 {: shortdesc}
-
-Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{: important}
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
