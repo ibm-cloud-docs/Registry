@@ -192,7 +192,7 @@ To upgrade your service plan, complete the following steps:
 ## Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
-Descriptions of the terms used in {{site.data.keyword.registrylong_notm}}.
+Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
 <dl>
