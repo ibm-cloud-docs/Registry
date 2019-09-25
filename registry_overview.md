@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-16"
+lastupdated: "2019-09-25"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -189,7 +189,7 @@ To upgrade your service plan, complete the following steps:
 
    For more information, see [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Understanding the terms used in {{site.data.keyword.registrylong_notm}}
+## Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
 Descriptions of the terms used in {{site.data.keyword.registrylong_notm}}.

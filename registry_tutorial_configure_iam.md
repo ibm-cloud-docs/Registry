@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-09-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -535,5 +535,3 @@ In this section, you remove the resources that you created in previous sections 
    ibmcloud account user-remove <user.b@example.com>
    ```
    {: pre}
-
-You've successfully completed this tutorial.
