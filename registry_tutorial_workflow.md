@@ -281,10 +281,8 @@ Despite the vulnerability that is present in your image, you're still able to de
     You see the following error message:
 
     ```
-    Deny "us.icr.io/<my_namespace>/hello-world:2",
-    the Vulnerability Advisor image scan assessment
-    found issues with the container image that are not exempted.
-    Refer to your image vulnerability report
+    Deny "us.icr.io/<my_namespace>/hello-world:2", the Vulnerability Advisor image scan assessment
+    found issues with the container image that are not exempted. Refer to your image vulnerability report
     for more details by using the `ibmcloud cr va` command.
     ```
     {: screen}
