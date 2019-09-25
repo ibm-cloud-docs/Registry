@@ -54,7 +54,7 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 * [Install Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/)
 * [Install {{site.data.keyword.cloud_notm}} Developer Tools ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/ibm-cloud-developer-tools), a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository
-* [Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free)[Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters)
+* [Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free)
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
