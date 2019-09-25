@@ -28,7 +28,7 @@ subcollection: registry
 Find out about the basic functions of both {{site.data.keyword.registrylong}} and Vulnerability Advisor. These two services are pre-integrated and work together seamlessly in {{site.data.keyword.cloud_notm}}, and their features provide a robust but straightforward workflow for users of containers. You can use these services to store your container images, ensure the security of your images and Kubernetes clusters, control the images that you can use to deploy to your clusters, and more.
 {: shortdesc}
 
-Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation, this tutorial combines all of those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
+Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation. This tutorial combines all of those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
 
 ## Time required
 {: #registry_tutorial_workflow_time}
@@ -54,7 +54,7 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 * [Install Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/)
 * [Install {{site.data.keyword.cloud_notm}} Developer Tools ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/ibm-cloud-developer-tools), a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository
-* [Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free)[Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters)
+* [Create a free Kubernetes cluster](/docs/containers?topic=containers-clusters#clusters_free)
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
@@ -185,7 +185,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
     ```
     {: pre}
 
-7. Access your container service by running the following command. You can also use a web browser.
+7. Access your service by running the following command. You can also use a web browser.
 
     ```
     curl <public_ip>:<node_port>
@@ -201,7 +201,7 @@ When you push an image to a namespace, the image is automatically scanned by [Vu
 
 To demonstrate these features, you must push an intentionally vulnerable image.
 
-Images are continually updated and new CVEs are discovered, that's why you might see more vulnerabilities present in your image. If so, fix those vulnerabilities by using the information that is provided by Vulnerability Advisor.
+Images are continually updated and new CVEs are discovered. As a result, you might see more vulnerabilities present in your image. If so, fix those vulnerabilities by using the information that is provided by Vulnerability Advisor.
 {: note}
 
 ### View the vulnerability report for your image
@@ -264,7 +264,7 @@ Despite the vulnerability that is present in your image, you're still able to de
     ```
     {: pre}
 
-5. To update `hello-world.yaml` so that it pulls your vulnerable image, change the tag from `1` to `2` as shown here:
+5. To update `hello-world.yaml` so that it references your vulnerable image, change the tag from `1` to `2` as shown here:
 
     ```
     image: us.icr.io/<my_namespace>/hello-world:2
@@ -281,10 +281,8 @@ Despite the vulnerability that is present in your image, you're still able to de
     You see the following error message:
 
     ```
-    Deny "us.icr.io/<my_namespace>/hello-world:2",
-    the Vulnerability Advisor image scan assessment
-    found issues with the container image that are not exempted.
-    Refer to your image vulnerability report
+    Deny "us.icr.io/<my_namespace>/hello-world:2", the Vulnerability Advisor image scan assessment
+    found issues with the container image that are not exempted. Refer to your image vulnerability report
     for more details by using the `ibmcloud cr va` command.
     ```
     {: screen}
@@ -363,7 +361,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
     ```
     {: pre}
 
-2. To deploy your deployment and service into your Kubernetes namespace, in the `hello-world.yaml` file change the `metadata.namespace` fields for both the deployment and the service from `default` to `test`. This snippet shows the `metadata.namespace` field in context:
+2. To deploy your deployment and service into this Kubernetes namespace, in the `hello-world.yaml` file change the `metadata.namespace` fields for both the deployment and the service from `default` to `test`. This snippet shows the `metadata.namespace` field in context:
 
     ```
     metadata:
@@ -392,7 +390,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
     This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-images#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
-    If you [remove Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#remove) first, the `apply` command completes successfully, but when you inspect the deployment's sole pod by running the `kubectl describe po <pod_name> -n test` command, the events log indicates that the cluster isn't authorized to pull the image.
+    If you [remove Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#remove) first, the `kubectl apply` command completes successfully, but when you inspect the deployment's sole pod by running the `kubectl describe pod <pod_name> -n test` command, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
 
 4. You must [set up an image pull secret](/docs/containers?topic=containers-images#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-images#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
