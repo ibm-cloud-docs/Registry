@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-09-27"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -139,5 +139,4 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 | `container-registry.retention.get` | Get an image retention policy. | Reader, Manager |
 | `container-registry.retention.set` | [`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only images that meet your criteria. | Writer, Manager |
 | `container-registry.retention.list` | [`ibmcloud cr retention-policy-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) List the image retention policies for your account. | Reader, Manager |
-
 {: caption="Table 5. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="top"}
