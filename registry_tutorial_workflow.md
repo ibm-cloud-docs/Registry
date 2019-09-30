@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-09-30"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor, tutorial, workflow,
 
@@ -388,7 +388,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
     This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-images#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
-    If you [remove Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#remove) first, the `kubectl apply` command completes successfully, but when you inspect the deployment's sole pod by running the `kubectl describe pod <pod_name> -n test` command, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
+    If you [remove Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#remove) first, the `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
 
 4. You must [set up an image pull secret](/docs/containers?topic=containers-images#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-images#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
