@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-09-24"
+lastupdated: "2019-10-01"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -22,11 +22,12 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
+
 # Retaining images
 {: #registry_retention}
 
 You can decide whether to delete or retain images.
-{:shortdesc}
+{: shortdesc}
 
 ## Planning retention
 {: #retention_plan}
