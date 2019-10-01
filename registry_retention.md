@@ -22,12 +22,21 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Retaining images
 {: #registry_retention}
 
-You can decide whether to delete or retain images.
+You can clean up your namespace by choosing the images that you want to delete or retain.
 {: shortdesc}
+
+You can detect and delete old images from a repository by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the registry.
+
+When you run the [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands, a list of images to delete is shown and you must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
+
+If you want to check what's in the trash, run the [`ibmcloud cr trash-list`](/docs/services/Registry?topic=registry-registry_images_#registry_images_list_trash) command. You can restore images from the trash by running the [`ibmcloud cr image-restore`](/docs/services/Registry?topic=registry-registry_images_#registry_images_restore) command.
+
+If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
+
+If you want to cancel a policy, [update the retention policy so that it keeps all your images](#retention_policy_keep).
 
 ## Planning retention
 {: #retention_plan}
