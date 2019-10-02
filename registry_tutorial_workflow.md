@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-30"
+lastupdated: "2019-10-02"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor, tutorial, workflow,
 
@@ -246,7 +246,7 @@ When a vulnerability is found in one of your images, a [report](/docs/services/v
 
 Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
 
-1. [Install Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](https://test.cloud.ibm.com/docs/containers?topic=containers-helm#public_helm_install).
+1. [Install Container Image Security Enforcement](/docs/services/Registry?topic=registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install).
 
 2. The [default policies](/docs/services/Registry?topic=registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/services/Registry?topic=registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/services/Registry?topic=registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 

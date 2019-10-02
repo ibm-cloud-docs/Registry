@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-01"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -53,7 +53,7 @@ The following table lists the API methods that generate an event when they are c
   </tr>
   <tr>
     <td>`container-registry.image.bulkdelete`</td>
-	  <td>Delete several images from {{site.data.keyword.registrylong_notm}}.</td>
+	  <td>Delete multiple images from {{site.data.keyword.registrylong_notm}}.</td>
   </tr>
   <tr>
     <td>`container-registry.image.delete`</td>
