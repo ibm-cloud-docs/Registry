@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-02"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -401,7 +401,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 7. [Push a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
-8.  (Optional) When you've finished, if you want to revoke your API key, run the following command:
+8. (Optional) When you've finished, if you want to revoke your API key, run the following command:
 
     ```
     ibmcloud iam api-key-delete notary-auth

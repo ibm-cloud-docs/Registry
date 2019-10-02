@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-09-25"
+lastupdated: "2019-10-02"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -187,7 +187,7 @@ In this section, you create some namespaces with sample images, and grant access
         ibmcloud cr namespace-add namespace_b
         ```
         {: pre}
-            
+
     4. Create `namespace_c` by running the following command:
 
         ```
