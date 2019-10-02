@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-02"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -39,7 +39,7 @@ Do not put personal information in your container images, namespace names, descr
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="images/images_pull.svg"/>
 
 Before you begin, complete the following tasks:
 
@@ -408,6 +408,7 @@ You can restore images that were deleted in the last 30 days.
 You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days after deletion.
 
 You can restore images by using one of the following methods:
+
 - [Restoring images by digest](#registry_images_restore_digest)
 - [Restoring images by tag](#registry_images_restore_tag)
 

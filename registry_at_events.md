@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-02"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -132,20 +132,20 @@ The following table lists the API methods that generate an event when they are c
 	  <td>Delete multiple registry tokens.</td>
   </tr>
   <tr>
-    <td>`container-registry.retention.set`</td>
-	  <td>Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria.</td>
+    <td>`container-registry.retention.analyze`</td>
+	  <td>List the images that are deleted if you apply a given retention policy.</td>
   </tr>
   <tr>
     <td>`container-registry.retention.list`</td>
 	  <td>List the image retention policies for your account.</td>
   </tr>
   <tr>
-    <td>`container-registry.retention.analyze`</td>
-	  <td>List the images that are deleted if you apply a given retention policy.</td>
+    <td>`container-registry.retention.set`</td>
+	  <td>Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria.</td>
   </tr>
   <tr>
     <td>`container-registry.trash.list`</td>
-	  <td>Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. </td>
+	  <td>Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account.</td>
   </tr>
   <tr>
     <td>`container-registry.trash.restore`</td>
