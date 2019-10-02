@@ -39,7 +39,7 @@ Do not put personal information in your container images, namespace names, descr
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.svg" width="800" style="width:800px;" alt="images/images_pull.svg"/>
+<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
 
 Before you begin, complete the following tasks:
 
