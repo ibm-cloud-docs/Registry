@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-10"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -30,9 +30,8 @@ Use {{site.data.keyword.registrylong}} to store and access private Docker images
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image namespace and pushing Docker images to your namespace.
 
-<img src="images/registry_architecture1.svg" alt="Image showing how you can interact with IBM Cloud Container Registry. Container Registry contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The IBM Cloud web UI (console) interacts with the Container Registry API to list images. The Container Registry CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."/>
-
-**Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images**
+![Image showing how you can interact with IBM Cloud Container Registry.](images/registry_architecture1.svg "Image showing how you can interact with {{site.data.keyword.registrylong_notm}}. {{site.data.keyword.registrylong_notm}} contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The {{site.data.keyword.cloud_notm}} web UI (console) interacts with the {{site.data.keyword.registrylong_notm}} API to list images. The {{site.data.keyword.registrylong_notm}} CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries.")
+{: caption="Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images" caption-side="bottom"}
 
 A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registrylong_notm}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 

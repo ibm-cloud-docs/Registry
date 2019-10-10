@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-10"
 
 keywords: IBM Cloud Container Registry, Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories,
 
@@ -39,7 +39,8 @@ Do not put personal information in your container images, namespace names, descr
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-<img src="images/images_pull.svg" width="800" style="width:800px;" alt="Pull an image from a private or public registry to your computer."/>
+![Pull an image from a private or public registry to your computer.](images/images_pull.svg "You can pull an image from {{site.data.keyword.registrylong_notm}} or from any private or public registry source to your local computer.")
+{: caption="Figure 1. Pulling images from another registry" caption-side="bottom"}
 
 Before you begin, complete the following tasks:
 
@@ -62,7 +63,8 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
 {:shortdesc}
 
-<img src="images/images_push.svg" width="800" style="width:800px;" alt="Push an image from your computer to {{site.data.keyword.registrylong_notm}}."/>
+![Push an image from your computer to {{site.data.keyword.registrylong_notm}}.](images/images_push.svg "You can push (upload) an image from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.")
+{: caption="Figure 2. Pushing Docker images to your namespace." caption-side="bottom"}
 
 Before you begin, complete the following tasks:
 
@@ -102,7 +104,8 @@ After you push your image to {{site.data.keyword.registrylong_notm}}, you can do
 You can pull an image from a registry in one region and push it to a registry in another region so that you can share the image with users in both regions.
 {:shortdesc}
 
-<img src="images/images_copy.svg" width="800" style="width:800px;" alt="Copy an image from any  private or public registry to your private {{site.data.keyword.cloud_notm}} registry."/>
+![Copying images between registries.](images/images_copy.svg "You can pull an image from a registry in one region and push it to a registry in another region.")
+{: caption="Figure 3. Copying images between registries." caption-side="bottom"}
 
 Before you begin, complete the following tasks:
 
