@@ -33,7 +33,7 @@ For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Ac
 
 The following table lists the API methods that generate an event when they are called:
 
- | Action | Description |
+| Action | Description |
 |:-----------------|:-----------------|
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. |
