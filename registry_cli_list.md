@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-11"
 
 keywords: IBM Cloud Container Registry, commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, 
 
@@ -211,4 +211,4 @@ Review the following table to find available Go template options and data types 
 | `Expiry` | Integer (64 bit) | Displays [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the token expires. |
 | `ID` | String | Displays the unique identifier for a token. |
 | `ReadOnly` | Boolean | Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
-{: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}
+{: caption="Table 6. Available fields and data types in the `ibmcloud cr token-list` command." caption-side="top"}
