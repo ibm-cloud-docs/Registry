@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-10"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -22,13 +22,13 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-# Retaining images
+# Cleaning up your namespaces
 {: #registry_retention}
 
-You can clean up your namespace by choosing the images that you want to delete or retain.
+You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace.
 {: shortdesc}
 
-You can detect and delete old images from a repository by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the registry.
+You can detect and delete old images from a repository by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the registry.
 
 When you run the [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands, a list of images to delete is shown and you must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
 

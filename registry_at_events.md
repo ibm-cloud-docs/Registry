@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-10"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -33,125 +33,37 @@ For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Ac
 
 The following table lists the API methods that generate an event when they are called:
 
-<table>
-  <caption>Table 1. Actions that generate events</caption>
-  <tr>
-    <th>Action</th>
-	  <th>Description</th>
-  </tr>
-  <tr>
-    <td>`container-registry.exemption.create`</td>
-	  <td>Create a Vulnerability Advisor exemption.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.exemption.delete`</td>
-	  <td>Delete a Vulnerability Advisor exemption.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.build`</td>
-	  <td>Build a Docker image in {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.bulkdelete`</td>
-	  <td>Delete multiple images from {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.delete`</td>
-	  <td>Delete an image from {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.inspect`</td>
-	  <td>Display details about an image.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.list`</td>
-	  <td>List the images in your {{site.data.keyword.IBM_notm}} account.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.pull`</td>
-	  <td>Pull an image from {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.push`</td>
-	  <td>Push an image to {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.rm`</td>
-	  <td>Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.image.tag`</td>
-	  <td>Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image.</td>
-  </tr>
-   <tr>
-    <td>`container-registry.image.untag`</td>
-	  <td>Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.namespace.create`</td>
-	  <td>Add a namespace to {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.namespace.delete`</td>
-	  <td>Delete a namespace from {{site.data.keyword.registrylong_notm}}.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.namespace.list`</td>
-	  <td>List the namespaces in your {{site.data.keyword.IBM_notm}} account.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.plan.get`</td>
-	  <td>Display information about the current pricing plan.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.plan.set`</td>
-	  <td>Upgrade to the standard plan.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.quota.get`</td>
-	  <td>Display the current quotas for traffic and storage, and the usage information against those quotas.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.quota.set`</td>
-	  <td>Modify the quotas.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.delete`</td>
-	  <td>Delete a registry token.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.get`</td>
-	  <td>Retrieve information about a registry token.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytoken.list`</td>
-	  <td>List the registry tokens in your {{site.data.keyword.IBM_notm}} account.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.registrytokens.delete`</td>
-	  <td>Delete multiple registry tokens.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.retention.set`</td>
-	  <td>Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.retention.list`</td>
-	  <td>List the image retention policies for your account.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.retention.analyze`</td>
-	  <td>List the images that are deleted if you apply a given retention policy.</td>
-  </tr>
-  <tr>
-    <td>`container-registry.trash.list`</td>
-	  <td>Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. </td>
-  </tr>
-  <tr>
-    <td>`container-registry.trash.restore`</td>
-	  <td>Restore a deleted image from the trash.</td>
-  </tr>
- </table>
+| Action | Description |
+|:-----------------|:-----------------|
+| `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. |
+| `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. |
+| `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.delete` | Delete an image from {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.inspect` | Display details about an image. |
+| `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. |
+| `container-registry.image.pull` | Pull an image from {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.rm` | Delete one or more specified images from {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. |
+| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.namespace.create` | Add a namespace to {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.namespace.list` | List the namespaces in your {{site.data.keyword.IBM_notm}} account. |
+| `container-registry.plan.get` | Display information about the current pricing plan. |
+| `container-registry.plan.set` | Upgrade to the standard plan. |
+| `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. |
+| `container-registry.quota.set` | Modify the quotas. |
+| `container-registry.registrytoken.delete` | Delete a registry token. |
+| `container-registry.registrytoken.get` | Retrieve information about a registry token. |
+| `container-registry.registrytoken.list` | List the registry tokens in your {{site.data.keyword.IBM_notm}} account. |
+| `container-registry.registrytokens.delete` | Delete multiple registry tokens. |
+| `container-registry.retention.analyze` | List the images that are deleted if you apply a given retention policy. |
+| `container-registry.retention.list` | List the image retention policies for your account. |
+| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. |
+| `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. |
+| `container-registry.trash.restore` | Restore a deleted image from the trash. |
+{: caption="Table 1. Actions that generate events" caption-side="top"}
 
 ## Where to look for the events
 {: #ui}
