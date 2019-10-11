@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-10"
+lastupdated: "2019-10-11"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -78,7 +78,7 @@ The following table details actions that are mapped to service access roles. Ser
 
 | Service access role | Description of actions | Example actions|
 |:-----------------|:-----------------|:-----------------|
-| Reader | The Reader role can view information. | View, inspect, and pull images.</br></br>View namespaces.</br></br>View quotas.</br></br>View vulnerability reports.</br></br>View image signatures.</br></br>View retention policies.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Writer role.)</br></br>View the contents of the trash. |
+| Reader | The Reader role can view information. | View, inspect, and pull images.</br></br>View namespaces.</br></br>View quotas.</br></br>View vulnerability reports.</br></br>View image signatures.</br></br>View retention policies.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Writer role.)</br></br>View the contents of the trash.  |
 | Writer | The Writer role can edit information. | Build, push, delete, and restore images.</br></br>View quotas.</br></br>Sign images.</br></br>Add and remove namespaces.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Reader role.)</br></br>Set retention policies. |
 | Manager | The Manager role can perform all actions. | View, inspect, pull, build, push, delete, and restore images.</br></br>View, add, and remove namespaces.</br></br>View and set quotas.</br></br>View vulnerability reports.</br></br>View and create image signatures.</br></br>Review and change pricing plans.</br></br>Enable IAM policy enforcement.</br></br>Manage Vulnerability Advisor exemptions.</br></br>Clean up your namespaces by retaining only images that meet your criteria.</br></br>Set retention policies.</br></br>View the contents of the trash.</br></br>Restore images. |
 {: caption="Table 3. IAM service access roles and actions" caption-side="top"}
