@@ -597,7 +597,7 @@ None
 View the contents of the manifest for an image.
 
 ```
-ibmcloud cr manifest-inspect [--quiet] IMAGE
+ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
 ```
 {: codeblock}
 
