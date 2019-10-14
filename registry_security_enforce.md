@@ -213,7 +213,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
     <tbody>
     <tr>
     <td><code>kind</code></td>
-    <td>For a cluster-wide policy, specify the `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`.</td>
+    <td>For a cluster-wide policy, specify `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`.</td>
     </tr>
     <tr>
     <td><code>metadata/name</code></td>
