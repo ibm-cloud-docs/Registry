@@ -597,7 +597,7 @@ None
 View the contents of the manifest for an image.
 
 ```
-ibmcloud cr manifest-inspect [--quiet] IMAGE
+ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
 ```
 {: codeblock}
 
@@ -610,7 +610,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_manifest_inspect_option}
 
 <dl>
-<dt>IMAGE</dt>
+<dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`</dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Reduces the output to display essential elements only.</dd>
