@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-14"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -590,6 +590,41 @@ ibmcloud cr login
 {: #bx_cr_login_prereq}
 
 None
+
+## `ibmcloud cr manifest-inspect`
+{: #bx_cr_manifest_inspect}
+
+View the contents of the manifest for an image.
+
+```
+ibmcloud cr manifest-inspect [--quiet] IMAGE
+```
+{: codeblock}
+
+### Prerequisites
+{: #bx_cr_manifest_inspect_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_manifest_inspect_option}
+
+<dl>
+<dt>IMAGE</dt>
+<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>(Optional) Reduces the output to display essential elements only.</dd>
+</dl>
+
+### Example
+{: #bx_cr_manifest_inspect_example}
+
+To view the contents of the manifest for the image `us.icr.io/birds/bluebird:1`, run the following command.
+
+```
+ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
+```
+{: codeblock}
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}

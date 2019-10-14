@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-10-14"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -213,7 +213,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
     <tbody>
     <tr>
     <td><code>kind</code></td>
-    <td>For a cluster-wide policy, specify the `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`.</td>
+    <td>For a cluster-wide policy, specify `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`.</td>
     </tr>
     <tr>
     <td><code>metadata/name</code></td>
