@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-10"
+lastupdated: "2019-10-14"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -47,6 +47,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.rm` | Delete one or more specified images from {{site.data.keyword.registrylong_notm}}. |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. |
+| `container-registry.manifest.inspect` | View the contents of the manifest for an image. |
 | `container-registry.namespace.create` | Add a namespace to {{site.data.keyword.registrylong_notm}}. |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. |
 | `container-registry.namespace.list` | List the namespaces in your {{site.data.keyword.IBM_notm}} account. |

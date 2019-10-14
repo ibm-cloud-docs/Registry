@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-14"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -27,6 +27,16 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 14 October 2019
+{: #14oct2019}
+
+<dl>
+  <dt>`ibmcloud cr manifest-inspect` command is available</dt>
+  <dd>The `ibmcloud cr manifest-inspect` command displays the contents of the manifest for an image.
+
+  For more information, see [`ibmcloud cr manifest-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect).</dd>
+</dl>
 
 ## 23 September 2019
 {: #23sep2019}
