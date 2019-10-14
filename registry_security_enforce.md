@@ -182,8 +182,6 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
-
-
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
 1. Create a [Kubernetes custom resource definition ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` file.
