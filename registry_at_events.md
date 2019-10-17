@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-10-17"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -34,7 +34,7 @@ For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Ac
 The following table lists the API methods that generate an event when they are called:
 
 | Action | Description |
-|:-----------------|:-----------------|
+|-----------------|-----------------|
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. |
 | `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. |
@@ -77,7 +77,7 @@ The following table lists the API methods that generate an event when they are c
 The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
-|:-----------------|:-----------------|:-----------------|
+|-----------------|-----------------|-----------------|
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
 | `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
@@ -86,7 +86,7 @@ The [region](/docs/services/Registry?topic=registry-registry_overview#registry_r
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
 | Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
-|:-----------------|:-----------------|:-----------------|
+|-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
