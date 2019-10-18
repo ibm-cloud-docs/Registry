@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
 
-{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your Docker images with users in your {{site.data.keyword.cloud_notm}} account.
+{{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
 
 The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/services/va?topic=va-va_index).
