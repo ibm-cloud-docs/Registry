@@ -156,7 +156,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters</dt>
-  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
   
   For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-images#cluster_registry_auth).</dd>
 </dl>
