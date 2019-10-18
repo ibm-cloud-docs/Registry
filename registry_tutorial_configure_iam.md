@@ -231,17 +231,17 @@ In this section, you create some namespaces with sample images, and grant access
 
         The three namespaces that you created in this tutorial (`namespace_a`, `namespace_b`, and `namespace_c`) are shown. If you do not see these namespaces, go back and follow the instructions to create them again.
 
-    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
+    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_c --roles Reader,Writer
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region --resource-type namespace --resource namespace_c --roles Reader,Writer
         ```
         {: pre}
 
@@ -257,7 +257,7 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Tag the image to `namespace_a` by running the following command:
+    2. Tag the image to `namespace_a` by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
 
         ```
         docker tag hello-world <Region>.icr.io/namespace_a/hello-world
@@ -415,14 +415,14 @@ In this section, you configure a service ID and grant it access to your {{site.d
     3. Create a service policy for the service ID that grants the Reader role on `namespace_a` by running the following command:
 
         ```
-        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
+        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region --resource-type namespace --resource namespace_a --roles Reader
         ```
         {: pre}
 
     4. Create a second service policy that grants the Writer role on `namespace_b` by running the following command:
 
         ```
-        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Writer
+        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region --resource-type namespace --resource namespace_b --roles Writer
         ```
         {: pre}
 
