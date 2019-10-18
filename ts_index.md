@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors,
 
@@ -34,7 +34,7 @@ Here are the answers to common troubleshooting questions about using {{site.data
 ## Getting help and support for {{site.data.keyword.registrylong_notm}}
 {: #gettinghelp}
 
-If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM_notm}} support ticket.
+If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM}} support ticket.
 
 When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
 

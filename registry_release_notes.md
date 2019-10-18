@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -80,7 +80,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
-  <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).</dd>
 </dl>
@@ -138,7 +138,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
-  <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).
 </dd>
@@ -213,7 +213,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor</dt>
-  <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).</dd>
 </dl>
@@ -273,7 +273,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Global registry</dt>
-  <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by IBM are hosted in this registry.
+  <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 
   For more information, see [Global registry](/docs/services/Registry?topic=registry-registry_overview#registry_regions_global).</dd>
 </dl>

@@ -25,7 +25,7 @@ subcollection: registry
 # Managing user access with Identity and Access Management
 {: #iam}
 
-Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM).
+Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
 When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM user roles](/docs/iam?topic=iam-userroles).
@@ -55,7 +55,7 @@ Try out the tutorial [Tutorial: Granting access to {{site.data.keyword.registryl
 The following table details actions that are mapped to platform management roles. Platform management roles enable users to perform tasks on service resources at the platform level, for example assign user access for the service, and create or delete service IDs.
 
 | Platform management role | Description of actions | Example actions |
-|:-----------------|:-----------------|:-----------------|
+|-----------------|-----------------|-----------------|
 | Viewer | Not supported | |
 | Editor | Not supported | |
 | Operator | Not supported | |
@@ -65,7 +65,7 @@ The following table details actions that are mapped to platform management roles
 For {{site.data.keyword.registrylong_notm}}, the following actions exist:
 
 | Action| Operation on service | Role |
-|:-----------------|:-----------------|:--------------|
+|-----------------|-----------------|--------------|
 | `container-registry.registrytoken.delete` | [`ibmcloud cr token-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm) Remove one or more specified tokens. | Administrator |
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Retrieve the specified token from the registry. | Administrator |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Display all tokens that exist for your {{site.data.keyword.cloud_notm}} account. | Administrator |
@@ -77,7 +77,7 @@ For {{site.data.keyword.registrylong_notm}}, the following actions exist:
 The following table details actions that are mapped to service access roles. Service access roles enable users access to {{site.data.keyword.registrylong_notm}} as well as the ability to call the {{site.data.keyword.registrylong_notm}} API.
 
 | Service access role | Description of actions | Example actions|
-|:-----------------|:-----------------|:-----------------|
+|-----------------|-----------------|-----------------|
 | Reader | The Reader role can view information. | View, inspect, and pull images.</br></br>View namespaces.</br></br>View quotas.</br></br>View vulnerability reports.</br></br>View image signatures.</br></br>View retention policies.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Writer role.)</br></br>View the contents of the trash. </br></br> View the contents of the manifest for an image. |
 | Writer | The Writer role can edit information. | Build, push, delete, and restore images.</br></br>View quotas.</br></br>Sign images.</br></br>Add and remove namespaces.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Reader role.)</br></br>Set retention policies. |
 | Manager | The Manager role can perform all actions. | View, inspect, pull, build, push, delete, and restore images.</br></br>View, add, and remove namespaces.</br></br>View and set quotas.</br></br>View vulnerability reports.</br></br>View and create image signatures.</br></br>Review and change pricing plans.</br></br>Enable IAM policy enforcement.</br></br>Manage Vulnerability Advisor exemptions.</br></br>Clean up your namespaces by retaining only images that meet your criteria.</br></br>Set retention policies.</br></br>View the contents of the trash.</br></br>Restore images.</br></br> View the contents of the manifest for an image. |
@@ -98,7 +98,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 {: pre}
 
 | Action| Operation on service | Role |
-|:-----------------|:-----------------|:--------------|
+|-----------------|-----------------|--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement. | Manager |
 | `container-registry.exemption.manager` | [`ibmcloud cr exemption-add`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Create an exemption for a security issue.</br></br>[`ibmcloud cr exemption-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) List your exemptions for security issues.</br></br>[`ibmcloud cr exemption-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Delete an exemption for a security issue.</br></br>[`ibmcloud cr exemption-types`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Manager |
 | `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan) Display your pricing plan. | Manager |
@@ -123,7 +123,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 {: pre}
 
 | Action | Operation on service | Role |
-|:-----------------|:-----------------|:--------------|
+|-----------------|-----------------|--------------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Build a container image. | Writer, Manager |
 | `container-registry.image.delete` | [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more container images.</br></br>[`ibmcloud cr image-untag`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified container image in {{site.data.keyword.registrylong_notm}}.</br></br>`docker trust revoke` Delete the signature for a container image.</br></br>[`ibmcloud cr retention-run`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only container images that meet your criteria.</br></br>[`ibmcloud cr retention-policy-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager</br></br>To run `ibmcloud cr retention-run` and `ibmcloud cr retention-policy-set` you must have Manager, or  both Reader and Writer. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Display details about a specific container image. </br></br>[`ibmcloud cr manifest-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect) View the contents of the manifest for an image. | Reader, Manager |
