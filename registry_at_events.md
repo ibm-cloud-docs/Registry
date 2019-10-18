@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Activity Tracker events
 {: #at_events}
 
-Track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud}}.
+Track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service or for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.

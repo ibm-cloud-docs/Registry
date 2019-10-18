@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -32,7 +32,7 @@ When IAM policies are enabled for your account in {{site.data.keyword.registrylo
 
 IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token, your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 
-For more information about IAM, see [IBM Cloud Access and Management](/docs/iam?topic=iam-iamoverview#iamoverview).
+For more information about IAM, see [What is {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/iam?topic=iam-iamoverview#iamoverview).
 
 For information about enabling policies for {{site.data.keyword.registrylong_notm}}, see [Defining user access role policies](/docs/services/Registry?topic=registry-user#user).
 
