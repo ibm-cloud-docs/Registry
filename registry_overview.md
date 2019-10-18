@@ -25,7 +25,7 @@ subcollection: registry
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
-Use {{site.data.keyword.registrylong}} to store and access private Docker images in a highly available and scalable architecture.
+Use {{site.data.keyword.registrylong}} to store and access private container images in a highly available and scalable architecture.
 {:shortdesc}
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image namespace and pushing Docker images to your namespace.
