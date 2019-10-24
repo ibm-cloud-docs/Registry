@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-10-24"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -233,13 +233,13 @@ In this section, you create some namespaces with sample images, and grant access
 
     3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<cloud_region>`_ is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`:
 
-        To see the names of the {{site.data.keyword.cloud_notm}} regions, run the [`ibmcloud regions`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_regions) command.
-        {: tip}
-
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
+
+        To see the names of the {{site.data.keyword.cloud_notm}} regions, run the [`ibmcloud regions`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_regions) command.
+        {: tip}
 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command:
 
