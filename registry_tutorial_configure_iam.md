@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -58,7 +58,7 @@ In this section, you add a second user to your account and grant them the abilit
         ```
         {: pre}
 
-    2. Invite User B to access User A's account by running the following command, where _`<user.b@example.com>`_ is User B's email address:
+    2. Invite User B to access User A's account by running the following command, where `<user.b@example.com>` is User B's email address:
 
         ```
         ibmcloud account user-invite <user.b@example.com>
@@ -76,7 +76,7 @@ In this section, you add a second user to your account and grant them the abilit
 
 2. Prove that User B can target User A's account but can't do anything with {{site.data.keyword.registrylong_notm}} yet:
 
-    1. Log in as User B and target User A's account by running the following command, where _`<YourAccountID>`_ is User A's Account ID:
+    1. Log in as User B and target User A's account by running the following command, where `<YourAccountID>` is User A's Account ID:
 
         ```
         ibmcloud login -c <YourAccountID>
@@ -149,7 +149,7 @@ In this section, you add a second user to your account and grant them the abilit
         ```
         {: pre}
   
-    3. Delete the policy by running the following command, where _`<Policy_ID>`_ is your Policy ID:
+    3. Delete the policy by running the following command, where `<Policy_ID>` is your Policy ID:
   
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -231,7 +231,7 @@ In this section, you create some namespaces with sample images, and grant access
 
         The three namespaces that you created in this tutorial (`namespace_a`, `namespace_b`, and `namespace_c`) are shown. If you do not see these namespaces, go back and follow the instructions to create them again.
 
-    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<cloud_region>`_ is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`:
+    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where `<cloud_region>` is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`:
 
         ```
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Reader
@@ -260,7 +260,7 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Tag the image to `namespace_a` by running the following command, where _`<registry_region>`_ is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
+    2. Tag the image to `namespace_a` by running the following command, where `<registry_region>` is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
 
         ```
         docker tag hello-world <registry_region>.icr.io/namespace_a/hello-world
@@ -386,7 +386,7 @@ In this section, you create some namespaces with sample images, and grant access
 
         Find the policies you just created and note the Policy IDs.
 
-    3. Delete the policies you just created by running the following command, where _`<Policy_ID>`_ is the Policy ID:
+    3. Delete the policies you just created by running the following command, where `<Policy_ID>` is the Policy ID:
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
@@ -436,7 +436,7 @@ In this section, you configure a service ID and grant it access to your {{site.d
         ```
         {: pre}
 
-2. Use Docker to log in with the service ID API key, where _`<API_Key>`_ is your API key, and interact with the registry:
+2. Use Docker to log in with the service ID API key, where `<API_Key>` is your API key, and interact with the registry:
 
     1. Log in to {{site.data.keyword.registrylong_notm}} by running the following command:
 
