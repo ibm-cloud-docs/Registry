@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-10-16"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, retention, delete images, retain images
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Cleaning up your namespaces
 {: #registry_retention}
 
-You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace.
+You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository in a namespace, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the registry. The number of images that are kept is the same for each repository in that namespace.

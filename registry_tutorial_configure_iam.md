@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-24"
 
 keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
 {: #iam_access}
 
-Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong_notm}}.
+Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong}}.
 {:shortdesc}
 
 This tutorial takes approximately 45 minutes.
@@ -41,7 +41,7 @@ Before you begin, you must complete the following tasks:
 
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 
-- If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your IBM Cloud account, use a different account as User A to prevent disruption to their access.
+- If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your {{site.data.keyword.cloud_notm}} account, use a different account as User A to prevent disruption to their access.
 
 ## Step 1: Authorize a user to configure the registry
 {: #configure_registry}
@@ -231,17 +231,20 @@ In this section, you create some namespaces with sample images, and grant access
 
         The three namespaces that you created in this tutorial (`namespace_a`, `namespace_b`, and `namespace_c`) are shown. If you do not see these namespaces, go back and follow the instructions to create them again.
 
-    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<Region>`_ is the name of your [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
+    3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where _`<cloud_region>`_ is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Reader
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
+
+        To see the names of the {{site.data.keyword.cloud_notm}} regions, run the [`ibmcloud regions`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_regions) command.
+        {: tip}
 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command:
 
         ```
-        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <Region> --resource-type namespace --resource namespace_c --roles Reader,Writer
+        ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_c --roles Reader,Writer
         ```
         {: pre}
 
@@ -257,17 +260,17 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Tag the image to `namespace_a` by running the following command:
+    2. Tag the image to `namespace_a` by running the following command, where _`<registry_region>`_ is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
 
         ```
-        docker tag hello-world <Region>.icr.io/namespace_a/hello-world
+        docker tag hello-world <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Tag the image to `namespace_b` by running the following command:
 
         ```
-        docker tag hello-world <Region>.icr.io/namespace_b/hello-world
+        docker tag hello-world <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -281,14 +284,14 @@ In this section, you create some namespaces with sample images, and grant access
     5. Push the image to `namespace_a` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_a/hello-world
+        docker push <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_b/hello-world
+        docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -327,14 +330,14 @@ In this section, you create some namespaces with sample images, and grant access
     5. Pull the image by running the following command:
 
         ```
-        docker pull <Region>.icr.io/namespace_b/hello-world
+        docker pull <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_b/hello-world
+        docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
@@ -343,14 +346,14 @@ In this section, you create some namespaces with sample images, and grant access
     7. Tag the image with `namespace_c` by running the following command:
 
         ```
-        docker tag hello-world <Region>.icr.io/namespace_c/hello-world
+        docker tag hello-world <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. Push the image to `namespace_c` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_c/hello-world
+        docker push <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -359,7 +362,7 @@ In this section, you create some namespaces with sample images, and grant access
     9. Pull from `namespace_c` by running the following command:
 
         ```
-        docker pull <Region>.icr.io/namespace_c/hello-world
+        docker pull <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
@@ -415,14 +418,14 @@ In this section, you configure a service ID and grant it access to your {{site.d
     3. Create a service policy for the service ID that grants the Reader role on `namespace_a` by running the following command:
 
         ```
-        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_a --roles Reader
+        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_a --roles Reader
         ```
         {: pre}
 
     4. Create a second service policy that grants the Writer role on `namespace_b` by running the following command:
 
         ```
-        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <Region> --resource-type namespace --resource namespace_b --roles Writer
+        ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Writer
         ```
         {: pre}
 
@@ -438,21 +441,21 @@ In this section, you configure a service ID and grant it access to your {{site.d
     1. Log in to {{site.data.keyword.registrylong_notm}} by running the following command:
 
         ```
-        docker login -u iamapikey -p <API_Key> <Region>.icr.io
+        docker login -u iamapikey -p <API_Key> <registry_region>.icr.io
         ```
         {: pre}
 
     2. Pull your image by running the following command:
 
         ```
-        docker pull <Region>.icr.io/namespace_a/hello-world
+        docker pull <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Push your image to `namespace_a` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_a/hello-world
+        docker push <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
@@ -461,7 +464,7 @@ In this section, you configure a service ID and grant it access to your {{site.d
     4. Push your image to `namespace_b` by running the following command:
 
         ```
-        docker push <Region>.icr.io/namespace_b/hello-world
+        docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 

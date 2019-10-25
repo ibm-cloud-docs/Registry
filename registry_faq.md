@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, public images, commands, questions, registry, FAQ, Vulnerability Advisor,
 
@@ -33,7 +33,7 @@ Frequently asked questions about {{site.data.keyword.registrylong}}.
 {: #faq_list_public_images}
 {: faq}
 
-To list public images, run the following `ibmcloud` commands to target the global registry and list the IBM-provided public images:
+To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM}}:
 
 ```
 ibmcloud cr region-set global

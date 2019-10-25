@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-14"
+lastupdated: "2019-10-24"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+
 
 # Release notes
 {: #registry_release_notes}
@@ -80,7 +81,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
-  <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).</dd>
 </dl>
@@ -138,7 +139,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
-  <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).
 </dd>
@@ -156,7 +157,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters</dt>
-  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+  <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
   
   For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-images#cluster_registry_auth).</dd>
 </dl>
@@ -213,7 +214,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor</dt>
-  <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+  <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
   For more information, see [Activity Tracker events](/docs/services/Registry?topic=registry-at_events#at_events).</dd>
 </dl>
@@ -273,7 +274,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Global registry</dt>
-  <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by IBM are hosted in this registry.
+  <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 
   For more information, see [Global registry](/docs/services/Registry?topic=registry-registry_overview#registry_regions_global).</dd>
 </dl>

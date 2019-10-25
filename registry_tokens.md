@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-10-18"
 
 keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
 
@@ -25,7 +25,7 @@ subcollection: registry
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
-You can use an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
+You can use an {{site.data.keyword.iamlong}} (IAM) API key to automate access to your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images.
 {:shortdesc}
 
 Are you trying to use your registry images in Kubernetes deployments? Check out [Accessing images in other Kubernetes namespaces, {{site.data.keyword.cloud_notm}} regions, and accounts](/docs/containers?topic=containers-images#other).
