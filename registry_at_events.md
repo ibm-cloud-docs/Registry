@@ -72,9 +72,7 @@ The following table lists the API methods that generate an event when they are c
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_atlogdna}
 
-{{site.data.keyword.at_full_notm}} events are available in the {{site.data.keyword.at_full_notm}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
-
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
+The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
