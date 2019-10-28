@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-28"
 
 keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
 
@@ -28,8 +28,7 @@ subcollection: registry
 Track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-The {{site.data.keyword.at_full_notm}} service or for existing users only, the {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}.
-For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started) or for existing users, [{{site.data.keyword.cloudaccesstrailfull_notm}}](/docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started).
+The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
 
 The following table lists the API methods that generate an event when they are called:
 
@@ -72,9 +71,7 @@ The following table lists the API methods that generate an event when they are c
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_atlogdna}
 
-{{site.data.keyword.at_full_notm}} events are available in the {{site.data.keyword.at_full_notm}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
-
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
+The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
@@ -89,13 +86,3 @@ The [region](/docs/services/Registry?topic=registry-registry_overview#registry_r
 |-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="top"}
-
-### {{site.data.keyword.cloudaccesstraillong_notm}} events
-{: #ui_at}
-
-{{site.data.keyword.cloudaccesstraillong_notm}} events, for existing users only, are available in the {{site.data.keyword.cloudaccesstraillong_notm}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} region where the events are generated, except for `ap-north`. Events for `ap-north` show in `ap-south`.
-
-{{site.data.keyword.cloudaccesstrailfull_notm}} is deprecated. As of 9 May 2019, you cannot provision new {{site.data.keyword.cloudaccesstrailshort}} instances. Existing premium plan instances are supported until 30 September 2019. To continue monitoring the activity of your {{site.data.keyword.cloud_notm}} account, provision an instance of the [{{site.data.keyword.at_full_notm}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
-{: deprecated}
-
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} where the resource is available. Images and namespaces are examples of resources.
