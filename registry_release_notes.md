@@ -35,7 +35,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.la_full_notm}} platform services logs are available</dt>
   <dd>{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances.
   
-  For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/services/Registry?topic=registry-logs).</dd>
+  For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/services/Registry?topic=registry-registry_logs).</dd>
 </dl>
 
 ## 14 October 2019
