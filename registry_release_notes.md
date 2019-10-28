@@ -27,6 +27,7 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
 ## 25 October 2019
 {: #25oct2019}
 
