@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-28"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
@@ -22,12 +22,21 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Release notes
 {: #registry_release_notes}
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 25 October 2019
+{: #25oct2019}
+
+<dl>
+  <dt>{{site.data.keyword.la_full_notm}} platform services logs are available</dt>
+  <dd>{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances.
+  
+  For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/services/Registry?topic=registry-registry_logs).</dd>
+</dl>
 
 ## 14 October 2019
 {: #14oct2019}

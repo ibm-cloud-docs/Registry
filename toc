@@ -45,6 +45,7 @@ IBM Cloud Container Registry
     registry_cli_list.md
     iam.md
     registry_at_events.md
+    registry_logs.md
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
     {: .navgroup-end}
 
