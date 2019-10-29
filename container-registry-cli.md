@@ -1045,7 +1045,7 @@ ibmcloud cr retention-run --images 20 birds
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/services/Registry?topic=registry-registry_retention).
 
-## `ibmcloud cr token-get`
+## `ibmcloud cr token-get` - deprecated
 {: #bx_cr_token_get}
 
 Retrieve the specified token from the registry.
@@ -1081,7 +1081,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 ```
 {: pre}
 
-## `ibmcloud cr token-list` (`ibmcloud cr tokens`)
+## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - deprecated
 {: #bx_cr_token_list}
 
 Displays all tokens that exist for your {{site.data.keyword.cloud_notm}} account.
@@ -1128,7 +1128,7 @@ This example produces output in the following format:
 ```
 {: screen}
 
-## `ibmcloud cr token-rm`
+## `ibmcloud cr token-rm` - deprecated
 {: #bx_cr_token_rm}
 
 Remove one or more specified registry tokens.
