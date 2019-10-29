@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-29"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands
 
@@ -21,7 +21,6 @@ subcollection: container-registry-cli-plugin
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
-
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
@@ -1051,6 +1050,9 @@ For more information about how to use the `ibmcloud cr retention-run` command, s
 
 Retrieve the specified token from the registry.
 
+This command is deprecated.
+{: deprecated}
+
 ```
 ibmcloud cr token-get TOKEN
 ```
@@ -1083,6 +1085,9 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 {: #bx_cr_token_list}
 
 Displays all tokens that exist for your {{site.data.keyword.cloud_notm}} account.
+
+This command is deprecated.
+{: deprecated}
 
 ```
 ibmcloud cr token-list [--format FORMAT]
@@ -1127,6 +1132,9 @@ This example produces output in the following format:
 {: #bx_cr_token_rm}
 
 Remove one or more specified registry tokens.
+
+This command is deprecated.
+{: deprecated}
 
 ```
 ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
