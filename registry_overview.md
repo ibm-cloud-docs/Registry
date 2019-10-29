@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-10-29"
 
 keywords: IBM Cloud Container Registry, private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, 
 
@@ -243,7 +243,7 @@ To learn more about Docker-specific terms, see [Docker glossary ![External link 
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
 {:shortdesc}
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens, quota settings, and plan settings must all be managed separately for each regional registry.
+All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens (deprecated), quota settings, and plan settings must all be managed separately for each regional registry.
 
 ### Local regions
 {: #registry_regions_local}

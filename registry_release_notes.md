@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-28"
+lastupdated: "2019-10-29"
 
 keywords: IBM Cloud Container Registry, changelog, release notes, changes, user access, DNS names, regions,
 
