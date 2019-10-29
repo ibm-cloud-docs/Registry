@@ -28,14 +28,6 @@ subcollection: registry
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
 
-## 29 October 2019
-{: #29oct2019}
-
-<dl>
-  <dt>{{site.data.keyword.registrylong_notm}} tokens are deprecated</dt>
-  <dd>The `ibmcloud cr token-list`, `ibmcloud cr token-rm`, and `ibmcloud cr token-get` commands are deprecated.</dd>
-</dl>
-
 ## 25 October 2019
 {: #25oct2019}
 
