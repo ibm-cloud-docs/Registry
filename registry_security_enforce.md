@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-29"
 
 keywords: IBM Cloud Container Registry, Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, policies, content trust, Kube-system policies, IBM-system policies, CISE, removing policies,
 
@@ -182,9 +182,22 @@ You must have some policy set. Otherwise, deployments to your cluster fail. If y
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
+The following table explains the YAML components that you must set in your Kubernetes custom resource definition `.yaml` file.
+
+| Field | Description |
+|-----|-----------|
+| `kind` | For a cluster-wide policy, specify the `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`. |
+|`metadata/name` | Name the custom resource definition. |
+| `spec/repositories/name` | Specify the repositories to allow images from. Wildcards (`*`) are allowed in repository names. Repositories are denied unless a matching entry in `repositories` allows it or applies further verification. An empty `repositories` list blocks deployment of all images. To allow all images without verification of any policies, set the name to `*` and omit the policy subsections. |
+| `../../../policy` | Complete the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each. |
+| `../../../../trust/enabled` | Set as `true` to allow only images that are [signed for content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed. |
+| `../../../../trust/signerSecrets/name` | If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this section or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers). |
+| `../../../../va/enabled` | Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan. |
+{: caption="Table 1. Understanding the YAML components for the Kubernetes custom resource definition." caption-side="top"}
+
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
-1. Create a [Kubernetes custom resource definition ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` file.
+1. Create a [Kubernetes custom resource definition ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/) `.yaml` file. For more information, see Table 1.
 
     ```yaml
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
@@ -203,44 +216,6 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
               enabled: <true_or_false>
     ```
     {: codeblock}
-
-    <table>
-    <caption>Table 1. Understanding the YAML components</caption>
-    <thead>
-    <th>Field</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>kind</code></td>
-    <td>For a cluster-wide policy, specify `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`.</td>
-    </tr>
-    <tr>
-    <td><code>metadata/name</code></td>
-    <td>Name the custom resource definition.</td>
-    </tr>
-    <tr>
-    <td><code>spec/repositories/name</code></td>
-    <td>Specify the repositories to allow images from. Wildcards (`*`) are allowed in repository names. Repositories are denied unless a matching entry in `repositories` allows it or applies further verification. An empty `repositories` list blocks deployment of all images. To allow all images without verification of any policies, set the name to `*` and omit the policy subsections.</td>
-    </tr>
-    <tr>
-    <td><code>../../../policy</code></td>
-    <td>Complete the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each.</td>
-    </tr>
-    <tr>
-    <td><code>../../../../trust/enabled</code></td>
-    <td>Set as `true` to allow only images that are [signed for content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed.</td>
-    </tr>
-    <tr>
-    <td><code>../../../../trust/signerSecrets/name</code></td>
-    <td>If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this section or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers).</td>
-    </tr>
-    <tr>
-    <td><code>../../../../va/enabled</code></td>
-    <td>Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan.</td>
-    </tr>
-    </tbody>
-    </table>
 
 2. Apply the `.yaml` file to your cluster.
 
