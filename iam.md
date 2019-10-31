@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-10-31"
 
 keywords: IBM Cloud Container Registry, user access, Identity and Access Management, policies, user roles, access policies, platform management roles, service access roles, access roles,
 
@@ -30,7 +30,7 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM user roles](/docs/iam?topic=iam-userroles).
 
-IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token (deprecated), your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, consider using an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
+IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token (deprecated), your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, use an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 
 For more information about IAM, see [What is {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/iam?topic=iam-iamoverview#iamoverview).
 
