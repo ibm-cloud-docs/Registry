@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-11-11"
 
 keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
 
@@ -130,7 +130,7 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account:
     ```
     {: pre}
 
-2. Remove an image from your namespace. Replace `<image_name>` with the name of the image that you want to remove.
+2. Remove an image from your namespace by using the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
     ```
     ibmcloud cr image-rm <image_name>
