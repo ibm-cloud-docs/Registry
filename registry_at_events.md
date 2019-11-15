@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Activity Tracker with LogDNA events, Activity Tracker events, events, track,
+keywords: activity tracker, events, track, tracking events, find events, look for events,
 
 subcollection: registry
 

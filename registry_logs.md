@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-28"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, IBM Cloud Log Analysis with LogDNA, logging, logs, platform services logs
+keywords: logging, logs, platform services logs,
 
 subcollection: registry
 

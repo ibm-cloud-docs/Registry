@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, user access, tutorial, access control, 
+keywords: user access, tutorial, access control, granting access, authorizing, 
 
 subcollection: registry
 

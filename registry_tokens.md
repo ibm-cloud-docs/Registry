@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, API keys, tokens, automating access, creating API keys, authenticating,
+keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
 subcollection: registry
 

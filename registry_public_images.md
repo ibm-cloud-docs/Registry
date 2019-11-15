@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, public IBM images, images, accessing images,
+keywords: public IBM images, images, accessing images, container images, public images,
 
 subcollection: registry
 
