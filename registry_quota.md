@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, quota limits, custom quota limits, pull traffic, quotas, storage,
+keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
 subcollection: registry
 

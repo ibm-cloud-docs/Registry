@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-11-15"
 
-keywords: IBM Cloud Container Registry, Vulnerability Advisor, tutorial, workflow,
+keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
 subcollection: registry
 
