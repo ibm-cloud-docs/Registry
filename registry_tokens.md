@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-26"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -45,6 +46,8 @@ Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docke
 You can use API keys to automate the pushing and pulling of Docker images to and from your namespaces.
 {:shortdesc}
 
+
+
 ### Creating an API key
 {: #registry_api_key_create}
 
@@ -52,6 +55,8 @@ You can create an API key that you can then use to log in to your registry.
 {:shortdesc}
 
 You can create both user API keys and service ID API keys.
+
+
 
 - To create a service ID API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
 - To create a user API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key).
@@ -62,7 +67,9 @@ You can create both user API keys and service ID API keys.
 You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
+
+
+<Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
 
 - For namespaces set up in AP-North, use `jp.icr.io`
 - For namespaces set up in AP-South, use `au.icr.io`
