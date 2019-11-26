@@ -47,6 +47,8 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 
 
 
+
+
 ### Creating an API key manually
 {: #registry_api_key_create}
 
@@ -63,8 +65,6 @@ You can create an API key that you can then use to log in to your registry.
 
 You can use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
-
-
 
 Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
 
