@@ -22,7 +22,6 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 
-
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
@@ -69,7 +68,7 @@ You can use an API key to automate access to your namespaces in {{site.data.keyw
 
 
 
-<Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
+Use the API key to log in to your registry by running the following Docker command. Replace `<your_apikey>` with your API key, and replace `<registry_url>` with the URL to the registry where your namespaces are set up.
 
 - For namespaces set up in AP-North, use `jp.icr.io`
 - For namespaces set up in AP-South, use `au.icr.io`
