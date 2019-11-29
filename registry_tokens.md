@@ -49,7 +49,7 @@ You can use API keys to automate the pushing and pulling of Docker images to and
 
 
 
-### Creating an API key manually
+### Creating an API key
 {: #registry_api_key_create}
 
 You can create an API key that you can then use to log in to your registry.
