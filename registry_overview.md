@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-11-29"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, registry
 
@@ -193,46 +193,58 @@ To upgrade your service plan, complete the following steps:
 Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
+{: #registry_overview_container_image}
+
 <dl>
-  <dt>Dockerfile</dt>
-  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).</dd>
+  <dt>Container image</dt>
+  <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the container image is built by successive updates. The container image does not retain state as the container executes.</br></br>Container images are stored in a repository that is stored in a namespace.</dd>
 </dl>
 
 <dl>
-  <dt>Docker V2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+  <dt>Dockerfile</dt>
+  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. </br></br>Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).</dd>
+</dl>
+
+<dl>
+  <dt>Docker V2 container images</dt>
+  <dd>A container image that is compliant with the [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/) specification. </br></br>The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
   <dt>Image</dt>
-  <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the image is built by successive updates. The image does not retain state as the container executes.</dd>
+  <dd>See [container image](#registry_overview_container_image).</dd>
 </dl>
 
 <dl>
   <dt>Namespace</dt>
-  <dd>Namespaces are a way to organize repositories of your images within {{site.data.keyword.registrylong_notm}}. The namespace is associated with your {{site.data.keyword.cloud_notm}} account. When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region.
-
-  Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace. You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments.</dd>
+  <dd>See [registry namespace](#registry_overview_registry_namespace).</dd>
 </dl>
 
 <dl>
   <dt>OCI container images</dt>
-  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec). The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
+  <dd>A container image that is compliant with the [OCI Image Format ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec)  specification. </br></br>The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
   <dt>Registry</dt>
-  <dd>A registry is a service that provides storage for OCI images (also known as Docker images). OCI images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
+  <dd>A public or private container image storage and distribution service. </br></br>Storage is provided for OCI container images (also known as Docker container images). OCI container images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Container images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
+</dl>
+
+{: #registry_overview_registry_namespace}
+
+<dl>
+  <dt>Registry namespace</dt>
+  <dd>A collection of repositories that store your container images in {{site.data.keyword.registrylong_notm}}. The registry namespace is associated with your {{site.data.keyword.cloud_notm}} account. You can have multiple registry namespaces in an account. </br></br>When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.</br></br>A registry namespace is made up of one or more repositories.</dd>
 </dl>
 
 <dl>
   <dt>Repository</dt>
-  <dd>An image repository is a collection of related, tagged images in the registry. Repository is often used interchangeably with image, but a repository potentially holds multiple tagged variants of an image.</dd>
+  <dd>A collection of related, container images in the container registry that are distinguished by tag or digest only. </br></br>Repository is often used interchangeably with container image, but a repository potentially holds multiple tagged variants of a container image. </br></br>A repository stores container images, and is itself stored in a registry namespace.</dd>
 </dl>
 
 <dl>
   <dt>Tag</dt>
-  <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
+  <dd>A reassignable label that identifies container images within a repository.</br></br>You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
 To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
