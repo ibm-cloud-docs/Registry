@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-29"
+lastupdated: "2019-12-02"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, registry
 
@@ -193,10 +193,10 @@ To upgrade your service plan, complete the following steps:
 Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-{: #registry_overview_container_image}
-
 <dl>
   <dt>Container image</dt>
+  {: #registry_overview_container_image}
+
   <dd>A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, combined at runtime, that are created as the container image is built by successive updates. The container image does not retain state as the container executes.</br></br>Container images are stored in a repository that is stored in a namespace.</dd>
 </dl>
 
@@ -230,10 +230,10 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
   <dd>A public or private container image storage and distribution service. </br></br>Storage is provided for OCI container images (also known as Docker container images). OCI container images can be accessed or "pulled" by OCI clients that use the appropriate registry domain name. Container images can be accessed by anyone (public images) or access can be limited to a group (private images). {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, private image registry that is hosted and managed by {{site.data.keyword.IBM_notm}}. You can use the registry by adding a namespace that is private to your account and then push images to your namespace.</dd>
 </dl>
 
-{: #registry_overview_registry_namespace}
-
 <dl>
   <dt>Registry namespace</dt>
+  {: #registry_overview_registry_namespace}
+
   <dd>A collection of repositories that store your container images in {{site.data.keyword.registrylong_notm}}. The registry namespace is associated with your {{site.data.keyword.cloud_notm}} account. You can have multiple registry namespaces in an account. </br></br>When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: <code><em>&lt;region&gt;</em>.icr.io/my_namespace</code>. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.</br></br>A registry namespace is made up of one or more repositories.</dd>
 </dl>
 
