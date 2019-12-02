@@ -244,7 +244,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>Tag</dt>
-  <dd>A reassignable label that identifies container images within a repository.</br></br>You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
+  <dd>A label that you can reassign that identifies container images within a repository.</br></br>You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
 To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
