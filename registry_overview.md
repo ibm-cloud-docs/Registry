@@ -187,7 +187,7 @@ To upgrade your service plan, complete the following steps:
 
    For more information, see [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
-## Understanding> the terms that are used in {{site.data.keyword.registrylong_notm}}
+## Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
 
 Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm}}.
