@@ -42,7 +42,7 @@ Before you begin, [install the {{site.data.keyword.registrylong_notm}} and Docke
 ## Automating access to your namespaces by using API keys
 {: #registry_api_key}
 
-You can use service ID and user API keys to automate the pushing and pulling of Docker images to and from your namespaces.
+You can use API keys to automate the pushing and pulling of Docker images to and from your namespaces.
 {:shortdesc}
 
 ### Creating an API key
