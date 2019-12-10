@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: logging, logs, platform services logs,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # {{site.data.keyword.la_full_notm}} platform services logs
 {: #registry_logs}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -24,6 +24,7 @@ subcollection: registry
 {:tsSymptoms: .tsSymptoms}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
+{:term: .term}
 
 # Troubleshooting
 {: #ts_index}

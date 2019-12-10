@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}

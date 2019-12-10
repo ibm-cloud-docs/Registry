@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Enforcing container image security
 {: #security_enforce}

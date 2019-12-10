@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Managing user access with Identity and Access Management
 {: #iam}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -21,8 +21,9 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
-# Defining user access role policies
+# Defining access role policies
 {: #user access}
 
 As an administrator, you can define access policies for your registry to create different levels of access for different users. For example, you can authorize certain users to set quotas while other users can only view quotas.
