@@ -101,7 +101,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 ```
 {: pre}
 
-The following table details actions that are mapped to service access roles for configuring {{site.data.keyword.registrylong_notm}}.
+The following table details actions that are mapped to operations on the service and to the service access roles for configuring {{site.data.keyword.registrylong_notm}}.
 
 | Action| Operation on service | Role |
 |-----------------|-----------------|--------------|
@@ -128,7 +128,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 ```
 {: pre}
 
-The following table details actions that are mapped to service access roles for using {{site.data.keyword.registrylong_notm}}.
+The following table details actions that are mapped to operations on the service and to the service access roles for using {{site.data.keyword.registrylong_notm}}.
 
 | Action | Operation on service | Role |
 |-----------------|-----------------|--------------|
