@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}

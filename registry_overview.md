@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
-keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, terminology, glossary, domain names, Docker, global registry, registry
+keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
 subcollection: registry
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}

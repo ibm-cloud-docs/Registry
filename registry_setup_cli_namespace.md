@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}

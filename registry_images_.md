@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Adding images to your namespace
 {: #registry_images_}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019,
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Cleaning up your namespaces
 {: #registry_retention}

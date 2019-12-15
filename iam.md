@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-13"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Managing user access with Identity and Access Management
 {: #iam}
@@ -100,6 +101,8 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 ```
 {: pre}
 
+The following table details actions that are mapped to operations on the service and to the service access roles for configuring {{site.data.keyword.registrylong_notm}}.
+
 | Action| Operation on service | Role |
 |-----------------|-----------------|--------------|
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement. | Manager |
@@ -124,6 +127,8 @@ For example, use the following command, where `<user_email>` is the user's email
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
+
+The following table details actions that are mapped to operations on the service and to the service access roles for using {{site.data.keyword.registrylong_notm}}.
 
 | Action | Operation on service | Role |
 |-----------------|-----------------|--------------|

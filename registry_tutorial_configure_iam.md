@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
 {: #iam_access}

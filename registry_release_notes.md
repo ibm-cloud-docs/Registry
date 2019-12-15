@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-15"
+lastupdated: "2019-12-10"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -21,6 +21,7 @@ subcollection: registry
 {:important: .important}
 {:deprecated: .deprecated}
 {:download: .download}
+{:term: .term}
 
 # Release notes
 {: #registry_release_notes}
