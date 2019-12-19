@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-19"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 
@@ -44,7 +44,6 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | |
 | `container-registry.image.pull` | Pull an image from {{site.data.keyword.registrylong_notm}}. | |
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. | |
-| `container-registry.image.rm` | Delete one or more specified images from {{site.data.keyword.registrylong_notm}}. | |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | |
