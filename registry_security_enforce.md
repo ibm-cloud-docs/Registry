@@ -55,17 +55,8 @@ To install Container Image Security Enforcement in your cluster, complete the fo
 
 3. Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
-   - For Helm V2, use the following command:
-
    ```
    helm install --name cise iks-charts/ibmcloud-image-enforcement
-   ```
-   {: pre}
-
-   - For Helm V3, use the following command:
-
-   ```
-  helm install cise iks-charts/ibmcloud-image-enforcement
    ```
    {: pre}
 
