@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-19"
+  years: 2018, 2020
+lastupdated: "2020-01-07"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 

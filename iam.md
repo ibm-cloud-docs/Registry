@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-13"
+  years: 2018, 2020
+lastupdated: "2020-01-07"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 

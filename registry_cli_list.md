@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-10"
+  years: 2017, 2020
+lastupdated: "2020-01-07"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -38,13 +38,14 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
+
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
 - [`ibmcloud cr token-list`](#registry_cli_list_tokenlist)(deprecated)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
-- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all  images that have a size over 1 MB:
 
   ```
   ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
@@ -119,7 +120,7 @@ Review the following table to find available Go template options and data types 
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Struct | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
@@ -190,7 +191,7 @@ Review the following table to find available Go template options and data types 
 | `Retries` | Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
 | `Test` | Array of strings | Displays how to run the health check test. Available options are: </br></br>`{}`: inherit the health check</br></br>`{"NONE"}`: the health check is disabled</br></br>`{"CMD", args...}`: exec arguments directly</br></br>`{"CMD-SHELL", command}`: run the command with the system's default shell |
 | `Timeout` | Integer (64 bit) | Displays the time to wait before considering the health check to have failed in nanoseconds. |
-{: caption="Table 4. Available fields and data types in the <code>Healthcheck</code> struct." caption-side="top"}
+{: caption="Table 4. Available fields and data types in the <code>Healthcheck</code>." caption-side="top"}
 
 ### `RootFS`
 {: #registry_cli_list_imageinspect_rootfs}
@@ -200,7 +201,7 @@ Review the following table to find available Go template options and data types 
 | `BaseLayer` | String | Displays the descriptor for the base layer in the image. |
 | `Layers` | Array of strings|Displays the descriptors of each image layer. |
 | `Type` | String | Displays the type of file system. |
-{: caption="Table 5. Available fields and data types in the <code>RootFS</code> struct." caption-side="top"}
+{: caption="Table 5. Available fields and data types in the <code>RootFS</code>." caption-side="top"}
 
 ## Go template options and data types in the `ibmcloud cr token-list` command (deprecated)
 {: #registry_cli_list_tokenlist}
