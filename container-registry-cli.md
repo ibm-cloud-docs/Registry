@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-07"
+lastupdated: "2020-01-09"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -362,9 +362,9 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Each image is listed in the format: `repository:tag`</dd>
 <dt>`--restrict RESTRICTION`</dt>
-<dd>(Optional) Limit the output to display only images in the specified namespace or namespace and repository. </dd>
+<dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
 <dt>`--include-ibm`</dt>
-<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default only private images are listed.</dd>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can only view {{site.data.keyword.IBM_notm}}-provided  images in the global registry.</dd>
 <dt>`--no-trunc`</dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
 <dt>`--show-type`</dt>
