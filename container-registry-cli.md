@@ -365,7 +365,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`--restrict RESTRICTION`</dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
 <dt>`--include-ibm`</dt>
-<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can only view {{site.data.keyword.IBM_notm}}-provided  images in the global registry.</dd>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided images in the global registry only.</dd>
 <dt>`--no-trunc`</dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
 <dt>`--show-type`</dt>
