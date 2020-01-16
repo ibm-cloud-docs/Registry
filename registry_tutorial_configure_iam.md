@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-10"
+  years: 2018, 2020
+lastupdated: "2020-01-16"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -205,10 +205,10 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Try to list images as User B by running the following command:
+    2. Try to list the namespaces as User B by running the following command:
 
         ```
-        ibmcloud cr images
+        ibmcloud cr namespaces
         ```
         {: pre}
 
