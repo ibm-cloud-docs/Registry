@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-07"
+lastupdated: "2020-01-16"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+
 
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}
@@ -45,7 +46,7 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
-- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all  images that have a size over 1 MB:
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
 
   ```
   ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
