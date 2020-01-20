@@ -23,7 +23,6 @@ subcollection: registry
 {:download: .download}
 {:term: .term}
 
-
 # Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
 {: #iam_access}
 
