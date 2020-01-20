@@ -23,6 +23,7 @@ subcollection: registry
 {:download: .download}
 {:term: .term}
 
+
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
