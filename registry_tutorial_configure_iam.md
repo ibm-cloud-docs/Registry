@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-20"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -473,7 +473,14 @@ In this section, you configure a service ID and grant it access to your {{site.d
 
 3. Clean up:
 
-    1. List your service policies by running the following command:
+    1. Log back in to {{site.data.keyword.registrylong_notm}} as User A:
+
+        ```
+        ibmcloud cr login
+        ```
+        {: pre}
+
+    2. List your service policies by running the following command:
 
         ```
         ibmcloud iam service-policies cr-roles-tutorial
@@ -482,24 +489,17 @@ In this section, you configure a service ID and grant it access to your {{site.d
 
         Note your Policy IDs.
 
-    2. Delete your service policies by running the following command for each policy:
+    3. Delete your service policies by running the following command for each policy:
 
         ```
         ibmcloud iam service-policy-delete cr-roles-tutorial <Policy_ID>
         ```
         {: pre}
 
-    3. Delete your service ID by running the following command:
+    4. Delete your service ID by running the following command:
 
         ```
         ibmcloud iam service-id-delete cr-roles-tutorial
-        ```
-        {: pre}
-
-    4. Log back in to {{site.data.keyword.registrylong_notm}} as User A:
-
-        ```
-        ibmcloud cr login
         ```
         {: pre}
 
@@ -509,7 +509,7 @@ In this section, you configure a service ID and grant it access to your {{site.d
 In this section, you remove the resources that you created in previous sections to leave your account as it was at the start of this tutorial.
 {:shortdesc}
 
-1. Log in to your account by running the following command:
+1. Log in to User A's account by running the following command:
 
     ```
     ibmcloud login
