@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-10"
+  years: 2018, 2020
+lastupdated: "2020-01-21"
 
 keywords: high availability, load balancing, back ups, disaster recovery,
 
@@ -23,6 +23,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # High availability and disaster recovery
 {: #ha-dr}

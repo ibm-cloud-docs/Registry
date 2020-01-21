@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-21"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
-
+{:external: target="_blank" .external}
 
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}
@@ -30,7 +30,7 @@ subcollection: registry
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong}} commands.
 {:shortdesc}
 
-By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://golang.org/pkg/text/template/) that you can use to customize the CLI output.
+By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://golang.org/pkg/text/template/){: external} that you can use to customize the CLI output.
 
 You can alter the CLI output by applying the format option in two different ways:
 
@@ -116,7 +116,7 @@ Review the following table to find available Go template options and data types 
 
 | Field | Type | Description |
 |-----|----|-----------|
-| `Created` | Integer (64 bit) | Displays when the image was created, expressed in number of seconds in [UNIX time ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time). |
+| `Created` | Integer (64 bit) | Displays when the image was created, expressed in number of seconds in [UNIX time](https://en.wikipedia.org/wiki/Unix_time){: external}. |
 | `Digest` | String | Displays the unique identifier for an image. |
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
@@ -140,7 +140,7 @@ Review the following table to find available Go template options and data types 
 | `Config` | Object | Displays configuration metadata for the image. See the field details in [`Config`](#registry_cli_list_imageinspect_config). |
 | `Container` | String | Displays the ID of the container that created the image. |
 | `ContainerConfig` | Object | Displays the default configuration for containers that are started from this image. See the field details in [`Config`](#registry_cli_list_imageinspect_config). |
-| `Created` | String | Displays the [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the image was created. |
+| `Created` | String | Displays the [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time){: external} when the image was created. |
 | `DockerVersion` | String | Displays the Docker version that was used to build this image. |
 | `ID` | String | Displays the unique identifier for an image. |
 | `Os` | String | Displays the operating system family that was used to build this image, and that is required to run the image. |
@@ -216,7 +216,7 @@ Review the following table to find available Go template options and data types 
 | Field | Type | Description |
 |-----|----|-----------|
 | `Description` | String | Displays the description of the token. |
-| `Expiry` | Integer (64 bit) | Displays [UNIX timestamp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Unix_time) when the token expires. |
+| `Expiry` | Integer (64 bit) | Displays [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time){: external} when the token expires. |
 | `ID` | String | Displays the unique identifier for a token. |
 | `ReadOnly` | Boolean | Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
 {: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}

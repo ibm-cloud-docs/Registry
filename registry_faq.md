@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-10"
+  years: 2018, 2020
+lastupdated: "2020-01-21"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -23,6 +23,7 @@ subcollection: registry
 {:download: .download}
 {:faq: data-hd-content-type='faq'}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Frequently asked questions (FAQs)
 {: #registry_faq}

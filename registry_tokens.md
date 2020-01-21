@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-18"
+  years: 2017, 2020
+lastupdated: "2020-01-21"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-10"
+  years: 2018, 2020
+lastupdated: "2020-01-21"
 
 keywords: public IBM images, images, accessing images, container images, public images,
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Public {{site.data.keyword.IBM_notm}} images
 {: #public_images}

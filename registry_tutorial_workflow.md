@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-10"
+  years: 2019, 2020
+lastupdated: "2020-01-21"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
@@ -47,20 +48,20 @@ Approximately 2 hours
 
 This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
-* [{{site.data.keyword.registrylong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/kubernetes/registry/main/private)
-* [{{site.data.keyword.containerlong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/kubernetes/catalog/cluster)
+* [{{site.data.keyword.registrylong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}
+* [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/catalog/cluster){: external}
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
 
-* [Install Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/)
-* [Install {{site.data.keyword.cloud_notm}} Developer Tools ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM-Cloud/ibm-cloud-developer-tools), a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository
+* [Install Git](https://git-scm.com/){: external}
+* [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository
 * [Create a cluster](/docs/containers?topic=containers-clusters)
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
 
-Using [{{site.data.keyword.registrylong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/container-registry) to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. In this section, you build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
+Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. In this section, you build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
 
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
@@ -99,7 +100,7 @@ Create a [namespace](/docs/services/Registry?topic=registry-registry_setup_cli_n
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
 
-To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_creating), you require an application and a Dockerfile. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/registry-va-workflow) that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
+To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_images_#registry_images_creating), you require an application and a Dockerfile. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external} that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
 
 1. To build the image, run the following command:
 
@@ -352,7 +353,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take additional steps.
 
-Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_overview#terms). For more information about Kubernetes namespaces, see [Namespaces ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/).
+Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-registry_overview#terms). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
 {: tip}
 
 1. In your cluster, create a Kubernetes namespace called `test`:
