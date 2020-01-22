@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-20"
+lastupdated: "2020-01-21"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -22,7 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
-
+{:external: target="_blank" .external}
 
 # Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
 {: #iam_access}
@@ -41,7 +41,7 @@ Before you begin, you must complete the following tasks:
 
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
-- Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login) that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
+- Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 
 - If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your {{site.data.keyword.cloud_notm}} account, use a different account as User A to prevent disruption to their access.
 

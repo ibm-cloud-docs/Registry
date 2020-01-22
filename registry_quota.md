@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-10"
+  years: 2017, 2020
+lastupdated: "2020-01-21"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}

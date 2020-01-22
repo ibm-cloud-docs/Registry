@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-07"
+lastupdated: "2020-01-21"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Activity Tracker events
 {: #at_events}

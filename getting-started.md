@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-10"
+  years: 2017, 2020
+lastupdated: "2020-01-21"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
@@ -72,7 +73,7 @@ Do not put personal information in your container images, namespace names, descr
 ## Pull images from another registry to your local machine
 {: #gs_registry_images_pulling}
 
-1. [Install the Docker Engine CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.docker.com/products/container-runtime#/download). For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/toolbox/) instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
+1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
 2. Download (_pull_) the image to your local machine. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, _latest_.
 

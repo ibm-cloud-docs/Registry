@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-10"
+  years: 2017, 2020
+lastupdated: "2020-01-21"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -25,6 +25,7 @@ subcollection: registry
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # Troubleshooting
 {: #ts_index}
@@ -39,8 +40,8 @@ If you have problems or questions when you are using {{site.data.keyword.registr
 
 When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
 
-- If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://stackoverflow.com/search?q=+ibm-cloud+container-registry) and tag your question with `ibm-cloud` and `container-registry`.
-- For questions about the service and getting started instructions, use the [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/container-registry.html) forum. Include the `ibm-cloud` and `container-registry` tags.
+- If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=+ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
+- For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/container-registry.html){: external} forum. Include the `ibm-cloud` and `container-registry` tags.
 
 See [Using the Support Center](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
 
@@ -118,7 +119,7 @@ The build command fails.
 The server might be down or there might be issues with your Dockerfile.
 
 {: tsResolve}
-To find out what the cause is, run `docker build` locally with the appropriate [`docker build` options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/commandline/build/):
+To find out what the cause is, run `docker build` locally with the appropriate [`docker build` options](https://docs.docker.com/engine/reference/commandline/build/){: external}:
 
 ```
 docker build --no-cache .
@@ -213,7 +214,7 @@ It is generally better to explicitly define a different sequential tag for your 
 {: #ts_ppa}
 
 {: tsSymptoms}
-When you try to import content that you used in other IBM products, such as {{site.data.keyword.cloud_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html) in the registry.
+When you try to import content that you used in other IBM products, such as {{site.data.keyword.cloud_notm}} Private, you are not able to store your images and other licensed software from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} in the registry.
 
 {: tsCauses}
 Software packages such as images and Helm charts from IBM Passport Advantage must be imported to the registry with the `ibmcloud cr ppa-archive-load` command.
@@ -225,12 +226,12 @@ Before you begin to import a product from IBM Passport Advantage, complete the f
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
 3. [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
 4. If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-helm#helm).
-5. If you want to share the charts within your organization, you can install the [Chart Museum open source project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum). For instructions, see this [developerWorks recipe ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/).
+5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}. For instructions, see this [developerWorks recipe](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/){: external}.
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
 
-1. Obtain the compressed file that you want to import from [IBM Passport Advantage ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/index.html).
+1. Obtain the compressed file that you want to import from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
 
 2. Target the region that you want to use. If you don't know the region name, run the command without the region and then choose a region.
 
@@ -373,7 +374,7 @@ The only signing role that you can rotate is `targets`, which is the repository 
 
 Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
 
-1. Install the CLI version of the [Notary project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli).
+1. Install the CLI version of the [Notary project](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli){: external}.
 
 2. [Set up your trusted content environment](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
 
@@ -493,7 +494,7 @@ on these resources:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac) and [Kubernetes - Using RBAC Authorization ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
+For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac) and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-12-10"
+  years: 2017, 2020
+lastupdated: "2020-01-21"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -22,6 +22,7 @@ subcollection: registry
 {:deprecated: .deprecated}
 {:download: .download}
 {:term: .term}
+{:external: target="_blank" .external}
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
@@ -61,7 +62,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Description | Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images | 500 MB | Unlimited |
 | Pull traffic | 5 GB per month | Unlimited |
-| Billing |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).</br></br>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
+| Billing |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}.</br></br>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
 
 ## Quota limits and billing
@@ -143,7 +144,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 ### Cost
 {: #registry_cost}
 
-You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).
+You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}.
 {:shortdesc}
 
 ## Upgrading your service plan
@@ -196,12 +197,12 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).</dd>
+  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.</dd>
 </dl>
 
 <dl>
   <dt>Docker V2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}. The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -218,7 +219,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>OCI container images</dt>
-  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec). The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
+  <dd>Container images that are compliant with the [OCI Image Format Specification](https://github.com/opencontainers/image-spec){: external}. The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
@@ -236,7 +237,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
   <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
 </dl>
 
-To learn more about Docker-specific terms, see [Docker glossary ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/glossary/).
+To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/glossary/){: external}.
 
 ## Regions
 {: #registry_regions}
@@ -364,7 +365,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
 
-Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/).
+Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
 
 Docker V1 images are deprecated.
 {: deprecated}
