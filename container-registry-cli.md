@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-27"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -292,7 +292,7 @@ ibmcloud cr iam-policies-status
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
 
-Displays details about a specific image.
+Displays details about a specific image. 
 
 ```
 ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
@@ -317,7 +317,9 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected. </p>
+ `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
 
 </dd>
 </dl>
@@ -472,8 +474,12 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 
 Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
 
-To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`.
 {: tip}
+
+
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
 
 ```
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -596,7 +602,7 @@ None
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}
 
-View the contents of the manifest for an image.
+View the contents of the manifest for an image. 
 
 ```
 ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
@@ -613,7 +619,11 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`</dd>
+<dd>The name of the image for which you want to inspect the manifest.` `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
+</dd>
+
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Reduces the output to display essential elements only.</dd>
 </dl>
