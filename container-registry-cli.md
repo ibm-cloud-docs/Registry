@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-01-28"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -619,7 +619,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to inspect the manifest.` `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
 
 <p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
 </dd>
