@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-28"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -317,7 +317,9 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected. </p>
+ `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected.</p>
 
 </dd>
 </dl>
@@ -405,7 +407,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`IMAGE`</dt>
 <dd>The name of the image that you want to restore from the trash.
 <p>To find the names of your images in the trash, run [`ibmcloud cr trash-list`](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest `<dns>/<namespace>/<repo>@<digest>` or by tag
-`<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>`  is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+`<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
 Images are stored in the trash for 30 days.</p>
 
@@ -472,8 +474,10 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 
 Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
 
-To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 {: tip}
+
+
 
 ```
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -613,7 +617,11 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`</dd>
+<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
+</dd>
+
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) Reduces the output to display essential elements only.</dd>
 </dl>
