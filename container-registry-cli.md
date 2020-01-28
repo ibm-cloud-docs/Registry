@@ -292,7 +292,7 @@ ibmcloud cr iam-policies-status
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
 
-Displays details about a specific image. 
+Displays details about a specific image.
 
 ```
 ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
@@ -319,7 +319,7 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 
  `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
+<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected.</p>
 
 </dd>
 </dl>
@@ -474,12 +474,10 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 
 Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
 
-To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`.
+To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 {: tip}
 
 
-
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
 
 ```
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -602,7 +600,7 @@ None
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}
 
-View the contents of the manifest for an image. 
+View the contents of the manifest for an image.
 
 ```
 ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
