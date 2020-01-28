@@ -289,10 +289,59 @@ ibmcloud cr iam-policies-status
 ```
 {: codeblock}
 
+## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
+{: #bx_cr_image_digests}
+
+Lists all images, including untagged images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
+
+You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and and one of the tags in the **Tags** column in the format: `repository:tag`.
+{: tip}
+
+```
+ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm]
+```
+{: codeblock}
+
+### Prerequisites
+{: bx_cr_image_digests_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_image_digests_option}
+
+<dl>
+<dt>`--format FORMAT`</dt>
+<dd>(Optional) Format the output elements by using a Go template.
+
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/services/Registry?topic=registry-registry_cli_list).
+
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>(Optional) Each image is listed in the format: `repository@digest`</dd>
+<dt>`--json`</dt>
+<dd>(Optional) Outputs the list in JSON format.</dd>
+<dt>`--restrict RESTRICTION`</dt>
+<dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
+<dt>`--include-ibm`</dt>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided  images in the global registry only.</dd>
+
+</dl>
+
+### Example
+{: #bx_cr_image_digests_example}
+
+Display all the images in the *`birds`* namespace, including untagged images, in the format `repository@digest`.
+
+```
+ibmcloud cr image-digests --restrict birds --quiet
+```
+{: pre}
+
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
 
-Displays details about a specific image.
+Displays details about a specific image. You can reference the image that you want to inspect either by digest, `repository@digest`, or by tag,`repository:tag`.
 
 ```
 ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
@@ -317,9 +366,14 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dt>`IMAGE`</dt>
 <dd>The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
 
- `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is inspected.</p>
+<p>To find the names of your images, run one of the following commands:
+
+<ul>
+<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
+<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</li>
+</ul></p>
 
 </dd>
 </dl>
@@ -337,7 +391,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-Displays all images in your {{site.data.keyword.cloud_notm}} account.
+Displays all tagged images in your {{site.data.keyword.cloud_notm}} account. If you want to list all your images, including untagged images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 
 The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
 {:tip}
@@ -429,7 +483,7 @@ For more information about how to use the `ibmcloud cr image-restore` command, s
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
 
-Delete one or more specified images from {{site.data.keyword.registrylong_notm}}.
+Delete one or more specified images from {{site.data.keyword.registrylong_notm}}. You can reference the image that you want to delete either by digest or by tag.
 
 Where multiple tags exist for the same image digest within a repository, the `ibmcloud cr image-rm` command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](#bx_cr_image_untag) command.
 {: tip}
@@ -452,9 +506,14 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. Removed images are stored in the trash for 30 days.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</p>
+<p>To find the names of your images, run one of the following commands:
+
+<ul>
+<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
+<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</li>
+</ul></p>
 
 </dd>
 </dl>
@@ -472,12 +531,17 @@ ibmcloud cr image-rm us.icr.io/birds/bluebird:1
 ## `ibmcloud cr image-tag`
 {: #bx_cr_image_tag}
 
-Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region.
+Add a tag that you specify in the command to an existing image, copy the tag to another repository, or copy the tag to a repository in a different namespace. The target image, `TARGET_IMAGE`, is the new image and the source image, `SOURCE_IMAGE`, is the existing image in {{site.data.keyword.registrylong_notm}}. The source and target images must be in the same region. You can reference the source image that you want to tag by either digest, `repository@digest`, or by tag, `repository:tag`. You must reference the target image by tag.
 
-To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
-{: tip}
+You can identify source images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. You must reference the target image by tag, `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
+<p>To find the names of your images, run one of the following commands:
 
+<ul>
+
+<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
+<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</li>
+</ul></p>
 
 ```
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -494,7 +558,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`SOURCE_IMAGE`</dt>
-<dd>The name of the source image. `SOURCE_IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+<dd>The name of the source image. You can identify source images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
 </dd>
 <dt>`TARGET_IMAGE`</dt>
@@ -600,7 +664,7 @@ None
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}
 
-View the contents of the manifest for an image.
+View the contents of the manifest for an image. You can reference the image that you want to inspect either by digest or by tag.
 
 ```
 ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
@@ -617,9 +681,14 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to inspect the manifest. `IMAGE` must be in the format `repository:tag`, for example: `us.icr.io/namespace/image:latest`
+<dd>The name of the image for which you want to inspect the manifest. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</p>
+<p>To find the names of your images, run one of the following commands:
+
+<ul>
+<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
+<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</li>
+</ul></p>
 </dd>
 
 <dt>`--quiet`, `-q`</dt>

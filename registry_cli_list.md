@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-28"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -39,14 +39,30 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-
+- [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests)
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
 - [`ibmcloud cr token-list`](#registry_cli_list_tokenlist)(deprecated)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
-- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all images that have a size over 1 MB:
+- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests:
+
+  ```
+  ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
+  ```
+  {: pre}
+
+  The following message is an example of the output from the command:
+
+  ```
+  example-<region>.icr.io/user1/ibmliberty@<digest1>
+  example-<region>.icr.io/user1/ibmliberty@<digest2>
+  example-<region>.icr.io/user1/ibmliberty@<digest3>
+  ```
+  {: screen}
+
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB:
 
   ```
   ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
@@ -107,6 +123,23 @@ The following code examples demonstrate how you might use the formatting and fil
 
   Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
   {: deprecated}
+  
+## Go template options and data types in the `ibmcloud cr image-digests` command
+{: #registry_cli_list_imagedigests}
+
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
+{:shortdesc}
+
+| Field | Type | Description |
+|-----|----|-----------|
+| `Created` | Integer (64 bit) | Displays when the image was created, expressed in number of seconds in [UNIX time](https://en.wikipedia.org/wiki/Unix_time){: external}. |
+| `Digest` | String | Displays the unique identifier for an image. |
+| `ManifestType` | String | Displays the image manifest type. |
+| `Repository` | String | Displays the repository of the image. |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli). |
+| `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
+| `Tags` | Array of strings | Displays the tags for the image. |
+{: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-digests</code> command." caption-side="top"}
 
 ## Go template options and data types in the `ibmcloud cr image-list` command
 {: #registry_cli_list_imagelist}
