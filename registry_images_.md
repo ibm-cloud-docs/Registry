@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-28"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -149,7 +149,7 @@ To create a new image from a source image, complete the following steps:
    ```
    {: pre}
 
-2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `<REPOSITORY>:<TAG>`, for example: `us.icr.io/namespace/image:latest`
+2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `repository:tag` or `repository@digest`, for example: `us.icr.io/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -290,9 +290,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
    ```
    {: pre}
 
-   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`.
-
-   If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
    {:tip}
@@ -314,8 +312,8 @@ If you want to delete a private repository and its associated images, see [Delet
 
 Public {{site.data.keyword.IBM_notm}} images can't be deleted from your private {{site.data.keyword.cloud_notm}} repository, and don't count toward your quota.
 
-Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{: important}
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+{: tip}
 
 Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](#registry_images_untag) command.
 {: tip}
@@ -326,8 +324,8 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 You can delete unwanted images and all their tags from your private repository by using the CLI.
 {:shortdesc}
 
-Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{: important}
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+{: tip}
 
 To delete an image by using the CLI, complete the following steps:
 
@@ -339,9 +337,7 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`.
-
-   If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
    {:tip}
@@ -359,8 +355,8 @@ To delete an image by using the CLI, complete the following steps:
 You can delete unwanted images and all their tags from your private image repository by using the graphical user interface (GUI).
 {:shortdesc}
 
-Deleting an image can't be undone. Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
-{: important}
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+{: tip}
 
 To delete an image by using the GUI, complete the following steps:
 
@@ -370,10 +366,6 @@ To delete an image by using the GUI, complete the following steps:
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Images**. A list of your images is displayed.
 6. In the row that contains the image that you want to delete, select the check box.
-
-   Ensure that you've selected the correct image because this action can't be undone.
-   {: important}
-
 7. Click **Delete Image**.
 
 ## Listing images in the trash
