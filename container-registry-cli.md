@@ -24,6 +24,7 @@ subcollection: container-registry-cli-plugin
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 

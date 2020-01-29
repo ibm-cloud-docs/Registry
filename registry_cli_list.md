@@ -24,6 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}
 

@@ -24,6 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
