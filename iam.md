@@ -120,7 +120,7 @@ The following table details actions that are mapped to operations on the service
 To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resource in the account.
 
 You cannot organize and assign access to registry namespaces in resource groups.
-{: note}
+{: important}
 
 For example, use the following command, where `<user_email>` is the user's email address:
 
