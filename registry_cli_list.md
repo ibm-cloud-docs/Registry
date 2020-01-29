@@ -24,7 +24,6 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
 {: #registry_cli_list}
 
@@ -43,7 +42,7 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
-- [`ibmcloud cr token-list`](#registry_cli_list_tokenlist)(deprecated)
+- [`ibmcloud cr token-list`](#registry_cli_list_tokenlist) (deprecated)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
