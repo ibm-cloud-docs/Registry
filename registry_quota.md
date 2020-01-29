@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-28"
+lastupdated: "2020-01-29"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
@@ -23,6 +23,7 @@ subcollection: registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+
 
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
@@ -125,23 +126,14 @@ If you exceeded your quota limits that are set for your {{site.data.keyword.clou
 
 To free up image storage in your {{site.data.keyword.cloud_notm}} account:
 
-1. To list all images in all your namespaces of your {{site.data.keyword.cloud_notm}} account, run one of the following commands:
+1. List all images in all your namespaces of your {{site.data.keyword.cloud_notm}} account.
 
-    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-  
       ```
-      ibmcloud cr image-digests
+      ibmcloud cr images
       ```
       {: pre}
 
-    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
-
-      ```
-      ibmcloud cr image-list
-      ```
-      {: pre}
-
-2. Remove an image from your namespace by using the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+2. Remove an image from your namespace by using the [`ibmcloud cr image-rm`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
     ```
     ibmcloud cr image-rm <image_name>
