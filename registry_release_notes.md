@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-28"
+lastupdated: "2020-01-29"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,16 +29,6 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
-
-## 28 January 2020
-{: #28jan2020}
-
-<dl>
-  <dt>`ibmcloud cr image-digests` command is available</dt>
-  <dd>The `ibmcloud cr image-digests` command displays all images in your account, including untagged images.
-
-  For more information, see [`ibmcloud cr image-digests`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests).</dd>
-</dl>
 
 ## 25 October 2019
 {: #25oct2019}
