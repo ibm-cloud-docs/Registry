@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -37,9 +37,9 @@ This tutorial takes approximately 45 minutes.
 
 Before you begin, you must complete the following tasks:
 
-- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-getting-started#getting-started).
+- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started#getting-started).
 
-- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/services/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
+- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
 
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
 
@@ -262,7 +262,7 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-    2. Tag the image to `namespace_a` by running the following command, where `<registry_region>` is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/services/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
+    2. Tag the image to `namespace_a` by running the following command, where `<registry_region>` is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/Registry?topic=registry-registry_overview#registry_regions), for example `us-south`:
 
         ```
         docker tag hello-world <registry_region>.icr.io/namespace_a/hello-world

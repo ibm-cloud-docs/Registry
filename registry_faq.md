@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -57,13 +57,13 @@ Yes, if the tool supports OCI image format and protocol.
 {: #faq_access_control}
 {: faq}
 
-You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/services/Registry?topic=registry-iam_access) and [Managing user access with Identity and Access Management](/docs/services/Registry?topic=registry-iam).
+You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=registry-iam_access) and [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam).
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}
 {: faq}
 
-You can host images in [local regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions_local). IBM hosted public images are available in the [Global registry](/docs/services/Registry?topic=registry-registry_overview#registry_regions_global).
+You can host images in [local regions](/docs/Registry?topic=registry-registry_overview#registry_regions_local). IBM hosted public images are available in the [Global registry](/docs/Registry?topic=registry-registry_overview#registry_regions_global).
 
 ## Why have I received a scan not found error message for a newly added image?
 {: #faq_va_new_scan_error}
@@ -82,7 +82,7 @@ You receive this message because the images are scanned asynchronously to the re
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
-If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registrylong_notm}}](/docs/services/Registry?topic=registry-ts_index#gettinghelp).
+If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-ts_index#gettinghelp).
 
 ## How is a Vulnerability Advisor scan triggered?
 {: #faq_va_trigger_scan}

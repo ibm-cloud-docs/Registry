@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -111,7 +111,7 @@ The following code examples demonstrate how you might use the formatting and fil
 ## Go template options and data types in the `ibmcloud cr image-list` command
 {: #registry_cli_list_imagelist}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
 {:shortdesc}
 
 | Field | Type | Description |
@@ -121,7 +121,7 @@ Review the following table to find available Go template options and data types 
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/services/Registry?topic=va-va_index#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
@@ -129,7 +129,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options and data types in the `ibmcloud cr image-inspect` command
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
 {:shortdesc}
 
 | Field | Type | Description |
@@ -210,7 +210,7 @@ Review the following table to find available Go template options and data types 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
 {: deprecated}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr token-list`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr token-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) command.
 {:shortdesc}
 
 | Field | Type | Description |

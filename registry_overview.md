@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -120,7 +120,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 #### Storage
 {: #registry_quota_limits_storage}
 
-  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/services/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
+  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
   {:shortdesc}
 
   Example for the standard plan:
@@ -132,7 +132,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 #### Pull traffic
 {: #registry_quota_limits_pull_traffic}
 
-  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/services/Registry?topic=registry-registry_quota#registry_quota_set).
+  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/Registry?topic=registry-registry_quota#registry_quota_set).
   {:shortdesc}
 
   Example for the standard plan:
@@ -175,7 +175,7 @@ To upgrade your service plan, complete the following steps:
    ```
    {: pre}
 
-   For more information, see [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/services/Registry?topic=registry-registry_overview#registry_regions).
+   For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
 
 3. Upgrade to the standard plan.
 
@@ -187,7 +187,7 @@ To upgrade your service plan, complete the following steps:
    If you have an {{site.data.keyword.cloud_notm}} Lite account, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before running `ibmcloud cr plan-upgrade`.
    {:tip}
 
-   For more information, see [`ibmcloud cr plan-upgrade`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+   For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
 ## Understanding the terms that are used in {{site.data.keyword.registrylong_notm}}
 {: #terms}
@@ -202,7 +202,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>Docker V2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}. The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/services/Registry?topic=registry-registry_overview#docker).</dd>
+  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}. The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -290,7 +290,7 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Targeting a local region
 {: #registry_regions_local_target}
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
 {:shortdesc}
 
 1. To run the command with parameters, replace `<region>` with the name of the [region](#registry_regions_local).
@@ -346,7 +346,7 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Targeting the global registry
 {: #registry_regions_global_target}
 
-You can target the global registry by running the [`ibmcloud cr region-set`](/docs/services/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
 {:shortdesc}
 
 1. To target the global registry, run the following command:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -27,7 +27,7 @@ subcollection: registry
 # Enforcing container image security
 {: #security_enforce}
 
-With Container Image Security Enforcement, you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
+With Container Image Security Enforcement, you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
 
 Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong_notm}}. You can choose to block or to allow deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
@@ -201,9 +201,9 @@ The following table explains the YAML components that you must set in your Kuber
 |`metadata/name` | Name the custom resource definition. |
 | `spec/repositories/name` | Specify the repositories to allow images from. Wildcards (`*`) are allowed in repository names. Repositories are denied unless a matching entry in `repositories` allows it or applies further verification. An empty `repositories` list blocks deployment of all images. To allow all images without verification of any policies, set the name to `*` and omit the policy subsections. |
 | `../../../policy` | Complete the subsections for `trust` and `va` enforcement. If you omit the policy subsections, it is equivalent to specifying `enabled: false` for each. |
-| `../../../../trust/enabled` | Set as `true` to allow only images that are [signed for content trust](/docs/services/Registry?topic=registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed. |
+| `../../../../trust/enabled` | Set as `true` to allow only images that are [signed for content trust](/docs/Registry?topic=registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed. |
 | `../../../../trust/signerSecrets/name` | If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this section or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers). |
-| `../../../../va/enabled` | Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/services/va?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan. |
+| `../../../../va/enabled` | Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/Registry?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan. |
 {: caption="Table 1. Understanding the YAML components for the Kubernetes custom resource definition." caption-side="top"}
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
@@ -238,7 +238,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 ### Specifying trusted content signers in custom policies
 {: #signers}
 
-If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/services/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
+If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
 {:shortdesc}
 
 To configure the policy to verify that an image is signed by a particular signer:
@@ -347,7 +347,7 @@ When a policy is applied, you can deploy content to your cluster normally. Your 
 
 - You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
 
-- You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/services/Registry?topic=registry-registry_trustedcontent).
+- You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent).
 
 A deployment is allowed only if all images pass the Container Image Security Enforcement checks.
 
