@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -27,8 +27,83 @@ subcollection: registry
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools. To use this feature, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/){: external} and the [Notary project](https://github.com/theupdateframework/notary){: external} documentation.
+{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
+{: shortdesc}
+
+You can use either Red Hat Signatures or Docker Content Trust and Notary to sign your images. If you plan to make significant use of Docker Content Trust and Notary, open a support ticket for assistance.
+
+- [Signing images for trusted content by using Red Hat Signatures](#registry_trustedcontent_red_hat_sig)
+- [Signing images for trusted content by using Docker Content Trust and Notary](#registry_trustedcontent_dct_notary)
+
+## Signing images for trusted content by using Red Hat Signatures
+{: #registry_trustedcontent_red_hat_sig}
+
+You can use various tools to create [Red Hat Signatures](https://www.redhat.com/en/blog/container-image-signing) for your images. You can store your signed images for trusted content by using the Red Hat Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
+{: shortdesc}
+
+You can use the following tools to create Red Hat signatures:
+
+- [skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
+- [Podman](#registry_trustedcontent_red_hat_sig_podman)
+- [Openshift CLI](#registry_trustedcontent_red_hat_sig_oc)
+- [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
+
+### Using skopeo to sign images
+{: #registry_trustedcontent_red_hat_sig_skopeo}
+
+To use [skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
+
+1. To create a GnuPG identity, run the following command:
+
+   ```
+   gpg --generate-key
+   ```
+   {: pre}
+
+2. Push and sign the image at the same time by using the GnuPG identity to sign the image, where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is tha name of your region and `<namespace>` is the name of your namespace:
+
+   ```
+   skopeo --insecure-policy copy --sign-by <your_email> docker-daemon:<repository:tag> docker://<image>
+   ```
+   {: pre}
+
+   For example, where `user@email.com` is your GnuPG email address, `bluebird:build1` is your repository and tag, and `us.icr.io/birds/bluebird:build1` is the name of your image:
+
+   ```
+   skopeo --insecure-policy copy --sign-by user@email.com docker-daemon:bluebird:build1 docker://us.icr.io/birds/bluebird:build1
+   ```
+   {: pre}
+
+   On macOS, if you get the error `“FATA[0015] Error writing signatures: mkdir /var/lib/atomic: permission denied”`, override the internal default for registry configuration so that the right signature storage is used by running the command with `--registries.d`:
+
+   ```
+   skopeo skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
+   ```
+   {: pre}
+
+### Using Podman to sign images
+{: #registry_trustedcontent_red_hat_sig_podman}
+
+See [Podman](https://podman.io/){: external}.
+
+### Using OpenShift CLI to sign images
+{: #registry_trustedcontent_red_hat_sig_oc}
+
+See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The Openshift CLI uses the `oc` command.
+
+### Using atomic to sign images
+{: #registry_trustedcontent_red_hat_sig_atomic}
+
+See [Atomic](https://atomic.io/){: external}.
+
+## Signing images for trusted content by using Docker Content Trust and Notary
+{: #registry_trustedcontent_dct_notary}
+
+To sign images for trusted content by using Docker Content Trust and Notary, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/){: external} and the [Notary project](https://github.com/theupdateframework/notary){: external} documentation.
 {:shortdesc}
+
+If you plan to make significant use of Docker Content Trust and Notary, open a [support ticket](/docs/Registry?topic=registry-ts_index#gettinghelp) for assistance.
+{: important}
 
 When you push your image with trusted content enabled, your Docker client also pushes a signed metadata object into the {{site.data.keyword.cloud_notm}} trust server. When pulling a tagged image with Docker Content Trust enabled, your Docker client contacts the trust server to establish the latest signed version of the tag that you requested, verifies the content signature, and downloads the signed image.
 
@@ -43,7 +118,7 @@ Docker Content Trust uses a trust on first use (TOFU) security model. The reposi
 
 For more information about the TOFU security model, see [The Update Framework](https://theupdateframework.github.io/){: external}.
 
-## Setting up your trusted content environment
+### Setting up your trusted content environment
 {: #trustedcontent_setup}
 
 By default, Docker Content Trust is disabled. Enable the Content Trust environment before logging in to {{site.data.keyword.registrylong_notm}} and working with signed images.
@@ -116,29 +191,29 @@ Now you are ready to push, pull, and manage trusted, signed images.
 During your session with Docker Content Trust enabled, if you want to do an operation with trusted content disabled (such as to pull an unsigned image), use the `--disable-content-trust` flag with the command.
 {: tip}
 
-## Pushing a signed image
+### Pushing a signed image
 {: #trustedcontent_push}
 
 When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the machine that is pushing the image.
 {:shortdesc}
 
-Before you begin, [set up your registry namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_namespace_add).
+Before you begin, [set up your registry namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. [Push your image](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+2. [Push your image](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
    This action is only required the first time that you push a signed repository.
    {: tip}
 
-## Pulling a signed image
+### Pulling a signed image
 {: #trustedcontent_pull}
 
 The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. Unsigned images or untrusted content are not pulled.
@@ -156,7 +231,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
     Specify the tag when you push or pull a signed image. The `latest` tag only defaults when content trust is disabled.
     {: tip}
 
-## Re-signing an image for the new domain name
+### Re-signing an image for the new domain name
 {: #trustedcontent_resign}
 
 To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and push the image.
@@ -179,20 +254,20 @@ To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and 
    ```
    {: pre}
 
-3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/services/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-## Managing trusted content
+### Managing trusted content
 {: #trustedcontent_managetrust}
 
 By using `docker trust` commands, you can view who signed images and revoke trust content status. To run `docker trust` commands, you must have Docker 18.03 or later.
 {:shortdesc}
 
-### Viewing signed images
+#### Viewing signed images
 {: #trustedcontent_viewsigned}
 
 You can review signed versions of an image repository or tag, including information about the key ID and signer.
@@ -209,7 +284,7 @@ You can review signed versions of an image repository or tag, including informat
    ```
    {: pre}
 
-### Revoking trust
+#### Revoking trust
 {: #trustedcontent_revoketrust}
 
 You can revoke the trusted content status of an image.
@@ -244,7 +319,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
    ```
    {: screen}
 
-## Backing up signing keys
+### Backing up signing keys
 {: #trustedcontent_backupkeys}
 
 When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root key and repository key, and stores them on your local machine:
@@ -256,17 +331,17 @@ When you first push a signed image to a new repository, Docker Content Trust cre
    If you changed your Docker configuration directory, look for the `trust` subdirectory there.
    {: tip}
 
-You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/services/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
 To back up your keys, see [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys){: external}.
 
-## Managing trusted signers
+### Managing trusted signers
 {: #trustedcontent_signers}
 
 You can add and remove signers from signing images in a repository.
 {:shortdesc}
 
-### Adding signers to a trusted repository
+#### Adding signers to a trusted repository
 {: #trustedcontent_addsigners}
 
 To allow other users to sign images in a repository, add the signing keys for those users to that repository.
@@ -320,7 +395,7 @@ To share signing keys:
 
 4. To verify that the signer was added, see [Viewing signed images](#trustedcontent_viewsigned).
 
-### Removing a signer from a repository
+#### Removing a signer from a repository
 {: #trustedcontent_removesigner}
 
 If you no longer want a signer to be able to sign images in your repository, you can remove them as a signer.
