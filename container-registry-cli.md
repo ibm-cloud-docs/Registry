@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-30"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -407,8 +407,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dl>
 <dt>`IMAGE`</dt>
 <dd>The name of the image that you want to restore from the trash.
-<p>To find the names of your images in the trash, run [`ibmcloud cr trash-list`](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest `<dns>/<namespace>/<repo>@<digest>` or by tag
-`<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.</p>
+<p>To find the names of your images in the trash, run [`ibmcloud cr trash-list`](#bx_cr_trash_list). `IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
 
 <p>Images are stored in the trash for 30 days.</p>
 
