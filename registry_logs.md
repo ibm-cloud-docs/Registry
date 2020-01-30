@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-21"
+lastupdated: "2020-01-30"
 
 keywords: logging, logs, platform services logs,
 
@@ -30,7 +30,7 @@ subcollection: registry
 {{site.data.keyword.registrylong}} generates platform services logs that are displayed in your LogDNA instances.
 {: shortdesc}
 
-For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
+For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
 
 Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Activity Tracker events](/docs/Registry?topic=registry-at_events).
 
@@ -42,7 +42,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 ## Where to look for {{site.data.keyword.la_full_notm}} logs
 {: #registry_logs_region}
 
-The [region](/docs/services/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south`. Logs for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south`. Logs for `ap-south` show in `Tokyo (jp-tok)`.
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |-----------------|-----------------|-----------------|
