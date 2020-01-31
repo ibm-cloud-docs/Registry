@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-01-31"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -288,6 +288,55 @@ Displays the IAM policy status of the targeted {{site.data.keyword.registryshort
 ibmcloud cr iam-policies-status
 ```
 {: codeblock}
+
+## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
+{: #bx_cr_image_digests}
+
+Lists all images, including untagged images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
+
+You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and and one of the tags in the **Tags** column in the format: `repository:tag`.
+{: tip}
+
+```
+ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm]
+```
+{: codeblock}
+
+### Prerequisites
+{: bx_cr_image_digests_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_image_digests_option}
+
+<dl>
+<dt>`--format FORMAT`</dt>
+<dd>(Optional) Format the output elements by using a Go template.
+
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=registry-registry_cli_list).
+
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>(Optional) Each image is listed in the format: `repository@digest`</dd>
+<dt>`--json`</dt>
+<dd>(Optional) Outputs the list in JSON format.</dd>
+<dt>`--restrict RESTRICTION`</dt>
+<dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
+<dt>`--include-ibm`</dt>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided  images in the global registry only.</dd>
+
+</dl>
+
+### Example
+{: #bx_cr_image_digests_example}
+
+Display all the images in the *`birds`* namespace, including untagged images, in the format `repository@digest`.
+
+```
+ibmcloud cr image-digests --restrict birds --quiet
+```
+{: pre}
 
 ## `ibmcloud cr image-inspect`
 {: #bx_cr_image_inspect}
