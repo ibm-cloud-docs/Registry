@@ -24,6 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
