@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-01-31"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -24,6 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
@@ -38,7 +39,7 @@ You can use either Red Hat Signatures or Docker Content Trust and Notary to sign
 ## Signing images for trusted content by using Red Hat Signatures
 {: #registry_trustedcontent_red_hat_sig}
 
-You can use various tools to create [Red Hat Signatures](https://www.redhat.com/en/blog/container-image-signing) for your images. You can store your signed images for trusted content by using the Red Hat Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
+You can use various tools to create [Red Hat Signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the Red Hat Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 You can use the following tools to create Red Hat signatures:
