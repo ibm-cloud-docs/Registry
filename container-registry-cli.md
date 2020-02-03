@@ -507,7 +507,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`IMAGE`</dt>
 <dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
 
-<p>Removed images are stored in the trash for 30 days.</p>
+<p>Images are stored in the trash for 30 days.</p>
 
 <p>To find the names of your images, run one of the following commands:
 

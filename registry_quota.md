@@ -134,14 +134,14 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account:
      ```
      {: pre}
 
-   - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+   - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
 
      ```
      ibmcloud cr image-list
      ```
      {: pre}
 
-2. Remove an image from your namespace by using the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+2. Remove an image from your namespace by using the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Images are stored in the trash for 30 days.
 
    ```
    ibmcloud cr image-rm <image_name>
