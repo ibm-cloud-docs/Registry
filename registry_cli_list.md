@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-03"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -39,12 +39,28 @@ You can alter the CLI output by applying the format option in two different ways
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
-
+- [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests)
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
 - [`ibmcloud cr token-list`](#registry_cli_list_tokenlist) (deprecated)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
+
+- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests:
+
+  ```
+  ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
+  ```
+  {: pre}
+
+  The following message is an example of the output from the command:
+
+  ```
+  example-<region>.icr.io/user1/ibmliberty@<digest1>
+  example-<region>.icr.io/user1/ibmliberty@<digest2>
+  example-<region>.icr.io/user1/ibmliberty@<digest3>
+  ```
+  {: screen}
 
 - Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB:
 

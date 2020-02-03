@@ -24,7 +24,6 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Adding images to your namespace
 {: #registry_images_}
 
@@ -86,7 +85,7 @@ To upload (push) an image, complete the following steps:
    {: pre}
 
    You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
-  {:tip}
+   {:tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
 3. [Upload the image to your namespace.](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing)
@@ -150,7 +149,7 @@ To create a new image from a source image, complete the following steps:
    ```
    {: pre}
 
-2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region.`SOURCE_IMAGE` and `TARGET_IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
+2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` must be in the format `repository:tag` or `repository@digest`and `TARGET_IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`
 
    ```
    ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -186,30 +185,30 @@ To build your own Docker image, complete the following steps:
 
 1. Create a local directory where you want to store the build context. The build context contains your Dockerfile and related build artifacts, such as the app code. Navigate to this directory in a command line window.
 2. Create a Dockerfile.
-    1. Create a Dockerfile in your local directory.
+   1. Create a Dockerfile in your local directory.
 
-        ```
-        touch Dockerfile
-        ```
-        {: pre}
+      ```
+      touch Dockerfile
+      ```
+      {: pre}
 
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
+   2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
-       ```
-       FROM <source_image>:<tag>
-       ```
-       {: pre}
+      ```
+      FROM <source_image>:<tag>
+      ```
+      {: pre}
 
-       For example, to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following command:
+      For example, to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following command:
 
-       ```
-       FROM <region>.icr.io/ibmliberty:latest
-       LABEL description="This is my test Dockerfile"
-       EXPOSE 9080
-       ```
-       {: pre}
+      ```
+      FROM <region>.icr.io/ibmliberty:latest
+      LABEL description="This is my test Dockerfile"
+      EXPOSE 9080
+      ```
+      {: pre}
 
-       This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){: external}.
+      This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){: external}.
 
 3. Decide on a name for your image. The image name must be in the following format:
 
@@ -338,9 +337,9 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
+   Where `IMAGE` is the name of the image that you want to remove, in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+   To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
    {:tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
@@ -497,7 +496,7 @@ To delete a private repository by using the GUI, complete the following steps:
 5. Click **Repositories**. A list of your private repositories is displayed.
 6. In the row that contains the private repository that you want to delete, select the check box.
 
-    Ensure that you've selected the correct repository because this action can't be undone.
-    {: important}
+   Ensure that you've selected the correct repository because this action can't be undone.
+   {: important}
 
 7. Click **Delete Repository**.
