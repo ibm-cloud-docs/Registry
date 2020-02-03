@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-03"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -23,6 +23,7 @@ subcollection: container-registry-cli-plugin
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
