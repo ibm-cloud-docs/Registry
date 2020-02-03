@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-03"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -96,7 +96,7 @@ To upload (push) an image, complete the following steps:
 
 After you push your image to {{site.data.keyword.registrylong_notm}}, you can do one of the following tasks:
 
-- [Manage security with Vulnerability Advisor](/docs/va?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Manage security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copying images between registries
@@ -122,7 +122,7 @@ To copy an image between two registries, complete the following steps:
 
 After you copy your image, you can do one of the following tasks:
 
-- [Managing image security with Vulnerability Advisor](/docs/va?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Creating new images that refer to a source image
@@ -254,7 +254,7 @@ To build your own Docker image, complete the following steps:
 
       3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
-To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/va?topic=va-va_index).
+To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
 ## Pushing images to {{site.data.keyword.registrylong_notm}} by using an API key
 {: #registry_api_key_push_image}
