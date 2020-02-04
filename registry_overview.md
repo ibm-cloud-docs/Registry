@@ -197,12 +197,12 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>Dockerfile</dt>
-  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.</dd>
+  <dd>A Dockerfile is a text file that contains instructions to build a Docker image. Typically, an image is built upon a base image that contains a base operating system, such as Ubuntu. You can incrementally change the base image with your Dockerfile instructions to define the environment that the app needs to run. Every change to the base image describes a new layer of the image, and you can make multiple changes in a single Dockerfile line. The instructions in a Dockerfile also might reference build artifacts that are stored separately, such as an app, the app's configuration, and its dependencies. For more information about Dockerfile, see [Dockerfile reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/engine/reference/builder/).</dd>
 </dl>
 
 <dl>
   <dt>Docker V2 images</dt>
-  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}. The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/Registry?topic=registry-registry_overview#docker).</dd>
+  <dd>Container images that are compliant with [Docker: Image Manifest V2, Schema 2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.docker.com/registry/spec/manifest-v2-2/). The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. For more information about support for Docker, see [Docker](/docs/Registry?topic=registry-registry_overview#docker).</dd>
 </dl>
 
 <dl>
@@ -219,7 +219,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>OCI container images</dt>
-  <dd>Container images that are compliant with the [OCI Image Format Specification](https://github.com/opencontainers/image-spec){: external}. The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
+  <dd>Container images that are compliant with the [OCI Image Format Specification ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/opencontainers/image-spec). The media type for OCI container images is `application/vnd.oci.image.manifest.v1+json`.</dd>
 </dl>
 
 <dl>
