@@ -247,9 +247,6 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens (deprecated), quota settings, and plan settings must all be managed separately for each regional registry.
 
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
-{: deprecated}
-
 ### Local regions
 {: #registry_regions_local}
 
