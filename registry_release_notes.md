@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-04"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -182,7 +182,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>New domain names</dt>
-  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
+  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
 
   Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).</dd>
 </dl>
@@ -216,9 +216,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
  <dl>
   <dt>End of support for Vulnerability Advisor API version 2</dt>
-  <dd>Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API](https://cloud.ibm.com/apidocs/container-registry/va){: external}.
+  <dd>Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).
 
-  For more information, see [Vulnerability Advisor v2 API Deprecation](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/){: external}.</dd>
+  For more information, see [Vulnerability Advisor v2 API Deprecation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/).</dd>
 </dl>
 
 ## 4 October 2018
@@ -258,7 +258,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Vulnerability Advisor API version 3</dt>
   <dd>Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You must check that your use of the API does not rely on the behavior of version 2.
 
-  For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/apidocs/container-registry/va){: external}.</dd>
+  For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/container-registry/va).</dd>
 </dl>
 
 ## 31 May 2018
@@ -266,7 +266,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Use Helm for Passport Advantage images</dt>
-  <dd>Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
+  <dd>Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/passportadvantage/pao_customer.html) and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
 
   For more information, see [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load).</dd>
 </dl>
@@ -326,7 +326,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Graphical user interface released</dt>
-  <dd>The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}.</dd>
+  <dd>The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/kubernetes/catalog/registry).</dd>
 </dl>
 
 ## 27 June 2017

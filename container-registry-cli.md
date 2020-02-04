@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-04"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -871,11 +871,11 @@ To find out about the required permissions, see [Access roles for using {{site.d
   <dt>`--namespace NAMESPACE`</dt>
   <dd>One of your namespaces. Container images from the compressed file are pushed to this namespace. To list namespaces, run `ibmcloud cr namespace-list`.</dd>
   <dt>`--chartmuseum-uri URI`</dt>
-  <dd>(Optional) Your [Chart Museum](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} unique resource identifier.</dd>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) unique resource identifier.</dd>
   <dt>`--chartmuseum-user USER`</dt>
-  <dd>(Optional) Your [Chart Museum](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} user name.</dd>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) user name.</dd>
   <dt>`--chartmuseum-password PASSWORD`</dt>
-  <dd>(Optional) Your [Chart Museum](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} password.</dd>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) password.</dd>
 </dl>
 
 ### Example
