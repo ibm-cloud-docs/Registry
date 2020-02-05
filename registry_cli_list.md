@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-03"
+lastupdated: "2020-02-05"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -42,7 +42,6 @@ You can use the format option with the following {{site.data.keyword.registrylon
 - [`ibmcloud cr image-digests`](#registry_cli_list_imagedigests)
 - [`ibmcloud cr image-list`](#registry_cli_list_imagelist)
 - [`ibmcloud cr image-inspect`](#registry_cli_list_imageinspect)
-- [`ibmcloud cr token-list`](#registry_cli_list_tokenlist) (deprecated)
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
@@ -106,23 +105,6 @@ The following code examples demonstrate how you might use the formatting and fil
   map[9080/tcp: 9443/tcp:]
   ```
   {: screen}
-
-- Run the following `ibmcloud cr token-list` command to display all read-only tokens (deprecated):
-
-  ```
-  ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-  ```
-  {: pre}
-
-  The following message is an example of the output from the command:
-
-  ```
-  0a3fb35f-e8eb-5232-b9fb-b1bdcb36d68a - 1495798639 - true - demo
-  ```
-  {: screen}
-
-  Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
-  {: deprecated}
 
 ## Go template options and data types in the `ibmcloud cr image-digests` command
 {: #registry_cli_list_imagedigests}
@@ -236,20 +218,3 @@ Review the following table to find available Go template options and data types 
 | `Layers` | Array of strings|Displays the descriptors of each image layer. |
 | `Type` | String | Displays the type of file system. |
 {: caption="Table 5. Available fields and data types in the <code>RootFS</code>." caption-side="top"}
-
-## Go template options and data types in the `ibmcloud cr token-list` command (deprecated)
-{: #registry_cli_list_tokenlist}
-
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
-{: deprecated}
-
-Review the following table to find available Go template options and data types for the [`ibmcloud cr token-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) command.
-{:shortdesc}
-
-| Field | Type | Description |
-|-----|----|-----------|
-| `Description` | String | Displays the description of the token. |
-| `Expiry` | Integer (64 bit) | Displays [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time){: external} when the token expires. |
-| `ID` | String | Displays the unique identifier for a token. |
-| `ReadOnly` | Boolean | Displays _true_ when you can pull images only and _false_ when you can push and pull images to and from your namespace.|
-{: caption="Table 6. Available fields and data types in the <code>ibmcloud cr token-list</code> command." caption-side="top"}
