@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -34,7 +34,8 @@ When IAM policies are enabled for your account in {{site.data.keyword.registrylo
 
 IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token (deprecated), your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, use an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 
-
+Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
+{: deprecated}
 
 For more information about IAM, see [What is {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/iam?topic=iam-iamoverview#iamoverview).
 
@@ -66,7 +67,8 @@ The following table details actions that are mapped to platform management roles
 | Administrator | Configure access for other users</br></br>Configure registry tokens (deprecated)</br></br>Create clusters | For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</br></br>List, retrieve, and remove registry tokens (deprecated)</br></br>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
-
+Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
+{: deprecated}
 
 For {{site.data.keyword.registrylong_notm}}, the following actions exist:
 
@@ -76,9 +78,6 @@ For {{site.data.keyword.registrylong_notm}}, the following actions exist:
 | `container-registry.registrytoken.get` | [`ibmcloud cr token-get`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get) Retrieve the specified token from the registry. | Administrator | Deprecated |
 | `container-registry.registrytoken.list` | [`ibmcloud cr token-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list) Display all tokens that exist for your {{site.data.keyword.cloud_notm}} account. | Administrator | Deprecated |
 {: caption="Table 2. Platform actions and operations for configuring {{site.data.keyword.registrylong_notm}}" caption-side="top"}
-
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
-{: deprecated}
 
 ## Service access roles
 {: #service_access_roles}

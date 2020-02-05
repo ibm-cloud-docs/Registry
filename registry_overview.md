@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -245,7 +245,7 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 {{site.data.keyword.registrylong_notm}} registries are available in several regions.
 {:shortdesc}
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, tokens (deprecated), quota settings, and plan settings must all be managed separately for each regional registry.
+All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional registry.
 
 ### Local regions
 {: #registry_regions_local}

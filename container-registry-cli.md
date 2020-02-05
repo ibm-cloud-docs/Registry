@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1130,7 +1130,7 @@ For more information about how to use the `ibmcloud cr retention-run` command, s
 
 Retrieve the specified token from the registry.
 
-This command is deprecated.
+This command is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
 {: deprecated}
 
 ```
@@ -1166,7 +1166,7 @@ ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
 
 Displays all tokens that exist for your {{site.data.keyword.cloud_notm}} account.
 
-This command is deprecated.
+This command is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
 {: deprecated}
 
 ```
@@ -1213,7 +1213,7 @@ This example produces output in the following format:
 
 Remove one or more specified registry tokens.
 
-This command is deprecated.
+This command is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
 {: deprecated}
 
 ```

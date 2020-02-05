@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,17 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 3 February 2020
+{: #3feb2020}
+
+<dl>
+  <dt>Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.</dt>
+  <dd>From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication.
+  
+  For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens).
+  </dd>
+</dl>
 
 ## 31 January 2020
 {: #31jan2020}
