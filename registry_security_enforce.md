@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-06"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -98,10 +98,41 @@ apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
 kind: ClusterImagePolicy
 metadata:
   name: ibmcloud-default-cluster-image-policy
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "1"
 spec:
    repositories:
-    # This enforces that all images deployed to this cluster pass trust and VA
-    # To override, set an ImagePolicy for a specific Kubernetes namespace or modify this policy
+    # These policies allow all IBM Cloud Kubernetes Service images from all IBM Cloud Container Registries to deploy and update.
+    # At minumum IKS images must allowed in ibm-system, kube-system and default namespaces, failure to allow these will prevent
+    # the cluster operating correctly.
+    - name: "registry*.bluemix.net/armada/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-worker/*"
+      policy:
+    - name: "registry*.bluemix.net/armada-master/*"
+      policy:
+    - name: "*.icr.io/armada/*"
+      policy:
+    - name: "*.icr.io/armada-worker/*"
+      policy:
+    - name: "*.icr.io/armada-master/*"
+      policy:
+    - name: "icr.io/armada/*"
+      policy:
+    - name: "icr.io/armada-worker/*"
+      policy:
+    - name: "icr.io/armada-master/*"
+      policy:
+    # This allows all IBM addons like managed istio or knative to be deployed to this cluster.
+    - name: "icr.io/ibm/*"
+      policy:
+    - name: "icr.io/ext/*"
+      policy:
+    - name: "icr.io/obs/*"
+      policy:
+    # This enforces that all other images deployed to this cluster pass trust and va
+    # To override set an ImagePolicy for a specific Kubernetes namespace or modify this policy
     - name: "*"
       policy:
         trust:
@@ -128,6 +159,9 @@ kind: ImagePolicy
 metadata:
   name: ibmcloud-image-policy
   namespace: kube-system
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "1"
 spec:
    repositories:
     # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
@@ -141,6 +175,18 @@ spec:
     - name: "registry*.bluemix.net/armada-worker/*"
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
+      policy:
+    - name: "*.icr.io/armada/*"
+      policy:
+    - name: "*.icr.io/armada-worker/*"
+      policy:
+    - name: "*.icr.io/armada-master/*"
+      policy:
+    - name: "icr.io/armada/*"
+      policy:
+    - name: "icr.io/armada-worker/*"
+      policy:
+    - name: "icr.io/armada-master/*"
       policy:
 ```
 {: codeblock}
@@ -159,6 +205,9 @@ kind: ImagePolicy
 metadata:
   name: ibmcloud-image-policy
   namespace: ibm-system
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "1"
 spec:
    repositories:
     # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
@@ -173,12 +222,24 @@ spec:
       policy:
     - name: "registry*.bluemix.net/armada-master/*"
       policy:
-    # This policy prevents Container Image Security Enforcement from blocking itself.
-    - name: "registry*.bluemix.net/ibm/ibmcloud-image-enforcement"
+    - name: "*.icr.io/armada/*"
       policy:
-    # This policy allows Container Image Security Enforcement to use the Kubernetes API to configure your cluster. This policy is required so that Container Image Security Enforcement can be uninstalled cleanly.
-    - name: registry.bluemix.net/kubectl
-      policies:
+    - name: "*.icr.io/armada-worker/*"
+      policy:
+    - name: "*.icr.io/armada-master/*"
+      policy:
+    - name: "icr.io/armada/*"
+      policy:
+    - name: "icr.io/armada-worker/*"
+      policy:
+    - name: "icr.io/armada-master/*"
+      policy:
+    # This policy prevents Image Security Enforcement from blocking itself
+    - name: "icr.io/ibm/ibmcloud-image-enforcement"
+      policy:
+    # This policy allows Image Security Enforcement to use a kubectl image to configure your cluster. This policy must exist if you uninstall Image Security Enforcement.
+    - name: "icr.io/obs/kubectl"
+      policy:
 ```
 {: codeblock}
 
