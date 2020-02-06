@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="registry" category="containers" audience="compute" href="/docs/services/Registry?topic=registry-getting-started" path="services/Registry"}
+{: .toc subcollection="registry" category="containers" audience="compute" href="/docs/Registry?topic=registry-getting-started" path="Registry"}
 IBM Cloud Container Registry
 
     {: .navgroup id="learn"}
