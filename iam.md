@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-07"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -120,9 +120,9 @@ The following table details actions that are mapped to operations on the service
 ### Access roles for using {{site.data.keyword.registrylong_notm}}
 {: #access_roles_using}
 
-To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resource in the account.
+To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account.
 
-You cannot organize and assign access to registry namespaces in resource groups.
+You can't organize and assign access to registry namespaces in resource groups.
 {: important}
 
 For example, use the following command, where `<user_email>` is the user's email address:
