@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-10"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -471,6 +471,21 @@ Remove the remaining Kubernetes jobs by running the following command:
 kubectl delete jobs -n ibm-system create-admission-webhooks create-armada-image-policies create-crds validate-crd-creation --ignore-not-found=true
 ```
 {: pre}
+
+## You have an IAM access policy but still get access denied errors
+{: #ts_iam_policy}
+
+{: tsSymptoms}
+You've created an IAM access policy, but you're still getting access denied errors.
+
+{: tsCauses}
+This situation is likely to be caused by the user policy being created in a resource group. {{site.data.keyword.registrylong_notm}} doesn't support resource groups, so the user policy works only if it's created at the Account level.
+
+{: tsResolve}
+Create the user policy at the Account level. You can create the policy by using the GUI or the CLI.
+
+- In the GUI, on the **Assign Users Additional Access** page, in the **What type of access do you want to assign** section, select `Container Registry` and from the **Enter or select a resource group** list, select `Account`, then complete the rest of the information on the page as required.
+- In the CLI, create your user policy by using the [`ibmcloud iam user-policy-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, but don't use the `--resource-group-name` option. For more information, see [Access to resources](/docs/iam?topic=iam-iammanidaccser#resourceaccess).
 
 ## Pods do not restart after all your workers have been down
 {: #ts_pods}
