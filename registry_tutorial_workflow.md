@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-13"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -127,7 +127,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     {: pre}
 
     You can build your image directly in {{site.data.keyword.cloud_notm}} instead of building it locally and pushing it separately. Try running `ibmcloud cr build -t us.icr.io/<my_namespace>/hello-world:1 .`.
-    {:tip}
+    {: tip}
 
 4. Confirm that your image uploaded successfully by running the following command:
 
@@ -213,33 +213,33 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 
 1. Build and push a vulnerable image by running the following commands:
 
-    ```
-    docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
-    ```
-    {: pre}
+   ```
+   docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
+   ```
+   {: pre}
 
-    ```
-    docker push us.icr.io/<my_namespace>/hello-world:2
-    ```
-    {: pre}
+   ```
+   docker push us.icr.io/<my_namespace>/hello-world:2
+   ```
+   {: pre}
 
-    You can read the Dockerfile to better understand how this image was made vulnerable. In short, a Debian base image is used, and the `apt` package is rolled back to a version that is vulnerable to CVE-2019-3462.
+   You can read the Dockerfile to better understand how this image was made vulnerable. In short, a Debian base image is used, and the `apt` package is rolled back to a version that is vulnerable to CVE-2019-3462.
 
 2. List your images, and take note of the `SECURITY STATUS` column by running the following command:
 
-    ```
-    ibmcloud cr images
-    ```
-    {: pre}
+   ```
+   ibmcloud cr images
+   ```
+   {: pre}
 
-    This column conveys the number of issues present in your image. Because the number isn't zero, this image is vulnerable.
+   This column conveys the number of issues present in your image. Because the number isn't zero, this image is vulnerable.
 
 3. Run the `ibmcloud cr vulnerability-assessment` (alias `ibmcloud cr va`) command to get more information about the vulnerability:
 
-    ```
-    ibmcloud cr va us.icr.io/<my_namespace>/hello-world:1
-    ```
-    {: pre}
+   ```
+   ibmcloud cr va us.icr.io/<my_namespace>/hello-world:1
+   ```
+   {: pre}
 
     Among other things, this output includes the ID of the vulnerability (if applicable), the affected package, and the steps to resolve the issue.
 
@@ -254,21 +254,21 @@ Despite the vulnerability that is present in your image, you're still able to de
 
 3. Update the following line in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
 
-    ```
-    - name: us.icr.io/<my_namespace>/*
-    ```
-    {: screen}
+   ```
+   - name: us.icr.io/<my_namespace>/*
+   ```
+   {: screen}
 
 4. Apply the custom policies:
 
-    ```
-    kubectl apply -f security.yaml
-    ```
-    {: pre}
+   ```
+   kubectl apply -f security.yaml
+   ```
+   {: pre}
 
 5. To update `hello-world.yaml` so that it references your vulnerable image, change the tag from `1` to `2` as shown here:
 
-    ```
+   ```
     image: us.icr.io/<my_namespace>/hello-world:2
     ```
     {: screen}
@@ -290,7 +290,7 @@ Despite the vulnerability that is present in your image, you're still able to de
     {: screen}
 
     The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the `ibmcloud cr exemptions` command.
-    {:note}
+    {: note}
 
 ### Resolve vulnerabilities in your image
 {: #registry_tutorial_workflow_resolve_vulnerabilities}
