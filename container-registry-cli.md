@@ -873,7 +873,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
   <dt>`--chartmuseum-uri URI`</dt>
   <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) unique resource identifier.</dd>
   <dt>`--chartmuseum-user USER`</dt>
-  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) user name.</dd>
+  <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) username.</dd>
   <dt>`--chartmuseum-password PASSWORD`</dt>
   <dd>(Optional) Your [Chart Museum ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/helm/charts/tree/master/stable/chartmuseum) password.</dd>
 </dl>

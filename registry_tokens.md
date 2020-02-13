@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-13"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -48,7 +48,7 @@ When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keywo
 You can use service ID API keys in the following places:
 
 - {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} clusters. When you create {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}} clusters, one service ID is automatically created for each cluster. If you want more than one service ID, you can create them manually.
-- Kubernetes and Red Hat Openshift clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
+- Kubernetes and Red Hat OpenShift clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
 - Docker CLI and other clients.  You must create your own service ID and API key.
 
 ### Creating a service ID API key manually
@@ -87,9 +87,9 @@ To create a user API key, see [Managing user API keys](/docs/iam?topic=iam-usera
 Use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
 
-Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a user name and password. In {{site.data.keyword.registrylong_notm}}, the user name indicates the type of secret that is presented in the password.
+Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
-The following user names are valid:
+The following usernames are valid:
 
 - `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 - `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived. This authentication type is used by the `ibmcloud cr login` command.

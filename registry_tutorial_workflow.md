@@ -75,7 +75,7 @@ Create a [namespace](/docs/Registry?topic=registry-registry_setup_cli_namespace#
     ```
     {: pre}
 
-    If you have a federated ID, use `ibmcloud login -r us-south --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
+    If you have a federated ID, use `ibmcloud login -r us-south --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
 2. Set `us-south` as the target region for the {{site.data.keyword.registrylong_notm}} commands:

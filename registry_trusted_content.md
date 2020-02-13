@@ -24,7 +24,6 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
@@ -46,7 +45,7 @@ You can use the following tools to create Red Hat signatures:
 
 - [skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
-- [Openshift CLI](#registry_trustedcontent_red_hat_sig_oc)
+- [OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
 - [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
 
 ### Using skopeo to sign images
@@ -90,7 +89,7 @@ See [Podman](https://podman.io/){: external}.
 ### Using OpenShift CLI to sign images
 {: #registry_trustedcontent_red_hat_sig_oc}
 
-See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The Openshift CLI uses the `oc` command.
+See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The OpenShift CLI uses the `oc` command.
 
 ### Using atomic to sign images
 {: #registry_trustedcontent_red_hat_sig_atomic}
@@ -148,7 +147,7 @@ By default, Docker Content Trust is disabled. Enable the Content Trust environme
    ```
    {: pre}
 
-   If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your user name and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
+   If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
    {: tip}
 
 3. Target the region that you want to use. If you don't know the region name, you can run the command without the region and choose one.
@@ -217,7 +216,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=registry
 ### Pulling a signed image
 {: #trustedcontent_pull}
 
-The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. Unsigned images or untrusted content are not pulled.
+The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. Unsigned images or untrusted content is not pulled.
 {:shortdesc}
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
