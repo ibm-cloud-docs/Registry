@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-02-13"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -28,7 +28,7 @@ subcollection: registry
 {: #registry_images_}
 
 You can securely store and share Docker images with other users by adding images to your namespace in {{site.data.keyword.registrylong}}.
-{:shortdesc}
+{: shortdesc}
 
 Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
@@ -39,7 +39,7 @@ Do not put personal information in your container images, namespace names, descr
 {: #registry_images_pulling_reg}
 
 You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 ![Pull an image from a private or public registry to your computer.](images/images_pull.svg "You can pull an image from {{site.data.keyword.registrylong_notm}} or from any private or public registry source to your local computer."){: caption="Figure 1. Pulling images from another registry" caption-side="bottom"}
 
@@ -54,7 +54,7 @@ Before you begin, complete the following tasks:
 1. Download the image, see [Pull an image](/docs/Registry?topic=registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
-   {:tip}
+   {: tip}
 
 After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
 
@@ -62,7 +62,7 @@ After you pull an image and tag it for your namespace, you can upload (push) the
 {: #registry_images_pushing_namespace}
 
 You can push (upload) an image to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users.
-{:shortdesc}
+{: shortdesc}
 
 ![Push an image from your computer to {{site.data.keyword.registrylong_notm}}.](images/images_push.svg "You can push (upload) an image from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your image with other users."){: caption="Figure 2. Pushing Docker images to your namespace." caption-side="bottom"}
 
@@ -128,7 +128,7 @@ After you copy your image, you can do one of the following tasks:
 {: #registry_images_source}
 
 Create a new image by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command.
-{:shortdesc}
+{: shortdesc}
 
 In the region that you're logged into, create a new image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images created by using Docker Engine version 1.12, or later, only.
 
@@ -167,7 +167,7 @@ To create a new image from a source image, complete the following steps:
 {: #registry_images_creating}
 
 You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, complete the following tasks:
 
@@ -210,37 +210,34 @@ To build your own Docker image, complete the following steps:
 
       This example adds a label to the image metadata and exposes port 9080. For more Dockerfile instructions that you can use, see the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/){: external}.
 
-3. Decide on a name for your image. The image name must be in the following format:
+3. Decide on a name for your image. The image name must be in the following format, where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image:
 
    ```
    <region>.icr.io/<my_namespace>/<repo_name>:<tag>
    ```
    {: pre}
 
-   where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image. To find your namespace, run the `ibmcloud cr namespace-list` command.
+   To find your namespace, run the `ibmcloud cr namespace-list` command
+   {: tip}
 
 4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
 5. Choose to either build your image directly in {{site.data.keyword.cloud_notm}} or build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
-   - To build the image directly in {{site.data.keyword.cloud_notm}}, run the following command:
+   - To build the image directly in {{site.data.keyword.cloud_notm}}, run the following command, where `<image_name>` is the name of your image and `<directory>` is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
 
      ```
      ibmcloud cr build -t <image_name> <directory>
      ```
      {: pre}
 
-     where `<image_name>` is the name of your image and `<directory>` is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
-  
      For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
 
    - To build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}, complete the following steps:
-      1. Build the image from your Dockerfile on your local computer and tag it with your image name.
+      1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
 
          ```
          docker build -t <image_name> <directory>
          ```
          {: pre}
-
-         where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
 
       2. Optional: Test your image on your local computer before you push it to your namespace.
 
@@ -259,7 +256,7 @@ To use Vulnerability Advisor to check the security of your image, see [Managing 
 {: #registry_api_key_push_image}
 
 Create a service ID that uses an API key to push images to {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 Complete the following steps:
 
@@ -275,7 +272,7 @@ You can now use clusters to pull the images, see [Building containers from image
 {: #registry_images_untag}
 
 You can remove a tag, or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
-{:shortdesc}
+{: shortdesc}
 
 Where multiple tags exist for the same image digest within a repository, to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
@@ -283,17 +280,15 @@ Where multiple tags exist for the same image digest within a repository, to remo
 To remove a tag, or tags, by using the CLI, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
-2. To remove a tag, run the following command:
+2. To remove a tag, run the following command, where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
    ```
    ibmcloud cr image-untag IMAGE
    ```
    {: pre}
 
-   Where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
-
    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
-   {:tip}
+   {: tip}
 
 3. Verify that the tag was removed by running the following command, and check that the tag does not show in the list.
 
@@ -306,7 +301,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
 {: #registry_images_remove}
 
 You can delete unwanted images from your private repository by using either the graphical user interface (GUI) or the CLI.
-{:shortdesc}
+{: shortdesc}
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
@@ -320,7 +315,7 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 {: #registry_images_remove_cli}
 
 You can delete unwanted images and all their tags from your private repository by using the CLI.
-{:shortdesc}
+{: shortdesc}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -328,17 +323,15 @@ If you want to restore a deleted image, you can list the contents of the trash b
 To delete an image by using the CLI, complete the following steps:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
-2. To delete an image, run the following command:
+2. To delete an image, run the following command, where `IMAGE` is the name of the image that you want to remove, in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
    ```
    ibmcloud cr image-rm IMAGE
    ```
    {: pre}
 
-   Where `IMAGE` is the name of the image that you want to remove, in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
-
    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-   {:tip}
+   {: tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
 
@@ -370,7 +363,7 @@ To delete an image by using the GUI, complete the following steps:
 {: #registry_images_list_trash}
 
 You can list deleted images that are in the trash and see when they expire.
-{:shortdesc}
+{: shortdesc}
 
 To find out which images are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
 
@@ -395,7 +388,7 @@ To list the images in the trash, complete the following steps:
 {: #registry_images_restore}
 
 You can restore images that were deleted in the last 30 days.
-{:shortdesc}
+{: shortdesc}
 
 You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
 
@@ -477,7 +470,7 @@ To restore an image by tag from the trash, complete the following steps:
 {: #registry_repo_remove}
 
 You can delete private repositories that are no longer required, and any associated images, by using the graphical user interface (GUI).
-{:shortdesc}
+{: shortdesc}
 
 When you delete a repository, all images in that repository are deleted. This action can't be undone.
 {: important}

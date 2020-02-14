@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-13"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -36,7 +36,7 @@ Container Image Security Enforcement retrieves information about image content t
 {: #sec_enforce_install}
 
 Install Container Image Security Enforcement in your cluster by setting up Helm and installing the Container Image Security Enforcement Helm chart.
-{:shortdesc}
+{: shortdesc}
 
 Before you begin, complete the following tasks:
 
@@ -58,17 +58,17 @@ To install Container Image Security Enforcement in your cluster, complete the fo
 
    - For Helm V2, use the following command:
 
-   ```
-   helm install --name cise iks-charts/ibmcloud-image-enforcement
-   ```
-   {: pre}
+     ```
+     helm install --name cise iks-charts/ibmcloud-image-enforcement
+     ```
+     {: pre}
 
    - For Helm V3, use the following command:
 
-   ```
-   helm install cise iks-charts/ibmcloud-image-enforcement
-   ```
-   {: pre}
+     ```
+     helm install cise iks-charts/ibmcloud-image-enforcement
+     ```
+     {: pre}
 
 Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
@@ -76,7 +76,7 @@ Container Image Security Enforcement is now installed, and is applying the [defa
 {: #default_policies}
 
 Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
-{:shortdesc}
+{: shortdesc}
 
 To override these policies, use one of the following options:
 
@@ -89,7 +89,7 @@ For more information about writing security policies, see [Customizing policies]
 {: #cluster-wide}
 
 By default, a cluster-wide policy enforces that all images in all registries have trust information and have no reported vulnerabilities in Vulnerability Advisor.
-{:shortdesc}
+{: shortdesc}
 
 The following code shows the default cluster-wide policy `.yaml` file:
 
@@ -143,13 +143,13 @@ spec:
 {: codeblock}
 
 When you set `va` or `trust` to `enabled: true` for a container registry other than {{site.data.keyword.registrylong_notm}}, any attempts to deploy pods from images in that registry are denied. If you want to deploy images from other registries, remove the `va` and `trust` policies.
-{:tip}
+{: tip}
 
 ### Kube-system policy
 {: #kube-system}
 
 By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
-{:shortdesc}
+{: shortdesc}
 
 The following code shows the default `kube-system` policy `.yaml` file:
 
@@ -195,7 +195,7 @@ spec:
 {: #ibm-system}
 
 By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Container Image Security Enforcement.
-{:shortdesc}
+{: shortdesc}
 
 The following code shows the default `ibm-system` policy `.yaml` file:
 
@@ -247,10 +247,10 @@ spec:
 {: #customize_policies}
 
 You can change the policy that Container Image Security Enforcement uses to permit images, either at the cluster or Kubernetes namespace level. In the policy, you can specify different enforcement rules for different images.
-{:shortdesc}
+{: shortdesc}
 
 You must have some policy set. Otherwise, deployments to your cluster fail. If you do not want any image security policies enforced, [remove Container Image Security Enforcement](#remove).
-{:tip}
+{: tip}
 
 When you apply a deployment, Container Image Security Enforcement checks whether the Kubernetes namespace that you are deploying to has a policy to apply. If it does not, Container Image Security Enforcement uses the cluster-wide policy. Your deployment is denied if no namespace or cluster-wide policy exists.
 
@@ -271,23 +271,23 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 
 1. Create a [Kubernetes custom resource definition](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/){: external} `.yaml` file. For more information, see Table 1.
 
-    ```yaml
-    apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
-    kind: <ClusterImagePolicy_or_ImagePolicy>
-    metadata:
-      name: <crd_name>
-    spec:
-       repositories:
-        - name: <repository_name>
-          policy:
-            trust:
-              enabled: <true_or_false>
-              signerSecrets:
-              - name: <secret_name>
-            va:
-              enabled: <true_or_false>
-    ```
-    {: codeblock}
+   ```yaml
+   apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+   kind: <ClusterImagePolicy_or_ImagePolicy>
+   metadata:
+     name: <crd_name>
+   spec:
+     repositories:
+       - name: <repository_name>
+         policy:
+         trust:
+             enabled: <true_or_false>
+             signerSecrets:
+             - name: <secret_name>
+         va:
+             enabled: <true_or_false>
+   ```
+   {: codeblock}
 
 2. Apply the `.yaml` file to your cluster.
 
@@ -300,7 +300,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 {: #signers}
 
 If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_signers).
-{:shortdesc}
+{: shortdesc}
 
 To configure the policy to verify that an image is signed by a particular signer:
 
@@ -340,7 +340,7 @@ If you have role-based access control (RBAC) enabled on your Kubernetes cluster,
   {: codeblock}
 
   You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can only use the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
-  {:tip}
+  {: tip}
 
 - Users who have access to delete custom resource definitions (CRDs) can delete the resource definition for security policies, which also deletes your security policies. Make sure to control who is allowed to delete CRDs. To grant access to delete CRDs, add a rule:
 
@@ -352,13 +352,13 @@ If you have role-based access control (RBAC) enabled on your Kubernetes cluster,
   {: codeblock}
 
   Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
-  {:tip}
+  {: tip}
 
 ## Deploying container images with enforced security
 {: #deploy_containers}
 
 When a policy is applied, you can deploy content to your cluster normally. Your policy is automatically enforced by the Kubernetes cluster. If your deployment matches a policy and is allowed by that policy, your deployment is accepted by the cluster and applied.
-{:shortdesc}
+{: shortdesc}
 
 - If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 

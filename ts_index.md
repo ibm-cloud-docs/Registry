@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-02-13"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -226,7 +226,7 @@ Before you begin to import a product from IBM Passport Advantage, complete the f
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
 3. [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
 4. If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-helm#helm).
-5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}. For instructions, see this [developerWorks recipe](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/){: external}.
+5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}. For instructions, see the IBM Developer recipe [Deploy ChartMuseum into IBM Cloud Kubernetes Service (IKS)](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/){: external}.
 
 ### Importing IBM Passport Advantage products for use in {{site.data.keyword.cloud_notm}}
 {: #ts_ppa_import}
@@ -342,7 +342,7 @@ You set up an additional firewall in your development environment with custom se
 Your custom firewall requires certain network groups to be opened for inbound and outbound network traffic to allow communication to and from the registry.
 
 {: tsResolve}
-Let your cluster access infrastructure resources and services from behind a firewall, see [Allowing the cluster to access infrastructure resources and other services](/docs/containers?topic=containers-firewall#firewall_outbound).
+Allow your cluster to access infrastructure resources and services from behind a firewall, see [Allowing the cluster to access infrastructure resources and other services](/docs/containers?topic=containers-firewall#firewall_outbound).
 
 For INBOUND connectivity to your computer, allow incoming network traffic from the source network groups to the destination public IP address of your computer.
 
@@ -632,4 +632,4 @@ There is a problem with Docker for Mac that prevents your credentials from being
 You might be able to resolve the problem by rebooting your Mac. If rebooting your Mac doesn't work, you can disable the storage of logins in your Mac keychain:
 
 1. In your menu, click the **Docker** icon, select **Preferences**.
-2. Clear the **Securely store Docker logins in macOS keychain** check box.
+2. Clear the **Securely store Docker logins in macOS keychain** checkbox.
