@@ -27,7 +27,6 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Troubleshooting
 {: #ts_index}
 
