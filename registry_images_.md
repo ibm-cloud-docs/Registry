@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-02-17"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -305,6 +305,9 @@ You can delete unwanted images from your private repository by using either the 
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
+Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{: important}
+
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
@@ -316,6 +319,9 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 
 You can delete unwanted images and all their tags from your private repository by using the CLI.
 {: shortdesc}
+
+Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{: important}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}
@@ -345,6 +351,9 @@ To delete an image by using the CLI, complete the following steps:
 
 You can delete unwanted images and all their tags from your private image repository by using the graphical user interface (GUI).
 {:shortdesc}
+
+Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+{: important}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}

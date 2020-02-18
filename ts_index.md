@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-17"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
