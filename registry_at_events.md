@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-02-28"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 
@@ -77,6 +77,8 @@ Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 Augu
 
 The [region](/docs/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
+The following table shows the location of {{site.data.keyword.at_full_notm}} events.
+
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
@@ -85,6 +87,8 @@ The [region](/docs/Registry?topic=registry-registry_overview#registry_regions) i
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events" caption-side="top"}
+
+The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
 
 | Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
