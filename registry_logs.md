@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-02-28"
 
 keywords: logging, logs, platform services logs,
 
@@ -44,6 +44,8 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 
 The [region](/docs/Registry?topic=registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south`. Logs for `ap-south` show in `Tokyo (jp-tok)`.
 
+The following table shows the location of {{site.data.keyword.la_full_notm}}.
+
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |-----------------|-----------------|-----------------|
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
@@ -52,6 +54,8 @@ The [region](/docs/Registry?topic=registry-registry_overview#registry_regions) i
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 {: caption="Table 1. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="top"}
+
+The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.
 
 | Registry | Global registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |-----------------|-----------------|-----------------|
