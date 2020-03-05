@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-03-05"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -142,7 +142,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
 ### Deploy a container that uses your image
 {: #registry_tutorial_workflow_deploy}
 
-Now that you have an image that is stored in {{site.data.keyword.registrylong_notm}}, you can [run a container on {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-app#app_cli) that uses that image.
+Now that you have an image that is stored in {{site.data.keyword.registrylong_notm}}, you can run a container on {{site.data.keyword.containerlong_notm}} that uses that image, see [Deploying apps with the CLI](/docs/containers?topic=containers-deploy_app#app_cli).
 
 Throughout this tutorial, replace `<my_cluster>` with the name of your free Kubernetes cluster.
 
@@ -388,18 +388,18 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
     ```
     {: screen}
 
-    This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-images#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
+    This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_authh) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
     If you [remove Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#remove) first, the `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
 
-4. You must [set up an image pull secret](/docs/containers?topic=containers-images#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-images#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
+4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
     ```
     kubectl get secret default-us-icr-io -o yaml | sed 's/default/test/g' | kubectl -n test create -f -
     ```
     {: pre}
 
-5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-images#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment YAML by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
+5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-registry#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment YAML by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
 
     ```
     spec:

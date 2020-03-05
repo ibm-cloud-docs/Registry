@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-03-05"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -30,7 +30,7 @@ subcollection: registry
 To automate access to your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM) [API keys](/docs/iam?topic=iam-manapikey#ibm-cloud-api-keys).
 {:shortdesc}
 
-If you want to use your registry images in Kubernetes deployments, see [Using an image pull secret in other Kubernetes namespaces or to access images in other accounts](/docs/containers?topic=containers-images#other).
+If you want to use your registry images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
 {: tip}
 
 API keys are linked to user and service IDs in your account and you can use them across {{site.data.keyword.cloud_notm}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey) has it's own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
