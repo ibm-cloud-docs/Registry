@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-05"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -521,7 +521,7 @@ on these resources:
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-For more information about RBAC, see [Authorizing users with custom Kubernetes RBAC roles](/docs/containers?topic=containers-users#rbac) and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
+For more information about RBAC, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding) and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
 

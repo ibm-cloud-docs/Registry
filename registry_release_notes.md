@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-03-05"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -162,9 +162,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>End of support for Container Scanner</dt>
-  <dd>Container Scanner is now deprecated and is no longer usable.
-
-  For more information, see [Installing the Container Scanner (deprecated)](/docs/Registry?topic=va-va_index#va_install_container_scanner).</dd>
+  <dd>Container Scanner is now deprecated and is no longer usable.</dd>
 </dl>
 
 ## 2 April 2019
@@ -202,7 +200,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters</dt>
   <dd>The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
   
-  For more information, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-images#cluster_registry_auth).</dd>
+  For more information, see [Understanding how to authorize your cluster to pull images from a registry](/docs/containers?topic=containers-registry#cluster_registry_auth).</dd>
 </dl>
 
 <dl>
@@ -219,7 +217,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Automating access to your namespaces</dt>
   <dd>Using tokens to automate pushing and pulling Docker images to and from your namespaces is deprecated. You must now use API keys to automate access to your {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
 
-  For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=registry-registry_access#registry_api_key).</dd>
+  For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=registry-registry_access#registry_access_user_apikey).</dd>
 </dl>
 
 ## 8 January 2019
@@ -287,9 +285,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Container Scanner</dt>
-  <dd>Container Scanner enables Vulnerability Advisor to report any problems that are found in running containers that are not present in the container's base image.
-
-  For more information, see [Installing the Container Scanner](/docs/Registry?topic=va-va_index#va_install_container_scanner).</dd>
+  <dd>Container Scanner enables Vulnerability Advisor to report any problems that are found in running containers that are not present in the container's base image.</dd>
 </dl>
 
 ## 16 March 2018

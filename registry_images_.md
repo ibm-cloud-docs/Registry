@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-05"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -263,10 +263,10 @@ Complete the following steps:
 1. Create a service ID, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam).
 3. Create an API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
-4. Use the API key to log in to registry so that you can push images to the registry, see [Using an API key to automate access](/docs/Registry?topic=registry-registry_access#registry_api_key_use).
+4. Use the API key to log in to registry so that you can push images to the registry, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_access).
 5. Push your images, see [Pushing Docker images to your namespace](#registry_images_pushing_namespace).
 
-You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images#other_registry_accounts).
+You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images).
 
 ## Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository
 {: #registry_images_untag}
