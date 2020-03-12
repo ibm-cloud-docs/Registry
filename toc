@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="registry" category="containers,compute" audience="compute" href="/docs/Registry?topic=registry-getting-started" path="Registry"}
-IBM Cloud Container Registry
+Container Registry
 
     {: .navgroup id="learn"}
     getting-started.md
