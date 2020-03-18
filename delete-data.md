@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-03-18"
 
 keywords: personal data, data deletion, PHI, data, data security, IBM Cloud Container Registry
 
@@ -27,7 +27,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Managing your data in {{site.data.keyword.registryshort_notm}}
+# Managing your data in {{site.data.keyword.registrylong_notm}}
 {: #delete-data}
 
 Information about your data and how it is stored.
@@ -41,9 +41,9 @@ The {{site.data.keyword.cloud}} platform provides layered security controls acro
 ### Image data
 {: #data-storage_image}
 
-Image data is stored in {{site.data.keyword.cos_full_notm}}, which is encrypted at rest, and encrypted in transit between {{site.data.keyword.registryshort_notm}} and {{site.data.keyword.cos_full_notm}}. For more information about {{site.data.keyword.cos_full_notm}}, see [About IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage).
+Image data is stored in {{site.data.keyword.cos_full_notm}}, which is encrypted at rest, and encrypted in transit between {{site.data.keyword.registrylong_notm}} and {{site.data.keyword.cos_full_notm}}. For more information about {{site.data.keyword.cos_full_notm}}, see [About IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage).
 
-Data that is stored in {{site.data.keyword.registryshort_notm}} is backed up regularly. For more information, see [High availability and disaster recovery](/docs/Registry?topic=registry-ha-dr).
+Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regularly. For more information, see [High availability and disaster recovery](/docs/Registry?topic=registry-ha-dr).
 
 ### Vulnerability Advisor
 {: #data-storage_va}
@@ -63,14 +63,14 @@ Do not put personal information into any field or location that Vulnerability Ad
 ## Deleting your data
 {: #data-delete}
 
-You can delete your {{site.data.keyword.registryshort_notm}} namespaces, images, and private repositories.
+You can delete your {{site.data.keyword.registrylong_notm}} namespaces, images, and private repositories.
 
 ### Deleting the service
 {: #data-delete_service}
 
-When an {{site.data.keyword.cloud_notm}} account is canceled or removed, the resource instances that track the account's usage of {{site.data.keyword.registryshort_notm}} are deleted. As part of that action all namespaces, and the images that they contain, are removed in accordance with the data retention policy.
+When an {{site.data.keyword.cloud_notm}} account is canceled or removed, the resource instances that track the account's usage of {{site.data.keyword.registrylong_notm}} are deleted. As part of that action all namespaces, and the images that they contain, are removed in accordance with the data retention policy.
 
-The {{site.data.keyword.registryshort_notm}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.registryshort_notm}} service description, which you can find in the Service Description for {{site.data.keyword.cloud_notm}} in the [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
+The {{site.data.keyword.registrylong_notm}} data retention policy describes how long your data is stored after you delete the service. The data retention policy is included in the {{site.data.keyword.registrylong_notm}} service description, which you can find in the Service Description for {{site.data.keyword.cloud_notm}} in the [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
 
 ### Deleting namespaces
 {: #data-delete_namespaces}
@@ -82,7 +82,7 @@ If you no longer require a registry namespace, you can remove the namespace from
 
 You can delete unwanted images from your private repository by using either the graphical user interface (GUI) or the CLI. For more information, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=registry-registry_images_#registry_images_remove).
 
-You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registryshort_notm}}. You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=registry-registry_retention).
+You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong_notm}}. You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=registry-registry_retention).
 
 ### Deleting private repositories
 {: #data-delete_private_repo}

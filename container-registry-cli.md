@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-18"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -283,7 +283,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
-Displays the IAM policy status of the targeted {{site.data.keyword.registryshort_notm}} account. For more information, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
+Displays the IAM policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
 
 ```
 ibmcloud cr iam-policies-status
@@ -851,7 +851,7 @@ ibmcloud cr plan-upgrade standard
 
 Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
 
-Container images are pushed to your private {{site.data.keyword.registryshort_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} to host helm charts.
+Container images are pushed to your private {{site.data.keyword.registrylong_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} to host helm charts.
 
 ```
 ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
