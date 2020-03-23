@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-03-23"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -25,7 +25,7 @@ subcollection: registry
 {:external: target="_blank" .external}
 
 # Defining access role policies
-{: #user access}
+{: #user}
 
 As an administrator, you can define access policies for your registry to create different levels of access for different users. For example, you can authorize certain users to set quotas while other users can only view quotas.
 {: shortdesc}
@@ -65,6 +65,9 @@ To create policies for {{site.data.keyword.registrylong_notm}}, the service name
 {: #existing_users}
 
 For users provisioned after 4 October 2018, IAM policies are enabled by default. For users provisioned before 4 October 2018, after you create your policies, you must enable policy enforcement so that your policies take effect.
+
+You must set an IAM policy for each region.
+{: tip}
 
 1. [Create policies](#create) for your users and service IDs.
 
