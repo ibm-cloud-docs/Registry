@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-03-24"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -250,7 +250,7 @@ All registry artifacts are scoped to the specific regional registry that you are
 ### Local regions
 {: #registry_regions_local}
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The {{site.data.keyword.registrylong_notm}} domain names for the regions have changed. The new domain names are available in the console and the CLI.
+A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI.
 {:shortdesc}
 
 The domain names are shown in the following table.
@@ -270,10 +270,10 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Vulnerability Advisor domain names
 {: #registry_regions_local_va}
 
-Vulnerability Advisor domain names for the regions have changed. The new domain names are available in the console and the CLI.
+Information about the Vulnerability Advisor domain names. The domain names are available in the console and the CLI.
 {:shortdesc}
 
-The new domain names are shown in the following table.
+The domain names are shown in the following table.
 
 | Local Vulnerability Advisor region | New domain name | Deprecated domain name |
 |-----|----|-----------|
@@ -315,9 +315,9 @@ If you want to use a region other than your local region, you can target the reg
 A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by IBM are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-The domain name for the global registry has changed. The new domain name is available in the console and the CLI.
+The domain names are available in the console and the CLI.
 
-The new domain name is shown in the following table.
+The domain names are shown in the following table.
 
 | Registry | New domain name | Deprecated domain name |
 |-----|----|-----------|
@@ -330,10 +330,10 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Vulnerability Advisor domain names
 {: #registry_regions_global_va}
 
-The Vulnerability Advisor domain name for global has changed. The new domain name is available in the console and the CLI.
+Information about the Vulnerability Advisor domain names.
 {:shortdesc}
 
-The new domain name is shown in the following table.
+The domain names are shown in the following table.
 
 | Vulnerability Advisor | New domain name  | Deprecated domain name |
 |-----|----|-----------|
