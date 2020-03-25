@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-23"
+lastupdated: "2020-03-25"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -66,8 +66,8 @@ To create policies for {{site.data.keyword.registrylong_notm}}, the service name
 
 For users provisioned after 4 October 2018, IAM policies are enabled by default. For users provisioned before 4 October 2018, after you create your policies, you must enable policy enforcement so that your policies take effect.
 
-You must set an IAM policy for each region.
-{: tip}
+To enable policy enforcement, you must run the `ibmcloud cr iam-policies-enable` command once in each region.
+{: important}
 
 1. [Create policies](#create) for your users and service IDs.
 
