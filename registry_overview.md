@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-25"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -257,7 +257,7 @@ A local region is a geographic area that is accessed by a dedicated endpoint. Th
 
 The domain names are shown in the following table.
 
-| Local registry region | New domain name | Deprecated domain name |
+| Local registry region | Domain name | Deprecated domain name |
 |-----|----|-----------|
 | `ap-north` | `jp.icr.io` | Not applicable |
 | `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
@@ -277,7 +277,7 @@ Information about the Vulnerability Advisor domain names. The domain names are a
 
 The domain names are shown in the following table.
 
-| Local Vulnerability Advisor region | New domain name | Deprecated domain name |
+| Local Vulnerability Advisor region | Domain name | Deprecated domain name |
 |-----|----|-----------|
 | `ap-north` | `jp.icr.io/va` | Not applicable |
 | `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
@@ -321,7 +321,7 @@ The domain names are available in the console and the CLI.
 
 The domain names are shown in the following table.
 
-| Registry | New domain name | Deprecated domain name |
+| Registry | Domain name | Deprecated domain name |
 |-----|----|-----------|
 | Global | `icr.io` | `registry.bluemix.net` |
 {: caption="Table 5. Domain name for the global registry." caption-side="top"}
@@ -337,7 +337,7 @@ Information about the Vulnerability Advisor domain names.
 
 The domain names are shown in the following table.
 
-| Vulnerability Advisor | New domain name  | Deprecated domain name |
+| Vulnerability Advisor | Domain name  | Deprecated domain name |
 |-----|----|-----------|
 | Global | `icr.io/va` | `va.bluemix.net` |
 {: caption="Table 6. Domain name for the global registry for Vulnerability Advisor." caption-side="top"}
