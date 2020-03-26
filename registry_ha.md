@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-03-26"
 
 keywords: high availability, load balancing, back ups, disaster recovery,
 
@@ -33,7 +33,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 * In each supported region, traffic is load balanced across registry infrastructure in multiple availability zones, with no single point of failure.
 
-* Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regularly, providing extra resilience.
+* Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated and it is also backed up regularly.
 
 * If you are worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple regional registries.
   
