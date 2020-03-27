@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-26"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 
@@ -32,7 +32,7 @@ Track how users and applications interact with the {{site.data.keyword.registryl
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started).
 
-The following table lists the API methods that generate an event when they are called:
+The following table lists the API methods that generate an event when they are called.
 
 | Action | Description | Status | Data Event |
 |-----------------|-----------------|-----------------|-----------------|
