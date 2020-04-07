@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-04-07"
 
 keywords: personal data, data deletion, PHI, data, data security, IBM Cloud Container Registry
 
@@ -41,7 +41,7 @@ The {{site.data.keyword.cloud}} platform provides layered security controls acro
 ### Image data
 {: #data-storage_image}
 
-Image data is stored in {{site.data.keyword.cos_full_notm}}, which is encrypted at rest, and encrypted in transit between {{site.data.keyword.registrylong_notm}} and {{site.data.keyword.cos_full_notm}}. For more information about {{site.data.keyword.cos_full_notm}}, see [About IBM Cloud Object Storage](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage).
+Image data is stored in {{site.data.keyword.cos_full_notm}}, which is encrypted at rest, and encrypted in transit between {{site.data.keyword.registrylong_notm}} and {{site.data.keyword.cos_full_notm}}. For more information about {{site.data.keyword.cos_full_notm}}, see [About IBM Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage).
 
 Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regularly. For more information, see [High availability and disaster recovery](/docs/Registry?topic=registry-ha-dr).
 
