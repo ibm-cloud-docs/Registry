@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-06"
 
 keywords: high availability, load balancing, back ups, disaster recovery,
 
@@ -40,6 +40,8 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
   You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
 
   For more information about regions, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+
+For more information about service availability, see [Service Level Agreements](/docs/overview?topic=overview-slas).
 
 ## Frequently asked questions about high availability and disaster recovery
 {: #ha-dr_faq}
