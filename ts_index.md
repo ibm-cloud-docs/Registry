@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-04-09"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -40,12 +40,9 @@ If you have problems or questions when you are using {{site.data.keyword.registr
 
 When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
 
-- If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=+ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
-- For questions about the service and getting started instructions, use the [IBM Developer Answers](https://developer.ibm.com/answers/topics/container-registry.html){: external} forum. Include the `ibm-cloud` and `container-registry` tags.
+If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=+ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
 
-See [Using the Support Center](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
-
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [How do I get the support I need?](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support)
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
