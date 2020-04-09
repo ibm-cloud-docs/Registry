@@ -38,8 +38,6 @@ Here are the answers to common troubleshooting questions about using {{site.data
 
 If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM}} support ticket.
 
-When you are using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.registrylong_notm}} development team.
-
 If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=+ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
 
 For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
