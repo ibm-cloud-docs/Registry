@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-04-09"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -32,7 +32,7 @@ As an administrator, you can define access policies for your registry to create 
 
 You must define access policies for every user that works with {{site.data.keyword.registrylong}}. The scope of an access policy is based on a user's defined role or roles that determine the actions that they are allowed to do. Some policies are pre-defined, but others can be customized.
 
-If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement before your policies can take effect, see [Enabling policy enforcement for existing users](#existing_users).
+If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources.
 {: tip}
 
 To find out more about {{site.data.keyword.iamlong}} (IAM) access role policies, see [{{site.data.keyword.iamshort}}](/docs/iam?topic=iam-iamoverview#iamoverview).

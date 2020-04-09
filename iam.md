@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-09"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -34,7 +34,8 @@ When IAM policies are enabled for your account in {{site.data.keyword.registrylo
 
 IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token (deprecated), your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, use an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
 
-
+If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources.
+{: tip}
 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
 {: deprecated}
