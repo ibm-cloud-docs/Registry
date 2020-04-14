@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-14"
 
 keywords: high availability, load balancing, back ups, disaster recovery,
 
@@ -64,9 +64,9 @@ The image data and service and policy settings are backed up by {{site.data.keyw
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
 
-{{site.data.keyword.IBM_notm}} doesn't replicate the instance of the service, which your account created, from one region to another region.
+{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the one where you created it.
 
 ### Do users have to replicate the service?
 {: #ha-dr_service_replicate}
 
-You're not required to replicate the instance of the service, which your account created in one region, to another region, but you do have the option to do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/master/docs/skopeo-copy.1.md){: external}.
+You're not required to replicate your data into another region, but you do have the option to do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/master/docs/skopeo-copy.1.md){: external}.
