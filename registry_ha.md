@@ -64,7 +64,7 @@ The image data and service and policy settings are backed up by {{site.data.keyw
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
 
-{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than in the region where the data is stored.
+{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the region where you stored it.
 
 ### Do users have to replicate the service?
 {: #ha-dr_service_replicate}
