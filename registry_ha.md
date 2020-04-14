@@ -36,7 +36,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 * Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated and it is also backed up regularly.
 
 * If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple regional registries.
-  
+
   You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
 
   For more information about regions, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
@@ -45,7 +45,7 @@ For more information about service availability, see [Service Level Agreements](
 
 ## Frequently asked questions about high availability and disaster recovery
 {: #ha-dr_faq}
-  
+
 ### Does the service replicate the data?
 {: #ha-dr_replicate_data}
 
@@ -64,7 +64,7 @@ The image data and service and policy settings are backed up by {{site.data.keyw
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
 
-{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the one where you created it.
+{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the one where you stored it.
 
 ### Do users have to replicate the service?
 {: #ha-dr_service_replicate}
