@@ -369,5 +369,5 @@ Docker is required only if you want to push or pull images, or you want to run t
 
 Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
 
-Docker V1 images are discontinued.
+Docker V2 Schema 1 images are discontinued and you can't push them to {{site.data.keyword.registrylong_notm}} any more.
 {: note}
