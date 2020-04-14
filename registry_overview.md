@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-04-14"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -369,5 +369,5 @@ Docker is required only if you want to push or pull images, or you want to run t
 
 Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
 
-Docker V1 images are deprecated.
-{: deprecated}
+Docker V1 images are discontinued.
+{: note}
