@@ -242,10 +242,10 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 ## Regions
 {: #registry_regions}
 
-The default instance of {{site.data.keyword.registrylong_notm}} is the global registry, it has no region included in its domain name (`icr.io`).
+{{site.data.keyword.registrylong_notm}} registries are available in several regions.
 {:shortdesc}
 
-Use the global instance of the registry unless you a specific requirement to store your data in a particular region, for example, data sovereignty. In which case, you can use {{site.data.keyword.registrylong_notm}} in several regions. For more information, see [Local regions](#registry_regions_local).
+
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional registry.
 
@@ -318,7 +318,7 @@ If you want to use a region other than your local region, you can target the reg
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available, it has no region included in its name (`icr.io`). Public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
+A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 {:shortdesc}
 
 The domain names are available in the console and the CLI.
