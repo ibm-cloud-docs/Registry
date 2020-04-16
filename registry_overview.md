@@ -318,7 +318,7 @@ If you want to use a region other than your local region, you can target the reg
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
+A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
 The domain names are available in the console and the CLI.
