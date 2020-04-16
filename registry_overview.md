@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-16"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -242,10 +242,10 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 ## Regions
 {: #registry_regions}
 
-{{site.data.keyword.registrylong_notm}} registries are available in several regions.
+The default instance of {{site.data.keyword.registrylong_notm}} is the global registry, it has no region included in its domain name (`icr.io`).
 {:shortdesc}
 
-
+Use the global instance of the registry unless you a specific requirement to store your data in a particular region, for example, data sovereignty. In which case, you can use {{site.data.keyword.registrylong_notm}} in several regions. For more information, see [Local regions](#registry_regions_local).
 
 All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional registry.
 
@@ -257,14 +257,16 @@ A local region is a geographic area that is accessed by a dedicated endpoint. Th
 
 The domain names are shown in the following table.
 
-| Local registry region | Domain name | Deprecated domain name |
-|-----|----|-----------|
-| `ap-north` | `jp.icr.io` | Not applicable |
-| `ap-south` | `au.icr.io` | `registry.au-syd.bluemix.net` |
-| `eu-central` | `de.icr.io` | `registry.eu-de.bluemix.net` |
-| `uk-south` | `uk.icr.io` | `registry.eu-gb.bluemix.net` |
-| `us-south` | `us.icr.io` | `registry.ng.bluemix.net` |
+| Local registry region | Domain name | Private domain name | Deprecated domain name |
+|-----|----|-----------|---------------|
+| `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
+| `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Table 3. Domain names for local regions." caption-side="top"}
+
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -277,14 +279,16 @@ Information about the Vulnerability Advisor domain names. The domain names are a
 
 The domain names are shown in the following table.
 
-| Local Vulnerability Advisor region | Domain name | Deprecated domain name |
-|-----|----|-----------|
-| `ap-north` | `jp.icr.io/va` | Not applicable |
-| `ap-south` | `au.icr.io/va` | `va.au-syd.bluemix.net` |
-| `eu-central` | `de.icr.io/va` | `va.eu-de.bluemix.net` |
-| `uk-south` | `uk.icr.io/va` | `va.eu-gb.bluemix.net` |
-| `us-south` | `us.icr.io/va` | `va.ng.bluemix.net` |
+| Local Vulnerability Advisor region | Domain name | Private domain name | Deprecated domain name |
+|-----|----|-----------|--------------|
+| `ap-north` | `jp.icr.io/va` | `private.jp.icr.io/va` | Not applicable |
+| `ap-south` | `au.icr.io/va` | `private.au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `private.de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `private.uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `private.us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="Table 4. Domain names for local regions." caption-side="top"}
+
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -314,17 +318,19 @@ If you want to use a region other than your local region, you can target the reg
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
+A global registry is available, it has no region included in its name (`icr.io`). Public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 {:shortdesc}
 
 The domain names are available in the console and the CLI.
 
 The domain names are shown in the following table.
 
-| Registry | Domain name | Deprecated domain name |
-|-----|----|-----------|
-| Global | `icr.io` | `registry.bluemix.net` |
+| Registry | Domain name | Private domain name | Deprecated domain name |
+|-----|----|-----------|--------------|
+| Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
 {: caption="Table 5. Domain name for the global registry." caption-side="top"}
+
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -337,10 +343,12 @@ Information about the Vulnerability Advisor domain names.
 
 The domain names are shown in the following table.
 
-| Vulnerability Advisor | Domain name  | Deprecated domain name |
-|-----|----|-----------|
-| Global | `icr.io/va` | `va.bluemix.net` |
+| Vulnerability Advisor | Domain name  | Private domain name | Deprecated domain name |
+|-----|----|-----------|--------------|
+| Global | `icr.io/va` | `private.icr.io/va` | `va.bluemix.net` |
 {: caption="Table 6. Domain name for the global registry for Vulnerability Advisor." caption-side="top"}
+
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}

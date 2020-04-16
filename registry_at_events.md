@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-16"
 
 keywords: activity tracker, events, track, tracking events, find events, look for events,
 
@@ -36,6 +36,8 @@ The following table lists the API methods that generate an event when they are c
 
 | Action | Description | Status | Data Event |
 |-----------------|-----------------|-----------------|-----------------|
+| `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | | |
+| `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | | |
 | `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. | | True |

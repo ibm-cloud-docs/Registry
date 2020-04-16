@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-04-16"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,22 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 16 April 2020
+{: #16apr2020}
+
+<dl>
+  <dt>You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}}.</dt>
+  <dd>If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the {{site.data.keyword.cloud_notm}} private network.
+  
+  For more information, see [Using private network connections](/docs/Registry?topic=registry-registry_private) and [Service architecture and dependencies](/docs/Registry?topic=registry-registry_architecture).
+  </dd>
+  <dt>`ibmcloud cr private-only` command is available</dt>
+  <dd>The `ibmcloud cr private-only` command enables you to prevent image pulls or pushes over public network connections for your account.
+  
+  For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only).
+  </dd>
+</dl>
 
 ## 3 February 2020
 {: #3feb2020}
