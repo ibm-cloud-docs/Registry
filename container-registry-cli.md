@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-04-16"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -23,7 +23,6 @@ subcollection: container-registry-cli-plugin
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
-
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
@@ -67,6 +66,9 @@ None
 {: #bx_cr_build}
 
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
+
+Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
+{: tip}
 
 ```
 ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
@@ -886,6 +888,43 @@ Import IBM software and package it for use with Helm in your {{site.data.keyword
 
 ```
 ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace birds
+```
+{: pre}
+
+## `ibmcloud cr private-only`
+{: #ic_cr_private_only}
+
+Prevent image pulls or pushes over public network connections for your account for the registry region that you're targeting. You must have one of the command options specified or the command fails with an error.
+
+```
+ibmcloud cr private-only --enable | --disable | --status
+```
+{: codeblock}
+
+### Prerequisites
+{: #ic_cr_private_only_prereq}
+
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+
+### Command options
+{: #ic_cr_private_only_option}
+
+<dl>
+<dt>`--enable`</dt>
+<dd>(Optional) Prevent image pulls or pushes over public network connections for your account.</dd>
+<dt>`--disable`</dt>
+<dd>(Optional) Reinstate image pulls or pushes over public network connections for your account.</dd>
+<dt>`--status`</dt>
+<dd>(Optional) Check whether the use of public connections is prevented for image pushes or pulls in your account.</dd>
+</dl>
+
+### Example
+{: #ic_cr_private_only_example}
+
+Prevent image pulls or pushes over public network connections for your account.
+
+```
+ibmcloud cr private-only --enable
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-16"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management,
 
@@ -91,7 +91,7 @@ The following table details actions that are mapped to service access roles. Ser
 |-----------------|-----------------|-----------------|
 | Reader | The Reader role can view information. | View, inspect, and pull images.</br></br>View namespaces.</br></br>View quotas.</br></br>View vulnerability reports.</br></br>View image signatures.</br></br>View retention policies.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Writer role.)</br></br>View the contents of the trash. </br></br> View the contents of the manifest for an image. |
 | Writer | The Writer role can edit information. | Build, push, delete, and restore images.</br></br>View quotas.</br></br>Sign images.</br></br>Add and remove namespaces.</br></br>Clean up your namespaces by retaining only images that meet your criteria. (You must also have the Reader role.)</br></br>Set retention policies. |
-| Manager | The Manager role can perform all actions. | View, inspect, pull, build, push, delete, and restore images.</br></br>View, add, and remove namespaces.</br></br>View and set quotas.</br></br>View vulnerability reports.</br></br>View and create image signatures.</br></br>Review and change pricing plans.</br></br>Enable IAM policy enforcement.</br></br>Manage Vulnerability Advisor exemptions.</br></br>Clean up your namespaces by retaining only images that meet your criteria.</br></br>Set retention policies.</br></br>View the contents of the trash.</br></br>Restore images.</br></br> View the contents of the manifest for an image. |
+| Manager | The Manager role can perform all actions. | View, inspect, pull, build, push, delete, and restore images.</br></br>View, add, and remove namespaces.</br></br>View and set quotas.</br></br>View vulnerability reports.</br></br>View and create image signatures.</br></br>Review and change pricing plans.</br></br>Enable IAM policy enforcement.</br></br>Manage Vulnerability Advisor exemptions.</br></br>Clean up your namespaces by retaining only images that meet your criteria.</br></br>Set retention policies.</br></br>View the contents of the trash.</br></br>Restore images.</br></br> View the contents of the manifest for an image.</br></br>Prevent or allow image pulls or pushes over public network connections for your account.</br></br>Check whether the use of public connections is prevented for image pushes or pulls in your account. |
 {: caption="Table 3. IAM service access roles and actions" caption-side="top"}
 
  For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}} you must create a policy where the service name is `container-registry`, the service instance is empty, and the region is the region that you want to grant access to, or empty to give access to all regions.
@@ -112,7 +112,8 @@ The following table details actions that are mapped to operations on the service
 
 | Action| Operation on service | Role |
 |-----------------|-----------------|--------------|
-| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement. | Manager |
+| `container-registry.auth.get` | [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Check whether the use of public connections is prevented for image pushes or pulls in your account. | Manager |
+| `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement.</br></br>[`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Prevent or allow image pulls or pushes over public network connections for your account. | Manager |
 | `container-registry.exemption.manager` | [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Create an exemption for a security issue.</br></br>[`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) List your exemptions for security issues.</br></br>[`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Delete an exemption for a security issue.</br></br>[`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Manager |
 | `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan) Display your pricing plan. | Manager |
 | `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade) Upgrade to the standard plan. | Manager |
