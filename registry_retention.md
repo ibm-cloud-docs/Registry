@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-04-16"
 
-keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, delete untagged images
+keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
 subcollection: registry
 
