@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-04-20"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -406,7 +406,7 @@ When a policy is applied, you can deploy content to your cluster normally. Your 
     ```
     {: screen}
 
-- You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed.
+- You can enable the `va` option in your policy to enforce that Vulnerability Advisor passes before an image can be deployed. Images that are not supported by Vulnerability Advisor are allowed. If you want to deploy images that have issues, you can exempt specific issues or [CVEs](https://cve.mitre.org/data/downloads/index.html){: external} by using the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command. For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
 - You can enable the `trust` option in your policy to enforce content trust. If you do not specify any `signerSecrets`, the deployment is allowed if the image is signed by anyone. If you specify `signerSecrets`, the most recently signed version of the image must have been signed by all the signers you specify. Container Image Security Enforcement verifies that the provided public key belongs to the signer. For more information about content trust, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent).
 
