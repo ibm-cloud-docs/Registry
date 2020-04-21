@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-04-21"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -88,11 +88,7 @@ If you still see unacceptable performance, contact support, see [Getting help an
 {: #faq_va_trigger_scan}
 {: faq}
 
-The scanning of an image is triggered in one of the following ways:
-
-- If a new image is pushed to the registry.
-- If the last scan is more than 7 days ago, the image is queued for rescanning, which might take some time to complete.
-- If a new security notice is released for a package that is installed in the image, the image is queued for rescanning, which might take some time to complete. Rescans that are triggered by the release of new security notices are available for Ubuntu and Debian images only.
+For information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}
