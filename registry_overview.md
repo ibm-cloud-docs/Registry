@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-23"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -266,7 +266,7 @@ The domain names are shown in the following table.
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Table 3. Domain names for local regions." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/services/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -288,7 +288,7 @@ The domain names are shown in the following table.
 | `us-south` | `us.icr.io/va` | `private.us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="Table 4. Domain names for local regions." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/services/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -330,7 +330,7 @@ The domain names are shown in the following table.
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
 {: caption="Table 5. Domain name for the global registry." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/services/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -348,7 +348,7 @@ The domain names are shown in the following table.
 | Global | `icr.io/va` | `private.icr.io/va` | `va.bluemix.net` |
 {: caption="Table 6. Domain name for the global registry for Vulnerability Advisor." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/services/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
