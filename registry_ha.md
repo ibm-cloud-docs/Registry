@@ -2,10 +2,9 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-22"
 
-keywords: high availability, load balancing, back ups, disaster recovery,
-
+keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
 subcollection: registry
 

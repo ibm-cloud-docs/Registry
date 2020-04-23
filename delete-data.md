@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-23"
 
-keywords: personal data, data deletion, PHI, data, data security, IBM Cloud Container Registry
+keywords: PHI, data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry
 
 subcollection: registry
 

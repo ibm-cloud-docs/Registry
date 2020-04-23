@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-22"
 
-keywords: private DNS
+keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
 subcollection: registry
 
