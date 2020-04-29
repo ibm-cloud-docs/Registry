@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-29"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -79,7 +79,7 @@ You can't use private connections for image management operations by using the {
    - For namespaces that are set up in AP-South, use the following private registry URL: `private.au.icr.io`
    - For namespaces that are set up in EU-Central, use the following private registry URL: `private.de.icr.io`
    - For namespaces that are set up in UK-South, use the following private registry URL: `private.uk.icr.io`
-   - For namespaces that are set up in US-South, use the following private registry URL: `private.us.icr.io`</staging><staging>
+   - For namespaces that are set up in US-South, use the following private registry URL: `private.us.icr.io`
 
 ## Enforcing access to your account over private network connections
 {: #registry_private_account}
