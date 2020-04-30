@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-30"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# {{site.data.keyword.la_full_notm}} platform services logs
+# Analyzing logs for {{site.data.keyword.registrylong_notm}}
 {: #registry_logs}
 
 {{site.data.keyword.registrylong}} generates platform services logs that are displayed in your LogDNA instances.
@@ -32,7 +32,7 @@ subcollection: registry
 
 For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
 
-Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Activity Tracker events](/docs/Registry?topic=registry-at_events).
+Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-at_events).
 
 {{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances for the following specific cases:
 

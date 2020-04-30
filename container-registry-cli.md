@@ -42,7 +42,7 @@ If you want to view the current version of your `container-registry` CLI plug-in
 
 To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started#getting-started).
 
-For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam).
+For more information about the IAM platform and service access roles that are required for some commands, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#iam).
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -270,7 +270,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
+If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
 
 ```
 ibmcloud cr iam-policies-enable
@@ -285,7 +285,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
-Displays the IAM policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing user access with Identity and Access Management](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
+Displays the IAM policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
 
 ```
 ibmcloud cr iam-policies-status

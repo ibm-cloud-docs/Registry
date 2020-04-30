@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-30"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# High availability and disaster recovery
+# Understanding high availability and disaster recovery for {{site.data.keyword.registrylong_notm}}
 {: #ha-dr}
 
 The {{site.data.keyword.registrylong}} service is a highly available, regional, service.
