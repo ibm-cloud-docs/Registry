@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-30"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Activity Tracker events
+# Auditing events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
 Use {{site.data.keyword.at_full_notm}} to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.

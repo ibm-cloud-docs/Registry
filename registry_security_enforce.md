@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-20"
+lastupdated: "2020-04-30"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -40,7 +40,7 @@ Install Container Image Security Enforcement in your cluster by setting up Helm 
 
 Before you begin, complete the following tasks:
 
-1. [Create](/docs/containers?topic=containers-clusters#clusters_ui) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
+1. [Create](/docs/containers?topic=containers-clusters) or [update](/docs/containers?topic=containers-update#update) the cluster that you want to use with **Kubernetes version 1.9 or later**.
 2. [Target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
 To install Container Image Security Enforcement in your cluster, complete the following steps:

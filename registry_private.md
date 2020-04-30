@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-04-30"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Using private network connections
+# Securing your connection to {{site.data.keyword.registryshort_notm}}
 {: #registry_private}
 
 You can use private network connections to securely route your data in {{site.data.keyword.registrylong}}.
