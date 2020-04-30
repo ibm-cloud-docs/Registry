@@ -239,7 +239,7 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 
 <dl>
   <dt>Untagged</dt>
-  <dd>An image can also have no tag and therefore be untagged. Images that are untagged can be referenced by using the digest reference format <code><repository>@<digest></code> as opposed to the tag reference format <code><repository>:<tag></code>. Untagged images are typically the result of an image being pushed with a pre-existing <code><repository>:<tag></code> combination, in this case the tag is overwritten and the original image becomes untagged.
+  <dd>An image can also have no tag and therefore be untagged. Images that are untagged can be referenced by using the digest reference format <code>&lt;repository&gt;@&lt;digest&gt;</code> as opposed to the tag reference format <code>&lt;repository&gt;:&lt;tag&gt;</code>. Untagged images are typically the result of an image being pushed with a pre-existing <code>&lt;repository&gt;:&lt;tag&gt;</code> combination, in this case the tag is overwritten and the original image becomes untagged.
 
   You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.</dd>
 </dl>
