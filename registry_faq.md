@@ -57,7 +57,7 @@ Yes, if the tool supports OCI image format and protocol.
 {: #faq_access_control}
 {: faq}
 
-You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=registry-iam_access) and [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam#iam).
+You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=registry-iam_access) and [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam).
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}
