@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-04-30"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -235,6 +235,13 @@ Descriptions of the terms that are used in {{site.data.keyword.registrylong_notm
 <dl>
   <dt>Tag</dt>
   <dd>A tag is an identifier of an image within a repository. You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged <code>latest</code> is used by default.</dd>
+</dl>
+
+<dl>
+  <dt>Untagged</dt>
+  <dd>An image can also have no tag and therefore be untagged. Images that are untagged can be referenced by using the digest reference format <code>&lt;repository&gt;@&lt;digest&gt;</code> as opposed to the tag reference format <code>&lt;repository&gt;:&lt;tag&gt;</code>. Untagged images are typically the result of an image being pushed with a pre-existing <code>&lt;repository&gt;:&lt;tag&gt;</code> combination, in this case the tag is overwritten and the original image becomes untagged.
+
+  You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.</dd>
 </dl>
 
 To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/glossary/){: external}.

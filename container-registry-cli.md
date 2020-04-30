@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-30"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -437,6 +437,44 @@ Display the images in the *`birds`* namespace in the format `repository:tag`, wi
 
 ```
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
+```
+{: pre}
+
+## `ibmcloud cr image-prune-untagged`
+{: #ic_cr_image_prune_untagged}
+
+Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account.
+{: shortdesc}
+
+```
+ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict RESTRICTION
+```
+{: codeblock}
+
+### Prerequisites
+{: #ic_cr_image_prune_untagged_prereq}
+
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+
+### Command options
+{: #ic_cr_image_prune_untagged_option}
+
+<dl>
+<dt>`--force, -f`</dt>
+<dd>(Optional) Force the command to run with no user prompts.</dd>
+<dt>`--json`</dt>
+<dd>(Optional) Outputs JSON that contains the results of cleaning up your untagged images. This flag must be used with `--force`.</dd>
+<dt>`--restrict`</dt>
+<dd>(Optional) Limit the clean up to only untagged images in the specified namespace or repository.</dd>
+</dl>
+
+### Example
+{: #ic_cr_image_prune_untagged_example}
+
+Delete all untagged images that are in the *`birds`* namespace and output the results in JSON format.
+
+```
+ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
 ```
 {: pre}
 

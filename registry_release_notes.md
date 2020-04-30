@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-04-30"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,16 @@ subcollection: registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 30 April 2020
+{: #30apr2020}
+
+<dl>
+  <dt>`ibmcloud cr image-prune-untagged` command is available</dt>
+  <dd>The `ibmcloud cr image-prune-untagged` command deletes all untagged images in your {{site.data.keyword.registrylong_notm}} account.
+
+  For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged).</dd>
+</dl>
 
 ## 16 April 2020
 {: #16apr2020}
