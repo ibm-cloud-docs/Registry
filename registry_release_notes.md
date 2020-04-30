@@ -35,9 +35,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>`ibmcloud cr image-prune-untagged` command is available</dt>
-  <dd>The `ibmcloud cr image-prune-untagged` command deletes all untagged images in your {{site.data.keyword.registrylong_notm}} account.
+  <dd>The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 
-  For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged).</dd>
+  For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=registry-registry_retention#retention_images_untagged).</dd>
 </dl>
 
 ## 16 April 2020

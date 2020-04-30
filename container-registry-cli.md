@@ -295,7 +295,7 @@ ibmcloud cr iam-policies-status
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
 
-Lists all images, including untagged images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
+Lists all images, including [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
 
 You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and and one of the tags in the **Tags** column in the format: `repository:tag`.
 {: tip}
@@ -443,7 +443,7 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ## `ibmcloud cr image-prune-untagged`
 {: #ic_cr_image_prune_untagged}
 
-Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account.
+Delete all [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 {: shortdesc}
 
 ```

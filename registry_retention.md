@@ -168,7 +168,7 @@ You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=contai
 ## Clean up your namespaces by deleting untagged images
 {: #retention_images_untagged}
 
-You can clean up your namespace by deleting your untagged images in the namespace and optionally output the results in JSON format.
+You can clean up your namespace by deleting your [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
 {: shortdesc}
 
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:
