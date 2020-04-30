@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Analyzing logs for {{site.data.keyword.registrylong_notm}}
+# Analyzing logs for {{site.data.keyword.registryshort_notm}}
 {: #registry_logs}
 
 {{site.data.keyword.registrylong}} generates platform services logs that are displayed in your LogDNA instances.
@@ -32,7 +32,7 @@ subcollection: registry
 
 For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
 
-Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-at_events).
+Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).
 
 {{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances for the following specific cases:
 

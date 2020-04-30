@@ -47,7 +47,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}}.</dt>
   <dd>If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the {{site.data.keyword.cloud_notm}} private network.
   
-  For more information, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_private).
+  For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-registry_private).
   </dd>
   <dt>`ibmcloud cr private-only` command is available</dt>
   <dd>The `ibmcloud cr private-only` command enables you to prevent image pulls or pushes over public network connections for your account.
@@ -152,7 +152,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
   <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-at_events).</dd>
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).</dd>
 </dl>
 
 ## 1 July 2019
@@ -208,7 +208,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
   <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-at_events).
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).
 </dd>
 </dl>
 
@@ -283,7 +283,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor</dt>
   <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-at_events).</dd>
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).</dd>
 </dl>
   
 ## 12 July 2018

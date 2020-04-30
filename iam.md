@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Managing access for {{site.data.keyword.registrylong_notm}}
+# Managing access for {{site.data.keyword.registryshort_notm}}
 {: #iam}
 
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).

@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Understanding high availability and disaster recovery for {{site.data.keyword.registrylong_notm}}
+# Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
 
 The {{site.data.keyword.registrylong}} service is a highly available, regional, service.

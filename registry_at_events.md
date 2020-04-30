@@ -24,7 +24,7 @@ subcollection: registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Auditing events for {{site.data.keyword.registrylong_notm}}
+# Auditing events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
 Use {{site.data.keyword.at_full_notm}} to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
