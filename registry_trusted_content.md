@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-05-01"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -94,7 +94,7 @@ See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_gui
 ### Using atomic to sign images
 {: #registry_trustedcontent_red_hat_sig_atomic}
 
-See [Atomic](https://atomic.io/){: external}.
+See [Atomic](https://atomic.io){: external}.
 
 ## Signing images for trusted content by using Docker Content Trust and Notary
 {: #registry_trustedcontent_dct_notary}
