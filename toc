@@ -8,6 +8,7 @@ Container Registry
     getting-started.md
     registry_overview.md
     registry_ha.md
+    registry_architecture.md
 
     {: .topicgroup}
     Public images
