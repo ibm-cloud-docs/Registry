@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-14"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1167,7 +1167,7 @@ If you want to restore a deleted image, you can list the contents of the trash b
 {: tip}
 
 ```
-ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f [--json]] [--retain-untagged] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
 

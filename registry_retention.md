@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-14"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -91,7 +91,7 @@ To reduce the number of images in each repository within your namespace by using
 
    Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
-3. Verify that the images were deleted by running the following command, and check that the images do not show in the list.
+4. Verify that the images were deleted by running the following command, and check that the images do not show in the list.
 
    ```
    ibmcloud cr image-list
@@ -131,7 +131,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
    Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
-   A list of images to delete is displayed. 
+   A list of images to delete is displayed.
 
 4. Review the list of images. To run the policy and delete the images, confirm that you want to set the policy. 
 
