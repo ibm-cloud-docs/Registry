@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-18"
 
 keywords: external registry, private registry, OpenShift
 
@@ -49,7 +49,7 @@ To set up your {{site.data.keyword.openshiftlong_notm}} clusters to use the inte
 ## Set up Red Hat OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os}
 
-To set up Red Hat OpenShift Container Platform, you must create secrets with the credentials to access {{site.data.keyword.registrylong_notm}} so that you can perform the following actions.
+To set up Red Hat OpenShift Container Platform, you must create secrets that have the credentials to access {{site.data.keyword.registrylong_notm}} so that you can perform the following actions.
 
 - **Pull**: Create image pull secrets to [pull images](#registry_rhos_os_pull) from {{site.data.keyword.registrylong_notm}} to your OpenShift cluster. For example, you might deploy an app that uses an image in a private registry.
 - **Push**: Create image push secrets to [push images](#registry_rhos_os_push) from your OpenShift cluster to a repository in {{site.data.keyword.registrylong_notm}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry instead of the internal registry.
