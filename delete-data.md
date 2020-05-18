@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-05-18"
 
 keywords: PHI, data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry
 
@@ -45,10 +45,10 @@ Image data is stored in {{site.data.keyword.cos_full_notm}}, which is encrypted 
 
 Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regularly. For more information, see [High availability and disaster recovery](/docs/Registry?topic=registry-ha-dr).
 
-### Vulnerability Advisor
+### Scanning data
 {: #data-storage_va}
 
-To scan images and containers in your account for security issues, Vulnerability Advisor collects, stores, and processes the following information:
+To scan images and containers in your account for security issues, {{site.data.keyword.registrylong_notm}} collects, stores, and processes the following information:
 
 - Free-form fields, including IDs, descriptions, and image names (registry, namespace, repository name, and image tag)
 - Metadata about the file modes and creation timestamps of the configuration files
@@ -57,7 +57,7 @@ To scan images and containers in your account for security issues, Vulnerability
 
 Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. Scan results are deleted 30 days after they are generated. For more information, see [Data protection](/docs/Registry?topic=va-va_index#about_data_protection).
 
-Do not put personal information into any field or location that Vulnerability Advisor processes, as identified in the preceding list.
+Do not put personal information into any field or location that {{site.data.keyword.registrylong_notm}} processes, as identified in the preceding list.
 {: important}
 
 ## Deleting your data
