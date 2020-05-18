@@ -1107,6 +1107,8 @@ For more information about how to use the `ibmcloud cr retention-policy-list` co
 Set a policy to retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. When you set a policy it runs interactively, subsequently it runs on a daily basis. You can set only one policy in each namespace.
 {: shortdesc}
 
+You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
+
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
@@ -1116,7 +1118,7 @@ If a retention policy deletes an image that you want to keep, you can restore th
 If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=registry-registry_retention#retention_policy_keep).
 
 ```
-ibmcloud cr retention-policy-set --images IMAGECOUNT NAMESPACE
+ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
 
@@ -1131,6 +1133,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dl>
 <dt>`NAMESPACE`</dt>
 <dd>The namespace for which you want to create a policy.</dd>
+<dt>`--retain-untagged`</dt>
+<dd>(Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.</dd>
 <dt>`--images`</dt>
 <dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images, set `IMAGECOUNT` to `All`.</dd>
 </dl>
@@ -1160,6 +1164,8 @@ For more information about how to use the `ibmcloud cr retention-policy-set` com
 Cleans up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 {: shortdesc}
 
+You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
+
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
@@ -1167,7 +1173,7 @@ If you want to restore a deleted image, you can list the contents of the trash b
 {: tip}
 
 ```
-ibmcloud cr retention-run [--force | -f [--json]] --images IMAGECOUNT NAMESPACE
+ibmcloud cr retention-run [--force | -f [--json]] [--retain-untagged] --images IMAGECOUNT NAMESPACE
 ```
 {: codeblock}
 
@@ -1186,6 +1192,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 <dt>`--json`</dt>
 <dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with `--force`.</dd>
+<dt>`--retain-untagged`</dt>
+<dd>(Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.</dd>
 <dt>`--images`</dt>
 <dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
 </dd>
