@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-19"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -34,7 +34,7 @@ In each regional instance of the registry, the service runs in three physically 
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment, in our account, MZRs, public ingress, private ingress, customer data flows, dependencies (public/private)"){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
+![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public/private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
 ## Segregation
 {: #registry_architecture_segregation}
