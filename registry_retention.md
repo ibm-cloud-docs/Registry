@@ -6,7 +6,7 @@ lastupdated: "2020-05-18"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -34,7 +34,7 @@ You can detect and delete old images from all the repositories in a namespace by
 
 When you run the [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud cr retention-policy-set`](#retention_policy_set) commands, a list of images to delete is shown and you must confirm that you want to delete those images. After you run the `ibmcloud cr retention-policy-set` command the first time, the policy runs automatically and deletes any images that meet the criteria that are specified in the policy. Deleted images are stored in the trash for 30 days.
 
-If you want to check what's in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=registry-registry_images_#registry_images_list_trash) command. You can restore images from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=registry-registry_images_#registry_images_restore) command.
+If you want to check what's in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) command. You can restore images from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-registry_images_#registry_images_restore) command.
 
 If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
 
@@ -55,7 +55,7 @@ You gain the following advantages by using this technique:
 
 * You can choose different retention settings for development, staging, and production namespaces.
 * You minimise the chances of accidentally removing an image that might be in use in your staging or production environments, when compared with using a single namespace for all images.
-* You can use different [IAM](/docs/Registry?topic=registry-iam) policies. For example, you can have more restrictive access to production images.
+* You can use different [IAM](/docs/Registry?topic=Registry-iam) policies. For example, you can have more restrictive access to production images.
 * You can sign production images, but leave development and staging images unsigned.
 
 ## Clean up your namespaces by retaining only images that meet your criteria
@@ -196,7 +196,7 @@ You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=contai
 ## Clean up your namespaces by deleting untagged images
 {: #retention_images_untagged}
 
-You can clean up your namespace by deleting your [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
+You can clean up your namespace by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
 {: shortdesc}
 
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:

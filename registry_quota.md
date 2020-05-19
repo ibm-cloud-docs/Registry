@@ -6,7 +6,7 @@ lastupdated: "2020-03-18"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -164,5 +164,5 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account:
    To continue pulling images from your namespaces, choose between the following options.
 
    - Wait until the next billing cycle starts.
-   - If you have a free plan, [upgrade to the standard service plan](/docs/Registry?topic=registry-registry_overview#registry_plan_upgrade).
+   - If you have a free plan, [upgrade to the standard service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade).
    - If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).

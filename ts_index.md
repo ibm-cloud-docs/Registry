@@ -6,7 +6,7 @@ lastupdated: "2020-04-09"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -60,7 +60,7 @@ The following alternatives are possible causes:
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
+- Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 - Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.cloud_notm}} login credentials.
 
@@ -76,7 +76,7 @@ All `ibmcloud cr` commands fail.
 The `container-registry` CLI plug-in is out of date and needs updating.
 
 {: tsResolve}
-Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_cli_update).
+Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
 ## {{site.data.keyword.registrylong_notm}} commands fail with `'cr' is not a registered command. See 'ibmcloud help'.`
 {: #ts_login_error}
@@ -102,7 +102,7 @@ ibmcloud cr namespace
 The `container-registry` CLI plug-in is not installed.
 
 {: tsResolve}
-Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+Install the `container-registry` CLI plug-in, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
 
 ## The `ibmcloud cr build` command fails
 {: #ts_build_fails}
@@ -188,10 +188,10 @@ The following alternatives are possible causes:
 {: tsResolve}
 You can fix this problem in the following ways:
 
-- [Ensure that Docker is installed on your computer](/docs/Registry?topic=registry-getting-started#gs_registry_cli_install).
+- [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running `ibmcloud cr login`.
-- [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_quota#registry_quota_get).
+- [Review quota limits and usage for storing and pulling Docker images in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
 
 ## Unable to pull the most recent image using the `latest` tag
 {: #ts_docker_latest}
@@ -212,7 +212,7 @@ It is generally better to explicitly define a different sequential tag for your 
 The request timed out while attempting to list your images in the GUI.
 
 {: tsCauses}
-The GUI timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/services/Registry?topic=registry-registry_retention).
+The GUI timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/services/Registry?topic=Registry-registry_retention).
 
 {: tsResolve}
 You can run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command to see all the images in the account because the CLI does not have a timeout. Also consider using the `--restrict` flag to reduce the scope of the list and increase performance.
@@ -310,7 +310,7 @@ You deleted an image by using the `ibmcloud cr image-rm` command and all the tag
 Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed.
 
 {: tsResolve}
-If you want to remove a tag from an image, but leave the underlying image and any other tags, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=registry-registry_images_#registry_images_untag) and [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=registry-registry_images_#registry_images_remove).
+If you want to remove a tag from an image, but leave the underlying image and any other tags, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag) and [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 
 ## An image does not show in the list produced by the `ibmcloud cr retention-run` command
 {: #ts_image_list}
@@ -322,7 +322,7 @@ You ran the [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registr
 You might have a distroless image. Some distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
 
 {: tsResolve}
-You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private IBM Cloud repository](/docs/Registry?topic=registry-registry_images_#registry_images_remove).
+You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private IBM Cloud repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 
 To check the creation date of an image, you can run the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command. If the image doesn't have a creation date, the date is shown in the `ibmcloud cr image-inspect` output as `1970-01-01` and the image is excluded from the results for `ibmcloud cr retention-run`.
 {: tip}
@@ -337,7 +337,7 @@ You receive the following error message when you run the [`ibmcloud cr image-res
 An image with the same name exists in your live repository. You can't overwrite a live image with an image that is in the trash.
 
 {: tsResolve}
-You can restore this image by restoring by digest and then, if required, you can use the `ibmcloud cr image-tag` command to tag the image, see [Restoring images by digest](/docs/Registry?topic=registry-registry_images_#registry_images_restore_digest).
+You can restore this image by restoring by digest and then, if required, you can use the `ibmcloud cr image-tag` command to tag the image, see [Restoring images by digest](/docs/Registry?topic=Registry-registry_images_#registry_images_restore_digest).
 
 ## Accessing the registry with a custom firewall fails
 {: #ts_firewall}
@@ -359,7 +359,7 @@ For OUTBOUND connectivity from your computer, use the same network groups and al
 {: #ts_recoveringtrustedcontent}
 
 {: tsSymptoms}
-When using [trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent), you can no longer manage trusted images because your signing keys are lost or compromised.
+When using [trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent), you can no longer manage trusted images because your signing keys are lost or compromised.
 
 {: tsCauses}
 Your repository or root key is lost or compromised.
@@ -379,11 +379,11 @@ If your repository key is lost or compromised, generate a new set of signing key
 The only signing role that you can rotate is `targets`, which is the repository admin. If other roles are affected, generate new keys for those roles, remove the old ones, and add the new ones as signers.
 {:tip}
 
-Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
+Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push).
 
 1. Install the CLI version of the [Notary project](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli){: external}.
 
-2. [Set up your trusted content environment](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_setup).
+2. [Set up your trusted content environment](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_setup).
 
 3. Create an IAM API key:
 
@@ -408,7 +408,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 6. If prompted, enter the root key passphrase. Then, enter a new root key passphrase for the new repository key when prompted.
 
-7. [Push a signed image](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
+7. [Push a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
 8. (Optional) When you've finished, if you want to revoke your API key, run the following command:
 
@@ -423,7 +423,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 If your root key is lost or compromised, you can't update any trusted content repositories that used that root key.
 {:shortdesc}
 
-You can [delete the namespaces](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
+You can [delete the namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove) that have repositories that use the affected root key, which deletes your images and trust data.
 
 If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
 
@@ -438,7 +438,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
    Because the root key is affected, this step deletes all signing keys, including for other trust servers.
    {:tip}
 
-3. If you use [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/Registry?topic=registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
+3. If you use [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/Registry?topic=Registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
 
    ```
    kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
@@ -447,7 +447,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 4. Generate trusted content repositories.
 
-    - If you want to create new trusted content, [push new signed images](/docs/Registry?topic=registry-registry_trustedcontent#trustedcontent_push).
+    - If you want to create new trusted content, [push new signed images](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push).
 
     - If you don't want to change the previous trusted content, add a signature to the most recent images in the registry.
 
@@ -624,7 +624,7 @@ To resolve the problem, complete the following steps:
    ```
    {: pre}
 
-4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/Registry?topic=registry-registry_images_#registry_images_source).
+4. Tag the image by running the `ibmcloud cr image-tag` command, see [Creating new images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source).
 
 ## Docker login fails on a Mac: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: #ts_docker_mac}

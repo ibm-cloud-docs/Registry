@@ -6,7 +6,7 @@ lastupdated: "2020-05-06"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -102,7 +102,7 @@ See [Atomic](https://www.atomic.io){: external}.
 To sign images for trusted content by using Docker Content Trust and Notary, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/){: external} and the [Notary project](https://github.com/theupdateframework/notary){: external} documentation.
 {:shortdesc}
 
-If you plan to make significant use of Docker Content Trust and Notary, open a [support ticket](/docs/Registry?topic=registry-ts_index#gettinghelp) for assistance.
+If you plan to make significant use of Docker Content Trust and Notary, open a [support ticket](/docs/Registry?topic=Registry-ts_index#gettinghelp) for assistance.
 {: important}
 
 When you push your image with trusted content enabled, your Docker client also pushes a signed metadata object into the {{site.data.keyword.cloud_notm}} trust server. When pulling a tagged image with Docker Content Trust enabled, your Docker client contacts the trust server to establish the latest signed version of the tag that you requested, verifies the content signature, and downloads the signed image.
@@ -197,18 +197,18 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the machine that is pushing the image.
 {:shortdesc}
 
-Before you begin, [set up your registry namespace](/docs/Registry?topic=registry-getting-started#gs_registry_namespace_add).
+Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. [Push your image](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+2. [Push your image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
    This action is only required the first time that you push a signed repository.
    {: tip}
@@ -254,7 +254,7 @@ To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and 
    ```
    {: pre}
 
-3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
+3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. In the command output you see:
 
    ```
    Signing and pushing image metadata.
@@ -331,7 +331,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
    If you changed your Docker configuration directory, look for the `trust` subdirectory there.
    {: tip}
 
-You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/Registry?topic=registry-ts_index#ts_recoveringtrustedcontent) are limited.
+You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
 To back up your keys, see [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys){: external}.
 

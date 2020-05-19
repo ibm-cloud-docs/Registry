@@ -6,7 +6,7 @@ lastupdated: "2020-02-28"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

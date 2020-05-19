@@ -40,9 +40,9 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and `co
 
 If you want to view the current version of your `container-registry` CLI plug-in, run `ibmcloud plugin list`.
 
-To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-getting-started#getting-started).
+To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
-For more information about the IAM platform and service access roles that are required for some commands, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam).
+For more information about the IAM platform and service access roles that are required for some commands, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -78,7 +78,7 @@ ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ..
 ### Prerequisites
 {: #bx_cr_build_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_build_option}
@@ -123,7 +123,7 @@ ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE
 ### Prerequisites
 {: #bx_cr_exemption_add_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_exemption_add_option}
@@ -177,7 +177,7 @@ ibmcloud cr exemption-list [--scope SCOPE]
 ### Prerequisites
 {: #bx_cr_exemption_list_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_exemption_list_option}
@@ -211,7 +211,7 @@ ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_
 ### Prerequisites
 {: #bx_cr_exemption_rm_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_exemption_rm_option}
@@ -265,12 +265,12 @@ ibmcloud cr exemption-types
 ### Prerequisites
 {: #bx_cr_exemption_types_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
+If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining user access role policies](/docs/Registry?topic=Registry-user#user).
 
 ```
 ibmcloud cr iam-policies-enable
@@ -280,12 +280,12 @@ ibmcloud cr iam-policies-enable
 ### Prerequisites
 {: #bx_cr_iam_policies_enable_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
-Displays the IAM policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam) and [Defining user access role policies](/docs/Registry?topic=registry-user#user).
+Displays the IAM policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining user access role policies](/docs/Registry?topic=Registry-user#user).
 
 ```
 ibmcloud cr iam-policies-status
@@ -295,7 +295,7 @@ ibmcloud cr iam-policies-status
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
 
-Lists all images, including [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
+Lists all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
 
 You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and and one of the tags in the **Tags** column in the format: `repository:tag`.
 {: tip}
@@ -308,7 +308,7 @@ ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict 
 ### Prerequisites
 {: bx_cr_image_digests_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_digests_option}
@@ -317,7 +317,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=registry-registry_cli_list).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -353,7 +353,7 @@ ibmcloud cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 ### Prerequisites
 {: #bx_cr_image_inspect_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_inspect_option}
@@ -362,7 +362,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=registry-registry_cli_list).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
 <dt>`IMAGE`</dt>
@@ -406,7 +406,7 @@ ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION
 ### Prerequisites
 {: #bx_cr_image_list_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_list_option}
@@ -415,7 +415,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=registry-registry_cli_list).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
 <dt>`--quiet`, `-q`</dt>
@@ -443,7 +443,7 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 ## `ibmcloud cr image-prune-untagged`
 {: #ic_cr_image_prune_untagged}
 
-Delete all [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
+Delete all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 {: shortdesc}
 
 ```
@@ -454,7 +454,7 @@ ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict RESTRICTION
 ### Prerequisites
 {: #ic_cr_image_prune_untagged_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #ic_cr_image_prune_untagged_option}
@@ -492,7 +492,7 @@ ibmcloud cr image-restore IMAGE
 ### Prerequisites
 {: #bx_cr_image_restore_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_restore_option}
@@ -518,7 +518,7 @@ ibmcloud cr image-restore us.icr.io/birds/bluebird:1
 ```
 {: pre}
 
-For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=registry-registry_images_#registry_images_restore).
+For more information about how to use the `ibmcloud cr image-restore` command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
 ## `ibmcloud cr image-rm`
 {: #bx_cr_image_rm}
@@ -539,7 +539,7 @@ ibmcloud cr image-rm IMAGE [IMAGE...]
 ### Prerequisites
 {: #bx_cr_image_rm_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_rm_option}
@@ -593,7 +593,7 @@ ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
 ### Prerequisites
 {: #bx_cr_image_tag_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_tag_option}
@@ -649,7 +649,7 @@ ibmcloud cr image-untag IMAGE [IMAGE...]
 ### Prerequisites
 {: #bx_cr_image_untag_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_image_untag_option}
@@ -716,7 +716,7 @@ ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
 ### Prerequisites
 {: #bx_cr_manifest_inspect_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_manifest_inspect_option}
@@ -760,7 +760,7 @@ ibmcloud cr namespace-add NAMESPACE
 ### Prerequisites
 {: #bx_cr_namespace_add_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_namespace_add_option}
@@ -799,7 +799,7 @@ ibmcloud cr namespace-list
 ### Prerequisites
 {: #bx_cr_namespace_list_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
@@ -814,7 +814,7 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 ### Prerequisites
 {: #bx_cr_namespace_rm_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_namespace_rm_option}
@@ -849,7 +849,7 @@ ibmcloud cr plan
 ### Prerequisites
 {: #bx_cr_plan_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## `ibmcloud cr plan-upgrade`
 {: #bx_cr_plan_upgrade}
@@ -861,12 +861,12 @@ ibmcloud cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-For more information about plans, see [Registry plans](/docs/Registry?topic=registry-registry_overview#registry_plans).
+For more information about plans, see [Registry plans](/docs/Registry?topic=Registry-registry_overview#registry_plans).
 
 ### Prerequisites
 {: #bx_cr_plan_upgrade_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_plan_upgrade_option}
@@ -901,7 +901,7 @@ ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
 ### Prerequisites
 {: #bx_cr_ppa_archive_load_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_ppa_archive_load_option}
@@ -942,7 +942,7 @@ ibmcloud cr private-only --enable | --disable | --status
 ### Prerequisites
 {: #ic_cr_private_only_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #ic_cr_private_only_option}
@@ -979,7 +979,7 @@ ibmcloud cr quota
 ### Prerequisites
 {: #bx_cr_quota_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## `ibmcloud cr quota-set`
 {: #bx_cr_quota_set}
@@ -994,7 +994,7 @@ ibmcloud cr quota-set [--traffic TRAFFIC] [--storage STORAGE]
 ### Prerequisites
 {: #bx_cr_quota_set_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_configure).
+To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_quota_set_option}
@@ -1026,7 +1026,7 @@ ibmcloud cr region
 ```
 {: codeblock}
 
-For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ### Prerequisites
 {: #bx_cr_region_prereq}
@@ -1055,7 +1055,7 @@ None
 <dt>`REGION`</dt>
 <dd>(Optional) The name of your target region, for example, `us-south`.
 
-For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 </dd>
 </dl>
@@ -1087,7 +1087,7 @@ ibmcloud cr retention-policy-list
 ### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Example
 {: #bx_cr_retention_policy_list_example}
@@ -1099,7 +1099,7 @@ ibmcloud cr retention-policy-list
 ```
 {: pre}
 
-For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=registry-registry_retention).
+For more information about how to use the `ibmcloud cr retention-policy-list` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ## `ibmcloud cr retention-policy-set`
 {: #bx_cr_retention_policy_set}
@@ -1115,7 +1115,7 @@ Where an image, within a repository, is referenced by multiple tags, that image 
 If a retention policy deletes an image that you want to keep, you can restore the image. To identify the image, list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore the selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
-If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=registry-registry_retention#retention_policy_keep).
+If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
 ```
 ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPACE
@@ -1125,7 +1125,7 @@ ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPA
 ### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_retention_policy_set_option}
@@ -1156,7 +1156,7 @@ ibmcloud cr retention-policy-set --images All birds
 ```
 {: pre}
   
-For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=registry-registry_retention).
+For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ## `ibmcloud cr retention-run`
 {: #bx_cr_retention_run}
@@ -1180,7 +1180,7 @@ ibmcloud cr retention-run [--force | -f [--json]] [--retain-untagged] --images I
 ### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_retention_run_option}
@@ -1209,7 +1209,7 @@ ibmcloud cr retention-run --images 20 birds
 ```
 {: pre}
 
-For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=registry-registry_retention).
+For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ## `ibmcloud cr token-get` - deprecated
 {: #bx_cr_token_get}
@@ -1227,7 +1227,7 @@ ibmcloud cr token-get TOKEN
 ### Prerequisites
 {: #bx_cr_token_get_prereq}
 
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=registry-iam#platform_management_roles).
+To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
 
 ### Command options
 {: #bx_cr_token_get_option}
@@ -1263,7 +1263,7 @@ ibmcloud cr token-list [--format FORMAT]
 ### Prerequisites
 {: #bx_cr_token_list_prereq}
 
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=registry-iam#platform_management_roles).
+To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
 
 ### Command options
 {: #bx_cr_token_list_option}
@@ -1272,7 +1272,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 <dt>`--format FORMAT`</dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=registry-registry_cli_list).
+For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
 </dl>
@@ -1310,7 +1310,7 @@ ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
 ### Prerequisites
 {: #bx_cr_token_rm_prereq}
 
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=registry-iam#platform_management_roles).
+To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
 
 ### Command options
 {: #bx_cr_token_rm_option}
@@ -1337,7 +1337,7 @@ ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
 
 Displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. You can also see the number of days remaining until the image is removed from the trash. The number of days remaining until removal is rounded up, therefore if the time remaining until removal is 2 hours, it will show as 1 day. Images remain in the trash for 30 days after they've been deleted from your live repository.
 
-If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/Registry?topic=registry-registry_images_#registry_images_restore).
+If you want to restore an image from the trash, run the [`ibmcloud cr image-restore`](#bx_cr_image_restore) command, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
 ```
 ibmcloud cr trash-list [--restrict NAMESPACE] [--json]
@@ -1347,7 +1347,7 @@ ibmcloud cr trash-list [--restrict NAMESPACE] [--json]
 ### Prerequisites
 {: #bx_cr_trash_list_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_trash_list_option}
@@ -1382,7 +1382,7 @@ ibmcloud cr vulnerability-assessment [--extended | -e] [--vulnerabilities | -v] 
 ### Prerequisites
 {: #bx_cr_va_prereq}
 
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-iam#access_roles_using).
+To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
 ### Command options
 {: #bx_cr_va_option}

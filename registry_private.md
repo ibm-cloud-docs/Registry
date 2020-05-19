@@ -6,7 +6,7 @@ lastupdated: "2020-04-30"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -63,12 +63,12 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 
 - Pull traffic is not charged for image pulls that use private connections.
 
-- If you use [image signing](/docs/Registry?topic=registry-registry_trustedcontent) and want to use the private domain names, you must re-sign any images that you already have because the domain name forms part of the signed artifact.
+- If you use [image signing](/docs/Registry?topic=Registry-registry_trustedcontent) and want to use the private domain names, you must re-sign any images that you already have because the domain name forms part of the signed artifact.
 
 ### Pushing and pulling images
 {: #registry_private_images_push}
 
-Private connections are available for image pushes and pulls. You use the same `icr.io` domain name, with the prefix `private.`, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+Private connections are available for image pushes and pulls. You use the same `icr.io` domain name, with the prefix `private.`, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}

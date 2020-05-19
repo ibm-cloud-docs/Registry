@@ -6,7 +6,7 @@ lastupdated: "2020-03-05"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -35,7 +35,7 @@ If you want to use your registry images in Kubernetes deployments, see [Using an
 
 API keys are linked to user and service IDs in your account and you can use them across {{site.data.keyword.cloud_notm}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey) has it's own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
-To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=registry-user#user).
+To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=Registry-user#user).
 
 ## Automating access to your namespaces by using service ID API keys
 {: #registry_access_serviceid_apikey}
@@ -130,7 +130,7 @@ For more information, see [Using a private image registry](/docs/ContinuousDeliv
 #### Example: skopeo
 {: #registry_access_apikey_auth_other_example_skopeo}
 
-You can use skopeo to authenticate with the registry. Replace `<region>` with the name of your [region](/docs/Registry?topic=registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<apikey>` with your API key,.
+You can use skopeo to authenticate with the registry. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<apikey>` with your API key,.
 
 ```
 skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<region>.icr.io/<namespace>/busybox:copy --dest-creds iamapikey:<apikey>
@@ -140,7 +140,7 @@ skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker
 #### Example: Cloud Foundry
 {: #registry_access_apikey_auth_other_example_cf}
 
-You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<image_repo>` with the repository.
+You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<image_repo>` with the repository.
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>

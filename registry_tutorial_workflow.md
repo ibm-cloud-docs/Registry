@@ -6,7 +6,7 @@ lastupdated: "2020-04-30"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -66,7 +66,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/contai
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}.
+Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}.
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command:
 
@@ -100,7 +100,7 @@ Create a [namespace](/docs/Registry?topic=registry-registry_setup_cli_namespace#
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
 
-To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_images_#registry_images_creating), you require an application and a Dockerfile. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external} that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
+To [build a container image and push it to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_creating), you require an application and a Dockerfile. To get the application and the Dockerfile, and the other artifacts that you require, clone the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external} that is associated with this tutorial. For the rest of this tutorial, ensure that you run all commands from the directory of the cloned repository.
 
 1. To build the image, run the following command:
 
@@ -136,7 +136,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_access) with API keys and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=registry-iam_access) by using IAM.
+    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access) with API keys and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-iam_access) by using IAM.
     {: tip}
 
 ### Deploy a container that uses your image
@@ -246,11 +246,11 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 ### Enforce security in your cluster
 {: #registry_tutorial_workflow_enforce_security}
 
-Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
+Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
 
-1. [Install Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install).
+1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install).
 
-2. The [default policies](/docs/Registry?topic=registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/Registry?topic=registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
+2. The [default policies](/docs/Registry?topic=Registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
 3. Update the following line in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
 
@@ -353,7 +353,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take additional steps.
 
-Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Find out more about the elements that are used in IBM Cloud Container Registry](/docs/Registry?topic=registry-registry_overview#overview_elements). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
+Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Find out more about the elements that are used in IBM Cloud Container Registry](/docs/Registry?topic=Registry-registry_overview#overview_elements). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
 {: tip}
 
 1. In your cluster, create a Kubernetes namespace called `test`:
@@ -390,7 +390,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
     This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
-    If you [remove Container Image Security Enforcement](/docs/Registry?topic=registry-security_enforce#remove) first, the `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
+    If you [remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove) first, the `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
 
 4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 

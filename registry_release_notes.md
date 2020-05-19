@@ -6,7 +6,7 @@ lastupdated: "2020-05-18"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -35,7 +35,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Retaining untagged images is now an option when you clean up your namespaces</dt>
-  <dd>Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=registry-registry_retention).</dd>
+  <dd>Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).</dd>
 </dl>
 
 ## 30 April 2020
@@ -43,9 +43,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>`ibmcloud cr image-prune-untagged` command is available</dt>
-  <dd>The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
+  <dd>The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
 
-  For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=registry-registry_retention#retention_images_untagged).</dd>
+  For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).</dd>
 </dl>
 
 ## 16 April 2020
@@ -55,7 +55,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}}.</dt>
   <dd>If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the {{site.data.keyword.cloud_notm}} private network.
   
-  For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-registry_private) and [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=registry-registry_architecture).
+  For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private) and [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture).
   </dd>
   <dt>`ibmcloud cr private-only` command is available</dt>
   <dd>The `ibmcloud cr private-only` command enables you to prevent image pulls or pushes over public network connections for your account.
@@ -92,7 +92,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Support for {{site.data.keyword.openshiftlong_notm}} signatures is available</dt>
   <dd>{{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.openshiftlong_notm}} signatures.
 
-  For more information, see [Signing images for trusted content by using Red Hat Signatures](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+  For more information, see [Signing images for trusted content by using Red Hat Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
   </dd>
 </dl>
 
@@ -103,7 +103,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.la_full_notm}} platform services logs are available</dt>
   <dd>{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances.
   
-  For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=registry-registry_logs).</dd>
+  For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=Registry-registry_logs).</dd>
 </dl>
 
 ## 14 October 2019
@@ -128,7 +128,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
     <li>The [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command lists the image retention policies for your account. </li>
   </ul>
   
-  For more information, see [Retaining images](/docs/Registry?topic=registry-registry_retention).</dd>
+  For more information, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).</dd>
 </dl>
 
 <dl>
@@ -140,7 +140,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
     <li>The [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.</li>
   </ul>
   
-  For more information, see [Listing images in the trash](/docs/Registry?topic=registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topic=registry-registry_images_#registry_images_restore).</dd>
+  For more information, see [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).</dd>
 </dl>
 
 ## 1 August 2019
@@ -150,7 +150,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>`ibmcloud cr retention-run` command is available</dt>
   <dd>The `ibmcloud cr retention-run` command cleans up your namespaces by retaining images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
   
-  For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=registry-registry_retention).</dd>
+  For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=Registry-registry_retention).</dd>
 </dl>
 
 ## 25 July 2019
@@ -160,7 +160,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
   <dd>Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).</dd>
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).</dd>
 </dl>
 
 ## 1 July 2019
@@ -188,7 +188,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
   To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all of its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
 
-  For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=registry-registry_images_#registry_images_untag).</dd>
+  For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).</dd>
 </dl>
 
 ## 13 May 2019
@@ -204,9 +204,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>General Availability of Container Image Security Enforcement</dt>
-  <dd>Use Container Image Security Enforcement to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=registry-registry_trustedcontent) is properly applied to the image.
+  <dd>Use Container Image Security Enforcement to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
 
-  For more information, see [Enforcing container image security](/docs/Registry?topic=registry-security_enforce#security_enforce).</dd>
+  For more information, see [Enforcing container image security](/docs/Registry?topic=Registry-security_enforce#security_enforce).</dd>
 </dl>
 
 ## 14 March 2019
@@ -216,7 +216,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}</dt>
   <dd>Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 </dd>
 </dl>
 
@@ -225,9 +225,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>New domain names</dt>
-  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
+  <dd>{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names).
 
-  Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).</dd>
+  Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).</dd>
 </dl>
 
 <dl>
@@ -241,7 +241,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>New region in ap-north</dt>
   <dd>A new region is available in `ap-north`. You can use the new region by using the domain name `jp.icr.io`.
   
-  For more information, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).</dd>
+  For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).</dd>
 </dl>
 
 ## 21 February 2019
@@ -251,7 +251,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Automating access to your namespaces</dt>
   <dd>Using tokens to automate pushing and pulling Docker images to and from your namespaces is deprecated. You must now use API keys to automate access to your {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
 
-  For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=registry-registry_access#registry_access_user_apikey).</dd>
+  For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey).</dd>
 </dl>
 
 ## 8 January 2019
@@ -271,7 +271,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Managing user access</dt>
   <dd>Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-  For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/Registry?topic=registry-iam_access#iam_access).</dd>
+  For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/Registry?topic=Registry-iam_access#iam_access).</dd>
 </dl>
 
 ## 7 August 2018
@@ -291,7 +291,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor</dt>
   <dd>Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
 
-  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-at_events).</dd>
+  For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).</dd>
 </dl>
   
 ## 12 July 2018
@@ -327,9 +327,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Container Image Security Enforcement beta</dt>
-  <dd>Use Container Image Security Enforcement beta to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=registry-registry_trustedcontent) is properly applied to the image.
+  <dd>Use Container Image Security Enforcement beta to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
 
-  For more information, see [Enforcing container image security](/docs/Registry?topic=registry-security_enforce#security_enforce).</dd>
+  For more information, see [Enforcing container image security](/docs/Registry?topic=Registry-security_enforce#security_enforce).</dd>
 </dl>
 
 ## 20 February 2018
@@ -339,7 +339,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Trusted content</dt>
   <dd>{{site.data.keyword.registrylong_notm}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 
-  For more information, see [Signing images for trusted content](/docs/Registry?topic=registry-registry_trustedcontent#registry_trustedcontent).</dd>
+  For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).</dd>
 </dl>
 
 ## 6 November 2017
@@ -349,7 +349,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Global registry</dt>
   <dd>A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 
-  For more information, see [Global registry](/docs/Registry?topic=registry-registry_overview#registry_regions_global).</dd>
+  For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).</dd>
 </dl>
 
 ## 29 September 2017
@@ -359,7 +359,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
   <dt>Build Docker images</dt>
   <dd>The `ibmcloud cr build` command is now available for running container builds. You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
 
-  For more information, see [Building Docker images to use them with your namespace](/docs/Registry?topic=registry-registry_images_#registry_images_creating) and [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).</dd>
+  For more information, see [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating) and [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).</dd>
 </dl>
 
 ## 24 August 2017

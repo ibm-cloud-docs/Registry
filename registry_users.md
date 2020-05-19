@@ -6,7 +6,7 @@ lastupdated: "2020-04-09"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -49,7 +49,7 @@ You cannot organize and assign access to registry namespaces in resource groups.
 
 Before you begin, complete the following tasks:
 
-- Decide what roles each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/Registry?topic=registry-iam#iam). Take into consideration that you can create multiple policies, for example, you can grant write access on a resource but only grant read access on another resource, and grant no access on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
+- Decide what roles each user needs and on which resources in {{site.data.keyword.registrylong_notm}}, see [IAM roles](/docs/Registry?topic=Registry-iam#iam). Take into consideration that you can create multiple policies, for example, you can grant write access on a resource but only grant read access on another resource, and grant no access on another resource. Policies are additive, which means that a global read policy and a resource-scoped write policy grants both read and write access on that resource.
 
 - [Invite users and assign access](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 

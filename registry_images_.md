@@ -6,7 +6,7 @@ lastupdated: "2020-04-30"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
@@ -45,13 +45,13 @@ You can pull (download) an image from any private or public registry source, and
 
 Before you begin, complete the following tasks:
 
-- [Install the CLI](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-1. Download the image, see [Pull an image](/docs/Registry?topic=registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
+1. Download the image, see [Pull an image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {: tip}
@@ -68,8 +68,8 @@ You can push (upload) an image to your namespace in {{site.data.keyword.registry
 
 Before you begin, complete the following tasks:
 
-- [Install the CLI](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Pull](#registry_images_pulling_reg) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
@@ -88,7 +88,7 @@ To upload (push) an image, complete the following steps:
    {:tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
-3. [Upload the image to your namespace.](/docs/Registry?topic=registry-getting-started#gs_registry_images_pushing)
+3. [Upload the image to your namespace.](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing)
 
    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
    {:tip}
@@ -108,8 +108,8 @@ You can pull an image from a registry in one region and push it to a registry in
 
 Before you begin, complete the following tasks:
 
-- [Install the CLI](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -137,7 +137,7 @@ New images that are created by using this mechanism do not retain signatures. If
 
 Before you begin, complete the following tasks:
 
-- [Install the CLI](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - Ensure that you have access to a private namespace in {{site.data.keyword.registrylong_notm}} that contains a source image to which you want to refer another image.
 
 To create a new image from a source image, complete the following steps:
@@ -171,8 +171,8 @@ You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or cre
 
 Before you begin, complete the following tasks:
 
-- [Install the CLI](/docs/Registry?topic=registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
-- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_setup_cli_namespace#registry_namespace_setup).
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
   If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
@@ -261,9 +261,9 @@ Create a service ID that uses an API key to push images to {{site.data.keyword.r
 Complete the following steps:
 
 1. Create a service ID, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids#serviceids).
-2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=registry-iam).
+2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 3. Create an API key, see [Creating an API key for a service ID](/docs/iam?topic=iam-serviceidapikeys#create_service_key).
-4. Use the API key to log in to registry so that you can push images to the registry, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=registry-registry_access).
+4. Use the API key to log in to registry so that you can push images to the registry, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 5. Push your images, see [Pushing Docker images to your namespace](#registry_images_pushing_namespace).
 
 You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images).
