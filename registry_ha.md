@@ -38,7 +38,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
   You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
 
-  For more information about regions, see [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+  For more information about regions, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 For more information about service availability, see [Service Level Agreements](/docs/overview?topic=overview-slas).
 

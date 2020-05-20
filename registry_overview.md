@@ -120,7 +120,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 #### Storage
 {: #registry_quota_limits_storage}
 
-  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/Registry?topic=registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
+  When you reach or exceed the quota limits for your plan, you cannot push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=Registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
   {:shortdesc}
 
   Example for the standard plan:
@@ -132,7 +132,7 @@ Depending on the service plan that you choose, you can push and pull images to a
 #### Pull traffic
 {: #registry_quota_limits_pull_traffic}
 
-  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/Registry?topic=registry-registry_quota#registry_quota_set).
+  When you reach or exceed the quota limits for your plan, you cannot pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
   {:shortdesc}
 
   Example for the standard plan:
@@ -175,7 +175,7 @@ To upgrade your service plan, complete the following steps:
    ```
    {: pre}
 
-   For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=registry-registry_overview#registry_regions).
+   For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 3. Upgrade to the standard plan.
 
@@ -216,7 +216,7 @@ Typically, a container image is built upon a base image that contains a base ope
 
 A container image that is compliant with the [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external} specification.
 
-The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=registry-registry_overview#docker).
+The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
 ### OCI container images
 {: #overview_elements_oci_images}
@@ -291,7 +291,7 @@ The domain names are shown in the following table.
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
 {: caption="Table 3. Domain names for local regions." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -313,7 +313,7 @@ The domain names are shown in the following table.
 | `us-south` | `us.icr.io/va` | `private.us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="Table 4. Domain names for local regions." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -355,7 +355,7 @@ The domain names are shown in the following table.
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
 {: caption="Table 5. Domain name for the global registry." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
@@ -373,7 +373,7 @@ The domain names are shown in the following table.
 | Global | `icr.io/va` | `private.icr.io/va` | `va.bluemix.net` |
 {: caption="Table 6. Domain name for the global registry for Vulnerability Advisor." caption-side="top"}
 
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=registry-registry_private#registry_private_images).
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
 The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the time being, an end of support date will be announced later.
 {: deprecated}
