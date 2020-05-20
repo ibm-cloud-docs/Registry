@@ -63,7 +63,7 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 
 - Pull traffic is not charged for image pulls that use private connections.
 
-- If you use [image signing](/docs/Registry?topic=Registry-registry_trustedcontent) and want to use the private domain names, you must re-sign any images that you already have because the domain name forms part of the signed artifact.
+- If you use [image signing](/docs/Registry?topic=registry-registry_trustedcontent) and want to use the private domain names, you must re-sign any images that you already have because the domain name forms part of the signed artifact.
 
 ### Pushing and pulling images
 {: #registry_private_images_push}
