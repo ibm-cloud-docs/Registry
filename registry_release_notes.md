@@ -140,7 +140,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
     <li>The [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.</li>
   </ul>
   
-  For more information, see [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topice=Registry-registry_images_#registry_images_restore).</dd>
+  For more information, see [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).</dd>
 </dl>
 
 ## 1 August 2019
