@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-20"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -48,7 +48,7 @@ For more information about service availability, see [Service Level Agreements](
 ### Does the service replicate the data?
 {: #ha-dr_replicate_data}
 
-All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Additionally, point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted, and out-of-region backups are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster recovery situation.
+All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Additionally, regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted, additional backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in the event of a disaster situation.
 
 ### Do users have to replicate the data?
 {: #ha-dr_client}
