@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-18"
+lastupdated: "2020-05-20"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 

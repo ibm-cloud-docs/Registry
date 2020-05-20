@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-18"
+lastupdated: "2020-05-20"
 
 keywords: external registry, private registry, OpenShift
 

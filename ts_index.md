@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-05-20"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -492,7 +492,7 @@ This situation is likely to be caused by the user policy being created in a reso
 Create the user policy at the Account level. You can create the policy by using the GUI or the CLI.
 
 - In the GUI, on the **Assign Users Additional Access** page, in the **What type of access do you want to assign** section, select `Container Registry` and from the **Enter or select a resource group** list, select `Account`, then complete the rest of the information on the page as required.
-- In the CLI, create your user policy by using the [`ibmcloud iam user-policy-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, but don't use the `--resource-group-name` option. For more information, see [Access to resources](/docs/iam?topic=iam-iammanidaccser#resourceaccess).
+- In the CLI, create your user policy by using the [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, but don't use the `--resource-group-name` option. For more information, see [Access to resources](/docs/iam?topic=iam-iammanidaccser#resourceaccess).
 
 ## Pods do not restart after all your workers have been down
 {: #ts_pods}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-05-20"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -240,7 +240,7 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-        To see the names of the {{site.data.keyword.cloud_notm}} regions, run the [`ibmcloud regions`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_cli#ibmcloud_regions) command.
+        To see the names of the {{site.data.keyword.cloud_notm}} regions, run the [`ibmcloud regions`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_regions) command.
         {: tip}
 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command:
