@@ -2,11 +2,11 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-05-20"
 
 keywords: public IBM images, images, accessing images, container images, public images,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

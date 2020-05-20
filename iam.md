@@ -2,11 +2,11 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-20"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

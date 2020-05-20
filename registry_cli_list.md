@@ -2,11 +2,11 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-05-20"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

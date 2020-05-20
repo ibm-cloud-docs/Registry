@@ -2,11 +2,11 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-20"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

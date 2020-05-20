@@ -2,11 +2,11 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-01"
+lastupdated: "2020-05-20"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

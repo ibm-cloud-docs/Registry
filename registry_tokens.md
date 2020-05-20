@@ -2,11 +2,11 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-05-20"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

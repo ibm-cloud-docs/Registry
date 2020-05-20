@@ -2,11 +2,11 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-06"
+lastupdated: "2020-05-20"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 

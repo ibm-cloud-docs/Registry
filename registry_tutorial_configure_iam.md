@@ -2,11 +2,11 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-30"
+lastupdated: "2020-05-20"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
-subcollection: registry
+subcollection: Registry
 
 ---
 
