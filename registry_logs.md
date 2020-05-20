@@ -30,7 +30,7 @@ subcollection: Registry
 {{site.data.keyword.registrylong}} generates platform services logs that are displayed in your LogDNA instances.
 {: shortdesc}
 
-For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-config_svc_logs).
+For information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs).
 
 Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive, therefore {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 

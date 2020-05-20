@@ -59,11 +59,11 @@ Create a service ID API key that you can use to log in to your registry.
 
 To create a service ID API key, complete the following steps:
 
-1. Create a service ID, see [`ibmcloud iam service-id-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create).
+1. Create a service ID, see [`ibmcloud iam service-id-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create).
 
 2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong}}, see [Managing service ID access policies](/docs/iam?topic=iam-serviceidpolicy).
 
-3. Create a service ID API key, see [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys#serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
+3. Create a service ID API key, see [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys#serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
 
 ## Automating access to your namespaces by using user API keys
 {: #registry_access_user_apikey}
@@ -91,7 +91,7 @@ Most users can use the `ibmcloud cr login` command to simplify `docker login`, b
 
 The following usernames are valid:
 
-- `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
+- `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 - `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived. This authentication type is used by the `ibmcloud cr login` command.
 - `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Automating access to your namespaces by using service ID API keys](#registry_access_serviceid_apikey) and [Automating access to your namespaces by using user API keys](#registry_access_user_apikey).
 

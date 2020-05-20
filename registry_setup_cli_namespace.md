@@ -33,7 +33,7 @@ To manage your Docker images in {{site.data.keyword.registrylong}}, you must ins
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
-Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started).
+Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
 ## Installing the `container-registry` CLI plug-in
 {: #cli_namespace_registry_cli_install}

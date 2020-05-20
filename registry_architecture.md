@@ -65,10 +65,10 @@ For more information about private connections, see [Securing your connection to
 ### Other dependencies that use private network connections
 {: #registry_architecture_dependencies_other}
 
-- [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=cloudant-getting-started-with-cloudant) \*
-- [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started)
-- [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started)
-- [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started)
+- [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) \*
+- [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
+- [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started)
+- [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started)
 
 \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
 
