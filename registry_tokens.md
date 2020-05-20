@@ -79,7 +79,7 @@ Create a user API key that you can use to log in to your registry.
 
 If you create a user API key, the access policies are those of the user.
 
-To create a user API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
+To create a user API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ## Authentication
 {: #registry_access_apikey_auth}
