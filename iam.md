@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-21"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -52,7 +52,7 @@ Policies enable access to be granted at different levels. Some of the options in
 
 After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
 
-For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+For information about assigning user roles in the UI, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser).
 
 Try out the tutorial [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 {: tip}
@@ -67,7 +67,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | Not supported | |
 | Editor | Not supported | |
 | Operator | Not supported | |
-| Administrator | Configure access for other users</br></br>Configure registry tokens (deprecated)</br></br>Create clusters | For information about assigning user roles in the UI, see [Managing IAM access](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).</br></br>List, retrieve, and remove registry tokens (deprecated)</br></br>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
+| Administrator | Configure access for other users</br></br>Configure registry tokens (deprecated)</br></br>Create clusters | For information about assigning user roles in the UI, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser).</br></br>List, retrieve, and remove registry tokens (deprecated)</br></br>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication. For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
