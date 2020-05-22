@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-22"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -173,7 +173,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
    ```
    {: pre}
 
-6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that policy that you set for the namespace retains the required number of images:
+6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images:
 
    ```
    ibmcloud cr retention-policy-list
