@@ -173,7 +173,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
    ```
    {: pre}
 
-6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images:
+6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, check that the **Retain all untagged** column has the value `true`.
 
    ```
    ibmcloud cr retention-policy-list
