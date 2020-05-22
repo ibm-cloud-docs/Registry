@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-22"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -35,7 +35,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 
 <dl>
   <dt>Retaining untagged images is now an option when you clean up your namespaces</dt>
-  <dd>Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).</dd>
+  <dd>Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).</dd>
 </dl>
 
 ## 30 April 2020
