@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-29"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -47,7 +47,7 @@ You must set up your account with the correct authority so that you can set up a
 ### Enabling {{site.data.keyword.cloud_notm}} service endpoint support for the account
 {: #registry_private_images_endpoints}
 
-To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must be able to access the classic infrastructure and you must enable [virtual routing and forwarding](/docs/resources?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)  (VRF) and connectivity to service endpoints for your account. You must also have a billable account.
+To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must be able to access the classic infrastructure and you must enable [virtual routing and forwarding](/docs/dl?topic=dl-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) (VRF) and connectivity to service endpoints for your account. You must also have a billable account.
 {: shortdesc}
 
 To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing and forwarding (VRF) and service endpoints, see [Setting up service endpoints](/docs/resources?topic=resources-private-network-endpoints).
