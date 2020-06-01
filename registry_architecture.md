@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-01"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -60,7 +60,7 @@ For more information about private connections, see [Securing your connection to
 ### Dependencies that are used for customer data, all of which use private network connections
 {: #registry_architecture_dependencies_private}
 
-- [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started)
+- [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 
 ### Other dependencies that use private network connections
 {: #registry_architecture_dependencies_other}
