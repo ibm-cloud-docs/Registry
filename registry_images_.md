@@ -2,11 +2,12 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-09"
+lastupdated: "2020-06-10"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
 subcollection: Registry
+
 
 ---
 
