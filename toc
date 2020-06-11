@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="Registry" category="containers,compute" audience="compute" href="/docs/Registry?topic=Registry-getting-started" path="Registry"}
+{: .toc subcollection="Registry" category="containers" audience="compute" href="/docs/Registry?topic=Registry-getting-started" path="Registry"}
 Container Registry
 
     {: .navgroup id="learn"}
