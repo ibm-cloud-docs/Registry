@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-10"
+lastupdated: "2020-06-11"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -413,6 +413,7 @@ You can restore images by using one of the following methods:
 {: #registry_images_restore_digest}
 
 When you restore an image by digest, only the digest is copied out of the trash into your live repository, any tags for that digest remain in the trash. The digest continues to show in the trash because a copy is restored.
+{: shortdesc}
 
 To restore an image by digest from the trash, complete the following steps:
 
@@ -451,6 +452,7 @@ To restore an image by digest from the trash, complete the following steps:
 {: #registry_images_restore_tag}
 
 When you restore an image by tag, only that specific tag is moved out of the trash into your live repository.
+{: shortdesc}
 
 To restore an image by tag from the trash, complete the following steps:
 
