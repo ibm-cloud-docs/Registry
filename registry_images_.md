@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-06-22"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -397,12 +397,10 @@ To list the images in the trash, complete the following steps:
 ## Restoring images
 {: #registry_images_restore}
 
-You can restore images that were deleted in the last 30 days.
+You can restore images from the trash. Deleted images are stored in the trash for 30 days.
 {: shortdesc}
 
 You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
-
-
 
 You can restore images by using one of the following methods:
 
@@ -434,6 +432,8 @@ To restore an image by digest from the trash, complete the following steps:
    ibmcloud cr image-restore <digest>
    ```
    {: pre}
+
+   
 
    In your live repository, you can pull the image by digest. If you run the `ibmcloud cr image-list` command, the image doesn't show in the output because the image is untagged.
    {: tip}
