@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-22"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, Kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -269,7 +269,7 @@ The following table explains the YAML components that you must set in your Kuber
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
-1. Create a [Kubernetes custom resource definition](https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/){: external} `.yaml` file. For more information, see Table 1.
+1. Create a [Kubernetes custom resource definition](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/){: external} `.yaml` file. For more information, see Table 1.
 
    ```yaml
    apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
