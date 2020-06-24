@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-24"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -63,7 +63,7 @@ The image data and service and policy settings are backed up by {{site.data.keyw
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
 
-{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the region where you stored it.
+{{site.data.keyword.IBM_notm}} doesn't make replicas of your data available in any region other than the region where you stored it. High availability is achieved by running the service in three data centers in each region.
 
 ### Do users have to replicate the service?
 {: #ha-dr_service_replicate}
