@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-22"
+lastupdated: "2020-06-24"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 24 June 2020
+{: #24jun2020}
+
+<dl>
+  <dt>Restoring all tags for a digest in a repository is now an option</dt>
+  <dd>When you want to restore an image, you have the option to restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).</dd>
+</dl>
 
 ## 18 May 2020
 {: #18may2020}

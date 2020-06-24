@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-06-24"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -397,20 +397,20 @@ To list the images in the trash, complete the following steps:
 ## Restoring images
 {: #registry_images_restore}
 
-You can restore images that were deleted in the last 30 days.
+You can restore images from the trash. Deleted images are stored in the trash for 30 days.
 {: shortdesc}
 
-You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
+You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command.
 
-You can restore images by using one of the following methods:
+You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
-- [Restoring images by digest](#registry_images_restore_digest)
-- [Restoring images by tag](#registry_images_restore_tag)
+- `<repo>@<digest>`, which restores the digest and all of its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest)
+- `<repo>:<tag>`, which restores the tag, see [Restoring images by tag](#registry_images_restore_tag)
 
 ### Restoring images by digest
 {: #registry_images_restore_digest}
 
-When you restore an image by digest, only the digest is copied out of the trash into your live repository, any tags for that digest remain in the trash. The digest continues to show in the trash because a copy is restored.
+When you restore an image by digest, the digest is copied from the trash into your live repository, and all of the digest's tags in the repository are restored. The digest continues to show in the trash because a copy is restored.
 {: shortdesc}
 
 To restore an image by digest from the trash, complete the following steps:
@@ -426,26 +426,17 @@ To restore an image by digest from the trash, complete the following steps:
    A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
 3. Note the digest for the image that you want to restore.
-4. Run the following command to restore the image to your repository, where `<digest>` is the digest of the image that you want to restore.
+4. Run the following command to restore the image to your repository, where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, and `<digest>` is the digest of the image that you want to restore.
 
    ```
-   ibmcloud cr image-restore <digest>
+   ibmcloud cr image-restore <dns>/<namespace>/<repo>@<digest>
    ```
    {: pre}
 
-   
-
-   In your live repository, you can pull the image by digest. If you run the `ibmcloud cr image-list` command, the image doesn't show in the output because the image is untagged.
+   If some of the tags aren't restored, see [You want to restore an image from the trash by digest, but some of the tags weren't restored](/docs/Registry?topic=Registry-ts_index#ts_image_restore_digest).
    {: tip}
 
-5. To tag the image in your live repository run the following command, where `<repo>` is the repository and `<tag>` is the tag that you want to link to the digest:
-
-   ```
-   ibmcloud cr image-tag <digest> <repo>:<tag>
-   ```
-   {: pre}
-
-   If you run the `ibmcloud cr image-list` command, the image shows in the output because the image is tagged.
+   In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the image shows in the output.
    {: tip}
 
 ### Restoring images by tag
