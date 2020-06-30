@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-06-30"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -53,7 +53,7 @@ ibmcloud cr images --include-ibm
 
 Yes, if the tool supports OCI image format and protocol.
 
-## How many namesapces can you have in a region?
+## Is there a limit to the number of namespaces you can have?
 {: #faq_namespace}
 {: faq}
 
