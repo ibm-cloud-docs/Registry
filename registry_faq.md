@@ -57,7 +57,7 @@ Yes, if the tool supports OCI image format and protocol.
 {: #faq_namespace}
 {: faq}
 
-You can have 100 namespaces in each region.
+You can have 100 registry namespaces in each region.
 
 ## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
