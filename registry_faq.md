@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-30"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -52,6 +52,12 @@ ibmcloud cr images --include-ibm
 {: faq}
 
 Yes, if the tool supports OCI image format and protocol.
+
+## Is there a limit to the number of namespaces you can have?
+{: #faq_namespace}
+{: faq}
+
+You can have 100 registry namespaces in each region.
 
 ## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
