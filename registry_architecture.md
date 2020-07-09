@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-07-09"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -75,4 +75,4 @@ For more information about private connections, see [Securing your connection to
 ### Dependencies that use public connections
 {: #registry_architecture_dependencies_public}
 
-- [{{site.data.keyword.iamlong}} (IAM)](/docs/iam?topic=iam-getstarted)
+- [{{site.data.keyword.iamshort}} (IAM)](/docs/iam?topic=iam-getstarted)
