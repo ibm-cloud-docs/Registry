@@ -36,7 +36,9 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 ### Restoring all tags for a digest in a repository is now an option
 {: #24jun2020_tags}
 
-When you want to restore an image, you have the option to restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
+When you want to restore an image, you have the option to restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+
+For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
 ## 18 May 2020
 {: #18may2020}
@@ -44,7 +46,9 @@ When you want to restore an image, you have the option to restore either by tag 
 ### Retaining untagged images is now an option when you clean up your namespaces
 {: #18may2020_untagged}
 
-Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
+Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
+
+For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
 ## 30 April 2020
 {: #30apr2020}
@@ -138,8 +142,10 @@ The following commands are available for you to use to create retention policies
   
 For more information, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
-### You can restore deleted images from the trash. All deleted images are stored in the trash for 30 days
+### You can restore deleted images from the trash.
 {: #23sep2019_restore_trash}
+
+All deleted images are stored in the trash for 30 days.
 
 The following commands are available for you to use to restore images:
 
@@ -190,9 +196,7 @@ The Container Scanner is discontinued. Vulnerability Advisor still scans images 
 ### Remove tags from images
 {: #13jun2019_tags}
 
-Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}.
-
-To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all of its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
+Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all of its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
 
 For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
 
@@ -230,9 +234,13 @@ For more information, see [Auditing events for {{site.data.keyword.registryshort
 ### New domain names
 {: #25feb2019_dns}
 
-{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet. For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
+{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
 
-Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name. For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
+For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
+
+Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name.
+
+For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
 ### IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters
 {: #25feb2019_secrets}
