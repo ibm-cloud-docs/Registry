@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-07-09"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -110,8 +110,8 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 
 The following table details actions that are mapped to operations on the service and to the service access roles for configuring {{site.data.keyword.registrylong_notm}}.
 
-| Action| Operation on service | Role |
-|-----------------|-----------------|--------------|
+| Action | Operation on service | Role |
+|-----------------------|---------------------|--------------|
 | `container-registry.auth.get` | [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Check whether the use of public connections is prevented for image pushes or pulls in your account. | Manager |
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement.</br></br>[`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Prevent or allow image pulls or pushes over public network connections for your account. | Manager |
 | `container-registry.exemption.manager` | [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Create an exemption for a security issue.</br></br>[`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) List your exemptions for security issues.</br></br>[`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Delete an exemption for a security issue.</br></br>[`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Manager |
@@ -139,7 +139,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 The following table details actions that are mapped to operations on the service and to the service access roles for using {{site.data.keyword.registrylong_notm}}.
 
 | Action | Operation on service | Role |
-|-----------------|-----------------|--------------|
+|---------------------|-------------------|-----------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Build a container image. | Writer, Manager |
 | `container-registry.image.delete` | `docker trust revoke` Delete the signature for a container image.</br></br>[`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account.</br></br>[`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more container images.</br></br>[`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified container image in {{site.data.keyword.registrylong_notm}}.</br></br>[`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria.</br></br>[`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager</br></br>To run `ibmcloud cr retention-run` and `ibmcloud cr retention-policy-set` you must have Manager, or  both Reader and Writer. |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Display details about a specific container image. </br></br>[`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect) View the contents of the manifest for an image. | Reader, Manager |
