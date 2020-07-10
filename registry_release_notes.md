@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-10"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -386,7 +386,7 @@ The {{site.data.keyword.registrylong_notm}} graphical user interface is availabl
 {: #27jun2017}
 
 ### General availability of {{site.data.keyword.registrylong_notm}}
-{: #27jun2017}
+{: #27jun2017_ga}
 
 {{site.data.keyword.registrylong_notm}} is generally available as a service in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.registrylong_notm}} supports {{site.data.keyword.containerlong_notm}}.
 
