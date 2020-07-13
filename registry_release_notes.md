@@ -30,6 +30,14 @@ subcollection: Registry
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
 
+## 13 July 2020
+{: #13jul2020}
+
+### To work with namespaces, you must have the Manager role at the account level
+{: #xxjul2020_manager}
+
+If you want to add or remove namespaces, you must have the Manager role, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+
 ## 24 June 2020
 {: #24jun2020}
 

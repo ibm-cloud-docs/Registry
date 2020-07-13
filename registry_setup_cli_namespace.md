@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-07-13"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -32,6 +32,9 @@ To manage your Docker images in {{site.data.keyword.registrylong}}, you must ins
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
+
+To add and remove namespaces, you must have the Manager role at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+{: tip}
 
 Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 
@@ -98,6 +101,8 @@ You can set up multiple namespaces, for example, to have separate repositories f
 
 You can have 100 namespaces in each region.
 {: note}
+
+To add and remove namespaces, you must have the Manager role at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 You can control access to your namespaces by using IAM policies. For more information, see [Defining user access role policies](/docs/Registry?topic=Registry-user#user).
 
