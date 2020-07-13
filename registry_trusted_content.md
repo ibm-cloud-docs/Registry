@@ -30,18 +30,18 @@ subcollection: Registry
 {{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 {: shortdesc}
 
-You can use either Red Hat Signatures or Docker Content Trust and Notary to sign your images. If you plan to make significant use of Docker Content Trust and Notary, open a support ticket for assistance.
+You can use either Red&nbsp;Hat Signatures or Docker Content Trust and Notary to sign your images. If you plan to make significant use of Docker Content Trust and Notary, open a support ticket for assistance.
 
-- [Signing images for trusted content by using Red Hat Signatures](#registry_trustedcontent_red_hat_sig)
+- [Signing images for trusted content by using Red&nbsp;Hat Signatures](#registry_trustedcontent_red_hat_sig)
 - [Signing images for trusted content by using Docker Content Trust and Notary](#registry_trustedcontent_dct_notary)
 
-## Signing images for trusted content by using Red Hat Signatures
+## Signing images for trusted content by using Red&nbsp;Hat Signatures
 {: #registry_trustedcontent_red_hat_sig}
 
-You can use various tools to create [Red Hat Signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the Red Hat Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
+You can use various tools to create [Red&nbsp;Hat Signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the Red&nbsp;Hat Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
-You can use the following tools to create Red Hat signatures:
+You can use the following tools to create Red&nbsp;Hat signatures:
 
 - [skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
