@@ -46,7 +46,7 @@ To set up your {{site.data.keyword.openshiftlong_notm}} clusters to use the inte
 - [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
 - [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
 
-## Set up Red Hat OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}
+## Set up Red Hat OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os}
 
 To set up Red Hat OpenShift Container Platform, you must create secrets that have the credentials to access {{site.data.keyword.registrylong_notm}} so that you can perform the following actions.
@@ -64,7 +64,7 @@ To configure Red Hat OpenShift Container Platform to pull from {{site.data.keywo
 
 2. [Configure Red Hat OpenShift Container Platform to use the image pull secrets](/docs/openshift?topic=openshift-registry#use_imagePullSecret) by adding the secrets to a service account in each project or by referring to the secret in your pod deployment. You are only required to add the secret to the projects that you want to pull to.
 
-### Set up the Red Hat OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}
+### Set up the Red Hat OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os_push}
 
 If you want to push application images from Red Hat OpenShift Container Platform to {{site.data.keyword.registrylong_notm}}, you must edit the Red Hat OpenShift Container Platform build configuration to point at {{site.data.keyword.registrylong_notm}}, where `myregistry.mycompany.io` is `<region_domain_name>.icr.io`. For more information about {{site.data.keyword.registrylong_notm}} regions and domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
