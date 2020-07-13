@@ -1399,7 +1399,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <li>Alpine</li>
 <li>CentOS</li>
 <li>Debian</li>
-<li>Red Hat Enterprise Linux (RHEL)</li>
+<li>Red Hat Enterprise Linux (RHEL)</li>
 <li>Ubuntu</li>
 </ul>
 </p>

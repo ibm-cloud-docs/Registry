@@ -105,7 +105,7 @@ For more information, see [`ibmcloud cr image-digests`](/docs/Registry?topic=con
 
 {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.openshiftlong_notm}} signatures.
 
-For more information, see [Signing images for trusted content by using Red Hat Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+For more information, see [Signing images for trusted content by using Red Hat Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 25 October 2019
 {: #25oct2019}
