@@ -111,7 +111,7 @@ For more information, see [`ibmcloud cr image-digests`](/docs/Registry?topic=con
 ### Support for {{site.data.keyword.openshiftlong_notm}} signatures is available
 {: #4dec2019_signatures}
 
-{{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.openshiftlong_notm}} signatures.
+{{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.openshiftlong}} signatures.
 
 For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
