@@ -37,7 +37,7 @@ You can set up {{site.data.keyword.registrylong_notm}} to work with the internal
 ## Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_rhoks}
 
-By default, your {{site.data.keyword.openshiftlong}} clusters are set up with an internal registry that stores images locally in your cluster. The clusters are also set up with image pull secrets in the `default` project to pull images that you store in your private {{site.data.keyword.registrylong_notm}} repositories.
+By default, your {{site.data.keyword.openshiftlong_notm}} clusters are set up with an internal registry that stores images locally in your cluster. The clusters are also set up with image pull secrets in the `default` project to pull images that you store in your private {{site.data.keyword.registrylong_notm}} repositories.
 
 You can use either registry separately or in combination. When you set up the OpenShift internal registry to import images from {{site.data.keyword.registrylong_notm}}, you get the advantage of a private registry that is common to multiple clusters. Another benefit is that copies of the pulled images from {{site.data.keyword.registrylong_notm}} are stored locally on the cluster, therefore reducing latency and external traffic, but you are subject to storage limitations.
 
