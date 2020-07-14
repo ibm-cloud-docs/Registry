@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-14"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1399,7 +1399,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <li>Alpine</li>
 <li>CentOS</li>
 <li>Debian</li>
-<li>Red Hat Enterprise Linux (RHEL)</li>
+<li>{{site.data.keyword.redhat_notm}} Enterprise Linux (RHEL)</li>
 <li>Ubuntu</li>
 </ul>
 </p>
