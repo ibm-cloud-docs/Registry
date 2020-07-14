@@ -22,8 +22,6 @@ Container Registry
         /solution-tutorials/solution-tutorials-vm-to-containers-and-kubernetes
         /solution-tutorials/solution-tutorials-multi-region-k8s-cis
         /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
-
-
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -54,7 +52,6 @@ Container Registry
     Related links
         [IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started){: new_window}
         [Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: new_window}
-        
     {: .navgroup-end}
 
     {: .navgroup id="help"}
