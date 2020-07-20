@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-20"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -32,7 +32,7 @@ Use this tutorial to find out how to grant access to your resources by configuri
 
 This tutorial takes approximately 45 minutes.
 
-For more information about how to use {{site.data.keyword.iamlong}} to manage access to your resources, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser).
+For more information about how to use {{site.data.keyword.iamlong}} to manage access to your resources, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ## Before you begin
 {: #iam_access_prereq}
