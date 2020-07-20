@@ -63,7 +63,7 @@ To create a service ID API key, complete the following steps:
 
 2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong}}, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
-3. Create a service ID API key, see [Creating and working with service IDs](/docs/account?topic=account-serviceids) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
+3. Create a service ID API key, see [Managing service ID API keys](/docs/account?topic=account-serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
 
 ## Automating access to your namespaces by using user API keys
 {: #registry_access_user_apikey}
