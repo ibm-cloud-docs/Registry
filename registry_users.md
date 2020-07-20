@@ -59,7 +59,7 @@ Before you begin, complete the following tasks:
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
 
 - To create a policy for users, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
-- To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the GUI to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids) and [Managing access to resources](/docs/account?topic=account-assign-access-resources#serviceidpolicy).
+- To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the GUI to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids) and [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ## Enabling policy enforcement for existing users
 {: #existing_users}
