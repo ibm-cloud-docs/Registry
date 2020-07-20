@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-20"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -27,7 +27,7 @@ subcollection: Registry
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
-To automate access to your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM) [API keys](/docs/iam?topic=iam-manapikey#ibm-cloud-api-keys).
+To automate access to your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM) [Understanding API keys](/docs/account?topic=account-manapikey).
 {:shortdesc}
 
 If you want to use your registry images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
@@ -61,9 +61,9 @@ To create a service ID API key, complete the following steps:
 
 1. Create a service ID, see [`ibmcloud iam service-id-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create).
 
-2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong}}, see [Managing service ID access policies](/docs/iam?topic=iam-serviceidpolicy).
+2. Assign service policies to the service ID to control the level of access that is allowed when the service ID is used to authenticate with {{site.data.keyword.registrylong}}, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
-3. Create a service ID API key, see [Managing service ID API keys](/docs/iam?topic=iam-serviceidapikeys#serviceidapikeys) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
+3. Create a service ID API key, see [Creating and working with service IDs](/docs/account?topic=account-serviceids) and [`ibmcloud iam service-api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create).
 
 ## Automating access to your namespaces by using user API keys
 {: #registry_access_user_apikey}
@@ -79,7 +79,7 @@ Create a user API key that you can use to log in to your registry.
 
 If you create a user API key, the access policies are those of the user.
 
-To create a user API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
+To create a user API key, see [Managing user API keys](/docs/account?topic=account-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
 ## Authentication
 {: #registry_access_apikey_auth}

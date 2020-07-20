@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-20"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -212,7 +212,7 @@ It is generally better to explicitly define a different sequential tag for your 
 The request timed out while attempting to list your images in the GUI.
 
 {: tsCauses}
-The GUI timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/services/Registry?topic=Registry-registry_retention).
+The GUI timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
 {: tsResolve}
 You can run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command to see all the images in the account because the CLI does not have a timeout. Also consider using the `--restrict` flag to reduce the scope of the list and increase performance.
@@ -507,7 +507,7 @@ This situation is likely to be caused by the user policy being created in a reso
 Create the user policy at the Account level. You can create the policy by using the GUI or the CLI.
 
 - In the GUI, on the **Assign Users Additional Access** page, in the **What type of access do you want to assign** section, select `Container Registry` and from the **Enter or select a resource group** list, select `Account`, then complete the rest of the information on the page as required.
-- In the CLI, create your user policy by using the [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, but don't use the `--resource-group-name` option. For more information, see [Access to resources](/docs/iam?topic=iam-iammanidaccser#resourceaccess).
+- In the CLI, create your user policy by using the [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, but don't use the `--resource-group-name` option. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ## Pods do not restart after all your workers have been down
 {: #ts_pods}

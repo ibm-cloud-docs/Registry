@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-07-20"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -34,7 +34,7 @@ If you use cloud-based services for production workloads, you can use a secure p
 
 Service endpoints make it easier to securely route network traffic between different {{site.data.keyword.cloud_notm}} services and your registry over the private {{site.data.keyword.cloud_notm}} network. This network routing ensures that your data doesn't go over the public internet.
 
-To learn more about {{site.data.keyword.cloud_notm}} service endpoints, see [Secure access to services by using service endpoints](/docs/resources?topic=resources-service-endpoints).
+To learn more about {{site.data.keyword.cloud_notm}} service endpoints, see [Secure access to services by using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 
 ## Using private network connections for image pushes and pulls
 {: #registry_private_images}
@@ -50,7 +50,7 @@ You must set up your account with the correct authority so that you can set up a
 To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must be able to access the classic infrastructure and you must enable [virtual routing and forwarding](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) (VRF) and connectivity to service endpoints for your account. You must also have a billable account.
 {: shortdesc}
 
-To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing and forwarding (VRF) and service endpoints, see [Setting up service endpoints](/docs/resources?topic=resources-private-network-endpoints).
+To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing and forwarding (VRF) and service endpoints, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
 ### Considerations
 {: #registry_private_images_considerations}
