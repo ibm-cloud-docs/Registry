@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-21"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -34,7 +34,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 {: #13jul2020}
 
 ### To work with namespaces, you must have the Manager role at the account level
-{: #xxjul2020_manager}
+{: #13jul2020_manager}
 
 If you want to add or remove namespaces, you must have the Manager role, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
