@@ -43,8 +43,6 @@ Do not put personal information in your container images, namespace names, descr
 ## Set up a namespace
 {: #gs_registry_namespace_add}
 
-
-
 1. Log in to {{site.data.keyword.cloud_notm}}:
 
    ```
