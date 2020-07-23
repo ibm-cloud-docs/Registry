@@ -28,7 +28,7 @@ subcollection: Registry
 {: #registry_setup_cli_namespace}
 
 To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` CLI plug-in and create a namespace.
-{:shortdesc} 
+{:shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -97,7 +97,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 {:shortdesc}
 
- 
+
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
 
@@ -136,12 +136,12 @@ Before you begin, complete the following tasks:
 - [Install the {{site.data.keyword.cloud_notm}} CLI and the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - [Plan how to use and name your registry namespaces](#registry_setup_cli_namespace_plan).
 
-To create a namespace, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in the Getting Started documentation. 
+To create a namespace, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) in the Getting Started documentation.
 
 The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 {: tip}
 
-You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account. To control access to namespaces in {{site.data.keyword.cloud_notm}} IAM, see [Creating policies](/docs/Registry?topic=Registry-user#create).  
+You can now [push Docker images to your namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_images_#registry_images_pushing_namespace) and share these images with other users in your account. To control access to namespaces in {{site.data.keyword.cloud_notm}} IAM, see [Creating policies](/docs/Registry?topic=Registry-user#create).
 
 ## Removing namespaces
 {: #registry_remove}
