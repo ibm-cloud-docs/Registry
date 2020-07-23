@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -42,6 +42,8 @@ Do not put personal information in your container images, namespace names, descr
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}
+
+ 
 
 1. Log in to {{site.data.keyword.cloud_notm}}:
 
