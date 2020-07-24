@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-24"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -55,13 +55,13 @@ Do not put personal information in your container images, namespace names, descr
 
 2. Add a namespace to create your own image repository. Replace `<my_namespace>` with your preferred namespace.
 
+   The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
+   {: tip}
+
    ```
    ibmcloud cr namespace-add <my_namespace>
    ```
    {: pre}
-
-   The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
-   {: tip}
 
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
