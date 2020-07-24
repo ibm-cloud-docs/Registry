@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-24"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -64,7 +64,7 @@ The following table details actions that are mapped to platform management roles
 
 | Platform management role | Description of actions | Example actions |
 |-----------------|-----------------|-----------------|
-| Viewer | Not supported | |
+| Viewer | Not supported |  |
 | Editor | Not supported | |
 | Operator | Not supported | |
 | Administrator | Configure access for other users</br></br>Configure registry tokens (deprecated)</br></br>Create clusters | For information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).</br></br>List, retrieve, and remove registry tokens (deprecated)</br></br>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
