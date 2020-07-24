@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-24"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -67,7 +67,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/contai
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}.
+Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}. When you create a namespace after xx July 2020, it's created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level.
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command:
 

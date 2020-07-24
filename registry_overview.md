@@ -237,11 +237,9 @@ Storage is provided for OCI container images (also known as Docker container ima
 
 A collection of repositories that store your container images in {{site.data.keyword.registrylong_notm}}. The registry namespace is associated with your {{site.data.keyword.cloud_notm}} account. You can have multiple registry namespaces in an account.
 
-When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.
-
 A registry namespace is made up of one or more repositories.
 
-
+When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, the namespace is appended to the registry URL as follows: `<region>.icr.io/my_namespace`. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Every user in your {{site.data.keyword.cloud_notm}} account can view and work with images that are stored in your registry namespace.
 
 You can have 100 namespaces in each region.
 {: note}
