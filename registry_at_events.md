@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-07-28"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -52,7 +52,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | | |
 | `container-registry.namespace.create` | Add a namespace to {{site.data.keyword.registrylong_notm}}. | | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | | |
-| `container-registry.namespace.list` | List the namespaces in your {{site.data.keyword.IBM_notm}} account. | | |
+| `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | | |
 | `container-registry.plan.get` | Display information about the current pricing plan. | | |
 | `container-registry.plan.set` | Upgrade to the standard plan. | | |
 | `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | | |
