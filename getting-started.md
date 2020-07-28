@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-28"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -66,7 +66,7 @@ Do not put personal information in your container images, namespace names, descr
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
    ```
-   ibmcloud cr namespace-list
+   ibmcloud cr namespace-list -v
    ```
    {: pre}
 
