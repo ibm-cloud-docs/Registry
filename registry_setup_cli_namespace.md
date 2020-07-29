@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -108,7 +108,7 @@ You can control access to your namespaces by using IAM policies. For more inform
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command with the `-v` flag to retrieve existing namespace information.
+If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command to retrieve existing namespace information.
 {:tip}
 
 Consider the following rules when you choose a namespace:
