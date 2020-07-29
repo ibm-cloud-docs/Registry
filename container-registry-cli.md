@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -751,6 +751,9 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 {: #bx_cr_namespace_add}
 
 Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+
 
 ```
 ibmcloud cr namespace-add NAMESPACE
