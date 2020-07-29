@@ -68,7 +68,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.trash.restore` | Restore a deleted image from the trash. | | |
 {: caption="Table 1. Actions that generate events" caption-side="top"}
 
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens are no longer accepted for authentication. For the time being, registry tokens continue to be accepted, but their use is deprecated. For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
+Using {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA and registry tokens will no longer be accepted for authentication.For more information, see [Announcing End of IBM Cloud Container Registry Support for Registry and UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-registry-and-uaa-tokens){: external}.
 {: deprecated}
 
 ## Where to look for the events
