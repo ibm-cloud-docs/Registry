@@ -34,6 +34,8 @@ When IAM policies are enabled for your account in {{site.data.keyword.registrylo
 
 IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you log in to {{site.data.keyword.registrylong_notm}} by using another method, such as a registry token (deprecated), your policies are not enforced. If you want to restrict access to one or more namespaces for an ID that you are using for automation, use an IAM service ID instead of a registry token. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
+From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the GUI on or after 29 July 2020, you can set permissions so that access to resources within a namespace can be configured at the [resource group](/docs/account?topic=account-rgs) level, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+
 If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users).
 {: tip}
 
@@ -49,6 +51,7 @@ Policies enable access to be granted at different levels. Some of the options in
 * Access to the service in your account
 * Access to a specific resource within the service
 * Access to all IAM-enabled services in your account
+* Access to resources within a resource group
 
 After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
 
@@ -64,7 +67,7 @@ The following table details actions that are mapped to platform management roles
 
 | Platform management role | Description of actions | Example actions |
 |-----------------|-----------------|-----------------|
-| Viewer | Not supported | |
+| Viewer | View resource groups | To view information about resource groups, you must assign the Viewer role for Billing in Account Management to the user so that the user can run the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) commands. For more information, see [Platform management roles](/docs/account?topic=account-userroles#platformroles) and [Assigning access to account management services](/docs/account?topic=account-account-services). |
 | Editor | Not supported | |
 | Operator | Not supported | |
 | Administrator | Configure access for other users</br></br>Configure registry tokens (deprecated)</br></br>Create clusters | For information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).</br></br>List, retrieve, and remove registry tokens (deprecated)</br></br>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
@@ -99,7 +102,7 @@ The following table details actions that are mapped to service access roles. Ser
 ### Access roles for configuring {{site.data.keyword.registrylong_notm}}
 {: #access_roles_configure}
 
-To grant a user permission to configure your {{site.data.keyword.registrylong_notm}} in your account, you must create a policy that grants one or more of the roles in the following table. When creating your policy, you must not specify a `resource type` or `resource`.
+To grant a user permission to configure your {{site.data.keyword.registrylong_notm}} in your account, you must create a policy that grants one or more of the roles in the following table. When creating your policy, you must not specify a `resource type` or `resource`. Policies for configuring {{site.data.keyword.registrylong_notm}} must not be set at a resource group level.
 
 For example, use the following command, where `<user_email>` is the user's email address:
 
@@ -115,7 +118,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.auth.get` | [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Check whether the use of public connections is prevented for image pushes or pulls in your account. | Manager |
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement.</br></br>[`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Prevent or allow image pulls or pushes over public network connections for your account. | Manager |
 | `container-registry.exemption.manager` | [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) Create an exemption for a security issue.</br></br>[`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) List your exemptions for security issues.</br></br>[`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) Delete an exemption for a security issue.</br></br>[`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Manager |
-| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) Add a namespace. | Manager |
+| `container-registry.namespace.create` | [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) Create a namespace.</br></br>[`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) Assign a namespace to a resource group. | Manager |
 | `container-registry.namespace.delete` | [`ibmcloud cr namespace-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm) Remove a namespace. | Manager |
 | `container-registry.plan.get` | [`ibmcloud cr plan`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan) Display your pricing plan. | Manager |
 | `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade) Upgrade to the standard plan. | Manager |
@@ -126,10 +129,7 @@ The following table details actions that are mapped to operations on the service
 ### Access roles for using {{site.data.keyword.registrylong_notm}}
 {: #access_roles_using}
 
-To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account.
-
-You can't organize and assign access to registry namespaces in resource groups.
-{: important}
+To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an access policy on that resource group.
 
 For example, use the following command, where `<user_email>` is the user's email address:
 

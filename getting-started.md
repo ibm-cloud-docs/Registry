@@ -43,6 +43,9 @@ Do not put personal information in your container images, namespace names, descr
 ## Set up a namespace
 {: #gs_registry_namespace_add}
 
+Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
+{:shortdesc}
+
 1. Log in to {{site.data.keyword.cloud_notm}}:
 
    ```
@@ -58,6 +61,9 @@ Do not put personal information in your container images, namespace names, descr
    The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
    {: tip}
 
+   You can put the namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before creating the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` flag on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+   {: tip}
+
    ```
    ibmcloud cr namespace-add <my_namespace>
    ```
@@ -66,7 +72,7 @@ Do not put personal information in your container images, namespace names, descr
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
    ```
-   ibmcloud cr namespace-list
+   ibmcloud cr namespace-list -v
    ```
    {: pre}
 

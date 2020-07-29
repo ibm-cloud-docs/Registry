@@ -753,17 +753,24 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
+You can create a namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before creating the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` flag on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
 
+Creating a namespace in a resource group enables you to configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself.
+
+Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the GUI on or after 29 July 2020 are created in a resource group. Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020 are not created in a resource group. If you want to assign a namespace to a resource group, see [`ibmcloud cr namespace-assign`](#ic_cr_namespace_assign).
+{: tip}
 
 ```
-ibmcloud cr namespace-add NAMESPACE
+ibmcloud cr namespace-add [-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)] NAMESPACE
 ```
 {: codeblock}
+
+For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
 
 ### Prerequisites
 {: #bx_cr_namespace_add_prereq}
 
-To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles) and [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #bx_cr_namespace_add_option}
@@ -772,30 +779,77 @@ To find out about the required permissions, see [Access roles for configuring {{
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 
-<p>  
+<p>
 <strong>Important</strong> Do not put personal information in your namespace names.
 </p>
 
+</dd>
+<dt>`-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`</dt>
+<dd>(Optional) Specify the name or ID of the resource group to which you want to add the namespace. If you don't set this option, the targeted resource group is used. If you don't set this option and a resource group is not targeted, the default resource group for the account is used.
 </dd>
 </dl>
 
 ### Example
 {: #bx_cr_namespace_add_example}
 
-Create a namespace with the name *`birds`*.
+Create a namespace with the name *`birds`* and add it to the resource group *`beaks`*.
 
 ```
-ibmcloud cr namespace-add birds
+ibmcloud cr namespace-add -g beaks birds
+```
+{: pre}
+
+## `ibmcloud cr namespace-assign`
+{: #ic_cr_namespace_assign}
+
+Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020 are not assigned to resource groups. You can assign a namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. Assigning a namespace to a resource group enables you to configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the command fails.
+{: shortdesc}
+
+You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
+{: note}
+
+To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](#bx_cr_namespace_list) command with the `-v` flag.
+{: tip}
+
+```
+ibmcloud cr namespace-assign -g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID) NAMESPACE
+```
+{: codeblock}
+
+For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
+
+### Prerequisites
+{: #ic_cr_namespace_assign_prereq}
+
+To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles) and [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+
+### Command options
+{: #ic_cr_namespace_assign_option}
+
+<dl>
+<dt>`-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`</dt>
+<dd>(Optional) Specify the name or ID of the resource group to which you want to assign the namespace. If you don't set this option, the targeted resource group is used.</dd>
+<dt>`NAMESPACE`</dt>
+<dd>The namespace that you want to assign to a resource group.</dd>
+</dl>
+
+### Example
+{: #ic_cr_namespace_assign_example}
+
+Assign a namespace with the name *`birds`* to the resource group *`beaks`*.
+
+```
+ibmcloud cr namespace-assign -g beaks birds
 ```
 {: pre}
 
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account.
+Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to resource groups, and which namespaces are unassigned.
 
 ```
-ibmcloud cr namespace-list
+ibmcloud cr namespace-list [--verbose | -v]
 ```
 {: codeblock}
 
@@ -803,6 +857,25 @@ ibmcloud cr namespace-list
 {: #bx_cr_namespace_list_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
+
+### Command options
+{: #bx_cr_namespace_list_option}
+
+<dl>
+<dt>`--verbose`, `-v`</dt>
+<dd>(Optional) List all the namespaces and include information about the resource group and the creation date of the namespace.
+</dd>
+</dl>
+
+### Example
+{: #bx_cr_namespace_list_example}
+
+View a list of all your namespaces, including information about resource groups and creation dates.
+
+```
+ibmcloud cr namespace-list  -v
+```
+{: pre}
 
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}

@@ -50,7 +50,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | | |
-| `container-registry.namespace.create` | Add a namespace to {{site.data.keyword.registrylong_notm}}. | | |
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.</br></br>Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | | |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | | |
 | `container-registry.plan.get` | Display information about the current pricing plan. | | |
