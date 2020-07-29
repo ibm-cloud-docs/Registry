@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-29"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -243,6 +243,10 @@ When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, t
 
 You can have 100 namespaces in each region.
 {: note}
+
+From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI, or in the GUI on or after 29 July 2020, when you create a namespace, it is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
+
+Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020 aren't created in resource groups. If you have an existing namespace that is not in a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 
 ### Repository
 {: #overview_elements_repository}

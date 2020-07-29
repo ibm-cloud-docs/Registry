@@ -67,7 +67,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/contai
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}.
+Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}. If you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the GUI on or after 29 July 2020, it's created in a [resource group](/docs/account?topic=account-rgs). Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020, aren't assigned to resource groups. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command:
 
@@ -87,6 +87,9 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
     {: pre}
 
 3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name:
+
+   If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
+   {: tip}
 
     ```
     ibmcloud cr namespace-add <my_namespace>

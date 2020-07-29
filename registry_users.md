@@ -37,15 +37,14 @@ If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2
 
 To find out more about {{site.data.keyword.iamlong}} (IAM) access role policies, see [IAM access](/docs/account?topic=account-userroles).
 
+From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the GUI on or after 29 July 2020, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still set permissions for the namespace at the account level or in the namespace itself.
+
 ## Creating policies
 {: #create}
 
-If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, or the entire service, that is, all namespaces in the account.
+If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, the resource group, or the entire service, that is, all namespaces in the account.
 
 If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specific namespace, specify the resource type as `namespace` and use the namespace name as the resource.
-
-You cannot organize and assign access to registry namespaces in resource groups.
-{: note}
 
 Before you begin, complete the following tasks:
 
