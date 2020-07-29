@@ -772,7 +772,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 <dt>`NAMESPACE`</dt>
 <dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 
-<p>  
+<p>
 <strong>Important</strong> Do not put personal information in your namespace names.
 </p>
 
