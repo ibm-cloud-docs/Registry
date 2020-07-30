@@ -34,7 +34,7 @@ Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnera
 {: #30jul2020}
 
 ### New access roles required for Vulnerability Advisor exemption policies
-{: #30jul2020exemption}
+{: #30jul2020_exemption}
 
 If you want to manage your Vulnerability Advisor exemption policies for security issues, you might have to update your access role depending on the task that you want to complete.
 
