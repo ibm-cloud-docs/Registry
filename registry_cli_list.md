@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-07-30"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -205,7 +205,7 @@ Review the following table to find available Go template options and data types 
 |-----|----|-----------|
 | `Interval` | Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds. |
 | `Retries` | Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
-| `Test` | Array of strings | Displays how to run the health check test. Available options are: </br></br>`{}`: inherit the health check</br></br>`{"NONE"}`: the health check is disabled</br></br>`{"CMD", args...}`: exec arguments directly</br></br>`{"CMD-SHELL", command}`: run the command with the system's default shell |
+| `Test` | Array of strings | Displays how to run the health check test. Available options are: <br/><br/>`{}`: inherit the health check<br/><br/>`{"NONE"}`: the health check is disabled<br/><br/>`{"CMD", args...}`: exec arguments directly<br/><br/>`{"CMD-SHELL", command}`: run the command with the system's default shell |
 | `Timeout` | Integer (64 bit) | Displays the time to wait before considering the health check to have failed in nanoseconds. |
 {: caption="Table 5. Available fields and data types in the <code>Healthcheck</code>." caption-side="top"}
 
