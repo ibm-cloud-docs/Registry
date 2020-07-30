@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,16 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 30 July 2020
+{: #30jul2020}
+
+### New access roles required for Vulnerability Advisor exemption policies
+{: #30jul2020_exemption}
+
+If you want to manage your Vulnerability Advisor exemption policies for security issues, you might have to update your access role depending on the task that you want to complete.
+
+For more information, see [Access roles for configuring IBM Cloud Container Registry](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## 29 July 2020
 {: 29jul2020}
