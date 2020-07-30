@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -42,9 +42,9 @@ Review the following table to find an overview of benefits of using {{site.data.
 
 | Benefit | Description |
 |-------|-----------|
-| Highly available and scalable private registry | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.</br></br>Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
-| Image security compliance with Vulnerability Advisor | Benefit from automatic scanning of images in your namespace.</br></br>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
-| Quota limits for storage and pull traffic | Benefit from free storage and pull traffic to your private images until you reach your free quota.</br></br>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
+| Highly available and scalable private registry | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.<br/><br/>Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
+| Image security compliance with Vulnerability Advisor | Benefit from automatic scanning of images in your namespace.<br/><br/>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
+| Quota limits for storage and pull traffic | Benefit from free storage and pull traffic to your private images until you reach your free quota.<br/><br/>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
 {: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
 
 ## Service plans
@@ -62,7 +62,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Description | Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images | 500 MB | Unlimited |
 | Pull traffic | 5 GB per month | Unlimited |
-| Billing |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/kubernetes/catalog/registry).</br></br>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
+| Billing |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | Storage: You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/kubernetes/catalog/registry).<br/><br/>Pull traffic: You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
 
 ## Quota limits and billing
