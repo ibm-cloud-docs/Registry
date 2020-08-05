@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-05"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -116,7 +116,7 @@ For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=cont
 ### Using {{site.data.keyword.registrylong_notm}} tokens is deprecated
 {: #3feb2020_tokens}
 
-The use of UAA and {{site.data.keyword.registrylong_notm}}y tokens is deprecated. From 12 August 2020, UAA tokens will not be accepted for authentication.
+The use of UAA and {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens will not be accepted for authentication.
 
 ## 31 January 2020
 {: #31jan2020}
