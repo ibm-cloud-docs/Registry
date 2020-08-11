@@ -118,7 +118,7 @@ For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=cont
 
 The use of UAA and {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens will not be accepted for authentication.
 
-For more information, see [Announcing End of {{site.data.keyword.registrylong_notm} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
+For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
 ## 31 January 2020
 {: #31jan2020}
