@@ -91,7 +91,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-6. To make the public key available, display the public key:
+6. To use this key pair to encrypt images, save the public key somewhere that your build infrastructure can access it. To display the public key, run the following `cat` command:
 
    ```
    cat <user>Pub.pem
@@ -124,20 +124,17 @@ Encrypt the image by using the public key and then build a container image by us
    ```
    {: pre}
 
-2. Create the Dockefile by running the following commands:
+2. Create the Dockerfile by running the following command:
 
    ```
-   cat Dockerfile
+   cat << EOF >> Dockerfile
+   FROM nginx:latest
+   RUN echo "some secret" > /secret-file
+   EOF
    ```
    {: pre}
 
-   ```
-   FROM nginx:latest
-   RUN echo "some secret" > /secret-file
-   ```
-   {: screen}
-
-3. Use Buildah to create an unencrypted file by running the following commands, where `<namespace>` is your namespace:
+3. Use Buildah to create an unencrypted image by running the following commands, where `<namespace>` is your namespace:
 
    ```
    buildah bud -t us.icr.io/<namespace>/<my_app> .
