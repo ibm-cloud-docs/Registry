@@ -70,6 +70,9 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
+   Protect your private key by using {{site.data.keyword.keymanagementservicelong_notm}}, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
+   {: tip}
+
 3. Create a public key:
 
    ```
@@ -91,7 +94,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-6. To use this key pair to encrypt images, save the public key somewhere that your build infrastructure can access it. To display the public key, run the following `cat` command:
+6. To use this key pair to encrypt images, display the public key by running the following `cat` command, and then copy the public key to somewhere that your build infrastructure can access it:
 
    ```
    cat <user>Pub.pem
