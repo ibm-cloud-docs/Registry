@@ -2,11 +2,16 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-28"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
 subcollection: Registry
+
+content-type: tutorial
+services: containers, Registry,
+account-plan: lite
+completion-time: 2h
 
 ---
 
@@ -23,9 +28,13 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
 
 # {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
+{: toc-content-type="tutorial"}
+{: toc-services="containers, Registry"}
+{: toc-completion-time="2h"}
 
 Find out about the basic functions of both {{site.data.keyword.registrylong}} and Vulnerability Advisor. These two services are pre-integrated and work together seamlessly in {{site.data.keyword.cloud_notm}}, and their features provide a robust but straightforward workflow for users of containers. You can use these services to store your container images, ensure the security of your images and Kubernetes clusters, control the images that you can use to deploy to your clusters, and more.
 {: shortdesc}
@@ -41,7 +50,7 @@ Approximately 2 hours
 {: #registry_tutorial_workflow_objectives}
 
 * Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor
-* Use the functions of these two services to create a workflow
+* Use the functions of these services to create a workflow
 
 ## Services used
 {: #registry_tutorial_workflow_services}
@@ -61,6 +70,7 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
+{: step}
 
 Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. In this section, you build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
 
@@ -202,6 +212,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 
 ## Secure your images and clusters
 {: #registry_tutorial_workflow_secure}
+{: step}
 
 When you push an image to a namespace, the image is automatically scanned by [Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find [potential vulnerabilities](/docs/Registry?topic=va-va_index#types). If vulnerabilities are found, instructions are provided to help fix the reported vulnerabilities.
 
@@ -354,6 +365,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 ## Deploying to non-default Kubernetes namespaces
 {: #registry_tutorial_workflow_deploy_nondefault_namespaces}
+{: step}
 
 An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take additional steps.
 

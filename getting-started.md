@@ -8,6 +8,11 @@ keywords: IBM Cloud Container Registry, private image registry, namespaces, imag
 
 subcollection: Registry
 
+content-type: tutorial
+services: containers, Registry,
+account-plan: lite
+completion-time: 30m
+
 ---
 
 {:new_window: target="_blank"}
@@ -23,9 +28,13 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
+{: toc-content-type="tutorial"}
+{: toc-services="containers, Registry"}
+{: toc-completion-time="30m"}
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
@@ -37,11 +46,13 @@ Do not put personal information in your container images, namespace names, descr
 
 ## Install the {{site.data.keyword.registrylong_notm}} CLI
 {: #gs_registry_cli_install}
+{: step}
 
 1. Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}
+{: step}
 
 Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
 {:shortdesc}
@@ -78,6 +89,7 @@ Create a namespace. The namespace is created in the resource group that you spec
 
 ## Pull images from another registry to your local machine
 {: #gs_registry_images_pulling}
+{: step}
 
 1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
@@ -114,6 +126,7 @@ Create a namespace. The namespace is created in the resource group that you spec
 
 ## Push Docker images to your namespace
 {: #gs_registry_images_pushing}
+{: step}
 
 1. Run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
