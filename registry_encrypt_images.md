@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-08-27"
+lastupdated: "2020-08-28"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -70,7 +70,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-   Protect your private key by using {{site.data.keyword.keymanagementservicelong_notm}}, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
+   You can protect your private keys and manage data encryption from one central location by using {{site.data.keyword.keymanagementservicelong_notm}}. You can add existing cryptographic keys to {{site.data.keyword.keymanagementservicelong_notm}} by using the {{site.data.keyword.keymanagementserviceshort}} dashboard. For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
    {: tip}
 
 3. Create a public key:
