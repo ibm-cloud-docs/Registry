@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-28"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -63,7 +63,7 @@ Namespaces are created in resource groups so that access to resources within a n
 
 - Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020 aren't assigned to resource groups. If you want to assign an existing namespace to a resource group so that access to resources within a namespace can be configured at the resource group level, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign).
 
-- You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` flag.
+- You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
 
 ## 13 July 2020
 {: #13jul2020}
