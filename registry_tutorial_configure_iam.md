@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-01"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -47,13 +47,9 @@ For more information about how to use {{site.data.keyword.iamlong}} to manage ac
 Before you begin, you must complete the following tasks:
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
-
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
-
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
-
 - Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
-
 - If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your {{site.data.keyword.cloud_notm}} account, use a different account as User A to prevent disruption to their access.
 
 ## Authorize a user to configure the registry

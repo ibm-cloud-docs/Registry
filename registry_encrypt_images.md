@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-01"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -70,15 +70,20 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-   You can protect your private keys and manage data encryption from one central location by using {{site.data.keyword.keymanagementservicelong_notm}}. You can add existing cryptographic keys to {{site.data.keyword.keymanagementservicelong_notm}} by using the {{site.data.keyword.keymanagementserviceshort}} dashboard. For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
-   {: tip}
-
 3. Create a public key:
 
    ```
    openssl rsa -in <user>Private.pem -pubout -out <user>Pub.pem
    ```
    {: pre}
+
+   To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store your keys. {{site.data.keyword.keymanagementservicelong_notm}} generally manages symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard. Note that {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. You can re-encode the PEM files as Base64 by using `“openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64”` before pasting the Base64 content, and reverse this action to obtain the usable key again by using `“openssl enc -base64 -A -in <user>Private..b64 -out <user>Private.pem”`.
+
+   For an additional level of security, you can wrap your image encryption keys by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, you can wrap your keys before you import the keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with the optional additional secrets that are required to retrieve the key.
+
+   For example, `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` and `“ibmcloud kp key unwrap <root_key_id> -p <base65 cyphertext>`, where `<root_key_id>` is the ID of the root key.
+
+   For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
 
 4. List the keys to ensure that they are created:
 
@@ -87,14 +92,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-5. Display the keys:
-
-   ```
-   cat *.pem
-   ```
-   {: pre}
-
-6. To use this key pair to encrypt images, display the public key by running the following `cat` command, and then copy the public key to somewhere that your build infrastructure can access it:
+5. To use this key pair to encrypt images, display the public key by running the following `cat` command:
 
    ```
    cat <user>Pub.pem
@@ -207,5 +205,5 @@ Pull the image from the registry and decrypt it by using the private key.
 ## Next steps
 {: #registry_encrypt_next}
 
-You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is currently unsupported. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
+You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is currently unsupported. You must supply the private key in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
 {: note}
