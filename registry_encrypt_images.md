@@ -9,7 +9,7 @@ keywords: encryption, decryption, security, encrypted images, public-private key
 subcollection: Registry
 
 content-type: tutorial
-services: containers, Registry, key-protect
+services: Registry, key-protect
 account-plan: lite
 completion-time: 1h
 
@@ -33,7 +33,7 @@ completion-time: 1h
 # Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
-{: toc-services="containers, Registry, key-protect"}
+{: toc-services="Registry, key-protect"}
 {: toc-completion-time="1h"}
 
 You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
