@@ -81,7 +81,7 @@ Create a public-private key pair by using OpenSSL commands.
 
    For an additional level of security, you can wrap your image encryption keys by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, you can wrap your keys before you import the keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with the optional additional secrets that are required to retrieve the key.
 
-   For example, `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` and `“ibmcloud kp key unwrap <root_key_id> -p <base65 cyphertext>`, where `<root_key_id>` is the ID of the root key.
+   For example, to wrap keys, run `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` command and to unwrap keys, run `“ibmcloud kp key unwrap <root_key_id> -p <base65 cyphertext>`, where `<root_key_id>` is the ID of the root key.
 
    For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
 
