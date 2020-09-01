@@ -8,6 +8,11 @@ keywords: encryption, decryption, security, encrypted images, public-private key
 
 subcollection: Registry
 
+content-type: tutorial
+services: containers, Registry, key-protect
+account-plan: lite
+completion-time: 1h
+
 ---
 
 {:new_window: target="_blank"}
@@ -23,9 +28,13 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
 
 # Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
 {: #registry_encrypt}
+{: toc-content-type="tutorial"}
+{: toc-services="containers, Registry, key-protect"}
+{: toc-completion-time="1h"}
 
 You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
 {: shortdesc}
@@ -51,8 +60,9 @@ For more information about encrypting images, see:
 * Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux environment only. As an alternative to Linux, you can use a virtual machine or Docker image to run Buildah to build images.
 * Install [Podman](https://podman.io/).
 
-## Step 1: Create the public-private key pair
+## Create the public-private key pair
 {: #registry_encrypt_create}
+{: step}
 
 Create a public-private key pair by using OpenSSL commands.
 
@@ -113,8 +123,9 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: screen}
 
-## Step 2: Encrypt the image
+## Encrypt the image
 {: #registry_encrypt_image}
+{: step}
 
 Encrypt the image by using the public key and then build a container image by using a Dockerfile.
 
@@ -158,8 +169,9 @@ Encrypt the image by using the public key and then build a container image by us
 
 5. Check in your registry to make sure that the image is there.
 
-## Step 3: Pull and decrypt the image
+## Pull and decrypt the image
 {: #registry_encrypt_pull}
+{: step}
 
 Pull the image from the registry and decrypt it by using the private key.
 
