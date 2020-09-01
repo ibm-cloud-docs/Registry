@@ -2,14 +2,14 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-01"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: Registry
 
 content-type: tutorial
-services: containers, Registry,
+services: containers, Registry
 account-plan: lite
 completion-time: 30m
 

@@ -2,14 +2,14 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-01"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
 subcollection: Registry
 
 content-type: tutorial
-services: containers, Registry,
+services: containers, Registry
 account-plan: lite
 completion-time: 2h
 
