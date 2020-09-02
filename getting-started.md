@@ -9,7 +9,7 @@ keywords: IBM Cloud Container Registry, private image registry, namespaces, imag
 subcollection: Registry
 
 content-type: tutorial
-services: Registry, containers
+services: containers
 account-plan: lite
 completion-time: 45m
 
@@ -33,7 +33,7 @@ completion-time: 45m
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
 {: toc-content-type="tutorial"}
-{: toc-services="Registry, containers"}
+{: toc-services="containers"}
 {: toc-completion-time="45m"}
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
