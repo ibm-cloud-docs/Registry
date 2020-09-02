@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -223,7 +223,7 @@ To use the private key in production, you must safely store and protect the priv
 
 {{site.data.keyword.keymanagementservicelong_notm}} generally manages symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard. Note that {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. You can re-encode the PEM files as Base64 by using `“openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64”` before pasting the Base64 content, and reverse this action to obtain the usable key again by using `“openssl enc -base64 -A -in <user>Private..b64 -out <user>Private.pem”`.
 
-Image encryption keys must be wrapped by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, which protects the private key. You must wrap your keys before you import them as standard keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with the optional additional secrets that are required to retrieve the key.
+Image encryption keys must be wrapped by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, which protects the private key. You must wrap your keys before you import them as standard keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with optional additional secrets that are required to retrieve the key.
 
 For example, to wrap keys, run `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` command and to unwrap keys, run `“ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key.
 
