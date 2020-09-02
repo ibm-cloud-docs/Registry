@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-28"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -108,7 +108,7 @@ You can have 100 namespaces in each region.
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command with the `-v` flag to retrieve existing namespace information.
+If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command with the `-v` option to retrieve existing namespace information.
 {:tip}
 
 Consider the following rules when you choose a namespace:
@@ -163,7 +163,7 @@ Namespaces created in version 0.1.484 of the CLI or earlier and in the GUI befor
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}
 
-You can assign an existing namespace to a resource group by using the [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) command. To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` flag.
+You can assign an existing namespace to a resource group by using the [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) command. To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
 

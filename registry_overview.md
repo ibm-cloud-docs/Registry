@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-28"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -328,10 +328,10 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Targeting a local region
 {: #registry_regions_local_target}
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no parameters to get a list of available regions, or you can specify the region as a parameter.
+If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
 {:shortdesc}
 
-1. To run the command with parameters, replace `<region>` with the name of the [region](#registry_regions_local).
+1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
 
    ```
    ibmcloud cr region-set <region>

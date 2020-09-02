@@ -2,11 +2,15 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-09-01"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
 subcollection: Registry
+
+content-type: tutorial
+account-plan: lite
+completion-time: 45m
 
 ---
 
@@ -23,9 +27,12 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
 
 # Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
 {: #iam_access}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="45m"}
 
 Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong}}.
 {:shortdesc}
@@ -40,17 +47,14 @@ For more information about how to use {{site.data.keyword.iamlong}} to manage ac
 Before you begin, you must complete the following tasks:
 
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
-
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
-
 - Ensure that you have access to two [{{site.data.keyword.cloud_notm}} accounts](https://cloud.ibm.com/login){: external} that you can use for this tutorial, one for User A and one for User B, each must use a unique email address. You work in your own account, User A, and invite another user, User B, to use your account. You can choose to create a second {{site.data.keyword.cloud_notm}} account, or you can work with a colleague that has an {{site.data.keyword.cloud_notm}} account.
-
 - Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
-
 - If you started to use {{site.data.keyword.registrylong_notm}} in your account before 4 October 2018, you must enable IAM policy enforcement by running the `ibmcloud cr iam-policies-enable` command. If you have invited other users that use your {{site.data.keyword.registrylong_notm}} namespaces into your {{site.data.keyword.cloud_notm}} account, use a different account as User A to prevent disruption to their access.
 
-## Step 1: Authorize a user to configure the registry
+## Authorize a user to configure the registry
 {: #configure_registry}
+{: step}
 
 In this section, you add a second user to your account and grant them the ability to configure {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -162,8 +166,9 @@ In this section, you add a second user to your account and grant them the abilit
         ```
         {: pre}
 
-## Step 2: Authorize a user to access specific namespaces
+## Authorize a user to access specific namespaces
 {: #access_resources}
+{: step}
 
 In this section, you create some namespaces with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
 {:shortdesc}
@@ -399,8 +404,9 @@ In this section, you create some namespaces with sample images, and grant access
         ```
         {: pre}
 
-## Step 3: Create a service ID and grant access to a resource
+## Create a service ID and grant access to a resource
 {: #service_id}
+{: step}
 
 In this section, you configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
 {:shortdesc}
@@ -508,8 +514,9 @@ In this section, you configure a service ID and grant it access to your {{site.d
         ```
         {: pre}
 
-## Step 4: Cleaning up
+## Cleaning up
 {: #clean_up}
+{: step}
 
 In this section, you remove the resources that you created in previous sections to leave your account as it was at the start of this tutorial.
 {:shortdesc}

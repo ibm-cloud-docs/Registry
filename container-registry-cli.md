@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-28"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -36,7 +36,7 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 - Install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). The prefix for running commands by using the {{site.data.keyword.cloud_notm}} CLI is `ibmcloud`.
 - Before running the registry commands, log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
 
-In the command line, you are notified when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and flags.
+In the command line, you are notified when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and options.
 
 If you want to view the current version of your `container-registry` CLI plug-in, run `ibmcloud plugin list`.
 
@@ -93,7 +93,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--quiet`, `-q`</dt>
 <dd>(Optional) If specified, the build output is suppressed unless an error occurs.</dd>
 <dt>`--build-arg KEY=VALUE`</dt>
-<dd>(Optional) Specify an extra build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this parameter multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
+<dd>(Optional) Specify an extra build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this option multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
 <dt>`--file FILE`, `-f FILE`</dt>
 <dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where PATH is the root of the build context.</dd>
 <dt>`--tag TAG`, `-t TAG`</dt>
@@ -463,7 +463,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--force, -f`</dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 <dt>`--json`</dt>
-<dd>(Optional) Outputs JSON that contains the results of cleaning up your untagged images. This flag must be used with `--force`.</dd>
+<dd>(Optional) Outputs JSON that contains the results of cleaning up your untagged images. This option must be used with `--force`.</dd>
 <dt>`--restrict`</dt>
 <dd>(Optional) Limit the clean up to only untagged images in the specified namespace or repository.</dd>
 </dl>
@@ -753,7 +753,7 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-You can create a namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before creating the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` flag on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+You can create a namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before creating the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
 
 Creating a namespace in a resource group enables you to configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself.
 
@@ -808,7 +808,7 @@ Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_n
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}
 
-To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](#bx_cr_namespace_list) command with the `-v` flag.
+To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](#bx_cr_namespace_list) command with the `-v` option.
 {: tip}
 
 ```
@@ -1112,7 +1112,7 @@ None
 ## `ibmcloud cr region-set`
 {: #bx_cr_region_set}
 
-Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no parameters.
+Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no options.
 
 ```
 ibmcloud cr region-set [REGION]
@@ -1267,7 +1267,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt>`--force`, `-f`</dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 <dt>`--json`</dt>
-<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This flag must be used with `--force`.</dd>
+<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This option must be used with `--force`.</dd>
 <dt>`--retain-untagged`</dt>
 <dd>(Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.</dd>
 <dt>`--images`</dt>

@@ -2,11 +2,16 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-08-27"
+lastupdated: "2020-09-02"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
 subcollection: Registry
+
+content-type: tutorial
+services: Registry, key-protect
+account-plan: lite
+completion-time: 2h
 
 ---
 
@@ -23,9 +28,13 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:step: data-tutorial-type='step'}
 
 # Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
 {: #registry_encrypt}
+{: toc-content-type="tutorial"}
+{: toc-services="Registry, key-protect"}
+{: toc-completion-time="2h"}
 
 You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
 {: shortdesc}
@@ -51,8 +60,9 @@ For more information about encrypting images, see:
 * Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux environment only. As an alternative to Linux, you can use a virtual machine or Docker image to run Buildah to build images.
 * Install [Podman](https://podman.io/).
 
-## Step 1: Create the public-private key pair
+## Create the public-private key pair
 {: #registry_encrypt_create}
+{: step}
 
 Create a public-private key pair by using OpenSSL commands.
 
@@ -77,6 +87,9 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
+  To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. For more inforamtion, see [Storing keys](#registry_encrypt_keys).
+  {: tip}
+
 4. List the keys to ensure that they are created:
 
    ```
@@ -84,14 +97,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-5. Display the keys:
-
-   ```
-   cat *.pem
-   ```
-   {: pre}
-
-6. To make the public key available, display the public key:
+5. To use this key pair to encrypt images, display the public key by running the following `cat` command:
 
    ```
    cat <user>Pub.pem
@@ -112,8 +118,9 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: screen}
 
-## Step 2: Encrypt the image
+## Encrypt the image
 {: #registry_encrypt_image}
+{: step}
 
 Encrypt the image by using the public key and then build a container image by using a Dockerfile.
 
@@ -124,20 +131,17 @@ Encrypt the image by using the public key and then build a container image by us
    ```
    {: pre}
 
-2. Create the Dockefile by running the following commands:
+2. Create the Dockerfile by running the following command:
 
    ```
-   cat Dockerfile
+   cat << EOF >> Dockerfile
+   FROM nginx:latest
+   RUN echo "some secret" > /secret-file
+   EOF
    ```
    {: pre}
 
-   ```
-   FROM nginx:latest
-   RUN echo "some secret" > /secret-file
-   ```
-   {: screen}
-
-3. Use Buildah to create an unencrypted file by running the following commands, where `<namespace>` is your namespace:
+3. Use Buildah to create an unencrypted image by running the following commands, where `<namespace>` is your namespace:
 
    ```
    buildah bud -t us.icr.io/<namespace>/<my_app> .
@@ -160,8 +164,9 @@ Encrypt the image by using the public key and then build a container image by us
 
 5. Check in your registry to make sure that the image is there.
 
-## Step 3: Pull and decrypt the image
+## Pull and decrypt the image
 {: #registry_encrypt_pull}
+{: step}
 
 Pull the image from the registry and decrypt it by using the private key.
 
@@ -207,5 +212,19 @@ Pull the image from the registry and decrypt it by using the private key.
 ## Next steps
 {: #registry_encrypt_next}
 
-You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is currently unsupported. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
+You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is currently unsupported. You must supply the private key in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
 {: note}
+
+## Storing keys
+{: #registry_encrypt_keys}
+
+To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store your keys.
+{:shortdesc}
+
+{{site.data.keyword.keymanagementservicelong_notm}} generally manages symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard. Note that {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. You can re-encode the PEM files as Base64 by using `“openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64”` before pasting the Base64 content, and reverse this action to obtain the usable key again by using `“openssl enc -base64 -A -in <user>Private..b64 -out <user>Private.pem”`.
+
+Image encryption keys must be wrapped by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, which protects the private key. You must wrap your keys before you import them as standard keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with optional additional secrets that are required to retrieve the key.
+
+For example, to wrap keys, run `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` command and to unwrap keys, run `“ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key.
+
+For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys), [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys), and [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
