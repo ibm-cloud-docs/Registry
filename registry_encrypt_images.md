@@ -9,7 +9,7 @@ keywords: encryption, decryption, security, encrypted images, public-private key
 subcollection: Registry
 
 content-type: tutorial
-services: Registry, key-protect
+services: key-protect
 account-plan: lite
 completion-time: 2h
 
@@ -33,7 +33,7 @@ completion-time: 2h
 # Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
-{: toc-services="Registry, key-protect"}
+{: toc-services="key-protect"}
 {: toc-completion-time="2h"}
 
 You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
@@ -218,13 +218,13 @@ You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https
 ## Storing keys
 {: #registry_encrypt_keys}
 
-To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store your keys.
+To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys.
 {:shortdesc}
 
-{{site.data.keyword.keymanagementservicelong_notm}} generally manages symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard. Note that {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. You can re-encode the PEM files as Base64 by using `“openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64”` before pasting the Base64 content, and reverse this action to obtain the usable key again by using `“openssl enc -base64 -A -in <user>Private..b64 -out <user>Private.pem”`.
+{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. Note that {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can re-encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before loading the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
 
-Image encryption keys must be wrapped by using an {{site.data.keyword.keymanagementservicelong_notm}} root key, which protects the private key. You must wrap your keys before you import them as standard keys to {{site.data.keyword.keymanagementservicelong_notm}}. This action ties access to your keys to the root key lifecycle and with optional additional secrets that are required to retrieve the key.
+As an alternative, you can protect your keys in your own store by wrapping them by using an {{site.data.keyword.keymanagementservicelong_notm}} root key. This action means that you must unwrap them again by using {{site.data.keyword.keymanagementservicelong_notm}} and the valid root key.
 
-For example, to wrap keys, run `“ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>”` command and to unwrap keys, run `“ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key.
+For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key that you are using.
 
 For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys), [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys), and [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
