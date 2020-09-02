@@ -11,7 +11,7 @@ subcollection: Registry
 content-type: tutorial
 services: Registry, containers
 account-plan: lite
-completion-time: 30m
+completion-time: 45m
 
 ---
 
@@ -34,7 +34,7 @@ completion-time: 30m
 {: #getting-started}
 {: toc-content-type="tutorial"}
 {: toc-services="Registry, containers"}
-{: toc-completion-time="30m"}
+{: toc-completion-time="45m"}
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
