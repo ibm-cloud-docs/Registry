@@ -87,7 +87,7 @@ Create a public-private key pair by using OpenSSL commands.
    ```
    {: pre}
 
-  To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. For more inforamtion, see [Storing keys](#registry_encrypt_keys).
+  To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. For more information, see [Storing keys](#registry_encrypt_keys).
   {: tip}
 
 4. List the keys to ensure that they are created:
