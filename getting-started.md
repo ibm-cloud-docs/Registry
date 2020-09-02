@@ -2,14 +2,14 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
 subcollection: Registry
 
 content-type: tutorial
-services: containers, Registry
+services: Registry, containers
 account-plan: lite
 completion-time: 30m
 
@@ -33,7 +33,7 @@ completion-time: 30m
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
 {: toc-content-type="tutorial"}
-{: toc-services="containers, Registry"}
+{: toc-services="Registry, containers"}
 {: toc-completion-time="30m"}
 
 {{site.data.keyword.registrylong}} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
