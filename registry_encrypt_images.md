@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-03"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -39,17 +39,14 @@ completion-time: 2h
 You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
 {: shortdesc}
 
-Create an encrypted image so that people without the private key can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret and only users with that private key can use it to decrypt the image.
+Create an encrypted image so that people without the private key can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret, and only users that have that private key can use it to decrypt the image.
 
 Encryption is supported in {{site.data.keyword.registrylong_notm}} and complies with the following standards:
 
-* [opencontainers/image-spec](https://github.com/opencontainers/image-spec){: external}
-* [opencontainers/artifacts](https://github.com/opencontainers/artifacts/pull/15){: external}
+* [opencontainers / image-spec](https://github.com/opencontainers/image-spec){: external}
+* [opencontainers / artifacts](https://github.com/opencontainers/artifacts/pull/15){: external}
 
-For more information about encrypting images, see:
-
-* [Advancing container image security with encrypted container images](https://developer.ibm.com/articles/advancing-image-security-encrypted-container-images/){: external}
-* [Webinar: Advancing image security and compliance through Container Image Encryption!](https://www.youtube.com/watch?v=dYXhAxxPkqA){: external}
+For more information about encrypting images, see [Advancing container image security with encrypted container images](https://developer.ibm.com/articles/advancing-image-security-encrypted-container-images/){: external} and [Advancing image security and compliance through Container Image Encryption!](https://www.youtube.com/watch?v=dYXhAxxPkqA){: external}.
 
 ## Before you begin
 {: #registry_encrypt_prereqs}
@@ -157,10 +154,10 @@ Encrypt the image by using the public key and then build a container image by us
    ```
    {: pre}
 
-   Buildah version 1.15, or later, uses Docker’s login credentials to authenticate, if these credentials don't work or you want to use an API key, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
+   Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an API key, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
    {: tip}
 
-   You get a response telling you that the manifest is written to the image destination, which is the registry.
+   You get a response that tells you that the manifest is written to the image destination, which is the registry.
 
 5. Check in your registry to make sure that the image is there.
 
@@ -212,7 +209,7 @@ Pull the image from the registry and decrypt it by using the private key.
 ## Next steps
 {: #registry_encrypt_next}
 
-You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is currently unsupported. You must supply the private key in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
+You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, however, it is unsupported. You must supply the private key in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
 {: note}
 
 ## Storing keys

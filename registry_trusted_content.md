@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-09-03"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -194,7 +194,7 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 ### Pushing a signed image
 {: #trustedcontent_push}
 
-When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the machine that is pushing the image.
+When you first push a signed image, Docker automatically creates a pair of signing keys: root and repository. To sign an image in a repository where signed images have been pushed before, you must have the correct repository signing key loaded on the computer that is pushing the image.
 {:shortdesc}
 
 Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
@@ -208,7 +208,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local machine. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
 
    This action is only required the first time that you push a signed repository.
    {: tip}
@@ -322,7 +322,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 ### Backing up signing keys
 {: #trustedcontent_backupkeys}
 
-When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root key and repository key, and stores them on your local machine:
+When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root key and repository key, and stores them on your local computer:
 
 - Linux and Mac directory: `~/.docker/trust/private`
 
@@ -351,7 +351,7 @@ Before you begin, complete the following tasks:
 
 - Image signers must have permission to push images to the namespace.
 - Repository owners and additional signers must have Docker 18.03 or later installed.
-- Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local machine. If you do not have the repository admin key, contact the owner to do this task for you.
+- Create a trusted content repository by [pushing a signed image](#trustedcontent_push). Repository owners must have the repository admin keys for the repository available in the Docker trust folder on their local computer. If you do not have the repository admin key, contact the owner to do this task for you.
 
 When you add a signer, you can no longer use the repository admin key to sign images in that repository. You must hold the private key for one of the approved signers to sign. To retain the ability to sign images after adding a signer, follow these instructions again to generate and add a signer role for yourself.
 {:tip}
