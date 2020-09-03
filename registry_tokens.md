@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-09-03"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -33,7 +33,7 @@ To automate access to your {{site.data.keyword.registrylong}} namespaces so that
 If you want to use your registry images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
 {: tip}
 
-API keys are linked to user and service IDs in your account and you can use them across {{site.data.keyword.cloud_notm}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey) has it's own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
+API keys are linked to user and service IDs in your account and you can use them across {{site.data.keyword.cloud_notm}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey) has its own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
 To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=Registry-user#user).
 
@@ -77,7 +77,7 @@ You can use user API keys to automate the pushing and pulling of Docker images t
 Create a user API key that you can use to log in to your registry.
 {:shortdesc}
 
-If you create a user API key, the access policies are those of the user.
+If you create a user API key, the user's access policies are used.
 
 To create a user API key, see [Managing user API keys](/docs/account?topic=account-userapikey) and [`ibmcloud iam api-key-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create).
 
@@ -98,7 +98,7 @@ The following usernames are valid:
 You can authenticate by using one of the following clients:
 
 - [Docker](#registry_access_apikey_auth_docker)
-- [Other registry clients](#registry_access_apikey_auth_other), such as skopeo, Podman, or any tool that's supported by the {{site.data.keyword.registrylong}} V2 API.
+- [Other registry clients](#registry_access_apikey_auth_other), such as skopeo, Podman, or any tool that is supported by the {{site.data.keyword.registrylong}} V2 API.
 
 ### Using Docker to authenticate with an API key
 {: #registry_access_apikey_auth_docker}
@@ -108,11 +108,11 @@ You can use Docker to authenticate with the registry so that you can push and pu
 
 Use the API key to log in to your registry by running the following Docker command. Replace `<apikey>` with your API key and `<registry_url>` with the URL to the registry where your namespaces are set up.
 
-- For namespaces set up in AP-North, use `jp.icr.io`
-- For namespaces set up in AP-South, use `au.icr.io`
-- For namespaces set up in EU-Central, use `de.icr.io`
-- For namespaces set up in UK-South, use `uk.icr.io`
-- For namespaces set up in US-South, use `us.icr.io`
+- For namespaces that are set up in AP-North, use `jp.icr.io` as the registry URL.
+- For namespaces that are set up in AP-South, use `au.icr.io` as the registry URL.
+- For namespaces that are set up in EU-Central, use `de.icr.io` as the registry URL.
+- For namespaces that are set up in UK-South, use `uk.icr.io` as the registry URL.
+- For namespaces that are set up in US-South, use `us.icr.io` as the registry URL.
 
 ```
 docker login -u iamapikey -p <apikey> <registry_url>
@@ -127,7 +127,7 @@ You can use clients other than Docker to authenticate with the registry so that 
 
 For more information, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
 
-#### Example: skopeo
+#### Example for skopeo
 {: #registry_access_apikey_auth_other_example_skopeo}
 
 You can use skopeo to authenticate with the registry. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<apikey>` with your API key,.
@@ -137,7 +137,7 @@ skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker
 ```
 {: pre}
 
-#### Example: Cloud Foundry
+#### Example for Cloud Foundry
 {: #registry_access_apikey_auth_other_example_cf}
 
 You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<image_repo>` with the repository.

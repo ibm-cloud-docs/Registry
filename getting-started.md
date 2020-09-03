@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -54,7 +54,7 @@ Do not put personal information in your container images, namespace names, descr
 {: #gs_registry_namespace_add}
 {: step}
 
-Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
+Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't target a resource group, the default resource group is used.
 {:shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}:
@@ -87,13 +87,13 @@ Create a namespace. The namespace is created in the resource group that you spec
    ```
    {: pre}
 
-## Pull images from another registry to your local machine
+## Pull images from another registry to your local computer
 {: #gs_registry_images_pulling}
 {: step}
 
 1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
-2. Download (_pull_) the image to your local machine. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, _latest_.
+2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, `latest`.
 
    ```
    docker pull <source_image>:<tag>
@@ -114,7 +114,7 @@ Create a namespace. The namespace is created in the resource group that you spec
    ```
    {: pre}
 
-   To find the name of your region, run the `ibmcloud cr region`command.
+   To find the name of your region, run the `ibmcloud cr region` command.
    {: tip}
 
    Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
