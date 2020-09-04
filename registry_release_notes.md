@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-04"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,16 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 27 August 2020
+{: #27aug2020}
+
+### Setting exemption policies by digest
+{: #27aug2020_digest}
+
+When you want to set up an exemption policy, you have the option to set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command.
+
+For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
 ## 12 August 2020
 {: #12aug2020}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-04"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -113,7 +113,10 @@ ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
 
-Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, or tag.
+Create an exemption for a security issue. You can create an exemption for a security issue that applies to different scopes. The scope can be the account, namespace, repository, digest, or tag.
+
+You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
+{: tip}
 
 ```
 ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
@@ -130,7 +133,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
@@ -164,10 +167,20 @@ ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird:1 --issue-type config
 ```
 {: pre}
 
+Create a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the digest `us.icr.io/birds/bluebird@sha256:101010101010`.
+
+```
+ibmcloud cr exemption-add --scope us.icr.io/birds/bluebird@sha256:101010101010 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
+
 ## `ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)
 {: #bx_cr_exemption_list}
 
 List your exemptions for security issues.
+
+You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
+{: tip}
 
 ```
 ibmcloud cr exemption-list [--scope SCOPE]
@@ -184,11 +197,11 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
 </dd>
 </dl>
 
-### Example
+### Examples
 {: #bx_cr_exemption_list_example}
 
 List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository, but not any that are scoped to specific tags within the *`birds/bluebird`* repository.
@@ -198,10 +211,20 @@ ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
+List all your exemptions for security issues that apply to images in the *`birds/bluebird@sha256:101010101010`* digest. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository and to the *`birds/bluebird@sha256:101010101010`* digest, but not any that are scoped to specific tags within the *`birds/bluebird`* repository.
+
+```
+ibmcloud cr exemption-list --scope birds/bluebird@sha256:101010101010
+```
+{: pre}
+
 ## `ibmcloud cr exemption-rm`
 {: #bx_cr_exemption_rm}
 
 Delete an exemption for a security issue. To view your existing exemptions, run `ibmcloud cr exemption-list`.
+
+You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
+{: tip}
 
 ```
 ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
@@ -218,7 +241,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `ibmcloud cr exemption-list`.
@@ -249,6 +272,13 @@ Delete a configuration issue exemption for issue `application_configuration:ngin
 
 ```
 ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird:1 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
+```
+{: pre}
+
+Delete a configuration issue exemption for issue `application_configuration:nginx.ssl_protocols` for a single image with the digest `us.icr.io/birds/bluebird@sha256:101010101010`.
+
+```
+ibmcloud cr exemption-rm --scope us.icr.io/birds/bluebird@sha256:101010101010 --issue-type configuration --issue-id application_configuration:nginx.ssl_protocols
 ```
 {: pre}
 
