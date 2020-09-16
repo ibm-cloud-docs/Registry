@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-14"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -250,7 +250,7 @@ To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and 
 2. Run the `docker tag` command for the new domain name. Replace `<old_domain_name>` with your old domain name, `<new_domain_name>` with your new domain name, `<repository>` with the name of your repository, and `<tag>` with the name of your tag.
 
    ```
-   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:t<tag>
+   docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:<tag>
    ```
    {: pre}
 
