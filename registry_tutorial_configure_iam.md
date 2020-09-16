@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-16"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -36,8 +36,6 @@ completion-time: 45m
 
 Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong}}.
 {:shortdesc}
-
-This tutorial takes approximately 45 minutes.
 
 For more information about how to use {{site.data.keyword.iamlong}} to manage access to your resources, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
