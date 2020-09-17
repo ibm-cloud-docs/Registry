@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-16"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -40,7 +40,7 @@ If you have problems or questions when you are using {{site.data.keyword.registr
 
 If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/search?q=+ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
 
-For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Getting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
+For information about opening an {{site.data.keyword.IBM_notm}} support ticket, or about support levels and ticket severities, see [Using the Support Center](/docs/get-support?topic=get-support-using-avatar).
 
 ## Logging in to {{site.data.keyword.registrylong_notm}} fails
 {: #ts_login}
@@ -122,7 +122,7 @@ docker build --no-cache .
 {:  pre}
 
 - If the local build doesn't work, check for issues with your Dockerfile.
-- If the local build works, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
+- If the local build works, contact {{site.data.keyword.cloud_notm}} support, see [Using the Support Center](/docs/get-support?topic=get-support-using-avatar).
 
 ## Setting up a namespace fails
 {: #ts_problem}
@@ -442,7 +442,7 @@ You can [delete the namespaces](/docs/Registry?topic=Registry-registry_setup_cli
 
 If the namespace contains repositories with unaffected root keys, such as a namespace for production images, you might want to delete only the trust data associated with the affected root key. Open a support ticket.
 
-1. [Contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
+1. Contact {{site.data.keyword.cloud_notm}} support, see [Using the Support Center](/docs/get-support?topic=get-support-using-avatar). Include a brief description of your issue, the account ID, and a list of the namespaces that contain the image repositories with affected root keys.
 
 2. After {{site.data.keyword.cloud_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-16"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -40,11 +40,6 @@ Find out about the basic functions of both {{site.data.keyword.registrylong}} an
 {: shortdesc}
 
 Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation. This tutorial combines all of those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
-
-## Time required
-{: #registry_tutorial_workflow_time}
-
-Approximately 2 hours
 
 ## Objectives
 {: #registry_tutorial_workflow_objectives}
