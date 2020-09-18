@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-18"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -57,7 +57,7 @@ Do not put personal information in your container images, namespace names, descr
 Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't target a resource group, the default resource group is used.
 {:shortdesc}
 
-1. Log in to {{site.data.keyword.cloud_notm}}:
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
    ```
    ibmcloud login
@@ -72,7 +72,7 @@ Create a namespace. The namespace is created in the resource group that you spec
    The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
    {: tip}
 
-   You can put the namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before creating the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+   You can put the namespace in a resource group of your choice by either running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before you create the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
    {: tip}
 
    ```
@@ -107,7 +107,7 @@ Create a namespace. The namespace is created in the resource group that you spec
    ```
    {: pre}
 
-3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
+3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in Step 2, see [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
 
    ```
    docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
@@ -135,7 +135,7 @@ Create a namespace. The namespace is created in the resource group that you spec
    ```
    {: pre}
 
-2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
+2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in Step 2, see [Set up a namespace](#gs_registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
@@ -161,8 +161,8 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 ## Next steps
 {: #gs_get_start_next}
 
-- [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index)
-- [Review your service plans and usage](/docs/Registry?topic=Registry-registry_overview#registry_plans)
-- [Store and manage more images in your namespace](/docs/Registry?topic=Registry-registry_images_)
-- [Defining user access role policies](/docs/Registry?topic=Registry-user#user)
-- [Setting up clusters and worker nodes](/docs/containers?topic=containers-clusters#clusters)
+- [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=va-va_index)
+- [Review your service plans and .](/docs/Registry?topic=Registry-registry_overview#registry_plans)
+- [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
+- [Define user access role policies.](/docs/Registry?topic=Registry-user#user)
+- [Set up clusters and worker nodes.](/docs/containers?topic=containers-clusters#clusters)
