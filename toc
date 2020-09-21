@@ -56,7 +56,6 @@ Container Registry
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    ts_index.md
-    registry_faq.md
+    ts_index.mdregistry_faq.md
     registry_release_notes.md
     {: .navgroup-end}
