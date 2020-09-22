@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-22"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -130,7 +130,7 @@ You can control which users can work with namespaces by using IAM roles.
 {: shortdesc}
 
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
-  - To add and assign namespaces, you must also have the Viewer role for Billing in Account Management. This role is required so that you can view and list available resource groups. For more information, see [Platform management roles](/docs/account?topic=account-userroles#platformroles) and [Assigning access to account management services](/docs/account?topic=account-account-services).
+  - To add and assign namespaces, you must also have the Viewer role for `All Account Management Services`. This role is required so that you can view and list available resource groups. For more information, see [Platform management roles](/docs/account?topic=account-userroles#platformroles) and [Assigning access to account management services](/docs/account?topic=account-account-services).
 
 - To view and analyze namespaces, you must have the Reader or Manager role in the {{site.data.keyword.registrylong_notm}} service, see [Access roles for using IBM Cloud Container Registry](/docs/Registry?topic=Registry-iam#access_roles_using).
 
