@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-09-23"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -70,7 +70,7 @@ The following table details actions that are mapped to platform management roles
 | Viewer | View resource groups | To view information about resource groups, you must assign the Viewer role for Billing in Account Management to the user so that the user can run the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) commands. For more information, see [Platform management roles](/docs/account?topic=account-userroles#platformroles) and [Assigning access to account management services](/docs/account?topic=account-account-services). |
 | Editor | Not supported | |
 | Operator | Not supported | |
-| Administrator | Configure access for other users<br/><br/>Configure registry tokens (deprecated)<br/><br/>Create clusters | For information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).<br/><br/>List, retrieve, and remove registry tokens (deprecated)<br/><br/>To create clusters in {{site.data.keyword.containerlong_notm}}, you must assign the Administrator role for {{site.data.keyword.registrylong_notm}} to the user, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
+| Administrator | Configure access for other users<br/><br/>Configure registry tokens (deprecated)<br/><br/>Apply pull secrets to clusters | For information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).<br/><br/>List, retrieve, and remove registry tokens (deprecated)<br/><br/>To create clusters in {{site.data.keyword.containerlong_notm}} with access to pull secrets from {{site.data.keyword.registrylong_notm}} or to set up pull secrets later, you must have the Administrator role. See [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
