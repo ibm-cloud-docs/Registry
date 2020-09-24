@@ -130,7 +130,7 @@ You can control which users can work with namespaces by using IAM roles.
 {: shortdesc}
 
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
-  - To add and assign namespaces, you must also have the Viewer role for `All Account Management Services`. This role is required so that you can view and list available resource groups. Run the following [`ibmcloud iam user-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
+  - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role to a user, run the following [`ibmcloud iam user-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
   
     ```
     ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
