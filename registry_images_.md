@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-09-29"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -433,7 +433,7 @@ To restore an image by digest from the trash, complete the following steps:
    ```
    {: pre}
 
-   If some of the tags aren't restored, see [You want to restore an image from the trash by digest, but some of the tags weren't restored](/docs/Registry?topic=Registry-ts_index#ts_image_restore_digest).
+   If some of the tags aren't restored, see [When I'm restoring an image from the trash by digest, why aren't some of the tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest).
    {: tip}
 
    In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the image shows in the output.

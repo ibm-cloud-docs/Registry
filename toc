@@ -56,7 +56,31 @@ Container Registry
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    ts_index.md
+    {: .topicgroup}
+    Troubleshooting
+        ts_index.md
+        ts_login.md
+        ts_login_cloud.md
+        ts_login_error.md
+        ts_build_fails.md
+        ts_add_namespace.md
+        ts_push_pull_docker.md
+        ts_docker_latest.md
+        ts_image_timeout.md
+        ts_ppa.md
+        ts_image_rm.md
+        ts_image_list_retention.md
+        ts_image_restore.md
+        ts_image_restore_digest.md
+        ts_firewall.md
+        ts_recover_key.md
+        ts_install_cise_fail.md
+        ts_iam_policy.md
+        ts_pods.md
+        ts_manifest_error_type.md
+        ts_manifest_error_version.md
+        ts_docker_mac.md
+
     registry_faq.md
     registry_release_notes.md
     {: .navgroup-end}
