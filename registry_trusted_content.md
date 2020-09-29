@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-29"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -208,7 +208,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key).
 
    This action is only required the first time that you push a signed repository.
    {: tip}
@@ -331,7 +331,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
    If you changed your Docker configuration directory, look for the `trust` subdirectory there.
    {: tip}
 
-You must back up all your keys, and especially the root key. If a key is lost or compromised, your [recovery options](/docs/Registry?topic=Registry-ts_index#ts_recoveringtrustedcontent) are limited.
+You must back up all your keys, and especially the root key. If a key is lost or compromised, your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key).
 
 To back up your keys, see [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys){: external}.
 
