@@ -1,282 +1,281 @@
 {
-    "faq_list_public_images": [
-        "list public images Container Registry",
-        "get public image CR",
-        "How to target global for CR",
-        "set container registry region",
-        "CLI command for images in Container Registry",
-        "IBM images list in Container Registry",
-		"know available images on Container Registry",
-		"view the images on Container Registry list",
-        "listing public images for CR"
-    ],
-    "faq_tools": [
-        "non-docker tools in Container Registry",
-        "alternatives to build my Container Registry images",
-        "options OCI image format and protocol tools for CR",
-        "non docker push images in Container Registry",
-        "custom tool to build images for Container Registry",
-        "use non-docker tools to build my images in CR",
-		"Container Registry support OCI images",
-        "OCI images supported in container registry",
-        "non docker tool supported ContainerRegistry"
-    ],
-    "faq_access_control": [
-        "IAM access control container registry",
-        "limit access on CR",
-        "Grant access to ContainerRegistry",
-        "IAM policy to access container registry",
-		"configure IAM for container registry",
-		"IAM configuration for ContainerRegistry",
-		"IAM access for Container Registry",
-        "IBM Cloud Identity and Access management for container registry",
-        "use access control within container registry"
-    ],
-    "faq_regions": [
-        "Container registry regions",
-        "Global registry images available for CR",
-        "Region list for ContainerRegistry",
-        "local regions container registry",
-        "global regions available for container registry"
-    ],
-    "faq_va_new_scan_error": [
-        "scan not found on image error for CR",
-        "error BXNVA0009E in container registry",
-        "vulnerability check from container registry",
-        "scanning image takes a while in container registry",
-		"What does BXNVA0009E mean for container registry",
-		"error BXNVA0009E given in CR",
-        "scan error in CR"
-    ],
-    "faq_va_trigger_scan": [
-        "vulnerability advisor scan in CR",
-        "vulnerability packages for  container registry",
-        "how vulnerabilitiy scan start in container registry",
-        "when image scan starts for container registry",
-        "Vulnerability Advisor scan triggered in CR"
-    ],
-    "faq_va_update_security_notice": [
-        "how often vulnerability advisor notice updated in CR",
-        "vulnerability advisor and security notice for container registry",
-        "Frequency secuity notice in container registry",
-        "many times are security notices posted in CR",
-        "often are the security notices updated in CR"
-    ],
-    "ts_login": [
-        "ibmcloud cr login command fails for CR",
-        "cli container-registry plugin login",
-        "ibmcloud cr login command failing",
-        "log in to Container registry error",
-		"Cannot login to Container Registry",
-		"unable to log into Container Registry",
-		"can't login to CR",
-		"login error for Container Registry",
-        "ibmcloud cr cli login error"
-    ],
-    "ts_firewall": [
-        "Accessing the container registry with a custom firewall fails",
-        "can't access CR using a custom firewall",
-        "trying to access Container Registry fails",
-        "issue accessing CR with customized firewall",
-        "can't access container registry with a custom firewall",
-        "issue accessing container registry with a different firewall"
-    ],   
-    "ts_login_cloud": [
-        "any ibmcloud cr command fail",
-        "container registry cli error not logged-in",
-        "ibmcloud cr failed you are not logged in",
-        "unable to run ibmcloud cr cli",
-		"cannot run commands in Container Registry",
-		"can't run commands in ContainerRegistry",
-		"unable to run any commands in container registry",
-        "CLI Container Registry fails"
-    ],
-    "ts_login_error": [
-        "cr command fails cr is not a registered command ",
-        "Container registry plugin cli cannot use",
-        "cr is not a registered command ibmcloud",
-        "how to install ibmcloud cr plugin",
-        "command cr not available"
-    ],
-    "ts_build_fails": [
-        "build command fails in CR",
-        "cannot use ibmcloud cr build command",
-        "local build fail cli container registry",
-        "ibmcloud cr build not work for container registry",
-        "ibmcloud cr build command fails"
-    ],
-    "ts_problem": [
-        "cannot add namespace cli ContainerRegistry",
-        "unable to add namespace in container registry",
-        "adding namespace fail in container registry",
-        "name rules to add namespace in CR",
-        "rules for adding a namespace in Container Regsitry",
-		"What are the name rules with namespace in CR",
-		"container registry name rules with a namespace",
-        "ibmcloud cr namespace-add error",
-        "can't add namespace in CR",
-        "ibmcloud cr namespace-add fails"
-    ],
-    "ts_pushpull": [
-        "exceeded storage quota push docker image CR",
-        "docker pull failed in CR",
-        "docker push of image failed for container registry",
-        "unauthorized authentication required for ContainerRegistry",
-        "You have exceeded your pull traffic quota for the current month CR",
-        "Docker requested access to the resource is denied in CR",
-		"exceeded quota in Container Registry",
-		"exceeded traffic quota in container registry",
-        "unable to push docker image CR",
-        "error message docker pull CR",
-        "not push docker image error"
-    ],
-    "ts_docker_latest": [
-        "unable to pull recent image latest tag for container registry",
-        "not pull latest image CR",
-		"docker pull returns old images in CR",
-		"only see the old images in container registry",
-        "docker pull not getting latest image in CR",
-        "docker pull return old version image Container Registry",
-        "can't pull the most recent image for CR",
-        "why not showing latest image ContainerRegistry",
-        "missing latest tag new version CR"
-    ],
-    "ts_image_timeout": [
-        "timeout listing images for container registry",
-        "how to fix timeout listing images from CR",
-        "how to resolve timeout listing images from ContainerRegistry",
-        "ibmcloud cr image-list to list images in CR",
-        "time out loading images for container registry",
-        "images times out for Container Registry",
-		"images in the container registry page times out",
-		"images in the container registry page timeout",
-		"Timeout while getting images from Container Registry",
-		"images time out for container registry",
-        "not list images for CR",
-        "UI timed out list images for CR",
-        "Listing images in the GUI time out in CR"
-    ],
-    "ts_ppa": [
-        "can't import images into Container Registry",
-        "import images from iIBM Passport advantage fails CR",
-        "unable to import images into Container registry",
-        "how to deploy chart museum for CR",
-        "fail to add images to the container registry",
-		"can't add images to containerregistry",
-        "cannot add images to my container registry",
-        "can't import images into ContainerRegistry",
-        "Unable to add other images to the container registry"
-    ],
-    "ts_ppa_import": [
-        "ibmcloud cr ppa-acrhive-load",
-        "images from IBM Passport Advantage CR",
-        "import IBM Passport advantage into CR",
-        "how to import images into ContainerRegistry",
-        "importing images into CR",
-        "import images from Passport Advantage into CR",
-		"import image of IBM product into container registry",
-		"import images into Container registry from PPA",
-        "ppa-import helm charts ContainerRegistry",
-        "Importing IBM Passport Advantage products Container Registry"
-    ],
-    "ts_image-rm": [
-        "how to delete an image from container registry",
-        "ibmcloud cr image-rm command",
-        "how to delete all the tags from the CR repository",
-        "how to remove a tag from the repository in CR",
-        "ibmcloud cr image-rm command deleted all the image tags",
-        "ibmcloud cr image-rm command failed"
-    ],
-    "ts_image_list": [
-        "image not show in the CR list ",
-        "ibmcloud cr retention-run",
-        "what is a distroless image in container registry",
-        "image not shown in ContainerRegistry",
-        "retention-run command delete old image  in CR",
-        "how to check the creation date of image in CR",
-        "ibmcloud cr image-inspect gives creation date",
-        "image not show after running ibmcloud cr retention-run"
-    ],
-    "ts_image_restore": [
-        "what is error 409 in container registry",
-        "how to restore image using digest in CR",
-        "restore image with same name in CR respository",
-        "Cannot restore images by running ibmcloud cr image-restore",
-        "can't restore images in CR",
-        "ibmcloud cr image-restore not working",
-        "overwrite image from trash for CR",
-        "using ibmcloud cr image-tag",
-        "container registry error 409",
-		"unable to restore images by running ibmcloud cr image-restore",
-        "error 409 The tagged image already exists for CR"
-    ],
-	"ts_image_restore_digest": [
-		"restored an image in container registry but tags missing",
-		"the tags were not restored after restoring an image in CR",
-		"ran ibmcloud cr image-restore command but the tags were not restored",
-		"tags not restored after image restore in container regitry",
-		"missing tags after image restore in CR",
-		"tags missing after I restored a CR image"
-	],
-	"ts_recoveringtrustedcontent": [
-        "repository or root key is lost or compromised",
-		"lost my root key for container registry",
-		"lost my repository key for container registry",
-		"missing root key in CR for trusted image",
-		"issue with repository key for container registry",
-		"recover the key for container registry",
-		"issue managing trusted image in container registry",
-		"issue with trusted image in container registry",
-		"manage a signed image by docker trust command in container registry"
-    ],
-	"ts_install_cise_fail": [
-		"installation of Container Image Security Enforcement fails",
-		"install of Container Image Security Enforcement failing",
-		"installation of Container Image Security Enforcement failed",
-		"Error: jobs.batch 'create-crds' already exists",
-		"helm install ibmcloud-image-enforcement fails with error",
-		"issue installing Container Image Security Enforcement"
-	],
-	"ts_iam_policy": [
-		"get access denied errors although I have IAM access",
-		"getting access denied errors container registry",
-		"access errors when access container registry",
-		"can't access container registry",
-		"isue accessing container registry",
-		"no access to container registry"		
-	],
-	"ts_pods": [
-		"pods do not restart after all workers are down",
-		"pods won't restart in CR after the workers go down",
-		"Container Image Security Enforcement pods are down",
-		"Pods do not restart with Container Image Security Enforcement",
-		"can't restart pods with Container Image Security Enforcement installed",
-		"restart pods as all the workers down in container registry"
-	],
-	"ts_manifest_error_type": [
-		"The manifest type for this image is not supported for tagging",
-		"error in container registry -The manifest type for this image is not supported for tagging",
-		"getting Manifest error when I try to tag my images in container registry",
-		"when I try to tag my images in container registry I am getting a manifest error",
-		"manifest error trying to tag CR images",
-		"cause of the manifest type for this image is not supported for tagging in CR",
-		"I receive Manifest error in Container Registry",
-		"get error the manifest type is not supported in CR"
-    ],
-	"ts_manifest_error_version": [
-		"error the manifest version for this image is not supported for tagging",
-		"getting an error message tring to tag my image in container registry",
-		"The manifest version for this image is not supported for tagging error",
-		"manifest version error trying to tag CR images",
-		"get error the manifest version is not supported in CR",
-		"the manifest version for this image is not supported for tagging in container registry" 
-	],
-	"ts_docker_mac": [
-		"Docker login fails on a Mac in container registry",
-		"ibmcloud cr login fails on a Mac",
-		"Docker login fails with Error saving credentials for CR",
-		"getting error when running ibmcloud cr login",
-		"Error saving credentials in container registry",
-		"error when running ibmcloud cr login Error saving credentials on Mac"
-	]	
+  "faq_list_public_images": [
+    "list public images Container Registry",
+    "get public image CR",
+    "How to target global for CR",
+    "set container registry region",
+    "CLI command for images in Container Registry",
+    "IBM images list in Container Registry",
+    "know available images on Container Registry",
+    "view the images on Container Registry list",
+    "listing public images for CR"
+  ],
+  "faq_tools": [
+    "non-docker tools in Container Registry",
+    "alternatives to build my Container Registry images",
+    "options OCI image format and protocol tools for CR",
+    "non docker push images in Container Registry",
+    "custom tool to build images for Container Registry",
+    "use non-docker tools to build my images in CR",
+    "Container Registry support OCI images",
+    "OCI images supported in container registry",
+    "non docker tool supported ContainerRegistry"
+  ],
+  "faq_namespace": [
+    "limit to the number of namespaces",
+    "how many namespaces create in Container Registry",
+    "limit to namespaces creation in Container Registry",
+    "amount of namespaces allowed in CR",
+    "number of namespaces allowed in Container Registry",
+    "namespace limit in Container Registry",
+    "how many registry namespaces in each region",
+    "namespaces creation limit for Container Registry",
+    "namespace amount allowed in Container Registry"
+  ],
+  "faq_access_control": [
+    "IAM access control container registry",
+    "limit access on CR",
+    "Grant access to ContainerRegistry",
+    "IAM policy to access container registry",
+    "configure IAM for container registry",
+    "IAM configuration for ContainerRegistry",
+    "IAM access for Container Registry",
+    "IBM Cloud Identity and Access management for container registry",
+    "use access control within container registry"
+  ],
+  "faq_regions": [
+    "Container registry regions",
+    "Global registry images available for CR",
+    "Region list for ContainerRegistry",
+    "local regions container registry",
+    "global regions available for container registry"
+  ],
+  "faq_va_new_scan_error": [
+    "scan not found on image error for CR",
+    "error BXNVA0009E in container registry",
+    "vulnerability check from container registry",
+    "scanning image takes a while in container registry",
+    "What does BXNVA0009E mean for container registry",
+    "error BXNVA0009E given in CR",
+    "scan error in CR"
+  ],
+  "faq_va_trigger_scan": [
+    "vulnerability advisor scan in CR",
+    "vulnerability packages for  container registry",
+    "how vulnerabilitiy scan start in container registry",
+    "when image scan starts for container registry",
+    "Vulnerability Advisor scan triggered in CR"
+  ],
+  "faq_va_update_security_notice": [
+    "how often vulnerability advisor notice updated in CR",
+    "vulnerability advisor and security notice for container registry",
+    "Frequency secuity notice in container registry",
+    "many times are security notices posted in CR",
+    "often are the security notices updated in CR"
+  ],
+  "troubleshoot-login": [
+    "ibmcloud cr login command fails for CR",
+    "cli container-registry plugin login",
+    "ibmcloud cr login command failing",
+    "log in to Container registry error",
+    "Cannot login to Container Registry",
+    "unable to log into Container Registry",
+    "can't login to CR",
+    "login error for Container Registry",
+    "ibmcloud cr cli login error"
+  ],
+  "troubleshoot-firewall": [
+    "Accessing the container registry with a custom firewall fails",
+    "can't access CR using a custom firewall",
+    "trying to access Container Registry fails",
+    "issue accessing CR with customized firewall",
+    "can't access container registry with a custom firewall",
+    "issue accessing container registry with a different firewall"
+  ],
+  "troubleshoot-login-cloud": [
+    "any ibmcloud cr command fail",
+    "container registry cli error not logged-in",
+    "ibmcloud cr failed you are not logged in",
+    "unable to run ibmcloud cr cli",
+    "cannot run commands in Container Registry",
+    "can't run commands in ContainerRegistry",
+    "unable to run any commands in container registry",
+    "CLI Container Registry fails"
+  ],
+  "troubleshoot-login-error": [
+    "cr command fails cr is not a registered command ",
+    "Container registry plugin cli cannot use",
+    "cr is not a registered command ibmcloud",
+    "how to install ibmcloud cr plugin",
+    "command cr not available"
+  ],
+  "troubleshoot-build-fails": [
+    "build command fails in CR",
+    "cannot use ibmcloud cr build command",
+    "local build fail cli container registry",
+    "ibmcloud cr build not work for container registry",
+    "ibmcloud cr build command fails"
+  ],
+  "troubleshoot-add-namespace": [
+    "cannot add namespace cli ContainerRegistry",
+    "unable to add namespace in container registry",
+    "adding namespace fail in container registry",
+    "name rules to add namespace in CR",
+    "rules for adding a namespace in Container Regsitry",
+    "What are the name rules with namespace in CR",
+    "container registry name rules with a namespace",
+    "ibmcloud cr namespace-add error",
+    "can't add namespace in CR",
+    "ibmcloud cr namespace-add fails"
+  ],
+  "troubleshoot-push-pull-docker": [
+    "exceeded storage quota push docker image CR",
+    "docker pull failed in CR",
+    "docker push of image failed for container registry",
+    "unauthorized authentication required for ContainerRegistry",
+    "You have exceeded your pull traffic quota for the current month CR",
+    "Docker requested access to the resource is denied in CR",
+    "exceeded quota in Container Registry",
+    "exceeded traffic quota in container registry",
+    "unable to push docker image CR",
+    "error message docker pull CR",
+    "not push docker image error"
+  ],
+  "troubleshoot-docker-latest": [
+    "unable to pull recent image latest tag for container registry",
+    "not pull latest image CR",
+    "docker pull returns old images in CR",
+    "only see the old images in container registry",
+    "docker pull not getting latest image in CR",
+    "docker pull return old version image Container Registry",
+    "can't pull the most recent image for CR",
+    "why not showing latest image ContainerRegistry",
+    "missing latest tag new version CR"
+  ],
+  "troubleshoot-image-timeout": [
+    "timeout listing images for container registry",
+    "how to fix timeout listing images from CR",
+    "how to resolve timeout listing images from ContainerRegistry",
+    "ibmcloud cr image-list to list images in CR",
+    "time out loading images for container registry",
+    "images times out for Container Registry",
+    "images in the container registry page times out",
+    "images in the container registry page timeout",
+    "Timeout while getting images from Container Registry",
+    "images time out for container registry",
+    "not list images for CR",
+    "UI timed out list images for CR",
+    "Listing images in the GUI time out in CR"
+  ],
+  "troubleshoot-ppa": [
+    "can't import images into Container Registry",
+    "import images from iIBM Passport advantage fails CR",
+    "unable to import images into Container registry",
+    "how to deploy chart museum for CR",
+    "fail to add images to the container registry",
+    "can't add images to containerregistry",
+    "cannot add images to my container registry",
+    "can't import images into ContainerRegistry",
+    "Unable to add other images to the container registry"
+  ],
+  "troubleshoot-image-rm": [
+    "how to delete an image from container registry",
+    "ibmcloud cr image-rm command",
+    "how to delete all the tags from the CR repository",
+    "how to remove a tag from the repository in CR",
+    "ibmcloud cr image-rm command deleted all the image tags",
+    "ibmcloud cr image-rm command failed"
+  ],
+  "troubleshoot-image-list-retention": [
+    "image not show in the CR list ",
+    "ibmcloud cr retention-run",
+    "what is a distroless image in container registry",
+    "image not shown in ContainerRegistry",
+    "retention-run command delete old image  in CR",
+    "how to check the creation date of image in CR",
+    "ibmcloud cr image-inspect gives creation date",
+    "image not show after running ibmcloud cr retention-run"
+  ],
+  "troubleshoot-image-restore": [
+    "what is error 409 in container registry",
+    "how to restore image using digest in CR",
+    "restore image with same name in CR respository",
+    "Cannot restore images by running ibmcloud cr image-restore",
+    "can't restore images in CR",
+    "ibmcloud cr image-restore not working",
+    "overwrite image from trash for CR",
+    "using ibmcloud cr image-tag",
+    "container registry error 409",
+    "unable to restore images by running ibmcloud cr image-restore",
+    "error 409 The tagged image already exists for CR"
+  ],
+  "troubleshoot-image-restore-digest": [
+    "restored an image in container registry but tags missing",
+    "the tags were not restored after restoring an image in CR",
+    "ran ibmcloud cr image-restore command but the tags were not restored",
+    "tags not restored after image restore in container regitry",
+    "missing tags after image restore in CR",
+    "tags missing after I restored a CR image"
+  ],
+  "troubleshoot-recover-key": [
+    "repository or root key is lost or compromised",
+    "lost my root key for container registry",
+    "lost my repository key for container registry",
+    "missing root key in CR for trusted image",
+    "issue with repository key for container registry",
+    "recover the key for container registry",
+    "issue managing trusted image in container registry",
+    "issue with trusted image in container registry",
+    "manage a signed image by docker trust command in container registry"
+  ],
+  "troubleshoot-install-cise-fail": [
+    "installation of Container Image Security Enforcement fails",
+    "install of Container Image Security Enforcement failing",
+    "installation of Container Image Security Enforcement failed",
+    "Error: jobs.batch 'create-crds' already exists",
+    "helm install ibmcloud-image-enforcement fails with error",
+    "issue installing Container Image Security Enforcement"
+  ],
+  "troubleshoot-iam-policy": [
+    "get access denied errors although I have IAM access",
+    "getting access denied errors container registry",
+    "access errors when access container registry",
+    "can't access container registry",
+    "isue accessing container registry",
+    "no access to container registry"
+  ],
+  "troubleshoot-pods": [
+    "pods do not restart after all workers are down",
+    "pods won't restart in CR after the workers go down",
+    "Container Image Security Enforcement pods are down",
+    "Pods do not restart with Container Image Security Enforcement",
+    "can't restart pods with Container Image Security Enforcement installed",
+    "restart pods as all the workers down in container registry"
+  ],
+  "troubleshoot-manifest-error-type": [
+    "The manifest type for this image is not supported for tagging",
+    "error in container registry -The manifest type for this image is not supported for tagging",
+    "getting Manifest error when I try to tag my images in container registry",
+    "when I try to tag my images in container registry I am getting a manifest error",
+    "manifest error trying to tag CR images",
+    "cause of the manifest type for this image is not supported for tagging in CR",
+    "I receive Manifest error in Container Registry",
+    "get error the manifest type is not supported in CR"
+  ],
+  "troubleshoot-manifest-error-version": [
+    "error the manifest version for this image is not supported for tagging",
+    "getting an error message tring to tag my image in container registry",
+    "The manifest version for this image is not supported for tagging error",
+    "manifest version error trying to tag CR images",
+    "get error the manifest version is not supported in CR",
+    "the manifest version for this image is not supported for tagging in container registry"
+  ],
+  "troubleshoot-docker-mac": [
+    "Docker login fails on a Mac in container registry",
+    "ibmcloud cr login fails on a Mac",
+    "Docker login fails with Error saving credentials for CR",
+    "getting error when running ibmcloud cr login",
+    "Error saving credentials in container registry",
+    "error when running ibmcloud cr login Error saving credentials on Mac"
+  ]
 }
