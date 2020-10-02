@@ -142,7 +142,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Restore deleted image | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
 {: caption="Table 10. Trash" caption-side="top"}
 
-## Vulnerability
+## Vulnerability Advisor
 {: #registry_at_iam_vuln}
 
 ### Report
