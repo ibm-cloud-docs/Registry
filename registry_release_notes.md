@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-10-02"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -58,7 +58,7 @@ For more information, see [Announcing End of {{site.data.keyword.registrylong_no
 
 If you want to manage your Vulnerability Advisor exemption policies for security issues, you might have to update your access role depending on the task that you want to complete.
 
-For more information, see [Access roles for configuring IBM Cloud Container Registry](/docs/Registry?topic=Registry-iam#access_roles_configure).
+For more information, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## 29 July 2020
 {: 29jul2020}
@@ -289,7 +289,7 @@ For more information, see [Auditing events for {{site.data.keyword.registryshort
 
 {{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
 
-For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New IBM Cloud Container Registry Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
+For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
 
 Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name.
 
@@ -337,7 +337,7 @@ For more information, see [Vulnerability Advisor v2 API Deprecation](https://www
 
 Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Tutorial: Granting access to IBM Cloud Container Registry resources](/docs/Registry?topic=Registry-iam_access#iam_access).
+For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 
 ## 7 August 2018
 {: #7aug2018}
