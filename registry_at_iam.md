@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-05"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -163,8 +163,8 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | List account level exemptions | `GET /va/api/v3/exempt/image` | `container-registry.exemption.list` | |
 | Get an account level exemption | `GET /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
-| Create or update an account level exemption | `POST /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager`</br>`container-registry.exemption.create` | |
-| Delete an account level exemption | `DELETE /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager`</br>`container-registry.exemption.delete` | |
+| Create or update an account level exemption | `POST /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
+| Delete an account level exemption | `DELETE /va/api/v3/exempt/image/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
 | List resource exemptions | `GET /va/api/v3/exempt/image/{resource}` | `container-registry.exemption.list` | |
 | Get details of a resource exemption | `GET /va/api/v3/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.list` | |
 | Create or update a resource exemption | `POST /va/api/v3/exempt/image/{resource}/issue/{issueType}/{issueID}` | `container-registry.exemption.manager` | `container-registry.exemption.create` |
