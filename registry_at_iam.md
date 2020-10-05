@@ -27,7 +27,7 @@ subcollection: Registry
 # IAM and Activity Tracker action by API method
 {: #registry_at_iam}
 
-When you use {{site.data.keyword.registryshort_notm}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
+When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
 {: shortdesc}
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
