@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-09"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -131,7 +131,6 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | Delete tag | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
 {: caption="Table 9. Tags" caption-side="top"}
-
 ### Trash
 {: #registry_at_iam_reg_trash}
 
