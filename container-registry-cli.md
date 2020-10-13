@@ -65,9 +65,6 @@ None
 ## `ibmcloud cr build` - deprecated
 {: #bx_cr_build}
 
-This command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
-{: deprecated}
-
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
 
 Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
