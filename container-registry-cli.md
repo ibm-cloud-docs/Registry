@@ -62,7 +62,7 @@ ibmcloud cr api
 
 None
 
-## `ibmcloud cr build` - deprecated
+## `ibmcloud cr build`
 {: #bx_cr_build}
 
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
