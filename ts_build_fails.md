@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-13"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, build, build fails
 

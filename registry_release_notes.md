@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-13"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 

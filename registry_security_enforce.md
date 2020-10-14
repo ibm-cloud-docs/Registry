@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-14"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -56,17 +56,17 @@ To install Container Image Security Enforcement in your cluster, complete the fo
 
 3. Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
-   - For Helm V2, use the following command:
-
-     ```
-     helm install --name cise iks-charts/ibmcloud-image-enforcement
-     ```
-     {: pre}
-
    - For Helm V3, use the following command:
 
      ```
      helm install cise iks-charts/ibmcloud-image-enforcement
+     ```
+     {: pre}
+
+   - For Helm V2, use the following command:
+
+     ```
+     helm install --name cise iks-charts/ibmcloud-image-enforcement
      ```
      {: pre}
 
@@ -431,9 +431,18 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
    ```
    {: pre}
 
-1. Remove the chart.
+2. Remove the chart by using one of the following commands:
 
-   ```
-   helm delete --purge cise
-   ```
-   {: pre}
+   - Helm V3:
+
+      ```
+      helm delete cise
+      ```
+      {: pre}
+
+   - Helm V2:
+
+      ```
+      helm delete --purge cise
+      ```
+      {: pre}

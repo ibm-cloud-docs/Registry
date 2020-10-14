@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-10-14"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -118,7 +118,7 @@ Review the following table to find available Go template options and data types 
 | `Digest` | String | Displays the unique identifier for an image. |
 | `ManifestType` | String | Displays the image manifest type. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: **`Status`** `string`, **`IssueCount`** `int`, and **`ExemptionCount`** `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the <code>ibmcloud cr image-digests</code> command." caption-side="top"}
@@ -136,7 +136,7 @@ Review the following table to find available Go template options and data types 
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: *Status*  `string`, *IssueCount*  `int`, and *ExemptionCount*  `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values: **`Status`** `string`, **`IssueCount`** `int`, and **`ExemptionCount`** `int`. The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the <code>ibmcloud cr image-list</code> command." caption-side="top"}
