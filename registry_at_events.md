@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -40,7 +40,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | | |
-| `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. |  | True |
+| `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.delete` | Delete an image from {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.inspect` | Display details about an image. | | |
