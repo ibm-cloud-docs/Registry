@@ -436,7 +436,7 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
    - Helm version 3:
 
       ```
-      helm delete
+      helm delete cise
       ```
       {: pre}
 
