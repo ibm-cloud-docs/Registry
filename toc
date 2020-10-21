@@ -38,6 +38,13 @@ Container Registry
     registry_retention.md
     delete-data.md
     /va/toc
+    
+    {: .topicgroup}
+    Observability
+        registry_monitor_sysdig.md
+        registry_at_events.md
+        registry_logs.md
+        registry_at_iam.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -45,9 +52,6 @@ Container Registry
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
     registry_cli_list.md
     iam.md
-    registry_at_events.md
-    registry_at_iam.md
-    registry_logs.md
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
 
     {: .topicgroup}

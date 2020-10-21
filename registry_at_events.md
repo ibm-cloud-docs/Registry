@@ -64,6 +64,8 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.retention.analyze` | List the images that are deleted if you apply a given retention policy. | | |
 | `container-registry.retention.list` | List the image retention policies for your account. | | |
 | `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. | | |
+| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | | |
+| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | | |
 | `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | | |
 | `container-registry.trash.restore` | Restore a deleted image from the trash. | | |
 {: caption="Table 1. Actions that generate events" caption-side="top"}
