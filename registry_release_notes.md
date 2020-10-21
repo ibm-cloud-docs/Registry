@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,16 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 21 October 2020
+{: #21oct2020}
+
+### Find out about the usage on your account by using platform metrics
+{: #21oct2020_metrics}
+
+You can use the [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) command to enable and disable platform metrics, and to find out whether you have platform metrics set up on your account.
+
+For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor_sysdig).
 
 ## 6 October 2020
 {: #06oct2020}

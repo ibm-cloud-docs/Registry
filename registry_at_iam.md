@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -126,6 +126,15 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | Analyze a retention policy, and get a list of what would be deleted by it | `POST /api/v1/retentions/analyze` | `container-registry.retention.analyze`  | `container-registry.retention.analyze`  |
 | Get the retention policy for the specified namespace | `GET /api/v1/retentions/{namespace}` | `container-registry.retention.get` | `container-registry.retention.get`  |
 {: caption="Table 8. Retentions" caption-side="top"}
+
+### Settings
+{: #registry_at_iam_reg_set}
+
+| Action                                    | Method                 | IAM ACTION    |  AT ACTION |
+|-------------------------------------------|------------------------|---------------|------------|
+| Get registry service settings for the targeted account, such as whether platform metrics are enabled. | `GET /api/v1/settings` | `container-registry.settings.get` | `container-registry.settings.get` |
+| Update registry service settings for the targeted account, such as enabling platform metrics. | `PATCH /api/v1/settings` | `container-registry.settings.set` | `container-registry.settings.set` |
+{: caption="Table 9. Settings" caption-side="top"}
 
 ### Tags
 {: #registry_at_iam_reg_tags}

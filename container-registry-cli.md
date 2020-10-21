@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -992,6 +992,56 @@ Upgrade to the standard pricing plan.
 
 ```
 ibmcloud cr plan-upgrade standard
+```
+{: pre}
+
+## `ibmcloud cr platform-metrics`
+{: #ic_cr_platform_metrics}
+
+You can use the command to enable and disable platform metrics, and to find out whether you have platform metrics set up on your account for the registry region that you're targeting.
+{: shortdesc}
+
+If you want to view the platform metrics for {{site.data.keyword.registrylong_notm}}, you must opt in by running the `ibmcloud cr platform-metrics` command.
+{: important}
+
+You must have one of the command options specified or the command fails with an error.
+{: tip}
+
+```
+ibmcloud cr platform-metrics --enable | --disable | --status
+```
+{: codeblock}
+
+For more information about the platform metrics that you can view in {{site.data.keyword.registrylong_notm}}, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor_sysdig).
+
+### Prerequisites
+{: #ic_cr_platform_metrics_prereq}
+
+- You must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
+
+- [Enable your {{site.data.keyword.mon_full_notm}} instance for platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
+
+- To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+
+### Command options
+{: #ic_cr_platform_metrics_option}
+
+<dl>
+<dt>`--enable`</dt>
+<dd>(Optional) Enable the setting for your account.</dd>
+<dt>`--disable`</dt>
+<dd>(Optional) Disable the setting for your account.</dd>
+<dt>`--status`</dt>
+<dd>(Optional) Display whether the setting is enabled for your account.</dd>
+</dl>
+
+### Example
+{: #ic_cr_platform_metrics_example}
+
+Enable platform metrics for your account.
+
+```
+ibmcloud cr platform-metrics --enable
 ```
 {: pre}
 

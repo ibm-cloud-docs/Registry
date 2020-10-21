@@ -125,6 +125,8 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.plan.set` | [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade) Upgrade to the standard plan. | Manager |
 | `container-registry.quota.get` | [`ibmcloud cr quota`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota) Display your current quotas for traffic and storage, and usage information against those quotas. | Reader, Writer, Manager |
 | `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set) Modify the specified quota. | Manager |
+| `container-registry.settings.get` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Get registry service settings for the targeted account, such as whether platform metrics are enabled. | Reader, Writer, Manager |
+| `container-registry.settings.set` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Update registry service settings for the targeted account, such as enabling platform metrics. | Manager |
 {: caption="Table 4. Service actions and operations for configuring {{site.data.keyword.registrylong_notm}}" caption-side="top"}
 
 ### Access roles for using {{site.data.keyword.registrylong_notm}}

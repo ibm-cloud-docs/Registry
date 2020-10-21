@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -27,7 +27,7 @@ subcollection: Registry
 # Auditing the events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
-Use {{site.data.keyword.at_full_notm}} to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
+Use {{site.data.keyword.at_full} to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
@@ -64,6 +64,8 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.retention.analyze` | List the images that are deleted if you apply a given retention policy. | | |
 | `container-registry.retention.list` | List the image retention policies for your account. | | |
 | `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. | | |
+| `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | | |
+| `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | | |
 | `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | | |
 | `container-registry.trash.restore` | Restore a deleted image from the trash. | | |
 {: caption="Table 1. Actions that generate events" caption-side="top"}
