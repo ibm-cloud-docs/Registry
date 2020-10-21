@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -233,7 +233,8 @@ To build your own Docker image, complete the following steps:
      ```
      {: pre}
 
-     For more information about the `ibmcloud cr build` command, see [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build).
+     The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
+     {: deprecated}
 
    - To build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}, complete the following steps:
       1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
