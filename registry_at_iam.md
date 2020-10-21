@@ -161,10 +161,10 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Get the vulnerability assessment for all images | `GET /va/api/v3/report/account` | `container-registry.exemption.list` |  |
-| Get vulnerability assessment status for all images | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` |  |
-| Get vulnerability status | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` |  |
-| Get vulnerability assessment status | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` |  |
+| Get the vulnerability assessment for all images | `GET /va/api/v3/report/account` | `container-registry.exemption.list` | |
+| Get vulnerability assessment status for all images | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | |
+| Get vulnerability status | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | |
+| Get vulnerability assessment status | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | |
 {: caption="Table 11. Report" caption-side="top"}
 
 ### Exemption
