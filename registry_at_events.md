@@ -101,3 +101,5 @@ The following table shows the location of global registry {{site.data.keyword.at
 |-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="top"}
+
+For more information about {{site.data.keyword.cloud_notm}} services by location, see [Container services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations#cloud_services_locations_container).
