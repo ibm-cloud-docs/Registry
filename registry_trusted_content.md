@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-22"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -208,7 +208,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key).
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your recovery options are limited, see, [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key).
 
    This action is only required the first time that you push a signed repository.
    {: tip}
@@ -221,7 +221,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 1. [Set up your trusted content environment](#trustedcontent_setup).
 
-2. Pull your image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
+2. Pull your image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`. To list available images to pull, run `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>
@@ -237,7 +237,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 To re-sign the image for the new domain name, `icr.io`, you must pull, tag, and push the image.
 {:shortdesc}
 
-1. Pull your signed image from the old domain name. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as _latest_. To list available images to pull, run `ibmcloud cr image-list`.
+1. Pull your signed image from the old domain name. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`. To list available images to pull, run `ibmcloud cr image-list`.
 
    ```
    docker pull <source_image>:<tag>

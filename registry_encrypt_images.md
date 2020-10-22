@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-22"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -157,7 +157,7 @@ Encrypt the image by using the public key and then build a container image by us
    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an API key, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
    {: tip}
 
-   You get a response informing you that the manifest is written to the image destination, which is the registry.
+   You get a response that informs you that the manifest is written to the image destination, which is the registry.
 
 5. Check in your registry to make sure that the image is there.
 
@@ -218,7 +218,7 @@ You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https
 To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys.
 {:shortdesc}
 
-{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can re-encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
+{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can reencode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
 
 As an alternative, you can protect your keys in your own store by wrapping them by using an {{site.data.keyword.keymanagementservicelong_notm}} root key. This action means that you must unwrap them again by using {{site.data.keyword.keymanagementservicelong_notm}} and the valid root key.
 
