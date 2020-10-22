@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-22"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods won't restart, workers down, pods, workers
 
@@ -37,7 +37,7 @@ Pods do not restart after your cluster workers have been down.
 {: shortdesc}
 
 {: tsSymptoms}
-Container Image Security Enforcement is deployed. The cluster workers are showing as healthy, but nothing is scheduled.
+Container Image Security Enforcement is deployed. The cluster workers are showing as working correctly, but nothing is scheduled.
 
 {: tsCauses}
 By default, Container Image Security Enforcement adds a fail closed admission webhook. If all Container Image Security Enforcement pods are down, the pods are not available to approve their own recovery.
@@ -50,7 +50,7 @@ You must have sufficient role-based access control (RBAC) privileges to use the 
 - `GET`
 - `PATCH`
 
-on these resources:
+On these resources:
 
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
