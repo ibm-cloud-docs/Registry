@@ -206,12 +206,6 @@ Pull the image from the registry and decrypt it by using the private key.
    ```
    {: pre}
 
-## Next steps
-{: #registry_encrypt_next}
-
-You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, but it is unsupported. The private key must be in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
-{: note}
-
 ## Storing keys
 {: #registry_encrypt_keys}
 
@@ -227,3 +221,9 @@ As an alternative, you can protect your keys in your own store by using an {{sit
 For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key that you are using.
 
 For more information about how you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
+
+## Next steps
+{: #registry_encrypt_next}
+
+You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, but it is unsupported. The private key must be in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
+{: note}
