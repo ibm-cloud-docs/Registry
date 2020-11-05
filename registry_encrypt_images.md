@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-03"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -206,22 +206,24 @@ Pull the image from the registry and decrypt it by using the private key.
    ```
    {: pre}
 
+## Storing keys
+{: #registry_encrypt_keys}
+
+To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-about) to store and protect your keys.
+{:shortdesc}
+
+{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
+
+For more information about how to use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
+
+As an alternative, you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them. This action means that you must unwrap them again by using {{site.data.keyword.keymanagementservicelong_notm}} and the valid root key.
+
+For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key that you are using.
+
+For more information about how you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
+
 ## Next steps
 {: #registry_encrypt_next}
 
 You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, but it is unsupported. The private key must be in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
 {: note}
-
-## Storing keys
-{: #registry_encrypt_keys}
-
-To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys.
-{:shortdesc}
-
-{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
-
-As an alternative, you can protect your keys in your own store by wrapping them by using an {{site.data.keyword.keymanagementservicelong_notm}} root key. This action means that you must unwrap them again by using {{site.data.keyword.keymanagementservicelong_notm}} and the valid root key.
-
-For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wrap <root_key_id> -p <base64 encoded image key>"` and to unwrap keys, run the command `"ibmcloud kp key unwrap <root_key_id> -p <base64 cyphertext>`, where `<root_key_id>` is the ID of the root key that you are using.
-
-For more information, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys), [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys), and [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
