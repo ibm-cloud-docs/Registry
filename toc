@@ -32,6 +32,7 @@ Container Registry
     registry_images_.md
     registry_tokens.md
     registry_users.md
+    iam.md
     registry_trusted_content.md
     registry_security_enforce.md
     registry_encrypt_images.md
@@ -51,7 +52,6 @@ Container Registry
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
     registry_cli_list.md
-    iam.md
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
 
     {: .topicgroup}
