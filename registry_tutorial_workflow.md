@@ -135,12 +135,6 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    You can build your image directly in {{site.data.keyword.cloud_notm}} instead of building it locally and pushing it separately. Try running `ibmcloud cr build -t us.icr.io/<my_namespace>/hello-world:1 .`.
-    {: tip}
-
-    The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
-    {: deprecated}
-
 4. Confirm that your image uploaded successfully by running the following command:
 
     ```
