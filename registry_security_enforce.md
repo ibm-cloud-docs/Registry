@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-19"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -24,11 +24,14 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-# Enforcing container image security
+# Enforcing container image security by using Container Image Security Enforcement - deprecated
 {: #security_enforce}
 
 With Container Image Security Enforcement, you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
 {:shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 Container Image Security Enforcement retrieves information about image content trust and vulnerabilities from {{site.data.keyword.registrylong_notm}}. You can choose to block or to allow deployment of images that are stored in other registries, but you cannot use vulnerability or trust enforcement for these images.
 
@@ -37,6 +40,9 @@ Container Image Security Enforcement retrieves information about image content t
 
 Install Container Image Security Enforcement in your cluster by setting up Helm and installing the Container Image Security Enforcement Helm chart.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 Before you begin, complete the following tasks:
 
@@ -78,6 +84,9 @@ Container Image Security Enforcement is now installed, and is applying the [defa
 Container Image Security Enforcement installs some policies by default to provide you with a starting point for building your security policy.
 {: shortdesc}
 
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
+
 To override these policies, use one of the following options:
 
 - Write a new policy document and apply it to your cluster by using `kubectl apply`
@@ -90,6 +99,9 @@ For more information about writing security policies, see [Customizing policies]
 
 By default, a cluster-wide policy enforces that all images in all registries have trust information and have no reported vulnerabilities in Vulnerability Advisor.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 The following code shows the default cluster-wide policy `.yaml` file:
 
@@ -151,6 +163,9 @@ When you set `va` or `trust` to `enabled: true` for a container registry other t
 By default, a namespace-wide policy is installed for the `kube-system` namespace. This policy allows all images from any container registry to be deployed into the `kube-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly.
 {: shortdesc}
 
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
+
 The following code shows the default `kube-system` policy `.yaml` file:
 
 ```yaml
@@ -196,6 +211,9 @@ spec:
 
 By default, a namespace-wide policy is installed for the `ibm-system` namespace. This policy allows all images from any container registry to be deployed into the `ibm-system` without enforcement, but you can change this part of the policy. The default policy also includes certain repositories that you must leave in place so that your cluster is configured correctly and can install or upgrade Container Image Security Enforcement.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 The following code shows the default `ibm-system` policy `.yaml` file:
 
@@ -248,6 +266,9 @@ spec:
 
 You can change the policy that Container Image Security Enforcement uses to permit images, either at the cluster or Kubernetes namespace level. In the policy, you can specify different enforcement rules for different images.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 You must have some policy set. Otherwise, deployments to your cluster fail. If you do not want any image security policies enforced, [remove Container Image Security Enforcement](#remove).
 {: tip}
@@ -302,6 +323,9 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 If you use content trust, you can verify that images are signed by particular signers. Deployment is allowed only if the most recent signed version is signed by all the listed signers. To add a signer to a repository, see [Managing trusted signers](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_signers).
 {: shortdesc}
 
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
+
 To configure the policy to verify that an image is signed by a particular signer:
 
 1. Get the signer name (the name that was used in `docker trust signer add`), and the signer's public key.
@@ -329,6 +353,9 @@ To configure the policy to verify that an image is signed by a particular signer
 
 If you have role-based access control (RBAC) enabled on your Kubernetes cluster, you can create a role to govern who has the ability to administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding).
 {:shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 - In your role, add a rule for security policies:
 
@@ -359,6 +386,9 @@ If you have role-based access control (RBAC) enabled on your Kubernetes cluster,
 
 When a policy is applied, you can deploy content to your cluster normally. Your policy is automatically enforced by the Kubernetes cluster. If your deployment matches a policy and is allowed by that policy, your deployment is accepted by the cluster and applied.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 - If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 
@@ -414,6 +444,9 @@ A deployment is allowed only if all images pass the Container Image Security Enf
 
 ## Removing Container Image Security Enforcement
 {: #remove}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster.
 
