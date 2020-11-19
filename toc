@@ -26,19 +26,22 @@ Container Registry
 
     {: .navgroup id="howto"}
     registry_setup_cli_namespace.md
-    registry_private.md
     registry_rhos.md
     registry_quota.md
     registry_images_.md
     registry_tokens.md
     registry_users.md
     iam.md
-    registry_trusted_content.md
-    registry_security_enforce.md
-    registry_encrypt_images.md
     registry_retention.md
     delete-data.md
     /va/toc
+
+    {: .topicgroup}
+    Enhancing security
+        registry_trusted_content.md
+        registry_security_enforce.md
+        registry_encrypt_images.md
+        registry_private.md
     
     {: .topicgroup}
     Observability
