@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-11-19"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, helm, cise, helm install
 
@@ -35,6 +35,9 @@ subcollection: Registry
 
 The installation of Container Image Security Enforcement fails.
 {: shortdesc}
+
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+{: deprecated}
 
 {: tsSymptoms}
 Your installation of Container Image Security Enforcement failed and you received the following message:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-11-19"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 19 November 2020
+{: #19nov2020}
+
+### You can use Portieris to enforce container image security
+{: #19nov2020_portieris}
+
+With effect from 19 November 2020, [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce) is deprecated. To enforce container image security you can use [Portieris](https://github.com/IBM/portieris){: external}. You can use Portieris to control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
 
 ## 21 October 2020
 {: #21oct2020}
