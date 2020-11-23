@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-11-23"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, deleting images, deleting tags, tags
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# When I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags that referenced that image get deleted too?
+# I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?
 {: #troubleshoot-image-rm}
 {: troubleshoot}
 {: support}

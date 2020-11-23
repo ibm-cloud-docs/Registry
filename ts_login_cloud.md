@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-11-23"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# When I run any command in {{site.data.keyword.registrylong_notm}}, why am I getting the message: `FAILED You are not logged in to IBM Cloud`?
+# Why do I get a failure message when I run any command in {{site.data.keyword.registrylong_notm}}?
 {: #troubleshoot-login-cloud}
 {: troubleshoot}
 {: support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-11-23"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -60,10 +60,12 @@ For more information about private connections, see [Securing your connection to
 ### Dependencies that are used for customer data, all of which use private network connections
 {: #registry_architecture_dependencies_private}
 
-- [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
+To find out aboue dependencies that are used for customer data, all of which use private network connections, see [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
 ### Other dependencies that use private network connections
 {: #registry_architecture_dependencies_other}
+
+The following list identifies other dependencies that use private network connections:
 
 - [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) \*
 - [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
@@ -75,4 +77,4 @@ For more information about private connections, see [Securing your connection to
 ### Dependencies that use public connections
 {: #registry_architecture_dependencies_public}
 
-- [{{site.data.keyword.iamshort}} (IAM)](/docs/account?topic=account-iamoverview)
+To find out about dependencies that use public connections, see [{{site.data.keyword.iamshort}} (IAM)](/docs/account?topic=account-iamoverview).

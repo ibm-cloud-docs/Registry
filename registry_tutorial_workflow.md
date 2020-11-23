@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-11-23"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -44,6 +44,8 @@ Much of the information that is provided in this tutorial is available in greate
 ## Objectives
 {: #registry_tutorial_workflow_objectives}
 
+The objectives of the tutorial are to:
+
 * Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor
 * Use the functions of these services to create a workflow
 
@@ -57,6 +59,8 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
+
+Before you begin, complete the following tasks:
 
 * [Install Git](https://git-scm.com/){: external}
 * [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository

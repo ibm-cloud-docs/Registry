@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-11-23"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails, not a registered command, registered command, command fails
 
@@ -28,12 +28,12 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why are all the {{site.data.keyword.registrylong_notm}} commands failing with the message: `'cr' is not a registered command. See 'ibmcloud help'`?
+# Why are all the {{site.data.keyword.registrylong_notm}} commands failing?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}
 
-You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands.
+You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands, they are failing with the message: `'cr' is not a registered command. See 'ibmcloud help'`.
 {: shortdesc}
 
 {: tsSymptoms}
