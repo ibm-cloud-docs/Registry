@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-11-23"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, docker login, mac, docker login fails on a mac
 
@@ -28,12 +28,12 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why is Docker login failing on my Mac with the message: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`?
+# Why is Docker login failing on my Mac?
 {: #troubleshoot-docker-mac}
 {: troubleshoot}
 {: support}
 
-When you're using {{site.data.keyword.registrylong}}, Docker login fails on a Mac.
+When you're using {{site.data.keyword.registrylong}}, Docker login fails on a Mac with the message: `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'`
 {: shortdesc}
 
 {: tsSymptoms}
