@@ -28,7 +28,7 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why am I getting a 409 error when I'm restoring an image from the trash `The tagged image already exists`?
+# Why am I getting a 409 error telling me that the tagged image already exists when I'm restoring an image from the trash?
 {: #troubleshoot-image-restore}
 {: troubleshoot}
 {: support}
