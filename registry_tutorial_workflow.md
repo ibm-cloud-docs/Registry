@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -222,17 +222,20 @@ Images are continually updated and new CVEs are discovered. As a result, you mig
 
 When a vulnerability is found in one of your images, a [report](/docs/Registry?topic=va-va_index#va_reviewing) is produced that gives you more information about the vulnerability and the steps to resolve the vulnerability.
 
-1. Build and push a vulnerable image by running the following commands:
+1. Build and push a vulnerable image:
+   1. Build a vulnerable image by running the following command:
 
-   ```
-   docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
-   ```
-   {: pre}
+      ```
+      docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
+      ```
+      {: pre}
 
-   ```
-   docker push us.icr.io/<my_namespace>/hello-world:2
-   ```
-   {: pre}
+   2. Push the vulnerable image by running the following command:
+
+      ```
+      docker push us.icr.io/<my_namespace>/hello-world:2
+      ```
+      {: pre}
 
    You can read the Dockerfile to better understand how this image was made vulnerable. In short, a Debian base image is used, and the `apt` package is rolled back to a version that is vulnerable to CVE-2019-3462.
 
@@ -320,17 +323,20 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
    ```
    {: screen}
 
-2. Build and push the image again by running the following commands:
+2. Build and push the image again:
+   1. Build the image again by running the following command:
+  
+      ```
+      docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
+      ```
+      {: pre}
 
-   ```
-   docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
-   ```
-   {: pre}
+   2. Push the image again by running the following command:
 
-   ```
-   docker push us.icr.io/<my_namespace>/hello-world:2
-   ```
-   {: pre}
+      ```
+      docker push us.icr.io/<my_namespace>/hello-world:2
+      ```
+      {: pre}
 
 3. Wait for the scan to complete and then run the following command to ensure that no issues are present in the image:
 
@@ -427,16 +433,19 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
    ```
    {: screen}
 
-6. Delete your deployment and reapply the configuration by running the following commands:
+6. Delete your deployment and reapply the configuration:
+   1. Delete your deployment by running the following command:
+   
+      ```
+      kubectl delete -f hello-world.yaml
+      ```
+      {: pre}
 
-   ```
-   kubectl delete -f hello-world.yaml
-   ```
-   {: pre}
+   2. Reapply the configuration by running the following command:
 
    ```
    kubectl apply -f hello-world.yaml
    ```
    {: pre}
 
-   This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
+This time the command succeeds, and you can access your container by using a `curl` command or a web browser.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -36,45 +36,43 @@ In each regional instance of the registry, the service runs in three physically 
 
 ![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public/private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
+\* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
+
 ## Segregation
 {: #registry_architecture_segregation}
 
-Segregation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private namespaces, which are strictly owned by single accounts. You can control access to namespaces within the account by using {{site.data.keyword.iamlong}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segregated, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
+Segregation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private namespaces, which are strictly owned by single accounts.
+{: shortdesc}
 
-All traffic to the registry, and from the service to {{site.data.keyword.registrylong_notm}} dependencies is encrypted in transit. No additional network level segregation of traffic is provided.
+You can control access to namespaces within the account by using {{site.data.keyword.iamlong}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segregated, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
 
-The control plane and data plane are not segregated from each other.
+All traffic to the registry, and from the service to {{site.data.keyword.registrylong_notm}} dependencies is encrypted in transit. No additional network level segregation of traffic is provided. The control plane and data plane are not segregated from each other.
 
 ## Private connections
 {: #registry_architecture_private_connections}
 
 You can decide whether your data plane interactions use private connections. Additionally, you can choose to prohibit public data plane connections for your account.
+{; shortdesc}
 
-The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections.
-
-For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
+The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections. For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
 
 ## Dependencies
 {: #registry_architecture_dependencies}
 
-### Dependencies that are used for customer data, all of which use private network connections
-{: #registry_architecture_dependencies_private}
+Find out about dependencies that use public and private network connections.
+{: shortdesc}
 
-To find out aboue dependencies that are used for customer data, all of which use private network connections, see [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+- For information about dependencies that are used for customer data, all of which use private network connections, see [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
-### Other dependencies that use private network connections
-{: #registry_architecture_dependencies_other}
+- For information about other dependencies that use private network connections, see the following links:
 
-The following list identifies other dependencies that use private network connections:
+  - [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 
-- [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) \*
-- [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
-- [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started)
-- [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started)
+    Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
+    {: important}
 
-\* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
+  - [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
+  - [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started)
+  - [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started)
 
-### Dependencies that use public connections
-{: #registry_architecture_dependencies_public}
-
-To find out about dependencies that use public connections, see [{{site.data.keyword.iamshort}} (IAM)](/docs/account?topic=account-iamoverview).
+- For information about dependencies that use public connections, see [{{site.data.keyword.iamshort}} (IAM)](/docs/account?topic=account-iamoverview).
