@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, restoring images, restoring images from the trash, trash
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why am I getting a 409 error telling me that the tagged image already exists when I'm restoring an image from the trash?
+# When I'm restoring an image from the trash, why do I get an error that says that the tagged image already exists?
 {: #troubleshoot-image-restore}
 {: troubleshoot}
 {: support}

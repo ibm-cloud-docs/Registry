@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -320,33 +320,35 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
    ```
    {: screen}
 
-2. Build and push the image again by running the following commands:
+2. Build the image again by running the following command:
 
    ```
    docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
    ```
    {: pre}
 
+3. Push the image again by running the following command:
+
    ```
    docker push us.icr.io/<my_namespace>/hello-world:2
    ```
    {: pre}
 
-3. Wait for the scan to complete and then run the following command to ensure that no issues are present in the image:
+4. Wait for the scan to complete and then run the following command to ensure that no issues are present in the image:
 
    ```
    ibmcloud cr images
    ```
    {: pre}
 
-4. To patch the deployment, run the following command:
+5. To patch the deployment, run the following command:
 
    ```
    kubectl apply -f hello-world.yaml
    ```
    {: pre}
 
-5. Wait for the deployment to complete. To check whether the deployment is complete, run the following command:
+6. Wait for the deployment to complete. To check whether the deployment is complete, run the following command:
 
    ```
    kubectl rollout status deployment hello-world
@@ -355,7 +357,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
    This deployment succeeds, and you can access your service and see "Hello, world!" displayed.
 
-6. Delete the deployment and the service before proceeding:
+7. Delete the deployment and the service before proceeding:
 
    ```
    kubectl delete -f hello-world.yaml
@@ -427,12 +429,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
    ```
    {: screen}
 
-6. Delete your deployment and reapply the configuration by running the following commands:
+6. Delete your deployment by running the following command:
 
    ```
    kubectl delete -f hello-world.yaml
    ```
    {: pre}
+
+7. Reapply the configuration by running the following command:
 
    ```
    kubectl apply -f hello-world.yaml
