@@ -172,7 +172,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
    ```
    image: us.icr.io/<my_namespace>/hello-world:1
    ```
-   {: screen}
+   {: codeblock}
 
 4. Run your image as a deployment and expose it by creating a service that is accessed through the IP address of the worker node:
 
@@ -274,7 +274,7 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
    ```
    - name: us.icr.io/<my_namespace>/*
    ```
-   {: screen}
+   {: codeblock}
 
 4. Apply the custom policies:
 
@@ -288,7 +288,7 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
    ```
    image: us.icr.io/<my_namespace>/hello-world:2
    ```
-   {: screen}
+   {: codeblock}
 
 6. Try to patch the existing deployment by running the following command:
 
@@ -391,27 +391,42 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
      name: hello-world
      namespace: test
    ```
-   {: screen}
+   {: codeblock}
 
-3. Apply the configuration by running the following command:
+3. Apply the configuration.
 
-   ```
-   kubectl apply -f hello-world.yaml
-   ```
-   {: pre}
+   1. Apply the configuration with Container Image Security Enforcement still enabled in your cluster by running the following command:
 
-   Because Container Image Security Enforcement is still enabled in your cluster, your deployment fails immediately and you see the following message:
+      ```
+      kubectl apply -f hello-world.yaml
+      ```
+      {: pre}
 
-   ```
-   Error from server: error when creating "hello-world.yaml": admission webhook
-   "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request:
-   Deny "us.icr.io/<my_namespace>/hello-world:2", no valid ImagePullSecret defined for us.icr.io
-   ```
-   {: screen}
+      Because Container Image Security Enforcement is still enabled in your cluster, your deployment fails immediately and you see the following message:
 
-   This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
+      ```
+      Error from server: error when creating "hello-world.yaml": admission webhook
+      "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request:
+      Deny "us.icr.io/<my_namespace>/hello-world:2", no valid ImagePullSecret defined for us.icr.io
+      ```
+      {: screen}
 
-   If you [remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove) first, the `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image. You can find the pod name by running `kubectl get pod -n test`.
+      This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
+
+   2. Apply the configuration after Container Image Security Enforcement is removed from your cluster, then apply the configuration.
+
+      1. [Remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove).
+      2. Apply the configuration by running the following command:
+
+         ```
+         kubectl apply -f hello-world.yaml
+         ```
+         {: pre}
+
+         The `kubectl apply` command completes successfully. However, when you inspect the deployment's pod by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
+         
+         You can find the pod name by running `kubectl get pod -n test`.
+         {: tip}
 
 4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
@@ -431,7 +446,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
      imagePullSecrets:
      - name: test-us-icr-io
    ```
-   {: screen}
+   {: codeblock}
 
 6. Delete your deployment and reapply the configuration:
    1. Delete your deployment by running the following command:
