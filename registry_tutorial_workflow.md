@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-11-25"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -321,7 +321,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
    ```
    # RUN apt-get install --allow-downgrades -y apt=1.4.8
    ```
-   {: screen}
+   {: codeblock}
 
 2. Build and push the image again:
    1. Build the image again by running the following command:
@@ -443,9 +443,9 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
    2. Reapply the configuration by running the following command:
 
-   ```
-   kubectl apply -f hello-world.yaml
-   ```
-   {: pre}
+      ```
+      kubectl apply -f hello-world.yaml
+      ```
+      {: pre}
 
-This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
+   This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
