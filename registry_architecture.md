@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-11-25"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -36,7 +36,7 @@ In each regional instance of the registry, the service runs in three physically 
 
 ![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public/private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
-\* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
+Note: \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in eu-central (`de.icr.io`).
 
 ## Segregation
 {: #registry_architecture_segregation}
@@ -52,7 +52,7 @@ All traffic to the registry, and from the service to {{site.data.keyword.registr
 {: #registry_architecture_private_connections}
 
 You can decide whether your data plane interactions use private connections. Additionally, you can choose to prohibit public data plane connections for your account.
-{; shortdesc}
+{: shortdesc}
 
 The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections. For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
 

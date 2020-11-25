@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-11-25"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -43,7 +43,7 @@ You can use various tools to create [{{site.data.keyword.redhat_notm}} Signature
 
 You can use the following tools to create {{site.data.keyword.redhat_notm}} signatures:
 
-- [skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
+- [Skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
 - [OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
 - [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
@@ -329,7 +329,7 @@ When you first push a signed image to a new repository, Docker Content Trust cre
 If you changed your Docker configuration directory, look for the `trust` subdirectory there.
 {: tip}
 
-You must back up all your keys, and especially the root key. If a key is lost or compromised, your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key).
+You must back up all your keys, and especially the root key. If a key is lost or compromised, your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key)
 
 To back up your keys, see [Docker Content Trust documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/#back-up-your-keys){: external}.
 
