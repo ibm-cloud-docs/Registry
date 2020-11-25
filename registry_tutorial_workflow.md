@@ -413,7 +413,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
       This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
-   2. Apply the configuration after Container Image Security Enforcement is removed from your cluster, then apply the configuration.
+   2. Apply the configuration after Container Image Security Enforcement is removed from your cluster.
 
       1. [Remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove).
       2. Apply the configuration by running the following command:
