@@ -24,7 +24,6 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
