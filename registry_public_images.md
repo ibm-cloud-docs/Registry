@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-12-04"
 
 keywords: public IBM images, images, accessing images, container images, public images,
 
@@ -27,7 +27,7 @@ subcollection: Registry
 # Public {{site.data.keyword.IBM_notm}} images
 {: #public_images}
 
-You can access the images that are provided by {{site.data.keyword.IBM}} by using the command line. You can't access the public {{site.data.keyword.IBM_notm}} images by using the graphical user interface anymore.
+You can access the images that are provided by {{site.data.keyword.IBM}} by using the command line. You can't access the public {{site.data.keyword.IBM_notm}} images by using the {{site.data.keyword.cloud_notm}} console anymore.
 {:shortdesc}
 
 ## Accessing the public IBM images by using the CLI

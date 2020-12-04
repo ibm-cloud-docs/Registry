@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-12-04"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -244,9 +244,9 @@ When you set up your own namespace in {{site.data.keyword.registrylong_notm}}, t
 You can have 100 namespaces in each region.
 {: note}
 
-From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI, or in the GUI on or after 29 July 2020, when you create a namespace, it is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
+From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, when you create a namespace, it is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
 
-Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020 aren't created in resource groups. If you have an existing namespace that is not in a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't created in resource groups. If you have an existing namespace that is not in a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 
 ### Repository
 {: #overview_elements_repository}
@@ -284,7 +284,7 @@ All registry artifacts are scoped to the specific regional registry that you are
 ### Local regions
 {: #registry_regions_local}
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI.
+A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
 {:shortdesc}
 
 The domain names are shown in the following table.
@@ -353,7 +353,7 @@ If you want to use a region other than your local region, you can target the reg
 A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-The domain names are available in the console and the CLI.
+The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
 
 The domain names are shown in the following table.
 

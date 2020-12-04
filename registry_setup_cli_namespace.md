@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-12-04"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -97,9 +97,9 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
 {:shortdesc}
 
-When you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the GUI on or after 29 July 2020, it is created in the resource group that you specify so that, if you want to, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
+When you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it is created in the resource group that you specify so that, if you want to, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and you don't have a resource group targeted, the default resource group is used.
 
-Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the GUI before 29 July 2020, aren't assigned to resource groups. If you have existing namespaces that are not assigned to a resource group and you want to assign them to a resource group, see [Assigning existing namespaces to resource groups](#registry_namespace_assign).
+Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have existing namespaces that are not assigned to a resource group and you want to assign them to a resource group, see [Assigning existing namespaces to resource groups](#registry_namespace_assign).
 
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name set up in that region.
 
@@ -162,7 +162,7 @@ You can now [push Docker images to your namespace in {{site.data.keyword.registr
 ## Assigning existing namespaces to resource groups
 {: #registry_namespace_assign}
 
-Namespaces created in version 0.1.484 of the CLI or earlier and in the GUI before 29 July 2020, aren't assigned to resource groups. If you have an existing namespace that is not assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
+Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have an existing namespace that is not assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
 {: shortdesc}
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
