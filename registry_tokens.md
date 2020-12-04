@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-12-04"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -23,6 +23,7 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -108,11 +109,11 @@ You can use Docker to authenticate with the registry so that you can push and pu
 
 Use the API key to log in to your registry by running the following Docker command. Replace `<apikey>` with your API key and `<registry_url>` with the URL to the registry where your namespaces are set up.
 
-- For namespaces that are set up in AP-North, use `jp.icr.io` as the registry URL.
-- For namespaces that are set up in AP-South, use `au.icr.io` as the registry URL.
-- For namespaces that are set up in EU-Central, use `de.icr.io` as the registry URL.
-- For namespaces that are set up in UK-South, use `uk.icr.io` as the registry URL.
-- For namespaces that are set up in US-South, use `us.icr.io` as the registry URL.
+- For namespaces that are set up in `ap-north`, use `jp.icr.io` as the registry URL.
+- For namespaces that are set up in `ap-south`, use `au.icr.io` as the registry URL.
+- For namespaces that are set up in `eu-central`, use `de.icr.io` as the registry URL.
+- For namespaces that are set up in `uk-south`, use `uk.icr.io` as the registry URL.
+- For namespaces that are set up in `us-south`, use `us.icr.io` as the registry URL.
 
 ```
 docker login -u iamapikey -p <apikey> <registry_url>
