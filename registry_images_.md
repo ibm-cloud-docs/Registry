@@ -25,7 +25,6 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Adding images to your namespace
 {: #registry_images_}
 
