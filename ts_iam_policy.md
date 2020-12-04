@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-12-04"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, iam, access denied, iam access policy
 
@@ -43,4 +43,4 @@ You've created an IAM access policy, but you're still getting access denied erro
 You are likely to get access denied errors because the user policy was created in a resource group but the namespace is not assigned to that resource group.
 
 {: tsResolve}
-If your namespace was created in version 0.1.484 of the CLI or earlier, or in the GUI before 29 July 2020, and isn't assigned to a resource group, you must assign the namespace to the same resource group as the user policy, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+If your namespace was created in version 0.1.484 of the CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, and isn't assigned to a resource group, you must assign the namespace to the same resource group as the user policy, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).

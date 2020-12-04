@@ -305,7 +305,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
 ## Deleting images from your private {{site.data.keyword.cloud_notm}} repository
 {: #registry_images_remove}
 
-You can delete unwanted images from your private repository by using either the graphical user interface (GUI) or the CLI.
+You can delete unwanted images from your private repository by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
 {: shortdesc}
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
@@ -354,7 +354,7 @@ To delete an image by using the CLI, complete the following steps:
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the GUI
 {: #registry_images_remove_gui}
 
-You can delete unwanted images and all their tags from your private image repository by using the graphical user interface (GUI).
+You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
 {:shortdesc}
 
 Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
@@ -478,7 +478,7 @@ To restore an image by tag from the trash, complete the following steps:
 ## Deleting a private repository and any associated images
 {: #registry_repo_remove}
 
-You can delete private repositories that are no longer required, and any associated images, by using the graphical user interface (GUI).
+You can delete private repositories that are no longer required, and any associated images, by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 When you delete a repository, all images in that repository are deleted. This action can't be undone.

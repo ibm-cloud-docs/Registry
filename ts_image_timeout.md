@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-12-04"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out, GUI
 
@@ -28,19 +28,19 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why does listing images in the GUI time out?
+# Why does listing images in the {{site.data.keyword.cloud_notm}} console time out?
 {: #troubleshoot-image-timeout}
 {: troubleshoot}
 {: support}
 
-Listing images in the {{site.data.keyword.registrylong}} GUI times out.
+Listing images in the {{site.data.keyword.registrylong}} {{site.data.keyword.cloud_notm}} console times out.
 {: shortdesc}
 
 {: tsSymptoms}
 The request timed out while you attempted to list your images in the GUI.
 
 {: tsCauses}
-The GUI timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
+The {{site.data.keyword.cloud_notm}} console timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
 {: tsResolve}
 You can run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command to see all the images in the account because the CLI does not have a timeout. Also consider using the `--restrict` option to reduce the scope of the list and increase performance.
