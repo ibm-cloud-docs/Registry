@@ -24,7 +24,6 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Securing your connection to {{site.data.keyword.registryshort_notm}}
 {: #registry_private}
 
