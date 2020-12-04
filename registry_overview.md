@@ -284,7 +284,7 @@ All registry artifacts are scoped to the specific regional registry that you are
 ### Local regions
 {: #registry_regions_local}
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the console and the CLI.
+A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
 {:shortdesc}
 
 The domain names are shown in the following table.
@@ -353,7 +353,7 @@ If you want to use a region other than your local region, you can target the reg
 A global registry is available, it has no region included in its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
 {:shortdesc}
 
-The domain names are available in the console and the CLI.
+The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
 
 The domain names are shown in the following table.
 

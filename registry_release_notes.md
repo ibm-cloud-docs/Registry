@@ -315,7 +315,7 @@ For more information, see [Auditing events for {{site.data.keyword.registryshort
 ### New domain names
 {: #25feb2019_dns}
 
-{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
+{{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
 
 For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
 
