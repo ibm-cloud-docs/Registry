@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-11-03"
+lastupdated: "2020-12-17"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -225,5 +225,5 @@ For more information about how you can protect your keys in your own store by us
 ## Next steps
 {: #registry_encrypt_next}
 
-You can run encrypted images in [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/registry/main/private){: external}, but it is unsupported. The private key must be in plain text. You can use this technology preview, [Encrypted Images Key Syncer Helm Operator](https://operatorhub.io/operator/enc-key-sync){: external}.
-{: note}
+Run your encrypted image in a {{site.data.keyword.openshiftlong_notm}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
+{: shortdesc}
