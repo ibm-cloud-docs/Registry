@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-12-17"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, adding images to the registry, passport advantage, ppa, IBM images, ppa import, helm charts
 
@@ -49,7 +49,7 @@ Before you begin to import a product from {{site.data.keyword.IBM_notm}} Passpor
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
 3. [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
 4. If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-helm#helm).
-5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}. For instructions, see the {{site.data.keyword.IBM_notm}} Developer recipe [Deploy ChartMuseum into {{site.data.keyword.containerlong_notm}}](https://developer.ibm.com/recipes/tutorials/deploy-chartmuseum-into-ibm-cloud-kubernetes-service-iks/){: external}.
+5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}.
 
 ## Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}
 {: #troubleshoot-ppa-import}
