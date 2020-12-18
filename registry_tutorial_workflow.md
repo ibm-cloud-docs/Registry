@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-17"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -265,7 +265,7 @@ Despite the vulnerability that is present in your image, you're still able to de
 With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
 
-1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm#public_helm_install).
+1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm).
 
 2. The [default policies](/docs/Registry?topic=Registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
