@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-10-22"
+  years: 2018, 2021
+lastupdated: "2021-01-07"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -36,6 +36,8 @@ The following table lists the API methods that generate an event when they are c
 
 | Action | Description | Status | Data Event |
 |-----------------|-----------------|-----------------|-----------------|
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account. | | |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account. | | |
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | | |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
@@ -49,6 +51,8 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | | |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}. | | |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}. | | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | | |
 | `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.<br/><br/>Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | | |

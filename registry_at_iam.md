@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-22"
+lastupdated: "2021-01-07"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -161,10 +161,10 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Get the vulnerability assessment for all images. | `GET /va/api/v3/report/account` | `container-registry.exemption.list` | |
-| Get vulnerability assessment status for all images. | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | |
-| Get vulnerability status. | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | |
-| Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | |
+| Get the vulnerability assessment for all images. | `GET /va/api/v3/report/account` | `container-registry.exemption.list` | `container-registry.account-vulnerability-report.list` |
+| Get vulnerability assessment status for all images. | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | `container-registry.account-vulnerability-status.list` |
+| Get vulnerability status. | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
+| Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
 {: caption="Table 11. Report" caption-side="top"}
 
 ### Exemption
