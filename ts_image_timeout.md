@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-07"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out, GUI
+keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out, IBM Cloud console, console
 
 subcollection: Registry
 
@@ -37,7 +37,7 @@ Listing images in the {{site.data.keyword.registrylong}} {{site.data.keyword.clo
 {: shortdesc}
 
 {: tsSymptoms}
-The request timed out while you attempted to list your images in the GUI.
+The request timed out while you attempted to list your images in the {{site.data.keyword.cloud_notm}} console.
 
 {: tsCauses}
 The {{site.data.keyword.cloud_notm}} console timed out while trying to list all your images. The most likely cause of the timeout is that the account has a very large number of images. For help with managing the number of images see, [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
