@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-07"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -351,7 +351,7 @@ To delete an image by using the CLI, complete the following steps:
    ```
    {: pre}
 
-### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the GUI
+### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
 
 You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
@@ -363,7 +363,7 @@ Deleting an image that is being used by an existing deployment might cause scale
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
-To delete an image by using the GUI, complete the following steps:
+To delete an image by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
@@ -487,7 +487,7 @@ When you delete a repository, all images in that repository are deleted. This ac
 Before you begin, you must back up any images that you want to keep.
 {: tip}
 
-To delete a private repository by using the GUI, complete the following steps:
+To delete a private repository by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
