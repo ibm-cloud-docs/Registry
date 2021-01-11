@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-05-22"
+  years: 2019, 2021
+lastupdated: "2021-01-11"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -119,7 +119,7 @@ You can set a retention policy that runs automatically to clean up your namespac
 
 You can choose whether to exclude untagged images from the clean up process.
 
-You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images in a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, subsequently it runs on a daily basis. You can set only one policy in each namespace.
+You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, subsequently it runs on a daily basis. You can set only one policy in each namespace.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
