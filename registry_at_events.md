@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-13"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -32,12 +32,15 @@ Use {{site.data.keyword.at_full}} to track how users and applications interact w
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
 
+## API methods
+{: #at_events_api_methods}
+
 The following table lists the API methods that generate an event when they are called.
 
 | Action | Description | Status | Data Event |
 |-----------------|-----------------|-----------------|-----------------|
-| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account. | | |
-| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account. | | |
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account.<br/><br/>For information about request data, see [Request data for `container-registry.account-vulnerability-report.list`](#at_events_analyze_report_list). | | |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account.<br/><br/>For information about request data, see [Request data for `container-registry.account-vulnerability-status.list`](#at_events_analyze_status_list). | | |
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | | |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
@@ -51,8 +54,8 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | | |
-| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}. | | |
-| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}. | | |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}.<br/><br/>For information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | | |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.<br/><br/>For information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | | |
 | `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.<br/><br/>Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | | |
@@ -107,3 +110,79 @@ The following table shows the location of global registry {{site.data.keyword.at
 {: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
 For more information about {{site.data.keyword.cloud_notm}} services by location, see [Container services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations#cloud_services_locations_container).
+
+## Analyzing Activity Tracker events
+{: #at_events_analyze}
+
+The following fields are populated as described, depending on how you populate the request:
+
+- `target.name` shows the image name and, if you request an image name with a tag, a tag. If you request an image name by digest, the digest is shown instead of the tag because the digest might have many tags.
+
+- `target.id` shows the image name by digest to represent a searchable unique ID for the image, unless the request is for an image with a tag and the request fails before the digest is discovered. To see all the events for this digest across all tags, you can search by `target.id`.
+
+### Request data for `container-registry.account-vulnerability-report.list`
+{: #at_events_analyze_report_list}
+
+Get the vulnerability assessment for the list of registry images that belong to a specific account.
+{: shortdesc}
+
+The following table lists the fields that are available through the `requestData` field in the events with the action `container-registry.account-vulnerability-report.list`.
+
+| Custom Event Fields | Type | Description |
+|-----------------|-----------------|-----------------|
+| `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
+| `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
+| `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
+{: caption="Table 4. Custom event fields for `container-registry.account-vulnerability-report.list`" caption-side="top"}
+
+For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](https://{DomainName}/apidocs/container-registry/va#accountreportquerypath){: external} in the API documentation.
+
+### Request data for `container-registry.account-vulnerability-status.list`
+{: #at_events_analyze_status_list}
+
+Get the vulnerability assessment status for the list of registry images that belong to a specific account.
+{: shortdesc}
+
+The following table lists the fields that are available through the `requestData` field in the events with the action `container-registry.account-vulnerability-status.list`.
+
+| Custom Event Fields | Type | Description |
+|-----------------|-----------------|-----------------|
+| `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
+| `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
+| `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
+{: caption="Table 5. Custom event fields for `container-registry.account-vulnerability-status.list`" caption-side="top"}
+
+For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](https://{DomainName}/apidocs/container-registry/va#accountstatusquerypath){: external} in the API documentation.
+
+### Request and response data for `container-registry.image-vulnerability-report.read`
+{: #at_events_analyze_report_read}
+
+Get the vulnerability assessment for a registry image.
+{: shortdesc}
+
+The following table lists the fields that are available through the `requestData` and `responseData` fields in the events with the action `container-registry.image-vulnerability-report.read`.
+
+| Custom Event Fields | Type | Description |
+|-----------------|-----------------|-----------------|
+| `requestData.RequestParameters.name` | String | The name of the image, for example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
+| `responseData.id` | String | The unique ID of the report. |
+| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
+{: caption="Table 7. Custom event fields for `container-registry.image-vulnerability-report.read`" caption-side="top"}
+
+For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external}.
+
+### Request and response data for `container-registry.image-vulnerability-status.read`
+{: #at_events_analyze_status_read}
+
+Get the overall vulnerability status for a registry image.
+{: shortdesc}
+
+The following table lists the fields that are available through the `requestData` and `responseData` fields in the events with the action `container-registry.image-vulnerability-status.read`.
+
+| Custom Event Fields | Type | Description |
+|-----------------|-----------------|-----------------|
+| `requestData.RequestParameters.name` | String | The name of the image, for example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
+| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation.
+{: caption="Table 6. Custom event fields for `container-registry.image-vulnerability-status.read`" caption-side="top"}
+
+For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external}.
