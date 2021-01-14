@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -164,12 +164,12 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image, for example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
 | `responseData.id` | String | The unique ID of the report. |
-| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
+| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
 {: caption="Table 7. Custom event fields for `container-registry.image-vulnerability-report.read`" caption-side="top"}
 
-For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external}.
+For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external} in the API documentation.
 
 ### Request and response data for `container-registry.image-vulnerability-status.read`
 {: #at_events_analyze_status_read}
@@ -181,8 +181,8 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image, for example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
-| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation.
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>Constraints: Value must match regular expression `.*` |
+| `responseData.status` | String | Overall vulnerability assessment status: `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation.
 {: caption="Table 6. Custom event fields for `container-registry.image-vulnerability-status.read`" caption-side="top"}
 
-For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external}.
+For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.
