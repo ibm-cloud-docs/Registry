@@ -91,5 +91,4 @@ Container Registry
 
     registry_faq.md
     registry_release_notes.md
-    sitemap.md
     {: .navgroup-end}
