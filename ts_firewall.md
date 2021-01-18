@@ -1,12 +1,14 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-09-29"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, firewall, custom firewall
 
 subcollection: Registry
+
+content-type: troubleshoot
 
 ---
 

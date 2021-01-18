@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-09-18"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -29,6 +29,8 @@ completion-time: 45m
 {:term: .term}
 {:external: target="_blank" .external}
 {:step: data-tutorial-type='step'}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Getting started with {{site.data.keyword.registrylong_notm}}
 {: #getting-started}
@@ -53,6 +55,8 @@ Do not put personal information in your container images, namespace names, descr
 ## Set up a namespace
 {: #gs_registry_namespace_add}
 {: step}
+{: help}
+{: support}
 
 Create a namespace. The namespace is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't target a resource group, the default resource group is used.
 {:shortdesc}
@@ -90,6 +94,8 @@ Create a namespace. The namespace is created in the resource group that you spec
 ## Pull images from another registry to your local computer
 {: #gs_registry_images_pulling}
 {: step}
+{: help}
+{: support}
 
 1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
@@ -127,6 +133,8 @@ Create a namespace. The namespace is created in the resource group that you spec
 ## Push Docker images to your namespace
 {: #gs_registry_images_pushing}
 {: step}
+{: help}
+{: support}
 
 1. Run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 

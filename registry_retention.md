@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-18"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Cleaning up your namespaces
 {: #registry_retention}
@@ -60,6 +62,8 @@ You gain the following advantages by using this technique:
 
 ## Clean up your namespaces by retaining only images that meet your criteria
 {: #retention_images}
+{: help}
+{: support}
 
 Use the `ibmcloud cr retention-run` command to clean up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
 {:shortdesc}
@@ -113,6 +117,8 @@ To reduce the number of images in each repository within your namespace by using
 
 ## Set a retention policy for your namespaces to retain only images that meet your criteria
 {: #retention_policy_set}
+{: help}
+{: support}
 
 You can set a retention policy that runs automatically to clean up your namespaces.
 {:shortdesc}
@@ -182,6 +188,8 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
 ## Updating a retention policy so that it keeps all your images
 {: #retention_policy_keep}
+{: help}
+{: support}
 
 All namespaces have a default policy that keeps all images. You can return a policy to the default state.
 {:shortdesc}
@@ -195,6 +203,8 @@ You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=contai
 
 ## Clean up your namespaces by deleting untagged images
 {: #retention_images_untagged}
+{: help}
+{: support}
 
 You can clean up your namespace by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
 {: shortdesc}

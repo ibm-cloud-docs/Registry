@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-11-25"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Signing images for trusted content
 {: #registry_trustedcontent}
@@ -50,6 +52,8 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 
 ### Using skopeo to sign images
 {: #registry_trustedcontent_red_hat_sig_skopeo}
+{: help}
+{: support}
 
 To use [skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
 
@@ -120,6 +124,8 @@ For more information about the TOFU security model, see [The Update Framework](h
 
 ### Setting up your trusted content environment
 {: #trustedcontent_setup}
+{: help}
+{: support}
 
 By default, Docker Content Trust is disabled. Before you log in to {{site.data.keyword.registrylong_notm}} and start working with signed images, you must enable the Content Trust environment.
 {:shortdesc}
@@ -191,6 +197,8 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 
 ### Pushing a signed image
 {: #trustedcontent_push}
+{: help}
+{: support}
 
 When you first push a signed image, Docker automatically creates a pair of signing keys, the root key and repository key. To sign an image in a repository where signed images have been pushed before, you must load the correct repository signing key onto the computer that is pushing the image.
 {:shortdesc}
@@ -213,6 +221,8 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
 
 ### Pulling a signed image
 {: #trustedcontent_pull}
+{: help}
+{: support}
 
 The first time that you pull a signed image with Docker Content Trust enabled, your Docker client recognizes the signature as trusted. The Docker client pulls the most recent signed version of the image that you specify. Unsigned images or untrusted content is not pulled.
 {:shortdesc}
@@ -231,6 +241,8 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 ### Signing an image for the new domain name
 {: #trustedcontent_resign}
+{: help}
+{: support}
 
 To sign the image for the new domain name, `icr.io`, you must pull, tag, and push the image.
 {:shortdesc}
@@ -267,6 +279,8 @@ By using `docker trust` commands, you can view who signed images and revoke trus
 
 #### Viewing signed images
 {: #trustedcontent_viewsigned}
+{: help}
+{: support}
 
 You can review signed versions of an image repository or tag, including information about the key ID and signer.
 {:shortdesc}
@@ -284,6 +298,8 @@ You can review signed versions of an image repository or tag, including informat
 
 #### Revoking trust
 {: #trustedcontent_revoketrust}
+{: help}
+{: support}
 
 You can revoke the trusted content status of an image.
 {:shortdesc}
@@ -319,6 +335,8 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
 ### Backing up signing keys
 {: #trustedcontent_backupkeys}
+{: help}
+{: support}
 
 When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root key and repository key, and stores them in a directory on your local computer.
 
@@ -341,6 +359,8 @@ You can add and remove signers from signing images in a repository.
 
 #### Adding signers to a trusted repository
 {: #trustedcontent_addsigners}
+{: help}
+{: support}
 
 To allow other users to sign images in a repository, add the signing keys for those users to that repository.
 {:shortdesc}
@@ -395,6 +415,8 @@ To share signing keys, complete the following steps:
 
 #### Removing a signer from a repository
 {: #trustedcontent_removesigner}
+{: help}
+{: support}
 
 If you no longer want a signer to be able to sign images in your repository, you can remove them as a signer.
 {:shortdesc}

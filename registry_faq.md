@@ -1,12 +1,14 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-10-22"
+  years: 2018, 2021
+lastupdated: "2021-01-18"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
 subcollection: Registry
+
+content-type: faq
 
 ---
 

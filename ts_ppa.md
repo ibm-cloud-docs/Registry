@@ -2,11 +2,13 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-18"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, adding images to the registry, passport advantage, ppa, IBM images, ppa import, helm charts
 
 subcollection: Registry
+
+content-type: troubleshoot
 
 ---
 
