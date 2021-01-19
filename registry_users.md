@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-04"
+  years: 2018, 2021
+lastupdated: "2021-01-18"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Defining access role policies
 {: #user}
@@ -41,6 +43,8 @@ From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or late
 
 ## Creating policies
 {: #create}
+{: help}
+{: support}
 
 If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, the resource group, or the entire service, that is, all namespaces in the account.
 
@@ -62,6 +66,8 @@ To create policies for {{site.data.keyword.registrylong_notm}}, the service name
 
 ## Enabling policy enforcement for existing users
 {: #existing_users}
+{: help}
+{: support}
 
 For users provisioned after 4 October 2018, IAM policies are enabled by default. For users provisioned before 4 October 2018, after you create your policies, you must enable policy enforcement so that your policies take effect.
 

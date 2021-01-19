@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
@@ -40,6 +42,8 @@ Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting
 
 ## Installing the `container-registry` CLI plug-in
 {: #cli_namespace_registry_cli_install}
+{: help}
+{: support}
 
 Install the `container-registry` CLI plug-in to use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -51,6 +55,8 @@ You can now [set up your own namespace](#registry_namespace_setup) in {{site.dat
 
 ## Updating the `container-registry` CLI plug-in
 {: #registry_cli_update}
+{: help}
+{: support}
 
 You might want to update the `container-registry` CLI plug-in periodically to use new features.
 {:shortdesc}
@@ -71,6 +77,8 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 
 ## Uninstalling the `container-registry` CLI plug-in
 {: #registry_cli_uninstall}
+{: help}
+{: support}
 
 If you no longer need the `container-registry` CLI plug-in, you can uninstall it.
 {:shortdesc}
@@ -125,6 +133,8 @@ After you set your first namespace, you are assigned the free {{site.data.keywor
 
 ### User permissions for working with namespaces
 {: #registry_setup_cli_namespace_plan_perm}
+{: help}
+{: support}
 
 You can control which users can work with namespaces by using IAM roles.
 {: shortdesc}
@@ -143,6 +153,8 @@ For more information about user roles, [Defining user access role policies](/doc
 
 ## Setting up a namespace
 {: #registry_namespace_setup}
+{: help}
+{: support}
 
 You must create a namespace to store your Docker images in {{site.data.keyword.registrylong_notm}}.
 {:shortdesc}
@@ -161,6 +173,8 @@ You can now [push Docker images to your namespace in {{site.data.keyword.registr
 
 ## Assigning existing namespaces to resource groups
 {: #registry_namespace_assign}
+{: help}
+{: support}
 
 Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have an existing namespace that is not assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
 {: shortdesc}
@@ -199,6 +213,8 @@ To assign an existing namespace to a resource group, complete the following step
 
 ## Removing namespaces
 {: #registry_remove}
+{: help}
+{: support}
 
 If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}

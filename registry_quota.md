@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-05-20"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
@@ -32,6 +34,8 @@ You can limit the amount of storage and pull traffic that can be used in your {{
 
 ## Setting quota limits for storing and pulling images
 {: #registry_quota_set}
+{: help}
+{: support}
 
 You can limit the amount of storage and pull traffic to your private images by setting your own quota limits.
 {:shortdesc}
@@ -86,6 +90,8 @@ To set a quota:
 
 ## Reviewing quota limits and usage for storing and pulling images
 {: #registry_quota_get}
+{: help}
+{: support}
 
 You can review your quota limits and check your current storage and pull traffic usage for your account.
 {:shortdesc}
@@ -119,6 +125,8 @@ You can review your quota limits and check your current storage and pull traffic
 
 ## Freeing up used storage and changing service plans or quota limits to stay within given quota limits
 {: #registry_quota_freeup}
+{: help}
+{: support}
 
 If you exceeded your quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits to continue pushing and pulling images to and from your namespace.
 {:shortdesc}

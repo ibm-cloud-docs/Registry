@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-18"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
@@ -149,6 +151,8 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
+{: help}
+{: support}
 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
 {:shortdesc}
@@ -327,6 +331,8 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 
 #### Targeting a local region
 {: #registry_regions_local_target}
+{: help}
+{: support}
 
 If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
 {:shortdesc}

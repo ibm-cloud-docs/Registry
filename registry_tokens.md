@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-18"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Automating access to {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -53,6 +55,8 @@ You can use service ID API keys in the following places:
 
 ### Creating a service ID API key manually
 {: #registry_access_serviceid_apikey_create}
+{: help}
+{: support}
 
 Create a service ID API key that you can use to log in to your registry.
 {:shortdesc}
@@ -73,6 +77,8 @@ You can use user API keys to automate the pushing and pulling of Docker images t
 
 ### Creating a user API key manually
 {: #registry_access_user_apikey_create}
+{: help}
+{: support}
 
 Create a user API key that you can use to log in to your registry.
 {:shortdesc}

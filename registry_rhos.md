@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-14"
+  years: 2020, 2021
+lastupdated: "2021-01-18"
 
 keywords: external registry, private registry, OpenShift
 
@@ -23,6 +23,8 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
 {: #registry_rhos}
@@ -36,6 +38,8 @@ You can set up {{site.data.keyword.registrylong_notm}} to work with the internal
 
 ## Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_rhoks}
+{: help}
+{: support}
 
 By default, your {{site.data.keyword.openshiftlong_notm}} clusters are set up with an internal registry that stores images locally in your cluster. The clusters are also set up with image pull secrets in the `default` project to pull images that you store in your private {{site.data.keyword.registrylong_notm}} repositories.
 
@@ -57,6 +61,8 @@ To set up {{site.data.keyword.redhat_notm}} OpenShift Container Platform, you mu
 
 ### Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os_pull}
+{: help}
+{: support}
 
 To configure {{site.data.keyword.redhat_notm}} OpenShift Container Platform to pull from {{site.data.keyword.registrylong_notm}}, you must complete the following steps:
 
@@ -66,6 +72,8 @@ To configure {{site.data.keyword.redhat_notm}} OpenShift Container Platform to p
 
 ### Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os_push}
+{: help}
+{: support}
 
 If you want to push application images from {{site.data.keyword.redhat_notm}} OpenShift Container Platform to {{site.data.keyword.registrylong_notm}}, you must edit the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build configuration to point at {{site.data.keyword.registrylong_notm}}, where `myregistry.mycompany.io` is `<region_domain_name>.icr.io`. For more information about {{site.data.keyword.registrylong_notm}} regions and domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 

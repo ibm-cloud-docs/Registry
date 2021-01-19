@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-04"
+  years: 2019, 2021
+lastupdated: "2021-01-18"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -23,6 +23,7 @@ subcollection: Registry
 {:download: .download}
 {:term: .term}
 {:external: target="_blank" .external}
+
 
 # Release notes
 {: #registry_release_notes}
