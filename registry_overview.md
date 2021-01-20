@@ -315,13 +315,13 @@ Information about the Vulnerability Advisor domain names. The domain names are a
 
 The domain names are shown in the following table.
 
-| Local Vulnerability Advisor region | Domain name | Private domain name |
-|-----|----|-----------|
-| `ap-north` | `jp.icr.io/va` | `private.jp.icr.io/va` |
-| `ap-south` | `au.icr.io/va` | `private.au.icr.io/va` |
-| `eu-central` | `de.icr.io/va` | `private.de.icr.io/va` |
-| `uk-south` | `uk.icr.io/va` | `private.uk.icr.io/va` |
-| `us-south` | `us.icr.io/va` | `private.us.icr.io/va` |
+| Local Vulnerability Advisor region | Domain name | Private domain name | Deprecated domain name |
+|-----|----|-----------|--------------|
+| `ap-north` | `jp.icr.io/va` | `private.jp.icr.io/va` | Not applicable |
+| `ap-south` | `au.icr.io/va` | `private.au.icr.io/va` | `va.au-syd.bluemix.net` |
+| `eu-central` | `de.icr.io/va` | `private.de.icr.io/va` | `va.eu-de.bluemix.net` |
+| `uk-south` | `uk.icr.io/va` | `private.uk.icr.io/va` | `va.eu-gb.bluemix.net` |
+| `us-south` | `us.icr.io/va` | `private.us.icr.io/va` | `va.ng.bluemix.net` |
 {: caption="Table 4. Domain names for local regions." caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
