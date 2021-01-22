@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-22"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -142,7 +142,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | Delete tag. | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
-{: caption="Table 9. Tags" caption-side="top"}
+{: caption="Table 10. Tags" caption-side="top"}
 ### Trash
 {: #registry_at_iam_reg_trash}
 
@@ -151,7 +151,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | List images in the trash. | `GET /api/v1/trash` | `container-registry.image.delete` | `container-registry.trash.list` |
 | Restore a digest and all associated tags. | `POST /api/v1/trash/{digest}/restoretags` | `container-registry.image.push` | `container-registry.trash.restore` |
 | Restore deleted image. | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
-{: caption="Table 10. Trash" caption-side="top"}
+{: caption="Table 11. Trash" caption-side="top"}
 
 ## Vulnerability Advisor
 {: #registry_at_iam_vuln}
@@ -165,7 +165,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | Get vulnerability assessment status for all images. | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | `container-registry.account-vulnerability-status.list` |
 | Get vulnerability status. | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
 | Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
-{: caption="Table 11. Report" caption-side="top"}
+{: caption="Table 12. Report" caption-side="top"}
 
 ### Exemption
 {: #registry_at_iam_vuln_exempt}
@@ -185,4 +185,4 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | Delete all exemptions. | `POST /va/api/v3/exemptions/deleteAll` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
 | List image exemptions. | `GET /va/api/v3/exemptions/image/{resource}` | `container-registry.exemption.list` | |
 | List exemptions for images. | `POST /va/api/v3/exemptions/images` | `container-registry.exemption.list` | |
-{: caption="Table 12. Exemption" caption-side="top"}
+{: caption="Table 13. Exemption" caption-side="top"}
