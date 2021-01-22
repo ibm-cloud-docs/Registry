@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-01-22"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -52,7 +52,7 @@ For more information, see [Monitoring metrics for {{site.data.keyword.registrylo
 ## 6 October 2020
 {: #06oct2020}
 
-### {{site.data.keyword.registrylong}} container builds are deprecated
+### {{site.data.keyword.registrylong_notm}} container builds are deprecated
 {: #06oct2020_build}
 
 The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registrylong_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
