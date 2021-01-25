@@ -925,7 +925,7 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 
 To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Command options
+### Command options
 {: #bx_cr_namespace_rm_option}
 
 <dl>
