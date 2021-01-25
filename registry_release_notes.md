@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-01-25"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -90,7 +90,7 @@ If you want to manage your Vulnerability Advisor exemption policies for security
 For more information, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## 29 July 2020
-{: 29jul2020}
+{: #29jul2020}
 
 ### You can set permissions so that access to resources within a namespace can be configured at the resource group level
 {: #29jul2020_resource_group}
