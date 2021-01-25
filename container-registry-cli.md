@@ -1243,7 +1243,7 @@ ibmcloud cr retention-policy-list
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -1281,7 +1281,7 @@ ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPA
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -1336,7 +1336,7 @@ ibmcloud cr retention-run [--force | -f [--json]] [--retain-untagged] --images I
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
