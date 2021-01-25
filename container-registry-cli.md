@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-25"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -339,7 +339,7 @@ ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict 
 {: codeblock}
 
 ### Prerequisites
-{: bx_cr_image_digests_prereq}
+{: #bx_cr_image_digests_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
@@ -484,7 +484,7 @@ ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict RESTRICTION
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #ic_cr_image_prune_untagged_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -522,7 +522,7 @@ ibmcloud cr image-restore IMAGE
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_image_restore_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -925,7 +925,7 @@ ibmcloud cr namespace-rm NAMESPACE  [--force | -f]
 
 To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### Command options
+### Command options
 {: #bx_cr_namespace_rm_option}
 
 <dl>
@@ -1243,7 +1243,7 @@ ibmcloud cr retention-policy-list
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_policy_list_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -1281,7 +1281,7 @@ ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPA
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_policy_set_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -1336,7 +1336,7 @@ ibmcloud cr retention-run [--force | -f [--json]] [--retain-untagged] --images I
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_retention_run_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).

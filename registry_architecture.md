@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-25"
+lastupdated: "2021-01-25"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -56,7 +56,7 @@ You can decide whether your data plane interactions use private connections. Add
 
 The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections. For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
 
-## Dependencies
+## Dependencies
 {: #registry_architecture_dependencies}
 
 Find out about dependencies that use public and private network connections.
