@@ -484,7 +484,7 @@ ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict RESTRICTION
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #ic_cr_image_prune_untagged_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
@@ -522,7 +522,7 @@ ibmcloud cr image-restore IMAGE
 ```
 {: codeblock}
 
-### Prerequisites
+### Prerequisites
 {: #bx_cr_image_restore_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
