@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-12-04"
+  years: 2017, 2021
+lastupdated: "2021-01-25"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -339,7 +339,7 @@ ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict 
 {: codeblock}
 
 ### Prerequisites
-{: bx_cr_image_digests_prereq}
+{: #bx_cr_image_digests_prereq}
 
 To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
