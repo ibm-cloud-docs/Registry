@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-21"
+lastupdated: "2021-01-27"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, Sysdig, metrics
 
@@ -150,17 +150,6 @@ The *Default* dashboard can't be changed. You can copy the dashboard so that you
 When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because not enough time has elapsed to create the data. When data is available, the warning sign goes away and the metric is populated.
 {: note}
 
-## Predefined alerts
-{: #registry_default_alerts}
-
-The following table outlines the pre-defined alerts that are available in Sysdig.
-
-| Alert Name                                 | Description |
-|--------------------------------------------|-------------|
-| {{site.data.keyword.registryshort_notm}} Storage Near Quota | This alert notifies you when the storage usage of your account reaches 80% of the storage quota. To manage your usage, consider using the actions described in [Monitoring {{site.data.keyword.registryshort_notm}}](#registry_monitor_service). |
-| {{site.data.keyword.registryshort_notm}} Traffic Near Quota | This alert notifies you when the traffic usage of your account reaches 80% of the traffic quota. To prevent the quota being reached, consider using the actions described in [Monitoring {{site.data.keyword.registryshort_notm}}](#registry_monitor_service). |
-{: caption="Table 3. Pre-defined alerts" caption-side="top"}
-
 ## Metrics available by Service Plan
 {: #metrics-by-plan}
 
@@ -170,7 +159,7 @@ The following table outlines the pre-defined alerts that are available in Sysdig
 | [Pull Traffic Quota](#ibm_containerregistry_pull_traffic_quota) |
 | [Storage Quota](#ibm_containerregistry_storage_quota) |
 | [Storage Used](#ibm_containerregistry_storage) |
-{: caption="Table 4: Metrics Available by Plan Names" caption-side="top"}
+{: caption="Table 3: Metrics Available by Plan Names" caption-side="top"}
 
 ### Pull Traffic
 {: #ibm_containerregistry_pull_traffic}
@@ -183,7 +172,7 @@ The account's pull traffic in the current month.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 5: Pull Traffic metric metadata" caption-side="top"}
+{: caption="Table 4: Pull Traffic metric metadata" caption-side="top"}
 
 ### Pull Traffic Quota
 {: #ibm_containerregistry_pull_traffic_quota}
@@ -196,7 +185,7 @@ The account's pull traffic quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 6: Pull Traffic Quota metric metadata" caption-side="top"}
+{: caption="Table 5: Pull Traffic Quota metric metadata" caption-side="top"}
 
 ### Storage Quota
 {: #ibm_containerregistry_storage_quota}
@@ -209,7 +198,7 @@ The account's storage quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 7: Storage Quota metric metadata" caption-side="top"}
+{: caption="Table 6: Storage Quota metric metadata" caption-side="top"}
 
 ### Storage Used
 {: #ibm_containerregistry_storage}
@@ -222,7 +211,7 @@ The account's storage usage.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 8: Storage Used metric metadata" caption-side="top"}
+{: caption="Table 7: Storage Used metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: #attributes}
@@ -241,7 +230,7 @@ The following attributes are available for segmenting all of the metrics that ar
 | `Resource Type` | `ibm_resource_type` | The type of resource that is being measured by the service. | No |
 | `Service name` | `ibm_service_name` | The name of the service that is generating this metric. | Yes |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID that is associated with this metric. | Yes |
-{: caption="Table 9. Attributes for segmenting metrics" caption-side="top"}
+{: caption="Table 8. Attributes for segmenting metrics" caption-side="top"}
 
 ### Additional Attributes
 {: #additional-attributes}
@@ -252,4 +241,4 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. | No |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance. The name might not be a unique value depending on the name provided by the user. | No |
-{: caption="Table 10. Attributes for segmenting attributes" caption-side="top"}
+{: caption="Table 9. Attributes for segmenting attributes" caption-side="top"}
