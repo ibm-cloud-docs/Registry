@@ -223,7 +223,7 @@ The following attributes are available for segmenting all of the metrics that ar
 
 | Attribute | Attribute Name | Attribute Description | Applicable to {{site.data.keyword.registryshort_notm}} metrics |
 |-----------|----------------|-----------------------|-----------------------|
-| `Cloud Type` | `ibm_ctype` | The cloud type has a value of `public`. | Yes |
+| `Cloud Type` | `ibm_ctype` | The cloud type has a value of `public`, `dedicated`, or `local`. | Yes |
 | `Location` | `ibm_location` | The location of the monitored resource. This location can be a region, data center, or global. | Yes |
 | `Resource` | `ibm_resource` | The resource that is being measured by the service, typically an identifying name or GUID. | No |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. | No |
