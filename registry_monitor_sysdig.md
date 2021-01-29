@@ -95,6 +95,7 @@ The following table outlines the predefined Sysdig dashboards that you can use t
 | Dashboard name        | Description    |
 |-----------------------|----------------|
 | {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics. |
+| {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
 {: caption="Table 1. Predefined dashboards" caption-side="top"}
 
 The *Default* dashboard can't be changed. You can copy the dashboard so that you can make changes to suit your requirements.
