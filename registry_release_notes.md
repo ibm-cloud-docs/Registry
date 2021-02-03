@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-02-03"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -354,7 +354,7 @@ For more information, see [Automating access to your namespaces by using API key
 ### End of support for Vulnerability Advisor API version 2
 {: #8jan2019_va2}
 
-Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/apidocs/container-registry/va){: external}.
+Vulnerability Advisor’s API version 2 is deprecated and is no longer usable. Use version 3 of the API, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va){: external}.
 
 For more information, see [Vulnerability Advisor v2 API Deprecation](https://www.ibm.com/blogs/cloud-archive/2018/12/vulnerability-advisor-v2-api-deprecation/){: external}.
 
@@ -396,7 +396,7 @@ For more information, see [Auditing events for {{site.data.keyword.registryshort
 
 Version 3 of the API changes the behavior of the API endpoints that are used to list exemptions. You must check that your use of the API does not rely on the behavior of version 2.
 
-For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/apidocs/container-registry/va){: external}.
+For more information, see [Vulnerability Advisor for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va){: external}.
 
 ## 31 May 2018
 {: #31may2018}
@@ -462,7 +462,7 @@ For more information, see [Building Docker images to use them with your namespac
 ### Graphical user interface released
 {: #24aug2017_gui}
 
-The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry](https://cloud.ibm.com/kubernetes/catalog/registry){: external}.
+The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry](https://{DomainName}/registry/catalog){: external}.
 
 ## 27 June 2017
 {: #27jun2017}
