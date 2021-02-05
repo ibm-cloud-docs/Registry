@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-05"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -344,7 +344,7 @@ The domain names are shown in the following table.
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |-----|----|-----------|--------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 5. Domain name for the global registry." caption-side="top"}
+{: caption="Table 4. Domain name for the global registry." caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
