@@ -82,6 +82,13 @@ You can't use private connections for image management operations by using the {
    - For namespaces that are set up in `uk-south`, use the following private registry URL: `private.uk.icr.io`
    - For namespaces that are set up in `us-south`, use the following private registry URL: `private.us.icr.io`
 
+For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
+
+   ```
+   docker login -u iamapikey -p <apikey> <private_registry_url>
+   ```
+   {: pre}
+
 ## Enforcing access to your account over private network connections
 {: #registry_private_account}
 
