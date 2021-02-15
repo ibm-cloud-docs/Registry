@@ -24,6 +24,7 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
+
 # Release notes
 {: #registry_release_notes}
 
