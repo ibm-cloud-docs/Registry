@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-15"
 
 keywords: container registry
 
@@ -906,6 +906,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+[15 February 2021](/docs/Registry?topic=Registry-registry_release_notes#15feb2021)
+* [New region in Japan](/docs/Registry?topic=Registry-registry_release_notes#15feb2021_japan)
 
 [19 November 2020](/docs/Registry?topic=Registry-registry_release_notes#19nov2020)
 * [You can use Portieris to enforce container image security](/docs/Registry?topic=Registry-registry_release_notes#19nov2020_portieris)

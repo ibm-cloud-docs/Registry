@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-02-15"
 
 keywords: track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -89,7 +89,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_atlogdna}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south` and `jp-osa`. Events for `ap-south` and `jp-osa` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.at_full_notm}} events.
 
@@ -100,6 +100,7 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `jp-osa` | `jp2.icr.io` | `Tokyo (jp-tok)` |
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events" caption-side="top"}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
