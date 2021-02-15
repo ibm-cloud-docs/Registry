@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-15"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -24,12 +24,19 @@ subcollection: Registry
 {:term: .term}
 {:external: target="_blank" .external}
 
-
 # Release notes
 {: #registry_release_notes}
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 15 February 2021
+{: #15feb2021}
+
+### New region in Japan
+{: #15feb2021_japan}
+
+A new region in Japan is available. The new region is `jp-osa` and the domain name is `jp2.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 19 November 2020
 {: #19nov2020}
