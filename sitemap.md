@@ -343,11 +343,11 @@ subcollection: Registry
 [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove)
 
 
-## Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
-{: #sitemap_using__as_a_private_registry_on_{{site.data.keyword.redhat_notm}}_openshift}
+## Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
+{: #sitemap_setting_up__as_a_private_registry_on_{{site.data.keyword.redhat_notm}}_openshift}
 
 
-[Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift](/docs/Registry?topic=Registry-registry_rhos)
+[Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift](/docs/Registry?topic=Registry-registry_rhos)
 
 [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 

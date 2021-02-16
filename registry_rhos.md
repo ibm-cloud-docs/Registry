@@ -26,7 +26,7 @@ subcollection: Registry
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
-# Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
+# Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
 {: #registry_rhos}
 
 You can add value to your {{site.data.keyword.redhat_full}} OpenShift® clusters by using {{site.data.keyword.registrylong}} even where an internal registry is already provided.
