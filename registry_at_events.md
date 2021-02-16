@@ -68,7 +68,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.registrytoken.get` | Retrieve information about a registry token. | Deprecated | |
 | `container-registry.registrytoken.list` | List the registry tokens in your {{site.data.keyword.IBM_notm}} account. | Deprecated | |
 | `container-registry.registrytokens.delete` | Delete multiple registry tokens. | Deprecated | |
-| `container-registry.retention.analyze` | List the images that are deleted if you apply a particular retention policy. | | |
+| `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | | |
 | `container-registry.retention.list` | List the image retention policies for your account. | | |
 | `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. | | |
 | `container-registry.settings.get` | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | | |
