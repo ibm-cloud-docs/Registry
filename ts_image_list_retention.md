@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images, retention
 
@@ -30,7 +30,7 @@ content-type: troubleshoot
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why is an image missing from the list that is produced by the `ibmcloud cr retention-run` command?
+# Why doesn't an image show on the list that is produced by the `ibmcloud cr retention-run` command?
 {: #troubleshoot-image-list-retention}
 {: troubleshoot}
 {: support}

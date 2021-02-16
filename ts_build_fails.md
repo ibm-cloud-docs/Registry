@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, build, build fails
 
@@ -30,7 +30,7 @@ content-type: troubleshoot
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why is the `ibmcloud cr build` command failing?
+# Why does the `ibmcloud cr build` command fail?
 {: #troubleshoot-build-fails}
 {: troubleshoot}
 {: support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails, not a registered command, registered command, command fails
 
@@ -30,7 +30,7 @@ content-type: troubleshoot
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why are all the {{site.data.keyword.registrylong_notm}} commands failing?
+# Why do all the {{site.data.keyword.registrylong_notm}} commands fail?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}

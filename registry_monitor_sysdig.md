@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-16"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, Sysdig, metrics
 
@@ -38,7 +38,7 @@ You can configure one instance only of the {{site.data.keyword.mon_full_notm}} s
 * To use platform metrics, you must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
 * To configure the Sysdig instance, you must set the *platform metrics* configuration setting, see [Enabling Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
 * If a Sysdig instance in a region is already enabled to collect platform metrics, metrics from Sysdig-enabled services are collected automatically and available for monitoring through this instance. For more information about Sysdig-enabled services, see [Cloud services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
-* For information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for Sysdig, see [Container services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services_locations#cloud_services_locations_container).
+* For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for Sysdig, see [Container services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services_locations#cloud_services_locations_container).
 
 To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where {{site.data.keyword.registryshort_notm}} is provisioned.
 {: important}
@@ -55,7 +55,7 @@ Complete the following steps to configure platform metrics:
    ```
    {: pre}
 
-2. Log in to {{site.data.keyword.registryshort_notm}}:
+2. Log in to {{site.data.keyword.registryshort_notm}}.
 
    ```
    ibmcloud cr login
@@ -98,24 +98,24 @@ The following table outlines the predefined Sysdig dashboards that you can use t
 | {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
 {: caption="Table 1. Predefined dashboards" caption-side="top"}
 
-The *Default* dashboard can't be changed. You can copy the dashboard so that you can make changes to suit your requirements.
+The *Default* dashboard can't be changed. You can copy the dashboard so that you can change it to suit your requirements.
 {: important}
 
-When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because not enough time has elapsed to create the data. When data is available, the warning sign goes away and the metric is populated.
+When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because more time is required to create the data. When data is available, the warning sign goes away and the metric is populated.
 {: note}
 
-## Metrics available by Service Plan
+## Metrics available by service plan
 {: #metrics-by-plan}
 
 | Metric Name |
 |-----------|
-| [Pull Traffic](#ibm_containerregistry_pull_traffic) |
-| [Pull Traffic Quota](#ibm_containerregistry_pull_traffic_quota) |
-| [Storage Quota](#ibm_containerregistry_storage_quota) |
-| [Storage Used](#ibm_containerregistry_storage) |
-{: caption="Table 2: Metrics Available by Plan Names" caption-side="top"}
+| [`Pull Traffic`](#ibm_containerregistry_pull_traffic) |
+| [`Pull Traffic Quota`](#ibm_containerregistry_pull_traffic_quota) |
+| [`Storage Quota`](#ibm_containerregistry_storage_quota) |
+| [`Storage Used`](#ibm_containerregistry_storage) |
+{: caption="Table 2. Metrics Available by Plan Names" caption-side="top"}
 
-### Pull Traffic
+### `Pull Traffic`
 {: #ibm_containerregistry_pull_traffic}
 
 The account's pull traffic in the current month.
@@ -126,9 +126,9 @@ The account's pull traffic in the current month.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 3: Pull Traffic metric metadata" caption-side="top"}
+{: caption="Table 3. Pull Traffic metric metadata" caption-side="top"}
 
-### Pull Traffic Quota
+### `Pull Traffic Quota`
 {: #ibm_containerregistry_pull_traffic_quota}
 
 The account's pull traffic quota.
@@ -139,9 +139,9 @@ The account's pull traffic quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 4: Pull Traffic Quota metric metadata" caption-side="top"}
+{: caption="Table 4. Pull Traffic Quota metric metadata" caption-side="top"}
 
-### Storage Quota
+### `Storage Quota`
 {: #ibm_containerregistry_storage_quota}
 
 The account's storage quota.
@@ -152,9 +152,9 @@ The account's storage quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 5: Storage Quota metric metadata" caption-side="top"}
+{: caption="Table 5. Storage Quota metric metadata" caption-side="top"}
 
-### Storage Used
+### `Storage Used`
 {: #ibm_containerregistry_storage}
 
 The account's storage usage.
@@ -165,21 +165,21 @@ The account's storage usage.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 6: Storage Used metric metadata" caption-side="top"}
+{: caption="Table 6. Storage Used metric metadata" caption-side="top"}
 
-## Attributes for Segmentation
+## Attributes for segmentation
 {: #attributes}
 
 ### Global Attributes
 {: #global-attributes}
 
-The following attributes are available for segmenting all of the metrics that are listed in [Metrics available by Service Plan](#metrics-by-plan).
+The following attributes are available for segmenting all of the metrics that are listed in [Metrics available by service plan](#metrics-by-plan).
 
 | Attribute | Attribute Name | Attribute Description | Applicable to {{site.data.keyword.registryshort_notm}} metrics |
 |-----------|----------------|-----------------------|-----------------------|
 | `Cloud Type` | `ibm_ctype` | The cloud type has a value of `public`. | Yes |
 | `Location` | `ibm_location` | The location of the monitored resource. This location can be a region, data center, or global. | Yes |
-| `Resource` | `ibm_resource` | The resource that is being measured by the service, typically an identifying name or GUID. | No |
+| `Resource` | `ibm_resource` | The resource that is being measured by the service, which is typically an identifying name or GUID. | No |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. | No |
 | `Resource Type` | `ibm_resource_type` | The type of resource that is being measured by the service. | No |
 | `Service name` | `ibm_service_name` | The name of the service that is generating this metric. | Yes |
@@ -189,10 +189,10 @@ The following attributes are available for segmenting all of the metrics that ar
 ### Additional Attributes
 {: #additional-attributes}
 
-The following attributes are available for segmenting one or more attributes as described in [Metrics available by Service Plan](#metrics-by-plan). For segmentation options, see the individual metrics.
+The following attributes are available for segmenting one or more attributes as described in [Metrics available by service plan](#metrics-by-plan). For segmentation options, see the individual metrics.
 
 | Attribute | Attribute Name | Attribute Description | Applicable to {{site.data.keyword.registryshort_notm}} metrics |
 |-----------|----------------|-----------------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. | No |
-| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance. The name might not be a unique value depending on the name provided by the user. | No |
+| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance. The name might not be a unique value, the name is dependent on the name that is provided by the user. | No |
 {: caption="Table 8. Attributes for segmenting attributes" caption-side="top"}
