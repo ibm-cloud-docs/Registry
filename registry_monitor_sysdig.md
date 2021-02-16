@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020
+  years: 2020, 2021
 lastupdated: "2021-02-16"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, Sysdig, metrics
