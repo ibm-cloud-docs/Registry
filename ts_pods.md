@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, pods won't restart, workers down, pods, workers
+keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
 subcollection: Registry
 
@@ -30,15 +30,15 @@ content-type: troubleshoot
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Why don't my pods restart after all my workers have been down?
+# Why don't my pods restart after my workers were down?
 {: #troubleshoot-pods}
 {: troubleshoot}
 {: support}
 
-Pods do not restart after your cluster workers have been down.
+Pods do not restart after your cluster workers were down.
 {: shortdesc}
 
-With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
 
 {: tsSymptoms}
@@ -50,12 +50,7 @@ By default, Container Image Security Enforcement adds a fail closed admission we
 {: tsResolve}
 To recover the cluster when it's in this state, you must change the webhook configuration to make it fail open instead of closed.
 
-You must have sufficient role-based access control (RBAC) privileges to use the following verbs:
-
-- `GET`
-- `PATCH`
-
-On these resources:
+You must have sufficient role-based access control (RBAC) privileges to use the `GET` and `PATCH` verbs on the following resources:
 
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
@@ -64,7 +59,7 @@ For more information about RBAC, see [Assigning RBAC permissions](/docs/containe
 
 Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
 
-1. Update `MutatingWebhookConfiguration` by running the following command:
+1. Update `MutatingWebhookConfiguration` by running the following command.
 
    ```
    kubectl edit MutatingWebhookConfiguration image-admission-config
@@ -73,7 +68,7 @@ Complete the following steps to change the webhook configuration to make it fail
 
     Change `failurePolicy` to `Ignore`, save, and close.
 
-2. Update `ValidatingWebhookConfiguration` by running the following command:
+2. Update `ValidatingWebhookConfiguration` by running the following command.
 
    ```
    kubectl edit ValidatingWebhookConfiguration image-admission-config
@@ -82,14 +77,14 @@ Complete the following steps to change the webhook configuration to make it fail
 
    Change `failurePolicy` to `Ignore`, save, and close.
 
-3. Wait for some Container Image Security Enforcement pods to start. You can check whether the pods have started by running the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
+3. Wait for some Container Image Security Enforcement pods to start. If you want to check when the pods start, run the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
 
    ```
    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
    ```
    {: pre}
 
-4. When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command:
+4. When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command.
 
    ```
    kubectl edit MutatingWebhookConfiguration image-admission-config
@@ -98,7 +93,7 @@ Complete the following steps to change the webhook configuration to make it fail
 
     Change `failurePolicy` to `Fail`, save, and close.
 
-5. Update `ValidatingWebhookConfiguration` by running the following command:
+5. Update `ValidatingWebhookConfiguration` by running the following command.
 
    ```
    kubectl edit ValidatingWebhookConfiguration image-admission-config

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-16"
 
 keywords: container registry
 
@@ -343,11 +343,11 @@ subcollection: Registry
 [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove)
 
 
-## Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
-{: #sitemap_using__as_a_private_registry_on_{{site.data.keyword.redhat_notm}}_openshift}
+## Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift
+{: #sitemap_setting_up__as_a_private_registry_on_{{site.data.keyword.redhat_notm}}_openshift}
 
 
-[Using {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift](/docs/Registry?topic=Registry-registry_rhos)
+[Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_notm}} OpenShift](/docs/Registry?topic=Registry-registry_rhos)
 
 [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
@@ -559,12 +559,12 @@ subcollection: Registry
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics)
   * [Launching the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
 * [{{site.data.keyword.registryshort_notm}} Predefined Dashboards](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_dashboards_dictionary)
-* [Metrics available by Service Plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
-  * [Pull Traffic](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)
-  * [Pull Traffic Quota](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic_quota)
-  * [Storage Quota](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage_quota)
-  * [Storage Used](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage)
-* [Attributes for Segmentation](/docs/Registry?topic=Registry-registry_monitor_sysdig#attributes)
+* [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
+  * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)
+  * [`Pull Traffic Quota`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic_quota)
+  * [`Storage Quota`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage_quota)
+  * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage)
+* [Attributes for segmentation](/docs/Registry?topic=Registry-registry_monitor_sysdig#attributes)
   * [Global Attributes](/docs/Registry?topic=Registry-registry_monitor_sysdig#global-attributes)
   * [Additional Attributes](/docs/Registry?topic=Registry-registry_monitor_sysdig#additional-attributes)
 
@@ -836,9 +836,9 @@ subcollection: Registry
 
 [Why do I get a failure message when I run any command in {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login-cloud)
 
-[Why are all the {{site.data.keyword.registrylong_notm}} commands failing?](/docs/Registry?topic=Registry-troubleshoot-login-error)
+[Why do all the {{site.data.keyword.registrylong_notm}} commands fail?](/docs/Registry?topic=Registry-troubleshoot-login-error)
 
-[Why is the `ibmcloud cr build` command failing?](/docs/Registry?topic=Registry-troubleshoot-build-fails)
+[Why does the `ibmcloud cr build` command fail?](/docs/Registry?topic=Registry-troubleshoot-build-fails)
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
 
@@ -846,16 +846,16 @@ subcollection: Registry
 
 [Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 
-[Why does listing images in the {{site.data.keyword.cloud_notm}} console time out?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
+[Why does listing images in the {{site.data.keyword.cloud_notm}} console time-out?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
 [Why can't I add other {{site.data.keyword.IBM_notm}} images to the registry?](/docs/Registry?topic=Registry-troubleshoot-ppa)
 * [Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}](/docs/Registry?topic=Registry-troubleshoot-ppa#troubleshoot-ppa-import)
 
 [I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 
-[Why is an image missing from the list that is produced by the `ibmcloud cr retention-run` command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
+[Why doesn't an image show on the list that is produced by the `ibmcloud cr retention-run` command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
 
-[When I'm restoring an image, why do I get an error that says that the tagged image already exists?](/docs/Registry?topic=Registry-troubleshoot-image-restore)
+[When I'm restoring an image, why do I get an error that says that the tagged image exists?](/docs/Registry?topic=Registry-troubleshoot-image-restore)
 
 [When I'm restoring an image from the trash by digest, why aren't some of the tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest)
 
@@ -869,13 +869,13 @@ subcollection: Registry
 
 [Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
 
-[Why don't my pods restart after all my workers have been down?](/docs/Registry?topic=Registry-troubleshoot-pods)
+[Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods)
 
 [Why am I getting a manifest type error when I try to tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type)
 
 [Why am I getting a manifest version error when I try to tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version)
 
-[Why is Docker login failing on my Mac?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
+[Why does Docker login fail on my Mac?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
 
 
 ## Frequently asked questions (FAQs)

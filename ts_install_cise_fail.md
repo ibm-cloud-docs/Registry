@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, helm, cise, helm install
+keywords: troubleshooting, support, help, errors, problems, ts, registry, helm, helm installation
 
 subcollection: Registry
 
@@ -38,7 +38,7 @@ content-type: troubleshoot
 The installation of Container Image Security Enforcement fails with the message: `helm install ibm-incubator/ibmcloud-image-enforcement --name cise Error: jobs.batch "create-crds" already exists`.
 {: shortdesc}
 
-With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
 
 {: tsSymptoms}
@@ -51,7 +51,7 @@ Error: jobs.batch "create-crds" already exists
 {: screen}
 
 {: tsCauses}
-The previous installation failed and the subsequent uninstallation didn't remove every Kubernetes job that is associated with the installation.
+The previous installation of Container Image Security Enforcement failed and the subsequent uninstallation didn't remove every Kubernetes job that is associated with the installation.
 
 {: tsResolve}
 Remove the remaining Kubernetes jobs by running the following command:

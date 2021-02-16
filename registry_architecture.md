@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2021-02-15"
+  years: 2020, 2021
+lastupdated: "2021-02-16"
 
 keywords: IBM Cloud Container Registry architecture,
 

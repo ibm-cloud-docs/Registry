@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-16"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, restoring images, restoring images from the trash, trash
 
@@ -30,7 +30,7 @@ content-type: troubleshoot
 {:external: target="_blank" .external}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# When I'm restoring an image, why do I get an error that says that the tagged image already exists?
+# When I'm restoring an image, why do I get an error that says that the tagged image exists?
 {: #troubleshoot-image-restore}
 {: troubleshoot}
 {: support}
