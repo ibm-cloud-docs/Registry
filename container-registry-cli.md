@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-02-18"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -334,7 +334,7 @@ You can refer to an image by using a combination of the **Repository** column an
 {: tip}
 
 ```
-ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm]
+ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm] [--no-va]
 ```
 {: codeblock}
 
@@ -361,6 +361,8 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
 <dt>`--include-ibm`</dt>
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided  images in the global registry only.</dd>
+<dt>`--no-va`</dt>
+<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-digests` output, you can use this option to increase performance.</dd>
 </dl>
 
 ### Example
@@ -432,7 +434,7 @@ The image name is the combination of the content of the **Repository** and **Tag
 {:tip}
 
 ```
-ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va]
 ```
 {: codeblock}
 
@@ -461,6 +463,8 @@ For more information, see [Formatting and filtering the CLI output for {{site.da
 <dd>(Optional) Do not truncate the image digests.</dd>
 <dt>`--show-type`</dt>
 <dd>(Optional) Displays the image manifest type.</dd>
+<dt>`--no-va`</dt>
+<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-list` output, you can use this option to increase performance.</dd>
 </dl>
 
 ### Example

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-18"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 18 February 2021
+{: #18feb2021}
+
+### Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option
+{: #18feb2021_no-va}
+
+If you don't need the security status (Vulnerability Advisor) results as part of the output of the `ibmcloud cr image-list` or `ibmcloud cr image-digests` commands, you can use the `--no-va` option to increase performance.
 
 ## 15 February 2021
 {: #15feb2021}

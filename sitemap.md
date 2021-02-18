@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-18"
 
 keywords: container registry
 
@@ -906,6 +906,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+[18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#18feb2021)
+* [Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option](/docs/Registry?topic=Registry-registry_release_notes#18feb2021_no-va)
 
 [15 February 2021](/docs/Registry?topic=Registry-registry_release_notes#15feb2021)
 * [New region in Japan](/docs/Registry?topic=Registry-registry_release_notes#15feb2021_japan)
