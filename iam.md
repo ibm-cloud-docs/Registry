@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-04"
+  years: 2018, 2021
+lastupdated: "2021-02-22"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -104,10 +104,10 @@ The following table details actions that are mapped to service access roles. Ser
 
 To grant a user permission to configure your {{site.data.keyword.registrylong_notm}} in your account, you must create a policy that grants one or more of the roles in the following table. When creating your policy, you must not specify a `resource type` or `resource`. Policies for configuring {{site.data.keyword.registrylong_notm}} must not be set at a resource group level.
 
-For example, use the following command, where `<user_email>` is the user's email address:
+For example, use the following command, where `<user_email>` is the user's email address, `<region>` is the region, and `<roles>` is the role, or roles, that you want the user to have:
 
 ```
-ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Manager>
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles>
 ```
 {: pre}
 
@@ -134,10 +134,10 @@ The following table details actions that are mapped to operations on the service
 
 To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account you must create a policy that grants one or more of the roles in the following table. When creating your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an access policy on that resource group.
 
-For example, use the following command, where `<user_email>` is the user's email address:
+For example, use the following command, where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace:
 
 ```
-ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <us-south> --roles <Reader> [--resource-type namespace --resource <namespace_name>]
+ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}
 
