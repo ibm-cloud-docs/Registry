@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: container registry
 
@@ -846,7 +846,7 @@ subcollection: Registry
 
 [Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 
-[Why does listing images in the {{site.data.keyword.cloud_notm}} console time-out?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
+[Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
 [Why can't I add other {{site.data.keyword.IBM_notm}} images to the registry?](/docs/Registry?topic=Registry-troubleshoot-ppa)
 * [Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}](/docs/Registry?topic=Registry-troubleshoot-ppa#troubleshoot-ppa-import)
