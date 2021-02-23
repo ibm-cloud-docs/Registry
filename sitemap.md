@@ -995,7 +995,7 @@ subcollection: Registry
 
 [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#25feb2019)
 * [New domain names](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_dns)
-* [IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
+* [Adding IAM API key policies to control access to resources](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
 * [New region in ap-north](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_ap-north)
 
 [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#21feb2019)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-23"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -339,7 +339,7 @@ Signatures apply to the whole image name, which includes the domain name. If you
 
 For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
-### IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters
+### Adding IAM API key policies to control access to resources
 {: #25feb2019_secrets}
 
 The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
