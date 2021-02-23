@@ -557,7 +557,7 @@ subcollection: Registry
 * [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_platform_metrics)
 * [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_enable_platform_metrics)
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics)
-  * [Launching the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
+  * [Starting the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
 * [{{site.data.keyword.registryshort_notm}} Predefined Dashboards](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_dashboards_dictionary)
 * [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
   * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-23"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, Sysdig, metrics
 
@@ -72,13 +72,13 @@ Complete the following steps to configure platform metrics:
 ## Viewing metrics
 {: #registry_view_metrics}
 
-To monitor {{site.data.keyword.registryshort_notm}} metrics, you must launch the Sysdig web UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
+To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the Sysdig web UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
 {: important}
 
-### Launching the Sysdig web UI from the Observability page
+### Starting the Sysdig web UI from the Observability page
 {: #registry_view_metrics_opt2}
 
-To launch the Sysdig web UI from the *Observability* page, complete the following steps:
+To start the Sysdig web UI from the *Observability* page, complete the following steps:
 
 1. [Launch the Sysdig web UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
 2. Select **DASHBOARDS**.
