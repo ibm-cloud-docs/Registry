@@ -349,7 +349,7 @@ The domain names are shown in the following table.
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
-The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the momdent. An end of support date is not available yet.
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the moment. An end of support date is not available yet.
 {: deprecated}
 
 #### Targeting the global registry
