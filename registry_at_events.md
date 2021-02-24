@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -75,12 +75,12 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.settings.set` | Update registry service settings for the targeted account, such as enabling platform metrics. | | |
 | `container-registry.trash.list` | Display all the images in the trash in your {{site.data.keyword.cloud_notm}} account. | | |
 | `container-registry.trash.restore` | Restore a deleted image from the trash. | | |
-{: caption="Table 1. Actions that generate events" caption-side="top"}
+{: caption="Table 1. Actions that generate events." caption-side="top"}
 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
 {: deprecated}
 
-The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
+The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 {: deprecated}
 
 ## Where to look for the events
@@ -101,14 +101,14 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 | `jp-osa` | `jp2.icr.io` | `Tokyo (jp-tok)` |
-{: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events" caption-side="top"}
+{: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events." caption-side="top"}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
 
 | Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
-{: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events" caption-side="top"}
+{: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events." caption-side="top"}
 
 For more information about {{site.data.keyword.cloud_notm}} services by location, see [Container services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations#cloud_services_locations_container).
 
@@ -134,7 +134,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 4. Custom event fields for `container-registry.account-vulnerability-report.list`" caption-side="top"}
+{: caption="Table 4. Custom event fields for `container-registry.account-vulnerability-report.list`." caption-side="top"}
 
 For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](https://{DomainName}/apidocs/container-registry/va#accountreportquerypath){: external} in the API documentation.
 
@@ -151,7 +151,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 5. Custom event fields for `container-registry.account-vulnerability-status.list`" caption-side="top"}
+{: caption="Table 5. Custom event fields for `container-registry.account-vulnerability-status.list`." caption-side="top"}
 
 For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](https://{DomainName}/apidocs/container-registry/va#accountstatusquerypath){: external} in the API documentation.
 
@@ -168,7 +168,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
-{: caption="Table 6. Custom event fields for `container-registry.image-vulnerability-report.read`" caption-side="top"}
+{: caption="Table 6. Custom event fields for `container-registry.image-vulnerability-report.read`." caption-side="top"}
 
 For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external} in the API documentation.
 
@@ -184,6 +184,6 @@ The following table lists the fields that are available through the `requestData
 |-----------------|-----------------|-----------------|
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation.
-{: caption="Table 7. Custom event fields for `container-registry.image-vulnerability-status.read`" caption-side="top"}
+{: caption="Table 7. Custom event fields for `container-registry.image-vulnerability-status.read`." caption-side="top"}
 
 For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.

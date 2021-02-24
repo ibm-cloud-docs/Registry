@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
@@ -42,7 +42,7 @@ You can limit the amount of storage and pull traffic to your private images by s
 
 When you upgrade to the {{site.data.keyword.registrylong_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all namespaces that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
 
-To set a quota:
+To set a quota, complete the following steps.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -128,10 +128,10 @@ You can review your quota limits and check your current storage and pull traffic
 {: help}
 {: support}
 
-If you exceeded your quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits to continue pushing and pulling images to and from your namespace.
+If you exceed the quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits so that you can continue pushing and pulling images to and from your namespace.
 {:shortdesc}
 
-To free up image storage in your {{site.data.keyword.cloud_notm}} account:
+To free up image storage in your {{site.data.keyword.cloud_notm}} account, complete the following steps.
 
 1. To list all images in all your namespaces of your {{site.data.keyword.cloud_notm}} account, run one of the following commands:
 

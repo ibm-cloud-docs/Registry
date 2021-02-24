@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, keys, lost keys, recover lost keys, root keys, repo keys, repository keys
 
@@ -39,7 +39,7 @@ Recovering lost or compromised keys for {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 {: tsSymptoms}
-When you're using [trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent), you can't manage trusted images any more because your signing keys are lost or compromised.
+When you're using [trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent), you can't manage trusted images anymore because your signing keys are lost or compromised.
 
 {: tsCauses}
 Your repository or root key is lost or compromised.
@@ -65,21 +65,21 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 2. [Set up your trusted content environment](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_setup).
 
-3. Create an IAM API key:
+3. Create an IAM API key.
 
    ```
    ibmcloud iam api-key-create notary-auth --file notary-auth
    ```
    {: pre}
 
-4. Set NOTARY_AUTH:
+4. Set the `NOTARY_AUTH`.
 
    ```
    export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
    ```
    {: pre}
 
-5. Rotate your keys so that content that was signed with those keys is no longer trusted. Use the trust server variable that you set up in Step 2, and replace`<image>` with the image whose repository key is affected.
+5. Rotate your keys so that content that was signed with those keys is no longer trusted. Use the trust server variable that you set up in Step 2, and replace `<image>` with the image whose repository key is affected.
 
    ```
    notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
@@ -90,7 +90,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 7. [Push a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push) that uses the new signing keys.
 
-8. (Optional) When you've finished, if you want to revoke your API key, run the following command:
+8. (Optional) When you finish, if you want to revoke your API key, run the following command.
 
     ```
     ibmcloud iam api-key-delete notary-auth

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
@@ -57,7 +57,7 @@ You must have sufficient role-based access control (RBAC) privileges to use the 
 
 For more information about RBAC, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding) and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
 
-Complete the following steps to change the webhook configuration to make it fail open instead of closed, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed:
+To change the webhook configuration so that it fails open, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed, complete the following steps:
 
 1. Update `MutatingWebhookConfiguration` by running the following command.
 

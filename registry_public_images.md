@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: Public IBM images, images, accessing images, container images, public images,
 
@@ -55,7 +55,7 @@ To list the public images, complete the following steps.
    ```
    {: pre}
 
-2. List the {{site.data.keyword.IBM_notm}} public images:
+2. List the {{site.data.keyword.IBM_notm}} public images.
 
    ```
    ibmcloud cr images --include-ibm

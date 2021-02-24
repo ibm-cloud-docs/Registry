@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-24"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -99,7 +99,7 @@ The following usernames are valid:
 
 - `iambearer` The password contains an IAM access token. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 - `iamrefresh` The password must contain an IAM refresh token that is used internally to generate and refresh an IAM access token. This type of authentication is longer lived. This authentication type is used by the `ibmcloud cr login` command.
-- `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use either a user or service ID API key, see [Automating access to your namespaces by using service ID API keys](#registry_access_serviceid_apikey) and [Automating access to your namespaces by using user API keys](#registry_access_user_apikey).
+- `iamapikey` The password is an IAM API key. This type of authentication is the preferred type for automation. You can use a user or service ID API key, see [Automating access to your namespaces by using service ID API keys](#registry_access_serviceid_apikey) and [Automating access to your namespaces by using user API keys](#registry_access_user_apikey).
 
 You can authenticate by using one of the following clients:
 
@@ -147,7 +147,7 @@ skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker
 #### Example for Cloud Foundry
 {: #registry_access_apikey_auth_other_example_cf}
 
-You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<image_repo>` with the repository.
+You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), `<namespace>` with your namespace, and `<image_repo>` with the repository.
 
 ```
 export CF_DOCKER_PASSWORD=<apikey>

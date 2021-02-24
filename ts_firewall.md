@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, firewall, custom firewall
 
@@ -39,7 +39,7 @@ Accessing {{site.data.keyword.registrylong}} fails when you have a custom firewa
 {: shortdesc}
 
 {: tsSymptoms}
-You set up an additional firewall in your development environment with custom settings for inbound and outbound network traffic. When trying to access {{site.data.keyword.registrylong_notm}}, the connection fails.
+You set up an extra firewall in your development environment with custom settings for inbound and outbound network traffic. When you try to access {{site.data.keyword.registrylong_notm}}, the connection fails.
 
 {: tsCauses}
 Your custom firewall requires certain network groups to be opened for inbound and outbound network traffic to allow communication to and from the registry.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pushing a Docker image fails, pulling a Docker image fails, exceeded quota,
 
@@ -39,7 +39,7 @@ Pushing or pulling a Docker image fails.
 {: shortdesc}
 
 {: tsSymptoms}
-When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. Potential error messages might be:
+When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
 
 ```
 You have exceeded your storage quota. Delete one or more images,
@@ -68,7 +68,7 @@ The following alternatives are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong}}.
-- Your {{site.data.keyword.cloud}} access token might have expired.
+- Your {{site.data.keyword.cloud}} access token expired.
 - You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
 
 {: tsResolve}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: External registry, private registry, OpenShift
 
@@ -47,8 +47,8 @@ You can use either registry separately or in combination. When you set up the Op
 
 To set up your {{site.data.keyword.openshiftlong_notm}} clusters to use the internal registry in combination with {{site.data.keyword.registrylong_notm}}, see the following topics in the {{site.data.keyword.openshiftlong_notm}} documentation:
 
-- [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
-- [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
+- [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
+- [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).
 
 ## Set up {{site.data.keyword.redhat_notm}} OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}
 {: #registry_rhos_os}

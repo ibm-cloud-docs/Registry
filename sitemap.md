@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: container registry
 
@@ -166,7 +166,7 @@ subcollection: Registry
 
 [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture)
 
-[Segregation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
+[Segmentation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
 
 [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
@@ -381,7 +381,7 @@ subcollection: Registry
 
 [Copying images between registries](/docs/Registry?topic=Registry-registry_images_#registry_images_copying)
 
-[Creating new images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source)
+[Creating images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source)
 
 [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating)
 
