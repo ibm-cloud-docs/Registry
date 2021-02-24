@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-24"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -46,8 +46,8 @@ Much of the information that is provided in this tutorial is available in greate
 
 The objectives of the tutorial are to:
 
-* Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor
-* Use the functions of these services to create a workflow
+* Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor.
+* Use the functions of these services to create a workflow.
 
 ## Services used
 {: #registry_tutorial_workflow_services}
@@ -62,23 +62,23 @@ This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
 Before you begin, complete the following tasks:
 
-* [Install Git](https://git-scm.com/){: external}
-* [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository
-* [Create a cluster](/docs/containers?topic=containers-clusters)
+* [Install Git](https://git-scm.com/){: external}.
+* [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
+* [Create a cluster](/docs/containers?topic=containers-clusters).
 * Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}
 {: step}
 
-Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. In this section, you build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
+Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/container-registry){: external} to store your container images is the easiest way to get an application up and running with {{site.data.keyword.containerlong_notm}}. The following steps show you how to build a container image, store it in {{site.data.keyword.registrylong_notm}}, and create a Kubernetes deployment that uses that image.
 
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}. If you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it's created in a [resource group](/docs/account?topic=account-rgs). Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
+Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan) to store your container images in {{site.data.keyword.registrylong_notm}}. If you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it is created in a [resource group](/docs/account?topic=account-rgs). Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
-1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command:
+1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command.
 
    ```
    ibmcloud login -r us-south [--sso]
@@ -88,14 +88,14 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
    If you have a federated ID, use `ibmcloud login -r us-south --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
    {: tip}
 
-2. Set `us-south` as the target region for the {{site.data.keyword.registrylong_notm}} commands:
+2. Set `us-south` as the target region for the {{site.data.keyword.registrylong_notm}} commands.
 
    ```
    ibmcloud cr region-set us-south
    ```
    {: pre}
 
-3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name:
+3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name.
 
    If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
    {: tip}
@@ -262,10 +262,10 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 
 Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
 
-With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security use [Portieris](https://github.com/IBM/portieris){: external}.
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
 
-1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When setting up Helm in your cluster, your free cluster has public access and isn't a private cluster, therefore you must follow the steps to [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm).
+1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When you set up Helm in your cluster, your free cluster has public access and isn't a private cluster, you must [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm).
 
 2. The [default policies](/docs/Registry?topic=Registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
@@ -395,7 +395,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 3. Apply the configuration.
 
-   1. Apply the configuration with Container Image Security Enforcement still enabled in your cluster by running the following command:
+   1. Apply the configuration with Container Image Security Enforcement that is still enabled in your cluster by running the following command:
 
       ```
       kubectl apply -f hello-world.yaml
@@ -428,14 +428,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
          You can find the pod name by running `kubectl get pod -n test`.
          {: tip}
 
-4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can just copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
+4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
    ```
    kubectl get secret default-us-icr-io -o yaml | sed 's/default/test/g' | kubectl -n test create -f -
    ```
    {: pre}
 
-5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-registry#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment YAML by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
+5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-registry#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment `.yaml` file by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
 
    ```
    spec:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, adding images to the registry, passport advantage, ppa, IBM images, ppa import, helm charts
 
@@ -39,18 +39,18 @@ You're unable to add other {{site.data.keyword.IBM}} images to {{site.data.keywo
 {: shortdesc}
 
 {: tsSymptoms}
-When you try to import content that you used in other {{site.data.keyword.IBM_notm}} products, such as {{site.data.keyword.cloud}} Private, you are not able to store your images and other licensed software from [{{site.data.keyword.IBM_notm}} Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} in the registry.
+When you try to import content that you used in other {{site.data.keyword.IBM_notm}} products, such as {{site.data.keyword.cloud}} Private, you can't store your images and other licensed software from [{{site.data.keyword.IBM_notm}} Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} in the registry.
 
 {: tsCauses}
 Software packages such as images and Helm charts from {{site.data.keyword.IBM_notm}} Passport Advantage must be imported to the registry with the [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load) command.
 
 {: tsResolve}
-Before you begin to import a product from {{site.data.keyword.IBM_notm}} Passport Advantage, complete the following tasks:
+Before you import a product from {{site.data.keyword.IBM_notm}} Passport Advantage, complete the following tasks:
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login [--sso]`.
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
-3. [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
-4. If you have not already set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-helm#helm).
+3. Target the `kubectl` CLI to your cluster, see [Configuring the CLI to run kubectl](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+4. Ensure that you have set up Helm in your cluster, see [Adding services by using Helm charts](/docs/containers?topic=containers-helm#helm).
 5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}.
 
 ## Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}
@@ -102,7 +102,7 @@ Importing images to use in {{site.data.keyword.cloud_notm}}.
    ```
    {: screen}
 
-4. If the compressed files contain Helm charts, these charts are placed in an archive directory called `ppa-import` that is created in your current working directory. Open the directory to get the name of the Helm chart, `<helm_chart>`, and then inspect its values.
+4. If the compressed files contain Helm charts, these charts are placed in an archive directory that is called `ppa-import` that is created in your current working directory. Open the directory to get the name of the Helm chart, `<helm_chart>`, and then inspect its values.
 
    ```
    helm inspect values ppa-import/charts/<helm_chart>.tgz

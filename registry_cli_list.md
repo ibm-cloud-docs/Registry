@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2020
-lastupdated: "2020-10-14"
+  years: 2017, 2021
+lastupdated: "2021-02-24"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -45,14 +45,14 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
-- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests:
+- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests.
 
   ```
   ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
   ```
   {: pre}
 
-  The following message is an example of the output from the command:
+  The following message is an example of the output from the command.
 
   ```
   example-<region>.icr.io/user1/ibmliberty@<digest1>
@@ -61,7 +61,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: screen}
 
-- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB:
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
 
   ```
   ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
@@ -78,7 +78,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: screen}
 
-- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image:
+- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
   ```
   ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -92,7 +92,7 @@ The following code examples demonstrate how you might use the formatting and fil
   ```
   {: screen}
 
-- Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image:
+- Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image.
 
   ```
   ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
@@ -181,7 +181,7 @@ Review the following table to find available Go template options and data types 
 | `Env` | Array of strings | Displays the list of environment variables in the form of key-value pairs. |
 | `ExposedPorts` | Key-value map | Displays the list of exposed ports in the format `[123:,456:]`. |
 | `Healthcheck` | Object | Describes how to check that the container is working correctly. See the field details in [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck). |
-| `Hostname` | String | Displays the host name of the container. |
+| `Hostname` | String | Displays the hostname of the container. |
 | `Image` | String | Displays the name of the image that was passed by the operator. |
 | `Labels` | Key-value map | Displays the list of labels that were added to the image as key-value pairs. |
 | `MacAddress` | String | Displays the MAC address that is assigned to the container. |
@@ -205,8 +205,8 @@ Review the following table to find available Go template options and data types 
 |-----|----|-----------|
 | `Interval` | Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds. |
 | `Retries` | Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
-| `Test` | Array of strings | Displays how to run the health check test. Available options are: <br/><br/>`{}`: inherit the health check<br/><br/>`{"NONE"}`: the health check is disabled<br/><br/>`{"CMD", args...}`: exec arguments directly<br/><br/>`{"CMD-SHELL", command}`: run the command with the system's default shell |
-| `Timeout` | Integer (64 bit) | Displays the time to wait before considering the health check to have failed in nanoseconds. |
+| `Test` | Array of strings | Displays how to run the health check test. The following options are available: <br/><br/>`{}`: inherit the health check<br/><br/>`{"NONE"}`: the health check is disabled<br/><br/>`{"CMD", args...}`: exec arguments directly<br/><br/>`{"CMD-SHELL", command}`: run the command with the system's default shell |
+| `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before deciding that the health check has failed. |
 {: caption="Table 5. Available fields and data types in the <code>Healthcheck</code>." caption-side="top"}
 
 ### `RootFS`

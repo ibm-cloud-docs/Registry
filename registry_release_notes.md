@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-24"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -52,7 +52,7 @@ A new region in Japan is available. The new region is `jp-osa` and the domain na
 ### You can use Portieris to enforce container image security
 {: #19nov2020_portieris}
 
-With effect from 19 November 2020, [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce) is deprecated. To enforce container image security you can use [Portieris](https://github.com/IBM/portieris){: external}. You can use Portieris to control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
+With effect from 19 November 2020, [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce) is deprecated. To enforce container image security, you can use [Portieris](https://github.com/IBM/portieris){: external}. You can use Portieris to control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
 
 ## 21 October 2020
 {: #21oct2020}
@@ -72,7 +72,7 @@ For more information, see [Monitoring metrics for {{site.data.keyword.registrylo
 
 The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registrylong_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
-For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
+For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 
 ## 27 August 2020
 {: #27aug2020}
@@ -80,7 +80,7 @@ For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecatin
 ### Setting exemption policies by digest
 {: #27aug2020_digest}
 
-When you want to set up an exemption policy, you have the option to set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command.
+When you want to set up an exemption policy, you can set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command.
 
 For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
@@ -90,7 +90,7 @@ For more information, see [Setting organizational exemption policies](/docs/Regi
 ### Using UAA tokens is discontinued
 {: #12aug2020_tokens}
 
-From 12 August 2020, UAA tokens are no longer accepted for authentication. For the time being, registry tokens continue to be accepted, but their use is deprecated.
+From 12 August 2020, UAA tokens are no longer accepted for authentication. At the moment, registry tokens continue to be accepted, but their use is deprecated.
 
 For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
@@ -100,7 +100,7 @@ For more information, see [Announcing End of {{site.data.keyword.registrylong_no
 ### New access roles required for Vulnerability Advisor exemption policies
 {: #30jul2020_exemption}
 
-If you want to manage your Vulnerability Advisor exemption policies for security issues, you might have to update your access role depending on the task that you want to complete.
+If you want to manage your Vulnerability Advisor exemption policies for security issues, depending on the task that you want to complete, you might have to update your access role.
 
 For more information, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
@@ -113,7 +113,7 @@ For more information, see [Access roles for configuring {{site.data.keyword.regi
 Namespaces are created in resource groups so that access to resources within a namespace can be configured at the resource group level. If a namespace isn't already in a resource group, you can assign the namespace to a resource group.
 {: shortdesc}
 
-- Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in a resource group that you specify so that, if you want to, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) and [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add).
+- Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) and [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add).
 
 - Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't assigned to resource groups. If you want to assign an existing namespace to a resource group so that access to resources within a namespace can be configured at the resource group level, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign).
 
@@ -133,7 +133,7 @@ If you want to add or remove namespaces, you must have the Manager role, see [Ac
 ### Restoring all tags for a digest in a repository is now an option
 {: #24jun2020_tags}
 
-When you want to restore an image, you have the option to restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+When you want to restore an image, you can restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 
 For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
@@ -143,7 +143,7 @@ For more information, see [Restoring images](/docs/Registry?topic=Registry-regis
 ### Retaining untagged images is now an option when you clean up your namespaces
 {: #18may2020_untagged}
 
-Retention policies now include untagged images by default when calculating what to retain. A new `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands allows you to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
+Retention policies now include untagged images by default when they calculate what to retain. You can use the `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
 
 For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
@@ -170,7 +170,7 @@ For more information, see [Securing your connection to {{site.data.keyword.regis
 ### `ibmcloud cr private-only` command is available
 {: #16apr2020_private}
 
-The `ibmcloud cr private-only` command enables you to prevent image pulls or pushes over public network connections for your account.
+You can use the `ibmcloud cr private-only` command to prevent image pulls or pushes over public network connections for your account.
 
 For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only).
 
@@ -246,7 +246,7 @@ All deleted images are stored in the trash for 30 days.
 
 The following commands are available for you to use to restore images:
 
-- The [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. Images remain in the trash for 30 days after they've been deleted.
+- The [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. Images remain in the trash for 30 days after deletion.
 - The [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.
 
 For more information, see [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
@@ -339,7 +339,7 @@ Signatures apply to the whole image name, which includes the domain name. If you
 
 For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
-### IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters
+### Adding IAM API key policies to control access to resources
 {: #25feb2019_secrets}
 
 The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
@@ -457,7 +457,7 @@ For more information, see [Signing images for trusted content](/docs/Registry?to
 ### Global registry
 {: #6nov2017_global}
 
-A global registry is available. It has no region included in its domain name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
+A global registry is available. The global registry domain name doesn't include a region (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry.
 
 For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -96,7 +96,7 @@ If you still see unacceptable performance, contact support, see [Getting help an
 {: #faq_va_trigger_scan}
 {: faq}
 
-For information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
+For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}

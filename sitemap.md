@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-24"
 
 keywords: container registry
 
@@ -166,7 +166,7 @@ subcollection: Registry
 
 [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture)
 
-[Segregation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
+[Segmentation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
 
 [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
@@ -381,7 +381,7 @@ subcollection: Registry
 
 [Copying images between registries](/docs/Registry?topic=Registry-registry_images_#registry_images_copying)
 
-[Creating new images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source)
+[Creating images that refer to a source image](/docs/Registry?topic=Registry-registry_images_#registry_images_source)
 
 [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating)
 
@@ -557,7 +557,7 @@ subcollection: Registry
 * [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_platform_metrics)
 * [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_enable_platform_metrics)
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics)
-  * [Launching the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
+  * [Starting the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
 * [{{site.data.keyword.registryshort_notm}} Predefined Dashboards](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_dashboards_dictionary)
 * [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
   * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)
@@ -846,7 +846,7 @@ subcollection: Registry
 
 [Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 
-[Why does listing images in the {{site.data.keyword.cloud_notm}} console time-out?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
+[Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
 [Why can't I add other {{site.data.keyword.IBM_notm}} images to the registry?](/docs/Registry?topic=Registry-troubleshoot-ppa)
 * [Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}](/docs/Registry?topic=Registry-troubleshoot-ppa#troubleshoot-ppa-import)
@@ -995,7 +995,7 @@ subcollection: Registry
 
 [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#25feb2019)
 * [New domain names](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_dns)
-* [IAM API key pull secrets for {{site.data.keyword.containerlong_notm}} clusters](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
+* [Adding IAM API key policies to control access to resources](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
 * [New region in ap-north](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_ap-north)
 
 [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#21feb2019)

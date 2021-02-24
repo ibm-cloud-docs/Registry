@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-24"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails
 
@@ -46,7 +46,7 @@ The following alternatives are possible causes:
 
 - The `container-registry` CLI plug-in is out of date and needs updating.
 - Docker is not installed on your local computer, or is not running.
-- Your {{site.data.keyword.cloud_notm}} login credentials have expired.
+- Your {{site.data.keyword.cloud_notm}} login credentials expired.
 
 {: tsResolve}
 You can fix this problem in the following ways:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -68,19 +68,19 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 ### Pushing and pulling images
 {: #registry_private_images_push}
 
-Private connections are available for image pushes and pulls. You use the same `icr.io` domain name, with the prefix `private.`, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+Private connections are available so that you can push and pull images. You use the same `icr.io` domain name, with the prefix `private.`, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}
 
-1. Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list:
+1. Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list.
 
-   - For namespaces that are set up in `ap-north` use the following private registry URL: `private.jp.icr.io`
-   - For namespaces that are set up in `ap-south`, use the following private registry URL: `private.au.icr.io`
-   - For namespaces that are set up in `eu-central`, use the following private registry URL: `private.de.icr.io`
-   - For namespaces that are set up in `jp-osa` use the following private registry URL: `private.jp2.icr.io`
-   - For namespaces that are set up in `uk-south`, use the following private registry URL: `private.uk.icr.io`
-   - For namespaces that are set up in `us-south`, use the following private registry URL: `private.us.icr.io`
+   - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`
+   - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`
+   - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`
+   - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`
+   - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`
+   - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`
 
    ```
    docker login -u iamapikey -p <apikey> <private_registry_url>
@@ -99,24 +99,24 @@ You can also use this command to check whether the use of private connections is
 After you enable the use of private connections on your account, any attempts to pull and push images or access signatures over the public network are rejected.
 {: important}
 
-The use of private connections doesn't apply to the management API, therefore you can still use the CLI over a public connection.
+Because the use of private connections doesn't apply to the management API, you can still use the CLI over a public connection.
 {: tip}
 
-- To prevent image pulls or pushes over public network connections for your account, run the following command:
+- To prevent image pulls or pushes over public network connections for your account, run the following command.
 
   ```
   ibmcloud cr private-only --enable
   ```
   {: pre}
 
-- To reinstate image pulls or pushes over public network connections for your account, run the following command:
+- To reinstate image pulls or pushes over public network connections for your account, run the following command.
 
   ```
   ibmcloud cr private-only --disable
   ```
   {: pre}
 
-- To check whether the use of public connections is prevented for image pushes or pulls in your account, run the following command:
+- To check whether the use of public connections is prevented for image pushes or pulls in your account, run the following command.
   
   ```
   ibmcloud cr private-only --status
