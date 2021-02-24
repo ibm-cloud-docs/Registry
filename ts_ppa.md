@@ -49,8 +49,8 @@ Before you import a product from {{site.data.keyword.IBM_notm}} Passport Advanta
 
 1. Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login [--sso]`.
 2. Log in to {{site.data.keyword.registrylong_notm}} by running `ibmcloud cr login`.
-3. [Target the `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
-4. Ensure that you have set up Helm in your cluster, [set up Helm in your cluster now](/docs/containers?topic=containers-helm#helm).
+3. Target the `kubectl` CLI to your cluster, see [Configuring the CLI to run kubectl](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+4. Ensure that you have set up Helm in your cluster, see [Adding services by using Helm charts](/docs/containers?topic=containers-helm#helm).
 5. If you want to share the charts within your organization, you can install the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external}.
 
 ## Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}
