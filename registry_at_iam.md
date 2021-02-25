@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -24,7 +24,7 @@ subcollection: Registry
 {:deprecated: .deprecated}
 {:external: target="_blank" .external}
 
-# IAM and Activity Tracker action by API method
+# IAM and Activity Tracker actions by API method
 {: #registry_at_iam}
 
 When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} instance.

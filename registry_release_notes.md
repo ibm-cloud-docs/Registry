@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -381,7 +381,7 @@ For more information, see [Vulnerability Advisor v2 API Deprecation](https://www
 
 Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Tutorial: Granting access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
+For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
 
 ## 7 August 2018
 {: #7aug2018}
