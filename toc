@@ -61,7 +61,7 @@ Container Registry
     Related links
         [IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started){: new_window}
         [Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: new_window}
-        [IBM Developer: Containers](https://developer.ibm.com/technologies/containers/)
+        [IBM Developer - Containers](https://developer.ibm.com/technologies/containers/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

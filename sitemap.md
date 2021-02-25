@@ -822,7 +822,7 @@ subcollection: Registry
 
 [Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: new_window}{: external}
 
-[IBM Developer: Containers](https://developer.ibm.com/technologies/containers/){: external}
+[IBM Developer - Containers](https://developer.ibm.com/technologies/containers/){: external}
 
 
 ## Troubleshooting
