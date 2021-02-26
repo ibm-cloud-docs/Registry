@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-26"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -286,7 +286,7 @@ The following table explains the `.yaml` components that you must set in your Ku
 | `../../../../trust/enabled` | Set as `true` to allow only images that are [signed for content trust](/docs/Registry?topic=Registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed. |
 | `../../../../trust/signerSecrets/name` | If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this field or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers). |
 | `../../../../va/enabled` | Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/Registry?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan. |
-{: caption="Table 1. Understanding the `.yaml` components for the Kubernetes custom resource definition." caption-side="top"}
+{: caption="Table 1. Understanding the <code>.yaml</code> components for the Kubernetes custom resource definition." caption-side="top"}
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
