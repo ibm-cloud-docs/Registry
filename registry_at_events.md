@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -134,7 +134,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 4. Custom event fields for `container-registry.account-vulnerability-report.list`." caption-side="top"}
+{: caption="Table 4. Custom event fields for <code>container-registry.account-vulnerability-report.list</code>." caption-side="top"}
 
 For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](https://{DomainName}/apidocs/container-registry/va#accountreportquerypath){: external} in the API documentation.
 
@@ -151,7 +151,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.repository` | String | The name of the repository that you want to see image vulnerability assessments for. For example, `us.icr.io/namespace/image`. |
 | `requestData.RequestParameters.includeIBM` | String | When set to `true`, the returned list contains {{site.data.keyword.IBM_notm}} public images and the account images. If not set, or set to `false`, the list contains only the account images. |
 | `requestData.RequestParameters.includePrivate` | String | When set to `false`, the returned list does not contain the private account images. If not set, or set to `true`, the list contains the private account images. |
-{: caption="Table 5. Custom event fields for `container-registry.account-vulnerability-status.list`." caption-side="top"}
+{: caption="Table 5. Custom event fields for <code>container-registry.account-vulnerability-status.list</code>." caption-side="top"}
 
 For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](https://{DomainName}/apidocs/container-registry/va#accountstatusquerypath){: external} in the API documentation.
 
@@ -168,7 +168,7 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
-{: caption="Table 6. Custom event fields for `container-registry.image-vulnerability-report.read`." caption-side="top"}
+{: caption="Table 6. Custom event fields for <code>container-registry.image-vulnerability-report.read</code>." caption-side="top"}
 
 For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external} in the API documentation.
 
@@ -184,6 +184,6 @@ The following table lists the fields that are available through the `requestData
 |-----------------|-----------------|-----------------|
 | `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation.
-{: caption="Table 7. Custom event fields for `container-registry.image-vulnerability-status.read`." caption-side="top"}
+{: caption="Table 7. Custom event fields for <code>container-registry.image-vulnerability-status.read</code>." caption-side="top"}
 
 For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.
