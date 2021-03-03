@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -188,7 +188,7 @@ Review the following table to find available Go template options and data types 
 | `NetworkDisabled` | Boolean | Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container. |
 | `OnBuild` | Array of strings | Displays the `ONBUILD` metadata that were defined on the image Dockerfile. |
 | `OpenStdin` | Boolean | Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed. |
-| `Shell` | Array of strings | Displays the shell-form of RUN, CMD, ENTRYPOINT. |
+| `Shell` | Array of strings | Displays the shell-form of `RUN`, `CMD`, `ENTRYPOINT`. |
 | `StdinOnce` | Boolean | Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open. |
 | `StopSignal` | String | Describes the UNIX stop signal to send when to stop the container. |
 | `StopTimeout` | Integer | Displays the timeout in seconds to stop a container. |
@@ -205,8 +205,8 @@ Review the following table to find available Go template options and data types 
 |-----|----|-----------|
 | `Interval` | Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds. |
 | `Retries` | Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
-| `Test` | Array of strings | Displays how to run the health check test. The following options are available: <br/><br/>`{}`: inherit the health check<br/><br/>`{"NONE"}`: the health check is disabled<br/><br/>`{"CMD", args...}`: exec arguments directly<br/><br/>`{"CMD-SHELL", command}`: run the command with the system's default shell |
-| `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before deciding that the health check has failed. |
+| `Test` | Array of strings | Displays how to run the health check test. The following options are available. <br/><br/>`{}` Inherit the health check.<br/><br/>`{"NONE"}` The health check is disabled.<br/><br/>`{"CMD", args...}` Exec arguments directly.<br/><br/>`{"CMD-SHELL", command}` Run the command with the system's default shell. |
+| `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before the health check fails. |
 {: caption="Table 5. Available fields and data types in the <code>Healthcheck</code>." caption-side="top"}
 
 ### `RootFS`

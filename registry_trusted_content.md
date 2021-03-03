@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -64,7 +64,7 @@ To use [skopeo](https://github.com/containers/skopeo){: external} to sign your i
    ```
    {: pre}
 
-2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is tha name of your region and `<namespace>` is the name of your namespace.
+2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
 
    ```
    skopeo --insecure-policy copy --sign-by <your_email> docker-daemon:<repository:tag> docker://<image>
@@ -118,7 +118,7 @@ A repository can contain both signed and unsigned content. If Docker Content Tru
 Images have separate signatures for old (`registry.bluemix.net`) and new (`icr.io`) domain names. Existing signatures work when the image is pulled from the old domain name. If you want to pull signed content from the new domain name, you must sign the image on the new domain name, `icr.io`, see [Signing an image for the new domain name](#trustedcontent_resign).
 {: note}
 
-Docker Content Trust uses a trust on first use (TOFU) security model. The repository key is pulled from the trust server when you pull a signed image from a repository for the first time, and that key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before you pull the repository for the first time. If the trust information in the server is compromised and an image hasn't been pulled from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and doesn't pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
+Docker Content Trust uses a trust on first use (TOFU) security model. The repository key is pulled from the trust server when you pull a signed image from a repository for the first time. That key is used to verify images from that repository in the future. You must verify that you trust either the trust server or the image and its publisher before you pull the repository for the first time. If the trust information in the server is compromised and an image hasn't been pulled from the repository before, your Docker client might pull the compromised information from the trust server. If the trust data is compromised after you pull the image for the first time, on subsequent pulls, your Docker client fails to verify the compromised data and doesn't pull the image. For more information about how to inspect trust data for an image, see [Viewing signed images](#trustedcontent_viewsigned).
 
 For more information about the TOFU security model, see [The Update Framework](https://theupdateframework.github.io/){: external}.
 
@@ -200,7 +200,7 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 {: help}
 {: support}
 
-When you first push a signed image, Docker automatically creates a pair of signing keys, the root and repository keys. To sign an image in a repository where signed images have been pushed before, you must load the correct repository signing key onto the computer that is pushing the image.
+When you first push a signed image, Docker automatically creates a pair of signing keys, the root key and repository key. To sign an image in a repository where signed images have been pushed before, you must load the correct signing key for the repository onto the computer that is pushing the image.
 {:shortdesc}
 
 Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
@@ -214,7 +214,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
    ```
    {: screen}
 
-3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root and repository keys, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key)
+3. The first time that you push a signed image to a new repository, the command creates two signing keys, the root key and repository key, and stores them in your local computer. Enter and save secure passphrases for each key, and then [back up your keys](#trustedcontent_backupkeys). Backing up your keys is critical because your recovery options are limited, see [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key)
 
    This action is only required the first time that you push a signed repository.
    {: tip}

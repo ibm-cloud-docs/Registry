@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -76,8 +76,10 @@ Create a namespace. The namespace is created in the resource group that you spec
    The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
    {: tip}
 
-   You can put the namespace in a resource group of your choice by running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before you create the namespace, where `<resource_group>` is the resource group, or by specifying the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
-   {: tip}
+   You can put the namespace in a resource group of your choice by using one of the following options.
+
+   - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
+   - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
 
    ```
    ibmcloud cr namespace-add <my_namespace>
@@ -143,7 +145,7 @@ Create a namespace. The namespace is created in the resource group that you spec
    ```
    {: pre}
 
-2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in Step 2, see [Set up a namespace](#gs_registry_namespace_add), and `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
+2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Step 2. Set up a namespace](#gs_registry_namespace_add). Replace `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
    ```
    docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>

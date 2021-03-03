@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-03"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -27,7 +27,7 @@ subcollection: Registry
 # Release notes
 {: #registry_release_notes}
 
-Learn about the latest changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
+Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
 
 ## 18 February 2021
@@ -115,7 +115,7 @@ Namespaces are created in resource groups so that access to resources within a n
 
 - Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) and [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add).
 
-- Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't assigned to resource groups. If you want to assign an existing namespace to a resource group so that access to resources within a namespace can be configured at the resource group level, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign).
+- Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't assigned to resource groups. You can assign an existing namespace to a resource group so that you can configure access to resources within a namespace at the resource group level. For more information, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign).
 
 - You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
 
@@ -335,7 +335,7 @@ For more information, see [Auditing events for {{site.data.keyword.registryshort
 
 For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
 
-Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can consume content trust under the new domain name.
+Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can use content trust under the new domain name.
 
 For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 

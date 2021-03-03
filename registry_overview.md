@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -64,7 +64,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Description. | Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
-| Billing. |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage** You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog).<br/><br/>**Pull traffic** You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
+| Billing. |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog).<br/><br/>**Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
 
 ## Quota limits and billing
@@ -122,26 +122,33 @@ Depending on the service plan that you choose, you can push and pull images to a
 #### Storage
 {: #registry_quota_limits_storage}
 
-  When you reach or exceed the quota limits for your plan, you can't push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you either [free up space by removing images](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup) from your namespaces, or [upgrade to the standard plan](#registry_plan_upgrade). If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=Registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
-  {:shortdesc}
+When you reach or exceed the quota limits for your plan, you can't push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you complete one of the following tasks.
 
-  The following example is for the standard plan:
+- [Free up space by removing images](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup) from your namespaces.
+- [Upgrade to the standard plan](#registry_plan_upgrade).
+- If you set quota limits for storage in your free or standard plan, you can also [increase this quota limit](/docs/Registry?topic=Registry-registry_quota#registry_quota_set) to enable the pushing of new images again.
 
-  Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
-  
-  After the push, {{site.data.keyword.registrylong_notm}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registrylong_notm}} prevents you from pushing more images to the namespace.
+The following example is for the standard plan:
+
+Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
+
+After the push, {{site.data.keyword.registrylong_notm}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registrylong_notm}} prevents you from pushing more images to the namespace.
 
 #### Pull traffic
 {: #registry_quota_limits_pull_traffic}
 
-  When you reach or exceed the quota limits for your plan, you can't pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you either wait for the next billing period to start, [upgrade to the standard plan](#registry_plan_upgrade), or [increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
-  {:shortdesc}
+When you reach or exceed the quota limits for your plan, you can't pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you complete one of the following tasks.
 
-  The following example is for the standard plan:
+- Wait for the next billing period to start.
+- [Upgrade to the standard plan](#registry_plan_upgrade).
+- [Increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
 
-  In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
-  
-  After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
+
+The following example is for the standard plan:
+
+In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
+
+After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
 ### Cost
 {: #registry_cost}
@@ -204,7 +211,7 @@ To learn more about Docker-specific terms, see [Docker glossary](https://docs.do
 ### Container image
 {: #overview_elements_container_image}
 
-A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, which are combined at run time, that are created as the container image is built by successive updates. The container image does not retain state as the container executes.
+A file system and its execution parameters that are used within a container runtime to create a container. The file system consists of a series of layers, which are combined at run time, that are created as the container image is built by successive updates. The container image does not retain state as the container runs.
 
 Container images are stored in a repository that is stored in a namespace.
 
@@ -271,7 +278,7 @@ You can use tags to distinguish different versions of the same base image within
 ### Untagged image
 {: #overview_elements_untagged}
 
-An image that has no tag is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination, in this case the tag is overwritten and the original image becomes untagged.
+An image that has no tag is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case the tag is overwritten and the original image becomes untagged.
 
 You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.
 

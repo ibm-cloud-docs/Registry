@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2020-12-17"
+lastupdated: "2021-03-03"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -147,7 +147,7 @@ Encrypt the image by using the public key and then build a container image by us
 
    `us.icr.io/<namespace>/<my_app>` is committed to the local image store.
 
-4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image, where `<user_keys>/<user>Pub.pem` is the encryption key:
+4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image. Where `<user_keys>/<user>Pub.pem` is the encryption key.
 
    ```
    buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>
@@ -212,7 +212,7 @@ Pull the image from the registry and decrypt it by using the private key.
 To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-about) to store and protect your keys.
 {:shortdesc}
 
-{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption, but you can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
+{{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption. You can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
 
 For more information about how to use {{site.data.keyword.keymanagementservicelong_notm}} to store and protect your keys, see [Bringing your encryption keys to the cloud](/docs/key-protect?topic=key-protect-importing-keys) and [Importing your own keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#import-keys).
 
