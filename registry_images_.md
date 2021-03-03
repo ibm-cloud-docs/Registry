@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -298,7 +298,7 @@ You can now use clusters to pull the images, see [Building containers from image
 You can remove a tag, or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
 {: shortdesc}
 
-Where multiple tags exist for the same image digest within a repository, to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
+If multiple tags exist for the same image digest within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
 
 To remove a tag, or tags, by using the CLI, complete the following steps:
@@ -344,7 +344,7 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 You can delete unwanted images and all their tags from your private repository by using the CLI.
 {: shortdesc}
 
-Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
@@ -376,7 +376,7 @@ To delete an image by using the CLI, complete the following steps:
 You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
 {:shortdesc}
 
-Deleting an image that is being used by an existing deployment might cause scale up, reschedule, or both, to fail.
+Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
@@ -389,7 +389,7 @@ To delete an image by using the {{site.data.keyword.cloud_notm}} console, comple
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Images**. A list of your images is displayed.
-6. In the row that contains the image that you want to delete, select the check box.
+6. In the row that contains the image that you want to delete, select the checkbox.
 7. Click **Delete Image**.
 
 ## Listing images in the trash
@@ -453,7 +453,7 @@ To restore an image by digest from the trash, complete the following steps:
    A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
 3. Note the digest for the image that you want to restore.
-4. Run the following command to restore the image to your repository, where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, and `<digest>` is the digest of the image that you want to restore.
+4. Run the following command to restore the image to your repository. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, and `<digest>` is the digest of the image that you want to restore.
 
    ```
    ibmcloud cr image-restore <dns>/<namespace>/<repo>@<digest>
@@ -521,7 +521,7 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
 3. Click **Catalog**.
 4. Select the **Containers** category and click the **Container Registry** tile.
 5. Click **Repositories**. A list of your private repositories is displayed.
-6. In the row that contains the private repository that you want to delete, select the check box.
+6. In the row that contains the private repository that you want to delete, select the checkbox.
 
    Ensure that the correct repository is selected because this action can't be undone.
    {: important}

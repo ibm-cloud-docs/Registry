@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -44,7 +44,7 @@ Much of the information that is provided in this tutorial is available in greate
 ## Objectives
 {: #registry_tutorial_workflow_objectives}
 
-The objectives of the tutorial are to:
+The tutorial has the following objectives.
 
 * Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor.
 * Use the functions of these services to create a workflow.
@@ -372,7 +372,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 {: #registry_tutorial_workflow_deploy_nondefault_namespaces}
 {: step}
 
-An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take additional steps.
+An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take extra steps.
 
 Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Find out more about the elements that are used in IBM Cloud Container Registry](/docs/Registry?topic=Registry-registry_overview#overview_elements). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -136,7 +136,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
@@ -200,21 +200,21 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
+<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
 </dd>
 </dl>
 
 ### Examples
 {: #bx_cr_exemption_list_example}
 
-List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository, but not any that are scoped to specific tags within the *`birds/bluebird`* repository.
+List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository. The output doesn't include any exemptions that are scoped to specific tags within the *`birds/bluebird`* repository.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
-List all your exemptions for security issues that apply to images in the *`birds/bluebird@sha256:101010101010`* digest. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository and to the *`birds/bluebird@sha256:101010101010`* digest, but not any that are scoped to specific tags within the *`birds/bluebird`* repository.
+List all your exemptions for security issues that apply to images in the *`birds/bluebird@sha256:101010101010`* digest. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository and to the *`birds/bluebird@sha256:101010101010`* digest. The output doesn't include any exemptions that are scoped to specific tags within the *`birds/bluebird`* repository.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird@sha256:101010101010
@@ -244,7 +244,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 <dl>
 <dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`
+<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
 </dd>
 <dt>`--issue-type ISSUE_TYPE`</dt>
 <dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `ibmcloud cr exemption-list`.
@@ -790,9 +790,12 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-You can create a namespace in a resource group of your choice by running [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) before you create the namespace, where `<resource_group>` is the resource group, or by specifying the required resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+You can create a namespace in a resource group of your choice by using one of the following options.
 
-If you create a namespace in a resource group you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself.
+- Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
+- Specify the required resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+
+If you create a namespace in a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself.
 
 Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020 are created in a resource group. Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not created in a resource group. If you want to assign a namespace to a resource group, see [`ibmcloud cr namespace-assign`](#ic_cr_namespace_assign).
 {: tip}
@@ -839,7 +842,7 @@ ibmcloud cr namespace-add -g beaks birds
 ## `ibmcloud cr namespace-assign`
 {: #ic_cr_namespace_assign}
 
-Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not assigned to resource groups. You can assign an unassigned namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. If you assign a namespace to a resource group you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the command fails.
+Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not assigned to resource groups. You can assign an unassigned namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. If you assign a namespace to a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the command fails.
 {: shortdesc}
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.

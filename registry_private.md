@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-03"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -47,8 +47,11 @@ You must set up your account with the correct authority so that you can set up a
 ### Enabling {{site.data.keyword.cloud_notm}} service endpoint support for the account
 {: #registry_private_images_endpoints}
 
-To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must be able to access the classic infrastructure and you must enable [virtual routing and forwarding](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) (VRF) and connectivity to service endpoints for your account. You must also have a billable account.
-{: shortdesc}
+To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must meet the following criteria.
+
+- You must be able to access the classic infrastructure.
+- You must enable [virtual routing and forwarding](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) (VRF) and connectivity to service endpoints for your account.
+- You must also have a billable account.
 
 To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing and forwarding (VRF) and service endpoints, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
@@ -75,12 +78,12 @@ You can't use private connections for image management operations by using the {
 
 1. Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list.
 
-   - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`
-   - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`
-   - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`
-   - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`
-   - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`
-   - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`
+   - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
+   - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
+   - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
+   - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.
+   - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`.
+   - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`.
 
    ```
    docker login -u iamapikey -p <apikey> <private_registry_url>
