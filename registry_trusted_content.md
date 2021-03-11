@@ -132,7 +132,7 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
 
 1. Enable the Docker Content Trust environment variable by running one of the following commands.
 
-   On Linux or Mac.
+   On Linux&reg; or Mac.
 
    ```
    export DOCKER_CONTENT_TRUST=1
@@ -340,7 +340,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
 When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root and repository keys, and stores them in a directory on your local computer.
 
-- On Linux&reg; and Mac `~/.docker/trust/private`
+- On Linux and Mac `~/.docker/trust/private`
 
 - On Windows `%HOMEPATH%\.docker\trust\private`
 
