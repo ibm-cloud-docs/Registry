@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-11"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -132,7 +132,7 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
 
 1. Enable the Docker Content Trust environment variable by running one of the following commands.
 
-   On Linux or Mac.
+   On Linux&reg; or Mac.
 
    ```
    export DOCKER_CONTENT_TRUST=1
