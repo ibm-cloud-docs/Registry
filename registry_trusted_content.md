@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-11"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -340,7 +340,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
 When you first push a signed image to a new repository, Docker Content Trust creates two signing keys, the root and repository keys, and stores them in a directory on your local computer.
 
-- On Linux and Mac `~/.docker/trust/private`
+- On Linux&reg; and Mac `~/.docker/trust/private`
 
 - On Windows `%HOMEPATH%\.docker\trust\private`
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-11"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, keys, lost keys, recover lost keys, root keys, repo keys, repository keys
 
@@ -111,7 +111,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 2. After {{site.data.keyword.cloud_notm}} addresses the issue, delete the Docker Content Trust repository on your local computer.
 
-   - Linux and Mac directory `~/.docker/trust/private` and `~/.docker/trust/tuf`
+   - Linux&reg; and Mac directory `~/.docker/trust/private` and `~/.docker/trust/tuf`
 
    - Windows directory `%HOMEPATH%\.docker\trust\private` and `%HOMEPATH%\.docker\trust\tuf`
 
