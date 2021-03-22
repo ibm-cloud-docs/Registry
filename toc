@@ -42,6 +42,7 @@ Container Registry
         registry_security_enforce.md
         registry_encrypt_images.md
         registry_private.md
+        registry_vpe.md
     
     {: .topicgroup}
     Observability
