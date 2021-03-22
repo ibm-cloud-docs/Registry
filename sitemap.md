@@ -548,6 +548,10 @@ subcollection: Registry
   * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
 * [Enforcing access to your account over private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
+[Using a virtual private endpoint for {{site.data.keyword.vpc_short}}](/docs/Registry?topic=Registry-registry_vpe)
+* [Before you begin](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_prereqs)
+* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_endpoints)
+
 
 ## Observability
 {: #sitemap_observability}
