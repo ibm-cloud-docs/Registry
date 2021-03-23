@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-23"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -36,7 +36,7 @@ In each regional instance of the registry, the service runs in three physically 
 
 ![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public/private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
-Note: \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`) or `jp-osa` (`jp2.icr.io`).
+Note: \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`).
 
 ## Segmentation
 {: #registry_architecture_segregation}
@@ -68,7 +68,7 @@ Find out about dependencies that use public and private network connections.
 
   - [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
 
-    Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`) or `jp-osa` (`jp2.icr.io`).
+    Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`).
     {: important}
 
   - [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
