@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-29"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -97,7 +97,7 @@ The following table details actions that are mapped to service access roles. Ser
 | Manager | The Manager role can perform all actions. | View, inspect, pull, build, push, delete, and restore images.<br/><br/>View, add, analyze, and remove namespaces.<br/><br/>Assign namespaces to resource groups.<br/><br/>View and set quotas.<br/><br/>View vulnerability reports.<br/><br/>View and create image signatures.<br/><br/>Review and change pricing plans.<br/><br/>Enable IAM policy enforcement.<br/><br/>List, add, and remove Vulnerability Advisor security issue exemption policies.<br/><br/>List types of security exemptions<br/><br/>Set and run retention policies.<br/><br/>View the contents of the trash.<br/><br/>Restore images.<br/><br/> View the contents of the manifest for an image.<br/><br/>Prevent or allow image pulls or pushes over public network connections for your account.<br/><br/>Check whether the use of public connections is prevented for image pushes or pulls in your account.<br/><br/>Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account. |
 {: caption="Table 3. IAM service access roles and actions" caption-side="top"}
 
-For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}} you must create a policy where the following criteria apply.
+For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}}, you must create a policy where the following criteria apply.
 
 * The service name is `container-registry`.
 * The service instance is empty.
