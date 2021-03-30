@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-30"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -97,7 +97,7 @@ For more information, see [Announcing End of {{site.data.keyword.registrylong_no
 ## 30 July 2020
 {: #30jul2020}
 
-### New access roles required for Vulnerability Advisor exemption policies
+### New access roles are required for Vulnerability Advisor exemption policies
 {: #30jul2020_exemption}
 
 If you want to manage your Vulnerability Advisor exemption policies for security issues, depending on the task that you want to complete, you might have to update your access role.
@@ -210,7 +210,7 @@ For more information, see [Signing images for trusted content by using {{site.da
 ### {{site.data.keyword.la_full_notm}} platform services logs are available
 {: #25oct2019_logs}
 
-{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances.
+{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your logging instances.
 
 For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=Registry-registry_logs).
 

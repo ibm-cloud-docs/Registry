@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-30"
 
-keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, LogDNA for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
+keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
 subcollection: Registry
 
@@ -27,14 +27,14 @@ subcollection: Registry
 # Analyzing logs for {{site.data.keyword.registryshort_notm}}
 {: #registry_logs}
 
-{{site.data.keyword.registrylong}} generates platform services logs that are displayed in your LogDNA instances.
+{{site.data.keyword.registrylong}} generates platform services logs that are displayed in your logging instances.
 {: shortdesc}
 
-For more information about how to configure LogDNA instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs).
+For more information about how to configure logging instances to receive platform services logs, see [Configuring IBM Cloud service logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs).
 
 Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive; {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
-{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your LogDNA instances for the following specific cases:
+{{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your logging instances for the following specific cases:
 
 - When {{site.data.keyword.registrylong_notm}} runs scheduled retention policies for namespaces in your account.
 - When {{site.data.keyword.registrylong_notm}} calculates your account's registry traffic and average storage usage per hour for a region.
