@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: container registry
 
@@ -561,7 +561,7 @@ subcollection: Registry
 * [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_platform_metrics)
 * [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_enable_platform_metrics)
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics)
-  * [Starting the Sysdig web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
+  * [Starting the web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
 * [{{site.data.keyword.registryshort_notm}} Predefined Dashboards](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_dashboards_dictionary)
 * [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
   * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)
@@ -933,7 +933,7 @@ subcollection: Registry
 * [Using UAA tokens is discontinued](/docs/Registry?topic=Registry-registry_release_notes#12aug2020_tokens)
 
 [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#30jul2020)
-* [New access roles required for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-registry_release_notes#30jul2020_exemption)
+* [New access roles are required for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-registry_release_notes#30jul2020_exemption)
 
 [29 July 2020](/docs/Registry?topic=Registry-registry_release_notes#29jul2020)
 * [You can set permissions so that access to resources within a namespace can be configured at the resource group level](/docs/Registry?topic=Registry-registry_release_notes#29jul2020_resource_group)

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-30"
 
-keywords: IBM Cloud, observability, registry, monitoring, supertenant, Sysdig, metrics
+keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
 subcollection: Registry
 
@@ -27,7 +27,7 @@ subcollection: Registry
 # Monitoring metrics for {{site.data.keyword.registrylong_notm}}
 {: #registry_monitor_sysdig}
 
-{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
 
 ## Platform metrics overview
@@ -36,9 +36,9 @@ subcollection: Registry
 You can configure one instance only of the {{site.data.keyword.mon_full_notm}} service in each region to collect platform metrics.
 
 * To use platform metrics, you must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
-* To configure the Sysdig instance, you must set the *platform metrics* configuration setting, see [Enabling Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
-* If a Sysdig instance in a region is already enabled to collect platform metrics, metrics from Sysdig-enabled services are collected automatically and available for monitoring through this instance. For more information about Sysdig-enabled services, see [Cloud services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
-* For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for Sysdig, see [Container services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services_locations#cloud_services_locations_container).
+* To configure the monitoring instance, you must set the platform metrics configuration setting, see [Enabling Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
+* If a monitoring instance in a region is already enabled to collect platform metrics, metrics are collected automatically and available for monitoring through this instance. For more information about monitoring-enabled services, see [Cloud services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
+* For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Container services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services_locations#cloud_services_locations_container).
 
 To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where {{site.data.keyword.registryshort_notm}} is provisioned.
 {: important}
@@ -72,25 +72,25 @@ Complete the following steps to configure platform metrics:
 ## Viewing metrics
 {: #registry_view_metrics}
 
-To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the Sysdig web UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
+To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the web UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
 {: important}
 
-### Starting the Sysdig web UI from the Observability page
+### Starting the web UI from the Observability page
 {: #registry_view_metrics_opt2}
 
-To start the Sysdig web UI from the *Observability* page, complete the following steps:
+To start the web UI from the Observability page, complete the following steps:
 
-1. [Launch the Sysdig web UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
+1. [Start the web UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
 2. Select **DASHBOARDS**.
 3. In the **Default Dashboards** section, expand **IBM**.
 4. Choose the {{site.data.keyword.registryshort_notm}} dashboard from the list.
 
-Next, change the scope or make a copy of the *Default* dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}.
+Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}.
 
 ## {{site.data.keyword.registryshort_notm}} Predefined Dashboards
 {: #registry_dashboards_dictionary}
 
-The following table outlines the predefined Sysdig dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics:
+The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics:
 
 | Dashboard name        | Description    |
 |-----------------------|----------------|
@@ -98,7 +98,7 @@ The following table outlines the predefined Sysdig dashboards that you can use t
 | {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
 {: caption="Table 1. Predefined dashboards." caption-side="top"}
 
-The *Default* dashboard can't be changed. You can copy the dashboard so that you can change it to suit your requirements.
+The Default dashboard can't be changed. You can copy the dashboard so that you can change it to suit your requirements.
 {: important}
 
 When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because more time is required to create the data. When data is available, the warning sign goes away and the metric is populated.
