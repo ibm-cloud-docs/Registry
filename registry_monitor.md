@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -25,7 +25,7 @@ subcollection: Registry
 {:external: target="_blank" .external}
 
 # Monitoring metrics for {{site.data.keyword.registrylong_notm}}
-{: #registry_monitor_sysdig}
+{: #registry_monitor}
 
 {{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
@@ -72,22 +72,22 @@ Complete the following steps to configure platform metrics:
 ## Viewing metrics
 {: #registry_view_metrics}
 
-To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the web UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
+To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the Monitoring UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
 {: important}
 
-### Starting the web UI from the Observability page
+### Starting the Monitoring UI from the Observability page
 {: #registry_view_metrics_opt2}
 
-To start the web UI from the Observability page, complete the following steps:
+To start the Monitoring UI from the Observability page, complete the following steps:
 
-1. [Start the web UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
+1. [Start the Monitoring UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
 2. Select **DASHBOARDS**.
 3. In the **Default Dashboards** section, expand **IBM**.
 4. Choose the {{site.data.keyword.registryshort_notm}} dashboard from the list.
 
 Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}.
 
-## {{site.data.keyword.registryshort_notm}} Predefined Dashboards
+## {{site.data.keyword.registryshort_notm}} predefined dashboards
 {: #registry_dashboards_dictionary}
 
 The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics:

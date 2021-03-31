@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -62,7 +62,7 @@ With effect from 19 November 2020, [Container Image Security Enforcement](/docs/
 
 You can use the [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) command to enable and disable platform metrics, and to find out whether you have platform metrics set up on your account.
 
-For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor_sysdig).
+For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
 
 ## 6 October 2020
 {: #06oct2020}
