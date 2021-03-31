@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-31"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1019,7 +1019,7 @@ ibmcloud cr platform-metrics --enable | --disable | --status
 ```
 {: codeblock}
 
-For more information about the platform metrics that you can view in {{site.data.keyword.registrylong_notm}}, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor_sysdig).
+For more information about the platform metrics that you can view in {{site.data.keyword.registrylong_notm}}, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
 
 ### Prerequisites
 {: #ic_cr_platform_metrics_prereq}

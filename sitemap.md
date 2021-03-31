@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: container registry
 
@@ -557,25 +557,25 @@ subcollection: Registry
 {: #sitemap_observability}
 
 
-[Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor_sysdig)
-* [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_platform_metrics)
-* [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_enable_platform_metrics)
-* [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics)
-  * [Starting the web UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_view_metrics_opt2)
-* [{{site.data.keyword.registryshort_notm}} Predefined Dashboards](/docs/Registry?topic=Registry-registry_monitor_sysdig#registry_dashboards_dictionary)
-* [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor_sysdig#metrics-by-plan)
-  * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic)
-  * [`Pull Traffic Quota`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_pull_traffic_quota)
-  * [`Storage Quota`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage_quota)
-  * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor_sysdig#ibm_containerregistry_storage)
-* [Attributes for segmentation](/docs/Registry?topic=Registry-registry_monitor_sysdig#attributes)
-  * [Global Attributes](/docs/Registry?topic=Registry-registry_monitor_sysdig#global-attributes)
-  * [Additional Attributes](/docs/Registry?topic=Registry-registry_monitor_sysdig#additional-attributes)
+[Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor)
+* [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor#registry_platform_metrics)
+* [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor#registry_enable_platform_metrics)
+* [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics)
+  * [Starting the Monitoring UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics_opt2)
+* [{{site.data.keyword.registryshort_notm}} predefined dashboards](/docs/Registry?topic=Registry-registry_monitor#registry_dashboards_dictionary)
+* [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor#metrics-by-plan)
+  * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_pull_traffic)
+  * [`Pull Traffic Quota`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_pull_traffic_quota)
+  * [`Storage Quota`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage_quota)
+  * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
+* [Attributes for segmentation](/docs/Registry?topic=Registry-registry_monitor#attributes)
+  * [Global Attributes](/docs/Registry?topic=Registry-registry_monitor#global-attributes)
+  * [Additional Attributes](/docs/Registry?topic=Registry-registry_monitor#additional-attributes)
 
 [Auditing the events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
 * [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)
 * [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
-  * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_atlogdna)
+  * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
   * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
   * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
