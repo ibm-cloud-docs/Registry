@@ -575,7 +575,7 @@ subcollection: Registry
 [Auditing the events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
 * [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)
 * [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
-  * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_atlogdna)
+  * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
   * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
   * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -87,7 +87,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 {: #ui}
 
 ### {{site.data.keyword.at_full_notm}} events
-{: #ui_atlogdna}
+{: #ui_at}
 
 The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south` and `jp-osa`. Events for `ap-south` and `jp-osa` show in `Tokyo (jp-tok)`.
 
