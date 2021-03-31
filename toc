@@ -46,7 +46,7 @@ Container Registry
     
     {: .topicgroup}
     Observability
-        registry_monitor_sysdig.md
+        registry_monitor.md
         registry_at_events.md
         registry_logs.md
         registry_at_iam.md
