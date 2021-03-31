@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-31"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -386,11 +386,10 @@ To delete an image by using the {{site.data.keyword.cloud_notm}} console, comple
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
-3. Click **Catalog**.
-4. Select the **Containers** category and click the **Container Registry** tile.
-5. Click **Images**. A list of your images is displayed.
-6. In the row that contains the image that you want to delete, select the checkbox.
-7. Click **Delete Image**.
+3. Click the **Navigation Menu** icon, then click **Container Registry**.
+4. Click **Images**. A list of your images is displayed.
+5. In the row that contains the image that you want to delete, select the checkbox.
+6. Click **Delete Image**.
 
 ## Listing images in the trash
 {: #registry_images_list_trash}
@@ -518,12 +517,11 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
-3. Click **Catalog**.
-4. Select the **Containers** category and click the **Container Registry** tile.
-5. Click **Repositories**. A list of your private repositories is displayed.
-6. In the row that contains the private repository that you want to delete, select the checkbox.
+3. Click the **Navigation Menu** icon, then click **Container Registry**.
+4. Click **Repositories**. A list of your private repositories is displayed.
+5. In the row that contains the private repository that you want to delete, select the checkbox.
 
    Ensure that the correct repository is selected because this action can't be undone.
    {: important}
 
-7. Click **Delete Repository**.
+6. Click **Delete Repository**.
