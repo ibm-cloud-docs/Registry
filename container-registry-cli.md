@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-06"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1024,9 +1024,9 @@ For more information about the platform metrics that you can view in {{site.data
 ### Prerequisites
 {: #ic_cr_platform_metrics_prereq}
 
-- You must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
+- You must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
 
-- [Enable your {{site.data.keyword.mon_full_notm}} instance for platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
+- [Enable your {{site.data.keyword.mon_full_notm}} instance for platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
 
 - To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 

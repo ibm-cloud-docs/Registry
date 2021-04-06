@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-06"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -35,10 +35,10 @@ subcollection: Registry
 
 You can configure one instance only of the {{site.data.keyword.mon_full_notm}} service in each region to collect platform metrics.
 
-* To use platform metrics, you must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started).
-* To configure the monitoring instance, you must set the platform metrics configuration setting, see [Enabling Platform Metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_enabling).
-* If a monitoring instance in a region is already enabled to collect platform metrics, metrics are collected automatically and available for monitoring through this instance. For more information about monitoring-enabled services, see [Cloud services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services).
-* For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Container services](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-cloud_services_locations#cloud_services_locations_container).
+* To use platform metrics, you must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
+* To configure the monitoring instance, you must set the platform metrics configuration setting, see [Enabling Platform Metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
+* If a monitoring instance in a region is already enabled to collect platform metrics, metrics are collected automatically and available for monitoring through this instance. For more information about monitoring-enabled services, see [Cloud services](/docs/monitoring?topic=monitoring-cloud_services).
+* For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Container services](/docs/monitoring?topic=monitoring-cloud_services_locations#cloud_services_locations_container).
 
 To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where {{site.data.keyword.registryshort_notm}} is provisioned.
 {: important}
@@ -80,7 +80,7 @@ To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the 
 
 To start the Monitoring UI from the Observability page, complete the following steps:
 
-1. [Start the Monitoring UI](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-launch).
+1. [Start the Monitoring UI](/docs/monitoring?topic=monitoring-launch).
 2. Select **DASHBOARDS**.
 3. In the **Default Dashboards** section, expand **IBM**.
 4. Choose the {{site.data.keyword.registryshort_notm}} dashboard from the list.

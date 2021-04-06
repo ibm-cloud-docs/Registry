@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-06"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -30,7 +30,7 @@ subcollection: Registry
 Use {{site.data.keyword.at_full}} to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
+The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## API methods
 {: #at_events_api_methods}
@@ -110,7 +110,7 @@ The following table shows the location of global registry {{site.data.keyword.at
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 3. Location of global registry {{site.data.keyword.at_full_notm}} events." caption-side="top"}
 
-For more information about {{site.data.keyword.cloud_notm}} services by location, see [Container services](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-cloud_services_locations#cloud_services_locations_container).
+For more information about {{site.data.keyword.cloud_notm}} services by location, see [Container services](/docs/activity-tracker?topic=activity-tracker-cloud_services_locations#cloud_services_locations_container).
 
 ## Analyzing Activity Tracker events
 {: #at_events_analyze}
