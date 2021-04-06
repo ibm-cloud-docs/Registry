@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-04-06"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -71,8 +71,8 @@ Find out about dependencies that use public and private network connections.
     Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`).
     {: important}
 
-  - [{{site.data.keyword.la_full_notm}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-getting-started)
-  - [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started)
-  - [{{site.data.keyword.mon_full_notm}}](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-getting-started)
+  - [{{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-getting-started)
+  - [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started)
+  - [{{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started)
 
 - For more information about dependencies that use public connections, see [{{site.data.keyword.iamshort}} (IAM)](/docs/account?topic=account-iamoverview).
