@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: container registry
 
@@ -171,6 +171,11 @@ subcollection: Registry
 [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
 [Dependencies](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies)
+
+
+## What are containers?
+
+[What are containers?](https://www.ibm.com/cloud/learn/containers){: external}
 
 
 ## Public images
@@ -822,9 +827,9 @@ subcollection: Registry
 {: #sitemap_related_links}
 
 
-[IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started){: new_window}{: external}
+[IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started){: external}
 
-[Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: new_window}{: external}
+[Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: external}
 
 [IBM Developer - Containers](https://developer.ibm.com/technologies/containers/){: external}
 
