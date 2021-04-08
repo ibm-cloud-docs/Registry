@@ -173,11 +173,6 @@ subcollection: Registry
 [Dependencies](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies)
 
 
-## What are containers?
-
-[What are containers?](https://www.ibm.com/cloud/learn/containers){: external}
-
-
 ## Public images
 {: #sitemap_public_images}
 
@@ -324,6 +319,11 @@ subcollection: Registry
 * [Remove resources](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-removeresources)
 * [Expand the Tutorial](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-expandTutorial)
 * [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
+
+
+## What are containers?
+
+[What are containers?](https://www.ibm.com/cloud/learn/containers){: external}
 
 
 ## Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace

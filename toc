@@ -9,7 +9,6 @@ Container Registry
     registry_overview.md
     registry_ha.md
     registry_architecture.md
-    [What are containers?](https://www.ibm.com/cloud/learn/containers)
 
     {: .topicgroup}
     Public images
@@ -23,6 +22,8 @@ Container Registry
         /solution-tutorials/solution-tutorials-vm-to-containers-and-kubernetes
         /solution-tutorials/solution-tutorials-multi-region-k8s-cis
         /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
+
+    [What are containers?](https://www.ibm.com/cloud/learn/containers)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
