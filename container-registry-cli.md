@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -729,6 +729,9 @@ None
 {: #bx_cr_login}
 
 This command runs the `docker login` command against the registry. The `docker login` command is required to be able to run the `docker push` or `docker pull` commands for the registry. This command is not required to run other `ibmcloud cr` commands. If Docker is not installed, this command returns an error message.
+
+Logging in to {{site.data.keyword.registrylong}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
+{: tip}
 
 ```
 ibmcloud cr login
