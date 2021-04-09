@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: container registry
 
@@ -842,6 +842,8 @@ subcollection: Registry
 * [Getting help and support for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-ts_index#gettinghelp)
 
 [Why can't I log in to {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login)
+
+[Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)
 
 [Why do I get a failure message when I run any command in {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login-cloud)
 

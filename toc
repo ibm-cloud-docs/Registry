@@ -72,6 +72,7 @@ Container Registry
     Troubleshooting
         ts_index.md
         ts_login.md
+        ts_login_expire.md
         ts_login_cloud.md
         ts_login_error.md
         ts_build_fails.md
