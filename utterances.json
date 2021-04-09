@@ -109,6 +109,11 @@
         "how to install ibmcloud cr plugin",
         "command cr not available"
       ],
+      "troubleshoot-login-expire": [
+        "ibmcloud cr login command expires ",
+        "push image fails",
+        "pull image fails"
+      ],
       "troubleshoot-build-fails": [
         "build command fails in CR",
         "cannot use ibmcloud cr build command",
@@ -279,3 +284,4 @@
         "error when running ibmcloud cr login Error saving credentials on Mac"
       ]
     }
+  
