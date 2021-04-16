@@ -556,6 +556,10 @@ subcollection: Registry
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_prereqs)
 * [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_endpoints)
 
+[Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_iam_ip)
+* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
+* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
+
 
 ## Observability
 {: #sitemap_observability}
