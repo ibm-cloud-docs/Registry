@@ -45,6 +45,7 @@ Container Registry
         registry_encrypt_images.md
         registry_private.md
         registry_vpe.md
+        registry_iam_ip.md
     
     {: .topicgroup}
     Observability
