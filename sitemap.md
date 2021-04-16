@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-16"
 
 keywords: container registry
 
@@ -500,7 +500,6 @@ subcollection: Registry
 [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
 * [Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
 * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
-* [Vulnerabilities in packages on CentOS](/docs/Registry?topic=va-va_index#va_centos)
 
 [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy)
 * [Setting organizational exemption policies by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
