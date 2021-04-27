@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-27"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -420,8 +420,6 @@ For more information, see [Vulnerability Advisor for {{site.data.keyword.registr
 {: #31may2018_helm}
 
 Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
-
-For more information, see [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load).
 
 ## 21 March 2018
 {: #21mar2018}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-27"
 
 keywords: container registry
 
@@ -759,11 +759,6 @@ subcollection: Registry
 * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_prereq)
 * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
 * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
-
-[`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
-* [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_prereq)
-* [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_option)
-* [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_example)
 
 [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
 * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
