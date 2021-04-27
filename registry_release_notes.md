@@ -421,6 +421,8 @@ For more information, see [Vulnerability Advisor for {{site.data.keyword.registr
 
 Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
 
+For more information, see [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load).
+
 ## 21 March 2018
 {: #21mar2018}
 
