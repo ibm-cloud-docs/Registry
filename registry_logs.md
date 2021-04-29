@@ -42,7 +42,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 ## Where to look for {{site.data.keyword.la_full_notm}} logs
 {: #registry_logs_region}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south` and `jp-osa`. Events for `ap-south` and `jp-osa` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south` and `jp-osa`. Logs for `ap-south` and `jp-osa` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.la_full_notm}} logs.
 
