@@ -337,7 +337,7 @@ If you want to use a region other than your local region, you can target the reg
    ```
    {: pre}
 
-2. To log your local Docker daemon into the registry so that you can push or pull images, run the `ibmcloud cr login` command.
+2. Log in to the registry by running the `ibmcloud cr login` command.
 
 ### Global registry
 {: #registry_regions_global}
@@ -372,7 +372,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
    ```
    {: pre}
 
-2. To log your local Docker daemon into the global registry, run the `ibmcloud cr login` command.
+2. To log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images, run the `ibmcloud cr login` command.
 
 ## Support for Docker
 {: #docker}
