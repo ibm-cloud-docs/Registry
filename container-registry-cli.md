@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-30"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -72,6 +72,9 @@ Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
 
 Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
 {: tip}
+
+You can't use [IAM IP allowlists](/docs/Registry?topic=Registry-registry_iam_ip) in combination with the `ibmcloud cr image-build` command.
+{: note}
 
 ```
 ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
