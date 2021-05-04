@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-04"
 
 keywords: container registry
 
@@ -760,10 +760,7 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
 
-* [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_example)
+* [`ibmcloud cr ppa-archive-load` - obsolete](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
 
 * [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
@@ -862,9 +859,6 @@ subcollection: Registry
 
 [Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
-[Why can't I add other {{site.data.keyword.IBM_notm}} images to the registry?](/docs/Registry?topic=Registry-troubleshoot-ppa)
-* [Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}](/docs/Registry?topic=Registry-troubleshoot-ppa#troubleshoot-ppa-import)
-
 [I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 
 [Why doesn't an image show on the list that is produced by the `ibmcloud cr retention-run` command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
@@ -920,6 +914,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [4 May 2021](/docs/Registry?topic=Registry-registry_release_notes#04may2021)
+    * [The `ibmcloud cr ppa-archive-load` command is obsolete](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa)
 
 * [18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#18feb2021)
     * [Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option](/docs/Registry?topic=Registry-registry_release_notes#18feb2021_no-va)

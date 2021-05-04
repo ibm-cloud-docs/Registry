@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-05-04"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 4 May 2021
+{: #04may2021}
+
+### The `ibmcloud cr ppa-archive-load` command is obsolete
+{: #04may2021_ppa}
+
+The `ibmcloud cr ppa-archive-load` command is obsolete. For more information about its use, see [Use Helm for Passport Advantage images](#31may2018_helm).
 
 ## 18 February 2021
 {: #18feb2021}

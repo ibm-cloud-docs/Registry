@@ -81,7 +81,6 @@ Container Registry
         ts_push_pull_docker.md
         ts_docker_latest.md
         ts_image_timeout.md
-        ts_ppa.md
         ts_image_rm.md
         ts_image_list_retention.md
         ts_image_restore.md
