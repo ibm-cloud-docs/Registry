@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-04"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -379,7 +379,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 {{site.data.keyword.registrylong_notm}} supports Docker Engine V1.12.6, or later.
 
-Docker is required only if you want to push or pull images, or you want to run the `ibmcloud cr ppa-archive-load` command.
+Docker is required only if you want to push or pull images.
 
 Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
 

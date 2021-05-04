@@ -859,9 +859,6 @@ subcollection: Registry
 
 [Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
-[Why can't I add other {{site.data.keyword.IBM_notm}} images to the registry?](/docs/Registry?topic=Registry-troubleshoot-ppa)
-* [Importing {{site.data.keyword.IBM_notm}} Passport Advantage products to use in {{site.data.keyword.cloud_notm}}](/docs/Registry?topic=Registry-troubleshoot-ppa#troubleshoot-ppa-import)
-
 [I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 
 [Why doesn't an image show on the list that is produced by the `ibmcloud cr retention-run` command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)

@@ -172,17 +172,6 @@
         "UI timed out list images for CR",
         "Listing images in the GUI time out in CR"
       ],
-      "troubleshoot-ppa": [
-        "can't import images into Container Registry",
-        "import images from iIBM Passport advantage fails CR",
-        "unable to import images into Container registry",
-        "how to deploy chart museum for CR",
-        "fail to add images to the container registry",
-        "can't add images to containerregistry",
-        "cannot add images to my container registry",
-        "can't import images into ContainerRegistry",
-        "Unable to add other images to the container registry"
-      ],
       "troubleshoot-image-rm": [
         "how to delete an image from container registry",
         "ibmcloud cr image-rm command",
