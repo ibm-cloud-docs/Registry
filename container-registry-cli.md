@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-04"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1058,48 +1058,10 @@ ibmcloud cr platform-metrics --enable
 ```
 {: pre}
 
-## `ibmcloud cr ppa-archive-load`
+## `ibmcloud cr ppa-archive-load` - obsolete
 {: #bx_cr_ppa_archive_load}
 
-Imports {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
-
-Container images are pushed to your private {{site.data.keyword.registrylong_notm}} namespace. Helm charts are written to a `ppa-import` directory that is created in the directory from which you run the command. Optionally, you can use the [Chart Museum open source project](https://github.com/helm/charts/tree/master/stable/chartmuseum){: external} to host helm charts.
-
-```
-ibmcloud cr ppa-archive-load --archive FILE --namespace NAMESPACE
-```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_ppa_archive_load_prereq}
-
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
-
-### Command options
-{: #bx_cr_ppa_archive_load_option}
-
-<dl>
-  <dt>`--archive FILE`</dt>
-  <dd>The path to the compressed file that is downloaded from IBM Passport Advantage.</dd>
-  <dt>`--namespace NAMESPACE`</dt>
-  <dd>One of your namespaces. Container images from the compressed file are pushed to this namespace. To list namespaces, run `ibmcloud cr namespace-list`.</dd>
-  <dt>`--chartmuseum-uri URI`</dt>
-  <dd>(Optional) Your Chart Museum unique resource identifier.</dd>
-  <dt>`--chartmuseum-user USER`</dt>
-  <dd>(Optional) Your Chart Museum username.</dd>
-  <dt>`--chartmuseum-password PASSWORD`</dt>
-  <dd>(Optional) Your Chart Museum password.</dd>
-</dl>
-
-### Example
-{: #bx_cr_ppa_archive_load_example}
-
-Import IBM software and package it for use with Helm in your {{site.data.keyword.registrylong_notm}} namespace *`birds`*, where the path to the compressed file is *`downloads/compressed_file.tgz`*.
-
-```
-ibmcloud cr ppa-archive-load --archive downloads/compressed_file.tgz --namespace birds
-```
-{: pre}
+[The `ibmcloud cr ppa-archive-load` command is obsolete](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa).
 
 ## `ibmcloud cr private-only`
 {: #ic_cr_private_only}

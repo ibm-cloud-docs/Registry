@@ -760,10 +760,7 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
 
-* [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load_example)
+* [`ibmcloud cr ppa-archive-load` - obsolete](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
 
 * [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
@@ -920,6 +917,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [4 May 2021](/docs/Registry?topic=Registry-registry_release_notes#04may2021)
+    * [The `ibmcloud cr ppa-archive-load` command is obsolete](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa)
 
 * [18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#18feb2021)
     * [Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option](/docs/Registry?topic=Registry-registry_release_notes#18feb2021_no-va)
