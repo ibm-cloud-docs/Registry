@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-10"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -304,6 +304,7 @@ The domain names are shown in the following table.
 |-----|----|-----------|---------------|
 | `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
 | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
+| `ca-tor` | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
 | `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |

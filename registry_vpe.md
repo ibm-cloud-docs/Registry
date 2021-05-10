@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-05-10"
 
 keywords: Virtual private endpoint, VPE
 
@@ -64,7 +64,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Osaka (`jp-osa`)
 - Sydney (`au-syd`)
 - Tokyo (`jp-tok`)
-- Washington DC (`us-east`)
+- Washington (`us-east`)
 
 You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. You can create VPE gateways in the following locations: `us-south`, `us-east` (global registry), `uk-south`, `eu-central`, `ap-south`, `ap-north`, and `jp-osa`.
 {: important}

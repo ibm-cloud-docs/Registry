@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-10"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -89,7 +89,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_at}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south` and `ca-tor`. Events for `ap-south` show in `Tokyo (jp-tok)`. Events for `ca-tor` show in `Washington (us-east)`.
 
 The following table shows the location of {{site.data.keyword.at_full_notm}} events.
 
@@ -101,6 +101,7 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `ca-tor` | `ca.icr.io` | `Washington (us-east)` |
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events." caption-side="top"}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
@@ -187,3 +188,5 @@ The following table lists the fields that are available through the `requestData
 {: caption="Table 7. Custom event fields for <code>container-registry.image-vulnerability-status.read</code>." caption-side="top"}
 
 For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.
+
+

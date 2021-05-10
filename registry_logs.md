@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-10"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
@@ -42,7 +42,7 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 ## Where to look for {{site.data.keyword.la_full_notm}} logs
 {: #registry_logs_region}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south`. Logs for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor log entry is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the log, except for `ap-south` and `ca-tor`. Logs for `ap-south` show in `Tokyo (jp-tok)`. Logs for `ca-tor` show in `Washington (us-east)`.
 
 The following table shows the location of {{site.data.keyword.la_full_notm}} logs.
 
@@ -54,6 +54,7 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `ca-tor` | `ca.icr.io` | `Washington (us-east)` |
 {: caption="Table 1. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="top"}
 
 The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-05-10"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -37,6 +37,7 @@ Every image that you want to add to your namespace must exist on your local comp
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
+
 
 ## Pulling images from another registry
 {: #registry_images_pulling_reg}
@@ -197,7 +198,7 @@ If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resour
 The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 {: deprecated}
 
-The `jp-osa` region does not have a build service because the `ibmcloud cr build` command is deprecated.
+The `jp-osa` and `ca-tor` regions don't have a build service because the `ibmcloud cr build` command is deprecated.
 {: note}
 
 To build your own Docker image, complete the following steps:

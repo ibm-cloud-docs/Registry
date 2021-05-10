@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-10"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 10 May 2021
+{: #10may2021}
+
+### New region in Canada
+{: #10may2021_canada}
+
+A new region in Toronto, Canada is available. The new region is `ca-tor` and the domain name is `ca.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 4 May 2021
 {: #04may2021}
