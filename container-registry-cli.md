@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-11"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -69,6 +69,9 @@ This command is deprecated from 6 October 2020. You can use [Tekton pipelines](/
 {: deprecated}
 
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
+
+The `jp-osa` and `ca-tor` regions don't have a build service because they were created after the command was deprecated.
+{: note}
 
 Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
 {: tip}
