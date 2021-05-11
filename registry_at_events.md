@@ -95,13 +95,13 @@ The following table shows the location of {{site.data.keyword.at_full_notm}} eve
 
 | Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.at_full_notm}} events |
 |-----------------|-----------------|-----------------|
-| `us-south` | `us.icr.io` | `Dallas (us-south)` |
-| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
-| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
-| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
-| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `ap-south` | `au.icr.io` | `Tokyo (jp-tok)` |
 | `ca-tor` | `ca.icr.io` | `Washington (us-east)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
 {: caption="Table 2. Location of {{site.data.keyword.at_full_notm}} events." caption-side="top"}
 
 The following table shows the location of global registry {{site.data.keyword.at_full_notm}} events.
