@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-05-10"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -116,6 +116,7 @@ Use the API key to log in to your registry by running the following Docker comma
 
 - For namespaces that are set up in `ap-north`, use `jp.icr.io` as the registry URL.
 - For namespaces that are set up in `ap-south`, use `au.icr.io` as the registry URL.
+- For namespaces that are set up in `ca-tor`, use `ca.icr.io` as the registry URL.
 - For namespaces that are set up in `eu-central`, use `de.icr.io` as the registry URL.
 - For namespaces that are set up in `jp-osa`, use `jp2.icr.io` as the registry URL.
 - For namespaces that are set up in `uk-south`, use `uk.icr.io` as the registry URL.
