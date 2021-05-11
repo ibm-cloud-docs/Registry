@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -37,7 +37,6 @@ Every image that you want to add to your namespace must exist on your local comp
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
-
 
 ## Pulling images from another registry
 {: #registry_images_pulling_reg}

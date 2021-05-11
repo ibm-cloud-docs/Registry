@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -188,5 +188,3 @@ The following table lists the fields that are available through the `requestData
 {: caption="Table 7. Custom event fields for <code>container-registry.image-vulnerability-status.read</code>." caption-side="top"}
 
 For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.
-
-
