@@ -26,6 +26,7 @@ subcollection: Registry
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
 
+
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
@@ -290,7 +291,7 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 
 
 
-All registry artifacts are scoped to the specific registry instance that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each registry instance.
+All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
 
 ### Local regions
 {: #registry_regions_local}
