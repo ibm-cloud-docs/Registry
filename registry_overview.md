@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-14"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -57,6 +57,9 @@ You can choose between the free or standard {{site.data.keyword.registrylong_not
 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
+Service plans are scoped to the specific [regional registry](#registry_regions) that you are currently working with. Plan settings must all be managed separately for each regional registry.
+{: note}
+
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 | Characteristics | Free | Standard |
@@ -74,6 +77,9 @@ Find information and examples for how the billing process and quota limits work 
 {:shortdesc}
 
 Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.cloud_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer.
+
+Quota limits and billing are scoped to the specific [regional registry](#registry_regions) that you are currently working with. Quota settings and billing must all be managed separately for each regional registry.
+{: note}
 
 The following example is for pushing images:
 
@@ -142,7 +148,6 @@ When you reach or exceed the quota limits for your plan, you can't pull any imag
 - Wait for the next billing period to start.
 - [Upgrade to the standard plan](#registry_plan_upgrade).
 - [Increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
-
 
 The following example is for the standard plan:
 
