@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-14"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -290,7 +290,7 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 
 
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional registry.
+All registry artifacts are scoped to the specific registry instance that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each registry instance.
 
 ### Local regions
 {: #registry_regions_local}
