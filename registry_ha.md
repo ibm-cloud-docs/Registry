@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-05-17"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -44,6 +44,7 @@ For more information about service availability, see [Service Level Agreements](
 
 ## Frequently asked questions about high availability and disaster recovery
 {: #ha-dr_faq}
+
 
 ### Does the service replicate the data?
 {: #ha-dr_replicate_data}
