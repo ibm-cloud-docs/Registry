@@ -172,7 +172,9 @@ subcollection: Registry
 
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
-* [Dependencies](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies)
+* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_cloud)
+
+* [Dependencies to third-party services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_third_party)
 
 
 ## Public images

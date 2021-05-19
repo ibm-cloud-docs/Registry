@@ -92,7 +92,6 @@ subcollection: Registry
 {:video: .video}
 
 
-
 # Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
 
@@ -109,14 +108,11 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 For more information about service availability, see [Service Level Agreements](/docs/overview?topic=overview-slas).
 
-
-
 ## Frequently asked questions about high availability and disaster recovery
 {: #ha-dr_faq}
 
 Review the following FAQs about high availability and disaster recovery.
 {: shortdesc}
-
 
 ### Does the service replicate the data?
 {: #ha-dr_replicate_data}
