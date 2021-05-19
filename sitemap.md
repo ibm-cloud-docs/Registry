@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-19"
 
 keywords: container registry
 
@@ -153,6 +153,8 @@ subcollection: Registry
 
 
 [Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr)
+
+* [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
     * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
     * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
@@ -170,7 +172,9 @@ subcollection: Registry
 
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
-* [Dependencies](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies)
+* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_cloud)
+
+* [Dependencies to third-party services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_third_party)
 
 
 ## Public images
