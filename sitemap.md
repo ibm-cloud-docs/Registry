@@ -153,6 +153,8 @@ subcollection: Registry
 
 
 [Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr)
+
+* [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
     * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
     * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
