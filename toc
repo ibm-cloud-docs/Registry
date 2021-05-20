@@ -7,7 +7,6 @@ Container Registry
     {: .navgroup id="learn"}
     getting-started.md
     registry_overview.md
-    registry_ha.md
     registry_architecture.md
 
     {: .topicgroup}
@@ -56,10 +55,11 @@ Container Registry
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
+    registry_ha.md
+    registry_cli_list.md
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
-    registry_cli_list.md
-    /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
 
     {: .topicgroup}
     Related links

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-20"
 
 keywords: Virtual private endpoint, VPE
 
@@ -35,7 +35,7 @@ You can configure the VPE to use the IP addresses of your choice, which are allo
 To connect to {{site.data.keyword.registrylong_notm}} by using a virtual private endpoint, you must use the {{site.data.keyword.registryshort_notm}} API or CLI. The {{site.data.keyword.registryshort_notm}} page of the {{site.data.keyword.cloud_notm}} console must be accessed through the public network from your VPC.
 {: note}
 
-You must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container host-map entries or configuring the `kube` Domain Name System (DNS).
+You must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
 
 For more information about other {{site.data.keyword.cloud_notm}} VPE services, see [VPE supported services](/docs/vpc?topic=vpc-vpe-supported-services).
 
@@ -64,9 +64,10 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Osaka (`jp-osa`)
 - Sydney (`au-syd`)
 - Tokyo (`jp-tok`)
+- Toronto (`ca-tor`)
 - Washington (`us-east`)
 
-You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. You can create VPE gateways in the following locations: `us-south`, `us-east` (global registry), `uk-south`, `eu-central`, `ap-south`, `ap-north`, and `jp-osa`.
+You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 {: important}
 
 When you create a VPE gateway by using the [CLI](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-cli) or [API](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-api), you must specify the Cloud Resource Name (CRN) of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. If you use the {{site.data.keyword.registryshort_notm}} page of the {{site.data.keyword.cloud_notm}} console to create the VPE gateway, choose the relevant service name and region and the gateway is created for you.
@@ -82,6 +83,7 @@ ibmcloud is endpoint-gateway-create --target <CRN> --vpc-id <VPC-ID> --name myna
 |-----------------|-----------------|
 | `ap-north` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:vpe.jp-tok.container-registry.cloud.ibm.com` |
 | `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:vpe.au-syd.container-registry.cloud.ibm.com` |
+| `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:vpe.ca-tor.container-registry.cloud.ibm.com` |
 | `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:vpe.eu-de.container-registry.cloud.ibm.com` |
 | `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:vpe.jp-osa.container-registry.cloud.ibm.com` |
 | `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` |

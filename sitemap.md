@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-20"
 
 keywords: container registry
 
@@ -77,6 +77,7 @@ subcollection: Registry
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -146,20 +147,6 @@ subcollection: Registry
     * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
 
 * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
-
-
-## Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
-{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
-
-
-[Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr)
-
-* [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
-    * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
-    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
-    * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
-    * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
-    * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
 
 
 ## {{site.data.keyword.registrylong_notm}} architecture and workload
@@ -615,32 +602,6 @@ subcollection: Registry
   * [Exemption](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
 
 
-## IBM Cloud Container Registry API
-
-[IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
-
-
-## Vulnerability Advisor for IBM Cloud Container Registry API
-
-[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
-
-
-## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
-{: #sitemap_formatting_and_filtering_the_cli_output_for__commands}
-
-
-[Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list)
-
-* [Go template options and data types in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
-
-* [Go template options and data types in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
-
-* [Go template options and data types in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
-    * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
-    * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
-    * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
-
-
 ## {{site.data.keyword.registrylong_notm}} CLI
 {: #sitemap__cli}
 
@@ -825,6 +786,46 @@ subcollection: Registry
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_prereq)
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_option)
     * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr)
+
+* [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
+    * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
+    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
+    * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
+    * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
+    * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
+
+
+## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
+{: #sitemap_formatting_and_filtering_the_cli_output_for__commands}
+
+
+[Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list)
+
+* [Go template options and data types in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+
+* [Go template options and data types in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+
+* [Go template options and data types in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+    * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
+    * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
+    * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+
+
+## IBM Cloud Container Registry API
+
+[IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
+
+
+## Vulnerability Advisor for IBM Cloud Container Registry API
+
+[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
 
 
 ## Related links
