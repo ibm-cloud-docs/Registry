@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -119,6 +119,20 @@ Review the following FAQs about high availability and disaster recovery.
 {: #ha-dr_replicate_data}
 
 All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
+
+The following table shows the backup locations.
+
+| Environment       | Active location    | Backup location    |
+|-----------------------|----------------|----------------|
+| `ap-north` | `jp-tok` | `au-syd` |
+| `ap-south` | `au-syd` | `jp-tok` |
+| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)<br/><br/>`ca-mon` (images) |
+| `eu-de` | `eu-de` | `eu-gb` |
+| `eu-gb` | `eu-gb` | `eu-de` |
+| `global` | `us-east` | `us-south` |
+| `jp-osa` | `jp-osa` | `jp-tok` |
+| `us-south` | `us-south` | `us-east` |
+{: caption="Table 1. Backup locations." caption-side="top"}
 
 ### Are users required to replicate the data?
 {: #ha-dr_client}
