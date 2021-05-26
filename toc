@@ -39,12 +39,13 @@ Container Registry
 
     {: .topicgroup}
     Enhancing security
+        manage-scc.md
         registry_trusted_content.md
-        registry_security_enforce.md
         registry_encrypt_images.md
         registry_private.md
         registry_vpe.md
         registry_iam_ip.md
+        registry_security_enforce.md
     
     {: .topicgroup}
     Observability
