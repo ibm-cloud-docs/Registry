@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-26"
 
 keywords: container registry
 
@@ -501,6 +501,10 @@ subcollection: Registry
 {: #sitemap_enhancing_security}
 
 
+[Managing security and compliance with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance)
+* [Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
+  * [Available goals for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
+
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent)
 * [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
   * [Using skopeo to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_skopeo)
@@ -515,18 +519,6 @@ subcollection: Registry
   * [Managing trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_managetrust)
   * [Backing up signing keys](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_backupkeys)
   * [Managing trusted signers](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_signers)
-
-[Enforcing container image security by using Container Image Security Enforcement - deprecated](/docs/Registry?topic=Registry-security_enforce)
-* [Installing Container Image Security Enforcement in your cluster](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install)
-* [Default policies](/docs/Registry?topic=Registry-security_enforce#default_policies)
-  * [Cluster-wide policy](/docs/Registry?topic=Registry-security_enforce#cluster-wide)
-  * [`kube-system` policy](/docs/Registry?topic=Registry-security_enforce#kube-system)
-  * [IBM-system policy](/docs/Registry?topic=Registry-security_enforce#ibm-system)
-* [Customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies)
-  * [Specifying trusted content signers in custom policies](/docs/Registry?topic=Registry-security_enforce#signers)
-* [Controlling who can customize policies](/docs/Registry?topic=Registry-security_enforce#assign_user_policy)
-* [Deploying container images with enforced security](/docs/Registry?topic=Registry-security_enforce#deploy_containers)
-* [Removing Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove)
 
 [Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_encrypt)
 * [Before you begin](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt_prereqs)
@@ -550,6 +542,18 @@ subcollection: Registry
 [Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_iam_ip)
 * [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
 * [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
+
+[Enforcing container image security by using Container Image Security Enforcement - deprecated](/docs/Registry?topic=Registry-security_enforce)
+* [Installing Container Image Security Enforcement in your cluster](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install)
+* [Default policies](/docs/Registry?topic=Registry-security_enforce#default_policies)
+  * [Cluster-wide policy](/docs/Registry?topic=Registry-security_enforce#cluster-wide)
+  * [`kube-system` policy](/docs/Registry?topic=Registry-security_enforce#kube-system)
+  * [IBM-system policy](/docs/Registry?topic=Registry-security_enforce#ibm-system)
+* [Customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies)
+  * [Specifying trusted content signers in custom policies](/docs/Registry?topic=Registry-security_enforce#signers)
+* [Controlling who can customize policies](/docs/Registry?topic=Registry-security_enforce#assign_user_policy)
+* [Deploying container images with enforced security](/docs/Registry?topic=Registry-security_enforce#deploy_containers)
+* [Removing Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove)
 
 
 ## Observability
