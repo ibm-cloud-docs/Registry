@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-27"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -34,7 +34,7 @@ In each regional instance of the registry, the service runs in three physically 
 
 {{site.data.keyword.registrylong_notm}} runs in {{site.data.keyword.containerlong_notm}} clusters, and uses {{site.data.keyword.cos_full_notm}} to store images. Image data in {{site.data.keyword.cos_full_notm}} is encrypted at rest.
 
-![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public/private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
+![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
 Note: \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`).
 
@@ -65,7 +65,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.re
 | Service name | Description |
 |------------|-------------------------------------|
 | {{site.data.keyword.at_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.at_short}}, by using a private connection, to forward {{site.data.keyword.registryshort_notm}} audit events to the {{site.data.keyword.at_short}} service instances that you set up. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
-| {{site.data.keyword.cis_full_notm}} | {{site.data.keyword.cis_full_notm}} is used as a provider for DNS and load balancing capabilities in {{site.data.keyword.registrylong_notm}}. |
+| {{site.data.keyword.cis_full_notm}} | {{site.data.keyword.cis_full_notm}} is used as a provider for DNS and load-balancing capabilities in {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.containerlong_notm}} | {{site.data.keyword.registrylong_notm}} uses {{site.data.keyword.containerlong_notm}} to run its service. |
 | {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor). |
 | {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.registryshort_notm}} stores customer data (images) in {{site.data.keyword.cos_short}} by using a private connection. All data is encrypted in transit and at rest. For more information, see [Managing your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-delete-data).|
@@ -84,6 +84,6 @@ Review the list of third-party services that {{site.data.keyword.registrylong_no
 
 | Service name | Description |
 |------------|-------------------------------------|
-| Akamai | Akamai is used as a provider for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.registrylong_notm}}. |
+| Akamai | Akamai is used as a provider for DNS, global load-balancing, and web firewall capabilities in {{site.data.keyword.registrylong_notm}}. |
 {: caption="Table 2. {{site.data.keyword.registryshort_notm}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
