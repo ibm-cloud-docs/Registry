@@ -344,7 +344,6 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
-{: cli}
 
 You can delete unwanted images and all their tags from your private repository by using the CLI.
 {: shortdesc}
@@ -377,7 +376,6 @@ To delete an image by using the CLI, complete the following steps:
 
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
-{: ui}
 
 You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
 {:shortdesc}
