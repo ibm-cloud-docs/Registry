@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-01"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -26,6 +26,10 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
+{:terraform: .ph data-hd-interface='terraform'}
 
 # Adding images to your namespace
 {: #registry_images_}
@@ -340,6 +344,7 @@ Where multiple tags exist for the same image digest within a repository, the [`i
 
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
 {: #registry_images_remove_cli}
+{: cli}
 
 You can delete unwanted images and all their tags from your private repository by using the CLI.
 {: shortdesc}
@@ -372,6 +377,7 @@ To delete an image by using the CLI, complete the following steps:
 
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
+{: ui}
 
 You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
 {:shortdesc}
