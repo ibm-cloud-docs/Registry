@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-01"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -26,6 +26,10 @@ subcollection: Registry
 {:external: target="_blank" .external}
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
+{:terraform: .ph data-hd-interface='terraform'}
 
 # Adding images to your namespace
 {: #registry_images_}
