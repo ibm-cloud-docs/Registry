@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-06-07"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -44,7 +44,7 @@ A new region in Toronto, Canada is available. The new region is `ca-tor` and the
 ### The `ibmcloud cr ppa-archive-load` command is obsolete
 {: #04may2021_ppa}
 
-The `ibmcloud cr ppa-archive-load` command is obsolete. For more information about its use, see [Use Helm for Passport Advantage images](#31may2018_helm).
+The `ibmcloud cr ppa-archive-load` command is obsolete. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## 18 February 2021
 {: #18feb2021}
