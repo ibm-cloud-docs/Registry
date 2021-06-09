@@ -85,6 +85,9 @@ To use [skopeo](https://github.com/containers/skopeo){: external} to sign your i
    ```
    {: pre}
 
+On Linux&reg; and macOS: The default configuration for the tools is to store the signatures locally. Storing signatures locally can lead to signature verification failure because the signature is not in the registry. To fix this problem, you can modify or delete the configuration file. On Linux&reg;, the configuration is saved in `/etc/containers/registries.d/default.yaml`. On macOS, the configuration file is saved in `/usr/local/etc/containers/registries.d/default.yaml`.
+{: tip}
+
 ### Using Podman to sign images
 {: #registry_trustedcontent_red_hat_sig_podman}
 
