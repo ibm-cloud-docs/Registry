@@ -28,8 +28,5 @@
       "developer": "https://developer.ibm.com/?q=IBM%20cloud%20container%20registry",
       "training": "https://www.ibm.com/training/search?query=container%20registry#",
       "community": "https://community.ibm.com/community/user/publiccloud/home"
-    },
-    "section_updates": {
-      "view_more": "/docs/Registry?topic=Registry-registry_release_notes"
     }
-  }
+}
