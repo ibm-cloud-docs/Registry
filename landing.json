@@ -1,0 +1,35 @@
+{
+    "title": "Container Registry docs",
+    "lastupdated": "2021-06-10",
+    "introduction": "This is the Container Registry subcollection. Container Registry provides a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. The links on this page take you to information about Container Registry.",
+    "section_devtools": {
+      "api": "/apidocs/container-registry", 
+      "cli": "/docs/Registry?topic=container-registry-cli-plugin-containerregcli", 
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace"
+    },
+    "section_recommended": [
+      {
+        "title": "Getting started with IBM Cloud Container Registry",
+        "description": "Install the Container Registry CLI, set up your own image namespace, and push container images to your namespace. ",
+        "href": "/docs/Registry?topic=Registry-getting-started"
+      },
+      {
+        "title": "About IBM Cloud Container Registry",
+        "description": "Find out about Container Registry.",
+        "href": "/docs/Registry?topic=Registry-registry_overview"
+      },
+      {
+        "title": "IBM Cloud Container Registry and Vulnerability Advisor workflow tutorial",
+        "description": "Find out about the basic functions of both IBM Cloud Container Registry and Vulnerability Advisor. These two services are pre-integrated and work together seamlessly in IBM Cloud, and their features provide a robust but straightforward workflow for users of containers.",
+        "href": "/docs/Registry?topic=Registry-registry_tutorial_workflow"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/?q=IBM%20cloud%20container%20registry",
+      "training": "https://www.ibm.com/training/search?query=container%20registry#",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    },
+    "section_updates": {
+      "view_more": "/docs/Registry?topic=Registry-registry_release_notes"
+    }
+  }
