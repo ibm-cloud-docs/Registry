@@ -10,7 +10,7 @@
     "section_recommended": [
       {
         "title": "Getting started with IBM Cloud Container Registry",
-        "description": "Install the Container Registry CLI, set up your own image namespace, and push container images to your namespace. ",
+        "description": "Install the Container Registry CLI, set up your own image namespace, and push container images to your namespace.",
         "href": "/docs/Registry?topic=Registry-getting-started"
       },
       {
@@ -20,7 +20,7 @@
       },
       {
         "title": "IBM Cloud Container Registry and Vulnerability Advisor workflow tutorial",
-        "description": "Find out about the basic functions of both IBM Cloud Container Registry and Vulnerability Advisor. These two services are pre-integrated and work together seamlessly in IBM Cloud, and their features provide a robust but straightforward workflow for users of containers.",
+        "description": "Find out about the basic functions of both IBM Cloud Container Registry and Vulnerability Advisor. These services are pre-integrated and work together seamlessly in IBM Cloud, and their features provide a robust but straightforward workflow for users of containers.",
         "href": "/docs/Registry?topic=Registry-registry_tutorial_workflow"
       }
     ],
