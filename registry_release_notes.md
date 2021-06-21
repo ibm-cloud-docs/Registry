@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 21 June 2021
+{: #21jun2021}
+
+### New global registry
+{: #21jun2021_global}
+
+A global registry is available. The global registry has no region included as part of its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}. For more information, see [Global registry]](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
 
 ## 10 May 2021
 {: #10may2021}
