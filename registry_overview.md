@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-21"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -290,20 +290,51 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 ## Regions
 {: #registry_regions}
 
-{{site.data.keyword.registrylong_notm}} registries are available in several regions.
+The default instance of {{site.data.keyword.registrylong_notm}} is the global registry, it doesn't include a region in its domain name (`icr.io`).
 {:shortdesc}
 
+Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
 
+All registry artifacts are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for your account in each registry instance.
 
-All registry artifacts are scoped to the specific regional registry that you are currently working with. For example, namespaces, images, quota settings, and plan settings must all be managed separately for each regional registry.
+### Global registry
+{: #registry_regions_global}
+
+A global registry is available. The global registry has no region included as part of its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
+{:shortdesc}
+
+The global instance of {{site.data.keyword.registrylong_notm}} is available by using the domain names that are shown in the following table.
+
+| Registry | Domain name | Private domain name | Deprecated domain name |
+|-----|----|-----------|--------------|
+| Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
+{: caption="Table 4. Domain name for the global registry." caption-side="top"}
+
+To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
+
+The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the moment. An end of support date is not available yet.
+{: deprecated}
+
+#### Targeting the global registry
+{: #registry_regions_global_target}
+
+You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+{:shortdesc}
+
+1. To target the global registry, run the following command.
+
+   ```
+   ibmcloud cr region-set global
+   ```
+   {: pre}
+
+2. To log your local Docker daemon into the global registry, run the `ibmcloud cr login` command.
 
 ### Local regions
 {: #registry_regions_local}
 
-A local region is a geographic area that is accessed by a dedicated endpoint. The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
+Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the domain names that are shown in the following table.
 {:shortdesc}
-
-The domain names are shown in the following table.
 
 | Local registry region | Domain name | Private domain name | Deprecated domain name |
 |-----|----|-----------|---------------|
@@ -343,42 +374,7 @@ If you want to use a region other than your local region, you can target the reg
    ```
    {: pre}
 
-2. Log in to the registry by running the `ibmcloud cr login` command.
-
-### Global registry
-{: #registry_regions_global}
-
-A global registry is available. The global registry has no region included as part of its name (`icr.io`). Only public images that are provided by {{site.data.keyword.IBM_notm}} are hosted in this registry. To manage your own images such as by setting up namespaces or tagging and pushing images to a registry, use a [local regional registry](#registry_regions_local).
-{:shortdesc}
-
-The domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI.
-
-The domain names are shown in the following table.
-
-| Registry | Domain name | Private domain name | Deprecated domain name |
-|-----|----|-----------|--------------|
-| Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 4. Domain name for the global registry." caption-side="top"}
-
-To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
-
-The existing `bluemix.net` domain names are deprecated, but you can continue to use them for the moment. An end of support date is not available yet.
-{: deprecated}
-
-#### Targeting the global registry
-{: #registry_regions_global_target}
-
-You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
-{:shortdesc}
-
-1. To target the global registry, run the following command.
-
-   ```
-   ibmcloud cr region-set global
-   ```
-   {: pre}
-
-2. To log your local Docker daemon into the global registry so that you can pull {{site.data.keyword.IBM_notm}}-provided public images, run the `ibmcloud cr login` command.
+2. To log your local Docker daemon into the registry so that you can push or pull images, run the `ibmcloud cr login` command.
 
 ## Support for Docker
 {: #docker}

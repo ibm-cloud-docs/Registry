@@ -143,8 +143,8 @@ subcollection: Registry
     * [Untagged image](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged)
 
 * [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions)
-    * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
     * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
+    * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
 
 * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
 
@@ -923,6 +923,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#21jun2021)
+    * [Global registry](/docs/Registry?topic=Registry-registry_release_notes#21jun2021_global)
 
 * [10 May 2021](/docs/Registry?topic=Registry-registry_release_notes#10may2021)
     * [New region in Canada](/docs/Registry?topic=Registry-registry_release_notes#10may2021_canada)
