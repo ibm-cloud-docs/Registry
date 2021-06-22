@@ -36,6 +36,7 @@ Container Registry
     registry_retention.md
     delete-data.md
     /va/toc
+    terraform.md
 
     {: .topicgroup}
     Enhancing security

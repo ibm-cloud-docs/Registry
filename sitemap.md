@@ -497,6 +497,15 @@ subcollection: Registry
     * [Setting organizational exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
 
 
+## Setting up Terraform for {{site.data.keyword.registrylong_notm}}
+{: #sitemap_setting_up_terraform_for_}
+
+
+[Setting up Terraform for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_terraform-setup)
+
+* [What's next?](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup-next)
+
+
 ## Enhancing security
 {: #sitemap_enhancing_security}
 
