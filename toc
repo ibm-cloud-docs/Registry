@@ -61,6 +61,7 @@ Container Registry
     registry_cli_list.md
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
+    [Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace)
 
     {: .topicgroup}
     Related links
