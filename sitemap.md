@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-22"
 
 keywords: container registry
 
@@ -830,6 +830,11 @@ subcollection: Registry
 ## Vulnerability Advisor for IBM Cloud Container Registry API
 
 [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
+
+
+## Terraform reference
+
+[Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: external}
 
 
 ## Related links
