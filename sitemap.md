@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-23"
 
 keywords: container registry
 
@@ -502,6 +502,8 @@ subcollection: Registry
 
 
 [Setting up Terraform for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_terraform-setup)
+
+* [Installing Terraform and creating a {{site.data.keyword.registryshort}} namespace](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-install)
 
 * [What's next?](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup-next)
 
