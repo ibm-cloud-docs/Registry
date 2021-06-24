@@ -61,6 +61,12 @@ Yes, if the tool supports [OCI container image](#x9860419){: term} format and pr
 
 You can have 100 registry namespaces in each region.
 
+## Do images in the trash count toward my quota?
+{: #faq_trash}
+{: faq}
+
+Images that are in the trash don't count toward your quota.
+
 ## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}
 {: faq}
