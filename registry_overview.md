@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-24"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -283,14 +283,14 @@ You can use tags to distinguish different versions of the same base image within
 ### Untagged image
 {: #overview_elements_untagged}
 
-An image that has no tag is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case the tag is overwritten and the original image becomes untagged.
+An image that has no tag is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case, the tag is overwritten and the original image becomes untagged.
 
 You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.
 
 ## Regions
 {: #registry_regions}
 
-The default instance of {{site.data.keyword.registrylong_notm}} is the global registry, it doesn't include a region in its domain name (`icr.io`).
+The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its domain name (`icr.io`).
 {:shortdesc}
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
@@ -300,7 +300,7 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available. The global registry has no region included as part of its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
+A global registry is available. The global registry doesn't have a region included in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
 {:shortdesc}
 
 The global instance of {{site.data.keyword.registrylong_notm}} is available by using the domain names that are shown in the following table.
