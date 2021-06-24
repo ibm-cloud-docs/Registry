@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-06-24"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -71,7 +71,7 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 {: #faq_regions}
 {: faq}
 
-You can host images in [local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local). IBM hosted public images are available in the [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
+To find out about the regions that are available, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ## Why have I received a scan not found error message for a newly added image?
 {: #faq_va_new_scan_error}
