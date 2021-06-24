@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-24"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -137,7 +137,7 @@ The following table shows the backup locations.
 ### Are users required to replicate the data?
 {: #ha-dr_client}
 
-You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/master/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
+You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
 
 ### What data is backed-up or replicated?
 {: #ha-dr_backup}
@@ -152,4 +152,4 @@ The image data and service and policy settings are backed up by {{site.data.keyw
 ### Are users required to replicate the service?
 {: #ha-dr_service_replicate}
 
-You're not required to replicate your data into another region, but you can do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/master/docs/skopeo-copy.1.md){: external}.
+You're not required to replicate your data into another region, but you can do it yourself by using tools such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}.
