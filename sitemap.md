@@ -923,6 +923,8 @@ subcollection: Registry
 
 * [Is there a limit to the number of namespaces you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
+* [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+
 * [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
 * [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
