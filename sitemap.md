@@ -515,6 +515,7 @@ subcollection: Registry
 [Managing security and compliance with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance)
 * [Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
   * [Available goals for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
+* [Gaining security insight with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-security_insight)
 
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent)
 * [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
