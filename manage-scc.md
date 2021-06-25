@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-25"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -58,4 +58,4 @@ You can choose from the following goals:
 * **Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 * **Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints.** For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 * **Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether Security Insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}.** For more information, see [Leveraging default services](/docs/security-advisor?topic=security-advisor-setup-services).
+* **Check whether IBM Security Insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}.** For more information, see [Leveraging default services](/docs/security-advisor?topic=security-advisor-setup-services).
