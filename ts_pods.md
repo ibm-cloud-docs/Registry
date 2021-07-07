@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-07-07"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
@@ -55,7 +55,7 @@ You must have sufficient role-based access control (RBAC) privileges to use the 
 - `admissionregistration.k8s.io/v1beta1/MutatingWebhookConfiguration`
 - `admissionregistration.k8s.io/v1beta1/ValidatingWebhookConfiguration`
 
-For more information about RBAC, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding) and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
+For more information about RBAC, see [Understanding RBAC permissions](/docs/containers?topic=containers-users#understand-rbac), [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac), and [Kubernetes - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external}.
 
 To change the webhook configuration so that it fails open, and then, when at least one Container Image Security Enforcement pod is running, restore the webhook configuration so that it fails closed, complete the following steps:
 

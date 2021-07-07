@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-07-07"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -351,7 +351,7 @@ To configure the policy to verify that an image is signed by a particular signer
 ## Controlling who can customize policies
 {: #assign_user_policy}
 
-If role-based access control (RBAC) is enabled on your Kubernetes cluster, you can create a role to govern who can administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [Assigning RBAC permissions](/docs/containers?topic=containers-users#role-binding).
+If role-based access control (RBAC) is enabled on your Kubernetes cluster, you can create a role to govern who can administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [Understanding RBAC permissions](/docs/containers?topic=containers-users#understand-rbac) and [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac).
 {:shortdesc}
 
 With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
