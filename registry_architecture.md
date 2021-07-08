@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-07-08"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -36,8 +36,6 @@ In each regional instance of the registry, the service runs in three physically 
 
 ![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
-Note: \* Connection to {{site.data.keyword.cloudant_short_notm}} is not private in `eu-central` (`de.icr.io`).
-
 ## Segmentation
 {: #registry_architecture_segregation}
 
@@ -70,7 +68,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.re
 | {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor). |
 | {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.registryshort_notm}} stores customer data (images) in {{site.data.keyword.cos_short}} by using a private connection. All data is encrypted in transit and at rest. For more information, see [Managing your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-delete-data).|
 | {{site.data.keyword.cloud_notm}} Platform | To authenticate requests to the service and authorize user actions, {{site.data.keyword.registrylong_notm}} implements platform and service access roles in {{site.data.keyword.iamshort}} (IAM). For more information about required IAM permissions to work with the service, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam). Connections from {{site.data.keyword.registrylong_notm}} to IAM do not use private connections. |
-| {{site.data.keyword.cloudant_short_notm}} for {{site.data.keyword.cloud_notm}} | Cloudant is a managed, distributed database. {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.cloudant_short_notm}} to store metadata. Connections to {{site.data.keyword.cloudant_short_notm}} are private, except in `eu-central` (`de.icr.io`). |
+| {{site.data.keyword.cloudant_short_notm}} for {{site.data.keyword.cloud_notm}} | Cloudant is a managed, distributed database. {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.cloudant_short_notm}} to store metadata. Connections to {{site.data.keyword.cloudant_short_notm}} are private. |
 | {{site.data.keyword.keymanagementservicefull_notm}} | {{site.data.keyword.keymanagementserviceshort}} is used to help secure the parts of {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.cos_full_notm}} that are used by {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.la_full_notm}} | {{site.data.keyword.registrylong_notm}} generates platform services logs, which are displayed in your logging instances. The logs are sent to {{site.data.keyword.la_full_notm}} by using private connections. For more information, see [Analyzing logs for Container Registry](/docs/Registry?topic=Registry-registry_logs). |
 {: caption="Table 1. {{site.data.keyword.registryshort_notm}} dependencies to other {{site.data.keyword.cloud_notm}} services." caption-side="top"}
