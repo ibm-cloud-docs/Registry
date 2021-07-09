@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-09"
 
 keywords: container registry
 
