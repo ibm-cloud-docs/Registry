@@ -523,7 +523,7 @@ subcollection: Registry
   * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
   * [Using OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
   * [Using atomic to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_atomic)
-* [Signing images for trusted content by using Docker Content Trust and Notary](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_dct_notary)
+* [Signing images for trusted content by using Docker Content Trust and Notary - deprecated](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_dct_notary)
   * [Setting up your trusted content environment](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_setup)
   * [Pushing a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push)
   * [Pulling a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_pull)
@@ -942,6 +942,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#08jul2021)
+    * [Using Notary v1 for signing images is deprecated](/docs/Registry?topic=Registry-registry_release_notes#08jul2021_notary)
 
 * [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#21jun2021)
     * [Global registry](/docs/Registry?topic=Registry-registry_release_notes#21jun2021_global)

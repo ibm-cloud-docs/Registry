@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-07-12"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, keys, lost keys, recover lost keys, root keys, repo keys, repository keys
 
@@ -55,6 +55,9 @@ Your options for recovering lost or affected keys depend on the type of key: rep
 
 If your repository key is lost or compromised, generate a new set of signing keys for your repository.
 {: shortdesc}
+
+The Notary v1 service is deprecated. It is being removed from {{site.data.keyword.registrylong_notm}} on 31 August 2021. As an alternative approach, {{site.data.keyword.registrylong_notm}} supports the [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+{: deprecated}
 
 The only signing role that you can rotate is `targets`, which is the repository admin. If other roles are affected, generate new keys for those roles, remove the old ones, and add the new ones as signers.
 {:tip}

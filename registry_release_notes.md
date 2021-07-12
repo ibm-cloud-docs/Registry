@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-12"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -29,6 +29,16 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {:shortdesc}
+
+## 8 July 2021
+{: #08jul2021}
+
+### Using Notary v1 for signing images is deprecated
+{: #08jul2021_notary}
+
+The Notary v1 service for signing images is deprecated. It is being removed from {{site.data.keyword.registrylong_notm}} on 31 August 2021.
+
+As an alternative approach, {{site.data.keyword.registrylong_notm}} supports the [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 21 June 2021
 {: #21jun2021}
