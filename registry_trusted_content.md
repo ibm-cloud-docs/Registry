@@ -38,7 +38,7 @@ The Notary v1 service is deprecated. It is being removed from {{site.data.keywor
 {: deprecated}
 
 - [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](#registry_trustedcontent_red_hat_sig)
-- [Signing images for trusted content by using Docker Content Trust and Notary - deprecated<](#registry_trustedcontent_dct_notary)
+- [Signing images for trusted content by using Docker Content Trust and Notary - deprecated](#registry_trustedcontent_dct_notary)
 
 ## Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures
 {: #registry_trustedcontent_red_hat_sig}
