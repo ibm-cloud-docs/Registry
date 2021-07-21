@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: container registry
 
@@ -566,6 +566,11 @@ subcollection: Registry
 * [Controlling who can customize policies](/docs/Registry?topic=Registry-security_enforce#assign_user_policy)
 * [Deploying container images with enforced security](/docs/Registry?topic=Registry-security_enforce#deploy_containers)
 * [Removing Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove)
+
+[Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris)
+* [Installing Portieris in your cluster](/docs/Registry?topic=Registry-security_enforce_portieris#sec_enforce_install_portieris)
+* [Policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris)
+* [Uninstalling Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris)
 
 
 ## Observability
