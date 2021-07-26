@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-26"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -308,7 +308,7 @@ The global instance of {{site.data.keyword.registrylong_notm}} is available by u
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |-----|----|-----------|--------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 4. Domain name for the global registry." caption-side="top"}
+{: caption="Table 3. Domain name for the global registry." caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
@@ -345,7 +345,7 @@ Regional instances of {{site.data.keyword.registrylong_notm}} are available by u
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
-{: caption="Table 3. Domain names for local regions." caption-side="top"}
+{: caption="Table 4. Domain names for local regions." caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
