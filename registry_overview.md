@@ -264,8 +264,6 @@ From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI, or in 
 
 Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't created in resource groups. If you have an existing namespace that is not in a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 
-
-
 ### Repository
 {: #overview_elements_repository}
 
