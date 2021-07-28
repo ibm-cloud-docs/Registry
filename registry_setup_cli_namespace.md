@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-07-28"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -166,6 +166,8 @@ Before you begin, complete the following tasks:
 
 To create a namespace, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add). Namespaces are created in the resource group that you specify so that you can configure access to resources within the namespace at the resource group level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. For more information about resource groups, see [Managing resource groups](/docs/account?topic=account-rgs).
 
+
+
 The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 {: tip}
 
@@ -182,7 +184,7 @@ Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.da
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}
 
-You can assign an existing namespace to a resource group by using the [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) command. To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
+You can assign an existing namespace to a resource group by using the [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) command. To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option. 
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
 
