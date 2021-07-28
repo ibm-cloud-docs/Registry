@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-07-28"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -415,7 +415,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
    2. Apply the configuration after Container Image Security Enforcement is removed from your cluster.
 
-      1. Remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove).
+      1. [Remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove).
       2. Apply the configuration by running the following command:
 
          ```
