@@ -35,7 +35,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You want to restore an image from the {{site.data.keyword.registrylong}} trash, but you get a 409 error: The tagged image already exists. You can restore this image by using the digest.
+You want to restore an image from the {{site.data.keyword.registrylong}} trash, but you get a 409 error: `The tagged image already exists. You can restore this image by using the digest.`
 {: shortdesc}
 
 {: tsSymptoms}
