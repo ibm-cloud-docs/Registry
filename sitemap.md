@@ -562,8 +562,8 @@ subcollection: Registry
 * [Enforcing access to your account over private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
 [Using a virtual private endpoint for {{site.data.keyword.vpc_short}}](/docs/Registry?topic=Registry-registry_vpe)
-* [Before you begin](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_prereqs)
-* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#egistry_vpe_endpoints)
+* [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
+* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoints)
 
 [Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_iam_ip)
 * [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
