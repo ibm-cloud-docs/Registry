@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-08-05"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, image not supported, manifest type, tagging image fails
 
@@ -38,14 +38,14 @@ content-type: troubleshoot
 You get a manifest type error when you try to tag your image in {{site.data.keyword.registrylong}}: `The manifest type for this image is not supported for tagging.`
 {: shortdesc}
 
-{: tsSymptoms}
 You tried to tag your image, but you receive the following manifest error message: `The manifest type for this image is not supported for tagging.`
+{: tsSymptoms}
 
-{: tsCauses}
 The manifest type is not supported.
+{: tsCauses}
 
-{: tsResolve}
 To resolve the problem, complete the following steps:
+{: tsResolve}
 
 1. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
 
