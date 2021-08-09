@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-08-09"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -176,23 +176,10 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
    ```
    {: pre}
 
-   The output informs you that you must export the Docker Content Trust environment variable.
+5. Export the environment variable command into your command line, where `<registry_DNS>` is your registry domain name. To find out about the available {{site.data.keyword.registrylong_notm}} domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
    ```
-   user:~ user$ ibmcloud cr login
-   Logging in to 'us.icr.io'...
-   Logged in to 'us.icr.io'.
-
-   To set up your Docker client with content trust,
-   export the following environment variable:
-   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
-   ```
-   {: screen}
-
-5. Copy and paste the environment variable command into your command line.
-
-   ```
-   export DOCKER_CONTENT_TRUST_SERVER=https://us.icr.io:4443
+   export DOCKER_CONTENT_TRUST_SERVER=https://<registry_DNS>:4443
    ```
    {: pre}
 
