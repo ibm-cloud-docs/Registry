@@ -117,7 +117,7 @@ VPEs are virtual IP interfaces that are bound to an endpoint gateway created on 
 
 If you have an [{{site.data.keyword.vpc_full}} (VPC) instance](/docs/vpc?topic=vpc-getting-started) and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a virtual private endpoint (VPE) for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network.
 
-To connect to {{site.data.keyword.registrylong_notm}} by using a virtual private endpoint, you must use the {{site.data.keyword.registryshort_notm}} API or CLI. The {{site.data.keyword.registryshort_notm}} page of the {{site.data.keyword.cloud_notm}} console must be accessed through the public network from your VPC.
+To connect to {{site.data.keyword.registrylong_notm}} by using a virtual private endpoint, you must use the {{site.data.keyword.registryshort_notm}} API or CLI. The {{site.data.keyword.registryshort_notm}} page of the {{site.data.keyword.cloud_notm}} console must be accessed from a browser in your VPC.
 {: note}
 
 You must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
