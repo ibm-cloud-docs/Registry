@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-09"
 
 keywords: container registry
 
@@ -961,6 +961,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#09aug2021)
+    * [The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry domain only](/docs/Registry?topic=Registry-registry_release_notes#09aug2021_bmx)
 
 * [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#08jul2021)
     * [Using Notary v1 for signing images is deprecated](/docs/Registry?topic=Registry-registry_release_notes#08jul2021_notary)
