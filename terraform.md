@@ -64,10 +64,10 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
         roles  = ["Manager"]
 
         resources {
-        service              = "container-registry"
-        resource = ibm_cr_namespace.cr_namespace.id
-        resource_type = "namespace"
-        region = var.region
+            service              = "container-registry"
+            resource = ibm_cr_namespace.cr_namespace.id
+            resource_type = "namespace"
+            region = var.region
         }
     }
     ```

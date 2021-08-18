@@ -196,10 +196,10 @@ All namespaces have a default policy that keeps all images. You can return a pol
 
 You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
 
-    ```
-    ibmcloud cr retention-policy-set --images All <namespace>
-    ```
-    {: pre}
+```
+ibmcloud cr retention-policy-set --images All <namespace>
+```
+{: pre}
 
 ## Clean up your namespaces by deleting untagged images
 {: #retention_images_untagged}
