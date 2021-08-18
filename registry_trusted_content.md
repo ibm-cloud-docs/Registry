@@ -451,22 +451,22 @@ To share signing keys, complete the following steps.
 
 1. If the new signer doesn't have a key pair, a key pair must be generated and loaded.
 
-        a. Generate the key. You can enter any name for `<NAME>`. The name that you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
+    1. Generate the key. You can enter any name for `<NAME>`. The name that you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
         ```
         docker trust key generate <NAME>
         ```
         {: pre}
 
-        b. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
+    2. Enter a passphrase for the private key. A public key (`.pub`) is generated, and the corresponding private key is automatically loaded into the Docker trust configuration.
 
-        c. The new signer must send the repository owner the public key.
+    3. The new signer must send the repository owner the public key.
 
 2. The repository owner must add the signer's key to the repository.
 
-    a. [Set up the trusted content environment](#trustedcontent_setup).
+    1. [Set up the trusted content environment](#trustedcontent_setup).
 
-    b. Add the signer's key to the repository.
+    2. Add the signer's key to the repository.
 
         ```
         docker trust signer add --key <NAME>.pub <NAME> <repository>
@@ -475,9 +475,9 @@ To share signing keys, complete the following steps.
 
 3. The signer can set up their environment and sign an image.
 
-    a. [Set up the trusted content environment](#trustedcontent_setup).
+    1. [Set up the trusted content environment](#trustedcontent_setup).
 
-    b. The signer must sign an image. When prompted, enter the passphrase for the private key.
+    2. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
         ```
         docker trust sign <repository>:<tag>

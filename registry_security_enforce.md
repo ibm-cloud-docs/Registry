@@ -109,48 +109,48 @@ The following code shows the default cluster-wide policy `.yaml` file:
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
 kind: ClusterImagePolicy
 metadata:
-  name: ibmcloud-default-cluster-image-policy
-  annotations:
-    helm.sh/hook: post-install
-    helm.sh/hook-weight: "1"
+    name: ibmcloud-default-cluster-image-policy
+    annotations:
+        helm.sh/hook: post-install
+        helm.sh/hook-weight: "1"
 spec:
-   repositories:
-    # These policies allow all IBM Cloud Kubernetes Service images from all IBM Cloud Container Registries to deploy and update.
-    # At minumum IKS images must allowed in ibm-system, kube-system and default namespaces, failure to allow these will prevent
-    # the cluster operating correctly.
-    - name: "registry*.bluemix.net/armada/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-worker/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-master/*"
-      policy:
-    - name: "*.icr.io/armada/*"
-      policy:
-    - name: "*.icr.io/armada-worker/*"
-      policy:
-    - name: "*.icr.io/armada-master/*"
-      policy:
-    - name: "icr.io/armada/*"
-      policy:
-    - name: "icr.io/armada-worker/*"
-      policy:
-    - name: "icr.io/armada-master/*"
-      policy:
-    # This allows all IBM addons like managed istio or knative to be deployed to this cluster.
-    - name: "icr.io/ibm/*"
-      policy:
-    - name: "icr.io/ext/*"
-      policy:
-    - name: "icr.io/obs/*"
-      policy:
-    # This enforces that all other images deployed to this cluster pass trust and va
-    # To override set an ImagePolicy for a specific Kubernetes namespace or modify this policy
-    - name: "*"
-      policy:
-        trust:
-          enabled: true
-        va:
-          enabled: true
+    repositories:
+        # These policies allow all IBM Cloud Kubernetes Service images from all IBM Cloud Container Registries to deploy and update.
+        # At minumum IKS images must allowed in ibm-system, kube-system and default namespaces, failure to allow these will prevent
+        # the cluster operating correctly.
+        - name: "registry*.bluemix.net/armada/*"
+         policy:
+        - name: "registry*.bluemix.net/armada-worker/*"
+          policy:
+        - name: "registry*.bluemix.net/armada-master/*"
+          policy:
+        - name: "*.icr.io/armada/*"
+          policy:
+        - name: "*.icr.io/armada-worker/*"
+          policy:
+        - name: "*.icr.io/armada-master/*"
+          policy:
+        - name: "icr.io/armada/*"
+          policy:
+        - name: "icr.io/armada-worker/*"
+          policy:
+        - name: "icr.io/armada-master/*"
+          policy:
+        # This allows all IBM addons like managed istio or knative to be deployed to this cluster.
+        - name: "icr.io/ibm/*"
+          policy:
+        - name: "icr.io/ext/*"
+          policy:
+        - name: "icr.io/obs/*"
+          policy:
+        # This enforces that all other images deployed to this cluster pass trust and va
+        # To override set an ImagePolicy for a specific Kubernetes namespace or modify this policy
+        - name: "*"
+          policy:
+            trust:
+              enabled: true
+            va:
+              enabled: true
 ```
 {: codeblock}
 
@@ -172,37 +172,37 @@ The following code shows the default `kube-system` policy `.yaml` file:
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
 kind: ImagePolicy
 metadata:
-  name: ibmcloud-image-policy
-  namespace: kube-system
-  annotations:
-    helm.sh/hook: post-install
-    helm.sh/hook-weight: "1"
+    name: ibmcloud-image-policy
+    namespace: kube-system
+    annotations:
+        helm.sh/hook: post-install
+        helm.sh/hook-weight: "1"
 spec:
-   repositories:
+    repositories:
     # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
-    - name: "*"
-      policy:
+        - name: "*"
+          policy:
     # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
-    - name: "registry*.bluemix.net/armada/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-worker/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-master/*"
-      policy:
-    - name: "*.icr.io/armada/*"
-      policy:
-    - name: "*.icr.io/armada-worker/*"
-      policy:
-    - name: "*.icr.io/armada-master/*"
-      policy:
-    - name: "icr.io/armada/*"
-      policy:
-    - name: "icr.io/armada-worker/*"
-      policy:
-    - name: "icr.io/armada-master/*"
-      policy:
+        - name: "registry*.bluemix.net/armada/*"
+          policy:
+        - name: "registry*.bluemix.net/armada-worker/*"
+          policy:
+        - name: "registry*.bluemix.net/armada-master/*"
+          policy:
+        - name: "*.icr.io/armada/*"
+          policy:
+        - name: "*.icr.io/armada-worker/*"
+          policy:
+        - name: "*.icr.io/armada-master/*"
+          policy:
+        - name: "icr.io/armada/*"
+          policy:
+        - name: "icr.io/armada-worker/*"
+          policy:
+        - name: "icr.io/armada-master/*"
+          policy:
 ```
 {: codeblock}
 
@@ -221,43 +221,43 @@ The following code shows the default `ibm-system` policy `.yaml` file:
 apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
 kind: ImagePolicy
 metadata:
-  name: ibmcloud-image-policy
-  namespace: ibm-system
-  annotations:
-    helm.sh/hook: post-install
-    helm.sh/hook-weight: "1"
+    name: ibmcloud-image-policy
+    namespace: ibm-system
+    annotations:
+        helm.sh/hook: post-install
+        helm.sh/hook-weight: "1"
 spec:
-   repositories:
+    repositories:
     # This policy allows all images to be deployed into this namespace. This policy prevents breaking any existing third party applications in this namespace.
     # IMPORTANT: Review this policy and replace it with one that meets your requirements. If you do not run any third party applications in this namespace, you can remove this policy entirely.
-    - name: "*"
-      policy:
+        - name: "*"
+          policy:
     # These policies allow all IBM Cloud Kubernetes Service images from the global and all regional registries to deploy in this namespace.
     # IMPORTANT: When you create your own policy in this namespace, make sure to include these repositories. If you do not, the cluster might not function properly.
-    - name: "registry*.bluemix.net/armada/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-worker/*"
-      policy:
-    - name: "registry*.bluemix.net/armada-master/*"
-      policy:
-    - name: "*.icr.io/armada/*"
-      policy:
-    - name: "*.icr.io/armada-worker/*"
-      policy:
-    - name: "*.icr.io/armada-master/*"
-      policy:
-    - name: "icr.io/armada/*"
-      policy:
-    - name: "icr.io/armada-worker/*"
-      policy:
-    - name: "icr.io/armada-master/*"
-      policy:
+        - name: "registry*.bluemix.net/armada/*"
+          policy:
+        - name: "registry*.bluemix.net/armada-worker/*"
+          policy:
+        - name: "registry*.bluemix.net/armada-master/*"
+          policy:
+        - name: "*.icr.io/armada/*"
+          policy:
+        - name: "*.icr.io/armada-worker/*"
+          policy:
+        - name: "*.icr.io/armada-master/*"
+          policy:
+        - name: "icr.io/armada/*"
+          policy:
+        - name: "icr.io/armada-worker/*"
+          policy:
+        - name: "icr.io/armada-master/*"
+          policy:
     # This policy prevents Image Security Enforcement from blocking itself
-    - name: "icr.io/ibm/ibmcloud-image-enforcement"
-      policy:
+        - name: "icr.io/ibm/ibmcloud-image-enforcement"
+          policy:
     # This policy allows Image Security Enforcement to use a kubectl image to configure your cluster. This policy must exist if you uninstall Image Security Enforcement.
-    - name: "icr.io/obs/kubectl"
-      policy:
+        - name: "icr.io/obs/kubectl"
+          policy:
 ```
 {: codeblock}
 
@@ -278,7 +278,7 @@ When you apply a deployment, Container Image Security Enforcement checks whether
 The following table explains the `.yaml` components that you must set in your Kubernetes custom resource definition `.yaml` file.
 
 | Field | Description |
-|-----|-----------|
+|-------|-------------|
 | `kind` | For a cluster-wide policy, specify the `kind` as `ClusterImagePolicy`. For a Kubernetes namespace policy, specify as `ImagePolicy`. |
 |`metadata/name` | Name the custom resource definition. |
 | `spec/repositories/name` | Specify the repositories to allow images from. Wildcards (`*`) are allowed in repository names. Repositories are denied unless a matching entry in `repositories` allows it or applies further verification. An empty `repositories` list blocks deployment of all images. To allow all images without verification of any policies, set the name to `*` and omit the policy subsections. |
@@ -286,7 +286,7 @@ The following table explains the `.yaml` components that you must set in your Ku
 | `../../../../trust/enabled` | Set as `true` to allow only images that are [signed for content trust](/docs/Registry?topic=Registry-registry_trustedcontent) to be deployed. Set as `false` to ignore whether images are signed. |
 | `../../../../trust/signerSecrets/name` | If you want to allow only images that are signed by particular users, specify the Kubernetes secret with the signer name. Omit this field or leave it empty to verify that images are signed without enforcing particular signers. For more information, see [Specifying trusted content signers in custom policies](#signers). |
 | `../../../../va/enabled` | Set as `true` to allow only images that pass the [Vulnerability Advisor](/docs/Registry?topic=va-va_index) scan. Set as `false` to ignore the Vulnerability Advisor scan. |
-{: caption="Table 1. Understanding the <code>.yaml</code> components for the Kubernetes custom resource definition." caption-side="top"}
+{: caption="Table 1. Understanding the YAML components for the Kubernetes custom resource definition" caption-side="top"}
 
 Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to the cluster. Then, complete the following steps:
 
@@ -296,17 +296,17 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
     apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
     kind: <ClusterImagePolicy_or_ImagePolicy>
     metadata:
-      name: <crd_name>
+        name: <crd_name>
     spec:
-      repositories:
-        - name: <repository_name>
-          policy:
-          trust:
-              enabled: <true_or_false>
-              signerSecrets:
-              - name: <secret_name>
-          va:
-              enabled: <true_or_false>
+        repositories:
+            - name: <repository_name>
+              policy:
+              trust:
+                  enabled: <true_or_false>
+                  signerSecrets:
+                  - name: <secret_name>
+              va:
+                  enabled: <true_or_false>
     ```
     {: codeblock}
 
@@ -341,10 +341,10 @@ To configure the policy to verify that an image is signed by a particular signer
     ```yaml
     - name: example
       policy:
-        trust:
-          enabled: true
-          signerSecrets:
-          - name: <secret_name>
+          trust:
+              enabled: true
+              signerSecrets:
+              - name: <secret_name>
     ```
     {: codeblock}
 
@@ -361,8 +361,8 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
 
     ```yaml
     - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
-        resources: ["imagepolicies", "clusterimagepolicies"]
-    verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+      resources: ["imagepolicies", "clusterimagepolicies"]
+      verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
     ```
     {: codeblock}
 
@@ -373,8 +373,8 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
 
     ```yaml
     - apiGroups: ["apiextensions.k8s.io/v1beta1"]
-        resources: ["CustomResourceDefinition"]
-    verbs: ["delete"]
+      resources: ["CustomResourceDefinition"]
+      verbs: ["delete"]
     ```
     {: codeblock}
 
