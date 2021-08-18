@@ -150,14 +150,14 @@ Add a second user to your account and grant them the ability to configure {{site
         ```
         {: pre}
 
-        2. List the policies for User B, find the policy that you created by running the following command, and note the ID.
+    2. List the policies for User B, find the policy that you created by running the following command, and note the ID.
 
         ```
         ibmcloud iam user-policies <user.b@example.com>
         ```
         {: pre}
 
-        3. Delete the policy by running the following command, where `<Policy_ID>` is your Policy ID.
+    3. Delete the policy by running the following command, where `<Policy_ID>` is your Policy ID.
 
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
