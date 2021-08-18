@@ -160,10 +160,10 @@ Create a namespace. The namespace is created in the resource group that you spec
     - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
     - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
 
-    ```
-    ibmcloud cr namespace-add <my_namespace>
-    ```
-    {: pre}
+        ```
+        ibmcloud cr namespace-add <my_namespace>
+        ```
+        {: pre}
 
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 

@@ -58,7 +58,7 @@ To set a quota, complete the following steps.
     ```
     {: pre}
 
-    Your output looks similar to the following.
+    Your output looks similar to the following example.
 
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
@@ -110,7 +110,7 @@ You can review your quota limits and check your current storage and pull traffic
     ```
     {: pre}
 
-    Your output looks similar to the following.
+    Your output looks similar to the following example.
 
     ```
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
@@ -166,8 +166,7 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account, compl
     ```
     {: pre}
 
-4. You cannot reduce your pull traffic usage in a billing period.
-{: tip}
+4. To reduce your pull traffic usage, you must wait until the next billing period.
 
     To continue pulling images from your namespaces, choose between the following options.
 
