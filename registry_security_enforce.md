@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-08-18"
 
 keywords: Vulnerability Advisor policies, container image security, policy requirements, policies, Container Image Security Enforcement, content trust, kube-system policies, IBM-system policies, CISE, removing policies, security, security enforcement, 
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {: #security_enforce}
 
 With Container Image Security Enforcement, you can verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image. If an image does not meet your policy requirements, the pod is not deployed to your cluster or updated.
-{:shortdesc}
+{: shortdesc}
 
 With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
@@ -55,26 +55,26 @@ To install Container Image Security Enforcement in your cluster, complete the fo
 
 2. Add the IBM chart repository to your Helm client.
 
-   ```
-   helm repo add iks-charts https://icr.io/helm/iks-charts
-   ```
-   {: pre}
+    ```
+    helm repo add iks-charts https://icr.io/helm/iks-charts
+    ```
+    {: pre}
 
 3. Install the Container Image Security Enforcement Helm chart into your cluster. Give it a name such as `cise`.
 
-   - For Helm V3, use the following command:
+    - For Helm V3, use the following command:
 
-     ```
-     helm install cise iks-charts/ibmcloud-image-enforcement
-     ```
-     {: pre}
+        ```
+        helm install cise iks-charts/ibmcloud-image-enforcement
+        ```
+        {: pre}
 
-   - For Helm V2, use the following command:
+    - For Helm V2, use the following command:
 
-     ```
-     helm install --name cise iks-charts/ibmcloud-image-enforcement
-     ```
-     {: pre}
+        ```
+        helm install --name cise iks-charts/ibmcloud-image-enforcement
+        ```
+        {: pre}
 
 Container Image Security Enforcement is now installed, and is applying the [default security policy](#default_policies) for all Kubernetes namespaces in your cluster. For more information about customizing the security policy for Kubernetes namespaces in your cluster, or the cluster overall, see [Customizing policies](#customize_policies).
 
@@ -292,30 +292,30 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 
 1. Create a [Kubernetes custom resource definition](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/){: external} `.yaml` file. For more information, see Table 1.
 
-   ```yaml
-   apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
-   kind: <ClusterImagePolicy_or_ImagePolicy>
-   metadata:
-     name: <crd_name>
-   spec:
-     repositories:
-       - name: <repository_name>
-         policy:
-         trust:
-             enabled: <true_or_false>
-             signerSecrets:
-             - name: <secret_name>
-         va:
-             enabled: <true_or_false>
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+    kind: <ClusterImagePolicy_or_ImagePolicy>
+    metadata:
+      name: <crd_name>
+    spec:
+      repositories:
+        - name: <repository_name>
+          policy:
+          trust:
+              enabled: <true_or_false>
+              signerSecrets:
+              - name: <secret_name>
+          va:
+              enabled: <true_or_false>
+    ```
+    {: codeblock}
 
 2. Apply the `.yaml` file to your cluster.
 
-   ```
-   kubectl apply -f <filepath>
-   ```
-   {: pre}
+    ```
+    kubectl apply -f <filepath>
+    ```
+    {: pre}
 
 ### Specifying trusted content signers in custom policies
 {: #signers}
@@ -331,55 +331,55 @@ To configure the policy to verify that an image is signed by a particular signer
 1. Get the signer name (the name that was used in `docker trust signer add`), and the signer's public key.
 2. Generate a Kubernetes secret with the signer name and their public key.
 
-   ```
-   kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
-   ```
-   {: pre}
+    ```
+    kubectl create secret generic <secret_name> --from-literal=name=<signer_name> --from-file=publicKey=<key.pub>
+    ```
+    {: pre}
 
 3. Add the secret to the `signerSecrets` list for the repository in your policy.
 
-   ```yaml
-   - name: example
-     policy:
-       trust:
-         enabled: true
-         signerSecrets:
-         - name: <secret_name>
-   ```
-   {: codeblock}
+    ```yaml
+    - name: example
+      policy:
+        trust:
+          enabled: true
+          signerSecrets:
+          - name: <secret_name>
+    ```
+    {: codeblock}
 
 ## Controlling who can customize policies
 {: #assign_user_policy}
 
 If role-based access control (RBAC) is enabled on your Kubernetes cluster, you can create a role to govern who can administer security policies on your cluster. For more information about applying RBAC rules to your cluster, see [Understanding RBAC permissions](/docs/containers?topic=containers-users#understand-rbac) and [Creating custom RBAC permissions for users, groups, or service accounts](/docs/containers?topic=containers-users#rbac).
-{:shortdesc}
+{: shortdesc}
 
 With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
 {: deprecated}
 
 - In your role, add a rule for security policies:
 
-  ```yaml
-  - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
-    resources: ["imagepolicies", "clusterimagepolicies"]
+    ```yaml
+    - apiGroups: ["securityenforcement.admission.cloud.ibm.com"]
+        resources: ["imagepolicies", "clusterimagepolicies"]
     verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
-  You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can use only the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
-  {: tip}
+    You can create multiple roles to control what actions users can take. For example, change the `verbs` so that some users can use only the `get` or `list` policies. Alternatively, you can omit `clusterimagepolicies` from the `resources` list to grant access only to Kubernetes namespace policies.
+    {: tip}
 
 - Users who have access to delete custom resource definitions (CRDs) can delete the resource definition for security policies, which also deletes your security policies. Make sure to control who is allowed to delete CRDs. To grant access to delete CRDs, add a rule:
 
-  ```yaml
-  - apiGroups: ["apiextensions.k8s.io/v1beta1"]
-    resources: ["CustomResourceDefinition"]
+    ```yaml
+    - apiGroups: ["apiextensions.k8s.io/v1beta1"]
+        resources: ["CustomResourceDefinition"]
     verbs: ["delete"]
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
-  Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
-  {: tip}
+    Users and Service Accounts with the `cluster-admin` role have access to all resources. The cluster-admin role grants access to administer security policies, even if you do not edit the role. Make sure to control who has the `cluster-admin` role, and grant access only to people that you want to allow to modify security policies.
+    {: tip}
 
 ## Deploying container images with enforced security
 {: #deploy_containers}
@@ -392,9 +392,9 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
 
 - If Container Image Security Enforcement denies a Deployment, the Deployment is created, but the ReplicaSet created by it fails to scale up, and no pods are created. You can find the ReplicaSet by running `kubectl describe deployment <deployment-name>`, and then see the reason that the deployment was denied by running `kubectl describe rs <replicaset-name>`.
 
-  The following code shows examples of typical error messages:
+    The following code shows examples of typical error messages:
 
-  - If your image doesn't match any policies, or no policies are used in the namespace or the cluster.
+    - If your image doesn't match any policies, or no policies are used in the namespace or the cluster.
 
     ```
     admission webhook
@@ -404,7 +404,7 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
     ```
     {: screen}
 
-  - If your image matches a policy, but doesn't satisfy that policy's Vulnerability Advisor requirements.
+    - If your image matches a policy, but doesn't satisfy that policy's Vulnerability Advisor requirements.
 
     ```
     admission webhook
@@ -416,7 +416,7 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
     ```
     {: screen}
 
-  - If your image matches a policy, but doesn't satisfy that policy's trust requirements.
+    - If your image matches a policy, but doesn't satisfy that policy's trust requirements.
 
     ```
     admission webhook
@@ -426,7 +426,7 @@ With effect from 19 November 2020, Container Image Security Enforcement is depre
     ```
     {: screen}
 
-  - If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
+    - If your policy specifies trust enforcement for your image, but your image is not from a supported registry.
 
     ```
     admission webhook
@@ -454,28 +454,30 @@ Before you begin, [target your `kubectl` CLI](/docs/containers?topic=containers-
 
 1. Disable Container Image Security Enforcement.
 
-   ```
-   kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl delete --ignore-not-found=true MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
-   ```
-   kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl delete --ignore-not-found=true ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
 2. Remove the chart by using one of the following commands.
 
-   - Helm V3
+    - Helm V3
 
-      ```
-      helm delete cise
-      ```
-      {: pre}
+        ```
+        helm delete cise
+        ```
+        {: pre}
 
-   - Helm V2
+    - Helm V2
 
-      ```
-      helm delete --purge cise
-      ```
-      {: pre}
+        ```
+        helm delete --purge cise
+        ```
+        {: pre}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-08-18"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -66,7 +66,7 @@ You gain the following advantages by using this technique:
 {: support}
 
 Use the `ibmcloud cr retention-run` command to clean up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
-{:shortdesc}
+{: shortdesc}
 
 You can choose whether to exclude untagged images from the clean-up process.
 
@@ -83,37 +83,37 @@ To reduce the number of images in each repository within your namespace by using
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. Choose the registry in which you want to clean up your images by running the following command and selecting the appropriate region:
 
-   ```
-   ibmcloud cr region-set
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set
+    ```
+    {: pre}
 
 3. To retain the most recent images and delete the others, run one the following commands:
 
-   - If you want to clean up both tagged and untagged images, run the following command:
+    - If you want to clean up both tagged and untagged images, run the following command:
 
-     ```
-     ibmcloud cr retention-run --images <image_count> <namespace>
-     ```
-     {: pre}
+        ```
+        ibmcloud cr retention-run --images <image_count> <namespace>
+        ```
+        {: pre}
 
-     Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
+        Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
-   - If you want to clean up tagged images only and retain all untagged images, run the following command:
+    - If you want to clean up tagged images only and retain all untagged images, run the following command:
 
-     ```
-     ibmcloud cr retention-run --retain-untagged --images <image_count> <namespace>
-     ```
-     {: pre}
+        ```
+        ibmcloud cr retention-run --retain-untagged --images <image_count> <namespace>
+        ```
+        {: pre}
 
-     Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
+        Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
 4. Verify that the images were deleted by running the following command, and check that the images do not show in the list.
 
-   ```
-   ibmcloud cr image-list
-   ```
-   {: pre}
+    ```
+    ibmcloud cr image-list
+    ```
+    {: pre}
 
 ## Set a retention policy for your namespaces to retain only images that meet your criteria
 {: #retention_policy_set}
@@ -121,7 +121,7 @@ To reduce the number of images in each repository within your namespace by using
 {: support}
 
 You can set a retention policy that runs automatically to clean up your namespaces.
-{:shortdesc}
+{: shortdesc}
 
 You can choose whether to exclude untagged images from the clean-up process.
 
@@ -138,53 +138,53 @@ To set a policy and immediately move your deleted images to the trash, complete 
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. Choose the registry in which you want to clean up your images by running the following command and selecting the appropriate region:
 
-   ```
-   ibmcloud cr region-set
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set
+    ```
+    {: pre}
 
 3. To set a policy that retains the most recent images and deletes the others, run one of the following commands:
 
-   - If you want to clean up both tagged and untagged images, run the following command:
+    - If you want to clean up both tagged and untagged images, run the following command:
 
-     ```
-     ibmcloud cr retention-policy-set --images <image_count> <namespace>
-     ```
-     {: pre}
+        ```
+        ibmcloud cr retention-policy-set --images <image_count> <namespace>
+        ```
+        {: pre}
 
-     Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
+        Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
-     A list of images to delete is displayed.
+        A list of images to delete is displayed.
 
-   - If you want to clean up tagged images only and retain all untagged images, run the following command:
+    - If you want to clean up tagged images only and retain all untagged images, run the following command:
 
-     ```
-     ibmcloud cr retention-policy-set --retain-untagged --images <image_count> <namespace>
-     ```
-     {: pre}
+        ```
+        ibmcloud cr retention-policy-set --retain-untagged --images <image_count> <namespace>
+        ```
+        {: pre}
 
-     Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
+        Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
-     A list of images to delete is displayed.
+        A list of images to delete is displayed.
 
 4. Review the list of images. To run the policy and delete the images, confirm that you want to set the policy.
 
-   If you don't want to delete those images, choose `No`. The policy is not set and the images are not deleted.
-   {: tip}
-  
+    If you don't want to delete those images, choose `No`. The policy is not set and the images are not deleted.
+    {: tip}
+
 5. Verify that the images were deleted by running the following command, and check that the images show in the list.
 
-   ```
-   ibmcloud cr trash-list
-   ```
-   {: pre}
+    ```
+    ibmcloud cr trash-list
+    ```
+    {: pre}
 
 6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, ensure that the **`Retain all untagged`** column has the value `true`.
 
-   ```
-   ibmcloud cr retention-policy-list
-   ```
-   {: pre}
+    ```
+    ibmcloud cr retention-policy-list
+    ```
+    {: pre}
 
 ## Updating a retention policy so that it keeps all your images
 {: #retention_policy_keep}
@@ -192,14 +192,14 @@ To set a policy and immediately move your deleted images to the trash, complete 
 {: support}
 
 All namespaces have a default policy that keeps all images. You can return a policy to the default state.
-{:shortdesc}
+{: shortdesc}
 
 You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
 
-  ```
-  ibmcloud cr retention-policy-set --images All <namespace>
-  ```
-  {: pre}
+    ```
+    ibmcloud cr retention-policy-set --images All <namespace>
+    ```
+    {: pre}
 
 ## Clean up your namespaces by deleting untagged images
 {: #retention_images_untagged}
@@ -215,3 +215,5 @@ If you want to delete your untagged images and output the results in JSON format
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict <namespace>
 ```
 {: pre}
+
+

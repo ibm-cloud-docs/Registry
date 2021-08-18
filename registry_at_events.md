@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-08-18"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {: #at_events}
 
 Use {{site.data.keyword.at_full}} to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
@@ -171,7 +171,7 @@ The following table lists the fields that are available through the `requestData
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](https://{DomainName}/apidocs/container-registry/va#vulnerability-report-status-codes){: external} in the API documentation. |
 {: caption="Table 6. Custom event fields for <code>container-registry.image-vulnerability-report.read</code>." caption-side="top"}
 
-For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){:external} in the API documentation.
+For more information, see [Get vulnerability assessment status](https://{DomainName}/apidocs/container-registry/va#imagereportquerypath){: external} in the API documentation.
 
 ### Request and response data for `container-registry.image-vulnerability-status.read`
 {: #at_events_analyze_status_read}
@@ -188,3 +188,5 @@ The following table lists the fields that are available through the `requestData
 {: caption="Table 7. Custom event fields for <code>container-registry.image-vulnerability-status.read</code>." caption-side="top"}
 
 For more information, see [Get vulnerability status](https://{DomainName}/apidocs/container-registry/va#imagestatusquerypath){: external} in the API documentation.
+
+

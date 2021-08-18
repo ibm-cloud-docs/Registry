@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-07-28"
+lastupdated: "2021-08-18"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -10,31 +10,112 @@ subcollection: Registry
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
-{:term: .term}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
+{:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
+{:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
+
 
 # About {{site.data.keyword.registrylong_notm}}
 {: #registry_overview}
 
 Use {{site.data.keyword.registrylong}} to store and access private container images in a highly available and scalable architecture.
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image namespace and pushing container images to your namespace.
 
-![Image showing how you can interact with IBM Cloud Container Registry.](images/registry_architecture1.svg "Image showing how you can interact with {{site.data.keyword.registrylong_notm}}. {{site.data.keyword.registrylong_notm}} contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The {{site.data.keyword.cloud_notm}} web UI (console) interacts with the {{site.data.keyword.registrylong_notm}} API to list images. The {{site.data.keyword.registrylong_notm}} CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."){: caption="Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images." caption-side="bottom"}
+![Image showing how you can interact with IBM Cloud Container Registry.](images/registry_architecture1.svg "Image showing how you can interact with {{site.data.keyword.registrylong_notm}}. {{site.data.keyword.registrylong_notm}} contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The {{site.data.keyword.cloud_notm}} web UI (console) interacts with the {{site.data.keyword.registrylong_notm}} API to list images. The {{site.data.keyword.registrylong_notm}} CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."){: caption="Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images" caption-side="bottom"}
 
 A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies. Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry). By using {{site.data.keyword.registrylong_notm}}, only users with access to your {{site.data.keyword.cloud_notm}} account can access your images.
 
@@ -43,17 +124,17 @@ When you push images to {{site.data.keyword.registrylong_notm}}, you benefit fro
 Review the following table to find an overview of benefits of using {{site.data.keyword.registrylong_notm}}.
 
 | Benefit | Description |
-|-------|-----------|
+|---------|-------------|
 | Highly available and scalable private registry. | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.<br/><br/>Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
 | Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.<br/><br/>Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
 | Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.<br/><br/>Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
-{: caption="Table 1. {{site.data.keyword.registrylong_notm}} Benefits" caption-side="top"}
+{: caption="Table 1. {{site.data.keyword.registrylong_notm}} benefits" caption-side="top"}
 
 ## Service plans
 {: #registry_plans}
 
 You can choose between the free or standard {{site.data.keyword.registrylong_notm}} service plans to store your Docker images and make these images available to users in your {{site.data.keyword.cloud_notm}} account.
-{:shortdesc}
+{: shortdesc}
 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
@@ -63,18 +144,18 @@ Service plans are scoped to the specific registry instance (one of the regional 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing).
 
 | Characteristics | Free | Standard |
-|---------------|----|--------|
+|-----------------|------|----------|
 | Description. | Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
-| Billing. |If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog).<br/><br/>**Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
-{: caption="Table 2. {{site.data.keyword.registrylong_notm}} Plans" caption-side="top"}
+| Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog).<br/><br/>**Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](https://{DomainName}/registry/catalog){: external}. If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
+{: caption="Table 2. {{site.data.keyword.registrylong_notm}} plans" caption-side="top"}
 
 ## Quota limits and billing
 {: #registry_plan_billing}
 
 Find information and examples for how the billing process and quota limits work in {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.cloud_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer. Layers that are only referenced by deleted images in the trash are not charged.
 
@@ -83,47 +164,47 @@ Quota limits and billing are scoped to the specific registry instance (one of th
 
 The following example is for pushing images:
 
-You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
+    You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
 
-Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registrylong_notm}} recognizes that all layers of the base Ubuntu image are already stored in your account. You are not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registrylong_notm}} determines the size of all new layers and adds the amount of storage to your monthly usage.
+    Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registrylong_notm}} recognizes that all layers of the base Ubuntu image are already stored in your account. You are not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registrylong_notm}} determines the size of all new layers and adds the amount of storage to your monthly usage.
 
 ### Billing for storage and pull traffic
 {: #registry_billing_traffic}
 
 Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month in each region.
-{:shortdesc}
+{: shortdesc}
 
 #### Storage
 {: #registry_billing_traffic_storage}
 
-  Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
-  {:shortdesc}
+Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+{: shortdesc}
 
-  The following example is for the standard plan:
+The following example is for the standard plan:
 
-  You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
-  
-  (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months
-  
-  In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
+    You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
+
+    (5 GB x 0.5 (months)) + (10 GB x 0.5 (months)) = 2.5 + 5 = 7.5 GB-Months
+
+    In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
 #### Pull traffic
 {: #registry_billing_traffic_pull_traffic}
 
-  Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
-  {:shortdesc}
+Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
+{: shortdesc}
 
-  The following example is for the standard plan:
+The following example is for the standard plan:
 
-  In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
-  
-  In the standard plan, the first 5 GB per month is free, so you get charged for 9 GB (14 GB - 5 GB).
+    In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
+
+    In the standard plan, the first 5 GB per month is free, so you get charged for 9 GB (14 GB - 5 GB).
 
 ### Quota limits for storage and pull traffic
 {: #registry_quota_limits}
 
 Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits for each region.
-{:shortdesc}
+{: shortdesc}
 
 #### Storage
 {: #registry_quota_limits_storage}
@@ -136,9 +217,9 @@ When you reach or exceed the quota limits for your plan, you can't push any imag
 
 The following example is for the standard plan:
 
-Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
+    Your current quota limit for storage is set to 1 GB. All private images that are stored in the namespaces of your {{site.data.keyword.cloud_notm}} account already use 900 MB of this storage. You have 100 MB storage available until you reach your quota limit. One user wants to push an image with a size of 2 GB on the local computer. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to push this image.
 
-After the push, {{site.data.keyword.registrylong_notm}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registrylong_notm}} prevents you from pushing more images to the namespace.
+    After the push, {{site.data.keyword.registrylong_notm}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registrylong_notm}} prevents you from pushing more images to the namespace.
 
 #### Pull traffic
 {: #registry_quota_limits_pull_traffic}
@@ -151,15 +232,15 @@ When you reach or exceed the quota limits for your plan, you can't pull any imag
 
 The following example is for the standard plan:
 
-In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
+    In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
 
-After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
+    After the image is pulled, {{site.data.keyword.registrylong_notm}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registrylong_notm}} prevents you from pulling images from your namespace.
 
 ### Cost
 {: #registry_cost}
 
 You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [Container Registry](https://{DomainName}/registry/catalog){: external}.
-{:shortdesc}
+{: shortdesc}
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
@@ -167,7 +248,7 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 {: support}
 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
-{:shortdesc}
+{: shortdesc}
 
 If you want to find out what service plan you have for the registry region that you're targeting, run the `ibmcloud cr plan` command.
 {: tip}
@@ -176,40 +257,40 @@ To upgrade your service plan, complete the following steps.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```
+    ibmcloud login
+    ```
+    {: pre}
 
-   If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
-   {:tip}
+    If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
+    {: tip}
 
 2. Target the region for which you want to upgrade the plan.
 
-   ```
-   ibmcloud cr region-set
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set
+    ```
+    {: pre}
 
-   For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+    For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 3. Upgrade to the standard plan.
 
-   ```
-   ibmcloud cr plan-upgrade standard
-   ```
-   {: pre}
+    ```
+    ibmcloud cr plan-upgrade standard
+    ```
+    {: pre}
 
-   If you have an {{site.data.keyword.cloud_notm}} Lite account, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
-   {:tip}
+    If you have an {{site.data.keyword.cloud_notm}} Lite account, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
+    {: tip}
 
-   For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+    For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
 
 ## Find out more about the elements that are used in {{site.data.keyword.registrylong_notm}}
 {: #overview_elements}
 
 Information about the elements that are used in {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/glossary/){: external}.
 
@@ -291,7 +372,7 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 {: #registry_regions}
 
 The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its domain name (`icr.io`).
-{:shortdesc}
+{: shortdesc}
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
 
@@ -301,14 +382,14 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 {: #registry_regions_global}
 
 A global registry is available. The global registry doesn't have a region included in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 The global instance of {{site.data.keyword.registrylong_notm}} is available by using the domain names that are shown in the following table.
 
 | Registry | Domain name | Private domain name | Deprecated domain name |
-|-----|----|-----------|--------------|
+|----------|-------------|----------------------|-----------------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 3. Domain name for the global registry." caption-side="top"}
+{: caption="Table 3. Domain name for the global registry" caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
@@ -319,14 +400,14 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {: #registry_regions_global_target}
 
 You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
-{:shortdesc}
+{: shortdesc}
 
 1. To target the global registry, run the following command.
 
-   ```
-   ibmcloud cr region-set global
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set global
+    ```
+    {: pre}
 
 2. To log your local Docker daemon into the global registry, run the `ibmcloud cr login` command.
 
@@ -334,10 +415,10 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 {: #registry_regions_local}
 
 Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the domain names that are shown in the following table.
-{:shortdesc}
+{: shortdesc}
 
 | Local registry region | Domain name | Private domain name | Deprecated domain name |
-|-----|----|-----------|---------------|
+|-----------------------|-------------|---------------------|------------------------|
 | `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
 | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
 | `ca-tor` | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
@@ -345,7 +426,7 @@ Regional instances of {{site.data.keyword.registrylong_notm}} are available by u
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
-{: caption="Table 4. Domain names for local regions." caption-side="top"}
+{: caption="Table 4. Domain names for local regions" caption-side="top"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
@@ -358,21 +439,21 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {: support}
 
 If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
-{:shortdesc}
+{: shortdesc}
 
 1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
 
-   ```
-   ibmcloud cr region-set <region>
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set <region>
+    ```
+    {: pre}
 
-   For example, to target the `eu-central` region, run the following command.
+    For example, to target the `eu-central` region, run the following command.
 
-   ```
-   ibmcloud cr region-set eu-central
-   ```
-   {: pre}
+    ```
+    ibmcloud cr region-set eu-central
+    ```
+    {: pre}
 
 2. To log your local Docker daemon into the registry so that you can push or pull images, run the `ibmcloud cr login` command.
 
@@ -387,3 +468,5 @@ Docker V2 Schema 2 images are supported. Manifest lists are also supported. For 
 
 Docker V2 Schema 1 images are discontinued and you can't push them to {{site.data.keyword.registrylong_notm}} anymore.
 {: note}
+
+

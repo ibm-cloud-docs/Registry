@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-08-18"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
@@ -63,3 +63,5 @@ The following table shows the location of global registry {{site.data.keyword.la
 |-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
 {: caption="Table 2. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="top"}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2021-03-11"
+lastupdated: "2021-08-18"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -65,55 +65,55 @@ Create a public-private key pair by using OpenSSL commands.
 
 1. Create a work directory, for example, `<user_keys>`, in which to store the keys and change to that directory:
 
-   ```
-   mkdir <user_keys>; cd <user_keys>
-   ```
-   {: pre}
+    ```
+    mkdir <user_keys>; cd <user_keys>
+    ```
+    {: pre}
 
 2. Use OpenSSL to create a private key, where `<user>` is the name for your key's identity:
 
-   ```
-   openssl genrsa --out <user>Private.pem
-   ```
-   {: pre}
+    ```
+    openssl genrsa --out <user>Private.pem
+    ```
+    {: pre}
 
 3. Create a public key:
 
-   ```
-   openssl rsa -in <user>Private.pem -pubout -out <user>Pub.pem
-   ```
-   {: pre}
+    ```
+    openssl rsa -in <user>Private.pem -pubout -out <user>Pub.pem
+    ```
+    {: pre}
 
-  To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. For more information, see [Storing keys](#registry_encrypt_keys).
-  {: tip}
+    To use the private key in production, you must safely store and protect the private key in a suitable store. You might also want to manage the public key in the same way. For more information, see [Storing keys](#registry_encrypt_keys).
+    {: tip}
 
 4. List the keys to ensure that they are created:
 
-   ```
-   ls -l
-   ```
-   {: pre}
+    ```
+    ls -l
+    ```
+    {: pre}
 
 5. To use this key pair to encrypt images, display the public key by running the following `cat` command:
 
-   ```
-   cat <user>Pub.pem
-   ```
-   {: pre}
+    ```
+    cat <user>Pub.pem
+    ```
+    {: pre}
 
-   You get a response similar to the following output:
+    You get a response similar to the following output:
 
-   ```
-   -----BEGIN PUBLIC KEY-----
-   MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8Ny7dCWQ8Pdq1ddYSwk
-   QOCB3lUEZVEyj9StX3jnISF/rxIsUZzJfbOrQN0fGkm+1sCCtltgQdztTjito8Fh
-   DGflqQBSmV40XP3iZnNUJDrHuAol463Z/BuxxFXL3ry6rTosLGfrRwdQjxp8RSsn
-   WyIIO2rmcqXZYe4SCtiMjMejLlTIDWLIMdYL3d6hA4DpgDLoh6EPmhKMVVwRt5b0
-   ew5eMLcDuq6ButOM5yv4zYVHNrajY41NK+abSlFb6wzMg2AUDiC/MxV1LRq6mpyZ
-   GJllx3LS1M1j7fDO3pmh/M0X7yD/4RgHwFaW4/4CQBw3fyxrOv0pZzZay+o
-   -----END PUBLIC KEY-----
-   ```
-   {: screen}
+    ```
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8Ny7dCWQ8Pdq1ddYSwk
+    QOCB3lUEZVEyj9StX3jnISF/rxIsUZzJfbOrQN0fGkm+1sCCtltgQdztTjito8Fh
+    DGflqQBSmV40XP3iZnNUJDrHuAol463Z/BuxxFXL3ry6rTosLGfrRwdQjxp8RSsn
+    WyIIO2rmcqXZYe4SCtiMjMejLlTIDWLIMdYL3d6hA4DpgDLoh6EPmhKMVVwRt5b0
+    ew5eMLcDuq6ButOM5yv4zYVHNrajY41NK+abSlFb6wzMg2AUDiC/MxV1LRq6mpyZ
+    GJllx3LS1M1j7fDO3pmh/M0X7yD/4RgHwFaW4/4CQBw3fyxrOv0pZzZay+o
+    -----END PUBLIC KEY-----
+    ```
+    {: screen}
 
 ## Encrypt the image
 {: #registry_encrypt_image}
@@ -123,41 +123,41 @@ Encrypt the image by using the public key and then build a container image by us
 
 1. Go to the directory where you store your apps, for example, `<my_app>`.
 
-   ```
-   cd <my_app>
-   ```
-   {: pre}
+    ```
+    cd <my_app>
+    ```
+    {: pre}
 
 2. Create the Dockerfile by running the following command:
 
-   ```
-   cat << EOF >> Dockerfile
-   FROM nginx:latest
-   RUN echo "some secret" > /secret-file
-   EOF
-   ```
-   {: pre}
+    ```
+    cat << EOF >> Dockerfile
+    FROM nginx:latest
+    RUN echo "some secret" > /secret-file
+    EOF
+    ```
+    {: pre}
 
 3. Use Buildah to create an unencrypted image by running the following commands, where `<namespace>` is your namespace:
 
-   ```
-   buildah bud -t us.icr.io/<namespace>/<my_app> .
-   ```
-   {: pre}
+    ```
+    buildah bud -t us.icr.io/<namespace>/<my_app> .
+    ```
+    {: pre}
 
-   `us.icr.io/<namespace>/<my_app>` is committed to the local image store.
+    `us.icr.io/<namespace>/<my_app>` is committed to the local image store.
 
 4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image. Where `<user_keys>/<user>Pub.pem` is the encryption key.
 
-   ```
-   buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>
-   ```
-   {: pre}
+    ```
+    buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>
+    ```
+    {: pre}
 
-   Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an API key, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
-   {: tip}
+    Buildah version 1.15, or later, uses Docker’s login credentials to authenticate. If these credentials don't work or you want to use an API key, you can supply the `—-creds <user_name>` option, where `<user_name>` is the username. If you use the `—-creds <user_name>` the option, when requested, type in the password of the registry credential.
+    {: tip}
 
-   You get a response that informs you that the manifest is written to the image destination, which is the registry.
+    You get a response that informs you that the manifest is written to the image destination, which is the registry.
 
 5. Check in your registry to make sure that the image is there.
 
@@ -169,48 +169,48 @@ Pull the image from the registry and decrypt it by using the private key.
 
 1. To ensure that you are pulling from the registry and that you are not using the local cache, remove the image locally:
 
-   ```
-   buildah rmi -f us.icr.io/<namespace>/<my_app>
-   ```
-   {: pre}
+    ```
+    buildah rmi -f us.icr.io/<namespace>/<my_app>
+    ```
+    {: pre}
 
 2. (Optional) You can try to pull the image without providing the decryption key to confirm that the image can't be decrypted:
 
-   ```
-   buildah pull us.icr.io/<namespace>/<my_app>
-   ```
-   {: pre}
+    ```
+    buildah pull us.icr.io/<namespace>/<my_app>
+    ```
+    {: pre}
 
-   The output contains a message similar to the following message:
+    The output contains a message similar to the following message:
 
-   ```
-   ...<truncated>...
-   Error decrypting layer sha256:ab4ea03582e08a8e8fc35b778cc6f1a1fa797469fa9cc61cee85f703b316bb12: missing private key needed for decryption
-   ERRO exit status 125
-   ```
-   {: screen}
+    ```
+    ...<truncated>...
+    Error decrypting layer sha256:ab4ea03582e08a8e8fc35b778cc6f1a1fa797469fa9cc61cee85f703b316bb12: missing private key needed for decryption
+    ERRO exit status 125
+    ```
+    {: screen}
 
 3. Use Buildah to pull the image with the decryption key, where `<user_keys>/<user>Private.pem` is the decryption key and `us.icr.io/<namespace>/<my_app>` is the registry:
 
-   ```
-   buildah pull --decryption-key ../<user_keys>/<user>Private.pem us.icr.io/<namespace>/<my_app>
-   ```
-   {: pre}
+    ```
+    buildah pull --decryption-key ../<user_keys>/<user>Private.pem us.icr.io/<namespace>/<my_app>
+    ```
+    {: pre}
 
-   The encrypted image is retrieved from the registry, decrypted, and stored in the local image store.
+    The encrypted image is retrieved from the registry, decrypted, and stored in the local image store.
 
 4. Confirm that the image is stored by running Podman:
 
-   ```
-   podman run -it us.icr.io/<namespace>/<my_app> /bin/bash
-   ```
-   {: pre}
+    ```
+    podman run -it us.icr.io/<namespace>/<my_app> /bin/bash
+    ```
+    {: pre}
 
 ## Storing keys
 {: #registry_encrypt_keys}
 
 To use the private key in production, you must safely store and protect the private key. You might also want to manage the public key in the same way to control who can build images. You can use [{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-about) to store and protect your keys.
-{:shortdesc}
+{: shortdesc}
 
 {{site.data.keyword.keymanagementservicelong_notm}} stores symmetric keys rather than the asymmetric PKI keys that are used for image encryption. You can add your keys separately as two {{site.data.keyword.keymanagementservicelong_notm}} standard keys by using the dashboard, CLI, or API. {{site.data.keyword.keymanagementservicelong_notm}} requires that only Base64 data is imported. To obtain pure Base64 data, you can encode the PEM files by running `"openssl enc -base64 -A -in <user>Private.pem -out <user>Private.b64"` before you load the Base64 content, and reverse this action to obtain the usable key again by running `"openssl enc -base64 -A -d -in <user>Private..b64 -out <user>Private.pem"`.
 
@@ -227,3 +227,5 @@ For more information about how you can protect your keys in your own store by us
 
 Run your encrypted image in a {{site.data.keyword.openshiftlong_notm}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
 {: shortdesc}
+
+

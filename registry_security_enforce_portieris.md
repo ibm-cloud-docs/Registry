@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-08-18"
 
 keywords: Portieris, container image security, Portieris policies, installing Portieris, security, security enforcement, removing Portieris, uninstalling Portieris
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {: #security_enforce_portieris}
 
 You can use [Portieris](https://github.com/IBM/portieris){: external} to enforce image security policies. Portieris is a Kubernetes admission controller that verifies your container images before you deploy them to your cluster in {{site.data.keyword.containerlong}}.
-{:shortdesc}
+{: shortdesc}
 
 You can use Portieris to enforce policies on image signatures and on vulnerabilities that are detected by Vulnerability Advisor. If an image doesn't meet your policy requirements, the resource that contains the pod is not deployed to your cluster.
 
@@ -59,3 +59,5 @@ How to uninstall Portieris.
 {: shortdesc}
 
 To uninstall Portieris, see [Uninstalling Portieris](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
+
+

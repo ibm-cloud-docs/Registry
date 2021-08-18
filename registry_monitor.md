@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-08-18"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -28,7 +28,7 @@ subcollection: Registry
 {: #registry_monitor}
 
 {{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-{:shortdesc}
+{: shortdesc}
 
 ## Platform metrics overview
 {: #registry_platform_metrics}
@@ -50,24 +50,24 @@ Complete the following steps to configure platform metrics:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```
+    ibmcloud login
+    ```
+    {: pre}
 
 2. Log in to {{site.data.keyword.registryshort_notm}}.
 
-   ```
-   ibmcloud cr login
-   ```
-   {: pre}
+    ```
+    ibmcloud cr login
+    ```
+    {: pre}
 
 2. To enable platform metrics, run the following command:
 
-   ```
-   ibmcloud cr platform-metrics --enable
-   ```
-   {: pre}
+    ```
+    ibmcloud cr platform-metrics --enable
+    ```
+    {: pre}
 
 ## Viewing metrics
 {: #registry_view_metrics}
@@ -196,3 +196,5 @@ The following attributes are available for segmenting one or more attributes as 
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. | No |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance. The name might not be a unique value because the name depends on the name that is provided by the user. | No |
 {: caption="Table 8. Attributes for segmenting attributes." caption-side="top"}
+
+

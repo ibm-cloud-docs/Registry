@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-08-18"
 
 keywords: External registry, private registry, OpenShift
 
@@ -78,3 +78,5 @@ To configure {{site.data.keyword.redhat_notm}} OpenShift Container Platform to p
 If you want to push application images from {{site.data.keyword.redhat_notm}} OpenShift Container Platform to {{site.data.keyword.registrylong_notm}}, you must edit the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build configuration to point at {{site.data.keyword.registrylong_notm}}, where `myregistry.mycompany.io` is `<region_domain_name>.icr.io`. For more information about {{site.data.keyword.registrylong_notm}} regions and domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 For instructions, see [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).
+
+

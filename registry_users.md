@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-08-18"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -56,8 +56,8 @@ Before you begin, complete the following tasks:
 
 - [Invite users to an account](/docs/account?topic=account-iamuserinv#iamuserinv).
 
-  If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users and don't assign a resource group. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
-  {: tip}
+    If you want users to create clusters in {{site.data.keyword.containerlong_notm}}, ensure that you assign the {{site.data.keyword.registrylong_notm}} Administrator role to those users and don't assign a resource group. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare).
+    {: tip}
 
 To create policies for {{site.data.keyword.registrylong_notm}}, the service name field must be `container-registry`.
 
@@ -82,3 +82,5 @@ To enable policy enforcement, you must run the `ibmcloud cr iam-policies-enable`
     {: tip}
 
 3. To verify that IAM policies are enabled, run [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status).
+
+

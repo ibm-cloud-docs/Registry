@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-08-18"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -30,7 +30,7 @@ subcollection: Registry
 {: #registry_access}
 
 To automate access to your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM) [Understanding API keys](/docs/account?topic=account-manapikey).
-{:shortdesc}
+{: shortdesc}
 
 If you want to use your registry images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
 {: tip}
@@ -43,7 +43,7 @@ To set up and manage IAM policies, see [Defining access role policies](/docs/Reg
 {: #registry_access_serviceid_apikey}
 
 You can use service ID API keys to automate the pushing and pulling of container images to and from your namespaces.
-{:shortdesc}
+{: shortdesc}
 
 When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM **Reader** service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a non-expiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
 
@@ -59,7 +59,7 @@ You can use service ID API keys in the following places:
 {: support}
 
 Create a service ID API key that you can use to log in to your registry.
-{:shortdesc}
+{: shortdesc}
 
 To create a service ID API key, complete the following steps:
 
@@ -81,7 +81,7 @@ You can use user API keys to automate the pushing and pulling of Docker images t
 {: support}
 
 Create a user API key that you can use to log in to your registry.
-{:shortdesc}
+{: shortdesc}
 
 If you create a user API key, the user's access policies are used.
 
@@ -91,7 +91,7 @@ To create a user API key, see [Managing user API keys](/docs/account?topic=accou
 {: #registry_access_apikey_auth}
 
 Use an API key to automate access to your namespaces in {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 Most users can use the `ibmcloud cr login` command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
@@ -155,3 +155,5 @@ export CF_DOCKER_PASSWORD=<apikey>
 ibmcloud cf push appname  -o <region>.icr.io/<namespace>/<image_repo> --docker-username iamapikey
 ```
 {: pre}
+
+
