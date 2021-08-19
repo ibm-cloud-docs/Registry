@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-19"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -135,8 +135,8 @@ All customer data in {{site.data.keyword.registrylong_notm}} is replicated and b
 
 The following table shows the backup locations.
 
-| Environment       | Active location    | Backup location    |
-|-----------------------|----------------|----------------|
+| Environment | Active location | Backup location |
+|-------------|-----------------|-----------------|
 | `ap-north` | `jp-tok` | `au-syd` |
 | `ap-south` | `au-syd` | `jp-tok` |
 | `ca-tor` | `ca-tor` | `us-east` (service and policy settings)<br/><br/>`ca-mon` (images) |
@@ -145,7 +145,7 @@ The following table shows the backup locations.
 | `global` | `us-east` | `us-south` |
 | `jp-osa` | `jp-osa` | `jp-tok` |
 | `us-south` | `us-south` | `us-east` |
-{: caption="Table 1. Backup locations." caption-side="top"}
+{: caption="Table 1. Backup locations" caption-side="top"}
 
 ### Are users required to replicate the data?
 {: #ha-dr_client}
