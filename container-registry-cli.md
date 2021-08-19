@@ -94,7 +94,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 <dl>
 <dt><code>DIRECTORY</code></dt>
-<dd>The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).</dd>
+<dd>The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace <code>DIRECTORY</code> with a period (.).</dd>
 <dt><code>--no-cache</code></dt>
 <dd>(Optional)  If specified, cached image layers from previous builds are not used in this build.</dd>
 <dt><code>--pull</code></dt>
@@ -104,7 +104,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt><code>--build-arg KEY=VALUE</code></dt>
 <dd>(Optional) Specify an extra build argument in the format <code>'KEY=VALUE'</code>. Multiple build arguments can be specified by including this option multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
 <dt><code>--file FILE</code>, <code>-f FILE</code></dt>
-<dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is <code>PATH/Dockerfile</code>, where PATH is the root of the build context.</dd>
+<dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is <code>PATH/Dockerfile</code>, where <code>PATH</code> is the root of the build context.</dd>
 <dt><code>--tag TAG</code>, <code>-t TAG</code></dt>
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
@@ -148,7 +148,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 <dd>The type of security issue that you want to exempt. To find valid issue types, run <code>ibmcloud cr exemption-types</code>.
 </dd>
 <dt><code>--issue-id ISSUE_ID</code></dt>
-<dd>The ID of the security issue that you want to exempt. To find an issue ID, run <code>ibmcloud cr va <image></code>, where <code><image></code> is the name of your image, and use the relevant value from either the <strong>Vulnerability ID</strong> or <strong>Configuration Issue ID</strong> column.
+<dd>The ID of the security issue that you want to exempt. To find an issue ID, run <code>ibmcloud cr va &lt;image&gt;</code>, where <code>&lt;image&gt;</code> is the name of your image, and use the relevant value from either the <strong>Vulnerability ID</strong> or <strong>Configuration Issue ID</strong> column.
 </dd>
 </dl>
 
@@ -543,7 +543,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dl>
 <dt><code>IMAGE</code></dt>
 <dd>The name of the image that you want to restore from the trash.
-<p>To find the names of your images in the trash, run [<code>ibmcloud cr trash-list</code>](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code>, which restores the digest and all of its tags in the same repository, or by tag
+<p>To find the names of your images in the trash, run [ibmcloud cr trash-list](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code>, which restores the digest and all of its tags in the same repository, or by tag
 <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.</p>
 
 <p>Images are stored in the trash for 30 days.</p>
@@ -698,7 +698,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dt><code>IMAGE</code></dt>
 <dd>The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. <code>IMAGE</code> must be in the format <code>repository:tag</code>, for example, <code>us.icr.io/namespace/image:latest</code>.
 
-<p>To find the names of your images, run <code>ibmcloud cr image-list</code>. Combine the content of the <strong>Repository</strong> and <strong>Tag<strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the command fails.</p>
+<p>To find the names of your images, run <code>ibmcloud cr image-list</code>. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the command fails.</p>
 
 </dd>
 </dl>
@@ -1031,9 +1031,7 @@ For more information about the platform metrics that you can view in {{site.data
 {: #ic_cr_platform_metrics_prereq}
 
 - You must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
-
 - [Enable your {{site.data.keyword.mon_full_notm}} instance for platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
-
 - To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
