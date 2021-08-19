@@ -34,8 +34,8 @@ By default, the CLI output is displayed in a human-readable format. However, thi
 
 You can alter the CLI output by applying the format option in two different ways:
 
-1. Format data in your CLI output. For example, change the `Created` field output from UNIX time to standard time.
-2. Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
+- Format data in your CLI output. For example, change the `Created` field output from UNIX time to standard time.
+- Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
 
