@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-19"
 
 keywords: PHI, data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry
 
@@ -88,6 +88,7 @@ You can clean up your namespace by choosing to retain only the most recent image
 {: #data-delete_private_repo}
 
 You can delete private repositories that are no longer required, and any associated images, by using the {{site.data.keyword.cloud_notm}} console. For more information, see [Deleting a private repository and any associated images](/docs/Registry?topic=Registry-registry_images_#registry_repo_remove).
+
 
 ## Restoring deleted data
 {: #data-restore}
