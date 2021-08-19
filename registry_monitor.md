@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-19"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -96,7 +96,7 @@ The following table outlines the predefined monitoring dashboards that you can u
 |-----------------------|----------------|
 | {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics. |
 | {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
-{: caption="Table 1. Predefined dashboards." caption-side="top"}
+{: caption="Table 1. Predefined dashboards" caption-side="top"}
 
 The Default dashboard can't be changed. You can copy the dashboard so that you can change it to suit your requirements.
 {: important}
@@ -113,7 +113,7 @@ When you start your dashboard, some metrics might display a `Data Load Error` wa
 | [`Pull Traffic Quota`](#ibm_containerregistry_pull_traffic_quota) |
 | [`Storage Quota`](#ibm_containerregistry_storage_quota) |
 | [`Storage Used`](#ibm_containerregistry_storage) |
-{: caption="Table 2. Metrics Available by Plan Names." caption-side="top"}
+{: caption="Table 2. Metrics available by plan names" caption-side="top"}
 
 ### `Pull Traffic`
 {: #ibm_containerregistry_pull_traffic}
@@ -126,7 +126,7 @@ The account's pull traffic in the current month.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 3. Pull Traffic metric metadata." caption-side="top"}
+{: caption="Table 3. Pull Traffic metric metadata" caption-side="top"}
 
 ### `Pull Traffic Quota`
 {: #ibm_containerregistry_pull_traffic_quota}
@@ -139,7 +139,7 @@ The account's pull traffic quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 4. Pull Traffic Quota metric metadata." caption-side="top"}
+{: caption="Table 4. Pull Traffic Quota metric metadata" caption-side="top"}
 
 ### `Storage Quota`
 {: #ibm_containerregistry_storage_quota}
@@ -152,7 +152,7 @@ The account's storage quota.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 5. Storage Quota metric metadata." caption-side="top"}
+{: caption="Table 5. Storage Quota metric metadata" caption-side="top"}
 
 ### `Storage Used`
 {: #ibm_containerregistry_storage}
@@ -165,7 +165,7 @@ The account's storage usage.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 6. Storage Used metric metadata." caption-side="top"}
+{: caption="Table 6. Storage Used metric metadata" caption-side="top"}
 
 ## Attributes for segmentation
 {: #attributes}
@@ -184,7 +184,7 @@ The following attributes are available for segmenting all of the metrics that ar
 | `Resource Type` | `ibm_resource_type` | The type of resource that is being measured by the service. | No |
 | `Service name` | `ibm_service_name` | The name of the service that is generating this metric. | Yes |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID that is associated with this metric. | Yes |
-{: caption="Table 7. Attributes for segmenting metrics." caption-side="top"}
+{: caption="Table 7. Attributes for segmenting metrics" caption-side="top"}
 
 ### Additional Attributes
 {: #additional-attributes}
@@ -195,6 +195,6 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|-----------------------|
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. | No |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance. The name might not be a unique value because the name depends on the name that is provided by the user. | No |
-{: caption="Table 8. Attributes for segmenting attributes." caption-side="top"}
+{: caption="Table 8. Attributes for segmenting attributes" caption-side="top"}
 
 
