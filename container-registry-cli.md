@@ -543,7 +543,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dl>
 <dt><code>IMAGE</code></dt>
 <dd>The name of the image that you want to restore from the trash.
-<p>To find the names of your images in the trash, run [ibmcloud cr trash-list](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code>, which restores the digest and all of its tags in the same repository, or by tag
+<p>To find the names of your images in the trash, run <code>ibmcloud cr trash-list</code>. You can identify images by using either the tag or the digest. The image to restore can be referenced by digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code>, which restores the digest and all of its tags in the same repository, or by tag
 <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.</p>
 
 <p>Images are stored in the trash for 30 days.</p>
