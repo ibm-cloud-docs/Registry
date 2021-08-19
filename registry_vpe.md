@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-18"
 
 keywords: Virtual private endpoint, VPE
 
@@ -19,6 +19,7 @@ subcollection: Registry
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: Registry
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -129,12 +128,11 @@ For more information about other {{site.data.keyword.cloud_notm}} VPE services, 
 
 Before you target a virtual private endpoint for {{site.data.keyword.registryshort_notm}}, you must complete the following tasks.
 
-- Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started){: external}.
-- Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-planning-considerations){: external}.
-- Ensure that [correct access controls](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways){:external} are set for your virtual private endpoint.
-- Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpe){: external} of having a virtual private endpoint.
-- Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway){: external} about
-  a virtual private endpoint.
+- Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started).
+- Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-planning-considerations).
+- Ensure that [correct access controls](/docs/vpc?topic=vpc-vpe-configuring-acls) are set for your virtual private endpoint.
+- Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpe) of having a virtual private endpoint.
+- Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a virtual private endpoint.
 
 ## Virtual private service endpoints
 {: #registry_vpe_endpoints}
@@ -150,7 +148,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Toronto (`ca-tor`)
 - Washington (`us-east`)
 
-You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. This restriction is a known limitation, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure&cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15%3A%3A12-31-18-_-setting-up-access-to-classic-infrastructure&interface=ui#create-a-classic-access-vpc) and use hostnames, such as `private.uk.icr.io`.
+You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. This restriction is a known limitation, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use hostnames, such as `private.uk.icr.io`.
 {: important}
 
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
@@ -170,7 +168,7 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 | `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` |
 | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:vpe.us-south.container-registry.cloud.ibm.com` |
 | Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:vpe.us-east.container-registry.cloud.ibm.com` |
-{: caption="Table 1. Region availability and Cloud Resource Names for connecting {{site.data.keyword.registryshort_notm}} over {{site.data.keyword.cloud_notm}} private networks." caption-side="top"}
+{: caption="Table 1. Region availability and Cloud Resource Names for connecting {{site.data.keyword.registryshort_notm}} over {{site.data.keyword.cloud_notm}} private networks" caption-side="top"}
 
 If you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use hostnames, such as `private.uk.icr.io`. For more information about {{site.data.keyword.registryshort_notm}} private networks, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
 
@@ -191,3 +189,5 @@ To configure a virtual private endpoint gateway, follow these steps:
 4. View the created VPE gateways associated with the {{site.data.keyword.registrylong_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 Now your virtual server instances in the VPC can access your {{site.data.keyword.registrylong_notm}} instance privately through it.
+
+

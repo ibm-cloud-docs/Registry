@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-08-18"
 
 keywords: Terraform for IBM Cloud Container Registry
 
@@ -42,60 +42,60 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 2. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.registryshort}} namespace and to assign a user an access policy in Identity and Access Management (IAM) for that namespace by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
 
-   The following example creates a namespace in the default resource group with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
+    The following example creates a namespace in the default resource group with a name of your choice and attaches an image retention policy to that namespace that retains 10 images. To retrieve the ID of the default resource group, the `ibm_resource_group` data source is used. Then, the user `user@ibm.com` is assigned the Manager role in the IAM access policy for the namespace for a particular region. The region is retrieved from the `terraform.tfvars` file that you created in step 1.
 
-   ```terraform
-   data "ibm_resource_group" "group" {
-     name = "default"
-   }
-   
-   resource "ibm_cr_namespace" "cr_namespace" {
-     name = "<namespace_name>"
-     resource_group_id = data.ibm_resource_group.group.id
-   }
-   
-   resource "ibm_cr_retention_policy" "cr_retention_policy" {
-     namespace = ibm_cr_namespace.cr_namespace.id
-     images_per_repo = 10
-   }
-   
-   resource "ibm_iam_user_policy" "policy" {
-     ibm_id = "user@ibm.com"
-     roles  = ["Manager"]
+    ```terraform
+    data "ibm_resource_group" "group" {
+        name = "default"
+    }
 
-     resources {
-       service              = "container-registry"
-       resource = ibm_cr_namespace.cr_namespace.id
-       resource_type = "namespace"
-       region = var.region
-     }
-   }
-   ```
-   {: codeblock}
+    resource "ibm_cr_namespace" "cr_namespace" {
+        name = "<namespace_name>"
+        resource_group_id = data.ibm_resource_group.group.id
+    }
 
-   Updating a namespace by using Terraform is not supported. You can use Terraform to create and remove namespaces only.
-   {: note}
+    resource "ibm_cr_retention_policy" "cr_retention_policy" {
+        namespace = ibm_cr_namespace.cr_namespace.id
+        images_per_repo = 10
+    }
+
+    resource "ibm_iam_user_policy" "policy" {
+        ibm_id = "user@ibm.com"
+        roles  = ["Manager"]
+
+        resources {
+            service              = "container-registry"
+            resource = ibm_cr_namespace.cr_namespace.id
+            resource_type = "namespace"
+            region = var.region
+        }
+    }
+    ```
+    {: codeblock}
+
+    Updating a namespace by using Terraform is not supported. You can use Terraform to create and remove namespaces only.
+    {: note}
 
 3. Initialize the Terraform CLI.
 
-   ```
-   terraform init
-   ```
-   {: pre}
+    ```
+    terraform init
+    ```
+    {: pre}
 
 4. Create a Terraform execution plan. The Terraform execution plan summarizes all the actions that need to be run to create the {{site.data.keyword.registryshort}} namespace and IAM access policy in your account.
 
-   ```
-   terraform plan
-   ```
-   {: pre}
+    ```
+    terraform plan
+    ```
+    {: pre}
 
 5. Create the {{site.data.keyword.registryshort}} namespace and IAM access policy in {{site.data.keyword.cloud_notm}}.
 
-   ```
-   terraform apply
-   ```
-   {: pre}
+    ```
+    terraform apply
+    ```
+    {: pre}
 
 6. From the [{{site.data.keyword.registryshort}} namespace overview page](https://cloud.ibm.com/registry/namespaces){: external}, verify that your namespace is created successfully.
 
@@ -108,3 +108,5 @@ Now that you successfully created your first {{site.data.keyword.registryshort}}
 
 - Learn how to [add images to your namespace](/docs/Registry?topic=Registry-registry_images_). 
 - Explore other supported arguments and attributes for the [{{site.data.keyword.registryshort}} Terraform resources and data sources](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: external} that were used in this example.
+
+

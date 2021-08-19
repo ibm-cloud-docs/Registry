@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-08-18"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -35,7 +35,7 @@ completion-time: 45m
 {: toc-completion-time="45m"}
 
 Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong}}.
-{:shortdesc}
+{: shortdesc}
 
 For more information about how to use {{site.data.keyword.iamlong}} to manage access to your resources, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
@@ -55,7 +55,7 @@ Before you begin, you must complete the following tasks:
 {: step}
 
 Add a second user to your account and grant them the ability to configure {{site.data.keyword.registrylong_notm}}.
-{:shortdesc}
+{: shortdesc}
 
 1. Add User B to User A's account.
 
@@ -135,7 +135,7 @@ Add a second user to your account and grant them the ability to configure {{site
         It works because User B has the correct type of access.
 
     3. Now change the quota back by running the following command.
-  
+
         ```
         ibmcloud cr quota-set --traffic=5120
         ```
@@ -144,21 +144,21 @@ Add a second user to your account and grant them the ability to configure {{site
 5. Clean up.
 
     1. Log back in to your account as yourself, User A, by running the following command.
-  
+
         ```
         ibmcloud login
         ```
         {: pre}
-  
+
     2. List the policies for User B, find the policy that you created by running the following command, and note the ID.
-  
+
         ```
         ibmcloud iam user-policies <user.b@example.com>
         ```
         {: pre}
-  
+
     3. Delete the policy by running the following command, where `<Policy_ID>` is your Policy ID.
-  
+
         ```
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
         ```
@@ -169,7 +169,7 @@ Add a second user to your account and grant them the ability to configure {{site
 {: step}
 
 Create some namespaces with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
-{:shortdesc}
+{: shortdesc}
 
 1. Create three new namespaces in User A's account. These namespaces must be unique across the region, so choose your own namespace names, but this tutorial uses `namespace_a`, `namespace_b` and `namespace_c` as examples.
 
@@ -318,7 +318,7 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         ibmcloud cr namespaces
         ```
-        {:pre}
+        {: pre}
 
     3. List your images by running the following command.
 
@@ -407,7 +407,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 {: step}
 
 Configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
-{:shortdesc}
+{: shortdesc}
 
 1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an API key for it.
 
@@ -517,7 +517,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 {: step}
 
 Remove the resources that you created in previous sections to leave your account as it was at the start of this tutorial.
-{:shortdesc}
+{: shortdesc}
 
 1. Log in to User A's account by running the following command.
 
@@ -545,7 +545,9 @@ Remove the resources that you created in previous sections to leave your account
 
 3. Remove User B from your account by running the following command.
 
-   ```
-   ibmcloud account user-remove <user.b@example.com>
-   ```
-   {: pre}
+    ```
+    ibmcloud account user-remove <user.b@example.com>
+    ```
+    {: pre}
+
+

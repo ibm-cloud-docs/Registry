@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-08-18"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -62,7 +62,7 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 
 - If you have private {{site.data.keyword.containerlong_notm}} clusters, you aren't required to change anything. {{site.data.keyword.containerlong_notm}} already modifies the connection, which is referenced by the public domain name, to use a private connection. This behavior is unchanged.
 
-  - If you use {{site.data.keyword.containerlong_notm}}, you can optionally reference your images from private clusters by using the private registry domain name. However, you must create more `imagePullSecrets` for the extra domain names, see [Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
+    - If you use {{site.data.keyword.containerlong_notm}}, you can optionally reference your images from private clusters by using the private registry domain name. However, you must create more `imagePullSecrets` for the extra domain names, see [Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
 
 - Pull traffic is not charged for image pulls that use private connections.
 
@@ -78,21 +78,21 @@ You can't use private connections for image management operations by using the {
 
 1. Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list.
 
-   - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
-   - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
-   - For namespaces that are set up in `ca-tor`, use the following private registry URL `private.ca.icr.io`.
-   - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
-   - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.
-   - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`.
-   - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`.
-   - For namespaces that are set up in Global, use the following private registry URL `private.icr.io`.
+    - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
+    - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
+    - For namespaces that are set up in `ca-tor`, use the following private registry URL `private.ca.icr.io`.
+    - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
+    - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.
+    - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`.
+    - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`.
+    - For namespaces that are set up in Global, use the following private registry URL `private.icr.io`.
 
-   ```
-   docker login -u iamapikey -p <apikey> <private_registry_url>
-   ```
-   {: pre}
+    ```
+    docker login -u iamapikey -p <apikey> <private_registry_url>
+    ```
+    {: pre}
 
-   For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
+    For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 
 ## Enforcing access to your account over private network connections
 {: #registry_private_account}
@@ -109,21 +109,23 @@ Because the use of private connections doesn't apply to the management API, you 
 
 - To prevent image pulls or pushes over public network connections for your account, run the following command.
 
-  ```
-  ibmcloud cr private-only --enable
-  ```
-  {: pre}
+    ```
+    ibmcloud cr private-only --enable
+    ```
+    {: pre}
 
 - To reinstate image pulls or pushes over public network connections for your account, run the following command.
 
-  ```
-  ibmcloud cr private-only --disable
-  ```
-  {: pre}
+    ```
+    ibmcloud cr private-only --disable
+    ```
+    {: pre}
 
 - To check whether the use of public connections is prevented for image pushes or pulls in your account, run the following command.
-  
-  ```
-  ibmcloud cr private-only --status
-  ```
-  {: pre}
+
+    ```
+    ibmcloud cr private-only --status
+    ```
+    {: pre}
+
+

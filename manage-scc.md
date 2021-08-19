@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-08-18"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -66,3 +66,5 @@ You can choose from the following goals:
 With {{site.data.keyword.compliance_short}}, you can gain insight into potential issues through built-in security capabilities. By default, {{site.data.keyword.registryshort_notm}} is an integrated service. {{site.data.keyword.compliance_short}} gathers and presents information that is related to security so that all of your security alerts are displayed in one place.
 
 To learn more about how you can use security insights, see [Monitoring vulnerabilities in container images](/docs/security-advisor?topic=security-advisor-setup-services#setup-images).
+
+

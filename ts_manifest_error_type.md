@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-18"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, image not supported, manifest type, tagging image fails
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,11 +55,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -128,21 +127,23 @@ To resolve the problem, complete the following steps:
 
 1. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
 
-   ```
-   docker pull <source_image>
-   ```
-   {: pre}
+    ```
+    docker pull <source_image>
+    ```
+    {: pre}
 
 2. Tag your local copy of the image that you pulled in the previous step by running the following command, where `<target_image>` is your new image name:
 
-   ```
-   docker tag <source_image> <target_image>
-   ```
-   {: pre}
+    ```
+    docker tag <source_image> <target_image>
+    ```
+    {: pre}
 
 3. Push the image that you tagged in the previous step by running the following command:
 
-   ```
-   docker push <target_image>
-   ```
-   {: pre}
+    ```
+    docker push <target_image>
+    ```
+    {: pre}
+
+

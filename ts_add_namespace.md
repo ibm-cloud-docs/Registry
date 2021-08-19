@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-18"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, adding a namespace fails
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,11 +55,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -132,9 +131,11 @@ You can fix this problem in the following ways:
 
 - Follow any instructions that are in the returned error message.
 - Check that you entered a valid namespace:
-  - Your namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region.
-  - Your namespace must be 4 - 30 characters long.
-  - Your namespace must start and end with a letter or number.
-  - Your namespace must contain lowercase letters, numbers, hyphens (-), and underscores (_) only.
+    - Your namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region.
+    - Your namespace must be 4 - 30 characters long.
+    - Your namespace must start and end with a letter or number.
+    - Your namespace must contain lowercase letters, numbers, hyphens (-), and underscores (_) only.
 - Choose a different value for your namespace.
 - If you are re-creating a namespace that was deleted, and it contained many images, try again later.
+
+

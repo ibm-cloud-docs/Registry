@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-08-19"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -93,19 +93,19 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_build_option}
 
 <dl>
-<dt>`DIRECTORY`</dt>
-<dd>The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).</dd>
-<dt>`--no-cache`</dt>
+<dt><code>DIRECTORY</code></dt>
+<dd>The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace <code>DIRECTORY</code> with a period (.).</dd>
+<dt><code>--no-cache</code></dt>
 <dd>(Optional)  If specified, cached image layers from previous builds are not used in this build.</dd>
-<dt>`--pull`</dt>
+<dt><code>--pull</code></dt>
 <dd>(Optional) If specified, the base images are pulled, even if an image with a matching tag exists on the build host.</dd>
-<dt>`--quiet`, `-q`</dt>
+<dt><code>--quiet</code>, <code>-q</code></dt>
 <dd>(Optional) If specified, the build output is suppressed unless an error occurs.</dd>
-<dt>`--build-arg KEY=VALUE`</dt>
-<dd>(Optional) Specify an extra build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this option multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
-<dt>`--file FILE`, `-f FILE`</dt>
-<dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where PATH is the root of the build context.</dd>
-<dt>`--tag TAG`, `-t TAG`</dt>
+<dt><code>--build-arg KEY=VALUE</code></dt>
+<dd>(Optional) Specify an extra build argument in the format <code>'KEY=VALUE'</code>. Multiple build arguments can be specified by including this option multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.</dd>
+<dt><code>--file FILE</code>, <code>-f FILE</code></dt>
+<dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is <code>PATH/Dockerfile</code>, where <code>PATH</code> is the root of the build context.</dd>
+<dt><code>--tag TAG</code>, <code>-t TAG</code></dt>
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
 </dl>
 
@@ -141,14 +141,14 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_exemption_add_option}
 
 <dl>
-<dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
+<dt><code>--scope SCOPE</code></dt>
+<dd>To set your account as the scope, use <code>"*"</code> as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: <code>namespace</code>, <code>namespace/repository</code>, <code>namespace/repository:tag</code>, <code>namespace/repo@digest</code>.
 </dd>
-<dt>`--issue-type ISSUE_TYPE`</dt>
-<dd>The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
+<dt><code>--issue-type ISSUE_TYPE</code></dt>
+<dd>The type of security issue that you want to exempt. To find valid issue types, run <code>ibmcloud cr exemption-types</code>.
 </dd>
-<dt>`--issue-id ISSUE_ID`</dt>
-<dd>The ID of the security issue that you want to exempt. To find an issue ID, run `ibmcloud cr va <image>`, where `<image>` is the name of your image, and use the relevant value from either the **Vulnerability ID** or **Configuration Issue ID** column.
+<dt><code>--issue-id ISSUE_ID</code></dt>
+<dd>The ID of the security issue that you want to exempt. To find an issue ID, run <code>ibmcloud cr va &lt;image&gt;</code>, where <code>&lt;image&gt;</code> is the name of your image, and use the relevant value from either the <strong>Vulnerability ID</strong> or <strong>Configuration Issue ID</strong> column.
 </dd>
 </dl>
 
@@ -205,8 +205,8 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_exemption_list_option}
 
 <dl>
-<dt>`--scope SCOPE`</dt>
-<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
+<dt><code>--scope SCOPE</code></dt>
+<dd>(Optional) List only the exemptions that apply to this scope. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: <code>namespace</code>, <code>namespace/repository</code>, <code>namespace/repository:tag</code>, <code>namespace/repo@digest</code>.
 </dd>
 </dl>
 
@@ -249,14 +249,14 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_exemption_rm_option}
 
 <dl>
-<dt>`--scope SCOPE`</dt>
-<dd>To set your account as the scope, use `"*"` as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: `namespace`, `namespace/repository`, `namespace/repository:tag`, `namespace/repo@digest`.
+<dt><code>--scope SCOPE</code></dt>
+<dd>To set your account as the scope, use <code>"*"</code> as the value. To set a namespace, repository, digest, or tag as the scope, enter the value in one of the following formats: <code>namespace</code>, <code>namespace/repository</code>, <code>namespace/repository:tag</code>, <code>namespace/repo@digest</code>.
 </dd>
-<dt>`--issue-type ISSUE_TYPE`</dt>
-<dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `ibmcloud cr exemption-list`.
+<dt><code>--issue-type ISSUE_TYPE</code></dt>
+<dd>The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run <code>ibmcloud cr exemption-list</code>.
 </dd>
-<dt>`--issue-id ISSUE_ID`</dt>
-<dd>The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run `ibmcloud cr exemption-list`.
+<dt><code>--issue-id ISSUE_ID</code></dt>
+<dd>The ID of the exemption for the security issue that you want to remove. To find the issue IDs for your exemptions, run <code>ibmcloud cr exemption-list</code>.
 </dd>
 </dl>
 
@@ -353,22 +353,22 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_digests_option}
 
 <dl>
-<dt>`--format FORMAT`</dt>
+<dt><code>--format FORMAT</code></dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Optional) Each image is listed in the format: `repository@digest`</dd>
-<dt>`--json`</dt>
+<dt><code>--quiet</code>, <code>-q</code></dt>
+<dd>(Optional) Each image is listed in the format: <code>repository@digest</code></dd>
+<dt><code>--json</code></dt>
 <dd>(Optional) Outputs the list in JSON format.</dd>
-<dt>`--restrict RESTRICTION`</dt>
+<dt><code>--restrict RESTRICTION</code></dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
-<dt>`--include-ibm`</dt>
+<dt><code>--include-ibm</code></dt>
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided  images in the global registry only.</dd>
-<dt>`--no-va`</dt>
-<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-digests` output, you can use this option to increase performance.</dd>
+<dt><code>--no-va</code></dt>
+<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your <code>ibmcloud cr image-digests</code> output, you can use this option to increase performance.</dd>
 </dl>
 
 ### Example
@@ -400,22 +400,22 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_inspect_option}
 
 <dl>
-<dt>`--format FORMAT`</dt>
+<dt><code>--format FORMAT</code></dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
-<dt>`IMAGE`</dt>
+<dt><code>IMAGE</code></dt>
 <dd>The name of the image for which you want to get a report. You can inspect multiple images by listing each image in the command with a space between each name.
 
-You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+You can identify images by using either the digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code> or by tag <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.
 
 <p>To find the names of your images, run one of the following commands:
 
 <ul>
-<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
-<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</li>
+<li>To identify your image by digest, run the <code>ibmcloud cr image-digests</code> command. Combine the content of the <strong>Repository</strong> column and the <strong>Digest</strong> column, for example, <code>repository@digest</code>.</li>
+<li>To identify your image by tag, run the <code>ibmcloud cr image-list</code> command. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the image that is tagged <code>latest</code> is deleted by default.</li>
 </ul></p>
 
 </dd>
@@ -437,7 +437,7 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 Displays all tagged images in your {{site.data.keyword.cloud_notm}} account. If you want to list all your images, including untagged images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 
 The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
-{:tip}
+{: tip}
 
 ```
 ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va]
@@ -453,24 +453,24 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_list_option}
 
 <dl>
-<dt>`--format FORMAT`</dt>
+<dt><code>--format FORMAT</code></dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
 
 </dd>
-<dt>`--quiet`, `-q`</dt>
-<dd>(Optional) Each image is listed in the format: `repository:tag`</dd>
-<dt>`--restrict RESTRICTION`</dt>
+<dt><code>--quiet</code>, <code>-q</code></dt>
+<dd>(Optional) Each image is listed in the format: <code>repository:tag</code></dd>
+<dt><code>--restrict RESTRICTION</code></dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace or repository. </dd>
-<dt>`--include-ibm`</dt>
+<dt><code>--include-ibm</code></dt>
 <dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided images in the global registry only.</dd>
-<dt>`--no-trunc`</dt>
+<dt><code>--no-trunc</code></dt>
 <dd>(Optional) Do not truncate the image digests.</dd>
-<dt>`--show-type`</dt>
+<dt><code>--show-type</code></dt>
 <dd>(Optional) Displays the image manifest type.</dd>
-<dt>`--no-va`</dt>
-<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-list` output, you can use this option to increase performance.</dd>
+<dt><code>--no-va</code></dt>
+<dd>(Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your <code>ibmcloud cr image-list</code> output, you can use this option to increase performance.</dd>
 </dl>
 
 ### Example
@@ -503,11 +503,11 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #ic_cr_image_prune_untagged_option}
 
 <dl>
-<dt>`--force, -f`</dt>
+<dt><code>--force, -f</code></dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
-<dt>`--json`</dt>
-<dd>(Optional) Outputs JSON that contains the results of cleaning up your untagged images. This option must be used with `--force`.</dd>
-<dt>`--restrict`</dt>
+<dt><code>--json</code></dt>
+<dd>(Optional) Outputs JSON that contains the results of cleaning up your untagged images. This option must be used with <code>--force</code>.</dd>
+<dt><code>--restrict</code></dt>
 <dd>(Optional) Limit the clean up to only untagged images in the specified namespace or repository.</dd>
 </dl>
 
@@ -541,10 +541,10 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_restore_option}
 
 <dl>
-<dt>`IMAGE`</dt>
+<dt><code>IMAGE</code></dt>
 <dd>The name of the image that you want to restore from the trash.
-<p>To find the names of your images in the trash, run [`ibmcloud cr trash-list`](#bx_cr_trash_list). You can identify images by using either the tag or the digest. The image to restore can be referenced by digest `<dns>/<namespace>/<repo>@<digest>`, which restores the digest and all of its tags in the same repository, or by tag
-`<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.</p>
+<p>To find the names of your images in the trash, run the <code>ibmcloud cr trash-list</code> command. You can identify images by using either the tag or the digest. The image to restore can be referenced by digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code>, which restores the digest and all of its tags in the same repository, or by tag
+<code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.</p>
 
 <p>Images are stored in the trash for 30 days.</p>
 
@@ -588,16 +588,16 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_rm_option}
 
 <dl>
-<dt>`IMAGE`</dt>
-<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+<dt><code>IMAGE</code></dt>
+<dd>The name of the image that you want to delete. You can delete multiple images at the same time by listing each image in the command with a space between each name. You can identify images by using either the digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code> or by tag <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.
 
 <p>Images are stored in the trash for 30 days.</p>
 
 <p>To find the names of your images, run one of the following commands:
 
 <ul>
-<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
-<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.</li>
+<li>To identify your image by digest, run the <code>ibmcloud cr image-digests</code> command. Combine the content of the <strong>Repository</strong> column and the <strong>Digest</strong> column, for example, <code>repository@digest</code>.</li>
+<li>To identify your image by tag, run the <code>ibmcloud cr image-list</code> command. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the image that is tagged <code>latest</code> is deleted by default.</li>
 </ul></p>
 
 </dd>
@@ -639,12 +639,12 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_tag_option}
 
 <dl>
-<dt>`SOURCE_IMAGE`</dt>
-<dd>The name of the source image. You can identify source images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+<dt><code>SOURCE_IMAGE</code></dt>
+<dd>The name of the source image. You can identify source images by using either the digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code> or by tag <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.
 
 </dd>
-<dt>`TARGET_IMAGE`</dt>
-<dd>The name of the target image. `TARGET_IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
+<dt><code>TARGET_IMAGE</code></dt>
+<dd>The name of the target image. <code>TARGET_IMAGE</code> must be in the format <code>repository:tag</code>, for example, <code>us.icr.io/namespace/image:latest</code>.
 
 </dd>
 </dl>
@@ -695,10 +695,10 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_image_untag_option}
 
 <dl>
-<dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
+<dt><code>IMAGE</code></dt>
+<dd>The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. <code>IMAGE</code> must be in the format <code>repository:tag</code>, for example, <code>us.icr.io/namespace/image:latest</code>.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the command fails.</p>
+<p>To find the names of your images, run <code>ibmcloud cr image-list</code>. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the command fails.</p>
 
 </dd>
 </dl>
@@ -765,18 +765,18 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_manifest_inspect_option}
 
 <dl>
-<dt>`IMAGE`</dt>
-<dd>The name of the image for which you want to inspect the manifest. You can identify images by using either the digest `<dns>/<namespace>/<repo>@<digest>` or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag.
+<dt><code>IMAGE</code></dt>
+<dd>The name of the image for which you want to inspect the manifest. You can identify images by using either the digest <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;@&lt;digest&gt;</code> or by tag <code>&lt;dns&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>. Where <code>&lt;dns&gt;</code> is the domain name, <code>&lt;namespace&gt;</code> is the namespace, <code>&lt;repo&gt;</code> is the repository, <code>&lt;digest&gt;</code> is the digest, and <code>&lt;tag&gt;</code> is the tag.
 
 <p>To find the names of your images, run one of the following commands:
 
 <ul>
-<li>To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.</li>
-<li>To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.</li>
+<li>To identify your image by digest, run the <code>ibmcloud cr image-digests</code> command. Combine the content of the <strong>Repository</strong> column and the <strong>Digest</strong> column, for example, <code>repository@digest</code>.</li>
+<li>To identify your image by tag, run the <code>ibmcloud cr image-list</code> command. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>.</li>
 </ul></p>
 </dd>
 
-<dt>`--quiet`, `-q`</dt>
+<dt><code>--quiet</code>, <code>-q</code></dt>
 <dd>(Optional) Reduces the output to display essential elements only.</dd>
 </dl>
 
@@ -822,7 +822,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 {: #bx_cr_namespace_add_option}
 
 <dl>
-<dt>`NAMESPACE`</dt>
+<dt><code>NAMESPACE</code></dt>
 <dd>The namespace that you want to add. The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 
 <p>
@@ -830,7 +830,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 </p>
 
 </dd>
-<dt>`-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`</dt>
+<dt><code>-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)</code></dt>
 <dd>(Optional) Specify the name or ID of the resource group to which you want to add the namespace. If you don't set this option, the targeted resource group is used. If you don't set this option and a resource group is not targeted, the default resource group for the account is used.
 </dd>
 </dl>
@@ -873,9 +873,9 @@ To find out about the required permissions, see [Platform management roles](/doc
 {: #ic_cr_namespace_assign_option}
 
 <dl>
-<dt>`-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)`</dt>
+<dt><code>-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)</code></dt>
 <dd>(Optional) Specify the name or ID of the resource group to which you want to assign the namespace. If you don't set this option, the targeted resource group is used.</dd>
-<dt>`NAMESPACE`</dt>
+<dt><code>NAMESPACE</code></dt>
 <dd>The namespace that you want to assign to a resource group.</dd>
 </dl>
 
@@ -908,7 +908,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_namespace_list_option}
 
 <dl>
-<dt>`--verbose`, `-v`</dt>
+<dt><code>--verbose</code>, <code>-v</code></dt>
 <dd>(Optional) List all the namespaces and include information about the resource group and the creation date of the namespace.
 </dd>
 </dl>
@@ -942,9 +942,9 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_namespace_rm_option}
 
 <dl>
-<dt>`NAMESPACE`</dt>
+<dt><code>NAMESPACE</code></dt>
 <dd>The namespace that you want to remove.</dd>
-<dt>`--force`, `-f`</dt>
+<dt><code>--force</code>, <code>-f</code></dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 </dl>
 
@@ -994,8 +994,8 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_plan_upgrade_option}
 
 <dl>
-<dt>`PLAN`</dt>
-<dd>(Optional) The name of the pricing plan that you want to upgrade to. If `PLAN` is not specified, the default is `standard`.</dd>
+<dt><code>PLAN</code></dt>
+<dd>(Optional) The name of the pricing plan that you want to upgrade to. If <code>PLAN</code> is not specified, the default is <code>standard</code>.</dd>
 </dl>
 
 ### Example
@@ -1031,20 +1031,18 @@ For more information about the platform metrics that you can view in {{site.data
 {: #ic_cr_platform_metrics_prereq}
 
 - You must set up {{site.data.keyword.mon_full_notm}}, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
-
 - [Enable your {{site.data.keyword.mon_full_notm}} instance for platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling).
-
 - To find out about the required permissions, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ### Command options
 {: #ic_cr_platform_metrics_option}
 
 <dl>
-<dt>`--enable`</dt>
+<dt><code>--enable</code></dt>
 <dd>(Optional) Enable the setting for your account.</dd>
-<dt>`--disable`</dt>
+<dt><code>--disable</code></dt>
 <dd>(Optional) Disable the setting for your account.</dd>
-<dt>`--status`</dt>
+<dt><code>--status</code></dt>
 <dd>(Optional) Display whether the setting is enabled for your account.</dd>
 </dl>
 
@@ -1082,11 +1080,11 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #ic_cr_private_only_option}
 
 <dl>
-<dt>`--enable`</dt>
+<dt><code>--enable</code></dt>
 <dd>(Optional) Prevent image pulls or pushes over public network connections for your account.</dd>
-<dt>`--disable`</dt>
+<dt><code>--disable</code></dt>
 <dd>(Optional) Reinstate image pulls or pushes over public network connections for your account.</dd>
-<dt>`--status`</dt>
+<dt><code>--status</code></dt>
 <dd>(Optional) Check whether the use of public connections is prevented for image pushes or pulls in your account.</dd>
 </dl>
 
@@ -1134,9 +1132,9 @@ To find out about the required permissions, see [Access roles for configuring {{
 {: #bx_cr_quota_set_option}
 
 <dl>
-<dt>`--traffic TRAFFIC`</dt>
+<dt><code>--traffic TRAFFIC</code></dt>
 <dd>(Optional) Changes your traffic quota to the specified value in megabytes. The operation fails if you are not authorized to set traffic, or if you set a value that exceeds your current pricing plan.</dd>
-<dt>`--storage STORAGE`</dt>
+<dt><code>--storage STORAGE</code></dt>
 <dd>(Optional) Changes your storage quota to the specified value in megabytes. The operation fails if you are not authorized to set storage quotas, or if you set a value that exceeds your current pricing plan.</dd>
 </dl>
 
@@ -1186,8 +1184,8 @@ None
 {: #bx_cr_region_set_option}
 
 <dl>
-<dt>`REGION`</dt>
-<dd>(Optional) The name of your target region, for example, `us-south`.
+<dt><code>REGION</code></dt>
+<dd>(Optional) The name of your target region, for example, <code>us-south</code>.
 
 For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
@@ -1265,12 +1263,12 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_retention_policy_set_option}
 
 <dl>
-<dt>`NAMESPACE`</dt>
+<dt><code>NAMESPACE</code></dt>
 <dd>The namespace for which you want to create a policy.</dd>
-<dt>`--retain-untagged`</dt>
+<dt><code>--retain-untagged</code></dt>
 <dd>(Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.</dd>
-<dt>`--images`</dt>
-<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images, set `IMAGECOUNT` to `All`.</dd>
+<dt><code>--images</code></dt>
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. <code>IMAGECOUNT</code> is the number of images that you want to retain in each repository for the namespace. To return a policy to the default state that keeps all the images, set <code>IMAGECOUNT</code> to <code>All</code>.</dd>
 </dl>
 
 ### Examples
@@ -1289,7 +1287,7 @@ Set the policy back to the default state so that you keep all your images in the
 ibmcloud cr retention-policy-set --images All birds
 ```
 {: pre}
-  
+
 For more information about how to use the `ibmcloud cr retention-policy-set` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ## `ibmcloud cr retention-run`
@@ -1320,16 +1318,16 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_retention_run_option}
 
 <dl>
-<dt>`NAMESPACE`</dt>
+<dt><code>NAMESPACE</code></dt>
 <dd>The namespace that you want to clean up.</dd>
-<dt>`--force`, `-f`</dt>
+<dt><code>--force</code>, <code>-f</code></dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
-<dt>`--json`</dt>
-<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This option must be used with `--force`.</dd>
-<dt>`--retain-untagged`</dt>
+<dt><code>--json</code></dt>
+<dd>(Optional) Outputs JSON that contains the results of cleaning your namespace. This option must be used with <code>--force</code>.</dd>
+<dt><code>--retain-untagged</code></dt>
 <dd>(Optional) Retain all untagged images when the retention policy is being processed. Only tagged images are analyzed and, if the images don't meet the criteria, they are deleted. If the option isn't specified, all tagged and untagged images are analyzed and, if the images don't meet the criteria, they are deleted.</dd>
-<dt>`--images`</dt>
-<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. `IMAGECOUNT` is the number of images that you want to retain in each repository for the namespace.
+<dt><code>--images</code></dt>
+<dd>Determines how many images to keep within each repository in the specified namespace. The newest images are retained. The age of images is determined by their build date. <code>IMAGECOUNT</code> is the number of images that you want to retain in each repository for the namespace.
 </dd>
 </dl>
 
@@ -1367,8 +1365,8 @@ To find out about the required permissions, see [Platform management roles](/doc
 {: #bx_cr_token_get_option}
 
 <dl>
-<dt>`TOKEN`</dt>
-<dd>The unique identifier of the token that you want to retrieve. To list your tokens, run `ibmcloud cr token-list`.</dd>
+<dt><code>TOKEN</code></dt>
+<dd>The unique identifier of the token that you want to retrieve. To list your tokens, run <code>ibmcloud cr token-list</code>.</dd>
 </dl>
 
 ### Example
@@ -1403,7 +1401,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 {: #bx_cr_token_list_option}
 
 <dl>
-<dt>`--format FORMAT`</dt>
+<dt><code>--format FORMAT</code></dt>
 <dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
@@ -1450,9 +1448,9 @@ To find out about the required permissions, see [Platform management roles](/doc
 {: #bx_cr_token_rm_option}
 
 <dl>
-<dt>`TOKEN`</dt>
-<dd>TOKEN can be either the token itself, or the unique identifier of the token, as shown in `ibmcloud cr token-list`. Multiple tokens can be specified and they must be separated by a space.</dd>
-<dt>`--force`, `-f`</dt>
+<dt><code>TOKEN</code></dt>
+<dd>TOKEN can be either the token itself, or the unique identifier of the token, as shown in <code>ibmcloud cr token-list</code>. Multiple tokens can be specified and they must be separated by a space.</dd>
+<dt><code>--force</code>, <code>-f</code></dt>
 <dd>(Optional) Force the command to run with no user prompts.</dd>
 </dl>
 
@@ -1487,9 +1485,9 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_trash_list_option}
 
 <dl>
-<dt>`--restrict NAMESPACE`</dt>
+<dt><code>--restrict NAMESPACE</code></dt>
 <dd>(Optional) Limit the output to display only images in the specified namespace. </dd>
-<dt>`--json`</dt>
+<dt><code>--json</code></dt>
 <dd>(Optional) Outputs JSON that contains the details of the contents of the trash.</dd>
 </dl>
 
@@ -1522,10 +1520,10 @@ To find out about the required permissions, see [Access roles for using {{site.d
 {: #bx_cr_va_option}
 
 <dl>
-<dt>`IMAGE`</dt>
+<dt><code>IMAGE</code></dt>
 <dd>The name of the image for which you want to get a report. The report states whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
 
-<p>To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.</p>
+<p>To find the names of your images, run <code>ibmcloud cr image-list</code>. Combine the content of the <strong>Repository</strong> and <strong>Tag</strong> columns to create the image name in the format <code>repository:tag</code>. If a tag is not specified in the image name, the report assesses the image that is tagged <code>latest</code>.</p>
 
 <p>The following operating systems are supported:
 
@@ -1541,18 +1539,18 @@ To find out about the required permissions, see [Access roles for using {{site.d
 For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
 </dd>
-<dt>`--extended`, `-e`</dt>
+<dt><code>--extended</code>, <code>-e</code></dt>
 <dd>(Optional) The command output shows additional information about fixes for vulnerable packages.</dd>
-<dt>`--vulnerabilities`, `-v`</dt>
+<dt><code>--vulnerabilities</code>, <code>-v</code></dt>
 <dd>(Optional) The command output is restricted to show vulnerabilities only.</dd>
-<dt>`--configuration-issues`, `-c`</dt>
+<dt><code>--configuration-issues</code>, <code>-c</code></dt>
 <dd>(Optional) The command output is restricted to show configuration issues only.</dd>
-<dt>`--output FORMAT`, `-o FORMAT`</dt>
-<dd>(Optional) The command output is returned in the chosen format. The default format is `text`. The following formats are supported:
+<dt><code>--output FORMAT</code>, <code>-o FORMAT</code></dt>
+<dd>(Optional) The command output is returned in the chosen format. The default format is <code>text</code>. The following formats are supported:
 
 <ul>
-<li>`text`</li>
-<li>`json`</li>
+<li><code>text</code></li>
+<li><code>json</code></li>
 </ul>
 
 </dd>
@@ -1574,3 +1572,5 @@ View a vulnerability assessment report for your image `us.icr.io/birds/bluebird:
 ibmcloud cr vulnerability-assessment --vulnerabilities  --output json us.icr.io/birds/bluebird:1
 ```
 {: pre}
+
+

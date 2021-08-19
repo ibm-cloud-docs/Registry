@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-18"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,11 +55,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -140,43 +139,45 @@ To change the webhook configuration so that it fails open, and then, when at lea
 
 1. Update `MutatingWebhookConfiguration` by running the following command.
 
-   ```
-   kubectl edit MutatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
     Change `failurePolicy` to `Ignore`, save, and close.
 
 2. Update `ValidatingWebhookConfiguration` by running the following command.
 
-   ```
-   kubectl edit ValidatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
-   Change `failurePolicy` to `Ignore`, save, and close.
+    Change `failurePolicy` to `Ignore`, save, and close.
 
 3. Wait for some Container Image Security Enforcement pods to start. If you want to check when the pods start, run the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
 
-   ```
-   kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
-   ```
-   {: pre}
+    ```
+    kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
+    ```
+    {: pre}
 
 4. When at least one Container Image Security Enforcement pod is running, update `MutatingWebhookConfiguration` by running the following command.
 
-   ```
-   kubectl edit MutatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl edit MutatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
     Change `failurePolicy` to `Fail`, save, and close.
 
 5. Update `ValidatingWebhookConfiguration` by running the following command.
 
-   ```
-   kubectl edit ValidatingWebhookConfiguration image-admission-config
-   ```
-   {: pre}
+    ```
+    kubectl edit ValidatingWebhookConfiguration image-admission-config
+    ```
+    {: pre}
 
-   Change `failurePolicy` to `Fail`, save, and close.
+    Change `failurePolicy` to `Fail`, save, and close.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-08-18"
 
 keywords: 
 
@@ -50,3 +50,5 @@ If you're using the registry in one of the following scenarios, you must add the
 
 This action is required for private connections because the source IP address that {{site.data.keyword.registrylong}} receives is the IP address of the {{site.data.keyword.cloud_notm}} service endpoint and not the IP from where the request originated.
 {: note}
+
+

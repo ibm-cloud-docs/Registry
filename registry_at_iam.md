@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-08-18"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -186,3 +186,5 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | List image exemptions. | `GET /va/api/v3/exemptions/image/{resource}` | `container-registry.exemption.list` | |
 | List exemptions for images. | `POST /va/api/v3/exemptions/images` | `container-registry.exemption.list` | |
 {: caption="Table 13. Exemption" caption-side="top"}
+
+
