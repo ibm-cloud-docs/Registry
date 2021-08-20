@@ -36,9 +36,10 @@ You can access the images that are provided by {{site.data.keyword.IBM}} by usin
 You can access the public {{site.data.keyword.IBM_notm}} images by using the command line.
 {: shortdesc}
 
-Before you begin, complete the following tasks:
+Before you begin, complete the following tasks.
 
 1. Ensure that the {{site.data.keyword.registrylong_notm}} CLI is installed, see [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install).
+
 2. Log in to [{{site.data.keyword.cloud_notm}}](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login).
 
     ```
