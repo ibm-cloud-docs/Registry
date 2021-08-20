@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-20"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -97,6 +97,9 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
 
 3. Create a namespace by running the following command. Choose a name for your namespace, and replace `<my_namespace>` with that name.
 
+    The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters and include lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
+    {: tip}
+
     If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
     {: tip}
 
@@ -106,9 +109,6 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
     {: pre}
 
     Throughout this tutorial, replace `<my_namespace>` with your chosen namespace.
-
-    The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters and include lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
-    {: tip}
 
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
