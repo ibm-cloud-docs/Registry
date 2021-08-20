@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-20"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -235,7 +235,8 @@ If you no longer require a registry namespace, you can remove the namespace from
 
 3. Remove a namespace.
 
-    **Attention:** When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
+    When you remove a namespace, any images that are stored in that namespace are also deleted. This action cannot be undone.
+    {: important}
 
     Replace `<my_namespace>` with the namespace that you want to remove.
 
