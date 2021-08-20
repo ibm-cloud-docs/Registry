@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-20"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, keys, lost keys, recover lost keys, root keys, repo keys, repository keys
 
@@ -196,8 +196,8 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
     - Windows&reg; directory `%HOMEPATH%\.docker\trust\private` and `%HOMEPATH%\.docker\trust\tuf`
 
-    Because the root key is affected, this step deletes all signing keys, including for other trust servers.
-    {: tip}
+Because the root key is affected, this step deletes all signing keys, including for other trust servers.
+{: tip}
 
 3. If you use [{{site.data.keyword.cloud_notm}} Image Enforcement](/docs/Registry?topic=Registry-security_enforce#security_enforce) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
 
