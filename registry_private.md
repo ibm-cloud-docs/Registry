@@ -158,16 +158,16 @@ Private connections are available so that you can push and pull images. You use 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}
 
-1. Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list.
+Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your API key and `<private_registry_url>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following list.
 
-- For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
-- For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
-- For namespaces that are set up in `ca-tor`, use the following private registry URL `private.ca.icr.io`.
-- For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
-- For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.
-- For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`.
-- For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`.
-- For namespaces that are set up in Global, use the following private registry URL `private.icr.io`.
+    - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
+    - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
+    - For namespaces that are set up in `ca-tor`, use the following private registry URL `private.ca.icr.io`.
+    - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
+    - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.
+    - For namespaces that are set up in `uk-south`, use the following private registry URL `private.uk.icr.io`.
+    - For namespaces that are set up in `us-south`, use the following private registry URL `private.us.icr.io`.
+    - For namespaces that are set up in Global, use the following private registry URL `private.icr.io`.
 
 ```
 docker login -u iamapikey -p <apikey> <private_registry_url>
