@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-22"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -80,7 +80,7 @@ You can't use [IAM IP allowlists](/docs/Registry?topic=Registry-registry_iam_ip)
 {: note}
 
 ```
-ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY
+ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY --accept-deprecation
 ```
 {: codeblock}
 
@@ -107,6 +107,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 <dd>(Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is <code>PATH/Dockerfile</code>, where <code>PATH</code> is the root of the build context.</dd>
 <dt><code>--tag TAG</code>, <code>-t TAG</code></dt>
 <dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
+<dt><code>--accept-deprecation</code></dt>
+<dd>(Optional) Confirm that you are aware that the build command is deprecated, and will be removed soon.</dd>
 </dl>
 
 ### Example
