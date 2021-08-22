@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-22"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -10,19 +10,101 @@ subcollection: Registry
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
-{:term: .term}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
+{:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
+{:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # Managing access for {{site.data.keyword.registryshort_notm}}
 {: #iam}
@@ -118,7 +200,7 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 The following table details actions that are mapped to operations on the service and to the service access roles for configuring {{site.data.keyword.registrylong_notm}}.
 
 | Action | Operation on service | Role |
-|-----------------------|---------------------|--------------|
+|--------|----------------------|------|
 | `container-registry.auth.get` | [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Check whether the use of public connections is prevented for image pushes or pulls in your account. | Manager |
 | `container-registry.auth.set` | [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) Enable IAM policy enforcement.<br/><br/>[`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) Prevent or allow image pulls or pushes over public network connections for your account. | Manager |
 | `container-registry.exemption.list` | [`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) List your Vulnerability Advisor exemption policies for security issues.<br/><br/>[`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) List the types of security issues that you can exempt. | Reader, Manager |
@@ -151,7 +233,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 {: deprecated}
 
 | Action | Operation on service | Role | Status |
-|---------------------|-------------------|-----------|-----------|
+|--------|----------------------|------|--------|
 | `container-registry.image.build` | [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) Build a container image. | Writer, Manager | Deprecated |
 | `container-registry.image.delete` | `docker trust revoke` Delete the signature for a container image.<br/><br/>[`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account.<br/><br/>[`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) Delete one or more container images.<br/><br/>[`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) Remove a tag, or tags, from each specified container image in {{site.data.keyword.registrylong_notm}}.<br/><br/>[`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria.<br/><br/>[`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) Clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager<br/><br/>To run `ibmcloud cr retention-run` and `ibmcloud cr retention-policy-set` you must have Manager, or  both Reader and Writer. | |
 | `container-registry.image.inspect` | [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) Display details about a specific container image. <br/><br/>[`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect) View the contents of the manifest for an image. | Reader, Manager | |
