@@ -1436,7 +1436,7 @@ From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is dis
 ## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued
 {: #bx_cr_token_list}
 
-From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued andf will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
+From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
 ## `ibmcloud cr token-rm` - discontinued
