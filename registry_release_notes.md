@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-23"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -111,6 +111,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 19 August 2021
+{: #19aug2021}
+
+### Using registry tokens is discontinued
+{: #19aug2021_remove_tokens}
+
+From 19 August 2021, registry tokens are no longer accepted for authentication. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 
 ## 9 August 2021
 {: #09aug2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-22"
+lastupdated: "2021-08-23"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -146,10 +146,6 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.plan.set` | Upgrade to the standard plan. | | |
 | `container-registry.quota.get` | Display the current quotas for traffic and storage, and the usage information against those quotas. | | |
 | `container-registry.quota.set` | Modify the quotas. | | |
-| `container-registry.registrytoken.delete` | Delete a registry token. | Deprecated | |
-| `container-registry.registrytoken.get` | Retrieve information about a registry token. | Deprecated | |
-| `container-registry.registrytoken.list` | List the registry tokens in your {{site.data.keyword.IBM_notm}} account. | Deprecated | |
-| `container-registry.registrytokens.delete` | Delete multiple registry tokens. | Deprecated | |
 | `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | | |
 | `container-registry.retention.list` | List the image retention policies for your account. | | |
 | `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. | | |
@@ -159,7 +155,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.trash.restore` | Restore a deleted image from the trash. | | |
 {: caption="Table 1. Actions that generate events" caption-side="top"}
 
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated.
+From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
 The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.

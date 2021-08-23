@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-22"
+lastupdated: "2021-08-23"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1427,126 +1427,23 @@ ibmcloud cr retention-run --images 20 birds
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
-## `ibmcloud cr token-get` - deprecated
+## `ibmcloud cr token-get` - discontinued
 {: #bx_cr_token_get}
 
-Retrieve the specified token from the registry.
-
-This command is deprecated.
+From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
-```
-ibmcloud cr token-get TOKEN
-```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_token_get_prereq}
-
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
-
-### Command options
-{: #bx_cr_token_get_option}
-
-<dl>
-<dt><code>TOKEN</code></dt>
-<dd>The unique identifier of the token that you want to retrieve. To list your tokens, run <code>ibmcloud cr token-list</code>.</dd>
-</dl>
-
-### Example
-{: #bx_cr_token_get_example}
-
-Retrieve the token *10101010-101x-1x10-x1xx-x10xx10xxx10*.
-
-```
-ibmcloud cr token-get 10101010-101x-1x10-x1xx-x10xx10xxx10
-```
-{: pre}
-
-## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - deprecated
+## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued
 {: #bx_cr_token_list}
 
-Displays all tokens that exist for your {{site.data.keyword.cloud_notm}} account.
-
-This command is deprecated.
+From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued andf will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
-```
-ibmcloud cr token-list [--format FORMAT]
-```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_token_list_prereq}
-
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
-
-### Command options
-{: #bx_cr_token_list_option}
-
-<dl>
-<dt><code>--format FORMAT</code></dt>
-<dd>(Optional) Format the output elements by using a Go template.
-
-For more information, see [Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands](/docs/Registry?topic=Registry-registry_cli_list).
-
-</dd>
-</dl>
-
-### Example
-{: #bx_cr_token_list_example}
-
-Display all tokens that are read-only, by using the formatting directive *`"{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"`*.
-
-```
-ibmcloud cr token-list --format "{{ if eq .ReadOnly true}}{{.ID}} - {{.Expiry}} - {{.ReadOnly}} - {{.Description}}{{ end }}"
-```
-{: pre}
-
-This example produces output in the following format:
-
-```
-10101010-101a-1a10-a1aa-a10aa10aaa10 - 1234567890 - true - demo
-```
-{: screen}
-
-## `ibmcloud cr token-rm` - deprecated
+## `ibmcloud cr token-rm` - discontinued
 {: #bx_cr_token_rm}
 
-Remove one or more specified registry tokens.
-
-This command is deprecated.
+From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
-
-```
-ibmcloud cr token-rm TOKEN [TOKEN...] [--force | -f]
-```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_token_rm_prereq}
-
-To find out about the required permissions, see [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles).
-
-### Command options
-{: #bx_cr_token_rm_option}
-
-<dl>
-<dt><code>TOKEN</code></dt>
-<dd>TOKEN can be either the token itself, or the unique identifier of the token, as shown in <code>ibmcloud cr token-list</code>. Multiple tokens can be specified and they must be separated by a space.</dd>
-<dt><code>--force</code>, <code>-f</code></dt>
-<dd>(Optional) Force the command to run with no user prompts.</dd>
-</dl>
-
-### Example
-{: #bx_cr_token_rm_example}
-
-Remove the token *10101010-101x-1x10-x1xx-x10xx10xxx10*.
-
-```
-ibmcloud cr token-rm 10101010-101x-1x10-x1xx-x10xx10xxx10
-```
-{: pre}
 
 ## `ibmcloud cr trash-list`
 {: #bx_cr_trash_list}

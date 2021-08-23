@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-22"
+lastupdated: "2021-08-23"
 
 keywords: container registry
 
@@ -799,20 +799,11 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_option)
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_example)
 
-* [`ibmcloud cr token-get` - deprecated](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get_example)
+* [`ibmcloud cr token-get` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)
 
-* [`ibmcloud cr token-list` (`ibmcloud cr tokens`) - deprecated](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list_example)
+* [`ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)
 
-* [`ibmcloud cr token-rm` - deprecated](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm_example)
+* [`ibmcloud cr token-rm` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)
 
 * [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_prereq)
@@ -963,6 +954,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [19 August 2021](/docs/Registry?topic=Registry-registry_release_notes#19aug2021)
+    * [Using registry tokens is discontinued](/docs/Registry?topic=Registry-registry_release_notes#19aug2021_remove_tokens)
 
 * [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#09aug2021)
     * [The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry domain only](/docs/Registry?topic=Registry-registry_release_notes#09aug2021_bmx)
