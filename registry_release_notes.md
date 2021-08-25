@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-25"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -446,8 +446,6 @@ Container Scanner is now deprecated and is no longer usable.
 
 Use Container Image Security Enforcement to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
 
-For more information, see [Enforcing container image security](/docs/Registry?topic=Registry-security_enforce#security_enforce).
-
 ## 14 March 2019
 {: #14mar2019}
 
@@ -571,8 +569,6 @@ Container Scanner enables Vulnerability Advisor to report any problems that are 
 {: #16mar2018_cise}
 
 Use Container Image Security Enforcement beta to verify your container images before you deploy them to your cluster in {{site.data.keyword.containerlong_notm}}. You can control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
-
-For more information, see [Enforcing container image security](/docs/Registry?topic=Registry-security_enforce#security_enforce).
 
 ## 20 February 2018
 {: #20feb2018}

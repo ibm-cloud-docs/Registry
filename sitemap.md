@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-08-25"
 
 keywords: container registry
 
@@ -571,18 +571,6 @@ subcollection: Registry
 * [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
 * [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
 
-[Enforcing container image security by using Container Image Security Enforcement - deprecated](/docs/Registry?topic=Registry-security_enforce)
-* [Installing Container Image Security Enforcement in your cluster](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install)
-* [Default policies](/docs/Registry?topic=Registry-security_enforce#default_policies)
-  * [Cluster-wide policy](/docs/Registry?topic=Registry-security_enforce#cluster-wide)
-  * [`kube-system` policy](/docs/Registry?topic=Registry-security_enforce#kube-system)
-  * [IBM-system policy](/docs/Registry?topic=Registry-security_enforce#ibm-system)
-* [Customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies)
-  * [Specifying trusted content signers in custom policies](/docs/Registry?topic=Registry-security_enforce#signers)
-* [Controlling who can customize policies](/docs/Registry?topic=Registry-security_enforce#assign_user_policy)
-* [Deploying container images with enforced security](/docs/Registry?topic=Registry-security_enforce#deploy_containers)
-* [Removing Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove)
-
 [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris)
 * [Installing Portieris in your cluster](/docs/Registry?topic=Registry-security_enforce_portieris#sec_enforce_install_portieris)
 * [Policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris)
@@ -910,8 +898,6 @@ subcollection: Registry
 [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key)
 * [Repository keys](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key-repo)
 * [Root keys](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key-root)
-
-[Why does the installation of Container Image Security Enforcement fail?](/docs/Registry?topic=Registry-troubleshoot-install-cise-fail)
 
 [Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
 
