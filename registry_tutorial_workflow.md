@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-25"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -341,14 +341,11 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 ### Enforce security in your cluster
 {: #registry_tutorial_workflow_enforce_security}
 
-Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
+Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
 
-With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, use [Portieris](https://github.com/IBM/portieris){: external}.
-{: deprecated}
+1. [Install Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#sec_enforce_install_portieris).
 
-1. [Install Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#sec_enforce_install). The installation involves setting up Helm in your cluster, adding the appropriate chart repository, and installing the Container Image Security Enforcement Helm chart into your cluster. When you set up Helm in your cluster, your free cluster has public access and isn't a private cluster, you must [set up Helm in a cluster with public access](/docs/containers?topic=containers-helm).
-
-2. The [default policies](/docs/Registry?topic=Registry-security_enforce#default_policies) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file, and read about [customizing policies](/docs/Registry?topic=Registry-security_enforce#customize_policies) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
+2. The [Portieris default policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) are too restrictive for this tutorial because they involve [image signing](/docs/Registry?topic=Registry-registry_trustedcontent). Therefore, you must create custom policies. View the `security.yaml` file in the [GitHub repository](https://github.com/IBM/registry-va-workflow){: external}, and read about customizing [policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris) to understand this file's contents. In short, this policy requires all images in your namespace to have no issues reported by Vulnerability Advisor.
 
 3. Update the following line in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
 
@@ -476,14 +473,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 3. Apply the configuration.
 
-    1. Apply the configuration with Container Image Security Enforcement that is still enabled in your cluster by running the following command:
+    1. Apply the configuration with Portieris that is still enabled in your cluster by running the following command:
 
         ```
         kubectl apply -f hello-world.yaml
         ```
         {: pre}
 
-        Because Container Image Security Enforcement is still enabled in your cluster, your deployment fails immediately and you see the following message:
+        Because Portieris is still enabled in your cluster, your deployment fails immediately and you see the following message:
 
         ```
         Error from server: error when creating "hello-world.yaml": admission webhook
@@ -492,11 +489,11 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         ```
         {: screen}
 
-        This error is because Container Image Security Enforcement determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
+        This error is because Portieris determines that this deployment can't succeed because the `test` namespace is unable to pull images from your {{site.data.keyword.registrylong_notm}} namespace. The `default` Kubernetes namespace in an {{site.data.keyword.containerlong_notm}} cluster comes preconfigured with [image pull secrets](/docs/containers?topic=containers-registry#cluster_registry_auth) to pull images from {{site.data.keyword.registrylong_notm}}. However, these secrets aren't present in your new namespace.
 
-    2. Apply the configuration after Container Image Security Enforcement is removed from your cluster.
+    2. Apply the configuration after Portieris is removed from your cluster.
 
-        1. [Remove Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce#remove).
+        1. [Remove Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris).
         2. Apply the configuration by running the following command:
 
             ```
