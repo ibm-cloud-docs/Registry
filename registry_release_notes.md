@@ -185,7 +185,9 @@ A new region in Japan is available. The new region is `jp-osa` and the domain na
 ### You can use Portieris to enforce container image security
 {: #19nov2020_portieris}
 
-With effect from 19 November 2020, [Container Image Security Enforcement](/docs/Registry?topic=Registry-security_enforce) is deprecated. To enforce container image security, you can use [Portieris](https://github.com/IBM/portieris){: external}. You can use Portieris to control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
+With effect from 19 November 2020, Container Image Security Enforcement is deprecated. To enforce container image security, you can use [Portieris](https://github.com/IBM/portieris){: external}. You can use Portieris to control where images are deployed from, enforce Vulnerability Advisor policies, and ensure that [content trust](/docs/Registry?topic=Registry-registry_trustedcontent) is properly applied to the image.
+
+For more information, see [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
 ## 21 October 2020
 {: #21oct2020}
@@ -520,7 +522,7 @@ For more information, see [Managing user access with {{site.data.keyword.iamshor
 ### Exemption policies available in Vulnerability Advisor
 {: #7aug2018_exemption}
 
-If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can use Container Image Security Enforcement to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
+If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can use Portieris to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
 
 For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
