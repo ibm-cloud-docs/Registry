@@ -46,7 +46,6 @@ Container Registry
         registry_private.md
         registry_vpe.md
         registry_iam_ip.md
-        registry_security_enforce.md
         registry_security_enforce_portieris.md
     
     {: .topicgroup}
@@ -91,7 +90,6 @@ Container Registry
         ts_image_restore_digest.md
         ts_firewall.md
         ts_recover_key.md
-        ts_install_cise_fail.md
         ts_iam_policy.md
         ts_pods.md
         ts_manifest_error_type.md
