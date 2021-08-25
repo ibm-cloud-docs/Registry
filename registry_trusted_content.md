@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-25"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -189,7 +189,7 @@ See [Atomic CLI Reference](https://access.redhat.com/documentation/en-us/red_hat
 ## Signing images for trusted content by using Docker Content Trust and Notary - deprecated
 {: #registry_trustedcontent_dct_notary}
 
-To sign images for trusted content by using Docker Content Trust and Notary, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/){: external} and the [Notary project](https://github.com/theupdateframework/notary){: external} documentation.
+To sign images for trusted content by using Docker Content Trust and Notary, you must have Docker version 18.03 or later. You can learn more by reviewing the [Docker Content Trust](https://docs.docker.com/engine/security/trust/content_trust/){: external} and the [Notary project](https://github.com/notaryproject/notary){: external} documentation.
 {: shortdesc}
 
 The Notary v1 service is deprecated. It is being removed from {{site.data.keyword.registrylong_notm}} on 31 August 2021. {{site.data.keyword.registrylong_notm}} supports the [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](#registry_trustedcontent_red_hat_sig).

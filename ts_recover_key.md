@@ -142,7 +142,7 @@ The only signing role that you can rotate is `targets`, which is the repository 
 
 Before you begin, retrieve the root key passphrase that you created when you first [pushed a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push).
 
-1. Install the CLI version of the [Notary project](https://github.com/theupdateframework/notary#getting-started-with-the-notary-cli){: external}.
+1. Install the CLI version of the [Notary project](https://github.com/notaryproject/notary#getting-started-with-the-notary-cli){: external}.
 
 2. [Set up your trusted content environment](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_setup).
 
