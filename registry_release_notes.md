@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-27"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -63,6 +63,7 @@ subcollection: Registry
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -111,6 +112,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 30 August 2021
+{: #30aug2021}
+
+### New region in Brazil
+{: #30aug2021_brazil}
+
+A new region in Sao Paulo, Brazil is available. The new region is `br-sao` and the domain name is `br.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
 ## 19 August 2021
 {: #19aug2021}

@@ -942,6 +942,9 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
 
+* [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#30aug2021)
+    * [New region in Brazil](/docs/Registry?topic=Registry-registry_release_notes#30aug2021_brazil)
+
 * [19 August 2021](/docs/Registry?topic=Registry-registry_release_notes#19aug2021)
     * [Using registry tokens is discontinued](/docs/Registry?topic=Registry-registry_release_notes#19aug2021_remove_tokens)
 
