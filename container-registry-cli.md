@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-08-27"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -63,6 +63,7 @@ subcollection: container-registry-cli-plugin
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -152,7 +153,7 @@ This command is deprecated from 6 October 2020. You can use [Tekton pipelines](/
 
 Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
 
-The `jp-osa` and `ca-tor` regions don't have a build service because they were created after the command was deprecated.
+The `br-sao`, `ca-tor`, and `jp-osa` regions don't have a build service because they were created after the command was deprecated.
 {: note}
 
 Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.

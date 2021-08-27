@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-27"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -63,6 +63,7 @@ subcollection: Registry
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -162,6 +163,7 @@ Run the `docker login` command to authenticate with your registry. Replace `<api
 
 - For namespaces that are set up in `ap-north`, use the following private registry URL `private.jp.icr.io`.
 - For namespaces that are set up in `ap-south`, use the following private registry URL `private.au.icr.io`.
+- For namespaces that are set up in `br-sao`, use the following private registry URL `private.br.icr.io`.
 - For namespaces that are set up in `ca-tor`, use the following private registry URL `private.ca.icr.io`.
 - For namespaces that are set up in `eu-central`, use the following private registry URL `private.de.icr.io`.
 - For namespaces that are set up in `jp-osa`, use the following private registry URL `private.jp2.icr.io`.

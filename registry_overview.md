@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-08-27"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -63,6 +63,7 @@ subcollection: Registry
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -420,6 +421,7 @@ Regional instances of {{site.data.keyword.registrylong_notm}} are available by u
 |-----------------------|-------------|---------------------|------------------------|
 | `ap-north` | `jp.icr.io` | `private.jp.icr.io` | Not applicable |
 | `ap-south` | `au.icr.io` | `private.au.icr.io` | `registry.au-syd.bluemix.net` |
+| `br-sao` | `br.icr.io` | `private.br.icr.io` | Not applicable |
 | `ca-tor` | `ca.icr.io` | `private.ca.icr.io` | Not applicable |
 | `eu-central` | `de.icr.io` | `private.de.icr.io` | `registry.eu-de.bluemix.net` |
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
