@@ -115,13 +115,8 @@ Learn about the management responsibilities and terms and conditions that you ha
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.registrylong_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
-
-
 ## Incident and operations management
 {: #incident-and-ops}
-
-
-
 
 Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
 
@@ -137,9 +132,6 @@ Incident and operations management includes tasks such as monitoring, event mana
 ## Change management
 {: #change-management}
 
-
-
-
 Change management includes tasks such as deployment, configuration, upgrades, patching, configuration changes, and deletion.
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
@@ -153,9 +145,6 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 
 ## Identity and access management
 {: #iam-responsibilities}
-
-
-
 
 Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access.
 
@@ -173,9 +162,6 @@ Identity and access management includes tasks such as authentication, authorizat
 ## Security and regulation compliance
 {: #security-compliance}
 
-
-
-
 Security and regulation compliance includes tasks such as security controls implementation and compliance certification.
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
@@ -188,9 +174,6 @@ Security and regulation compliance includes tasks such as security controls impl
 
 ## Disaster recovery
 {: #disaster-recovery}
-
-
-
 
 Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events. For more information, see [Understanding high availability and disaster recovery for Container Registry](/docs/Registry?topic=Registry-ha-dr).
 
