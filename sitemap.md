@@ -897,6 +897,8 @@ subcollection: Registry
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
 
+[Why don't all of my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
+
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
 
 [Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
