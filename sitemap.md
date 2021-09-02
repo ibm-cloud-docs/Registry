@@ -835,6 +835,23 @@ subcollection: Registry
     * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
+## Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
+{: #sitemap_understanding_your_responsibilities_when_you_are_using_}
+
+
+[Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_responsibilities)
+
+* [Incident and operations management](/docs/Registry?topic=Registry-registry_responsibilities#incident-and-ops)
+
+* [Change management](/docs/Registry?topic=Registry-registry_responsibilities#change-management)
+
+* [Identity and access management](/docs/Registry?topic=Registry-registry_responsibilities#iam-responsibilities)
+
+* [Security and regulation compliance](/docs/Registry?topic=Registry-registry_responsibilities#security-compliance)
+
+* [Disaster recovery](/docs/Registry?topic=Registry-registry_responsibilities#disaster-recovery)
+
+
 ## IBM Cloud Container Registry API
 
 [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
