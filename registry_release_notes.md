@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-02"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -112,6 +112,14 @@ subcollection: Registry
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 2 September 2021
+{: #02sep2021}
+
+### Namespaces that are assigned to a resource group show in the Resource list page
+{: #02sep2021_resource_list}
+
+Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
 ## 30 August 2021
 {: #30aug2021}
