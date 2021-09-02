@@ -60,6 +60,7 @@ Container Registry
     /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
     registry_ha.md
     registry_cli_list.md
+    registry_responsibilities.md
     [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
     [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
     [Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace)
