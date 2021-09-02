@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-02"
 
 keywords: container registry
 
@@ -941,6 +941,9 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [2 September 2021](/docs/Registry?topic=Registry-registry_release_notes#02sep2021)
+    * [Namespaces that are assigned to a resource group show in the Resource list page](/docs/Registry?topic=Registry-registry_release_notes#02sep2021_resource_list)
 
 * [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#30aug2021)
     * [New region in Brazil](/docs/Registry?topic=Registry-registry_release_notes#30aug2021_brazil)

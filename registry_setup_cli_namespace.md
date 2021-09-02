@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-09-02"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -63,6 +63,7 @@ subcollection: Registry
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -189,6 +190,9 @@ When you create a namespace in version 0.1.485 of the {{site.data.keyword.regist
 
 Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have existing namespaces that are not assigned to a resource group and you want to assign them to a resource group, see [Assigning existing namespaces to resource groups](#registry_namespace_assign).
 
+Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
+{: note}
+
 You can set up multiple namespaces, for example, to have separate repositories for your production and staging environments. If you want to use the registry in multiple {{site.data.keyword.cloud_notm}} regions, you must set up a namespace for each region. Namespace names are unique within regions. You can use the same namespace name for each region, unless someone else already has a namespace with that name in that region.
 
 You can have 100 namespaces in each region.
@@ -246,6 +250,8 @@ Before you begin, complete the following tasks:
 
 To create a namespace, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add). Namespaces are created in the resource group that you specify so that you can configure access to resources within the namespace at the resource group level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. For more information about resource groups, see [Managing resource groups](/docs/account?topic=account-rgs).
 
+Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
+
 The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
 {: tip}
 
@@ -263,6 +269,8 @@ You can assign a namespace to a resource group only once. When a namespace is in
 {: note}
 
 You can assign an existing namespace to a resource group by using the [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign) command. To find out which namespaces are assigned to resource groups and which are unassigned, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
+
+Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
 
