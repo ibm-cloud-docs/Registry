@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-09-03"
 
 keywords: Responsibilities
 
@@ -138,7 +138,7 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 |------|-------------------------------------------------|-----------------------|
 | Provisioning. | It is the responsibility of {{site.data.keyword.IBM_notm}} to provision the service. | |
 | Deprovisioning. | It is the responsibility of {{site.data.keyword.IBM_notm}} to deprovision the service. | |
-| Update package versions. | | It is your responsibility to update package versions inside container images. You can use Vulnerability Advisor to identify the required updates. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui). |
+| Update package versions. | | It is your responsibility to update package versions inside container images. You can use Vulnerability Advisor to identify the required updates. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index). |
 {: row-headers}
 {: caption="Table 2. Responsibilities for change management" caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
