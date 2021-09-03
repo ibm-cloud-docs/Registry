@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-03"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -68,6 +68,7 @@ completion-time: 2h
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -135,8 +136,8 @@ The tutorial has the following objectives.
 
 This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
-* [{{site.data.keyword.registrylong_notm}}](https://{DomainName}/registry/repos){: external}
-* [{{site.data.keyword.containerlong_notm}}](https://{DomainName}/kubernetes/catalog/about){: external}
+* [{{site.data.keyword.registrylong_notm}}](/registry/repos)
+* [{{site.data.keyword.containerlong_notm}}](/kubernetes/catalog/about)
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
