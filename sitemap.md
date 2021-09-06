@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-06"
 
 keywords: container registry
 
@@ -854,12 +854,12 @@ subcollection: Registry
 
 ## IBM Cloud Container Registry API
 
-[IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
+[IBM Cloud Container Registry API](/apidocs/container-registry){: external}
 
 
 ## Vulnerability Advisor for IBM Cloud Container Registry API
 
-[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
+[Vulnerability Advisor for IBM Cloud Container Registry API](/apidocs/container-registry/va){: external}
 
 
 ## Terraform reference
@@ -871,9 +871,9 @@ subcollection: Registry
 {: #sitemap_related_links}
 
 
-[IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started){: external}
+[IBM Cloud Kubernetes Service documentation](/docs/containers?topic=containers-getting-started){: external}
 
-[Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started){: external}
+[Red Hat OpenShift on IBM Cloud documentation](/docs/openshift?topic=openshift-getting-started){: external}
 
 [IBM Developer - Containers](https://developer.ibm.com/technologies/containers/){: external}
 
