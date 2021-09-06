@@ -61,14 +61,14 @@ Container Registry
     registry_ha.md
     registry_cli_list.md
     registry_responsibilities.md
-    [IBM Cloud Container Registry API](/apidocs/container-registry)
-    [Vulnerability Advisor for IBM Cloud Container Registry API](/apidocs/container-registry/va)
+    [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry)
+    [Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va)
     [Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace)
 
     {: .topicgroup}
     Related links
-        [IBM Cloud Kubernetes Service documentation](/docs/containers?topic=containers-getting-started)
-        [Red Hat OpenShift on IBM Cloud documentation](/docs/openshift?topic=openshift-getting-started)
+        [IBM Cloud Kubernetes Service documentation](https://{DomainName}/docs/containers?topic=containers-getting-started)
+        [Red Hat OpenShift on IBM Cloud documentation](https://{DomainName}/docs/openshift?topic=openshift-getting-started)
         [IBM Developer - Containers](https://developer.ibm.com/technologies/containers/)
     {: .navgroup-end}
 
