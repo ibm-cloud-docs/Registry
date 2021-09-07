@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-07"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -136,8 +136,8 @@ The tutorial has the following objectives.
 
 This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
-* [{{site.data.keyword.registrylong_notm}}](/registry/repos)
-* [{{site.data.keyword.containerlong_notm}}](/kubernetes/catalog/about)
+* [{{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/registry/repos)
+* [{{site.data.keyword.containerlong_notm}}](https://cloud.ibm.com/kubernetes/catalog/about)
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
@@ -453,7 +453,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 An {{site.data.keyword.containerlong_notm}} cluster can automatically pull images from {{site.data.keyword.registrylong_notm}} to the `default` Kubernetes namespace. However, if you want to deploy to namespaces other than `default`, you must take extra steps.
 
-Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Find out more about the elements that are used in IBM Cloud Container Registry](/docs/Registry?topic=Registry-registry_overview#overview_elements). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
+Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different. For more information about {{site.data.keyword.registrylong_notm}} namespaces, see [Find out more about the elements that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements). For more information about Kubernetes namespaces, see [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external}.
 {: tip}
 
 1. In your cluster, create a Kubernetes namespace called `test`:

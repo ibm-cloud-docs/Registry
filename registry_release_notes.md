@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-07"
 
 keywords: changelog, release notes, changes, user access, DNS names, regions, releases,
 
@@ -625,7 +625,7 @@ For more information, see [Building Docker images to use them with your namespac
 ### Graphical user interface released
 {: #24aug2017_gui}
 
-The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [Container Registry](/registry/catalog).
+The {{site.data.keyword.registrylong_notm}} graphical user interface is available in the catalog, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).
 
 ## 27 June 2017
 {: #27jun2017}
