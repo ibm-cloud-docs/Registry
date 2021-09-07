@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-06"
+lastupdated: "2021-09-07"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -148,7 +148,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Description. | Try out {{site.data.keyword.registrylong_notm}} to store and share your Docker images. This plan is the default service plan when you set up your first namespace in {{site.data.keyword.registrylong_notm}}. | Benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account. |
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
-| Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [Container Registry](/registry/catalog).<br/><br/>**Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [Container Registry](/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
+| Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).<br/><br/>**Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
 {: caption="Table 2. {{site.data.keyword.registrylong_notm}} plans" caption-side="top"}
 
 ## Quota limits and billing
@@ -239,7 +239,7 @@ After the image is pulled, {{site.data.keyword.registrylong_notm}} determines th
 ### Cost
 {: #registry_cost}
 
-You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [Container Registry](/registry/catalog).
+You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).
 {: shortdesc}
 
 ## Upgrading your service plan
