@@ -509,7 +509,7 @@ You can identify images by using either the digest <code>&lt;dns&gt;/&lt;namespa
 ### Example
 {: #bx_cr_image_inspect_example}
 
-Display details about the exposed ports for the image *`us.icr.io/birds/bluebird:1`*, by using the formatting directive *`"{{ .Config.ExposedPorts }}"`*.
+Display details about the exposed ports for the image `us.icr.io/birds/bluebird:1`, by using the formatting directive `"{{ .Config.ExposedPorts }}"`.
 
 ```
 ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds/bluebird:1
