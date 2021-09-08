@@ -202,7 +202,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 ### Example
 {: #bx_cr_build_example}
 
-Build a Docker image that doesn’t use a build cache from previous builds, where the build output is suppressed, the tag is *`us.icr.io/birds/bluebird:1`*, and the directory is your working directory.
+Build a Docker image that doesn’t use a build cache from previous builds, where the build output is suppressed, the tag is `us.icr.io/birds/bluebird:1`, and the directory is your working directory.
 
 ```
 ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
@@ -312,14 +312,14 @@ To find out about the required permissions, see [Access roles for configuring {{
 ### Examples
 {: #bx_cr_exemption_list_example}
 
-List all your exemptions for security issues that apply to images in the *`birds/bluebird`* repository. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository. The output doesn't include any exemptions that are scoped to specific tags within the *`birds/bluebird`* repository.
+List all your exemptions for security issues that apply to images in the `birds/bluebird` repository. The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird
 ```
 {: pre}
 
-List all your exemptions for security issues that apply to images in the *`birds/bluebird@sha256:101010101010`* digest. The output includes exemptions that are account-wide, exemptions that are scoped to the *`birds`* namespace, and exemptions that are scoped to the *`birds/bluebird`* repository and to the *`birds/bluebird@sha256:101010101010`* digest. The output doesn't include any exemptions that are scoped to specific tags within the *`birds/bluebird`* repository.
+List all your exemptions for security issues that apply to images in the `birds/bluebird@sha256:101010101010` digest. The output includes exemptions that are account-wide, exemptions that are scoped to the `birds` namespace, and exemptions that are scoped to the `birds/bluebird` repository and to the `birds/bluebird@sha256:101010101010` digest. The output doesn't include any exemptions that are scoped to specific tags within the `birds/bluebird` repository.
 
 ```
 ibmcloud cr exemption-list --scope birds/bluebird@sha256:101010101010
@@ -476,7 +476,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 ### Example
 {: #bx_cr_image_digests_example}
 
-Display all the images in the *`birds`* namespace, including untagged images, in the format `repository@digest`.
+Display all the images in the `birds` namespace, including untagged images, in the format `repository@digest`.
 
 ```
 ibmcloud cr image-digests --restrict birds --quiet
@@ -569,7 +569,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 ### Example
 {: #bx_cr_image_list_example}
 
-Display the images in the *`birds`* namespace in the format `repository:tag`, without truncating the image digests.
+Display the images in the `birds` namespace in the format `repository:tag`, without truncating the image digests.
 
 ```
 ibmcloud cr image-list --restrict birds --quiet --no-trunc
@@ -607,7 +607,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 ### Example
 {: #ic_cr_image_prune_untagged_example}
 
-Delete all untagged images that are in the *`birds`* namespace and output the results in JSON format.
+Delete all untagged images that are in the `birds` namespace and output the results in JSON format.
 
 ```
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
@@ -904,7 +904,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 ### Example
 {: #bx_cr_namespace_add_example}
 
-Create a namespace with the name *`birds`* and add it to the resource group *`beaks`*.
+Create a namespace with the name `birds` and add it to the resource group `beaks`.
 
 ```
 ibmcloud cr namespace-add -g beaks birds
@@ -947,7 +947,7 @@ To find out about the required permissions, see [Platform management roles](/doc
 ### Example
 {: #ic_cr_namespace_assign_example}
 
-Assign a namespace with the name *`birds`* to the resource group *`beaks`*.
+Assign a namespace with the name `birds` to the resource group `beaks`.
 
 ```
 ibmcloud cr namespace-assign -g beaks birds
@@ -1012,7 +1012,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ### Example
 {: #bx_cr_namespace_rm_example}
 
-Remove the namespace *`birds`*.
+Remove the namespace `birds`.
 
 ```
 ibmcloud cr namespace-rm birds
@@ -1443,7 +1443,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 ### Example
 {: #bx_cr_trash_list_example}
 
-Display the images that are in the trash in the *`birds`* namespace.
+Display the images that are in the trash in the `birds` namespace.
 
 ```
 ibmcloud cr trash-list --restrict birds
