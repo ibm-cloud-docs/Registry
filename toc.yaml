@@ -1,0 +1,157 @@
+toc:
+  properties:
+    subcollection: Registry
+    category: containers
+    audience: service
+    href: /docs/Registry
+    console-page: /registry/catalog
+    product-page: https://www.ibm.com/cloud/container-registry
+    path: Registry
+    label: Container Registry
+    version: 2
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+      - topic: getting-started.md
+        navtitle: Getting started with Container Registry
+      - topic: registry_overview.md
+        navtitle: About Container Registry
+      - topic: registry_architecture.md
+        navtitle: Container Registry architecture and workload
+      - topicgroup: 
+          label: Public images
+          topics:
+          - registry_public_images.md
+          - /RegistryImages/toc
+      - link: 
+          label: What are containers?
+          href: https://www.ibm.com/cloud/learn/containers
+
+  - navgroup: 
+      id: tutorial
+      topics: 
+      - topic: registry_tutorial_workflow.md
+        navtitle: Container Registry and Vulnerability Advisor workflow tutorial
+      - topic: registry_tutorial_configure_iam.md
+        navtitle: Granting access to Container Registry resources tutorial
+      - topicgroup:
+          label: Solution tutorials
+          topics:
+          - /solution-tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+          - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
+          - /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
+
+  - navgroup: 
+      id: howto
+      topics:
+      - topic: registry_setup_cli_namespace.md
+        navtitle: Setting up the Container Registry CLI and your registry namespace
+      - topic: registry_rhos.md
+        navtitle: Setting up Container Registry as a private registry on Red Hat OpenShift
+      - registry_quota.md
+      - registry_images_.md
+      - topic: registry_tokens.md
+        navtitle: Automating access
+      - registry_users.md
+      - topic: iam.md
+        navtitle: Managing access
+      - registry_retention.md
+      - topic: delete-data.md
+        navtitle: Managing your data
+      - /va/toc
+      - terraform.md
+      - topicgroup: 
+          label: Enhancing security
+          topics: 
+          - topic: manage-scc.md
+            navtitle: Managing security and compliance
+          - registry_trusted_content.md
+          - topic: registry_encrypt_images.md
+            navtitle: Encrypting images for content confidentiality
+          - registry_private.md
+          - registry_vpe.md
+          - topic: registry_iam_ip.md
+            navtitle: Using IAM IP address access restrictions
+          - registry_security_enforce_portieris.md
+      - topicgroup: 
+          label: Observability
+          topics: 
+          - topic: registry_monitor.md
+            navtitle: Monitoring metrics
+          - topic: registry_at_events.md
+            navtitle: Auditing the events
+          - topic: registry_logs.md
+            navtitle: Analyzing logs
+          - registry_at_iam.md
+
+  - navgroup:
+      id: reference
+      topics: 
+      - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
+      - topic: registry_ha.md
+        navtitle: Understanding high availability and disaster recovery
+      - topic: registry_cli_list.md
+        navtitle: Formatting and filtering the CLI output for Container Registry commands
+      - registry_responsibilities.md
+      - link:
+          label: Terraform reference
+          href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace
+      - topicgroup:
+          label: API reference
+          links: 
+          - link: 
+              label: IBM Cloud Container Registry API
+              href: https://{DomainName}/apidocs/container-registry
+          - link: 
+              label: Vulnerability Advisor for IBM Cloud Container Registry API
+              href: https://{DomainName}/apidocs/container-registry/va
+      - topicgroup:
+          label: Related links
+          links:
+          - link:
+              label: IBM Cloud Kubernetes Service documentation
+              href: /containers/containers-getting-started
+          - link:
+              label: Red Hat OpenShift on IBM Cloud documentation
+              href: /openshift/openshift-getting-started
+          - link:
+              label: IBM Developer - Containers
+              href: https://developer.ibm.com/technologies/containers/
+
+  - navgroup:
+      id: help
+      topics: 
+      - topicgroup: 
+          label: Troubleshooting
+          topics: 
+          - ts_index.md
+          - topic: ts_login.md
+            navtitle: Why can't I log in to Container Registry?
+          - topic: ts_login_expire.md
+            navtitle: Why does the Container Registry login keep expiring?
+          - topic: ts_login_cloud.md
+            navtitle: Why do I get a failure message when I run any command in Container Registry?
+          - topic: ts_login_error.md
+            navtitle: Why do all the Container Registry commands fail?
+          - ts_build_fails.md
+          - ts_add_namespace.md
+          - ts_namespace_resource_list.md
+          - ts_push_pull_docker.md
+          - ts_docker_latest.md
+          - ts_image_timeout.md
+          - ts_image_rm.md
+          - ts_image_list_retention.md
+          - ts_image_restore.md
+          - ts_image_restore_digest.md
+          - ts_firewall.md
+          - ts_recover_key.md
+          - ts_iam_policy.md
+          - ts_pods.md
+          - ts_manifest_error_type.md
+          - ts_manifest_error_version.md
+          - ts_docker_mac.md
+      - registry_faq.md
+      - registry_release_notes.md
+      - sitemap.md
