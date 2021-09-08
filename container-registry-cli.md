@@ -1497,8 +1497,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
     The following formats are supported:
 
-    - text
-    - JSON
+    - `text`
+    - `json`
 
 ### Examples
 {: #bx_cr_va_example}
