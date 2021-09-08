@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-08"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -141,7 +141,7 @@ The following table shows the backup locations.
 | `ap-north` | `jp-tok` | `au-syd` |
 | `ap-south` | `au-syd` | `jp-tok` |
 | `br-sao` | `br-sao` | `us-south` |
-| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)<br/><br/>`ca-mon` (images) |
+| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
 | `eu-de` | `eu-de` | `eu-gb` |
 | `eu-gb` | `eu-gb` | `eu-de` |
 | `global` | `us-east` | `us-south` |

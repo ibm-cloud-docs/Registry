@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-18"
+lastupdated: "2021-09-08"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -72,7 +72,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 | List images. | `GET /api/v1/images` | `container-registry.image.list` | `container-registry.image.list` |
 | Bulk delete image. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
 | List images by digest. | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
-| Create tag. | `POST /api/v1/images/tags` | `container-registry.image.pull`<br/>`container-registry.image.push` | `container-registry.image.tag` |
+| Create tag. | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|
 | Inspect an image. | `GET /api/v1/images/{image}/json` | `container-registry.image.inspect` | `container-registry.image.inspect` |
 | Get image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |

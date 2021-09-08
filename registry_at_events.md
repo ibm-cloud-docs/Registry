@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-08"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -122,8 +122,8 @@ The following table lists the API methods that generate an event when they are c
 
 | Action | Description | Status | Data Event |
 |-----------------|-----------------|-----------------|-----------------|
-| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account.<br/><br/>For more information about request data, see [Request data for `container-registry.account-vulnerability-report.list`](#at_events_analyze_report_list). | | |
-| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account.<br/><br/>For more information about request data, see [Request data for `container-registry.account-vulnerability-status.list`](#at_events_analyze_status_list). | | |
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-report.list`](#at_events_analyze_report_list). | | |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-status.list`](#at_events_analyze_status_list). | | |
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | | |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
@@ -137,10 +137,10 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | | |
-| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}.<br/><br/>For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | | |
-| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.<br/><br/>For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | | |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | | |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | | |
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.<br/><br/>Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | | |
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | | |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | | |
 | `container-registry.plan.get` | Display information about the current pricing plan. | | |
@@ -246,7 +246,7 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n **Constraints** Value must match regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation. |
 {: caption="Table 6. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability reports read" caption-side="top"}
@@ -263,7 +263,7 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.<br/><br/>**Constraints** Value must match regular expression `.*`. |
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n **Constraints** Value must match regular expression `.*`. |
 | `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation.
 {: caption="Table 7. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="top"}
 
