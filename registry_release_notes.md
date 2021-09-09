@@ -112,7 +112,7 @@ content-type: release-note
 # Release notes for {{site.data.keyword.registryshort}}
 {: #registry_release_notes}
 
-Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
+Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
 
 ## 2 September 2021
@@ -575,7 +575,7 @@ Graphical user interface released {: #24aug2017_gui}
 {: release-note}
 
 Introducing {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
-:   {{site.data.keyword.registrylong_notm}} is generally available as a service in {{site.data.keyword.cloud_notm}}. [{{site.data.keyword.registryshort}}](https://www.ibm.com/cloud/container-registry) provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
+:   {{site.data.keyword.registrylong_notm}} is available as a service in {{site.data.keyword.cloud_notm}}. [{{site.data.keyword.registryshort}}](https://www.ibm.com/cloud/container-registry){: external} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 
     For more information about how to use {{site.data.keyword.registryshort}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 
