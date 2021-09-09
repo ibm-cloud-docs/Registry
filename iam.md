@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -131,10 +131,10 @@ For more information about enabling policies for {{site.data.keyword.registrylon
 
 Policies enable access to be granted at different levels. Some of the options include the following access levels:
 
-* Access to the service in your account
-* Access to a specific resource within the service
-* Access to all IAM-enabled services in your account
-* Access to resources within a resource group
+- Access to the service in your account
+- Access to a specific resource within the service
+- Access to all IAM-enabled services in your account
+- Access to resources within a resource group
 
 After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
 
@@ -173,9 +173,9 @@ The following table details actions that are mapped to service access roles. Ser
 
 For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}}, you must create a policy where the following criteria apply.
 
-* The service name is `container-registry`.
-* The service instance is empty.
-* The region is the region that you want to grant access to, or is empty to give access to all regions.
+- The service name is `container-registry`.
+- The service instance is empty.
+- The region is the region that you want to grant access to, or is empty to give access to all regions.
 
 ### Access roles for configuring {{site.data.keyword.registrylong_notm}}
 {: #access_roles_configure}

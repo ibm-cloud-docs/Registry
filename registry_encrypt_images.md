@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2021-08-18"
+lastupdated: "2021-09-09"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -15,20 +15,102 @@ completion-time: 2h
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
-{:term: .term}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
+{:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
+{:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
 {: #registry_encrypt}
@@ -43,19 +125,19 @@ Create an encrypted image so that people without the private key can't access th
 
 Encryption is supported in {{site.data.keyword.registrylong_notm}} and complies with the following standards:
 
-* [`opencontainers/image-spec`](https://github.com/opencontainers/image-spec){: external}
-* [`opencontainers/artifacts`](https://github.com/opencontainers/artifacts/pull/15){: external}
+- [`opencontainers/image-spec`](https://github.com/opencontainers/image-spec){: external}
+- [`opencontainers/artifacts`](https://github.com/opencontainers/artifacts/pull/15){: external}
 
 For more information about encrypting images, see [Advancing container image security with encrypted container images](https://developer.ibm.com/articles/advancing-image-security-encrypted-container-images/){: external} and [Advancing image security and compliance through Container Image Encryption](https://www.youtube.com/watch?v=dYXhAxxPkqA){: external}.
 
 ## Before you begin
 {: #registry_encrypt_prereqs}
 
-* Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
-* Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
-* Ensure that you have a private namespace to push your encrypted image to, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-* Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux, you can use a virtual machine or Docker image to run Buildah to build images.
-* Install [Podman](https://podman.io/).
+- Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+- Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+- Ensure that you have a private namespace to push your encrypted image to, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
+- Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux, you can use a virtual machine or Docker image to run Buildah to build images.
+- Install [Podman](https://podman.io/).
 
 ## Create the public-private key pair
 {: #registry_encrypt_create}
