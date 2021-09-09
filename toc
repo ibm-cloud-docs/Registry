@@ -23,6 +23,7 @@ Container Registry
         /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
     [What are containers?](https://www.ibm.com/cloud/learn/containers)
+    registry_release_notes.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -99,6 +100,5 @@ Container Registry
         ts_docker_mac.md
 
     registry_faq.md
-    registry_release_notes.md
     sitemap.md
     {: .navgroup-end}
