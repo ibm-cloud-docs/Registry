@@ -340,45 +340,47 @@ subcollection: Registry
 
 * [2 September 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-02sep2021)
 
-* [August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-aug2021)
-    * [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-30aug2021)
-    * [19 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-19aug2021)
-    * [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-09aug2021)
+* [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-30aug2021)
+
+* [19 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-19aug2021)
+
+* [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-09aug2021)
 
 * [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2021)
 
 * [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-21jun2021)
 
-* [May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-may2021)
-    * [10 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-10may2021)
-    * [4 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-04may2021)
+* [10 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-10may2021)
 
-* [February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-feb2021)
-    * [18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-18feb2021)
-    * [15 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-15feb2021)
+* [4 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-04may2021)
+
+* [18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-18feb2021)
+
+* [15 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-15feb2021)
 
 * [19 November 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-19nov2020)
 
-* [October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-oct2020)
-    * [21 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-21oct2020)
-    * [6 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-06oct2020)
+* [21 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-21oct2020)
 
-* [August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-aug2020)
-    * [27 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-27aug2020)
-    * [12 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-12aug2020)
+* [6 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-06oct2020)
 
-* [July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-jul2020)
-    * [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry- 30jul2020)
-    * [29 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2020)
-    * [13 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-13jul2020)
+* [27 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-27aug2020)
+
+* [12 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-12aug2020)
+
+* [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry- 30jul2020)
+
+* [29 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2020)
+
+* [13 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-13jul2020)
 
 * [24 June 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-24jun2020)
 
 * [18 May 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-18may2020)
 
-* [April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-apr2020)
-    * [30 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-30apr2020)
-    * [16 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-16apr2020)
+* [30 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-30apr2020)
+
+* [16 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-16apr2020)
 
 * [3 February 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-3feb2020)
 
@@ -386,21 +388,21 @@ subcollection: Registry
 
 * [4 December 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-4dec2019)
 
-* [October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-oct2019)
-    * [25 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25oct2019)
-    * [14 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14oct2019)
+* [25 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25oct2019)
+
+* [14 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14oct2019)
 
 * [23 September 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-23sep2019)
 
 * [1 August 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-01aug2019)
 
-* [July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-jul2019)
-    * [25 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2019)
-    * [1 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-1jul2019)
+* [25 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2019)
 
-* [June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-jun2019)
-    * [27 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2019)
-    * [13 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13jun2019)
+* [1 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-1jul2019)
+
+* [27 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2019)
+
+* [13 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13jun2019)
 
 * [13 May 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13may2019)
 
@@ -408,9 +410,9 @@ subcollection: Registry
 
 * [14 March 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14mar2019)
 
-* [February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-feb2019)
-    * [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019)
-    * [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-21feb2019)
+* [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019)
+
+* [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-21feb2019)
 
 * [8 January 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-8jan2019)
 
@@ -418,15 +420,15 @@ subcollection: Registry
 
 * [7 August 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-7aug2018)
 
-* [July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-jul2018)
-    * [25 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2018)
-    * [12 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-12jul2018)
+* [25 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2018)
+
+* [12 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-12jul2018)
 
 * [31 May 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-31may2018)
 
-* [March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-mar2018)
-    * [21 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-21mar2018)
-    * [16 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-16mar2018)
+* [21 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-21mar2018)
+
+* [16 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-16mar2018)
 
 * [20 February 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-20feb2018)
 

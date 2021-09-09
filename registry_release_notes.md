@@ -122,24 +122,21 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 Namespaces that are assigned to a resource group show in the Resource list page {: #02sep2021_resource_list}
 :   Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
-## August 2021
-{: #registry-aug2021}
-
-### 30 August 2021
+## 30 August 2021
 {: #registry-30aug2021}
 {: release-note}
 
 New region in Brazil {: #30aug2021_brazil}
 :   A new region in Sao Paulo, Brazil is available. The new region is `br-sao` and the domain name is `br.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
-### 19 August 2021
+## 19 August 2021
 {: #registry-19aug2021}
 {: release-note}
 
 Using registry tokens is discontinued {: #19aug2021_remove_tokens}
 :   From 19 August 2021, registry tokens are no longer accepted for authentication. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 
-### 9 August 2021
+## 9 August 2021
 {: #registry-09aug2021}
 {: release-note}
 
@@ -163,34 +160,28 @@ Global registry {: #21jun2021_global}
 :   The global registry (`icr.io`) is now available for hosting user images and namespaces. Previously the global registry hosted only public images that are provided by {{site.data.keyword.IBM_notm}}.
 For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
 
-## May 2021
-{: #registry-may2021}
-
-### 10 May 2021
+## 10 May 2021
 {: #registry-10may2021}
 {: release-note}
 
 New region in Canada {: #10may2021_canada}
 :   A new region in Toronto, Canada is available. The new region is `ca-tor` and the domain name is `ca.icr.io`. For more information, see [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
-### 4 May 2021
+## 4 May 2021
 {: #registry-04may2021}
 {: release-note}
 
 The `ibmcloud cr ppa-archive-load` command is obsolete {: #04may2021_ppa}
 :   The `ibmcloud cr ppa-archive-load` command is obsolete. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
-## February 2021
-{: #registry-feb2021}
-
-### 18 February 2021
+## 18 February 2021
 {: #registry-18feb2021}
 {: release-note}
 
 Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option {: #18feb2021_no-va}
 :   If you don't need the security status (Vulnerability Advisor) results as part of the output of the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) or [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) commands, you can use the `--no-va` option to increase performance.
 
-### 15 February 2021
+## 15 February 2021
 {: #registry-15feb2021}
 {: release-note}
 
@@ -206,10 +197,7 @@ You can use Portieris to enforce container image security {: #19nov2020_portieri
 
     For more information, see [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
-## October 2020
-{: #registry-oct2020}
-
-### 21 October 2020
+## 21 October 2020
 {: #registry-21oct2020}
 {: release-note}
 
@@ -218,7 +206,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 
     For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
 
-### 6 October 2020
+## 6 October 2020
 {: #registry-06oct2020}
 {: release-note}
 
@@ -227,10 +215,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 
     For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 
-## August 2020
-{: #registry-aug2020}
-
-### 27 August 2020
+## 27 August 2020
 {: #registry-27aug2020}
 {: release-note}
 
@@ -239,7 +224,7 @@ Setting exemption policies by digest {: #27aug2020_digest}
 
     For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
-### 12 August 2020
+## 12 August 2020
 {: #registry-12aug2020}
 {: release-note}
 
@@ -248,10 +233,7 @@ Using UAA tokens is discontinued {: #12aug2020_tokens}
 
     For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
-## July 2020
-{: #registry-jul2020}
-
-### 30 July 2020
+## 30 July 2020
 {: #registry- 30jul2020}
 {: release-note}
 
@@ -260,7 +242,7 @@ New access roles are required for Vulnerability Advisor exemption policies {: #3
 
     For more information, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-### 29 July 2020
+## 29 July 2020
 {: #registry-29jul2020}
 {: release-note}
 
@@ -273,7 +255,7 @@ You can set permissions so that access to resources within a namespace can be co
 
     - You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
 
-### 13 July 2020
+## 13 July 2020
 {: #registry-13jul2020}
 {: release-note}
 
@@ -298,10 +280,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 
     For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
-## April 2020
-{: #registry-apr2020}
-
-### 30 April 2020
+## 30 April 2020
 {: #registry-30apr2020}
 {: release-note}
 
@@ -310,7 +289,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 
     For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
 
-### 16 April 2020
+## 16 April 2020
 {: #registry-16apr2020}
 {: release-note}
 
@@ -351,10 +330,7 @@ Support for {{site.data.keyword.openshiftlong_notm}} signatures is available {: 
 
     For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
-## October 2019
-{: #registry-oct2019}
-
-### 25 October 2019
+## 25 October 2019
 {: #registry-25oct2019}
 {: release-note}
 
@@ -363,7 +339,7 @@ Support for {{site.data.keyword.openshiftlong_notm}} signatures is available {: 
 
     For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=Registry-registry_logs).
 
-### 14 October 2019
+## 14 October 2019
 {: #registry-14oct2019}
 {: release-note}
 
@@ -405,10 +381,7 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 
     For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
-## July 2019
-{: #registry-jul2019}
-
-### 25 July 2019
+## 25 July 2019
 {: #registry-25jul2019}
 {: release-note}
 
@@ -417,24 +390,21 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
-### 1 July 2019
+## 1 July 2019
 {: #registry-1jul2019}
 {: release-note}
 
 `ibmcloud cr token-add` command is no longer available {: #1jul2019_token_add}
 :   The `ibmcloud cr token-add` command is discontinued. You can't add registry tokens in either the CLI or the API anymore.
 
-## June 2019
-{: #registry-jun2019}
-
-### 27 June 2019
+## 27 June 2019
 {: #registry-27jun2019}
 {: release-note}
 
 Container Scanner is no longer available {: #27jun2019_cs}
 :   The Container Scanner is discontinued. Vulnerability Advisor still scans images that are pushed to {{site.data.keyword.registrylong_notm}}.
 
-### 13 June 2019
+## 13 June 2019
 {: #registry-13jun2019}
 {: release-note}
 
@@ -466,10 +436,7 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
-## February 2019
-{: #registry-feb2019}
-
-### 25 February 2019
+## 25 February 2019
 {: #registry-25feb2019}
 {: release-note}
 
@@ -492,7 +459,7 @@ New region in ap-north {: #25feb2019_ap-north}
 
     For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-### 21 February 2019
+## 21 February 2019
 {: #registry-21feb2019}
 {: release-note}
 
@@ -528,10 +495,7 @@ Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 
     For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
-## July 2018
-{: #registry-jul2018}
-
-### 25 July 2018
+## 25 July 2018
 {: #registry-25jul2018}
 {: release-note}
 
@@ -540,7 +504,7 @@ Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
-### 12 July 2018
+## 12 July 2018
 {: #registry-12jul2018}
 {: release-note}
 
@@ -558,17 +522,14 @@ Use Helm for Passport Advantage images {: #31may2018_helm}
 
     For more information, see [`ibmcloud cr ppa-archive-load`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load).
 
-## March 2018
-{: #registry-mar2018}
-
-### 21 March 2018
+## 21 March 2018
 {: #registry-21mar2018}
 {: release-note}
 
 Container Scanner {: #21mar2018_cs}
 :   Container Scanner enables Vulnerability Advisor to report any problems that are found in running containers that are not present in the container's base image.
 
-### 16 March 2018
+## 16 March 2018
 {: #registry-16mar2018}
 {: release-note}
 
@@ -613,9 +574,9 @@ Graphical user interface released {: #24aug2017_gui}
 {: #registry-27jun2017}
 {: release-note}
 
-General availability of {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
-:   {{site.data.keyword.registrylong_notm}} is generally available as a service in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.registrylong_notm}} supports {{site.data.keyword.containerlong_notm}}.
+Introducing {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
+:   {{site.data.keyword.registrylong_notm}} is generally available as a service in {{site.data.keyword.cloud_notm}}. [{{site.data.keyword.registryshort}}](https://www.ibm.com/cloud/container-registry) provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 
-    For more information about {{site.data.keyword.containerlong_notm}}, see [Getting started with {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-getting-started).
+    For more information about how to use {{site.data.keyword.registryshort}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 
 
