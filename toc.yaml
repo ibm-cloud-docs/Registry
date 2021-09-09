@@ -28,6 +28,8 @@ toc:
       - link: 
           label: What are containers?
           href: https://www.ibm.com/cloud/learn/containers
+      - topic: registry_release_notes.md
+        navtitle: Release notes
 
   - navgroup: 
       id: tutorial
@@ -153,5 +155,4 @@ toc:
           - ts_manifest_error_version.md
           - ts_docker_mac.md
       - registry_faq.md
-      - registry_release_notes.md
       - sitemap.md
