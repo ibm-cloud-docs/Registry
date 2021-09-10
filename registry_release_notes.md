@@ -112,7 +112,7 @@ content-type: release-note
 # Release notes for {{site.data.keyword.registryshort}}
 {: #registry_release_notes}
 
-Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](docs/Registry?topic=va-va_index). The changes are grouped by date.
+Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
 
 ## 2 September 2021
