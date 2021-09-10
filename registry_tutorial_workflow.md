@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-09"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -128,26 +128,26 @@ Much of the information that is provided in this tutorial is available in greate
 
 The tutorial has the following objectives.
 
-* Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor.
-* Use the functions of these services to create a workflow.
+- Understand the core features of {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor.
+- Use the functions of these services to create a workflow.
 
 ## Services used
 {: #registry_tutorial_workflow_services}
 
 This tutorial uses the following {{site.data.keyword.cloud_notm}} services:
 
-* [{{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/registry/repos)
-* [{{site.data.keyword.containerlong_notm}}](https://cloud.ibm.com/kubernetes/catalog/about)
+- [{{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/registry/repos)
+- [{{site.data.keyword.containerlong_notm}}](https://cloud.ibm.com/kubernetes/catalog/about)
 
 ## Before you begin
 {: #registry_tutorial_workflow_prereqs}
 
 Before you begin, complete the following tasks:
 
-* [Install Git](https://git-scm.com/){: external}.
-* [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
-* [Create a cluster](/docs/containers?topic=containers-clusters).
-* Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- [Install Git](https://git-scm.com/){: external}.
+- [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
+- [Create a cluster](/docs/containers?topic=containers-clusters).
+- Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}

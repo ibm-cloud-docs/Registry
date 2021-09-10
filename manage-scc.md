@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-09"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -115,8 +115,8 @@ subcollection: Registry
 
 With the {{site.data.keyword.compliance_short}}, you can:
 
-* Monitor for controls and goals that are applicable to {{site.data.keyword.registrylong_notm}}.
-* Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
+- Monitor for controls and goals that are applicable to {{site.data.keyword.registrylong_notm}}.
+- Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
 
 ## Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}
 {: #monitor-container-registry}
@@ -133,15 +133,15 @@ To start monitoring your resources, see [Getting started with {{site.data.keywor
 
 You can choose from the following goals:
 
-* **Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM access groups.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether {{site.data.keyword.registryshort_notm}} has at least `#` service IDs with the IAM manager role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether {{site.data.keyword.registryshort_notm}} is enabled with {{site.data.keyword.mon_full_notm}}.** For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
-* **Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints.** For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
-* **Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-* **Check whether security insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}.** For more information, see [Leveraging default services](/docs/security-advisor?topic=security-advisor-setup-services).
+- **Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM access groups.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether {{site.data.keyword.registryshort_notm}} has at least `#` service IDs with the IAM manager role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether {{site.data.keyword.registryshort_notm}} is enabled with {{site.data.keyword.mon_full_notm}}.** For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
+- **Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints.** For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
+- **Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role.** For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- **Check whether security insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}.** For more information, see [Leveraging default services](/docs/security-advisor?topic=security-advisor-setup-services).
 
 ## Gaining security insight with {{site.data.keyword.registrylong_notm}}
 {: #container-registry-security_insight}

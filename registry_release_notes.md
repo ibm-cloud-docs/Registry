@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-10"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -112,7 +112,7 @@ content-type: release-note
 # Release notes for {{site.data.keyword.registryshort}}
 {: #registry_release_notes}
 
-Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](docs/Registry?topic=va-va_index). The changes are grouped by date.
+Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
 
 ## 2 September 2021
@@ -234,7 +234,7 @@ Using UAA tokens is discontinued {: #12aug2020_tokens}
     For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
 ## 30 July 2020
-{: #registry- 30jul2020}
+{: #registry-30jul2020}
 {: release-note}
 
 New access roles are required for Vulnerability Advisor exemption policies {: #30jul2020_exemption}
