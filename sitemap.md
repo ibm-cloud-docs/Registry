@@ -368,7 +368,7 @@ subcollection: Registry
 
 * [12 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-12aug2020)
 
-* [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry- 30jul2020)
+* [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-30jul2020)
 
 * [29 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2020)
 
