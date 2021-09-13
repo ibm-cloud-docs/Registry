@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out, IBM Cloud console, console
+keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out,
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?
+# Why does listing images  in the {{site.data.keyword.cloud_notm}} console timeout?
 {: #troubleshoot-image-timeout}
 {: troubleshoot}
 {: support}

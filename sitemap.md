@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: container registry
 
@@ -917,7 +917,7 @@ subcollection: Registry
 
 [Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 
-[Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
+[Why does listing images  in the {{site.data.keyword.cloud_notm}} console timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 
 [I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 
