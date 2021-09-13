@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does listing images  in the {{site.data.keyword.cloud_notm}} console timeout?
+# Why does listing images in the {{site.data.keyword.cloud_notm}} console timeout?
 {: #troubleshoot-image-timeout}
 {: troubleshoot}
 {: support}
