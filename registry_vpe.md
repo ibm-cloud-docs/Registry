@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: Virtual private endpoint, VPE
 
@@ -49,6 +49,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Frankfurt (`eu-de`)
 - London (`eu-gb`)
 - Osaka (`jp-osa`)
+- Sao Paulo (`br-sao`)
 - Sydney (`au-syd`)
 - Tokyo (`jp-tok`)
 - Toronto (`ca-tor`)
@@ -62,12 +63,13 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 
 When you create a VPE gateway by using the [CLI](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-cli) or [API](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-api), you must specify the Cloud Resource Name (CRN) of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
+You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 
 | Registry region | Cloud Resource Name (CRN) |
 |-----------------|-----------------|
 | `ap-north` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:vpe.jp-tok.container-registry.cloud.ibm.com` |
 | `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:vpe.au-syd.container-registry.cloud.ibm.com` |
+| `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:vpe.br-sao.container-registry.cloud.ibm.com` |
 | `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:vpe.ca-tor.container-registry.cloud.ibm.com` |
 | `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:vpe.eu-de.container-registry.cloud.ibm.com` |
 | `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:vpe.jp-osa.container-registry.cloud.ibm.com` |
