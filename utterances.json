@@ -222,14 +222,6 @@
         "issue with trusted image in container registry",
         "manage a signed image by docker trust command in container registry"
       ],
-      "troubleshoot-install-cise-fail": [
-        "installation of Container Image Security Enforcement fails",
-        "install of Container Image Security Enforcement failing",
-        "installation of Container Image Security Enforcement failed",
-        "Error: jobs.batch 'create-crds' already exists",
-        "helm install ibmcloud-image-enforcement fails with error",
-        "issue installing Container Image Security Enforcement"
-      ],
       "troubleshoot-iam-policy": [
         "get access denied errors although I have IAM access",
         "getting access denied errors container registry",
