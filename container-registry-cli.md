@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-17"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -64,7 +64,7 @@ The `br-sao`, `ca-tor`, and `jp-osa` regions don't have a build service because 
 Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
 {: tip}
 
-You can't use [IAM IP allowlists](/docs/Registry?topic=Registry-registry_iam_ip) in combination with the `ibmcloud cr image-build` command.
+You can't use an [IAM IP allowlist](/docs/Registry?topic=Registry-registry_iam_ip) in combination with the `ibmcloud cr image-build` command.
 {: note}
 
 ```
