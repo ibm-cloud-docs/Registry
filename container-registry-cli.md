@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -1020,10 +1020,10 @@ ibmcloud cr platform-metrics --enable
 ```
 {: pre}
 
-## `ibmcloud cr ppa-archive-load` - obsolete
+## `ibmcloud cr ppa-archive-load` - discontinued
 {: #bx_cr_ppa_archive_load}
 
-The [`ibmcloud cr ppa-archive-load` command is obsolete](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa). Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
+The [`ibmcloud cr ppa-archive-load` command is discontinued(/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa). Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## `ibmcloud cr private-only`
 {: #ic_cr_private_only}

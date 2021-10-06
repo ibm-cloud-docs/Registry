@@ -763,7 +763,7 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
 
-* [`ibmcloud cr ppa-archive-load` - obsolete](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
+* [`ibmcloud cr ppa-archive-load` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
 
 * [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
