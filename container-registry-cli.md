@@ -67,7 +67,7 @@ Builds are pushed to the private domain name of the registry over a private conn
 You can't use an [IAM IP allowlist](/docs/Registry?topic=Registry-registry_iam_ip) in combination with the `ibmcloud cr image-build` command.
 {: note}
 
-```
+```sh
 ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY --accept-deprecation
 ```
 {: codeblock}
@@ -122,7 +122,7 @@ Create an exemption for a security issue. You can create an exemption for a secu
 You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```
+```sh
 ibmcloud cr exemption-add --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
 {: codeblock}
@@ -191,7 +191,7 @@ List your exemptions for security issues.
 You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```
+```sh
 ibmcloud cr exemption-list [--scope SCOPE]
 ```
 {: codeblock}
@@ -239,7 +239,7 @@ Delete an exemption for a security issue. To view your existing exemptions, run 
 You can identify the images in the scope by using either the tag or the digest. You can reference the image by digest `<dns>/<namespace>/<repo>@<digest>`, which affects the digest and all of its tags in the same repository, or by tag `<dns>/<namespace>/<repo>:<tag>`. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, `<digest>` is the digest, and `<tag>` is the tag. To list all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
 {: tip}
 
-```
+```sh
 ibmcloud cr exemption-rm --scope SCOPE --issue-type ISSUE_TYPE --issue-id ISSUE_ID
 ```
 {: codeblock}
@@ -764,7 +764,7 @@ To view the contents of the manifest for the image `us.icr.io/birds/bluebird:1`,
 ```sh
 ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 ```
-{: codeblock}
+{: pre}
 
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}

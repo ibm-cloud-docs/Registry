@@ -156,10 +156,10 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 
 3. Update the following line in the `hello-world.yaml` file by replacing `<my_namespace>` with your namespace:
 
-    ```
+    ```sh
     image: us.icr.io/<my_namespace>/hello-world:1
     ```
-    {: codeblock}
+    {: pre}
 
 4. Run your image as a deployment and expose it by creating a service that is accessed through the IP address of the worker node:
 
@@ -370,7 +370,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 2. To deploy your deployment and service into this Kubernetes namespace, in the `hello-world.yaml` file change the `metadata.namespace` fields for both the deployment and the service from `default` to `test`. This snippet shows the `metadata.namespace` field in context:
 
-    ```
+    ```sh
     metadata:
         name: hello-world
         namespace: test
@@ -421,7 +421,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-registry#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment `.yaml` file by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
 
-    ```
+    ```sh
     spec:
         containers:
         - name: hello-world
