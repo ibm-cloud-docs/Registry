@@ -188,7 +188,7 @@ Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry
 
 2. [Push your image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. You see the following message:
 
-    ```
+    ```sh
     Signing and pushing image metadata.
     ```
     {: screen}
@@ -245,7 +245,7 @@ To sign the image for the new domain name, `icr.io`, you must pull, tag, and pus
 
 3. Push your image by using the new domain name, see [Push Docker images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing). The tag is mandatory for trusted content. You see the following message:
 
-    ```
+    ```sh
     Signing and pushing image metadata.
     ```
     {: screen}
@@ -307,7 +307,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
     You see the following message:
 
-    ```
+    ```sh
     No signatures or cannot access <image>:<tag>
     ```
     {: screen}

@@ -283,7 +283,7 @@ Despite the vulnerability that is present in your image, you're still able to de
 
     You see the following error message:
 
-    ```
+    ```sh
     Deny "us.icr.io/<my_namespace>/hello-world:2", the Vulnerability Advisor image scan assessment
     found issues with the container image that are not exempted. Refer to your image vulnerability
     report for more details by using the `ibmcloud cr va` command.
@@ -388,7 +388,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
         Because Portieris is still enabled in your cluster, your deployment fails immediately and you see the following message:
 
-        ```
+        ```sh
         Error from server: error when creating "hello-world.yaml": admission webhook
         "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request:
         Deny "us.icr.io/<my_namespace>/hello-world:2", no valid ImagePullSecret defined for us.icr.io

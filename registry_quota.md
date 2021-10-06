@@ -46,7 +46,7 @@ To set a quota, complete the following steps.
 
     Your output looks similar to the following example.
 
-    ```
+    ```sh
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
     QUOTA          LIMIT    USED
@@ -98,7 +98,7 @@ You can review your quota limits and check your current storage and pull traffic
 
     Your output looks similar to the following example.
 
-    ```
+    ```sh
     Getting quotas and usage for the current month, for account '<account_owner> Account'...
 
     QUOTA          LIMIT    USED

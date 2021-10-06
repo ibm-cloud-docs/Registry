@@ -42,7 +42,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command.
 
-    ```
+    ```sh
     example-<region>.icr.io/user1/ibmliberty@<digest1>
     example-<region>.icr.io/user1/ibmliberty@<digest2>
     example-<region>.icr.io/user1/ibmliberty@<digest3>
@@ -58,7 +58,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    ```
+    ```sh
     example-<region>.icr.io/user1/ibmliberty:latest No Issues
     example-<region>.icr.io/user1/ibmnode:1 2 Issues
     example-<region>.icr.io/user1/ibmnode:test1 1 Issue
@@ -75,7 +75,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    ```
+    ```sh
     map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
     ```
     {: screen}
@@ -89,7 +89,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    ```
+    ```sh
     map[9080/tcp: 9443/tcp:]
     ```
     {: screen}

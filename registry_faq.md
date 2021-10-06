@@ -72,7 +72,7 @@ To find out about the regions that are available, see [Regions](/docs/Registry?t
 
 If you get the vulnerability report immediately after you add the image to the registry, you might receive the following error:
 
-```
+```sh
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
 If this issue persists, contact support for help;
 see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support

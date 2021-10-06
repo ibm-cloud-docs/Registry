@@ -90,7 +90,7 @@ Create a public-private key pair by using OpenSSL commands.
 
     You get a response similar to the following output:
 
-    ```
+    ```sh
     -----BEGIN PUBLIC KEY-----
     MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8Ny7dCWQ8Pdq1ddYSwk
     QOCB3lUEZVEyj9StX3jnISF/rxIsUZzJfbOrQN0fGkm+1sCCtltgQdztTjito8Fh
@@ -170,7 +170,7 @@ Pull the image from the registry and decrypt it by using the private key.
 
     The output contains a message similar to the following message:
 
-    ```
+    ```sh
     ...<truncated>...
     Error decrypting layer sha256:ab4ea03582e08a8e8fc35b778cc6f1a1fa797469fa9cc61cee85f703b316bb12: missing private key needed for decryption
     ERRO exit status 125
