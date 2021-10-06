@@ -31,7 +31,7 @@ The server might be down or issues might exist in your Dockerfile.
 To find out what the cause is, run `docker build` locally with the appropriate [`docker build` options](https://docs.docker.com/engine/reference/commandline/build/){: external}:
 {: tsResolve}
 
-```
+```sh
 docker build --no-cache .
 ```
 {:  pre}

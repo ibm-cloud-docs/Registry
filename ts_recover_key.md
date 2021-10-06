@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, keys, lost keys, recover lost keys, root keys, repo keys, repository keys
 
@@ -54,21 +54,21 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 3. Create an IAM API key.
 
-    ```
+    ```sh
     ibmcloud iam api-key-create notary-auth --file notary-auth
     ```
     {: pre}
 
 4. Set the `NOTARY_AUTH`.
 
-    ```
+    ```sh
     export NOTARY_AUTH="iamapikey:$(jq -r .apikey notary-auth)"
     ```
     {: pre}
 
 5. Rotate your keys so that content that was signed with those keys is no longer trusted. Use the trust server variable that you set up in Step 2, and replace `<image>` with the image whose repository key is affected.
 
-    ```
+    ```sh
     notary -s "$DOCKER_CONTENT_TRUST_SERVER" -d ~/.docker/trust key rotate <image> targets
     ```
     {: pre}
@@ -79,7 +79,7 @@ Before you begin, retrieve the root key passphrase that you created when you fir
 
 8. (Optional) When you finish, if you want to revoke your API key, run the following command.
 
-    ```
+    ```sh
     ibmcloud iam api-key-delete notary-auth
     ```
     {: pre}
@@ -107,7 +107,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
 3. If you use [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris) in your {{site.data.keyword.containershort_notm}} cluster, restart each image enforcement pod. To trigger Kubernetes to do a rolling restart of the pods automatically, you can change some metadata on the pod. For example, [target your Kubernetes CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) and modify the deployment.
 
-    ```
+    ```sh
     kubectl patch deployment $(helm list | grep "ibmcloud-image-enforcement" | awk '{print $1;}')-ibmcloud-image-enforcement -p'{"spec":{"template":{"metadata":{"annotations":{"restarted":"'$(date +%s)'"}}}}}}' -n ibm-system
     ```
     {: pre}
@@ -118,7 +118,7 @@ If the namespace contains repositories with unaffected root keys, such as a name
 
     - If you don't want to change the previous trusted content, add a signature to the most recent images in the registry.
 
-        ```
+        ```sh
         docker trust sign <image>:<tag>
         ```
         {: pre}
