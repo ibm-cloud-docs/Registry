@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: 
 
@@ -16,9 +16,6 @@ subcollection: Registry
 {: #registry_iam_ip}
 
 If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.registrylong}}, you must ensure that the {{site.data.keyword.iamshort}} (IAM) allowlist is configured so that the {{site.data.keyword.registrylong_notm}} OAuth service, which is used to authenticate image pulls and pushes, can still function.
-
-The deprecated [`ibmcloud cr image-build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command can't be used in combination with an IAM IP allowlist.
-{: note}
 
 ## Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network
 {: #registry_iam_ip_public}

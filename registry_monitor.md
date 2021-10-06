@@ -50,7 +50,7 @@ Complete the following steps to configure platform metrics:
     ```
     {: pre}
 
-2. To enable platform metrics, run the following command:
+3. To enable platform metrics, run the following command:
 
     ```sh
     ibmcloud cr platform-metrics --enable

@@ -179,11 +179,8 @@ A Docker image is the basis for every container that you create. An image is cre
 
 If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.cloud_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
 
-The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 {: deprecated}
-
-The `br-sao`, `ca-tor`, and `jp-osa` regions don't have a build service because the `ibmcloud cr build` command is deprecated.
-{: note}
 
 To build your own Docker image, complete the following steps:
 
@@ -225,35 +222,25 @@ To build your own Docker image, complete the following steps:
     {: tip}
 
 4. Take note of the path to the directory that contains your Dockerfile. If you run the commands in the following steps while your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
-5. Choose to either build your image directly in {{site.data.keyword.cloud_notm}} or build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
-    - To build the image directly in {{site.data.keyword.cloud_notm}}, run the following command, where `<image_name>` is the name of your image and `<directory>` is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
+5. Build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
+
+    1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
 
         ```sh
-        ibmcloud cr build -t <image_name> <directory>
+        docker build -t <image_name> <directory>
         ```
         {: pre}
 
-        The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
-        {: deprecated}
+    2. Optional: Test your image on your local computer before you push it to your namespace.
 
-    - To build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}, complete the following steps:
-        1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
+        ```sh
+        docker run <image_name>
+        ```
+        {: pre}
 
-            ```sh
-            docker build -t <image_name> <directory>
-            ```
-            {: pre}
+        Replace `<image_name>` with the name of your image.
 
-        2. Optional: Test your image on your local computer before you push it to your namespace.
-
-            ```sh
-            docker run <image_name>
-            ```
-            {: pre}
-
-            Replace `<image_name>` with the name of your image.
-
-        3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
+    3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
