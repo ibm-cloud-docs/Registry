@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: container registry
 
@@ -198,9 +198,7 @@ subcollection: Registry
 * [Before you begin](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-prereqs)
 * [Deploy an application to one location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-2)
   * [Create a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-3)
-  * [Create a namespace in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-create_namespace)
-  * [Build the application](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-build_application)
-  * [Build and push a Docker image to the location-specific registry](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-push_image)
+  * [Clone the application](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-clone_application)
   * [Deploy the application to the Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-deploy_application)
   * [Get the Ingress Subdomain assigned to the cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-CSALB_IP_subdomain)
   * [Configure the Ingress for your DNS subdomain](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-ingress)
