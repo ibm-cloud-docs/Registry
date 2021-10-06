@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -109,7 +109,7 @@ Use the API key to log in to your registry by running the following Docker comma
 - For namespaces that are set up in `uk-south`, use `uk.icr.io` as the registry URL.
 - For namespaces that are set up in `us-south`, use `us.icr.io` as the registry URL.
 
-```
+```sh
 docker login -u iamapikey -p <apikey> <registry_url>
 ```
 {: pre}
@@ -127,7 +127,7 @@ For more information, see [Using a private image registry](/docs/ContinuousDeliv
 
 You can use skopeo to authenticate with the registry. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us`, `<namespace>` with your namespace, and `<apikey>` with your API key.
 
-```
+```sh
 skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<region>.icr.io/<namespace>/busybox:copy --dest-creds iamapikey:<apikey>
 ```
 {: pre}
@@ -137,7 +137,7 @@ skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker
 
 You can start Cloud Foundry apps from images in the registry by using the Cloud Foundry CLI. Replace `<apikey>` with your API key, `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), `<namespace>` with your namespace, and `<image_repo>` with the repository.
 
-```
+```sh
 export CF_DOCKER_PASSWORD=<apikey>
 ibmcloud cf push appname  -o <region>.icr.io/<namespace>/<image_repo> --docker-username iamapikey
 ```

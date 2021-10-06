@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -71,7 +71,7 @@ To upload (push) an image, complete the following steps:
 
 1. Log in to the CLI.
 
-    ```
+    ```sh
     ibmcloud cr login
     ```
     {: pre}
@@ -140,21 +140,21 @@ To create an image from a source image, complete the following steps.
 
 1. Log in to the CLI.
 
-    ```
+    ```sh
     ibmcloud cr login
     ```
     {: pre}
 
 2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` must be in the format `repository:tag` or `repository@digest` and `TARGET_IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
 
-    ```
+    ```sh
     ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
     ```
     {: pre}
 
 3. Verify that the new image was created by running the following command, and check that the image is shown in the list with the same image digest as the source image.
 
-    ```
+    ```sh
     ibmcloud cr image-list
     ```
     {: pre}
@@ -191,21 +191,21 @@ To build your own Docker image, complete the following steps:
 2. Create a Dockerfile.
     1. Create a Dockerfile in your local directory.
 
-        ```
+        ```sh
         touch Dockerfile
         ```
         {: pre}
 
     2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
-        ```
+        ```sh
         FROM <source_image>:<tag>
         ```
         {: pre}
 
         For example, to create a Dockerfile that is based on the public {{site.data.keyword.IBM_notm}} {{site.data.keyword.appserver_short}} Liberty (ibmliberty) image, use the following command.
 
-        ```
+        ```sh
         FROM <region>.icr.io/ibmliberty:latest
         LABEL description="This is my test Dockerfile"
         EXPOSE 9080
@@ -216,7 +216,7 @@ To build your own Docker image, complete the following steps:
 
 3. Decide on a name for your image. The image name must be in the following format, where `<my_namespace>` is your namespace information, `<repo_name>` is the name of your repository, and `<tag>` is the version that you want to use for your image:
 
-    ```
+    ```sh
     <region>.icr.io/<my_namespace>/<repo_name>:<tag>
     ```
     {: pre}
@@ -228,7 +228,7 @@ To build your own Docker image, complete the following steps:
 5. Choose to either build your image directly in {{site.data.keyword.cloud_notm}} or build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}.
     - To build the image directly in {{site.data.keyword.cloud_notm}}, run the following command, where `<image_name>` is the name of your image and `<directory>` is the path to the directory. If you run the command when your working directory is set to where your build context is stored, you can replace `<directory>` with a period (.).
 
-        ```
+        ```sh
         ibmcloud cr build -t <image_name> <directory>
         ```
         {: pre}
@@ -239,14 +239,14 @@ To build your own Docker image, complete the following steps:
     - To build and test your image locally before you push it to {{site.data.keyword.cloud_notm}}, complete the following steps:
         1. Build the image from your Dockerfile on your local computer and tag it with your image name, where `<image_name>` is the name of your image and `<directory>` is the path to the directory.
 
-            ```
+            ```sh
             docker build -t <image_name> <directory>
             ```
             {: pre}
 
         2. Optional: Test your image on your local computer before you push it to your namespace.
 
-            ```
+            ```sh
             docker run <image_name>
             ```
             {: pre}
@@ -291,7 +291,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. To remove a tag, run the following command, where `IMAGE` is the name of the image that you want to remove, in the format `repository:tag`. If a tag is not specified in the image name, the command fails. You can delete the tags for multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-    ```
+    ```sh
     ibmcloud cr image-untag IMAGE
     ```
     {: pre}
@@ -301,7 +301,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
 
 3. Verify that the tag was removed by running the following command, and check that the tag does not show in the list.
 
-    ```
+    ```sh
     ibmcloud cr image-list
     ```
     {: pre}
@@ -340,7 +340,7 @@ To delete an image by using the CLI, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. To delete an image, run the following command, where `IMAGE` is the name of the image that you want to remove, in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.cloud_notm}} registry path in the command with a space between each path.
 
-    ```
+    ```sh
     ibmcloud cr image-rm IMAGE
     ```
     {: pre}
@@ -350,7 +350,7 @@ To delete an image by using the CLI, complete the following steps:
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
 
-    ```
+    ```sh
     ibmcloud cr image-list
     ```
     {: pre}
@@ -391,14 +391,14 @@ To list the images in the trash, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the images in the trash by running the following command:
 
-    ```
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
 
 3. List only the images in the trash for the namespace that you're interested in by running the following command, where `<namespace>` is your namespace:
 
-    ```
+    ```sh
     ibmcloud cr trash-list --restrict <namespace>
     ```
     {: pre}
@@ -429,7 +429,7 @@ To restore an image by digest from the trash, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the images in the trash by running the following command:
 
-    ```
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
@@ -439,7 +439,7 @@ To restore an image by digest from the trash, complete the following steps:
 3. Note the digest for the image that you want to restore.
 4. Run the following command to restore the image to your repository. Where `<dns>` is the domain name, `<namespace>` is the namespace, `<repo>` is the repository, and `<digest>` is the digest of the image that you want to restore.
 
-    ```
+    ```sh
     ibmcloud cr image-restore <dns>/<namespace>/<repo>@<digest>
     ```
     {: pre}
@@ -463,7 +463,7 @@ To restore an image by tag from the trash, complete the following steps:
 1. Log in to {{site.data.keyword.cloud_notm}} by running the `ibmcloud login` command.
 2. List the images in the trash by running the following command:
 
-    ```
+    ```sh
     ibmcloud cr trash-list
     ```
     {: pre}
@@ -474,7 +474,7 @@ To restore an image by tag from the trash, complete the following steps:
 4. For the image that you want to restore, make a note of the tag, `<tag>`.
 5. Run the following command to restore the image to your repository, where `<dns>/<namespace>/<repo>` is the name of the image that you want to restore and `<tag>` is the tag.
 
-    ```
+    ```sh
     ibmcloud cr image-restore <dns>/<namespace>/<repo>:<tag>
     ```
     {: pre}

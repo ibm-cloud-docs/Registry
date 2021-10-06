@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -35,7 +35,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
 - Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests.
 
-    ```
+    ```sh
     ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
     ```
     {: pre}
@@ -51,7 +51,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
 - Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
 
-    ```
+    ```sh
     ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
     ```
     {: pre}
@@ -68,7 +68,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
 - Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
-    ```
+    ```sh
     ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
     ```
     {: pre}
@@ -82,7 +82,7 @@ The following code examples demonstrate how you might use the formatting and fil
 
 - Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image.
 
-    ```
+    ```sh
     ibmcloud cr image-inspect ibmliberty --format "{{ .Config.ExposedPorts }}"
     ```
     {: pre}

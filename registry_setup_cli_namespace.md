@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -49,14 +49,14 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 
 1. Update the `container-registry` CLI plug-in.
 
-    ```
+    ```sh
     ibmcloud plugin update container-registry
     ```
     {: pre}
 
 2. Verify that the `container-registry` CLI plug-in was updated successfully.
 
-    ```
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}
@@ -71,14 +71,14 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 
 1. Uninstall the `container-registry` CLI plug-in.
 
-    ```
+    ```sh
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
 2. Verify that the `container-registry` CLI plug-in was uninstalled successfully.
 
-    ```
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}
@@ -131,7 +131,7 @@ You can control which users can work with namespaces by using IAM roles.
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
     - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
 
-      ```
+      ```sh
       ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
       ```
       {: pre}
@@ -183,14 +183,14 @@ To assign an existing namespace to a resource group, complete the following step
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
 
 2. To find the namespace, list the available namespaces.
 
-    ```
+    ```sh
     ibmcloud cr namespace-list -v
     ```
     {: pre}
@@ -199,7 +199,7 @@ To assign an existing namespace to a resource group, complete the following step
 
     Replace `<my_resource_group>` with the name or ID of the resource group and `<my_namespace>` with the name of the namespace.
 
-    ```
+    ```sh
     ibmcloud cr namespace-assign -g <my_resource_group> <my_namespace>
     ```
     {: pre}
@@ -214,14 +214,14 @@ If you no longer require a registry namespace, you can remove the namespace from
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
 
 2. List available namespaces.
 
-    ```
+    ```sh
     ibmcloud cr namespace-list
     ```
     {: pre}
@@ -233,7 +233,7 @@ If you no longer require a registry namespace, you can remove the namespace from
 
     Replace `<my_namespace>` with the namespace that you want to remove.
 
-    ```
+    ```sh
     ibmcloud cr namespace-rm <my_namespace>
     ```
     {: pre}

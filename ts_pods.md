@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
@@ -42,7 +42,7 @@ To change the webhook configuration so that it fails open, and then, when at lea
 
 1. Update `MutatingWebhookConfiguration` by running the following command.
 
-    ```
+    ```sh
     kubectl edit MutatingWebhookConfiguration image-admission-config
     ```
     {: pre}
@@ -51,7 +51,7 @@ To change the webhook configuration so that it fails open, and then, when at lea
 
 2. Update `ValidatingWebhookConfiguration` by running the following command.
 
-    ```
+    ```sh
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}
@@ -60,14 +60,14 @@ To change the webhook configuration so that it fails open, and then, when at lea
 
 3. Wait for some Portieris pods to start. If you want to check when the pods start, run the following command until you see the **STATUS** column for at least one pod is displaying `Running`:
 
-    ```
+    ```sh
     kubectl get po -n ibm-system -l app=ibmcloud-image-enforcement
     ```
     {: pre}
 
 4. When at least one Portieris pod is running, update `MutatingWebhookConfiguration` by running the following command.
 
-    ```
+    ```sh
     kubectl edit MutatingWebhookConfiguration image-admission-config
     ```
     {: pre}
@@ -76,7 +76,7 @@ To change the webhook configuration so that it fails open, and then, when at lea
 
 5. Update `ValidatingWebhookConfiguration` by running the following command.
 
-    ```
+    ```sh
     kubectl edit ValidatingWebhookConfiguration image-admission-config
     ```
     {: pre}

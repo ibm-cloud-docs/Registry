@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: Virtual private endpoint, VPE
 
@@ -88,7 +88,7 @@ To configure a virtual private endpoint gateway, follow these steps:
 1. List the available services, including {{site.data.keyword.cloud_notm}} infrastructure services available (by default) for all VPC users. For more information, see [VPE supported services](/docs/vpc?topic=vpc-vpe-supported-services).
 2. [Create an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway) for {{site.data.keyword.registrylong_notm}} that you want to be privately available to the VPC. To create the VPE gateway by using the CLI, run the following command, where `<CRN>` is the CRN of the target region as shown in Table 1.
 
-    ```
+    ```sh
     ibmcloud is endpoint-gateway-create --target <CRN> --vpc-id <VPC-ID> --name myname
     ```
     {: pre}

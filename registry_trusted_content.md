@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -48,28 +48,28 @@ To use [skopeo](https://github.com/containers/skopeo){: external} to sign your i
 
 1. To create a GnuPG identity, run the following command.
 
-    ```
+    ```sh
     gpg --generate-key
     ```
     {: pre}
 
 2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
 
-    ```
+    ```sh
     skopeo --insecure-policy copy --sign-by <your_email> docker-daemon:<repository:tag> docker://<image>
     ```
     {: pre}
 
     For example, where `user@email.com` is your GnuPG email address, `bluebird:build1` is your repository and tag, and `us.icr.io/birds/bluebird:build1` is the name of your image.
 
-    ```
+    ```sh
     skopeo --insecure-policy copy --sign-by user@email.com docker-daemon:bluebird:build1 docker://us.icr.io/birds/bluebird:build1
     ```
     {: pre}
 
     On macOS, if you get the error `“FATA[0015] Error writing signatures: mkdir /var/lib/atomic: permission denied”`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
 
-    ```
+    ```sh
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
     ```
     {: pre}
@@ -126,21 +126,21 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
 
     On Linux&reg; or macOS.
 
-    ```
+    ```sh
     export DOCKER_CONTENT_TRUST=1
     ```
-    {: codeblock}
+    {: pre}
 
     On Windows.
 
-    ```
+    ```sh
     set DOCKER_CONTENT_TRUST=1
     ```
-    {: codeblock}
+    {: pre}
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-    ```
+    ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
@@ -150,21 +150,21 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
 
 3. Target the region that you want to use. If you don't know the region name, you can run the command without the region and choose one.
 
-    ```
+    ```sh
     ibmcloud cr region-set <region>
     ```
     {: pre}
 
 4. Log in to {{site.data.keyword.registrylong_notm}}.
 
-    ```
+    ```sh
     ibmcloud cr login
     ```
     {: pre}
 
 5. Export the environment variable command into your command line, where `<registry_DNS>` is your registry domain name. To find out about the available {{site.data.keyword.registrylong_notm}} domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-    ```
+    ```sh
     export DOCKER_CONTENT_TRUST_SERVER=https://<registry_DNS>:4443
     ```
     {: pre}
@@ -210,7 +210,7 @@ The first time that you pull a signed image with Docker Content Trust enabled, y
 
 2. Pull your image. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`. To list available images to pull, run `ibmcloud cr image-list`.
 
-    ```
+    ```sh
     docker pull <source_image>:<tag>
     ```
     {: pre}
@@ -228,7 +228,7 @@ To sign the image for the new domain name, `icr.io`, you must pull, tag, and pus
 
 1. Pull your signed image from the old domain name. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, such as `latest`. To list available images to pull, run `ibmcloud cr image-list`.
 
-    ```
+    ```sh
     docker pull <source_image>:<tag>
     ```
     {: pre}
@@ -238,7 +238,7 @@ To sign the image for the new domain name, `icr.io`, you must pull, tag, and pus
 
 2. Run the `docker tag` command for the new domain name. Replace `<old_domain_name>` with your old domain name, `<new_domain_name>` with your new domain name, `<repository>` with the name of your repository, and `<tag>` with the name of your tag.
 
-    ```
+    ```sh
     docker tag <old_domain_name>/<repository>:<tag> <new_domain_name>/<repository>:<tag>
     ```
     {: pre}
@@ -270,7 +270,7 @@ You can review signed versions of an image repository or tag, including informat
 
     (Optional) Specify the tag, `<tag>`, to see information about that version of the image.
 
-    ```
+    ```sh
     docker trust inspect --pretty <image>:<tag>
     ```
     {: pre}
@@ -291,7 +291,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
     (Optional) Specify a tag to revoke trusted metadata only for that version of the image.
 
-    ```
+    ```sh
     docker trust revoke <image>:<tag>
     ```
     {: pre}
@@ -300,7 +300,7 @@ Before you begin, retrieve the repository key passphrase that you saved when you
 
     (Optional) If you want to verify revoked content for a tagged image, include the tag.
 
-    ```
+    ```sh
     docker trust inspect --pretty <image>:<tag>
     ```
     {: pre}
@@ -359,7 +359,7 @@ To share signing keys, complete the following steps.
 
     1. Generate the key. You can enter any name for `<NAME>`. The name that you select is visible when someone inspects trust on the repository. Work with the repository owner to meet any naming conventions that might be used by the organization and to select a name that is identifiable for that signer.
 
-        ```
+        ```sh
         docker trust key generate <NAME>
         ```
         {: pre}
@@ -374,7 +374,7 @@ To share signing keys, complete the following steps.
 
     2. Add the signer's key to the repository.
 
-        ```
+        ```sh
         docker trust signer add --key <NAME>.pub <NAME> <repository>
         ```
         {: pre}
@@ -385,7 +385,7 @@ To share signing keys, complete the following steps.
 
     2. The signer must sign an image. When prompted, enter the passphrase for the private key.
 
-        ```
+        ```sh
         docker trust sign <repository>:<tag>
         ```
         {: pre}
@@ -411,7 +411,7 @@ To remove a signer, complete the following steps.
 
 2. Remove the signer by running the following command.
 
-    ```
+    ```sh
     docker trust signer remove <NAME> <repository>
     ```
     {: pre}

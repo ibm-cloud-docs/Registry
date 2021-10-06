@@ -89,7 +89,7 @@ To grant a user permission to configure your {{site.data.keyword.registrylong_no
 
 For example, run the following `ibmcloud iam user-policy-create` command. Where `<user_email>` is the user's email address, `<region>` is the region, and `<roles>` is the role, or roles, that you want the user to have.
 
-```
+```sh
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles>
 ```
 {: pre}
@@ -119,7 +119,7 @@ To grant a user permission to access {{site.data.keyword.registrylong_notm}} con
 
 For example, use the following command, where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace:
 
-```
+```sh
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}

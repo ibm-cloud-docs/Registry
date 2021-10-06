@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -26,12 +26,12 @@ Frequently asked questions about {{site.data.keyword.registrylong}}.
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM}}:
 
-```
+```sh
 ibmcloud cr region-set global
 ```
 {: pre}
 
-```
+```sh
 ibmcloud cr images --include-ibm
 ```
 {: pre}
