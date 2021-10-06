@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pushing a Docker image fails, pulling a Docker image fails, exceeded quota,
 
@@ -25,24 +25,24 @@ Pushing or pulling a Docker image fails.
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
 {: tsSymptoms}
 
-```
+```sh
 You have exceeded your storage quota. Delete one or more images,
 or review your storage quota and pricing plan
 ```
 {: screen}
 
-```
+```sh
 You have exceeded your pull traffic quota for the current month.
 Review your pull traffic quota and pricing plan
 ```
 {: screen}
 
-```
+```sh
 unauthorized: authentication required
 ```
 {: screen}
 
-```
+```sh
 denied: requested access to the resource is denied
 ```
 {: screen}

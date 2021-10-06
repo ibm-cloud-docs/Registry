@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -157,7 +157,7 @@ To upgrade your service plan, complete the following steps.
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -167,7 +167,7 @@ To upgrade your service plan, complete the following steps.
 
 2. Target the region for which you want to upgrade the plan.
 
-    ```
+    ```sh
     ibmcloud cr region-set
     ```
     {: pre}
@@ -176,7 +176,7 @@ To upgrade your service plan, complete the following steps.
 
 3. Upgrade to the standard plan.
 
-    ```
+    ```sh
     ibmcloud cr plan-upgrade standard
     ```
     {: pre}
@@ -306,7 +306,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 1. To target the global registry, run the following command.
 
-    ```
+    ```sh
     ibmcloud cr region-set global
     ```
     {: pre}
@@ -346,14 +346,14 @@ If you want to use a region other than your local region, you can target the reg
 
 1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
 
-    ```
+    ```sh
     ibmcloud cr region-set <region>
     ```
     {: pre}
 
     For example, to target the `eu-central` region, run the following command.
 
-    ```
+    ```sh
     ibmcloud cr region-set eu-central
     ```
     {: pre}

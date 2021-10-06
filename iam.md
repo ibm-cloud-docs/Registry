@@ -27,7 +27,7 @@ From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or late
 If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users).
 {: tip}
 
-From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
+From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and will not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
 For more information about IAM, see [What is {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/account?topic=account-iamoverview#iamoverview)
@@ -61,7 +61,7 @@ The following table details actions that are mapped to platform management roles
 | Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registrylong_notm}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
 {: caption="Table 1. IAM user roles and actions" caption-side="top"}
 
-From 19 August 2021, using {{site.data.keyword.registrylong_notm}} tokens is discontinued and will no longer work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
+From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and will not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
 ## Service access roles
@@ -89,7 +89,7 @@ To grant a user permission to configure your {{site.data.keyword.registrylong_no
 
 For example, run the following `ibmcloud iam user-policy-create` command. Where `<user_email>` is the user's email address, `<region>` is the region, and `<roles>` is the role, or roles, that you want the user to have.
 
-```
+```sh
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles>
 ```
 {: pre}
@@ -119,7 +119,7 @@ To grant a user permission to access {{site.data.keyword.registrylong_notm}} con
 
 For example, use the following command, where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace:
 
-```
+```sh
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}

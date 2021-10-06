@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -76,8 +76,8 @@ New region in Canada {: #10may2021_canada}
 {: #registry-04may2021}
 {: release-note}
 
-The `ibmcloud cr ppa-archive-load` command is obsolete {: #04may2021_ppa}
-:   The `ibmcloud cr ppa-archive-load` command is obsolete. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
+The `ibmcloud cr ppa-archive-load` command is discontinued {: #04may2021_ppa}
+:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## 18 February 2021
 {: #registry-18feb2021}

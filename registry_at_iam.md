@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -131,6 +131,7 @@ The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-con
 |-------------------------------------------|------------------------|---------------|------------|
 | Delete tag. | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
 {: caption="Table 10. Tags" caption-side="top"}
+
 ### Trash
 {: #registry_at_iam_reg_trash}
 

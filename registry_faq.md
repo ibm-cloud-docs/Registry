@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-06"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -26,12 +26,12 @@ Frequently asked questions about {{site.data.keyword.registrylong}}.
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM}}:
 
-```
+```sh
 ibmcloud cr region-set global
 ```
 {: pre}
 
-```
+```sh
 ibmcloud cr images --include-ibm
 ```
 {: pre}
@@ -72,7 +72,7 @@ To find out about the regions that are available, see [Regions](/docs/Registry?t
 
 If you get the vulnerability report immediately after you add the image to the registry, you might receive the following error:
 
-```
+```sh
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
 If this issue persists, contact support for help;
 see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
