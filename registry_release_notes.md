@@ -20,6 +20,15 @@ content-type: release-note
 Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
 
+## 5 October 2021
+{: #registry-05oct2021}
+{: release-note}
+
+{{site.data.keyword.registrylong_notm}} container builds are discontinued {: #05oct2021_build}
+:   The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
+
+    For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+
 ## 2 September 2021
 {: #registry-02sep2021}
 {: release-note}

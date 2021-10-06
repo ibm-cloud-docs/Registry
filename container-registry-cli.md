@@ -50,69 +50,10 @@ ibmcloud cr api
 
 None
 
-## `ibmcloud cr build` - deprecated
+## `ibmcloud cr build` - discontinued
 {: #bx_cr_build}
 
-This command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
-{: deprecated}
-
-Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
-
-The `br-sao`, `ca-tor`, and `jp-osa` regions don't have a build service because they were created after the command was deprecated.
-{: note}
-
-Builds are pushed to the private domain name of the registry over a private connection, but you can pull the image from all domains.
-{: tip}
-
-You can't use an [IAM IP allowlist](/docs/Registry?topic=Registry-registry_iam_ip) in combination with the `ibmcloud cr image-build` command.
-{: note}
-
-```sh
-ibmcloud cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg KEY=VALUE ...] [--file FILE | -f FILE] --tag TAG DIRECTORY --accept-deprecation
-```
-{: codeblock}
-
-### Prerequisites
-{: #bx_cr_build_prereq}
-
-To find out about the required permissions, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
-
-### Command options
-{: #bx_cr_build_option}
-
-`DIRECTORY`
-:   The location of your build context, which contains your Dockerfile and prerequisite files. If you run the command when your working directory is set to where your build context is stored, you can replace `DIRECTORY` with a period (.).
-
-`--no-cache`
-:   (Optional)  If specified, cached image layers from previous builds are not used in this build.
-
-`--pull`
-:   (Optional) If specified, the base images are pulled, even if an image with a matching tag exists on the build host.
-
-`--quiet`, `-q`
-:   (Optional) If specified, the build output is suppressed unless an error occurs.
-
-`--build-arg KEY=VALUE`
-:   (Optional) Specify an extra build argument in the format `'KEY=VALUE'`. Multiple build arguments can be specified by including this option multiple times. The value of each build argument is available as an environment variable when you specify an ARG line that matches the key in your Dockerfile.
-
-`--file FILE`, `-f FILE`
-:   (Optional) If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where `PATH` is the root of the build context.
-
-`--tag TAG`, `-t TAG`
-:   The full name for the image that you want to build, which includes the registry URL and namespace.
-
-`--accept-deprecation`
-:   (Optional) Confirm that you are aware that the build command is deprecated, and will be removed soon.
-
-### Example
-{: #bx_cr_build_example}
-
-Build a Docker image that doesn’t use a build cache from previous builds, where the build output is suppressed, the tag is `us.icr.io/birds/bluebird:1`, and the directory is your working directory.
-
-```sh
-ibmcloud cr build --no-cache --quiet --tag us.icr.io/birds/bluebird:1 .
-```
-{: pre}
+This command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}

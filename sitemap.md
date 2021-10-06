@@ -241,6 +241,8 @@ subcollection: Registry
 
 [Release notes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes)
 
+* [5 October 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-05oct2021)
+
 * [2 September 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-02sep2021)
 
 * [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-30aug2021)
@@ -651,10 +653,7 @@ subcollection: Registry
 * [`ibmcloud cr api`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api_prereq)
 
-* [`ibmcloud cr build` - deprecated](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build_prereq)
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build_option)
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build_example)
+* [`ibmcloud cr build` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)
 
 * [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add)
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_prereq)

@@ -33,7 +33,6 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | | |
 | `container-registry.exemption.create` | Create a Vulnerability Advisor exemption. | | |
 | `container-registry.exemption.delete` | Delete a Vulnerability Advisor exemption. | | |
-| `container-registry.image.build` | Build a Docker image in {{site.data.keyword.registrylong_notm}}. | Deprecated | True |
 | `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.delete` | Delete an image from {{site.data.keyword.registrylong_notm}}. | | True |
 | `container-registry.image.inspect` | Display details about an image. | | |
@@ -64,7 +63,7 @@ The following table lists the API methods that generate an event when they are c
 From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and will not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
 
-The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
 {: deprecated}
 
 ## Where to look for the events
