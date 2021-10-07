@@ -24,6 +24,7 @@ With the {{site.data.keyword.compliance_short}}, you can:
 - Monitor for controls and goals that are applicable to {{site.data.keyword.registrylong_notm}}.
 - Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
 
+
 ## Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}
 {: #monitor-container-registry}
 
