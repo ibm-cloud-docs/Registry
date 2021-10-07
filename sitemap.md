@@ -46,26 +46,26 @@ subcollection: Registry
 * [Service plans](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 
 * [Quota limits and billing](/docs/Registry?topic=Registry-registry_overview#registry_plan_billing)
-        * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
-        * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
-        * [Cost](/docs/Registry?topic=Registry-registry_overview#registry_cost)
+    * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
+    * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
+    * [Cost](/docs/Registry?topic=Registry-registry_overview#registry_cost)
 
 * [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade)
 
 * [Find out more about the elements that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements)
-        * [Container image](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image)
-        * [Dockerfile](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerfile)
-        * [Docker V2 container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerv2_images)
-        * [OCI container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_oci_images)
-        * [Registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry)
-        * [Registry namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace)
-        * [Repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository)
-        * [Tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag)
-        * [Untagged image](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged)
+    * [Container image](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image)
+    * [Dockerfile](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerfile)
+    * [Docker V2 container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerv2_images)
+    * [OCI container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_oci_images)
+    * [Registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry)
+    * [Registry namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace)
+    * [Repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository)
+    * [Tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag)
+    * [Untagged image](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged)
 
 * [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions)
-        * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
-        * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
+    * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
+    * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
 
 * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
 
@@ -359,7 +359,7 @@ subcollection: Registry
 * [Uninstalling the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_uninstall)
 
 * [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan)
-        * [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm)
+    * [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm)
 
 * [Setting up a namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup)
 
@@ -377,8 +377,8 @@ subcollection: Registry
 * [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
 * [Set up {{site.data.keyword.redhat_notm}} OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
-        * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
-        * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
+    * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
+    * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
 
 
 ## Managing quota limits for storage and pull traffic
@@ -415,14 +415,14 @@ subcollection: Registry
 * [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag)
 
 * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
-        * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
-        * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
+    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
+    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
 
 * [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash)
 
 * [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore)
-        * [Restoring images by digest](/docs/Registry?topic=Registry-registry_images_#registry_images_restore_digest)
-        * [Restoring images by tag](/docs/Registry?topic=Registry-registry_images_#registry_images_restore_tag)
+    * [Restoring images by digest](/docs/Registry?topic=Registry-registry_images_#registry_images_restore_digest)
+    * [Restoring images by tag](/docs/Registry?topic=Registry-registry_images_#registry_images_restore_tag)
 
 * [Deleting a private repository and any associated images](/docs/Registry?topic=Registry-registry_images_#registry_repo_remove)
 
@@ -434,14 +434,14 @@ subcollection: Registry
 [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access)
 
 * [Automating access to your namespaces by using service ID API keys](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey)
-        * [Creating a service ID API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create)
+    * [Creating a service ID API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create)
 
 * [Automating access to your namespaces by using user API keys](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey)
-        * [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create)
+    * [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create)
 
 * [Authentication](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
-        * [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
-        * [Using clients other than Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other)
+    * [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
+    * [Using clients other than Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other)
 
 
 ## Defining access role policies
@@ -464,8 +464,8 @@ subcollection: Registry
 * [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles)
 
 * [Service access roles](/docs/Registry?topic=Registry-iam#service_access_roles)
-        * [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure)
-        * [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using)
+    * [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure)
+    * [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
 
 ## Cleaning up your namespaces
@@ -492,14 +492,14 @@ subcollection: Registry
 [Managing your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-delete-data)
 
 * [How your data is stored](/docs/Registry?topic=Registry-delete-data#data-storage)
-        * [Image data](/docs/Registry?topic=Registry-delete-data#data-storage_image)
-        * [Scanning data](/docs/Registry?topic=Registry-delete-data#data-storage_va)
+    * [Image data](/docs/Registry?topic=Registry-delete-data#data-storage_image)
+    * [Scanning data](/docs/Registry?topic=Registry-delete-data#data-storage_va)
 
 * [Deleting your data](/docs/Registry?topic=Registry-delete-data#data-delete)
-        * [Deleting the service](/docs/Registry?topic=Registry-delete-data#data-delete_service)
-        * [Deleting namespaces](/docs/Registry?topic=Registry-delete-data#data-delete_namespaces)
-        * [Deleting images](/docs/Registry?topic=Registry-delete-data#data-delete_images)
-        * [Deleting private repositories](/docs/Registry?topic=Registry-delete-data#data-delete_private_repo)
+    * [Deleting the service](/docs/Registry?topic=Registry-delete-data#data-delete_service)
+    * [Deleting namespaces](/docs/Registry?topic=Registry-delete-data#data-delete_namespaces)
+    * [Deleting images](/docs/Registry?topic=Registry-delete-data#data-delete_images)
+    * [Deleting private repositories](/docs/Registry?topic=Registry-delete-data#data-delete_private_repo)
 
 * [Restoring deleted data](/docs/Registry?topic=Registry-delete-data#data-restore)
 
@@ -511,19 +511,19 @@ subcollection: Registry
 [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index)
 
 * [About Vulnerability Advisor](/docs/Registry?topic=va-va_index#about)
-        * [Data protection](/docs/Registry?topic=va-va_index#about_data_protection)
+    * [Data protection](/docs/Registry?topic=va-va_index#about_data_protection)
 
 * [Types of vulnerabilities](/docs/Registry?topic=va-va_index#types)
-        * [Vulnerable packages](/docs/Registry?topic=va-va_index#packages)
-        * [Configuration issues](/docs/Registry?topic=va-va_index#app_configurations)
+    * [Vulnerable packages](/docs/Registry?topic=va-va_index#packages)
+    * [Configuration issues](/docs/Registry?topic=va-va_index#app_configurations)
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
-        * [Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
-        * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
+    * [Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
 
 * [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy)
-        * [Setting organizational exemption policies by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
-        * [Setting organizational exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
+    * [Setting organizational exemption policies by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
+    * [Setting organizational exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
 
 
 ## Setting up Terraform for {{site.data.keyword.registrylong_notm}}
@@ -651,153 +651,153 @@ subcollection: Registry
 * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli_prereq)
 
 * [`ibmcloud cr api`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api_prereq)
 
 * [`ibmcloud cr build` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)
 
 * [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_example)
 
 * [`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_example)
 
 * [`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_example)
 
 * [`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types_prereq)
 
 * [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable_prereq)
 
 * [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status)
 
 * [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_example)
 
 * [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_example)
 
 * [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_example)
 
 * [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_example)
 
 * [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_example)
 
 * [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_example)
 
 * [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_example)
 
 * [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_example)
 
 * [`ibmcloud cr info`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_info)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_info_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_info_prereq)
 
 * [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_prereq)
 
 * [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_example)
 
 * [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_example)
 
 * [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_example)
 
 * [`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_example)
 
 * [`ibmcloud cr namespace-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_example)
 
 * [`ibmcloud cr plan`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_prereq)
 
 * [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_example)
 
 * [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
 
 * [`ibmcloud cr ppa-archive-load` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
 
 * [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_example)
 
 * [`ibmcloud cr quota`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_prereq)
 
 * [`ibmcloud cr quota-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_example)
 
 * [`ibmcloud cr region`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_prereq)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_prereq)
 
 * [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_example)
 
 * [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_prereq)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_prereq)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_example)
 
 * [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_example)
 
 * [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_example)
 
 * [`ibmcloud cr token-get` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)
 
@@ -806,14 +806,14 @@ subcollection: Registry
 * [`ibmcloud cr token-rm` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)
 
 * [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_option)
-        * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_option)
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_example)
 
 * [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va)
-        * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_prereq)
-        * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_option)
-        * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_prereq)
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_option)
+    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
 
 
 ## Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
@@ -823,11 +823,11 @@ subcollection: Registry
 [Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr)
 
 * [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
-        * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
-        * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
-        * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
-        * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
-        * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
+    * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
+    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
+    * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
+    * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
+    * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
 
 
 ## Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
@@ -841,9 +841,9 @@ subcollection: Registry
 * [Go template options and data types in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
 
 * [Go template options and data types in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
-        * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
-        * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
-        * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+    * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
+    * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
+    * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
 ## Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}

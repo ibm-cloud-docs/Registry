@@ -35,6 +35,7 @@ All of the goals for {{site.data.keyword.registrylong_notm}} are added to the {{
 
 To start monitoring your resources, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
 
+
 ### Available goals for {{site.data.keyword.registrylong_notm}}
 {: #container-registry-available-goals}
 
