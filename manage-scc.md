@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-07"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Managing security and compliance with {{site.data.keyword.registrylong_notm}}
 {: #manage-security-compliance}
@@ -23,6 +24,7 @@ With the {{site.data.keyword.compliance_short}}, you can:
 - Monitor for controls and goals that are applicable to {{site.data.keyword.registrylong_notm}}.
 - Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
 
+
 ## Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}
 {: #monitor-container-registry}
 
@@ -32,6 +34,7 @@ All of the goals for {{site.data.keyword.registrylong_notm}} are added to the {{
 {: note}
 
 To start monitoring your resources, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
+
 
 ### Available goals for {{site.data.keyword.registrylong_notm}}
 {: #container-registry-available-goals}
