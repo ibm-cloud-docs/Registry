@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-10-11"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs,
 
@@ -44,13 +44,13 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
-{: caption="Table 1. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="top"}
+{: caption="Table 1. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 
 The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.
 
 | Registry | Global registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |-----------------|-----------------|-----------------|
 | Global | `icr.io` | `Dallas (us-south)` |
-{: caption="Table 2. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="top"}
+{: caption="Table 2. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 
 
