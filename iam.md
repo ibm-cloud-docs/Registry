@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-11"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -59,7 +59,7 @@ The following table details actions that are mapped to platform management roles
 | Editor | Not supported | |
 | Operator | Not supported | |
 | Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registrylong_notm}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
-{: caption="Table 1. IAM user roles and actions" caption-side="top"}
+{: caption="Table 1. IAM user roles and actions" caption-side="bottom"}
 
 From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and will not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 {: deprecated}
@@ -74,7 +74,7 @@ The following table details actions that are mapped to service access roles. Ser
 | Reader | The Reader role can view information. | View, inspect, and pull images.  \n  \n View and analyze namespaces.  \n  \n View quotas.  \n  \n View vulnerability reports.  \n  \n View image signatures.  \n  \n View retention policies.  \n  \n View the contents of the trash.  \n  \n View the contents of the manifest for an image.  \n  \n List Vulnerability Advisor security exemption policies and types of security exemptions. |
 | Writer | The Writer role can edit information. | Push, delete, and restore images.  \n  \n View quotas.  \n  \n Sign images.  \n  \n Set and run retention policies.  \n  \n Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account. |
 | Manager | The Manager role can perform all actions. | View, inspect, pull, push, delete, and restore images.  \n  \n View, add, analyze, and remove namespaces.  \n  \n Assign namespaces to resource groups.  \n  \n View and set quotas.  \n  \n View vulnerability reports.  \n  \n View and create image signatures.  \n  \n Review and change pricing plans.  \n  \n Enable IAM policy enforcement.  \n  \n List, add, and remove Vulnerability Advisor security issue exemption policies.  \n  \n List types of security exemptions.  \n  \n Set and run retention policies.  \n  \n View the contents of the trash.  \n  \n Restore images.  \n  \n  View the contents of the manifest for an image.  \n  \n Prevent or allow image pulls or pushes over public network connections for your account.  \n  \n Check whether the use of public connections is prevented for image pushes or pulls in your account.  \n  \n Delete all untagged images in your {{site.data.keyword.registrylong_notm}} account. |
-{: caption="Table 2. IAM service access roles and actions" caption-side="top"}
+{: caption="Table 2. IAM service access roles and actions" caption-side="bottom"}
 
 For the following {{site.data.keyword.registrylong_notm}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registrylong_notm}}, you must create a policy where the following criteria apply.
 
@@ -110,7 +110,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set) Modify the specified quota. | Manager |
 | `container-registry.settings.get` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Get registry service settings for the targeted account, such as whether platform metrics are enabled. | Reader, Writer, Manager |
 | `container-registry.settings.set` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Update registry service settings for the targeted account, such as enabling platform metrics. | Manager |
-{: caption="Table 3. Service actions and operations for configuring {{site.data.keyword.registrylong_notm}}" caption-side="top"}
+{: caption="Table 3. Service actions and operations for configuring {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
 
 ### Access roles for using {{site.data.keyword.registrylong_notm}}
 {: #access_roles_using}
@@ -141,6 +141,6 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | `container-registry.retention.get` | View the image retention policy for a namespace by using the API, see [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry). | Reader, Manager | |
 | `container-registry.retention.set` | [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager | |
 | `container-registry.retention.list` | [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) List the image retention policies for your account. | Reader, Manager | |
-{: caption="Table 4. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="top"}
+{: caption="Table 4. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
 
 

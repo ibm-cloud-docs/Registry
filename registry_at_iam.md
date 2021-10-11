@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-11"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -39,7 +39,7 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | Get authorization options for the targeted account. | `GET /api/v1/auth` | `container-registry.auth.get`  | `container-registry.auth.get`  |
 | Update authorization options for the targeted account. | `PATCH /api/v1/auth` | `container-registry.auth.set` | `container-registry.auth.set`  |
-{: caption="Table 1. Auth" caption-side="top"}
+{: caption="Table 1. Auth" caption-side="bottom"}
 
 ### Builds
 {: #registry_at_iam_reg_builds}
@@ -59,7 +59,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|
 | Inspect an image. | `GET /api/v1/images/{image}/json` | `container-registry.image.inspect` | `container-registry.image.inspect` |
 | Get image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |
-{: caption="Table 2. Images" caption-side="top"}
+{: caption="Table 2. Images" caption-side="bottom"}
 
 ### Messages
 {: #registry_at_iam_reg_messages}
@@ -67,7 +67,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | Return any published system messages. | `GET /api/v1/messages` | | |
-{: caption="Table 3. Messages" caption-side="top"}
+{: caption="Table 3. Messages" caption-side="bottom"}
 
 ### Namespaces
 {: #registry_at_iam_reg_namespace}
@@ -79,7 +79,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Create namespace. | `PUT /api/v1/namespaces/{namespace}` | `container-registry.namespace.create` | `container-registry.namespace.create` |
 | Assign namespace. | `PATCH /api/v1/namespaces/{namespace}` | `container-registry.namespace.create` | `container-registry.namespace.update` |
 | Delete namespace. | `DELETE /api/v1/namespaces/{namespace}` | `container-registry.namespace.delete` | `container-registry.namespace.delete` |
-{: caption="Table 4. Namespaces" caption-side="top"}
+{: caption="Table 4. Namespaces" caption-side="bottom"}
 
 ### Plans
 {: #registry_at_iam_reg_plans}
@@ -88,7 +88,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 |-------------------------------------------|------------------------|---------------|------------|
 | Get plans for the targeted account. | `GET /api/v1/plans` | `container-registry.plan.get` | `container-registry.plan.get` |
 | Update plans for the targeted account. | `PATCH /api/v1/plans` | `container-registry.plan.set` | `container-registry.plan.set` |
-{: caption="Table 5. Plans" caption-side="top"}
+{: caption="Table 5. Plans" caption-side="bottom"}
 
 ### Quotas
 {: #registry_at_iam_reg_quota}
@@ -97,7 +97,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 |-------------------------------------------|------------------------|---------------|------------|
 | Get quotas for the targeted account. | `GET /api/v1/quotas` | `container-registry.quota.get` | `container-registry.quota.get` |
 | Update quotas for the targeted account. | `PATCH /api/v1/quotas` | `container-registry.quota.set` | `container-registry.quota.set` |
-{: caption="Table 6. Quotas" caption-side="top"}
+{: caption="Table 6. Quotas" caption-side="bottom"}
 
 ### Retentions
 {: #registry_at_iam_reg_retention}
@@ -108,7 +108,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Set the retention policy for the specified namespace. | `POST /api/v1/retentions` | `container-registry.retention.set` | `container-registry.retention.set` |
 | Analyze a retention policy, and get a list of what would be deleted by it. | `POST /api/v1/retentions/analyze` | `container-registry.retention.analyze`  | `container-registry.retention.analyze`  |
 | Get the retention policy for the specified namespace. | `GET /api/v1/retentions/{namespace}` | `container-registry.retention.get` | `container-registry.retention.get`  |
-{: caption="Table 7. Retentions" caption-side="top"}
+{: caption="Table 7. Retentions" caption-side="bottom"}
 
 ### Settings
 {: #registry_at_iam_reg_set}
@@ -117,7 +117,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 |-------------------------------------------|------------------------|---------------|------------|
 | Get registry service settings for the targeted account, such as whether platform metrics are enabled. | `GET /api/v1/settings` | `container-registry.settings.get` | `container-registry.settings.get` |
 | Update registry service settings for the targeted account, such as enabling platform metrics. | `PATCH /api/v1/settings` | `container-registry.settings.set` | `container-registry.settings.set` |
-{: caption="Table 8. Settings" caption-side="top"}
+{: caption="Table 8. Settings" caption-side="bottom"}
 
 ### Tags
 {: #registry_at_iam_reg_tags}
@@ -125,7 +125,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | Delete tag. | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
-{: caption="Table 9. Tags" caption-side="top"}
+{: caption="Table 9. Tags" caption-side="bottom"}
 
 ### Trash
 {: #registry_at_iam_reg_trash}
@@ -135,7 +135,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | List images in the trash. | `GET /api/v1/trash` | `container-registry.image.delete` | `container-registry.trash.list` |
 | Restore a digest and all associated tags. | `POST /api/v1/trash/{digest}/restoretags` | `container-registry.image.push` | `container-registry.trash.restore` |
 | Restore deleted image. | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
-{: caption="Table 10. Trash" caption-side="top"}
+{: caption="Table 10. Trash" caption-side="bottom"}
 
 ## Vulnerability Advisor
 {: #registry_at_iam_vuln}
@@ -149,7 +149,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Get vulnerability assessment status for all images. | `GET /va/api/v3/report/account/status` | `container-registry.exemption.list` | `container-registry.account-vulnerability-status.list` |
 | Get vulnerability status. | `GET /va/api/v3/report/image/status/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-status.read` |
 | Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
-{: caption="Table 11. Report" caption-side="top"}
+{: caption="Table 11. Report" caption-side="bottom"}
 
 ### Exemption
 {: #registry_at_iam_vuln_exempt}
@@ -169,6 +169,6 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Delete all exemptions. | `POST /va/api/v3/exemptions/deleteAll` | `container-registry.exemption.manager` | `container-registry.exemption.delete` |
 | List image exemptions. | `GET /va/api/v3/exemptions/image/{resource}` | `container-registry.exemption.list` | |
 | List exemptions for images. | `POST /va/api/v3/exemptions/images` | `container-registry.exemption.list` | |
-{: caption="Table 12. Exemption" caption-side="top"}
+{: caption="Table 12. Exemption" caption-side="bottom"}
 
 

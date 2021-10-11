@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-11"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -33,7 +33,7 @@ Review the following table to find an overview of benefits of using {{site.data.
 | Highly available and scalable private registry. | Set up your own image namespace in a multi-tenant, highly available, scalable, encrypted private registry that is hosted and managed by {{site.data.keyword.IBM_notm}}.  \n  \n Store your private Docker images and share them with users in your {{site.data.keyword.cloud_notm}} account. |
 | Image security compliance with Vulnerability Advisor. | Benefit from automatic scanning of images in your namespace.  \n  \n Review recommendations that are specific to the operating system to fix potential vulnerabilities and protect your containers from being compromised. |
 | Quota limits for storage and pull traffic. | Benefit from free storage and pull traffic to your private images until you reach your free quota.  \n  \n Set custom quota limits for the amount of storage and pull traffic per month to avoid exceeding your preferred payment level. |
-{: caption="Table 1. {{site.data.keyword.registrylong_notm}} benefits" caption-side="top"}
+{: caption="Table 1. {{site.data.keyword.registrylong_notm}} benefits" caption-side="bottom"}
 
 ## Service plans
 {: #registry_plans}
@@ -54,7 +54,7 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 | Amount of storage for images. | 500 MB | Unlimited |
 | Pull traffic. | 5 GB per month | Unlimited |
 | Billing. | If you exceed your storage or pull traffic limits, you cannot push or pull images to and from your namespace. For more information, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). | **Storage**. You are charged by Gigabyte-Months of usage. The first 0.5 GB-Months are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).  \n  \n **Pull traffic**. You are charged by Gigabyte usage per month. The first 5 GB are free. Then, you are charged as stated in the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog). If you exceed your storage or pull traffic limits, you can't push or pull images to and from your namespace. For more information about storage, pull traffic, and the cost estimator, see [Quota limits and billing in {{site.data.keyword.registrylong_notm}}](#registry_plan_billing). |
-{: caption="Table 2. {{site.data.keyword.registrylong_notm}} plans" caption-side="top"}
+{: caption="Table 2. {{site.data.keyword.registrylong_notm}} plans" caption-side="bottom"}
 
 ## Quota limits and billing
 {: #registry_plan_billing}
@@ -291,7 +291,7 @@ The global instance of {{site.data.keyword.registrylong_notm}} is available by u
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |----------|-------------|----------------------|-----------------------|
 | Global | `icr.io` | `private.icr.io` | `registry.bluemix.net` |
-{: caption="Table 3. Domain name for the global registry" caption-side="top"}
+{: caption="Table 3. Domain name for the global registry" caption-side="bottom"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
@@ -329,7 +329,7 @@ Regional instances of {{site.data.keyword.registrylong_notm}} are available by u
 | `jp-osa` | `jp2.icr.io` | `private.jp2.icr.io` | Not applicable |
 | `uk-south` | `uk.icr.io` | `private.uk.icr.io` | `registry.eu-gb.bluemix.net` |
 | `us-south` | `us.icr.io` | `private.us.icr.io` | `registry.ng.bluemix.net` |
-{: caption="Table 4. Domain names for local regions" caption-side="top"}
+{: caption="Table 4. Domain names for local regions" caption-side="bottom"}
 
 To learn about connecting to {{site.data.keyword.registrylong_notm}} by using the private domain names, see [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images).
 
