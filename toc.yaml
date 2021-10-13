@@ -91,7 +91,7 @@ toc:
   - navgroup:
       id: reference
       topics: 
-      - container-registry-cli.md
+      - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
       - topic: registry_ha.md
         navtitle: Understanding high availability and disaster recovery
       - topic: registry_cli_list.md

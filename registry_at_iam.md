@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-13"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -44,7 +44,7 @@ Review the following account API methods, their required actions in {{site.data.
 ### Builds
 {: #registry_at_iam_reg_builds}
 
-The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 {: deprecated}
 
 ### Images
@@ -53,7 +53,7 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | List images. | `GET /api/v1/images` | `container-registry.image.list` | `container-registry.image.list` |
-| Bulk delete image. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
+| Bulk delete images. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
 | List images by digest. | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
 | Create tag. | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|
