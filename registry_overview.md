@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -211,9 +211,9 @@ Typically, a container image is built upon a base image that contains a base ope
 ### Docker V2 container images
 {: #overview_elements_dockerv2_images}
 
-A container image that is compliant with the [Docker: Image Manifest V2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external} specification.
+A container image that is compliant with the [Docker: Image Manifest V2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external} specification.
 
-The media type for Docker Image Manifest V2, Schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
+The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
 ### OCI container images
 {: #overview_elements_oci_images}
@@ -367,9 +367,9 @@ If you want to use a region other than your local region, you can target the reg
 
 Docker is required only if you want to push or pull images.
 
-Docker V2 Schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, Schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
+Docker V2 schema 2 images are supported. Manifest lists are also supported. For more information, see [Docker: Image Manifest Version 2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external}.
 
-Docker V2 Schema 1 images are discontinued and you can't push them to {{site.data.keyword.registrylong_notm}} anymore.
+Docker V2 schema 1 images are discontinued and you can't push them to {{site.data.keyword.registrylong_notm}} anymore.
 {: note}
 
 

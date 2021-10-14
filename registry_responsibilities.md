@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: Responsibilities
 
@@ -88,6 +88,6 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 | Restore the contents of the data in a single region. | It is the responsibility of {{site.data.keyword.IBM_notm}} to restore the contents of the data in a single region. | |
 {: row-headers}
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column describes the task that a the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
+{: summary="The rows are read from left to right. The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 
