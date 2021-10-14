@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-14"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -131,7 +131,7 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
     ```
     {: pre}
 
-    On Windows.
+    On Windows&reg;.
 
     ```sh
     set DOCKER_CONTENT_TRUST=1

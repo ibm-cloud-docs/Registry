@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -159,7 +159,7 @@ Review the following table to find available Go template options and data types 
 
 | Field | Type | Description |
 |-----|----|-----------|
-| `ArgsEscaped` | Boolean | Displays true if the command is already escaped (Windows specific). |
+| `ArgsEscaped` | Boolean | Displays true if the command is already escaped (Windows&reg; specific). |
 | `AttachStderr` | Boolean | Displays _true_ if the standard error stream is attached to the container and _false_ if not. |
 | `AttachStdin` | Boolean | Displays _true_ if the standard input stream is attached to the container and _false_ if not. |
 | `AttachStdout` | Boolean | Displays _true_ if the standard output stream is attached to the container and _false_ if not. |

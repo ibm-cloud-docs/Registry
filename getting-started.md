@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-14"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -84,7 +84,7 @@ Create a namespace. The namespace is created in the resource group that you spec
 {: help}
 {: support}
 
-1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
+1. [Install the Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows&reg; 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
 
 2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, `latest`.
 
