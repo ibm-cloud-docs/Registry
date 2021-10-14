@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020,
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-14"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -41,7 +41,7 @@ For more information about encrypting images, see [Advancing container image sec
 - Complete the instructions in [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 - Ensure that you have the most recent version of the `container-registry` CLI plug-in for the {{site.data.keyword.cloud_notm}} CLI, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that you have a private namespace to push your encrypted image to, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-- Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux, you can use a virtual machine or Docker image to run Buildah to build images.
+- Install [Buildah version 1.15](https://buildah.io/releases/2020/06/27/Buildah-version-v1.15.0.html){: external}, or later, so that you can build encrypted images. Buildah works in the Linux&reg; environment only. As an alternative to Linux&reg;, you can use a virtual machine or Docker image to run Buildah to build images.
 - Install [Podman](https://podman.io/).
 
 ## Create the public-private key pair
