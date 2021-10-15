@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-14"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -74,7 +74,7 @@ To use [skopeo](https://github.com/containers/skopeo){: external} to sign your i
     ```
     {: pre}
 
-On Linux&reg; and macOS: The default configuration for the tools is to store the signatures locally. Storing signatures locally can lead to signature verification failure because the signature is not in the registry. To fix this problem, you can modify or delete the configuration file. On Linux&reg;, the configuration is saved in `/etc/containers/registries.d/default.yaml`. On macOS, the configuration file is saved in `/usr/local/etc/containers/registries.d/default.yaml`.
+On Linux&reg; and macOS, the default configuration for the tools is to store the signatures locally. Storing signatures locally can lead to signature verification failure because the signature is not in the registry. To fix this problem, you can modify or delete the configuration file. On Linux&reg;, the configuration is saved in `/etc/containers/registries.d/default.yaml`. On macOS, the configuration file is saved in `/usr/local/etc/containers/registries.d/default.yaml`.
 {: tip}
 
 ### Using Podman to sign images
@@ -131,7 +131,7 @@ By default, Docker Content Trust is disabled. Before you log in to {{site.data.k
     ```
     {: pre}
 
-    On Windows.
+    On Windows&reg;.
 
     ```sh
     set DOCKER_CONTENT_TRUST=1
@@ -179,7 +179,7 @@ During your session with Docker Content Trust enabled, if you want to do an oper
 {: help}
 {: support}
 
-When you first push a signed image, Docker automatically creates a pair of signing keys, the root key and repository key. To sign an image in a repository where signed images have previously been pushed, you must load the correct signing key for the repository onto the computer that is pushing the image.
+When you first push a signed image, Docker automatically creates a pair of signing keys (the root and repository keys). To sign an image in a repository where signed images have previously been pushed, you must load the correct signing key for the repository onto the computer that is pushing the image.
 {: shortdesc}
 
 Before you begin, [set up your registry namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).

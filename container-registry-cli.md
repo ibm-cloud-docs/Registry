@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-14"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -53,7 +53,7 @@ None
 ## `ibmcloud cr build` - discontinued
 {: #bx_cr_build}
 
-This command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+This command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -358,7 +358,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
     To find the names of your images, run one of the following commands:
 
     - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest`is deleted by default.
+    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
 ### Example
 {: #bx_cr_image_inspect_example}

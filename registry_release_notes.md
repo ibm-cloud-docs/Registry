@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-14"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -27,7 +27,7 @@ Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?t
 {{site.data.keyword.registrylong_notm}} container builds are discontinued {: #05oct2021_build}
 :   The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
-    For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
 ## 2 September 2021
 {: #registry-02sep2021}
@@ -127,7 +127,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {{site.data.keyword.registrylong_notm}} container builds are deprecated {: #06oct2020_build}
 :   The [`ibmcloud cr build`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build) command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registrylong_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
-    For more information, see the [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external} blog post.
+    For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
 ## 27 August 2020
 {: #registry-27aug2020}
@@ -208,7 +208,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 {: release-note}
 
 You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}} {: #16apr2020_private_network}
-:   If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the {{site.data.keyword.cloud_notm}} private network.
+:   If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
 
     For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private) and [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture).
 

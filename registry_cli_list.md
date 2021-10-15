@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-14"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -22,7 +22,7 @@ By default, the CLI output is displayed in a human-readable format. However, thi
 
 You can alter the CLI output by applying the format option in two different ways:
 
-- Format data in your CLI output. For example, change the `Created` field output from UNIX time to standard time.
+- Format data in your CLI output. For example, change the `Created` field output from UNIX&reg; time to standard time.
 - Filter data in your CLI output. For example, filter by details of the image to display a specific subset of images by using the Go template `if gt` condition.
 
 You can use the format option with the following {{site.data.keyword.registrylong_notm}} commands. Click a command to view a list of available fields and their data types.
@@ -66,7 +66,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
+- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
     ```sh
     ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -159,7 +159,7 @@ Review the following table to find available Go template options and data types 
 
 | Field | Type | Description |
 |-----|----|-----------|
-| `ArgsEscaped` | Boolean | Displays true if the command is already escaped (Windows specific). |
+| `ArgsEscaped` | Boolean | Displays true if the command is already escaped (Windows&reg; specific). |
 | `AttachStderr` | Boolean | Displays _true_ if the standard error stream is attached to the container and _false_ if not. |
 | `AttachStdin` | Boolean | Displays _true_ if the standard input stream is attached to the container and _false_ if not. |
 | `AttachStdout` | Boolean | Displays _true_ if the standard output stream is attached to the container and _false_ if not. |
@@ -178,7 +178,7 @@ Review the following table to find available Go template options and data types 
 | `OpenStdin` | Boolean | Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed. |
 | `Shell` | Array of strings | Displays the shell-form of `RUN`, `CMD`, `ENTRYPOINT`. |
 | `StdinOnce` | Boolean | Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open. |
-| `StopSignal` | String | Describes the UNIX stop signal to send when to stop the container. |
+| `StopSignal` | String | Describes the UNIX&reg; stop signal to send when to stop the container. |
 | `StopTimeout` | Integer | Displays the timeout in seconds to stop a container. |
 | `Tty` | Boolean | Displays _true_ if a `pseudo-tty` is allocated to the container and _false_ if not. |
 | `User` | String | Displays the user that runs commands inside the container where the image is used. |
@@ -193,7 +193,7 @@ Review the following table to find available Go template options and data types 
 |-----|----|-----------|
 | `Interval` | Integer (64 bit)|Displays the time to wait between two health checks in nanoseconds. |
 | `Retries` | Integer|Displays the number of consecutive failures that are needed to consider a container as not working correctly. |
-| `Test` | Array of strings | Displays how to run the health check test. The following options are available.  \n - `{}` Inherit the health check.  \n - `{"NONE"}` The health check is disabled.  \n - `{"CMD", args...}` Exec arguments directly.  \n - `{"CMD-SHELL", command}` Run the command with the system's default shell. |
+| `Test` | Array of strings | Displays how to run the health check test. The following options are available.  \n - `{}` inherit the health check.  \n - `{"NONE"}` the health check is disabled.  \n - `{"CMD", args...}` exec arguments directly.  \n - `{"CMD-SHELL", command}` run the command with the system's default shell. |
 | `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before the health check fails. |
 {: caption="Table 5. Available fields and data types in Healthcheck" caption-side="bottom"}
 
