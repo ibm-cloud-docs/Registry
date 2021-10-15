@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: container registry
 
@@ -609,7 +609,7 @@ subcollection: Registry
     * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
 * [Attributes for segmentation](/docs/Registry?topic=Registry-registry_monitor#attributes)
     * [Global Attributes](/docs/Registry?topic=Registry-registry_monitor#global-attributes)
-    * [Additional Attributes](/docs/Registry?topic=Registry-registry_monitor#additional-attributes)
+    * [Other Attributes](/docs/Registry?topic=Registry-registry_monitor#additional-attributes)
 
 [Auditing the events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
 * [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)

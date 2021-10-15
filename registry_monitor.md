@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-15"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -174,7 +174,7 @@ The following attributes are available for segmenting all of the metrics that ar
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID that is associated with this metric. | Yes |
 {: caption="Table 7. Attributes for segmenting metrics" caption-side="bottom"}
 
-### Additional Attributes
+### Other Attributes
 {: #additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in [Metrics available by service plan](#metrics-by-plan). For segmentation options, see the individual metrics.
