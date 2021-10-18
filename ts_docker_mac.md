@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-15"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, docker login, mac, docker login fails on a mac
 
@@ -26,7 +26,8 @@ You receive the following error message when you try to run the `ibmcloud cr log
 {: tsSymptoms}
 
 ```sh
-Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct.'
+Error saving credentials: error storing credentials - err: exit status 1, out: 
+'The user name or passphrase you entered is not correct.'
 ```
 {: screen}
 
