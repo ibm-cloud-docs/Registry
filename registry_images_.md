@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-20"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -255,7 +255,7 @@ Create a service ID that uses an API key to push images to {{site.data.keyword.r
 Complete the following steps:
 
 1. Create a service ID, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
-2. Create a policy that gives the service ID permission to access the registry, for example, `Administrator` and `Manager` roles, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+2. Create a policy that gives the service ID permission to access the registry, for example, Administrator and Manager roles, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 3. Create an API key, see [Creating an API key for a service ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
 4. Use the API key to log in to registry so that you can push images to the registry, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 5. Push your images, see [Pushing Docker images to your namespace](#registry_images_pushing_namespace).
