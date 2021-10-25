@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-20"
+lastupdated: "2021-10-25"
 
 keywords: access restrictions, IP addresses,
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}
 {: #registry_iam_ip}
