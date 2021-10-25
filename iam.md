@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-25"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -142,5 +142,6 @@ The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use
 | `container-registry.retention.set` | [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager | |
 | `container-registry.retention.list` | [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) List the image retention policies for your account. | Reader, Manager | |
 {: caption="Table 4. Service actions and operations for using {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
+
 
 

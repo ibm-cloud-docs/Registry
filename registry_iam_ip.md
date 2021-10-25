@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-20"
 
-keywords: 
+keywords: access restrictions, IP addresses,
 
 subcollection: Registry
 
