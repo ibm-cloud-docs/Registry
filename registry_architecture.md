@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-27"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -51,6 +51,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.re
 | Service name | Description |
 |------------|-------------------------------------|
 | {{site.data.keyword.at_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.at_short}}, by using a private connection, to forward {{site.data.keyword.registryshort_notm}} audit events to the {{site.data.keyword.at_short}} service instances that you set up. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
+| {{site.data.keyword.databases-for-postgresql_full_notm}} | {{site.data.keyword.databases-for-postgresql_full_notm}} is a fully managed, highly available object-relational SQL database. {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.databases-for-postgresql_full_notm}} to store metadata. Connections to {{site.data.keyword.databases-for-postgresql_full_notm}} are private. |
 | {{site.data.keyword.cis_full_notm}} | {{site.data.keyword.cis_full_notm}} is used as a provider for DNS and load-balancing capabilities in {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.containerlong_notm}} | {{site.data.keyword.registrylong_notm}} uses {{site.data.keyword.containerlong_notm}} to run its service. |
 | {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor). |
