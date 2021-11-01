@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-27"
+lastupdated: "2021-11-01"
 
 keywords: container registry
 
@@ -240,6 +240,8 @@ subcollection: Registry
 
 
 [Release notes for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes)
+
+* [1 November 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021)
 
 * [5 October 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-05oct2021)
 
@@ -552,14 +554,6 @@ subcollection: Registry
     * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
     * [Using OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
     * [Using atomic to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_atomic)
-* [Signing images for trusted content by using Docker Content Trust and Notary - deprecated](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_dct_notary)
-    * [Setting up your trusted content environment](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_setup)
-    * [Pushing a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_push)
-    * [Pulling a signed image](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_pull)
-    * [Signing an image for the new domain name](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_resign)
-    * [Managing trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_managetrust)
-    * [Backing up signing keys](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_backupkeys)
-    * [Managing trusted signers](/docs/Registry?topic=Registry-registry_trustedcontent#trustedcontent_signers)
 
 [Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_encrypt)
 * [Before you begin](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt_prereqs)
