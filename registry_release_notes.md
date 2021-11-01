@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-11-01"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
+
+## 1 November 2021
+{: #registry-01nov2021}
+{: release-note}
+
+Using Notary v1 for signing images is discontinued {: #01nov2021_notary}
+:   The Notary v1 service for signing images in {{site.data.keyword.registrylong_notm}} is discontinued.
+
+    {{site.data.keyword.registrylong_notm}} supports the [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 5 October 2021
 {: #registry-05oct2021}
