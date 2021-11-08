@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-08"
 
 keywords: container registry
 
@@ -921,8 +921,6 @@ subcollection: Registry
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall)
 
 [How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key)
-* [Repository keys](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key-repo)
-* [Root keys](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key-root)
 
 [Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
 
