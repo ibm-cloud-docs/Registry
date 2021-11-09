@@ -211,17 +211,6 @@
         "missing tags after image restore in CR",
         "tags missing after I restored a CR image"
       ],
-      "troubleshoot-recover-key": [
-        "repository or root key is lost or compromised",
-        "lost my root key for container registry",
-        "lost my repository key for container registry",
-        "missing root key in CR for trusted image",
-        "issue with repository key for container registry",
-        "recover the key for container registry",
-        "issue managing trusted image in container registry",
-        "issue with trusted image in container registry",
-        "manage a signed image by docker trust command in container registry"
-      ],
       "troubleshoot-iam-policy": [
         "get access denied errors although I have IAM access",
         "getting access denied errors container registry",
