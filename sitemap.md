@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-13"
+lastupdated: "2021-11-14"
 
 keywords: container registry
 
@@ -14,8 +14,6 @@ subcollection: Registry
 
 # Site map
 {: #sitemap}
-
-
 
 
 
@@ -193,7 +191,7 @@ subcollection: Registry
 ## What are containers?
 {: #sitemap_what-are-containers?}
 
-[What are containers?](https://www.ibm.com/cloud/learn/containers){: new_window}{: external}
+[What are containers?](https://www.ibm.com/cloud/learn/containers){: external}
 
 
 ## Release notes
@@ -1172,16 +1170,16 @@ subcollection: Registry
 ## Terraform reference
 {: #sitemap_terraform-reference}
 
-[Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: new_window}{: external}
+[Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace){: external}
 
 
 ## API reference
 {: #sitemap_api_reference}
 
 
-[IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: new_window}{: external}
+[IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
 
-[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: new_window}{: external}
+[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
 
 
 ## Related links
@@ -1192,7 +1190,7 @@ subcollection: Registry
 
 [Red Hat OpenShift on IBM Cloud documentation](/docs/openshift?topic=openshift-getting-started)
 
-[IBM Developer - Containers](https://developer.ibm.com/technologies/containers/){: new_window}{: external}
+[IBM Developer - Containers](https://developer.ibm.com/technologies/containers/){: external}
 
 
 ## Troubleshooting
