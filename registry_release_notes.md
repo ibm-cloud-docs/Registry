@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-15"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -190,7 +190,7 @@ To work with namespaces, you must have the Manager role at the account level {: 
 {: release-note}
 
 Restoring all tags for a digest in a repository is now an option {: #24jun2020_tags}
-:   When you want to restore an image, you can restore either by tag or by digest. Restoring by digest restores the digest and all of its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+:   When you want to restore an image, you can restore either by tag or by digest. Restoring by digest restores the digest and all its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 
     For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
@@ -231,7 +231,7 @@ You can use private network connections to securely route your data in {{site.da
 {: release-note}
 
 Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_tokens}
-:   The use of UAA and {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens will not be accepted for authentication.
+:   The use of UAA and {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens are not accepted for authentication.
 
     For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
@@ -332,7 +332,7 @@ Container Scanner is no longer available {: #27jun2019_cs}
 {: release-note}
 
 Remove tags from images {: #13jun2019_tags}
-:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all of its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
+:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
 
     For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
 

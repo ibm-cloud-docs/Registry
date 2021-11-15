@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-15"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -35,7 +35,7 @@ You can also clean up your namespace by [deleting your untagged images](#retenti
 
 The [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) commands operate on a per-namespace basis. If you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
 
-Consider a typical delivery pipeline with development, staging, and production environments. As code is delivered, continuous integration and continuous deployment pushes images into the registry and then deploys them straight to your development environment. After testing, some builds from development are promoted to staging, and then potentially onto production. In this scenario, the rate of image change is fastest in development and slowest in production. If all of your environments pull images from the same namespace, it can be difficult to choose an appropriate number of images to retain due to this difference in velocity.
+Consider a typical delivery pipeline with development, staging, and production environments. As code is delivered, continuous integration and continuous deployment pushes images into the registry and then deploys them straight to your development environment. After testing, some builds from development are promoted to staging, and then potentially onto production. In this scenario, the rate of image change is fastest in development and slowest in production. If all your environments pull images from the same namespace, it can be difficult to choose an appropriate number of images to retain due to this difference in velocity.
 
 A good approach is to deliver all images into a development namespace, for example, `project-development`, and then to use the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command to tag the image into a different namespace when it is promoted to a higher stage of the pipeline. In the previous example, you can have three namespaces: development, `project-development`, staging, `project-staging`, and production, `project-production`. When you are promoting from development to staging, images are tagged from the `project-development` namespace into the `project-staging` namespace, and the images from the `project-staging` namespace are used for deployment. Similarly, when you are promoting from staging to production, images are tagged from the `project-staging` namespace into the `project-production` namespace, and the `project-production` namespace images are used in the production deployment.
 
