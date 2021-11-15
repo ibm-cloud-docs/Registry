@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-15"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, namespaces, resource list
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't all of my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?
+# Why don't all my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?
 {: #troubleshoot-namespace-resource-list}
 {: troubleshoot}
 {: support}
@@ -32,7 +32,7 @@ Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_n
 
 Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups.
 
-If you want to see all of your namespaces in the {{site.data.keyword.cloud_notm}} **Resource list** page, you must assign each namespace to a resource group, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+If you want to see all your namespaces in the {{site.data.keyword.cloud_notm}} **Resource list** page, you must assign each namespace to a resource group, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 {: tsResolve}
 
 

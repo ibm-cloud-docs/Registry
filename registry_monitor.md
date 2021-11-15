@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-11-15"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -161,7 +161,7 @@ The account's storage usage.
 ### Global Attributes
 {: #global-attributes}
 
-The following attributes are available for segmenting all of the metrics that are listed in [Metrics available by service plan](#metrics-by-plan).
+The following attributes are available for segmenting all the metrics that are listed in [Metrics available by service plan](#metrics-by-plan).
 
 | Attribute | Attribute Name | Attribute Description | Applicable to {{site.data.keyword.registryshort_notm}} metrics |
 |-----------|----------------|-----------------------|-----------------------|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-15"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, restoring images, restoring images from the trash by digest, trash, restoring tags
 
@@ -14,15 +14,15 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# When I'm restoring an image from the trash by digest, why aren't some of the tags restored?
+# When I'm restoring an image from the trash by digest, why aren't some tags restored?
 {: #troubleshoot-image-restore-digest}
 {: troubleshoot}
 {: support}
 
-You want to restore an image by digest from the {{site.data.keyword.registrylong}} trash, but some of the tags weren't restored.
+You want to restore an image by digest from the {{site.data.keyword.registrylong}} trash, but some tags weren't restored.
 {: shortdesc}
 
-You run the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command, but the tags were not restored. If all of the tags were unsuccessful, the digest shows in the live repository, but it is untagged. You can see the digest if you run [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests), but not if you run [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list).
+You run the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command, but the tags were not restored. If all the tags were unsuccessful, the digest shows in the live repository, but it is untagged. You can see the digest if you run [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests), but not if you run [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list).
 {: tsSymptoms}
 
 The tags that were not restored are already in your live repository. You can't overwrite a tag with a tag that is in the trash.

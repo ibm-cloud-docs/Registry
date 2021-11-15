@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-15"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -26,7 +26,7 @@ completion-time: 2h
 Find out about the basic functions of both {{site.data.keyword.registrylong}} and Vulnerability Advisor. These two services are pre-integrated and work together seamlessly in {{site.data.keyword.cloud_notm}}, and their features provide a robust but straightforward workflow for users of containers. You can use these services to store your container images, ensure the security of your images and Kubernetes clusters, control the images that you can use to deploy to your clusters, and more.
 {: shortdesc}
 
-Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation. This tutorial combines all of those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
+Much of the information that is provided in this tutorial is available in greater detail in the "How To" sections of the documentation. This tutorial combines all those tasks into a workflow that helps you to use {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor. To learn more about each task, click the relevant link.
 
 ## Objectives
 {: #registry_tutorial_workflow_objectives}
@@ -224,7 +224,7 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
         ```
         {: pre}
 
-    You can read the Dockerfile to better understand how this image was made vulnerable. In short, a Debian base image is used, and the `apt` package is rolled back to a version that is vulnerable to CVE-2019-3462.
+    You can read the Dockerfile to better understand how this image was made vulnerable. In short, a Debian base image is used, and the `apt` package is rolled back to a version that is vulnerable to `CVE-2019-3462`.
 
 2. List your images, and take note of the `SECURITY STATUS` column by running the following command:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-14"
+lastupdated: "2021-11-15"
 
 keywords: container registry
 
@@ -1213,7 +1213,7 @@ subcollection: Registry
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
-[Why don't all of my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
+[Why don't all my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 
@@ -1227,7 +1227,7 @@ subcollection: Registry
 
 [When I'm restoring an image, why do I get an error that says that the tagged image exists?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
-[When I'm restoring an image from the trash by digest, why aren't some of the tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+[When I'm restoring an image from the trash by digest, why aren't some tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
 
