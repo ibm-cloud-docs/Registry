@@ -54,6 +54,7 @@ You can choose from the following goals:
 ## Gaining security insight with {{site.data.keyword.registrylong_notm}}
 {: #container-registry-security_insight}
 
+
 With {{site.data.keyword.compliance_short}}, you can gain insight into potential issues through built-in security capabilities. By default, {{site.data.keyword.registryshort_notm}} is an integrated service. {{site.data.keyword.compliance_short}} gathers and presents information that is related to security so that all your security alerts are displayed in one place.
 
 To learn more about how you can use security insights, see [Monitoring vulnerabilities in container images](/docs/security-advisor?topic=security-advisor-setup-services#setup-images).
