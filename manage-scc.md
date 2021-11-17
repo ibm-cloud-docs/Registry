@@ -12,6 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Managing security and compliance with {{site.data.keyword.registrylong_notm}}
 {: #manage-security-compliance}
 
