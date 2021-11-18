@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-18"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -150,9 +150,9 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n **Constraints** Value must match regular expression `.*`. |
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n Constraints: Value must match regular expression `.*`. |
 | `responseData.id` | String | The unique ID of the report. |
-| `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation. |
+| `responseData.status` | String | Overall vulnerability assessment status:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation. |
 {: caption="Table 6. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability reports read" caption-side="bottom"}
 
 For more information, see [Get vulnerability assessment status](/apidocs/container-registry/va#imagereportquerypath) in the API documentation.
@@ -167,8 +167,8 @@ The following table lists the fields that are available through the `requestData
 
 | Custom Event Fields | Type | Description |
 |-----------------|-----------------|-----------------|
-| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n **Constraints** Value must match regular expression `.*`. |
-| `responseData.status` | String | **Overall vulnerability assessment status** `OK`, `WARN`, `FAIL`, `UNSUPPORTED`, `INCOMPLETE`, `UNSCANNED`. For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation.
+| `requestData.RequestParameters.name` | String | The name of the image. For example, `us.icr.io/namespace/repository:tag`.  \n  \n Constraints: Value must match regular expression `.*`. |
+| `responseData.status` | String | Overall vulnerability assessment status:  \n  \n `OK`  \n  \n `WARN`  \n  \n `FAIL`  \n  \n `UNSUPPORTED`  \n  \n `INCOMPLETE`  \n  \n `UNSCANNED`  \n  \n For more information about these status codes, see [Vulnerability report status codes](/apidocs/container-registry/va#vulnerability-report-status-codes) in the API documentation.
 {: caption="Table 7. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
 
 For more information, see [Get vulnerability status](/apidocs/container-registry/va#imagestatusquerypath) in the API documentation.
