@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-18"
 
 keywords: Terraform for IBM Cloud Container Registry
 
@@ -52,7 +52,7 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
         roles  = ["Manager"]
 
         resources {
-            service              = "container-registry"
+            service = "container-registry"
             resource = ibm_cr_namespace.cr_namespace.id
             resource_type = "namespace"
             region = var.region
