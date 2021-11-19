@@ -31,7 +31,7 @@ Container Registry
     registry_rhos.md
     registry_quota.md
     registry_images_.md
-    registry_tokens.md
+    registry_access.md
     registry_users.md
     iam.md
     registry_retention.md
