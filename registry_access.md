@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-20"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -121,8 +121,6 @@ You can use clients other than Docker to authenticate with the registry so that 
 {: shortdesc}
 
 For more information, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
-
-To log the client in to {{site.data.keyword.registrylong}}, complete the following steps.
 
 #### Example for skopeo
 {: #registry_access_apikey_auth_other_example_skopeo}
