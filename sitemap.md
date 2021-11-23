@@ -826,8 +826,6 @@ subcollection: Registry
 
     * [Auth](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
 
-    * [Builds](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_builds)
-
     * [Images](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
 
     * [Messages](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
@@ -1208,8 +1206,6 @@ subcollection: Registry
 [Why do I get a failure message when I run any command in Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
 [Why do all the Container Registry commands fail?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
-
-[Why does the `ibmcloud cr build` command fail?](/docs/Registry?topic=Registry-troubleshoot-build-fails#troubleshoot-build-fails)
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
