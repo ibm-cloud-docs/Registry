@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-23"
 
 keywords: container registry
 
@@ -826,8 +826,6 @@ subcollection: Registry
 
     * [Auth](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
 
-    * [Builds](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_builds)
-
     * [Images](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
 
     * [Messages](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
@@ -1209,8 +1207,6 @@ subcollection: Registry
 
 [Why do all the Container Registry commands fail?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
-[Why does the `ibmcloud cr build` command fail?](/docs/Registry?topic=Registry-troubleshoot-build-fails#troubleshoot-build-fails)
-
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
 [Why don't all my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
@@ -1230,8 +1226,6 @@ subcollection: Registry
 [When I'm restoring an image from the trash by digest, why aren't some tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
-
-[How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key)
 
 [Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 

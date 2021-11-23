@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-23"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -50,11 +50,6 @@ ibmcloud cr api
 {: #bx_cr_api_prereq}
 
 None
-
-## `ibmcloud cr build` - discontinued
-{: #bx_cr_build}
-
-This command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
 ## `ibmcloud cr exemption-add`
 {: #bx_cr_exemption_add}
@@ -962,11 +957,6 @@ ibmcloud cr platform-metrics --enable
 ```
 {: pre}
 
-## `ibmcloud cr ppa-archive-load` - discontinued
-{: #bx_cr_ppa_archive_load}
-
-The [`ibmcloud cr ppa-archive-load` command is discontinued](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa). Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
-
 ## `ibmcloud cr private-only`
 {: #ic_cr_private_only}
 
@@ -1242,24 +1232,6 @@ ibmcloud cr retention-run --images 20 birds
 {: pre}
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
-
-## `ibmcloud cr token-get` - discontinued
-{: #bx_cr_token_get}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
-## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued
-{: #bx_cr_token_list}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
-## `ibmcloud cr token-rm` - discontinued
-{: #bx_cr_token_rm}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
 
 ## `ibmcloud cr trash-list`
 {: #bx_cr_trash_list}

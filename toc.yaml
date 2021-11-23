@@ -137,7 +137,6 @@ toc:
             navtitle: Why do I get a failure message when I run any command in Container Registry?
           - topic: ts_login_error.md
             navtitle: Why do all the Container Registry commands fail?
-          - ts_build_fails.md
           - ts_add_namespace.md
           - ts_namespace_resource_list.md
           - ts_push_pull_docker.md
@@ -148,7 +147,6 @@ toc:
           - ts_image_restore.md
           - ts_image_restore_digest.md
           - ts_firewall.md
-          - ts_recover_key.md
           - ts_iam_policy.md
           - ts_pods.md
           - ts_manifest_error_type.md

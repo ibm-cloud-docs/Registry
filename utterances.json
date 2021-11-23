@@ -114,13 +114,6 @@
         "push image fails",
         "pull image fails"
       ],
-      "troubleshoot-build-fails": [
-        "build command fails in CR",
-        "cannot use ibmcloud cr build command",
-        "local build fail cli container registry",
-        "ibmcloud cr build not work for container registry",
-        "ibmcloud cr build command fails"
-      ],
       "troubleshoot-add-namespace": [
         "cannot add namespace cli ContainerRegistry",
         "unable to add namespace in container registry",

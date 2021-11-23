@@ -81,7 +81,6 @@ Container Registry
         ts_login_expire.md
         ts_login_cloud.md
         ts_login_error.md
-        ts_build_fails.md
         ts_add_namespace.md
         ts_namespace_resource_list.md
         ts_push_pull_docker.md
@@ -92,7 +91,6 @@ Container Registry
         ts_image_restore.md
         ts_image_restore_digest.md
         ts_firewall.md
-        ts_recover_key.md
         ts_iam_policy.md
         ts_pods.md
         ts_manifest_error_type.md
