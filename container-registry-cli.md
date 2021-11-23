@@ -1233,24 +1233,6 @@ ibmcloud cr retention-run --images 20 birds
 
 For more information about how to use the `ibmcloud cr retention-run` command, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
-## `ibmcloud cr token-get` - discontinued
-{: #bx_cr_token_get}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
-## `ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued
-{: #bx_cr_token_list}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
-## `ibmcloud cr token-rm` - discontinued
-{: #bx_cr_token_rm}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
 ## `ibmcloud cr trash-list`
 {: #bx_cr_trash_list}
 
