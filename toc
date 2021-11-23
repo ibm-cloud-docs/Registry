@@ -92,7 +92,6 @@ Container Registry
         ts_image_restore.md
         ts_image_restore_digest.md
         ts_firewall.md
-        ts_recover_key.md
         ts_iam_policy.md
         ts_pods.md
         ts_manifest_error_type.md

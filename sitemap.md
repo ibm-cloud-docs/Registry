@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-23"
 
 keywords: container registry
 
@@ -1230,8 +1230,6 @@ subcollection: Registry
 [When I'm restoring an image from the trash by digest, why aren't some tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
-
-[How do I recover lost or compromised keys?](/docs/Registry?topic=Registry-troubleshoot-recover-key#troubleshoot-recover-key)
 
 [Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 
