@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-11-24"
 
 keywords: container registry
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Site map
 {: #sitemap}
+
 
 
 
@@ -863,8 +864,6 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api_prereq)
 
-* [`ibmcloud cr build` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_build)
-
 * [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add)
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_prereq)
@@ -1031,8 +1030,6 @@ subcollection: Registry
 
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
 
-* [`ibmcloud cr ppa-archive-load` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_ppa_archive_load)
-
 * [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
@@ -1086,12 +1083,6 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_option)
 
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_example)
-
-* [`ibmcloud cr token-get` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_get)
-
-* [`ibmcloud cr token-list` (`ibmcloud cr tokens`) - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_list)
-
-* [`ibmcloud cr token-rm` - discontinued](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_token_rm)
 
 * [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list)
 
