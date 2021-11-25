@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-25"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -35,12 +35,12 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 - [OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
 - [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
 
-### Using skopeo to sign images
+### Using Skopeo to sign images
 {: #registry_trustedcontent_red_hat_sig_skopeo}
 {: help}
 {: support}
 
-To use [skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
+To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
 
 1. To create a GnuPG identity, run the following command.
 
