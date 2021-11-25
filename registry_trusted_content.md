@@ -33,7 +33,6 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 - [Skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
 - [OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
-- [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
 
 ### Using Skopeo to sign images
 {: #registry_trustedcontent_red_hat_sig_skopeo}
@@ -82,10 +81,5 @@ See [Podman](https://podman.io/){: external}.
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The OpenShift CLI uses the `oc` command.
-
-### Using atomic to sign images
-{: #registry_trustedcontent_red_hat_sig_atomic}
-
-See [Atomic CLI Reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/cli_reference/index){: external}.
 
 

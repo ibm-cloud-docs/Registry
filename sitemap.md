@@ -714,8 +714,6 @@ subcollection: Registry
 
     * [Using OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
-    * [Using atomic to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_atomic)
-
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt_prereqs)
