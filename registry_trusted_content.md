@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-25"
+lastupdated: "2021-11-26"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -62,7 +62,7 @@ To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your i
     ```
     {: pre}
 
-    On macOS, if you get the error `“FATA[0015] Error writing signatures: mkdir /var/lib/atomic: permission denied”`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
+    On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
 
     ```sh
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
