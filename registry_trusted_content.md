@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-26"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -33,14 +33,13 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 - [Skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
 - [OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
-- [Atomic](#registry_trustedcontent_red_hat_sig_atomic)
 
-### Using skopeo to sign images
+### Using Skopeo to sign images
 {: #registry_trustedcontent_red_hat_sig_skopeo}
 {: help}
 {: support}
 
-To use [skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
+To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
 
 1. To create a GnuPG identity, run the following command.
 
@@ -63,7 +62,7 @@ To use [skopeo](https://github.com/containers/skopeo){: external} to sign your i
     ```
     {: pre}
 
-    On macOS, if you get the error `“FATA[0015] Error writing signatures: mkdir /var/lib/atomic: permission denied”`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
+    On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
 
     ```sh
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
@@ -82,10 +81,5 @@ See [Podman](https://podman.io/){: external}.
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The OpenShift CLI uses the `oc` command.
-
-### Using atomic to sign images
-{: #registry_trustedcontent_red_hat_sig_atomic}
-
-See [Atomic CLI Reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/cli_reference/index){: external}.
 
 
