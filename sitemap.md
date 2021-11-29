@@ -1228,8 +1228,6 @@ subcollection: Registry
 
 [Why am I getting a manifest type error when I try to tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
 
-[Why am I getting a manifest version error when I try to tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
-
 [Why does Docker login fail on my Mac?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
 
