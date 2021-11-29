@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-29"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -66,6 +66,9 @@ Before you begin, complete the following tasks.
 - [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
+
+{{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+{: tip}
 
 To upload (push) an image, complete the following steps:
 

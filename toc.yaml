@@ -54,8 +54,7 @@ toc:
         navtitle: Setting up Container Registry as a private registry on Red Hat OpenShift
       - registry_quota.md
       - registry_images_.md
-      - topic: registry_access.md
-        navtitle: Automating access
+      - registry_access.md
       - registry_users.md
       - topic: iam.md
         navtitle: Managing access

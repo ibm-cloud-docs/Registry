@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-11-29"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -389,7 +389,7 @@ New region in ap-north {: #25feb2019_ap-north}
 Automating access to your namespaces {: #21feb2019_access}
 :   Using tokens to automate pushing and pulling Docker images to and from your namespaces is deprecated. You must now use API keys to automate access to your {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
 
-    For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey).
+    For more information, see [Automating access to your namespaces by using API keys](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create).
 
 ## 8 January 2019
 {: #registry-8jan2019}
