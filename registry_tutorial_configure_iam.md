@@ -448,7 +448,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
         ```
         {: pre}
 
-        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces in automation](#registry_access_automating).
+        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
         {: tip}
 
     2. Pull your image by running the following command.

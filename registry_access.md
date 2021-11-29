@@ -31,7 +31,7 @@ You can use service ID API keys to automate the pushing and pulling of container
 
 API keys are linked to user IDs or service IDs in your account and you can use them across {{site.data.keyword.cloud}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey_create) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey_create) has its own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
-When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a non-expiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
+When you create an {{site.data.keyword.containerlong}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a non-expiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
 
 You can use service ID API keys in the following places:
 
@@ -77,15 +77,15 @@ Clients require an API key and a domain, replace `<apikey>` with your API key an
 
 | Region | `<registry_domain>` |
 |--------|-----------------|
-| 'global' | `icr.io` |
-| 'ap-north' | `jp.icr.io` |
-| 'ap-south' | `au.icr.io` |
-| 'br-sao' | `br.icr.io` |
-| 'ca-tor' | `ca.icr.io` |
-| 'eu-central' | `de.icr.io` |
-| 'jp-osa' | `jp2.icr.io` |
-| 'uk-south' | `uk.icr.io` |
-| 'us-south' | `us.icr.io` |
+| `global` | `icr.io` |
+| `ap-north` | `jp.icr.io` |
+| `ap-south` | `au.icr.io` |
+| `br-sao` | `br.icr.io` |
+| `ca-tor` | `ca.icr.io` |
+| `eu-central` | `de.icr.io` |
+| `jp-osa` | `jp2.icr.io` |
+| `uk-south` | `uk.icr.io` |
+| `us-south` | `us.icr.io` |
 {: caption="Table 1. Registry domains" caption-side="bottom"}
 
 For more information about how to use {{site.data.keyword.registrylong}} in an {{site.data.keyword.contdelivery_full}} pipeline, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
@@ -142,7 +142,7 @@ podman login -u iamapikey -p <apikey> <registry_domain>
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
 {: shortdesc}
 
-For example; you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_apikey_auth), `<apikey>` with your API key, and `<namespace>` with your namespace.
+For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_apikey_auth), `<namespace>` with your namespace, and `<apikey>` with your API key:
 
 ```sh
 skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<registry_domain>/<namespace>/busybox:latest --dest-creds iamapikey:<apikey>
@@ -168,7 +168,7 @@ Examples of how to access your namespaces interactively are provided for the fol
 Log in to the registry by using the Buildah CLI.
 {: shortdesc}
 
-You can use the Buildah CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth).
+You can use the Buildah CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
 ```sh
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iambearer --password-stdin <registry_domain>
@@ -192,12 +192,12 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 
 1. Generate a bearer token by using [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 
-2. Log in to the registry by using the `docker login` command. Replace `<bearer_token>` with your bearer token and `<registry_domain>` with the [domain](#registry_access_apikey_auth).
+2. Log in to the registry by using the `docker login` command. Replace `<bearer_token>` with your bearer token and `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
-```sh
-docker login -u iambearer --password <bearer_token> <registry_domain>
-```
-{: pre}
+    ```sh
+    docker login -u iambearer --password <bearer_token> <registry_domain>
+    ```
+    {: pre}
 
 ### Podman
 {: #registry_access_interactive_auth_podman}
@@ -205,7 +205,7 @@ docker login -u iambearer --password <bearer_token> <registry_domain>
 Log in to the registry by using the Podman CLI.
 {: shortdesc}
 
-You can use the Podman CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth).
+You can use the Podman CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
 ```sh
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | podman login -u iambearer --password-stdin <registry_domain>
@@ -218,7 +218,7 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | podman login -u iamb
 Log in to the registry by using the Skopeo CLI.
 {: shortdesc}
 
-You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth).
+You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
 ```sh
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iambearer --password-stdin <registry_domain>
