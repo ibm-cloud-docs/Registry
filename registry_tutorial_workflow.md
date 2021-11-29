@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-29"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -109,7 +109,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    Docker must be running on your computer or the `docker` commands fail.
+    Docker must be running on your computer or the `docker` commands fail. {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}
 
 2. Log your local Docker daemon into {{site.data.keyword.registrylong_notm}} by running the following command:

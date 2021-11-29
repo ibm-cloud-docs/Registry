@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-23"
+lastupdated: "2021-11-29"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -657,6 +657,9 @@ ibmcloud cr login
 {: codeblock}
 
 Logging in to {{site.data.keyword.registrylong_notm}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
+{: tip}
+
+{{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 {: tip}
 
 ### Prerequisites

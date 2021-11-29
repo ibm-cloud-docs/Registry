@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-29"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -277,6 +277,9 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         {: pre}
 
+        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {: tip}
+
     5. Push the image to `namespace_a` by running the following command.
 
         ```sh
@@ -322,6 +325,9 @@ Create some namespaces with sample images, and grant access to them. You create 
         ibmcloud cr login
         ```
         {: pre}
+
+        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {: tip}
 
     5. Pull the image by running the following command.
 
@@ -442,6 +448,9 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
         ```
         {: pre}
 
+        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating).
+        {: tip}
+
     2. Pull your image by running the following command.
 
         ```sh
@@ -475,6 +484,9 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
         ibmcloud cr login
         ```
         {: pre}
+
+        {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {: tip}
 
     2. List your service policies by running the following command.
 

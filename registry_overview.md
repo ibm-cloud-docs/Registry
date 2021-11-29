@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-11-29"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -313,6 +313,9 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 
 2. To log your local Docker daemon into the global registry, run the `ibmcloud cr login` command.
 
+    {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+    {: tip}
+
 ### Local regions
 {: #registry_regions_local}
 
@@ -359,6 +362,9 @@ If you want to use a region other than your local region, you can target the reg
     {: pre}
 
 2. To log your local Docker daemon into the registry so that you can push or pull images, run the `ibmcloud cr login` command.
+
+    {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+    {: tip}
 
 ## Support for Docker
 {: #docker}

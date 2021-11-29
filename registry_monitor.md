@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-29"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -43,14 +43,7 @@ Complete the following steps to configure platform metrics:
     ```
     {: pre}
 
-2. Log in to {{site.data.keyword.registryshort_notm}}.
-
-    ```sh
-    ibmcloud cr login
-    ```
-    {: pre}
-
-3. To enable platform metrics, run the following command:
+2. To enable platform metrics, run the following command:
 
     ```sh
     ibmcloud cr platform-metrics --enable

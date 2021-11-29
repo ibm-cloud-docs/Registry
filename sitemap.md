@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-25"
+lastupdated: "2021-11-29"
 
 keywords: container registry
 
@@ -563,25 +563,31 @@ subcollection: Registry
 * [Deleting a private repository and any associated images](/docs/Registry?topic=Registry-registry_images_#registry_repo_remove)
 
 
-## Automating access
-{: #sitemap_automating_access}
+## Accessing {{site.data.keyword.registrylong_notm}}
+{: #sitemap_accessing_}
 
 
-[Automating access](/docs/Registry?topic=Registry-registry_access#registry_access)
+[Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access#registry_access)
 
-* [Automating access to your namespaces by using service ID API keys](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey)
+* [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating)
 
     * [Creating a service ID API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create)
 
-* [Automating access to your namespaces by using user API keys](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey)
-
     * [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create)
 
-* [Authentication](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
+    * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
 
-    * [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
+* [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive)
 
-    * [Using clients other than Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other)
+    * [Buildah](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_buildah)
+
+    * [Docker](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_docker)
+
+    * [Podman](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_podman)
+
+    * [Skopeo](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_skopeo)
+
+* [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
 
 ## Defining access role policies

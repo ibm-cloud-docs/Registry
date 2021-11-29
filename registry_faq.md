@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-29"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -40,7 +40,7 @@ ibmcloud cr images --include-ibm
 {: #faq_tools}
 {: faq}
 
-Yes, if the tool supports [OCI container image](#x9860419){: term} format and protocol.
+Yes, if the tool supports [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
 ## Is there a limit to the number of namespaces you can have?
 {: #faq_namespace}
