@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-30"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, namespaces, resource list
 
@@ -25,7 +25,7 @@ My {{site.data.keyword.registrylong}} namespaces don't all show up in the {{site
 When you view your namespaces in the {{site.data.keyword.cloud_notm}} **Resource list** page, they don't all show up.
 {: tsSymptoms}
 
-Only namespaces that are assigned to resource groups show in the {{site.data.keyword.cloud_notm}} **Resource list** page.
+Only namespaces that are assigned to [resource groups](x2161955){: term} show in the {{site.data.keyword.cloud_notm}} **Resource list** page.
 {: tsCauses}
 
 Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in the resource group that you specify. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.

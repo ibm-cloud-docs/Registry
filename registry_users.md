@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-30"
 
 keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, 
 
@@ -18,7 +18,7 @@ subcollection: Registry
 As an administrator, you can define access policies for your registry to create different levels of access for different users. For example, you can authorize certain users to set quotas while other users can view only quotas.
 {: shortdesc}
 
-You must define access policies for every user that works with {{site.data.keyword.registrylong}}. The scope of an access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some policies are pre-defined, but others can be customized.
+You must define access policies for every user that works with {{site.data.keyword.registrylong}}. The scope of an [access policy](x2853407){: term} is based on the user's role or roles that determine the actions that they are allowed to do. Some policies are pre-defined, but others can be customized.
 
 If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](#existing_users).
 {: tip}
@@ -32,7 +32,7 @@ From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or late
 {: help}
 {: support}
 
-If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, the resource group, or the entire service, that is, all namespaces in the account.
+If you want to control access to resources, you must assign roles to users or service IDs. Access to {{site.data.keyword.registrylong_notm}} resources can be granted to the namespace resource by name, the [resource group](x2161955){: term}, or the entire service, that is, all namespaces in the account.
 
 If you want to grant access to everything, don't specify a resource type or a resource. If you want to grant access to a specific namespace, specify the resource type as `namespace` and use the namespace name as the resource.
 

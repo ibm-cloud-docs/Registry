@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-11-30"
 
 keywords: Responsibilities
 
@@ -23,7 +23,7 @@ Review the following sections for the specific responsibilities for you and for 
 ## Incident and operations management
 {: #incident-and-ops}
 
-Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
+Incident and operations management includes tasks such as monitoring, event management, [high availability](x2284708){: term}, problem determination, recovery, and full state backup and recovery.
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|
@@ -80,7 +80,7 @@ Security and regulation compliance includes tasks such as security controls impl
 ## Disaster recovery
 {: #disaster-recovery}
 
-Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events. For more information, see [Understanding high availability and disaster recovery for Container Registry](/docs/Registry?topic=Registry-ha-dr).
+[Disaster recovery](x2113280){: term} includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events. For more information, see [Understanding high availability and disaster recovery for Container Registry](/docs/Registry?topic=Registry-ha-dr).
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|

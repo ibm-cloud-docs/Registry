@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-11-30"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can securely store and share Docker images with other users by adding images to your namespace in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a Dockerfile by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
+Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a [Dockerfile](x9860414){: term} by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -252,7 +252,7 @@ To use Vulnerability Advisor to check the security of your image, see [Managing 
 {: help}
 {: support}
 
-Create a service ID that uses an API key to push images to {{site.data.keyword.registrylong_notm}}.
+Create a service ID that uses an [API key](x8051010){: term} to push images to {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 Complete the following steps:
@@ -348,7 +348,7 @@ To delete an image by using the CLI, complete the following steps:
 ### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
 {: #registry_images_remove_gui}
 
-You can delete unwanted images and all their tags from your private image repository by using the {{site.data.keyword.cloud_notm}} console.
+You can delete unwanted images and all their tags from your [private image repository](x8439215){: term} by using the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.

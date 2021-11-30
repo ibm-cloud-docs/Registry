@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-11-30"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Monitoring metrics for {{site.data.keyword.registrylong_notm}}
 {: #registry_monitor}
 
-{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, [DevOps](x5784896){: term} teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {: shortdesc}
 
 ## Platform metrics overview
@@ -160,7 +160,7 @@ The following attributes are available for segmenting all the metrics that are l
 |-----------|----------------|-----------------------|-----------------------|
 | `Cloud Type` | `ibm_ctype` | The cloud type has a value of `public`. | Yes |
 | `Location` | `ibm_location` | The location of the monitored resource. This location can be a region, data center, or global. | Yes |
-| `Resource` | `ibm_resource` | The resource that is being measured by the service, which is typically an identifying name or GUID. | No |
+| `Resource` | `ibm_resource` | The resource that is being measured by the service, which is typically an identifying name or [globally unique identifier (GUID)](x2390455){: term}. | No |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. | No |
 | `Resource Type` | `ibm_resource_type` | The type of resource that is being measured by the service. | No |
 | `Service name` | `ibm_service_name` | The name of the service that is generating this metric. | Yes |

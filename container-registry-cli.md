@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-11-30"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -23,7 +23,7 @@ You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the
 {: #containerregcli_prereq}
 
 - Install the {{site.data.keyword.cloud_notm}} CLI, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). The prefix for running commands by using the {{site.data.keyword.cloud_notm}} CLI is `ibmcloud`.
-- Before you run the registry commands, log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an access token and authenticate your session.
+- Before you run the registry commands, log in to {{site.data.keyword.cloud_notm}} with the `ibmcloud login` command to generate an [access token](x2113001){: term} and authenticate your session.
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and `container-registry` CLI plug-ins are available. Ensure that you keep your CLI up-to-date so that you can use all the available commands and options.
 
@@ -712,7 +712,7 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-You can create a namespace in a resource group of your choice by using one of the following options.
+You can create a namespace in a [resource group](x2161955){: term} of your choice by using one of the following options.
 
 - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
 - Specify the required resource group by using the `-g` option on the `ibmcloud cr namespace-add` command.
