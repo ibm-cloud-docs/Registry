@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-30"
 
 keywords: Portieris, container image security, Portieris policies, installing Portieris, security, security enforcement, removing Portieris, uninstalling Portieris
 
@@ -20,7 +20,7 @@ You can use [Portieris](https://github.com/IBM/portieris){: external} to enforce
 
 You can use Portieris to enforce policies on image signatures and on vulnerabilities that are detected by Vulnerability Advisor. If an image doesn't meet your policy requirements, the resource that contains the pod is not deployed to your cluster.
 
-Portieris is supported on OpenShift.
+Portieris is supported on {{site.data.keyword.redhat_full}} {{site.data.keyword.openshiftshort}}.
 
 ## Installing Portieris in your cluster
 {: #sec_enforce_install_portieris}
