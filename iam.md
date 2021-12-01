@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-30"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
-When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an access policy with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM access](/docs/account?topic=account-userroles) user roles.
+When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registrylong_notm}} is mapped to one or more [IAM access](/docs/account?topic=account-userroles) user roles.
 
 IAM policies are enforced only when you use IAM to log in to {{site.data.keyword.registrylong_notm}}. If you want to restrict access to one or more namespaces for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
@@ -39,7 +39,7 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to the service in your account
 - Access to a specific resource within the service
 - Access to all IAM-enabled services in your account
-- Access to resources within a resource group
+- Access to resources within a [resource group](x2161955){: term}
 
 After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registrylong_notm}} service.
 

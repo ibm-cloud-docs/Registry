@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-30"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, iam, access denied, iam access policy
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You have an IAM access policy but still get access denied errors.
+You have an IAM [access policy](x2853407){: term} but still get access denied errors.
 {: shortdesc}
 
 You created an IAM access policy, but you're still getting access denied errors.
@@ -28,7 +28,7 @@ You created an IAM access policy, but you're still getting access denied errors.
 You are likely to get access denied errors because of one of the following causes:
 {: tsCauses}
 
-- **Cause 1**. The user policy was created in a resource group but the namespace is not assigned to that resource group.
+- **Cause 1**. The user policy was created in a [resource group](x2161955){: term} but the namespace is not assigned to that resource group.
 - **Cause 2**. If you're using a namespace level policy, the resource type is not correct, for example, `Namespace`.
 
 You can resolve the problem by using one of the following solutions:

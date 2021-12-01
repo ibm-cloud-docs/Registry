@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-11-30"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -174,7 +174,7 @@ Review the following table to find available Go template options and data types 
 | `Labels` | Key-value map | Displays the list of labels that were added to the image as key-value pairs. |
 | `MacAddress` | String | Displays the MAC address that is assigned to the container. |
 | `NetworkDisabled` | Boolean | Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container. |
-| `OnBuild` | Array of strings | Displays the `ONBUILD` metadata that were defined on the image Dockerfile. |
+| `OnBuild` | Array of strings | Displays the `ONBUILD` metadata that were defined on the image [Dockerfile](x9860414){: term}. |
 | `OpenStdin` | Boolean | Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed. |
 | `Shell` | Array of strings | Displays the shell-form of `RUN`, `CMD`, `ENTRYPOINT`. |
 | `StdinOnce` | Boolean | Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-24"
+lastupdated: "2021-11-30"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -44,7 +44,7 @@ The following table lists the API methods that generate an event when they are c
 | `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | |
 | `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | |
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a resource group. | |
+| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a [resource group](x2161955){: term}. | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
 | `container-registry.plan.get` | Display information about the current pricing plan. | |

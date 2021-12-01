@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-30"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -41,7 +41,7 @@ To start monitoring your resources, see [Getting started with {{site.data.keywor
 
 You can choose from the following goals:
 
-- Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM access groups. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM [access groups](x2160811){: term}. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} has at least `#` service IDs with the IAM manager role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).

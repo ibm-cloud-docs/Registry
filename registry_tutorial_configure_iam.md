@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-11-30"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -402,7 +402,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 Configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
 {: shortdesc}
 
-1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an API key for it.
+1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an [API key](x8051010){: term} for it.
 
     1. Log in to User A's account by running the following command.
 
