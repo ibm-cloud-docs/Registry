@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-03"
 
 keywords: container registry
 
@@ -160,7 +160,7 @@ subcollection: Registry
 
 * [Provision a Kubernetes cluster within a Secure Perimeter by using {{site.data.keyword.containerlong_notm}}](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_provision_cluster)
 
-* [Run initial config of your Secure Perimeter Vyatta](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_initial_setup)
+* [Run initial configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_initial_setup)
 
 * [Set up a Kubernetes pod within your Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_setup)
 

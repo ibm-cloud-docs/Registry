@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-03"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -23,7 +23,7 @@ completion-time: 2h
 {: toc-services="key-protect"}
 {: toc-completion-time="2h"}
 
-You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that untrusted hosts can't run the images.
+You can protect the confidentiality of your {{site.data.keyword.registrylong_notm}} images, and ensure that hosts that aren't trusted can't run the images.
 {: shortdesc}
 
 Create an encrypted image so that people without the [private key](x2034701){: term} can't access the content. Create the encrypted image by using an RSA public-private key pair to encrypt and decrypt the image. A public key is not a secret and anyone can use it to encrypt an image. A private key is a secret, and only users that have that private key can use it to decrypt the image.
