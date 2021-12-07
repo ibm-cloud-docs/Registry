@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-07"
 
 keywords: container registry
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Site map
 {: #sitemap}
+
 
 
 
@@ -413,8 +414,6 @@ subcollection: Registry
 * [Deploy an application to one location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-2)
 
     * [Create a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-3)
-
-    * [Clone the application](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-clone_application)
 
     * [Deploy the application to the Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-deploy_application)
 
