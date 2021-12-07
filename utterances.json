@@ -232,11 +232,18 @@
       ],
       "troubleshoot-manifest-error-version": [
         "error the manifest version for this image is not supported for tagging",
-        "getting an error message tring to tag my image in container registry",
+        "getting an error message when trying to tag my image in container registry",
         "The manifest version for this image is not supported for tagging error",
         "manifest version error trying to tag CR images",
         "get error the manifest version is not supported in CR",
         "the manifest version for this image is not supported for tagging in container registry"
+      ],
+      "troubleshoot-manifest-list-error": [
+        "manifest list invalid error when tagging my manifest list or OCI Image Index",
+        "getting an error message when trying to tag my manifest list or OCI Image Index in container registry",
+        "manifest list error trying to tag my manifest list or OCI Image Index",
+        "get error tagging my manifest list or OCI Image Index is not supported in CR",
+        "the manifest list or OCI Image Index for this image is not supported for tagging in container registry"
       ],
       "troubleshoot-docker-mac": [
         "Docker login fails on a Mac in container registry",
