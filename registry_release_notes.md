@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-07"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
+
+## 7 December 2021
+{: #registry-07dec2021}
+{: release-note}
+
+Define configuration rules for {{site.data.keyword.registrylong_notm}} {: #07dec2021_gov}
+:   As a security or compliance focal, you can use the **Govern resources** section of the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registrylong_notm}}.
+
+    For more information, see [Governing {{site.data.keyword.registrylong_notm}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance&interface=ui#govern-container-registry).
 
 ## 1 November 2021
 {: #registry-01nov2021}

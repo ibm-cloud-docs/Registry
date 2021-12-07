@@ -200,6 +200,8 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
+
 * [1 November 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021)
 
 * [5 October 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-05oct2021)
@@ -704,6 +706,8 @@ subcollection: Registry
 * [Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
 
     * [Available goals for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
+
+* [Governing {{site.data.keyword.registrylong_notm}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
 
 * [Gaining security insight with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-security_insight)
 
