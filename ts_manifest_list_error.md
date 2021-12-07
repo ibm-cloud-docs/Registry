@@ -144,7 +144,7 @@ You can resolve this issue by using one of the following options, following on f
 
         You receive the following response:
 
-        ````sh
+        ```sh
         Restoring digest 'icr.io/mynamespace/myrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc' ...
 
         Successfully restored digest 'icr.io/mynamespace/myrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc'
