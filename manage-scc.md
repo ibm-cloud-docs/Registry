@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-07"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -50,6 +50,52 @@ You can choose from the following goals:
 - Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints. For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether security insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}. For more information, see [Leveraging default services](/docs/security-advisor?topic=security-advisor-setup-services).
+
+## Governing {{site.data.keyword.registrylong_notm}} resource configuration
+{: #govern-container-registry}
+
+As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registrylong_notm}}.
+
+Configuration rules are used to enforce the configuration standards that you want to implement across your accounts. To learn more about the data that you can use to create a rule for {{site.data.keyword.registrylong_notm}}, review the following table.
+
+You can restrict your rule to a specific registry instance by specifying either the `registry` or `region` target attributes. For example, to restrict your rule to the registry instance in `us-south`, you can use the `string_equals` *operator* to require that either the *target attribute* `registry` matches the *value* `us.icr.io`, or the *target attribute* `region` matches the *value* `us-south`.
+
+| Resource kind | Property | Operator | Value | Description |
+|---------------|----------|----------|-------|-------------|
+| *service* | *iam_authz* | *is_true*  \n *is_false* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
+| *service* | *private_only* | *is_true*  \n *is_false* | Not applicable | Restricts the account so that it can push and pull images over private connections only. |
+| *service* | *platform_metrics* | *is_true*  \n *is_false* | Not applicable | Publishes {{site.data.keyword.registrylong_notm}} platform metrics. |
+{: caption="Table 1. Rule properties for {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
+
+For example, use the following rule if you want *private_only* to be true, but only in the `us-south` registry.
+
+```sh
+{
+    "target": {
+        "service_name": "container-registry",
+        "resource_kind": "service",
+        "additional_target_attributes": [
+            {
+                "name": "registry",
+                "operator": "string_equals",
+                "value": "us.icr.io"
+            }
+        ]
+    },
+    "required_config": {
+        "description": "IBM Cloud Container Registry account-level regional settings",
+        "and": [
+            {
+                "property": "private_only",
+                "operator": "is_true"
+            }
+        ]
+    }
+}
+```
+{: codeblock}
+
+To learn more about configuration rules, check out [What is Configuration Governance?](/docs/security-compliance?topic=security-compliance-what-is-governance).
 
 ## Gaining security insight with {{site.data.keyword.registrylong_notm}}
 {: #container-registry-security_insight}
