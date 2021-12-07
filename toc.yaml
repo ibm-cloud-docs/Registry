@@ -150,6 +150,7 @@ toc:
           - ts_pods.md
           - ts_manifest_error_type.md
           - ts_manifest_error_version.md
+          - ts_manifest_list_error.md
           - ts_docker_mac.md
       - registry_faq.md
       - sitemap.md
