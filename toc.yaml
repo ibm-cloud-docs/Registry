@@ -27,7 +27,7 @@ toc:
           - /RegistryImages/toc
       - link: 
           label: What are containers?
-          href: https://www.ibm.com/cloud/learn/containers
+          href: https://www.ibm.com/topics/containers
       - topic: registry_release_notes.md
         navtitle: Release notes
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-07"
+lastupdated: "2021-12-15"
 
 keywords: container registry
 
@@ -191,7 +191,7 @@ subcollection: Registry
 ## What are containers?
 {: #sitemap_what-are-containers?}
 
-[What are containers?](https://www.ibm.com/cloud/learn/containers){: external}
+[What are containers?](https://www.ibm.com/topics/containers){: external}
 
 
 ## Release notes

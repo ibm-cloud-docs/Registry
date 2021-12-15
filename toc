@@ -22,7 +22,7 @@ Container Registry
         /solution-tutorials/solution-tutorials-multi-region-k8s-cis
         /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
-    [What are containers?](https://www.ibm.com/cloud/learn/containers)
+    [What are containers?](https://www.ibm.com/topics/containers)
     registry_release_notes.md
     {: .navgroup-end}
 
