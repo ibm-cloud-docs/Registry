@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-16"
 
 keywords: container registry
 
@@ -1244,7 +1244,7 @@ subcollection: Registry
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-* [Can you use non-docker tools to build my images and push them to the registry?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+* [Can you use non-Docker tools to build my images and push them to the registry?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
 * [Is there a limit to the number of namespaces you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
@@ -1254,8 +1254,8 @@ subcollection: Registry
 
 * [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
-* [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
-
 * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
+
+* [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
 * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)

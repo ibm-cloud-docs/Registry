@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-16"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -36,7 +36,7 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Can you use non-docker tools to build my images and push them to the registry?
+## Can you use non-Docker tools to build my images and push them to the registry?
 {: #faq_tools}
 {: faq}
 
@@ -66,6 +66,12 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 
 To find out about the regions that are available, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
+## How is a Vulnerability Advisor scan triggered?
+{: #faq_va_trigger_scan}
+{: faq}
+
+For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
+
 ## Why have I received a scan not found error message for a newly added image?
 {: #faq_va_new_scan_error}
 {: faq}
@@ -84,12 +90,6 @@ You receive this message because the images are scanned asynchronously to the re
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
 If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-ts_index#gettinghelp).
-
-## How is a Vulnerability Advisor scan triggered?
-{: #faq_va_trigger_scan}
-{: faq}
-
-For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}
