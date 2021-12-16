@@ -66,6 +66,18 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 
 To find out about the regions that are available, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
+## How much does Vulnerability Advisor cost?
+{: #faq_va_cost}
+{: faq}
+
+The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview&interface=ui#registry_billing_traffic).
+
+## Does Vulnerability Advisor scan images from other registries?
+{: #faq_va_reg}
+{: faq}
+
+Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} only.
+
 ## How is a Vulnerability Advisor scan triggered?
 {: #faq_va_trigger_scan}
 {: faq}

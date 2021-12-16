@@ -1254,6 +1254,10 @@ subcollection: Registry
 
 * [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
+* [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
+
+* [Does Vulnerability Advisor scan images from other registries?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
+
 * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
 * [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
