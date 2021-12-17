@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-17"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -70,7 +70,7 @@ To find out about the regions that are available, see [Regions](/docs/Registry?t
 {: #faq_va_cost}
 {: faq}
 
-The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview&interface=ui#registry_billing_traffic).
+The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic).
 
 ## Does Vulnerability Advisor scan images from other registries?
 {: #faq_va_reg}
