@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-12-03"
+  years: 2017, 2022
+lastupdated: "2022-01-07"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images, retention
 
@@ -25,7 +25,7 @@ An image doesn't show in the list that is produced by the {{site.data.keyword.re
 You ran the [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command and an image that you're expecting to view in the list is not displayed.
 {: tsSymptoms}
 
-You might have a Distroless image. Some Distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
+You might have a distroless image. Some distroless images don't have a creation date. The `ibmcloud cr retention-run` command deletes the oldest images, and therefore requires a creation date.
 {: tsCauses}
 
 You can delete the image manually by running the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
