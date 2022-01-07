@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-01-07"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images, retention
+keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images, retention, distroless
 
 subcollection: Registry
 
