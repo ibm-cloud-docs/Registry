@@ -176,7 +176,7 @@
       "troubleshoot-image-list-retention": [
         "image not show in the CR list ",
         "ibmcloud cr retention-run",
-        "what is a Distroless image in container registry",
+        "what is a distroless image in container registry",
         "image not shown in ContainerRegistry",
         "retention-run command delete old image  in CR",
         "how to check the creation date of image in CR",
