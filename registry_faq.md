@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-12-17"
+  years: 2018, 2022
+lastupdated: "2022-01-17"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -59,6 +59,14 @@ Images that are in the trash don't count toward your quota.
 {: faq}
 
 You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access) and [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+
+## How can I share an image with many users?
+{: #faq_share_image}
+{: faq}
+
+You can create an {{site.data.keyword.cloud}} account and invite all the users to it. They can then all have access to any namespace that is created in the account. You can create a subset of the users and set an IAM policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
+
+For more information, see [Defining access role policies](/docs/Registry?topic=Registry-user).
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}

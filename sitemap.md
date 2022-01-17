@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-17"
+  years: 2021, 2022
+lastupdated: "2022-01-17"
 
 keywords: container registry
 
@@ -1251,6 +1251,8 @@ subcollection: Registry
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
 * [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+
+* [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
 * [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 

@@ -172,5 +172,3 @@ The following table lists the fields that are available through the `requestData
 {: caption="Table 7. Custom event fields for {{site.data.keyword.registryshort_notm}} image vulnerability status read" caption-side="bottom"}
 
 For more information, see [Get vulnerability status](/apidocs/container-registry/va#imagestatusquerypath) in the API documentation.
-
-
