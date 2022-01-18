@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-17"
+lastupdated: "2022-01-18"
 
 keywords: container registry
 
@@ -199,6 +199,8 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
 
@@ -808,19 +810,37 @@ subcollection: Registry
 
 * [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)
 
+    * [Actions that generate events for authorization](/docs/Registry?topic=Registry-at_events#at_events_api_methods_auth)
+
+    * [Actions that generate events for images](/docs/Registry?topic=Registry-at_events#at_events_api_methods_images)
+
+    * [Actions that generate events for namespaces](/docs/Registry?topic=Registry-at_events#at_events_api_methods_namespaces)
+
+    * [Actions that generate events for plans](/docs/Registry?topic=Registry-at_events#at_events_api_methods_plan)
+
+    * [Actions that generate events for quotas](/docs/Registry?topic=Registry-at_events#at_events_api_methods_quota)
+
+    * [Actions that generate events for retention policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_retention)
+
+    * [Actions that generate events for settings](/docs/Registry?topic=Registry-at_events#at_events_api_methods_setting)
+
+    * [Actions that generate events for signing images](/docs/Registry?topic=Registry-at_events#at_events_api_methods_sign)
+
+    * [Actions that generate events for trash](/docs/Registry?topic=Registry-at_events#at_events_api_methods_trash)
+
+    * [Actions that generate events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_events_api_methods_vuln)
+
+    * [Actions that generate events for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
+
 * [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
 
     * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
 
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
 
-    * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
+    * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
 
-    * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
-
-    * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
-
-    * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
+    * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
 [Analyzing logs](/docs/Registry?topic=Registry-registry_logs#registry_logs)
 
