@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-30"
+  years: 2020, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
