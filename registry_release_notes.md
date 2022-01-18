@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-18"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
+
+## 17 January 2022
+{: #registry-17jan2022}
+{: release-note}
+
+View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
+:   You can view {{site.data.keyword.at_short}} events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
+
+    For more information, see [Auditing the events](/docs/Registry?topic=Registry-at_events).
 
 ## 7 December 2021
 {: #registry-07dec2021}
