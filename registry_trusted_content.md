@@ -12,6 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
