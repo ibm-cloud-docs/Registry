@@ -20,7 +20,7 @@ subcollection: Registry
 
 You can use {{site.data.keyword.redhat_full}} Signatures to sign your images.
 
-The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
+From 1 November 2021, the Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued.
 {: deprecated}
 
 ## Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures
@@ -78,7 +78,7 @@ On Linux&reg; and macOS, the default configuration for the tools is to store the
 
 See [Podman](https://podman.io/){: external}.
 
-### Using OpenShift CLI to sign images
+### Using the OpenShift CLI to sign images
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 See [OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The OpenShift CLI uses the `oc` command.
