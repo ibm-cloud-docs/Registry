@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-26"
+  years: 2017, 2022
+lastupdated: "2022-01-24"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -20,7 +20,8 @@ subcollection: Registry
 
 You can use {{site.data.keyword.redhat_full}} Signatures to sign your images.
 
-The Notary v1 service for signing images in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
+The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
+{: deprecated}
 
 ## Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures
 {: #registry_trustedcontent_red_hat_sig}

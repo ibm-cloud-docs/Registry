@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-24"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -43,7 +43,7 @@ Define configuration rules for {{site.data.keyword.registrylong_notm}} {: #07dec
 {: release-note}
 
 Using Notary v1 for signing images is discontinued {: #01nov2021_notary}
-:   The Notary v1 service for signing images in {{site.data.keyword.registrylong_notm}} is discontinued.
+:   The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
 
     {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
