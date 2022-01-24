@@ -181,7 +181,7 @@ subcollection: Registry
 
 * [`rules.conf` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
 
-[ `ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
+[`ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
 
 * [Getting started with the `ibm/liberty` image](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_start)
 
