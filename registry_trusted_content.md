@@ -40,7 +40,10 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 {: help}
 {: support}
 
-To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command:
+To use [Skopeo](https://github.com/containers/skopeo){: external} to sign your images, you must create a private [GNU Privacy Guard (GnuPG or GPG)](https://gnupg.org/){: external} identity and then run the `skopeo` command.
+
+The following example doesn't include Skopeo authentication.
+{: note}
 
 1. To create a GnuPG identity, run the following command.
 
