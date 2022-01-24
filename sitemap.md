@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-24"
 
 keywords: container registry
 
@@ -47,7 +47,15 @@ subcollection: Registry
 
     * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
 
+        * [Storage](/docs/Registry?topic=Registry-registry_overview#storage)
+
+        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#pull-traffic)
+
     * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
+
+        * [Storage](/docs/Registry?topic=Registry-registry_overview#storage)
+
+        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#pull-traffic)
 
     * [Cost](/docs/Registry?topic=Registry-registry_overview#registry_cost)
 
@@ -77,7 +85,11 @@ subcollection: Registry
 
     * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
 
+        * [Targeting the global registry](/docs/Registry?topic=Registry-registry_overview#targeting-the-global-registry)
+
     * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
+
+        * [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#targeting-a-local-region)
 
 * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
 
@@ -169,7 +181,9 @@ subcollection: Registry
 
 * [`rules.conf` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
 
-[Getting started with the `ibm/liberty` image](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
+[ `ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
+
+* [Getting started with the `ibm/liberty` image](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_start)
 
 * [How it works](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_how_it_works)
 
@@ -375,6 +389,10 @@ subcollection: Registry
 
     * [VMs, containers, and Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
 
+        * [Virtual machines vs containers](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#virtual-machines-vs-containers)
+
+        * [Kubernetes orchestration](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#kubernetes-orchestration)
+
     * [What IBM's doing for you](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
 
 * [Sizing clusters](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
@@ -436,6 +454,12 @@ subcollection: Registry
     * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-12)
 
     * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
+
+        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#one-pool-for-the-cluster-in-london)
+
+        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#one-pool-for-the-cluster-in-dallas)
+
+        * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#and-one-pool-with-both-clusters)
 
     * [Create the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-17)
 
@@ -577,6 +601,14 @@ subcollection: Registry
     * [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create)
 
     * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
+
+        * [Buildah](/docs/Registry?topic=Registry-registry_access#buildah)
+
+        * [Docker](/docs/Registry?topic=Registry-registry_access#docker)
+
+        * [Podman](/docs/Registry?topic=Registry-registry_access#podman)
+
+        * [Skopeo](/docs/Registry?topic=Registry-registry_access#skopeo)
 
 * [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive)
 
@@ -721,7 +753,7 @@ subcollection: Registry
 
     * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
 
-    * [Using OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
+    * [Using the OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
@@ -839,6 +871,14 @@ subcollection: Registry
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
+
+        * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#request-data-for-container-registryaccount-vulnerability-reportlist)
+
+        * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#request-data-for-container-registryaccount-vulnerability-statuslist)
+
+        * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#request-and-response-data-for-container-registryimage-vulnerability-reportread)
+
+        * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#request-and-response-data-for-container-registryimage-vulnerability-statusread)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
