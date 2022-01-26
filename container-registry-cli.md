@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-01-26"
+  years: 2017, 2021
+lastupdated: "2021-11-30"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
