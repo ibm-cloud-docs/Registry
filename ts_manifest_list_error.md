@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-07"
+lastupdated: "2022-01-26"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, tags, manifest list, oci image index
 subcollection: Registry
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a manifest list invalid error when I try to tag my manifest list or OCI Image Index?
+# Why am I getting a manifest list invalid error?
 {: #troubleshoot-manifest-list-error}
 {: troubleshoot}
 {: support}
