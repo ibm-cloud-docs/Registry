@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-10-27"
+  years: 2020, 2022
+lastupdated: "2022-01-26"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -61,7 +61,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.re
 | {{site.data.keyword.keymanagementservicefull_notm}} | {{site.data.keyword.keymanagementserviceshort}} is used to help secure the parts of {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.cos_full_notm}} that are used by {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.la_full_notm}} | {{site.data.keyword.registrylong_notm}} generates platform services logs, which are displayed in your logging instances. The logs are sent to {{site.data.keyword.la_full_notm}} by using private connections. For more information, see [Analyzing logs for Container Registry](/docs/Registry?topic=Registry-registry_logs). |
 {: caption="Table 1. {{site.data.keyword.registryshort_notm}} dependencies to other {{site.data.keyword.cloud_notm}} services" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
+{: summary="The first column is the service. The second column is a description of the service."}
 
 ## Dependencies to third-party services
 {: #registry_architecture_dependencies_third_party}
@@ -73,6 +73,6 @@ Review the list of third-party services that {{site.data.keyword.registrylong_no
 |------------|-------------------------------------|
 | Akamai | Akamai is used as a provider for DNS, global load-balancing, and web firewall capabilities in {{site.data.keyword.registrylong_notm}}. |
 {: caption="Table 2. {{site.data.keyword.registryshort_notm}} dependencies to third-party services" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
+{: summary="The first column is the service. The second column is a description of the service."}
 
 
