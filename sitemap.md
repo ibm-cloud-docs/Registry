@@ -1291,7 +1291,7 @@ subcollection: Registry
 
 [Why am I getting a manifest version error when I try to tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
 
-[Why am I getting a manifest list invalid error when I try to tag my manifest list or OCI Image Index?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
+[Why am I getting a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
 
 [Why does Docker login fail on my Mac?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
