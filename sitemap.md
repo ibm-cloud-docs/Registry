@@ -65,9 +65,13 @@ subcollection: Registry
 
     * [Container image](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image)
 
+    * [Digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest)
+
     * [Dockerfile](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerfile)
 
     * [Docker V2 container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerv2_images)
+
+    * [Image manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest)
 
     * [OCI container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_oci_images)
 
@@ -1311,6 +1315,10 @@ subcollection: Registry
 * [Is there a limit to the number of namespaces you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+
+* [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
+
+* [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
 * [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 

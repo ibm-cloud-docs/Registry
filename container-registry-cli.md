@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-30"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -279,7 +279,9 @@ ibmcloud cr iam-policies-status
 ## `ibmcloud cr image-digests` (`ibmcloud cr digests`)
 {: #bx_cr_image_digests}
 
-Lists all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, in your {{site.data.keyword.cloud_notm}} account. If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
+Lists all images, including [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, in your {{site.data.keyword.cloud_notm}} account. This command returns the digest in its long format. When you are using the digest to identify an image, always use the long format.
+
+If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
 
 You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and one of the tags in the **Tags** column in the format: `repository:tag`.
 {: tip}
@@ -369,7 +371,10 @@ ibmcloud cr image-inspect  --format "{{ .Config.ExposedPorts }}" us.icr.io/birds
 ## `ibmcloud cr image-list` (`ibmcloud cr images`)
 {: #bx_cr_image_list}
 
-Displays all tagged images in your {{site.data.keyword.cloud_notm}} account. If you want to list all your images, including untagged images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command.
+Displays all tagged images in your {{site.data.keyword.cloud_notm}} account. If you want to list all your images, including untagged images, run the [`ibmcloud cr image-digests`](#bx_cr_image_digests) command. By default, the `ibmcloud cr image-list` command returns the digest for the images in a truncated format. The `ibmcloud cr image-digests` command returns the long format of the digest.
+
+When you are using the digest to identify an image, always use the long format.
+{: note}
 
 The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
 {: tip}
@@ -400,7 +405,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 :   (Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. By default only private images are listed. You can view {{site.data.keyword.IBM_notm}}-provided images in the global registry only.
 
 `--no-trunc`
-:   (Optional) Do not truncate the image digests.
+:   (Optional) Returns the image digest in its long format.
 
 `--show-type`
 :   (Optional) Displays the image manifest type.
@@ -670,7 +675,7 @@ None
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}
 
-View the contents of the manifest for an image. You can reference the image that you want to inspect either by digest or by tag.
+View the contents of the [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) for an image. You can reference the image that you want to inspect either by digest or by tag.
 
 ```sh
 ibmcloud cr manifest-inspect [--quiet | -q ] IMAGE
