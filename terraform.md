@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-16"
+  years: 2021, 2022
+lastupdated: "2022-02-03"
 
 keywords: Terraform for IBM Cloud Container Registry
 
@@ -66,21 +66,21 @@ Before you begin, ensure that you have the [required access](/docs/Registry?topi
 
 3. Initialize the Terraform CLI.
 
-    ```sh
+    ```txt
     terraform init
     ```
     {: pre}
 
 4. Create a Terraform execution plan. The Terraform execution plan summarizes all the actions that need to be run to create the {{site.data.keyword.registryshort}} namespace and IAM access policy in your account.
 
-    ```sh
+    ```txt
     terraform plan
     ```
     {: pre}
 
 5. Create the {{site.data.keyword.registryshort}} namespace and IAM access policy in {{site.data.keyword.cloud_notm}}.
 
-    ```sh
+    ```txt
     terraform apply
     ```
     {: pre}

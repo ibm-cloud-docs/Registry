@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-30"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -105,7 +105,7 @@ You can use Buildah to authenticate with the registry so that you can push and p
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Buildah command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
-```sh
+```txt
 buildah login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
@@ -118,7 +118,7 @@ You can use Docker to authenticate with the registry so that you can push and pu
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Docker command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
-```sh
+```txt
 docker login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
@@ -131,7 +131,7 @@ You can use Podman to authenticate with the registry so that you can push and pu
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Podman command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
-```sh
+```txt
 podman login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
@@ -144,7 +144,7 @@ You can use Skopeo to authenticate with the registry so that you can push and pu
 
 For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_apikey_auth), `<namespace>` with your namespace, and `<apikey>` with your API key:
 
-```sh
+```txt
 skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker://<registry_domain>/<namespace>/busybox:latest --dest-creds iamapikey:<apikey>
 ```
 {: pre}
@@ -170,7 +170,7 @@ Log in to the registry by using the Buildah CLI.
 
 You can use the Buildah CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
-```sh
+```txt
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iambearer --password-stdin <registry_domain>
 ```
 {: pre}
@@ -183,7 +183,7 @@ Log in to the registry by using the Docker CLI.
 
 You can use the Docker CLI to log in to the registry by using a refresh token in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started):
 
-```sh
+```txt
 ibmcloud cr login
 ```
 {: pre}
@@ -194,7 +194,7 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 
 2. Log in to the registry by using the `docker login` command. Replace `<bearer_token>` with your bearer token and `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
-    ```sh
+    ```txt
     docker login -u iambearer --password <bearer_token> <registry_domain>
     ```
     {: pre}
@@ -207,7 +207,7 @@ Log in to the registry by using the Podman CLI.
 
 You can use the Podman CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
-```sh
+```txt
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | podman login -u iambearer --password-stdin <registry_domain>
 ```
 {: pre}
@@ -220,7 +220,7 @@ Log in to the registry by using the Skopeo CLI.
 
 You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
-```sh
+```txt
 ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iambearer --password-stdin <registry_domain>
 ```
 {: pre}

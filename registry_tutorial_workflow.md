@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-30"
+  years: 2019, 2022
+lastupdated: "2022-02-03"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -67,7 +67,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command.
 
-    ```sh
+    ```txt
     ibmcloud login -r us-south [--sso]
     ```
     {: pre}
@@ -77,7 +77,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
 
 2. Set `us-south` as the target region for the {{site.data.keyword.registrylong_notm}} commands.
 
-    ```sh
+    ```txt
     ibmcloud cr region-set us-south
     ```
     {: pre}
@@ -90,7 +90,7 @@ Create a [namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#
     If you want to create the namespace in a specific resource group, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
     {: tip}
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
@@ -104,7 +104,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
 
 1. To build the image, run the following command:
 
-    ```sh
+    ```txt
     docker build -t us.icr.io/<my_namespace>/hello-world:1 .
     ```
     {: pre}
@@ -114,21 +114,21 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
 
 2. Log your local Docker daemon into {{site.data.keyword.registrylong_notm}} by running the following command:
 
-    ```sh
+    ```txt
     ibmcloud cr login
     ```
     {: pre}
 
 3. Push the image by running the following command:
 
-    ```sh
+    ```txt
     docker push us.icr.io/<my_namespace>/hello-world:1
     ```
     {: pre}
 
 4. Confirm that your image uploaded successfully by running the following command:
 
-    ```sh
+    ```txt
     ibmcloud cr images
     ```
     {: pre}
@@ -145,7 +145,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 
 1. Run the following command:
 
-    ```sh
+    ```txt
     ibmcloud ks cluster-config <my_cluster> --export
     ```
     {: pre}
@@ -156,21 +156,21 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 
 3. Update the following line in the `hello-world.yaml` file by replacing `<my_namespace>` with your namespace:
 
-    ```sh
+    ```txt
     image: us.icr.io/<my_namespace>/hello-world:1
     ```
     {: pre}
 
 4. Run your image as a deployment and expose it by creating a service that is accessed through the IP address of the worker node:
 
-    ```sh
+    ```txt
     kubectl apply -f hello-world.yaml
     ```
     {: pre}
 
 5. Find the port that is used on the worker node by examining your new service by running the following command:
 
-    ```sh
+    ```txt
     kubectl describe service hello-world
     ```
     {: pre}
@@ -179,14 +179,14 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 
 6. In the output of the following command, note the public IP address. Throughout this tutorial, replace the variable `<public_ip>` with the IP address:
 
-    ```sh
+    ```txt
     ibmcloud ks workers <my_cluster>
     ```
     {: pre}
 
 7. Access your service by running the following command. You can also use a web browser.
 
-    ```sh
+    ```txt
     curl <public_ip>:<node_port>
     ```
     {: pre}
@@ -212,14 +212,14 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 1. Build and push a vulnerable image:
     1. Build a vulnerable image by running the following command:
 
-        ```sh
+        ```txt
         docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
         ```
         {: pre}
 
     2. Push the vulnerable image by running the following command:
 
-        ```sh
+        ```txt
         docker push us.icr.io/<my_namespace>/hello-world:2
         ```
         {: pre}
@@ -228,7 +228,7 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 
 2. List your images, and take note of the `SECURITY STATUS` column by running the following command:
 
-    ```sh
+    ```txt
     ibmcloud cr images
     ```
     {: pre}
@@ -237,7 +237,7 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 
 3. Run the `ibmcloud cr vulnerability-assessment` (alias `ibmcloud cr va`) command to get more information about the vulnerability:
 
-    ```sh
+    ```txt
     ibmcloud cr va us.icr.io/<my_namespace>/hello-world:1
     ```
     {: pre}
@@ -255,35 +255,35 @@ Despite the vulnerability that is present in your image, you're still able to de
 
 3. Update the following line in the `security.yaml` file by replacing `<my_namespace>` with your namespace:
 
-    ```sh
+    ```txt
     - name: us.icr.io/<my_namespace>/*
     ```
     {: pre}
 
 4. Apply the custom policies:
 
-    ```sh
+    ```txt
     kubectl apply -f security.yaml
     ```
     {: pre}
 
 5. To update `hello-world.yaml` so that it references your vulnerable image, change the tag from `1` to `2` as shown here:
 
-    ```sh
+    ```txt
     image: us.icr.io/<my_namespace>/hello-world:2
     ```
     {: pre}
 
 6. Try to patch the existing deployment by running the following command:
 
-    ```sh
+    ```txt
     kubectl apply -f hello-world.yaml
     ```
     {: pre}
 
     You see the following error message:
 
-    ```sh
+    ```txt
     Deny "us.icr.io/<my_namespace>/hello-world:2", the Vulnerability Advisor image scan assessment
     found issues with the container image that are not exempted. Refer to your image vulnerability
     report for more details by using the `ibmcloud cr va` command.
@@ -302,7 +302,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 1. To prevent `apt` from being rolled back, comment out the following line in `Dockerfile-vulnerable` by putting a number sign (`#`) at the beginning of the line as shown here:
 
-    ```sh
+    ```txt
     # RUN apt-get install --allow-downgrades -y apt=1.4.8
     ```
     {: pre}
@@ -310,35 +310,35 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 2. Build and push the image again:
     1. Build the image again by running the following command:
 
-        ```sh
+        ```txt
         docker build -t us.icr.io/<my_namespace>/hello-world:2 -f Dockerfile-vulnerable .
         ```
         {: pre}
 
     2. Push the image again by running the following command:
 
-        ```sh
+        ```txt
         docker push us.icr.io/<my_namespace>/hello-world:2
         ```
         {: pre}
 
 3. Wait for the scan to complete and then run the following command to ensure that no issues are present in the image:
 
-    ```sh
+    ```txt
     ibmcloud cr images
     ```
     {: pre}
 
 4. To patch the deployment, run the following command:
 
-    ```sh
+    ```txt
     kubectl apply -f hello-world.yaml
     ```
     {: pre}
 
 5. Wait for the deployment to complete. To check whether the deployment is complete, run the following command:
 
-    ```sh
+    ```txt
     kubectl rollout status deployment hello-world
     ```
     {: pre}
@@ -347,7 +347,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 
 6. Delete the deployment and the service before proceeding:
 
-    ```sh
+    ```txt
     kubectl delete -f hello-world.yaml
     ```
     {: pre}
@@ -363,14 +363,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 1. In your cluster, create a Kubernetes namespace called `test`:
 
-    ```sh
+    ```txt
     kubectl create namespace test
     ```
     {: pre}
 
 2. To deploy your deployment and service into this Kubernetes namespace, in the `hello-world.yaml` file change the `metadata.namespace` fields for both the deployment and the service from `default` to `test`. This snippet shows the `metadata.namespace` field in context:
 
-    ```sh
+    ```txt
     metadata:
         name: hello-world
         namespace: test
@@ -381,14 +381,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
     1. Apply the configuration with Portieris that is still enabled in your cluster by running the following command:
 
-        ```sh
+        ```txt
         kubectl apply -f hello-world.yaml
         ```
         {: pre}
 
         Because Portieris is still enabled in your cluster, your deployment fails immediately and you see the following message:
 
-        ```sh
+        ```txt
         Error from server: error when creating "hello-world.yaml": admission webhook
         "va.hooks.securityenforcement.admission.cloud.ibm.com" denied the request:
         Deny "us.icr.io/<my_namespace>/hello-world:2", no valid ImagePullSecret defined for us.icr.io
@@ -402,7 +402,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         1. [Remove Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris).
         2. Apply the configuration by running the following command:
 
-            ```sh
+            ```txt
             kubectl apply -f hello-world.yaml
             ```
             {: pre}
@@ -414,14 +414,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 
 4. You must [set up an image pull secret](/docs/containers?topic=containers-registry#other) in your namespace so that you can deploy containers to that namespace. Several options are available, but this tutorial follows the steps to [copy an image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret) to the `test` namespace. Rather than copying all the `icr.io` secrets, you can copy the `us.icr.io` secret because your image is in that local registry. The following command copies the `default-us-icr-io` secret to the `test` namespace, giving it the name `test-us-icr-io`:
 
-    ```sh
+    ```txt
     kubectl get secret default-us-icr-io -o yaml | sed 's/default/test/g' | kubectl -n test create -f -
     ```
     {: pre}
 
 5. Two options are available to [use the image pull secret](/docs/containers?topic=containers-registry#use_imagePullSecret). This tutorial uses the option to refer to the image pull secret in the deployment `.yaml` file by populating the `spec.imagePullSecrets` field. The following snippet shows the required lines in context; you must add the final two lines:
 
-    ```sh
+    ```txt
     spec:
         containers:
         - name: hello-world
@@ -435,14 +435,14 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
 6. Delete your deployment and reapply the configuration:
     1. Delete your deployment by running the following command:
 
-        ```sh
+        ```txt
         kubectl delete -f hello-world.yaml
         ```
         {: pre}
 
     2. Reapply the configuration by running the following command:
 
-        ```sh
+        ```txt
         kubectl apply -f hello-world.yaml
         ```
         {: pre}

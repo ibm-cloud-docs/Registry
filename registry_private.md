@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-30"
+  years: 2020, 2022
+lastupdated: "2022-02-03"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -79,7 +79,7 @@ Run the `docker login` command to authenticate with your registry. Replace `<api
 | `us-south` | `private.us.icr.io` |
 {: caption="Table 1. Private registry domains." caption-side="bottom"}
 
-```sh
+```txt
 docker login -u iamapikey -p <apikey> <private_registry_domain>
 ```
 {: pre}
@@ -104,21 +104,21 @@ Because the use of private connections doesn't apply to the management API, you 
 
 - To prevent image pulls or pushes over public network connections for your account, run the following command.
 
-    ```sh
+    ```txt
     ibmcloud cr private-only --enable
     ```
     {: pre}
 
 - To reinstate image pulls or pushes over public network connections for your account, run the following command.
 
-    ```sh
+    ```txt
     ibmcloud cr private-only --disable
     ```
     {: pre}
 
 - To check whether the use of public connections is prevented for image pushes or pulls in your account, run the following command.
 
-    ```sh
+    ```txt
     ibmcloud cr private-only --status
     ```
     {: pre}

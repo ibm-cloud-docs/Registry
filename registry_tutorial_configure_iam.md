@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-30"
+  years: 2018, 2022
+lastupdated: "2022-02-03"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -48,21 +48,21 @@ Add a second user to your account and grant them the ability to configure {{site
 
     1. Log in to User A's account, by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. Invite User B to access User A's account by running the following command, where `<user.b@example.com>` is User B's email address.
 
-        ```sh
+        ```txt
         ibmcloud account user-invite <user.b@example.com>
         ```
         {: pre}
 
     3. Get User A's Account ID by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud target
         ```
         {: pre}
@@ -73,14 +73,14 @@ Add a second user to your account and grant them the ability to configure {{site
 
     1. Log in as User B and target User A's account by running the following command, where `<YourAccountID>` is User A's Account ID.
 
-        ```sh
+        ```txt
         ibmcloud login -c <YourAccountID>
         ```
         {: pre}
 
     2. Try to edit your registry quota to 4 GB of traffic by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr quota-set --traffic=4000
         ```
         {: pre}
@@ -91,14 +91,14 @@ Add a second user to your account and grant them the ability to configure {{site
 
     1. Log back in to your account as yourself, User A, by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. Create a policy that grants the Manager role to User B by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --roles Manager
         ```
         {: pre}
@@ -107,14 +107,14 @@ Add a second user to your account and grant them the ability to configure {{site
 
     1. Log in as User B, targeting User A's account by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login -c <YourAccountID>
         ```
         {: pre}
 
     2. Try to edit your registry quota to 4 GB of traffic by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr quota-set --traffic=4000
         ```
         {: pre}
@@ -123,7 +123,7 @@ Add a second user to your account and grant them the ability to configure {{site
 
     3. Now change the quota back by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr quota-set --traffic=5120
         ```
         {: pre}
@@ -132,21 +132,21 @@ Add a second user to your account and grant them the ability to configure {{site
 
     1. Log back in to your account as yourself, User A, by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. List the policies for User B, find the policy that you created by running the following command, and note the ID.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policies <user.b@example.com>
         ```
         {: pre}
 
     3. Delete the policy by running the following command, where `<Policy_ID>` is your Policy ID.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
         ```
         {: pre}
@@ -162,14 +162,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Log in as User A, by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. Create `namespace_a` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespace-add namespace_a
         ```
         {: pre}
@@ -179,14 +179,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     3. Create `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespace-add namespace_b
         ```
         {: pre}
 
     4. Create `namespace_c` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespace-add namespace_c
         ```
         {: pre}
@@ -195,14 +195,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Log in as User B, targeting User A's account by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login -c <YourAccountID>
         ```
         {: pre}
 
     2. Try to list the namespaces as User B by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespaces
         ```
         {: pre}
@@ -213,14 +213,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Log in as User A's account by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. Check that at least three namespaces are listed by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespaces
         ```
         {: pre}
@@ -229,7 +229,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     3. Create a policy that grants the Reader role on `namespace_b` to User B by running the following command, where `<cloud_region>` is the name of your {{site.data.keyword.cloud_notm}} region, for example `us-south`.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Reader
         ```
         {: pre}
@@ -239,7 +239,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     4. Create a second policy that grants the Reader and Writer roles on `namespace_c` to User B by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policy-create <user.b@example.com> --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_c --roles Reader,Writer
         ```
         {: pre}
@@ -251,28 +251,28 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Pull the `hello-world` image by running the following command.
 
-        ```sh
+        ```txt
         docker pull hello-world
         ```
         {: pre}
 
     2. Tag the image to `namespace_a` by running the following command, where `<registry_region>` is the name of your [{{site.data.keyword.registrylong_notm}} region](/docs/Registry?topic=Registry-registry_overview#registry_regions), for example `us-south`.
 
-        ```sh
+        ```txt
         docker tag hello-world <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Tag the image to `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         docker tag hello-world <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     4. Log in to {{site.data.keyword.registrylong_notm}} by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr login
         ```
         {: pre}
@@ -282,14 +282,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     5. Push the image to `namespace_a` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
@@ -298,21 +298,21 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Log in as User B by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login -c <YourAccountID>
         ```
         {: pre}
 
     2. Show that User B can see `namespace_b` and `namespace_c`, but not `namespace_a` because User B doesn't have access to `namespace_a`, by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr namespaces
         ```
         {: pre}
 
     3. List your images by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr images
         ```
         {: pre}
@@ -321,7 +321,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     4. Log in to {{site.data.keyword.registrylong_notm}} by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud cr login
         ```
         {: pre}
@@ -331,14 +331,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     5. Pull the image by running the following command.
 
-        ```sh
+        ```txt
         docker pull <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
 
     6. Push the image to `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
@@ -347,14 +347,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     7. Tag the image with `namespace_c` by running the following command.
 
-        ```sh
+        ```txt
         docker tag hello-world <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
 
     8. Push the image to `namespace_c` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
@@ -363,7 +363,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     9. Pull from `namespace_c` by running the following command.
 
-        ```sh
+        ```txt
         docker pull <registry_region>.icr.io/namespace_c/hello-world
         ```
         {: pre}
@@ -374,14 +374,14 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     1. Log back in to User A's account by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. List the policies for User B by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policies <user.b@example.com>
         ```
         {: pre}
@@ -390,7 +390,7 @@ Create some namespaces with sample images, and grant access to them. You create 
 
     3. Delete the policies that you created by running the following command, where `<Policy_ID>` is the Policy ID.
 
-        ```sh
+        ```txt
         ibmcloud iam user-policy-delete <user.b@example.com> <Policy_ID>
         ```
         {: pre}
@@ -406,35 +406,35 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     1. Log in to User A's account by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud login
         ```
         {: pre}
 
     2. Create a service ID named `cr-roles-tutorial` with the description `"Created during the access control tutorial for Container Registry"` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-id-create cr-roles-tutorial --description "Created during the access control tutorial for Container Registry"
         ```
         {: pre}
 
     3. Create a service policy for the service ID that grants the Reader role on `namespace_a` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_a --roles Reader
         ```
         {: pre}
 
     4. Create a second service policy that grants the Writer role on `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-policy-create cr-roles-tutorial --service-name container-registry --region <cloud_region> --resource-type namespace --resource namespace_b --roles Writer
         ```
         {: pre}
 
     5. Create an API key for the service ID by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-api-key-create cr-roles-tutorial-apikey cr-roles-tutorial
         ```
         {: pre}
@@ -443,7 +443,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     1. Log in to {{site.data.keyword.registrylong_notm}} by running the following command.
 
-        ```sh
+        ```txt
         docker login -u iamapikey -p <API_Key> <registry_region>.icr.io
         ```
         {: pre}
@@ -453,14 +453,14 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     2. Pull your image by running the following command.
 
-        ```sh
+        ```txt
         docker pull <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
 
     3. Push your image to `namespace_a` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_a/hello-world
         ```
         {: pre}
@@ -469,7 +469,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     4. Push your image to `namespace_b` by running the following command.
 
-        ```sh
+        ```txt
         docker push <registry_region>.icr.io/namespace_b/hello-world
         ```
         {: pre}
@@ -480,7 +480,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     1. Log back in to {{site.data.keyword.registrylong_notm}} as User A.
 
-        ```sh
+        ```txt
         ibmcloud cr login
         ```
         {: pre}
@@ -490,7 +490,7 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     2. List your service policies by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-policies cr-roles-tutorial
         ```
         {: pre}
@@ -499,14 +499,14 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 
     3. Delete your service policies by running the following command for each policy.
 
-        ```sh
+        ```txt
         ibmcloud iam service-policy-delete cr-roles-tutorial <Policy_ID>
         ```
         {: pre}
 
     4. Delete your service ID by running the following command.
 
-        ```sh
+        ```txt
         ibmcloud iam service-id-delete cr-roles-tutorial
         ```
         {: pre}
@@ -520,31 +520,31 @@ Remove the resources that you created in previous sections to leave your account
 
 1. Log in to User A's account by running the following command.
 
-    ```sh
+    ```txt
     ibmcloud login
     ```
     {: pre}
 
 2. Delete `namespace_a`, `namespace_b`, and `namespace_c` by running the following commands.
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-rm namespace_a
     ```
     {: pre}
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-rm namespace_b
     ```
     {: pre}
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-rm namespace_c
     ```
     {: pre}
 
 3. Remove User B from your account by running the following command.
 
-    ```sh
+    ```txt
     ibmcloud account user-remove <user.b@example.com>
     ```
     {: pre}

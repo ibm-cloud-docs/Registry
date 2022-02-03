@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-11-30"
+  years: 2018, 2022
+lastupdated: "2022-02-03"
 
 keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
 
@@ -89,7 +89,7 @@ To grant a user permission to configure your {{site.data.keyword.registrylong_no
 
 For example, run the following `ibmcloud iam user-policy-create` command. Where `<user_email>` is the user's email address, `<region>` is the region, and `<roles>` is the role, or roles, that you want the user to have.
 
-```sh
+```txt
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles>
 ```
 {: pre}
@@ -119,7 +119,7 @@ To grant a user permission to access {{site.data.keyword.registrylong_notm}} con
 
 For example, use the following command to create a user policy. Where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace.
 
-```sh
+```txt
 ibmcloud iam user-policy-create <user_email> --service-name container-registry --region <region> --roles <roles> [--resource-type namespace --resource <namespace_name>]
 ```
 {: pre}

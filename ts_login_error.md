@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-10-06"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails, not a registered command, registered command, command fails
 
@@ -25,13 +25,13 @@ You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands, the
 You're trying to run an `ibmcloud cr` command, but you receive an error message similar to one of the following error messages:
 {: tsSymptoms}
 
-```sh
+```txt
 ibmcloud cr login
 'cr' is not a registered command. See 'ibmcloud help'.
 ```
 {: screen}
 
-```sh
+```txt
 ibmcloud cr namespace
 'cr' is not a registered command. See 'ibmcloud help'.
 ```

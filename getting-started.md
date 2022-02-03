@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-30"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, namespaces, tutorial, Docker, images, registry
 
@@ -48,7 +48,7 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
-    ```sh
+    ```txt
     ibmcloud login
     ```
     {: pre}
@@ -61,7 +61,7 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
     The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
     {: tip}
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-add <my_namespace>
     ```
     {: pre}
@@ -73,7 +73,7 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
 
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
-    ```sh
+    ```txt
     ibmcloud cr namespace-list -v
     ```
     {: pre}
@@ -88,21 +88,21 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
 
 2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the tag of the image that you want to use, for example, `latest`.
 
-    ```sh
+    ```txt
     docker pull <source_image>:<tag>
     ```
     {: pre}
 
     Example, where `<source_image>` is `hello-world` and `<tag>` is `latest`:
 
-    ```sh
+    ```txt
     docker pull hello-world:latest
     ```
     {: pre}
 
 3. Tag the image. Replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Step 2. Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`.
 
-    ```sh
+    ```txt
     docker tag <source_image>:<tag> <region>.icr.io/<my_namespace>/<new_image_repo>:<new_tag>
     ```
     {: pre}
@@ -112,7 +112,7 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
 
     Example, where `<source_image>` is `hello-world`, `<tag>` is `latest`, `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<new_image_repo>` is `hw_repo`, and `<new_tag>` is `1`:
 
-    ```sh
+    ```txt
     docker tag hello-world:latest uk.icr.io/namespace1/hw_repo:1
     ```
     {: pre}
@@ -128,28 +128,28 @@ Create a namespace. The namespace is created in the [resource group](x2161955){:
 
 1. Run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
-    ```sh
+    ```txt
     ibmcloud cr login
     ```
     {: pre}
 
 2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Step 2. Set up a namespace](#gs_registry_namespace_add). Replace `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image.
 
-    ```sh
+    ```txt
     docker push <region>.icr.io/<my_namespace>/<image_repo>:<tag>
     ```
     {: pre}
 
     Example, where `<region>` is `uk`, `<my_namespace>` is `namespace1`, `<image_repo>` is `hw_repo`, and `<tag>` is `1`:
 
-    ```sh
+    ```txt
     docker push uk.icr.io/namespace1/hw_repo:1
     ```
     {: pre}
 
 3. Verify that the image was pushed successfully by running the following command.
 
-    ```sh
+    ```txt
     ibmcloud cr image-list
     ```
     {: pre}

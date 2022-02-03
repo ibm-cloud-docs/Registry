@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-02-03"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -47,28 +47,28 @@ The following example doesn't include Skopeo authentication.
 
 1. To create a GnuPG identity, run the following command.
 
-    ```sh
+    ```txt
     gpg --generate-key
     ```
     {: pre}
 
 2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
 
-    ```sh
+    ```txt
     skopeo --insecure-policy copy --sign-by <your_email> docker-daemon:<repository:tag> docker://<image>
     ```
     {: pre}
 
     For example, where `user@email.com` is your GnuPG email address, `bluebird:build1` is your repository and tag, and `us.icr.io/birds/bluebird:build1` is the name of your image.
 
-    ```sh
+    ```txt
     skopeo --insecure-policy copy --sign-by user@email.com docker-daemon:bluebird:build1 docker://us.icr.io/birds/bluebird:build1
     ```
     {: pre}
 
     On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
 
-    ```sh
+    ```txt
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
     ```
     {: pre}
