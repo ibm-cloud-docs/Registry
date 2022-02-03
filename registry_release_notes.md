@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-02-03"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?topic=Registry-registry_overview) and [Vulnerability Advisor](/docs/Registry?topic=va-va_index). The changes are grouped by date.
 {: shortdesc}
+
+## 2 February 2022
+{: #registry-02feb2022}
+{: release-note}
+
+Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued {: #02feb2022_exemption}
+:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+
+    For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions){: external}.
 
 ## 17 January 2022
 {: #registry-17jan2022}
