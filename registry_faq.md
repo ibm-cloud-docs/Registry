@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-01-17"
+lastupdated: "2022-02-03"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -53,6 +53,40 @@ You can have 100 registry namespaces in each region.
 {: faq}
 
 Images that are in the trash don't count toward your quota.
+
+## How do I find the image digest?
+{: #faq_digest}
+{: faq}
+
+You can find the long format of the image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) by running one of the following commands. The digest is displayed in the **Digest** column of the CLI.
+
+When you are using the digest to identify an image, always use the long format.
+{: note}
+
+- Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command:
+
+    ```sh
+    ibmcloud cr image-digests
+    ```
+    {: pre}
+
+- Run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command:
+
+    ```sh
+    ibmcloud cr image-list --no-trunc
+    ```
+    {: pre}
+
+    If you run the `ibmcloud cr image-list` command without the `--no-trunc` option, you see the truncated format of the digest.
+    {: note}
+
+## How do I use digests to work with images?
+{: #faq_digest_use}
+{: faq}
+
+The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) identifies an image by using the `sha256` hash of the [image manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest).
+
+To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the **Repository** and **Digest** columns, for example, `repository@digest`.
 
 ## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
 {: #faq_access_control}

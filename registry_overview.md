@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-30"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -201,6 +201,21 @@ A file system and its execution parameters that are used within a container runt
 
 Container images are stored in a repository that is stored in a namespace.
 
+### Digest
+{: #overview_elements_digest}
+
+Digests are used as immutable references to various objects in the registry such as image manifests, layers, and configuration items.
+
+In the context of the registry, an image digest is an immutable reference to an image that identifies an image by using the `sha256` hash of the [image manifest](#overview_elements_manifest). You can use an image digest to ensure that you always reference the same version of an image. Use the long format of the image digest to work with images, such as pulling, pushing, and deleting images.
+
+To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
+
+When you are using the image digest to identify an image, always use the long format.
+{: tip}
+
+In {{site.data.keyword.registrylong_notm}}, any reference to "digest" means "image digest".
+{: note}
+
 ### Dockerfile
 {: #overview_elements_dockerfile}
 
@@ -214,6 +229,11 @@ Typically, a container image is built upon a base image that contains a base ope
 A container image that is compliant with the [Docker: Image Manifest V2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external} specification.
 
 The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
+
+### Image manifest
+{: #overview_elements_manifest}
+
+An image manifest is a `.json` document that references the configuration object and image layers that are required to pull and run the image. The `sha256` hash of the image manifest is the [digest](#overview_elements_digest), which is used to identify the image. You can view the image manifest by running the [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect) command.
 
 ### OCI container images
 {: #overview_elements_oci_images}
