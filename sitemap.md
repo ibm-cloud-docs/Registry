@@ -214,6 +214,8 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
+
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
