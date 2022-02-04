@@ -122,7 +122,7 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account, compl
 Depending on the size of the image, it might take a while for the image to be removed and for the storage to be available.
 {: note}
 
-1. To list all images by digest, both tagged and untagged, in all your namespaces of your {{site.data.keyword.cloud_notm}} account, run the following command. Combine the content of the **Repository** column and the **Digest** column to create the image name in the format `repository@digest`.
+1. To list all images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), both [tagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) and [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged), in all your namespaces of your {{site.data.keyword.cloud_notm}} account, run the following command. Combine the content of the **Repository** column and the **Digest** column to create the image name in the format `repository@digest`.
 
     ```txt
     ibmcloud cr image-digests

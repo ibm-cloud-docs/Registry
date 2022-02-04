@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-12-03"
+  years: 2017, 2022
+lastupdated: "2022-02-04"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, restoring images, restoring images from the trash by digest, trash, restoring tags
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You want to restore an image by digest from the {{site.data.keyword.registrylong}} trash, but some tags weren't restored.
+You want to restore an image by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) from the {{site.data.keyword.registrylong}} trash, but some [tags](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) weren't restored.
 {: shortdesc}
 
 You run the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command, but the tags were not restored. If all the tags were unsuccessful, the digest shows in the live repository, but it is not tagged. You can see the digest if you run [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests), but not if you run [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list).

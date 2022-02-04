@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-09-10"
+  years: 2020, 2022
+lastupdated: "2022-02-04"
 
 keywords: PHI, data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry
 
@@ -35,7 +35,7 @@ Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regu
 
 To scan images and containers in your account for security issues, {{site.data.keyword.registrylong_notm}} collects, stores, and processes the following information:
 
-- Free-form fields, including IDs, descriptions, and image names (registry, namespace, repository name, and image tag)
+- Free-form fields, including IDs, descriptions, and image names ([registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry), [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) name, and image [tag](docs/Registry?topic=Registry-registry_overview#overview_elements_tag))
 - Metadata about the file modes and creation timestamps of the configuration files
 - The content of system and application configuration files in images and containers
 - Installed packages and libraries (including their versions)
@@ -77,7 +77,7 @@ You can delete private repositories that are no longer required, and any associa
 ## Restoring deleted data
 {: #data-restore}
 
-You can restore images from the trash by digest or by tag.
+You can restore images from the trash by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) or by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag).
 
 You can restore an image from the trash by running the `ibmcloud cr image-restore` command. To find out which images are in the trash, run the `ibmcloud cr trash-list` command. Images are stored in the trash for 30 days. For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 

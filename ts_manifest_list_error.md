@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-04"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, tags, manifest list, oci image index
 subcollection: Registry
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-When you try to tag your manifest list or OCI Image Index in {{site.data.keyword.registrylong}}, you get a manifest list invalid error.
+When you try to [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) your [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) list or OCI Image Index in {{site.data.keyword.registrylong}}, you get a manifest list invalid error.
 {: shortdesc}
 
 You get the following manifest list invalid error when you try to tag your manifest list or OCI Image Index in {{site.data.keyword.registrylong_notm}}: `The manifest list or OCI index that you are tagging references an image that doesn't exist.`
@@ -65,7 +65,7 @@ The output of which is similar to this output:
 ```
 {: screen}
 
-For this output to be valid, the images, with the digests from the previous output, must exist in the same repository as the manifest list or OCI index that you are trying to tag. To confirm whether one of the images is missing, you can run the following command. Replace `<src_repo>` with the name of your namespace and repository in the format `mynamespace/myrepo`.
+For this output to be valid, the images, with the [digests](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) from the previous output, must exist in the same repository as the manifest list or OCI index that you are trying to tag. To confirm whether one of the images is missing, you can run the following command. Replace `<src_repo>` with the name of your namespace and repository in the format `mynamespace/myrepo`.
 
 ```txt
 ibmcloud cr digests --restrict <src_repo>
