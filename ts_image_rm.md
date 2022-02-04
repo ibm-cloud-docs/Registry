@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-02-04"
+  years: 2017, 2021
+lastupdated: "2021-09-10"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, deleting images, deleting tags, tags
 
