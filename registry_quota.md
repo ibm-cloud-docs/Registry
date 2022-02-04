@@ -133,7 +133,7 @@ Depending on the size of the image, it might take a while for the image to be re
 
    - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
 
-        You can remove both tagged and untagged images by using the format `repository@digest`. You can remove tagged inages only by using the format `repository:tag`.
+        You can remove both tagged and untagged images by using the format `repository@digest`. You can remove tagged images only by using the format `repository:tag`.
         {: note}
 
         ```txt
