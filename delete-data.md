@@ -35,7 +35,7 @@ Data that is stored in {{site.data.keyword.registrylong_notm}} is backed up regu
 
 To scan images and containers in your account for security issues, {{site.data.keyword.registrylong_notm}} collects, stores, and processes the following information:
 
-- Free-form fields, including IDs, descriptions, and image names ([registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry), [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) name, and image [tag](docs/Registry?topic=Registry-registry_overview#overview_elements_tag))
+- Free-form fields, including IDs, descriptions, and image names ([registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry), [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) name, and image [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag))
 - Metadata about the file modes and creation timestamps of the configuration files
 - The content of system and application configuration files in images and containers
 - Installed packages and libraries (including their versions)
