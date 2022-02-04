@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-23"
+  years: 2020, 2022
+lastupdated: "2022-02-04"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -48,8 +48,8 @@ Review the following account API methods, their required actions in {{site.data.
 |-------------------------------------------|------------------------|---------------|------------|
 | List images. | `GET /api/v1/images` | `container-registry.image.list` | `container-registry.image.list` |
 | Bulk delete images. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
-| List images by digest. | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
-| Create tag. | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
+| List images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
+| Create [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|
 | Inspect an image. | `GET /api/v1/images/{image}/json` | `container-registry.image.inspect` | `container-registry.image.inspect` |
 | Get image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |
@@ -118,7 +118,7 @@ Review the following account API methods, their required actions in {{site.data.
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| Delete tag. | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
+| Delete [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
 {: caption="Table 9. Tags" caption-side="bottom"}
 
 ### Trash
@@ -127,7 +127,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | List images in the trash. | `GET /api/v1/trash` | `container-registry.image.delete` | `container-registry.trash.list` |
-| Restore a digest and all associated tags. | `POST /api/v1/trash/{digest}/restoretags` | `container-registry.image.push` | `container-registry.trash.restore` |
+| Restore a [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) and all associated [tags](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `POST /api/v1/trash/{digest}/restoretags` | `container-registry.image.push` | `container-registry.trash.restore` |
 | Restore deleted image. | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
 {: caption="Table 10. Trash" caption-side="bottom"}
 

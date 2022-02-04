@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-04"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -46,7 +46,7 @@ Before you begin, complete the following tasks.
     If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
     {: tip}
 
-After you pull an image and tag it for your namespace, you can upload (push) the image from your local computer to your namespace.
+After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
 
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing_namespace}
@@ -155,7 +155,7 @@ To create an image from a source image, complete the following steps.
     ```
     {: pre}
 
-3. Verify that the new image was created by running the following command, and check that the image is shown in the list with the same image digest as the source image.
+3. Verify that the new image was created by running the following command, and check that the image is shown in the list with the same image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) as the source image.
 
     ```txt
     ibmcloud cr image-list
@@ -270,10 +270,10 @@ You can now use clusters to pull the images, see [Building containers from image
 {: help}
 {: support}
 
-You can remove a tag, or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
+You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
 {: shortdesc}
 
-If multiple tags exist for the same image digest within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
+If multiple tags exist for the same image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
 
 To remove a tag, or tags, by using the CLI, complete the following steps:

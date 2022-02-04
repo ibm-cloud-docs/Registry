@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-04"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -33,7 +33,7 @@ You can use the format option with the following {{site.data.keyword.registrylon
 
 The following code examples demonstrate how you might use the formatting and filtering options.
 
-- Run the following `ibmcloud cr image-digests` command to display all untagged images referenced by their digests.
+- Run the following `ibmcloud cr image-digests` command to display all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images referenced by their [digests](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest).
 
     ```txt
     ibmcloud cr image-digests --format '{{if not .Tags}}{{.Repository}}@{{.Digest}}{{end}}'
