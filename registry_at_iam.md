@@ -49,7 +49,7 @@ Review the following account API methods, their required actions in {{site.data.
 | List images. | `GET /api/v1/images` | `container-registry.image.list` | `container-registry.image.list` |
 | Bulk delete images. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
 | List images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
-| Create [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
+| Create [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|
 | Inspect an image. | `GET /api/v1/images/{image}/json` | `container-registry.image.inspect` | `container-registry.image.inspect` |
 | Get image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |
