@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-03"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -69,7 +69,7 @@ You can restrict your rule to a specific registry instance by specifying either 
 
 For example, use the following rule if you want *private_only* to be true, but only in the `us-south` registry.
 
-```sh
+```txt
 {
     "target": {
         "service_name": "container-registry",

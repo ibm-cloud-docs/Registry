@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-01-26"
+  years: 2021, 2022
+lastupdated: "2022-02-03"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, tags, manifest list, oci image index
 subcollection: Registry
@@ -30,14 +30,14 @@ Manifest lists and OCI Image Indexes contain a list of references to different i
 To understand how to fix this issue, you must work out what images are referenced in the manifest list or OCI Image Index by running the following command:
 {: tsResolve}
 
-```sh
+```txt
 ibmcloud cr manifest-inspect <source_image>
 ```
 {: pre}
 
 The output of which is similar to this output:
 
-```sh
+```txt
 {
     "schemaVersion": 2,
     "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
@@ -67,21 +67,21 @@ The output of which is similar to this output:
 
 For this output to be valid, the images, with the digests from the previous output, must exist in the same repository as the manifest list or OCI index that you are trying to tag. To confirm whether one of the images is missing, you can run the following command. Replace `<src_repo>` with the name of your namespace and repository in the format `mynamespace/myrepo`.
 
-```sh
+```txt
 ibmcloud cr digests --restrict <src_repo>
 ```
 {: pre}
 
 For example, if you run the following command:
 
-```sh
+```txt
 ibmcloud cr  digests --restrict mynamespace/myrepo
 ```
 {: pre}
 
 You get the following response:
 
-```sh
+```txt
 Listing images...
 
 Repository                  Digest                                                                    Tags   Type                                 Created       Size     Security status
@@ -100,7 +100,7 @@ You can resolve this issue by using one of the following options, following on f
 
     1. To detect if the missing digest exists elsewhere in the registry, run the following command:
         
-        ```sh
+        ```txt
         ibmcloud cr digests --format '{{if eq .Digest "sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc"}}{{.Repository}}@{{.Digest}}{{end}}'
         icr.io/myrepo2/image2@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc
         ```
@@ -108,7 +108,7 @@ You can resolve this issue by using one of the following options, following on f
 
     2. If the previous command returns an image, you can copy it to the same repository as the manifest list:
         
-        ```sh
+        ```txt
         ibmcloud cr image-tag icr.io/mynamespace/myrepo2@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc icr.io/mynamespace/myrepo:ppc64le
         ```
         {: pre}
@@ -117,14 +117,14 @@ You can resolve this issue by using one of the following options, following on f
 
     1. Detect if the image exists in trash by running the following command:
 
-        ```sh
+        ```txt
         ibmcloud cr trash-list --restrict mynamespace
         ```
         {: pre}
 
         You receive the following response:
 
-        ```sh
+        ```txt
         Listing the contents of the trash...
 
         Digest                                                                                              Days until expiry   Tags
@@ -137,14 +137,14 @@ You can resolve this issue by using one of the following options, following on f
 
     2. If the image does exist in trash, you can restore it by running the following command:
 
-        ```sh
+        ```txt
         ibmcloud cr image-restore icr.io/mynamespacemyrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc
         ```
         {: pre}
 
         You receive the following response:
 
-        ```sh
+        ```txt
         Restoring digest 'icr.io/mynamespace/myrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc' ...
 
         Successfully restored digest 'icr.io/mynamespace/myrepo@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc'

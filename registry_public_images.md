@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-10-06"
+  years: 2018, 2022
+lastupdated: "2022-02-03"
 
 keywords: Public IBM images, images, accessing images, container images, public images,
 
@@ -30,7 +30,7 @@ Before you begin, complete the following tasks.
 
 2. Log in to [{{site.data.keyword.cloud_notm}}](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login).
 
-    ```sh
+    ```txt
     ibmcloud login
     ```
     {: pre}
@@ -39,14 +39,14 @@ To list the public images, complete the following steps.
 
 1. Target the global registry:
 
-    ```sh
+    ```txt
     ibmcloud cr region-set global
     ```
     {: pre}
 
 2. List the {{site.data.keyword.IBM_notm}} public images.
 
-    ```sh
+    ```txt
     ibmcloud cr images --include-ibm
     ```
     {: pre}

@@ -26,12 +26,12 @@ Frequently asked questions about {{site.data.keyword.registrylong}}.
 
 To list public images, run the following `ibmcloud` commands to target the global registry and list the public images that are provided by {{site.data.keyword.IBM}}:
 
-```sh
+```txt
 ibmcloud cr region-set global
 ```
 {: pre}
 
-```sh
+```txt
 ibmcloud cr images --include-ibm
 ```
 {: pre}
@@ -65,14 +65,14 @@ When you are using the digest to identify an image, always use the long format.
 
 - Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command:
 
-    ```sh
+    ```txt
     ibmcloud cr image-digests
     ```
     {: pre}
 
 - Run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command:
 
-    ```sh
+    ```txt
     ibmcloud cr image-list --no-trunc
     ```
     {: pre}
@@ -132,7 +132,7 @@ For more information about how the scanning of an image is triggered, see [Vulne
 
 If you get the vulnerability report immediately after you add the image to the registry, you might receive the following error:
 
-```sh
+```txt
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
 If this issue persists, contact support for help;
 see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support

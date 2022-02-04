@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-03"
+  years: 2020, 2022
+lastupdated: "2022-02-03"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -52,21 +52,21 @@ Create a public-private key pair by using OpenSSL commands.
 
 1. Create a work directory, for example, `<user_keys>`, in which to store the keys and change to that directory:
 
-    ```sh
+    ```txt
     mkdir <user_keys>; cd <user_keys>
     ```
     {: pre}
 
 2. Use OpenSSL to create a private key, where `<user>` is the name for your key's identity:
 
-    ```sh
+    ```txt
     openssl genrsa --out <user>Private.pem
     ```
     {: pre}
 
 3. Create a public key:
 
-    ```sh
+    ```txt
     openssl rsa -in <user>Private.pem -pubout -out <user>Pub.pem
     ```
     {: pre}
@@ -76,21 +76,21 @@ Create a public-private key pair by using OpenSSL commands.
 
 4. List the keys to ensure that they are created:
 
-    ```sh
+    ```txt
     ls -l
     ```
     {: pre}
 
 5. To use this key pair to encrypt images, display the public key by running the following `cat` command:
 
-    ```sh
+    ```txt
     cat <user>Pub.pem
     ```
     {: pre}
 
     You get a response similar to the following output:
 
-    ```sh
+    ```txt
     -----BEGIN PUBLIC KEY-----
     MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8Ny7dCWQ8Pdq1ddYSwk
     QOCB3lUEZVEyj9StX3jnISF/rxIsUZzJfbOrQN0fGkm+1sCCtltgQdztTjito8Fh
@@ -110,14 +110,14 @@ Encrypt the image by using the public key and then build a container image by us
 
 1. Go to the directory where you store your apps, for example, `<my_app>`.
 
-    ```sh
+    ```txt
     cd <my_app>
     ```
     {: pre}
 
 2. Create the Dockerfile by running the following command:
 
-    ```sh
+    ```txt
     cat << EOF >> Dockerfile
     FROM nginx:latest
     RUN echo "some secret" > /secret-file
@@ -127,7 +127,7 @@ Encrypt the image by using the public key and then build a container image by us
 
 3. Use Buildah to create an unencrypted image by running the following commands, where `<namespace>` is your namespace:
 
-    ```sh
+    ```txt
     buildah bud -t us.icr.io/<namespace>/<my_app> .
     ```
     {: pre}
@@ -136,7 +136,7 @@ Encrypt the image by using the public key and then build a container image by us
 
 4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image. Where `<user_keys>/<user>Pub.pem` is the encryption key.
 
-    ```sh
+    ```txt
     buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>
     ```
     {: pre}
@@ -156,21 +156,21 @@ Pull the image from the registry and decrypt it by using the private key.
 
 1. To ensure that you are pulling from the registry and that you are not using the local cache, remove the image locally:
 
-    ```sh
+    ```txt
     buildah rmi -f us.icr.io/<namespace>/<my_app>
     ```
     {: pre}
 
 2. (Optional) You can try to pull the image without providing the decryption key to confirm that the image can't be decrypted:
 
-    ```sh
+    ```txt
     buildah pull us.icr.io/<namespace>/<my_app>
     ```
     {: pre}
 
     The output contains a message similar to the following message:
 
-    ```sh
+    ```txt
     ...<truncated>...
     Error decrypting layer sha256:ab4ea03582e08a8e8fc35b778cc6f1a1fa797469fa9cc61cee85f703b316bb12: missing private key needed for decryption
     ERRO exit status 125
@@ -179,7 +179,7 @@ Pull the image from the registry and decrypt it by using the private key.
 
 3. Use Buildah to pull the image with the decryption key, where `<user_keys>/<user>Private.pem` is the decryption key and `us.icr.io/<namespace>/<my_app>` is the registry:
 
-    ```sh
+    ```txt
     buildah pull --decryption-key ../<user_keys>/<user>Private.pem us.icr.io/<namespace>/<my_app>
     ```
     {: pre}
@@ -188,7 +188,7 @@ Pull the image from the registry and decrypt it by using the private key.
 
 4. Confirm that the image is stored by running Podman:
 
-    ```sh
+    ```txt
     podman run -it us.icr.io/<namespace>/<my_app> /bin/bash
     ```
     {: pre}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-10-06"
+  years: 2017, 2022
+lastupdated: "2022-02-03"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, image not supported, manifest version, tagging image fails
 
@@ -35,14 +35,14 @@ To resolve the problem, complete the following steps:
 
 2. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
 
-    ```sh
+    ```txt
     docker pull <source_image>
     ```
     {: pre}
 
 3. To upgrade the manifest version, push the image by running the following command:
 
-    ```sh
+    ```txt
     docker push <source_image>
     ```
     {: pre}
