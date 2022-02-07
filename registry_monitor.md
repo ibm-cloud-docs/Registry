@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-07"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -28,9 +28,6 @@ You can configure one instance only of the {{site.data.keyword.mon_full_notm}} s
 - If a monitoring instance in a region is already enabled to collect platform metrics, metrics are collected automatically and available for monitoring through this instance. For more information about monitoring-enabled services, see [Cloud services](/docs/monitoring?topic=monitoring-cloud_services).
 - For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Container services](/docs/monitoring?topic=monitoring-cloud_services_locations#cloud_services_locations_container).
 
-To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where {{site.data.keyword.registryshort_notm}} is provisioned.
-{: important}
-
 ## Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI
 {: #registry_enable_platform_metrics}
 
@@ -43,7 +40,7 @@ Complete the following steps to configure platform metrics:
     ```
     {: pre}
 
-2. To enable platform metrics, run the following command:
+3. To enable platform metrics, run the following command:
 
     ```txt
     ibmcloud cr platform-metrics --enable
