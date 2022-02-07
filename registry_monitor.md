@@ -40,12 +40,13 @@ Complete the following steps to configure platform metrics:
     ```
     {: pre}
 
-3. To enable platform metrics, run the following command:
+3. To enable platform metrics, run the following command.
 
     ```txt
     ibmcloud cr platform-metrics --enable
     ```
     {: pre}
+
 
 ## Viewing metrics
 {: #registry_view_metrics}
@@ -63,7 +64,7 @@ To start the Monitoring UI from the Observability page, complete the following s
 3. In the **Default Dashboards** section, expand **IBM**.
 4. Choose the {{site.data.keyword.registryshort_notm}} dashboard from the list.
 
-Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}.
+Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}. For more information, see [Working with dashboards](/docs/monitoring?topic=monitoring-dashboards).
 
 ## {{site.data.keyword.registryshort_notm}} predefined dashboards
 {: #registry_dashboards_dictionary}
@@ -72,7 +73,7 @@ The following table outlines the predefined monitoring dashboards that you can u
 
 | Dashboard name        | Description    |
 |-----------------------|----------------|
-| {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics. |
+| {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics.|
 | {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
 {: caption="Table 1. Predefined dashboards" caption-side="bottom"}
 
