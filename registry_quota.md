@@ -117,8 +117,6 @@ You can review your quota limits and check your current storage and pull traffic
 If you exceed the quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits so that you can continue pushing and pulling images to and from your namespace.
 {: shortdesc}
 
-
-
 To free up image storage in your {{site.data.keyword.cloud_notm}} account, complete the following steps.
 
 Depending on the size of the image, it might take a while for the image to be removed and for the storage to be available.
