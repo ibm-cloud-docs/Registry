@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-07"
+lastupdated: "2022-02-08"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -28,6 +28,9 @@ You can configure one instance only of the {{site.data.keyword.mon_full_notm}} s
 - If a monitoring instance in a region is already enabled to collect platform metrics, metrics are collected automatically and available for monitoring through this instance. For more information about monitoring-enabled services, see [Cloud services](/docs/monitoring?topic=monitoring-cloud_services).
 - For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Container services](/docs/monitoring?topic=monitoring-cloud_services_locations#cloud_services_locations_container).
 
+To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} instance is provisioned in the same region where {{site.data.keyword.registryshort_notm}} is provisioned.
+{: important}
+
 ## Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI
 {: #registry_enable_platform_metrics}
 
@@ -40,13 +43,12 @@ Complete the following steps to configure platform metrics:
     ```
     {: pre}
 
-3. To enable platform metrics, run the following command.
+2. To enable platform metrics, run the following command:
 
     ```txt
     ibmcloud cr platform-metrics --enable
     ```
     {: pre}
-
 
 ## Viewing metrics
 {: #registry_view_metrics}
@@ -64,7 +66,7 @@ To start the Monitoring UI from the Observability page, complete the following s
 3. In the **Default Dashboards** section, expand **IBM**.
 4. Choose the {{site.data.keyword.registryshort_notm}} dashboard from the list.
 
-Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}. For more information, see [Working with dashboards](/docs/monitoring?topic=monitoring-dashboards).
+Next, change the scope or make a copy of the Default dashboard so that you can monitor your account in {{site.data.keyword.registryshort_notm}}.
 
 ## {{site.data.keyword.registryshort_notm}} predefined dashboards
 {: #registry_dashboards_dictionary}
@@ -73,7 +75,7 @@ The following table outlines the predefined monitoring dashboards that you can u
 
 | Dashboard name        | Description    |
 |-----------------------|----------------|
-| {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics.|
+| {{site.data.keyword.registryshort_notm}} | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics. |
 | {{site.data.keyword.registryshort_notm}} Quota Usage | Dashboard visualizing important {{site.data.keyword.registryshort_notm}} metrics compared to quotas, if set. Visible only to those accounts that have finite quotas. |
 {: caption="Table 1. Predefined dashboards" caption-side="bottom"}
 
