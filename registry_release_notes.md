@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-08"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -28,6 +28,15 @@ Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions
 :   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
 
     For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions){: external}.
+
+## 1 February 2022
+{: #registry-01feb2022}
+{: release-note}
+
+Storage that is used by untagged images is being charged for {: #01feb2022_billing}
+:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount you are charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+
+    For more information, see [Starting 1 February 2022, {{site.data.keyword.registrylong_notm}} will be billing for the storage that is used by untagged images](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images){: external}.
 
 ## 17 January 2022
 {: #registry-17jan2022}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-08"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -101,6 +101,20 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 You can create an {{site.data.keyword.cloud}} account and invite all the users to it. They can then all have access to any namespace that is created in the account. You can create a subset of the users and set an IAM policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
 
 For more information, see [Defining access role policies](/docs/Registry?topic=Registry-user).
+
+## Do I have any untagged images?
+{: #faq_untagged_image_1}
+{: faq}
+
+To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
+
+## Do I need untagged images?
+{: #faq_untagged_image_2}
+{: faq}
+
+If you have active containers that are running [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, you must retain the untagged images. If you delete untagged images that are in use, you can cause problems with scaling or automated restarts. Deleting untagged images might cause a problem in the following circumstances:
+- If you deployed the image by referencing the image by digest.
+- If a webhook service, for example, [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), has mutated your image reference.
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}

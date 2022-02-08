@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-08"
 
 keywords: container registry
 
@@ -219,6 +219,8 @@ subcollection: Registry
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
 * [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
+
+* [1 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01feb2022)
 
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
@@ -1323,6 +1325,10 @@ subcollection: Registry
 * [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
 * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+
+* [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
+
+* [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
 * [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
