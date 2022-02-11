@@ -311,7 +311,7 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 ## Regions
 {: #registry_regions}
 
-The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its domain name (`icr.io`).
+The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its [domain name](#overview_elements_domain_name) (`icr.io`).
 {: shortdesc}
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
@@ -324,7 +324,7 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 A global registry is available. The global registry doesn't have a region included in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
-The global instance of {{site.data.keyword.registrylong_notm}} is available by using the domain names that are shown in the following table.
+The global instance of {{site.data.keyword.registrylong_notm}} is available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |----------|-------------|----------------------|-----------------------|
@@ -357,7 +357,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 ### Local regions
 {: #registry_regions_local}
 
-Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the domain names that are shown in the following table.
+Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 {: shortdesc}
 
 | Local registry region | Domain name | Private domain name | Deprecated domain name |
