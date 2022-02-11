@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-11"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -232,6 +232,21 @@ Typically, a container image is built upon a base image that contains a base ope
 A container image that is compliant with the [Docker: Image Manifest V2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/){: external} specification.
 
 The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
+
+### Domain name
+{: #overview_elements_domain_name}
+
+The name of a host system. A domain name consists of a sequence of subnames that are separated by a delimiter character, for example, `www.ibm.com`.
+
+The domain names that {{site.data.keyword.registryshort}} uses are in the format `us.icr.io`. Earlier domain names that {{site.data.keyword.registryshort}} used are in the format `registry.ng.bluemix.net`. Both formats of domain name refer to the same registry and content. The {{site.data.keyword.registryshort}} service responds to earlier and canonical domain names equally. You can push or pull images by using either domain name interchangably.
+
+The domain name is only significant in the following situations:
+
+- When Kubernetes is selecting a pull-secret, it chooses one that matches the domain name.
+- When `ibmcloud cr login` is helping you to log in, it only uses domain names in the format `us.icr.io`.
+- When images are signed, the signature includes the domain name that was used at the time of signing.
+
+For more information about the domain names that {{site.data.keyword.registryshort}} uses, see [Regions](#registry_regions).
 
 ### Image manifest
 {: #overview_elements_manifest}

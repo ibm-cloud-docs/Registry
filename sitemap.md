@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-11"
 
 keywords: container registry
 
@@ -70,6 +70,8 @@ subcollection: Registry
     * [Dockerfile](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerfile)
 
     * [Docker V2 container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_dockerv2_images)
+
+    * [Domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name)
 
     * [Image manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest)
 
