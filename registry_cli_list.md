@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-11"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -164,7 +164,7 @@ Review the following table to find available Go template options and data types 
 | `AttachStdin` | Boolean | Displays _true_ if the standard input stream is attached to the container and _false_ if not. |
 | `AttachStdout` | Boolean | Displays _true_ if the standard output stream is attached to the container and _false_ if not. |
 | `Cmd` | Array of strings|Describes the commands and arguments that are passed to a container to run when the container is started. |
-| `Domainname` | String | Displays the fully qualified domain name of the container. |
+| `Domainname` | String | Displays the fully qualified [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) of the container. |
 | `Entrypoint` | Array of strings | Describes the command that is run when the container starts. |
 | `Env` | Array of strings | Displays the list of environment variables in the form of key-value pairs. |
 | `ExposedPorts` | Key-value map | Displays the list of exposed ports in the format `[123:,456:]`. |

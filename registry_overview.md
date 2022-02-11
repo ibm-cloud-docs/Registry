@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-11"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -233,6 +233,21 @@ A container image that is compliant with the [Docker: Image Manifest V2, schema 
 
 The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker.distribution.manifest.v2+json` and the media type for the manifest list is `application/vnd.docker.distribution.manifest.list.v2+json`. A Docker V2 container image is a type of OCI container image. For more information about support for Docker, see [Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
+### Domain name
+{: #overview_elements_domain_name}
+
+The name of a host system. A domain name consists of a sequence of subnames that are separated by a delimiter character, for example, `www.ibm.com`.
+
+The domain names that {{site.data.keyword.registryshort}} uses are in the format `us.icr.io`. Earlier domain names that {{site.data.keyword.registryshort}} used are in the format `registry.ng.bluemix.net`. Both formats of domain name refer to the same registry and content. The {{site.data.keyword.registryshort}} service responds to earlier and canonical domain names equally. You can push or pull images by using either domain name interchangably.
+
+The domain name is only significant in the following situations:
+
+- When Kubernetes is selecting a pull-secret, it chooses one that matches the domain name.
+- When `ibmcloud cr login` is helping you to log in, it only uses domain names in the format `us.icr.io`.
+- When images are signed, the signature includes the domain name that was used at the time of signing.
+
+For more information about the domain names that {{site.data.keyword.registryshort}} uses, see [Regions](#registry_regions).
+
 ### Image manifest
 {: #overview_elements_manifest}
 
@@ -296,7 +311,7 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 ## Regions
 {: #registry_regions}
 
-The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its domain name (`icr.io`).
+The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its [domain name](#overview_elements_domain_name) (`icr.io`).
 {: shortdesc}
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
@@ -309,7 +324,7 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 A global registry is available. The global registry doesn't have a region included in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
-The global instance of {{site.data.keyword.registrylong_notm}} is available by using the domain names that are shown in the following table.
+The global instance of {{site.data.keyword.registrylong_notm}} is available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
 | Registry | Domain name | Private domain name | Deprecated domain name |
 |----------|-------------|----------------------|-----------------------|
@@ -342,7 +357,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 ### Local regions
 {: #registry_regions_local}
 
-Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the domain names that are shown in the following table.
+Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 {: shortdesc}
 
 | Local registry region | Domain name | Private domain name | Deprecated domain name |
