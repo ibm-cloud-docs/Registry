@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-14"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -352,7 +352,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
     ```
     {: pre}
 
-## Deploying to non-default Kubernetes namespaces
+## Deploying to nondefault Kubernetes namespaces
 {: #registry_tutorial_workflow_deploy_nondefault_namespaces}
 {: step}
 

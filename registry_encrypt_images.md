@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-14"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -134,7 +134,7 @@ Encrypt the image by using the public key and then build a container image by us
 
     `us.icr.io/<namespace>/<my_app>` is committed to the local image store.
 
-4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image. Where `<user_keys>/<user>Pub.pem` is the encryption key.
+4. Encrypt the image by using the public key and upload the image to the registry by running the following commands and by specifying the JSON Web Encryption (`jwe`) protocol to encrypt the image, where `<user_keys>/<user>Pub.pem` is the encryption key.
 
     ```txt
     buildah push --encryption-key jwe:..<user_keys>/<user>Pub.pem us.icr.io/<namespace>/<my_app>

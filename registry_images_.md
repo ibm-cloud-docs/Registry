@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-14"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -361,7 +361,7 @@ To delete an image by using the {{site.data.keyword.cloud_notm}} console, comple
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
-3. Click the **Navigation Menu** icon, then click **Container Registry**.
+3. Click the **Navigation menu** icon, then click **Container Registry**.
 4. Click **Images**. A list of your images is displayed.
 5. In the row that contains the image that you want to delete, select the checkbox.
 6. Click **Delete Image**.
@@ -492,7 +492,7 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
 2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
-3. Click the **Navigation Menu** icon, then click **Container Registry**.
+3. Click the **Navigation menu** icon, then click **Container Registry**.
 4. Click **Repositories**. A list of your private repositories is displayed.
 5. In the row that contains the private repository that you want to delete, select the checkbox.
 

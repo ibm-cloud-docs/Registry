@@ -363,7 +363,7 @@ subcollection: Registry
 
     * [Resolve vulnerabilities in your image](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_resolve_vulnerabilities)
 
-* [Deploying to non-default Kubernetes namespaces](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_deploy_nondefault_namespaces)
+* [Deploying to nondefault Kubernetes namespaces](/docs/Registry?topic=Registry-registry_tutorial_workflow#registry_tutorial_workflow_deploy_nondefault_namespaces)
 
 
 ## Granting access to Container Registry resources tutorial
