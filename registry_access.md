@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-14"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 To access your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM). To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=Registry-user#user).
 {: shortdesc}
 
-If you want to use your container images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
+If you want to use your container images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from nondefault Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
 {: tip}
 
 Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registry_access_automating), which typically uses [API keys](/docs/account?topic=account-manapikey), or [interactive](#registry_access_interactive), which typically uses bearer tokens.
@@ -31,12 +31,12 @@ You can use service ID API keys to automate the pushing and pulling of container
 
 [API keys](x8051010){: term} are linked to user IDs or service IDs in your account and you can use them across {{site.data.keyword.cloud}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey_create) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey_create) has its own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
-When you create an {{site.data.keyword.containerlong}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a non-expiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
+When you create an {{site.data.keyword.containerlong}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a nonexpiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
 
 You can use service ID API keys in the following places:
 
 - {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} clusters. When you create {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}} clusters, one service ID is automatically created for each cluster. If you want more than one service ID, you can create them manually.
-- Kubernetes and {{site.data.keyword.redhat_full}} OpenShift clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
+- Kubernetes and {{site.data.keyword.redhat_full}} OpenShift&reg; clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
 - Docker CLI and other clients. You must create your own service ID and API key.
 
 ### Creating a service ID API key manually

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-14"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -284,10 +284,10 @@ Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_
 {: #registry-4dec2019}
 {: release-note}
 
-Support for {{site.data.keyword.openshiftlong_notm}} signatures is available {: #4dec2019_signatures}
-:   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.openshiftlong}} signatures.
+Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec2019_signatures}
+:   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.redhat_full}} signatures.
 
-    For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 25 October 2019
 {: #registry-25oct2019}
