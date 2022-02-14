@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-14"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
 
@@ -49,7 +49,7 @@ You can choose from the following goals:
 - Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints. For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-- Check whether security insights sends alerts for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}. For more information, see [Leveraging default services](/docs/security-compliance?topic=security-compliance-setup-services).
+- Check whether alerts are sent by security insights for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}. For more information, see [Leveraging default services](/docs/security-compliance?topic=security-compliance-setup-services).
 
 ## Governing {{site.data.keyword.registrylong_notm}} resource configuration
 {: #govern-container-registry}
@@ -62,9 +62,9 @@ You can restrict your rule to a specific registry instance by specifying either 
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|----------|-------|-------------|
-| *service* | *iam_authz* | *is_true*  \n *is_false* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
-| *service* | *private_only* | *is_true*  \n *is_false* | Not applicable | Restricts the account so that it can push and pull images over private connections only. |
-| *service* | *platform_metrics* | *is_true*  \n *is_false* | Not applicable | Publishes {{site.data.keyword.registrylong_notm}} platform metrics. |
+| *Service* | *iam_authz* | *is_true*  \n *is_false* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
+| *Service* | *private_only* | *is_true*  \n *is_false* | Not applicable | Restricts the account so that it can push and pull images by using private connections only. |
+| *Service* | *platform_metrics* | *is_true*  \n *is_false* | Not applicable | Publishes {{site.data.keyword.registrylong_notm}} platform metrics. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
 
 For example, use the following rule if you want *private_only* to be true, but only in the `us-south` registry.
@@ -95,7 +95,7 @@ For example, use the following rule if you want *private_only* to be true, but o
 ```
 {: codeblock}
 
-To learn more about configuration rules, check out [What is Configuration Governance?](/docs/security-compliance?topic=security-compliance-what-is-governance).
+To learn more about configuration rules, see [What is Configuration Governance?](/docs/security-compliance?topic=security-compliance-what-is-governance)
 
 ## Gaining security insight with {{site.data.keyword.registrylong_notm}}
 {: #container-registry-security_insight}

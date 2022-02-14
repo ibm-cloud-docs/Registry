@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-02-14"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -113,8 +113,8 @@ To find out whether you have any [untagged](/docs/Registry?topic=Registry-regist
 {: faq}
 
 If you have active containers that are running [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, you must retain the untagged images. If you delete untagged images that are in use, you can cause problems with scaling or automated restarts. Deleting untagged images might cause a problem in the following circumstances:
-- If you deployed the image by referencing the image by digest.
-- If a webhook service, for example, [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), has mutated your image reference.
+- If you deployed the image by referencing the image by using the digest.
+- If a webhook service, for example, [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), mutated your image reference.
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}

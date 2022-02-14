@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-02-14"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -47,7 +47,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
 | List images. | `GET /api/v1/images` | `container-registry.image.list` | `container-registry.image.list` |
-| Bulk delete images. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
+| Delete more than one image. | `POST /api/v1/images/bulkdelete` | `container-registry.image.delete` | `container-registry.image.bulkdelete` |
 | List images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). | `POST /api/v1/images/digests` | `container-registry.image.list` | `container-registry.image.list` |
 | Create [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `POST /api/v1/images/tags` | `container-registry.image.pull`  \n  \n `container-registry.image.push` | `container-registry.image.tag` |
 | Delete image. | `DELETE /api/v1/images/{image}` | `container-registry.image.delete` | `container-registry.image.delete`|

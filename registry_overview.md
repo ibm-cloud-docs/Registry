@@ -243,7 +243,7 @@ The domain names that {{site.data.keyword.registryshort}} uses are in the format
 The domain name is only significant in the following situations:
 
 - When Kubernetes is selecting a pull-secret, it chooses one that matches the domain name.
-- When `ibmcloud cr login` is helping you to log in, it only uses domain names in the format `us.icr.io`.
+- When `ibmcloud cr login` is helping you to log in, it uses domain names in the format `us.icr.io` only.
 - When images are signed, the signature includes the domain name that was used at the time of signing.
 
 For more information about the domain names that {{site.data.keyword.registryshort}} uses, see [Regions](#registry_regions).
@@ -321,7 +321,7 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 ### Global registry
 {: #registry_regions_global}
 
-A global registry is available. The global registry doesn't have a region included in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
+A global registry is available. The global registry doesn't include a region in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
 The global instance of {{site.data.keyword.registrylong_notm}} is available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
