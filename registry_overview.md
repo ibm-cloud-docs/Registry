@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-14"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -238,7 +238,7 @@ The media type for Docker Image Manifest V2, schema 2 is `application/vnd.docker
 
 The name of a host system. A domain name consists of a sequence of subnames that are separated by a delimiter character, for example, `www.ibm.com`.
 
-The domain names that {{site.data.keyword.registryshort}} uses are in the format `us.icr.io`. Earlier domain names that {{site.data.keyword.registryshort}} used are in the format `registry.ng.bluemix.net`. Both formats of domain name refer to the same registry and content. The {{site.data.keyword.registryshort}} service responds to earlier and canonical domain names equally. You can push or pull images by using either domain name interchangably.
+The domain names that {{site.data.keyword.registryshort}} uses are in the format `us.icr.io`. Earlier domain names that {{site.data.keyword.registryshort}} used are in the format `registry.ng.bluemix.net`. Both formats of domain name refer to the same registry and content. The {{site.data.keyword.registryshort}} service responds to earlier and canonical domain names equally. You can push or pull images by using either domain name interchangeably.
 
 The domain name is only significant in the following situations:
 
