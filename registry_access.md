@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-14"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -36,7 +36,7 @@ When you create an {{site.data.keyword.containerlong}} or {{site.data.keyword.op
 You can use service ID API keys in the following places:
 
 - {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} clusters. When you create {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}} clusters, one service ID is automatically created for each cluster. If you want more than one service ID, you can create them manually.
-- Kubernetes and {{site.data.keyword.redhat_full}} OpenShift clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
+- Kubernetes and {{site.data.keyword.redhat_full}} OpenShift&reg; clusters that aren't on {{site.data.keyword.cloud_notm}}. You must create your own service ID, API key, and pull secret.
 - Docker CLI and other clients. You must create your own service ID and API key.
 
 ### Creating a service ID API key manually
