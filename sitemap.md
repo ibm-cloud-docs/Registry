@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: container registry
 
@@ -14,6 +14,7 @@ subcollection: Registry
 
 # Site map
 {: #sitemap}
+
 
 
 
@@ -47,15 +48,15 @@ subcollection: Registry
 
     * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
 
-        * [Storage](/docs/Registry?topic=Registry-registry_overview#storage)
+        * [Storage](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_storage)
 
-        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#pull-traffic)
+        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_pull_traffic)
 
     * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
 
-        * [Storage](/docs/Registry?topic=Registry-registry_overview#storage)
+        * [Storage](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_storage)
 
-        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#pull-traffic)
+        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_pull_traffic)
 
     * [Cost](/docs/Registry?topic=Registry-registry_overview#registry_cost)
 
@@ -91,11 +92,11 @@ subcollection: Registry
 
     * [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global)
 
-        * [Targeting the global registry](/docs/Registry?topic=Registry-registry_overview#targeting-the-global-registry)
+        * [Targeting the global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global_target)
 
     * [Local regions](/docs/Registry?topic=Registry-registry_overview#registry_regions_local)
 
-        * [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#targeting-a-local-region)
+        * [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local_target)
 
 * [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker)
 
@@ -399,9 +400,9 @@ subcollection: Registry
 
     * [VMs, containers, and Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
 
-        * [Virtual machines vs containers](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#virtual-machines-vs-containers)
+        * [Virtual machines vs containers](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-5)
 
-        * [Kubernetes orchestration](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#kubernetes-orchestration)
+        * [Kubernetes orchestration](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
 
     * [What IBM's doing for you](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
 
@@ -465,11 +466,11 @@ subcollection: Registry
 
     * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
 
-        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#one-pool-for-the-cluster-in-london)
+        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-14)
 
-        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#one-pool-for-the-cluster-in-dallas)
+        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-15)
 
-        * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#and-one-pool-with-both-clusters)
+        * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-16)
 
     * [Create the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-17)
 
@@ -612,13 +613,13 @@ subcollection: Registry
 
     * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
 
-        * [Buildah](/docs/Registry?topic=Registry-registry_access#buildah)
+        * [Buildah](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_buildah)
 
-        * [Docker](/docs/Registry?topic=Registry-registry_access#docker)
+        * [Docker](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
 
-        * [Podman](/docs/Registry?topic=Registry-registry_access#podman)
+        * [Podman](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman)
 
-        * [Skopeo](/docs/Registry?topic=Registry-registry_access#skopeo)
+        * [Skopeo](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other_example_skopeo)
 
 * [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive)
 
@@ -882,13 +883,13 @@ subcollection: Registry
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
 
-        * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#request-data-for-container-registryaccount-vulnerability-reportlist)
+        * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
 
-        * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#request-data-for-container-registryaccount-vulnerability-statuslist)
+        * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
 
-        * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#request-and-response-data-for-container-registryimage-vulnerability-reportread)
+        * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
 
-        * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#request-and-response-data-for-container-registryimage-vulnerability-statusread)
+        * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
