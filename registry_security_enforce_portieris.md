@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-17"
 
 keywords: Portieris, container image security, Portieris policies, installing Portieris, security, security enforcement, removing Portieris, uninstalling Portieris
 
@@ -46,6 +46,6 @@ For more information about Portieris policies, see [Portieris policies](https://
 How to uninstall Portieris.
 {: shortdesc}
 
-To uninstall Portieris, see [Uninstalling Portieris](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
+[Uninstall Portieris](https://github.com/IBM/portieris#uninstalling-portieris){: external}.
 
 
