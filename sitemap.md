@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-18"
 
 keywords: container registry
 
@@ -31,7 +31,11 @@ subcollection: Registry
 
 * [Pull images from another registry to your local computer](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling)
 
-* [Push Docker images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing)
+* [Tag the image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_tag)
+
+* [Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing)
+
+* [Verify that the image was pushed](/docs/Registry?topic=Registry-getting-started#gs_registry_images_verify)
 
 * [Next steps](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
