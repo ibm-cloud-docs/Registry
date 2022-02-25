@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-02-25"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -165,5 +165,88 @@ If you still see unacceptable performance, contact support, see [Getting help an
 {: faq}
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
+
+## How do I determine what version of a package is installed in my image?
+{: #faq_va_package_version}
+{: faq}
+
+To determine the version of a package that is installed in your image, use the relevant package manager command for your operating system.
+
+### Alpine
+{: #faq_va_package_version_alpine}
+
+On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+
+- To list the metadata for a specific installed package:
+
+    ```txt
+    apk info <package_name>
+    ```
+    {: pre}
+
+- To list all installed packages and their versions:
+
+    ```txt
+    apk list
+    ```
+    {: pre}
+
+### Debian and Ubuntu
+{: #faq_va_package_version_debian_ubuntu}
+
+On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+
+- To list the metadata for a specific installed package, run either of the following commands:
+
+    ```txt
+    apt show <package_name>
+    ```
+    {: pre}
+
+    ```txt
+    dpkg-query -l <package_name>
+    ```
+    {: pre}
+
+- To list all installed packages and their versions, run either of the following commands:
+
+    ```txt
+    apt list
+    ```
+    {: pre}
+
+    ```txt
+    dpkg-query -W
+    ```
+    {: pre}
+
+### Red Hat and CentOS
+{: #faq_va_package_version_redhat_centos}
+
+On {{site.data.keyword.redhat_full}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+
+- To list the metadata for a specific installed package, run either of the following commands:
+
+    ```txt
+    rpm -qi <package_name>
+    ```
+    {: pre}
+
+    ```txt
+    yum info <package_name>
+    ```
+    {: pre}
+
+- To list all installed packages and their versions, run either of the following commands:
+
+    ```txt
+    rpm -qa
+    ```
+    {: pre}
+
+    ```txt
+    yum list installed
+    ```
+    {: pre}
 
 

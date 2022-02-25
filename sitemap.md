@@ -1348,3 +1348,11 @@ subcollection: Registry
 * [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
 * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
+
+* [How do I determine what version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
+
+    * [Alpine](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
+
+    * [Debian and Ubuntu](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
+
+    * [Red Hat and CentOS](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
