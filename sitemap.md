@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: container registry
 
@@ -114,10 +114,6 @@ subcollection: Registry
 * [Segmentation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
 
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
-
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_cloud)
-
-* [Dependencies to third-party services](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_dependencies_third_party)
 
 
 ## Public images

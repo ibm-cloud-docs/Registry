@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-02-28"
 
 keywords: IBM Cloud Container Registry architecture,
 
@@ -41,38 +41,5 @@ You can decide whether your data plane interactions use private connections. Add
 {: shortdesc}
 
 The flow of all customer data between {{site.data.keyword.registrylong_notm}} and its dependencies uses private network connections. For more information about private connections, see [Securing your connection to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_private).
-
-## Dependencies to other {{site.data.keyword.cloud_notm}} services
-{: #registry_architecture_dependencies_cloud}
-
-Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.registrylong_notm}} connects to over public or private connections.
-{: shortdesc}
-
-| Service name | Description |
-|------------|-------------------------------------|
-| {{site.data.keyword.at_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.at_short}}, by using a private connection, to forward {{site.data.keyword.registryshort_notm}} audit events to the {{site.data.keyword.at_short}} service instances that you set up. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
-| {{site.data.keyword.databases-for-postgresql_full_notm}} | {{site.data.keyword.databases-for-postgresql_full_notm}} is a fully managed, highly available object-relational SQL database. {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.databases-for-postgresql_full_notm}} to store metadata. Connections to {{site.data.keyword.databases-for-postgresql_full_notm}} are private. |
-| {{site.data.keyword.cis_full_notm}} | {{site.data.keyword.cis_full_notm}} is used as a provider for DNS and load-balancing capabilities in {{site.data.keyword.registrylong_notm}}. |
-| {{site.data.keyword.containerlong_notm}} | {{site.data.keyword.registrylong_notm}} uses {{site.data.keyword.containerlong_notm}} to run its service. |
-| {{site.data.keyword.mon_full_notm}} | {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.mon_short}}, by using a private connection, to send platform metrics. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor). |
-| {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.registryshort_notm}} stores customer data (images) in {{site.data.keyword.cos_short}} by using a private connection. All data is encrypted in transit and at rest. For more information, see [Managing your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-delete-data).|
-| {{site.data.keyword.cloud_notm}} Platform | To authenticate requests to the service and authorize user actions, {{site.data.keyword.registrylong_notm}} implements platform and service access roles in {{site.data.keyword.iamshort}} (IAM). For more information about required IAM permissions to work with the service, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam). Connections from {{site.data.keyword.registrylong_notm}} to IAM do not use private connections. |
-| {{site.data.keyword.cloudant_short_notm}} for {{site.data.keyword.cloud_notm}} | Cloudant is a managed, distributed database. {{site.data.keyword.registrylong_notm}} integrates with {{site.data.keyword.cloudant_short_notm}} to store metadata. Connections to {{site.data.keyword.cloudant_short_notm}} are private. |
-| {{site.data.keyword.keymanagementservicefull_notm}} | {{site.data.keyword.keymanagementserviceshort}} is used to help secure the parts of {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.cos_full_notm}} that are used by {{site.data.keyword.registrylong_notm}}. |
-| {{site.data.keyword.la_full_notm}} | {{site.data.keyword.registrylong_notm}} generates platform services logs, which are displayed in your logging instances. The logs are sent to {{site.data.keyword.la_full_notm}} by using private connections. For more information, see [Analyzing logs for Container Registry](/docs/Registry?topic=Registry-registry_logs). |
-{: caption="Table 1. {{site.data.keyword.registryshort_notm}} dependencies to other {{site.data.keyword.cloud_notm}} services" caption-side="bottom"}
-{: summary="The first column is the service. The second column is a description of the service."}
-
-## Dependencies to third-party services
-{: #registry_architecture_dependencies_third_party}
-
-Review the list of third-party services that {{site.data.keyword.registrylong_notm}} connects to over the public network.
-{: shortdesc}
-
-| Service name | Description |
-|------------|-------------------------------------|
-| Akamai | Akamai is used as a provider for DNS, global load-balancing, and web firewall capabilities in {{site.data.keyword.registrylong_notm}}. |
-{: caption="Table 2. {{site.data.keyword.registryshort_notm}} dependencies to third-party services" caption-side="bottom"}
-{: summary="The first column is the service. The second column is a description of the service."}
 
 
