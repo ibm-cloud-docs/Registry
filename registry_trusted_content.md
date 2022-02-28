@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-28"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -33,7 +33,7 @@ You can use the following tools to create {{site.data.keyword.redhat_notm}} sign
 
 - [Skopeo](#registry_trustedcontent_red_hat_sig_skopeo)
 - [Podman](#registry_trustedcontent_red_hat_sig_podman)
-- [{{site.data.keyword.redhat_notm}} OpenShift CLI](#registry_trustedcontent_red_hat_sig_oc)
+- [{{site.data.keyword.redhat_openshift_notm}} CLI](#registry_trustedcontent_red_hat_sig_oc)
 
 ### Using Skopeo to sign images
 {: #registry_trustedcontent_red_hat_sig_skopeo}
@@ -81,9 +81,9 @@ On Linux&reg; and macOS, the default configuration for the tools is to store the
 
 For more information, see [Podman](https://podman.io/){: external}.
 
-### Using the {{site.data.keyword.redhat_notm}} OpenShift CLI to sign images
+### Using the {{site.data.keyword.redhat_openshift_notm}} CLI to sign images
 {: #registry_trustedcontent_red_hat_sig_oc}
 
-For more information, see [{{site.data.keyword.redhat_notm}} OpenShift CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_full}} OpenShift&reg; CLI uses the `oc` command.
+For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.
 
 

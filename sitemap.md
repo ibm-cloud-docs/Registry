@@ -542,11 +542,11 @@ subcollection: Registry
 
 * [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
-* [Set up {{site.data.keyword.redhat_notm}} OpenShift Container Platform to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
+* [Set up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
 
-    * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
+    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
 
-    * [Set up the {{site.data.keyword.redhat_notm}} OpenShift Container Platform build to push images to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
+    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
 
 
 ## Managing quota limits for storage and pull traffic
@@ -764,7 +764,7 @@ subcollection: Registry
 
     * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
 
-    * [Using the {{site.data.keyword.redhat_notm}} OpenShift CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
+    * [Using the {{site.data.keyword.redhat_openshift_notm}} CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
