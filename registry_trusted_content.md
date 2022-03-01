@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -18,7 +18,7 @@ subcollection: Registry
 {{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 {: shortdesc}
 
-You can use {{site.data.keyword.redhat_full}} Signatures to sign your images.
+You can use {{site.data.keyword.redhat_full}} signatures to sign your images.
 
 From 1 November 2021, the Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued.
 {: deprecated}
@@ -26,7 +26,7 @@ From 1 November 2021, the Notary v1 service that supports [Docker Content Trust]
 ## Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures
 {: #registry_trustedcontent_red_hat_sig}
 
-You can use various tools to create [{{site.data.keyword.redhat_notm}} signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the {{site.data.keyword.redhat_notm}} Signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
+You can use various tools to create [{{site.data.keyword.redhat_notm}} signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the {{site.data.keyword.redhat_notm}} signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 You can use the following tools to create {{site.data.keyword.redhat_notm}} signatures:
