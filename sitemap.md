@@ -221,6 +221,8 @@ subcollection: Registry
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
 
+* [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
+
 * [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
 
 * [1 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01feb2022)
@@ -334,6 +336,15 @@ subcollection: Registry
 * [24 August 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-24aug2017)
 
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
+
+
+## Notices
+{: #sitemap_notices}
+
+
+[Notices](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+
+* [Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial
