@@ -202,11 +202,7 @@ subcollection: Registry
 
 * [License for production use](/docs/Registry?topic=RegistryImages-ibmliberty#ibm/liberty_license)
 
-[`ibmcloud-backup-restore` image - deprecated](/docs/Registry?topic=RegistryImages-ibmbackup_restore_starter#ibmbackup_restore_starter)
-
 [`ibm-mq` public image](/docs/Registry?topic=RegistryImages-mq#mq)
-
-[`ibm-node-strong-pm` public image - deprecated](/docs/Registry?topic=RegistryImages-node-strong#node-strong)
 
 
 ## What are containers?
