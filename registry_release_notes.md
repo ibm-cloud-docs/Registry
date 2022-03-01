@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-01"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -63,7 +63,7 @@ Define configuration rules for {{site.data.keyword.registrylong_notm}} {: #07dec
 Using Notary v1 for signing images is discontinued {: #01nov2021_notary}
 :   The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
 
-    {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 5 October 2021
 {: #registry-05oct2021}
@@ -109,7 +109,7 @@ The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry dom
 Using Notary v1 for signing images is deprecated {: #08jul2021_notary}
 :   The Notary v1 service for signing images is deprecated. It is being removed from {{site.data.keyword.registrylong_notm}} on 31 August 2021.
 
-    As an alternative approach, {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} Signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    As an alternative approach, {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 21 June 2021
 {: #registry-21jun2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-28"
 
 keywords: encryption, decryption, security, encrypted images, public-private key pairs,
 
@@ -212,7 +212,7 @@ For more information about how you can protect your keys in your own store by us
 ## Next steps
 {: #registry_encrypt_next}
 
-Run your encrypted image in a {{site.data.keyword.openshiftlong_notm}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
+Run your encrypted image in a {{site.data.keyword.openshiftlong}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
 {: shortdesc}
 
 
