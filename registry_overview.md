@@ -297,7 +297,7 @@ A repository stores container images, and is itself stored in a registry namespa
 ### Tag
 {: #overview_elements_tag}
 
-A label that you can reassign that identifies container images within a repository.
+An identifier that is attached to container images within a repository. Tags can be reassigned or deleted from images.
 
 You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged `latest` is used by default.
 
