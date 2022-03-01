@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-03-01"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -114,8 +114,8 @@ To find out whether you have any [untagged](/docs/Registry?topic=Registry-regist
 
 If you have active containers that are running [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, you must retain the untagged images. If you delete untagged images that are in use, you can cause problems with scaling or automated restarts. Deleting untagged images might cause a problem in the following circumstances:
 
-- If you deployed the image by referencing the image by using the digest
-- If a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), mutates your image reference
+- If you deployed the image by referencing the image by using the digest.
+- If a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), mutates your image reference.
 
 ## What regions are available for {{site.data.keyword.registrylong_notm}}?
 {: #faq_regions}
@@ -177,14 +177,14 @@ To determine the version of a package that is installed in your image, use the r
 
 On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
 
-- To list the metadata for a specific installed package:
+- To list the metadata for a specific installed package, run the following command:
 
     ```txt
     apk info <package_name>
     ```
     {: pre}
 
-- To list all installed packages and their versions:
+- To list all installed packages and their versions, run the following command:
 
     ```txt
     apk list
