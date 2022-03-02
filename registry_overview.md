@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -407,7 +407,7 @@ If you want to use a region other than your local region, you can target the reg
 ## Support for Docker
 {: #docker}
 
-{{site.data.keyword.registrylong_notm}} supports Docker Engine v17.07, or later. Earlier versions are not prevented from accessing {{site.data.keyword.registryshort}} but changes to {{site.data.keyword.registryshort}} might prevent earlier versions of Docker from functioning fully.
+{{site.data.keyword.registrylong_notm}} supports Docker Engine v17.07, or later.
 
 Docker is required only if you want to push or pull images.
 
