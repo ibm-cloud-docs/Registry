@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-02"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -23,6 +23,9 @@ completion-time: 45m
 
 Use this tutorial to find out how to grant access to your resources by configuring {{site.data.keyword.iamlong}} (IAM) for {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
+{: important}
 
 For more information about how to use {{site.data.keyword.iamlong}} to manage access to your resources, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
