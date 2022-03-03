@@ -618,6 +618,41 @@ subcollection: Registry
 * [Deleting a private repository and any associated images](/docs/Registry?topic=Registry-registry_images_#registry_repo_remove)
 
 
+## Using Helm charts
+{: #sitemap_using_helm_charts}
+
+
+[Using Helm charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts)
+
+* [OCI support for Helm charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_oci)
+
+* [Adding Helm charts to your namespace](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_add)
+
+    * [Pulling charts from another registry or Helm repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_pull)
+
+    * [Pushing Helm charts to your namespace](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_push)
+
+    * [Copying charts between registries](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_copy)
+
+    * [Install the Helm chart to the cluster](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_install)
+
+* [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
+
+    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
+
+    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
+
+* [Listing charts in the trash](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_list_trash)
+
+* [Restoring charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_restore)
+
+    * [Restoring charts by digest](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_restore_digest)
+
+    * [Restoring charts by tag](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_restore_tag)
+
+* [Deleting a private repository and any associated charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_repo_remove)
+
+
 ## Accessing {{site.data.keyword.registrylong_notm}}
 {: #sitemap_accessing_}
 
