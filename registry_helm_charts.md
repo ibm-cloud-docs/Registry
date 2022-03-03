@@ -170,7 +170,7 @@ To copy a chart between two registries, complete the following steps:
 
 After you copy your chart, you can [install the Helm chart to the cluster in {{site.data.keyword.containerlong_notm}}](#registry_helm_charts_install).
 
-### Installing the Helm chart to the cluster
+### Installing a Helm chart to the cluster
 {: #registry_helm_charts_install}
 {: help}
 {: support}

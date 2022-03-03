@@ -634,7 +634,7 @@ subcollection: Registry
 
     * [Copying charts between registries](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_copy)
 
-    * [Installing the Helm chart to the cluster](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_install)
+    * [Installing a Helm chart to the cluster](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_install)
 
 * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
 
