@@ -4,7 +4,7 @@ copyright:
   years: 2022
 lastupdated: "2022-03-03"
 
-keywords: IBM Cloud Container Registry notices,
+keywords: IBM Cloud Container Registry notices, iam access policies,
 
 subcollection: Registry
 
