@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -18,7 +18,7 @@ subcollection: Registry
 To access your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM). To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=Registry-user#user).
 {: shortdesc}
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
+From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
 {: important}
 
 If you want to use your container images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from nondefault Kubernetes namespaces](/docs/containers?topic=containers-registry#other).

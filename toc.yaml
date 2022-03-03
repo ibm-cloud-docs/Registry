@@ -30,8 +30,11 @@ toc:
           href: https://www.ibm.com/topics/containers
       - topic: registry_release_notes.md
         navtitle: Release notes
-      - topic: registry_notices.md
-        navtitle: Notices
+      - topicgroup: 
+          label: Notifications
+          topics:
+          - registry_notices_iam_policy.md
+          - registry_notices_docker.md
 
   - navgroup: 
       id: tutorial

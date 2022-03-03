@@ -336,23 +336,21 @@ subcollection: Registry
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
 
-## Notices
-{: #sitemap_notices}
+## Notifications
+{: #sitemap_notifications}
 
 
-[Notices](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+[Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
-* [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy)
+* [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
-    * [What is changing?](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy_change)
+* [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_affect)
 
-    * [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy_affect)
+* [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
 
-    * [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy_prepare)
+* [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-    * [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy_unprepared)
-
-* [Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#notices_docker)
+[Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial
