@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: container registry
 
@@ -219,7 +219,7 @@ subcollection: Registry
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
-* [24 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-24feb2022)
+* [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
 
 * [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
 
