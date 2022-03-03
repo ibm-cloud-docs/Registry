@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -27,11 +27,11 @@ Learn about the changes to [{{site.data.keyword.registrylong}}](/docs/Registry?t
 Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} {: #01mar2022_docker}
 :   From 1 March 2022, the minimum version of Docker Engine that is supported by {{site.data.keyword.registrylong_notm}} is v17.07, or later.
 
-## 24 February 2022
-{: #registry-24feb2022}
+## 9 February 2022
+{: #registry-09feb2022}
 {: release-note}
 
-All accounts will require IAM access policies from 5 July 2022 {: #24feb2022_iam}
+All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
 :   From 5 July 2022, to access {{site.data.keyword.registryshort}} you must be using {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
 
     Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
