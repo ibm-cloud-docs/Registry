@@ -44,7 +44,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 
     Other regions are unaffected because they already require IAM access policies for all accounts.
 
-    For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices#notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
+    For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
 
 ## 2 February 2022
 {: #registry-02feb2022}
