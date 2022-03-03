@@ -350,7 +350,7 @@ subcollection: Registry
 
 * [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-[Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} fro 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+[Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial
