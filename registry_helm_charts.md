@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-04"
 
 keywords: helm pull, helm push, helm create, helm package, delete charts, add charts, pull charts, push charts, copy charts, delete private repositories, charts, list charts, trash, recycle bin, restoring charts,
 
@@ -50,11 +50,9 @@ You can pull (download) a chart from any private or public registry source or He
 
 Before you begin, complete the following tasks.
 
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `helm pull`, and `helm push` commands with `sudo`.
-
-    If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
+- Install the latest release of [Helm CLI](https://github.com/helm/helm/releases){: external} to work with charts.
 
 1. Download the Helm chart to your local computer.
 
@@ -106,12 +104,10 @@ You can push (upload) a chart to your namespace in {{site.data.keyword.registryl
 
 Before you begin, complete the following tasks.
 
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with charts in your namespace.
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
+- Install the latest release of [Helm CLI](https://github.com/helm/helm/releases){: external} to work with charts.
 - [Pull](#registry_helm_charts_pull) or [create](https://helm.sh/docs/chart_template_guide/getting_started/){: external} a chart on your local computer. If you create a chart, you must save the chart as an archive by using the [`helm package`](https://helm.sh/docs/helm/helm_package/){: external} command.
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `helm pull`, and `helm push` commands with `sudo`.
-
-    If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
 To upload (push) a chart, complete the following steps:
 
@@ -157,11 +153,9 @@ You can pull a chart from a registry in one region and push it to a registry in 
 
 Before you begin, complete the following tasks.
 
-- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with charts in your namespace.
+- [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `helm pull`, and `helm push` commands with `sudo`.
-
-    If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
+- Install the latest release of [Helm CLI](https://github.com/helm/helm/releases){: external} to work with charts.
 
 To copy a chart between two registries, complete the following steps:
 
