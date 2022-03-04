@@ -19,6 +19,7 @@ subcollection: Registry
 
 
 
+
 ## Getting started with Container Registry
 {: #sitemap_getting_started_with_container_registry}
 
@@ -219,121 +220,247 @@ subcollection: Registry
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
+    * [Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
+
 * [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
+
+    * [All accounts will require IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_release_notes#09feb2022_iam)
 
 * [2 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-02feb2022)
 
+    * [Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued](/docs/Registry?topic=Registry-registry_release_notes#02feb2022_exemption)
+
 * [1 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01feb2022)
+
+    * [Storage that is used by untagged images is being charged for](/docs/Registry?topic=Registry-registry_release_notes#01feb2022_billing)
 
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
+    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
+
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
+
+    * [Define configuration rules for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#07dec2021_gov)
 
 * [1 November 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021)
 
+    * [Using Notary v1 for signing images is discontinued](/docs/Registry?topic=Registry-registry_release_notes#01nov2021_notary)
+
 * [5 October 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-05oct2021)
+
+    * [{{site.data.keyword.registrylong_notm}} container builds are discontinued](/docs/Registry?topic=Registry-registry_release_notes#05oct2021_build)
 
 * [2 September 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-02sep2021)
 
+    * [Namespaces that are assigned to a resource group show in the Resource list page](/docs/Registry?topic=Registry-registry_release_notes#02sep2021_resource_list)
+
 * [30 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-30aug2021)
+
+    * [New region in Brazil](/docs/Registry?topic=Registry-registry_release_notes#30aug2021_brazil)
 
 * [19 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-19aug2021)
 
+    * [Using registry tokens is discontinued](/docs/Registry?topic=Registry-registry_release_notes#19aug2021_remove_tokens)
+
 * [9 August 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-09aug2021)
+
+    * [The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry domain only](/docs/Registry?topic=Registry-registry_release_notes#09aug2021_bmx)
 
 * [8 July 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2021)
 
+    * [Using Notary v1 for signing images is deprecated](/docs/Registry?topic=Registry-registry_release_notes#08jul2021_notary)
+
 * [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-21jun2021)
+
+    * [Global registry](/docs/Registry?topic=Registry-registry_release_notes#21jun2021_global)
 
 * [10 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-10may2021)
 
+    * [New region in Canada](/docs/Registry?topic=Registry-registry_release_notes#10may2021_canada)
+
 * [4 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-04may2021)
+
+    * [The `ibmcloud cr ppa-archive-load` command is discontinued](/docs/Registry?topic=Registry-registry_release_notes#04may2021_ppa)
 
 * [18 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-18feb2021)
 
+    * [Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option](/docs/Registry?topic=Registry-registry_release_notes#18feb2021_no-va)
+
 * [15 February 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-15feb2021)
+
+    * [New region in Japan](/docs/Registry?topic=Registry-registry_release_notes#15feb2021_japan)
 
 * [19 November 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-19nov2020)
 
+    * [You can use Portieris to enforce container image security](/docs/Registry?topic=Registry-registry_release_notes#19nov2020_portieris)
+
 * [21 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-21oct2020)
+
+    * [Find out about the usage on your account by using platform metrics](/docs/Registry?topic=Registry-registry_release_notes#21oct2020_metrics)
 
 * [6 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-06oct2020)
 
+    * [{{site.data.keyword.registrylong_notm}} container builds are deprecated](/docs/Registry?topic=Registry-registry_release_notes#06oct2020_build)
+
 * [27 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-27aug2020)
+
+    * [Setting exemption policies by digest](/docs/Registry?topic=Registry-registry_release_notes#27aug2020_digest)
 
 * [12 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-12aug2020)
 
+    * [Using UAA tokens is discontinued](/docs/Registry?topic=Registry-registry_release_notes#12aug2020_tokens)
+
 * [30 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-30jul2020)
+
+    * [New access roles are required for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-registry_release_notes#30jul2020_exemption)
 
 * [29 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-29jul2020)
 
+    * [You can set permissions so that access to resources within a namespace can be configured at the resource group level](/docs/Registry?topic=Registry-registry_release_notes#29jul2020_resource_group)
+
 * [13 July 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-13jul2020)
+
+    * [To work with namespaces, you must have the Manager role at the account level](/docs/Registry?topic=Registry-registry_release_notes#13jul2020_manager)
 
 * [24 June 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-24jun2020)
 
+    * [Restoring all tags for a digest in a repository is now an option](/docs/Registry?topic=Registry-registry_release_notes#24jun2020_tags)
+
 * [18 May 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-18may2020)
+
+    * [Retaining untagged images is now an option when you clean up your namespaces](/docs/Registry?topic=Registry-registry_release_notes#18may2020_untagged)
 
 * [30 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-30apr2020)
 
+    * [`ibmcloud cr image-prune-untagged` command is available](/docs/Registry?topic=Registry-registry_release_notes#30apr2020_prune)
+
 * [16 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-16apr2020)
+
+    * [You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#16apr2020_private_network)
+
+    * [`ibmcloud cr private-only` command is available](/docs/Registry?topic=Registry-registry_release_notes#16apr2020_private)
 
 * [3 February 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-3feb2020)
 
+    * [Using {{site.data.keyword.registrylong_notm}} tokens is deprecated](/docs/Registry?topic=Registry-registry_release_notes#3feb2020_tokens)
+
 * [31 January 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-31jan2020)
+
+    * [`ibmcloud cr image-digests` command is available](/docs/Registry?topic=Registry-registry_release_notes#31jan2020_digests)
 
 * [4 December 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-4dec2019)
 
+    * [Support for {{site.data.keyword.redhat_notm}} signatures is available](/docs/Registry?topic=Registry-registry_release_notes#4dec2019_signatures)
+
 * [25 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25oct2019)
+
+    * [{{site.data.keyword.la_full_notm}} platform services logs are available](/docs/Registry?topic=Registry-registry_release_notes#25oct2019_logs)
 
 * [14 October 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14oct2019)
 
+    * [`ibmcloud cr manifest-inspect` command is available](/docs/Registry?topic=Registry-registry_release_notes#14oct2019_manifest)
+
 * [23 September 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-23sep2019)
+
+    * [You can create retention policies for your images](/docs/Registry?topic=Registry-registry_release_notes#23sep2019_retention_policy)
+
+    * [You can restore deleted images from the trash](/docs/Registry?topic=Registry-registry_release_notes#23sep2019_restore_trash)
 
 * [1 August 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-01aug2019)
 
+    * [`ibmcloud cr retention-run` command is available](/docs/Registry?topic=Registry-registry_release_notes#01aug2019_retention)
+
 * [25 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2019)
+
+    * [{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#25jul2019_at)
 
 * [1 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-1jul2019)
 
+    * [`ibmcloud cr token-add` command is no longer available](/docs/Registry?topic=Registry-registry_release_notes#1jul2019_token_add)
+
 * [27 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2019)
+
+    * [Container Scanner is no longer available](/docs/Registry?topic=Registry-registry_release_notes#27jun2019_cs)
 
 * [13 June 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13jun2019)
 
+    * [Remove tags from images](/docs/Registry?topic=Registry-registry_release_notes#13jun2019_tags)
+
 * [13 May 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-13may2019)
+
+    * [End of support for Container Scanner](/docs/Registry?topic=Registry-registry_release_notes#13may2019_cs)
 
 * [2 April 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-2apr2019)
 
+    * [General Availability of Container Image Security Enforcement](/docs/Registry?topic=Registry-registry_release_notes#2apr2019_cise)
+
 * [14 March 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14mar2019)
+
+    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#14mar2019_at)
 
 * [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019)
 
+    * [New domain names](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_dns)
+
+    * [Adding IAM API key policies to control access to resources](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_secrets)
+
+    * [New region in ap-north](/docs/Registry?topic=Registry-registry_release_notes#25feb2019_ap-north)
+
 * [21 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-21feb2019)
+
+    * [Automating access to your namespaces](/docs/Registry?topic=Registry-registry_release_notes#21feb2019_access)
 
 * [8 January 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-8jan2019)
 
+    * [End of support for Vulnerability Advisor API version 2](/docs/Registry?topic=Registry-registry_release_notes#8jan2019_va2)
+
 * [4 October 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-4oct2018)
+
+    * [Managing user access](/docs/Registry?topic=Registry-registry_release_notes#4oct2018_access)
 
 * [7 August 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-7aug2018)
 
+    * [Exemption policies available in Vulnerability Advisor](/docs/Registry?topic=Registry-registry_release_notes#7aug2018_exemption)
+
 * [25 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2018)
+
+    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor](/docs/Registry?topic=Registry-registry_release_notes#25jul2018_at)
 
 * [12 July 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-12jul2018)
 
+    * [Vulnerability Advisor API version 3](/docs/Registry?topic=Registry-registry_release_notes#12jul2018_va3)
+
 * [31 May 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-31may2018)
+
+    * [Use Helm for Passport Advantage images](/docs/Registry?topic=Registry-registry_release_notes#31may2018_helm)
 
 * [21 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-21mar2018)
 
+    * [Container Scanner](/docs/Registry?topic=Registry-registry_release_notes#21mar2018_cs)
+
 * [16 March 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-16mar2018)
+
+    * [Container Image Security Enforcement beta](/docs/Registry?topic=Registry-registry_release_notes#16mar2018_cise)
 
 * [20 February 2018](/docs/Registry?topic=Registry-registry_release_notes#registry-20feb2018)
 
+    * [Trusted content](/docs/Registry?topic=Registry-registry_release_notes#20feb2018_tc)
+
 * [6 November 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-6nov2017)
+
+    * [Global registry](/docs/Registry?topic=Registry-registry_release_notes#6nov2017_global)
 
 * [29 September 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-29sep2017)
 
+    * [Build Docker images](/docs/Registry?topic=Registry-registry_release_notes#29sep2017_docker)
+
 * [24 August 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-24aug2017)
 
+    * [Graphical user interface released](/docs/Registry?topic=Registry-registry_release_notes#24aug2017_gui)
+
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
+
+    * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
 
 
 ## Notifications
