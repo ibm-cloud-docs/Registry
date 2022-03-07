@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-07"
 
 keywords: container registry
 
@@ -273,6 +273,8 @@ subcollection: Registry
 * [21 June 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-21jun2021)
 
     * [Global registry](/docs/Registry?topic=Registry-registry_release_notes#21jun2021_global)
+
+    * For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
 
 * [10 May 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-10may2021)
 
