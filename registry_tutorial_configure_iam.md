@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -273,7 +273,7 @@ Create some namespaces with sample images, and grant access to them. You create 
         ```
         {: pre}
 
-    4. Log in to {{site.data.keyword.registrylong_notm}} by running the following command.
+    4. Log in to {{site.data.keyword.registrylong_notm}} by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
         ```txt
         ibmcloud cr login

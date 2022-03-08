@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-08"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -112,7 +112,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     Docker must be running on your computer or the `docker` commands fail. {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}
 
-2. Log your local Docker daemon into {{site.data.keyword.registrylong_notm}} by running the following command:
+2. Log your local Docker daemon into {{site.data.keyword.registrylong_notm}} by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command:
 
     ```txt
     ibmcloud cr login
