@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
 keywords: IBM Cloud Container Registry release notes, changes, releases,
 
@@ -142,8 +142,7 @@ Using Notary v1 for signing images is deprecated {: #08jul2021_notary}
 {: release-note}
 
 Global registry {: #21jun2021_global}
-:   The global registry (`icr.io`) is now available for hosting user images and namespaces. Previously the global registry hosted only public images that are provided by {{site.data.keyword.IBM_notm}}.
-For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
+:   The global registry (`icr.io`) is now available for hosting user images and namespaces. Previously the global registry hosted only public images that are provided by {{site.data.keyword.IBM_notm}}. For more information, see [Global registry](/docs/Registry?topic=Registry-registry_overview#registry_regions_global).
 
 ## 10 May 2021
 {: #registry-10may2021}
