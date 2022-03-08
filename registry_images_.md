@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-08"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -43,7 +43,7 @@ Before you begin, complete the following tasks.
 
 1. Download the image, see [Pull an image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
-    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
+    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
     {: tip}
 
 After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
@@ -72,7 +72,7 @@ Before you begin, complete the following tasks.
 
 To upload (push) an image, complete the following steps:
 
-1. Log in to the CLI.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login
@@ -141,7 +141,7 @@ Before you begin, complete the following tasks.
 
 To create an image from a source image, complete the following steps.
 
-1. Log in to the CLI.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login

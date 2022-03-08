@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-09-10"
+  years: 2017, 2022
+lastupdated: "2022-03-08"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Logging in to {{site.data.keyword.registrylong}} fails.
 {: shortdesc}
 
-The `ibmcloud cr login` command fails.
+The [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command fails.
 {: tsSymptoms}
 
 The following alternatives are possible causes:

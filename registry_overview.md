@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-08"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -243,7 +243,7 @@ The domain names that {{site.data.keyword.registryshort}} uses are in the format
 The domain name is only significant in the following situations:
 
 - When Kubernetes is selecting a pull-secret, it chooses one that matches the domain name.
-- When `ibmcloud cr login` is helping you to log in, it uses domain names in the format `us.icr.io` only.
+- When [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) is helping you to log in, it uses domain names in the format `us.icr.io` only.
 - When images are signed, the signature includes the domain name that was used at the time of signing.
 
 For more information about the domain names that {{site.data.keyword.registryshort}} uses, see [Regions](#registry_regions).
@@ -349,7 +349,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
     ```
     {: pre}
 
-2. To log your local Docker daemon into the global registry, run the `ibmcloud cr login` command.
+2. To log your local Docker daemon into the global registry, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
     {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}
@@ -399,7 +399,7 @@ If you want to use a region other than your local region, you can target the reg
     ```
     {: pre}
 
-2. To log your local Docker daemon into the registry so that you can push or pull images, run the `ibmcloud cr login` command.
+2. To log your local Docker daemon into the registry so that you can push or pull images, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
     {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}

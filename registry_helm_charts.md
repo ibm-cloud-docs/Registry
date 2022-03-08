@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-03-08"
 
 keywords: helm pull, helm push, helm create, helm package, delete charts, add charts, pull charts, push charts, copy charts, delete private repositories, charts, list charts, trash, recycle bin, restoring charts,
 
@@ -87,7 +87,7 @@ Before you begin, complete the following tasks.
         ```
         {: pre}
 
-    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the `ibmcloud cr login` command.
+    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
     {: tip}
 
 After you pull a chart for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the chart from your local computer to your namespace.
@@ -111,7 +111,7 @@ Before you begin, complete the following tasks.
 
 To upload (push) a chart, complete the following steps:
 
-1. Log in to the CLI.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login
@@ -121,7 +121,7 @@ To upload (push) a chart, complete the following steps:
     You must log in if you pull a chart from your private {{site.data.keyword.registrylong_notm}}.
     {: tip}
 
-2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
+2. To view all namespaces that are available in your account, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command.
 3. Upload the chart to your namespace.
 
     ```txt

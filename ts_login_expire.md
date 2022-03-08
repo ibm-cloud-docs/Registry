@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-30"
+lastupdated: "2022-03-08"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, login expire
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Logging in to {{site.data.keyword.registrylong}} by using the `ibmcloud cr login` command is subject to IAM login session limits.
+Logging in to {{site.data.keyword.registrylong}} by using the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command is subject to IAM login session limits.
 {: shortdesc}
 
 Pushes and pulls to the registry fail after a period of inactivity. The following example is a typical scenario:

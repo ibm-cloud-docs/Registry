@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-08"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, docker login, mac, docker login fails on a mac
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 When you're using {{site.data.keyword.registrylong}}, Docker login fails on a Mac with the following message `Error saving credentials: error storing credentials - err: exit status 1, out: 'The user name or passphrase you entered is not correct'`.
 {: shortdesc}
 
-You receive the following error message when you try to run the `ibmcloud cr login` command on a Mac:
+You receive the following error message when you try to run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command on a Mac:
 {: tsSymptoms}
 
 ```txt
