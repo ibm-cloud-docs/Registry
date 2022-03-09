@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -670,6 +670,7 @@ Logging in to {{site.data.keyword.registrylong_notm}} by using the `ibmcloud cr 
 {: tip}
 
 {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+{: tip}
 
 ### Prerequisites
 {: #bx_cr_login_prereq}
