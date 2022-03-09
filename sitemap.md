@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: container registry
 
@@ -1224,6 +1224,10 @@ subcollection: Registry
 * [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login)
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_prereq)
+
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_option)
+
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login__example)
 
 * [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect)
 

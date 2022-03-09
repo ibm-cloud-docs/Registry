@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-09"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -11,7 +11,6 @@ subcollection: container-registry-cli-plugin
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
@@ -660,23 +659,40 @@ None
 ## `ibmcloud cr login`
 {: #bx_cr_login}
 
-This command runs the `docker login` command against the registry. The `docker login` command is required to be able to run the `docker push` or `docker pull` commands for the registry. This command is not required to run other `ibmcloud cr` commands. If Docker is not installed, this command returns an error message.
+Log the local Docker or Podman client in to {{site.data.keyword.registrylong_notm}}.
+
+This command is required if you want to run the `push` or `pull` commands for the registry. If you want to run other `ibmcloud cr` commands, you're not required to log in to {{site.data.keyword.registrylong_notm}}.
 
 ```txt
-ibmcloud cr login
+ibmcloud cr login [--client CLIENT]
 ```
 {: codeblock}
 
-Logging in to {{site.data.keyword.registrylong_notm}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
-{: tip}
+{{site.data.keyword.registrylong_notm}} supports other clients as well as Docker and Podman. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-{{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+Logging in to {{site.data.keyword.registrylong_notm}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
 {: tip}
 
 ### Prerequisites
 {: #bx_cr_login_prereq}
 
 None
+
+### Command options
+{: #bx_cr_login_option}
+
+`CLIENT`
+:   (Optional) Select the client that you want to log in. Valid values are `docker` and `podman`. If this option is not used and Docker is installed, the default is `docker`; if Docker is not installed, the default is `podman`.
+
+### Example
+{: #bx_cr_login__example}
+
+To log in to the registry with Podman, run the following command.
+
+```txt
+ibmcloud cr login --client podman
+```
+{: pre}
 
 ## `ibmcloud cr manifest-inspect`
 {: #bx_cr_manifest_inspect}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
 
@@ -11,6 +11,7 @@ subcollection: Registry
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Accessing {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
@@ -187,7 +188,7 @@ Log in to the registry by using the Docker CLI.
 You can use the Docker CLI to log in to the registry by using a refresh token in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started):
 
 ```txt
-ibmcloud cr login
+ibmcloud cr login --client docker
 ```
 {: pre}
 
@@ -205,13 +206,11 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 ### Podman
 {: #registry_access_interactive_auth_podman}
 
-Log in to the registry by using the Podman CLI.
+Log in to the registry by using the CLI.
 {: shortdesc}
 
-You can use the Podman CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
-
 ```txt
-ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | podman login -u iambearer --password-stdin <registry_domain>
+ibmcloud cr login --client podman
 ```
 {: pre}
 
