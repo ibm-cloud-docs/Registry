@@ -12,6 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Accessing {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
