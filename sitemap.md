@@ -1225,6 +1225,10 @@ subcollection: Registry
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_prereq)
 
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_option)
+
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login__example)
+
 * [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect)
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_prereq)
