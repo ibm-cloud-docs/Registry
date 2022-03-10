@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-10"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, tutorial, Docker, images, registry, Podman
 
@@ -168,11 +168,18 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
     - To log in by using Docker, run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
 
       ```txt
-      ibmcloud cr login
+      ibmcloud cr login --client docker
       ```
       {: pre}
 
-    - To log in by using other clients, such as Podman, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+    - To log in by using Podman, run the `ibmcloud cr login` command to log into {{site.data.keyword.registrylong_notm}}.
+
+      ```txt
+      ibmcloud cr login --client podman
+      ```
+      {: pre}
+
+    - To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
 2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Replace `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image. For example, depending on the tool that you are using, run one of the following commands.
 
