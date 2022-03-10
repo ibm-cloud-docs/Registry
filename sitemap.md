@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-10"
 
 keywords: container registry
 
@@ -466,6 +466,8 @@ subcollection: Registry
 ## Notifications
 {: #sitemap_notifications}
 
+
+[Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
 [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
