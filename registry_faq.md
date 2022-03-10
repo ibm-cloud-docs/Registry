@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-10"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -223,7 +223,7 @@ On Debian and Ubuntu, to determine the version of a package that is installed in
 ### Red Hat and CentOS
 {: #faq_va_package_version_redhat_centos}
 
-On {{site.data.keyword.redhat_full}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
+On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
 
 - To list the metadata for a specific installed package, run either of the following commands:
 

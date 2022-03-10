@@ -79,7 +79,7 @@
         "ibmcloud cr login command failing",
         "log in to Container registry error",
         "Cannot login to Container Registry",
-        "unable to log into Container Registry",
+        "unable to log in to Container Registry",
         "can't login to CR",
         "login error for Container Registry",
         "ibmcloud cr cli login error"
