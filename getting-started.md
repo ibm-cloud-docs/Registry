@@ -36,6 +36,17 @@ Do not put personal information in your container images, namespace names, descr
 {: step}
 
 1. Install the {{site.data.keyword.cloud_notm}} CLI so that you can run the {{site.data.keyword.cloud_notm}} `ibmcloud` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). This installation also installs the CLI plug-ins for {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.registrylong_notm}}.
+2. Install the IBM Cloud Container Registry Plugin. Plugin installation can be found [here](/docs/cli?topic=cli-plug-ins).
+    ```txt
+    ibmcloud plugin install container-registry -r 'IBM Cloud'
+    ```
+    {: pre}
+   
+   To log in to your ibmcloud container-registry
+    ```txt
+    ibmcloud cr login 
+    ```
+    {: pre}
 
 ## Set up a namespace
 {: #gs_registry_namespace_add}
