@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-14"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -34,6 +34,9 @@ To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} 
 ## Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI
 {: #registry_enable_platform_metrics}
 
+You must enable {{site.data.keyword.registryshort_notm}} metrics in each region that you want to see metrics.
+{: note}
+
 Complete the following steps to configure platform metrics:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
@@ -48,7 +51,7 @@ Complete the following steps to configure platform metrics:
     ```txt
     ibmcloud cr platform-metrics --enable
     ```
-    {: pre}
+    {: pre}</prod
 
 ## Viewing metrics
 {: #registry_view_metrics}
@@ -163,7 +166,7 @@ The following attributes are available for segmenting all the metrics that are l
 | `Resource` | `ibm_resource` | The resource that is being measured by the service, which is typically an identifying name or [globally unique identifier (GUID)](x2390455){: term}. | No |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. | No |
 | `Resource Type` | `ibm_resource_type` | The type of resource that is being measured by the service. | No |
-| `Service name` | `ibm_service_name` | The name of the service that is generating this metric. | Yes |
+| `Service name` | `ibm_service_name` | The name of the service that is generating this metric: `container-registry`. | Yes |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID that is associated with this metric. | Yes |
 {: caption="Table 7. Attributes for segmenting metrics" caption-side="bottom"}
 
