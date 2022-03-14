@@ -34,9 +34,6 @@ To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} 
 ## Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI
 {: #registry_enable_platform_metrics}
 
-You must enable {{site.data.keyword.registryshort_notm}} metrics in each region that you want to see metrics.
-{: note}
-
 Complete the following steps to configure platform metrics:
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
@@ -51,7 +48,7 @@ Complete the following steps to configure platform metrics:
     ```txt
     ibmcloud cr platform-metrics --enable
     ```
-    {: pre}</prod
+    {: pre}
 
 ## Viewing metrics
 {: #registry_view_metrics}
