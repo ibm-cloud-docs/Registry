@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: Registry
+    service-name: container-registry
     category: containers
     audience: service
     href: /docs/Registry
