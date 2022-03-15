@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-14"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -71,7 +71,7 @@ Next, change the scope or make a copy of the Default dashboard so that you can m
 ## {{site.data.keyword.registryshort_notm}} predefined dashboards
 {: #registry_dashboards_dictionary}
 
-The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics:
+The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics.
 
 | Dashboard name        | Description    |
 |-----------------------|----------------|

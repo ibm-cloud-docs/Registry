@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-15"
 
 keywords: IBM Cloud Container Registry notifications, notices
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Notifications about {{site.data.keyword.registrylong_notm}}
 {: #registry_notices}
 
-Notifcations about changes that affect {{site.data.keyword.registrylong}}.
+Notifications about changes that affect {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 

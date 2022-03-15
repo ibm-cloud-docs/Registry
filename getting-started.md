@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-15"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, tutorial, Docker, images, registry, Podman
 
@@ -165,14 +165,14 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
 
 1. Log in to {{site.data.keyword.registrylong_notm}} by using one of the following options.
 
-    - To log in by using Docker, run the `ibmcloud cr login` command to log your local Docker daemon into {{site.data.keyword.registrylong_notm}}.
+    - To log in by using Docker, run the `ibmcloud cr login` command to log your local Docker daemon in to {{site.data.keyword.registrylong_notm}}.
 
       ```txt
       ibmcloud cr login --client docker
       ```
       {: pre}
 
-    - To log in by using Podman, run the `ibmcloud cr login` command to log into {{site.data.keyword.registrylong_notm}}.
+    - To log in by using Podman, run the `ibmcloud cr login` command to log in to {{site.data.keyword.registrylong_notm}}.
 
       ```txt
       ibmcloud cr login --client podman
