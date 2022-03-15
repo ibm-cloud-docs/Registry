@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-15"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -46,7 +46,7 @@ To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing a
 ### Considerations
 {: #registry_private_images_considerations}
 
-- Private domain names aren't used by the container-registry CLI plug-in. If you push an image on the private domain name, and then use the CLI on a public connection to run the `ibmcloud cr images` command, the image is listed with all the other images that have the same public domain name.
+- Private domain names aren't used by the `container-registry` CLI plug-in. If you push an image on the private domain name, and then use the CLI on a public connection to run the `ibmcloud cr images` command, the image is listed with all the other images that have the same public domain name.
 
 - If you have private {{site.data.keyword.containerlong_notm}} clusters, you aren't required to change anything. {{site.data.keyword.containerlong_notm}} already modifies the connection, which is referenced by the public domain name, to use a private connection. This behavior is unchanged.
 
@@ -64,20 +64,7 @@ Private connections are available so that you can push and pull images. You use 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}
 
-Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](x8051010){: term} and `<private_registry_domain>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following table.
-
-| Region | `<private_registry_domain>` |
-|--------|-----------------------------|
-| `Global` | `private.icr.io` |
-| `ap-north` | `private.jp.icr.io` |
-| `ap-south` | `private.au.icr.io` |
-| `br-sao` | `private.br.icr.io` |
-| `ca-tor` | `private.ca.icr.io` |
-| `eu-central` | `private.de.icr.io` |
-| `jp-osa` | `private.jp2.icr.io` |
-| `uk-south` | `private.uk.icr.io` |
-| `us-south` | `private.us.icr.io` |
-{: caption="Table 1. Private registry domains." caption-side="bottom"}
+Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](x8051010){: term} and `<private_registry_domain>` with the private domain name where your namespaces are set up. The private domain names are described in [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ```txt
 docker login -u iamapikey -p <apikey> <private_registry_domain>
