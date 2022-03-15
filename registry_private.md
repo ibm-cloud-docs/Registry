@@ -64,20 +64,7 @@ Private connections are available so that you can push and pull images. You use 
 You can't use private connections for image management operations by using the {{site.data.keyword.registrylong_notm}} CLI.
 {: note}
 
-Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](x8051010){: term} and `<private_registry_domain>` with the URL to the private registry where your namespaces are set up. The private registry URLs are described in the following table.
-
-| Region | `<private_registry_domain>` |
-|--------|-----------------------------|
-| `Global` | `private.icr.io` |
-| `ap-north` | `private.jp.icr.io` |
-| `ap-south` | `private.au.icr.io` |
-| `br-sao` | `private.br.icr.io` |
-| `ca-tor` | `private.ca.icr.io` |
-| `eu-central` | `private.de.icr.io` |
-| `jp-osa` | `private.jp2.icr.io` |
-| `uk-south` | `private.uk.icr.io` |
-| `us-south` | `private.us.icr.io` |
-{: caption="Table 1. Private registry domains." caption-side="bottom"}
+Run the `docker login` command to authenticate with your registry. Replace `<apikey>` with your [API key](x8051010){: term} and `<private_registry_domain>` with the private domain name where your namespaces are set up. The private domain names are described in [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ```txt
 docker login -u iamapikey -p <apikey> <private_registry_domain>
