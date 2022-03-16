@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-03-16"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events,
 
@@ -61,7 +61,7 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.namespace.create` | Create a namespace in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a [resource group](x2161955){: term}. | |
+| `container-registry.namespace.create` | Create a [namespace](x2031005){: term} in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a [resource group](x2161955){: term}. | |
 | `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | |
 | `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
 {: caption="Table 3. Actions that generate events for namespaces" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-16"
 
 keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
 
@@ -52,7 +52,7 @@ Before you begin, complete the following tasks:
 - [Install Git](https://git-scm.com/){: external}.
 - [Install {{site.data.keyword.cloud_notm}} Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools){: external}, a script to install `docker`, `kubectl`, `helm`, `ibmcloud` CLI, and required plug-ins by following the instructions in the `README.md` file in the repository.
 - [Create a cluster](/docs/containers?topic=containers-clusters).
-- Ensure that you have the correct access permissions for adding and removing namespaces, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+- Ensure that you have the correct access permissions for adding and removing [namespaces](x2031005){: term}, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## From code to a running container
 {: #registry_tutorial_workflow_code_run}

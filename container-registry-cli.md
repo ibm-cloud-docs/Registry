@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-16"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -16,7 +16,7 @@ subcollection: container-registry-cli-plugin
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your registry and its resources for your {{site.data.keyword.cloud_notm}} account.
+You can use the {{site.data.keyword.registrylong}} CLI, which is provided in the `container-registry` CLI plug-in, to manage your [registry](x2064940){: term} and its resources for your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
 ## Prerequisites
@@ -33,7 +33,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, [namespace](x2031005){: term} names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ## `ibmcloud cr api`

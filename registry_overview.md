@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-16"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -18,7 +18,7 @@ subcollection: Registry
 Use {{site.data.keyword.registrylong}} to store and access private container images in a highly available and scalable architecture.
 {: shortdesc}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image registry that is hosted and managed by {{site.data.keyword.IBM}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image namespace and pushing container images to your namespace.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant, highly available, scalable, and encrypted private image [registry](x2064940){: term} that is hosted and managed by {{site.data.keyword.IBM}}. You can use {{site.data.keyword.registrylong_notm}} by setting up your own image [namespace](x2031005){: term} and pushing container images to your namespace.
 
 ![Image showing how you can interact with IBM Cloud Container Registry.](images/registry_architecture1.svg "Image showing how you can interact with {{site.data.keyword.registrylong_notm}}. {{site.data.keyword.registrylong_notm}} contains both private and public repositories, and APIs to interact with the service. Your local Docker client can pull and push images to and from your private repositories in the registry, and can pull public repositories. The {{site.data.keyword.cloud_notm}} web UI (console) interacts with the {{site.data.keyword.registrylong_notm}} API to list images. The {{site.data.keyword.registrylong_notm}} CLI interacts with the API to list, create, inspect, and remove images, as well as other administrative functions. Your local Docker client can also pull and push images from your local image store to other registries."){: caption="Figure 1. How {{site.data.keyword.registrylong_notm}} interacts with your Docker images" caption-side="bottom"}
 
