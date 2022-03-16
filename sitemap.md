@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-16"
 
 keywords: container registry
 
@@ -1502,7 +1502,7 @@ subcollection: Registry
 
 * [Can you use non-Docker tools to build my images and push them to the registry?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-* [Is there a limit to the number of namespaces you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+* [Is there a limit to the number of namespaces that you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
