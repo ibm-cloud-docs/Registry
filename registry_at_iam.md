@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -68,7 +68,7 @@ Review the following account API methods, their required actions in {{site.data.
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
 |-------------------------------------------|------------------------|---------------|------------|
-| List [namespaces](x2031005){: term}. | `GET /api/v1/namespaces` | `container-registry.namespace.list` | `container-registry.namespace.list` |
+| List namespaces. | `GET /api/v1/namespaces` | `container-registry.namespace.list` | `container-registry.namespace.list` |
 | Detailed namespace list. | `GET /api/v1/namespaces/details` | `container-registry.namespace.list` | `container-registry.namespace.list` |
 | Create namespace. | `PUT /api/v1/namespaces/{namespace}` | `container-registry.namespace.create` | `container-registry.namespace.create` |
 | Assign namespace. | `PATCH /api/v1/namespaces/{namespace}` | `container-registry.namespace.create` | `container-registry.namespace.update` |

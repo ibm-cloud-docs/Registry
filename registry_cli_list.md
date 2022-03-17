@@ -10,7 +10,6 @@ subcollection: Registry
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
