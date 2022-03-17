@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
 
@@ -33,7 +33,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-Do not put personal information in your container images, [namespace](x2031005){: term} names, description fields, or in any image configuration data (for example, image names or image labels).
+Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
 
 ## `ibmcloud cr api`
@@ -737,7 +737,7 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 ## `ibmcloud cr namespace-add`
 {: #bx_cr_namespace_add}
 
-Choose a name for your namespace and add it to your {{site.data.keyword.cloud_notm}} account.
+Choose a name for your [namespace](x2031005){: term} and add it to your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
 You can create a namespace in a [resource group](x2161955){: term} of your choice by using one of the following options.
@@ -787,7 +787,7 @@ ibmcloud cr namespace-add -g beaks birds
 ## `ibmcloud cr namespace-assign`
 {: #ic_cr_namespace_assign}
 
-Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not assigned to resource groups. You can assign an unassigned namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. If you assign a namespace to a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the command fails.
+[Namespaces](x2031005){: term} created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not assigned to [resource groups](x2161955){: term}. You can assign an unassigned namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. If you assign a namespace to a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the command fails.
 {: shortdesc}
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
@@ -830,7 +830,7 @@ ibmcloud cr namespace-assign -g beaks birds
 ## `ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)
 {: #bx_cr_namespace_list}
 
-Displays all namespaces that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to resource groups, and which namespaces are unassigned. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
+Displays all [namespaces](x2031005){: term} that are owned by your {{site.data.keyword.cloud_notm}} account. You can use this command to list your namespaces so that you can verify which namespaces are assigned to [resource groups](x2161955){: term}, and which namespaces are unassigned. Namespaces that are assigned to a resource group also show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 
 ```txt
 ibmcloud cr namespace-list [--verbose | -v]
@@ -861,7 +861,7 @@ ibmcloud cr namespace-list  -v
 ## `ibmcloud cr namespace-rm`
 {: #bx_cr_namespace_rm}
 
-Removes a namespace from your {{site.data.keyword.cloud_notm}} account. Images in this namespace are deleted when the namespace is removed.
+Removes a [namespace](x2031005){: term} from your {{site.data.keyword.cloud_notm}} account. Images in this namespace are deleted when the namespace is removed.
 
 ```txt
 ibmcloud cr namespace-rm NAMESPACE  [--force | -f]

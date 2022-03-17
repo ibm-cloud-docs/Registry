@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
 
@@ -46,7 +46,7 @@ Yes, if the tool supports [OCI container image](#x9860419){: term} format and pr
 {: #faq_namespace}
 {: faq}
 
-You can have 100 registry namespaces in each region.
+You can have 100 registry [namespaces](x2031005){: term} in each region.
 
 ## Do images in the trash count toward my quota?
 {: #faq_trash}
@@ -98,7 +98,7 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 {: #faq_share_image}
 {: faq}
 
-You can create an {{site.data.keyword.cloud}} account and invite all the users to it. They can then all have access to any namespace that is created in the account. You can create a subset of the users and set an IAM policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
+You can create an {{site.data.keyword.cloud}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
 
 For more information, see [Defining access role policies](/docs/Registry?topic=Registry-user).
 
@@ -145,7 +145,7 @@ For more information about how the scanning of an image is triggered, see [Vulne
 {: #faq_va_new_scan_error}
 {: faq}
 
-If you get the vulnerability report immediately after you add the image to the registry, you might receive the following error:
+If you get the vulnerability report immediately after you add the image to the [registry](x2064940){: term}, you might receive the following error:
 
 ```txt
 BXNVA0009E:  <imagename> has not been scanned. Try again later.
