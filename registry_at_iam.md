@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-02-14"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
