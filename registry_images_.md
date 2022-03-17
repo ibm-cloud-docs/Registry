@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-16"
 
 keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Adding images to your namespace
 {: #registry_images_}
 
-You can securely store and share Docker images with other users by adding images to your namespace in {{site.data.keyword.registrylong}}.
+You can securely store and share Docker images with other users by adding images to your [namespace](x2031005){: term} in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 Every image that you want to add to your namespace must exist on your local computer first. You can either download (pull) an image from another repository to your local computer, or build your own image from a [Dockerfile](x9860414){: term} by using the Docker `build` command. To add an image to your namespace, you must upload (push) the local image to your namespace in {{site.data.keyword.registrylong_notm}}.
@@ -28,7 +28,7 @@ Do not put personal information in your container images, namespace names, descr
 {: help}
 {: support}
 
-You can pull (download) an image from any private or public registry source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
+You can pull (download) an image from any private or public [registry](x2064940){: term} source, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 ![Pull an image from a private or public registry to your computer.](images/images_pull.svg "You can pull an image from {{site.data.keyword.registrylong_notm}} or from any private or public registry source to your local computer."){: caption="Figure 1. Pulling images from another registry" caption-side="bottom"}

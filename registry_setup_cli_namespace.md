@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-17"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
 {: #registry_setup_cli_namespace}
 
-To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` CLI plug-in and create a namespace in a [resource group](x2161955){: term}.
+To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` CLI plug-in and create a [namespace](x2031005){: term} in a [resource group](x2161955){: term}.
 {: shortdesc}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
@@ -91,7 +91,7 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 ## Planning namespaces
 {: #registry_setup_cli_namespace_plan}
 
-{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image registry that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry namespace.
+{{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](x2064940){: term} that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry [namespace](x2031005){: term}.
 {: shortdesc}
 
 When you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
