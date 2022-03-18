@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-18"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, tutorial, Docker, images, registry, Podman
 
@@ -87,7 +87,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
 {: support}
 
 1. Install Docker or a tool of your choice, such as Podman.
-    - Install the [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}. For Windows&reg; 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
+    - Install the [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}. For Windows&reg; 8, or OS X Yosemite 10.10.x or earlier, install [Docker Toolbox](https://docs.docker.com/toolbox/){: external} instead. {{site.data.keyword.registrylong_notm}} supports Docker Engine v1.12.6, or later.
     - Install [Podman](https://podman.io/){: external}.
 
 2. Download (_pull_) the image to your local computer. Replace `<source_image>` with the repository of the image and `<tag>` with the [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) of the image that you want to use, for example, `latest`. For example, depending on the tool that you are using, run one of the following commands.
