@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, tutorial, Docker, images, registry, Podman
 
@@ -46,7 +46,6 @@ Do not put personal information in your container images, namespace names, descr
 {: support}
 
 Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace) is created in the [resource group](x2161955){: term} that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and you don't target a resource group, the default resource group is used. Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
-{: shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 

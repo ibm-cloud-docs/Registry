@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-21"
 
-keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry,
+keywords: user access, policies, user roles, access policies, platform management roles, service access roles, access roles, access management, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, identity and access management for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, access,
 
 subcollection: Registry
 
@@ -88,7 +88,7 @@ For the following {{site.data.keyword.registrylong_notm}} commands, you must hav
 - The service instance is empty.
 - The region is the region that you want to grant access to, or is empty to give access to all regions.
 
-### Access roles for configuring {{site.data.keyword.registrylong_notm}}
+### Access roles for configuring {{site.data.keyword.registryshort}}
 {: #access_roles_configure}
 
 To grant a user permission to configure your {{site.data.keyword.registrylong_notm}} in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you must not specify a `resource type` or `resource`. Policies for configuring {{site.data.keyword.registrylong_notm}} must not be set at a resource group level.
@@ -118,7 +118,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.settings.set` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Update registry service settings for the targeted account, such as enabling platform metrics. | Manager |
 {: caption="Table 3. Service actions and operations for configuring {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
 
-### Access roles for using {{site.data.keyword.registrylong_notm}}
+### Access roles for using {{site.data.keyword.registryshort}}
 {: #access_roles_using}
 
 To grant a user permission to access {{site.data.keyword.registrylong_notm}} content in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an access policy on that resource group.
