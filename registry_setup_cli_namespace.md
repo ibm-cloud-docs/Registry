@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-21"
 
 keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
 
@@ -32,7 +32,6 @@ Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting
 {: support}
 
 Install the `container-registry` CLI plug-in so that you can use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 1. [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
 2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
@@ -48,7 +47,6 @@ You can now [set up your own namespace](#registry_namespace_setup) in {{site.dat
 {: support}
 
 You might want to update the `container-registry` CLI plug-in periodically to use new features.
-{: shortdesc}
 
 1. Update the `container-registry` CLI plug-in.
 
@@ -70,7 +68,6 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 {: support}
 
 If you no longer need the `container-registry` CLI plug-in, you can uninstall it.
-{: shortdesc}
 
 1. Uninstall the `container-registry` CLI plug-in.
 
@@ -92,7 +89,6 @@ If you no longer need the `container-registry` CLI plug-in, you can uninstall it
 {: #registry_setup_cli_namespace_plan}
 
 {{site.data.keyword.registrylong_notm}} provides a multi-tenant private image [registry](x2064940){: term} that is hosted and managed by IBM. You can store and share your Docker images in this registry by setting up a registry [namespace](x2031005){: term}.
-{: shortdesc}
 
 When you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it is created in the resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
 
@@ -129,7 +125,6 @@ After you set your first namespace, you are assigned to the free {{site.data.key
 {: support}
 
 You can control which users can work with namespaces by using IAM roles.
-{: shortdesc}
 
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
     - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
@@ -149,7 +144,6 @@ For more information about user roles, [Defining user access role policies](/doc
 {: support}
 
 You must create a namespace to store your Docker images in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 Before you begin, complete the following tasks:
 
@@ -171,7 +165,6 @@ You can now [push Docker images to your namespace in {{site.data.keyword.registr
 {: support}
 
 Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have a namespace that is not assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
-{: shortdesc}
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}
@@ -213,7 +206,6 @@ To assign an existing namespace to a resource group, complete the following step
 {: support}
 
 If you no longer require a registry namespace, you can remove the namespace from your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 

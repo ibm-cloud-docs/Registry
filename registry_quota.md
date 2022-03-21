@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
-You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.cloud}} account by setting and managing custom quota limits.
+You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.cloud}} account by setting and managing custom quota limits in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 ## Setting quota limits for storing and pulling images
@@ -24,7 +24,6 @@ You can limit the amount of storage and pull traffic that can be used in your {{
 {: support}
 
 You can limit the amount of storage and pull traffic to your private images by setting your own quota limits.
-{: shortdesc}
 
 When you upgrade to the {{site.data.keyword.registrylong_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all [namespaces](x2031005){: term} that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
 
@@ -80,7 +79,6 @@ To set a quota, complete the following steps.
 {: support}
 
 You can review your quota limits and check your current storage and pull traffic usage for your account.
-{: shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -115,7 +113,6 @@ You can review your quota limits and check your current storage and pull traffic
 {: support}
 
 If you exceed the quota limits that are set for your {{site.data.keyword.cloud_notm}} account, you can free up storage and change your service plan or quota limits so that you can continue pushing and pulling images to and from your namespace.
-{: shortdesc}
 
 From 1 February 2022, both [tagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) and [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images are charged for.
 {: note}

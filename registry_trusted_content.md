@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-21"
 
 keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
 
@@ -15,8 +15,10 @@ subcollection: Registry
 # Signing images for trusted content
 {: #registry_trustedcontent}
 
-{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
+{{site.data.keyword.registrylong}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace.
 {: shortdesc}
+
+By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 
 You can use {{site.data.keyword.redhat_full}} signatures to sign your images.
 
@@ -27,7 +29,6 @@ From 1 November 2021, the Notary v1 service that supports [Docker Content Trust]
 {: #registry_trustedcontent_red_hat_sig}
 
 You can use various tools to create [{{site.data.keyword.redhat_notm}} signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the {{site.data.keyword.redhat_notm}} signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 You can use the following tools to create {{site.data.keyword.redhat_notm}} signatures:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: container registry
 
@@ -836,9 +836,9 @@ subcollection: Registry
 
 * [Service access roles](/docs/Registry?topic=Registry-iam#service_access_roles)
 
-    * [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure)
+    * [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure)
 
-    * [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using)
+    * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
 
 ## Cleaning up your namespaces
@@ -901,15 +901,15 @@ subcollection: Registry
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
 
     * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
 
 * [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy)
 
-    * [Setting organizational exemption policies by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
+    * [Setting exemption policies by using the console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
 
-    * [Setting organizational exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
+    * [Setting exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
 
 
 ## Setting up Terraform for {{site.data.keyword.registrylong_notm}}
@@ -929,13 +929,13 @@ subcollection: Registry
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
 
-* [Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
+* [Monitoring security and compliance posture with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
 
-    * [Available goals for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
+    * [Available goals for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
 
-* [Governing {{site.data.keyword.registrylong_notm}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
+* [Governing {{site.data.keyword.registryshort}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
 
-* [Gaining security insight with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-security_insight)
+* [Gaining security insight with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-security_insight)
 
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
 

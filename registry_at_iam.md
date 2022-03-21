@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-21"
 
 keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
 
@@ -15,8 +15,10 @@ subcollection: Registry
 # IAM and Activity Tracker actions by API method
 {: #registry_at_iam}
 
-When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests. You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
+When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests.
 {: shortdesc}
+
+You might need certain permissions to call these API methods, and you can track the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
 
 Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.registryshort_notm}}.
 
@@ -30,7 +32,7 @@ For more information, see the following topics:
 ## {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam_reg}
 
-Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for  {{site.data.keyword.registryshort_notm}}.
+Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.registryshort_notm}}.
 
 ### Auth
 {: #registry_at_iam_reg_auth}

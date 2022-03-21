@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-21"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
 
@@ -28,7 +28,6 @@ To learn more about {{site.data.keyword.cloud_notm}} service endpoints, see [Sec
 {: #registry_private_images}
 
 You must set up your account with the correct authority so that you can set up a private network connection for pushing and pulling images.
-{: shortdesc}
 
 {{site.data.keyword.registrylong_notm}} is a multi-tenant offering and you are, therefore, not required to create your own service endpoints to connect to the registry over private connections.
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-03-21"
 
-keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}},
+keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, available goals for container registry, governing container registry, security insight with container registry
 
 subcollection: Registry
 
@@ -25,7 +25,7 @@ With the {{site.data.keyword.compliance_short}}, you can:
 - Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
 
 
-## Monitoring security and compliance posture with {{site.data.keyword.registrylong_notm}}
+## Monitoring security and compliance posture with {{site.data.keyword.registryshort}}
 {: #monitor-container-registry}
 
 As a security or compliance focal, you can use the {{site.data.keyword.registrylong_notm}} [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identify potential issues as they arise.
@@ -36,7 +36,7 @@ All the goals for {{site.data.keyword.registrylong_notm}} are added to the {{sit
 To start monitoring your resources, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
 
 
-### Available goals for {{site.data.keyword.registrylong_notm}}
+### Available goals for {{site.data.keyword.registryshort}}
 {: #container-registry-available-goals}
 
 You can choose from the following goals:
@@ -51,7 +51,7 @@ You can choose from the following goals:
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether alerts are sent by security insights for critical, high, or medium vulnerabilities for images in {{site.data.keyword.registryshort_notm}}. For more information, see [Leveraging default services](/docs/security-compliance?topic=security-compliance-setup-services).
 
-## Governing {{site.data.keyword.registrylong_notm}} resource configuration
+## Governing {{site.data.keyword.registryshort}} resource configuration
 {: #govern-container-registry}
 
 As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registrylong_notm}}.
@@ -97,7 +97,7 @@ For example, use the following rule if you want *private_only* to be true, but o
 
 To learn more about configuration rules, see [What is Configuration Governance?](/docs/security-compliance?topic=security-compliance-what-is-governance)
 
-## Gaining security insight with {{site.data.keyword.registrylong_notm}}
+## Gaining security insight with {{site.data.keyword.registryshort}}
 {: #container-registry-security_insight}
 
 With {{site.data.keyword.compliance_short}}, you can gain insight into potential issues through built-in security capabilities. By default, {{site.data.keyword.registryshort_notm}} is an integrated service. {{site.data.keyword.compliance_short}} gathers and presents information that is related to security so that all your security alerts are displayed in one place.
