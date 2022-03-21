@@ -19,6 +19,7 @@ From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using
 {: shortdesc}
 
 If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
+{: important}
 
 Policy-free authorization is being discontinued in the following {{site.data.keyword.registryshort}} regions:
 
