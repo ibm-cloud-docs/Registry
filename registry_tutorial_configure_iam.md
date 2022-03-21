@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-21"
 
 keywords: user access, tutorial, access control, granting access, authorizing, 
 
@@ -45,7 +45,6 @@ Before you begin, you must complete the following tasks:
 {: step}
 
 Add a second user to your account and grant them the ability to configure {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 1. Add User B to User A's account.
 
@@ -159,7 +158,6 @@ Add a second user to your account and grant them the ability to configure {{site
 {: step}
 
 Create some [namespaces](x2031005){: term} with sample images, and grant access to them. You create policies to grant different roles to each namespace, and show what effect that has.
-{: shortdesc}
 
 1. Create three new namespaces in User A's account. These namespaces must be unique across the region, so choose your own namespace names, but this tutorial uses `namespace_a`, `namespace_b` and `namespace_c` as examples.
 
@@ -403,7 +401,6 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
 {: step}
 
 Configure a service ID and grant it access to your {{site.data.keyword.registrylong_notm}} namespace.
-{: shortdesc}
 
 1. Set up a service ID with access to {{site.data.keyword.registrylong_notm}} and create an [API key](x8051010){: term} for it.
 
@@ -519,7 +516,6 @@ Configure a service ID and grant it access to your {{site.data.keyword.registryl
 {: step}
 
 Remove the resources that you created in previous sections to leave your account as it was at the start of this tutorial.
-{: shortdesc}
 
 1. Log in to User A's account by running the following command.
 

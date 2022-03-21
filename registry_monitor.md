@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-21"
 
 keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
 
@@ -15,8 +15,10 @@ subcollection: Registry
 # Monitoring metrics for {{site.data.keyword.registrylong_notm}}
 {: #registry_monitor}
 
-{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, [DevOps](x5784896){: term} teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+You can use {{site.data.keyword.mon_full}} to monitor the metrics for {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, [DevOps](x5784896){: term} teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
 ## Platform metrics overview
 {: #registry_platform_metrics}

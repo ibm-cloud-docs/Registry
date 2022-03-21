@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-01"
+lastupdated: "2022-03-21"
 
 keywords: access restrictions, IP addresses,
 
@@ -15,7 +15,10 @@ subcollection: Registry
 # Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}
 {: #registry_iam_ip}
 
-You can enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.registrylong}}. To enable IAM IP address access restrictions, you must ensure that the {{site.data.keyword.iamshort}} (IAM) [allowlist](x3954001){: term} is configured so that the {{site.data.keyword.registryshort}} OAuth service can still function. The OAuth service is used to authenticate image pulls and pushes in {{site.data.keyword.registryshort}}.
+You can enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.registrylong}}.
+{: shortdesc}
+
+To enable IAM IP address access restrictions, you must ensure that the {{site.data.keyword.iamshort}} (IAM) [allowlist](x3954001){: term} is configured so that the {{site.data.keyword.registryshort}} OAuth service can still function. The OAuth service is used to authenticate image pulls and pushes in {{site.data.keyword.registryshort}}.
 
 ## Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network
 {: #registry_iam_ip_public}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-03-21"
 
 keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
 
@@ -98,7 +98,6 @@ The following code examples demonstrate how you might use the formatting and fil
 {: #registry_cli_list_imagedigests}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
-{: shortdesc}
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -115,7 +114,6 @@ Review the following table to find available Go template options and data types 
 {: #registry_cli_list_imagelist}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
-{: shortdesc}
 
 | Field | Type | Description |
 |-----|----|-----------|
@@ -133,7 +131,6 @@ Review the following table to find available Go template options and data types 
 {: #registry_cli_list_imageinspect}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
-{: shortdesc}
 
 | Field | Type | Description |
 |-----|----|-----------|

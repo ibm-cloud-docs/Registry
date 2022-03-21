@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: private Docker images, scalable private image registry, regions, plans, billing, registry, service plans, quotas, costs, domain names, Docker, global registry, registry, elements, components
 
@@ -39,7 +39,6 @@ Review the following table to find an overview of benefits of using {{site.data.
 {: #registry_plans}
 
 You can choose between the free or standard {{site.data.keyword.registrylong_notm}} service plans to store your Docker images and make these images available to users in your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
@@ -60,7 +59,6 @@ The following table shows available {{site.data.keyword.registrylong_notm}} serv
 {: #registry_plan_billing}
 
 Find information and examples for how the billing process and quota limits work in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 Every image is built from a number of layers that each represent an incremental change from the base image. When you push or pull an image, the amount of storage and pull traffic that is needed for each layer is added to your monthly usage. Identical layers are automatically shared between images in your {{site.data.keyword.cloud_notm}} account and are reused when you create other images. The storage for each identical layer is charged only once, regardless of how many images in your account reference the layer. Layers that are only referenced by deleted images in the trash are not charged.
 
@@ -79,13 +77,11 @@ The following example is for pushing images:
 {: #registry_billing_traffic}
 
 Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month in each region.
-{: shortdesc}
 
 #### Storage
 {: #registry_billing_traffic_storage}
 
 Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registrylong_notm}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
-{: shortdesc}
 
 The following example is for the standard plan:
 :   You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
@@ -98,7 +94,6 @@ The following example is for the standard plan:
 {: #registry_billing_traffic_pull_traffic}
 
 Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
-{: shortdesc}
 
 The following example is for the standard plan:
 :   In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
@@ -109,7 +104,6 @@ The following example is for the standard plan:
 {: #registry_quota_limits}
 
 Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits for each region.
-{: shortdesc}
 
 #### Storage
 {: #registry_quota_limits_storage}
@@ -143,7 +137,6 @@ The following example is for the standard plan:
 {: #registry_cost}
 
 You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).
-{: shortdesc}
 
 ## Upgrading your service plan
 {: #registry_plan_upgrade}
@@ -151,7 +144,6 @@ You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing 
 {: support}
 
 You can upgrade your service plan to benefit from unlimited storage and pull traffic usage to manage the Docker images for all namespaces in your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
 
 If you want to find out what service plan you have for the registry region that you're targeting, run the `ibmcloud cr plan` command.
 {: tip}
@@ -193,7 +185,6 @@ To upgrade your service plan, complete the following steps.
 {: #overview_elements}
 
 Information about the elements that are used in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 To learn more about Docker-specific terms, see [Docker glossary](https://docs.docker.com/glossary/){: external}.
 
@@ -312,7 +303,6 @@ You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Re
 {: #registry_regions}
 
 The default instance of {{site.data.keyword.registrylong_notm}} is the global registry. The global registry doesn't include a region in its [domain name](#overview_elements_domain_name) (`icr.io`).
-{: shortdesc}
 
 Use the global instance of the registry unless you have a specific requirement, for example, data sovereignty, to store your data in a particular region. In which case, you can use {{site.data.keyword.registrylong_notm}} in [local regions](#registry_regions_local).
 
@@ -322,7 +312,6 @@ All registry artifacts are scoped to the specific registry instance (one of the 
 {: #registry_regions_global}
 
 A global registry is available. The global registry doesn't include a region in its name (`icr.io`). In addition to hosting user namespaces and images, this registry also hosts public images that are provided by {{site.data.keyword.IBM_notm}}.
-{: shortdesc}
 
 The global instance of {{site.data.keyword.registrylong_notm}} is available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
 
@@ -340,7 +329,6 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {: #registry_regions_global_target}
 
 You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
-{: shortdesc}
 
 1. To target the global registry, run the following command.
 
@@ -358,7 +346,6 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
 {: #registry_regions_local}
 
 Regional instances of {{site.data.keyword.registrylong_notm}} are available by using the [domain names](#overview_elements_domain_name) that are shown in the following table.
-{: shortdesc}
 
 | Local registry region | Domain name | Private domain name | Deprecated domain name |
 |-----------------------|-------------|---------------------|------------------------|
@@ -383,7 +370,6 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {: support}
 
 If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
-{: shortdesc}
 
 1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
 

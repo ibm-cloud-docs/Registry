@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: helm pull, helm push, helm create, helm package, delete charts, add charts, pull charts, push charts, copy charts, delete private repositories, charts, list charts, trash, recycle bin, restoring charts,
 
@@ -31,7 +31,6 @@ The [Open Container Initiative (OCI)](https://opencontainers.org){: external} re
 {: support}
 
 You can securely store and share Helm charts with other users by adding charts to your [namespace](x2031005){: term} in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 Every Helm chart that you want to add to your namespace must exist on your local computer first. You can either download (pull) a chart from another repository to your local computer, or build your own chart by using the [`helm create`](https://helm.sh/docs/helm/helm_create/){: external} command. To add a chart to your namespace, you must upload (push) the local chart to your namespace in {{site.data.keyword.registrylong_notm}}.
 
@@ -44,7 +43,6 @@ Do not put personal information in your charts (for example, in namespace names 
 {: support}
 
 You can pull (download) a chart from any private or public [registry](x2064940){: term} source or Helm repository, and then tag it for later use in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 ![Pull a chart from a private or public registry or Helm repository to your computer.](images/images_pull.svg "You can pull a chart from {{site.data.keyword.registrylong_notm}} or from any private or public registry source or Helm repository to your local computer."){: caption="Figure 1. Pulling charts from another registry" caption-side="bottom"}
 
@@ -98,7 +96,6 @@ After you pull a chart for your [namespace](/docs/Registry?topic=Registry-regist
 {: support}
 
 You can push (upload) a chart to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users.
-{: shortdesc}
 
 ![Push a chart from your computer to {{site.data.keyword.registrylong_notm}}.](images/images_push.svg "You can push (upload) a chart from your local computer to your namespace in {{site.data.keyword.registrylong_notm}} to store and share your chart with other users."){: caption="Figure 2. Pushing charts to your namespace" caption-side="bottom"}
 
@@ -147,7 +144,6 @@ After you push your chart to {{site.data.keyword.registrylong_notm}}, you can [i
 {: support}
 
 You can pull a chart from a registry in one region and push it to a registry in another region so that you can share the chart with users in both regions.
-{: shortdesc}
 
 ![Copying charts between registries.](images/images_copy.svg "You can pull a chart from a registry in one region and push it to a registry in another region."){: caption="Figure 3. Copying charts between registries" caption-side="bottom"}
 
@@ -189,7 +185,6 @@ helm install myrelease oci://uk.icr.io/helm-charts/mychart --version 0.1.0
 {: support}
 
 You can delete unwanted charts from your private [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
-{: shortdesc}
 
 If you want to delete a private repository and its associated charts, see [Deleting a private repository and any associated charts](#registry_helm_charts_repo_remove).
 
@@ -210,7 +205,6 @@ A tag must always match the chart's semantic version, which means that a `latest
 {: support}
 
 You can delete unwanted charts and all their tags from your private repository by using the CLI.
-{: shortdesc}
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
@@ -244,7 +238,6 @@ To delete a chart by using the CLI, complete the following steps:
 {: support}
 
 You can delete unwanted charts and all their tags from your private repository by using the {{site.data.keyword.cloud_notm}} console.
-{: shortdesc}
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
@@ -267,7 +260,6 @@ To delete a chart by using the {{site.data.keyword.cloud_notm}} console, complet
 {: support}
 
 You can list deleted charts that are in the trash and see when they expire.
-{: shortdesc}
 
 To find out which charts are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Charts are stored in the trash for 30 days.
 
@@ -294,7 +286,6 @@ To list the charts in the trash, complete the following steps.
 {: support}
 
 You can restore charts from the trash. Deleted charts are stored in the trash for 30 days.
-{: shortdesc}
 
 You can restore a chart from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which charts are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command.
 
@@ -308,7 +299,7 @@ You can restore charts by running the [`ibmcloud cr image-restore`](/docs/Regist
 {: help}
 {: support}
 
-When you restore a chart by digest, the digest is moved from the trash into your live repository, and all the digest's tags in the repository are restored.{: shortdesc}
+When you restore a chart by digest, the digest is moved from the trash into your live repository, and all the digest's tags in the repository are restored.
 
 To restore a chart by digest from the trash, complete the following steps:
 
@@ -342,7 +333,6 @@ To restore a chart by digest from the trash, complete the following steps:
 {: support}
 
 When you restore a chart by tag, only that specific tag is moved out of the trash into your live repository.
-{: shortdesc}
 
 To restore a chart by tag from the trash, complete the following steps.
 
@@ -376,7 +366,6 @@ To restore a chart by tag from the trash, complete the following steps.
 {: support}
 
 You can delete private repositories that are no longer required, and any associated charts, by using the {{site.data.keyword.cloud_notm}} console.
-{: shortdesc}
 
 When you delete a repository, all charts in that repository are deleted. This action can't be undone.
 {: important}

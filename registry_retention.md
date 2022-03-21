@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
 
@@ -15,8 +15,10 @@ subcollection: Registry
 # Cleaning up your namespaces
 {: #registry_retention}
 
-You can clean up your [namespace](x2031005){: term} by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}. You can also choose whether to delete or retain your untagged images.
+You can clean up your [namespace](x2031005){: term} by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong}}.
 {: shortdesc}
+
+You can also choose whether to delete or retain your untagged images.
 
 You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. You can choose the number of images that you want to keep in each repository in a namespace, all other images are automatically deleted. Both options keep the most recent images. The age of the image is determined by when the image was created, not when it was pushed to the [registry](x2064940){: term}. The number of images that are kept is the same for each repository in that namespace.
 
@@ -52,7 +54,6 @@ You gain the following advantages by using this technique:
 {: support}
 
 Use the `ibmcloud cr retention-run` command to clean up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
-{: shortdesc}
 
 You can choose whether to exclude untagged images from the clean-up process.
 
@@ -107,7 +108,6 @@ To reduce the number of images in each repository within your namespace by using
 {: support}
 
 You can set a retention policy that runs automatically to clean up your namespaces.
-{: shortdesc}
 
 You can choose whether to exclude untagged images from the clean-up process.
 
@@ -178,7 +178,6 @@ To set a policy and immediately move your deleted images to the trash, complete 
 {: support}
 
 All namespaces have a default policy that keeps all images. You can return a policy to the default state.
-{: shortdesc}
 
 You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
 
@@ -193,7 +192,6 @@ ibmcloud cr retention-policy-set --images All <namespace>
 {: support}
 
 You can clean up your namespace and reduce your bills by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
-{: shortdesc}
 
 If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:
 

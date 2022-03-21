@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-21"
 
-keywords: API keys, tokens, automating access, creating API keys, authenticating, access, authentication,
+keywords: API keys, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client software, authenticate
 
 subcollection: Registry
 
@@ -31,7 +31,6 @@ Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registr
 {: #registry_access_automating}
 
 You can use service ID API keys to automate the pushing and pulling of container images to and from your namespaces.
-{: shortdesc}
 
 [API keys](x8051010){: term} are linked to user IDs or service IDs in your account and you can use them across {{site.data.keyword.cloud}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey_create) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey_create) has its own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
@@ -49,7 +48,6 @@ You can use service ID API keys in the following places:
 {: support}
 
 Create a service ID API key that you can use to log in to the registry.
-{: shortdesc}
 
 To create a service ID API key, complete the following steps:
 
@@ -65,7 +63,6 @@ To create a service ID API key, complete the following steps:
 {: support}
 
 Create a user API key that you can use to log in to the registry.
-{: shortdesc}
 
 If you create a user API key, the user's access policies are used.
 
@@ -75,7 +72,6 @@ To create a user API key, see [Managing user API keys](/docs/account?topic=accou
 {: #registry_access_apikey_auth}
 
 Use an API key to log in to the registry by using common clients.
-{: shortdesc}
 
 Clients require an API key and a domain, replace `<apikey>` with your API key and `<registry_domain>` with the domain of the registry where your namespaces are set up.
 
@@ -105,7 +101,6 @@ Examples of how to authenticate automatically with the registry are provided for
 {: #registry_access_apikey_auth_example_other_buildah}
 
 You can use Buildah to authenticate with the registry so that you can push and pull images to and from the registry.
-{: shortdesc}
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Buildah command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
@@ -118,7 +113,6 @@ buildah login -u iamapikey -p <apikey> <registry_domain>
 {: #registry_access_apikey_auth_docker}
 
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
-{: shortdesc}
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Docker command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
@@ -131,7 +125,6 @@ docker login -u iamapikey -p <apikey> <registry_domain>
 {: #registry_access_apikey_auth_example_other_podman}
 
 You can use Podman to authenticate with the registry so that you can push and pull images to and from the registry.
-{: shortdesc}
 
 Use the API key and [domain](#registry_access_apikey_auth) to log in to the registry by running the following Podman command, replace `<apikey>` with the API key and `<registry_domain>` with the domain:
 
@@ -144,7 +137,6 @@ podman login -u iamapikey -p <apikey> <registry_domain>
 {: #registry_access_apikey_auth_other_example_skopeo}
 
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
-{: shortdesc}
 
 For example, you can use the following Skopeo command to pull an image from Docker Hub and push it to your namespace. Replace `<registry_domain>` with the name of your [domain](#registry_access_apikey_auth), `<namespace>` with your namespace, and `<apikey>` with your API key:
 
@@ -157,7 +149,6 @@ skopeo --insecure-policy --override-os linux copy docker://busybox:latest docker
 {: #registry_access_interactive}
 
 You can use bearer tokens and refresh tokens to push and pull images to and from your namespaces interactively.
-{: shortdesc}
 
 Examples of how to access your namespaces interactively are provided for the following clients:
 
@@ -170,7 +161,6 @@ Examples of how to access your namespaces interactively are provided for the fol
 {: #registry_access_interactive_auth_buildah}
 
 Log in to the registry by using the Buildah CLI.
-{: shortdesc}
 
 You can use the Buildah CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
@@ -183,7 +173,6 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iam
 {: #registry_access_interactive_auth_docker}
 
 Log in to the registry by using the Docker CLI.
-{: shortdesc}
 
 You can use the Docker CLI to log in to the registry by using a refresh token in the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started):
 
@@ -207,7 +196,6 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 {: #registry_access_interactive_auth_podman}
 
 Log in to the registry by using the CLI.
-{: shortdesc}
 
 ```txt
 ibmcloud cr login --client podman
@@ -218,7 +206,6 @@ ibmcloud cr login --client podman
 {: #registry_access_interactive_auth_skopeo}
 
 Log in to the registry by using the Skopeo CLI.
-{: shortdesc}
 
 You can use the Skopeo CLI to log in to the registry by using a bearer token, replace `<registry_domain>` with the [domain](#registry_access_apikey_auth):
 
@@ -231,7 +218,6 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iamb
 {: #registry_access_programmatic}
 
 Use your own code to access to your namespaces in {{site.data.keyword.registrylong_notm}}.
-{: shortdesc}
 
 Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
