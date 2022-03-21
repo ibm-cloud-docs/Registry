@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-21"
 
-keywords: IBM Cloud Container Registry CLI, container images, container registry commands, commands, cli
+keywords: IBM Cloud Container Registry CLI, container registry commands, commands, cli, ibmcloud cr, container-registry cli, registry commands
 
 subcollection: container-registry-cli-plugin
 
@@ -433,7 +433,6 @@ ibmcloud cr image-list --restrict birds --quiet --no-trunc
 {: #ic_cr_image_prune_untagged}
 
 Delete all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
-{: shortdesc}
 
 ```txt
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict RESTRICTION
@@ -471,7 +470,6 @@ ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
 {: #bx_cr_image_restore}
 
 Restore a deleted image from the trash. You can choose to restore by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) or by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). If you restore by digest, the digest and all its tags in the same repository are restored. To find out what is in the trash, run the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command.
-{: shortdesc}
 
 ```txt
 ibmcloud cr image-restore IMAGE
@@ -738,7 +736,6 @@ ibmcloud cr manifest-inspect us.icr.io/birds/bluebird:1
 {: #bx_cr_namespace_add}
 
 Choose a name for your [namespace](x2031005){: term} and add it to your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
 
 You can create a namespace in a [resource group](x2161955){: term} of your choice by using one of the following options.
 
@@ -788,7 +785,6 @@ ibmcloud cr namespace-add -g beaks birds
 {: #ic_cr_namespace_assign}
 
 [Namespaces](x2031005){: term} created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 are not assigned to [resource groups](x2161955){: term}. You can assign an unassigned namespace to a resource group for your {{site.data.keyword.cloud_notm}} account. If you assign a namespace to a resource group, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the command fails.
-{: shortdesc}
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}
@@ -944,7 +940,6 @@ ibmcloud cr plan-upgrade standard
 {: #ic_cr_platform_metrics}
 
 You can use the command to enable and disable platform metrics. You can also use it to find out whether you have platform metrics set up on your account for the registry region that you're targeting.
-{: shortdesc}
 
 If you want to view the platform metrics for {{site.data.keyword.registrylong_notm}}, you must opt in by running the `ibmcloud cr platform-metrics` command.
 {: important}
@@ -1126,7 +1121,6 @@ ibmcloud cr region-set us-south
 {: #bx_cr_retention_policy_list}
 
 List the image retention policies for your account. Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. You can also see whether the option to retain all untagged images applies to the policy.
-{: shortdesc}
 
 Where an image within a repository is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
@@ -1157,7 +1151,6 @@ For more information about how to use the `ibmcloud cr retention-policy-list` co
 {: #bx_cr_retention_policy_set}
 
 Set a policy to retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted. When you set a policy it runs interactively, then it runs daily. You can set only one policy in each namespace.
-{: shortdesc}
 
 You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
 
@@ -1214,7 +1207,6 @@ For more information about how to use the `ibmcloud cr retention-policy-set` com
 {: #bx_cr_retention_run}
 
 Cleans up a namespace by retaining a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
-{: shortdesc}
 
 You can choose whether to exclude all untagged images from the total number of images that you decide to retain.
 
