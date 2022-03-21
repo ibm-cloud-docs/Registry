@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-09-14"
+  years: 2017, 2022
+lastupdated: "2022-03-21"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out,
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Listing images times out.
+Listing images times out in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 The request timed out while you attempted to list your images in the {{site.data.keyword.cloud_notm}} console, CLI, or API.

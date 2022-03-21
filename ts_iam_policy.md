@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-11-30"
+  years: 2017, 2022
+lastupdated: "2022-03-21"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, iam, access denied, iam access policy
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You have an IAM [access policy](x2853407){: term} but still get access denied errors.
+You have an IAM [access policy](x2853407){: term} but still get access denied errors in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 You created an IAM access policy, but you're still getting access denied errors.

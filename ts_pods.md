@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-21"
 
 keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-[Pods](x8461823){: term} do not restart after your cluster workers were down.
+When you are using {{site.data.keyword.registrylong}}, the [Pods](x8461823){: term} do not restart after your cluster workers were down.
 {: shortdesc}
 
 Portieris is deployed. The cluster workers are showing as working correctly, but nothing is scheduled.

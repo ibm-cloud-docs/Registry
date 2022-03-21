@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-12-03"
+  years: 2017, 2022
+lastupdated: "2022-03-21"
 
 keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
 
@@ -26,7 +26,6 @@ Answers to common troubleshooting questions about how to use {{site.data.keyword
 {: #gettinghelp}
 
 If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM}} support ticket.
-{: shortdesc}
 
 If you have technical questions about developing or deploying an app with {{site.data.keyword.registrylong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+container-registry){: external} and tag your question with `ibm-cloud` and `container-registry`.
 
