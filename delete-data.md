@@ -65,7 +65,7 @@ If you no longer require a registry namespace, you can remove the namespace from
 ### Deleting images
 {: #data-delete_images}
 
-You can delete unwanted images from your private repository by using either the {{site.data.keyword.cloud_notm}} console or the CLI. For more information, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
+You can delete unwanted images from your private repository by using either the {{site.data.keyword.cloud_notm}} console or the CLI. For more information, see [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove).
 
 You can clean up your namespace by choosing to retain only the most recent images in each repository in that namespace in {{site.data.keyword.registrylong_notm}}. You can detect and delete old images from all the repositories in a namespace by running a one-off command, `ibmcloud cr retention-run`, or by setting a scheduled policy by running the `ibmcloud cr retention-policy-set` command. For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 

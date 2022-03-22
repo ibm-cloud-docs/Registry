@@ -252,7 +252,7 @@ Create a service ID that uses an [API key](x8051010){: term} to push images to {
 Complete the following steps:
 
 1. Create a service ID, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
-2. Create a policy that gives the service ID permission to access the registry, for example, Administrator and Manager roles, see [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+2. Create a policy that gives the service ID permission to access the registry, for example, Administrator and Manager roles, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 3. Create an API key, see [Creating an API key for a service ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
 4. Use the API key to log in to registry so that you can push images to the registry, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 5. Push your images, see [Pushing Docker images to your namespace](#registry_images_pushing_namespace).
@@ -302,7 +302,7 @@ Deleting an image that is being used by an existing deployment might cause scale
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
-Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](#registry_images_untag) command.
+Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
 {: tip}
 
 ### Deleting images from your private repository by using the CLI

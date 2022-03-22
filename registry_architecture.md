@@ -30,7 +30,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 Segmentation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private [namespaces](x2031005){: term}, which are strictly owned by single accounts.
 
-You can control access to [namespaces](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace) within the account by using {{site.data.keyword.iamlong}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segregated, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
+You can control access to [namespaces](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace) within the account by using {{site.data.keyword.iamlong}} (IAM) access policies. Storage in {{site.data.keyword.cos_full_notm}} is not segregated, but user accounts do not have direct access to the {{site.data.keyword.cos_full_notm}} that contains the image data. For more information, see [Managing user access for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam).
 
 All traffic to the registry, and from the service to {{site.data.keyword.registrylong_notm}} dependencies is encrypted in transit. No additional network level segmentation of traffic is provided. The control plane and data plane are not segregated from each other.
 
