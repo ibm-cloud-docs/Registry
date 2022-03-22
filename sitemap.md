@@ -724,15 +724,15 @@ subcollection: Registry
 
 * [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating)
 
-* [Pushing images to {{site.data.keyword.registrylong_notm}} by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image)
+* [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image)
 
-* [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag)
+* [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag)
 
-* [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
+* [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
 
-    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
+    * [Deleting images from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
 
-    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
+    * [Deleting images from your private repository by using the console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
 
 * [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash)
 
@@ -763,11 +763,11 @@ subcollection: Registry
 
     * [Installing a Helm chart to the cluster](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_install)
 
-* [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
+* [Deleting charts from your private repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
 
-    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
+    * [Deleting charts from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
 
-    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
+    * [Deleting charts from your private repository by using the console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
 
 * [Listing charts in the trash](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_list_trash)
 
@@ -985,9 +985,9 @@ subcollection: Registry
 
 [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip)
 
-* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
+* [Granting access if you are using a public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
 
-* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
+* [Granting access if you are using a private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
 
 [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#security_enforce_portieris)
 
@@ -1500,9 +1500,9 @@ subcollection: Registry
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-* [Can you use non-Docker tools to build my images and push them to the registry?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+* [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-* [Is there a limit to the number of namespaces that you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+* [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
@@ -1510,7 +1510,7 @@ subcollection: Registry
 
 * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
-* [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+* [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
 * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
@@ -1518,22 +1518,22 @@ subcollection: Registry
 
 * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-* [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+* [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
 * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
 
-* [Does Vulnerability Advisor scan images from other registries?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
+* [Can images from other registries be scanned?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
 
 * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
-* [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
+* [Why have I got an image not scanned message for a new image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
 * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
-* [How do I determine what version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
+* [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 
-    * [Alpine](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
+    * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
 
-    * [Debian and Ubuntu](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
+    * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
 
-    * [Red Hat and CentOS](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
+    * [Red Hat and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)

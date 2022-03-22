@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-03-21"
+  years: 2021, 2022
+lastupdated: "2022-03-22"
 
-keywords: access restrictions, IP addresses,
+keywords: access restrictions, IP addresses, access, public, private, network
 
 subcollection: Registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using IAM IP address access restrictions with {{site.data.keyword.registrylong_notm}}
+# Using IAM IP address access restrictions
 {: #registry_iam_ip}
 
 You can enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.registrylong}}.
@@ -20,15 +20,15 @@ You can enable [IAM IP address access restrictions](/docs/account?topic=account-
 
 To enable IAM IP address access restrictions, you must ensure that the {{site.data.keyword.iamshort}} (IAM) [allowlist](x3954001){: term} is configured so that the {{site.data.keyword.registryshort}} OAuth service can still function. The OAuth service is used to authenticate image pulls and pushes in {{site.data.keyword.registryshort}}.
 
-## Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network
+## Granting access if you are using a public network
 {: #registry_iam_ip_public}
 
-If you're using the registry over the public network, you must ensure that the IP addresses of any computers that can originate pulls and pushes are added to the IAM IP allowlist.
+If you're using {{site.data.keyword.registrylong_notm}} over a public network, you must ensure that the IP addresses of any computers that can originate pulls and pushes are added to the IAM IP allowlist.
 
-## Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network
+## Granting access if you are using a private network
 {: #registry_iam_ip_private}
 
-If you're using the registry in one of the following scenarios, you must add the registry's own private IP addresses for the appropriate region to the allowlist. For more information about these IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+If you're using {{site.data.keyword.registrylong_notm}} in one of the following scenarios, you must add the registry's own private IP addresses for the appropriate region to the allowlist. For more information about these IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 - You're using one of the `private.*` domains, for example, `private.us.icr.io`.
 - You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.

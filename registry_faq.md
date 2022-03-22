@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-22"
 
-keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, FAQs,
+keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, client, image, digest, access, region, package manager, security notices
 
 subcollection: Registry
 
@@ -17,7 +17,7 @@ content-type: faq
 # Frequently asked questions (FAQs)
 {: #registry_faq}
 
-Frequently asked questions about {{site.data.keyword.registrylong}}.
+Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 ## How do you list public images?
@@ -36,13 +36,13 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## Can you use non-Docker tools to build my images and push them to the registry?
+## What tools can I use to build and push images?
 {: #faq_tools}
 {: faq}
 
-Yes, if the tool supports [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-## Is there a limit to the number of namespaces that you can have?
+## How many namespaces can you have?
 {: #faq_namespace}
 {: faq}
 
@@ -88,7 +88,7 @@ The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_d
 
 To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the **Repository** and **Digest** columns, for example, `repository@digest`.
 
-## How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?
+## How do you use access control?
 {: #faq_access_control}
 {: faq}
 
@@ -117,11 +117,11 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 - The image was deployed by referencing the image by using the digest.
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
-## What regions are available for {{site.data.keyword.registrylong_notm}}?
+## What regions are available?
 {: #faq_regions}
 {: faq}
 
-To find out about the regions that are available, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+To find out about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 ## How much does Vulnerability Advisor cost?
 {: #faq_va_cost}
@@ -129,7 +129,7 @@ To find out about the regions that are available, see [Regions](/docs/Registry?t
 
 The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic).
 
-## Does Vulnerability Advisor scan images from other registries?
+## Can images from other registries be scanned?
 {: #faq_va_reg}
 {: faq}
 
@@ -141,7 +141,7 @@ Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} 
 
 For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
-## Why have I received a scan not found error message for a newly added image?
+## Why have I got an image not scanned message for a new image?
 {: #faq_va_new_scan_error}
 {: faq}
 
@@ -166,13 +166,13 @@ If you still see unacceptable performance, contact support, see [Getting help an
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
 
-## How do I determine what version of a package is installed in my image?
+## Which version of a package is installed in my image?
 {: #faq_va_package_version}
 {: faq}
 
 To determine the version of a package that is installed in your image, use the relevant package manager command for your operating system.
 
-### Alpine
+### Alpine package manager commands
 {: #faq_va_package_version_alpine}
 
 On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
@@ -191,7 +191,7 @@ On Alpine, to determine the version of a package that is installed in your image
     ```
     {: pre}
 
-### Debian and Ubuntu
+### Debian and Ubuntu package manager commands
 {: #faq_va_package_version_debian_ubuntu}
 
 On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
@@ -220,7 +220,7 @@ On Debian and Ubuntu, to determine the version of a package that is installed in
     ```
     {: pre}
 
-### Red Hat and CentOS
+### Red Hat and CentOS package manager commands
 {: #faq_va_package_version_redhat_centos}
 
 On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.

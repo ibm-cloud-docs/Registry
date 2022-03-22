@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: helm pull, helm push, helm create, helm package, delete charts, add charts, pull charts, push charts, copy charts, delete private repositories, charts, list charts, trash, recycle bin, restoring charts,
+keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart
 
 subcollection: Registry
 
@@ -179,12 +179,12 @@ helm install myrelease oci://uk.icr.io/helm-charts/mychart --version 0.1.0
 ```
 {: pre}
 
-## Deleting charts from your private {{site.data.keyword.cloud_notm}} repository
+## Deleting charts from your private repository
 {: #registry_helm_charts_remove}
 {: help}
 {: support}
 
-You can delete unwanted charts from your private [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
+You can delete unwanted charts from your private {{site.data.keyword.cloud_notm}} [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository) by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
 
 If you want to delete a private repository and its associated charts, see [Deleting a private repository and any associated charts](#registry_helm_charts_repo_remove).
 
@@ -199,12 +199,12 @@ Where multiple tags exist for the same chart digest within a repository, the [`i
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.{: tip}
 
-### Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
+### Deleting charts from your private repository by using the CLI
 {: #registry_helm_charts_remove_cli}
 {: help}
 {: support}
 
-You can delete unwanted charts and all their tags from your private repository by using the CLI.
+You can delete unwanted charts and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the CLI.
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
@@ -232,12 +232,12 @@ To delete a chart by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
+### Deleting charts from your private repository by using the console
 {: #registry_helm_charts_remove_gui}
 {: help}
 {: support}
 
-You can delete unwanted charts and all their tags from your private repository by using the {{site.data.keyword.cloud_notm}} console.
+You can delete unwanted charts and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console.
 
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}

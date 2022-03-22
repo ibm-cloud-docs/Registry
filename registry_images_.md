@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: Docker build command, delete images, add images, pull images, push images, copy images, delete private repositories, images, building images, list images, trash, recycle bin, restoring images,
+keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images,
 
 subcollection: Registry
 
@@ -242,7 +242,7 @@ To build your own Docker image, complete the following steps:
 
 To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
-## Pushing images to {{site.data.keyword.registrylong_notm}} by using an API key
+## Pushing images by using an API key
 {: #registry_api_key_push_image}
 {: help}
 {: support}
@@ -259,12 +259,12 @@ Complete the following steps:
 
 You can now use clusters to pull the images, see [Building containers from images](/docs/containers?topic=containers-images).
 
-## Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository
+## Removing tags from images in your private repository
 {: #registry_images_untag}
 {: help}
 {: support}
 
-You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
+You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image in your private {{site.data.keyword.cloud_notm}} repository, and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
 
 If multiple tags exist for the same image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
@@ -289,10 +289,10 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
     ```
     {: pre}
 
-## Deleting images from your private {{site.data.keyword.cloud_notm}} repository
+## Deleting images from your private repository
 {: #registry_images_remove}
 
-You can delete unwanted images from your private repository by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
+You can delete unwanted images from your private {{site.data.keyword.cloud_notm}} repository by using either the {{site.data.keyword.cloud_notm}} console or the CLI.
 
 If you want to delete a private repository and its associated images, see [Deleting a private repository and any associated images](#registry_repo_remove).
 
@@ -305,10 +305,10 @@ If you want to restore a deleted image, you can list the contents of the trash b
 Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](#registry_images_untag) command.
 {: tip}
 
-### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI
+### Deleting images from your private repository by using the CLI
 {: #registry_images_remove_cli}
 
-You can delete unwanted images and all their tags from your private repository by using the CLI.
+You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the CLI.
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
@@ -336,10 +336,10 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console
+### Deleting images from your private repository by using the console
 {: #registry_images_remove_gui}
 
-You can delete unwanted images and all their tags from your [private image repository](x8439215){: term} by using the {{site.data.keyword.cloud_notm}} console.
+You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} image repository by using the {{site.data.keyword.cloud_notm}} console.
 
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
