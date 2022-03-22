@@ -56,7 +56,7 @@ toc:
       id: howto
       topics:
       - topic: registry_setup_cli_namespace.md
-        navtitle: Setting up the Container Registry CLI and your registry namespace
+        navtitle: Setting up the Container Registry CLI and your namespace
       - topic: registry_rhos.md
         navtitle: Setting up Container Registry as a private registry on Red Hat OpenShift
       - registry_quota.md

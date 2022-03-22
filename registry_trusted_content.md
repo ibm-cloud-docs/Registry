@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: Docker Content Trust, keys, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, 
+keywords: Docker Content Trust, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures
 
 subcollection: Registry
 
@@ -25,7 +25,7 @@ You can use {{site.data.keyword.redhat_full}} signatures to sign your images.
 From 1 November 2021, the Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued.
 {: deprecated}
 
-## Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures
+## Signing images by using {{site.data.keyword.redhat_notm}} signatures
 {: #registry_trustedcontent_red_hat_sig}
 
 You can use various tools to create [{{site.data.keyword.redhat_notm}} signatures](https://www.redhat.com/en/blog/container-image-signing){: external} for your images. You can store your signed images for trusted content by using the {{site.data.keyword.redhat_notm}} signatures extension API, which is supported by {{site.data.keyword.registrylong_notm}}.
@@ -82,7 +82,7 @@ On Linux&reg; and macOS, the default configuration for the tools is to store the
 
 For more information, see [Podman](https://podman.io/){: external}.
 
-### Using the {{site.data.keyword.redhat_openshift_notm}} CLI to sign images
+### Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.

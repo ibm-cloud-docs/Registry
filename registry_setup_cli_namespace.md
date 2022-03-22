@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: namespaces, Docker images, CLI, commands, installing, registry CLI, removing namespaces, setting up cli, installing cli, uninstalling cli, 
+keywords: namespaces, Docker images, CLI, install, registry CLI, namespaces, setting up cli, installing cli, uninstalling cli, command
 
 subcollection: Registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up the {{site.data.keyword.registrylong_notm}} CLI and your registry namespace
+# Setting up the {{site.data.keyword.registryshort}} CLI and your namespace
 {: #registry_setup_cli_namespace}
 
 To manage your Docker images in {{site.data.keyword.registrylong}}, you must install the `container-registry` CLI plug-in and create a [namespace](x2031005){: term} in a [resource group](x2161955){: term}.

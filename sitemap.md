@@ -657,11 +657,11 @@ subcollection: Registry
 * [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
 
 
-## Setting up the Container Registry CLI and your registry namespace
-{: #sitemap_setting_up_the_container_registry_cli_and_your_registry_namespace}
+## Setting up the Container Registry CLI and your namespace
+{: #sitemap_setting_up_the_container_registry_cli_and_your_namespace}
 
 
-[Setting up the Container Registry CLI and your registry namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
+[Setting up the Container Registry CLI and your namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
 
 * [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)
 
@@ -849,11 +849,11 @@ subcollection: Registry
 
 * [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
 
-* [Clean up your namespaces by retaining only images that meet your criteria](/docs/Registry?topic=Registry-registry_retention#retention_images)
+* [Clean up your namespaces by retaining a specified number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
 
-* [Set a retention policy for your namespaces to retain only images that meet your criteria](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
+* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
 
-* [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
+* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
 
 * [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
 
@@ -939,13 +939,13 @@ subcollection: Registry
 
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
 
-* [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
+* [Signing images by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
 
     * [Using Skopeo to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_skopeo)
 
     * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
 
-    * [Using the {{site.data.keyword.redhat_openshift_notm}} CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
+    * [Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
