@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: IBM Cloud Container Registry CLI, container registry commands, commands, cli, ibmcloud cr, container-registry cli, registry commands
 
@@ -1160,7 +1160,7 @@ Where an image, within a repository, is referenced by multiple tags, that image 
 If a retention policy deletes an image that you want to keep, you can restore the image. To identify the image, list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore the selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
 {: tip}
 
-If you want to cancel a retention policy, see [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
+If you want to cancel a retention policy, see [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep).
 
 ```txt
 ibmcloud cr retention-policy-set [--retain-untagged] --images IMAGECOUNT NAMESPACE

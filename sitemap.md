@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: container registry
 
@@ -30,7 +30,7 @@ subcollection: Registry
 
 * [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add)
 
-* [Pull images from another registry to your local computer](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling)
+* [Pull images from a registry to your local computer](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling)
 
 * [Tag the image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_tag)
 
@@ -67,7 +67,7 @@ subcollection: Registry
 
 * [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade)
 
-* [Find out more about the elements that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements)
+* [Terms that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements)
 
     * [Container image](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image)
 
@@ -220,7 +220,7 @@ subcollection: Registry
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
-    * [Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
+    * [Amendment to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
 
 * [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
 
@@ -469,7 +469,7 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
-[Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
@@ -479,7 +479,7 @@ subcollection: Registry
 
 * [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-[Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+[Amendment to the minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial
@@ -657,11 +657,11 @@ subcollection: Registry
 * [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
 
 
-## Setting up the Container Registry CLI and your registry namespace
-{: #sitemap_setting_up_the_container_registry_cli_and_your_registry_namespace}
+## Setting up the Container Registry CLI and your namespace
+{: #sitemap_setting_up_the_container_registry_cli_and_your_namespace}
 
 
-[Setting up the Container Registry CLI and your registry namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
+[Setting up the Container Registry CLI and your namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
 
 * [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)
 
@@ -703,9 +703,9 @@ subcollection: Registry
 
 * [Setting quota limits for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_set)
 
-* [Reviewing quota limits and usage for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
+* [Reviewing quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
 
-* [Freeing up used storage and changing service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
+* [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 
 ## Adding images to your namespace
@@ -724,15 +724,15 @@ subcollection: Registry
 
 * [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating)
 
-* [Pushing images to {{site.data.keyword.registrylong_notm}} by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image)
+* [Pushing images by using an API key](/docs/Registry?topic=Registry-registry_images_#registry_api_key_push_image)
 
-* [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag)
+* [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag)
 
-* [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
+* [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
 
-    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
+    * [Deleting images from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
 
-    * [Deleting images from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
+    * [Deleting images from your private repository by using the console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
 
 * [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash)
 
@@ -763,11 +763,11 @@ subcollection: Registry
 
     * [Installing a Helm chart to the cluster](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_install)
 
-* [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
+* [Deleting charts from your private repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
 
-    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
+    * [Deleting charts from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
 
-    * [Deleting charts from your private {{site.data.keyword.cloud_notm}} repository by using the {{site.data.keyword.cloud_notm}} console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
+    * [Deleting charts from your private repository by using the console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
 
 * [Listing charts in the trash](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_list_trash)
 
@@ -849,11 +849,11 @@ subcollection: Registry
 
 * [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
 
-* [Clean up your namespaces by retaining only images that meet your criteria](/docs/Registry?topic=Registry-registry_retention#retention_images)
+* [Clean up your namespaces by retaining a specified number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
 
-* [Set a retention policy for your namespaces to retain only images that meet your criteria](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
+* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
 
-* [Updating a retention policy so that it keeps all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
+* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
 
 * [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
 
@@ -929,7 +929,7 @@ subcollection: Registry
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
 
-* [Monitoring security and compliance posture with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
+* [Monitoring security and compliance posture](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
 
     * [Available goals for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
 
@@ -939,13 +939,13 @@ subcollection: Registry
 
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
 
-* [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
+* [Signing images by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
 
     * [Using Skopeo to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_skopeo)
 
     * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
 
-    * [Using the {{site.data.keyword.redhat_openshift_notm}} CLI to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
+    * [Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
@@ -963,15 +963,15 @@ subcollection: Registry
 
 [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private#registry_private)
 
-* [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images)
+* [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images)
 
-    * [Enabling {{site.data.keyword.cloud_notm}} service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
+    * [Enabling service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
 
-    * [Considerations](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
+    * [Considerations for private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
 
     * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
 
-* [Enforcing access to your account over private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_account)
+* [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
 [Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
@@ -985,9 +985,9 @@ subcollection: Registry
 
 [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip)
 
-* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
+* [Granting access if you are using a public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
 
-* [Granting access if you are using {{site.data.keyword.registrylong_notm}} over the private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
+* [Granting access if you are using a private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
 
 [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#security_enforce_portieris)
 
@@ -1054,7 +1054,7 @@ subcollection: Registry
 
     * [Actions that generate events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_events_api_methods_vuln)
 
-    * [Actions that generate events for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
+    * [Actions that generate events for exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
 
 * [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
 
@@ -1064,13 +1064,13 @@ subcollection: Registry
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
 
-        * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
+        * [Request data for the account vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
 
-        * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
+        * [Request data for the account vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
 
-        * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
+        * [Request and response data for the image vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
 
-        * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
+        * [Request and response data for the image vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
@@ -1082,31 +1082,31 @@ subcollection: Registry
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
-    * [Auth](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
+    * [Authorzation API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
 
-    * [Images](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
+    * [Image API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
 
-    * [Messages](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
+    * [Message API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
 
-    * [Namespaces](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_namespace)
+    * [Namespace API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_namespace)
 
-    * [Plans](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_plans)
+    * [Plan API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_plans)
 
-    * [Quotas](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_quota)
+    * [Quota API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_quota)
 
-    * [Retentions](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_retention)
+    * [Retention API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_retention)
 
-    * [Settings](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_set)
+    * [Settings API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_set)
 
-    * [Tags](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_tags)
+    * [Tag API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_tags)
 
-    * [Trash](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_trash)
+    * [Trash API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_trash)
 
-* [Vulnerability Advisor](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln)
+* [Vulnerability Advisor API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln)
 
-    * [Report](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_report)
+    * [Report API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_report)
 
-    * [Exemption](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
+    * [Exemption API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI
@@ -1387,17 +1387,17 @@ subcollection: Registry
 
 [Formatting and filtering the CLI output for Container Registry commands](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
-* [Go template options and data types in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+* [Go template format option in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
-* [Go template options and data types in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+* [Go template format option in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
 
-* [Go template options and data types in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+* [Go template format option in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
 
-    * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
+    * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
 
-    * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
+    * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
 
-    * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+    * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
 ## Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
@@ -1500,9 +1500,9 @@ subcollection: Registry
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-* [Can you use non-Docker tools to build my images and push them to the registry?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+* [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-* [Is there a limit to the number of namespaces that you can have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+* [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
 * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
@@ -1510,7 +1510,7 @@ subcollection: Registry
 
 * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
-* [How do you use access control with {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+* [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
 * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
@@ -1518,22 +1518,22 @@ subcollection: Registry
 
 * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-* [What regions are available for {{site.data.keyword.registrylong_notm}}?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+* [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
 * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
 
-* [Does Vulnerability Advisor scan images from other registries?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
+* [Can images from other registries be scanned?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
 
 * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
-* [Why have I received a scan not found error message for a newly added image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
+* [Why have I got an image not scanned message for a new image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
 * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
-* [How do I determine what version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
+* [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 
-    * [Alpine](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
+    * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
 
-    * [Debian and Ubuntu](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
+    * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
 
-    * [Red Hat and CentOS](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
+    * [Red Hat and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)

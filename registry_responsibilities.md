@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: Responsibilities
+keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery
 
 subcollection: Registry
 

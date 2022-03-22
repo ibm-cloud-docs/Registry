@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: IBM Cloud, observability, registry, monitoring, supertenant, metrics
+keywords: IBM Cloud, observability, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, attributes
 
 subcollection: Registry
 

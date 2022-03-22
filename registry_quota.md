@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: quota limits, custom quota limits, pull traffic, quotas, storage, free up space, decrease storage,
+keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage,
 
 subcollection: Registry
 
@@ -73,7 +73,7 @@ To set a quota, complete the following steps.
     ```
     {: pre}
 
-## Reviewing quota limits and usage for storing and pulling images
+## Reviewing quota limits and usage
 {: #registry_quota_get}
 {: help}
 {: support}
@@ -107,7 +107,7 @@ You can review your quota limits and check your current storage and pull traffic
     ```
     {: screen}
 
-## Freeing up used storage and changing service plans or quota limits to stay within given quota limits
+## Staying within quota limits
 {: #registry_quota_freeup}
 {: help}
 {: support}

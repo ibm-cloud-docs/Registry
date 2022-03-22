@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images,
+keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace
 
 subcollection: Registry
 
@@ -48,7 +48,7 @@ You gain the following advantages by using this technique:
 - You can use different [IAM](/docs/Registry?topic=Registry-iam) policies. For example, you can have more restrictive access to production images.
 - You can sign production images, but leave development and staging images unsigned.
 
-## Clean up your namespaces by retaining only images that meet your criteria
+## Clean up your namespaces by retaining a specified number of images
 {: #retention_images}
 {: help}
 {: support}
@@ -102,12 +102,12 @@ To reduce the number of images in each repository within your namespace by using
     ```
     {: pre}
 
-## Set a retention policy for your namespaces to retain only images that meet your criteria
+## Set a retention policy for your namespaces
 {: #retention_policy_set}
 {: help}
 {: support}
 
-You can set a retention policy that runs automatically to clean up your namespaces.
+You can set a retention policy for your namespaces to retain only images that meet your criteria. The retention policy runs automatically to clean up your namespaces.
 
 You can choose whether to exclude untagged images from the clean-up process.
 
@@ -172,7 +172,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
     ```
     {: pre}
 
-## Updating a retention policy so that it keeps all your images
+## Update a retention policy to keep all your images
 {: #retention_policy_keep}
 {: help}
 {: support}

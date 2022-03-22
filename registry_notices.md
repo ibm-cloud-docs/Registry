@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-22"
 
-keywords: IBM Cloud Container Registry notifications, notices
+keywords: IBM Cloud Container Registry notifications, notices, notifications
 
 subcollection: Registry
 

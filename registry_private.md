@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry
+keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint
 
 subcollection: Registry
 
@@ -24,14 +24,14 @@ Service endpoints make it easier to securely route network traffic between diffe
 
 To learn more about {{site.data.keyword.cloud_notm}} service endpoints, see [Secure access to services by using service endpoints](/docs/account?topic=account-service-endpoints-overview).
 
-## Using private network connections for image pushes and pulls
+## Using private network connections
 {: #registry_private_images}
 
 You must set up your account with the correct authority so that you can set up a private network connection for pushing and pulling images.
 
 {{site.data.keyword.registrylong_notm}} is a multi-tenant offering and you are, therefore, not required to create your own service endpoints to connect to the registry over private connections.
 
-### Enabling {{site.data.keyword.cloud_notm}} service endpoint support for the account
+### Enabling service endpoint support for the account
 {: #registry_private_images_endpoints}
 
 To connect to {{site.data.keyword.cloud_notm}} services over a private network, you must meet the following criteria.
@@ -42,7 +42,7 @@ To connect to {{site.data.keyword.cloud_notm}} services over a private network, 
 
 To enable your {{site.data.keyword.cloud_notm}} account to use virtual routing and forwarding (VRF) and service endpoints, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
-### Considerations
+### Considerations for private network connections
 {: #registry_private_images_considerations}
 
 - Private domain names aren't used by the `container-registry` CLI plug-in. If you push an image on the private domain name, and then use the CLI on a public connection to run the `ibmcloud cr images` command, the image is listed with all the other images that have the same public domain name.
@@ -75,7 +75,7 @@ docker login -u iamapikey -p <apikey> <private_registry_domain>
 
 For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).
 
-## Enforcing access to your account over private network connections
+## Enforcing access to your account over a private network
 {: #registry_private_account}
 
 You can prevent or allow image pulls or pushes over public network connections for your account by using the [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) command.

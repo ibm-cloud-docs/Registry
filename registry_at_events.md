@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data
+keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api methods
 
 subcollection: Registry
 
@@ -133,7 +133,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | |
 {: caption="Table 10. Actions that generate events for vulnerabilities" caption-side="bottom"}
 
-### Actions that generate events for Vulnerability Advisor exemption policies
+### Actions that generate events for exemption policies
 {: #at_events_api_methods_exemptions}
 
 | Action | Description | Data Event |
@@ -192,10 +192,10 @@ The following fields are populated as described, depending on how you populate t
 
 Get the data for vulnerability events in {{site.data.keyword.registryshort_notm}}.
 
-#### Request data for `container-registry.account-vulnerability-report.list`
+#### Request data for the account vulnerability report
 {: #at_events_analyze_report_list}
 
-Get the vulnerability assessment for the list of registry images that belong to a specific account.
+Get the vulnerability assessment (`container-registry.account-vulnerability-report.list`) for the list of registry images that belong to a specific account.
 
 The following table lists the fields that are available through the `requestData` field in events with the action `container-registry.account-vulnerability-report.list`.
 
@@ -208,10 +208,10 @@ The following table lists the fields that are available through the `requestData
 
 For more information about the action `container-registry.account-vulnerability-report.list`, see [Get the vulnerability assessment for all images](/apidocs/container-registry/va#accountreportquerypath) in the API documentation.
 
-#### Request data for `container-registry.account-vulnerability-status.list`
+#### Request data for the account vulnerability status
 {: #at_events_analyze_status_list}
 
-Get the vulnerability assessment status for the list of registry images that belong to a specific account.
+Get the vulnerability assessment status (`container-registry.account-vulnerability-status.list`) for the list of registry images that belong to a specific account.
 
 The following table lists the fields that are available through the `requestData` field in events with the action `container-registry.account-vulnerability-status.list`.
 
@@ -224,10 +224,10 @@ The following table lists the fields that are available through the `requestData
 
 For more information about the action `container-registry.account-vulnerability-status.list`, see [Get vulnerability assessment status for all images](/apidocs/container-registry/va#accountstatusquerypath) in the API documentation.
 
-#### Request and response data for `container-registry.image-vulnerability-report.read`
+#### Request and response data for the image vulnerability report
 {: #at_events_analyze_report_read}
 
-Get the vulnerability assessment for a registry image.
+Get the vulnerability assessment (`container-registry.image-vulnerability-report.read`) for a registry image.
 
 The following table lists the fields that are available through the `requestData` and `responseData` fields in events with the action `container-registry.image-vulnerability-report.read`.
 
@@ -240,10 +240,10 @@ The following table lists the fields that are available through the `requestData
 
 For more information, see [Get vulnerability assessment status](/apidocs/container-registry/va#imagereportquerypath) in the API documentation.
 
-#### Request and response data for `container-registry.image-vulnerability-status.read`
+#### Request and response data for the image vulnerability status
 {: #at_events_analyze_status_read}
 
-Get the overall vulnerability status for a registry image.
+Get the overall vulnerability status (`container-registry.image-vulnerability-status.read`) for a registry image.
 
 The following table lists the fields that are available through the `requestData` and `responseData` fields in events with the action `container-registry.image-vulnerability-status.read`.
 
