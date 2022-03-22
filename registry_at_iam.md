@@ -27,7 +27,7 @@ For more information, see the following topics:
 - [{{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry){: external}
 - [Vulnerability Advisor for {{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry/va){: external}
 - [Auditing the events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
-- [Managing access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam)
+- [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam)
 
 ## {{site.data.keyword.registryshort_notm}}
 {: #registry_at_iam_reg}

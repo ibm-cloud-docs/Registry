@@ -102,7 +102,7 @@ toc:
       - topic: registry_ha.md
         navtitle: Understanding high availability and disaster recovery
       - topic: registry_cli_list.md
-        navtitle: Formatting and filtering the CLI output for Container Registry commands
+        navtitle: Formatting and filtering the Container Registry CLI output
       - registry_responsibilities.md
       - link:
           label: Terraform reference

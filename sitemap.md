@@ -1381,11 +1381,11 @@ subcollection: Registry
     * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
 
 
-## Formatting and filtering the CLI output for Container Registry commands
-{: #sitemap_formatting_and_filtering_the_cli_output_for_container_registry_commands}
+## Formatting and filtering the Container Registry CLI output
+{: #sitemap_formatting_and_filtering_the_container_registry_cli_output}
 
 
-[Formatting and filtering the CLI output for Container Registry commands](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
+[Formatting and filtering the Container Registry CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
 * [Go template format option in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 

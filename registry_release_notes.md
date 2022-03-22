@@ -44,7 +44,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 
     Other regions are unaffected because they already require IAM access policies for all accounts.
 
-    For more information, see [Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
+    For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
 
 ## 2 February 2022
 {: #registry-02feb2022}
@@ -395,7 +395,7 @@ Container Scanner is no longer available {: #27jun2019_cs}
 Remove tags from images {: #13jun2019_tags}
 :   Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
 
-    For more information, see [Removing tags from images in your private {{site.data.keyword.cloud_notm}} repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
+    For more information, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
 
 ## 13 May 2019
 {: #registry-13may2019}
