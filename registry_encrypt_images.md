@@ -208,6 +208,9 @@ For example, to wrap keys by using the CLI, run the command `"ibmcloud kp key wr
 
 For more information about how you can protect your keys in your own store by using an {{site.data.keyword.keymanagementservicelong_notm}} root key to wrap them, see [Wrapping keys](/docs/key-protect?topic=key-protect-wrap-keys).
 
+Encrypted images are not scanned by Vulnerability Advisor.
+{: note}
+
 ## Next steps
 {: #registry_encrypt_next}
 
