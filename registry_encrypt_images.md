@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: encryption, decryption, security, encrypted images, public-private key pairs,
+keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key
 
 subcollection: Registry
 
@@ -17,7 +17,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Encrypting images for content confidentiality in {{site.data.keyword.registrylong_notm}}
+# Encrypting images for content confidentiality
 {: #registry_encrypt}
 {: toc-content-type="tutorial"}
 {: toc-services="key-protect"}
