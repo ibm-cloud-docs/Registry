@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry
 
@@ -36,7 +36,7 @@ Review the following FAQs about [high availability](x2284708){: term} and [disas
 ### Does the service replicate the data?
 {: #ha-dr_replicate_data}
 
-All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
+All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include image data, service settings, and policy settings, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
 
 The following table shows the backup locations.
 
@@ -61,7 +61,7 @@ You're not expected to replicate your images. However, you can create a service 
 ### What data is backed-up or replicated?
 {: #ha-dr_backup}
 
-The image data and service and policy settings are backed up by {{site.data.keyword.IBM_notm}}.
+The image data, service settings, and policy settings are backed up by {{site.data.keyword.IBM_notm}}.
 
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}
