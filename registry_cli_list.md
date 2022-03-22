@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template options, data types, cli
+keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template format option, data types, cli, config, healthcheck, rootfs
 
 subcollection: Registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Formatting and filtering the CLI output for {{site.data.keyword.registrylong_notm}} commands
+# Formatting and filtering the {{site.data.keyword.registryshort}} CLI output
 {: #registry_cli_list}
 
 You can format and filter the CLI output for supported {{site.data.keyword.registrylong}} commands.
@@ -94,7 +94,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-## Go template options and data types in the `ibmcloud cr image-digests` command
+## Go template format option in the `ibmcloud cr image-digests` command
 {: #registry_cli_list_imagedigests}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
@@ -110,7 +110,7 @@ Review the following table to find available Go template options and data types 
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-digests command" caption-side="bottom"}
 
-## Go template options and data types in the `ibmcloud cr image-list` command
+## Go template format option in the `ibmcloud cr image-list` command
 {: #registry_cli_list_imagelist}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
@@ -127,7 +127,7 @@ Review the following table to find available Go template options and data types 
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-list command" caption-side="bottom"}
 
-## Go template options and data types in the `ibmcloud cr image-inspect` command
+## Go template format option in the `ibmcloud cr image-inspect` command
 {: #registry_cli_list_imageinspect}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
@@ -137,21 +137,21 @@ Review the following table to find available Go template options and data types 
 | `Architecture` | String | Displays the processor architecture that was used to build this image, and that is required to run the image. |
 | `Author` | String | Displays the author of the image. |
 | `Comment` | String | Displays the description of the image. |
-| `Config` | Object | Displays configuration metadata for the image. See the field details in [`Config`](#registry_cli_list_imageinspect_config). |
+| `Config` | Object | Displays configuration metadata for the image. For more information, see [`Config` field details](#registry_cli_list_imageinspect_config). |
 | `Container` | String | Displays the ID of the container that created the image. |
-| `ContainerConfig` | Object | Displays the default configuration for containers that are started from this image. See the field details in [`Config`](#registry_cli_list_imageinspect_config). |
+| `ContainerConfig` | Object | Displays the default configuration for containers that are started from this image. For more information, see [`Config` field details](#registry_cli_list_imageinspect_config). |
 | `Created` | String | Displays the [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time){: external} when the image was created. |
 | `DockerVersion` | String | Displays the Docker version that was used to build this image. |
 | `ID` | String | Displays the unique identifier for an image. |
 | `Os` | String | Displays the operating system family that was used to build this image, and that is required to run the image. |
 | `OsVersion` | String | Displays the version of the operating system that was used to build this image. |
 | `Parent` | String | Displays the ID of the parent image that was used to build this image. |
-| `RootFS` | Object | Displays metadata that describe the root file system for the image. See the field details in [`RootFS`](#registry_cli_list_imageinspect_rootfs). |
+| `RootFS` | Object | Displays metadata that describe the root file system for the image. For more information, see [`RootFS` field details](#registry_cli_list_imageinspect_rootfs). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `VirtualSize` | Integer (64 bit) | Displays the sum of the size of each layer in the image in bytes. |
 {: caption="Table 3. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-inspect command" caption-side="bottom"}
 
-### `Config`
+### `Config` field details
 {: #registry_cli_list_imageinspect_config}
 
 | Field | Type | Description |
@@ -165,7 +165,7 @@ Review the following table to find available Go template options and data types 
 | `Entrypoint` | Array of strings | Describes the command that is run when the container starts. |
 | `Env` | Array of strings | Displays the list of environment variables in the form of key-value pairs. |
 | `ExposedPorts` | Key-value map | Displays the list of exposed ports in the format `[123:,456:]`. |
-| `Healthcheck` | Object | Describes how to check that the container is working correctly. See the field details in [`Healthcheck`](#registry_cli_list_imageinspect_healthcheck). |
+| `Healthcheck` | Object | Describes how to check that the container is working correctly. For more information, see [`Healthcheck` field details](#registry_cli_list_imageinspect_healthcheck). |
 | `Hostname` | String | Displays the hostname of the container. |
 | `Image` | String | Displays the name of the image that was passed by the operator. |
 | `Labels` | Key-value map | Displays the list of labels that were added to the image as key-value pairs. |
@@ -183,7 +183,7 @@ Review the following table to find available Go template options and data types 
 | `WorkingDir` | String | Displays the working directory inside the container where specified commands are run. |
 {: caption="Table 4. Available fields and data types in Config" caption-side="bottom"}
 
-### `Healthcheck`
+### `Healthcheck` field details
 {: #registry_cli_list_imageinspect_healthcheck}
 
 | Field | Type | Description |
@@ -194,7 +194,7 @@ Review the following table to find available Go template options and data types 
 | `Timeout` | Integer (64 bit) | Displays the time to wait, in nanoseconds, before the health check fails. |
 {: caption="Table 5. Available fields and data types in Healthcheck" caption-side="bottom"}
 
-### `RootFS`
+### `RootFS` field details
 {: #registry_cli_list_imageinspect_rootfs}
 
 | Option | Type | Description |

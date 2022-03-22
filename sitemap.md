@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: container registry
 
@@ -30,7 +30,7 @@ subcollection: Registry
 
 * [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add)
 
-* [Pull images from another registry to your local computer](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling)
+* [Pull images from a registry to your local computer](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling)
 
 * [Tag the image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_tag)
 
@@ -929,7 +929,7 @@ subcollection: Registry
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
 
-* [Monitoring security and compliance posture with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
+* [Monitoring security and compliance posture](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
 
     * [Available goals for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
 
@@ -1054,7 +1054,7 @@ subcollection: Registry
 
     * [Actions that generate events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_events_api_methods_vuln)
 
-    * [Actions that generate events for Vulnerability Advisor exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
+    * [Actions that generate events for exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
 
 * [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
 
@@ -1064,13 +1064,13 @@ subcollection: Registry
 
     * [Request data for vulnerability events](/docs/Registry?topic=Registry-at_events#at_events_vuln_events)
 
-        * [Request data for `container-registry.account-vulnerability-report.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
+        * [Request data for the account vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_list)
 
-        * [Request data for `container-registry.account-vulnerability-status.list`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
+        * [Request data for the account vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
 
-        * [Request and response data for `container-registry.image-vulnerability-report.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
+        * [Request and response data for the image vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
 
-        * [Request and response data for `container-registry.image-vulnerability-status.read`](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
+        * [Request and response data for the image vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
@@ -1082,31 +1082,31 @@ subcollection: Registry
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
-    * [Auth](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
+    * [Authorzation API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
 
-    * [Images](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
+    * [Image API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
 
-    * [Messages](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
+    * [Message API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_messages)
 
-    * [Namespaces](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_namespace)
+    * [Namespace API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_namespace)
 
-    * [Plans](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_plans)
+    * [Plan API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_plans)
 
-    * [Quotas](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_quota)
+    * [Quota API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_quota)
 
-    * [Retentions](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_retention)
+    * [Retention API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_retention)
 
-    * [Settings](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_set)
+    * [Settings API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_set)
 
-    * [Tags](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_tags)
+    * [Tag API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_tags)
 
-    * [Trash](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_trash)
+    * [Trash API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_trash)
 
-* [Vulnerability Advisor](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln)
+* [Vulnerability Advisor API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln)
 
-    * [Report](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_report)
+    * [Report API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_report)
 
-    * [Exemption](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
+    * [Exemption API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
 
 
 ## {{site.data.keyword.registrylong_notm}} CLI
@@ -1387,17 +1387,17 @@ subcollection: Registry
 
 [Formatting and filtering the CLI output for Container Registry commands](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
-* [Go template options and data types in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+* [Go template format option in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
-* [Go template options and data types in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+* [Go template format option in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
 
-* [Go template options and data types in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+* [Go template format option in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
 
-    * [`Config`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
+    * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
 
-    * [`Healthcheck`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
+    * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
 
-    * [`RootFS`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+    * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
 ## Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}

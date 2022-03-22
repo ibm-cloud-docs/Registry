@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: IBM Cloud Container Registry, private image registry, namespaces, image security, cli, tutorial, Docker, images, registry, Podman
+keywords: IBM Cloud Container Registry, namespace, image security, cli, Docker, images, registry, Podman
 
 subcollection: Registry
 
@@ -79,7 +79,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
     ```
     {: pre}
 
-## Pull images from another registry to your local computer
+## Pull images from a registry to your local computer
 {: #gs_registry_images_pulling}
 {: step}
 {: help}

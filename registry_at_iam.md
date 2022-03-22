@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: IBM Cloud, observability, api methods, registry, iam, activity tracker, actions
+keywords: IBM Cloud, api methods, registry, iam, activity tracker, actions, vulnerability
 
 subcollection: Registry
 
@@ -34,7 +34,7 @@ For more information, see the following topics:
 
 Review the following account API methods, their required actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.registryshort_notm}}.
 
-### Auth
+### Authorzation API methods
 {: #registry_at_iam_reg_auth}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -43,7 +43,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Update authorization options for the targeted account. | `PATCH /api/v1/auth` | `container-registry.auth.set` | `container-registry.auth.set`  |
 {: caption="Table 1. Auth" caption-side="bottom"}
 
-### Images
+### Image API methods
 {: #registry_at_iam_reg_images}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -57,7 +57,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get image manifest. | `GET /api/v1/images/{image}/manifest` | `container-registry.image.inspect` | `container-registry.manifest.inspect` |
 {: caption="Table 2. Images" caption-side="bottom"}
 
-### Messages
+### Message API methods
 {: #registry_at_iam_reg_messages}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -65,7 +65,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Return any published system messages. | `GET /api/v1/messages` | | |
 {: caption="Table 3. Messages" caption-side="bottom"}
 
-### Namespaces
+### Namespace API methods
 {: #registry_at_iam_reg_namespace}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -77,7 +77,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Delete namespace. | `DELETE /api/v1/namespaces/{namespace}` | `container-registry.namespace.delete` | `container-registry.namespace.delete` |
 {: caption="Table 4. Namespaces" caption-side="bottom"}
 
-### Plans
+### Plan API methods
 {: #registry_at_iam_reg_plans}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -86,7 +86,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Update plans for the targeted account. | `PATCH /api/v1/plans` | `container-registry.plan.set` | `container-registry.plan.set` |
 {: caption="Table 5. Plans" caption-side="bottom"}
 
-### Quotas
+### Quota API methods
 {: #registry_at_iam_reg_quota}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -95,7 +95,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Update quotas for the targeted account. | `PATCH /api/v1/quotas` | `container-registry.quota.set` | `container-registry.quota.set` |
 {: caption="Table 6. Quotas" caption-side="bottom"}
 
-### Retentions
+### Retention API methods
 {: #registry_at_iam_reg_retention}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -106,7 +106,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get the retention policy for the specified namespace. | `GET /api/v1/retentions/{namespace}` | `container-registry.retention.get` | `container-registry.retention.get`  |
 {: caption="Table 7. Retentions" caption-side="bottom"}
 
-### Settings
+### Settings API methods
 {: #registry_at_iam_reg_set}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -115,7 +115,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Update registry service settings for the targeted account, such as enabling platform metrics. | `PATCH /api/v1/settings` | `container-registry.settings.set` | `container-registry.settings.set` |
 {: caption="Table 8. Settings" caption-side="bottom"}
 
-### Tags
+### Tag API methods
 {: #registry_at_iam_reg_tags}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -123,7 +123,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Delete [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag). | `DELETE /api/v1/tags/{image}` | `container-registry.image.delete` | `container-registry.image.untag` |
 {: caption="Table 9. Tags" caption-side="bottom"}
 
-### Trash
+### Trash API methods
 {: #registry_at_iam_reg_trash}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -133,10 +133,10 @@ Review the following account API methods, their required actions in {{site.data.
 | Restore deleted image. | `POST /api/v1/trash/{image}/restore` | `container-registry.image.push` | `container-registry.trash.restore` |
 {: caption="Table 10. Trash" caption-side="bottom"}
 
-## Vulnerability Advisor
+## Vulnerability Advisor API methods
 {: #registry_at_iam_vuln}
 
-### Report
+### Report API methods
 {: #registry_at_iam_vuln_report}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |
@@ -147,7 +147,7 @@ Review the following account API methods, their required actions in {{site.data.
 | Get vulnerability assessment status. | `GET /va/api/v3/report/image/{name}` | `container-registry.exemption.list` | `container-registry.image-vulnerability-report.read` |
 {: caption="Table 11. Report" caption-side="bottom"}
 
-### Exemption
+### Exemption API methods
 {: #registry_at_iam_vuln_exempt}
 
 | Action                                    | Method                 | IAM ACTION    |  AT ACTION |

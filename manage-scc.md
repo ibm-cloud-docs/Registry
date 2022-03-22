@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, available goals for container registry, governing container registry, security insight with container registry
+keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, governing container registry, security insight, security, compliance
 
 subcollection: Registry
 
@@ -13,7 +13,7 @@ subcollection: Registry
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Managing security and compliance with {{site.data.keyword.registrylong_notm}}
+# Managing security and compliance with {{site.data.keyword.registryshort}}
 {: #manage-security-compliance}
 
 {{site.data.keyword.registrylong}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
@@ -25,7 +25,7 @@ With the {{site.data.keyword.compliance_short}}, you can:
 - Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
 
 
-## Monitoring security and compliance posture with {{site.data.keyword.registryshort}}
+## Monitoring security and compliance posture
 {: #monitor-container-registry}
 
 As a security or compliance focal, you can use the {{site.data.keyword.registrylong_notm}} [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identify potential issues as they arise.
