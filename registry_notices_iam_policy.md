@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
-keywords: IBM Cloud Container Registry notices, iam access policies,
+keywords: IBM Cloud Container Registry notices, iam access policies, notices, access policies, changes, changing, prepare
 
 subcollection: Registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022
+# Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022
 {: #registry_notices_iam_policy}
 
 From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamlong}} (IAM) access policies.

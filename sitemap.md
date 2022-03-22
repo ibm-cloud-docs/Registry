@@ -67,7 +67,7 @@ subcollection: Registry
 
 * [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade)
 
-* [Find out more about the elements that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements)
+* [Terms that are used in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_overview#overview_elements)
 
     * [Container image](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image)
 
@@ -220,7 +220,7 @@ subcollection: Registry
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
-    * [Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
+    * [Amendment to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
 
 * [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
 
@@ -469,7 +469,7 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
-[Access to {{site.data.keyword.registrylong_notm}} requires IAM access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
@@ -479,7 +479,7 @@ subcollection: Registry
 
 * [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-[Update to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+[Amendment to the minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial
@@ -703,9 +703,9 @@ subcollection: Registry
 
 * [Setting quota limits for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_set)
 
-* [Reviewing quota limits and usage for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
+* [Reviewing quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
 
-* [Freeing up used storage and changing service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
+* [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 
 ## Adding images to your namespace
@@ -963,15 +963,15 @@ subcollection: Registry
 
 [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private#registry_private)
 
-* [Using private network connections for image pushes and pulls](/docs/Registry?topic=Registry-registry_private#registry_private_images)
+* [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images)
 
-    * [Enabling {{site.data.keyword.cloud_notm}} service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
+    * [Enabling service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
 
-    * [Considerations](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
+    * [Considerations for private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
 
     * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
 
-* [Enforcing access to your account over private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_account)
+* [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
 [Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
