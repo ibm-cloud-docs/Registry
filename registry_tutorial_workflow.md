@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
-keywords: Vulnerability Advisor, tutorial, workflow, storing images, vulnerabilities, registry, 
+keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster
 
 subcollection: Registry
 
@@ -17,7 +17,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registrylong_notm}} and Vulnerability Advisor workflow tutorial
+# {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
 {: toc-content-type="tutorial"}
 {: toc-services="containers"}

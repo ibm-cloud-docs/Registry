@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-23"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, iam, access denied, iam access policy
+keywords: troubleshoot, error, problem, registry, iam, access denied, iam access policy, namespace, policy, resource group
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting access denied errors even though I have an IAM access policy?
+# I am getting access denied errors even though I have an IAM access policy
 {: #troubleshoot-iam-policy}
 {: troubleshoot}
 {: support}

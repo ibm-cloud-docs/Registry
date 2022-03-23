@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-09-10"
+  years: 2017, 2022
+lastupdated: "2022-03-23"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, firewall, custom firewall
+keywords: troubleshoot, error, problem, registry, firewall, custom firewall, network
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I access the registry through a custom firewall?
+# I can't access the registry through a custom firewall
 {: #troubleshoot-firewall}
 {: troubleshoot}
 {: support}

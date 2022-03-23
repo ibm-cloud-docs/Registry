@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
-keywords: user access, tutorial, access control, granting access, authorizing, 
+keywords: access, tutorial, authorize, service ID, configure, registry, namespace, clean
 
 subcollection: Registry
 
@@ -16,7 +16,7 @@ completion-time: 45m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial
+# Granting access to {{site.data.keyword.registryshort_notm}} resources tutorial
 {: #iam_access}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="45m"}

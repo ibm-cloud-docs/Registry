@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-04"
+lastupdated: "2022-03-23"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, restoring images, restoring images from the trash by digest, trash, restoring tags
+keywords: troubleshoot, error, problem, registry, restoring images, digest, trash, tag
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# When I'm restoring an image from the trash by digest, why aren't some tags restored?
+# When I'm restoring an image from the trash by digest, some tags aren't restored
 {: #troubleshoot-image-restore-digest}
 {: troubleshoot}
 {: support}
