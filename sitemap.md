@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: container registry
 
@@ -1374,7 +1374,7 @@ subcollection: Registry
 
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
 
-    * [What data is backed-up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
+    * [What data is backed up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
 
     * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
 
