@@ -973,7 +973,7 @@ subcollection: Registry
 
 * [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
-[Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
+[Using VPE for VPC to privately connect to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
 
@@ -1477,27 +1477,27 @@ subcollection: Registry
 
 [Why do all the Container Registry commands fail?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
-[Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
+[I can't add a namespace](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
 [Why don't all my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 
-[Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
+[I can't pull the most recent image by using the `latest` tag](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
 
 [Why does listing images timeout?](/docs/Registry?topic=Registry-troubleshoot-image-timeout#troubleshoot-image-timeout)
 
 [I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?](/docs/Registry?topic=Registry-troubleshoot-image-rm#troubleshoot-image-rm)
 
-[Why doesn't an image show on the list that is produced by the `ibmcloud cr retention-run` command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention#troubleshoot-image-list-retention)
+[An image is missing from the list when I run the `ibmcloud cr retention-run` command](/docs/Registry?topic=Registry-troubleshoot-image-list-retention#troubleshoot-image-list-retention)
 
-[When I'm restoring an image, why do I get an error that says that the tagged image exists?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
+[When I'm restoring an image, I get an error saying that the tagged image exists](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
-[When I'm restoring an image from the trash by digest, why aren't some tags restored?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+[When I'm restoring an image from the trash by digest, some tags aren't restored](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
-[Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
+[I can't access the registry through a custom firewall](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
 
-[Why am I getting access denied errors even though I have an IAM access policy?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
+[I am getting access denied errors even though I have an IAM access policy](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 
 [Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
 
@@ -1507,7 +1507,7 @@ subcollection: Registry
 
 [Why am I getting a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
 
-[Why does Docker login fail on my Mac?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
+[Docker login is failing on my Mac](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
 
 ## Frequently asked questions (FAQs)

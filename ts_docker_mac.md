@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-23"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, docker login, mac, docker login fails on a mac
+keywords: troubleshoot, error, problem, registry, docker login, mac, credentials
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does Docker login fail on my Mac?
+# Docker login is failing on my Mac
 {: #troubleshoot-docker-mac}
 {: troubleshoot}
 {: support}
