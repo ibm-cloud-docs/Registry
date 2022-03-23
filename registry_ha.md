@@ -12,56 +12,59 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding high availability and disaster recovery for {{site.data.keyword.registryshort_notm}}
+# Understanding high availability for {{site.data.keyword.registryshort_notm}}
 {: #ha-dr}
 
 The {{site.data.keyword.registrylong}} service is a highly available, regional, service.
 {: shortdesc}
 
-- In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](x7018171){: term}, with no single point of failure.
-- Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated and it is also backed up regularly.
-- If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registries.
+[High availability](#x2284708){: term} (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure.
 
-    You might also choose to push your images to multiple registries in case you accidentally delete or overwrite your images.
+- In each supported region, traffic is load balanced across registry infrastructure in multiple [availability zones](x7018171){: term}, with no single point of failure.
+- Data that is stored in {{site.data.keyword.registrylong_notm}} is replicated over the availability zones and it is also backed up in another region regularly.
+- If you're worried about the availability of your images if an entire region is unavailable, you can choose to push your images to multiple registry regions.
+
+    You might also choose to push your images to multiple registry regions in case you accidentally delete or overwrite your images.
 
     For more information about regions, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 For more information about service availability, see [Service Level Agreements](/docs/overview?topic=overview-slas).
 
-## Frequently asked questions about high availability and disaster recovery
+## Responsibilities
+{: #ha-responsibilities}
+
+To find out more about responsibility ownership for using {{site.data.keyword.cloud}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
+
+For more information about your responsibilities when you are using {{site.data.keyword.registrylong}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
+
+## What level of availability do I need?
+{: #ha-level}
+
+You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the service level agreements (SLAs) that you have with your customers, and the resources that you want to expend.
+
+## What level of availability does {{site.data.keyword.cloud_notm}} offer?
+{: #ha-service}
+
+The level of availability that you set up for your cluster impacts your coverage under the {{site.data.keyword.cloud_notm}} high availability service level agreement terms. 
+
+Service level objectives (SLOs) describe the design points that the {{site.data.keyword.cloud_notm}} services are engineered to meet. {{site.data.keyword.registrylong_notm}} is designed to achieve the following availability target.
+
+| Availability target | Target Value |
+|---------------------|--------------|
+| Availability % | 99.999 |
+{: caption="Table 1. SLO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
+
+The SLO is not a warranty and {{site.data.keyword.IBM_notm}} does not issue credits for failure to meet an objective. Refer to the SLAs for commitments and credits that are issued for failure to meet any committed SLAs. For a summary of all SLOs, see [{{site.data.keyword.cloud_notm}} service level objectives](/docs/overview?topic=overview-slo).
+
+## Locations
+{: #ha-locations}
+
+For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
+
+## Frequently asked questions about high availability
 {: #ha-dr_faq}
 
-Review the following FAQs about [high availability](x2284708){: term} and [disaster recovery](x2113280){: term}.
-
-### Does the service replicate the data?
-{: #ha-dr_replicate_data}
-
-All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include image data, service settings, and policy settings, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
-
-The following table shows the backup locations.
-
-| Environment | Active location | Backup location |
-|-------------|-----------------|-----------------|
-| `ap-north` | `jp-tok` | `au-syd` |
-| `ap-south` | `au-syd` | `jp-tok` |
-| `br-sao` | `br-sao` | `us-south` |
-| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
-| `eu-de` | `eu-de` | `eu-gb` |
-| `eu-gb` | `eu-gb` | `eu-de` |
-| `global` | `us-east` | `us-south` |
-| `jp-osa` | `jp-osa` | `jp-tok` |
-| `us-south` | `us-south` | `us-east` |
-{: caption="Table 1. Backup locations" caption-side="bottom"}
-
-### Are users required to replicate the data?
-{: #ha-dr_client}
-
-You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
-
-### What data is backed up or replicated?
-{: #ha-dr_backup}
-
-The image data, service settings, and policy settings are backed up by {{site.data.keyword.IBM_notm}}.
+Review the following FAQs about high availability.
 
 ### Does {{site.data.keyword.cloud_notm}} replicate the service?
 {: #ha-dr_service}

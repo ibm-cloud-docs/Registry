@@ -1362,23 +1362,41 @@ subcollection: Registry
     * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
 
 
-## Understanding high availability and disaster recovery
-{: #sitemap_understanding_high_availability_and_disaster_recovery}
+## High availability and disaster recovery
+{: #sitemap_high_availability_and_disaster_recovery}
 
 
-[Understanding high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr)
+[Understanding high availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr#ha-dr)
 
-* [Frequently asked questions about high availability and disaster recovery](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
+* [Responsibilities](/docs/Registry?topic=Registry-ha-dr#ha-responsibilities)
 
-    * [Does the service replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_replicate_data)
+* [What level of availability do I need?](/docs/Registry?topic=Registry-ha-dr#ha-level)
 
-    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-ha-dr#ha-dr_client)
+* [What level of availability does {{site.data.keyword.cloud_notm}} offer?](/docs/Registry?topic=Registry-ha-dr#ha-service)
 
-    * [What data is backed up or replicated?](/docs/Registry?topic=Registry-ha-dr#ha-dr_backup)
+* [Locations](/docs/Registry?topic=Registry-ha-dr#ha-locations)
+
+* [Frequently asked questions about high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
 
     * [Does {{site.data.keyword.cloud_notm}} replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service)
 
     * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
+
+[Understanding business continuity and disaster recovery for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-bc-dr#bc-dr)
+
+* [Responsibilities](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
+
+* [Disaster recovery strategy](/docs/Registry?topic=Registry-bc-dr#bc-dr-strategy)
+
+* [Locations](/docs/Registry?topic=Registry-bc-dr#ha-locations)
+
+* [Frequently asked questions about disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr_faq)
+
+    * [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#ha-dr_replicate_data)
+
+    * [What data is backed up or replicated?](/docs/Registry?topic=Registry-bc-dr#ha-dr_backup)
+
+    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#ha-dr_client)
 
 
 ## Formatting and filtering the Container Registry CLI output

@@ -99,8 +99,11 @@ toc:
       id: reference
       topics: 
       - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
-      - topic: registry_ha.md
-        navtitle: Understanding high availability and disaster recovery
+      - topicgroup:
+          label: High availability and disaster recovery
+          topics: 
+          - topic: registry_ha.md
+          - topic: registry_bc_dr.md
       - topic: registry_cli_list.md
         navtitle: Formatting and filtering the Container Registry CLI output
       - registry_responsibilities.md
