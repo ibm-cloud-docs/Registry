@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: IBM Cloud, observability, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, attributes
 
@@ -38,14 +38,14 @@ To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} 
 
 Complete the following steps to configure platform metrics:
 
-1. Log in to {{site.data.keyword.cloud_notm}}.
+2. Log in to {{site.data.keyword.cloud_notm}}.
 
     ```txt
     ibmcloud login
     ```
     {: pre}
 
-2. To enable platform metrics, run the following command:
+3. To enable platform metrics, run the following command:
 
     ```txt
     ibmcloud cr platform-metrics --enable
