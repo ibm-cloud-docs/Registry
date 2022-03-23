@@ -1,0 +1,81 @@
+---
+
+copyright:
+  years: 2022
+lastupdated: "2022-03-23"
+
+keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry
+
+subcollection: Registry
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+# Understanding business continuity and disaster recovery for {{site.data.keyword.registryshort}}
+{: #bc-dr}
+
+Find out about the disaster recovery strategy for {{site.data.keyword.registrylong}}.
+{: shortdesc}
+
+[Disaster recovery](#x2113280){: term} involves a set of policies, tools, and procedures for returning a system, an application, or an entire data center to full operation after a catastrophic interruption. It includes procedures for copying and storing an installed system's essential data in a secure location, and for recovering that data to restore normalcy of operation.
+
+## Responsibilities
+{: #bc-dr-responsibilities}
+
+For more information about your responsibilities when you are using {{site.data.keyword.registrylong_notm}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
+
+## Disaster recovery strategy
+{: #bc-dr-strategy}
+
+{{site.data.keyword.cloud_notm}} has [business continuity](#x3026801){: term} plans in place to provide for the recovery of services within hours if a disaster occurs. You are responsible for your data backup and associated recovery of your content.
+
+{{site.data.keyword.registryshort}} provides mechanisms to protect your data and restore service functions. Business continuity plans are in place to achieve targeted [recovery point objective](#x3429911){: term} (RPO) and [recovery time objective](#x3167918){: term} (RTO) for the service. The following table outlines the targets for {{site.data.keyword.registryshort}}.
+
+| Disaster recovery objective | Target Value |
+|-----------------------------|--------------|
+| Recovery point objective (RPO) | 48 hours |
+| Recovery time objective (RTO) | 24 hours |
+{: caption="Table 1. RPO and RTO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
+
+## Locations
+{: #ha-locations}
+
+For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
+
+## Frequently asked questions about disaster recovery
+{: #bc-dr_faq}
+
+Review the following FAQs about disaster recovery.
+
+### Does the service replicate the data?
+{: #ha-dr_replicate_data}
+
+All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
+
+The following table shows the backup locations.
+
+| Environment | Active location | Backup location |
+|-------------|-----------------|-----------------|
+| `ap-north` | `jp-tok` | `au-syd` |
+| `ap-south` | `au-syd` | `jp-tok` |
+| `br-sao` | `br-sao` | `us-south` |
+| `ca-tor` | `ca-tor` | `us-east` (service and policy settings)  \n  \n `ca-mon` (images) |
+| `eu-de` | `eu-de` | `eu-gb` |
+| `eu-gb` | `eu-gb` | `eu-de` |
+| `global` | `us-east` | `us-south` |
+| `jp-osa` | `jp-osa` | `jp-tok` |
+| `us-south` | `us-south` | `us-east` |
+{: caption="Table 2. Backup locations" caption-side="bottom"}
+
+### What data is backed up or replicated?
+{: #ha-dr_backup}
+
+The image data, service settings, and policy settings are backed up by {{site.data.keyword.IBM_notm}}.
+
+### Are users required to replicate the data?
+{: #ha-dr_client}
+
+You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
+
+
