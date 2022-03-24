@@ -38,14 +38,14 @@ To monitor platform metrics, check that the {{site.data.keyword.mon_full_notm}} 
 
 Complete the following steps to configure platform metrics:
 
-2. Log in to {{site.data.keyword.cloud_notm}}.
+1. Log in to {{site.data.keyword.cloud_notm}}.
 
     ```txt
     ibmcloud login
     ```
     {: pre}
 
-3. To enable platform metrics, run the following command:
+2. To enable platform metrics, run the following command:
 
     ```txt
     ibmcloud cr platform-metrics --enable
