@@ -14,6 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why am I getting a manifest version error when I tag my image?
 {: #troubleshoot-manifest-error-version}
 {: troubleshoot}
