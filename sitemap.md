@@ -1004,17 +1004,17 @@ subcollection: Registry
 
 [Monitoring metrics](/docs/Registry?topic=Registry-registry_monitor#registry_monitor)
 
-* [Platform metrics overview](/docs/Registry?topic=Registry-registry_monitor#registry_platform_metrics)
+* [Enabling metrics for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_monitor#registry_enable_platform_metrics)
 
-* [Enabling platform metrics by using the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-registry_monitor#registry_enable_platform_metrics)
+* [Locations](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_locations)
 
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics)
 
     * [Starting the Monitoring UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics_opt2)
 
-* [{{site.data.keyword.registryshort_notm}} predefined dashboards](/docs/Registry?topic=Registry-registry_monitor#registry_dashboards_dictionary)
+* [Predefined dashboards](/docs/Registry?topic=Registry-registry_monitor#registry_dashboards_dictionary)
 
-* [Metrics available by service plan](/docs/Registry?topic=Registry-registry_monitor#metrics-by-plan)
+* [Metrics](/docs/Registry?topic=Registry-registry_monitor#metrics)
 
     * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_pull_traffic)
 
@@ -1023,12 +1023,6 @@ subcollection: Registry
     * [`Storage Quota`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage_quota)
 
     * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
-
-* [Attributes for segmentation](/docs/Registry?topic=Registry-registry_monitor#attributes)
-
-    * [Global Attributes](/docs/Registry?topic=Registry-registry_monitor#global-attributes)
-
-    * [Other Attributes](/docs/Registry?topic=Registry-registry_monitor#additional-attributes)
 
 [Auditing the events](/docs/Registry?topic=Registry-at_events#at_events)
 
