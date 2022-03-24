@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-09-10"
+  years: 2017, 2022
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails
+keywords: troubleshoot, error, problem, registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get a failure message when I run any command in {{site.data.keyword.registrylong_notm}}?
+# Why do the {{site.data.keyword.registryshort}} commands fail saying that I'm not logged in?
 {: #troubleshoot-login-cloud}
 {: troubleshoot}
 {: support}
@@ -22,7 +22,7 @@ content-type: troubleshoot
 You can't run any commands in {{site.data.keyword.registrylong}}, even though you are logged in to {{site.data.keyword.cloud_notm}}. You get the following message: `FAILED You are not logged in to IBM Cloud`.
 {: shortdesc}
 
-All `ibmcloud cr` commands fail.
+All `ibmcloud cr` commands fail with the message: `FAILED You are not logged in to IBM Cloud`.
 {: tsSymptoms}
 
 The `container-registry` CLI plug-in is out of date and needs updating.

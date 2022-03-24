@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: troubleshoot, error, problem, registry, images, retention, distroless, list, creation date
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# An image is missing from the list when I run the `ibmcloud cr retention-run` command
+# Why is an image absent when I run the retention command?
 {: #troubleshoot-image-list-retention}
 {: troubleshoot}
 {: support}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, error messages, failure, fails, lost keys, firewall, Docker manifest errors, problems, ts, registry,
+keywords: troubleshooting, support, help, error, error messages, problem, registry, support ticket, ticket
 
 subcollection: Registry
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Answers to common troubleshooting questions about how to use {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-## Getting help and support for {{site.data.keyword.registrylong_notm}}
+## Getting help and support for {{site.data.keyword.registryshort}}
 {: #gettinghelp}
 
 If you have problems or questions when you are using {{site.data.keyword.registrylong_notm}}, you can get help by searching for information or by asking questions through a forum. You can also open an {{site.data.keyword.IBM}} support ticket.

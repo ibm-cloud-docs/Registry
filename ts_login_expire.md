@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-03-08"
+  years: 2021, 2022
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, login expire
+keywords: troubleshoot, error, problem, registry, login, expire, push, pull, image, iam session
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does the {{site.data.keyword.registrylong_notm}} login keep expiring?
+# Why does the {{site.data.keyword.registryshort}} login keep expiring?
 {: #troubleshoot-login-expire}
 {: troubleshoot}
 {: support}

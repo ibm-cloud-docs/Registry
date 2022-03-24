@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
-keywords: troubleshoot, error, problem, registry, restoring images, trash, image, tag, tagged image, digest
+keywords: troubleshoot, error, problem, registry, restoring images, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# When I'm restoring an image, I get an error saying that the tagged image exists
+# Why do I get a tagged image exists error when I'm restoring an image?
 {: #troubleshoot-image-restore}
 {: troubleshoot}
 {: support}

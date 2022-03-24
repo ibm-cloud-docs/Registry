@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, deleting images, deleting tags, tags
+keywords: troubleshoot, error, problem, registry, delete, images, tag, ibmcloud cr image-rm
 
 subcollection: Registry
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# I used the `ibmcloud cr image-rm` command to delete an image, why did all the tags get deleted too?
+# Why do all the tags get deleted when I delete an image?
 {: #troubleshoot-image-rm}
 {: troubleshoot}
 {: support}
 
-You tried to delete an image from {{site.data.keyword.registrylong}} and all the [tags](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) that referenced that image got deleted too.
+You tried to delete an image from {{site.data.keyword.registrylong}} by using the `ibmcloud cr image-rm` command and all the [tags](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) that referenced that image got deleted too.
 {: shortdesc}
 
 You deleted an image by using the `ibmcloud cr image-rm` command and all the tags within the same repository that referenced the image also got deleted.

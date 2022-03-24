@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: troubleshoot, error, problem, registry, iam, access denied, iam access policy, namespace, policy, resource group
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# I am getting access denied errors even though I have an IAM access policy
+# Why am I getting access denied errors?
 {: #troubleshoot-iam-policy}
 {: troubleshoot}
 {: support}
@@ -34,7 +34,7 @@ You are likely to get access denied errors because of one of the following cause
 You can resolve the problem by using one of the following solutions:
 {: tsResolve}
 
-- **Cause 1**. If your namespace was created in version 0.1.484 of the CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, and isn't assigned to a resource group, you must assign the namespace to the same resource group as the user policy, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+- **Cause 1**. If your namespace was created in version 0.1.484 of the CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, and isn't assigned to a resource group, you must assign the namespace to the same resource group as the user policy. For more information, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 - **Cause 2**. If you're using a namespace level policy, ensure that the resource type is `namespace` (lowercase).
 
 

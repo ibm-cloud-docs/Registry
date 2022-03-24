@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: troubleshoot, error, problem, registry, namespace, add,
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# I can't add a namespace
+# Why can't I add a namespace?
 {: #troubleshoot-add-namespace}
 {: troubleshoot}
 {: support}
