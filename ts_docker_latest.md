@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: troubleshoot, error, problem, registry, docker pull, latest, image
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# I can't pull the most recent image by using the `latest` tag
+# Why can't I pull the most recent image by using the `latest` tag?
 {: #troubleshoot-docker-latest}
 {: troubleshoot}
 {: support}

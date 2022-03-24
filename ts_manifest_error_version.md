@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, image not supported, manifest version, tagging image fails
+keywords: troubleshoot, error, problem, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging
 
 subcollection: Registry
 
@@ -14,7 +14,8 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a manifest version error when I try to tag my image?
+
+# Why am I getting a manifest version error when I tag my image?
 {: #troubleshoot-manifest-error-version}
 {: troubleshoot}
 {: support}
@@ -31,7 +32,7 @@ The manifest version is not supported.
 To resolve the problem, complete the following steps:
 {: tsResolve}
 
-1. Upgrade to Docker Engine version 1.12 or later.
+1. Upgrade to a supported version of Docker, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
 2. Pull the image that you tried to tag by running the following command, where `<source_image>` is your source image name:
 

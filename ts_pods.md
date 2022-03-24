@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, pods don't restart, workers down, pods, workers
+keywords: troubleshoot, error, problem, registry, pods, worker, cluster workers, portieris
 
 subcollection: Registry
 

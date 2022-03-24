@@ -144,9 +144,9 @@ toc:
           - topic: ts_login_expire.md
             navtitle: Why does the Container Registry login keep expiring?
           - topic: ts_login_cloud.md
-            navtitle: Why do I get a failure message when I run any command in Container Registry?
+            navtitle: Why do the {{site.data.keyword.registryshort}} commands fail saying I'm not logged in?
           - topic: ts_login_error.md
-            navtitle: Why do all the Container Registry commands fail?
+            navtitle: Why do the {{site.data.keyword.registryshort}} commands fail saying they're not registered commands?
           - ts_add_namespace.md
           - ts_namespace_resource_list.md
           - ts_push_pull_docker.md

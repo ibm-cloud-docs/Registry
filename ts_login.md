@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, log in, login fails
+keywords: troubleshoot, error, problem, registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I log in to {{site.data.keyword.registrylong_notm}}?
+# Why can't I log in to {{site.data.keyword.registryshort}}?
 {: #troubleshoot-login}
 {: troubleshoot}
 {: support}

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-30"
+  years: 2021, 2022
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, namespaces, resource list
+keywords: troubleshoot, error, problem, registry, namespaces, resource list, resource group
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't all my namespaces show up in the **Resource list** page in the {{site.data.keyword.cloud_notm}} console?
+# Why don't all my namespaces show up in the **Resource list** page?
 {: #troubleshoot-namespace-resource-list}
 {: troubleshoot}
 {: support}

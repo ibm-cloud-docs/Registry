@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, image not supported, manifest type, tagging image fails
+keywords: troubleshoot, error, problem, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a manifest type error when I try to tag my image?
+# Why am I getting a manifest type error when I tag my image?
 {: #troubleshoot-manifest-error-type}
 {: troubleshoot}
 {: support}

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, listing images times out,
+keywords: troubleshoot, error, problem, registry, list, images, times out
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does listing images timeout?
+# Why is it timing out when I list images?
 {: #troubleshoot-image-timeout}
 {: troubleshoot}
 {: support}

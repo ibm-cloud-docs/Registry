@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-24"
 
-keywords: troubleshooting, support, help, errors, problems, ts, registry, pushing a Docker image fails, pulling a Docker image fails, exceeded quota,
+keywords: troubleshoot, error, problem, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
 subcollection: Registry
 
@@ -51,7 +51,7 @@ The following alternatives are possible causes:
 {: tsCauses}
 
 - Docker is not installed.
-- The Docker client is not logged in to {{site.data.keyword.registrylong}}.
+- The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
 - Your {{site.data.keyword.cloud}} [access token](x2113001){: term} expired.
 - You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
 
