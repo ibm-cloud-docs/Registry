@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-25"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, client, image, digest, access, region, package manager, security notices
 
@@ -158,7 +158,7 @@ You receive this message because the images are scanned asynchronously to the re
 
 If you get this message as part of a build pipeline and you see this error regularly, try adding some retry logic that contains a short pause.
 
-If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-ts_index#gettinghelp).
+If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp).
 
 ## How often are the security notices updated?
 {: #faq_va_update_security_notice}

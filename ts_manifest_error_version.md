@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-25"
 
 keywords: troubleshoot, error, problem, registry, manifest version, manifest version error, tag, image, the manifest version for this image is not supported for tagging
 
@@ -13,7 +13,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Why am I getting a manifest version error when I tag my image?
 {: #troubleshoot-manifest-error-version}
