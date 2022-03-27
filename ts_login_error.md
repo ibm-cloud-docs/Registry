@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-27"
 
 keywords: troubleshoot, error, problem, registry, not a registered command, registered command, 'cr' is not a registered command
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do the {{site.data.keyword.registryshort}} commands fail saying they're not registered commands?
+# Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}
