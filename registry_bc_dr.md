@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-04-04"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -39,7 +39,7 @@ For more information about your responsibilities when you are using {{site.data.
 {: caption="Table 1. RPO and RTO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
 ## Locations
-{: #ha-locations}
+{: #bc-dr-locations}
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
@@ -49,7 +49,7 @@ For more information about service availability within regions and data centers,
 Review the following FAQs about disaster recovery.
 
 ### Does the service replicate the data?
-{: #ha-dr_replicate_data}
+{: #bc-dr_replicate_data}
 
 All customer data in {{site.data.keyword.registrylong_notm}} is replicated and backed up. Backups include service and policy settings and image data, but not vulnerability results, which can be reconstructed. All data, including vulnerability results, is replicated within each region so that the loss of a single availability zone is tolerated transparently. Regular point-in-time backups are used by {{site.data.keyword.IBM_notm}} to restore the content if the data is corrupted. Extra backups are created in other regions with compatible privacy policies that are used by {{site.data.keyword.IBM_notm}} to restore the service in a disaster situation.
 
@@ -69,12 +69,12 @@ The following table shows the backup locations.
 {: caption="Table 2. Backup locations" caption-side="bottom"}
 
 ### What data is backed up or replicated?
-{: #ha-dr_backup}
+{: #bc-dr_backup}
 
 The image data, service settings, and policy settings are backed up by {{site.data.keyword.IBM_notm}}.
 
 ### Are users required to replicate the data?
-{: #ha-dr_client}
+{: #bc-dr_client}
 
 You're not expected to replicate your images. However, you can create a service instance in another {{site.data.keyword.registrylong_notm}} region. You can also choose from a range of tools, including pushing to multiple locations from your development pipeline, and the use of replication tools, such as [`skopeo copy`](https://github.com/containers/skopeo/blob/main/docs/skopeo-copy.1.md){: external}. {{site.data.keyword.IBM_notm}} doesn't replicate service instances.
 
