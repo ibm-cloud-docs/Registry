@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-04"
 
 keywords: container registry
 
@@ -1382,15 +1382,15 @@ subcollection: Registry
 
 * [Disaster recovery strategy](/docs/Registry?topic=Registry-bc-dr#bc-dr-strategy)
 
-* [Locations](/docs/Registry?topic=Registry-bc-dr#ha-locations)
+* [Locations](/docs/Registry?topic=Registry-bc-dr#bc-dr-locations)
 
 * [Frequently asked questions about disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr_faq)
 
-    * [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#ha-dr_replicate_data)
+    * [Does the service replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_replicate_data)
 
-    * [What data is backed up or replicated?](/docs/Registry?topic=Registry-bc-dr#ha-dr_backup)
+    * [What data is backed up or replicated?](/docs/Registry?topic=Registry-bc-dr#bc-dr_backup)
 
-    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#ha-dr_client)
+    * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
 
 
 ## Formatting and filtering the Container Registry CLI output
