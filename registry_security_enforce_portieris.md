@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-05"
 
 keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies
 
@@ -38,7 +38,7 @@ If you prefer to install Portieris directly, or you're not using {{site.data.key
 
 Portieris has two types of policy. Image policy resources and cluster image policy resources. You can override the default Portieris policies.
 
-For more information about Portieris policies, see [Portieris policies](https://github.com/IBM/portieris/blob/master/POLICIES.md){: external}.
+For more information about Portieris policies, see [Portieris policies](https://github.com/IBM/portieris/blob/main/POLICIES.md){: external}.
 
 ## Uninstalling Portieris
 {: #uninstall_portieris}
