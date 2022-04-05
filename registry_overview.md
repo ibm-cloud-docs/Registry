@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-05"
 
 keywords: region, plan, billing, registry, service plan, quota, cost, domain name, Docker, global registry, terms, storage, pull traffic, digest, image, dockerfile, repository, tag,
 
@@ -68,6 +68,9 @@ From 1 February 2022, both [tagged](#overview_elements_tag) and [untagged](#over
 Quota limits and billing are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. Quota settings must be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
 {: note}
 
+Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
+{: note}
+
 The following example is for pushing images:
 :   You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
 
@@ -94,6 +97,9 @@ The following example is for the standard plan:
 {: #registry_billing_traffic_pull_traffic}
 
 Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
+
+Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
+{: note}
 
 The following example is for the standard plan:
 :   In the month, you pulled images that contain layers with a total size of 14 GB. Your monthly usage is calculated as shown in the following example:
@@ -127,6 +133,9 @@ When you reach or exceed the quota limits for your plan, you can't pull any imag
 - Wait for the next billing period to start.
 - [Upgrade to the standard plan](#registry_plan_upgrade).
 - [Increase your quota limits for pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota_set).
+
+Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
+{: note}
 
 The following example is for the standard plan:
 :   In the month, your quota limit for pull traffic is set to 5 GB. You already pulled images from your namespaces and used 4.5 GB of this pull traffic. You have 0.5 GB pull traffic available until you reach your quota limit. One user wants to pull an image from your namespace with a size of 1 GB. Because the quota limit is not yet reached, {{site.data.keyword.registrylong_notm}} allows the user to pull this image.
