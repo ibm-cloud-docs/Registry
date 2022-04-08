@@ -212,6 +212,25 @@ subcollection: Registry
 [What are containers?](https://www.ibm.com/topics/containers){: external}
 
 
+## Notifications
+{: #sitemap_notifications}
+
+
+[Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+
+[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+
+* [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
+
+* [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_affect)
+
+* [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
+
+* [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
+
+[Amendment to the minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+
+
 ## Release notes
 {: #sitemap_release_notes}
 
@@ -461,25 +480,6 @@ subcollection: Registry
 * [27 June 2017](/docs/Registry?topic=Registry-registry_release_notes#registry-27jun2017)
 
     * [Introducing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#27jun2017_ga)
-
-
-## Notifications
-{: #sitemap_notifications}
-
-
-[Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
-
-[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
-
-* [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
-
-* [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_affect)
-
-* [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
-
-* [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
-
-[Amendment to the minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Container Registry and Vulnerability Advisor workflow tutorial

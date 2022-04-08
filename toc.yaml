@@ -29,14 +29,14 @@ toc:
       - link: 
           label: What are containers?
           href: https://www.ibm.com/topics/containers
-      - topic: registry_release_notes.md
-        navtitle: Release notes
       - topicgroup: 
           label: Notifications
           topics:
           - registry_notices.md
           - registry_notices_iam_policy.md
           - registry_notices_docker.md
+      - topic: registry_release_notes.md
+        navtitle: Release notes
 
   - navgroup: 
       id: tutorial
