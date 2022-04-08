@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-08"
 
 keywords: container registry
 
@@ -680,11 +680,11 @@ subcollection: Registry
 * [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove)
 
 
-## Setting up Container Registry as a private registry on Red Hat OpenShift
-{: #sitemap_setting_up_container_registry_as_a_private_registry_on_red_hat_openshift}
+## Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}
+{: #sitemap_setting_up__as_a_private_registry_on_{{sitedatakeywordredhat_openshift_notm}}}
 
 
-[Setting up Container Registry as a private registry on Red Hat OpenShift](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
+[Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
 
 * [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
@@ -1393,11 +1393,11 @@ subcollection: Registry
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
 
 
-## Formatting and filtering the Container Registry CLI output
-{: #sitemap_formatting_and_filtering_the_container_registry_cli_output}
+## Formatting and filtering the {{site.data.keyword.registryshort}} CLI output
+{: #sitemap_formatting_and_filtering_the__cli_output}
 
 
-[Formatting and filtering the Container Registry CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
+[Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
 * [Go template format option in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
@@ -1463,13 +1463,13 @@ subcollection: Registry
 
 * [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp)
 
-[Why can't I log in to Container Registry?](/docs/Registry?topic=Registry-troubleshoot-login#troubleshoot-login)
+[Why can't I log in to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-login#troubleshoot-login)
 
-[Why does the Container Registry login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
+[Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
 
-[Why do the {{site.data.keyword.registryshort}} commands fail saying I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
+[Why do the {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
-[Why do the {{site.data.keyword.registryshort}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
