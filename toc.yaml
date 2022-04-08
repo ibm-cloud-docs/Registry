@@ -57,8 +57,7 @@ toc:
       topics:
       - topic: registry_setup_cli_namespace.md
         navtitle: Setting up the Container Registry CLI and your namespace
-      - topic: registry_rhos.md
-        navtitle: Setting up Container Registry as a private registry on Red Hat OpenShift
+      - registry_rhos.md
       - registry_quota.md
       - registry_images_.md
       - registry_helm_charts.md
@@ -104,8 +103,7 @@ toc:
           topics: 
           - topic: registry_ha.md
           - topic: registry_bc_dr.md
-      - topic: registry_cli_list.md
-        navtitle: Formatting and filtering the Container Registry CLI output
+      - registry_cli_list.md
       - registry_responsibilities.md
       - link:
           label: Terraform reference
@@ -139,14 +137,10 @@ toc:
           label: Troubleshooting
           topics: 
           - ts_index.md
-          - topic: ts_login.md
-            navtitle: Why can't I log in to Container Registry?
-          - topic: ts_login_expire.md
-            navtitle: Why does the Container Registry login keep expiring?
-          - topic: ts_login_cloud.md
-            navtitle: Why do the {{site.data.keyword.registryshort}} commands fail saying I'm not logged in?
-          - topic: ts_login_error.md
-            navtitle: Why do the {{site.data.keyword.registryshort}} commands fail saying they're not registered commands?
+          - ts_login.md
+          - ts_login_expire.md
+          - ts_login_cloud.md
+          - ts_login_error.md
           - ts_add_namespace.md
           - ts_namespace_resource_list.md
           - ts_push_pull_docker.md
