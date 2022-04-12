@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why don't all my namespaces show up in the **Resource list** page?
+# Why don't all my namespaces show in the **Resource list**?
 {: #troubleshoot-namespace-resource-list}
 {: troubleshoot}
 {: support}

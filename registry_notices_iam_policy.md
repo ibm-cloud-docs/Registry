@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, notices, access policies, changes, changing, prepare
 
@@ -12,13 +12,13 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022
+# Access requires access policies from 5 July 2022
 {: #registry_notices_iam_policy}
 
-From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamlong}} (IAM) access policies.
+From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies.
 {: shortdesc}
 
-If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
+If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
 {: important}
 
 Policy-free authorization is being discontinued in the following {{site.data.keyword.registryshort}} regions:

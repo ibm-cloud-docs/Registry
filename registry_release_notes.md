@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
-keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December
+keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, release notes
 
 subcollection: Registry
 
@@ -32,7 +32,7 @@ Amendment to the minimum supported Docker version for {{site.data.keyword.regist
 {: release-note}
 
 All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
-:   From 5 July 2022, to access {{site.data.keyword.registryshort}} you must be using {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
+:   From 5 July 2022, to access {{site.data.keyword.registryshort}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
 
     Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
 
@@ -68,7 +68,7 @@ Storage that is used by untagged images is being charged for {: #01feb2022_billi
 {: #registry-17jan2022}
 {: release-note}
 
-View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
+View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_full}} signing {: #17jan2022_sig}
 :   You can view {{site.data.keyword.at_short}} events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
 
     For more information, see [Auditing the events](/docs/Registry?topic=Registry-at_events).
@@ -156,7 +156,7 @@ New region in Canada {: #10may2021_canada}
 {: release-note}
 
 The `ibmcloud cr ppa-archive-load` command is discontinued {: #04may2021_ppa}
-:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
+:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong_notm}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## 18 February 2021
 {: #registry-18feb2021}
@@ -310,7 +310,7 @@ Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_
 {: release-note}
 
 Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec2019_signatures}
-:   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.redhat_full}} signatures.
+:   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.redhat_notm}} signatures.
 
     For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
@@ -434,7 +434,7 @@ New domain names {: #25feb2019_dns}
     For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
 Adding IAM API key policies to control access to resources {: #25feb2019_secrets}
-:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamlong}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
 
     For more information, see [Understanding how to authorize your cluster to pull images from a registry](/docs/containers?topic=containers-registry#cluster_registry_auth).
 

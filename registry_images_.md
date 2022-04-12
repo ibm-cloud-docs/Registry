@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-12"
 
-keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images,
+keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images
 
 subcollection: Registry
 

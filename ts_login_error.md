@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-03-27"
 
-keywords: troubleshoot, error, problem, registry, not a registered command, registered command, 'cr' is not a registered command
+keywords: troubleshoot, error, problem, registry, not a registered command, registered command, cr, command
 
 subcollection: Registry
 

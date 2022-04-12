@@ -52,7 +52,7 @@ The following alternatives are possible causes:
 
 - Docker is not installed.
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
-- Your {{site.data.keyword.cloud}} [access token](x2113001){: term} expired.
+- Your {{site.data.keyword.cloud_notm}} [access token](x2113001){: term} expired.
 - You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
 
 You can fix this problem in the following ways:

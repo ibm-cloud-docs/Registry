@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
 keywords: access restrictions, IP addresses, access, public, private, network
 
@@ -28,7 +28,7 @@ If you're using {{site.data.keyword.registrylong_notm}} over a public network, y
 ## Granting access if you are using a private network
 {: #registry_iam_ip_private}
 
-If you're using {{site.data.keyword.registrylong_notm}} in one of the following scenarios, you must add the registry's own private IP addresses for the appropriate region to the allowlist. For more information about these IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+If you're using {{site.data.keyword.registrylong_notm}} in one of the following scenarios, you must add the registry's own private IP addresses for the appropriate region to the allowlist. For more information about these IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 - You're using one of the `private.*` domains, for example, `private.us.icr.io`.
 - You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.

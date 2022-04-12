@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
-keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage,
+keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage
 
 subcollection: Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Managing quota limits for storage and pull traffic
 {: #registry_quota}
 
-You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.cloud}} account by setting and managing custom quota limits in {{site.data.keyword.registrylong}}.
+You can limit the amount of storage and pull traffic that can be used in your {{site.data.keyword.cloud_notm}} account by setting and managing custom quota limits in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 ## Setting quota limits for storing and pulling images

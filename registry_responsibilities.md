@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2022-03-22"
+  years: 2022
+lastupdated: "2022-04-12"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
+# Understanding your responsibilities when you use {{site.data.keyword.registryshort_notm}}
 {: #registry_responsibilities}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.registrylong}}.

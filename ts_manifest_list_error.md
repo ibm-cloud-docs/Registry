@@ -5,6 +5,7 @@ copyright:
 lastupdated: "2022-03-24"
 
 keywords: troubleshoot, error, problem, registry, tag, manifest list, oci image index, manifest, manifest list invalid error
+
 subcollection: Registry
 
 content-type: troubleshoot

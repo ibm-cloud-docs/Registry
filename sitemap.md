@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-12"
 
-keywords: container registry
+keywords: container registry, site map
 
 subcollection: Registry
 
@@ -218,7 +218,7 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
-[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[Access requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
@@ -228,7 +228,7 @@ subcollection: Registry
 
 * [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
-[Amendment to the minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
+[Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
 
 ## Release notes
@@ -255,7 +255,7 @@ subcollection: Registry
 
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
-    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
+    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_full}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
 
@@ -527,7 +527,7 @@ subcollection: Registry
 
 * [Create a service ID and grant access to a resource](/docs/Registry?topic=Registry-iam_access#service_id)
 
-* [Cleaning up](/docs/Registry?topic=Registry-iam_access#clean_up)
+* [Cleaning up your account](/docs/Registry?topic=Registry-iam_access#clean_up)
 
 
 ## Solution tutorials
@@ -920,7 +920,7 @@ subcollection: Registry
 
 * [Installing Terraform and creating a {{site.data.keyword.registryshort}} namespace](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-install)
 
-* [What's next?](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup-next)
+* [Next steps](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup-next)
 
 
 ## Enhancing security
@@ -1360,7 +1360,7 @@ subcollection: Registry
 {: #sitemap_high_availability_and_disaster_recovery}
 
 
-[Understanding high availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr#ha-dr)
+[Understanding high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr)
 
 * [Responsibilities](/docs/Registry?topic=Registry-ha-dr#ha-responsibilities)
 
@@ -1376,7 +1376,7 @@ subcollection: Registry
 
     * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
 
-[Understanding business continuity and disaster recovery for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-bc-dr#bc-dr)
+[Understanding business continuity and disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr)
 
 * [Responsibilities](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
 
@@ -1393,17 +1393,17 @@ subcollection: Registry
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
 
 
-## Formatting and filtering the {{site.data.keyword.registryshort}} CLI output
-{: #sitemap_formatting_and_filtering_the__cli_output}
+## Formatting and filtering the CLI output
+{: #sitemap_formatting_and_filtering_the_cli_output}
 
 
-[Formatting and filtering the {{site.data.keyword.registryshort}} CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
+[Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
-* [Go template format option in the `ibmcloud cr image-digests` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+* [Go template format options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
-* [Go template format option in the `ibmcloud cr image-list` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+* [Go template format options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
 
-* [Go template format option in the `ibmcloud cr image-inspect` command](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+* [Go template format options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
 
     * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
 
@@ -1412,11 +1412,11 @@ subcollection: Registry
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
-## Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
-{: #sitemap_understanding_your_responsibilities_when_you_are_using_}
+## Understanding your responsibilities
+{: #sitemap_understanding_your_responsibilities}
 
 
-[Understanding your responsibilities when you are using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_responsibilities#registry_responsibilities)
+[Understanding your responsibilities](/docs/Registry?topic=Registry-registry_responsibilities#registry_responsibilities)
 
 * [Incident and operations management](/docs/Registry?topic=Registry-registry_responsibilities#incident-and-ops)
 
@@ -1473,7 +1473,7 @@ subcollection: Registry
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
-[Why don't all my namespaces show up in the **Resource list** page?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
+[Why don't all my namespaces show in the **Resource list**?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-12"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster
 
@@ -17,13 +17,13 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow tutorial
+# {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow
 {: #registry_tutorial_workflow}
 {: toc-content-type="tutorial"}
 {: toc-services="containers"}
 {: toc-completion-time="2h"}
 
-Find out about the basic functions of both {{site.data.keyword.registrylong}} and Vulnerability Advisor.
+Use this tutorial to find out about the basic functions of both {{site.data.keyword.registrylong}} and Vulnerability Advisor.
 {: shortdesc}
 
 These two services are pre-integrated and work together seamlessly in {{site.data.keyword.cloud_notm}}, and their features provide a robust but straightforward workflow for users of containers. You can use these services to store your container images, ensure the security of your images and Kubernetes clusters, control the images that you can use to deploy to your clusters, and more.
