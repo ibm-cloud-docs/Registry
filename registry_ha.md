@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-12"
 
-keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability,
+keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, locations
 
 subcollection: Registry
 
@@ -33,9 +33,9 @@ For more information about service availability, see [Service Level Agreements](
 ## Responsibilities
 {: #ha-responsibilities}
 
-To find out more about responsibility ownership for using {{site.data.keyword.cloud}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
+To find out more about responsibility ownership for using {{site.data.keyword.cloud_notm}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
 
-For more information about your responsibilities when you are using {{site.data.keyword.registrylong}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
+For more information about your responsibilities when you are using {{site.data.keyword.registrylong_notm}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
 
 ## What level of availability do I need?
 {: #ha-level}

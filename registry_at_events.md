@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
-keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api methods
+keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api
 
 subcollection: Registry
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Auditing the events for {{site.data.keyword.registryshort_notm}}
 {: #at_events}
 
-Use {{site.data.keyword.at_full}} to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud}}.
+Use {{site.data.keyword.at_full}} to track how users and applications interact with the {{site.data.keyword.registrylong}} service in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 The {{site.data.keyword.at_full_notm}} service records user-initiated activities that change the state of a service in the {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).

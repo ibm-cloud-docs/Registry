@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
-keywords: commands, format commands, filter command output, private registry, registry commands, formatting output, filtering output, output, Go template format option, data types, cli, config, healthcheck, rootfs
+keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template
 
 subcollection: Registry
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Formatting and filtering the {{site.data.keyword.registryshort}} CLI output
+# Formatting and filtering the CLI output
 {: #registry_cli_list}
 
-You can format and filter the CLI output for supported {{site.data.keyword.registrylong}} commands.
+You can format and filter the {{site.data.keyword.registrylong}} CLI output for supported {{site.data.keyword.registrylong_notm}} commands.
 {: shortdesc}
 
 By default, the CLI output is displayed in a human-readable format. However, this view might limit your ability to use the output, particularly if the command is run programmatically. For example, in the `ibmcloud cr image-list` CLI output, you might want to sort the `Size` field by numerical size, but the command returns a string description of the size. The `container-registry` CLI plug-in provides the format option that you can use to apply a Go template to the CLI output. The Go template is a feature of the [Go programming language](https://pkg.go.dev/text/template){: external} that you can use to customize the CLI output.
@@ -66,7 +66,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
+- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
     ```txt
     ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -94,7 +94,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-## Go template format option in the `ibmcloud cr image-digests` command
+## Go template format options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
@@ -110,7 +110,7 @@ Review the following table to find available Go template options and data types 
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-digests command" caption-side="bottom"}
 
-## Go template format option in the `ibmcloud cr image-list` command
+## Go template format options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
@@ -127,7 +127,7 @@ Review the following table to find available Go template options and data types 
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-list command" caption-side="bottom"}
 
-## Go template format option in the `ibmcloud cr image-inspect` command
+## Go template format options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-12"
 
 keywords: API keys, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate
 
@@ -12,14 +12,13 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Accessing {{site.data.keyword.registrylong_notm}}
 {: #registry_access}
 
 To access your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM). To set up and manage IAM policies, see [Defining access role policies](/docs/Registry?topic=Registry-user#user).
 {: shortdesc}
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamlong}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
+From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access role policies](/docs/Registry?topic=Registry-user).
 {: important}
 
 If you want to use your container images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from nondefault Kubernetes namespaces](/docs/containers?topic=containers-registry#other).
@@ -34,7 +33,7 @@ You can use service ID API keys to automate the pushing and pulling of container
 
 [API keys](x8051010){: term} are linked to user IDs or service IDs in your account and you can use them across {{site.data.keyword.cloud}}. You can use an API key in the CLI or as part of automation to authenticate as your user or service identity. A [user API key](#registry_access_user_apikey_create) is associated with a user and their access policies. A [service ID API key](#registry_access_serviceid_apikey_create) has its own access policies. You can have several service IDs with different fine grained policies so that your automation is granted specific and limited capabilities.
 
-When you create an {{site.data.keyword.containerlong}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a nonexpiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
+When you create an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong}} cluster, the cluster is created with an {{site.data.keyword.cloud_notm}} IAM service ID that is given an IAM Reader service access role policy to {{site.data.keyword.registrylong_notm}}. The service ID credentials are authenticated in a nonexpiring service ID API key that is stored in image pull secrets in your cluster. The image pull secrets are added to the `default` Kubernetes namespace and to the list of secrets in the `default` service account for this Kubernetes namespace. If you require more service ID API keys or the service ID API key is missing, you can [create a service ID API key manually](#registry_access_serviceid_apikey_create).
 
 You can use service ID API keys in the following places:
 
@@ -88,7 +87,7 @@ Clients require an API key and a domain, replace `<apikey>` with your API key an
 | `us-south` | `us.icr.io` |
 {: caption="Table 1. Registry domains" caption-side="bottom"}
 
-For more information about how to use {{site.data.keyword.registrylong}} in an {{site.data.keyword.contdelivery_full}} pipeline, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
+For more information about how to use {{site.data.keyword.registrylong_notm}} in a {{site.data.keyword.contdelivery_short}} pipeline, see [Using a private image registry](/docs/ContinuousDelivery?topic=ContinuousDelivery-custom_docker_images#private_image_registry).
 
 Examples of how to authenticate automatically with the registry are provided for the following clients:
 

@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-03-24"
 
-keywords: troubleshoot, error, problem, registry, namespace, add,
+keywords: troubleshoot, error, problem, registry, namespace
 
 subcollection: Registry
 
@@ -28,7 +28,7 @@ When you run `ibmcloud cr namespace-add`, you are unable to set your entered val
 The following alternatives are possible causes:
 {: tsCauses}
 
-- You entered a namespace value that is already being used by another {{site.data.keyword.cloud}} organization.
+- You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
 - A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registrylong_notm}}.
 - You used invalid characters in the namespace value.
 

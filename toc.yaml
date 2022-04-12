@@ -102,9 +102,12 @@ toc:
           label: High availability and disaster recovery
           topics: 
           - topic: registry_ha.md
+            navtitle: Understanding high availability
           - topic: registry_bc_dr.md
+            navtitle: Understanding business continuity and disaster recovery
       - registry_cli_list.md
-      - registry_responsibilities.md
+      - topic: registry_responsibilities.md
+        navtitle: Understanding your responsibilities
       - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace

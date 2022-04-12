@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-03-24"
 
-keywords: troubleshoot, error, problem, registry, list, images, times out
+keywords: troubleshoot, error, problem, registry, list, images, timeout
 
 subcollection: Registry
 
