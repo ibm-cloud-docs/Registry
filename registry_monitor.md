@@ -15,7 +15,7 @@ subcollection: Registry
 # Monitoring metrics for {{site.data.keyword.registrylong_notm}}
 {: #registry_monitor}
 
-You can use {{site.data.keyword.mon_full}} to monitor platform metrics of {{site.data.keyword.registrylong_notm}} usage for your account and to create alerts based on these metrics.
+You can use {{site.data.keyword.mon_full}} to monitor platform metrics of {{site.data.keyword.registrylong}} usage for your account and to create alerts based on these metrics.
 {: shortdesc}
 
 Platform metrics for {{site.data.keyword.registryshort}} must be enabled in each {{site.data.keyword.registryshort}} region that you want to monitor, see [Enabling metrics for {{site.data.keyword.registryshort}}](#registry_enable_platform_metrics).
