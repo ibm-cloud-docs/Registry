@@ -218,7 +218,7 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
-[Access requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 

@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Access requires access policies from 5 July 2022
+# Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022
 {: #registry_notices_iam_policy}
 
 From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies.
