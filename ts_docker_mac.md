@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, docker login, mac, credentials, error saving credentials, error storing credentials, user name or passphrase you entered is not correct
+keywords: error, problem, registry, docker login, mac, credentials, error saving credentials, error storing credentials, user name or passphrase you entered is not correct
 
 subcollection: Registry
 

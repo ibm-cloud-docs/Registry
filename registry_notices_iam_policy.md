@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: IBM Cloud Container Registry notices, iam access policies, notices, access policies, changes, changing, prepare
+keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare
 
 subcollection: Registry
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022
+# Access policies are required from 5 July 2022
 {: #registry_notices_iam_policy}
 
 From 5 July 2022, to access {{site.data.keyword.registrylong}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies.
@@ -31,7 +31,7 @@ Policy-free authorization is being discontinued in the following {{site.data.key
 
 Other regions are unaffected because they already require IAM access policies for all accounts.
 
-## What is changing?
+## What are the changes?
 {: #notices_iam_policy_change}
 
 Before 7 June 2019, all account users had full access to the images and settings that are associated with the account. Accounts that use {{site.data.keyword.registryshort}} for the first time since 7 June 2019 are required to have IAM access policies and other accounts optionally require them. From 5 July 2022, all accounts will require IAM access policies.
@@ -59,7 +59,7 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 
     This change applies to the currently targeted region only. Remember to check all regions where you have {{site.data.keyword.registryshort}} namespaces.
 
-## What can I do if I did not prepare in time?
+## What if I did not make the changes in time?
 {: #notices_iam_policy_unprepared}
 
 To recover any access that is lost, follow the steps in [Prepare for the changes](#notices_iam_policy_prepare).

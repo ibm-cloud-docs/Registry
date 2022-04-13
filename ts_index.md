@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshooting, support, help, error, error messages, problem, registry, support ticket, ticket
+keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
 subcollection: Registry
 

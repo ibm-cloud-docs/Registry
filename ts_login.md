@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
+keywords: registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
 
 subcollection: Registry
 

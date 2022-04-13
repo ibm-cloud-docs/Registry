@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: container registry, site map
 
@@ -218,15 +218,15 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
-[Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[Access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
-* [What is changing?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
+* [What are the changes?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
 * [Check whether these changes affect you](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_affect)
 
 * [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
 
-* [What can I do if I did not prepare in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
+* [What if I did not make the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
@@ -255,7 +255,7 @@ subcollection: Registry
 
 * [17 January 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-17jan2022)
 
-    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_full}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
+    * [View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing](/docs/Registry?topic=Registry-registry_release_notes#17jan2022_sig)
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
 
@@ -680,19 +680,19 @@ subcollection: Registry
 * [Removing namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_remove)
 
 
-## Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}
+## Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}
 {: #sitemap_setting_up__as_a_private_registry_on_{{sitedatakeywordredhat_openshift_notm}}}
 
 
-[Setting up {{site.data.keyword.registrylong_notm}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
+[Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
 
-* [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
+* [Set up {{site.data.keyword.openshiftlong_notm}} to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_rhoks)
 
-* [Set up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
+* [Set up {{site.data.keyword.redhat_openshift_notm}} Container Platform to use {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os)
 
-    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
+    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
 
-    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
+    * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
 
 
 ## Managing quota limits for storage and pull traffic
@@ -1467,7 +1467,7 @@ subcollection: Registry
 
 [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
 
-[Why do the {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
+[Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
 [Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
@@ -1483,11 +1483,11 @@ subcollection: Registry
 
 [Why do all the tags get deleted when I delete an image?](/docs/Registry?topic=Registry-troubleshoot-image-rm#troubleshoot-image-rm)
 
-[Why is an image absent when I run the retention command?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention#troubleshoot-image-list-retention)
+[Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention#troubleshoot-image-list-retention)
 
-[Why do I get a tagged image exists error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
+[Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
-[Why aren't some tags restored when I'm restoring an image by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+[Why aren't all tags restored when an image is restored by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
 
@@ -1495,11 +1495,11 @@ subcollection: Registry
 
 [Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
 
-[Why am I getting a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
+[Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
 
-[Why am I getting a manifest version error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
+[Why do I get a manifest version error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
 
-[Why am I getting a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
+[Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
 
 [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-27"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
+keywords: registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do the {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?
+# Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?
 {: #troubleshoot-login-cloud}
 {: troubleshoot}
 {: support}

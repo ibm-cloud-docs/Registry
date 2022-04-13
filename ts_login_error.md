@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-27"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, not a registered command, registered command, cr, command
+keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
 subcollection: Registry
 

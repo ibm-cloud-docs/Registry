@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, login, expire, push, pull, image, iam session
+keywords: registry, login, expire, push, pull, iam session, iam
 
 subcollection: Registry
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, images, retention, distroless, list, creation date
+keywords: registry, images, retention, distroless, list, creation date
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is an image absent when I run the retention command?
+# Why doesn't the retention command show all the images?
 {: #troubleshoot-image-list-retention}
 {: troubleshoot}
 {: support}

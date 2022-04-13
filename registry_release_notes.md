@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, release notes
 
@@ -68,7 +68,7 @@ Storage that is used by untagged images is being charged for {: #01feb2022_billi
 {: #registry-17jan2022}
 {: release-note}
 
-View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_full}} signing {: #17jan2022_sig}
+View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
 :   You can view {{site.data.keyword.at_short}} events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
 
     For more information, see [Auditing the events](/docs/Registry?topic=Registry-at_events).
@@ -156,7 +156,7 @@ New region in Canada {: #10may2021_canada}
 {: release-note}
 
 The `ibmcloud cr ppa-archive-load` command is discontinued {: #04may2021_ppa}
-:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong_notm}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
+:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud_notm}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong_notm}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## 18 February 2021
 {: #registry-18feb2021}
@@ -312,7 +312,7 @@ Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_
 Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec2019_signatures}
 :   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.redhat_notm}} signatures.
 
-    For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_full}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 25 October 2019
 {: #registry-25oct2019}
