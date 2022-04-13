@@ -239,7 +239,7 @@ subcollection: Registry
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
-    * [Amendment to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
+    * [Amendment to the minimum supported Docker version for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#01mar2022_docker)
 
 * [9 February 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-09feb2022)
 
@@ -259,7 +259,7 @@ subcollection: Registry
 
 * [7 December 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-07dec2021)
 
-    * [Define configuration rules for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#07dec2021_gov)
+    * [Define configuration rules for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#07dec2021_gov)
 
 * [1 November 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-01nov2021)
 
@@ -267,7 +267,7 @@ subcollection: Registry
 
 * [5 October 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-05oct2021)
 
-    * [{{site.data.keyword.registrylong_notm}} container builds are discontinued](/docs/Registry?topic=Registry-registry_release_notes#05oct2021_build)
+    * [{{site.data.keyword.registryshort}} container builds are discontinued](/docs/Registry?topic=Registry-registry_release_notes#05oct2021_build)
 
 * [2 September 2021](/docs/Registry?topic=Registry-registry_release_notes#registry-02sep2021)
 
@@ -319,7 +319,7 @@ subcollection: Registry
 
 * [6 October 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-06oct2020)
 
-    * [{{site.data.keyword.registrylong_notm}} container builds are deprecated](/docs/Registry?topic=Registry-registry_release_notes#06oct2020_build)
+    * [{{site.data.keyword.registryshort}} container builds are deprecated](/docs/Registry?topic=Registry-registry_release_notes#06oct2020_build)
 
 * [27 August 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-27aug2020)
 
@@ -355,13 +355,13 @@ subcollection: Registry
 
 * [16 April 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-16apr2020)
 
-    * [You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#16apr2020_private_network)
+    * [You can use private network connections to securely route your data in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#16apr2020_private_network)
 
     * [`ibmcloud cr private-only` command is available](/docs/Registry?topic=Registry-registry_release_notes#16apr2020_private)
 
 * [3 February 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-3feb2020)
 
-    * [Using {{site.data.keyword.registrylong_notm}} tokens is deprecated](/docs/Registry?topic=Registry-registry_release_notes#3feb2020_tokens)
+    * [Using {{site.data.keyword.registryshort}} tokens is deprecated](/docs/Registry?topic=Registry-registry_release_notes#3feb2020_tokens)
 
 * [31 January 2020](/docs/Registry?topic=Registry-registry_release_notes#registry-31jan2020)
 
@@ -391,7 +391,7 @@ subcollection: Registry
 
 * [25 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25jul2019)
 
-    * [{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#25jul2019_at)
+    * [{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#25jul2019_at)
 
 * [1 July 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-1jul2019)
 
@@ -415,7 +415,7 @@ subcollection: Registry
 
 * [14 March 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-14mar2019)
 
-    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_release_notes#14mar2019_at)
+    * [{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#14mar2019_at)
 
 * [25 February 2019](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019)
 
