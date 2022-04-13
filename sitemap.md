@@ -849,7 +849,7 @@ subcollection: Registry
 
 * [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
 
-* [Clean up your namespaces by retaining a specified number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
+* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
 
 * [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
 

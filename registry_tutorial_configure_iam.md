@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: access, tutorial, authorize, service ID, configure, registry, namespace, account
+keywords: access, tutorial, service ID, configure, registry, namespace, account
 
 subcollection: Registry
 

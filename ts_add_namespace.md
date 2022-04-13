@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, namespace
+keywords: registry, namespace, value, characters, delete
 
 subcollection: Registry
 
@@ -29,7 +29,7 @@ The following alternatives are possible causes:
 {: tsCauses}
 
 - You entered a namespace value that is already being used by another {{site.data.keyword.cloud_notm}} organization.
-- A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registrylong_notm}}.
+- A namespace was recently deleted and you are reusing its name. If the namespace that was deleted contained many resources, the deletion might not yet be fully processed by {{site.data.keyword.registryshort}}.
 - You used invalid characters in the namespace value.
 
 You can fix this problem in the following ways:
