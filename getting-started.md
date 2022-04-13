@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-13"
 
-keywords: IBM Cloud Container Registry, namespace, image security, cli, Docker, images, registry, Podman
+keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman
 
 subcollection: Registry
 
