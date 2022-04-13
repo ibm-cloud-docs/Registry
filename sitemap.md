@@ -973,7 +973,7 @@ subcollection: Registry
 
 * [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
-[Using VPE for VPC to privately connect to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
+[Using VPE for VPC to connect privately](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
 
