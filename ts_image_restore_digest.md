@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: restore, image, digest, trash, tag
+keywords: restore, image, digest, trash, tag, repository
 
 subcollection: Registry
 

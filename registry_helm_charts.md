@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart
+keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
 subcollection: Registry
 

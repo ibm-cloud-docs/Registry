@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: API keys, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate
+keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
 subcollection: Registry
 

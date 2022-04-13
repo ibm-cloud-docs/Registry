@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: error, iam, access denied, access policy, namespace, policy, resource group
+keywords: error, iam, access denied, access policy, namespace, policy, resource group, access
 
 subcollection: Registry
 

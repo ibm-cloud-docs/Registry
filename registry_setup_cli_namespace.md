@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: namespaces, Docker images, CLI, install, registry CLI, namespaces, setting up cli, installing cli, uninstalling cli, command
+keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
 subcollection: Registry
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies
+keywords: Portieris, image security, Portieris policies, installing Portieris, security, removing Portieris, policies, cluster
 
 subcollection: Registry
 

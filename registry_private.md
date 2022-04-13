@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-13"
 
-keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint
+keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
 subcollection: Registry
 

@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-04-13"
 
-keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage
+keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
 subcollection: Registry
 

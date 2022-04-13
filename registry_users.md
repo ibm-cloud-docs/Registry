@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles
+keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, account, users, resources, namespace
 
 subcollection: Registry
 

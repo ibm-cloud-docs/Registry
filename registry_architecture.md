@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-04-13"
 
-keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane
+keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
 subcollection: Registry
 

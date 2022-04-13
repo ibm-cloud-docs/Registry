@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2022
 lastupdated: "2022-04-13"
 
-keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location
+keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
 subcollection: Registry
 

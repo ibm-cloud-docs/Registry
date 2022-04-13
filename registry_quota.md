@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage
+keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
 subcollection: Registry
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry, deleting, namespaces, images, private repositories, managing your data, service
+keywords: data, data encryption in IBM Cloud Container Registry, data storage for IBM Cloud Container Registry, personal data in IBM Cloud Container Registry, data deletion for IBM Cloud Container Registry, data in IBM Cloud Container Registry, data security in IBM Cloud Container Registry, deleting, namespace, images, private repositories, managing your data, service, data, trash
 
 subcollection: Registry
 

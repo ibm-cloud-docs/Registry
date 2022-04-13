@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image
+keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image, resource
 
 subcollection: Registry
 

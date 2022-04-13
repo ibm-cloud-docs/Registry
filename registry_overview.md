@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: region, plan, billing, registry, service plan, quota, cost, domain name, Docker, global registry, terms, storage, pull traffic, digest, image, dockerfile, repository, tag
+keywords: region, plan, billing, registry, service plan, quota, cost, domain name, Docker, global registry, terms, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
 subcollection: Registry
 
