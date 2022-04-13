@@ -4,7 +4,7 @@ copyright:
   years: 2021, 2022
 lastupdated: "2022-04-13"
 
-keywords: container registry, site map
+keywords: container registry, site map, policy, storage, images, overview, registry
 
 subcollection: Registry
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: IBM Cloud, api methods, registry, iam, activity tracker, actions, vulnerability
+keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
 subcollection: Registry
 

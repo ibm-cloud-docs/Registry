@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key
+keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
 subcollection: Registry
 

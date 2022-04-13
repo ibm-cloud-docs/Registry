@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2022
 lastupdated: "2022-04-13"
 
-keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace
+keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
 subcollection: Registry
 

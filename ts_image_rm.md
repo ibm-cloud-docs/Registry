@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: registry, delete, images, tag, ibmcloud cr image-rm
+keywords: registry, delete, image, tag, ibmcloud cr image-rm
 
 subcollection: Registry
 

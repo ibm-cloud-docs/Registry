@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-04-13"
 
-keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform
+keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
 subcollection: Registry
 

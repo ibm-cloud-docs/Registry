@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: registry, images, retention, distroless, list, creation date
+keywords: registry, image, retention, distroless, list, creation date
 
 subcollection: Registry
 
