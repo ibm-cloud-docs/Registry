@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, namespaces, resource list, resource group
+keywords: registry, namespaces, resource list, resource group, console
 
 subcollection: Registry
 

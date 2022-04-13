@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: troubleshoot, error, problem, registry, tag, manifest list, oci image index, manifest, manifest list invalid error
+keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error
 
 subcollection: Registry
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a manifest list invalid error?
+# Why do I get a manifest list invalid error?
 {: #troubleshoot-manifest-list-error}
 {: troubleshoot}
 {: support}

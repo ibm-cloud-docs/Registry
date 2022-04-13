@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: IBM Cloud Container Registry notices, support, docker, version
+keywords: IBM Cloud Container Registry notices, support, docker, version, minimum
 
 subcollection: Registry
 
