@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures
+keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images
 
 subcollection: Registry
 
@@ -80,11 +80,11 @@ On Linux&reg; and macOS, the default configuration for the tools is to store the
 ### Using Podman to sign images
 {: #registry_trustedcontent_red_hat_sig_podman}
 
-For more information, see [Podman](https://podman.io/){: external}.
+You can use Podman to sign images. For more information, see [Podman](https://podman.io/){: external}.
 
 ### Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI
 {: #registry_trustedcontent_red_hat_sig_oc}
 
-For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.
+You can sign your images by using the {{site.data.keyword.redhat_openshift_notm}} CLI. For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.
 
 

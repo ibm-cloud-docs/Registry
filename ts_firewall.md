@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2022
 lastupdated: "2022-04-13"
 
-keywords: registry, firewall, custom firewall, network
+keywords: registry, firewall, custom firewall, network, network traffic
 
 subcollection: Registry
 

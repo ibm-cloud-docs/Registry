@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
-keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, client, image, digest, access, region, package manager, security notices
+keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices
 
 subcollection: Registry
 
