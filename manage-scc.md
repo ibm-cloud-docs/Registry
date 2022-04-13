@@ -20,16 +20,16 @@ subcollection: Registry
 
 With the {{site.data.keyword.compliance_short}}, you can:
 
-- Monitor for controls and goals that are applicable to {{site.data.keyword.registrylong_notm}}.
-- Define rules for {{site.data.keyword.registrylong_notm}} that can help to standardize resource configuration.
+- Monitor for controls and goals that are applicable to {{site.data.keyword.registryshort}}.
+- Define rules for {{site.data.keyword.registryshort}} that can help to standardize resource configuration.
 
 
 ## Monitoring security and compliance posture
 {: #monitor-container-registry}
 
-As a security or compliance focal, you can use the {{site.data.keyword.registrylong_notm}} [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identify potential issues as they arise.
+As a security or compliance focal, you can use the {{site.data.keyword.registryshort}} [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identify potential issues as they arise.
 
-All the goals for {{site.data.keyword.registrylong_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
+All the goals for {{site.data.keyword.registryshort}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
 {: note}
 
 To start monitoring your resources, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
@@ -53,9 +53,9 @@ You can choose from the following goals:
 ## Governing {{site.data.keyword.registryshort}} resource configuration
 {: #govern-container-registry}
 
-As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registrylong_notm}}.
+As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registryshort}}.
 
-Configuration rules are used to enforce the configuration standards that you want to implement across your accounts. To learn more about the data that you can use to create a rule for {{site.data.keyword.registrylong_notm}}, review the following table.
+Configuration rules are used to enforce the configuration standards that you want to implement across your accounts. To learn more about the data that you can use to create a rule for {{site.data.keyword.registryshort}}, review the following table.
 
 You can restrict your rule to a specific registry instance by specifying either the `registry` or `region` target attributes. For example, to restrict your rule to the registry instance in `us-south`, you can use the `string_equals` *operator* to require that either the *target attribute* `registry` matches the *value* `us.icr.io`, or the *target attribute* `region` matches the *value* `us-south`.
 
@@ -63,8 +63,8 @@ You can restrict your rule to a specific registry instance by specifying either 
 |---------------|----------|----------|-------|-------------|
 | *Service* | *iam_authz* | *is_true*  \n *is_false* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
 | *Service* | *private_only* | *is_true*  \n *is_false* | Not applicable | Restricts the account so that it can push and pull images by using private connections only. |
-| *Service* | *platform_metrics* | *is_true*  \n *is_false* | Not applicable | Publishes {{site.data.keyword.registrylong_notm}} platform metrics. |
-{: caption="Table 1. Rule properties for {{site.data.keyword.registrylong_notm}}" caption-side="bottom"}
+| *Service* | *platform_metrics* | *is_true*  \n *is_false* | Not applicable | Publishes {{site.data.keyword.registryshort}} platform metrics. |
+{: caption="Table 1. Rule properties for {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
 For example, use the following rule if you want *private_only* to be true, but only in the `us-south` registry.
 

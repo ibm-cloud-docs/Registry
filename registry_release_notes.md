@@ -24,15 +24,15 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: #registry-01mar2022}
 {: release-note}
 
-Amendment to the minimum supported Docker version for {{site.data.keyword.registrylong_notm}} {: #01mar2022_docker}
-:   From 1 March 2022, the minimum version of Docker Engine that is supported by {{site.data.keyword.registrylong_notm}} is v17.07, or later.
+Amendment to the minimum supported Docker version for {{site.data.keyword.registryshort}} {: #01mar2022_docker}
+:   From 1 March 2022, the minimum version of Docker Engine that is supported by {{site.data.keyword.registryshort}} is v17.07, or later.
 
 ## 9 February 2022
 {: #registry-09feb2022}
 {: release-note}
 
 All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
-:   From 5 July 2022, to access {{site.data.keyword.registryshort}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service.
+:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access role policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
 
@@ -77,8 +77,8 @@ View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_no
 {: #registry-07dec2021}
 {: release-note}
 
-Define configuration rules for {{site.data.keyword.registrylong_notm}} {: #07dec2021_gov}
-:   As a security or compliance focal, you can use the **Govern resources** section of the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registrylong_notm}}.
+Define configuration rules for {{site.data.keyword.registryshort}} {: #07dec2021_gov}
+:   As a security or compliance focal, you can use the **Govern resources** section of the {{site.data.keyword.compliance_short}} dashboard to define [configuration rules](#x3084914){: term} for {{site.data.keyword.registryshort}}.
 
     For more information, see [Governing {{site.data.keyword.registrylong_notm}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance&interface=ui#govern-container-registry).
 
@@ -87,15 +87,15 @@ Define configuration rules for {{site.data.keyword.registrylong_notm}} {: #07dec
 {: release-note}
 
 Using Notary v1 for signing images is discontinued {: #01nov2021_notary}
-:   The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued from 1 November 2021.
+:   The Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registryshort}} is discontinued from 1 November 2021.
 
-    {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    {{site.data.keyword.registryshort}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 5 October 2021
 {: #registry-05oct2021}
 {: release-note}
 
-{{site.data.keyword.registrylong_notm}} container builds are discontinued {: #05oct2021_build}
+{{site.data.keyword.registryshort}} container builds are discontinued {: #05oct2021_build}
 :   The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
     For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
@@ -133,9 +133,9 @@ The `ibmcloud cr login` command logs you into the `<region>.icr.io` registry dom
 {: release-note}
 
 Using Notary v1 for signing images is deprecated {: #08jul2021_notary}
-:   The Notary v1 service for signing images is deprecated. It is being removed from {{site.data.keyword.registrylong_notm}} on 31 August 2021.
+:   The Notary v1 service for signing images is deprecated. It is being removed from {{site.data.keyword.registryshort}} on 31 August 2021.
 
-    As an alternative approach, {{site.data.keyword.registrylong_notm}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
+    As an alternative approach, {{site.data.keyword.registryshort}} supports the [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} model. For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
 ## 21 June 2021
 {: #registry-21jun2021}
@@ -194,8 +194,8 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {: #registry-06oct2020}
 {: release-note}
 
-{{site.data.keyword.registrylong_notm}} container builds are deprecated {: #06oct2020_build}
-:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registrylong_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
+{{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
+:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
     For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
@@ -224,7 +224,7 @@ Using UAA tokens is discontinued {: #12aug2020_tokens}
 New access roles are required for Vulnerability Advisor exemption policies {: #30jul2020_exemption}
 :   If you want to manage your Vulnerability Advisor exemption policies for security issues, depending on the task that you want to complete, you might have to update your access role.
 
-    For more information, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+    For more information, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## 29 July 2020
 {: #registry-29jul2020}
@@ -244,7 +244,7 @@ You can set permissions so that access to resources within a namespace can be co
 {: release-note}
 
 To work with namespaces, you must have the Manager role at the account level {: #13jul2020_manager}
-:   If you want to add or remove namespaces, you must have the Manager role, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
+:   If you want to add or remove namespaces, you must have the Manager role, see [Access roles for configuring {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
 ## 24 June 2020
 {: #registry-24jun2020}
@@ -269,7 +269,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 {: release-note}
 
 `ibmcloud cr image-prune-untagged` command is available {: #30apr2020_prune}
-:   The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registrylong_notm}} account.
+:   The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registryshort}} account.
 
     For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
 
@@ -277,7 +277,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 {: #registry-16apr2020}
 {: release-note}
 
-You can use private network connections to securely route your data in {{site.data.keyword.registrylong_notm}} {: #16apr2020_private_network}
+You can use private network connections to securely route your data in {{site.data.keyword.registryshort}} {: #16apr2020_private_network}
 :   If you use cloud-based services for production workloads, you can use a secure private connection so that you ensure that you adhere to any compliance regulations. You can use {{site.data.keyword.cloud_notm}} service endpoints to connect to {{site.data.keyword.cloud_notm}} services over the private {{site.data.keyword.cloud_notm}} network.
 
     For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private) and [{{site.data.keyword.registrylong_notm}} architecture and workload](/docs/Registry?topic=Registry-registry_architecture).
@@ -291,8 +291,8 @@ You can use private network connections to securely route your data in {{site.da
 {: #registry-3feb2020}
 {: release-note}
 
-Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_tokens}
-:   The use of UAA and {{site.data.keyword.registrylong_notm}} tokens is deprecated. From 12 August 2020, UAA tokens are not accepted for authentication.
+Using {{site.data.keyword.registryshort}} tokens is deprecated {: #3feb2020_tokens}
+:   The use of UAA and {{site.data.keyword.registryshort}} tokens is deprecated. From 12 August 2020, UAA tokens are not accepted for authentication.
 
     For more information, see [Announcing End of {{site.data.keyword.registrylong_notm}} Support for UAA Tokens](https://www.ibm.com/cloud/blog/announcements/announcing-end-of-ibm-cloud-container-registry-support-for-uaa-tokens){: external}.
 
@@ -310,7 +310,7 @@ Using {{site.data.keyword.registrylong_notm}} tokens is deprecated {: #3feb2020_
 {: release-note}
 
 Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec2019_signatures}
-:   {{site.data.keyword.registrylong_notm}} now supports {{site.data.keyword.redhat_notm}} signatures.
+:   {{site.data.keyword.registryshort}} now supports {{site.data.keyword.redhat_notm}} signatures.
 
     For more information, see [Signing images for trusted content by using {{site.data.keyword.redhat_full}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig).
 
@@ -319,7 +319,7 @@ Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec20
 {: release-note}
 
 {{site.data.keyword.la_full_notm}} platform services logs are available {: #25oct2019_logs}
-:   {{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your logging instances.
+:   {{site.data.keyword.registryshort}} generates platform services logs that are displayed in your logging instances.
 
     For more information, see [{{site.data.keyword.la_full_notm}} platform services logs](/docs/Registry?topic=Registry-registry_logs).
 
@@ -337,7 +337,7 @@ Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec20
 {: release-note}
 
 You can create retention policies for your images {: #23sep2019_retention_policy}
-:   Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted.
+:   Image retention policies retain the specified number of images for each repository within a namespace in {{site.data.keyword.registryshort}}. All other images in the namespace are deleted.
 
     The following commands are available for you to use to create retention policies so that you can manage your images:
 
@@ -361,7 +361,7 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 {: release-note}
 
 `ibmcloud cr retention-run` command is available {: #01aug2019_retention}
-:   The `ibmcloud cr retention-run` command cleans up your namespaces by retaining images for each repository within a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. All other images in the namespace are deleted.
+:   The `ibmcloud cr retention-run` command cleans up your namespaces by retaining images for each repository within a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. All other images in the namespace are deleted.
 
     For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
@@ -369,8 +369,8 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 {: #registry-25jul2019}
 {: release-note}
 
-{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registrylong_notm}} {: #25jul2019_at}
-:   Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.at_full_notm}} available for {{site.data.keyword.registryshort}} {: #25jul2019_at}
+:   Use the {{site.data.keyword.at_full_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -386,14 +386,14 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 {: release-note}
 
 Container Scanner is no longer available {: #27jun2019_cs}
-:   The Container Scanner is discontinued. Vulnerability Advisor still scans images that are pushed to {{site.data.keyword.registrylong_notm}}.
+:   The Container Scanner is discontinued. Vulnerability Advisor still scans images that are pushed to {{site.data.keyword.registryshort}}.
 
 ## 13 June 2019
 {: #registry-13jun2019}
 {: release-note}
 
 Remove tags from images {: #13jun2019_tags}
-:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
+:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
 
     For more information, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
 
@@ -415,8 +415,8 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 {: #registry-14mar2019}
 {: release-note}
 
-{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registrylong_notm}} {: #14mar2019_at}
-:   Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.cloudaccesstrailfull_notm}} available for {{site.data.keyword.registryshort}} {: #14mar2019_at}
+:   Use the {{site.data.keyword.cloudaccesstraillong_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -425,7 +425,7 @@ General Availability of Container Image Security Enforcement {: #2apr2019_cise}
 {: release-note}
 
 New domain names {: #25feb2019_dns}
-:   {{site.data.keyword.registrylong_notm}} is adopting new domain names. The new domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
+:   {{site.data.keyword.registryshort}} is adopting new domain names. The new domain names are available in the {{site.data.keyword.cloud_notm}} console and the CLI. You can use the new `icr.io` domain names now. The existing `registry.bluemix.net` domain names are deprecated, but you can continue to use them until the end of support date. An end of support date is not available yet.
 
     For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
 
@@ -434,7 +434,7 @@ New domain names {: #25feb2019_dns}
     For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
 Adding IAM API key policies to control access to resources {: #25feb2019_secrets}
-:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registrylong_notm}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registryshort}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
 
     For more information, see [Understanding how to authorize your cluster to pull images from a registry](/docs/containers?topic=containers-registry#cluster_registry_auth).
 
@@ -448,7 +448,7 @@ New region in ap-north {: #25feb2019_ap-north}
 {: release-note}
 
 Automating access to your namespaces {: #21feb2019_access}
-:   Using tokens to automate pushing and pulling Docker images to and from your namespaces is deprecated. You must now use API keys to automate access to your {{site.data.keyword.registrylong_notm}} namespaces so that you can push and pull images.
+:   Using tokens to automate pushing and pulling Docker images to and from your namespaces is deprecated. You must now use API keys to automate access to your {{site.data.keyword.registryshort}} namespaces so that you can push and pull images.
 
     For more information, see [Creating a user API key manually](/docs/Registry?topic=Registry-registry_access#registry_access_user_apikey_create).
 
@@ -466,9 +466,9 @@ End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 {: release-note}
 
 Managing user access {: #4oct2018_access}
-:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registrylong_notm}}. When IAM policies are enabled for your account in {{site.data.keyword.registrylong_notm}}, every user that accesses the service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
+:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-    For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
+    For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining user access role policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 
 ## 7 August 2018
 {: #registry-7aug2018}
@@ -484,7 +484,7 @@ Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 {: release-note}
 
 {{site.data.keyword.cloudaccesstrailfull_notm}} available for Vulnerability Advisor {: #25jul2018_at}
-:   Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registrylong_notm}} service in {{site.data.keyword.cloud_notm}}.
+:   Use the {{site.data.keyword.cloudaccesstrailfull_notm}} service to track how users and applications interact with the {{site.data.keyword.registryshort}} service in {{site.data.keyword.cloud_notm}}.
 
     For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
@@ -502,7 +502,7 @@ Vulnerability Advisor API version 3 {: #12jul2018_va3}
 {: release-note}
 
 Use Helm for Passport Advantage images {: #31may2018_helm}
-:   Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registrylong_notm}} namespace.
+:   Import {{site.data.keyword.IBM_notm}} software that is downloaded from [IBM Passport Advantage Online for customers](https://www.ibm.com/software/passportadvantage/pao_customer.html){: external} and packaged for use with Helm into your {{site.data.keyword.registryshort}} namespace.
 
 ## 21 March 2018
 {: #registry-21mar2018}
@@ -523,7 +523,7 @@ Container Image Security Enforcement beta {: #16mar2018_cise}
 {: release-note}
 
 Trusted content {: #20feb2018_tc}
-:   {{site.data.keyword.registrylong_notm}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
+:   {{site.data.keyword.registryshort}} provides trusted content technology so that you can sign images to ensure the integrity of images in your registry namespace. By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 
     For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
@@ -541,7 +541,7 @@ Global registry {: #6nov2017_global}
 {: release-note}
 
 Build Docker images {: #29sep2017_docker}
-:   The `ibmcloud cr build` command is now available for running container builds. You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registrylong_notm}}.
+:   The `ibmcloud cr build` command is now available for running container builds. You can build a Docker image directly in {{site.data.keyword.cloud_notm}} or create your own Docker image on your local computer and upload (push) it to your namespace in {{site.data.keyword.registryshort}}.
 
     For more information, see [Building Docker images to use them with your namespace](/docs/Registry?topic=Registry-registry_images_#registry_images_creating).
 

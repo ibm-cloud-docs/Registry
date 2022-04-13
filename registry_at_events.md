@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api
 
@@ -45,14 +45,14 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registrylong_notm}}. If the image is signed, the signature is deleted as well. | True |
-| `container-registry.image.delete` | Delete an image from {{site.data.keyword.registrylong_notm}}. If the image is signed, the signature is deleted as well. | True |
+| `container-registry.image.bulkdelete` | Delete multiple images from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
+| `container-registry.image.delete` | Delete an image from {{site.data.keyword.registryshort}}. If the image is signed, the signature is deleted as well. | True |
 | `container-registry.image.inspect` | Display details about an image. | |
 | `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | |
-| `container-registry.image.pull` | Pull an image from {{site.data.keyword.registrylong_notm}}. | True |
-| `container-registry.image.push` | Push an image to {{site.data.keyword.registrylong_notm}}. | True |
-| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registrylong_notm}} image. | |
-| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registrylong_notm}}. | |
+| `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. | True |
+| `container-registry.image.push` | Push an image to {{site.data.keyword.registryshort}}. | True |
+| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | |
+| `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | |
 {: caption="Table 2. Actions that generate events for images" caption-side="bottom"}
 
@@ -61,9 +61,9 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.namespace.create` | Create a [namespace](x2031005){: term} in {{site.data.keyword.registrylong_notm}}.  \n  \n Assign an {{site.data.keyword.registrylong_notm}} namespace to a [resource group](x2161955){: term}. | |
-| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registrylong_notm}}. | |
-| `container-registry.namespace.list` | List the {{site.data.keyword.registrylong_notm}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
+| `container-registry.namespace.create` | Create a [namespace](x2031005){: term} in {{site.data.keyword.registryshort}}.  \n  \n Assign an {{site.data.keyword.registryshort}} namespace to a [resource group](x2161955){: term}. | |
+| `container-registry.namespace.delete` | Delete a namespace from {{site.data.keyword.registryshort}}. | |
+| `container-registry.namespace.list` | List the {{site.data.keyword.registryshort}} namespaces in your {{site.data.keyword.IBM_notm}} account. | |
 {: caption="Table 3. Actions that generate events for namespaces" caption-side="bottom"}
 
 ### Actions that generate events for plans
@@ -91,7 +91,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.retention.analyze` | List the images that are deleted if you apply a specific retention policy. | |
 | `container-registry.retention.list` | List the image retention policies for your account. | |
-| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registrylong_notm}} by applying specified criteria. | |
+| `container-registry.retention.set` | Set a policy to retain images in a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. | |
 {: caption="Table 6. Actions that generate events for retention policies" caption-side="bottom"}
 
 ### Actions that generate events for settings
@@ -108,9 +108,9 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.signature.delete` | Delete a signature from an image in {{site.data.keyword.registrylong_notm}}. | True |
-| `container-registry.signature.read` | Read a signature from an image in {{site.data.keyword.registrylong_notm}}. | True |
-| `container-registry.signature.write` | Write a signature to an image in {{site.data.keyword.registrylong_notm}}. | True |
+| `container-registry.signature.delete` | Delete a signature from an image in {{site.data.keyword.registryshort}}. | True |
+| `container-registry.signature.read` | Read a signature from an image in {{site.data.keyword.registryshort}}. | True |
+| `container-registry.signature.write` | Write a signature to an image in {{site.data.keyword.registryshort}}. | True |
 {: caption="Table 8. Actions that generate events for signing images" caption-side="bottom"}
 
 ### Actions that generate events for trash
@@ -127,10 +127,10 @@ The following tables list the API methods that generate an event when they are c
 
 | Action | Description | Data Event |
 |--------|-------------|------------|
-| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registrylong_notm}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-report.list`](#at_events_analyze_report_list). | |
-| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registrylong_notm}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-status.list`](#at_events_analyze_status_list). | |
-| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | |
-| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registrylong_notm}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | |
+| `container-registry.account-vulnerability-report.list` | View the Vulnerability Advisor reports for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-report.list`](#at_events_analyze_report_list). | |
+| `container-registry.account-vulnerability-status.list` | View Vulnerability Advisor security status for images in your {{site.data.keyword.registryshort}} account.  \n  \n For more information about request data, see [Request data for `container-registry.account-vulnerability-status.list`](#at_events_analyze_status_list). | |
+| `container-registry.image-vulnerability-report.read` | View the Vulnerability Advisor report for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-report.read`](#at_events_analyze_report_read). | |
+| `container-registry.image-vulnerability-status.read` | View the Vulnerability Advisor security status for an image in {{site.data.keyword.registryshort}}.  \n  \n For more information about request and response data, see [Request and response data for `container-registry.image-vulnerability-status.read`](#at_events_analyze_status_read). | |
 {: caption="Table 10. Actions that generate events for vulnerabilities" caption-side="bottom"}
 
 ### Actions that generate events for exemption policies
@@ -148,7 +148,7 @@ The following tables list the API methods that generate an event when they are c
 ### {{site.data.keyword.at_full_notm}} events
 {: #ui_at}
 
-The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registrylong_notm}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registrylong_notm}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registryshort}} or a Vulnerability Advisor event is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the event, except for `ap-south`. Events for `ap-south` show in `Tokyo (jp-tok)`.
 
 The following table shows the location of {{site.data.keyword.at_full_notm}} events.
 
