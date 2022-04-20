@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-20"
 
 keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -125,7 +125,7 @@ After you copy your image, you can do one of the following tasks.
 
 Create an image by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command.
 
-In the region that you're logged in to, create an image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images that are created by using Docker Engine version 1.12, or later, only.
+In the region that you're logged in to, create an image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images that are created by using supported versions of Docker Engine, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
 New images that are created by using this mechanism do not retain signatures. If you require the new image to be signed, do not use this mechanism.
 {: tip}
