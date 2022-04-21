@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-21"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -149,13 +149,13 @@ subcollection: Registry
 
 * [Accessing a protected instance of Vault](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault-access)
 
-[Getting started with the `ibmcloud-secure-perimeter-health` image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
+[Getting started with `ibmcloud-secure-perimeter-health`](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
 
-* [How it works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_how-it-works)
+* [How the image works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_how-it-works)
 
-* [What is included](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_whats_included)
+* [What is included with the image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_whats_included)
 
-* [Provision a Kubernetes cluster within a Secure Perimeter by using {{site.data.keyword.containerlong_notm}}](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_provision_cluster)
+* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_provision_cluster)
 
 * [Scan private networks within a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_private_networks)
 
@@ -171,17 +171,17 @@ subcollection: Registry
 
 * [Environment variable reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_reference_env_var)
 
-[Getting started with the `ibmcloud-secure-perimeter-network` image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#ibmcloud-secure-perimeter-network)
+[Getting started with `ibmcloud-secure-perimeter-network`](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#ibmcloud-secure-perimeter-network)
 
-* [How it works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_how-it-works)
+* [How the image works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_how-it-works)
 
-* [What is included](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_whats_included)
+* [What is included with the image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_whats_included)
 
-* [Prerequisites](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_prerequisites)
+* [Before you begin](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_prerequisites)
 
-* [Provision a Kubernetes cluster within a Secure Perimeter by using {{site.data.keyword.containerlong_notm}}](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_provision_cluster)
+* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_provision_cluster)
 
-* [Run initial configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_initial_setup)
+* [Run the configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_initial_setup)
 
 * [Set up a Kubernetes pod within your Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_setup)
 
@@ -190,18 +190,6 @@ subcollection: Registry
 * [`rules.conf` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
 
 [`ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
-
-* [Getting started with the `ibm/liberty` image](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_start)
-
-* [How it works](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_how_it_works)
-
-* [Tags](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_tags)
-
-* [Getting started](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_get_started)
-
-* [Monitoring the Java heap space usage for a container with the CLI](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty_monitor_heap)
-
-* [License for production use](/docs/Registry?topic=RegistryImages-ibmliberty#ibm/liberty_license)
 
 [`ibm-mq` public image](/docs/Registry?topic=RegistryImages-mq#mq)
 
@@ -217,6 +205,16 @@ subcollection: Registry
 
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+
+[Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+
+* [What you need to know](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
+
+* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_benefit)
+
+* [Understanding if you are impacted](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_impact)
+
+* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
 
 [Access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
@@ -236,6 +234,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
+
+    * [Change to how requests over the private network interact with IAM restricted IP lists from 23 May 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
