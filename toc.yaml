@@ -33,6 +33,7 @@ toc:
           label: Notifications
           topics:
           - registry_notices.md
+          - registry_notices_iam_private_network.md
           - registry_notices_iam_policy.md
           - registry_notices_docker.md
       - topic: registry_release_notes.md
