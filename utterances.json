@@ -56,7 +56,7 @@
         "IAM access control container registry",
         "limit access on CR",
         "Grant access to ContainerRegistry",
-        "IAM policy to access container registry",
+        "IAM access policy to access container registry",
         "configure IAM for container registry",
         "IAM configuration for ContainerRegistry",
         "IAM access for Container Registry",
