@@ -26,7 +26,7 @@ You must define [access policies](x2853407){: term} for every user that works wi
 If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](#existing_users).
 {: tip}
 
-To find out more about IAM access policies, see [IAM access](/docs/account?topic=account-userroles).
+To find out more about IAM access policies, see [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles).
 
 From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still set permissions for the namespace at the account level or in the namespace itself.
 
