@@ -18,7 +18,7 @@ subcollection: Registry
 To access your {{site.data.keyword.registrylong}} namespaces so that you can push and pull images, use {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
-To set up and manage IAM policies, see [Defining access policies](/docs/Registry?topic=Registry-user#user).
+To set up and manage IAM access policies, see [Defining access policies](/docs/Registry?topic=Registry-user#user).
 
 From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access policies](/docs/Registry?topic=Registry-user).
 {: important}

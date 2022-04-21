@@ -58,7 +58,7 @@ To create policies for {{site.data.keyword.registrylong_notm}}, the service name
 {: help}
 {: support}
 
-If you’re an existing user, you must enable policy enforcement. If you started to use {{site.data.keyword.registrylong_notm}} after 4 October 2018, you don’t need to do anything to enable IAM policies. Policies are enforced automatically for invited users and Service IDs.
+If you’re an existing user, you must enable policy enforcement. If you started to use {{site.data.keyword.registrylong_notm}} after 4 October 2018, you don’t need to do anything to enable IAM access policies. Policies are enforced automatically for invited users and Service IDs.
 
 To enable policy enforcement, you must run the `ibmcloud cr iam-policies-enable` command once in each region.
 {: important}
@@ -70,6 +70,6 @@ To enable policy enforcement, you must run the `ibmcloud cr iam-policies-enable`
     You must have the Manager role on the account so that you can run the `ibmcloud cr iam-policies-enable` command. You automatically have Manager role in your own account.
     {: tip}
 
-3. To verify that IAM policies are enabled, run [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status).
+3. To verify that IAM access policies are enabled, run [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status).
 
 

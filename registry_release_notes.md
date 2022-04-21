@@ -443,7 +443,7 @@ New domain names {: #25feb2019_dns}
     For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
 Adding IAM API key policies to control access to resources {: #25feb2019_secrets}
-:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registryshort}} resources, you can add IAM policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
+:   The new cluster image pull secrets for the `icr.io` domains are authorized by using an {{site.data.keyword.iamshort}} (IAM) API key. Therefore, if you want more control over access to your {{site.data.keyword.registryshort}} resources, you can add IAM access policies. For example, you can change the API key policies in the cluster's pull secret so that images are pulled from a certain registry region or namespace only.
 
     For more information, see [Understanding how to authorize your cluster to pull images from a registry](/docs/containers?topic=containers-registry#cluster_registry_auth).
 
@@ -475,7 +475,7 @@ End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 {: release-note}
 
 Managing user access {: #4oct2018_access}
-:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
+:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
     For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining access policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 
