@@ -233,7 +233,7 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 - [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=va-va_index)
 - [Review your service plans.](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 - [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
-- [Define user access role policies.](/docs/Registry?topic=Registry-user#user)
+- [Define access policies.](/docs/Registry?topic=Registry-user#user)
 - [Set up clusters and worker nodes.](/docs/containers?topic=containers-clusters#clusters)
 
 

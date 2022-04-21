@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-21"
 
-keywords: user access role policies, access policies, policies, policy enforcement, user access, role policies, roles, account, users, resources, namespace
+keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
 subcollection: Registry
 
@@ -12,21 +12,21 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Defining access role policies
+# Defining access policies
 {: #user}
 
 As an administrator, you can define access policies for your registry to create different levels of access for different users in {{site.data.keyword.registrylong}}. For example, you can authorize certain users to set quotas while other users can view only quotas.
 {: shortdesc}
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using {{site.data.keyword.iamshort}} (IAM) access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
+From 5 July 2022, all accounts will require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 {: important}
 
-You must define access policies for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an [access policy](x2853407){: term} is based on the user's role or roles that determine the actions that they are allowed to do. Some policies are pre-defined, but others can be customized.
+You must define [access policies](x2853407){: term} for every user that works with {{site.data.keyword.registrylong_notm}}. The scope of an access policy is based on the user's role or roles that determine the actions that they are allowed to do. Some policies are pre-defined, but others can be customized.
 
-If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use IAM access role policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](#existing_users).
+If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Enabling policy enforcement for existing users](#existing_users).
 {: tip}
 
-To find out more about IAM access role policies, see [IAM access](/docs/account?topic=account-userroles).
+To find out more about IAM access policies, see [IAM access](/docs/account?topic=account-userroles).
 
 From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still set permissions for the namespace at the account level or in the namespace itself.
 

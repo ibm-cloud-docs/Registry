@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-21"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -134,9 +134,9 @@ You can control which users can work with namespaces by using IAM roles.
       ```
       {: pre}
 
-- To view and analyze namespaces, you must have the Reader or Manager role in the {{site.data.keyword.registrylong_notm}} service, see [Access roles for using IBM Cloud Container Registry](/docs/Registry?topic=Registry-iam#access_roles_using).
+- To view and analyze namespaces, you must have the Reader or Manager role in the {{site.data.keyword.registrylong_notm}} service, see [Access roles for using {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_using).
 
-For more information about user roles, [Defining user access role policies](/docs/Registry?topic=Registry-user#user).
+For more information about user roles, [Defining access policies](/docs/Registry?topic=Registry-user#user).
 
 ## Setting up a namespace
 {: #registry_namespace_setup}
