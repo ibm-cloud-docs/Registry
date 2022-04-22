@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Defining IAM access policies for {{site.data.keyword.registryshort}
+# Defining IAM access policies for {{site.data.keyword.registryshort}}
 {: #user}
 
 As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies for your registry to create different levels of access for different users in {{site.data.keyword.registrylong_notm}}. For example, you can authorize certain users to set quotas while other users can view only quotas.
