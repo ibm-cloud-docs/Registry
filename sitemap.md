@@ -817,11 +817,11 @@ subcollection: Registry
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
 
-## Defining access role policies
-{: #sitemap_defining_access_role_policies}
+## Defining access policies
+{: #sitemap_defining_access_policies}
 
 
-[Defining access role policies](/docs/Registry?topic=Registry-user#user)
+[Defining access policies](/docs/Registry?topic=Registry-user#user)
 
 * [Creating policies](/docs/Registry?topic=Registry-user#create)
 

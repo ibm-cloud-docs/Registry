@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-21"
 
 keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -98,9 +98,9 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 {: #faq_share_image}
 {: faq}
 
-You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
+You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM access policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
 
-For more information, see [Defining access role policies](/docs/Registry?topic=Registry-user).
+For more information, see [Defining access policies](/docs/Registry?topic=Registry-user).
 
 ## Do I have any untagged images?
 {: #faq_untagged_image_1}
