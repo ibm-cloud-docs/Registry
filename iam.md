@@ -18,7 +18,7 @@ subcollection: Registry
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
 {: shortdesc}
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access policies](/docs/Registry?topic=Registry-user).
+From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 {: important}
 
 When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the {{site.data.keyword.registryshort}} service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registryshort}} is mapped to one or more [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles) user roles.
@@ -35,7 +35,7 @@ From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are disconti
 
 For more information about IAM, see [What is {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}}?](/docs/account?topic=account-iamoverview#iamoverview)
 
-For more information about enabling policies for {{site.data.keyword.registryshort}}, see [Defining access policies](/docs/Registry?topic=Registry-user#user).
+For more information about enabling policies for {{site.data.keyword.registryshort}}, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
 Policies enable access to be granted at different levels. Some options include the following access levels:
 
@@ -70,7 +70,7 @@ From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are disconti
 ## Service access roles
 {: #service_access_roles}
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access policies](/docs/Registry?topic=Registry-user).
+From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 {: important}
 
 The following table details actions that are mapped to service access roles. Service access roles give users access to {{site.data.keyword.registryshort}} as well as the ability to call the {{site.data.keyword.registryshort}} API.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-22"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, release note, registry, images, vulnerability advisor
 
@@ -53,7 +53,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 
     Other regions are unaffected because they already require IAM access policies for all accounts.
 
-    For more information, see [Access to {{site.data.keyword.registryshort}} requires access policies from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining access policies](/docs/Registry?topic=Registry-user).
+    For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
 ## 2 February 2022
 {: #registry-02feb2022}
@@ -477,7 +477,7 @@ End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 Managing user access {: #4oct2018_access}
 :   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
 
-    For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining access policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
+    For more information, see [Managing user access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining IAM access policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 
 ## 7 August 2018
 {: #registry-7aug2018}
