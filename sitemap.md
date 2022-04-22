@@ -17,9 +17,6 @@ subcollection: Registry
 
 
 
-
-
-
 ## Getting started with Container Registry
 {: #sitemap_getting_started_with_container_registry}
 
@@ -799,8 +796,8 @@ subcollection: Registry
 * [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 
-## Managing user access
-{: #sitemap_managing_user_access}
+## Setting up user access
+{: #sitemap_setting_up_user_access}
 
 
 [Accessing Container Registry](/docs/Registry?topic=Registry-registry_access#registry_access)
