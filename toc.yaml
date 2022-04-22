@@ -56,21 +56,26 @@ toc:
   - navgroup: 
       id: howto
       topics:
-      - topic: registry_setup_cli_namespace.md
-        navtitle: Setting up the Container Registry CLI and your namespace
+      - registry_setup_cli_namespace.md
       - registry_rhos.md
-      - registry_quota.md
       - registry_images_.md
       - registry_helm_charts.md
-      - registry_access.md
-      - registry_users.md
-      - topic: iam.md
-        navtitle: Managing access
       - registry_retention.md
+      - registry_quota.md
+      - topicgroup:
+          label: Managing user access
+          topics:
+          - topic: registry_access.md
+            navtitle: Accessing Container Registry
+          - topic: iam.md
+            navtitle: Managing user access
+          - topic: registry_users.md
+            navtitle: Defining IAM access policies
       - topic: delete-data.md
         navtitle: Managing your data
       - /va/toc
-      - terraform.md
+      - topic: terraform.md
+        navtitle: Setting up Terraform for Container Registry
       - topicgroup: 
           label: Enhancing security
           topics: 
@@ -99,6 +104,7 @@ toc:
       id: reference
       topics: 
       - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
+      - registry_cli_list.md
       - topicgroup:
           label: High availability and disaster recovery
           topics: 
@@ -106,7 +112,6 @@ toc:
             navtitle: Understanding high availability
           - topic: registry_bc_dr.md
             navtitle: Understanding business continuity and disaster recovery
-      - registry_cli_list.md
       - topic: registry_responsibilities.md
         navtitle: Understanding your responsibilities
       - link:

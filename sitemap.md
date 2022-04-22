@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -216,7 +216,7 @@ subcollection: Registry
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
 
-[Access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
+[IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy#registry_notices_iam_policy)
 
 * [What are the changes?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_change)
 
@@ -659,11 +659,11 @@ subcollection: Registry
 * [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
 
 
-## Setting up the Container Registry CLI and your namespace
-{: #sitemap_setting_up_the_container_registry_cli_and_your_namespace}
+## Setting up the {{site.data.keyword.registryshort}} CLI and namespace
+{: #sitemap_setting_up_the__cli_and_namespace}
 
 
-[Setting up the Container Registry CLI and your namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
+[Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
 
 * [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)
 
@@ -695,19 +695,6 @@ subcollection: Registry
     * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_pull)
 
     * [Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform build to push images to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos_os_push)
-
-
-## Managing quota limits for storage and pull traffic
-{: #sitemap_managing_quota_limits_for_storage_and_pull_traffic}
-
-
-[Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota)
-
-* [Setting quota limits for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_set)
-
-* [Reviewing quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
-
-* [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 
 ## Adding images to your namespace
@@ -782,11 +769,41 @@ subcollection: Registry
 * [Deleting a private repository and any associated charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_repo_remove)
 
 
-## Accessing {{site.data.keyword.registrylong_notm}}
-{: #sitemap_accessing_}
+## Cleaning up your namespaces
+{: #sitemap_cleaning_up_your_namespaces}
 
 
-[Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access#registry_access)
+[Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention#registry_retention)
+
+* [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
+
+* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
+
+* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
+
+* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
+
+* [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
+
+
+## Managing quota limits for storage and pull traffic
+{: #sitemap_managing_quota_limits_for_storage_and_pull_traffic}
+
+
+[Managing quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_quota#registry_quota)
+
+* [Setting quota limits for storing and pulling images](/docs/Registry?topic=Registry-registry_quota#registry_quota_set)
+
+* [Reviewing quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get)
+
+* [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
+
+
+## Managing user access
+{: #sitemap_managing_user_access}
+
+
+[Accessing Container Registry](/docs/Registry?topic=Registry-registry_access#registry_access)
 
 * [Accessing your namespaces in automation](/docs/Registry?topic=Registry-registry_access#registry_access_automating)
 
@@ -816,23 +833,7 @@ subcollection: Registry
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
-
-## Defining access policies
-{: #sitemap_defining_access_policies}
-
-
-[Defining access policies](/docs/Registry?topic=Registry-user#user)
-
-* [Creating policies](/docs/Registry?topic=Registry-user#create)
-
-* [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
-
-
-## Managing access
-{: #sitemap_managing_access}
-
-
-[Managing access](/docs/Registry?topic=Registry-iam#iam)
+[Managing user access](/docs/Registry?topic=Registry-iam#iam)
 
 * [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles)
 
@@ -842,22 +843,11 @@ subcollection: Registry
 
     * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
+[Defining IAM access policies](/docs/Registry?topic=Registry-user#user)
 
-## Cleaning up your namespaces
-{: #sitemap_cleaning_up_your_namespaces}
+* [Creating policies](/docs/Registry?topic=Registry-user#create)
 
-
-[Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention#registry_retention)
-
-* [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
-
-* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
-
-* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
-
-* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
-
-* [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
+* [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
 
 
 ## Managing your data
@@ -914,11 +904,11 @@ subcollection: Registry
     * [Setting exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
 
 
-## Setting up Terraform for {{site.data.keyword.registrylong_notm}}
-{: #sitemap_setting_up_terraform_for_}
+## Setting up Terraform for Container Registry
+{: #sitemap_setting_up_terraform_for_container_registry}
 
 
-[Setting up Terraform for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup)
+[Setting up Terraform for Container Registry](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-setup)
 
 * [Installing Terraform and creating a {{site.data.keyword.registryshort}} namespace](/docs/Registry?topic=Registry-registry_terraform-setup#registry_terraform-install)
 
@@ -1358,6 +1348,25 @@ subcollection: Registry
     * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
 
 
+## Formatting and filtering the CLI output
+{: #sitemap_formatting_and_filtering_the_cli_output}
+
+
+[Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
+
+* [Go template format options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+
+* [Go template format options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+
+* [Go template format options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+
+    * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
+
+    * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
+
+    * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+
+
 ## High availability and disaster recovery
 {: #sitemap_high_availability_and_disaster_recovery}
 
@@ -1393,25 +1402,6 @@ subcollection: Registry
     * [What data is backed up or replicated?](/docs/Registry?topic=Registry-bc-dr#bc-dr_backup)
 
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
-
-
-## Formatting and filtering the CLI output
-{: #sitemap_formatting_and_filtering_the_cli_output}
-
-
-[Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
-
-* [Go template format options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
-
-* [Go template format options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
-
-* [Go template format options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
-
-    * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
-
-    * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
-
-    * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
 
 
 ## Understanding your responsibilities
