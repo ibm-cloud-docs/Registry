@@ -62,11 +62,14 @@ toc:
       - registry_quota.md
       - registry_images_.md
       - registry_helm_charts.md
-      - registry_access.md
-      - registry_users.md
-      - topic: iam.md
-        navtitle: Managing access
       - registry_retention.md
+      - topicgroup:
+          label: Managing user access
+          topics:
+          - registry_access.md
+          - topic: iam.md
+            navtitle: Managing access
+          - registry_users.md
       - topic: delete-data.md
         navtitle: Managing your data
       - /va/toc

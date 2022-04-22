@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-22"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -782,8 +782,25 @@ subcollection: Registry
 * [Deleting a private repository and any associated charts](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_repo_remove)
 
 
-## Accessing {{site.data.keyword.registrylong_notm}}
-{: #sitemap_accessing_}
+## Cleaning up your namespaces
+{: #sitemap_cleaning_up_your_namespaces}
+
+
+[Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention#registry_retention)
+
+* [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
+
+* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
+
+* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
+
+* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
+
+* [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
+
+
+## Managing user access
+{: #sitemap_managing_user_access}
 
 
 [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access#registry_access)
@@ -816,22 +833,6 @@ subcollection: Registry
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
-
-## Defining access policies
-{: #sitemap_defining_access_policies}
-
-
-[Defining access policies](/docs/Registry?topic=Registry-user#user)
-
-* [Creating policies](/docs/Registry?topic=Registry-user#create)
-
-* [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
-
-
-## Managing access
-{: #sitemap_managing_access}
-
-
 [Managing access](/docs/Registry?topic=Registry-iam#iam)
 
 * [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles)
@@ -842,22 +843,11 @@ subcollection: Registry
 
     * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
+[Defining access policies](/docs/Registry?topic=Registry-user#user)
 
-## Cleaning up your namespaces
-{: #sitemap_cleaning_up_your_namespaces}
+* [Creating policies](/docs/Registry?topic=Registry-user#create)
 
-
-[Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention#registry_retention)
-
-* [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
-
-* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
-
-* [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
-
-* [Update a retention policy to keep all your images](/docs/Registry?topic=Registry-registry_retention#retention_policy_keep)
-
-* [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged)
+* [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
 
 
 ## Managing your data
