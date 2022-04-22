@@ -21,7 +21,7 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 {: important}
 
-When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the {{site.data.keyword.registryshort}} service in your account must be assigned an [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registryshort}} is mapped to one or more [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles) user roles.
+When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the {{site.data.keyword.registryshort}} service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform. Each action in {{site.data.keyword.registryshort}} is mapped to one or more [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles) user roles.
 
 IAM access policies are enforced only when you use IAM to log in to {{site.data.keyword.registryshort}}. If you want to restrict user access to one or more [namespaces](x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
@@ -44,7 +44,7 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to all IAM-enabled services in your account
 - Access to resources within a [resource group](x2161955){: term}
 
-After you define the scope of the access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registryshort}} service.
+After you define the scope of the IAM access policy, you assign a role. Review the following tables that outline what actions each role allows within the {{site.data.keyword.registryshort}} service.
 
 For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
@@ -121,7 +121,7 @@ The following table details actions that are mapped to operations on the service
 ### Access roles for using {{site.data.keyword.registryshort}}
 {: #access_roles_using}
 
-To grant a user permission to access {{site.data.keyword.registryshort}} content in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an access policy on that resource group.
+To grant a user permission to access {{site.data.keyword.registryshort}} content in your account, you must create a policy that grants one or more of the roles in the following table. When you create your policy, you can restrict access to a specific namespace by specifying the resource type `namespace` and the namespace name as the resource. If you don't specify a `resource-type` and a `resource`, the policy grants access to all resources in the account. Alternatively, if your namespace is within a resource group, permission can be granted by using an IAM access policy on that resource group.
 
 For example, use the following command to create a user policy. Where `<user_email>` is the user's email address, `<region>` is the region, `<roles>` is the role, or roles, that you want the user to have, and `<namespace_name>` is the name of the namespace.
 
