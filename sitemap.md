@@ -843,6 +843,14 @@ subcollection: Registry
 
     * [Access roles for using {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-iam#access_roles_using)
 
+* [Assigning access to {{site.data.keyword.registryshort}} in the console](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-console)
+
+* [Assigning access to {{site.data.keyword.registryshort}} in the CLI](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-cli)
+
+* [Assigning access to {{site.data.keyword.registryshort}} by using the API](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-api)
+
+* [Assigning access to {{site.data.keyword.registryshort}} by using Terraform](/docs/Registry?topic=Registry-iam#registry_iam_assign-access-terraform)
+
 [Defining IAM access policies](/docs/Registry?topic=Registry-user#user)
 
 * [Creating policies](/docs/Registry?topic=Registry-user#create)
