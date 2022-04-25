@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-25"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -796,8 +796,8 @@ subcollection: Registry
 * [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup)
 
 
-## Setting up user access
-{: #sitemap_setting_up_user_access}
+## Managing user access
+{: #sitemap_managing_user_access}
 
 
 [Accessing Container Registry](/docs/Registry?topic=Registry-registry_access#registry_access)

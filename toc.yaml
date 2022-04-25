@@ -63,7 +63,7 @@ toc:
       - registry_retention.md
       - registry_quota.md
       - topicgroup:
-          label: Setting up user access
+          label: Managing user access
           topics:
           - topic: registry_access.md
             navtitle: Accessing Container Registry
