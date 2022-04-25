@@ -38,10 +38,11 @@ If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP ad
 ## Understanding if you are impacted
 {: #registry_notices_iam_pivate_network_impact}
 
-Action is required if you are accessing {{site.data.keyword.registryshort}} through a Virtual Private Cloud (VPC) Virtual Private Endpoint (VPE) and one, or both, of the following statements is true:
+You are accessing {{site.data.keyword.registryshort}} over the private network if one of the following statements is true:
 
-- You are using one of the `private.*` domains, for example, `private.us.icr.io`.
-- You are using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically accesses {{site.data.keyword.registryshort}} by using a private connection.
+- You're using one of the `private.*` domains, for example, `private.us.icr.io`.
+- You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
+- You are accessing {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) Virtual Private Endpoint Gateway (VPE Gateway).
 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}
