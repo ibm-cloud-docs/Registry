@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, change, impact, actions, know
 
@@ -38,11 +38,15 @@ If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP ad
 ## Understanding if you are impacted
 {: #registry_notices_iam_pivate_network_impact}
 
+You are impacted if you are accessing {{site.data.keyword.registryshort}} over the private network.
+
 You are accessing {{site.data.keyword.registryshort}} over the private network if one of the following statements is true:
 
 - You're using one of the `private.*` domains, for example, `private.us.icr.io`.
 - You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
 - You are accessing {{site.data.keyword.registryshort}} through a virtual private cloud (VPC) Virtual Private Endpoint Gateway (VPE Gateway).
+
+If any of the previous statements is true when this change takes effect, the IP addresses in the {{site.data.keyword.at_full_notm}} logs change, but you don't need to do anything unless you are also using IAM IP address access restrictions.
 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}
