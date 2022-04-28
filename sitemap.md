@@ -1460,6 +1460,18 @@ subcollection: Registry
 
 * [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp)
 
+* [Troubleshooting topics](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts)
+
+    * [Troubleshooting CLI login](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_cli_login)
+
+    * [Troubleshooting pull and push errors](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_pull_push)
+
+    * [Troubleshooting CLI commands](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_cli_commands)
+
+    * [Troubleshooting networking](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_network)
+
+    * [Troubleshooting Portieris](/docs/Registry?topic=Registry-ts_index#gettinghelp_ts_portieris)
+
 
 ### Troubleshooting CLI login
 {: #sitemap_troubleshooting_cli_login}
@@ -1481,6 +1493,10 @@ subcollection: Registry
 
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
+
+[Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull#ts-app-image-pull)
+
+* [Troubleshooting image pull secrets that use API keys](/docs/Registry?topic=containers-ts-app-image-pull#img-pull-api-key)
 
 [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 

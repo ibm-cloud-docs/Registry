@@ -158,6 +158,7 @@ toc:
               label: Troubleshooting pull and push errors
               topics:
               - ts_push_pull_docker.md
+              - /containers/containers-ts-app-image-pull
               - ts_iam_policy.md
           - topicgroup:
               label: Troubleshooting CLI commands
