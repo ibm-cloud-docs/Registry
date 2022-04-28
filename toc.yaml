@@ -144,27 +144,43 @@ toc:
       topics: 
       - topicgroup: 
           label: Troubleshooting
-          topics: 
+          topics:
           - ts_index.md
-          - ts_login.md
-          - ts_login_expire.md
-          - ts_login_cloud.md
-          - ts_login_error.md
-          - ts_add_namespace.md
-          - ts_namespace_resource_list.md
-          - ts_push_pull_docker.md
-          - ts_docker_latest.md
-          - ts_image_timeout.md
-          - ts_image_rm.md
-          - ts_image_list_retention.md
-          - ts_image_restore.md
-          - ts_image_restore_digest.md
-          - ts_firewall.md
-          - ts_iam_policy.md
-          - ts_pods.md
-          - ts_manifest_error_type.md
-          - ts_manifest_error_version.md
-          - ts_manifest_list_error.md
-          - ts_docker_mac.md
+          - topicgroup:
+              label: Troubleshooting CLI login
+              topics:
+              - ts_login.md
+              - ts_login_expire.md
+              - ts_login_cloud.md
+              - ts_login_error.md
+              - ts_docker_mac.md
+          - topicgroup:
+              label: Troubleshooting pull and push errors
+              topics:
+              - ts_push_pull_docker.md
+              - /containers/containers-ts-app-image-pull
+              - ts_iam_policy.md
+          - topicgroup:
+              label: Troubleshooting CLI commands
+              topics:
+              - ts_add_namespace.md
+              - ts_namespace_resource_list.md
+              - ts_image_timeout.md
+              - ts_docker_latest.md
+              - ts_image_rm.md
+              - ts_image_list_retention.md
+              - ts_image_restore.md
+              - ts_image_restore_digest.md
+              - ts_manifest_error_type.md
+              - ts_manifest_error_version.md
+              - ts_manifest_list_error.md
+          - topicgroup:
+              label: Troubleshooting networking
+              topics:
+              - ts_firewall.md
+          - topicgroup:
+              label: Troubleshooting Portieris
+              topics:
+              - ts_pods.md
       - registry_faq.md
       - sitemap.md
