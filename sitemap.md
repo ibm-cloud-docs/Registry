@@ -932,8 +932,6 @@ subcollection: Registry
 
 * [Governing {{site.data.keyword.registryshort}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
 
-* [Gaining security insight with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-security_insight)
-
 [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
 
 * [Signing images by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
