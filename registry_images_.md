@@ -47,7 +47,7 @@ Before you begin, complete the following tasks.
 
 After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
 
-If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull) for assistance.
+If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull) for assistance.
 {: tip}
 
 ## Pushing Docker images to your namespace
