@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-29"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -99,6 +99,9 @@ Create a [namespace](x2031005){: term} to store your container images in {{site.
 
     Throughout this tutorial, replace `<my_namespace>` with your chosen namespace.
 
+    If you have trouble adding a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+    {: tip}
+
 ### Build and push an image
 {: #registry_tutorial_workflow_build_push_image}
 
@@ -120,6 +123,8 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ibmcloud cr login
     ```
     {: pre}
+
+    If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
 
 3. Push the image by running the following command:
 

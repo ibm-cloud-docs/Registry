@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-29"
 
 keywords: access, tutorial, service ID, configure, registry, namespace, account, resources, iam
 
@@ -178,6 +178,9 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
         The namespace must be unique across all {{site.data.keyword.cloud_notm}} accounts in the same region. Namespaces must have 4 - 30 characters, and contain lowercase letters, numbers, hyphens (-), and underscores (_) only. Namespaces must start and end with a letter or number.
         {: tip}
 
+        If you have trouble adding a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+        {: tip}
+
     3. Create `namespace_b` by running the following command.
 
         ```txt
@@ -279,6 +282,9 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
         {: pre}
 
         {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
+        {: tip}
+
+        If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
         {: tip}
 
     5. Push the image to `namespace_a` by running the following command.

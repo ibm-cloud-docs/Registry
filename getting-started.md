@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-29"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -72,6 +72,9 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
     - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
     - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
 
+    If you have trouble creating a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+    {: tip}
+
 3. To ensure that your namespace is created, run the `ibmcloud cr namespace-list` command.
 
     ```txt
@@ -104,6 +107,9 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
       docker pull hello-world:latest
       ```
       {: pre}
+
+      If you have trouble pulling a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance. If you can't pull the most recent image by using the `latest` tag, see [Why can't I pull the most recent image by using the latest tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
+      {: tip}
 
     - If you are using Podman, run the following command.
 
@@ -182,6 +188,9 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
 
     - To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
+    If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+    {: tip}
+
 2. Upload (_push_) the image to your namespace. Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Replace `<image_repo>` and `<tag>` with the repository and the tag of the image that you chose when you tagged the image. For example, depending on the tool that you are using, run one of the following commands.
 
     - If you are using Docker, run the following command.
@@ -197,6 +206,9 @@ To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?t
       docker push uk.icr.io/namespace1/hw_repo:1
       ```
       {: pre}
+
+      If you have trouble pushing a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance.
+      {: tip}
 
     - If you are using Podman, run the following command.
 

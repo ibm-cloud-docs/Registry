@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-29"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -95,12 +95,18 @@ To reduce the number of images in each repository within your namespace by using
 
         Where `<image_count>` is the number of images that you want to retain for each repository within your namespace, `<namespace>`.
 
+    If an image that you're expecting to see doesn't show in the list that is produced, see [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention) for assistance.
+    {: tip}
+
 4. Verify that the images were deleted by running the following command, and check that the images do not show in the list.
 
     ```txt
     ibmcloud cr image-list
     ```
     {: pre}
+
+    If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    {: tip}
 
 ## Set a retention policy for your namespaces
 {: #retention_policy_set}
