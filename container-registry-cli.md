@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-29"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -31,6 +31,9 @@ If you want to view the current version of your `container-registry` CLI plug-in
 To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+
+If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
+{: tip}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -384,6 +387,9 @@ When you are using the digest to identify an image, always use the long format.
 The image name is the combination of the content of the **Repository** and **Tag** columns in the format: `repository:tag`
 {: tip}
 
+If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+{: tip}
+
 ```txt
 ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va]
 ```
@@ -469,6 +475,12 @@ ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict birds
 {: #bx_cr_image_restore}
 
 Restore a deleted image from the trash. You can choose to restore by [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) or by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest). If you restore by digest, the digest and all its tags in the same repository are restored. To find out what is in the trash, run the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command.
+
+If you get an error when you're restoring an image that says that the tagged image already exists, see [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore) for assistance.
+{: tip}
+
+If you're restoring an image by digest, but some tags aren't restored, see [Why aren't all tags restored when an image is restored by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
+{: tip}
 
 ```txt
 ibmcloud cr image-restore IMAGE
@@ -559,6 +571,9 @@ To find the names of your images, use one of the following alternatives:
 
 - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
 - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+
+If you get a manifest error when you try to tag your image, see [Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type), [Why do I get a manifest version error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version), and [Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error) for assistance.
+{: tip}
 
 ```txt
 ibmcloud cr image-tag [SOURCE_IMAGE] [TARGET_IMAGE]
@@ -668,6 +683,9 @@ ibmcloud cr login [--client CLIENT]
 
 {{site.data.keyword.registryshort}} supports other clients as well as Docker and Podman. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
+If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance. If you are using a Mac and you have trouble logging in, see [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac) for assistance.
+{: tip}
+
 Logging in to {{site.data.keyword.registryshort}} by using the `ibmcloud cr login` command is subject to IAM login session limits. If your login expires, see [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire) for assistance.
 {: tip}
 
@@ -752,6 +770,9 @@ ibmcloud cr namespace-add [-g (RESOURCE_GROUP_NAME | RESOURCE_GROUP_ID)] NAMESPA
 {: codeblock}
 
 For more information about resource groups, see [Creating a resource group](/docs/account?topic=account-rgs#create_rgs).
+
+If you have trouble adding a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+{: tip}
 
 ### Prerequisites
 {: #bx_cr_namespace_add_prereq}
@@ -1213,6 +1234,9 @@ Where an image, within a repository, is referenced by multiple tags, that image 
 {: tip}
 
 If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](#bx_cr_image_restore) command.
+{: tip}
+
+If an image that you're expecting to see doesn't show in the list that is produced, see [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention) for assistance.
 {: tip}
 
 ```txt

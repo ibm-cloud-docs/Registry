@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-29"
 
 keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -47,6 +47,9 @@ Before you begin, complete the following tasks.
 
 After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
 
+If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull) for assistance.
+{: tip}
+
 ## Pushing Docker images to your namespace
 {: #registry_images_pushing_namespace}
 {: help}
@@ -78,6 +81,9 @@ To upload (push) an image, complete the following steps:
     {: pre}
 
     You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
+    {: tip}
+
+    If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
     {: tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
@@ -289,6 +295,9 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
     ```
     {: pre}
 
+    If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    {: tip}
+
 ## Deleting images from your private repository
 {: #registry_images_remove}
 
@@ -326,7 +335,7 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`. If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
@@ -421,7 +430,7 @@ To restore an image by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't some tags restored when I'm restoring an image by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest)
+    If some tags aren't restored, see [Why aren't some tags restored when I'm restoring an image by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
 
     In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the image shows in the output.
@@ -456,6 +465,9 @@ To restore an image by tag from the trash, complete the following steps:
     {: pre}
 
     In your live repository, you can pull the image by tag.
+
+    If you get an error when you're restoring an image that says that the tagged image already exists, see [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore) for assistance.
+    {: tip}
 
     If you run the `ibmcloud cr trash-list` command, the digest and any other tags show in the output, but the tag is no longer displayed.
     {: tip}
