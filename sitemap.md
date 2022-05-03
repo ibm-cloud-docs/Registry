@@ -203,6 +203,8 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
+* [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
+
 [Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
