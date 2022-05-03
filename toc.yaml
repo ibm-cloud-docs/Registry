@@ -32,7 +32,8 @@ toc:
       - topicgroup: 
           label: Notifications
           topics:
-          - registry_notices.md
+          - topic: registry_notices.md
+            navtitle: Notifications
           - registry_notices_iam_private_network.md
           - registry_notices_iam_policy.md
           - registry_notices_docker.md
@@ -146,7 +147,8 @@ toc:
       - topicgroup: 
           label: Troubleshooting
           topics:
-          - ts_index.md
+          - topic: ts_index.md
+            navtitle: Troubleshooting
           - topicgroup:
               label: Troubleshooting CLI login
               topics:
@@ -183,5 +185,6 @@ toc:
               label: Troubleshooting Portieris
               topics:
               - ts_pods.md
-      - registry_faq.md
+      - topic: registry_faq.md
+        navtitle: Frequently asked questions (FAQs)
       - sitemap.md

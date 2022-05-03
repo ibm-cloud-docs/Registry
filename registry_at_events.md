@@ -180,7 +180,7 @@ The following fields are populated as described, depending on how you populate t
 
 - `target.name` shows the image name and, if you request an image name with a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), a tag. If you request an image name by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), the digest is shown instead of the tag because the digest might have many tags.
 
-- `target.id` shows the image name by digest to represent a searchable unique ID for the image, unless the request is for an image with a [tag](#x2040924){: term} and the request fails before the digest is discovered. To see all the events for this digest across all tags, you can search by `target.id`.
+- `target.id` shows the image name by digest to represent a searchable unique ID for the image, unless the request is for an image with a tag and the request fails before the digest is discovered. To see all the events for this digest across all tags, you can search by `target.id`.
 
 - `target.resourceGroupId` shows the resource group ID that is associated with a namespace and its resources. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 

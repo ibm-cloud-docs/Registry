@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Notifications about {{site.data.keyword.registrylong_notm}}
+# Notifications about {{site.data.keyword.registryshort_notm}}
 {: #registry_notices}
 
 Notifications about changes that affect {{site.data.keyword.registrylong}}.
