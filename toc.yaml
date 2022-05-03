@@ -146,7 +146,8 @@ toc:
       - topicgroup: 
           label: Troubleshooting
           topics:
-          - ts_index.md
+          - topic: ts_index.md
+            navtitle: Troubleshooting
           - topicgroup:
               label: Troubleshooting CLI login
               topics:
@@ -183,5 +184,6 @@ toc:
               label: Troubleshooting Portieris
               topics:
               - ts_pods.md
-      - registry_faq.md
+      - topic: registry_faq.md
+        navtitle: Frequently asked questions (FAQs)
       - sitemap.md
