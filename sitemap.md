@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-03"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -830,7 +830,7 @@ subcollection: Registry
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
-[Managing user access](/docs/Registry?topic=Registry-iam#iam)
+[Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
 
 * [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles)
 
@@ -853,31 +853,6 @@ subcollection: Registry
 * [Creating policies](/docs/Registry?topic=Registry-user#create)
 
 * [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
-
-
-## Managing your data
-{: #sitemap_managing_your_data}
-
-
-[Managing your data](/docs/Registry?topic=Registry-delete-data#delete-data)
-
-* [How your data is stored](/docs/Registry?topic=Registry-delete-data#data-storage)
-
-    * [Image data](/docs/Registry?topic=Registry-delete-data#data-storage_image)
-
-    * [Scanning data](/docs/Registry?topic=Registry-delete-data#data-storage_va)
-
-* [Deleting your data](/docs/Registry?topic=Registry-delete-data#data-delete)
-
-    * [Deleting the service](/docs/Registry?topic=Registry-delete-data#data-delete_service)
-
-    * [Deleting namespaces](/docs/Registry?topic=Registry-delete-data#data-delete_namespaces)
-
-    * [Deleting images](/docs/Registry?topic=Registry-delete-data#data-delete_images)
-
-    * [Deleting private repositories](/docs/Registry?topic=Registry-delete-data#data-delete_private_repo)
-
-* [Restoring deleted data](/docs/Registry?topic=Registry-delete-data#data-restore)
 
 
 ## Managing image security with Vulnerability Advisor
@@ -932,15 +907,27 @@ subcollection: Registry
 
 * [Governing {{site.data.keyword.registryshort}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
 
-[Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
+[Using VPE for VPC to privately connect](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
-* [Signing images by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
+* [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
 
-    * [Using Skopeo to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_skopeo)
+* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoints)
 
-    * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
+* [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoint_setup)
 
-    * [Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
+    * [Configuring an endpoint gateway](/docs/Registry?topic=Registry-registry_vpe#registry_endpoint-gateway-servicename)
+
+[Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private#registry_private)
+
+* [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images)
+
+    * [Enabling service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
+
+    * [Considerations for private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
+
+    * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
+
+* [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
 
 [Encrypting images for content confidentiality](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt)
 
@@ -956,27 +943,35 @@ subcollection: Registry
 
 * [Next steps](/docs/Registry?topic=Registry-registry_encrypt#registry_encrypt_next)
 
-[Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private#registry_private)
+[Managing your data](/docs/Registry?topic=Registry-delete-data#delete-data)
 
-* [Using private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images)
+* [How your data is stored](/docs/Registry?topic=Registry-delete-data#data-storage)
 
-    * [Enabling service endpoint support for the account](/docs/Registry?topic=Registry-registry_private#registry_private_images_endpoints)
+    * [Image data](/docs/Registry?topic=Registry-delete-data#data-storage_image)
 
-    * [Considerations for private network connections](/docs/Registry?topic=Registry-registry_private#registry_private_images_considerations)
+    * [Scanning data](/docs/Registry?topic=Registry-delete-data#data-storage_va)
 
-    * [Pushing and pulling images](/docs/Registry?topic=Registry-registry_private#registry_private_images_push)
+* [Deleting your data](/docs/Registry?topic=Registry-delete-data#data-delete)
 
-* [Enforcing access to your account over a private network](/docs/Registry?topic=Registry-registry_private#registry_private_account)
+    * [Deleting the service](/docs/Registry?topic=Registry-delete-data#data-delete_service)
 
-[Using VPE for VPC to connect privately](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
+    * [Deleting namespaces](/docs/Registry?topic=Registry-delete-data#data-delete_namespaces)
 
-* [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
+    * [Deleting images](/docs/Registry?topic=Registry-delete-data#data-delete_images)
 
-* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoints)
+    * [Deleting private repositories](/docs/Registry?topic=Registry-delete-data#data-delete_private_repo)
 
-* [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoint_setup)
+* [Restoring deleted data](/docs/Registry?topic=Registry-delete-data#data-restore)
 
-    * [Configuring an endpoint gateway](/docs/Registry?topic=Registry-registry_vpe#registry_endpoint-gateway-servicename)
+[Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent)
+
+* [Signing images by using {{site.data.keyword.redhat_notm}} signatures](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig)
+
+    * [Using Skopeo to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_skopeo)
+
+    * [Using Podman to sign images](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_podman)
+
+    * [Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip)
 

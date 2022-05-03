@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-03"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing security and compliance
+# Managing security and compliance with {{site.data.keyword.registryshort_notm}}
 {: #manage-security-compliance}
 
 {{site.data.keyword.registrylong}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
@@ -40,14 +40,14 @@ To start monitoring your resources, see [Getting started with {{site.data.keywor
 
 You can choose from the following goals:
 
-- Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM [access groups](x2160811){: term}. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-- Check whether {{site.data.keyword.registryshort_notm}} has at least `#` service IDs with the IAM manager role. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-- Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
-- Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} access is managed only by IAM [access groups](x2160811){: term}. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} has at least `#` service IDs with the IAM manager role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} is enabled with {{site.data.keyword.mon_full_notm}}. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
-- Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints. For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
-- Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
 ## Governing {{site.data.keyword.registryshort}} resource configuration
 {: #govern-container-registry}

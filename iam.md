@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-03"
 
 keywords: user access, policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing user access for {{site.data.keyword.registryshort_notm}}
+# Managing IAM access for {{site.data.keyword.registryshort_notm}}
 {: #iam}
 
 Access to {{site.data.keyword.registrylong}} for users in your account is controlled by {{site.data.keyword.iamlong}} (IAM).
