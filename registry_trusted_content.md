@@ -53,7 +53,7 @@ The following example doesn't include Skopeo authentication.
     ```
     {: pre}
 
-2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and [tag](#x2040924){: term}, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
+2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
 
     ```txt
     skopeo --insecure-policy copy --sign-by <your_email> docker-daemon:<repository:tag> docker://<image>
