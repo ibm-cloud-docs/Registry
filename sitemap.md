@@ -203,6 +203,8 @@ subcollection: Registry
 
 [Notifications about {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
+* [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
+
 [Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
@@ -1449,7 +1451,7 @@ subcollection: Registry
 {: #sitemap_troubleshooting}
 
 
-[Troubleshooting](/docs/Registry?topic=Registry-ts_index#ts_index)
+[Troubleshooting {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ts_index#ts_index)
 
 * [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp)
 
@@ -1535,11 +1537,11 @@ subcollection: Registry
 [Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods#troubleshoot-pods)
 
 
-## Frequently asked questions (FAQs)
-{: #sitemap_frequently_asked_questions_faqs}
+## Frequently asked questions about {{site.data.keyword.registryshort_notm}}
+{: #sitemap_frequently_asked_questions_about_}
 
 
-[Frequently asked questions (FAQs)](/docs/Registry?topic=Registry-registry_faq#registry_faq)
+[Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq)
 
 * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 

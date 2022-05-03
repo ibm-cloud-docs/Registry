@@ -14,7 +14,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Frequently asked questions (FAQs)
+# Frequently asked questions about {{site.data.keyword.registryshort_notm}}
 {: #registry_faq}
 
 Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-03"
 
 keywords: Terraform for IBM Cloud Container Registry, terraform, namespace, cli, image, resource
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up Terraform for {{site.data.keyword.registrylong_notm}}
+# Setting up Terraform for {{site.data.keyword.registryshort_notm}}
 {: #registry_terraform-setup}
 
 Terraform on {{site.data.keyword.cloud}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multitiered cloud environments that follow Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the provisioning, update, and deletion of your {{site.data.keyword.registrylong}} instances by using HashiCorp Configuration Language (HCL).
