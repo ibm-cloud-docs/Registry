@@ -49,7 +49,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-- Run the following `ibmcloud cr image-list` command to display repository, [tag](#x2040924){: term}, and security status of all tagged images that have a size over 1 MB.
+- Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
 
     ```txt
     ibmcloud cr image-list --format "{{ if gt .Size 1000000 }}{{ .Repository }}:{{ .Tag }} {{ .SecurityStatus.Status }}{{end}}"
