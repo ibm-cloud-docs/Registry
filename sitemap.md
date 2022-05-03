@@ -201,7 +201,7 @@ subcollection: Registry
 {: #sitemap_notifications}
 
 
-[Notifications about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_notices#registry_notices)
+[Notifications](/docs/Registry?topic=Registry-registry_notices#registry_notices)
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
