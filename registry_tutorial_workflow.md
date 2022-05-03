@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-03"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -125,6 +125,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     {: pre}
 
     If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+    {: tip}
 
 3. Push the image by running the following command:
 

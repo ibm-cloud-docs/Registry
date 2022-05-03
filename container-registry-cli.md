@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-03"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -30,7 +30,7 @@ If you want to view the current version of your `container-registry` CLI plug-in
 
 To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
-For more information about the IAM platform and service access roles that are required for some commands, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+For more information about the IAM platform and service access roles that are required for some commands, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
 If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
 {: tip}
@@ -259,7 +259,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 From 5 July 2022, all accounts will require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 {: important}
 
-If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
+If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
 ```txt
 ibmcloud cr iam-policies-enable
@@ -274,7 +274,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr iam-policies-status`
 {: #bx_cr_iam_policies_status}
 
-Displays the IAM access policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing user access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
+Displays the IAM access policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
 From 5 July 2022, all accounts will require {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 {: important}

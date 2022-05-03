@@ -68,24 +68,25 @@ toc:
           - topic: registry_access.md
             navtitle: Accessing Container Registry
           - topic: iam.md
-            navtitle: Managing user access
+            navtitle: Managing IAM access
           - topic: registry_users.md
             navtitle: Defining IAM access policies
-      - topic: delete-data.md
-        navtitle: Managing your data
       - /va/toc
       - topic: terraform.md
         navtitle: Setting up Terraform for Container Registry
       - topicgroup: 
           label: Enhancing security
-          topics: 
+          topics:
           - topic: manage-scc.md
             navtitle: Managing security and compliance
-          - registry_trusted_content.md
+          - topic: registry_vpe.md
+            navtitle: Using VPE for VPC to privately connect
+          - registry_private.md
           - topic: registry_encrypt_images.md
             navtitle: Encrypting images for content confidentiality
-          - registry_private.md
-          - registry_vpe.md
+          - topic: delete-data.md
+            navtitle: Managing your data
+          - registry_trusted_content.md
           - topic: registry_iam_ip.md
             navtitle: Using IAM IP address access restrictions
           - registry_security_enforce_portieris.md

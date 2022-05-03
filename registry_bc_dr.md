@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-03"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding business continuity and disaster recovery
+# Understanding business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}
 {: #bc-dr}
 
 Find out about the disaster recovery strategy for {{site.data.keyword.registrylong}}.

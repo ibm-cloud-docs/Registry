@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-03"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -40,7 +40,7 @@ For more information about your responsibilities when you are using {{site.data.
 ## What level of availability do I need?
 {: #ha-level}
 
-You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the service level agreements (SLAs) that you have with your customers, and the resources that you want to expend.
+You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is appropriate for you depends on several factors, such as your business requirements, the service level agreements (SLAs) that you have with your customers, and the resources that you want to expend.
 
 ## What level of availability does {{site.data.keyword.cloud_notm}} offer?
 {: #ha-service}
