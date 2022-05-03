@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-03"
 
 keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data
 
@@ -51,7 +51,7 @@ The following tables list the API methods that generate an event when they are c
 | `container-registry.image.list` | List the images in your {{site.data.keyword.IBM_notm}} account. | |
 | `container-registry.image.pull` | Pull an image from {{site.data.keyword.registryshort}}. | True |
 | `container-registry.image.push` | Push an image to {{site.data.keyword.registryshort}}. | True |
-| `container-registry.image.tag` | Add a tag that refers to a pre-existing {{site.data.keyword.registryshort}} image. | |
+| `container-registry.image.tag` | Add a [tag](#x2040924){: term} that refers to a pre-existing {{site.data.keyword.registryshort}} image. | |
 | `container-registry.image.untag` | Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. | |
 | `container-registry.manifest.inspect` | View the contents of the manifest for an image. | |
 {: caption="Table 2. Actions that generate events for images" caption-side="bottom"}
@@ -180,7 +180,7 @@ The following fields are populated as described, depending on how you populate t
 
 - `target.name` shows the image name and, if you request an image name with a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), a tag. If you request an image name by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), the digest is shown instead of the tag because the digest might have many tags.
 
-- `target.id` shows the image name by digest to represent a searchable unique ID for the image, unless the request is for an image with a tag and the request fails before the digest is discovered. To see all the events for this digest across all tags, you can search by `target.id`.
+- `target.id` shows the image name by digest to represent a searchable unique ID for the image, unless the request is for an image with a [tag](#x2040924){: term} and the request fails before the digest is discovered. To see all the events for this digest across all tags, you can search by `target.id`.
 
 - `target.resourceGroupId` shows the resource group ID that is associated with a namespace and its resources. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 

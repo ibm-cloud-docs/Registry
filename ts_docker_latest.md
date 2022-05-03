@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-03"
 
 keywords: registry, docker, latest, image, tag
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You're unable to pull the most recent image by using the `latest` tag in {{site.data.keyword.registrylong}}.
+You're unable to pull the most recent image by using the `latest` [tag](#x2040924){: term} in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 You are trying to run the command `docker pull`, but it returned a version of your image that is not the most recent version built.

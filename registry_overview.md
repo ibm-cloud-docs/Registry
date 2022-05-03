@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-03"
 
 keywords: region, plan, billing, registry, service plan, quota, cost, domain name, Docker, global registry, terms, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -299,12 +299,12 @@ A repository stores container images, and is itself stored in a registry namespa
 
 An identifier that is attached to container images within a repository. Tags can be reassigned or deleted from images.
 
-You can use tags to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged `latest` is used by default.
+You can use [tags](#x2040924){: term} to distinguish different versions of the same base image within a repository. When you run a Docker command and do not specify the tag of a repository image, then the image tagged `latest` is used by default.
 
 ### Untagged image
 {: #overview_elements_untagged}
 
-An image that has no tag is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case, the tag is overwritten and the original image becomes untagged.
+An image that has no [tag](#x2040924){: term} is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case, the tag is overwritten and the original image becomes untagged.
 
 You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.
 
