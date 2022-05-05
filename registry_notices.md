@@ -13,6 +13,7 @@ subcollection: Registry
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Notifications about {{site.data.keyword.registryshort_notm}}
 {: #registry_notices}
 
