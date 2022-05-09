@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-09"
 
-keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data
+keywords: Track, tracking events, find events, look for events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
 subcollection: Registry
 
@@ -38,7 +38,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | |
-{: caption="Table 1. Actions that generate events for your authorization" caption-side="bottom"}
+{: caption="Table 1. Actions that generate events for your authorization" caption-side="bottom"
 
 ### Actions that generate events for images
 {: #at_events_api_methods_images}
