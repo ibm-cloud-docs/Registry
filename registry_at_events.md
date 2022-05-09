@@ -38,7 +38,7 @@ The following tables list the API methods that generate an event when they are c
 |--------|-------------|------------|
 | `container-registry.auth.get` | Check whether the use of public connections is prevented for image pushes or pulls in your account. | |
 | `container-registry.auth.set` | Prevent or allow image pulls or pushes over public network connections for your account. | |
-{: caption="Table 1. Actions that generate events for your authorization" caption-side="bottom"
+{: caption="Table 1. Actions that generate events for your authorization" caption-side="bottom"}
 
 ### Actions that generate events for images
 {: #at_events_api_methods_images}
