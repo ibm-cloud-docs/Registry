@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-11"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -187,8 +187,6 @@ subcollection: Registry
 * [`rules.conf` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
 
 [`ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
-
-[`ibm-mq` public image](/docs/Registry?topic=RegistryImages-mq#mq)
 
 
 ## What are containers?
