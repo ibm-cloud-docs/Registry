@@ -97,7 +97,7 @@ toc:
           - topic: registry_monitor.md
             navtitle: Monitoring metrics
           - topic: registry_at_events.md
-            navtitle: Auditing the events
+            navtitle: Auditing events
           - topic: registry_logs.md
             navtitle: Analyzing logs
           - registry_at_iam.md

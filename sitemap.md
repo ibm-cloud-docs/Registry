@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -998,6 +998,10 @@ subcollection: Registry
 
 * [Locations](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_locations)
 
+* [Where to look for metrics](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_ui)
+
+    * [{{site.data.keyword.mon_short}} metrics](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_ui_at)
+
 * [Viewing metrics](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics)
 
     * [Starting the Monitoring UI from the Observability page](/docs/Registry?topic=Registry-registry_monitor#registry_view_metrics_opt2)
@@ -1012,9 +1016,15 @@ subcollection: Registry
 
     * [`Storage Quota`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage_quota)
 
-    * [`Storage Used`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
+    * [`Storage`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_storage)
 
-[Auditing the events](/docs/Registry?topic=Registry-at_events#at_events)
+[Auditing events](/docs/Registry?topic=Registry-at_events#at_events)
+
+* [Locations](/docs/Registry?topic=Registry-at_events#at_events_locations)
+
+* [Where to look for events](/docs/Registry?topic=Registry-at_events#ui)
+
+    * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
 
 * [API methods](/docs/Registry?topic=Registry-at_events#at_events_api_methods)
 
@@ -1039,10 +1049,6 @@ subcollection: Registry
     * [Actions that generate events for vulnerabilities](/docs/Registry?topic=Registry-at_events#at_events_api_methods_vuln)
 
     * [Actions that generate events for exemption policies](/docs/Registry?topic=Registry-at_events#at_events_api_methods_exemptions)
-
-* [Where to look for the events](/docs/Registry?topic=Registry-at_events#ui)
-
-    * [{{site.data.keyword.at_full_notm}} events](/docs/Registry?topic=Registry-at_events#ui_at)
 
 * [Analyzing Activity Tracker events](/docs/Registry?topic=Registry-at_events#at_events_analyze)
 
