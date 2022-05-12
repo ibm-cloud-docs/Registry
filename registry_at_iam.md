@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-12"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -26,7 +26,7 @@ For more information, see the following topics:
 
 - [{{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry){: external}
 - [Vulnerability Advisor for {{site.data.keyword.registryshort_notm}} API documentation](https://cloud.ibm.com/apidocs/container-registry/va){: external}
-- [Auditing the events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
+- [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events)
 - [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam)
 
 ## {{site.data.keyword.registryshort_notm}}

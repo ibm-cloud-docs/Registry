@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-12"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -69,31 +69,63 @@ Complete the following steps to create and configure platform metrics for {{site
 
 You can configure one monitoring instance in each region to collect platform metrics for {{site.data.keyword.registrylong_notm}}. The following tables list the locations where metrics can be collected if you enable collection of {{site.data.keyword.registryshort_notm}} service metrics in that region.
 
-{{site.data.keyword.registrylong_notm}} global registry metrics are available through the monitoring `Washington (us-east)` instance.
-{: note}
-
 | Locations in Americas | Platform metrics available |
-|-----------------------|---------------------------------|
+|-----------------------|----------------------------|
 | `Dallas (us-south)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | `Sao Paulo (br-sao)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | `Toronto (ca-tor)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Washington (us-east)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 {: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Americas locations" caption-side="bottom"}
 
 | Locations in Asia Pacific | Platform metrics available |
-|---------------------------|---------------------------------|
+|---------------------------|----------------------------|
 | `Osaka (jp-osa)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | `Sydney (au-syd)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | `Tokyo (jp-tok)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 {: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Asia Pacific locations" caption-side="bottom"}
 
 | Locations in Europe | Platform metrics available |
-|---------------------|---------------------------------|
+|---------------------|----------------------------|
 | `Frankfurt (eu-de)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | `London (eu-gb)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Europe locations" caption-side="bottom"}
 
+| Location for Global | Platform metrics available |
+|---------------------|----------------------------|
+| `Global` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+{: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics for Global" caption-side="bottom"}
+
+For more information about where to see {{site.data.keyword.registryshort_notm}} metrics, see [Where to look for metrics](#registry_monitor_ui).
+
 For more information about the locations where {{site.data.keyword.cloud_notm}} services are enabled to send metrics to {{site.data.keyword.mon_full_notm}}, see [{{site.data.keyword.cloud_notm}} services by location](/docs/monitoring?topic=monitoring-cloud_services_locations).
+
+## Where to look for metrics
+{: #registry_monitor_ui}
+
+### {{site.data.keyword.mon_short}} metrics
+{: #registry_monitor_ui_at}
+
+The [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) in which an {{site.data.keyword.registryshort}} or a Vulnerability Advisor metric is available corresponds to the region of the {{site.data.keyword.registryshort}} that generated the metric.
+
+The following table shows the location of {{site.data.keyword.mon_short}} metrics.
+
+| Region for your account's registry | Domain name of your registry | Location of {{site.data.keyword.mon_short}} metrics |
+|------------------------------------|------------------------------|-----------------------------------------------------|
+| `ap-north` | `jp.icr.io` | `Tokyo (jp-tok)` |
+| `ap-south` | `au.icr.io` | `Sydney (au-syd)` |
+| `br-sao` | `br.icr.io` | `Sao Paulo (br-sao)` |
+| `ca-tor` | `ca.icr.io` | `Toronto (ca-tor)` |
+| `eu-central` | `de.icr.io` | `Frankfurt (eu-de)` |
+| `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
+| `uk-south` | `uk.icr.io` | `London (eu-gb)` |
+| `us-south` | `us.icr.io` | `Dallas (us-south)` |
+{: caption="Table 5. Location of {{site.data.keyword.mon_short}} metrics" caption-side="bottom"}
+
+The following table shows the location of global registry {{site.data.keyword.mon_short}} metrics.
+
+| Registry | Global registry | Location of {{site.data.keyword.at_full_notm}} metrics |
+|----------|-----------------|--------------------------------------------------------|
+| `Global` | `icr.io` | `Washington (us-east)` |
+{: caption="Table 6. Location of global registry {{site.data.keyword.mon_short}} metrics" caption-side="bottom"}
 
 ## Viewing metrics
 {: #registry_view_metrics}
@@ -118,11 +150,11 @@ Next, change the scope or make a copy of the Default dashboard so that you can m
 
 The following table outlines the predefined monitoring dashboards that you can use to monitor {{site.data.keyword.registryshort_notm}} metrics.
 
-| Dashboard name        | Description    | Default dashboard |
-|-----------------------|----------------|-------------------|
+| Dashboard name | Description | Default dashboard |
+|----------------|-------------|-------------------|
 | {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
 | {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | |
-{: caption="Table 4. Predefined dashboards" caption-side="bottom"}
+{: caption="Table 7. Predefined dashboards" caption-side="bottom"}
 
 The predefined dashboards can't be changed. You can copy any predefined dashboard so that you can change it to suit your requirements. For more information, see [Working with dashboards](/docs/monitoring?topic=monitoring-dashboards).
 {: important}
@@ -139,7 +171,7 @@ When you start your dashboard, some metrics might display a `Data Load Error` wa
 | [`Pull Traffic Quota`](#ibm_containerregistry_pull_traffic_quota) | The account's pull traffic quota. |
 | [`Storage Quota`](#ibm_containerregistry_storage_quota) | The account's storage quota. |
 | [`Storage`](#ibm_containerregistry_storage) | The account's storage usage. |
-{: caption="Table 5. Metrics available by plan names" caption-side="bottom"}
+{: caption="Table 8. Metrics available by plan names" caption-side="bottom"}
 
 ### `Pull Traffic`
 {: #ibm_containerregistry_pull_traffic}
@@ -151,7 +183,7 @@ The account's pull traffic in the current month.
 | `Metric Name` | `ibm_containerregistry_pull_traffic`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-{: caption="Table 6. Pull Traffic metric metadata" caption-side="bottom"}
+{: caption="Table 9. Pull Traffic metric metadata" caption-side="bottom"}
 
 ### `Pull Traffic Quota`
 {: #ibm_containerregistry_pull_traffic_quota}
@@ -163,7 +195,7 @@ The account's pull traffic quota.
 | `Metric Name` | `ibm_containerregistry_pull_traffic_quota`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-{: caption="Table 7. Pull Traffic Quota metric metadata" caption-side="bottom"}
+{: caption="Table 10. Pull Traffic Quota metric metadata" caption-side="bottom"}
 
 ### `Storage Quota`
 {: #ibm_containerregistry_storage_quota}
@@ -175,9 +207,9 @@ The account's storage quota.
 | `Metric Name` | `ibm_containerregistry_storage_quota`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-{: caption="Table 8. Storage Quota metric metadata" caption-side="bottom"}
+{: caption="Table 11. Storage Quota metric metadata" caption-side="bottom"}
 
-### `Storage Used`
+### `Storage`
 {: #ibm_containerregistry_storage}
 
 The account's storage usage.
@@ -187,6 +219,6 @@ The account's storage usage.
 | `Metric Name` | `ibm_containerregistry_storage`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-{: caption="Table 9. Storage metric metadata" caption-side="bottom"}
+{: caption="Table 12. Storage metric metadata" caption-side="bottom"}
 
 

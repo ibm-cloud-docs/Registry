@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-05-03"
+  years: 2021, 2022
+lastupdated: "2022-05-12"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -31,7 +31,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 |------|-------------------------------------------------|-----------------------|
 | Data incidents. | It is the responsibility of {{site.data.keyword.IBM_notm}} to inform you if your data is lost. |  |
 | Ensure that the application is available. | It is the responsibility of {{site.data.keyword.IBM_notm}} to inform you if the application is not available. | |
-| Track events. | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that {{site.data.keyword.cloudaccesstraillong_notm}} is tracking events. | It is your responsibility to monitor events by using {{site.data.keyword.cloudaccesstraillong_notm}} to ensure that your application is being accessed only by users with the correct authority. It is also your responsibility to ensure that an {{site.data.keyword.cloudaccesstrailshort}} instance is set up to receive events. For more information, see [Auditing the events for Container Registry](/docs/Registry?topic=Registry-at_events). |
+| Track events. | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that {{site.data.keyword.cloudaccesstraillong_notm}} is tracking events. | It is your responsibility to monitor events by using {{site.data.keyword.cloudaccesstraillong_notm}} to ensure that your application is being accessed only by users with the correct authority. It is also your responsibility to ensure that an {{site.data.keyword.cloudaccesstrailshort}} instance is set up to receive events. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events). |
 {: row-headers}
 {: caption="Table 1. Responsibilities for incident and operations" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}

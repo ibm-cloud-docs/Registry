@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-12"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, release note, registry, images, vulnerability advisor
 
@@ -80,7 +80,7 @@ Storage that is used by untagged images is being charged for {: #01feb2022_billi
 View {{site.data.keyword.at_full_notm}} events for {{site.data.keyword.redhat_notm}} signing {: #17jan2022_sig}
 :   You can view {{site.data.keyword.at_short}} events for [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external} operations.
 
-    For more information, see [Auditing the events](/docs/Registry?topic=Registry-at_events).
+    For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
 ## 7 December 2021
 {: #registry-07dec2021}
