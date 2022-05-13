@@ -40,7 +40,7 @@ Before you target a VPE for {{site.data.keyword.registryshort_notm}}, you must c
 - Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpe) of having a VPE.
 - Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a VPE.
 
-## Virtual private service endpoints
+## Virtual private endpoints
 {: #registry_vpe_endpoints}
 
 The table lists {{site.data.keyword.registrylong_notm}} private endpoints that are supported from the following VPC regions:
