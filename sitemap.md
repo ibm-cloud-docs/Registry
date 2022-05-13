@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -911,7 +911,7 @@ subcollection: Registry
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
 
-* [Virtual private service endpoints](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoints)
+* [Virtual private endpoints](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoints)
 
 * [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_endpoint_setup)
 
