@@ -533,6 +533,128 @@ subcollection: Registry
 {: #sitemap_solution_tutorials}
 
 
+[Moving a VM based app to Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes)
+
+* [Objectives](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-objectives)
+
+* [Architecture](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-architecture)
+
+    * [Traditional app architecture with VMs](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-2)
+
+    * [Containerized architecture](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-3)
+
+    * [VMs, containers, and Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
+
+        * [Virtual machines vs containers](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-5)
+
+        * [Kubernetes orchestration](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
+
+    * [What IBM's doing for you](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
+
+* [Sizing clusters](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
+
+* [Decide what Database option to use](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-database_options)
+
+* [Decide where to store application files](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-decide_where_to_store_data)
+
+    * [Non-persistent data storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-11)
+
+    * [Learn how to create persistent data storage for your app](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-12)
+
+    * [Learn how to move existing data to persistent storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-13)
+
+    * [Set up backups for persistent storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-14)
+
+* [Prepare your code](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-prepare_code)
+
+    * [Apply the 12-factor principles](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-16)
+
+    * [Store credentials in Kubernetes secrets](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-17)
+
+* [Containerize your app](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-build_docker_images)
+
+* [Deploy your app to a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-deploy_to_kubernetes)
+
+    * [Learn how to create a Kubernetes deployment yaml file](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-20)
+
+* [Summary](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-summary)
+
+* [Put everything learned to practice, run the JPetStore app in your cluster](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-runthejpetstore)
+
+* [Related Content](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-related)
+
+[Resilient and secure multi-region Kubernetes clusters with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis)
+
+* [Objectives](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-objectives)
+
+* [Before you begin](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-prereqs)
+
+* [Deploy an application to one location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-2)
+
+    * [Create a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-3)
+
+    * [Deploy the application to the Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-deploy_application)
+
+    * [Get the Ingress Subdomain assigned to the cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-CSALB_IP_subdomain)
+
+    * [Configure the Ingress for your DNS subdomain](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-ingress)
+
+* [And then to another location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-0)
+
+* [Configure multi-location load-balancing](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-4)
+
+    * [Register a custom domain with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-create_cis_instance)
+
+    * [Verify the Global Load Balancer name](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-glb)
+
+    * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-12)
+
+    * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
+
+        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-14)
+
+        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-15)
+
+        * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-16)
+
+    * [Create the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-17)
+
+* [Secure the application](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-secure_via_CIS)
+
+    * [Turn the Web Application Firewall On](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-20)
+
+    * [Increase performance and protect from Denial of Service attacks](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-proxy_setting)
+
+* [Remove resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-6)
+
+    * [Remove Kubernetes Cluster resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-23)
+
+    * [Remove {{site.data.keyword.cis_short_notm}} resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-24)
+
+* [Related content](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-7)
+
+[Continuous Deployment to Kubernetes](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes)
+
+* [Objectives](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-objectives)
+
+* [Before you begin](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-prereq)
+
+* [Create development Kubernetes cluster](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_kube_cluster)
+
+* [Create a starter application](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
+
+* [Modify the application and deploy the updates](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-6)
+
+* [Deploy to a production environment](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-deploytoproduction)
+
+* [Setup Slack notifications](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-setup_slack)
+
+* [Remove resources](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-removeresources)
+
+* [Expand the Tutorial](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-expandTutorial)
+
+* [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
+
 
 ## Setting up the {{site.data.keyword.registryshort}} CLI and namespace
 {: #sitemap_setting_up_the__cli_and_namespace}
