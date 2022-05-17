@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
-keywords: public images, commands, questions, registry, FAQ, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
+keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
 subcollection: Registry
 
@@ -141,7 +141,7 @@ Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} 
 
 For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
-## Why have I got an image not scanned message for a new image?
+## Why doesn't a new image scan?
 {: #faq_va_new_scan_error}
 {: faq}
 

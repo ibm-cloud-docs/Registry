@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -32,7 +32,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
+If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why does a `cr` command fail saying that it's not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
 {: tip}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
@@ -479,7 +479,7 @@ Restore a deleted image from the trash. You can choose to restore by [tag](/docs
 If you get an error when you're restoring an image that says that the tagged image already exists, see [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore) for assistance.
 {: tip}
 
-If you're restoring an image by digest, but some tags aren't restored, see [Why aren't all tags restored when an image is restored by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
+If you're restoring an image by digest, but some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
 {: tip}
 
 ```txt

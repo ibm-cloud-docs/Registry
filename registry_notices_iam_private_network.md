@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-17"
 
-keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, change, impact, actions, know
+keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, impacted, actions
 
 subcollection: Registry
 
@@ -18,14 +18,14 @@ subcollection: Registry
 By 23 May 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list.
 {: shortdesc}
 
-## What you need to know
+## What you need to know about this change
 {: #registry_notices_iam_private_network_know}
 
 From 23 May 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented [{{site.data.keyword.registryshort}} IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 This change is required because of a security improvement to {{site.data.keyword.registrylong_notm}}. Instead of adding the {{site.data.keyword.registrylong_notm}} private IP addresses to your allowed IP list, you must add the private subnet and IP addresses of your own hosts, for example, worker nodes in an {{site.data.keyword.containerlong_notm}} cluster.
 
-If you don't make the [appropriate updates](#registry_notices_iam_pivate_network_action) before this change happens on 23 May 2022, your requests to {{site.data.keyword.registryshort}} might fail to be authorized.
+You must take the [appropriate actions](#registry_notices_iam_pivate_network_action) before this change happens on 23 May 2022, otherwise your requests to {{site.data.keyword.registryshort}} might fail to be authorized.
 {: important}
 
 ## How you benefit from this change
@@ -35,7 +35,7 @@ This change increases security for any {{site.data.keyword.registrylong_notm}} u
 
 If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP address in any audit logs, where previously you saw a private {{site.data.keyword.registryshort}} owned IP.
 
-## Understanding if you are impacted
+## Understanding if you are impacted by this change
 {: #registry_notices_iam_pivate_network_impact}
 
 You are impacted if you are accessing {{site.data.keyword.registryshort}} over the private network.

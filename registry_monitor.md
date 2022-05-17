@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-17"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -32,7 +32,7 @@ Complete the following steps to create and configure platform metrics for {{site
 
 1. Create and configure an {{site.data.keyword.mon_full_notm}} instance that is configured with platform metrics in the region that you want to monitor, see [Getting started with {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started).
 
-   For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Locations](#registry_monitor_locations).
+   For more information about the locations where {{site.data.keyword.registryshort_notm}} is enabled for monitoring, see [Locations of platform metrics](#registry_monitor_locations).
 
 2. Log in to {{site.data.keyword.cloud_notm}}.
 
@@ -64,7 +64,7 @@ Complete the following steps to create and configure platform metrics for {{site
 
     If you want to target a different [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), run the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
 
-## Locations
+## Locations of platform metrics
 {: #registry_monitor_locations}
 
 You can configure one monitoring instance in each region to collect platform metrics for {{site.data.keyword.registrylong_notm}}. The following tables list the locations where metrics can be collected if you enable collection of {{site.data.keyword.registryshort_notm}} service metrics in that region.
@@ -162,7 +162,7 @@ The predefined dashboards can't be changed. You can copy any predefined dashboar
 When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because more time is required to create the data. When data is available, the warning sign goes away and the metric is populated. You might also need to change the resolution period.
 {: note}
 
-## Metrics
+## Platform metrics
 {: #metrics}
 
 | Metric Name | Information |

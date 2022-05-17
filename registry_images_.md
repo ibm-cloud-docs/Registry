@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
-keywords: Docker, private repository, images, building images, list images, trash, recycle bin, restoring images, namespace, cli, tag, api key
+keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
 subcollection: Registry
 
@@ -314,7 +314,7 @@ If you want to restore a deleted image, you can list the contents of the trash b
 Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
 {: tip}
 
-### Deleting images from your private repository by using the CLI
+### Deleting images from your private repository in the CLI
 {: #registry_images_remove_cli}
 
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} repository by using the CLI.
@@ -345,7 +345,7 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting images from your private repository by using the console
+### Deleting images from your private repository in the console
 {: #registry_images_remove_gui}
 
 You can delete unwanted images and all their tags from your private {{site.data.keyword.cloud_notm}} image repository by using the {{site.data.keyword.cloud_notm}} console.
@@ -430,7 +430,7 @@ To restore an image by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't some tags restored when I'm restoring an image by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
+    If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
 
     In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the image shows in the output.

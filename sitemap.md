@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-17"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -50,17 +50,17 @@ subcollection: Registry
 
     * [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic)
 
-        * [Storage](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_storage)
+        * [Storage charges](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_storage)
 
-        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_pull_traffic)
+        * [Pull traffic charges](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic_pull_traffic)
 
     * [Quota limits for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits)
 
-        * [Storage](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_storage)
+        * [Storage quota limits](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_storage)
 
-        * [Pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_pull_traffic)
+        * [Pull traffic quota limits](/docs/Registry?topic=Registry-registry_overview#registry_quota_limits_pull_traffic)
 
-    * [Cost](/docs/Registry?topic=Registry-registry_overview#registry_cost)
+    * [Cost of {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_overview#registry_cost)
 
 * [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade)
 
@@ -109,7 +109,7 @@ subcollection: Registry
 
 [Container Registry architecture and workload](/docs/Registry?topic=Registry-registry_architecture#registry_architecture)
 
-* [Segmentation](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
+* [Segmentation of data](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
 
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
@@ -205,11 +205,11 @@ subcollection: Registry
 
 [Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
-* [What you need to know](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
 * [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_benefit)
 
-* [Understanding if you are impacted](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_impact)
+* [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_impact)
 
 * [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_pivate_network_action)
 
@@ -716,9 +716,9 @@ subcollection: Registry
 
 * [Deleting images from your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_remove)
 
-    * [Deleting images from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
+    * [Deleting images from your private repository in the CLI](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_cli)
 
-    * [Deleting images from your private repository by using the console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
+    * [Deleting images from your private repository in the console](/docs/Registry?topic=Registry-registry_images_#registry_images_remove_gui)
 
 * [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash)
 
@@ -751,9 +751,9 @@ subcollection: Registry
 
 * [Deleting charts from your private repository](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove)
 
-    * [Deleting charts from your private repository by using the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
+    * [Deleting charts from your private repository in the CLI](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_cli)
 
-    * [Deleting charts from your private repository by using the console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
+    * [Deleting charts from your private repository in the console](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_remove_gui)
 
 * [Listing charts in the trash](/docs/Registry?topic=Registry-registry_helm_charts#registry_helm_charts_list_trash)
 
@@ -774,7 +774,7 @@ subcollection: Registry
 
 * [Planning retention](/docs/Registry?topic=Registry-registry_retention#retention_plan)
 
-* [Clean up your namespaces by keeping a specific number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
+* [Clean up your namespaces to keep a set number of images](/docs/Registry?topic=Registry-registry_retention#retention_images)
 
 * [Set a retention policy for your namespaces](/docs/Registry?topic=Registry-registry_retention#retention_policy_set)
 
@@ -810,23 +810,23 @@ subcollection: Registry
 
     * [Using client software to authenticate in automation](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth)
 
-        * [Buildah](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_buildah)
+        * [Using Buildah to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_buildah)
 
-        * [Docker](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
+        * [Using Docker to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker)
 
-        * [Podman](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman)
+        * [Using Podman to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_example_other_podman)
 
-        * [Skopeo](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other_example_skopeo)
+        * [Using Skopeo to authenticate with the registry](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_other_example_skopeo)
 
 * [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive)
 
-    * [Buildah](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_buildah)
+    * [Using Buildah to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_buildah)
 
-    * [Docker](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_docker)
+    * [Using Docker to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_docker)
 
-    * [Podman](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_podman)
+    * [Using Podman to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_podman)
 
-    * [Skopeo](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_skopeo)
+    * [Using Skopeo to access your namespace](/docs/Registry?topic=Registry-registry_access#registry_access_interactive_auth_skopeo)
 
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
@@ -983,7 +983,7 @@ subcollection: Registry
 
 * [Installing Portieris in your cluster](/docs/Registry?topic=Registry-security_enforce_portieris#sec_enforce_install_portieris)
 
-* [Policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris)
+* [Portieris policies](/docs/Registry?topic=Registry-security_enforce_portieris#policies_portieris)
 
 * [Uninstalling Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#uninstall_portieris)
 
@@ -996,7 +996,7 @@ subcollection: Registry
 
 * [Enabling metrics for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_monitor#registry_enable_platform_metrics)
 
-* [Locations](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_locations)
+* [Locations of platform metrics](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_locations)
 
 * [Where to look for metrics](/docs/Registry?topic=Registry-registry_monitor#registry_monitor_ui)
 
@@ -1008,7 +1008,7 @@ subcollection: Registry
 
 * [Predefined dashboards](/docs/Registry?topic=Registry-registry_monitor#registry_dashboards_dictionary)
 
-* [Metrics](/docs/Registry?topic=Registry-registry_monitor#metrics)
+* [Platform metrics](/docs/Registry?topic=Registry-registry_monitor#metrics)
 
     * [`Pull Traffic`](/docs/Registry?topic=Registry-registry_monitor#ibm_containerregistry_pull_traffic)
 
@@ -1020,7 +1020,7 @@ subcollection: Registry
 
 [Auditing events](/docs/Registry?topic=Registry-at_events#at_events)
 
-* [Locations](/docs/Registry?topic=Registry-at_events#at_events_locations)
+* [Locations of service events](/docs/Registry?topic=Registry-at_events#at_events_locations)
 
 * [Where to look for events](/docs/Registry?topic=Registry-at_events#ui)
 
@@ -1058,9 +1058,9 @@ subcollection: Registry
 
         * [Request data for the account vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_list)
 
-        * [Request and response data for the image vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
+        * [Request and response data for the vulnerability report](/docs/Registry?topic=Registry-at_events#at_events_analyze_report_read)
 
-        * [Request and response data for the image vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
+        * [Request and response data for the vulnerability status](/docs/Registry?topic=Registry-at_events#at_events_analyze_status_read)
 
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
@@ -1358,11 +1358,11 @@ subcollection: Registry
 
 [Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
-* [Go template format options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
+* [Go template options for `ibmcloud cr image-digests`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagedigests)
 
-* [Go template format options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
+* [Go template options for `ibmcloud cr image-list`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imagelist)
 
-* [Go template format options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
+* [Go template options for `ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect)
 
     * [`Config` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_config)
 
@@ -1377,13 +1377,13 @@ subcollection: Registry
 
 [Understanding high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr)
 
-* [Responsibilities](/docs/Registry?topic=Registry-ha-dr#ha-responsibilities)
+* [Ownership of responsibilities](/docs/Registry?topic=Registry-ha-dr#ha-responsibilities)
 
 * [What level of availability do I need?](/docs/Registry?topic=Registry-ha-dr#ha-level)
 
 * [What level of availability does {{site.data.keyword.cloud_notm}} offer?](/docs/Registry?topic=Registry-ha-dr#ha-service)
 
-* [Locations](/docs/Registry?topic=Registry-ha-dr#ha-locations)
+* [Locations for service availability](/docs/Registry?topic=Registry-ha-dr#ha-locations)
 
 * [Frequently asked questions about high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr_faq)
 
@@ -1393,11 +1393,11 @@ subcollection: Registry
 
 [Understanding business continuity and disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr)
 
-* [Responsibilities](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
+* [Responsibilities when using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
 
 * [Disaster recovery strategy](/docs/Registry?topic=Registry-bc-dr#bc-dr-strategy)
 
-* [Locations](/docs/Registry?topic=Registry-bc-dr#bc-dr-locations)
+* [Locations for service availability](/docs/Registry?topic=Registry-bc-dr#bc-dr-locations)
 
 * [Frequently asked questions about disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr_faq)
 
@@ -1480,9 +1480,9 @@ subcollection: Registry
 
 [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire#troubleshoot-login-expire)
 
-[Why do {{site.data.keyword.registryshort_notm}} commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
+[Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
-[Why do the {{site.data.keyword.registryshort_notm}} commands fail saying they're not registered commands?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why does a `cr` command fail saying that it's not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
 [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
@@ -1518,7 +1518,7 @@ subcollection: Registry
 
 [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
-[Why aren't all tags restored when an image is restored by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+[Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
 
@@ -1575,7 +1575,7 @@ subcollection: Registry
 
 * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
-* [Why have I got an image not scanned message for a new image?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
+* [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
 * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 

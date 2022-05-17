@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
-keywords: region, plan, billing, registry, service plan, quota, cost, domain name, Docker, global registry, terms, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
+keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
 subcollection: Registry
 
@@ -81,7 +81,7 @@ The following example is for pushing images:
 
 Depending on the service plan that you choose, you are charged for the storage and pull traffic that you use per month in each region.
 
-#### Storage
+#### Storage charges
 {: #registry_billing_traffic_storage}
 
 Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registryshort}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
@@ -93,7 +93,7 @@ The following example is for the standard plan:
 
     In the standard plan, the first 0.5 GB-Months are free, so you get charged for 7 GB-Months (7.5 GB-Months - 0.5 GB-Months).
 
-#### Pull traffic
+#### Pull traffic charges
 {: #registry_billing_traffic_pull_traffic}
 
 Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
@@ -111,7 +111,7 @@ The following example is for the standard plan:
 
 Depending on the service plan that you choose, you can push and pull images to and from your namespace until you reach your plan-specific or custom quota limits for each region.
 
-#### Storage
+#### Storage quota limits
 {: #registry_quota_limits_storage}
 
 When you reach or exceed the quota limits for your plan, you can't push any images to the namespaces in your {{site.data.keyword.cloud_notm}} account until you complete one of the following tasks.
@@ -125,7 +125,7 @@ The following example is for the standard plan:
 
     After the push, {{site.data.keyword.registryshort}} determines the actual size of the image in your namespace, which can vary from the size on your local computer, and checks whether the limit for storage is reached. In this example, the storage usage increases from 900 MB by 2 GB. With your current quota limit set to 1 GB, {{site.data.keyword.registryshort}} prevents you from pushing more images to the namespace.
 
-#### Pull traffic
+#### Pull traffic quota limits
 {: #registry_quota_limits_pull_traffic}
 
 When you reach or exceed the quota limits for your plan, you can't pull any images from the namespaces in your {{site.data.keyword.cloud_notm}} account until you complete one of the following tasks.
@@ -142,7 +142,7 @@ The following example is for the standard plan:
 
     After the image is pulled, {{site.data.keyword.registryshort}} determines the bandwidth that you used during the pull and checks whether the limit for pull traffic is reached. In this example, the pull traffic usage increases from 4.5 GB to 5.5 GB. With your current quota limit set to 5 GB, {{site.data.keyword.registryshort}} prevents you from pulling images from your namespace.
 
-### Cost
+### Cost of {{site.data.keyword.registryshort}}
 {: #registry_cost}
 
 You can see the costs of {{site.data.keyword.registrylong_notm}} in the pricing plans section of the offering details page, see [{{site.data.keyword.registryshort_notm}}](https://cloud.ibm.com/registry/catalog).

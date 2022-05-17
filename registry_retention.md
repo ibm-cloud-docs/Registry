@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-17"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -48,7 +48,7 @@ You gain the following advantages by using this technique:
 - You can use different [IAM](/docs/Registry?topic=Registry-iam) policies. For example, you can have more restrictive access to production images.
 - You can sign production images, but leave development and staging images unsigned.
 
-## Clean up your namespaces by keeping a specific number of images
+## Clean up your namespaces to keep a set number of images
 {: #retention_images}
 {: help}
 {: support}

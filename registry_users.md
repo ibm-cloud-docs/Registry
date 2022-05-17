@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-17"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Defining IAM access policies for {{site.data.keyword.registryshort_notm}}
 {: #user}
 
-As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies for your registry to create different levels of access for different users in {{site.data.keyword.registrylong_notm}}. For example, you can authorize certain users to set quotas while other users can view only quotas.
+As an administrator, you can define {{site.data.keyword.iamlong}} (IAM) access policies for your registry to create different levels of access for different users in {{site.data.keyword.registrylong}}. For example, you can authorize certain users to set quotas while other users can view only quotas.
 {: shortdesc}
 
 From 5 July 2022, all accounts will require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).

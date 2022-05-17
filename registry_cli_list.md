@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-05-17"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -97,7 +97,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-## Go template format options for `ibmcloud cr image-digests`
+## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
@@ -113,7 +113,7 @@ Review the following table to find available Go template options and data types 
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-digests command" caption-side="bottom"}
 
-## Go template format options for `ibmcloud cr image-list`
+## Go template options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
@@ -130,7 +130,7 @@ Review the following table to find available Go template options and data types 
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-list command" caption-side="bottom"}
 
-## Go template format options for `ibmcloud cr image-inspect`
+## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
 Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
