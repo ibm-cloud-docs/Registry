@@ -12,6 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Update IAM restricted IP address lists by 23 May 2022
 {: #registry_notices_iam_private_network}
 
