@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-17"
 
-keywords: registry, login, expire, push, pull, iam session, iam
+keywords: registry, login, push, pull, iam session, iam
 
 subcollection: Registry
 

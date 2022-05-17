@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: load balancing, back ups, HA for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, high availability, replicate the data, replicate the service, availability, responsibilities, location, service, region
 
@@ -30,7 +30,7 @@ The {{site.data.keyword.registrylong}} service is a highly available, regional, 
 
 For more information about service availability, see [Service Level Agreements](/docs/overview?topic=overview-slas).
 
-## Responsibilities
+## Ownership of responsibilities
 {: #ha-responsibilities}
 
 To find out more about responsibility ownership for using {{site.data.keyword.cloud_notm}} products between {{site.data.keyword.IBM_notm}} and the customer, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities).
@@ -56,7 +56,7 @@ Service level objectives (SLOs) describe the design points that the {{site.data.
 
 The SLO is not a warranty and {{site.data.keyword.IBM_notm}} does not issue credits for failure to meet an objective. Refer to the SLAs for commitments and credits that are issued for failure to meet any committed SLAs. For a summary of all SLOs, see [{{site.data.keyword.cloud_notm}} service level objectives](/docs/overview?topic=overview-slo).
 
-## Locations
+## Locations for service availability
 {: #ha-locations}
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).

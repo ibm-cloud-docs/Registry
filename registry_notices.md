@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-17"
 
-keywords: IBM Cloud Container Registry notifications, notices, notifications
+keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vulnerability advisor
 
 subcollection: Registry
 
@@ -17,11 +17,13 @@ subcollection: Registry
 # Notifications about {{site.data.keyword.registryshort_notm}}
 {: #registry_notices}
 
-Notifications about changes that affect {{site.data.keyword.registrylong}}.
+Notifications about changes that affect {{site.data.keyword.registrylong}} and Vulnerability Advisor.
 {: shortdesc}
 
 ## Notifications topics
 {: #registry_notices_topics}
+
+Notifications about changes:
 
 - [Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network)
 - [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy)

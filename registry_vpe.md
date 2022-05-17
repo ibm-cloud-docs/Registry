@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-17"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.registryshort_notm}}
+# Using VPEs for VPC to privately connect to {{site.data.keyword.registryshort_notm}}
 {: #registry_vpe}
 
 You can use {{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.

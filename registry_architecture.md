@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: IBM Cloud Container Registry architecture, segmentation, private connections, data plane, control plane, registry
 
@@ -26,7 +26,7 @@ In each regional instance of the [registry](/docs/Registry?topic=Registry-regist
 
 ![Image showing deployment.](images/container-registry_deployment_model.svg "Image showing deployment in your account, MZRs, public ingress, private ingress, customer data flows, and dependencies (public and private)."){: caption="Figure 1. Image showing deployment" caption-side="bottom"}
 
-## Segmentation
+## Segmentation of data
 {: #registry_architecture_segregation}
 
 Segmentation of data within {{site.data.keyword.registrylong_notm}} is achieved by using private [namespaces](x2031005){: term}, which are strictly owned by single accounts.

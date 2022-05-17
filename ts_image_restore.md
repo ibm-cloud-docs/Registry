@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
-keywords: error, registry, restore, images, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest
+keywords: error, registry, restore, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest
 
 subcollection: Registry
 

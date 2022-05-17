@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -101,7 +101,7 @@ Examples of how to authenticate automatically with the registry are provided for
 - [Podman](#registry_access_apikey_auth_example_other_podman)
 - [Skopeo](#registry_access_apikey_auth_other_example_skopeo)
 
-#### Buildah
+#### Using Buildah to authenticate with the registry
 {: #registry_access_apikey_auth_example_other_buildah}
 
 You can use Buildah to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -113,7 +113,7 @@ buildah login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
 
-#### Docker
+#### Using Docker to authenticate with the registry
 {: #registry_access_apikey_auth_docker}
 
 You can use Docker to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -125,7 +125,7 @@ docker login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
 
-#### Podman
+#### Using Podman to authenticate with the registry
 {: #registry_access_apikey_auth_example_other_podman}
 
 You can use Podman to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -137,7 +137,7 @@ podman login -u iamapikey -p <apikey> <registry_domain>
 ```
 {: pre}
 
-#### Skopeo
+#### Using Skopeo to authenticate with the registry
 {: #registry_access_apikey_auth_other_example_skopeo}
 
 You can use Skopeo to authenticate with the registry so that you can push and pull images to and from the registry.
@@ -161,7 +161,7 @@ Examples of how to access your namespaces interactively are provided for the fol
 - [Podman](#registry_access_interactive_auth_podman)
 - [Skopeo](#registry_access_interactive_auth_skopeo)
 
-### Buildah
+### Using Buildah to access your namespace
 {: #registry_access_interactive_auth_buildah}
 
 Log in to the registry by using the Buildah CLI.
@@ -173,7 +173,7 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | buildah login -u iam
 ```
 {: pre}
 
-### Docker
+### Using Docker to access your namespace
 {: #registry_access_interactive_auth_docker}
 
 Log in to the registry by using the Docker CLI.
@@ -196,7 +196,7 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
     ```
     {: pre}
 
-### Podman
+### Using Podman to access your namespace
 {: #registry_access_interactive_auth_podman}
 
 Log in to the registry by using the CLI.
@@ -206,7 +206,7 @@ ibmcloud cr login --client podman
 ```
 {: pre}
 
-### Skopeo
+### Using Skopeo to access your namespace
 {: #registry_access_interactive_auth_skopeo}
 
 Log in to the registry by using the Skopeo CLI.

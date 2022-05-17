@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: DR for IBM Cloud Container Registry, high availability for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, failover for IBM Cloud Container Registry, BC for IBM Cloud Container Registry, DR for IBM Cloud Container Registry, business continuity for IBM Cloud Container Registry, disaster recovery for IBM Cloud Container Registry, disaster recovery, responsibilities, locations, data
 
@@ -20,7 +20,7 @@ Find out about the disaster recovery strategy for {{site.data.keyword.registrylo
 
 [Disaster recovery](#x2113280){: term} involves a set of policies, tools, and procedures for returning a system, an application, or an entire data center to full operation after a catastrophic interruption. It includes procedures for copying and storing an installed system's essential data in a secure location, and for recovering that data to restore normalcy of operation.
 
-## Responsibilities
+## Responsibilities when using {{site.data.keyword.registryshort_notm}}
 {: #bc-dr-responsibilities}
 
 For more information about your responsibilities when you are using {{site.data.keyword.registrylong_notm}}, see [Shared responsibilities for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_responsibilities).
@@ -38,7 +38,7 @@ For more information about your responsibilities when you are using {{site.data.
 | Recovery time objective (RTO) | 24 hours |
 {: caption="Table 1. RPO and RTO for {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
-## Locations
+## Locations for service availability
 {: #bc-dr-locations}
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).

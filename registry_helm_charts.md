@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-17"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -199,7 +199,7 @@ Where multiple [tags](#x2040924){: term} exist for the same chart digest within 
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.{: tip}
 
-### Deleting charts from your private repository by using the CLI
+### Deleting charts from your private repository in the CLI
 {: #registry_helm_charts_remove_cli}
 {: help}
 {: support}
@@ -232,7 +232,7 @@ To delete a chart by using the CLI, complete the following steps:
     ```
     {: pre}
 
-### Deleting charts from your private repository by using the console
+### Deleting charts from your private repository in the console
 {: #registry_helm_charts_remove_gui}
 {: help}
 {: support}
@@ -321,7 +321,7 @@ To restore a chart by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't some tags restored when I'm restoring an image by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest)
+    If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest)
     {: tip}
 
     In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the chart shows in the output.
