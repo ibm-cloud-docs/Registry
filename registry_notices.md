@@ -2,17 +2,15 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
-keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vulnerability advisor
+keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
 subcollection: Registry
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 # Notifications about {{site.data.keyword.registryshort_notm}}
 {: #registry_notices}

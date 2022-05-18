@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-18"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -108,7 +108,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
       ```
       {: pre}
 
-      If you have trouble pulling a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance. If you can't pull the most recent image by using the `latest` tag, see [Why can't I pull the most recent image by using the latest tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
+      If you have trouble pulling a Docker image, see [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker) for assistance. If you can't pull the most recent image by using the `latest` tag, see [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest) for assistance.
       {: tip}
 
     - If you are using Podman, run the following command.
