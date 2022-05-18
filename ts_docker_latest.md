@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: docker, latest, image, tag, recent image
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I pull the most recent image by using the `latest` tag?
+# Why can't I pull the newest image by using the `latest` tag?
 {: #troubleshoot-docker-latest}
 {: troubleshoot}
 {: support}

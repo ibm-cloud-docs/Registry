@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -44,7 +44,7 @@ Troubleshoot logging in problems.
 - [Why can't I log in to {{site.data.keyword.registryshort}}?](/docs/Registry?topic=Registry-troubleshoot-login)
 - [Why does the {{site.data.keyword.registryshort}} login keep expiring?](/docs/Registry?topic=Registry-troubleshoot-login-expire)
 - [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud)
-- [Why does a `cr` command fail saying that it's not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
+- [Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error)
 - [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac)
 
 ### Troubleshooting pull and push errors
@@ -64,7 +64,7 @@ Troubleshoot CLI command problems.
 - [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
 - [Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
 - [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
-- [Why can't I pull the most recent image by using the latest tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
+- [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
 - [Why do all the tags get deleted when I delete an image?](/docs/Registry?topic=Registry-troubleshoot-image-rm)
 - [Why doesn't the retention command show all the images?](/docs/Registry?topic=Registry-troubleshoot-image-list-retention)
 - [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore)

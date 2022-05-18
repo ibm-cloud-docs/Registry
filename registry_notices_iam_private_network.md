@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
-keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, impacted, actions
+keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
 subcollection: Registry
 

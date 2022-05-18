@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -32,7 +32,7 @@ To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, se
 
 For more information about the IAM platform and service access roles that are required for some commands, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why does a `cr` command fail saying that it's not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
+If {{site.data.keyword.registryshort_notm}} commands fail with an error saying that they're not registered commands, see [Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error) for assistance. If the commands fail saying that you're not logged in, see [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud) for assistance.
 {: tip}
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).

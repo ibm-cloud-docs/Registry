@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1482,7 +1482,7 @@ subcollection: Registry
 
 [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
-[Why does a `cr` command fail saying that it's not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
 [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 
@@ -1510,7 +1510,7 @@ subcollection: Registry
 
 [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout#troubleshoot-image-timeout)
 
-[Why can't I pull the most recent image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
+[Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest#troubleshoot-docker-latest)
 
 [Why do all the tags get deleted when I delete an image?](/docs/Registry?topic=Registry-troubleshoot-image-rm#troubleshoot-image-rm)
 
