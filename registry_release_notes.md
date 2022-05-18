@@ -10,6 +10,8 @@ subcollection: Registry
 
 content-type: release-note
 
+
+
 ---
 
 {{site.data.keyword.attribute-definition-list}}
