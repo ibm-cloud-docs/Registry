@@ -1493,6 +1493,10 @@ subcollection: Registry
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 
+[Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull#ts-app-image-pull)
+
+* [Troubleshooting image pull secrets that use API keys](/docs/Registry?topic=containers-ts-app-image-pull#img-pull-api-key)
+
 [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 
 
