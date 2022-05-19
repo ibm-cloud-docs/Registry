@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -11,6 +11,7 @@ subcollection: container-registry-cli-plugin
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
