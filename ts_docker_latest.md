@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
-keywords: docker, latest, image, tag, recent image
+keywords: docker, latest, image, tag, latest tag
 
 subcollection: Registry
 
