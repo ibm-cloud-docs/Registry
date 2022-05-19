@@ -12,7 +12,6 @@ subcollection: container-registry-cli-plugin
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
