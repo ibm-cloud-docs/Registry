@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -12,20 +12,20 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Update IAM restricted IP address lists by 23 May 2022
+# Update IAM restricted IP address lists by 20 June 2022
 {: #registry_notices_iam_private_network}
 
-By 23 May 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list.
+By 20 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list.
 {: shortdesc}
 
 ## What you need to know about this change
 {: #registry_notices_iam_private_network_know}
 
-From 23 May 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented [{{site.data.keyword.registryshort}} IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+From 20 June 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented [{{site.data.keyword.registryshort}} IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 This change is required because of a security improvement to {{site.data.keyword.registrylong_notm}}. Instead of adding the {{site.data.keyword.registrylong_notm}} private IP addresses to your allowed IP list, you must add the private subnet and IP addresses of your own hosts, for example, worker nodes in an {{site.data.keyword.containerlong_notm}} cluster.
 
-You must take the [appropriate actions](#registry_notices_iam_pivate_network_action) before this change happens on 23 May 2022, otherwise your requests to {{site.data.keyword.registryshort}} might fail to be authorized.
+You must take the [appropriate actions](#registry_notices_iam_pivate_network_action) before this change happens on 20 June 2022, otherwise your requests to {{site.data.keyword.registryshort}} might fail to be authorized.
 {: important}
 
 ## How you benefit from this change
@@ -51,13 +51,13 @@ If any of the previous statements is true when this change takes effect, the IP 
 ## What actions you need to take
 {: #registry_notices_iam_pivate_network_action}
 
-You must take the appropriate actions before 23 May 2022. If you don’t make the appropriate updates, your requests to push and pull from {{site.data.keyword.registryshort}} might fail.
+You must take the appropriate actions before 20 June 2022. If you don’t make the appropriate updates, your requests to push and pull from {{site.data.keyword.registryshort}} might fail.
 {: important}
 
-By 23 May 2022, if you access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM, you must update your IAM restricted IP address list to include any IP addresses or subnets of hosts in your account that make requests to {{site.data.keyword.registryshort}}. These IP addresses and subnets are in addition to the current {{site.data.keyword.registryshort}} [private IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry). 
+By 20 June 2022, if you access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM, you must update your IAM restricted IP address list to include any IP addresses or subnets of hosts in your account that make requests to {{site.data.keyword.registryshort}}. These IP addresses and subnets are in addition to the current {{site.data.keyword.registryshort}} private IP addresses. For more information about the IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry) in the {{site.data.keyword.containerlong_notm}} documentation and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry) in the {{site.data.keyword.openshiftlong}} documentation.
 
-After 27 May 2022, you can remove the existing {{site.data.keyword.registryshort}} private IP addresses from your allowed IP list.
+After 24 June 2022, you can remove the existing {{site.data.keyword.registryshort}} private IP addresses from your allowed IP list.
 
-For more information about connecting to {{site.data.keyword.registryshort}} over the private network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
+For more information about connecting to {{site.data.keyword.registryshort}} over the private network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private).
 
 
