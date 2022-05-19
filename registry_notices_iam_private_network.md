@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -54,7 +54,7 @@ If any of the previous statements is true when this change takes effect, the IP 
 You must take the appropriate actions before 23 May 2022. If you don’t make the appropriate updates, your requests to push and pull from {{site.data.keyword.registryshort}} might fail.
 {: important}
 
-By 23 May 2022, if you access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM, you must update your IAM restricted IP address list to include any IP addresses or subnets of hosts in your account that make requests to {{site.data.keyword.registryshort}}. These IP addresses and subnets are in addition to the current {{site.data.keyword.registryshort}} [private IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry). 
+By 23 May 2022, if you access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM, you must update your IAM restricted IP address list to include any IP addresses or subnets of hosts in your account that make requests to {{site.data.keyword.registryshort}}. These IP addresses and subnets are in addition to the current {{site.data.keyword.registryshort}} [private IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
 After 27 May 2022, you can remove the existing {{site.data.keyword.registryshort}} private IP addresses from your allowed IP list.
 
