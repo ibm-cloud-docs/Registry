@@ -24,10 +24,10 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: #registry-20apr2022}
 {: release-note}
 
-Change to how requests over the private network interact with IAM restricted IP lists from 23 May 2022 {: #20apr2022_private_network}
-:   By 23 May 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts.
+Change to how requests over the private network interact with IAM restricted IP lists from 20 June 2022 {: #20apr2022_private_network}
+:   By 20 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts.
 
-    For more information, see [Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Source IP Preservation for Private Connections to {{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/blog/announcements/source-ip-preservation-for-private-connections-to-ibm-cloud-container-registry){: external}.
+    For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Source IP Preservation for Private Connections to {{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/blog/announcements/source-ip-preservation-for-private-connections-to-ibm-cloud-container-registry){: external}.
 
 ## 1 March 2022
 {: #registry-01mar2022}

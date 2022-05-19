@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -203,7 +203,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Update IAM restricted IP address lists by 23 May 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+[Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
@@ -234,7 +234,7 @@ subcollection: Registry
 
 * [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
 
-    * [Change to how requests over the private network interact with IAM restricted IP lists from 23 May 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
+    * [Change to how requests over the private network interact with IAM restricted IP lists from 20 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
