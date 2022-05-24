@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-24"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -20,14 +20,15 @@ content-type: release-note
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
 
+
 ## 20 April 2022
 {: #registry-20apr2022}
 {: release-note}
 
 Change to how requests over the private network interact with IAM restricted IP lists from 20 June 2022 {: #20apr2022_private_network}
-:   By 20 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts.
+:   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong}} private IP addressees are also changing which might require updates to your firewall configuration.
 
-    For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Source IP Preservation for Private Connections to {{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/blog/announcements/source-ip-preservation-for-private-connections-to-ibm-cloud-container-registry){: external}.
+    For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
 ## 1 March 2022
 {: #registry-01mar2022}
@@ -569,5 +570,4 @@ Introducing {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
 :   {{site.data.keyword.registrylong_notm}} is available as a service in {{site.data.keyword.cloud_notm}}. [{{site.data.keyword.registryshort}}](https://www.ibm.com/cloud/container-registry){: external} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 
     For more information about how to use {{site.data.keyword.registryshort}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
-
 
