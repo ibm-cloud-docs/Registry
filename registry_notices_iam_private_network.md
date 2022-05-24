@@ -22,7 +22,7 @@ By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over
 {: #registry_notices_iam_private_network_know}
 
 
-From 23 June 2022, when connections are made to {{site.data.keyword.registrylong}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.cloudaccesstraillong_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry)
+From 23 June 2022, when connections are made to {{site.data.keyword.registrylong}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.cloudaccesstraillong_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry)
 
 This change improves the security of {{site.data.keyword.registrylong}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You should now allow private subnet/IPs of your own hosts (for example, worker nodes in a classic IBM Cloud Kubernetes Service Cluster) or the egress IP of a VPC network.
 
