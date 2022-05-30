@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-30"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -26,7 +26,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: release-note}
 
 Change to how requests over the private network interact with IAM restricted IP lists from 23 June 2022 {: #20apr2022_private_network}
-:   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong}} private IP addressees are also changing which might require updates to your firewall configuration.
+:   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees are also changing, which might require updates to your firewall configuration.
 
     For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
@@ -70,7 +70,7 @@ Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions
 {: release-note}
 
 Storage that is used by untagged images is being charged for {: #01feb2022_billing}
-:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount you are charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount that you are charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 
     For more information, see [Starting 1 February 2022, {{site.data.keyword.registrylong_notm}} will be billing for the storage that is used by untagged images](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images){: external}.
 
