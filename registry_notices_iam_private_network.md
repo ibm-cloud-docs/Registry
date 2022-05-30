@@ -12,7 +12,6 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Update IAM restricted IP address lists by 23 June 2022
 {: #registry_notices_iam_private_network}
 
@@ -28,9 +27,9 @@ This change was originally due to take place on 23 May 2022 but had to be delaye
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
-Also, as part of this change, the {{site.data.keyword.registrylong}} service private IP addressees are changing, which might require updates to your firewall configuration.
+Also, as part of this change, the {{site.data.keyword.registrylong_notm}} service private IP addressees are changing, which might require updates to your firewall configuration.
 
-You must not remove the {{site.data.keyword.registrylong}} private IP addresses from your IAM restricted IP list until an announcement advises you to do so.
+You must not remove the {{site.data.keyword.registrylong_notm}} private IP addresses from your IAM restricted IP list until an announcement advises you to do so.
 {: important}
 
 You must take the [appropriate actions](#registry_notices_iam_pivate_network_action) before this change happens on 23 June 2022, otherwise your requests to {{site.data.keyword.registryshort}} might fail to be authorized.
