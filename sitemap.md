@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-30"
+lastupdated: "2022-05-31"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1065,6 +1065,8 @@ subcollection: Registry
     * [Request data for image signing events](/docs/Registry?topic=Registry-at_events#at_events_sign_events)
 
 [Analyzing logs](/docs/Registry?topic=Registry-registry_logs#registry_logs)
+
+* [Locations of platform services logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_locations)
 
 * [Where to look for {{site.data.keyword.la_full_notm}} logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_region)
 
