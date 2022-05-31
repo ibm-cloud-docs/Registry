@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-30"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1482,7 +1482,7 @@ subcollection: Registry
 
 [Why do commands fail saying that I'm not logged in?](/docs/Registry?topic=Registry-troubleshoot-login-cloud#troubleshoot-login-cloud)
 
-[Why do `cr` commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
+[Why do commands fail saying they’re not registered?](/docs/Registry?topic=Registry-troubleshoot-login-error#troubleshoot-login-error)
 
 [Why is Docker login on my Mac failing?](/docs/Registry?topic=Registry-troubleshoot-docker-mac#troubleshoot-docker-mac)
 

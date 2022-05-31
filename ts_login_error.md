@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-30"
 
 keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do `cr` commands fail saying they’re not registered?
+# Why do commands fail saying they’re not registered?
 {: #troubleshoot-login-error}
 {: troubleshoot}
 {: support}
