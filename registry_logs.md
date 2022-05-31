@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-31"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -27,6 +27,40 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 - When {{site.data.keyword.registrylong_notm}} runs scheduled retention policies for namespaces in your account.
 - When {{site.data.keyword.registrylong_notm}} calculates your account's registry traffic and average storage usage per hour for a region.
 
+## Locations of platform services logs
+{: #registry_logs_locations}
+
+{{site.data.keyword.registrylong_notm}} generates platform logs that are displayed in your logging instances. The following tables list the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service logs is enabled.
+
+| Locations in Americas | Platform services logs available |
+|-----------------------|----------------------------------|
+| `Dallas (us-south)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Sao Paulo (br-sao)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Toronto (ca-tor)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+{: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Americas locations" caption-side="bottom"}
+
+| Locations in Asia Pacific | Platform services logs available |
+|---------------------------|----------------------------------|
+| `Osaka (jp-osa)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Sydney (au-syd)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Tokyo (jp-tok)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+{: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Asia Pacific locations" caption-side="bottom"}
+
+| Locations in Europe | Platform services logs available |
+|---------------------|----------------------------------|
+| `Frankfurt (eu-de)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `London (eu-gb)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+{: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Europe locations" caption-side="bottom"}
+
+| Location for Global | Platform services logs available |
+|---------------------|----------------------------------|
+| `Global` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+{: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
+
+For more information about where to see {{site.data.keyword.registryshort_notm}} service logs, see [Where to look for {{site.data.keyword.la_full_notm}} logs](#registry_logs_region).
+
+For more information about the locations where {{site.data.keyword.cloud_notm}} services are enabled to send platform logs to {{site.data.keyword.la_full_notm}}, see [{{site.data.keyword.cloud_notm}} services that generate {{site.data.keyword.la_full_notm}} logs by location](/docs/log-analysis?topic=log-analysis-cloud_services_locations).
+
 ## Where to look for {{site.data.keyword.la_full_notm}} logs
 {: #registry_logs_region}
 
@@ -44,13 +78,13 @@ The following table shows the location of {{site.data.keyword.la_full_notm}} log
 | `jp-osa` | `jp2.icr.io` | `Osaka (jp-osa)` |
 | `uk-south` | `uk.icr.io` | `London (eu-gb)` |
 | `us-south` | `us.icr.io` | `Dallas (us-south)` |
-{: caption="Table 1. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: caption="Table 5. Location of {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 
 The following table shows the location of global registry {{site.data.keyword.la_full_notm}} logs.
 
 | Registry | Global registry | Location of {{site.data.keyword.la_full_notm}} logs |
 |----------|-----------------|-----------------------------------------------------|
 | Global | `icr.io` | `Dallas (us-south)` |
-{: caption="Table 2. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
+{: caption="Table 6. Location of global registry {{site.data.keyword.la_full_notm}} logs" caption-side="bottom"}
 
 
