@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-06-06"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -222,7 +222,7 @@ To delete a chart by using the CLI, complete the following steps:
     ```
     {: pre}
 
-    To find the names of your charts, run `ibmcloud cr image-list`. The registry stores different artifact types that include Helm charts and container images. Combine the content of the **Repository** and **Tag** columns to create the chart name in the format `repository:tag`. To identify your chart by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
+    To find the names of your charts, run `ibmcloud cr image-list`. The registry stores different artifact types that include Helm charts and container images. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your chart by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
     {: tip}
 
 3. Verify that the chart was deleted by running the following command, and check that the chart does not show in the list.

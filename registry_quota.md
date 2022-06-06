@@ -123,14 +123,14 @@ Depending on the size of the image, it might take a while for the image to be re
 {: note}
 
 1. Find the names of the images that you want to remove.
-    - To list only tagged images, run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) with a colon (`:`) to create the image name in the format `repository:tag`. If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    - To list only tagged images, run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
 
       ```txt
       ibmcloud cr image-list
       ```
       {: pre}
 
-    - To list both tagged and untagged images, you must list the images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) in all your namespaces of your {{site.data.keyword.cloud_notm}} account. To list the images by digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) with an at (`@`) symbol to create the image name in the format `repository@digest`.
+    - To list both tagged and untagged images, you must list the images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) in all your namespaces of your {{site.data.keyword.cloud_notm}} account. To list the images by digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
       ```txt
       ibmcloud cr image-digests

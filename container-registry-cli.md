@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-06-06"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, container-registry, tag, repository, required permissions, resource group, command options, security issue
 
@@ -82,7 +82,7 @@ To find out about the required permissions, see [Access roles for configuring {{
     - `namespace`
     - `namespace/repository`
     - `namespace/repository:tag`
-    - `namespace/repo@digest`
+    - `namespace/repository@digest`
 
 `--issue-type ISSUE_TYPE`
 :   The type of security issue that you want to exempt. To find valid issue types, run `ibmcloud cr exemption-types`.
@@ -151,7 +151,7 @@ To find out about the required permissions, see [Access roles for configuring {{
     - `namespace`
     - `namespace/repository`
     - `namespace/repository:tag`
-    - `namespace/repo@digest`
+    - `namespace/repository@digest`
 
 ### Examples
 {: #bx_cr_exemption_list_example}
@@ -199,7 +199,7 @@ To find out about the required permissions, see [Access roles for configuring {{
     - `namespace`
     - `namespace/repository`
     - `namespace/repository:tag`
-    - `namespace/repo@digest`
+    - `namespace/repository@digest`
 
 `--issue-type ISSUE_TYPE`
 :   The issue type of the exemption for the security issue that you want to remove. To find the issue types for your exemptions, run `ibmcloud cr exemption-list`.
@@ -291,7 +291,7 @@ Lists all images, including [untagged](/docs/Registry?topic=Registry-registry_ov
 
 If you want to list tagged images only, run the [`ibmcloud cr image-list`](#bx_cr_image_list) command.
 
-You can refer to an image by using a combination of the **Repository** column and the **Digest** column, for example, `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column and one of the tags in the **Tags** column in the format: `repository:tag`.
+You can refer to an image by using a combination of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. You can also refer to the image name by using a combination of the content of the **Repository** column (`repository`) and one of the tags in the **Tags** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
 {: tip}
 
 ```txt
@@ -363,8 +363,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
     To find the names of your images, run one of the following commands:
 
-    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
 ### Example
 {: #bx_cr_image_inspect_example}
@@ -547,8 +547,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
     To find the names of your images, run one of the following commands:
 
-    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
+    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default.
 
 ### Example
 {: #bx_cr_image_rm_example}
@@ -569,8 +569,8 @@ You can identify source images by using either the digest `<dns>/<namespace>/<re
 
 To find the names of your images, use one of the following alternatives:
 
-- To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-- To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+- To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+- To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
 
 If you get a manifest error when you try to tag your image, see [Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type), [Why do I get a manifest version error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version), and [Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error) for assistance.
 {: tip}
@@ -642,7 +642,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 `IMAGE`
 :   The name of the image for which you want to remove the tag. You can delete the tag from multiple images at the same time by listing each image in the command with a space between each name. `IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the command fails.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the command fails.
 
 ### Example
 {: #bx_cr_image_untag_example}
@@ -733,8 +733,8 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
     To find the names of your images, run one of the following commands:
 
-    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column and the **Digest** column, for example, `repository@digest`.
-    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`.
+    - To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+    - To identify your image by tag, run the `ibmcloud cr image-list` command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`.
 
 `--quiet`, `-q`
 :   (Optional) Reduces the output to display essential elements only.
@@ -1336,7 +1336,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 `IMAGE`
 :   The name of the image for which you want to get a report. The report states whether the image has any known package vulnerabilities. You can request reports for multiple images at the same time by listing each image in the command with a space between each name.
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** and **Tag** columns to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.
 
     The following operating systems are supported:
 
