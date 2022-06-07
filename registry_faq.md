@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-06-06"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -86,7 +86,7 @@ When you are using the digest to identify an image, always use the long format.
 
 The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) identifies an image by using the `sha256` hash of the [image manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest).
 
-To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the **Repository** and **Digest** columns, for example, `repository@digest`.
+To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
 ## How do you use access control?
 {: #faq_access_control}

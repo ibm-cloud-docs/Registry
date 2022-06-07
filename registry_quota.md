@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-06-06"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -122,18 +122,26 @@ To free up image storage in your {{site.data.keyword.cloud_notm}} account, compl
 Depending on the size of the image, it might take a while for the image to be removed and for the storage to be available.
 {: note}
 
-1. To list all images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), both [tagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) and [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged), in all your namespaces of your {{site.data.keyword.cloud_notm}} account, run the following command. Combine the content of the **Repository** column and the **Digest** column to create the image name in the format `repository@digest`.
+1. Find the names of the images that you want to remove.
+    - To list only tagged images, run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
 
-    ```txt
-    ibmcloud cr image-digests
-    ```
-    {: pre}
+      ```txt
+      ibmcloud cr image-list
+      ```
+      {: pre}
+
+    - To list both tagged and untagged images, you must list the images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) in all your namespaces of your {{site.data.keyword.cloud_notm}} account. To list the images by digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+
+      ```txt
+      ibmcloud cr image-digests
+      ```
+      {: pre}
 
 2. You can remove images individually, collectively, or by using retention policies.
 
    - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
 
-        You can remove both tagged and untagged images by using the format `repository@digest`. You can remove tagged images only by using the format `repository:tag`.
+        You can remove both tagged and untagged images by using the format `repository@digest`. You can remove only tagged images by using the format `repository:tag`.
         {: note}
 
         ```txt
