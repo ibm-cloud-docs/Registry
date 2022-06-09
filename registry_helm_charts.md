@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-08"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -299,7 +299,7 @@ You can restore charts by running the [`ibmcloud cr image-restore`](/docs/Regist
 {: help}
 {: support}
 
-When you restore a chart by digest, the digest is moved from the trash into your live repository, and all the digest's tags in the repository are restored.
+When you restore a chart by digest, the digest is moved from the trash into your live repository, and all the tags for that digest in the repository are restored.
 
 To restore a chart by digest from the trash, complete the following steps:
 
@@ -346,7 +346,7 @@ To restore a chart by tag from the trash, complete the following steps.
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>`  is the repository.
+3. For the chart that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the chart that you want to restore, make a note of the tag, `<tag>`.
 5. Run the following command to restore the chart to your repository, where `<dns>/<namespace>/<repo>` is the name of the chart that you want to restore and `<tag>` is the tag.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-08"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -83,7 +83,7 @@ To upload (push) an image, complete the following steps:
     You must log in if you pull an image from your private {{site.data.keyword.registrylong_notm}}.
     {: tip}
 
-    If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+    If you have a problem when you try to log in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
     {: tip}
 
 2. To view all namespaces that are available in your account, run the `ibmcloud cr namespace-list` command.
@@ -182,7 +182,7 @@ Before you begin, complete the following tasks.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
-A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the app's configuration, and its dependencies.
+A Docker image is the basis for every container that you create. An image is created from a Dockerfile, which is a file that contains instructions to build the image. A Dockerfile might reference build artifacts in its instructions that are stored separately, such as an app, the configuration of the app, and its dependencies.
 
 If you want to take advantage of {{site.data.keyword.cloud_notm}} compute resources and internet connection or Docker is not installed on your workstation, build your image directly in {{site.data.keyword.cloud_notm}}. If you need to access resources in your build that are on servers that are behind your firewall, build your image locally.
 
@@ -411,7 +411,7 @@ You can restore images by running the [`ibmcloud cr image-restore`](/docs/Regist
 {: help}
 {: support}
 
-When you restore an image by digest, the digest is copied from the trash into your live repository, and all the digest's tags in the repository are restored. The digest continues to show in the trash because a copy is restored.
+When you restore an image by digest, the digest is copied from the trash into your live repository, and all the tags for the digest in the repository are restored. The digest continues to show in the trash because a copy is restored.
 
 To restore an image by digest from the trash, complete the following steps:
 
