@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -65,7 +65,7 @@ You can restrict your rule to a specific registry instance by specifying either 
 | *Service* | *`platform_metrics`* | *`is_true`*  \n *`is_false`* | Not applicable | Publishes {{site.data.keyword.registryshort}} platform metrics. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
-For example, use the following rule if you want *private_only* to be true, but only in the `us-south` registry.
+For example, use the following rule if you want *`private_only`* to be true, but only in the `us-south` registry.
 
 ```txt
 {
