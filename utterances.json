@@ -276,9 +276,18 @@
         "login error for Container Registry",
         "ibmcloud cr cli login error"
       ],
+      "troubleshoot-manifest-unknown": [
+        "The manifest for this image is unknown",
+        "error in container registry - The manifest is unknown",
+        "getting manifest unknnown error when I try to pull an image in container registry",
+        "when I try to pull an image in container registry I am getting a manifest unknown error",
+        "manifest unknown error trying to pull image",
+        "I receive a manifest unknown error in Container Registry",
+        "get unknown error for the manifest in CR"
+      ],
       "troubleshoot-manifest-error-type": [
         "The manifest type for this image is not supported for tagging",
-        "error in container registry -The manifest type for this image is not supported for tagging",
+        "error in container registry - The manifest type for this image is not supported for tagging",
         "getting Manifest error when I try to tag my images in container registry",
         "when I try to tag my images in container registry I am getting a manifest error",
         "manifest error trying to tag CR images",
