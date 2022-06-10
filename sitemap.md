@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-10"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1521,6 +1521,8 @@ subcollection: Registry
 [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
 [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+
+[Why do I get a manifest unknown error?](/docs/Registry?topic=Registry-troubleshoot-manifest-unknown#troubleshoot-manifest-unknown)
 
 [Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
 
