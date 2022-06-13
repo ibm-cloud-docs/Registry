@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-13"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1551,42 +1551,46 @@ subcollection: Registry
 
 [Frequently asked questions (FAQs)](/docs/Registry?topic=Registry-registry_faq#registry_faq)
 
-* [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
+* [Frequently asked questions about {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_faq#registry_faq_registry)
 
-* [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
+    * [How do you list public images?](/docs/Registry?topic=Registry-registry_faq#faq_list_public_images)
 
-* [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
+    * [What tools can I use to build and push images?](/docs/Registry?topic=Registry-registry_faq#faq_tools)
 
-* [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
+    * [How many namespaces can you have?](/docs/Registry?topic=Registry-registry_faq#faq_namespace)
 
-* [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
+    * [Do images in the trash count toward my quota?](/docs/Registry?topic=Registry-registry_faq#faq_trash)
 
-* [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
+    * [How do I find the image digest?](/docs/Registry?topic=Registry-registry_faq#faq_digest)
 
-* [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
+    * [How do I use digests to work with images?](/docs/Registry?topic=Registry-registry_faq#faq_digest_use)
 
-* [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
+    * [How do you use access control?](/docs/Registry?topic=Registry-registry_faq#faq_access_control)
 
-* [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
+    * [How can I share an image with many users?](/docs/Registry?topic=Registry-registry_faq#faq_share_image)
 
-* [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
+    * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
-* [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
+    * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
 
-* [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
+    * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 
-* [Can images from other registries be scanned?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
+* [Frequently asked questions about Vulnerability Advisor](/docs/Registry?topic=Registry-registry_faq#registry_faq_va)
 
-* [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
+    * [How much does Vulnerability Advisor cost?](/docs/Registry?topic=Registry-registry_faq#faq_va_cost)
 
-* [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
+    * [Can images from other registries be scanned?](/docs/Registry?topic=Registry-registry_faq#faq_va_reg)
 
-* [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
+    * [How is a Vulnerability Advisor scan triggered?](/docs/Registry?topic=Registry-registry_faq#faq_va_trigger_scan)
 
-* [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
+    * [Why doesn't a new image scan?](/docs/Registry?topic=Registry-registry_faq#faq_va_new_scan_error)
 
-    * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
+    * [How often are the security notices updated?](/docs/Registry?topic=Registry-registry_faq#faq_va_update_security_notice)
 
-    * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
+    * [Which version of a package is installed in my image?](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version)
 
-    * [Red Hat and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
+        * [Alpine package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_alpine)
+
+        * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
+
+        * [Red Hat and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
