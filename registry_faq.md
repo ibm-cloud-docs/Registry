@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-13"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,13 +14,16 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Frequently asked questions about {{site.data.keyword.registryshort_notm}}
+# Frequently asked questions about {{site.data.keyword.registryshort_notm}} and Vulnerabilty Advisor
 {: #registry_faq}
 
-Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}}.
+Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}} and Vulnerability Advisor.
 {: shortdesc}
 
-## How do you list public images?
+## Frequently asked questions about {{site.data.keyword.registryshort_notm}}
+{: #registry_faq_registry}
+
+### How do you list public images?
 {: #faq_list_public_images}
 {: faq}
 
@@ -36,25 +39,25 @@ ibmcloud cr images --include-ibm
 ```
 {: pre}
 
-## What tools can I use to build and push images?
+### What tools can I use to build and push images?
 {: #faq_tools}
 {: faq}
 
 You can use Docker and non-Docker tools to build and push images to the registry. You can use non-Docker tools that support [OCI container image](#x9860419){: term} format and protocol. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 
-## How many namespaces can you have?
+### How many namespaces can you have?
 {: #faq_namespace}
 {: faq}
 
 You can have 100 registry [namespaces](x2031005){: term} in each region.
 
-## Do images in the trash count toward my quota?
+### Do images in the trash count toward my quota?
 {: #faq_trash}
 {: faq}
 
 Images that are in the trash don't count toward your quota.
 
-## How do I find the image digest?
+### How do I find the image digest?
 {: #faq_digest}
 {: faq}
 
@@ -80,7 +83,7 @@ When you are using the digest to identify an image, always use the long format.
     If you run the `ibmcloud cr image-list` command without the `--no-trunc` option, you see the truncated format of the digest.
     {: note}
 
-## How do I use digests to work with images?
+### How do I use digests to work with images?
 {: #faq_digest_use}
 {: faq}
 
@@ -88,13 +91,13 @@ The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_d
 
 To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
-## How do you use access control?
+### How do you use access control?
 {: #faq_access_control}
 {: faq}
 
 You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) policies to control access to your namespaces in {{site.data.keyword.registrylong_notm}}. For more information, see [Granting access to {{site.data.keyword.registrylong_notm}} resources tutorial](/docs/Registry?topic=Registry-iam_access) and [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
-## How can I share an image with many users?
+### How can I share an image with many users?
 {: #faq_share_image}
 {: faq}
 
@@ -102,13 +105,13 @@ You can create an {{site.data.keyword.cloud_notm}} account and invite all the us
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
-## Do I have any untagged images?
+### Do I have any untagged images?
 {: #faq_untagged_image_1}
 {: faq}
 
 To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
 
-## Do I need untagged images?
+### Do I need untagged images?
 {: #faq_untagged_image_2}
 {: faq}
 
@@ -117,31 +120,34 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 - The image was deployed by referencing the image by using the digest.
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
 
-## What regions are available?
+### What regions are available?
 {: #faq_regions}
 {: faq}
 
 To find out about the regions that are available for {{site.data.keyword.registrylong_notm}}, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
-## How much does Vulnerability Advisor cost?
+## Frequently asked questions about Vulnerability Advisor
+{: #registry_faq_va}
+
+### How much does Vulnerability Advisor cost?
 {: #faq_va_cost}
 {: faq}
 
 The cost of Vulnerability Advisor is built into the pricing for {{site.data.keyword.registrylong_notm}}. For more information, see [Billing for storage and pull traffic](/docs/Registry?topic=Registry-registry_overview#registry_billing_traffic).
 
-## Can images from other registries be scanned?
+### Can images from other registries be scanned?
 {: #faq_va_reg}
 {: faq}
 
 Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} only.
 
-## How is a Vulnerability Advisor scan triggered?
+### How is a Vulnerability Advisor scan triggered?
 {: #faq_va_trigger_scan}
 {: faq}
 
 For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
 
-## Why doesn't a new image scan?
+### Why doesn't a new image scan?
 {: #faq_va_new_scan_error}
 {: faq}
 
@@ -160,19 +166,19 @@ If you get this message as part of a build pipeline and you see this error regul
 
 If you still see unacceptable performance, contact support, see [Getting help and support for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-ts_index#gettinghelp).
 
-## How often are the security notices updated?
+### How often are the security notices updated?
 {: #faq_va_update_security_notice}
 {: faq}
 
 Security notices for Vulnerability Advisor are loaded from the vendors' operating system sites approximately every 12 hours.
 
-## Which version of a package is installed in my image?
+### Which version of a package is installed in my image?
 {: #faq_va_package_version}
 {: faq}
 
 To determine the version of a package that is installed in your image, use the relevant package manager command for your operating system.
 
-### Alpine package manager commands
+#### Alpine package manager commands
 {: #faq_va_package_version_alpine}
 
 On Alpine, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
@@ -191,7 +197,7 @@ On Alpine, to determine the version of a package that is installed in your image
     ```
     {: pre}
 
-### Debian and Ubuntu package manager commands
+#### Debian and Ubuntu package manager commands
 {: #faq_va_package_version_debian_ubuntu}
 
 On Debian and Ubuntu, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
@@ -220,7 +226,7 @@ On Debian and Ubuntu, to determine the version of a package that is installed in
     ```
     {: pre}
 
-### Red Hat and CentOS package manager commands
+#### Red Hat and CentOS package manager commands
 {: #faq_va_package_version_redhat_centos}
 
 On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a package that is installed in your image, you can use the following commands, where `<package_name>` is the name of your package.
