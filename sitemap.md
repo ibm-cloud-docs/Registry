@@ -1526,7 +1526,7 @@ subcollection: Registry
 
 [Why do I get a manifest type error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-type#troubleshoot-manifest-error-type)
 
-[Why do I get a manifest version error when I tag my image?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
+[Why do I get a manifest version error?](/docs/Registry?topic=Registry-troubleshoot-manifest-error-version#troubleshoot-manifest-error-version)
 
 [Why do I get a manifest list invalid error?](/docs/Registry?topic=Registry-troubleshoot-manifest-list-error#troubleshoot-manifest-list-error)
 
