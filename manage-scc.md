@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-13"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing security and compliance with {{site.data.keyword.registryshort_notm}}
+# Managing security and compliance for {{site.data.keyword.registryshort_notm}}
 {: #manage-security-compliance}
 
 {{site.data.keyword.registrylong}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
