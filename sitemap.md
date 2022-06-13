@@ -1377,7 +1377,7 @@ subcollection: Registry
 {: #sitemap_high_availability_and_disaster_recovery}
 
 
-[Understanding high availability](/docs/Registry?topic=Registry-ha-dr#ha-dr)
+[High availability](/docs/Registry?topic=Registry-ha-dr#ha-dr)
 
 * [Ownership of responsibilities](/docs/Registry?topic=Registry-ha-dr#ha-responsibilities)
 
@@ -1393,7 +1393,7 @@ subcollection: Registry
 
     * [Are users required to replicate the service?](/docs/Registry?topic=Registry-ha-dr#ha-dr_service_replicate)
 
-[Understanding business continuity and disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr)
+[Business continuity and disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr)
 
 * [Responsibilities when using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
 
@@ -1410,11 +1410,11 @@ subcollection: Registry
     * [Are users required to replicate the data?](/docs/Registry?topic=Registry-bc-dr#bc-dr_client)
 
 
-## Understanding your responsibilities
-{: #sitemap_understanding_your_responsibilities}
+## Your responsibilities
+{: #sitemap_your_responsibilities}
 
 
-[Understanding your responsibilities](/docs/Registry?topic=Registry-registry_responsibilities#registry_responsibilities)
+[Your responsibilities](/docs/Registry?topic=Registry-registry_responsibilities#registry_responsibilities)
 
 * [Incident and operations management](/docs/Registry?topic=Registry-registry_responsibilities#incident-and-ops)
 
