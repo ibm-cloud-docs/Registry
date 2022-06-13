@@ -288,7 +288,7 @@
       "troubleshoot-manifest-error-type": [
         "The manifest type for this image is not supported for tagging",
         "error in container registry - The manifest type for this image is not supported for tagging",
-        "getting Manifest error when I try to tag my images in container registry",
+        "getting manifest type error when I try to tag my images in container registry",
         "when I try to tag my images in container registry I am getting a manifest error",
         "manifest error trying to tag CR images",
         "cause of the manifest type for this image is not supported for tagging in CR",

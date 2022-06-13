@@ -82,7 +82,7 @@ Security and regulation compliance includes tasks such as security controls impl
 ## Disaster recovery
 {: #disaster-recovery}
 
-[Disaster recovery](x2113280){: term} includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and fail over on disaster events. For more information, see [Understanding high availability and disaster recovery for Container Registry](/docs/Registry?topic=Registry-ha-dr).
+[Disaster recovery](x2113280){: term} includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and fail over on disaster events. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr) and [Business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr).
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|
