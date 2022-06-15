@@ -40,5 +40,8 @@
     <line class="cls-14" x1="105.51" y1="170.09" x2="161.69" y2="170.09" />
     <rect class="cls-15" x="111.25" y="165.05" width="44.71" height="5.03" />
     <path class="cls-16" d="M140.89,190.19H128.2v-2.12h-2.12v4.24H143v-4.24h-2.12Z" />
-    <text class="cls-6" transform="translate(581.28 43.93)">Any other private or public repository</text>
+    <text class="cls-6" transform="translate(638.97 43.93)">
+        Any other private or
+        <tspan x="0" y="16.8">public repository</tspan>
+    </text>
 </svg>
