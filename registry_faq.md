@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -14,7 +14,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Frequently asked questions about {{site.data.keyword.registryshort_notm}} and Vulnerabilty Advisor
+# Frequently asked questions about {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor
 {: #registry_faq}
 
 Frequently asked questions (FAQs) about {{site.data.keyword.registrylong}} and Vulnerability Advisor.
