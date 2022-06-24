@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-24"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -231,6 +231,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-23jun2022)
+
+    * [Change to how requests over the private network interact with IAM restricted IP lists in these regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
 
 * [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
 
@@ -974,10 +978,6 @@ subcollection: Registry
     * [Signing images by using the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent_red_hat_sig_oc)
 
 [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip)
-
-* [Granting access if you are using a public network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_public)
-
-* [Granting access if you are using a private network](/docs/Registry?topic=Registry-registry_iam_ip#registry_iam_ip_private)
 
 [Enforcing container image security by using Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#security_enforce_portieris)
 
