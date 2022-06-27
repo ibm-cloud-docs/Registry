@@ -203,7 +203,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Registry Private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+[{{site.data.keyword.registryshort}} private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
@@ -234,11 +234,11 @@ subcollection: Registry
 
 * [23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-23jun2022)
 
-    * [Change to how requests over the private network interact with IAM restricted IP lists in these regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
+    * [Change to {{site.data.keyword.registryshort}} private IP addresses in these regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
 
 * [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
 
-    * [Registry Private IP addresses are changing from 23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
+    * [{{site.data.keyword.registryshort}} private IP addresses are changing from 23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
