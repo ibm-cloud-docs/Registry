@@ -33,7 +33,7 @@ Change to how requests over the private network interact with IAM restricted IP 
 {: #registry-20apr2022}
 {: release-note}
 
-Registry Private IP addresses are changin from 23 June 2022 {: #20apr2022_private_network}
+Registry Private IP addresses are changing from 23 June 2022 {: #20apr2022_private_network}
 :   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees are also changing, which might require updates to your firewall configuration.
 
     For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).

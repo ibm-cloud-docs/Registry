@@ -238,7 +238,7 @@ subcollection: Registry
 
 * [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
 
-    * [Registry Private IP addresses are changin from 23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
+    * [Registry Private IP addresses are changing from 23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#20apr2022_private_network)
 
 * [1 March 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-01mar2022)
 
