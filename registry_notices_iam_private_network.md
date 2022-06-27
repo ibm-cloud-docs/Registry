@@ -23,7 +23,7 @@ By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over
 
 From 23 June 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
-This change was originally due to take place on 23 May 2022 but had to be delayed.
+This change was originally due to take place on 23 May 2022 but is delayed.
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
