@@ -15,7 +15,7 @@ subcollection: Registry
 # {{site.data.keyword.registryshort}} private IP addresses are changing on 23 June 2022
 {: #registry_notices_iam_private_network}
 
-By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list.
+By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list. This change also affects you if you have allowlists or a firewall rule.
 {: shortdesc}
 
 ## What you need to know about this change
@@ -23,11 +23,16 @@ By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over
 
 From 23 June 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
-This change was originally due to take place on 23 May 2022 but had to be delayed.
+As of 23 June 2022, only the `br-sao` and `ca-tor` regions changed. Changes to the other regions are delayed.
+{: note}
+
+This change was originally due to take place on 23 May 2022 but is delayed.
 
 This change improves the security of {{site.data.keyword.registrylong_notm}}. With this change, you can configure real, account specific, private client IP addresses in IAM restricted IP lists, instead of the documented list of shared IP addresses. You must now allow private subnet and IP addresses of your own hosts (for example, worker nodes in a classic {{site.data.keyword.containerlong_notm}} cluster or the egress IP of a VPC network).
 
 Also, as part of this change, the {{site.data.keyword.registrylong_notm}} service private IP addressees are changing, which might require updates to your firewall configuration.
+
+If you use [Calico](https://projectcalico.docs.tigera.io/about/about-calico){: external}, the samples are updated to take account of the change.
 
 You must not remove the {{site.data.keyword.registrylong_notm}} private IP addresses from your IAM restricted IP list until an announcement advises you to do so.
 {: important}

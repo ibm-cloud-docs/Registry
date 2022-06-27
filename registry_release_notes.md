@@ -25,7 +25,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: release-note}
 
 Change to {{site.data.keyword.registryshort}} private IP addresses in these regions only: `br-sao`, `ca-tor` {: #23jun2022_private_network}
-:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network in the `br-sao` and `ca-tor` regions, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. Other regions are not affected yet.
+:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network in the `br-sao` and `ca-tor` regions, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule. Other regions are not affected yet.
 
     For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
