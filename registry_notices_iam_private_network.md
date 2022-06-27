@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-30"
+lastupdated: "2022-06-27"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Update IAM restricted IP address lists by 23 June 2022
+# Registry Private IP addresses are changing on 23 June 2022
 {: #registry_notices_iam_private_network}
 
 By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over the private network and you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists, you must change your IAM restricted IP list.

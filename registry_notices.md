@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-06-27"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
@@ -23,7 +23,7 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 
 Notifications about changes:
 
-- [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network)
+- [Registry Private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network)
 - [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy)
 - [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker)
 
