@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-30"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -109,7 +109,7 @@ subcollection: Registry
 
 [Container Registry architecture and workload](/docs/Registry?topic=Registry-registry_architecture#registry_architecture)
 
-* [Segmentation of data](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segregation)
+* [Segmentation of data](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_segment)
 
 * [Private connections](/docs/Registry?topic=Registry-registry_architecture#registry_architecture_private_connections)
 
