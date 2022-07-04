@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-07-04"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -199,10 +199,15 @@ You can use the Docker CLI to log in to the registry by using a bearer token:
 ### Using Podman to access your namespace
 {: #registry_access_interactive_auth_podman}
 
-Log in to the registry by using the CLI.
+Log in to the registry and pull an image by using the CLI, where `<image_name>` is the name of the image.
 
 ```txt
 ibmcloud cr login --client podman
+```
+{: pre}
+
+```txt
+podman pull <image_name>
 ```
 {: pre}
 
