@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-01"
+lastupdated: "2022-07-04"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -203,6 +203,10 @@ Log in to the registry and pull an image by using the CLI, where `<image_name>` 
 
 ```txt
 ibmcloud cr login --client podman
+```
+{: pre}
+
+```txt
 podman pull <image_name>
 ```
 {: pre}
