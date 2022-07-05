@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-05"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -231,6 +231,12 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [5 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-05jul2022)
+
+    * [Change to {{site.data.keyword.registryshort}} private IP addresses in all regions](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_private_network)
+
+    * [All accounts require IAM access policies](/docs/Registry?topic=Registry-registry_release_notes#05jul2022_iam)
 
 * [23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-23jun2022)
 

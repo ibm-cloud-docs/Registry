@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-05"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -19,6 +19,30 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+    
+## 5 July 2022
+{: #registry-05jul2022}
+{: release-note}
+
+Change to {{site.data.keyword.registryshort}} private IP addresses in all regions {: #05jul2022_private_network}
+:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule.
+
+    For more information, see [Registry Private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
+
+All accounts require IAM access policies {: #05jul2022_iam}
+:   To access {{site.data.keyword.registrylong_notm}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+
+    Policy-free authorization is discontinued in the following {{site.data.keyword.registryshort}} regions:
+
+    - `us-south (us.icr.io)`
+    - `uk-south (uk.icr.io)`
+    - `eu-central (de.icr.io)`
+    - `ap-south (au.icr.io)`
+    - `ap-north (jp.icr.io)`
+
+    Other regions are unaffected because they already require IAM access policies for all accounts.
+
+    For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
 ## 23 June 2022
 {: #registry-23jun2022}
