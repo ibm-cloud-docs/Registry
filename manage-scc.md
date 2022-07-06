@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-22"
+lastupdated: "2022-07-06"
 
 keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -45,7 +45,7 @@ You can choose from the following goals:
 - Check whether {{site.data.keyword.registryshort_notm}} has at least `#` users with the IAM manager role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` service IDs with the IAM administrator role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 - Check whether {{site.data.keyword.registryshort_notm}} is enabled with {{site.data.keyword.mon_full_notm}}. For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
-- Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
+- Check whether {{site.data.keyword.registryshort_notm}} IAM access controls are configured for the account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam). From 5 July 2022, IAM access controls are always configured for the account. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 - Check whether {{site.data.keyword.registryshort_notm}} image pushes and pulls take place only over private endpoints. For more information, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
 - Check whether {{site.data.keyword.registryshort_notm}} has no more than `#` users with the IAM administrator role. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam).
 
@@ -60,7 +60,7 @@ You can restrict your rule to a specific registry instance by specifying either 
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|----------|-------|-------------|
-| *Service* | *`iam_authz`* | *`is_true`*  \n *`is_false`* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
+| *Service* | *`iam_authz`* | *`is_true`* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. From 5 July 2022, this value is always true. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy). |
 | *Service* | *`private_only`* | *`is_true`*  \n *`is_false`* | Not applicable | Restricts the account so that it can push and pull images by using private connections only. |
 | *Service* | *`platform_metrics`* | *`is_true`*  \n *`is_false`* | Not applicable | Publishes {{site.data.keyword.registryshort}} platform metrics. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.registryshort}}" caption-side="bottom"}
