@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-04"
+lastupdated: "2022-07-06"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -20,7 +20,7 @@ To access your {{site.data.keyword.registrylong}} namespaces so that you can pus
 
 To set up and manage IAM access policies, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-From 5 July 2022, all accounts will require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
+From 5 July 2022, all accounts require IAM access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registrylong_notm}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 {: important}
 
 Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registry_access_automating), which typically uses [API keys](/docs/account?topic=account-manapikey), or [interactive](#registry_access_interactive), which typically uses bearer tokens.

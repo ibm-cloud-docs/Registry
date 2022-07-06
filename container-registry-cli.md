@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-07-06"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue
 
@@ -256,7 +256,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 ## `ibmcloud cr iam-policies-enable`
 {: #bx_cr_iam_policies_enable}
 
-From 5 July 2022, all accounts will require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
+From 5 July 2022, all accounts require {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 {: important}
 
 If you are using IAM authentication, this command enables fine-grained authorization. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
@@ -276,7 +276,7 @@ To find out about the required permissions, see [Access roles for configuring {{
 
 Displays the IAM access policy status of the targeted {{site.data.keyword.registrylong_notm}} account. For more information, see [Managing IAM access for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-iam) and [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
 
-From 5 July 2022, all accounts will require {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
+From 5 July 2022, all accounts require {{site.data.keyword.iamlong}} (IAM) access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy).
 {: important}
 
 ```txt
