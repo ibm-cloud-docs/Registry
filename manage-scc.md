@@ -60,7 +60,7 @@ You can restrict your rule to a specific registry instance by specifying either 
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|----------|-------|-------------|
-| *Service* | *`iam_authz`* | *`is_true`*  \n *`is_false`* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}.> |
+| *Service* | *`iam_authz`* | *`is_true`*  \n *`is_false`* | Not applicable | Enables role-based authorization for authenticating with {{site.data.keyword.iamlong}}. |
 | *Service* | *`private_only`* | *`is_true`*  \n *`is_false`* | Not applicable | Restricts the account so that it can push and pull images by using private connections only. |
 | *Service* | *`platform_metrics`* | *`is_true`*  \n *`is_false`* | Not applicable | Publishes {{site.data.keyword.registryshort}} platform metrics. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.registryshort}}" caption-side="bottom"}
