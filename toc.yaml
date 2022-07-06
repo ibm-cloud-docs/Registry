@@ -167,6 +167,7 @@ toc:
               label: Troubleshooting CLI commands
               topics:
               - ts_add_namespace.md
+              - ts_namespace_auth.md
               - ts_namespace_resource_list.md
               - ts_image_timeout.md
               - ts_docker_latest.md

@@ -309,7 +309,19 @@
         "manifest list error trying to tag my manifest list or OCI Image Index",
         "get error tagging my manifest list or OCI Image Index is not supported in CR",
         "the manifest list or OCI Image Index for this image is not supported for tagging in container registry"
-      ],  
+      ],
+      "troubleshoot-namespace-auth": [
+        "can't add namespace Container Registry",
+        "unable to create namespace in container registry",
+        "adding namespace fails in container registry",
+        "permissions to add namespace in Container Registry",
+        "permissions for adding a namespace",
+        "roles required to create a namespace",
+        "container registry authorization error accessing a namespace",
+        "authorization error accessing a resource",
+        "can't access namespace",
+        "accessing a resource fails"
+      ],
       "troubleshoot-namespace-resource-list": [
         "container registry namespaces don't all show up in the IBM Cloud Resource list page",
         "Resource list page is not showing all my namespaces in container registry",

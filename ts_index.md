@@ -62,6 +62,7 @@ Troubleshoot pull and push problems.
 Troubleshoot CLI command problems.
 
 - [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
+- [Why do I get "You are not authorized to access the specified resource" when I create a namespace?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth)
 - [Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
 - [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 - [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
