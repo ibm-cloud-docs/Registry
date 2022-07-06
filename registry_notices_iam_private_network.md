@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-06"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -23,7 +23,7 @@ By 23 June 2022, if you're connecting to {{site.data.keyword.registrylong}} over
 
 From 23 June 2022, when connections are made to {{site.data.keyword.registrylong_notm}}, the real source IP of the request will be used. Previously, when connections came in over private networks, the source IP addresses that you saw in {{site.data.keyword.at_full_notm}} and that were configured for [IAM restricted IP address lists](/docs/account?topic=account-ips) were documented {{site.data.keyword.registryshort}} [IP addresses](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
-As of 23 June 2022, only the `br-sao` and `ca-tor` regions changed. Changes to the other regions are delayed.
+On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining regions changed on 5 July 2022.
 {: note}
 
 This change was originally due to take place on 23 May 2022 but is delayed.
