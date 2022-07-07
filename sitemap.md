@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -203,7 +203,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[{{site.data.keyword.registryshort}} private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
+[{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
 
