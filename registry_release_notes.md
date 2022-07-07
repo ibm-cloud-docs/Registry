@@ -28,7 +28,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 Change to {{site.data.keyword.registryshort}} private IP addresses in all regions {: #05jul2022_private_network}
 :   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule.
 
-    For more information, see [Registry Private IP addresses are changing on 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
+    For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
 All accounts require IAM access policies {: #05jul2022_iam}
 :   To access {{site.data.keyword.registrylong_notm}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
@@ -52,7 +52,7 @@ All accounts require IAM access policies {: #05jul2022_iam}
 Change to {{site.data.keyword.registryshort}} private IP addresses in these regions only: `br-sao`, `ca-tor` {: #23jun2022_private_network}
 :   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network in the `br-sao` and `ca-tor` regions, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule. Other regions are not affected yet.
 
-    For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
+    For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
 ## 20 April 2022
 {: #registry-20apr2022}
@@ -61,7 +61,7 @@ Change to {{site.data.keyword.registryshort}} private IP addresses in these regi
 {{site.data.keyword.registryshort}} private IP addresses are changing from 23 June 2022 {: #20apr2022_private_network}
 :   By 23 June 2022, if you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, you must update your lists of allowed IP addresses to include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees are also changing, which might require updates to your firewall configuration.
 
-    For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
+    For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
 ## 1 March 2022
 {: #registry-01mar2022}
