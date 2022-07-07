@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-07"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -11,6 +11,7 @@ subcollection: Registry
 content-type: release-note
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
