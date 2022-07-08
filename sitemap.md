@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -231,6 +231,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [8 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2022)
+
+    * [Context-based restrictions](/docs/Registry?topic=Registry-registry_release_notes#08jul2022_cbr)
 
 * [5 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-05jul2022)
 
@@ -841,6 +845,8 @@ subcollection: Registry
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
 [Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
+
+* [Context-based restrictions](/docs/Registry?topic=Registry-iam#iam_cbr)
 
 * [Platform management roles](/docs/Registry?topic=Registry-iam#platform_management_roles)
 
