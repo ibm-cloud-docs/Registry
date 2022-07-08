@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-08"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -57,6 +57,17 @@ For more information about assigning user roles in the UI, see [Managing access 
 
 Try out the tutorial [Tutorial: Granting access to {{site.data.keyword.registryshort}} resources](/docs/Registry?topic=Registry-iam_access#iam_access).
 {: tip}
+
+## Context-based restrictions
+{: #iam_cbr}
+
+{{site.data.keyword.registryshort}} also supports context-based restrictions. You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests. These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. 
+
+For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis).
+
+For an example of how to set up context-based restrictions, see the context-based restrictions tutorial [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
+
+When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. To set up your own context-based restrictions for {{site.data.keyword.registryshort_notm}}, when you're creating a rule, in the **Select your resources** section, select **Container Registry**. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image.
 
 ## Platform management roles
 {: #platform_management_roles}

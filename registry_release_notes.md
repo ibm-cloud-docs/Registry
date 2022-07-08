@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -20,6 +20,15 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 8 July 2022
+{: #registry-08jul2022}
+{: release-note}
+
+Context-based restrictions {: #08jul2022_cbr}
+:   You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests.
+
+    For more information, see [Context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr).
     
 ## 5 July 2022
 {: #registry-05jul2022}
