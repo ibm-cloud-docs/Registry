@@ -23,7 +23,6 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 
 Notifications about changes:
 
-
 - [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network)
 - [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy)
 - [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker)
