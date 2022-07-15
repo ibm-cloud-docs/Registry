@@ -2,12 +2,12 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-07-15"
 
 ---
 
 
-# IBM Cloud Registry documentation
+# IBM Cloud Container Registry documentation
 
 
 
