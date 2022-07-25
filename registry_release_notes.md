@@ -18,7 +18,7 @@ content-type: release-note
 {: #registry_release_notes}
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
-{: shortdesc}>
+{: shortdesc}
 
 ## 8 July 2022
 {: #registry-08jul2022}
