@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-27"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue
 
@@ -1338,13 +1338,7 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
     To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If a tag is not specified in the image name, the report assesses the image that is tagged `latest`.
 
-    The following operating systems are supported:
-
-    - Alpine
-    - CentOS
-    - Debian
-    - {{site.data.keyword.redhat_notm}} Enterprise Linux&reg; (RHEL)
-    - Ubuntu
+    For information about supported Docker base images, see [Vulnerable packages](/docs/Registry?topic=va-va_index&interface=ui#packages).
 
     For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
