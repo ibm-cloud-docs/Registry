@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-28"
 
-keywords: Security and compliance for {{site.data.keyword.registrylong_notm}}, security for {{site.data.keyword.registrylong_notm}}, compliance for {{site.data.keyword.registrylong_notm}}, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
+keywords: Security and compliance for IBM Cloud Container Registry, security for IBM Cloud Container Registry, compliance for IBM Cloud Container Registry, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
 subcollection: Registry
 
