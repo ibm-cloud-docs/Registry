@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-03"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -19,6 +19,17 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 3 August 2022
+{: #registry-03aug2022}
+{: release-note}
+
+The CLI stops returning security status results in lists by default from version 1.0.0 {: #03aug2022_list}
+:   From {{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0, when you use the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_list) and [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_digests) commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
+
+    If you want to continue to receive security status with your lists, prepare to upgrade by adding the new `--va` option to your commands.
+
+    For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
 
 ## 8 July 2022
 {: #registry-08jul2022}
