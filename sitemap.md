@@ -238,7 +238,7 @@ subcollection: Registry
 
 * [3 August 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-03aug2022)
 
-    * [The CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#01aug2022_list)
+    * [The CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#03aug2022_list)
 
 * [8 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2022)
 
