@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-03"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -203,6 +203,10 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+[{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists)
+
+* [Action required now](/docs/Registry?topic=Registry-registry_notices_lists#registry_notices_lists_action)
+
 [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_iam_private_network#registry_notices_iam_private_network_know)
@@ -231,6 +235,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [3 August 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-03aug2022)
+
+    * [The CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#01aug2022_list)
 
 * [8 July 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-08jul2022)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-27"
+lastupdated: "2022-08-03"
 
 keywords: IBM Cloud Container Registry, container registry, command, cli, ibmcloud cr, tag, repository, required permissions, resource group, command options, security issue
 
@@ -295,7 +295,7 @@ You can refer to an image by using a combination of the **Repository** column (`
 {: tip}
 
 ```txt
-ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm] [--no-va]
+ibmcloud cr image-digests [--format FORMAT | --quiet | -q | --json] [--restrict RESTRICTION] [--include-ibm] [--no-va] [--va]
 ```
 {: codeblock}
 
@@ -324,6 +324,9 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 `--no-va`
 :   (Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-digests` output, you can use this option to increase performance.
+
+`--va`
+:   (Optional) Includes the Vulnerability Advisor security status results in the output. Use this option to ensure that you are ready for [{{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists). You can use the `--va` option with the `--restrict` option to receive just the information that you require.
 
 ### Example
 {: #bx_cr_image_digests_example}
@@ -391,7 +394,7 @@ If listing images times out, see [Why is it timing out when I list images?](/doc
 {: tip}
 
 ```txt
-ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va]
+ibmcloud cr image-list [--format FORMAT] [--quiet | -q ] [--restrict RESTRICTION] [--include-ibm] [--no-trunc] [--show-type] [--no-va] [--va]
 ```
 {: codeblock}
 
@@ -423,6 +426,9 @@ To find out about the required permissions, see [Access roles for using {{site.d
 
 `--no-va`
 :   (Optional) Excludes the security status (Vulnerability Advisor) results from the output. If you don't need the security status results as part of your `ibmcloud cr image-list` output, you can use this option to increase performance.
+
+`--va`
+:   (Optional) Includes the Vulnerability Advisor security status results in the output. Use this option to ensure that you are ready for [{{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists). You can use the `--va` option with the `--restrict` option to receive just the information that you require.
 
 ### Example
 {: #bx_cr_image_list_example}
