@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-09-06"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -34,7 +34,7 @@ Before you begin, install the {{site.data.keyword.cloud_notm}} CLI, see [Getting
 Install the `container-registry` CLI plug-in so that you can use the command line to manage your namespaces and Docker images in {{site.data.keyword.registrylong_notm}}.
 
 1. [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
-2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
+2. Optional: [Configure your Docker client to run commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If you do not do this step, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo` or as root.
 
 {{site.data.keyword.registrylong_notm}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
 {: tip}
