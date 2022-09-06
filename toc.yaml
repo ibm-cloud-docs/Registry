@@ -11,8 +11,8 @@ toc:
     label: Container Registry
     version: 2
 
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - topic: getting-started.md
@@ -21,15 +21,15 @@ toc:
         navtitle: About Container Registry
       - topic: registry_architecture.md
         navtitle: Container Registry architecture and workload
-      - topicgroup: 
+      - topicgroup:
           label: Public images
           topics:
           - registry_public_images.md
           - /RegistryImages/toc
-      - link: 
+      - link:
           label: What are containers?
           href: https://www.ibm.com/topics/containers
-      - topicgroup: 
+      - topicgroup:
           label: Notifications
           topics:
           - topic: registry_notices.md
@@ -41,9 +41,9 @@ toc:
       - topic: registry_release_notes.md
         navtitle: Release notes
 
-  - navgroup: 
+  - navgroup:
       id: tutorial
-      topics: 
+      topics:
       - topic: registry_tutorial_workflow.md
         navtitle: Container Registry and Vulnerability Advisor workflow tutorial
       - topic: registry_tutorial_configure_iam.md
@@ -55,7 +55,7 @@ toc:
           - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
           - /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - registry_setup_cli_namespace.md
@@ -76,7 +76,7 @@ toc:
       - /va/toc
       - topic: terraform.md
         navtitle: Setting up Terraform for Container Registry
-      - topicgroup: 
+      - topicgroup:
           label: Enhancing security
           topics:
           - topic: manage-scc.md
@@ -92,9 +92,9 @@ toc:
           - topic: registry_iam_ip.md
             navtitle: Using IAM IP address access restrictions
           - registry_security_enforce_portieris.md
-      - topicgroup: 
+      - topicgroup:
           label: Observability
-          topics: 
+          topics:
           - topic: registry_monitor.md
             navtitle: Monitoring metrics
           - topic: registry_at_events.md
@@ -105,12 +105,12 @@ toc:
 
   - navgroup:
       id: reference
-      topics: 
+      topics:
       - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
       - registry_cli_list.md
       - topicgroup:
           label: High availability and disaster recovery
-          topics: 
+          topics:
           - topic: registry_ha.md
             navtitle: High availability
           - topic: registry_bc_dr.md
@@ -122,11 +122,11 @@ toc:
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace
       - topicgroup:
           label: API reference
-          links: 
-          - link: 
+          links:
+          - link:
               label: IBM Cloud Container Registry API
               href: https://{DomainName}/apidocs/container-registry
-          - link: 
+          - link:
               label: Vulnerability Advisor for IBM Cloud Container Registry API
               href: https://{DomainName}/apidocs/container-registry/va
       - topicgroup:
@@ -144,8 +144,8 @@ toc:
 
   - navgroup:
       id: help
-      topics: 
-      - topicgroup: 
+      topics:
+      - topicgroup:
           label: Troubleshooting
           topics:
           - topic: ts_index.md

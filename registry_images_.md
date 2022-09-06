@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-09-06"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -36,7 +36,7 @@ Before you begin, complete the following tasks.
 
 - [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -64,7 +64,7 @@ Before you begin, complete the following tasks.
 - [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
 - [Pull](#registry_images_pulling_reg) or [build](#registry_images_creating) an image on your local computer and tag the image with your namespace information.
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -110,7 +110,7 @@ Before you begin, complete the following tasks.
 
 - [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
@@ -178,7 +178,7 @@ Before you begin, complete the following tasks.
 
 - [Install the CLI](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install) to work with images in your namespace.
 - [Set up your own namespace in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_setup).
-- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/install/linux/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
+- [Make sure that you can run Docker commands without root permissions](https://docs.docker.com/engine/install/linux-postinstall/){: external}. If your Docker client is set up to require root permissions, you must run `ibmcloud login`, `ibmcloud cr login`, `docker pull`, and `docker push` commands with `sudo`.
 
     If you change your permissions to run Docker commands without root privileges, you must run the `ibmcloud login` command again.
 
