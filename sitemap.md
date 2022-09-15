@@ -903,11 +903,13 @@ subcollection: Registry
 
     * [Vulnerable packages](/docs/Registry?topic=va-va_index#packages)
 
-    * [Configuration issues](/docs/Registry?topic=va-va_index#app_configurations)
+    * [Configuration issues - version 3 only](/docs/Registry?topic=va-va_index#app_configurations)
+
+* [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index#va_set_version)
 
 * [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console](/docs/Registry?topic=va-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=va-va_index#va_reviewing_gui)
 
     * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
 
@@ -1375,6 +1377,18 @@ subcollection: Registry
 
     * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_example)
 
+* [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version)
+
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_prereq)
+
+* [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set)
+
+    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_prereq)
+
+    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_option)
+
+    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_example)
+
 * [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va)
 
     * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_prereq)
@@ -1469,7 +1483,9 @@ subcollection: Registry
 
 [IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry){: external}
 
-[Vulnerability Advisor for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
+[Vulnerability Advisor 3 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va){: external}
+
+[Vulnerability Advisor 4 for IBM Cloud Container Registry API](https://{DomainName}/apidocs/container-registry/va-v4){: external}
 
 
 ## Related links
