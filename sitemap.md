@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-09-15"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -23,7 +23,7 @@ subcollection: Registry
 
 [Getting started with Container Registry](/docs/Registry?topic=Registry-getting-started#getting-started)
 
-* [Install the {{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install)
+* [Install the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install)
 
 * [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add)
 
@@ -35,7 +35,7 @@ subcollection: Registry
 
 * [Verify that the image was pushed](/docs/Registry?topic=Registry-getting-started#gs_registry_images_verify)
 
-* [Next steps](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
+* [Next steps in {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-getting-started#gs_get_start_next)
 
 
 ## About Container Registry
@@ -235,6 +235,16 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [15 September 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-15sep2022)
+
+    * [{{site.data.keyword.registryshort}} plug-in 1.0.0 is available](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v1)
+
+    * [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0)
+
+    * [Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4)
+
+    * [New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_commands)
 
 * [3 August 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-03aug2022)
 
@@ -633,9 +643,9 @@ subcollection: Registry
 
     * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
 
-        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-14)
+        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-14)
 
-        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-15)
+        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-15)
 
         * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-16)
 

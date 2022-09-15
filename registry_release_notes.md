@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-09-15"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -19,6 +19,42 @@ content-type: release-note
 
 Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability Advisor. The changes are grouped by date.
 {: shortdesc}
+
+## 15 September 2022
+{: #registry-15sep2022}
+{: release-note}
+
+{{site.data.keyword.registryshort}} plug-in 1.0.0 is available {: #15sep2022_v1}
+:   A new version, version 1.0.0, of the {{site.data.keyword.registryshort}} CLI plug-in is available. To update the version of your {{site.data.keyword.registryshort}} CLI plug-in, see [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
+
+   Version 1.0.0 includes [Vulnerability Advisor 4](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
+   
+   In version 1.0.0, the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands no longer include security status by default. To include security status, you can either add the `--va` option to the command, or use the [`ibmcloud cr va`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) command to query the security status for an individual image.
+   
+   For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
+
+All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated {: #15sep2022_v0}
+:   All releases of version 0.1 of the {{site.data.keyword.registryshort}} CLI plug-in are deprecated. You can continue to use releases of version 0.1, but version 1.0.0 is available for you to use. To update the version of your CLI plug-in, see [Install the `container-registry` CLI plug-in](/docs/cli?topic=cli-install-devtools-manually#idt-install-container-registry-cli-plugin).
+
+Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_4}
+:   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can choose whether to use Vulnerability Advisor version 3 or version 4 to run your commands. Vulnerability Advisor 4 is available from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in. Vulnerability Advisor 3 is the default.
+
+    If you want to continue to use version 3, you don't need to do anything. 
+    
+    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+
+    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).</staging><staging>
+
+New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_commands}
+:   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can use new commands to check and set Vulnerability Advisor versions.
+
+    If you want to continue to use version 3, you don't need to do anything.
+
+    If you want to use version 4, you can set the version by running the [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) command.
+    
+    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+
+    To find out which version of Vulnerability Advisor you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version).
 
 ## 3 August 2022
 {: #registry-03aug2022}
@@ -622,4 +658,7 @@ Introducing {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
 :   {{site.data.keyword.registrylong_notm}} is available as a service in {{site.data.keyword.cloud_notm}}. [{{site.data.keyword.registryshort}}](https://www.ibm.com/cloud/container-registry){: external} provides a multi-tenant private image registry that you can use to store and share your container images with users in your {{site.data.keyword.cloud_notm}} account.
 
     For more information about how to use {{site.data.keyword.registryshort}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
+
+
+
 
