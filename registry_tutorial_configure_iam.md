@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-09-16"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -16,7 +16,7 @@ completion-time: 45m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Granting access to {{site.data.keyword.registryshort_notm}} resources
+# Granting access to {{site.data.keyword.registryshort_notm}} resources tutorial
 {: #iam_access}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="45m"}
