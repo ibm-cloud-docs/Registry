@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-09-16"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -17,7 +17,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow
+# {{site.data.keyword.registryshort_notm}} and Vulnerability Advisor workflow tutorial
 {: #registry_tutorial_workflow}
 {: toc-content-type="tutorial"}
 {: toc-services="containers"}
@@ -141,7 +141,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access) with [API keys](x8051010){: term} and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-iam_access) by using IAM.
+    You can [automate access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access) with [API keys](x8051010){: term} and [grant access to {{site.data.keyword.registrylong_notm}} resources](/docs/Registry?topic=Registry-user) by using IAM.
     {: tip}
 
 ### Deploy a container that uses your image

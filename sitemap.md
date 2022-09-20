@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-16"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -885,8 +885,6 @@ subcollection: Registry
 [Defining IAM access policies](/docs/Registry?topic=Registry-user#user)
 
 * [Creating policies](/docs/Registry?topic=Registry-user#create)
-
-* [Enabling policy enforcement for existing users](/docs/Registry?topic=Registry-user#existing_users)
 
 
 ## Managing image security with Vulnerability Advisor
