@@ -25,7 +25,7 @@ You must define IAM [access policies](x2853407){: term} for every user that work
 
 To find out more about IAM access policies, see [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles).
 
-From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can assign container registry namespaces to a [resource group](/docs/account?topic=account-rgs) and scope access policies to that group, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still define access policies that are scoped to individual container registry namespaces or to all namespaces that are owned by the account.
+From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can assign {{site.data.keyword.registryshort}} namespaces to a [resource group](/docs/account?topic=account-rgs) and scope access policies to that group, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still define access policies that are scoped to individual {{site.data.keyword.registryshort}} namespaces or to all namespaces that are owned by the account.
 
 ## Creating policies
 {: #create}
@@ -48,5 +48,5 @@ If you want to access resources, you must assign roles to users or service IDs. 
 - To create a policy for users, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 - To create a policy for service IDs, run the `ibmcloud iam service-policy-create` command or use the {{site.data.keyword.cloud_notm}} console to bind roles to your service IDs. To create policies, you must have the Administrator role. You automatically have the Administrator role on your own account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids) and [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
-For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see the [Granting access to Container Registry resources tutorial](/docs/Registry?topic=Registry-iam_access).
+For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see the [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
 {: tip}
