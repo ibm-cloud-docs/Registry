@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-16"
+lastupdated: "2022-09-22"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -99,7 +99,7 @@ Create a [namespace](x2031005){: term} to store your container images in {{site.
 
     Throughout this tutorial, replace `<my_namespace>` with your chosen namespace.
 
-    If you have trouble adding a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
+    If you have a problem when you try to add a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
     {: tip}
 
 ### Build and push an image
@@ -124,7 +124,7 @@ To [build a container image and push it to {{site.data.keyword.registrylong_notm
     ```
     {: pre}
 
-    If you have trouble logging in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
+    If you have a problem when you try to log in, see [Why can't I log in to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-login) for assistance.
     {: tip}
 
 3. Push the image by running the following command:
@@ -237,7 +237,7 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 2. List your images, and take note of the `SECURITY STATUS` column by running the following command:
 
     ```txt
-    ibmcloud cr images
+    ibmcloud cr images --va
     ```
     {: pre}
 
@@ -298,7 +298,7 @@ Despite the vulnerability that is present in your image, you're still able to de
     ```
     {: screen}
 
-    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) command.
+    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one, or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) command.
     {: note}
 
 ### Resolve vulnerabilities in your image
@@ -333,7 +333,7 @@ Because CVEs are frequently discovered and patched, this Dockerfile includes a c
 3. Wait for the scan to complete and then run the following command to ensure that no issues are present in the image:
 
     ```txt
-    ibmcloud cr images
+    ibmcloud cr images --va
     ```
     {: pre}
 
