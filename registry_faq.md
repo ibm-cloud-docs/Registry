@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-09-22"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -254,5 +254,11 @@ On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a p
     yum list installed
     ```
     {: pre}
+
+### Does Vulnerability Advisor have versions?
+{: #faq_va_versions}
+{: faq}
+
+Vulnerability Advisor is available in two versions, version 3 and version 4. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui).
 
 
