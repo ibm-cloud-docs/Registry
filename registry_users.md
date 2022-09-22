@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2022-09-22"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -50,3 +50,5 @@ If you want to access resources, you must assign roles to users or service IDs. 
 
 For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see the [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
 {: tip}
+
+
