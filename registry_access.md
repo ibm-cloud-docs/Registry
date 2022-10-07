@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-10-07"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -235,6 +235,5 @@ The following usernames are valid:
 - `iambearer` The password contains an IAM [access token](x2113001){: term}. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 - `iamrefresh` The password contains an IAM refresh token that is used internally by the registry to generate an IAM access token. This type of authentication is longer lived. This authentication type is used by the `ibmcloud cr login` command.
 - `iamapikey` The password is an IAM API key that is used internally by the registry to generate an IAM access token. This type of authentication is the preferred type for automation. You can use a user API key or a service ID API key. For more information, see [Accessing your namespaces in automation](#registry_access_automating).
-
 
 
