@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-10-07"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -197,7 +197,8 @@ If you want to restore a deleted chart, you can list the contents of the trash b
 Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace, that copy of the chart is not removed.
 {: tip}
 
-A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.{: tip}
+A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.
+{: tip}
 
 ### Deleting charts from your private repository in the CLI
 {: #registry_helm_charts_remove_cli}
@@ -321,7 +322,7 @@ To restore a chart by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest)
+    If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest).
     {: tip}
 
     In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the chart shows in the output.

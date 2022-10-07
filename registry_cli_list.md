@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-10-07"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -111,7 +111,7 @@ Review the following table to find available Go template options and data types 
 | `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tags` | Array of strings | Displays the tags for the image. |
-{: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-digests command" caption-side="bottom"}
+{: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
 
 ## Go template options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
@@ -128,7 +128,7 @@ Review the following table to find available Go template options and data types 
 | `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
-{: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-list command" caption-side="bottom"}
+{: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
 
 ## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
@@ -152,7 +152,7 @@ Review the following table to find available Go template options and data types 
 | `RootFS` | Object | Displays metadata that describe the root file system for the image. For more information, see [`RootFS` field details](#registry_cli_list_imageinspect_rootfs). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `VirtualSize` | Integer (64 bit) | Displays the sum of the size of each layer in the image in bytes. |
-{: caption="Table 3. Available fields and data types in the {{site.data.keyword.registryshort_notm}} image-inspect command" caption-side="bottom"}
+{: caption="Table 3. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to inspect images" caption-side="bottom"}
 
 ### `Config` field details
 {: #registry_cli_list_imageinspect_config}

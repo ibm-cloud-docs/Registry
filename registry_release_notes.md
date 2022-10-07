@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-10-07"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -254,7 +254,7 @@ New region in Canada {: #10may2021_canada}
 {: release-note}
 
 The `ibmcloud cr ppa-archive-load` command is discontinued {: #04may2021_ppa}
-:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud_notm}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong_notm}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
+:   The `ibmcloud cr ppa-archive-load` command is discontinued. Containerized software is distributed in {{site.data.keyword.cloud_notm}} Paks, see [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud-paks){: external}. To run {{site.data.keyword.cloud_notm}} Paks on {{site.data.keyword.openshiftlong_notm}}, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). For more information about setting up your {{site.data.keyword.containerlong_notm}} cluster to pull entitled software, see [Setting up a cluster to pull entitled software](/docs/containers?topic=containers-registry#secret_entitled_software).
 
 ## 18 February 2021
 {: #registry-18feb2021}
