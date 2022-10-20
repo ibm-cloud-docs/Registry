@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-10-20"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -15,7 +15,7 @@ subcollection: Registry
 # Using VPEs for VPC to privately connect to {{site.data.keyword.registryshort_notm}}
 {: #registry_vpe}
 
-You can use {{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.
+You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.
 {: shortdesc}
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
