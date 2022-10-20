@@ -106,8 +106,11 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
-      - registry_cli_list.md
+      - topicgroup:
+          label: Container Registry CLI
+          topics:
+          - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
+          - registry_cli_list.md
       - topicgroup:
           label: High availability and disaster recovery
           topics:

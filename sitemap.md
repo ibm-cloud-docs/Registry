@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1131,8 +1131,8 @@ subcollection: Registry
     * [Exemption API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_vuln_exempt)
 
 
-## {{site.data.keyword.registrylong_notm}} CLI
-{: #sitemap__cli}
+## Container Registry CLI
+{: #sitemap_container_registry_cli}
 
 
 [{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
@@ -1394,11 +1394,6 @@ subcollection: Registry
     * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_option)
 
     * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
-
-
-## Formatting and filtering the CLI output
-{: #sitemap_formatting_and_filtering_the_cli_output}
-
 
 [Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
