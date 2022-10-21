@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-21"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -697,6 +697,10 @@ subcollection: Registry
 * [Installing the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#cli_namespace_registry_cli_install)
 
 * [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update)
+
+    * [Updating `container-registry` CLI plug-in version 1.0](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update_v1)
+
+    * [Updating `container-registry` CLI plug-in version 0.1](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update_v0)
 
 * [Uninstalling the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_uninstall)
 
@@ -1408,6 +1412,20 @@ subcollection: Registry
     * [`Healthcheck` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_healthcheck)
 
     * [`RootFS` field details](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list_imageinspect_rootfs)
+
+[{{site.data.keyword.registryshort}} CLI change log](/docs/Registry?topic=Registry-registry_cli_change_log#registry_cli_change_log)
+
+* [Version 1.0.2](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-102)
+
+* [Version 0.1.584](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-log-01584)
+
+* [Version 1.0.1](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-101)
+
+* [Version 0.1.583](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-log-01583)
+
+* [Version 1.0.0](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-logv1-100)
+
+* [Version 0.1.582](/docs/Registry?topic=Registry-registry_cli_change_log#cli-change-log-01582)
 
 
 ## High availability and disaster recovery

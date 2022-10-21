@@ -111,6 +111,7 @@ toc:
           topics:
           - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
           - registry_cli_list.md
+          - registry_change_log.md
       - topicgroup:
           label: High availability and disaster recovery
           topics:
