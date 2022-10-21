@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-10-21"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -48,19 +48,39 @@ You can now [set up your own namespace](#registry_namespace_setup) in {{site.dat
 
 You might want to update the `container-registry` CLI plug-in periodically to use new features.
 
-1. Update the `container-registry` CLI plug-in.
+### Updating `container-registry` CLI plug-in version 1.0
+{: #registry_cli_update_v1}
+{: help}
+{: support}
 
-    ```txt
-    ibmcloud plugin update container-registry
-    ```
-    {: pre}
+To update version 1.0 of the {{site.data.keyword.registryshort}} CLI, run the following command:
 
-2. Verify that the `container-registry` CLI plug-in was updated successfully.
+```txt
+ibmcloud plugin update container-registry
+```
+{: pre}
 
-    ```txt
-    ibmcloud plugin list
-    ```
-    {: pre}
+### Updating `container-registry` CLI plug-in version 0.1
+{: #registry_cli_update_v0}
+{: help}
+{: support}
+
+To update version 0.1 of the {{site.data.keyword.registryshort}} CLI, run the following command, where `<version_number>` is the number of the version of the CLI.
+
+Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
+{: deprecated}
+
+```txt
+ibmcloud plugin install container-registry -v <version_number>
+```
+{: pre}
+
+For example, to update the CLI to version 0.1.584, run the following command:
+
+```txt
+ibmcloud plugin install container-registry -v 0.1.584
+```
+{: pre}
 
 ## Uninstalling the `container-registry` CLI plug-in
 {: #registry_cli_uninstall}
@@ -69,21 +89,12 @@ You might want to update the `container-registry` CLI plug-in periodically to us
 
 If you no longer need the `container-registry` CLI plug-in, you can uninstall it.
 
-1. Uninstall the `container-registry` CLI plug-in.
+To uninstall the `container-registry` CLI plug-in, run the following command:
 
-    ```txt
-    ibmcloud plugin uninstall container-registry
-    ```
-    {: pre}
-
-2. Verify that the `container-registry` CLI plug-in was uninstalled successfully.
-
-    ```txt
-    ibmcloud plugin list
-    ```
-    {: pre}
-
-    The `container-registry` CLI plug-in is not displayed in the results.
+```txt
+ibmcloud plugin uninstall container-registry
+```
+{: pre}
 
 ## Planning namespaces
 {: #registry_setup_cli_namespace_plan}
