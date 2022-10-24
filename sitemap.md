@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-10-24"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1631,6 +1631,8 @@ subcollection: Registry
     * [Do I have any untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_1)
 
     * [Do I need untagged images?](/docs/Registry?topic=Registry-registry_faq#faq_untagged_image_2)
+
+    * [What are eligible images?](/docs/Registry?topic=Registry-registry_faq#faq_eligible_image)
 
     * [What regions are available?](/docs/Registry?topic=Registry-registry_faq#faq_regions)
 

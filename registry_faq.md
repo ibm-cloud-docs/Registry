@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-24"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -119,6 +119,14 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 
 - The image was deployed by referencing the image by using the digest.
 - The image reference was mutated by a webhook service, such as [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris).
+
+### What are eligible images?
+{: #faq_eligible_image}
+{: faq}
+
+If you're cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained, and are therefore not eligible images, are distroless images that do not set a created time, such as Google distroless images, and manifest lists.
+
+The images that are not eligible are still displayed, but they do not count toward the total number of images that is set in the retention policy and will not be removed.
 
 ### What regions are available?
 {: #faq_regions}
