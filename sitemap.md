@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-26"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -716,7 +716,7 @@ subcollection: Registry
 
 
 ## Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}
-{: #sitemap_setting_up__as_a_private_registry_on_{{sitedatakeywordredhat_openshift_notm}}}
+{: #sitemap_setting_up__as_a_private_registry_on_}
 
 
 [Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
