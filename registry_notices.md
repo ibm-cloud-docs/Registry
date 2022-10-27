@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-19"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, iam
 
