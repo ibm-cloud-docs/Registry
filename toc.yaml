@@ -34,6 +34,7 @@ toc:
           topics:
           - topic: registry_notices.md
             navtitle: Notifications
+          - registry_notices_ip_address.md
           - registry_notices_lists.md
           - registry_notices_iam_private_network.md
           - registry_notices_iam_policy.md
