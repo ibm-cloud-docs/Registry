@@ -244,7 +244,7 @@ subcollection: Registry
 
 * [2 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-2nov2022)
 
-    * [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_release_notes#xxoct2022_ip)
+    * [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_release_notes#2nov2022_ip)
 
 * [15 September 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-15sep2022)
 

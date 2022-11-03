@@ -25,7 +25,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: #registry-2nov2022}
 {: release-note}
 
-Changes to private IP addresses from 15 December 2022 {: #xxoct2022_ip}
+Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
 :  The {{site.data.keyword.registrylong}} private IP addresses that were replaced on 5 July 2022 are being decommissioned on 15 December 2022.
 
     IP addresses for accessing {{site.data.keyword.registryshort}} over the private network changed on 5 July 2022, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network). You continue to be able to use these old IP addresses, but they are due to be decommissioned on 15 December 2022. After this date, you will not be able to access {{site.data.keyword.registryshort}} by using these IP addresses.
