@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "[{LAST_UPDATED_DATE}]"
+lastupdated: "2022-11-03"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, ip address
 
@@ -30,7 +30,7 @@ If you have any other custom configuration that uses the old {{site.data.keyword
 ## What actions you need to take
 {: #registry_notices_ip_address_actions}
 
-You must ensure that any cluster workers that have not been reloaded or reloaded, replaced or rebooted since 5 July 2022 are reloaded or replaced before 15 December 2022. For more information about how to reload workers for classic clusters, see [`ibmcloud ks worker reload`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload). For more information about how to replace workers for VPC clusters, see [`ibmcloud ks worker replace`](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). You may also reboot affected workers but this is not recommended due to the risks associated with rebooting. For more information about rebooting workers, see [`ibmcloud ks worker reboot`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot).
+You must ensure that any cluster workers that have not been reloaded, replaced or rebooted since 5 July 2022 are reloaded or replaced before 15 December 2022. For more information about how to reload workers for classic clusters, see [`ibmcloud ks worker reload`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload). For more information about how to replace workers for VPC clusters, see [`ibmcloud ks worker replace`](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). You may also reboot affected workers but this is not recommended due to the risks associated with rebooting. For more information about rebooting workers, see [`ibmcloud ks worker reboot`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot).
 
 If you have any other custom configuration that uses the old {{site.data.keyword.registryshort}} private IP addresses, such as for firewall rules or Calico policies, ensure that you update your configuration to use the new {{site.data.keyword.registryshort}} IP addresses and remove the old IP addresses. Both the old and new private IP addresses are documented in the {{site.data.keyword.containerlong_notm}} documentation, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 
