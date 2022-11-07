@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-07"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -26,7 +26,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 {: release-note}
 
 Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
-:  The {{site.data.keyword.registrylong}} private IP addresses that were replaced on 5 July 2022 are being decommissioned on 15 December 2022.
+:  The {{site.data.keyword.registrylong_notm}} private IP addresses that were replaced on 5 July 2022 are being decommissioned on 15 December 2022.
 
     IP addresses for accessing {{site.data.keyword.registryshort}} over the private network changed on 5 July 2022, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network). You continue to be able to use these old IP addresses, but they are due to be decommissioned on 15 December 2022. After this date, you will not be able to access {{site.data.keyword.registryshort}} by using these IP addresses.
 
