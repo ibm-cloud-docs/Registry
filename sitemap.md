@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1575,7 +1575,7 @@ subcollection: Registry
 
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
-[Why do I get "You are not authorized to access the specified resource" when I create a namespace?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth#troubleshoot-namespace-auth)
+[When I create a namespace, why aren't I authorized to access the specified resource?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth#troubleshoot-namespace-auth)
 
 [Why don't all my namespaces show in the **Resource list**?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
