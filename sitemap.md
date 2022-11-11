@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -203,6 +203,16 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
+[Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
+
+* [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
+
+* [How you benefit from this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_benefit)
+
+* [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_impact)
+
+* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
+
 [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address_know)
@@ -241,6 +251,10 @@ subcollection: Registry
 
 
 [Release notes](/docs/Registry?topic=Registry-registry_release_notes#registry_release_notes)
+
+* [11 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-11nov2022)
+
+    * [Change to virtual private endpoints](/docs/Registry?topic=Registry-registry_release_notes#11nov2022_vpe)
 
 * [2 November 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-2nov2022)
 
