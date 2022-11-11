@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Changes to {{site.data.keyword.registryshort}} VPE gateways
+# Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022
 {: #registry_notices_vpe}
 
 If you are using an {{site.data.keyword.registrylong}} virtual private endpoint (VPE) gateway that was created before 11 November 2022, you must re-create your VPE gateway before 15 December 2022. If you use {{site.data.keyword.iamshort}} restricted IP address lists and {{site.data.keyword.registryshort}} VPE gateways, you must also update your restricted IP address lists.

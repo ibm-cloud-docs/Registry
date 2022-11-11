@@ -203,7 +203,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
+[Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
 

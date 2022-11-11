@@ -32,7 +32,7 @@ Change to virtual private endpoints {: #11nov2022_vpe}
 
     If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 November 2022 and also use {{site.data.keyword.iamshort}} (IAM) [restricted IP address lists](/docs/account?topic=account-ips&interface=ui), you must ensure that your restricted IP address list contains the Cloud Service Endpoint (CSE) source IP addresses of the VPCs in which your {{site.data.keyword.registryshort}} VPE gateways exist. This requirement is related to a previous change to how {{site.data.keyword.registryshort}} works over the private network that the new VPE version also uses, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
-    For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
+    For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
 
 ## 2 November 2022
 {: #registry-2nov2022}
