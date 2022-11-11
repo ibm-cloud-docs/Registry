@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-11-11"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -18,14 +18,19 @@ subcollection: Registry
 You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.
 {: shortdesc}
 
+{{site.data.keyword.registryshort}} VPEs have been updated. Any VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
+{: important}
+
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
 
-If you have an [{{site.data.keyword.vpc_short}} instance](/docs/vpc?topic=vpc-getting-started) and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network.
+If you have an [{{site.data.keyword.vpc_short}} instance](/docs/vpc?topic=vpc-getting-started) and want to connect the VPC instance to {{site.data.keyword.registrylong_notm}} for your {{site.data.keyword.registryshort_notm}} services, you can create a VPE gateway for your VPC to access {{site.data.keyword.registrylong_notm}} within your VPC network. Any connections to {{site.data.keyword.registrylong_notm}} that originate from within the VPC automatically go through the {{site.data.keyword.registryshort_notm}} VPE gateway, if one exists.
 
-To connect to {{site.data.keyword.registrylong_notm}} by using a VPE, you must use the {{site.data.keyword.registryshort_notm}} API or CLI. The {{site.data.keyword.registryshort_notm}} page of the {{site.data.keyword.cloud_notm}} console must be accessed from a browser in your VPC.
+When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: note}
 
-You must ensure that the canonical [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
+For VPE gateways created before 11 November 2022, you must ensure that the canonical [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
+
+For VPE gateways created after 11 November 2022, this additional configuration is not required because the domain name resolution is now handled automatically by the VPE gateway.
 
 For more information about other {{site.data.keyword.cloud_notm}} VPE services, see [VPE supported services](/docs/vpc?topic=vpc-vpe-supported-services).
 
@@ -55,7 +60,7 @@ The table lists {{site.data.keyword.registrylong_notm}} private endpoints that a
 - Toronto (`ca-tor`)
 - Washington (`us-east`)
 
-You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. This restriction is a known limitation, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use hostnames, such as `private.uk.icr.io`.
+You can create a VPE gateway for your local {{site.data.keyword.registryshort_notm}} service only. For VPE gateways created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public hostnames, such as `uk.icr.io`. For VPE gateways created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must enable classic access, see [Creating a classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#create-a-classic-access-vpc) and use private hostnames, such as `private.uk.icr.io`.
 {: important}
 
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
@@ -67,18 +72,20 @@ You can create VPE gateways in the following locations: `ap-north`, `ap-south`, 
 
 | Registry region | Cloud resource name (CRN) |
 |-----------------|---------------------------|
-| `ap-north` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:vpe.jp-tok.container-registry.cloud.ibm.com` |
-| `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:vpe.au-syd.container-registry.cloud.ibm.com` |
-| `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:vpe.br-sao.container-registry.cloud.ibm.com` |
-| `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:vpe.ca-tor.container-registry.cloud.ibm.com` |
-| `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:vpe.eu-de.container-registry.cloud.ibm.com` |
-| `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:vpe.jp-osa.container-registry.cloud.ibm.com` |
-| `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` |
-| `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:vpe.us-south.container-registry.cloud.ibm.com` |
-| Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:vpe.us-east.container-registry.cloud.ibm.com` |
+| `ap-north` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:jp.icr.io` |
+| `ap-south` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:au.icr.io` |
+| `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:br.icr.io` |
+| `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:ca.icr.io` |
+| `eu-central` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:de.icr.io` |
+| `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:jp2.icr.io` |
+| `uk-south` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:uk.icr.io` |
+| `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:us.icr.io` |
+| Global `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:icr.io` |
 {: caption="Table 1. Region availability and cloud resource names for connecting {{site.data.keyword.registryshort_notm}} over private {{site.data.keyword.cloud_notm}} networks" caption-side="bottom"}
 
-If you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use hostnames, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
+For VPE gateways that were created before 11 November 2022, if you want to connect to {{site.data.keyword.registrylong_notm}} in another region, you must use hostnames, such as `private.uk.icr.io`. For more information about private {{site.data.keyword.registryshort_notm}} networks, see [Securing your connection to {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_private).
+
+For VPE gateways that are created after 11 November 2022, you can pull images from any other {{site.data.keyword.registryshort_notm}} region by using the public hostnames, such as `uk.icr.io`.
 
 ### Configuring an endpoint gateway
 {: #registry_endpoint-gateway-servicename}
