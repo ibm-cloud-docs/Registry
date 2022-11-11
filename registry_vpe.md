@@ -28,7 +28,7 @@ If you have an [{{site.data.keyword.vpc_short}} instance](/docs/vpc?topic=vpc-ge
 When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: note}
 
-For VPE Gateways created before 11 November 2022, you must ensure that the canonical [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
+For VPE gateways created before 11 November 2022, you must ensure that the canonical [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
 
 For VPE gateways created after 11 November 2022, this additional configuration is not required because the domain name resolution is now handled automatically by the VPE gateway.
 
