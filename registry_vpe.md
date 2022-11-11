@@ -18,7 +18,7 @@ subcollection: Registry
 You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.
 {: shortdesc}
 
-{{site.data.keyword.registryshort}} VPEs have been updated. Any VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
+{{site.data.keyword.registryshort}} VPEs have been updated. Any VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
 {: important}
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).

@@ -22,7 +22,7 @@ Notifications about changes that affect {{site.data.keyword.registrylong}} and V
 {: #registry_notices_topics}
 
 Notifications about changes:
-- [Changes to {{site.data.keyword.registryshort}} VPE gateways](/docs/Registry?topic=Registry-registry_notices_vpe)
+- [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe)
 - [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address)
 - [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists)
 - [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network)
