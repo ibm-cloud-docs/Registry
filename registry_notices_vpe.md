@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -41,7 +41,7 @@ When you connect to {{site.data.keyword.registryshort}} now, the real IP address
 ## Understanding if you are impacted by this change
 {: #registry_notices_vpe_impact}
 
-You are affected by this change if you are using a {{site.data.keyword.registryshort}} VPE gateway that was created before 11 November 2022. VPE gateways created before this date can be identified by differences in their target CRN. You can find the target CRN by viewing the VPE gateway in the {{site.data.keyword.cloud_notm}} console or CLI.
+You are affected by this change if you are using a {{site.data.keyword.registryshort}} VPE gateway that was created before 11 November 2022. VPE gateways created before this date can be identified by differences in their target CRN. You can find the target CRN of a VPE gateway by viewing the VPE gateway details in the {{site.data.keyword.cloud_notm}} console (GUI) or CLI, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui).
 
 VPE gateways that were created before 11 November 2022 are in the format:
 
