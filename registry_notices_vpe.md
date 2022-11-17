@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -59,7 +59,7 @@ If you are using a {{site.data.keyword.registryshort}} VPE gateway that was crea
 {: #registry_notices_vpe_actions}
 
 If you use a {{site.data.keyword.registryshort}} VPE gateway that was created before 11 November 2022
-:   You must re-create your {{site.data.keyword.registryshort}} VPE gateway before 15 December 2022. If you don't re-create your VPE gateway, the VPE gateway can't access {{site.data.keyword.registryshort}}.
+:   You must re-create your {{site.data.keyword.registryshort}} VPE gateway before 15 December 2022. If you don't re-create your VPE gateway, the VPE gateway will not connect to {{site.data.keyword.registryshort}} after that date.
 
     To replace the VPE gateway, complete the following steps:
 
@@ -68,11 +68,11 @@ If you use a {{site.data.keyword.registryshort}} VPE gateway that was created be
     2. Remove the VPE gateway that was created before 11 November 2022, see [Deleting an endpoint gateway](/docs/vpc?topic=vpc-vpe-deleting-ui-cli-api&interface=ui).
 
 If you use a {{site.data.keyword.registryshort}} VPE gateway that was created before 11 November 2022 and you use IAM restricted IP address lists
-:   You must re-create your {{site.data.keyword.registryshort}} VPE gateway and update your IAM restricted IP address lists before 15 December 2022. If you don't re-create your VPE gateway and update your IP address lists, the VPE gateway can't access {{site.data.keyword.registryshort}}.
+:   You must re-create your {{site.data.keyword.registryshort}} VPE gateway and update your IAM restricted IP address lists before 15 December 2022. If you don't re-create your VPE gateway and update your IP address lists, the VPE gateway will not connect to {{site.data.keyword.registryshort}} after that date.
 
     To replace the VPE gateway and update your IAM restricted IP address lists, complete the following steps:
 
-    1. Update your IAM restricted IP address lists to include the [Cloud service endpoint source addresses](/docs/vpc?topic=vpc-vpc-behind-the-curtain#cse-source-addresses) of your VPC. You can find the CSEs by viewing the details of your VPC in either the {{site.data.keyword.cloud_notm}} console or CLI.
+    1. Update your IAM restricted IP address lists to access the [Cloud service endpoint source addresses](/docs/vpc?topic=vpc-vpc-behind-the-curtain#cse-source-addresses) of your VPC. You can find the CSEs by viewing the details of your VPC in either the {{site.data.keyword.cloud_notm}} console or CLI.
 
     2. Create a new VPE gateway for {{site.data.keyword.registryshort}} in the required VPC, see [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui). If you’re using the CLI, you might want to refer to the {{site.data.keyword.registryshort}} VPE CRNs. For more information, see [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe&interface=ui#registry_vpe_endpoint_setup).
 
