@@ -161,9 +161,12 @@ For more information about how the scanning of an image is triggered, see [Vulne
 
 If you get the vulnerability report immediately after you add the image to the [registry](x2064940){: term}, you might receive the following error:
 
-> BXNVA0009E:  `<imagename>` has not been scanned. Try again later.
-> If this issue persists, contact support for help;
-> see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
+```txt
+BXNVA0009E:  <imagename> has not been scanned. Try again later.
+If this issue persists, contact support for help;
+see https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support
+```
+{: screen}
 
 You receive this message because the images are scanned asynchronously to the requests for results, and the scanning process takes a while to complete. During normal operation, the scan completes within the first few minutes after you add the image to the registry. The time that it takes to complete depends on variables like the image size and the amount of traffic that the registry is receiving.
 

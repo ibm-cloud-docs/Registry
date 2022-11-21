@@ -47,11 +47,7 @@ The following code examples demonstrate how you might use the formatting and fil
     example-<region>.icr.io/user1/ibmliberty@<digest2>
     example-<region>.icr.io/user1/ibmliberty@<digest3>
     ```
-    {: screen}</prod<staging>
-
-    > `example-<region>.icr.io/user1/ibmliberty@<digest1>`
-    > `example-<region>.icr.io/user1/ibmliberty@<digest2>`
-    > `example-<region>.icr.io/user1/ibmliberty@<digest3>`</staging
+    {: screen}
 
 - Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
 
@@ -68,8 +64,7 @@ The following code examples demonstrate how you might use the formatting and fil
     example-<region>.icr.io/user1/ibmnode:test1 1 Issue
     example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
     ```
-    {: screen}</prod
-
+    {: screen}
 
     If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}

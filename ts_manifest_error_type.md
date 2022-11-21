@@ -22,10 +22,8 @@ content-type: troubleshoot
 You get a manifest type error when you try to tag your image in {{site.data.keyword.registrylong}}: `The manifest type for this image is not supported for tagging.`
 {: shortdesc}
 
-You tried to tag your image, but you receive the following manifest error message:
+You tried to tag your image, but you receive the following manifest error message: `The manifest type for this image is not supported for tagging.`
 {: tsSymptoms}
-
-> The manifest type for this image is not supported for tagging.
 
 The manifest type is not supported.
 {: tsCauses}

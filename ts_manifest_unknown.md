@@ -22,10 +22,8 @@ content-type: troubleshoot
 You get a `manifest unknown` error when you try to pull an image in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-You're trying to pull an image, but you receive the following manifest error message:
+You're trying to pull an image, but you receive the following manifest error message: `manifest unknown`
 {: tsSymptoms}
-
-> manifest unknown
 
 The manifest does not exist in the registry.
 {: tsCauses}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-11-21"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -24,7 +24,6 @@ Pushing or pulling a Docker image fails when you are using {{site.data.keyword.r
 
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
 {: tsSymptoms}
-
 ```txt
 You have exceeded your storage quota. Delete one or more images,
 or review your storage quota and pricing plan

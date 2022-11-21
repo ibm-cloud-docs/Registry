@@ -25,13 +25,17 @@ You can't run any {{site.data.keyword.registrylong}} `ibmcloud cr` commands, the
 You're trying to run an `ibmcloud cr` command, but you receive an error message similar to one of the following error messages:
 {: tsSymptoms}
 
-> ibmcloud cr login
-> 'cr' is not a registered command. See 'ibmcloud help'.
+```txt
+ibmcloud cr login
+'cr' is not a registered command. See 'ibmcloud help'.
+```
+{: screen}
 
-or:
-
-> ibmcloud cr namespace
-> 'cr' is not a registered command. See 'ibmcloud help'.
+```txt
+ibmcloud cr namespace
+'cr' is not a registered command. See 'ibmcloud help'.
+```
+{: screen}
 
 The `container-registry` CLI plug-in is not installed.
 {: tsCauses}
