@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-11-21"
 
 keywords: registry, fail, command, container-registry, CLI, plug-in, you are not logged in to IBM Cloud, failed
 
@@ -22,8 +22,10 @@ content-type: troubleshoot
 You can't run any commands in {{site.data.keyword.registrylong}}, even though you are logged in to {{site.data.keyword.cloud_notm}}. You get the following message: `FAILED You are not logged in to IBM Cloud`.
 {: shortdesc}
 
-All `ibmcloud cr` commands fail with the message: `FAILED You are not logged in to IBM Cloud`.
+All `ibmcloud cr` commands fail with the message:
 {: tsSymptoms}
+
+> FAILED You are not logged in to IBM Cloud.
 
 The `container-registry` CLI plug-in is out of date and needs updating.
 {: tsCauses}

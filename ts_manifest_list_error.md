@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-11-21"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository
 
@@ -22,8 +22,10 @@ content-type: troubleshoot
 When you try to tag your manifest list or OCI Image Index in {{site.data.keyword.registrylong}}, you get a manifest list invalid error.
 {: shortdesc}
 
-You get the following manifest list invalid error when you try to [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) your [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) list or OCI Image Index in {{site.data.keyword.registrylong_notm}}: `The manifest list or OCI index that you are tagging references an image that doesn't exist.`
+You get the following manifest list invalid error when you try to [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) your [manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest) list or OCI Image Index in {{site.data.keyword.registrylong_notm}}:
 {: tsSymptoms}
+
+> The manifest list or OCI index that you are tagging references an image that doesn't exist.
 
 Manifest lists and OCI Image Indexes contain a list of references to different images, where each image is for a different architecture. When you tag a manifest list or OCI Image Index, {{site.data.keyword.registryshort}} tries to copy the referenced images. When you get this error message, it indicates that one of those referenced images was not found in the registry.
 {: tsCauses}

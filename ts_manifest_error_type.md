@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-11-21"
 
 keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging
 
@@ -22,8 +22,10 @@ content-type: troubleshoot
 You get a manifest type error when you try to tag your image in {{site.data.keyword.registrylong}}: `The manifest type for this image is not supported for tagging.`
 {: shortdesc}
 
-You tried to tag your image, but you receive the following manifest error message: `The manifest type for this image is not supported for tagging.`
+You tried to tag your image, but you receive the following manifest error message:
 {: tsSymptoms}
+
+> The manifest type for this image is not supported for tagging.
 
 The manifest type is not supported.
 {: tsCauses}

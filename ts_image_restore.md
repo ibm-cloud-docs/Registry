@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-11-21"
 
 keywords: error, registry, restore, trash, image, tag, tagged image, digest, tagged image already exists, restore this image by using the digest
 
@@ -22,8 +22,10 @@ content-type: troubleshoot
 You want to restore an image from the {{site.data.keyword.registrylong}} trash, but you get a 409 error: `The tagged image already exists. You can restore this image by using the digest.`
 {: shortdesc}
 
-You receive the following error message when you run the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command: `The tagged image already exists. You can restore this image by using the digest.`
+You receive the following error message when you run the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command:
 {: tsSymptoms}
+
+> The tagged image already exists. You can restore this image by using the digest.
 
 An image with the same name exists in your live repository. You can't overwrite a live image with an image that is in the trash.
 {: tsCauses}

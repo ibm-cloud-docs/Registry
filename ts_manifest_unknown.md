@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-11-21"
 
 keywords: error, registry, manifest unknown, manifest, manifest unknown error
 
@@ -22,8 +22,10 @@ content-type: troubleshoot
 You get a `manifest unknown` error when you try to pull an image in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-You're trying to pull an image, but you receive the following manifest error message: `manifest unknown`
+You're trying to pull an image, but you receive the following manifest error message:
 {: tsSymptoms}
+
+> manifest unknown
 
 The manifest does not exist in the registry.
 {: tsCauses}
