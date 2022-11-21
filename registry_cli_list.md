@@ -42,9 +42,16 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command.
 
-    > example-`<region>`.icr.io/user1/ibmliberty@`<digest1>`
-    > example-`<region>`.icr.io/user1/ibmliberty@`<digest2>`
-    > example-`<region>`.icr.io/user1/ibmliberty@`<digest3>`
+    ```txt
+    example-<region>.icr.io/user1/ibmliberty@<digest1>
+    example-<region>.icr.io/user1/ibmliberty@<digest2>
+    example-<region>.icr.io/user1/ibmliberty@<digest3>
+    ```
+    {: screen}</prod<staging>
+
+    > `example-<region>.icr.io/user1/ibmliberty@<digest1>`
+    > `example-<region>.icr.io/user1/ibmliberty@<digest2>`
+    > `example-<region>.icr.io/user1/ibmliberty@<digest3>`</staging
 
 - Run the following `ibmcloud cr image-list` command to display repository, tag, and security status of all tagged images that have a size over 1 MB.
 
@@ -55,10 +62,13 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    > example-`<region>`.icr.io/user1/ibmliberty:latest No Issues
-    > example-`<region>`.icr.io/user1/ibmnode:1 2 Issues
-    > example-`<region>`.icr.io/user1/ibmnode:test1 1 Issue
-    > example-`<region>`.icr.io/user1/ibmnode2:test2 7 Issues
+    ```txt
+    example-<region>.icr.io/user1/ibmliberty:latest No Issues
+    example-<region>.icr.io/user1/ibmnode:1 2 Issues
+    example-<region>.icr.io/user1/ibmnode:test1 1 Issue
+    example-<region>.icr.io/user1/ibmnode2:test2 7 Issues
+    ```
+    {: screen}</prod
 
 
     If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
@@ -73,7 +83,10 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    > map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+    ```txt
+    map[doc.url:/docs/images/docker_image_ibmliberty/ibmliberty_starter.html]
+    ```
+    {: screen}
 
 - Run the following `ibmcloud cr image-inspect` command to display the exposed ports for a specified image.
 
@@ -84,7 +97,10 @@ The following code examples demonstrate how you might use the formatting and fil
 
     The following message is an example of the output from the command:
 
-    > map[9080/tcp: 9443/tcp:]
+    ```txt
+    map[9080/tcp: 9443/tcp:]
+    ```
+    {: screen}
 
 ## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
