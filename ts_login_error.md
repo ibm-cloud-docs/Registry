@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-05-30"
 
 keywords: error, registry, not a registered command, registered command, cr, command, ibmcloud cr
 
