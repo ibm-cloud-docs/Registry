@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-04-13"
 
 keywords: error, registry, manifest type, tag, image, the manifest type for this image is not supported for tagging
 
