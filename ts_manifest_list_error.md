@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-04-13"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository
 
