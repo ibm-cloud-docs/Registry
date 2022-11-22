@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2022-11-22"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -47,7 +47,7 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to the service in your account
 - Access to a specific resource within the service
 - Access to all IAM-enabled services in your account
-- Access to resources within a [resource group](x2161955){: term}
+- Access to resources within a resource group
 
 After you define the scope of the IAM access policy, you assign a role.
 
