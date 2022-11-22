@@ -26,7 +26,7 @@ You receive the following error message when you try to run the [`ibmcloud cr lo
 {: tsSymptoms}
 
 ```txt
-Error saving credentials: error storing credentials - err: exit status 1, out: 
+Error saving credentials: error storing credentials - err: exit status 1, out:
 'The user name or passphrase you entered is not correct.'
 ```
 {: screen}
