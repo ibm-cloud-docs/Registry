@@ -25,13 +25,7 @@ toc:
           label: Public images
           topics:
           - registry_public_images.md
-          - include: ../RegistryImages/datashield-barbican/index-datashield-barbican.md
-          - include: ../RegistryImages/datashield-mysql/index-datashield-mysql.md
-          - include: ../RegistryImages/datashield-nginx/index-datashield-nginx.md
-          - include: ../RegistryImages/datashield-vault/index-datashield-vault.md
-          - include: ../RegistryImages/ibmcloud-secure-perimeter-health/index-ibmcloud-secure-perimeter-health.md
-          - include: ../RegistryImages/ibmcloud-secure-perimeter-network/index-ibmcloud-secure-perimeter-network.md
-          - include: ../RegistryImages/ibmliberty/index-ibmliberty.md
+          - /RegistryImages/toc
       - link:
           label: What are containers?
           href: https://www.ibm.com/topics/containers
@@ -59,9 +53,9 @@ toc:
       - topicgroup:
           label: Solution tutorials
           topics:
-          - include: ../solution-tutorials/vm-to-containers-and-kubernetes.md
-          - include: ../solution-tutorials/multi-region-k8s-cis.md
-          - include: ../solution-tutorials/continuous-deployment-to-kubernetes.md
+          - /solution-tutorials/solution-tutorials-vm-to-containers-and-kubernetes
+          - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
+          - /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
 
   - navgroup:
       id: howto
@@ -81,7 +75,7 @@ toc:
             navtitle: Managing IAM access
           - topic: registry_users.md
             navtitle: Defining IAM access policies
-      - include: ../va/va_index.md
+      - /va/toc
       - topic: terraform.md
         navtitle: Setting up Terraform for Container Registry
       - topicgroup:
@@ -117,7 +111,7 @@ toc:
       - topicgroup:
           label: Container Registry CLI
           topics:
-          - include: ../container-registry-cli-plugin/container-registry-cli.md
+          - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
           - registry_cli_list.md
           - registry_change_log.md
       - topicgroup:
@@ -177,7 +171,7 @@ toc:
               label: Troubleshooting pull and push errors
               topics:
               - ts_push_pull_docker.md
-              - include: ../containers/ts-app-02-imgpull.md
+              - /containers/containers-ts-app-image-pull
               - ts_iam_policy.md
           - topicgroup:
               label: Troubleshooting CLI commands
