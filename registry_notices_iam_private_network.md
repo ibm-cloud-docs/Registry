@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-11-23"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -65,13 +65,17 @@ If any of the previous statements is true when this change takes effect, the IP 
 You must take the appropriate actions before 23 June 2022. If you don’t make the appropriate updates, your requests to push and pull from {{site.data.keyword.registryshort}} might fail.
 {: important}
 
-If you access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM
+Depending on which of the following scenarios you fit, take the appropriate action.
+
+You access {{site.data.keyword.registryshort}} over the private network and maintain a list of restricted IP addresses in IAM.
 :   You must update your IAM restricted IP address list to include any IP addresses or subnets of hosts in your account that make requests to {{site.data.keyword.registryshort}}. You must keep the current {{site.data.keyword.registryshort}} private IP addresses in your restricted IP list until an announcement indicates it is safe to remove them. For more information about how to update a restricted IP address list, see [Allowing specific IP addresses](/docs/account?topic=account-ips) in the {{site.data.keyword.iamshort}} (IAM) documentation.
 
-If your firewalls are configured with the {{site.data.keyword.registryshort}} private IP addresses
+Your firewalls are configured with the {{site.data.keyword.registryshort}} private IP addresses.
 :   You must include the new private IP addresses in your firewall configuration. For more information about connecting to {{site.data.keyword.registryshort}} over the private network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private).
 
-For more information about the new and current {{site.data.keyword.registryshort}} private IP addresses, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry) in the {{site.data.keyword.containerlong_notm}} documentation or [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry) in the {{site.data.keyword.openshiftlong}} documentation.
-{: note}
+For more information about the new and current {{site.data.keyword.registryshort}} private IP addresses, use one of the following links:
+
+- For {{site.data.keyword.containerlong_notm}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+- For {{site.data.keyword.openshiftlong}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
 
 

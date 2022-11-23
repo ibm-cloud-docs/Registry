@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-23"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -241,7 +241,7 @@ subcollection: Registry
 
 * [Prepare for the changes](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_prepare)
 
-* [What if I did not make the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
+* [What if I did not implement the changes in time?](/docs/Registry?topic=Registry-registry_notices_iam_policy#notices_iam_policy_unprepared)
 
 [Minimum supported Docker version from 1 March 2022](/docs/Registry?topic=Registry-registry_notices_docker#registry_notices_docker)
 
@@ -286,7 +286,7 @@ subcollection: Registry
 
 * [23 June 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-23jun2022)
 
-    * [Change to {{site.data.keyword.registryshort}} private IP addresses in these regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
+    * [Change to {{site.data.keyword.registryshort}} private IP addresses in the following regions only: `br-sao`, `ca-tor`](/docs/Registry?topic=Registry-registry_release_notes#23jun2022_private_network)
 
 * [20 April 2022](/docs/Registry?topic=Registry-registry_release_notes#registry-20apr2022)
 
@@ -1132,7 +1132,7 @@ subcollection: Registry
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 
-    * [Authorzation API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
+    * [Authorization API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_auth)
 
     * [Image API methods](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg_images)
 
@@ -1474,7 +1474,7 @@ subcollection: Registry
 
 [Business continuity and disaster recovery](/docs/Registry?topic=Registry-bc-dr#bc-dr)
 
-* [Responsibilities when using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
+* [Your responsibilities when you're using {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr#bc-dr-responsibilities)
 
 * [Disaster recovery strategy](/docs/Registry?topic=Registry-bc-dr#bc-dr-strategy)
 
