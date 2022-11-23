@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-11-23"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -44,6 +44,11 @@ unauthorized: authentication required
 
 ```txt
 denied: requested access to the resource is denied
+```
+{: screen}
+
+```txt
+unauthorized: The login credentials are not valid, or your IBM Cloud account is not active.
 ```
 {: screen}
 
