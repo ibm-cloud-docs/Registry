@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-23"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -79,7 +79,7 @@ New commands for setting and checking the Vulnerability Advisor version are avai
     
     For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
 
-    To find out which version of Vulnerability Advisor you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version).
+    To find out which version of Vulnerability Advisor that you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version).
 
 ## 3 August 2022
 {: #registry-03aug2022}
@@ -106,12 +106,12 @@ Context-based restrictions {: #08jul2022_cbr}
 {: release-note}
 
 Change to {{site.data.keyword.registryshort}} private IP addresses in all regions {: #05jul2022_private_network}
-:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule.
+:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule.
 
     For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
 All accounts require IAM access policies {: #05jul2022_iam}
-:   To access {{site.data.keyword.registrylong_notm}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+:   To access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization is discontinued in the following {{site.data.keyword.registryshort}} regions:
 
@@ -129,7 +129,7 @@ All accounts require IAM access policies {: #05jul2022_iam}
 {: #registry-23jun2022}
 {: release-note}
 
-Change to {{site.data.keyword.registryshort}} private IP addresses in these regions only: `br-sao`, `ca-tor` {: #23jun2022_private_network}
+Change to {{site.data.keyword.registryshort}} private IP addresses in the following regions only: `br-sao`, `ca-tor` {: #23jun2022_private_network}
 :   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network in the `br-sao` and `ca-tor` regions, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees have also changed. This change also affects you if you have allowlists or a firewall rule. Other regions are not affected yet.
 
     For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
@@ -155,7 +155,7 @@ Amendment to the minimum supported Docker version for {{site.data.keyword.regist
 {: release-note}
 
 All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
-:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}} you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
 
