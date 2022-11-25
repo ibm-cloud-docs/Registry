@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-25"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -20,9 +20,6 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/account?topic=account-groups) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
 
-From 5 July 2022, all accounts require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
-{: important}
-
 The IAM access policy that you assign to users in your account determines the actions that a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.registryshort}} as operations that are allowed to be performed on the service. Each action is mapped to an [IAM platform or service role](/docs/account?topic=account-userroles) that you can assign to a user.
 
 If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles#custom-access-roles) and pick the actions to include.
@@ -31,12 +28,6 @@ If a specific role and its actions don't fit the use case that you're looking to
 IAM access policies are enforced only when you use IAM to log in to {{site.data.keyword.registryshort}}. If you want to restrict user access to one or more [namespaces](x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
 
 From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can set permissions so that you can configure access to resources within a namespace at the [resource group](x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
-
-If you started to use {{site.data.keyword.registrylong_notm}} before 4 October 2018, you must enable policy enforcement for each region so that you can use IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. If you do not enable this policy, any user in the account can manage registry resources. For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
-{: tip}
-
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
 
 For more information about IAM, see [How {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} works](/docs/account?topic=account-iamoverview#iamoverview).
 
@@ -82,14 +73,8 @@ The following table details actions that are mapped to platform management roles
 | Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
 {: caption="Table 1. IAM user roles and actions" caption-side="bottom"}
 
-From 19 August 2021, {{site.data.keyword.registrylong_notm}} tokens are discontinued and do not work. For more information, see [{{site.data.keyword.registrylong_notm}} Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
-{: deprecated}
-
 ## Service access roles
 {: #service_access_roles}
-
-From 5 July 2022, all accounts require IAM access policies. If you started to use {{site.data.keyword.registrylong_notm}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_release_notes#registry-25feb2019) in February 2019, you must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service. For more information, see [IAM access policies are required from 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_policy) and [Defining IAM access policies](/docs/Registry?topic=Registry-user).
-{: important}
 
 The following table details actions that are mapped to service access roles. Service access roles give users access to {{site.data.keyword.registryshort}} as well as the ability to call the {{site.data.keyword.registryshort}} API.
 
@@ -149,9 +134,6 @@ ibmcloud iam user-policy-create <user_email> --service-name container-registry -
 {: pre}
 
 The following table details actions that are mapped to operations on the service and to the service access roles for using {{site.data.keyword.registryshort}}.
-
-The `ibmcloud cr build` command is discontinued from 5 October 2021. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead. For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
-{: deprecated}
 
 | Action | Operation on service | Role | Status |
 |--------|----------------------|------|--------|

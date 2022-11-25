@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-25"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 
@@ -21,9 +21,6 @@ subcollection: Registry
 By pulling and pushing signed images, you can verify that your images were pushed by the correct party, such as your continuous integration (CI) tools.
 
 You can use {{site.data.keyword.redhat_full}} signatures to sign your images.
-
-From 1 November 2021, the Notary v1 service that supports [Docker Content Trust](https://docs.docker.com/engine/security/trust/){: external} and `docker trust` commands in {{site.data.keyword.registrylong_notm}} is discontinued.
-{: deprecated}
 
 ## Signing images by using {{site.data.keyword.redhat_notm}} signatures
 {: #registry_trustedcontent_red_hat_sig}
