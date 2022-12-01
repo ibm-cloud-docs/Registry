@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-12-01"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -58,7 +58,18 @@ For more information, see [What are context-based restrictions?](/docs/account?t
 
 For an example of how to set up context-based restrictions, see the context-based restrictions tutorial [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 
-When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. To set up your own context-based restrictions for {{site.data.keyword.registryshort_notm}}, when you're creating a rule, in the **Select your resources** section, select **Container Registry**. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image.
+When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. To set up your own context-based restrictions for {{site.data.keyword.registryshort_notm}}, when you're creating a rule, in the **Select your resources** section, select **Container Registry**. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image. 
+
+For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
+
+| Attribute type | Operator | Value |
+|----------------|----------|-------|
+| `Region` | `string equals` | `London`|
+| `Resource Type` | `string equals` | `namespace` |
+| `Resource Name` | `string equals` | `<my_project>` |
+{: caption="Table 1. Example attribute types" caption-side="bottom"}
+
+The **Resource Name** value is a namespace, as shown by the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command.
 
 ## Platform management roles
 {: #platform_management_roles}
