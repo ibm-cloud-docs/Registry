@@ -684,5 +684,3 @@ Introducing {{site.data.keyword.registrylong_notm}} {: #27jun2017_ga}
 
     For more information about how to use {{site.data.keyword.registryshort}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started).
 
-
-
