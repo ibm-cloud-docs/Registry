@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -122,71 +122,71 @@ subcollection: Registry
 
 * [Accessing the public IBM images by using the CLI](/docs/Registry?topic=Registry-public_images#public_images_cli)
 
-[Getting started with the `datashield-barbican` image](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican_starter)
+[Getting started with the `datashield-barbican` image](/docs/Registry?topic=Registry-datashield-barbican_starter#datashield-barbican_starter)
 
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican-deploy)
+* [Deploying the image](/docs/Registry?topic=Registry-datashield-barbican_starter#datashield-barbican-deploy)
 
-* [Creating a secret](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican-secret)
+* [Creating a secret](/docs/Registry?topic=Registry-datashield-barbican_starter#datashield-barbican-secret)
 
-[Getting started with the `datashield-mariadb` image](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb_starter)
+[Getting started with the `datashield-mariadb` image](/docs/Registry?topic=Registry-datashield-mariadb_starter#datashield-mariadb_starter)
 
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-deploy)
+* [Deploying the image](/docs/Registry?topic=Registry-datashield-mariadb_starter#datashield-mariadb-deploy)
 
-    * [Accepted environment variables](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-variables)
+    * [Accepted environment variables](/docs/Registry?topic=Registry-datashield-mariadb_starter#datashield-mariadb-variables)
 
-* [Connecting to the MariaDB instance](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-connect)
+* [Connecting to the MariaDB instance](/docs/Registry?topic=Registry-datashield-mariadb_starter#datashield-mariadb-connect)
 
-[Getting started with the `datashield-nginx` image](/docs/Registry?topic=RegistryImages-datashield-nginx_starter#datashield-nginx_starter)
+[Getting started with the `datashield-nginx` image](/docs/Registry?topic=Registry-datashield-nginx_starter#datashield-nginx_starter)
 
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-nginx_starter#datashield-nginx-deploy)
+* [Deploying the image](/docs/Registry?topic=Registry-datashield-nginx_starter#datashield-nginx-deploy)
 
-[Getting started with the `datashield-vault` image](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault_starter)
+[Getting started with the `datashield-vault` image](/docs/Registry?topic=Registry-datashield-vault_starter#datashield-vault_starter)
 
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault-deploy)
+* [Deploying the image](/docs/Registry?topic=Registry-datashield-vault_starter#datashield-vault-deploy)
 
-* [Accessing a protected instance of Vault](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault-access)
+* [Accessing a protected instance of Vault](/docs/Registry?topic=Registry-datashield-vault_starter#datashield-vault-access)
 
-[Getting started with `ibmcloud-secure-perimeter-health`](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
+[Getting started with `ibmcloud-secure-perimeter-health`](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
 
-* [How the image works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_how-it-works)
+* [How the image works](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_how-it-works)
 
-* [What is included with the image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_whats_included)
+* [What is included with the image](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_whats_included)
 
-* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_provision_cluster)
+* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_provision_cluster)
 
-* [Scan private networks within a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_private_networks)
+* [Scan private networks within a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_private_networks)
 
-    * [Before you begin](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_private_networks_prereq)
+    * [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_private_networks_prereq)
 
-* [Scan public networks outside a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_public_networks)
+* [Scan public networks outside a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_public_networks)
 
-    * [Before you begin](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_public_networks_prereq)
+    * [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_public_networks_prereq)
 
-* [Analyzing scan results](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_scan_results)
+* [Analyzing scan results](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_scan_results)
 
-* [Container argument reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_reference_container_arg)
+* [Container argument reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_reference_container_arg)
 
-* [Environment variable reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#sph_reference_env_var)
+* [Environment variable reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-health#sph_reference_env_var)
 
-[Getting started with `ibmcloud-secure-perimeter-network`](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#ibmcloud-secure-perimeter-network)
+[Getting started with `ibmcloud-secure-perimeter-network`](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#ibmcloud-secure-perimeter-network)
 
-* [How the image works](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_how-it-works)
+* [How the image works](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_how-it-works)
 
-* [What is included with the image](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_whats_included)
+* [What is included with the image](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_whats_included)
 
-* [Before you begin](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_prerequisites)
+* [Before you begin](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_prerequisites)
 
-* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_provision_cluster)
+* [Provision a Kubernetes cluster in a Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_provision_cluster)
 
-* [Run the configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_initial_setup)
+* [Run the configuration of your Secure Perimeter Vyatta](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_initial_setup)
 
-* [Set up a Kubernetes pod within your Secure Perimeter](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_setup)
+* [Set up a Kubernetes pod within your Secure Perimeter](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_setup)
 
-* [`config.json` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_config_json)
+* [`config.json` reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_reference_config_json)
 
-* [`rules.conf` reference](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
+* [`rules.conf` reference](/docs/Registry?topic=Registry-ibmcloud-secure-perimeter-network#spn_reference_rules_conf)
 
-[`ibm/liberty` public image - deprecated](/docs/Registry?topic=RegistryImages-ibmliberty#ibmliberty)
+[`ibm/liberty` public image - deprecated](/docs/Registry?topic=Registry-ibmliberty#ibmliberty)
 
 
 ## What are containers?
@@ -589,127 +589,127 @@ subcollection: Registry
 {: #sitemap_solution_tutorials}
 
 
-[Moving a VM based app to Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes)
+[Moving a VM based app to Kubernetes](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes)
 
-* [Objectives](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-objectives)
+* [Objectives](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-objectives)
 
-* [Architecture](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-architecture)
+* [Architecture](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-architecture)
 
-    * [Traditional app architecture with VMs](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-2)
+    * [Traditional app architecture with VMs](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-2)
 
-    * [Containerized architecture](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-3)
+    * [Containerized architecture](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-3)
 
-    * [VMs, containers, and Kubernetes](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
+    * [VMs, containers, and Kubernetes](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-4)
 
-        * [Virtual machines vs containers](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-5)
+        * [Virtual machines vs containers](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-5)
 
-        * [Kubernetes orchestration](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
+        * [Kubernetes orchestration](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-6)
 
-    * [What IBM's doing for you](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
+    * [What IBM's doing for you](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-7)
 
-* [Sizing clusters](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
+* [Sizing clusters](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-sizing_clusters)
 
-* [Decide what Database option to use](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-database_options)
+* [Decide what Database option to use](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-database_options)
 
-* [Decide where to store application files](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-decide_where_to_store_data)
+* [Decide where to store application files](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-decide_where_to_store_data)
 
-    * [Non-persistent data storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-11)
+    * [Non-persistent data storage](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-11)
 
-    * [Learn how to create persistent data storage for your app](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-12)
+    * [Learn how to create persistent data storage for your app](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-12)
 
-    * [Learn how to move existing data to persistent storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-13)
+    * [Learn how to move existing data to persistent storage](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-13)
 
-    * [Set up backups for persistent storage](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-14)
+    * [Set up backups for persistent storage](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-14)
 
-* [Prepare your code](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-prepare_code)
+* [Prepare your code](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-prepare_code)
 
-    * [Apply the 12-factor principles](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-16)
+    * [Apply the 12-factor principles](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-16)
 
-    * [Store credentials in Kubernetes secrets](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-17)
+    * [Store credentials in Kubernetes secrets](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-17)
 
-* [Containerize your app](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-build_docker_images)
+* [Containerize your app](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-build_docker_images)
 
-* [Deploy your app to a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-deploy_to_kubernetes)
+* [Deploy your app to a Kubernetes cluster](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-deploy_to_kubernetes)
 
-    * [Learn how to create a Kubernetes deployment yaml file](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-20)
+    * [Learn how to create a Kubernetes deployment yaml file](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-20)
 
-* [Summary](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-summary)
+* [Summary](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-summary)
 
-* [Put everything learned to practice, run the JPetStore app in your cluster](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-runthejpetstore)
+* [Put everything learned to practice, run the JPetStore app in your cluster](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-runthejpetstore)
 
-* [Related Content](/docs/Registry?topic=solution-tutorials-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-related)
+* [Related Content](/docs/Registry?topic=Registry-vm-to-containers-and-kubernetes#vm-to-containers-and-kubernetes-related)
 
-[Resilient and secure multi-region Kubernetes clusters with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis)
+[Resilient and secure multi-region Kubernetes clusters with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis)
 
-* [Objectives](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-objectives)
+* [Objectives](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-objectives)
 
-* [Before you begin](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-prereqs)
+* [Before you begin](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-prereqs)
 
-* [Deploy an application to one location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-2)
+* [Deploy an application to one location](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-2)
 
-    * [Create a Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-3)
+    * [Create a Kubernetes cluster](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-3)
 
-    * [Deploy the application to the Kubernetes cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-deploy_application)
+    * [Deploy the application to the Kubernetes cluster](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-deploy_application)
 
-    * [Get the Ingress Subdomain assigned to the cluster](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-CSALB_IP_subdomain)
+    * [Get the Ingress Subdomain assigned to the cluster](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-CSALB_IP_subdomain)
 
-    * [Configure the Ingress for your DNS subdomain](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-ingress)
+    * [Configure the Ingress for your DNS subdomain](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-ingress)
 
-* [And then to another location](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-0)
+* [And then to another location](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-0)
 
-* [Configure multi-location load-balancing](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-4)
+* [Configure multi-location load-balancing](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-4)
 
-    * [Register a custom domain with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-create_cis_instance)
+    * [Register a custom domain with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-create_cis_instance)
 
-    * [Verify the Global Load Balancer name](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-glb)
+    * [Verify the Global Load Balancer name](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-glb)
 
-    * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-12)
+    * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-12)
 
-    * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
+    * [Define Origin Pools](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-13)
 
-        * [One pool for the cluster in Dallas](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-14)
+        * [One pool for the cluster in Dallas](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-14)
 
-        * [One pool for the cluster in London](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-15)
+        * [One pool for the cluster in London](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-15)
 
-        * [And one pool with both clusters](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-16)
+        * [And one pool with both clusters](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-16)
 
-    * [Create the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-17)
+    * [Create the Global Load Balancer](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-17)
 
-* [Secure the application](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-secure_via_CIS)
+* [Secure the application](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-secure_via_CIS)
 
-    * [Turn the Web Application Firewall On](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-20)
+    * [Turn the Web Application Firewall On](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-20)
 
-    * [Increase performance and protect from Denial of Service attacks](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-proxy_setting)
+    * [Increase performance and protect from Denial of Service attacks](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-proxy_setting)
 
-* [Remove resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-6)
+* [Remove resources](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-6)
 
-    * [Remove Kubernetes Cluster resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-23)
+    * [Remove Kubernetes Cluster resources](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-23)
 
-    * [Remove {{site.data.keyword.cis_short_notm}} resources](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-24)
+    * [Remove {{site.data.keyword.cis_short_notm}} resources](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-24)
 
-* [Related content](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-7)
+* [Related content](/docs/Registry?topic=Registry-multi-region-k8s-cis#multi-region-k8s-cis-7)
 
-[Continuous Deployment to Kubernetes](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes)
+[Continuous Deployment to Kubernetes](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes)
 
-* [Objectives](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-objectives)
+* [Objectives](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-objectives)
 
-* [Before you begin](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-prereq)
+* [Before you begin](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-prereq)
 
-* [Create development Kubernetes cluster](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_kube_cluster)
+* [Create development Kubernetes cluster](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_kube_cluster)
 
-* [Create a starter application](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
+* [Create a starter application](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
 
-* [Modify the application and deploy the updates](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-6)
+* [Modify the application and deploy the updates](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-6)
 
-* [Deploy to a production environment](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-deploytoproduction)
+* [Deploy to a production environment](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-deploytoproduction)
 
-* [Setup Slack notifications](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-setup_slack)
+* [Setup Slack notifications](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-setup_slack)
 
-* [Remove resources](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-removeresources)
+* [Remove resources](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-removeresources)
 
-* [Expand the Tutorial](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-expandTutorial)
+* [Expand the Tutorial](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-expandTutorial)
 
-* [Related Content](/docs/Registry?topic=solution-tutorials-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
+* [Related Content](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-related)
 
 
 ## Setting up the {{site.data.keyword.registryshort}} CLI and namespace
@@ -919,31 +919,31 @@ subcollection: Registry
 {: #sitemap_managing_image_security_with_vulnerability_advisor}
 
 
-[Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index#va_index)
+[Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index#va_index)
 
-* [About Vulnerability Advisor](/docs/Registry?topic=va-va_index#about)
+* [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index#about)
 
-    * [Data protection](/docs/Registry?topic=va-va_index#about_data_protection)
+    * [Data protection](/docs/Registry?topic=Registry-va_index#about_data_protection)
 
-* [Types of vulnerabilities](/docs/Registry?topic=va-va_index#types)
+* [Types of vulnerabilities](/docs/Registry?topic=Registry-va_index#types)
 
-    * [Vulnerable packages](/docs/Registry?topic=va-va_index#packages)
+    * [Vulnerable packages](/docs/Registry?topic=Registry-va_index#packages)
 
-    * [Configuration issues - version 3 only](/docs/Registry?topic=va-va_index#app_configurations)
+    * [Configuration issues - version 3 only](/docs/Registry?topic=Registry-va_index#app_configurations)
 
-* [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index#va_set_version)
+* [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index#va_set_version)
 
-* [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
+* [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=va-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=Registry-va_index#va_reviewing_gui)
 
-    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
+    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index#va_registry_cli)
 
-* [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy)
+* [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index#va_managing_policy)
 
-    * [Setting exemption policies by using the console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
+    * [Setting exemption policies by using the console](/docs/Registry?topic=Registry-va_index#va_managing_policy_gui)
 
-    * [Setting exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
+    * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index#va_managing_policy_cli)
 
 
 ## Setting up Terraform for Container Registry
@@ -1163,265 +1163,265 @@ subcollection: Registry
 {: #sitemap_container_registry_cli}
 
 
-[{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli)
+[{{site.data.keyword.registrylong_notm}} CLI](/docs/Registry?topic=Registry-containerregcli#containerregcli)
 
-* [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#containerregcli_prereq)
+* [Prerequisites](/docs/Registry?topic=Registry-containerregcli#containerregcli_prereq)
 
-* [`ibmcloud cr api`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api)
+* [`ibmcloud cr api`](/docs/Registry?topic=Registry-containerregcli#bx_cr_api)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_api_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_api_prereq)
 
-* [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add)
+* [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add_example)
 
-* [`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list)
+* [`ibmcloud cr exemption-list` (`ibmcloud cr exemptions`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list_example)
 
-* [`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm)
+* [`ibmcloud cr exemption-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm_example)
 
-* [`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types)
+* [`ibmcloud cr exemption-types`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types_prereq)
 
-* [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable)
+* [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable_prereq)
 
-* [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status)
+* [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status)
 
-* [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests)
+* [`ibmcloud cr image-digests` (`ibmcloud cr digests`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests_example)
 
-* [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect)
+* [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect_example)
 
-* [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list)
+* [`ibmcloud cr image-list` (`ibmcloud cr images`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list_example)
 
-* [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged)
+* [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged_example)
 
-* [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore)
+* [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore_example)
 
-* [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm)
+* [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm_example)
 
-* [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag)
+* [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag_example)
 
-* [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag)
+* [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag_example)
 
-* [`ibmcloud cr info`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_info)
+* [`ibmcloud cr info`](/docs/Registry?topic=Registry-containerregcli#bx_cr_info)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_info_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_info_prereq)
 
-* [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login)
+* [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_login_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login__example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_login__example)
 
-* [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect)
+* [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect_example)
 
-* [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add)
+* [`ibmcloud cr namespace-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add_example)
 
-* [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign)
+* [`ibmcloud cr namespace-assign`](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign_example)
 
-* [`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list)
+* [`ibmcloud cr namespace-list` (`ibmcloud cr namespaces`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list_example)
 
-* [`ibmcloud cr namespace-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm)
+* [`ibmcloud cr namespace-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_rm_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_rm_example)
 
-* [`ibmcloud cr plan`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan)
+* [`ibmcloud cr plan`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_prereq)
 
-* [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade)
+* [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade_example)
 
-* [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics)
+* [`ibmcloud cr platform-metrics`](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics_example)
 
-* [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only)
+* [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only_example)
 
-* [`ibmcloud cr quota`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota)
+* [`ibmcloud cr quota`](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_prereq)
 
-* [`ibmcloud cr quota-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set)
+* [`ibmcloud cr quota-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_quota_set_example)
 
-* [`ibmcloud cr region`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region)
+* [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_prereq)
 
-* [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set)
+* [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set_example)
 
-* [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list)
+* [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_prereq)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list_example)
 
-* [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set)
+* [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set_example)
 
-* [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run)
+* [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run_example)
 
-* [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list)
+* [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list_example)
 
-* [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version)
+* [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_prereq)
 
-* [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set)
+* [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_option)
 
-    * [Example](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set_example)
+    * [Example](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set_example)
 
-* [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va)
+* [`ibmcloud cr vulnerability-assessment` (`ibmcloud cr va`)](/docs/Registry?topic=Registry-containerregcli#bx_cr_va)
 
-    * [Prerequisites](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_prereq)
+    * [Prerequisites](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_prereq)
 
-    * [Command options](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_option)
+    * [Command options](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_option)
 
-    * [Examples](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va_example)
+    * [Examples](/docs/Registry?topic=Registry-containerregcli#bx_cr_va_example)
 
 [Formatting and filtering the CLI output](/docs/Registry?topic=Registry-registry_cli_list#registry_cli_list)
 
@@ -1576,9 +1576,9 @@ subcollection: Registry
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 
-[Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull#ts-app-image-pull)
+[Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull#ts-app-image-pull)
 
-* [Troubleshooting image pull secrets that use API keys](/docs/Registry?topic=containers-ts-app-image-pull#img-pull-api-key)
+* [Troubleshooting image pull secrets that use API keys](/docs/Registry?topic=Registry-ts-app-image-pull#img-pull-api-key)
 
 [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 
