@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-12-08"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -29,9 +29,10 @@ Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [A
 Version 1.0.2 of the CLI was released on 19 October 2022.
 
 This release has the following changes:
+
 - Minor bug fixes.
-- Translation updates.
 - Vulnerability remediations.
+- Updated translations.
 
 ## Version 0.1.584
 {: #cli-change-log-01584}
@@ -39,7 +40,8 @@ This release has the following changes:
 Version 0.1.584 of the CLI was released on 19 October 2022.
 
 This release has the following changes:
-- Translation updates.
+
+- Updated translations.
 
 ## Version 1.0.1
 {: #cli-change-logv1-101}
@@ -47,8 +49,9 @@ This release has the following changes:
 Version 1.0.1 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-- Translation updates.
+- Updated translations.
 
 ## Version 0.1.583
 {: #cli-change-log-01583}
@@ -56,8 +59,9 @@ This release has the following changes:
 Version 0.1.583 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-- Translation updates.
+- Updated translations.
 
 ## Version 1.0.0
 {: #cli-change-logv1-100}
@@ -65,7 +69,8 @@ This release has the following changes:
 Version 1.0.0 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
-- Vulnerability Advisor v4 is now available, see the announcement for more details.
+
+- Vulnerability Advisor v4 is now available, see [Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
 - Image and digest list output no longer includes security status by default. You can either add the `--va` argument to include security status for all the listed images, or you can use the `ibmcloud cr va` command to query security status for an individual image.
 
 ## Version 0.1.582
@@ -74,6 +79,5 @@ This release has the following changes:
 Version 0.1.582 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-
-
