@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-12-08"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -23,15 +23,36 @@ For information about how to update the {{site.data.keyword.registryshort}} CLI,
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
 
+## Version 1.0.5
+{: #cli-change-logv1-105}
+
+Version 1.0.5 of the CLI was released on 5 December 2022.
+
+This release has the following changes:
+
+- Vulnerability remediations.
+- Updated translations.
+- You can install and uninstall the container-registry plugin by using the `cr` alias.
+
+## Version 0.1.585
+{: #cli-change-log-01585}
+
+Version 0.1.585 of the CLI was released on 5 December 2022.
+
+This release has the following changes:
+
+- Vulnerability remediations.
+
 ## Version 1.0.2
 {: #cli-change-logv1-102}
 
 Version 1.0.2 of the CLI was released on 19 October 2022.
 
 This release has the following changes:
+
 - Minor bug fixes.
-- Translation updates.
 - Vulnerability remediations.
+- Updated translations.
 
 ## Version 0.1.584
 {: #cli-change-log-01584}
@@ -39,7 +60,8 @@ This release has the following changes:
 Version 0.1.584 of the CLI was released on 19 October 2022.
 
 This release has the following changes:
-- Translation updates.
+
+- Updated translations.
 
 ## Version 1.0.1
 {: #cli-change-logv1-101}
@@ -47,8 +69,9 @@ This release has the following changes:
 Version 1.0.1 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-- Translation updates.
+- Updated translations.
 
 ## Version 0.1.583
 {: #cli-change-log-01583}
@@ -56,8 +79,9 @@ This release has the following changes:
 Version 0.1.583 of the CLI was released on 23 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-- Translation updates.
+- Updated translations.
 
 ## Version 1.0.0
 {: #cli-change-logv1-100}
@@ -65,7 +89,8 @@ This release has the following changes:
 Version 1.0.0 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
-- Vulnerability Advisor v4 is now available, see the announcement for more details.
+
+- Vulnerability Advisor v4 is now available, see [Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} plug-in 1.0.0](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
 - Image and digest list output no longer includes security status by default. You can either add the `--va` argument to include security status for all the listed images, or you can use the `ibmcloud cr va` command to query security status for an individual image.
 
 ## Version 0.1.582
@@ -74,6 +99,5 @@ This release has the following changes:
 Version 0.1.582 of the CLI was released on 15 September 2022.
 
 This release has the following changes:
+
 - Vulnerability remediations.
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-12-08"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -410,5 +410,3 @@ Docker V2 schema 2 images are supported. Manifest lists are also supported. For 
 
 Docker V2 schema 1 images are discontinued and you can't push them to {{site.data.keyword.registryshort}} anymore.
 {: note}
-
-
