@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -52,13 +52,13 @@ Try out the tutorial [Granting access to {{site.data.keyword.registryshort}} res
 ## Context-based restrictions
 {: #iam_cbr}
 
-{{site.data.keyword.registryshort}} also supports context-based restrictions. You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests. These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. 
+{{site.data.keyword.registryshort}} also supports context-based restrictions. You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests. These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection.
 
 For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis).
 
 For an example of how to set up context-based restrictions, see the context-based restrictions tutorial [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 
-When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. To set up your own context-based restrictions for {{site.data.keyword.registryshort_notm}}, when you're creating a rule, in the **Select your resources** section, select **Container Registry**. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image. 
+When you set up context-based restrictions, the restrictions apply to everything for the selected service in the account unless you select a subset of resources. To set up your own context-based restrictions for {{site.data.keyword.registryshort_notm}}, when you're creating a rule, in the **Select your resources** section, select **Container Registry**. {{site.data.keyword.registryshort}} supports the following subset of resources: `resource type = namespace` and `resource id = YOUR_IMAGE_NAMESPACE`, where `YOUR_IMAGE_NAMESPACE` is the namespace of your image.
 
 For example, if your image is in the format `uk.icr.io/<my_project>/<my_image>:latest`, where `<my_project>` is the name of your project and `<my_image>` is the name of the image, the attribute types are as shown in the following table.
 
@@ -82,7 +82,7 @@ The following table details actions that are mapped to platform management roles
 | Editor | Not supported | |
 | Operator | Not supported | |
 | Administrator | Configure access for other users.  \n  \n Apply pull secrets to clusters. | For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).  \n  \n To create clusters in {{site.data.keyword.containerlong_notm}} that have pull secrets to access images in {{site.data.keyword.registryshort}}, you must have the Administrator role. To use the [`ibmcloud ks cluster pull-secret apply`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply) command to configure the pull secrets for an existing cluster, you must have the Administrator role. For more information, see [Preparing to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). |
-{: caption="Table 1. IAM user roles and actions" caption-side="bottom"}
+{: caption="Table 2. IAM user roles and actions" caption-side="bottom"}
 
 ## Service access roles
 {: #service_access_roles}
@@ -94,7 +94,7 @@ The following table details actions that are mapped to service access roles. Ser
 | Reader | The Reader role can view information. | View, inspect, and pull images.  \n  \n View and analyze namespaces.  \n  \n View quotas.  \n  \n View vulnerability reports.  \n  \n View image signatures.  \n  \n View retention policies.  \n  \n View the contents of the trash.  \n  \n View the contents of the manifest for an image.  \n  \n List Vulnerability Advisor security exemption policies and types of security exemptions. |
 | Writer | The Writer role can edit information. | Push, delete, and restore images.  \n  \n View quotas.  \n  \n Sign images.  \n  \n Set and run retention policies.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
 | Manager | The Manager role can perform all actions. | View, inspect, pull, push, delete, and restore images.  \n  \n View, add, analyze, and remove namespaces.  \n  \n Assign namespaces to resource groups.  \n  \n View and set quotas.  \n  \n View vulnerability reports.  \n  \n View and create image signatures.  \n  \n Review and change pricing plans.  \n  \n Enable IAM access policy enforcement.  \n  \n List, add, and remove Vulnerability Advisor security issue exemption policies.  \n  \n List types of security exemptions.  \n  \n Set and run retention policies.  \n  \n View the contents of the trash.  \n  \n Restore images.  \n  \n  View the contents of the manifest for an image.  \n  \n Prevent or allow image pulls or pushes over public network connections for your account.  \n  \n Check whether the use of public connections is prevented for image pushes or pulls in your account.  \n  \n Delete all untagged images in your {{site.data.keyword.registryshort}} account. |
-{: caption="Table 2. IAM service access roles and actions" caption-side="bottom"}
+{: caption="Table 3. IAM service access roles and actions" caption-side="bottom"}
 
 For the following {{site.data.keyword.registryshort}} commands, you must have at least one of the specified roles as shown in the following tables. To create a policy that allows access to {{site.data.keyword.registryshort}}, you must create a policy where the following criteria apply.
 
@@ -130,7 +130,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.quota.set` | [`ibmcloud cr quota-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_quota_set) Modify the specified quota. | Manager |
 | `container-registry.settings.get` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Get registry service settings for the targeted account, such as whether platform metrics are enabled. | Reader, Writer, Manager |
 | `container-registry.settings.set` | [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) Update registry service settings for the targeted account, such as enabling platform metrics. | Manager |
-{: caption="Table 3. Service actions and operations for configuring {{site.data.keyword.registryshort}}" caption-side="bottom"}
+{: caption="Table 4. Service actions and operations for configuring {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
 ### Access roles for using {{site.data.keyword.registryshort}}
 {: #access_roles_using}
@@ -158,7 +158,7 @@ The following table details actions that are mapped to operations on the service
 | `container-registry.retention.get` | View the image retention policy for a namespace by using the API, see [{{site.data.keyword.registrylong_notm}} API](/apidocs/container-registry). | Reader, Manager | |
 | `container-registry.retention.set` | [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) Set a policy to clean up your namespaces by retaining only container images that meet your criteria. | Writer, Manager | |
 | `container-registry.retention.list` | [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) List the image retention policies for your account. | Reader, Manager | |
-{: caption="Table 4. Service actions and operations for using {{site.data.keyword.registryshort}}" caption-side="bottom"}
+{: caption="Table 5. Service actions and operations for using {{site.data.keyword.registryshort}}" caption-side="bottom"}
 
 ## Assigning access to {{site.data.keyword.registryshort}} in the console
 {: #registry_iam_assign-access-console}
@@ -195,14 +195,14 @@ For step-by-step instructions for assigning, removing, and reviewing access, see
 | Reader         | `crn:v1:bluemix:public:container-registry::::serviceRole:Reader`        |
 | Writer         | `crn:v1:bluemix:public:container-registry::::serviceRole:Writer`        |
 | Manager        | `crn:v1:bluemix:public:container-registry::::serviceRole:Manager`       |
-{: caption="Table 5. Role ID values for API use" caption-side="bottom"}
+{: caption="Table 6. Role ID values for API use" caption-side="bottom"}
 
 The following example is for assigning the `Manager` role for {{site.data.keyword.registryshort}}:
 
 Use `container-registry` for the service name, and refer to the Role ID values table to ensure that you're using the correct value for the CRN.
 {: tip}
 
-```curl 
+```curl
 curl -X POST 'https://iam.cloud.ibm.com/v1/policies' -H 'Authorization: Bearer $TOKEN' -H 'Content-Type: application/json' -d '{
   "type": "access",
   "description": "Manager role for Container Registry",
@@ -285,7 +285,7 @@ System.out.println(policy);
 ```
 {: java}
 {: codeblock}
-   
+
 ```javascript
 const policySubjects = [
   {
@@ -426,6 +426,3 @@ resource "ibm_iam_user_policy" "policy" {
 {: codeblock}
 
 For more information, see [ibm_iam_user_policy](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/iam_user_policy){: external} in the Terraform documentation.
-
-
-

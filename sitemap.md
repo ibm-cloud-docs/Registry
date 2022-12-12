@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-12"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -121,30 +121,6 @@ subcollection: Registry
 [Public {{site.data.keyword.IBM_notm}} images](/docs/Registry?topic=Registry-public_images#public_images)
 
 * [Accessing the public IBM images by using the CLI](/docs/Registry?topic=Registry-public_images#public_images_cli)
-
-[Getting started with the `datashield-barbican` image](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican_starter)
-
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican-deploy)
-
-* [Creating a secret](/docs/Registry?topic=RegistryImages-datashield-barbican_starter#datashield-barbican-secret)
-
-[Getting started with the `datashield-mariadb` image](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb_starter)
-
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-deploy)
-
-    * [Accepted environment variables](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-variables)
-
-* [Connecting to the MariaDB instance](/docs/Registry?topic=RegistryImages-datashield-mariadb_starter#datashield-mariadb-connect)
-
-[Getting started with the `datashield-nginx` image](/docs/Registry?topic=RegistryImages-datashield-nginx_starter#datashield-nginx_starter)
-
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-nginx_starter#datashield-nginx-deploy)
-
-[Getting started with the `datashield-vault` image](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault_starter)
-
-* [Deploying the image](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault-deploy)
-
-* [Accessing a protected instance of Vault](/docs/Registry?topic=RegistryImages-datashield-vault_starter#datashield-vault-access)
 
 [Getting started with `ibmcloud-secure-perimeter-health`](/docs/Registry?topic=RegistryImages-ibmcloud-secure-perimeter-health#ibmcloud-secure-perimeter-health)
 
