@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-14"
 
 keywords: change log, cli, versions, change log for Container Registry CLI, updates to Container Registry CLI
 
@@ -18,7 +18,7 @@ subcollection: Registry
 In this change log, you can learn about the most recent changes, improvements, and updates for the {{site.data.keyword.registrylong}} CLI.
 {: shortdesc}
 
-For information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
+For more information about how to update the {{site.data.keyword.registryshort}} CLI, see [Updating the container-registry CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
@@ -32,7 +32,7 @@ This release has the following changes:
 
 - Vulnerability remediations.
 - Updated translations.
-- You can install and uninstall the container-registry plugin by using the `cr` alias.
+- You can install and uninstall the container-registry plug-in by using the `cr` alias.
 
 ## Version 0.1.585
 {: #cli-change-log-01585}
