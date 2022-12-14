@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-12-14"
 
 keywords: access restrictions, IP addresses, access, public, private, network
 
@@ -22,4 +22,15 @@ To enable IAM IP address access restrictions, you must ensure that the {{site.da
 
 You must ensure that the IP addresses of any computers that can originate pulls and pushes are added to the IAM IP address access list, see [Allowing specific IP addresses](/docs/account?topic=account-ips).
 
+## Granting access if you are using a public network
+{: #registry_iam_ip_public}
 
+If you're using {{site.data.keyword.registrylong_notm}} over a public network, you must ensure that the Public IP addresses of any computers that can originate pulls and pushes are added to the IAM IP allowlist.
+
+## Granting access if you are using a private network
+{: #registry_iam_ip_private}
+
+If you're using {{site.data.keyword.registrylong_notm}} in one of the following scenarios, you must add the private IP addresses of any computers that can originate pulls and pushes to the allowlist.
+
+- You're using one of the `private.*` domains, for example, `private.us.icr.io`.
+- You're using an {{site.data.keyword.containerlong_notm}} cluster in a [configuration](/docs/containers?topic=containers-registry#cluster_registry_auth_private) that automatically talks to the registry over a private connection.
