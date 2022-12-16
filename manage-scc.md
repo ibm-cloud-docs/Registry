@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-12-16"
 
 keywords: Security and compliance for IBM Cloud Container Registry, security for IBM Cloud Container Registry, compliance for IBM Cloud Container Registry, managing security and compliance for container registry, monitoring security and compliance for container registry, goals, container registry, security insight, security, compliance, registry, user access
 
@@ -23,7 +23,6 @@ With the {{site.data.keyword.compliance_short}}, you can:
 - Monitor for controls and goals that are applicable to {{site.data.keyword.registryshort}}.
 - Define rules for {{site.data.keyword.registryshort}} that can help to standardize resource configuration.
 
-
 ## Monitoring security and compliance posture
 {: #monitor-container-registry}
 
@@ -33,7 +32,6 @@ All the goals for {{site.data.keyword.registryshort}} are added to the {{site.da
 {: note}
 
 To start monitoring your resources, see [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
-
 
 ### Available goals for {{site.data.keyword.registryshort}}
 {: #container-registry-available-goals}
@@ -92,7 +90,3 @@ For example, use the following rule if you want *`private_only`* to be true, but
 }
 ```
 {: codeblock}
-
-To learn more about configuration rules, see [What is Configuration Governance?](/docs/security-compliance?topic=security-compliance-what-is-governance)
-
-
