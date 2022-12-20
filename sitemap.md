@@ -937,12 +937,6 @@ subcollection: Registry
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
 
-* [Monitoring security and compliance posture](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
-
-    * [Available goals for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
-
-* [Governing {{site.data.keyword.registryshort}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
-
 [Using VPE for VPC to privately connect](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
 * [Before you begin](/docs/Registry?topic=Registry-registry_vpe#registry_vpe_prereqs)
