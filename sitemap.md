@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -636,8 +636,6 @@ subcollection: Registry
 * [Configure multi-location load-balancing](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-4)
 
     * [Register a custom domain with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-create_cis_instance)
-
-    * [Verify the Global Load Balancer name](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-glb)
 
     * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-12)
 
