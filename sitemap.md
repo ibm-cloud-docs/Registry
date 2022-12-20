@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -637,8 +637,6 @@ subcollection: Registry
 
     * [Register a custom domain with {{site.data.keyword.cis_full_notm}}](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-create_cis_instance)
 
-    * [Verify the Global Load Balancer name](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-glb)
-
     * [Configure Health Check for the Global Load Balancer](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-12)
 
     * [Define Origin Pools](/docs/Registry?topic=solution-tutorials-multi-region-k8s-cis#multi-region-k8s-cis-13)
@@ -938,12 +936,6 @@ subcollection: Registry
 
 
 [Managing security and compliance](/docs/Registry?topic=Registry-manage-security-compliance#manage-security-compliance)
-
-* [Monitoring security and compliance posture](/docs/Registry?topic=Registry-manage-security-compliance#monitor-container-registry)
-
-    * [Available goals for {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-manage-security-compliance#container-registry-available-goals)
-
-* [Governing {{site.data.keyword.registryshort}} resource configuration](/docs/Registry?topic=Registry-manage-security-compliance#govern-container-registry)
 
 [Using VPE for VPC to privately connect](/docs/Registry?topic=Registry-registry_vpe#registry_vpe)
 
