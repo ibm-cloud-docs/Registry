@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-11-25"
+  years: 2018, 2023
+lastupdated: "2023-01-04"
 
 keywords: user access policies, access policies, policies, policy enforcement, user access, roles, account, users, resources, namespace
 
@@ -22,7 +22,7 @@ You must define IAM [access policies](x2853407){: term} for every user that work
 
 To find out more about IAM access policies, see [{{site.data.keyword.cloud_notm}} IAM roles](/docs/account?topic=account-userroles).
 
-From version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, you can assign {{site.data.keyword.registryshort}} namespaces to a [resource group](/docs/account?topic=account-rgs) and scope access policies to that group, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still define access policies that are scoped to individual {{site.data.keyword.registryshort}} namespaces or to all namespaces that are owned by the account.
+You can assign {{site.data.keyword.registryshort}} namespaces to a [resource group](/docs/account?topic=account-rgs) and scope access policies to that group, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan). However, you can still define access policies that are scoped to individual {{site.data.keyword.registryshort}} namespaces or to all namespaces that are owned by the account.
 
 ## Creating policies
 {: #create}
@@ -47,5 +47,3 @@ If you want to access resources, you must assign roles to users or service IDs. 
 
 For an example of useful access policies for {{site.data.keyword.registrylong_notm}}, see the [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access).
 {: tip}
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-09-22"
+  years: 2019, 2023
+lastupdated: "2023-01-04"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -65,7 +65,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/contai
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. If you create a namespace in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, it is created in a [resource group](x2161955){: term}. Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to [resource groups](/docs/account?topic=account-rgs). For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
+Create a [namespace](x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. Namespaces are created in a [resource group](x2161955){: term}. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan)
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command.
 
@@ -394,7 +394,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         ```
         {: pre}
 
-        Because Portieris is still enabled in your cluster, your deployment fails immediately and you see the following message:
+        Because Portieris is still enabled in your cluster, your deployment fails immediately, and you see the following message:
 
         ```txt
         Error from server: error when creating "hello-world.yaml": admission webhook
@@ -416,7 +416,7 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
             {: pre}
 
             The `kubectl apply` command completes successfully. However, when you inspect the deployment's [pod](x8461823){: term} by running the `kubectl describe pod <pod_name> -n test` command, where `<pod_name>` is the name of the pod, the events log indicates that the cluster isn't authorized to pull the image.
-            
+
             You can find the pod name by running `kubectl get pod -n test`.
             {: tip}
 
@@ -456,5 +456,3 @@ Kubernetes and {{site.data.keyword.registrylong_notm}} namespaces are different.
         {: pre}
 
     This time the command succeeds, and you can access your container by using a `curl` command or a web browser.
-
-
