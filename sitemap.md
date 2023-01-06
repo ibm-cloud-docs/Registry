@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -865,6 +865,10 @@ subcollection: Registry
 * [Accessing your namespaces programmatically](/docs/Registry?topic=Registry-registry_access#registry_access_programmatic)
 
 [Managing IAM access](/docs/Registry?topic=Registry-iam#iam)
+
+* [Access policies](/docs/Registry?topic=Registry-iam#iam_access_policies)
+
+* [Assign roles](/docs/Registry?topic=Registry-iam#iam_assign_roles)
 
 * [Context-based restrictions](/docs/Registry?topic=Registry-iam#iam_cbr)
 
