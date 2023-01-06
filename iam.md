@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -20,18 +20,15 @@ Access to {{site.data.keyword.registrylong}} for users in your account is contro
 
 Every user that accesses the {{site.data.keyword.registrylong_notm}} service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM role. A user can also be a member of an [access group](/docs/account?topic=account-groups) with assigned IAM access policies that grant an IAM role. Review the following roles, actions, and more to help determine the best way to assign access to {{site.data.keyword.registryshort}}.
 
-The IAM access policy that you assign to users in your account determines the actions that a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.registryshort}} as operations that are allowed to be performed on the service. Each action is mapped to an [IAM platform or service role](/docs/account?topic=account-userroles) that you can assign to a user.
-
-If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles#custom-access-roles) and pick the actions to include.
-{: tip}
-
-IAM access policies are enforced only when you use IAM to log in to {{site.data.keyword.registryshort}}. If you want to restrict user access to one or more [namespaces](x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
-
-You can set permissions so that you can configure access to resources within a namespace at the [resource group](x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
-
 For more information about IAM, see [How {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} works](/docs/account?topic=account-iamoverview#iamoverview).
 
-For more information about enabling policies for {{site.data.keyword.registryshort}}, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
+Try out the tutorial [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
+{: tip}
+
+## Access policies
+{: #iam_access_policies}
+
+The IAM access policy that you assign to users in your account determines the actions that a user can perform within the context of the service or specific instance that you select. The allowable actions are customized and defined by {{site.data.keyword.registryshort}} as operations that are allowed to be performed on the service. Each action is mapped to an [IAM platform or service role](/docs/account?topic=account-userroles) that you can assign to a user.
 
 Policies enable access to be granted at different levels. Some options include the following access levels:
 
@@ -40,14 +37,28 @@ Policies enable access to be granted at different levels. Some options include t
 - Access to all IAM-enabled services in your account
 - Access to resources within a resource group
 
+If you want to restrict user access to one or more [namespaces](x2031005){: term} for an ID that you are using for automation, use an IAM service ID. For more information about service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids#serviceids).
+
+You can set permissions so that you can configure access to resources within a namespace at the [resource group](x2161955){: term} level. For more information, see [User permissions for working with namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan_perm).
+
+For more information about enabling policies for {{site.data.keyword.registryshort}}, see [Defining IAM access policies](/docs/Registry?topic=Registry-user#user).
+
+## Assign roles
+{: #iam_assign_roles}
+
 After you define the scope of the IAM access policy, you assign a role.
 
-Review the following tables that outline the actions that each role allows within the {{site.data.keyword.registryshort}} service. Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access to the service, create or delete instances, and bind instances to applications. Service access roles enable users access to {{site.data.keyword.registryshort}} and the ability to call the {{site.data.keyword.registryshort}} API. For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry).
+If a specific role and its actions don't fit the use case that you're looking to address, you can [create a custom role](/docs/account?topic=account-custom-roles#custom-access-roles) and pick the actions to include.
+
+Review the following tables that outline the actions that each role allows within the {{site.data.keyword.registryshort}} service.
+
+- [Platform management roles](#platform_management_roles) enable users to perform tasks on service resources at the platform level, for example, assign user access to the service, create or delete instances, and bind instances to applications.
+
+- [Service access roles](#service_access_roles) enable users access to {{site.data.keyword.registryshort}} and the ability to call the {{site.data.keyword.registryshort}} API.
+
+For more information about the exact actions that are mapped to each role, see [IAM roles and actions for {{site.data.keyword.registryshort}}](/docs/account?topic=account-iam-service-roles-actions#container-registry).
 
 For more information about assigning user roles in the UI, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
-
-Try out the tutorial [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
-{: tip}
 
 ## Context-based restrictions
 {: #iam_cbr}
