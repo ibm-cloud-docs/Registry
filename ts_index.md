@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-10"
+  years: 2017, 2023
+lastupdated: "2023-01-10"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -88,5 +88,3 @@ Troubleshoot networking problems.
 Troubleshoot Portieris problems.
 
 - [Why don't my pods restart after my workers were down?](/docs/Registry?topic=Registry-troubleshoot-pods)
-
-

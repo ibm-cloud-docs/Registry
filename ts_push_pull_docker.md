@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-23"
+  years: 2017, 2023
+lastupdated: "2023-01-10"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -67,5 +67,3 @@ You can fix this problem in the following ways:
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login).
 - [Review quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
-
-
