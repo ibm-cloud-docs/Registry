@@ -173,7 +173,6 @@ toc:
               - ts_push_pull_docker.md
               - /containers/containers-ts-app-image-pull
               - ts_iam_policy.md
-              - ts_pull_performance.md</staging>
           - topicgroup:
               label: Troubleshooting CLI commands
               topics:
