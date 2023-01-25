@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-04-13"
+  years: 2020, 2023
+lastupdated: "2023-01-25"
 
 keywords: encryption, decryption, encrypted image, public-private key pair, encrypt, decrypt, key, registry, image, private key, public key
 
@@ -125,7 +125,7 @@ Encrypt the image by using the public key and then build a container image by us
     ```
     {: pre}
 
-3. Use Buildah to create an unencrypted image by running the following commands, where `<namespace>` is your namespace:
+3. Use Buildah to create an unencrypted image by running the following command, where `<namespace>` is your namespace:
 
     ```txt
     buildah bud -t us.icr.io/<namespace>/<my_app> .
@@ -215,5 +215,3 @@ Encrypted images are not scanned by Vulnerability Advisor.
 {: #registry_encrypt_next}
 
 Run your encrypted image in a {{site.data.keyword.openshiftlong}} cluster by using the [Image Key Synchronizer cluster add-on](/docs/openshift?topic=openshift-images#encrypted-images).
-
-
