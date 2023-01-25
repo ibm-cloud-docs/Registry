@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-11-11"
+  years: 2021, 2023
+lastupdated: "2023-01-25"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can use {{site.data.keyword.cloud}} virtual private endpoints (VPE) for Virtual Private Cloud (VPC) to connect to {{site.data.keyword.registrylong}} from your VPC network by using the IP addresses of your choice, which are allocated from a subnetwork within your VPC.
 {: shortdesc}
 
-{{site.data.keyword.registryshort}} VPEs have been updated. Any VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
+ Any {{site.data.keyword.registryshort}} VPE gateways that were created before 11 November 2022 are deprecated and must be replaced by 15 December 2022. For more information, see [Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe&interface=ui).
 {: important}
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all [availability zones](x7018171){: term} of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud_notm}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
@@ -104,5 +104,3 @@ To configure a VPE gateway, complete the following steps:
 4. View the created VPE gateways associated with the {{site.data.keyword.registrylong_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 Now your virtual server instances in the VPC can access your {{site.data.keyword.registrylong_notm}} instance privately through it.
-
-
