@@ -67,3 +67,5 @@ You can fix this problem in the following ways:
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login).
 - [Review quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
+
+
