@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-04-13"
+  years: 2020, 2023
+lastupdated: "2023-01-25"
 
 keywords: External registry, private registry, Red Hat OpenShift, Red Hat, clusters, Red Hat OpenShift Container Platform, container platform, internal registry, images
 
@@ -43,7 +43,7 @@ To set up {{site.data.keyword.redhat_openshift_notm}} Container Platform, you mu
 
 - **Pull** Create image pull secrets to [pull images](#registry_rhos_os_pull) from {{site.data.keyword.registryshort}} to your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, you might deploy an app that uses an image in a private registry.
 - **Push** Create image push secrets to [push images](#registry_rhos_os_push) from your {{site.data.keyword.redhat_openshift_notm}} cluster to a repository in {{site.data.keyword.registryshort}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry instead of the internal registry.
-- **Both** Create a secret that can pull images from and push images to {{site.data.keyword.registryshort}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry so that your team can pull the latest image across multiple clusters.
+- **Both** Create a secret that can pull images from and push images to {{site.data.keyword.registryshort}}. For example, you might set up a continuous delivery pipeline that builds an image to a private registry so that your team can pull the most recent image across multiple clusters.
 
 ### Set up the {{site.data.keyword.redhat_openshift_notm}} Container Platform internal registry to pull from {{site.data.keyword.registryshort}}
 {: #registry_rhos_os_pull}
@@ -64,5 +64,3 @@ To configure {{site.data.keyword.redhat_openshift_notm}} Container Platform to p
 If you want to push application images from {{site.data.keyword.redhat_openshift_notm}} Container Platform to {{site.data.keyword.registryshort}}, you must edit the {{site.data.keyword.redhat_openshift_notm}} Container Platform build configuration to point at {{site.data.keyword.registryshort}}, where `myregistry.mycompany.io` is `<region_domain_name>.icr.io`. For more information about {{site.data.keyword.registryshort}} regions and domain names, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 For instructions, see [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).
-
-
