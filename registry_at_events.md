@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-11-25"
+  years: 2018, 2023
+lastupdated: "2023-01-25"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -210,7 +210,7 @@ The following fields are populated as described, depending on how you populate t
 
 - `target.resourceGroupId` shows the resource group ID that is associated with a namespace and its resources. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 
-    Legacy namespaces that are not migrated to IAM do not have a resource group, therefore this field is not available.
+    Legacy namespaces that aren't migrated to IAM don't have a resource group, therefore this field is not available.
     {: note}
 
 ### Request data for vulnerability events
@@ -288,9 +288,9 @@ Get the data for image signing events in {{site.data.keyword.registryshort_notm}
 
 The following table lists the fields that are available through the `requestData` field in events with the following actions:
 
--  `container-registry.signature.delete`
--  `container-registry.signature.read`
--  `container-registry.signature.write`
+- `container-registry.signature.delete`
+- `container-registry.signature.read`
+- `container-registry.signature.write`
 
 | Custom Event Fields | Type | Description |
 |---------------------|------|-------------|
@@ -298,6 +298,3 @@ The following table lists the fields that are available through the `requestData
 | `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
 | `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is performed, for example, `image`. |
 {: caption="Table 22. Custom event fields for {{site.data.keyword.registryshort_notm}} signing" caption-side="bottom"}
-
-
-
