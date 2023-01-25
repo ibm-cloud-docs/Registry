@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-01-10"
+  years: 2017, 2022
+lastupdated: "2022-11-10"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
