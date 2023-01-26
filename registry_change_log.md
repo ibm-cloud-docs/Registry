@@ -23,6 +23,15 @@ For more information about how to update the {{site.data.keyword.registryshort}}
 Version 0.1 of the {{site.data.keyword.registryshort}} CLI is deprecated, see [All releases of {{site.data.keyword.registryshort}} plug-in 0.1 are deprecated](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_v0).
 {: deprecated}
 
+## Version 0.1.587
+{: #cli-change-log-01587}
+
+Version 0.1.587 of the CLI was released on 26 January 2023.
+
+This release has the following changes:
+
+- Vulnerability remediations.
+
 ## Version 1.0.6
 {: #cli-change-logv1-106}
 
