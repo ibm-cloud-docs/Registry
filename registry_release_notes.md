@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-21"
+  years: 2019, 2023
+lastupdated: "2023-01-27"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -13,7 +13,6 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Release notes for {{site.data.keyword.registryshort}}
 {: #registry_release_notes}
@@ -111,7 +110,7 @@ Change to {{site.data.keyword.registryshort}} private IP addresses in all region
     For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
 All accounts require IAM access policies {: #05jul2022_iam}
-:   To access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+:   To access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you're using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization is discontinued in the following {{site.data.keyword.registryshort}} regions:
 
@@ -155,7 +154,7 @@ Amendment to the minimum supported Docker version for {{site.data.keyword.regist
 {: release-note}
 
 All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam}
-:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+:   From 5 July 2022, to access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. If you started to use {{site.data.keyword.registryshort}} before the availability of [IAM API key policies in {{site.data.keyword.registryshort}}](#registry-25feb2019) in February 2019, you must now ensure that you're using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization will be discontinued in the following {{site.data.keyword.registryshort}} regions:
 
@@ -183,7 +182,7 @@ Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions
 {: release-note}
 
 Storage that is used by untagged images is being charged for {: #01feb2022_billing}
-:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount that you are charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+:   From 1 February 2022, {{site.data.keyword.registrylong_notm}} is charging for the storage that is used by [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images. To reduce the amount that you're charged, you can [clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged). You can also [free up used storage and change service plans or quota limits to stay within given quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 
     For more information, see [Starting 1 February 2022, {{site.data.keyword.registrylong_notm}} will be billing for the storage that is used by untagged images](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-to-bill-for-storage-used-by-untagged-images){: external}.
 
@@ -552,7 +551,7 @@ New domain names {: #25feb2019_dns}
 
     For more information, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) and [Introducing New {{site.data.keyword.registrylong_notm}} Domain Names](https://www.ibm.com/cloud/blog/announcements/introducing-new-ibm-cloud-container-registry-domain-names){: external}.
 
-    Signatures apply to the whole image name, which includes the domain name. If you are using content trust, you must add new signatures so that you can use content trust under the new domain name.
+    Signatures apply to the whole image name, which includes the domain name. If you're using content trust, you must add new signatures so that you can use content trust under the new domain name.
 
     For more information about signing images, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
@@ -589,7 +588,7 @@ End of support for Vulnerability Advisor API version 2 {: #8jan2019_va2}
 {: release-note}
 
 Managing user access {: #4oct2018_access}
-:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM user role defined. That policy determines what role the user has within the context of the service, and what actions the user can perform.
+:   Use {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IAM) to control access by users in your account to {{site.data.keyword.registryshort}}. When IAM access policies are enabled for your account in {{site.data.keyword.registryshort}}, every user that accesses the service in your account must be assigned an IAM [access policy](x2853407){: term} with an IAM user role defined. That policy determines the role that the user has within the context of the service, and what actions the user can perform.
 
     For more information, see [Managing IAM access with {{site.data.keyword.iamshort}}](/docs/Registry?topic=Registry-iam#iam), [Defining IAM access policies](/docs/Registry?topic=Registry-user#user), and [Granting access to {{site.data.keyword.registryshort}} resources tutorial](/docs/Registry?topic=Registry-iam_access#iam_access).
 

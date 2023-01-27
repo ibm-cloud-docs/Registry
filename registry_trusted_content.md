@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-25"
+  years: 2017, 2023
+lastupdated: "2023-01-27"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 
@@ -52,7 +52,7 @@ The following example doesn't include Skopeo authentication.
 
 2. Push and sign the image at the same time by using the GnuPG identity to sign the image. Where `<your_email>` is the email address that you used to sign up for GnuPG, `<repository:tag>` is your repository and tag, and `<image>` is the name of your image in the format `<region><namespace><repository:tag>`, where `<region>` is the name of your region and `<namespace>` is the name of your namespace.
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If the list images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
     ```txt
@@ -67,7 +67,7 @@ The following example doesn't include Skopeo authentication.
     ```
     {: pre}
 
-    On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the  `--registries.d` option.
+    On macOS, if you get the error `Error copying image to the remote destination: Error writing signatures: mkdir /var/lib/containers/sigstore: permission denied`, override the internal default for registry configuration so that the correct signature storage is used by running the command with the `--registries.d` option.
 
     ```txt
     skopeo --registries.d . --insecure-policy copy --sign-by user@email.com docker-daemon:us.icr.io/birds/bluebird:build1 docker://us.icr.io/birds/bluebird:build1
@@ -86,5 +86,3 @@ You can use Podman to sign images. For more information, see [Podman](https://po
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 You can sign your images by using the {{site.data.keyword.redhat_openshift_notm}} CLI. For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.
-
-

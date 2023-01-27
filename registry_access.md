@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-11-25"
+  years: 2017, 2023
+lastupdated: "2023-01-27"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -225,12 +225,10 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iamb
 
 Use your own code to access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 
-Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command to simplify `docker login`, but if you are implementing automation or you are using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
+Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command to simplify `docker login`, but if you're implementing automation or you're using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
 The following usernames are valid:
 
 - `iambearer` The password contains an IAM [access token](x2113001){: term}. This type of authentication is short lived, but can be derived from all types of IAM identity. For example, from [`ibmcloud iam oauth-tokens`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_oauth_tokens).
 - `iamrefresh` The password contains an IAM refresh token that is used internally by the registry to generate an IAM access token. This type of authentication is longer lived. This authentication type is used by the `ibmcloud cr login` command.
 - `iamapikey` The password is an IAM API key that is used internally by the registry to generate an IAM access token. This type of authentication is the preferred type for automation. You can use a user API key or a service ID API key. For more information, see [Accessing your namespaces in automation](#registry_access_automating).
-
-

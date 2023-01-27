@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-01-27"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -179,7 +179,7 @@ subcollection: Registry
 
 * [Notifications topics](/docs/Registry?topic=Registry-registry_notices#registry_notices_topics)
 
-[Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
+[Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe)
 
 * [What you need to know about this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_know)
 
