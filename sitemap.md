@@ -17,11 +17,11 @@ subcollection: Registry
 
 
 
-## Getting started with Container Registry
-{: #sitemap_getting_started_with_container_registry}
+## Getting started
+{: #sitemap_getting_started}
 
 
-[Getting started with Container Registry](/docs/Registry?topic=Registry-getting-started#getting-started)
+[Getting started](/docs/Registry?topic=Registry-getting-started#getting-started)
 
 * [Install the {{site.data.keyword.registryshort_notm}} CLI](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install)
 
