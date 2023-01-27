@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-27"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# About {{site.data.keyword.registrylong_notm}}
+# About {{site.data.keyword.registryshort_notm}}
 {: #registry_overview}
 
 Use {{site.data.keyword.registrylong}} to store and access private container images in a highly available and scalable architecture.

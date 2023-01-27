@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-12-08"
+  years: 2017, 2023
+lastupdated: "2023-01-27"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -152,7 +152,7 @@ To create an image from a source image, complete the following steps.
 
 2. Run the following command to add the new reference, where `SOURCE_IMAGE` is the name of your source image and `TARGET_IMAGE` is the name of your target image. The source and target images must be in the same region. `SOURCE_IMAGE` must be in the format `repository:tag` or `repository@digest` and `TARGET_IMAGE` must be in the format `repository:tag`, for example, `us.icr.io/namespace/image:latest`.
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. If the list images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
     ```txt
@@ -197,7 +197,7 @@ To build your own Docker image, complete the following steps:
         ```
         {: pre}
 
-    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you are using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
+    2. Use a text editor to open the Dockerfile. At a minimum, you must add the base image to build your image from. Replace `<source_image>` and `<tag>` with the image repository and tag that you want to use. If you're using an image from another private registry, define the full path to the image in {{site.data.keyword.registrylong_notm}}.
 
         ```txt
         FROM <source_image>:<tag>
@@ -295,7 +295,7 @@ To remove a tag, or tags, by using the CLI, complete the following steps:
     ```
     {: pre}
 
-    If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    If the list images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
 ## Deleting images from your private repository
@@ -335,7 +335,7 @@ To delete an image by using the CLI, complete the following steps:
     ```
     {: pre}
 
-    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    To find the names of your images, run `ibmcloud cr image-list`. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. To identify your image by digest, run the `ibmcloud cr image-digests` command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`. If the list images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
 3. Verify that the image was deleted by running the following command, and check that the image does not show in the list.
@@ -359,7 +359,7 @@ If you want to restore a deleted image, you can list the contents of the trash b
 To delete an image by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
-2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
+2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, from the account menu, select the account and region that you want to use.
 3. Click the **Navigation menu** icon, then click **Container Registry**.
 4. Click **Images**. A list of your images is displayed.
 5. In the row that contains the image that you want to delete, select the checkbox.
@@ -455,7 +455,7 @@ To restore an image by tag from the trash, complete the following steps:
 
     A table is displayed that shows the items in the trash. The table shows the digest, the days until expiry, and the tags for that digest.
 
-3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>`  is the repository.
+3. For the image that you want to restore, make a note of the digest up to, but not including, the at sign (`@`). This part of the digest is `<dns>/<namespace>/<repo>`, where `<dns>` is the domain name, `<namespace>` is the namespace, and `<repo>` is the repository.
 4. For the image that you want to restore, make a note of the tag, `<tag>`.
 5. Run the following command to restore the image to your repository, where `<dns>/<namespace>/<repo>` is the name of the image that you want to restore and `<tag>` is the tag.
 
@@ -466,7 +466,7 @@ To restore an image by tag from the trash, complete the following steps:
 
     In your live repository, you can pull the image by tag.
 
-    If you get an error when you're restoring an image that says that the tagged image already exists, see [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore) for assistance.
+    If you get an error when you're restoring an image that says that the tagged image exists, see [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore) for assistance.
     {: tip}
 
     If you run the `ibmcloud cr trash-list` command, the digest and any other tags show in the output, but the tag is no longer displayed.
@@ -488,7 +488,7 @@ Before you begin, you must back up any images that you want to keep.
 To delete a private repository by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console [https://cloud.ibm.com/login](https://cloud.ibm.com/login){: external} with your IBMid.
-2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account and region that you want to use from the account menu.
+2. If you have multiple {{site.data.keyword.cloud_notm}} accounts, from the account menu, select the account and region that you want to use.
 3. Click the **Navigation menu** icon, then click **Container Registry**.
 4. Click **Repositories**. A list of your private repositories is displayed.
 5. In the row that contains the private repository that you want to delete, select the checkbox.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-27"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -255,7 +255,7 @@ When a vulnerability is found in one of your images, a [report](/docs/Registry?t
 ### Enforce security in your cluster
 {: #registry_tutorial_workflow_enforce_security}
 
-Despite the vulnerability that is present in your image, you're still able to deploy a container to your cluster by using this image, which you might not want. By using [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
+Despite the vulnerability that is present in your image, you are still able to deploy a container to your cluster by using this image, which you might not want. By using [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris), you can enforce security in several ways. For example, you can prevent vulnerable images from being used in deployments to your cluster.
 
 1. [Install Portieris](/docs/Registry?topic=Registry-security_enforce_portieris#sec_enforce_install_portieris).
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-06-06"
+  years: 2017, 2023
+lastupdated: "2023-01-27"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -56,7 +56,7 @@ To set a quota, complete the following steps.
     ```
     {: screen}
 
-3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option and replace `<traffic_quota>` with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option and replace `<storage_quota>` with the value in megabytes that you want to set.
+3. Change the quota limit for storage and pull traffic. To change the pull traffic usage, specify the **traffic** option, and replace `<traffic_quota>` with the value in megabytes that you want to set for the pull traffic quota. If you want to change the amount of storage in your account, specify the **storage** option, and replace `<storage_quota>` with the value in megabytes that you want to set.
 
     If you are on the free plan, you cannot set your quota to an amount that exceeds the free tier. The free tier allowance for storage is 512 MB and traffic is 5120 MB.
     {: tip}
@@ -170,5 +170,3 @@ Depending on the size of the image, it might take a while for the image to be re
     - Wait until the next billing cycle starts.
     - If you have a free plan, [upgrade to the standard service plan](/docs/Registry?topic=Registry-registry_overview#registry_plan_upgrade).
     - If you already have a standard plan, [set new quota limits for the pull traffic](#registry_quota_set).
-
-

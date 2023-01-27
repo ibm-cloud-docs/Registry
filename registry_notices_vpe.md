@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-17"
+lastupdated: "2023-01-27"
 
 keywords: IBM Cloud Container Registry notifications, notifications, registry, changes, vpe
 
@@ -12,10 +12,10 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Changes to {{site.data.keyword.registryshort}} VPE gateways from 11 November 2022
+# Changes to {{site.data.keyword.registryshort_notm}} VPE gateways from 11 November 2022
 {: #registry_notices_vpe}
 
-If you are using an {{site.data.keyword.registrylong}} virtual private endpoint (VPE) gateway that was created before 11 November 2022, you must re-create your VPE gateway before 15 December 2022. If you use {{site.data.keyword.iamshort}} restricted IP address lists and {{site.data.keyword.registryshort}} VPE gateways, you must also update your restricted IP address lists.
+If you're using an {{site.data.keyword.registrylong}} virtual private endpoint (VPE) gateway that was created before 11 November 2022, you must re-create your VPE gateway before 15 December 2022. If you use {{site.data.keyword.iamshort}} restricted IP address lists and {{site.data.keyword.registryshort}} VPE gateways, you must also update your restricted IP address lists.
 {: shortdesc}
 
 ## What you need to know about this change
@@ -77,5 +77,3 @@ If you use a {{site.data.keyword.registryshort}} VPE gateway that was created be
     2. Create a new VPE gateway for {{site.data.keyword.registryshort}} in the required VPC, see [Creating an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui). If you’re using the CLI, you might want to refer to the {{site.data.keyword.registryshort}} VPE CRNs. For more information, see [Setting up a VPE for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_vpe&interface=ui#registry_vpe_endpoint_setup).
 
     3. Remove the VPE gateway that was created before 11 November 2022, see [Deleting an endpoint gateway](/docs/vpc?topic=vpc-vpe-deleting-ui-cli-api&interface=ui).
-
-
