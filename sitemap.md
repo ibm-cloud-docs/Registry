@@ -897,31 +897,31 @@ subcollection: Registry
 {: #sitemap_managing_image_security_with_vulnerability_advisor}
 
 
-[Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index#va_index)
+[Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index#va_index)
 
-* [About Vulnerability Advisor](/docs/Registry?topic=va-va_index#about)
+* [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index#about)
 
-    * [Data protection](/docs/Registry?topic=va-va_index#about_data_protection)
+    * [Data protection](/docs/Registry?topic=Registry-va_index#about_data_protection)
 
-* [Types of vulnerabilities](/docs/Registry?topic=va-va_index#types)
+* [Types of vulnerabilities](/docs/Registry?topic=Registry-va_index#types)
 
-    * [Vulnerable packages](/docs/Registry?topic=va-va_index#packages)
+    * [Vulnerable packages](/docs/Registry?topic=Registry-va_index#packages)
 
-    * [Configuration issues - version 3 only](/docs/Registry?topic=va-va_index#app_configurations)
+    * [Configuration issues - version 3 only](/docs/Registry?topic=Registry-va_index#app_configurations)
 
-* [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index#va_set_version)
+* [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index#va_set_version)
 
-* [Reviewing a vulnerability report](/docs/Registry?topic=va-va_index#va_reviewing)
+* [Reviewing a vulnerability report](/docs/Registry?topic=Registry-va_index#va_reviewing)
 
-    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=va-va_index#va_reviewing_gui)
+    * [Reviewing a vulnerability report by using the console - version 3 only](/docs/Registry?topic=Registry-va_index#va_reviewing_gui)
 
-    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index#va_registry_cli)
+    * [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index#va_registry_cli)
 
-* [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy)
+* [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index#va_managing_policy)
 
-    * [Setting exemption policies by using the console](/docs/Registry?topic=va-va_index#va_managing_policy_gui)
+    * [Setting exemption policies by using the console](/docs/Registry?topic=Registry-va_index#va_managing_policy_gui)
 
-    * [Setting exemption policies by using the CLI](/docs/Registry?topic=va-va_index#va_managing_policy_cli)
+    * [Setting exemption policies by using the CLI](/docs/Registry?topic=Registry-va_index#va_managing_policy_cli)
 
 
 ## Setting up Terraform for Container Registry

@@ -77,7 +77,7 @@ toc:
             navtitle: Managing IAM access
           - topic: registry_users.md
             navtitle: Defining IAM access policies
-      - include: ../va/va_index.md
+      - va_index.md
       - topic: terraform.md
         navtitle: Setting up Terraform for Container Registry
       - topicgroup:
