@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-30"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -317,7 +317,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {: release-note}
 
 {{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
-:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
+:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
     For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
