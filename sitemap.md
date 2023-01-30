@@ -1104,7 +1104,7 @@ subcollection: Registry
 
 * [Where to look for {{site.data.keyword.la_full_notm}} logs](/docs/Registry?topic=Registry-registry_logs#registry_logs_region)
 
-[IAM and Activity Tracker actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
+[IAM and {{site.data.keyword.at_short}} actions by API method](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam)
 
 * [{{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-registry_at_iam#registry_at_iam_reg)
 

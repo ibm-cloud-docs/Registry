@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-30"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -42,7 +42,7 @@ You can choose between the free or standard {{site.data.keyword.registryshort}} 
 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
-Service plans are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. Plan settings must all be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
+Service plans are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. Plan settings must all be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
 {: note}
 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing](#registry_plan_billing).

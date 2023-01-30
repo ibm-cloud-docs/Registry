@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-11-23"
+  years: 2021, 2023
+lastupdated: "2023-01-30"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Your responsibilities when you're using {{site.data.keyword.registryshort_notm}}
+# Your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
 {: #registry_responsibilities}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.registrylong}}.
@@ -91,5 +91,3 @@ Security and regulation compliance includes tasks such as security controls impl
 {: row-headers}
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
-

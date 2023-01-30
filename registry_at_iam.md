@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-23"
+  years: 2020, 2023
+lastupdated: "2023-01-30"
 
 keywords: IBM Cloud, api method, registry, iam, activity tracker, actions, vulnerability, api, image, iam action, targeted account, tag
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IAM and Activity Tracker actions by API method
+# IAM and {{site.data.keyword.at_short}} actions by API method
 {: #registry_at_iam}
 
 When you use {{site.data.keyword.registrylong}} through the command line or console, the service calls application programming interface (API) methods to complete your requests.
@@ -166,5 +166,3 @@ Review the following account API methods, their required actions in {{site.data.
 | List image exemptions. | `GET /va/api/v3/exemptions/image/{resource}` | `container-registry.exemption.list` | |
 | List exemptions for images. | `POST /va/api/v3/exemptions/images` | `container-registry.exemption.list` | |
 {: caption="Table 12. Exemption" caption-side="bottom"}
-
-
