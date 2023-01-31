@@ -205,7 +205,7 @@ Throughout this tutorial, replace `<my_cluster>` with the name of your free Kube
 {: #registry_tutorial_workflow_secure}
 {: step}
 
-When you push an image to a namespace, the image is automatically scanned by [Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find [potential vulnerabilities](/docs/Registry?topic=va-va_index#types). If vulnerabilities are found, instructions are provided to help fix the reported vulnerabilities.
+When you push an image to a namespace, the image is automatically scanned by [Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui) to find [potential vulnerabilities](/docs/Registry?topic=Registry-va_index&interface=ui#types). If vulnerabilities are found, instructions are provided to help fix the reported vulnerabilities.
 
 To demonstrate these features, you must push an intentionally vulnerable image.
 
@@ -215,7 +215,7 @@ Images are continually updated and new CVEs are discovered. As a result, you mig
 ### View the vulnerability report for your image
 {: #registry_tutorial_workflow_vulnerability_report}
 
-When a vulnerability is found in one of your images, a [report](/docs/Registry?topic=va-va_index#va_reviewing) is produced that gives you more information about the vulnerability and the steps to resolve the vulnerability.
+When a vulnerability is found in one of your images, a [report](/docs/Registry?topic=Registry-va_index&interface=ui#va_reviewing) is produced that gives you more information about the vulnerability and the steps to resolve the vulnerability.
 
 1. Build and push a vulnerable image:
     1. Build a vulnerable image by running the following command:
@@ -298,7 +298,7 @@ Despite the vulnerability that is present in your image, you are still able to d
     ```
     {: screen}
 
-    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one, or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) command.
+    The Vulnerability Advisor verdict is subject to any [exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy) that you create. If you want to use an image that Vulnerability Advisor considers vulnerable, you can exempt one, or more vulnerabilities so that Vulnerability Advisor doesn't consider them in its verdict. You can see whether an issue is exempted by looking at the `Policy Status` column in the output of the `ibmcloud cr va` command, and you can also list your exemptions by running the [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) command.
     {: note}
 
 ### Resolve vulnerabilities in your image

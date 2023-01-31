@@ -26,7 +26,7 @@ completion-time: 45m
 {{site.data.keyword.registrylong}} provides a multi-tenant private image [registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry) that you can use to store and share your [container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image) with users in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -245,7 +245,7 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 ## Next steps in {{site.data.keyword.registryshort_notm}}
 {: #gs_get_start_next}
 
-- [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=va-va_index)
+- [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=Registry-va_index&interface=ui)
 - [Review your service plans.](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 - [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
 - [Define access policies.](/docs/Registry?topic=Registry-user#user)

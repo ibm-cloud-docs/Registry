@@ -40,7 +40,7 @@ To scan images and containers in your account for security issues, {{site.data.k
 - The content of system and application configuration files in images and containers
 - Installed packages and libraries (including their versions)
 
-Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. Scan results are deleted 30 days after they are generated. For more information, see [Data protection](/docs/Registry?topic=va-va_index#about_data_protection).
+Scan results, aggregated at a data center level, are processed to produce anonymized metrics to operate and improve the service. Scan results are deleted 30 days after they are generated. For more information, see [Data protection](/docs/Registry?topic=Registry-va_index&interface=ui#about_data_protection).
 
 Do not put personal information into any field or location that {{site.data.keyword.registrylong_notm}} processes, as identified in the preceding list.
 {: important}

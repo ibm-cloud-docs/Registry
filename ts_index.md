@@ -53,7 +53,7 @@ Troubleshoot logging in problems.
 Troubleshoot pull and push problems.
 
 - [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
-- [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/containers?topic=containers-ts-app-image-pull)
+- [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
 - [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
 
 ### Troubleshooting CLI commands

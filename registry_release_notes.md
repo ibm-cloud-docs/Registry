@@ -65,9 +65,9 @@ Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} pl
 
     If you want to continue to use version 3, you don't need to do anything.
 
-    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
-    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).
+    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).
 
 New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_commands}
 :   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can use new commands to check and set Vulnerability Advisor versions.
@@ -76,7 +76,7 @@ New commands for setting and checking the Vulnerability Advisor version are avai
 
     If you want to use version 4, you can set the version by running the [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command.
 
-    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
     To find out which version of Vulnerability Advisor that you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version).
 
@@ -173,7 +173,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 {: release-note}
 
 Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued {: #02feb2022_exemption}
-:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
     For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions){: external}.
 
@@ -328,7 +328,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 Setting exemption policies by digest {: #27aug2020_digest}
 :   When you want to set up an exemption policy, you can set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command.
 
-    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
 ## 12 August 2020
 {: #registry-12aug2020}
@@ -599,7 +599,7 @@ Managing user access {: #4oct2018_access}
 Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 :   If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can use Portieris to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
 
-    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
 ## 25 July 2018
 {: #registry-25jul2018}

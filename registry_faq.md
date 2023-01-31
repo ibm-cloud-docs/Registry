@@ -153,7 +153,7 @@ Vulnerability Advisor scans images from {{site.data.keyword.registrylong_notm}} 
 {: #faq_va_trigger_scan}
 {: faq}
 
-For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=va-va_index#packages).
+For more information about how the scanning of an image is triggered, see [Vulnerable packages](/docs/Registry?topic=Registry-va_index&interface=ui#packages).
 
 ### Why doesn't a new image scan?
 {: #faq_va_new_scan_error}
@@ -267,4 +267,4 @@ On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a p
 {: #faq_va_versions}
 {: faq}
 
-Vulnerability Advisor is available in two versions, version 3 and version 4. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui).
+Vulnerability Advisor is available in two versions, version 3 and version 4. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).

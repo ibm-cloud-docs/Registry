@@ -47,7 +47,7 @@ Before you begin, complete the following tasks.
 
 After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
 
-If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull) for assistance.
+If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull) for assistance.
 {: tip}
 
 ## Pushing Docker images to your namespace
@@ -94,7 +94,7 @@ To upload (push) an image, complete the following steps:
 
 After you push your image to {{site.data.keyword.registrylong_notm}}, you can do one of the following tasks.
 
-- [Manage security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Manage security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copying images between registries
@@ -121,7 +121,7 @@ To copy an image between two registries, complete the following steps:
 
 After you copy your image, you can do one of the following tasks.
 
-- [Manage image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Manage image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Creating images that refer to a source image
@@ -246,7 +246,7 @@ To build your own Docker image, complete the following steps:
 
     3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
-To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 ## Pushing images by using an API key
 {: #registry_api_key_push_image}

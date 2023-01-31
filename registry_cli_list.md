@@ -108,7 +108,7 @@ Review the following table to find available Go template options and data types 
 | `Digest` | String | Displays the unique identifier for an image. |
 | `ManifestType` | String | Displays the image manifest type. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
@@ -125,7 +125,7 @@ Review the following table to find available Go template options and data types 
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
