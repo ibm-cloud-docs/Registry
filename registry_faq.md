@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-10-24"
+  years: 2018, 2023
+lastupdated: "2023-01-31"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -101,7 +101,7 @@ You can create {{site.data.keyword.IBM_notm}} {{site.data.keyword.iamshort}} (IA
 {: #faq_share_image}
 {: faq}
 
-You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM access policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts. 
+You can create an {{site.data.keyword.cloud_notm}} account and invite all the users to it. They can then all have access to any [namespace](x2031005){: term} that is created in the account. You can create a subset of the users and set an IAM access policy to differentiate access at the namespace level. Users can be members of many accounts, but you can't give access outside the account, that is, you can't share a namespace to multiple accounts.
 
 For more information, see [Defining IAM access policies](/docs/Registry?topic=Registry-user).
 
@@ -126,7 +126,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 
 If you're cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained, and are therefore not eligible images, are distroless images that do not set a created time, such as Google distroless images, and manifest lists.
 
-The images that are not eligible are still displayed, but they do not count toward the total number of images that is set in the retention policy and will not be removed.
+The images that are not eligible are still displayed, but they do not count toward the total number of images that is set in the retention policy and are not removed.
 
 ### What regions are available?
 {: #faq_regions}
@@ -268,5 +268,3 @@ On {{site.data.keyword.redhat_notm}} and CentOS, to determine the version of a p
 {: faq}
 
 Vulnerability Advisor is available in two versions, version 3 and version 4. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui).
-
-

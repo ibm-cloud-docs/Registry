@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-09-08"
+  years: 2017, 2023
+lastupdated: "2023-01-31"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -56,7 +56,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
 
     If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
-    
+
     You don't need to log in to {{site.data.keyword.registryshort_notm}} until you want to push an image, see [Step 5: Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing).
     {: note}
 
@@ -250,5 +250,3 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 - [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
 - [Define access policies.](/docs/Registry?topic=Registry-user#user)
 - [Set up clusters and worker nodes.](/docs/containers?topic=containers-clusters#clusters)
-
-
