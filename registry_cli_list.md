@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -100,7 +100,7 @@ The following code examples demonstrate how you might use the formatting and fil
 ## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -116,7 +116,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command.
 
 | Field | Type | Description |
 |-----|----|-----------|
@@ -133,7 +133,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
 
 | Field | Type | Description |
 |-----|----|-----------|

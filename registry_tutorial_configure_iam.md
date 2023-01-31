@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: access, tutorial, service ID, registry, namespace, account, resources, iam
 
@@ -272,7 +272,7 @@ Create some [namespaces](x2031005){: term} with sample images, and grant access 
         ```
         {: pre}
 
-    4. Log in to {{site.data.keyword.registrylong_notm}} by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+    4. Log in to {{site.data.keyword.registrylong_notm}} by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
         ```txt
         ibmcloud cr login

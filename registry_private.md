@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-04-13"
+  years: 2020, 2023
+lastupdated: "2023-01-31"
 
 keywords: private DNS, isolation for IBM Cloud Container Registry, service endpoints for IBM Cloud Container Registry, private network for IBM Cloud Container Registry, network isolation in IBM Cloud Container Registry, non-public routes for IBM Cloud Container Registry, private connection for IBM Cloud Container Registry, private network, image, connection, service endpoint, account, services
 
@@ -78,7 +78,7 @@ For more information, see [Automating access to {{site.data.keyword.registrylong
 ## Enforcing access to your account over a private network
 {: #registry_private_account}
 
-You can prevent or allow image pulls or pushes over public network connections for your account by using the [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only) command.
+You can prevent or allow image pulls or pushes over public network connections for your account by using the [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only) command.
 
 You can also use this command to check whether the use of private connections is set for your account.
 
@@ -108,5 +108,3 @@ Because the use of private connections doesn't apply to the management API, you 
     ibmcloud cr private-only --status
     ```
     {: pre}
-
-

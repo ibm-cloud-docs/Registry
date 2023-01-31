@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-04-13"
+  years: 2017, 2023
+lastupdated: "2023-01-31"
 
 keywords: registry, log in, login fails, container-registry, CLI plug-in, login credentials, Docker
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Logging in to {{site.data.keyword.registrylong}} fails.
 {: shortdesc}
 
-The [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command fails.
+The [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command fails.
 {: tsSymptoms}
 
 The following alternatives are possible causes:
@@ -38,5 +38,3 @@ You can fix this problem in the following ways:
 - Upgrade to the most recent version of the `container-registry` CLI plug-in, see [Updating the `container-registry` CLI plug-in](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_cli_update).
 - Ensure that Docker is installed on your computer. If it is already installed, restart the Docker daemon.
 - Rerun the `ibmcloud login` command to refresh your {{site.data.keyword.cloud_notm}} login credentials.
-
-

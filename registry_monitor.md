@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -41,14 +41,14 @@ Complete the following steps to create and configure platform metrics for {{site
     ```
     {: pre}
 
-3. Target the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) where you want to enable metrics by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. Replace `<region>` with the name of the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
+3. Target the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) where you want to enable metrics by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command. Replace `<region>` with the name of the [region](/docs/Registry?topic=Registry-registry_overview#registry_regions_local).
 
     ```txt
     ibmcloud cr region-set <region>
     ```
     {: pre}
 
-4. Check whether metrics are already enabled for your account by running the following [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) command. This command also displays the registry that the result applies to.
+4. Check whether metrics are already enabled for your account by running the following [`ibmcloud cr platform-metrics`](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics) command. This command also displays the registry that the result applies to.
 
     ```txt
     ibmcloud cr platform-metrics --status
@@ -62,7 +62,7 @@ Complete the following steps to create and configure platform metrics for {{site
     ```
     {: pre}
 
-    If you want to target a different [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), run the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+    If you want to target a different [region](/docs/Registry?topic=Registry-registry_overview#registry_regions), run the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command.
 
 ## Locations of platform metrics
 {: #registry_monitor_locations}

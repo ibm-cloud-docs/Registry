@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -128,11 +128,11 @@ Images are scanned only if they are using an operating system that is supported 
 
 Starting from version 1.0.0 of the {{site.data.keyword.registryshort}} plug-in, you can choose whether to fetch results from either version 3, `v3` (the default), or version 4, `v4`, of Vulnerability Advisor for the following commands:
 
-- [`ibmcloud cr va IMAGE`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_va), where `IMAGE` is the name of the image.
-- [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_list).
-- [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_digests).
+- [`ibmcloud cr va IMAGE`](/docs/Registry?topic=Registry-containerregcli#bx_cr_va), where `IMAGE` is the name of the image.
+- [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list).
+- [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
 
-To retrieve results from version 4 instead of version 3, run the following [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) command.
+To retrieve results from version 4 instead of version 3, run the following [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command.
 
 ```txt
 ibmcloud cr va-version-set v4
@@ -262,9 +262,9 @@ If you're using the CLI, you can set a [namespace](/docs/Registry?topic=Registry
 
 If you want to set exemptions from the policy by using the CLI, you can run the following commands:
 
-- To create an exemption for a security issue, run the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command.
-- To list your exemptions for security issues, run the [`ibmcloud cr exemption-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_list) command.
-- To list the types of security issues that you can exempt, run the [`ibmcloud cr exemption-types`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_types) command.
-- To delete an exemption for a security issue, run the [`ibmcloud cr exemption-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_rm) command.
+- To create an exemption for a security issue, run the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command.
+- To list your exemptions for security issues, run the [`ibmcloud cr exemption-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_list) command.
+- To list the types of security issues that you can exempt, run the [`ibmcloud cr exemption-types`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_types) command.
+- To delete an exemption for a security issue, run the [`ibmcloud cr exemption-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_rm) command.
 
 For more information about the commands, you can use the `--help` option when you run the command.

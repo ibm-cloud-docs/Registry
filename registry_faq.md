@@ -66,14 +66,14 @@ You can find the long format of the image [digest](/docs/Registry?topic=Registry
 When you are using the digest to identify an image, always use the long format.
 {: note}
 
-- Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command:
+- Run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command:
 
     ```txt
     ibmcloud cr image-digests
     ```
     {: pre}
 
-- Run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command:
+- Run the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command:
 
     ```txt
     ibmcloud cr image-list --no-trunc
@@ -89,7 +89,7 @@ When you are using the digest to identify an image, always use the long format.
 
 The [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) identifies an image by using the `sha256` hash of the [image manifest](/docs/Registry?topic=Registry-registry_overview#overview_elements_manifest).
 
-To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+To find the digests for your images, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. You can refer to an image by using a combination of the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
 ### How do you use access control?
 {: #faq_access_control}
@@ -109,7 +109,7 @@ For more information, see [Defining IAM access policies](/docs/Registry?topic=Re
 {: #faq_untagged_image_1}
 {: faq}
 
-To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
+To find out whether you have any [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images, list your images by running the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. Untagged images have a hyphen (-) in the **Tags** column.
 
 ### Do I need untagged images?
 {: #faq_untagged_image_2}
