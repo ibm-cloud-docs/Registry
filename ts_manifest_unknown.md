@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-06-10"
+  years: 2022, 2023
+lastupdated: "2023-01-31"
 
 keywords: error, registry, manifest unknown, manifest, manifest unknown error
 
@@ -32,6 +32,4 @@ To resolve the problem, try the following options:
 {: tsResolve}
 
 - Check that the image name is correct.
-- Check that you're pointing at the correct {{site.data.keyword.registryshort}} region by running the [`ibmcloud cr region`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region) command.
-
-
+- Check that you're pointing at the correct {{site.data.keyword.registryshort}} region by running the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.

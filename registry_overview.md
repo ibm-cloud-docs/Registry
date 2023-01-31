@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -42,7 +42,7 @@ You can choose between the free or standard {{site.data.keyword.registryshort}} 
 
 The {{site.data.keyword.registrylong_notm}} service plan determines the amount of storage and pull traffic that you can use for your private images. The service plan is associated with your {{site.data.keyword.cloud_notm}} account, and limits for storage and image pull traffic apply to all namespaces that you set up in your account.
 
-Service plans are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. Plan settings must all be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
+Service plans are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. Plan settings must all be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
 {: note}
 
 The following table shows available {{site.data.keyword.registrylong_notm}} service plans and their characteristics. For more information about how billing works and what happens when you exceed service plan limits, see [Quota limits and billing](#registry_plan_billing).
@@ -176,7 +176,7 @@ To upgrade your service plan, complete the following steps.
     ```
     {: pre}
 
-    For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
+    For more information, see [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) and [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 3. Upgrade to the standard plan.
 
@@ -188,7 +188,7 @@ To upgrade your service plan, complete the following steps.
     If you have an {{site.data.keyword.cloud_notm}} lite plan, you must upgrade to an {{site.data.keyword.cloud_notm}} Pay-as-you-go or Subscription account before you run `ibmcloud cr plan-upgrade`.
     {: tip}
 
-    For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_plan_upgrade).
+    For more information, see [`ibmcloud cr plan-upgrade`](/docs/Registry?topic=Registry-containerregcli#bx_cr_plan_upgrade).
 
 ## Terms that are used in {{site.data.keyword.registrylong_notm}}
 {: #overview_elements}
@@ -211,7 +211,7 @@ Digests are used as immutable references to various objects in the registry such
 
 In the context of the registry, an image digest is an immutable reference to an image that identifies an image by using the `sha256` hash of the [image manifest](#overview_elements_manifest). You can use an image digest to ensure that you always reference the same version of an image. Use the long format of the image digest to work with images, such as pulling, pushing, and deleting images.
 
-To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
+To find the image digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. The [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command also returns the image digest, but, by default, it is in a truncated format. You can add an option to the `ibmcloud cr image-list` command to return the image digest in the long format.
 
 When you are using the image digest to identify an image, always use the long format.
 {: tip}
@@ -243,7 +243,7 @@ The domain names that {{site.data.keyword.registryshort}} uses are in the format
 The domain name is only significant in the following situations:
 
 - When Kubernetes is selecting a pull-secret, it chooses one that matches the domain name.
-- When [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) is helping you to log in, it uses domain names in the format `us.icr.io` only.
+- When [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) is helping you to log in, it uses domain names in the format `us.icr.io` only.
 - When images are signed, the signature includes the domain name that was used at the time of signing.
 
 For more information about the domain names that {{site.data.keyword.registryshort}} uses, see [Regions](#registry_regions).
@@ -251,7 +251,7 @@ For more information about the domain names that {{site.data.keyword.registrysho
 ### Image manifest
 {: #overview_elements_manifest}
 
-An image manifest is a `.json` document that references the configuration object and image layers that are required to pull and run the image. The `sha256` hash of the image manifest is the [digest](#overview_elements_digest), which is used to identify the image. You can view the image manifest by running the [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect) command.
+An image manifest is a `.json` document that references the configuration object and image layers that are required to pull and run the image. The `sha256` hash of the image manifest is the [digest](#overview_elements_digest), which is used to identify the image. You can view the image manifest by running the [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect) command.
 
 ### OCI container images
 {: #overview_elements_oci_images}
@@ -304,7 +304,7 @@ You can use [tags](#x2040924){: term} to distinguish different versions of the s
 
 An image that has no [tag](#x2040924){: term} is an untagged image. Images that are untagged can be referenced by using the digest reference format `<repository>@<digest>` as opposed to the tag reference format `<repository>:<tag>`. Untagged images are typically the result of an image that is pushed with a pre-existing `<repository>:<tag>` combination. In this case, the tag is overwritten and the original image becomes untagged.
 
-You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command.
+You can view untagged images by using the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, and clean up untagged images by using the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command.
 
 ## Regions
 {: #registry_regions}
@@ -335,7 +335,7 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 #### Targeting the global registry
 {: #registry_regions_global_target}
 
-You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+You can target the global registry by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command.
 
 1. To target the global registry, run the following command.
 
@@ -344,7 +344,7 @@ You can target the global registry by running the [`ibmcloud cr region-set`](/do
     ```
     {: pre}
 
-2. To log your local Docker daemon into the global registry, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+2. To log your local Docker daemon into the global registry, run the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
     {{site.data.keyword.registryshort}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}
@@ -376,7 +376,7 @@ The existing `bluemix.net` domain names are deprecated, but you can continue to 
 {: help}
 {: support}
 
-If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
+If you want to use a region other than your local region, you can target the region that you want to access by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command. You can run the command with no options to get a list of available regions, or you can specify the region as an option.
 
 1. To run the command with options, replace `<region>` with the name of the [region](#registry_regions_local).
 
@@ -392,7 +392,7 @@ If you want to use a region other than your local region, you can target the reg
     ```
     {: pre}
 
-2. To log your local Docker daemon into the registry so that you can push or pull images, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+2. To log your local Docker daemon into the registry so that you can push or pull images, run the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
     {{site.data.keyword.registryshort}} supports other clients as well as Docker. To log in by using other clients, see [Accessing your namespaces interactively](/docs/Registry?topic=Registry-registry_access#registry_access_interactive).
     {: tip}

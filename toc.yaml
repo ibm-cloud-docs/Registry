@@ -25,7 +25,9 @@ toc:
           label: Public images
           topics:
           - registry_public_images.md
-          - /RegistryImages/toc
+          - include: ../RegistryImages/ibmcloud-secure-perimeter-health/index-ibmcloud-secure-perimeter-health.md
+          - include: ../RegistryImages/ibmcloud-secure-perimeter-network/index-ibmcloud-secure-perimeter-network.md
+          - include: ../RegistryImages/ibmliberty/index-ibmliberty.md
       - link:
           label: What are containers?
           href: https://www.ibm.com/topics/containers
@@ -53,9 +55,9 @@ toc:
       - topicgroup:
           label: Solution tutorials
           topics:
-          - /solution-tutorials/solution-tutorials-vm-to-containers-and-kubernetes
-          - /solution-tutorials/solution-tutorials-multi-region-k8s-cis
-          - /solution-tutorials/solution-tutorials-continuous-deployment-to-kubernetes
+          - include: ../solution-tutorials/vm-to-containers-and-kubernetes.md
+          - include: ../solution-tutorials/multi-region-k8s-cis.md
+          - include: ../solution-tutorials/continuous-deployment-to-kubernetes.md
 
   - navgroup:
       id: howto
@@ -75,7 +77,7 @@ toc:
             navtitle: Managing IAM access
           - topic: registry_users.md
             navtitle: Defining IAM access policies
-      - /va/toc
+      - va_index.md
       - topic: terraform.md
         navtitle: Setting up Terraform for Container Registry
       - topicgroup:
@@ -111,7 +113,7 @@ toc:
       - topicgroup:
           label: Container Registry CLI
           topics:
-          - /container-registry-cli-plugin/container-registry-cli-plugin-containerregcli
+          - include: ../container-registry-cli-plugin/container-registry-cli.md
           - registry_cli_list.md
           - registry_change_log.md
       - topicgroup:
@@ -171,7 +173,7 @@ toc:
               label: Troubleshooting pull and push errors
               topics:
               - ts_push_pull_docker.md
-              - /containers/containers-ts-app-image-pull
+              - include: ../containers/ts-app-02-imgpull.md
               - ts_iam_policy.md
           - topicgroup:
               label: Troubleshooting CLI commands

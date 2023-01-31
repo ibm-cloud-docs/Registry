@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -225,7 +225,7 @@ ibmcloud iam oauth-tokens | sed -ne '/IAM token/s/.* //p' | skopeo login -u iamb
 
 Use your own code to access to your namespaces in {{site.data.keyword.registrylong_notm}}.
 
-Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command to simplify `docker login`, but if you're implementing automation or you're using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
+Most users can use the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command to simplify `docker login`, but if you're implementing automation or you're using a different client, you might want to authenticate manually. You must present a username and password. In {{site.data.keyword.registrylong_notm}}, the username indicates the type of secret that is presented in the password.
 
 The following usernames are valid:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-23"
+lastupdated: "2023-01-31"
 
 keywords: IBM Cloud Container Registry notices, iam access policies, access policies, changes, prepare, iam, policy, region
 
@@ -41,9 +41,9 @@ By default, account owners already have appropriate policies that give them full
 ## Check whether these changes affect you
 {: #notices_iam_policy_affect}
 
-To check whether policy-free authorization is in effect, run the [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_status) command. If the CLI reports that `IAM policy enforcement is disabled`, you must [prepare for the changes](#notices_iam_policy_prepare).
+To check whether policy-free authorization is in effect, run the [`ibmcloud cr iam-policies-status`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_status) command. If the CLI reports that `IAM policy enforcement is disabled`, you must [prepare for the changes](#notices_iam_policy_prepare).
 
-The policy status setting is specific to each {{site.data.keyword.registryshort}} region. Check every region in which you have {{site.data.keyword.registryshort}} namespaces by running the [`ibmcloud cr region-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region_set) command.
+The policy status setting is specific to each {{site.data.keyword.registryshort}} region. Check every region in which you have {{site.data.keyword.registryshort}} namespaces by running the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) command.
 
 ## Prepare for the changes
 {: #notices_iam_policy_prepare}
@@ -52,7 +52,7 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 
 1. Identify each service ID and user ID that accesses your {{site.data.keyword.registryshort}} images and settings. You can use [{{site.data.keyword.at_full_notm}}](/docs/Registry?topic=Registry-at_events) to help find this information.
 2. For each access that is identified in the previous step, [create an IAM access policy](/docs/Registry?topic=Registry-user) that allows the correct access. You can also use access groups to apply policies to IDs.
-3. (Optional) If you want to upgrade the account to use IAM access policy authorization at a more convenient time, rather than on the date of the change, run the [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_iam_policies_enable) command.
+3. (Optional) If you want to upgrade the account to use IAM access policy authorization at a more convenient time, rather than on the date of the change, run the [`ibmcloud cr iam-policies-enable`](/docs/Registry?topic=Registry-containerregcli#bx_cr_iam_policies_enable) command.
 
     This change cannot be reversed.
     {: important}
@@ -63,5 +63,3 @@ If the changes affect you, you must create IAM [access policies](/docs/Registry?
 {: #notices_iam_policy_unprepared}
 
 To recover any access that is lost, follow the steps in [Prepare for the changes](#notices_iam_policy_prepare).
-
-

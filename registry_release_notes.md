@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -53,7 +53,7 @@ Changes to private IP addresses from 15 December 2022 {: #2nov2022_ip}
 
     Version 1.0.0 includes [Vulnerability Advisor 4](/docs/Registry?topic=Registry-registry_release_notes#15sep2022_va_version_4).
 
-    In version 1.0.0, the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands no longer include security status by default. To include security status, you can either add the `--va` option to the command, or use the [`ibmcloud cr va`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_va) command to query the security status for an individual image.
+    In version 1.0.0, the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands no longer include security status by default. To include security status, you can either add the `--va` option to the command, or use the [`ibmcloud cr va`](/docs/Registry?topic=Registry-containerregcli#bx_cr_va) command to query the security status for an individual image.
 
     For more information, see [{{site.data.keyword.registryshort}} CLI stops returning security status results in lists by default from version 1.0.0](/docs/Registry?topic=Registry-registry_notices_lists).
 
@@ -65,27 +65,27 @@ Vulnerability Advisor 4 is available from {{site.data.keyword.registryshort}} pl
 
     If you want to continue to use version 3, you don't need to do anything.
 
-    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+    If you want to use version 4 to run the `ibmcloud cr va`, `ibmcloud cr image-list`, or `ibmcloud cr image-digests` commands, see [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
-    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=va-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).
+    For more information about Vulnerability Advisor, see [About Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui#about). For more information about Vulnerability Advisor API 4, see [Vulnerability Advisor 4 for {{site.data.keyword.registrylong_notm}}](https://{DomainName}/apidocs/container-registry/va-v4).
 
 New commands for setting and checking the Vulnerability Advisor version are available from {{site.data.keyword.registryshort}} plug-in 1.0.0 {: #15sep2022_va_version_commands}
 :   From {{site.data.keyword.registryshort}} plug-in 1.0.0, you can use new commands to check and set Vulnerability Advisor versions.
 
     If you want to continue to use version 3, you don't need to do anything.
 
-    If you want to use version 4, you can set the version by running the [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) command.
+    If you want to use version 4, you can set the version by running the [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) command.
 
-    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=va-va_index&interface=ui#va_set_version).
+    For more information about setting the version by using the `ibmcloud cr va-version-set` command, see [`ibmcloud cr va-version-set`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version_set) and [Setting the Vulnerability Advisor version](/docs/Registry?topic=Registry-va_index&interface=ui#va_set_version).
 
-    To find out which version of Vulnerability Advisor that you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_va_version).
+    To find out which version of Vulnerability Advisor that you're running, see [`ibmcloud cr va-version`](/docs/Registry?topic=Registry-containerregcli#ic_cr_va_version).
 
 ## 3 August 2022
 {: #registry-03aug2022}
 {: release-note}
 
 The CLI stops returning security status results in lists by default from version 1.0.0 {: #03aug2022_list}
-:   From {{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0, when you use the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_list) and [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_digests) commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
+:   From {{site.data.keyword.registrylong_notm}} CLI plug-in version 1.0.0, when you use the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) and [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) commands to list images, they return Vulnerability Advisor security status results only if you use the `--va` option.
 
     If you want to continue to receive security status with your lists, prepare to upgrade by adding the new `--va` option to your commands.
 
@@ -173,7 +173,7 @@ All accounts will require IAM access policies from 5 July 2022 {: #09feb2022_iam
 {: release-note}
 
 Replication of exemption policies between {{site.data.keyword.IBM_notm}} regions is discontinued {: #02feb2022_exemption}
-:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+:   From 2 February 2022, all regions require separate exemption policy management. Exemption policies are used to exclude any matching vulnerabilities or configuration issues from Vulnerability Advisor reports. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
     For more information, see [{{site.data.keyword.registrylong_notm}} Is Ending Exemption Synchronization Across Regions](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-is-ending-exemption-synchronization-across-regions){: external}.
 
@@ -285,7 +285,7 @@ The `ibmcloud cr ppa-archive-load` command is discontinued {: #04may2021_ppa}
 {: release-note}
 
 Increase the performance of the `ibmcloud cr image-list` and `ibmcloud cr image-digests` commands by using the `--no-va` option {: #18feb2021_no-va}
-:   If you don't need the security status (Vulnerability Advisor) results as part of the output of the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) or [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) commands, you can use the `--no-va` option to increase performance.
+:   If you don't need the security status (Vulnerability Advisor) results as part of the output of the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) or [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) commands, you can use the `--no-va` option to increase performance.
 
 ## 15 February 2021
 {: #registry-15feb2021}
@@ -308,7 +308,7 @@ You can use Portieris to enforce container image security {: #19nov2020_portieri
 {: release-note}
 
 Find out about the usage on your account by using platform metrics {: #21oct2020_metrics}
-:   You can use the [`ibmcloud cr platform-metrics`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_platform_metrics) command to enable and disable platform metrics, and to find out whether you have platform metrics set up on your account.
+:   You can use the [`ibmcloud cr platform-metrics`](/docs/Registry?topic=Registry-containerregcli#ic_cr_platform_metrics) command to enable and disable platform metrics, and to find out whether you have platform metrics set up on your account.
 
     For more information, see [Monitoring metrics for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_monitor).
 
@@ -317,7 +317,7 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {: release-note}
 
 {{site.data.keyword.registryshort}} container builds are deprecated {: #06oct2020_build}
-:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
+:   The `ibmcloud cr build` command, which builds an image in {{site.data.keyword.cloud_notm}} and pushes it to {{site.data.keyword.registryshort_notm}}, is deprecated from 6 October 2020. You can use [Tekton pipelines](/docs/ContinuousDelivery?topic=ContinuousDelivery-pipeline_container_images#pipeline_tekton_images) instead.
 
     For more information, see [{{site.data.keyword.registrylong_notm}} is Deprecating Container Builds](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecating-container-builds){: external}.
 
@@ -326,9 +326,9 @@ Find out about the usage on your account by using platform metrics {: #21oct2020
 {: release-note}
 
 Setting exemption policies by digest {: #27aug2020_digest}
-:   When you want to set up an exemption policy, you can set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_exemption_add) command.
+:   When you want to set up an exemption policy, you can set the scope by namespace, repository, digest, or tag. You can set an exemption policy by running the [`ibmcloud cr exemption-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_exemption_add) command.
 
-    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
 ## 12 August 2020
 {: #registry-12aug2020}
@@ -355,11 +355,11 @@ New access roles are required for Vulnerability Advisor exemption policies {: #3
 You can set permissions so that access to resources within a namespace can be configured at the resource group level {: #29jul2020_resource_group}
 :   Namespaces are created in resource groups so that access to resources within a namespace can be configured at the resource group level. If a namespace isn't already in a resource group, you can assign the namespace to a resource group.
 
-    - Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) and [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add).
+    - Namespaces created in version 0.1.485 of the {{site.data.keyword.registryshort_notm}} CLI or later, or in the {{site.data.keyword.cloud_notm}} console on or after 29 July 2020, are created in a resource group that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. However, you can still set permissions for the namespace at the account level or in the namespace itself. For more information, see [Set up a namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add) and [`ibmcloud cr namespace-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add).
 
-    - Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't assigned to resource groups. You can assign an existing namespace to a resource group so that you can configure access to resources within a namespace at the resource group level. For more information, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_namespace_assign).
+    - Namespaces created in version 0.1.484 of the {{site.data.keyword.registryshort_notm}} CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020 aren't assigned to resource groups. You can assign an existing namespace to a resource group so that you can configure access to resources within a namespace at the resource group level. For more information, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign) and [`ibmcloud cr namespace-assign`](/docs/Registry?topic=Registry-containerregcli#ic_cr_namespace_assign).
 
-    - You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command with the `-v` option.
+    - You can find out which namespaces are assigned to resource groups and which are unassigned by running the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command with the `-v` option.
 
 ## 13 July 2020
 {: #registry-13jul2020}
@@ -373,7 +373,7 @@ To work with namespaces, you must have the Manager role at the account level {: 
 {: release-note}
 
 Restoring all tags for a digest in a repository is now an option {: #24jun2020_tags}
-:   When you want to restore an image, you can restore either by tag or by digest. Restoring by digest restores the digest and all its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+:   When you want to restore an image, you can restore either by tag or by digest. Restoring by digest restores the digest and all its tags in the repository that aren't already in the live repository. You can restore an image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 
     For more information, see [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
@@ -382,7 +382,7 @@ Restoring all tags for a digest in a repository is now an option {: #24jun2020_t
 {: release-note}
 
 Retaining untagged images is now an option when you clean up your namespaces {: #18may2020_untagged}
-:   Retention policies now include untagged images by default when they calculate what to retain. You can use the `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) commands to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
+:   Retention policies now include untagged images by default when they calculate what to retain. You can use the `retain-untagged` option for the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) and [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) commands to keep all untagged images and delete only tagged images. You can view the value of `retain-untagged` for each retention policy by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command.
 
     For more information, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 
@@ -393,7 +393,7 @@ Retaining untagged images is now an option when you clean up your namespaces {: 
 `ibmcloud cr image-prune-untagged` command is available {: #30apr2020_prune}
 :   The `ibmcloud cr image-prune-untagged` command deletes all [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in your {{site.data.keyword.registryshort}} account.
 
-    For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
+    For more information, see [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) and [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
 
 ## 16 April 2020
 {: #registry-16apr2020}
@@ -407,7 +407,7 @@ You can use private network connections to securely route your data in {{site.da
 `ibmcloud cr private-only` command is available {: #16apr2020_private}
 :   You can use the `ibmcloud cr private-only` command to prevent image pulls or pushes over public network connections for your account.
 
-    For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_private_only).
+    For more information, see [`ibmcloud cr private-only`](/docs/Registry?topic=Registry-containerregcli#ic_cr_private_only).
 
 ## 3 February 2020
 {: #registry-3feb2020}
@@ -425,7 +425,7 @@ Using {{site.data.keyword.registryshort}} tokens is deprecated {: #3feb2020_toke
 `ibmcloud cr image-digests` command is available {: #31jan2020_digests}
 :   The `ibmcloud cr image-digests` command displays all images in your account, including untagged images.
 
-    For more information, see [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests).
+    For more information, see [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests).
 
 ## 4 December 2019
 {: #registry-4dec2019}
@@ -452,7 +452,7 @@ Support for {{site.data.keyword.redhat_notm}} signatures is available {: #4dec20
 `ibmcloud cr manifest-inspect` command is available {: #14oct2019_manifest}
 :   The `ibmcloud cr manifest-inspect` command displays the contents of the manifest for an image.
 
-    For more information, see [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_manifest_inspect).
+    For more information, see [`ibmcloud cr manifest-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_manifest_inspect).
 
 ## 23 September 2019
 {: #registry-23sep2019}
@@ -463,8 +463,8 @@ You can create retention policies for your images {: #23sep2019_retention_policy
 
     The following commands are available for you to use to create retention policies so that you can manage your images:
 
-    - The [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command sets up a policy for retaining images for each repository within a namespace.
-    - The [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command lists the image retention policies for your account.
+    - The [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) command sets up a policy for retaining images for each repository within a namespace.
+    - The [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command lists the image retention policies for your account.
 
     For more information, see [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
@@ -473,8 +473,8 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 
     The following commands are available for you to use to restore images:
 
-    - The [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. Images remain in the trash for 30 days after deletion.
-    - The [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.
+    - The [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command displays all images in the trash in your {{site.data.keyword.cloud_notm}} account. Images remain in the trash for 30 days after deletion.
+    - The [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command restores a deleted image from the trash.
 
     For more information, see [Listing images in the trash](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) and [Restoring images](/docs/Registry?topic=Registry-registry_images_#registry_images_restore).
 
@@ -485,7 +485,7 @@ You can restore deleted images from the trash {: #23sep2019_restore_trash}
 `ibmcloud cr retention-run` command is available {: #01aug2019_retention}
 :   The `ibmcloud cr retention-run` command cleans up your namespaces by retaining images for each repository within a namespace in {{site.data.keyword.registryshort}} by applying specified criteria. All other images in the namespace are deleted.
 
-    For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=Registry-registry_retention).
+    For more information, see [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) and [Retaining images](/docs/Registry?topic=Registry-registry_retention).
 
 ## 25 July 2019
 {: #registry-25jul2019}
@@ -515,7 +515,7 @@ Container Scanner is no longer available {: #27jun2019_cs}
 {: release-note}
 
 Remove tags from images {: #13jun2019_tags}
-:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command instead.
+:   Remove a tag, or tags, from each specified image in {{site.data.keyword.registryshort}}. To remove a specific tag from an image and leave the underlying image and any other tags in place, use the [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag) command. If you want to delete the underlying image, and all its tags, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command instead.
 
     For more information, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag).
 
@@ -599,7 +599,7 @@ Managing user access {: #4oct2018_access}
 Exemption policies available in Vulnerability Advisor {: #7aug2018_exemption}
 :   If you want to manage the security of an {{site.data.keyword.cloud_notm}} organization, you can use your policy setting to determine whether an issue is exempt or not. You can use Portieris to ensure that deployment is allowed only from images that contain no security issues after accounting for any issues that are exempted by your policy.
 
-    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=va-va_index#va_managing_policy).
+    For more information, see [Setting organizational exemption policies](/docs/Registry?topic=Registry-va_index&interface=ui#va_managing_policy).
 
 ## 25 July 2018
 {: #registry-25jul2018}

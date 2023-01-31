@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-09-08"
+  years: 2017, 2023
+lastupdated: "2023-01-31"
 
 keywords: IBM Cloud Container Registry, namespace, cli, Docker, image, registry, Podman, resource group, docker, repository
 
@@ -26,7 +26,7 @@ completion-time: 45m
 {{site.data.keyword.registrylong}} provides a multi-tenant private image [registry](/docs/Registry?topic=Registry-registry_overview#overview_elements_registry) that you can use to store and share your [container images](/docs/Registry?topic=Registry-registry_overview#overview_elements_container_image) with users in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+The {{site.data.keyword.cloud_notm}} console includes a brief Quick Start. To find out more about how to use the {{site.data.keyword.cloud_notm}} console, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 Do not put personal information in your container images, namespace names, description fields, or in any image configuration data (for example, image names or image labels).
 {: important}
@@ -56,7 +56,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
 
     If you have a federated ID, use `ibmcloud login --sso` to log in. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. If you have a federated ID, the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
-    
+
     You don't need to log in to {{site.data.keyword.registryshort_notm}} until you want to push an image, see [Step 5: Push images to your namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing).
     {: note}
 
@@ -73,7 +73,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
     You can put the namespace in a resource group of your choice by using one of the following options.
 
     - Before you create the namespace, run the [`ibmcloud target -g <resource_group>`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command, where `<resource_group>` is the resource group.
-    - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_add) command.
+    - Specify the resource group by using the `-g` option on the [`ibmcloud cr namespace-add`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_add) command.
 
     If you have a problem when you try to create a namespace, see [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace) for assistance.
     {: tip}
@@ -136,7 +136,7 @@ Create a [namespace](x2031005){: term}. The [namespace](/docs/Registry?topic=Reg
 
 To tag the image, replace `<source_image>` with the repository and `<tag>` with the tag of your local image that you pulled earlier. Replace `<region>` with the name of your [region](/docs/Registry?topic=Registry-registry_overview#registry_regions). Replace `<my_namespace>` with the namespace that you created in [Set up a namespace](#gs_registry_namespace_add). Define the repository and tag of the image that you want to use in your namespace by replacing `<new_image_repo>` and `<new_tag>`. For example, depending on the tool that you are using, run one of the following commands.
 
-To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_region) command.
+To find the name of your region, run the [`ibmcloud cr region`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region) command.
 {: tip}
 
 - If you are using Docker, run the following command.
@@ -245,10 +245,8 @@ You set up a namespace in {{site.data.keyword.registrylong_notm}} and pushed you
 ## Next steps in {{site.data.keyword.registryshort_notm}}
 {: #gs_get_start_next}
 
-- [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=va-va_index)
+- [Manage image security with Vulnerability Advisor.](/docs/Registry?topic=Registry-va_index&interface=ui)
 - [Review your service plans.](/docs/Registry?topic=Registry-registry_overview#registry_plans)
 - [Store and manage more images in your namespace.](/docs/Registry?topic=Registry-registry_images_)
 - [Define access policies.](/docs/Registry?topic=Registry-user#user)
 - [Set up clusters and worker nodes.](/docs/containers?topic=containers-clusters#clusters)
-
-

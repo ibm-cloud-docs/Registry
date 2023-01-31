@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-05-17"
+  years: 2019, 2023
+lastupdated: "2023-01-31"
 
 keywords: retention, delete images, retain images, clean up, retention policies, delete images, keep all images, namespace, images, policy, repository, trash
 
@@ -26,7 +26,7 @@ When you run the [`ibmcloud cr retention-run`](#retention_images) and [`ibmcloud
 
 If you want to check what's in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-registry_images_#registry_images_list_trash) command. You can restore images from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-registry_images_#registry_images_restore) command.
 
-If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command.
+If you want to check your policies, you can run the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command.
 
 If you want to cancel a policy, [update the retention policy so that it keeps all your images](#retention_policy_keep).
 
@@ -35,11 +35,11 @@ You can also clean up your namespace by [deleting your untagged images](#retenti
 ## Planning retention
 {: #retention_plan}
 
-The [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) and [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) commands operate on a per-namespace basis. If you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
+The [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) and [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) commands operate on a per-namespace basis. If you have multiple namespaces in your pipeline, you can apply different retention criteria for each namespace to best suit your requirements.
 
 Consider a typical delivery pipeline with development, staging, and production environments. As code is delivered, continuous integration and continuous deployment pushes images into the registry and then deploys them straight to your development environment. After testing, some builds from development are promoted to staging, and then potentially onto production. In this scenario, the rate of image change is fastest in development and slowest in production. If all your environments pull images from the same namespace, it can be difficult to choose an appropriate number of images to retain due to this difference in velocity.
 
-A good approach is to deliver all images into a development namespace, for example, `project-development`, and then to use the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command to tag the image into a different namespace when it is promoted to a higher stage of the pipeline. In the previous example, you can have three namespaces: development, `project-development`, staging, `project-staging`, and production, `project-production`. When you are promoting from development to staging, images are tagged from the `project-development` namespace into the `project-staging` namespace, and the images from the `project-staging` namespace are used for deployment. Similarly, when you are promoting from staging to production, images are tagged from the `project-staging` namespace into the `project-production` namespace, and the `project-production` namespace images are used in the production deployment.
+A good approach is to deliver all images into a development namespace, for example, `project-development`, and then to use the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command to tag the image into a different namespace when it is promoted to a higher stage of the pipeline. In the previous example, you can have three namespaces: development, `project-development`, staging, `project-staging`, and production, `project-production`. When you are promoting from development to staging, images are tagged from the `project-development` namespace into the `project-staging` namespace, and the images from the `project-staging` namespace are used for deployment. Similarly, when you are promoting from staging to production, images are tagged from the `project-staging` namespace into the `project-production` namespace, and the `project-production` namespace images are used in the production deployment.
 
 You gain the following advantages by using this technique:
 
@@ -57,12 +57,12 @@ Use the `ibmcloud cr retention-run` command to clean up a namespace by retaining
 
 You can choose whether to exclude untagged images from the clean-up process.
 
-The [`ibmcloud cr retention-run`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_run) command lists the images to delete and gives you the option to cancel before deletion.
+The [`ibmcloud cr retention-run`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_run) command lists the images to delete and gives you the option to cancel before deletion.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the  [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
 To reduce the number of images in each repository within your namespace by using the CLI, complete the following steps:
@@ -117,12 +117,12 @@ You can set a retention policy for your namespaces to retain only images that me
 
 You can choose whether to exclude untagged images from the clean-up process.
 
-You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, then it runs daily. You can set only one policy in each namespace.
+You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) command to set a policy that retains a specified number of images for each repository within a namespace in {{site.data.keyword.registrylong_notm}}. All other images in the namespace are deleted and moved to the trash. When you set a policy it runs immediately, then it runs daily. You can set only one policy in each namespace.
 
 Where an image, within a repository, is referenced by multiple tags, that image is counted only once. Newest images are retained. Age is determined by when the image was created, not when it was pushed to the registry.
 {: tip}
 
-If you delete an image in error, you can restore the image by using the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) and [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) commands.
+If you delete an image in error, you can restore the image by using the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) and [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) commands.
 {: tip}
 
 To set a policy and immediately move your deleted images to the trash, complete the following steps:
@@ -171,7 +171,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
     ```
     {: pre}
 
-6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, ensure that the **`Retain all untagged`** column has the value `true`.
+6. Verify that the policy is set by running the [`ibmcloud cr retention-policy-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_list) command, and check that the policy that you set for the namespace retains the required number of images. If you set the policy to retain all untagged images, ensure that the **`Retain all untagged`** column has the value `true`.
 
     ```txt
     ibmcloud cr retention-policy-list
@@ -185,7 +185,7 @@ To set a policy and immediately move your deleted images to the trash, complete 
 
 All namespaces have a default policy that keeps all images. You can return a policy to the default state.
 
-You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
+You can use the [`ibmcloud cr retention-policy-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_retention_policy_set) command to set the policy back to the default state by running the following command, where `<namespace>` is your namespace:
 
 ```txt
 ibmcloud cr retention-policy-set --images All <namespace>
@@ -199,11 +199,9 @@ ibmcloud cr retention-policy-set --images All <namespace>
 
 You can clean up your namespace and reduce your bills by deleting your [untagged](/docs/Registry?topic=Registry-registry_overview#overview_elements_untagged) images in the namespace and optionally output the results in JSON format.
 
-If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:
+If you want to delete your untagged images and output the results in JSON format, run the following [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, where `<namespace>` is your namespace:
 
 ```txt
 ibmcloud cr image-prune-untagged [--force | -f [--json]] --restrict <namespace>
 ```
 {: pre}
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-11-23"
+  years: 2021, 2023
+lastupdated: "2023-01-31"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -12,7 +12,7 @@ subcollection: Registry
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Your responsibilities when you're using {{site.data.keyword.registryshort_notm}}
+# Your responsibilities when you are using {{site.data.keyword.registryshort_notm}}
 {: #registry_responsibilities}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.registrylong}}.
@@ -45,7 +45,7 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 |------|-------------------------------------------------|-----------------------|
 | Provisioning. | It is the responsibility of {{site.data.keyword.IBM_notm}} to provision the service. | |
 | Deprovisioning. | It is the responsibility of {{site.data.keyword.IBM_notm}} to deprovision the service. | |
-| Update package versions. | | It is your responsibility to update package versions inside container images. You can use Vulnerability Advisor to identify the required updates. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index). |
+| Update package versions. | | It is your responsibility to update package versions inside container images. You can use Vulnerability Advisor to identify the required updates. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui). |
 {: row-headers}
 {: caption="Table 2. Responsibilities for change management" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
@@ -91,5 +91,3 @@ Security and regulation compliance includes tasks such as security controls impl
 {: row-headers}
 {: caption="Table 5. Responsibilities for disaster recovery" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
-

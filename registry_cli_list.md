@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-10-07"
+  years: 2017, 2023
+lastupdated: "2023-01-31"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -66,7 +66,7 @@ The following code examples demonstrate how you might use the formatting and fil
     ```
     {: screen}
 
-    If listing images times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
 - Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
@@ -100,7 +100,7 @@ The following code examples demonstrate how you might use the formatting and fil
 ## Go template options for `ibmcloud cr image-digests`
 {: #registry_cli_list_imagedigests}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command.
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -108,7 +108,7 @@ Review the following table to find available Go template options and data types 
 | `Digest` | String | Displays the unique identifier for an image. |
 | `ManifestType` | String | Displays the image manifest type. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tags` | Array of strings | Displays the tags for the image. |
 {: caption="Table 1. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list image digests" caption-side="bottom"}
@@ -116,7 +116,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options for `ibmcloud cr image-list`
 {: #registry_cli_list_imagelist}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command.
 
 | Field | Type | Description |
 |-----|----|-----------|
@@ -125,7 +125,7 @@ Review the following table to find available Go template options and data types 
 | `ManifestType` | String | Displays the image manifest type. |
 | `Namespace` | String | Displays the namespace where the image is stored. |
 | `Repository` | String | Displays the repository of the image. |
-| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=va-va_index&interface=cli#va_registry_cli). |
+| `SecurityStatus` | Object | Displays the vulnerability status for the image. You can filter and format the following values:  \n - **`Status`** `string`  \n - **`IssueCount`** `int`  \n - **`ExemptionCount`** `int`  \n  \n The possible statuses are described in [Reviewing a vulnerability report by using the CLI](/docs/Registry?topic=Registry-va_index&interface=cli#va_registry_cli). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `Tag` | String | Displays the tag for the image. |
 {: caption="Table 2. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to list images" caption-side="bottom"}
@@ -133,7 +133,7 @@ Review the following table to find available Go template options and data types 
 ## Go template options for `ibmcloud cr image-inspect`
 {: #registry_cli_list_imageinspect}
 
-Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_inspect) command.
+Review the following table to find available Go template options and data types for the [`ibmcloud cr image-inspect`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_inspect) command.
 
 | Field | Type | Description |
 |-----|----|-----------|
@@ -206,5 +206,3 @@ Review the following table to find available Go template options and data types 
 | `Layers` | Array of strings|Displays the descriptors of each image layer. |
 | `Type` | String | Displays the type of file system. |
 {: caption="Table 6. Available fields and data types in RootFS" caption-side="bottom"}
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -123,14 +123,14 @@ Depending on the size of the image, it might take a while for the image to be re
 {: note}
 
 1. Find the names of the images that you want to remove.
-    - To list only tagged images, run the [`ibmcloud cr image-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_list) command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
+    - To list only tagged images, run the [`ibmcloud cr image-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_list) command. Combine the content of the **Repository** column (`repository`) and **Tag** column (`tag`) separated by a colon (`:`) to create the image name in the format `repository:tag`. If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
 
       ```txt
       ibmcloud cr image-list
       ```
       {: pre}
 
-    - To list both tagged and untagged images, you must list the images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) in all your namespaces of your {{site.data.keyword.cloud_notm}} account. To list the images by digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
+    - To list both tagged and untagged images, you must list the images by [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) in all your namespaces of your {{site.data.keyword.cloud_notm}} account. To list the images by digest, run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command. Combine the content of the **Repository** column (`repository`) and the **Digest** column (`digest`) separated by an at (`@`) symbol to create the image name in the format `repository@digest`.
 
       ```txt
       ibmcloud cr image-digests
@@ -139,7 +139,7 @@ Depending on the size of the image, it might take a while for the image to be re
 
 2. You can remove images individually, collectively, or by using retention policies.
 
-   - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
+   - To remove images individually from your namespace, use the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command. Replace `<image_name>` with the name of the image that you want to remove. The name must be in the format `repository@digest` or `repository:tag`. If a tag is not specified in the image name, the image that is tagged `latest` is deleted by default. Deleted images are stored in the trash for 30 days. Images that are in the trash don't count toward your quota.
 
         You can remove both tagged and untagged images by using the format `repository@digest`. You can remove only tagged images by using the format `repository:tag`.
         {: note}
@@ -149,10 +149,10 @@ Depending on the size of the image, it might take a while for the image to be re
         ```
         {: pre}
 
-        Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag) command.
+        Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](/docs/Registry?topic=Registry-registry_images_#registry_images_untag) command.
         {: tip}
 
-   - To remove untagged images collectively from your namespace, use the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#ic_cr_image_prune_untagged) command, see [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
+   - To remove untagged images collectively from your namespace, use the [`ibmcloud cr image-prune-untagged`](/docs/Registry?topic=Registry-containerregcli#ic_cr_image_prune_untagged) command, see [Clean up your namespaces by deleting untagged images](/docs/Registry?topic=Registry-registry_retention#retention_images_untagged).
 
    - To use retention policies, see [Cleaning up your namespaces](/docs/Registry?topic=Registry-registry_retention).
 

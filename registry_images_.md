@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-31"
 
 keywords: Docker, private repository, images, building images, trash, recycle bin, restoring images, namespace, cli, tag, api key
 
@@ -42,12 +42,12 @@ Before you begin, complete the following tasks.
 
 1. Download the image, see [Pull an image](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pulling) in the Getting Started documentation.
 
-    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
     {: tip}
 
 After you pull an image and [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) it for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the image from your local computer to your namespace.
 
-If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=containers-ts-app-image-pull) for assistance.
+If you deploy a workload that pulls an image from {{site.data.keyword.registryshort_notm}} and your pods fail with an ImagePullBackOff status, see [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull) for assistance.
 {: tip}
 
 ## Pushing Docker images to your namespace
@@ -73,7 +73,7 @@ Before you begin, complete the following tasks.
 
 To upload (push) an image, complete the following steps:
 
-1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login
@@ -94,7 +94,7 @@ To upload (push) an image, complete the following steps:
 
 After you push your image to {{site.data.keyword.registrylong_notm}}, you can do one of the following tasks.
 
-- [Manage security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Manage security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Copying images between registries
@@ -121,7 +121,7 @@ To copy an image between two registries, complete the following steps:
 
 After you copy your image, you can do one of the following tasks.
 
-- [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index) to find information about potential security issues and vulnerabilities.
+- [Manage image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui) to find information about potential security issues and vulnerabilities.
 - [Create a cluster and use this image to deploy a container](/docs/containers?topic=containers-getting-started#getting-started) to the cluster in {{site.data.keyword.containerlong_notm}}.
 
 ## Creating images that refer to a source image
@@ -129,7 +129,7 @@ After you copy your image, you can do one of the following tasks.
 {: help}
 {: support}
 
-Create an image by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_tag) command.
+Create an image by using the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command.
 
 In the region that you're logged in to, create an image in {{site.data.keyword.registrylong_notm}} that refers to an existing image in the same region. This action is supported for source images that are created by using supported versions of Docker Engine, see [Support for Docker](/docs/Registry?topic=Registry-registry_overview#docker).
 
@@ -143,7 +143,7 @@ Before you begin, complete the following tasks.
 
 To create an image from a source image, complete the following steps.
 
-1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login
@@ -246,7 +246,7 @@ To build your own Docker image, complete the following steps:
 
     3. After you create your image and tag it for your namespace, [you can push your image to your namespace in {{site.data.keyword.registrylong_notm}}](#registry_images_pushing_namespace).
 
-To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
+To use Vulnerability Advisor to check the security of your image, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=Registry-va_index&interface=ui).
 
 ## Pushing images by using an API key
 {: #registry_api_key_push_image}
@@ -270,7 +270,7 @@ You can now use clusters to pull the images, see [Building containers from image
 {: help}
 {: support}
 
-You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image in your private {{site.data.keyword.cloud_notm}} repository, and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_untag) command.
+You can remove a [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag), or tags, from an image in your private {{site.data.keyword.cloud_notm}} repository, and leave the underlying image and any other tags in place by using the [`ibmcloud cr image-untag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_untag) command.
 
 If multiple tags exist for the same image [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) within a repository and you want to remove the underlying image and all its tags, see [Deleting images from your private {{site.data.keyword.cloud_notm}} repository](#registry_images_remove).
 {: tip}
@@ -308,10 +308,10 @@ If you want to delete a private repository and its associated images, see [Delet
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
 
-If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
-Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
+Where multiple tags exist for the same image digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying image and all its tags. If the same image exists in a different repository or namespace, that copy of the image is not removed. If you want to remove a tag from an image and leave the underlying image and any other tags in place, see [Removing tags from images in your private repository](#registry_images_untag) command.
 {: tip}
 
 ### Deleting images from your private repository in the CLI
@@ -322,7 +322,7 @@ You can delete unwanted images and all their tags from your private {{site.data.
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
 
-If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
 To delete an image by using the CLI, complete the following steps:
@@ -353,7 +353,7 @@ You can delete unwanted images and all their tags from your private {{site.data.
 Deleting an image that is being used by an existing deployment might cause scale-up, reschedule, or both, to fail.
 {: important}
 
-If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted image, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected image by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
 To delete an image by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
@@ -372,7 +372,7 @@ To delete an image by using the {{site.data.keyword.cloud_notm}} console, comple
 
 You can list deleted images that are in the trash and see when they expire.
 
-To find out which images are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
+To find out which images are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command. Images are stored in the trash for 30 days.
 
 To list the images in the trash, complete the following steps:
 
@@ -396,9 +396,9 @@ To list the images in the trash, complete the following steps:
 
 You can restore images from the trash. Deleted images are stored in the trash for 30 days.
 
-You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command.
+You can restore an image from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. To find out which images are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command.
 
-You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. You can use the following options:
+You can restore images by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
 - `<repo>@<digest>`, which restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring images by digest](#registry_images_restore_digest).
 - `<repo>:<tag>`, which restores the tag, see [Restoring images by tag](#registry_images_restore_tag).
@@ -433,7 +433,7 @@ To restore an image by digest from the trash, complete the following steps:
     If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest) for assistance.
     {: tip}
 
-    In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the image shows in the output.
+    In your live repository, you can pull the image by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, the image shows in the output.
     {: tip}
 
 ### Restoring images by tag

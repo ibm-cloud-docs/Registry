@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-04-13"
+  years: 2021, 2023
+lastupdated: "2023-01-31"
 
 keywords: error, registry, tag, manifest list, oci image index, manifest, manifest list invalid error, image, repository
 
@@ -97,10 +97,10 @@ In the previous example, you can see that only one image is in the same reposito
 
 You can resolve this issue by using one of the following options, following on from the previous example.
 
-- If the missing image exists elsewhere in the registry, you can use the [`ibmcloud cr image-tag`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli&interface=ui#bx_cr_image_tag) command to move the image to the same repository.
+- If the missing image exists elsewhere in the registry, you can use the [`ibmcloud cr image-tag`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_tag) command to move the image to the same repository.
 
     1. To detect if the missing digest exists elsewhere in the registry, run the following command:
-        
+
         ```txt
         ibmcloud cr digests --format '{{if eq .Digest "sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc"}}{{.Repository}}@{{.Digest}}{{end}}'
         icr.io/myrepo2/image2@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc
@@ -108,7 +108,7 @@ You can resolve this issue by using one of the following options, following on f
         {: pre}
 
     2. If the previous command returns an image, you can copy it to the same repository as the manifest list:
-        
+
         ```txt
         ibmcloud cr image-tag icr.io/mynamespace/myrepo2@sha256:1d71e323557502cc78ee6c237331a09b0c33ba59c14e5f683da3b1c6218779cc icr.io/mynamespace/myrepo:ppc64le
         ```
@@ -156,5 +156,3 @@ You can resolve this issue by using one of the following options, following on f
         {: screen}
 
 - If you have a local copy of the image, you can push it back to the registry. For more information, see [Pushing Docker images to your namespace](/docs/Registry?topic=Registry-registry_images_&interface=ui#registry_images_pushing_namespace).
-
-

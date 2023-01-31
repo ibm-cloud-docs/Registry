@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-05-17"
+  years: 2021, 2023
+lastupdated: "2023-01-31"
 
 keywords: registry, login, push, pull, iam session, iam
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Logging in to {{site.data.keyword.registrylong}} by using the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command is subject to IAM login session limits.
+Logging in to {{site.data.keyword.registrylong}} by using the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command is subject to IAM login session limits.
 {: shortdesc}
 
 Pushes and pulls to the registry fail after a period of inactivity. The following example is a typical scenario:
@@ -37,5 +37,3 @@ You can mitigate the issue by taking one of the following actions:
 
 - Log in by using an IAM [API key](x8051010){: term} because this key is not subject to the IAM session expiry, see [Using Docker to authenticate with an API key](/docs/Registry?topic=Registry-registry_access#registry_access_apikey_auth_docker).
 - Change the IAM login session limits to better suit your needs, see [Setting limits for login sessions](/docs/account?topic=account-iam-work-sessions). The longer you set the limits, the longer your {{site.data.keyword.registrylong_notm}} login lasts for.
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-07"
+lastupdated: "2023-01-31"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -76,7 +76,7 @@ Before you begin, complete the following tasks.
         {: pre}
 
         Example, where `<repo/chartname>` is `ibm-charts/ibm-istio` and `<chart_version>` is `1.2.2`.
-        
+
         You can add the repo alias by using the [`helm repo add`](https://helm.sh/docs/helm/helm_repo_add/){: external} command.
         {: tip}
 
@@ -85,7 +85,7 @@ Before you begin, complete the following tasks.
         ```
         {: pre}
 
-    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+    If you get an `unauthorized: authentication required` or a `denied: requested access to the resource is denied` message, run the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
     {: tip}
 
 After you pull a chart for your [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), you can upload (push) the chart from your local computer to your namespace.
@@ -108,7 +108,7 @@ Before you begin, complete the following tasks.
 
 To upload (push) a chart, complete the following steps:
 
-1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_login) command.
+1. Log in to the CLI by running the [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) command.
 
     ```txt
     ibmcloud cr login
@@ -118,7 +118,7 @@ To upload (push) a chart, complete the following steps:
     You must log in if you pull a chart from your private {{site.data.keyword.registrylong_notm}}.
     {: tip}
 
-2. To view all namespaces that are available in your account, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_namespace_list) command.
+2. To view all namespaces that are available in your account, run the [`ibmcloud cr namespace-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_namespace_list) command.
 3. Upload the chart to your namespace.
 
     ```txt
@@ -191,10 +191,10 @@ If you want to delete a private repository and its associated charts, see [Delet
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
 
-If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. You can use these commands because Helm charts are a supported artifact type in OCI.
+If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use these commands because Helm charts are a supported artifact type in OCI.
 {: tip}
 
-Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace, that copy of the chart is not removed.
+Where multiple [tags](#x2040924){: term} exist for the same chart digest within a repository, the [`ibmcloud cr image-rm`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_rm) command removes the underlying chart and all its tags. If the same chart exists in a different repository or namespace, that copy of the chart is not removed.
 {: tip}
 
 A tag must always match the chart's semantic version, which means that a `latest` tag isn't used.
@@ -210,7 +210,7 @@ You can delete unwanted charts and all their tags from your private {{site.data.
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
 
-If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
 To delete a chart by using the CLI, complete the following steps:
@@ -243,7 +243,7 @@ You can delete unwanted charts and all their tags from your private {{site.data.
 Deleting a chart that is being used by an existing deployment might cause a Helm upgrade, rollback, or delete to fail.
 {: important}
 
-If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command.
+If you want to restore a deleted chart, you can list the contents of the trash by running the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command and restore a selected chart by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command.
 {: tip}
 
 To delete a chart by using the {{site.data.keyword.cloud_notm}} console, complete the following steps.
@@ -262,7 +262,7 @@ To delete a chart by using the {{site.data.keyword.cloud_notm}} console, complet
 
 You can list deleted charts that are in the trash and see when they expire.
 
-To find out which charts are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command. Charts are stored in the trash for 30 days.
+To find out which charts are in the trash, you can use the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command. Charts are stored in the trash for 30 days.
 
 To list the charts in the trash, complete the following steps.
 
@@ -288,9 +288,9 @@ To list the charts in the trash, complete the following steps.
 
 You can restore charts from the trash. Deleted charts are stored in the trash for 30 days.
 
-You can restore a chart from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. To find out which charts are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_trash_list) command.
+You can restore a chart from the trash by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. To find out which charts are in the trash, run the [`ibmcloud cr trash-list`](/docs/Registry?topic=Registry-containerregcli#bx_cr_trash_list) command.
 
-You can restore charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_restore) command. You can use the following options:
+You can restore charts by running the [`ibmcloud cr image-restore`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_restore) command. You can use the following options:
 
 - `<repo>@<digest>`, which restores the digest and all its tags in the repository that aren't already in the live repository, see [Restoring charts by digest](#registry_helm_charts_restore_digest).
 - `<repo>:<tag>`, which restores the tag, see [Restoring charts by tag](#registry_helm_charts_restore_tag).
@@ -325,7 +325,7 @@ To restore a chart by digest from the trash, complete the following steps:
     If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest).
     {: tip}
 
-    In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=container-registry-cli-plugin-containerregcli#bx_cr_image_digests) command, the chart shows in the output.
+    In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, the chart shows in the output.
     {: tip}
 
 ### Restoring charts by tag
@@ -386,5 +386,3 @@ To delete a private repository by using the {{site.data.keyword.cloud_notm}} con
     {: important}
 
 6. Click **Delete Repository**.
-
-
