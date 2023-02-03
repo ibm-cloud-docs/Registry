@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-03"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -71,27 +71,27 @@ You can configure one monitoring instance in each region to collect platform met
 
 | Locations in Americas | Platform metrics available |
 |-----------------------|----------------------------|
-| `Dallas (us-south)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sao Paulo (br-sao)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Toronto (ca-tor)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Dallas (us-south)` | Yes |
+| `Sao Paulo (br-sao)` | Yes |
+| `Toronto (ca-tor)` | Yes |
 {: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Americas locations" caption-side="bottom"}
 
 | Locations in Asia Pacific | Platform metrics available |
 |---------------------------|----------------------------|
-| `Osaka (jp-osa)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sydney (au-syd)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Tokyo (jp-tok)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Osaka (jp-osa)` | Yes |
+| `Sydney (au-syd)` | Yes |
+| `Tokyo (jp-tok)` | Yes |
 {: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Asia Pacific locations" caption-side="bottom"}
 
 | Locations in Europe | Platform metrics available |
 |---------------------|----------------------------|
-| `Frankfurt (eu-de)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `London (eu-gb)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Frankfurt (eu-de)` | Yes |
+| `London (eu-gb)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics in Europe locations" caption-side="bottom"}
 
 | Location for Global | Platform metrics available |
 |---------------------|----------------------------|
-| `Global` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Global` | Yes |
 {: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service metrics for Global" caption-side="bottom"}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} metrics, see [Where to look for metrics](#registry_monitor_ui).
@@ -152,7 +152,7 @@ The following table outlines the predefined monitoring dashboards that you can u
 
 | Dashboard name | Description | Default dashboard |
 |----------------|-------------|-------------------|
-| {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| {{site.data.keyword.registryshort_notm}} Usage | A dashboard that you can use to visualize the traffic usage and storage usage. Traffic usage is the sum of bytes from image pulls from your {{site.data.keyword.registryshort_notm}} namespaces in the current billing period. Storage usage is the sum of bytes of images in your {{site.data.keyword.registryshort_notm}} namespaces. | Yes |
 | {{site.data.keyword.registryshort_notm}} Quota Usage | A dashboard that you can use to visualize the traffic usage and storage usage and compare the data to your quotas, if set. Visible only to those accounts that have finite quotas. The **Container Registry Quota Usage** dashboard is available only if you enable metrics and you have both a storage and a traffic quota set. | |
 {: caption="Table 7. Predefined dashboards" caption-side="bottom"}
 

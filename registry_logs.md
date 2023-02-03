@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-03"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -34,27 +34,27 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you'
 
 | Locations in Americas | Platform services logs available |
 |-----------------------|----------------------------------|
-| `Dallas (us-south)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sao Paulo (br-sao)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Toronto (ca-tor)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Dallas (us-south)` | Yes |
+| `Sao Paulo (br-sao)` | Yes |
+| `Toronto (ca-tor)` | Yes |
 {: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Americas locations" caption-side="bottom"}
 
 | Locations in Asia Pacific | Platform services logs available |
 |---------------------------|----------------------------------|
-| `Osaka (jp-osa)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sydney (au-syd)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Tokyo (jp-tok)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Osaka (jp-osa)` | Yes |
+| `Sydney (au-syd)` | Yes |
+| `Tokyo (jp-tok)` | Yes |
 {: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Asia Pacific locations" caption-side="bottom"}
 
 | Locations in Europe | Platform services logs available |
 |---------------------|----------------------------------|
-| `Frankfurt (eu-de)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `London (eu-gb)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Frankfurt (eu-de)` | Yes |
+| `London (eu-gb)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Europe locations" caption-side="bottom"}
 
 | Location for Global | Platform services logs available |
 |---------------------|----------------------------------|
-| `Global` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Global` | Yes |
 {: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} service logs, see [Where to look for {{site.data.keyword.la_full_notm}} logs](#registry_logs_region).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-03"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -27,27 +27,27 @@ You can track how users and applications interact with the {{site.data.keyword.r
 
 | Locations in Americas | Service events available |
 |-----------------------|--------------------------|
-| `Dallas (us-south)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sao Paulo (br-sao)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Toronto (ca-tor)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Dallas (us-south)` | Yes |
+| `Sao Paulo (br-sao)` | Yes |
+| `Toronto (ca-tor)` | Yes |
 {: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Americas locations" caption-side="bottom"}
 
 | Locations in Asia Pacific | Service events available |
 |---------------------------|--------------------------|
-| `Osaka (jp-osa)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Sydney (au-syd)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `Tokyo (jp-tok)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Osaka (jp-osa)` | Yes |
+| `Sydney (au-syd)` | Yes |
+| `Tokyo (jp-tok)` | Yes |
 {: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Asia Pacific locations" caption-side="bottom"}
 
 | Locations in Europe | Service events available |
 |---------------------|--------------------------|
-| `Frankfurt (eu-de)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
-| `London (eu-gb)` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Frankfurt (eu-de)` | Yes |
+| `London (eu-gb)` | Yes |
 {: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service events in Europe locations" caption-side="bottom"}
 
 | Location for Global | Service events available |
 |---------------------|--------------------------|
-| `Global` | ![Checkmark icon](../icons/checkmark-icon.svg "checkmark") |
+| `Global` | Yes |
 {: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service events for Global" caption-side="bottom"}
 
 For more information about where to see {{site.data.keyword.registryshort_notm}} events, see [Where to look for events](#ui).
