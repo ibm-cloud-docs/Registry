@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-06"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1566,6 +1566,10 @@ subcollection: Registry
 
 [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
 
+[Why can't I access a namespace?](/docs/Registry?topic=Registry-troubleshoot-access-namespace#troubleshoot-access-namespace)
+
+[Why is pulling images slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
+
 
 ### Troubleshooting CLI commands
 {: #sitemap_troubleshooting_cli_commands}
@@ -1574,6 +1578,8 @@ subcollection: Registry
 [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace#troubleshoot-add-namespace)
 
 [When I create a namespace, why aren't I authorized to access the specified resource?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth#troubleshoot-namespace-auth)
+
+[Why can't I find my image or my namespace?](/docs/Registry?topic=Registry-troubleshoot-image-find#troubleshoot-image-find)
 
 [Why don't all my namespaces show in the **Resource list**?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list#troubleshoot-namespace-resource-list)
 
@@ -1603,6 +1609,8 @@ subcollection: Registry
 
 
 [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall#troubleshoot-firewall)
+
+[Why can't I connect to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-connect#troubleshoot-connect)
 
 
 ### Troubleshooting Portieris

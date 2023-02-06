@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-06"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -55,6 +55,8 @@ Troubleshoot pull and push problems.
 - [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
 - [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
 - [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
+- [Why can't I access a namespace?](/docs/Registry?topic=Registry-troubleshoot-access-namespace)
+- [Why is pulling images so slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance)
 
 ### Troubleshooting CLI commands
 {: #gettinghelp_ts_cli_commands}
@@ -63,6 +65,7 @@ Troubleshoot CLI command problems.
 
 - [Why can't I add a namespace?](/docs/Registry?topic=Registry-troubleshoot-add-namespace)
 - [When I create a namespace, why aren't I authorized to access the specified resource?](/docs/Registry?topic=Registry-troubleshoot-namespace-auth)
+- [Why can't I find my image or my namespace?](/docs/Registry?topic=Registry-troubleshoot-image-find)
 - [Why don't all my namespaces show in the Resource list?](/docs/Registry?topic=Registry-troubleshoot-namespace-resource-list)
 - [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout)
 - [Why can't I pull the newest image by using the `latest` tag?](/docs/Registry?topic=Registry-troubleshoot-docker-latest)
@@ -81,6 +84,7 @@ Troubleshoot CLI command problems.
 Troubleshoot networking problems.
 
 - [Why can't I access the registry through a custom firewall?](/docs/Registry?topic=Registry-troubleshoot-firewall)
+- [Why can't I connect to {{site.data.keyword.registryshort_notm}}?](/docs/Registry?topic=Registry-troubleshoot-connect)
 
 ### Troubleshooting Portieris
 {: #gettinghelp_ts_portieris}

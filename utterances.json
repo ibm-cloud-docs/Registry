@@ -36,7 +36,7 @@
         "do images in the trash count toward quota",
         "images in the trash",
         "does my quota include images in the trash"
-      ],     
+      ],
       "faq_digest": [
         "how do I find the digest",
         "how do I find the long format of the image digest",
@@ -44,7 +44,7 @@
         "what is the image digest",
         "what is the long format of the image digest",
         "where do I find the image digest"
-      ],      
+      ],
       "faq_digest_use": [
         "how do I use the digest",
         "how do I use the long format of the image digest",
@@ -62,7 +62,7 @@
         "IAM access for Container Registry",
         "IBM Cloud Identity and Access management for container registry",
         "use access control within container registry"
-      ],      
+      ],
       "faq_share_image": [
         "how do I share my image in container registry",
         "how do I share images",
@@ -132,7 +132,7 @@
         "Frequency secuity notice in container registry",
         "many times are security notices posted in CR",
         "often are the security notices updated in CR"
-      ],     
+      ],
       "faq_va_package_version": [
         "what version of a package is installed in my image",
         "what version of a package is installed in my image in container registry",
@@ -141,7 +141,16 @@
         "on Ubuntu, what version of a package is installed in my image",
         "on Red Hat, what version of a package is installed in my image",
         "on CentOS, what version of a package is installed in my image"
-      ],  
+      ],
+       "troubleshoot-access-namespace": [
+        "cannot access a namespace in Container Registry",
+        "unable to access a namespace in container registry",
+        "accessing namespace fail in container registry",
+        "insufficient scope when accessing a namespace in CR",
+        "accessing a namespace in Container Regsitry",
+        "insufficient scope when pushing an image in CR",
+        "can't access namespace in CR"
+      ],
        "troubleshoot-add-namespace": [
         "cannot add namespace cli ContainerRegistry",
         "unable to add namespace in container registry",
@@ -153,6 +162,15 @@
         "ibmcloud cr namespace-add error",
         "can't add namespace in CR",
         "ibmcloud cr namespace-add fails"
+      ],
+      "troubleshoot-connect": [
+        "Connecting to the container registry fails",
+        "can't connect to CR",
+        "trying to connect to Container Registry fails with connection reset message",
+        "issue connecting to CR",
+        "can't connect to container registry and get connection reset message",
+        "issue connecting to container registry and getting connection reset message",
+        "issue connecting to container registry"
       ],
       "troubleshoot-docker-latest": [
         "unable to pull recent image latest tag for container registry",
@@ -188,6 +206,14 @@
         "can't access container registry",
         "isue accessing container registry",
         "no access to container registry"
+      ],
+      "troubleshoot-image-find": [
+        "my image is missing in container registry",
+        "my namespace is missing in container registry",
+        "image missing in CR",
+        "image missing in Container Registry",
+        "can't find my image in container registry",
+        "can't find my namespace in container registry"
       ],
       "troubleshoot-image-list-retention": [
         "image not show in the CR list ",
@@ -337,6 +363,12 @@
         "can't restart pods with Container Image Security Enforcement installed",
         "restart pods as all the workers down in container registry"
       ],
+      "troubleshoot-pull-performance": [
+        "pullling images is slow in Container Registry",
+        "pullling images is slow in CR",
+        "pulling images takes a long time in Container Registry",
+        "pulling images takes a long time in CR"
+      ],
       "troubleshoot-push-pull-docker": [
         "exceeded storage quota push docker image CR",
         "docker pull failed in CR",
@@ -348,7 +380,8 @@
         "exceeded traffic quota in container registry",
         "unable to push docker image CR",
         "error message docker pull CR",
-        "not push docker image error"
+        "not push docker image error",
+        "login credentials are not valid",
+        "IBM Cloud account is not active"
       ]
     }
-  

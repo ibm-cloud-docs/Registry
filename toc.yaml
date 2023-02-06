@@ -175,11 +175,14 @@ toc:
               - ts_push_pull_docker.md
               - include: ../containers/ts-app-02-imgpull.md
               - ts_iam_policy.md
+              - ts_access_namespace.md
+              - ts_pull_performance.md
           - topicgroup:
               label: Troubleshooting CLI commands
               topics:
               - ts_add_namespace.md
               - ts_namespace_auth.md
+              - ts_image_find.md
               - ts_namespace_resource_list.md
               - ts_image_timeout.md
               - ts_docker_latest.md
@@ -195,6 +198,7 @@ toc:
               label: Troubleshooting networking
               topics:
               - ts_firewall.md
+              - ts_connect.md
           - topicgroup:
               label: Troubleshooting Portieris
               topics:
