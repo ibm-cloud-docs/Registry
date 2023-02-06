@@ -1568,7 +1568,7 @@ subcollection: Registry
 
 [Why can't I access a namespace?](/docs/Registry?topic=Registry-troubleshoot-access-namespace#troubleshoot-access-namespace)
 
-[Why is pulling images so slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
+[Why is pulling images slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
 
 
 ### Troubleshooting CLI commands

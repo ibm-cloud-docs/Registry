@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is pulling images so slow?
+# Why is pulling images slow?
 {: #troubleshoot-pull-performance}
 {: troubleshoot}
 {: support}
