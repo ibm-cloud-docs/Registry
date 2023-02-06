@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-06"
 
 keywords: error, registry, push, Docker image, pull, Docker image, quota, pricing plan, pull traffic, storage quota
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Pushing or pulling a Docker image fails when you're using {{site.data.keyword.registrylong}}.
+Pushing or pulling a Docker image fails when you're using {{site.data.keyword.registrylong}}. You might receive various messages, for example, about being over quota.
 {: shortdesc}
 
 When you run commands to push or pull Docker images, you receive an error message. The error message varies depending on the root cause. The following error messages are potential error messages that you might receive:
@@ -59,6 +59,7 @@ The following alternatives are possible causes:
 - The Docker client is not logged in to {{site.data.keyword.registrylong_notm}}.
 - Your {{site.data.keyword.cloud_notm}} [access token](x2113001){: term} expired.
 - You exceeded the quota limit for storage or pull traffic that is set for your {{site.data.keyword.cloud_notm}} account.
+- You're on a free plan and you need to upgrade to a standard plan.
 
 You can fix this problem in the following ways:
 {: tsResolve}
@@ -66,4 +67,5 @@ You can fix this problem in the following ways:
 - [Ensure that Docker is installed on your computer](/docs/Registry?topic=Registry-getting-started#gs_registry_cli_install).
 - Check your Docker installation path.
 - Log in to {{site.data.keyword.cloud_notm}} by running `ibmcloud login`. Then, log in to the {{site.data.keyword.registrylong_notm}} CLI by running [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login).
-- [Review quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get).
+- [Review quota limits and usage](/docs/Registry?topic=Registry-registry_quota#registry_quota_get). For more information, see [Staying within quota limits](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
+- Upgrade to a standard plan. For more information, see [Upgrading your service plan](/docs/Registry?topic=Registry-registry_overview&interface=ui#registry_plan_upgrade).
