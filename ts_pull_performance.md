@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 keywords: registry, slow, performance, image, pull
 
@@ -37,4 +37,4 @@ You can fix this problem in the following ways:
 
 - Make your image smaller.
 - Store and pull your images in the same location.
-- If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_notm}} Container Platform, you can pull images over the private network to get a faster speed.
+- If you're using {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.redhat_openshift_full}} Container Platform, you can pull images over the private network to get a faster speed.
