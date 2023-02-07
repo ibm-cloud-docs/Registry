@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 keywords: registry, namespace, access, image, scope
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Pushing an image fails with the message `insufficient scope` when you are using {{site.data.keyword.registrylong}}.
+Pushing an image fails with the message `insufficient scope` when you're using {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 When you try to push an image, you receive the message `insufficient scope`.
