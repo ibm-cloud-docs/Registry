@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 keywords: registry, namespace, find, image, region
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 Your image or your namespace is missing in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
-When you try to find your image or your namespace, you can't find them.
+When you try to find your image or your namespace, you can't find it.
 {: tsSymptoms}
 
 The following alternatives are possible causes:

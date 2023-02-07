@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 keywords: registry, connect, firewall, proxy
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-You're unable to connect to {{site.data.keyword.registrylong}} and you get the message `connection reset`.
+You are unable to connect to {{site.data.keyword.registrylong}} and you get the message `connection reset`.
 {: shortdesc}
 
 You can't connect to {{site.data.keyword.registrylong_notm}} and you receive the following message: `connection reset`.
