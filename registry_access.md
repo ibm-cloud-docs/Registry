@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-08"
 
 keywords: API key, tokens, automating access, creating API keys, access, authentication, podman, skopeo, buildah, docker, client, authenticate, iam, domain, service id api key, user api key
 
@@ -22,7 +22,7 @@ All accounts require IAM access policies. To set up and manage IAM access polici
 
 Access to {{site.data.keyword.registrylong_notm}} is either [automated](#registry_access_automating), which typically uses [API keys](/docs/account?topic=account-manapikey), or [interactive](#registry_access_interactive), which typically uses bearer tokens.
 
-If you have an IAM access policy, but you're getting access denied errors, see [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy) for assistance.
+If you have an IAM access policy, but you are getting access denied errors, see [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy) for assistance.
 {: tip}
 
 If you want to use your container images in Kubernetes deployments, see [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from nondefault Kubernetes namespaces](/docs/containers?topic=containers-registry#other).

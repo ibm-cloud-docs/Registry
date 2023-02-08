@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-08"
 
 keywords: Responsibilities, change management, identity and access management, incident and operations management, security and regulation compliance, disaster recovery, responsibility, access
 
@@ -25,7 +25,7 @@ Review the following sections for the specific responsibilities for you and for 
 ## Incident and operations management
 {: #incident-and-ops}
 
-Incident and operations management includes tasks such as monitoring, event management, [high availability](x2284708){: term}, problem determination, recovery, and full state backup and recovery.
+Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|
@@ -61,7 +61,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | Process access policies | It is the responsibility of {{site.data.keyword.IBM_notm}} to ensure that the policies are processed. | |
 | Set up access policies | | It is your responsibility to set up access policies. For more information, see [Creating policies](/docs/Registry?topic=Registry-user#create). |
 | Access to back-end resources | It is the responsibility of {{site.data.keyword.IBM_notm}} to access to back-end resources. | |
-| Access to namespaces | | It is your responsibility to set up access to [namespaces](x2031005){: term}. For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).|
+| Access to namespaces | | It is your responsibility to set up access to namespaces. For more information, see [Automating access to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access).|
 {: row-headers}
 {: caption="Table 3. Responsibilities for identity and access management" caption-side="bottom"}
 {: summary="The first column describes the task that the customer or {{site.data.keyword.IBM_notm}} might be responsible for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
@@ -82,7 +82,7 @@ Security and regulation compliance includes tasks such as security controls impl
 ## Disaster recovery
 {: #disaster-recovery}
 
-[Disaster recovery](x2113280){: term} includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and fail over on disaster events. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr) and [Business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr).
+Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and fail over on disaster events. For more information, see [High availability for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-ha-dr) and [Business continuity and disaster recovery for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-bc-dr).
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |------|-------------------------------------------------|-----------------------|

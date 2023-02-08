@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-08"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -20,7 +20,7 @@ subcollection: Registry
 
 For more information about how to configure logging instances to receive platform services logs, see [Configuring {{site.data.keyword.cloud_notm}} service logs](/docs/log-analysis?topic=log-analysis-config_svc_logs).
 
-Most of the time when you work with {{site.data.keyword.registrylong_notm}} you're pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive; {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+Most of the time when you work with {{site.data.keyword.registrylong_notm}} you are pushing, pulling, or managing images. These interactions output results that either you or your automation, tools, or runtime receive; {{site.data.keyword.registrylong_notm}} doesn't generate platform logs for them. {{site.data.keyword.at_full_notm}} provides a comprehensive list of events for auditing these interactions, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
 
 {{site.data.keyword.registrylong_notm}} generates platform services logs that are displayed in your logging instances for the following specific cases:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-08"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -65,7 +65,7 @@ Every image is built from a number of layers that each represent an incremental 
 From 1 February 2022, both [tagged](#overview_elements_tag) and [untagged](#overview_elements_untagged) images are charged for.
 {: note}
 
-Quota limits and billing are scoped to the specific registry instance (one of the regional registries or the global registry) that you are currently working with. Quota settings must be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
+Quota limits and billing are scoped to the specific registry instance (one of the regional registries or the global registry) that you're currently working with. Quota settings must be managed separately for your account in each registry instance. For more information, see [Regions](#registry_regions).
 {: note}
 
 Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
@@ -74,7 +74,7 @@ Pull traffic across public connections counts toward usage and quota. Pull traff
 The following example is for pushing images:
 :   You push an image to your namespace that is based on the Ubuntu image. The Ubuntu image contains several layers. Because you do not have these layers in your account yet, the amount of storage that these layers require is added to your monthly usage.
 
-    Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registryshort}} recognizes that all layers of the base Ubuntu image are already stored in your account. You are not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registryshort}} determines the size of all new layers and adds the amount of storage to your monthly usage.
+    Later, you create a second image that is based on the Ubuntu image. You change the Ubuntu base image, such as by adding more commands or files to your Dockerfile. Each change represents a new image layer. When you push the second image, {{site.data.keyword.registryshort}} recognizes that all layers of the base Ubuntu image are already stored in your account. You're not charged for storing these layers a second time, even if you pushed your image to another namespace. {{site.data.keyword.registryshort}} determines the size of all new layers and adds the amount of storage to your monthly usage.
 
 ### Billing for storage and pull traffic
 {: #registry_billing_traffic}
@@ -84,7 +84,7 @@ Depending on the service plan that you choose, you are charged for the storage a
 #### Storage charges
 {: #registry_billing_traffic_storage}
 
-Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you are on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you are on the free plan, you can store your images in {{site.data.keyword.registryshort}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
+Every {{site.data.keyword.registrylong_notm}} service plan comes with a certain amount of storage that you can use to store your Docker images in the namespaces of your {{site.data.keyword.cloud_notm}} account. If you're on the standard plan, you are charged by GB-Months of usage. The first 0.5 GB-Months are free. If you're on the free plan, you can store your images in {{site.data.keyword.registryshort}} for free until you reach the quota limits for the free plan. A GB-Month is an average of 1 GB of storage for a month (730 hours).
 
 The following example is for the standard plan:
 :   You use 5 GB for exactly half the month and then you push several images to your namespace and use 10 GB for the rest of the month. Your monthly usage is calculated as shown in the following example:
@@ -96,7 +96,7 @@ The following example is for the standard plan:
 #### Pull traffic charges
 {: #registry_billing_traffic_pull_traffic}
 
-Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you are on the standard plan, you are charged by GB of usage per month. The first 5 GB each month is free. If you are on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
+Every {{site.data.keyword.registrylong_notm}} service plan includes a certain amount of free pull traffic to your private images that are stored in your namespace. Pull traffic is the bandwidth that you use when you pull a layer of an image from your namespace to your local computer. If you're on the standard plan, you're charged by GB of usage per month. The first 5 GB each month is free. If you're on the free plan, you can pull images from your namespace until you reach the quota limit for the free plan.
 
 Pull traffic across public connections counts toward usage and quota. Pull traffic across private connections doesn't count.
 {: note}

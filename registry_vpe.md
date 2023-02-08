@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-02-08"
 
 keywords: Virtual private endpoint, VPE, vpc, private, service, endpoint gateway, gateway, endpoint
 
@@ -28,7 +28,7 @@ If you have an [{{site.data.keyword.vpc_short}} instance](/docs/vpc?topic=vpc-ge
 When you connect to {{site.data.keyword.registryshort_notm}} from the {{site.data.keyword.cloud_notm}} console, you must go through a browser in your VPC to ensure that the connection goes through the {{site.data.keyword.registryshort_notm}} VPE gateway.
 {: note}
 
-For VPE gateways created before 11 November 2022, you must ensure that the canonical [domain name](/docs/Registry?topic=Registry-registry_overview#overview_elements_domain_name) for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
+For VPE gateways created before 11 November 2022, you must ensure that the canonical domain name for the registry [region](/docs/Registry?topic=Registry-registry_overview#registry_regions) (for example, `us.icr.io` in `us-south`) resolves to the IP address of the VPE gateway. This action ensures that the image name, which starts with the hostname, is consistent. You can ensure consistency by creating container hostmap entries or configuring the `kube` Domain Name System (DNS).
 
 For VPE gateways created after 11 November 2022, this additional configuration is not required because the domain name resolution is now handled automatically by the VPE gateway.
 
@@ -66,7 +66,7 @@ You can create a VPE gateway for your local {{site.data.keyword.registryshort_no
 ## Setting up a VPE for {{site.data.keyword.registrylong_notm}}
 {: #registry_vpe_endpoint_setup}
 
-When you create a VPE gateway by using the [CLI](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-cli) or [API](/docs/vpc?topic=vpc-ordering-endpoint-gateway#vpe-ordering-api), you must specify the [cloud resource name (CRN)](x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
+When you create a VPE gateway by using the CLI or API, you must specify the [cloud resource name (CRN)](x9494304){: term} of the region that you want to connect to {{site.data.keyword.registryshort_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
 You can create VPE gateways in the following locations: `ap-north`, `ap-south`, `br-sao`, `ca-tor`, `eu-central`, `jp-osa`, `uk-south`, `us-south`, and `us-east` (global registry).
 
