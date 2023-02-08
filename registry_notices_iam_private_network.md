@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-23"
+lastupdated: "2023-02-08"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -30,7 +30,7 @@ This change improves the security of {{site.data.keyword.registrylong_notm}}. Wi
 
 Also, as part of this change, the {{site.data.keyword.registrylong_notm}} service private IP addressees changed, which might require updates to your firewall configuration.
 
-If you use [Calico](https://projectcalico.docs.tigera.io/about/about-calico){: external}, the samples are updated to take account of the change.
+If you use [Calico](https://www.tigera.io/project-calico/){: external}, the samples are updated to take account of the change.
 
 You must not remove the {{site.data.keyword.registrylong_notm}} private IP addresses from your IAM restricted IP list until an announcement advises you to do so.
 {: important}
@@ -77,5 +77,3 @@ For more information about the new and current {{site.data.keyword.registryshort
 
 - For {{site.data.keyword.containerlong_notm}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 - For {{site.data.keyword.openshiftlong}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
-
-
