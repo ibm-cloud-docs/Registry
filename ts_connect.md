@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-07"
+lastupdated: "2023-02-08"
 
 keywords: registry, connect, firewall, proxy
 
@@ -36,7 +36,7 @@ The following alternatives are possible causes:
 You can fix this problem in the following ways:
 {: tsResolve}
 
-- Check your [firewall](/docs/Registry?topic=Registry-troubleshoot-firewall&interface=ui) or [Calico](https://projectcalico.docs.tigera.io/about/about-calico){: external} rules.
+- Check your [firewall](/docs/Registry?topic=Registry-troubleshoot-firewall&interface=ui) or [Calico](https://www.tigera.io/project-calico/){: external} rules.
 - Connect to {{site.data.keyword.registryshort_notm}} without a proxy.
 - Use IP addresses that are in your allowlist.
 - Ensure that your [context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr) give you access to {{site.data.keyword.registryshort_notm}}.
