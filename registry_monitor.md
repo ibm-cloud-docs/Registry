@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-08"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -130,7 +130,7 @@ The following table shows the location of global registry {{site.data.keyword.mo
 ## Viewing metrics
 {: #registry_view_metrics}
 
-To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the {{site.data.keyword.mon_short}} UI instance that is enabled for platform metrics in the region where you're using {{site.data.keyword.registryshort_notm}}.
+To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the {{site.data.keyword.mon_short}} UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
 {: important}
 
 ### Starting the Monitoring UI from the Observability page
