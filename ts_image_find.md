@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-07"
+lastupdated: "2023-02-08"
 
 keywords: registry, namespace, find, image, region
 
@@ -35,4 +35,4 @@ You can fix this problem in the following ways:
 {: tsResolve}
 
 - Check that you're using the correct region. To change the region, see [Regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
-- Check your instance of {{site.data.keyword.at_full}} to see whether the image or namespace was deleted. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
+- Check your instance of {{site.data.keyword.at_full_notm}} to see whether the image or namespace was deleted. For more information, see [Auditing events for {{site.data.keyword.registryshort_notm}}](/docs/Registry?topic=Registry-at_events).
