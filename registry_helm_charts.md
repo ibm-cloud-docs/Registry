@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -156,7 +156,7 @@ Before you begin, complete the following tasks.
 To copy a chart between two registries, complete the following steps:
 
 1. [Pull a chart from a registry](#registry_helm_charts_pull).
-2. [Push the chart to another registry](#registry_helm_charts_push). Make sure that you use the correct domain name for the new region that you're targeting.
+2. [Push the chart to another registry](#registry_helm_charts_push). Make sure that you use the correct domain name for the new region that you are targeting.
 
 After you copy your chart, you can [install the Helm chart to the cluster in {{site.data.keyword.containerlong_notm}}](#registry_helm_charts_install).
 
@@ -274,7 +274,7 @@ To list the charts in the trash, complete the following steps.
     ```
     {: pre}
 
-3. List only the charts in the trash for the namespace that you're interested in by running the following command, where `<namespace>` is your namespace.
+3. List only the charts in the trash for the namespace that you are interested in by running the following command, where `<namespace>` is your namespace.
 
     ```txt
     ibmcloud cr trash-list --restrict <namespace>
