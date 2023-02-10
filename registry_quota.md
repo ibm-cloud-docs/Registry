@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 keywords: quota limits, custom quota, pull traffic, quota, storage, free up space, decrease storage, images, traffic, account
 
@@ -25,7 +25,7 @@ You can limit the amount of storage and pull traffic that can be used in your {{
 
 You can limit the amount of storage and pull traffic to your private images by setting your own quota limits.
 
-When you upgrade to the {{site.data.keyword.registrylong_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all [namespaces](x2031005){: term} that you set up in {{site.data.keyword.registrylong_notm}}. If you are using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
+When you upgrade to the {{site.data.keyword.registrylong_notm}} standard plan, you benefit from unlimited amount of storage and pull traffic to your private images. To avoid exceeding your preferred payment level, you can set individual quotas for the amount of storage and pull traffic. Quota limits are applied to all [namespaces](x2031005){: term} that you set up in {{site.data.keyword.registrylong_notm}}. If you're using the free service plan, you can also set custom quotas within your free amount of storage and pull traffic.
 
 To set a quota, complete the following steps.
 
