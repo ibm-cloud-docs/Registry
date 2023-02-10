@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 keywords: IBM Cloud Container Registry release notes, change, January, February, March, April, May, June, July, August, September, October, November, December, registry, images, vulnerability advisor
 
@@ -27,7 +27,7 @@ Learn about the changes to {{site.data.keyword.registrylong}} and Vulnerability 
 Change to virtual private endpoints {: #11nov2022_vpe}
 :   Virtual private endpoints are changing.
 
-    On 11 November 2022, virtual private endpoints (VPEs) for {{site.data.keyword.registrylong_notm}} are being updated and the existing VPE version is being deprecated on 15 December 2022. If you use {{site.data.keyword.registryshort}} VPE gateways, you must create new VPE gateways and remove your VPE gateways that were created before 11 November 2022 at the earliest opportunity so that you pick up these changes. VPE gateways that were created before 11 November 2022 are deprecated and will not work after 15 December 2022.
+    On 11 November 2022, virtual private endpoints (VPEs) for {{site.data.keyword.registrylong_notm}} are being updated and the existing VPE version is being deprecated on 15 December 2022. If you use {{site.data.keyword.registryshort_notm}} VPE gateways, you must create new VPE gateways and remove your VPE gateways that were created before 11 November 2022 at the earliest opportunity so that you pick up these changes. VPE gateways that were created before 11 November 2022 are deprecated and will not work after 15 December 2022.
 
     If you create a new {{site.data.keyword.registryshort}} VPE gateway after 11 November 2022 and also use {{site.data.keyword.iamshort}} (IAM) [restricted IP address lists](/docs/account?topic=account-ips&interface=ui), you must ensure that your restricted IP address list contains the Cloud Service Endpoint (CSE) source IP addresses of the VPCs in which your {{site.data.keyword.registryshort}} VPE gateways exist. This requirement is related to a previous change to how {{site.data.keyword.registryshort}} works over the private network that the new VPE version also uses, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 
@@ -105,12 +105,12 @@ Context-based restrictions {: #08jul2022_cbr}
 {: release-note}
 
 Change to {{site.data.keyword.registryshort}} private IP addresses in all regions {: #05jul2022_private_network}
-:   If you're using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you're connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule.
+:   If you are using {{site.data.keyword.iamshort}} (IAM) restricted IP address lists and you are connecting to {{site.data.keyword.registryshort}} over the private network, your lists of allowed IP addresses must now include the private subnet and IP addresses of your own hosts. The {{site.data.keyword.registrylong_notm}} private IP addressees also changed. This change also affects you if you have allowlists or a firewall rule.
 
     For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Using IAM IP address access restrictions](/docs/Registry?topic=Registry-registry_iam_ip).
 
 All accounts require IAM access policies {: #05jul2022_iam}
-:   To access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you're using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
+:   To access {{site.data.keyword.registrylong_notm}}, you must be using {{site.data.keyword.iamshort}} (IAM) access policies. You must ensure that you are using IAM access policies to manage access to the {{site.data.keyword.registryshort}} service.
 
     Policy-free authorization is discontinued in the following {{site.data.keyword.registryshort}} regions:
 

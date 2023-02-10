@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -115,7 +115,7 @@ You can have 100 namespaces in each region.
 
 To work with the IBM-provided public images only, you do not need to set up a namespace.
 
-If you are unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command with the `-v` option to retrieve existing namespace information.
+If you're unsure whether a namespace is already set for your account, run the `ibmcloud cr namespace-list` command with the `-v` option to retrieve existing namespace information.
 {: tip}
 
 Consider the following rules when you choose a namespace:
