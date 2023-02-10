@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-10"
 
 keywords: region, plan, billing, registry, service plan, quota, domain name, Docker, global registry, storage, pull traffic, digest, image, dockerfile, repository, tag, region, quota limits, resource group
 
@@ -279,7 +279,7 @@ When you set up your own namespace in {{site.data.keyword.registryshort}}, the n
 You can have 100 namespaces in each region.
 {: note}
 
-Namespaces are created in a [resource group](x2161955){: term} that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. If you have an older namespace that is not in a resource group, you can assign it to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+Namespaces are created in a [resource group](/docs/account?topic=account-rgs) that you specify so that you can configure access to resources within the namespace at the resource group level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. If you have an older namespace that is not in a resource group, you can assign it to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 
 Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 

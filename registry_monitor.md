@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-10"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -18,7 +18,7 @@ subcollection: Registry
 You can use {{site.data.keyword.mon_full}} to monitor platform metrics of {{site.data.keyword.registrylong}} usage for your account and to create alerts based on these metrics.
 {: shortdesc}
 
-Platform metrics for {{site.data.keyword.registryshort}} must be enabled in each {{site.data.keyword.registryshort}} region that you want to monitor, see [Enabling metrics for {{site.data.keyword.registryshort}}](#registry_enable_platform_metrics).
+Platform metrics for {{site.data.keyword.registryshort_notm}} must be enabled in each {{site.data.keyword.registryshort_notm}} region that you want to monitor, see [Enabling metrics for {{site.data.keyword.registryshort}}](#registry_enable_platform_metrics).
 
 ## Enabling metrics for {{site.data.keyword.registryshort_notm}}
 {: #registry_enable_platform_metrics}
@@ -130,7 +130,7 @@ The following table shows the location of global registry {{site.data.keyword.mo
 ## Viewing metrics
 {: #registry_view_metrics}
 
-To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the {{site.data.keyword.mon_short}} UI instance that is enabled for platform metrics in the region where you are using {{site.data.keyword.registryshort_notm}}.
+To monitor {{site.data.keyword.registryshort_notm}} metrics, you must start the {{site.data.keyword.mon_short}} UI instance that is enabled for platform metrics in the region where you're using {{site.data.keyword.registryshort_notm}}.
 {: important}
 
 ### Starting the Monitoring UI from the Observability page
