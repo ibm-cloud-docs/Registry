@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-14"
 
 keywords: Image security, Vulnerability Advisor, security, registry, vulnerabilities, containers, configuration issues, registry, container registry, portieris, reviewing a vulnerability report, organizational exemption policies, exemption policies, vulnerable packages, data, exemptions, policy, vulnerability report, security issues
 
@@ -231,7 +231,7 @@ To find out about the required permissions for working with exemptions, see [Acc
 {: support}
 {: ui}
 
-If you are using the {{site.data.keyword.cloud_notm}} console, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy. If you want to use the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) as the scope, you must use the CLI, see [Setting organizational exemption policies by using the CLI](#va_managing_policy_cli).
+If you're using the {{site.data.keyword.cloud_notm}} console, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy. If you want to use the [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest) as the scope, you must use the CLI, see [Setting organizational exemption policies by using the CLI](#va_managing_policy_cli).
 {: note}
 
 If you want to set exemptions from the policy by using the {{site.data.keyword.cloud_notm}} console, complete the following steps:
@@ -257,7 +257,7 @@ You can also edit and remove exemptions by hovering over the relevant row and cl
 {: support}
 {: cli}
 
-If you are using the CLI, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy.
+If you're using the CLI, you can set a [namespace](/docs/Registry?topic=Registry-registry_overview#overview_elements_namespace), [repository](/docs/Registry?topic=Registry-registry_overview#overview_elements_repository), [digest](/docs/Registry?topic=Registry-registry_overview#overview_elements_digest), or [tag](/docs/Registry?topic=Registry-registry_overview#overview_elements_tag) as the scope of the exemption policy.
 {: note}
 
 If you want to set exemptions from the policy by using the CLI, you can run the following commands:
