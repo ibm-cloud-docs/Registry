@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-20"
 
 keywords: Track, tracking events, find events, activity tracker for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry events, IBM Cloud Container Registry security, audit logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry events, IBM Cloud Container Registry events, actions that generate events, request data, request and response data, events, api, actions, data event, request, custom event fields, response data, locations, service events
 
@@ -295,6 +295,6 @@ The following table lists the fields that are available through the `requestData
 | Custom Event Fields | Type | Description |
 |---------------------|------|-------------|
 | `requestData.RequestParameters.repository` | String | The name of the repository for which you want to see image signing reports. For example, `us.icr.io/namespace/image`. |
-| `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [Red Hat Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
+| `requestData.RequestParameters.signatureMethod` | String | Displays the technology that is used to sign the image, such as [{{site.data.keyword.redhat_notm}} Signing](https://www.redhat.com/en/blog/container-image-signing){: external}. |
 | `requestData.RequestParameters.signatureObject` | String | Specifies the object type upon which a signing operation is performed, for example, `image`. |
 {: caption="Table 22. Custom event fields for {{site.data.keyword.registryshort_notm}} signing" caption-side="bottom"}
