@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-20"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1670,7 +1670,7 @@ subcollection: Registry
 
         * [Debian and Ubuntu package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_debian_ubuntu)
 
-        * [Red Hat and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
+        * [{{site.data.keyword.redhat_notm}} and CentOS package manager commands](/docs/Registry?topic=Registry-registry_faq#faq_va_package_version_redhat_centos)
 
     * [Does Vulnerability Advisor have versions?](/docs/Registry?topic=Registry-registry_faq#faq_va_versions)
 
