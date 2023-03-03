@@ -86,3 +86,4 @@ You can use Podman to sign images. For more information, see [Podman](https://po
 {: #registry_trustedcontent_red_hat_sig_oc}
 
 You can sign your images by using the {{site.data.keyword.redhat_openshift_notm}} CLI. For more information, see [{{site.data.keyword.redhat_openshift_notm}} CLI](https://docs.openshift.com/container-platform/3.11/admin_guide/image_signatures.html){: external}. The {{site.data.keyword.redhat_openshift_full}} CLI uses the `oc` command.
+
