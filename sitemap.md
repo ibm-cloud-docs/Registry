@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-03"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -671,7 +671,7 @@ subcollection: Registry
 
 * [Create development Kubernetes cluster](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_kube_cluster)
 
-* [Create a starter application](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
+* [Create a sample application](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-create_application)
 
 * [Modify the application and deploy the updates](/docs/Registry?topic=Registry-continuous-deployment-to-kubernetes#continuous-deployment-to-kubernetes-6)
 
