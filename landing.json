@@ -1,10 +1,10 @@
 {
     "title": "Container Registry docs",
-    "lastupdated": "2021-06-10",
+    "lastupdated": "2023-03-09",
     "introduction": "Find out about how you can use Container Registry to provide a multi-tenant private image registry that you can use to store and share your container images with users in your IBM Cloud account. Click the tiles on this page to explore more information about Container Registry.",
     "section_devtools": {
-      "api": "/apidocs/container-registry", 
-      "cli": "/docs/Registry?topic=container-registry-cli-plugin-containerregcli", 
+      "api": "/apidocs/container-registry",
+      "cli": "/docs/Registry?topic=Registry-containerregcli",
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cr_namespace"
     },
     "section_recommended": [

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-03-09"
 
 keywords: namespaces, Docker images, CLI, install, registry CLI, namespace, setting up cli, installing cli, uninstalling cli, command, resource group, cli plug-in
 
@@ -103,7 +103,7 @@ ibmcloud plugin uninstall container-registry
 
 Namespaces are created in a [resource group](x2161955){: term} that you specify so that you can configure access to resources within the namespace at the [resource group](/docs/account?topic=account-rgs) level. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used. However, you can still set permissions for the namespace at the account level or in the namespace itself. If you don't specify a resource group, and a resource group isn't targeted, the default resource group is used.
 
-If you have an older namespace that is not in a resource group, you can assign it to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
+If you have an older namespace that isn't in a resource group, you can assign it to a resource group and then set permissions for that namespace at the resource group level. For more information about resource groups, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 
 Namespaces that are assigned to a resource group show in the **Resource list** page of the {{site.data.keyword.cloud_notm}} console.
 {: tip}
@@ -139,7 +139,7 @@ You can control which users can work with namespaces by using IAM roles.
 
 - To add, assign, and remove namespaces, you must have the Manager role in the {{site.data.keyword.registrylong_notm}} service at the account level, see [Access roles for configuring {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#access_roles_configure).
 
-    - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
+    - To add and assign namespaces, you must also have the Viewer platform role for the resource group in which you want to create the namespace. To assign the Viewer role for a resource group to a user, run the following [`ibmcloud iam user-policy-create`](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create) command, where `<user>` is the name of the user and `<resource_group_id>` is the resource group ID:
 
     ```txt
     ibmcloud iam user-policy-create <user> --roles Viewer --resource-type resource-group --resource <resource_group_id>
@@ -176,7 +176,7 @@ You can now [push Docker images to your namespace in {{site.data.keyword.registr
 {: help}
 {: support}
 
-Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have a namespace that is not assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
+Namespaces created in version 0.1.484 of the CLI or earlier and in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, aren't assigned to resource groups. If you have a namespace that isn't assigned to a resource group, you can assign the namespace to a resource group and then set permissions for that namespace at the resource group level.
 
 You can assign a namespace to a resource group only once. When a namespace is in a resource group, you can't move it to another resource group.
 {: note}

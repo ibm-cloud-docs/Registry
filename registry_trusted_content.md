@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-09"
 
 keywords: Docker, trusted content, signing, signing images, repository keys, trust, revoking trust, signing key, skopeo, podman, Red Hat signatures, sign images, images, signatures, cli
 

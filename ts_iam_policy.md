@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-04-13"
+  years: 2017, 2023
+lastupdated: "2023-03-07"
 
-keywords: error, iam, access denied, access policy, namespace, policy, resource group, access
+keywords: error, iam, access denied, access policy, namespace, policy, access, quota,
 
 subcollection: Registry
 
@@ -36,5 +36,3 @@ You can resolve the problem by using one of the following solutions:
 
 - **Cause 1**. If your namespace was created in version 0.1.484 of the CLI or earlier, or in the {{site.data.keyword.cloud_notm}} console before 29 July 2020, and isn't assigned to a resource group, you must assign the namespace to the same resource group as the user policy. For more information, see [Assigning existing namespaces to resource groups](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_namespace_assign).
 - **Cause 2**. If you're using a namespace level policy, ensure that the resource type is `namespace` (lowercase).
-
-
