@@ -142,17 +142,16 @@
         "on Red Hat, what version of a package is installed in my image",
         "on CentOS, what version of a package is installed in my image"
       ],
-       "troubleshoot-access-namespace": [
-        "cannot access a namespace in Container Registry",
-        "unable to access a namespace in container registry",
-        "accessing namespace fail in container registry",
-        "insufficient scope when accessing a namespace in CR",
-        "accessing a namespace in Container Regsitry",
-        "insufficient scope when pushing an image in CR",
-        "can't access namespace in CR"
+       "troubleshoot-access-denied": [
+        "get access denied errors although I have IAM access",
+        "getting access denied errors container registry",
+        "access errors when accessing container registry",
+        "can't access container registry",
+        "issue accessing container registry",
+        "no access to container registry"
       ],
        "troubleshoot-add-namespace": [
-        "cannot add namespace cli ContainerRegistry",
+        "cannot add namespace cli Container Registry",
         "unable to add namespace in container registry",
         "adding namespace fail in container registry",
         "name rules to add namespace in CR",
@@ -162,6 +161,13 @@
         "ibmcloud cr namespace-add error",
         "can't add namespace in CR",
         "ibmcloud cr namespace-add fails"
+      ],
+      "troubleshoot-auth-req": [
+        "cannot access Container Registry",
+        "not authorized to access Container Registry",
+        "unauthorized to access Container Registry",
+        "can't authenticate with Container Registry",
+        "authorization required to access Container Registry"
       ],
       "troubleshoot-connect": [
         "Connecting to the container registry fails",
@@ -199,13 +205,15 @@
         "can't access container registry with a custom firewall",
         "issue accessing container registry with a different firewall"
       ],
-      "troubleshoot-iam-policy": [
-        "get access denied errors although I have IAM access",
-        "getting access denied errors container registry",
-        "access errors when access container registry",
-        "can't access container registry",
-        "isue accessing container registry",
-        "no access to container registry"
+      "troubleshoot-forbidden-ce": [
+        "get 403 forbidden errors although I have IAM access",
+        "getting access denied forbidden errors container registry",
+        "access errors when accessing container registry 403 forbidden",
+        "can't access container registry 403 forbidden",
+        "issue accessing container registry with code engine",
+        "no access to container registry using code engine",
+        "403 forbidden issue using code engine to access container registry",
+        "forbidden error trying to access registry uisng code engine"
       ],
       "troubleshoot-image-find": [
         "my image is missing in container registry",
@@ -363,6 +371,15 @@
         "can't restart pods with Container Image Security Enforcement installed",
         "restart pods as all the workers down in container registry"
       ],
+      "troubleshoot-private": [
+        "get access denied errors over a private network although I have IAM access",
+        "getting access denied errors accessing container registry over a private network",
+        "access errors when accessing container registry on a private network",
+        "can't access container registry over private network",
+        "issue accessing container registry over a private network",
+        "no access to container registry over a private network",
+        "private network issues accessing container registry"
+      ],
       "troubleshoot-pull-performance": [
         "pullling images is slow in Container Registry",
         "pullling images is slow in CR",
@@ -383,5 +400,44 @@
         "not push docker image error",
         "login credentials are not valid",
         "IBM Cloud account is not active"
+      ],
+      "troubleshoot-quota": [
+        "get access denied errors about my quota although I have IAM access",
+        "getting quota access denied errors container registry",
+        "quota access errors when trying to access container registry",
+        "can't access container registry not enough quota",
+        "issue accessing container registry because of my quota",
+        "no access to container registry exceeded quota",
+        "exceeded pull traffic quota",
+        "exceeded image storage quota",
+        "exceeded quota",
+        "exceeded pull traffic quota in container registry",
+        "exceeded image storage quota in container regsitry",
+        "exceeded qupta in container registry"
+      ],
+      "troubleshoot-resource": [
+        "get access denied errors for a resource although I have IAM access",
+        "getting access denied errors for a resource in container registry",
+        "access errors when accessing a resource in container registry",
+        "can't access a resource in container registry",
+        "issue accessing a resource in container registry",
+        "no access to a resource in container registry"
+      ],
+      "troubleshoot-scope": [
+        "get access denied errors for insufficient scope although I have IAM access",
+        "getting access denied errors for insufficient scope in container registry",
+        "insufficient scope access errors when accessing container registry",
+        "insufficient scope so I can't access container registry",
+        "insufficient scope issue accessing container registry",
+        "no access to container registry due to insufficient scope"
+      ],
+      "troubleshoot-unauthorized-ce": [
+        "cannot access Container Registry with code engine",
+        "not authorized to access Container Registry using code engine",
+        "unauthorized to access Container Registry with code engine",
+        "can't authenticate with Container Registry using code engine",
+        "authorization required to access Container Registry with code engine",
+        "using code engine and not authorized to access Container Registry",
+        "credentials are incorrect for accessing registry with code engine"
       ]
     }
