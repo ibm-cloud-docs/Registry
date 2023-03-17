@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-17"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -1560,15 +1560,27 @@ subcollection: Registry
 
 [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker#troubleshoot-push-pull-docker)
 
+[Why is pulling images slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
+
+[Why am I getting authorization required errors?](/docs/Registry?topic=Registry-troubleshoot-auth-req#troubleshoot-auth-req)
+
+[Why am I getting an unauthorized error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce#troubleshoot-unauthorized-ce)
+
+[Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied#troubleshoot-access-denied)
+
+[Why am I getting access denied errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource#troubleshoot-resource)
+
+[Why am I getting access denied errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope#troubleshoot-scope)
+
+[Why am I getting access denied errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota#troubleshoot-quota)
+
+[Why am I getting access denied errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private#troubleshoot-private)
+
+[Why am I getting a forbidden error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce#troubleshoot-forbidden-ce)
+
 [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull#ts-app-image-pull)
 
 * [Troubleshooting image pull secrets that use API keys](/docs/Registry?topic=Registry-ts-app-image-pull#img-pull-api-key)
-
-[Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy#troubleshoot-iam-policy)
-
-[Why can't I access a namespace?](/docs/Registry?topic=Registry-troubleshoot-access-namespace#troubleshoot-access-namespace)
-
-[Why is pulling images slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance#troubleshoot-pull-performance)
 
 
 ### Troubleshooting CLI commands
