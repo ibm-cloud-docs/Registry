@@ -29,7 +29,7 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 - `You were not authorized to complete this operation.`
 - `An error occurred when authenticating your request.`
 - `Status code 401 Unauthorized`
-  You might see this message if you're using {{site.data.keyword.codeenginefull_notm}}. For more information, see [Why am I getting an unauthorized error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
+    You might see this message if you're using {{site.data.keyword.codeenginefull_notm}}. For more information, see [Why am I getting an unauthorized error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
 
 The following alternatives are possible causes:
 {: tsCauses}
