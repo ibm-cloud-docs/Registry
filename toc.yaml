@@ -173,10 +173,16 @@ toc:
               label: Troubleshooting pull and push errors
               topics:
               - ts_push_pull_docker.md
-              - include: ../containers/ts-app-02-imgpull.md
-              - ts_iam_policy.md
-              - ts_access_namespace.md
               - ts_pull_performance.md
+              - ts_auth_req.md
+              - ts_unauthorized_ce.md
+              - ts_access_denied.md
+              - ts_resource.md
+              - ts_scope.md
+              - ts_quota.md
+              - ts_private.md
+              - ts_forbidden_ce.md
+              - include: ../containers/ts-app-02-imgpull.md
           - topicgroup:
               label: Troubleshooting CLI commands
               topics:

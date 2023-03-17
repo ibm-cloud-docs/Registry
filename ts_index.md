@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-17"
 
 keywords: troubleshooting, support, help, error messages, problem, registry, support ticket, ticket
 
@@ -53,10 +53,16 @@ Troubleshoot logging in problems.
 Troubleshoot pull and push problems.
 
 - [Why can't I push or pull a Docker image?](/docs/Registry?topic=Registry-troubleshoot-push-pull-docker)
-- [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
-- [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-iam-policy)
-- [Why can't I access a namespace?](/docs/Registry?topic=Registry-troubleshoot-access-namespace)
 - [Why is pulling images so slow?](/docs/Registry?topic=Registry-troubleshoot-pull-performance)
+- [Why am I getting authorization required errors?](/docs/Registry?topic=Registry-troubleshoot-auth-req)
+    - [Why am I getting an unauthorized error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
+- [Why am I getting access denied errors?](/docs/Registry?topic=Registry-troubleshoot-access-denied)
+    - [Why am I getting access denied errors for a resource?](/docs/Registry?topic=Registry-troubleshoot-resource)
+    - [Why am I getting access denied errors about insufficient scope?](/docs/Registry?topic=Registry-troubleshoot-scope)
+    - [Why am I getting access denied errors about my quota?](/docs/Registry?topic=Registry-troubleshoot-quota)
+    - [Why am I getting access denied errors over a private network?](/docs/Registry?topic=Registry-troubleshoot-private)
+    - [Why am I getting a forbidden error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-forbidden-ce)
+    - [Why do images fail to pull from registry with ImagePullBackOff or authorization errors?](/docs/Registry?topic=Registry-ts-app-image-pull)
 
 ### Troubleshooting CLI commands
 {: #gettinghelp_ts_cli_commands}
