@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-27"
 
-keywords: registry, access, authorization required, error, API key, client, token
+keywords: registry, access, authorization required, error, API key, client, token, region
 
 subcollection: Registry
 
@@ -40,6 +40,7 @@ The following alternatives are possible causes:
 - A client attempted to access {{site.data.keyword.registryshort}} with an expired OAuth token.
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid API key.
 - You attempted to authenticate against the {{site.data.keyword.registryshort}} API with an invalid Account ID.
+- You logged in to a different region of {{site.data.keyword.registryshort}}.
 
 You can fix this problem in the following ways:
 {: tsResolve}
@@ -49,3 +50,4 @@ You can fix this problem in the following ways:
 - Use the `ibmcloud` CLI or IAM API to retrieve a valid OAuth token to authenticate against the {{site.data.keyword.registryshort}} API. For more information, see [{{site.data.keyword.registrylong_notm}} API - Authentication](https://{DomainName}/apidocs/container-registry#authentication).
 - When you authenticate against the {{site.data.keyword.registryshort}} API, ensure that you use a valid Account ID.
 - When you access {{site.data.keyword.registryshort}} by using automation, set up a service ID and API key. For more information, see [Accessing {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_access#registry_access_serviceid_apikey_create).
+- If your image is in a different region of {{site.data.keyword.registryshort}}, you must log in to {{site.data.keyword.cloud_notm}} in that region by runnning the [`ibmcloud cr region-set`](/docs/Registry?topic=Registry-containerregcli#bx_cr_region_set) and [`ibmcloud cr login`](/docs/Registry?topic=Registry-containerregcli#bx_cr_login) commands. For more information, see [Targeting a local region](/docs/Registry?topic=Registry-registry_overview#registry_regions).
