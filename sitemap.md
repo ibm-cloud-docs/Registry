@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-27"
 
 keywords: container registry, site map, policy, storage, images, overview, registry
 
@@ -166,7 +166,7 @@ subcollection: Registry
 
 
 ## What are containers?
-{: #sitemap_what-are-containers?}
+{: #sitemap_what-are-containers}
 
 [What are containers?](https://www.ibm.com/topics/containers){: external}
 
@@ -687,7 +687,7 @@ subcollection: Registry
 
 
 ## Setting up the {{site.data.keyword.registryshort}} CLI and namespace
-{: #sitemap_setting_up_the__cli_and_namespace}
+{: #sitemap_setting_up_the_cli_and_namespace}
 
 
 [Setting up the {{site.data.keyword.registryshort}} CLI and namespace](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace)
@@ -714,7 +714,7 @@ subcollection: Registry
 
 
 ## Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}
-{: #sitemap_setting_up__as_a_private_registry_on_}
+{: #sitemap_setting_up_as_a_private_registry_on_}
 
 
 [Setting up {{site.data.keyword.registryshort}} as a private registry on {{site.data.keyword.redhat_openshift_notm}}](/docs/Registry?topic=Registry-registry_rhos#registry_rhos)
