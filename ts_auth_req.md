@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-29"
 
 keywords: registry, access, authorization required, error, API key, client, token, region
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting authorization required errors?
+# Why am I getting `Authorization required` errors?
 {: #troubleshoot-auth-req}
 {: troubleshoot}
 {: support}
@@ -29,7 +29,7 @@ When you try to access {{site.data.keyword.registryshort}}, you get one of the f
 - `You were not authorized to complete this operation.`
 - `An error occurred when authenticating your request.`
 - `Status code 401 Unauthorized`
-    You might see this message if you're using {{site.data.keyword.codeenginefull_notm}}. For more information, see [Why am I getting an unauthorized error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
+    You might see this message if you're using {{site.data.keyword.codeenginefull_notm}}. For more information, see [Why am I getting an `Uunauthorized` error when I'm using {{site.data.keyword.codeengineshort}}?](/docs/Registry?topic=Registry-troubleshoot-unauthorized-ce)
 
 The following alternatives are possible causes:
 {: tsCauses}

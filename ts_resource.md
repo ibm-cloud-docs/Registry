@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-29"
 
 keywords: error, iam, access denied, access, resource,
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting access denied errors for a resource?
+# Why am I getting `Access denied` errors for a resource?
 {: #troubleshoot-resource}
 {: troubleshoot}
 {: support}
 
-You have a valid IAM API key or OAuth token, but you still get access denied errors for a specific resource in {{site.data.keyword.registrylong}}.
+You have a valid IAM API key or OAuth token, but you still get `Access denied` errors for a specific resource in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get the following message:
@@ -40,5 +40,5 @@ You can fix this problem in the following ways:
 
 - Check whether context-based restriction rules are in place. If so, these rules prevent you from accessing resources outside the defined allowed contexts. Adjust the allowed context or rerun your pull from within an allowed context. For more information, see [Context-based restrictions](/docs/Registry?topic=Registry-iam&interface=ui#iam_cbr).
 
-    To confirm whether a context-based restriction rule caused the access denied error, check {{site.data.keyword.at_full_notm}} for the resource that is being accessed. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor#enabled-access).
+    To confirm whether a context-based restriction rule caused the `Access denied` error, check {{site.data.keyword.at_full_notm}} for the resource that is being accessed. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor#enabled-access).
     {: tip}

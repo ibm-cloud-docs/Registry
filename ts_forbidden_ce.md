@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-29"
 
-keywords: error, registry, access, authorization required, error, code engine, forbidden
+keywords: error, registry, access, error, code engine, forbidden
 
 subcollection: Registry
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting a forbidden error when I'm using {{site.data.keyword.codeengineshort}}?
+# Why am I getting a `Forbidden` error when I'm using {{site.data.keyword.codeengineshort}}?
 {: #troubleshoot-forbidden-ce}
 {: troubleshoot}
 {: support}
 
-You're trying to access {{site.data.keyword.registrylong}} but you're getting a forbidden error.
+You're trying to access {{site.data.keyword.registrylong}} but you're getting a `Forbidden` error.
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get the following message. You might see this error message if you're using {{site.data.keyword.codeenginefull_notm}}.
