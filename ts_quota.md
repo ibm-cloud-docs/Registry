@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-29"
 
 keywords: error, iam, access denied, access, quota, pull traffic quota, image storage quota
 
@@ -14,12 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why am I getting access denied errors about my quota?
+# Why am I getting `Access denied` errors about my quota?
 {: #troubleshoot-quota}
 {: troubleshoot}
 {: support}
 
-You have a valid IAM API key or OAuth token, but you still get access denied errors about your quota in {{site.data.keyword.registrylong}}.
+You have a valid IAM API key or OAuth token, but you still get `Access denied` errors about your quota in {{site.data.keyword.registrylong}}.
 {: shortdesc}
 
 When you try to access {{site.data.keyword.registryshort}}, you get one of the following messages:
