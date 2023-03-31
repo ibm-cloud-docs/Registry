@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-03-31"
 
 keywords: Vulnerability Advisor, tutorial, workflow, image, vulnerabilities, registry, services, container, namespace, vulnerability, cluster, vulnerable image
 
@@ -65,7 +65,7 @@ Using [{{site.data.keyword.registrylong_notm}}](https://www.ibm.com/cloud/contai
 ### Create a namespace
 {: #registry_tutorial_workflow_create_namespace}
 
-Create a [namespace](x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. Namespaces are created in a [resource group](x2161955){: term}. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan)
+Create a [namespace](x2031005){: term} to store your container images in {{site.data.keyword.registrylong_notm}}. Namespaces are created in a [resource group](x2161955){: term}. For more information, see [Planning namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan).
 
 1. To log in to {{site.data.keyword.cloud_notm}} and target the `us-south` region, run the following command.
 

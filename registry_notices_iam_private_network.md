@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-31"
 
 keywords: IBM Cloud Container Registry notices, iam, IP address list, restricted IP address, change, private network, actions
 
@@ -43,7 +43,7 @@ You must take the [appropriate actions](#registry_notices_iam_pivate_network_act
 
 This change increases security for any {{site.data.keyword.registrylong_notm}} users that use private connections and IAM restricted IP address lists. After the change, you must configure the restricted IP address list to allow the private subnet and IP addresses of your own host. This change means that you can ensure {{site.data.keyword.registryshort}} OAuth requests originate only from hosts that you own.
 
-If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP address in any audit logs, where previously you saw a private {{site.data.keyword.registryshort}} owned IP.
+If you use {{site.data.keyword.at_full_notm}}, you can see the true source IP address in any audit logs, where previously you saw a {{site.data.keyword.registryshort}} owned IP that was private.
 
 ## Understanding if you are impacted by this change
 {: #registry_notices_iam_pivate_network_impact}
@@ -73,7 +73,7 @@ You access {{site.data.keyword.registryshort}} over the private network and main
 Your firewalls are configured with the {{site.data.keyword.registryshort}} private IP addresses.
 :   You must include the new private IP addresses in your firewall configuration. For more information about connecting to {{site.data.keyword.registryshort}} over the private network, see [Securing your connection to {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-registry_private).
 
-For more information about the new and current {{site.data.keyword.registryshort}} private IP addresses, use one of the following links:
+For more information about the new and current {{site.data.keyword.registryshort}} private IP addresses, see the following topics:
 
 - For {{site.data.keyword.containerlong_notm}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
 - For {{site.data.keyword.openshiftlong}}, see [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).

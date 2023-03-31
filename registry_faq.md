@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-31"
 
 keywords: public images, commands, questions, registry, Vulnerability Advisor, frequently asked questions, namespace, tool, image, digest, access, region, package manager, security notices, version of a package
 
@@ -124,7 +124,7 @@ If you have active containers that are running [untagged](/docs/Registry?topic=R
 {: #faq_eligible_image}
 {: faq}
 
-If you are cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained, and are therefore not eligible images, are distroless images that do not set a created time, such as Google distroless images, and manifest lists.
+If you are cleaning up images by using retention policies, only eligible images are cleaned up. Images that are always retained, and are therefore not eligible images, are distroless images that do not set a created time, such as Google distroless images and manifest lists.
 
 The images that are not eligible are still displayed, but they do not count toward the total number of images that is set in the retention policy and are not removed.
 

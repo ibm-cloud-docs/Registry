@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-03-31"
 
 keywords: IBM Cloud, registry, monitoring, metrics, pull traffic, storage usage, storage quota, monitor, locations, dashboard, storage, region, platform metrics
 
@@ -159,7 +159,7 @@ The following table outlines the predefined monitoring dashboards that you can u
 The predefined dashboards can't be changed. You can copy any predefined dashboard so that you can change it to suit your requirements. For more information, see [Working with dashboards](/docs/monitoring?topic=monitoring-dashboards).
 {: important}
 
-When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because more time is required to create the data. When data is available, the warning sign goes away and the metric is populated. You might also need to change the resolution period.
+When you start your dashboard, some metrics might display a `Data Load Error` warning icon. This warning is because more time is required to create the data. When data is available, the warning sign goes away, and the metric is populated. You might also need to change the resolution period.
 {: note}
 
 ## Platform metrics

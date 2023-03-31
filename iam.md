@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-31"
 
 keywords: policies, role, access policies, platform management roles, service access roles, access roles, access, IAM access for IBM Cloud Container Registry, permissions for IBM Cloud Container Registry, iam for IBM Cloud Container Registry, roles for IBM Cloud Container Registry, actions for IBM Cloud Container Registry, assigning access for IBM Cloud Container Registry, manager, reader, writer, actions, access group
 
@@ -65,7 +65,7 @@ For more information about assigning user roles in the UI, see [Managing access 
 
 {{site.data.keyword.registryshort}} also supports context-based restrictions. You can use context-based restrictions to define and enforce access restrictions for {{site.data.keyword.cloud_notm}} resources based on the network location of access requests. These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection.
 
-For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis).
+For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
 For an example of how to set up context-based restrictions, see the context-based restrictions tutorial [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
 

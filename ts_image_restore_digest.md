@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-03-31"
 
 keywords: restore, image, digest, trash, tag, repository
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why aren't all tags restored when I restore by digest?
+# Why aren't all the tags restored when I restore by digest?
 {: #troubleshoot-image-restore-digest}
 {: troubleshoot}
 {: support}
