@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-31"
 
 keywords: commands, format commands, filter command output, private registry, registry, commands, formatting output, filtering output, output, Go template format options, data types, cli, config, healthcheck, rootfs, go template, cli output
 
@@ -69,7 +69,7 @@ The following code examples demonstrate how you might use the formatting and fil
     If the listing images command times out, see [Why is it timing out when I list images?](/docs/Registry?topic=Registry-troubleshoot-image-timeout) for assistance.
     {: tip}
 
-- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
+- Run the following `ibmcloud cr image-inspect` command to display where {{site.data.keyword.IBM_notm}} Documentation is hosted for a specified {{site.data.keyword.IBM_notm}} public image.
 
     ```txt
     ibmcloud cr image-inspect ibmliberty --format "{{ .ContainerConfig.Labels }}"
@@ -149,7 +149,7 @@ Review the following table to find available Go template options and data types 
 | `Os` | String | Displays the operating system family that was used to build this image, and that is required to run the image. |
 | `OsVersion` | String | Displays the version of the operating system that was used to build this image. |
 | `Parent` | String | Displays the ID of the parent image that was used to build this image. |
-| `RootFS` | Object | Displays metadata that describe the root file system for the image. For more information, see [`RootFS` field details](#registry_cli_list_imageinspect_rootfs). |
+| `RootFS` | Object | Displays metadata that describes the root file system for the image. For more information, see [`RootFS` field details](#registry_cli_list_imageinspect_rootfs). |
 | `Size` | Integer (64 bit) | Displays the size of the image in bytes. |
 | `VirtualSize` | Integer (64 bit) | Displays the sum of the size of each layer in the image in bytes. |
 {: caption="Table 3. Available fields and data types in the {{site.data.keyword.registryshort_notm}} command to inspect images" caption-side="bottom"}
@@ -174,7 +174,7 @@ Review the following table to find available Go template options and data types 
 | `Labels` | Key-value map | Displays the list of labels that were added to the image as key-value pairs. |
 | `MacAddress` | String | Displays the MAC address that is assigned to the container. |
 | `NetworkDisabled` | Boolean | Displays _true_ if the networking is disabled for the container and _false_ if the networking is enabled for the container. |
-| `OnBuild` | Array of strings | Displays the `ONBUILD` metadata that were defined on the image Dockerfile. |
+| `OnBuild` | Array of strings | Displays the `ONBUILD` metadata that was defined on the image Dockerfile. |
 | `OpenStdin` | Boolean | Displays _true_ if the standard input stream is opened and _false_ if the standard input stream is closed. |
 | `Shell` | Array of strings | Displays the shell-form of `RUN`, `CMD`, `ENTRYPOINT`. |
 | `StdinOnce` | Boolean | Displays _true_ if the standard input stream is closed after the attached client disconnects and _false_ if the standard input stream stays open. |

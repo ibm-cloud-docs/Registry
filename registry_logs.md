@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-31"
 
 keywords: platform services logs for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, logging for IBM Cloud Container Registry, IBM Cloud Container Registry logs, IBM Cloud Container Registry security, analyzing logs for IBM Cloud Container Registry, viewing IBM Cloud Container Registry logs, IBM Cloud Container Registry logs, logs, region
 
@@ -32,28 +32,28 @@ Most of the time when you work with {{site.data.keyword.registrylong_notm}} you 
 
 {{site.data.keyword.registrylong_notm}} generates platform logs that are displayed in your logging instances. The following tables list the locations where the automatic collection of {{site.data.keyword.registryshort_notm}} service logs is enabled.
 
-| Locations in Americas | Platform services logs available |
-|-----------------------|----------------------------------|
+| Locations in Americas | Are platform services logs available? |
+|-----------------------|---------------------------------------|
 | `Dallas (us-south)` | Yes |
 | `Sao Paulo (br-sao)` | Yes |
 | `Toronto (ca-tor)` | Yes |
-{: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Americas locations" caption-side="bottom"}
+{: caption="Table 1. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Americas locations" caption-side="bottom"}
 
-| Locations in Asia Pacific | Platform services logs available |
-|---------------------------|----------------------------------|
+| Locations in Asia Pacific | Are platform services logs available? |
+|---------------------------|---------------------------------------|
 | `Osaka (jp-osa)` | Yes |
 | `Sydney (au-syd)` | Yes |
 | `Tokyo (jp-tok)` | Yes |
-{: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Asia Pacific locations" caption-side="bottom"}
+{: caption="Table 2. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Asia Pacific locations" caption-side="bottom"}
 
-| Locations in Europe | Platform services logs available |
-|---------------------|----------------------------------|
+| Locations in Europe | Are platform services logs available? |
+|---------------------|---------------------------------------|
 | `Frankfurt (eu-de)` | Yes |
 | `London (eu-gb)` | Yes |
-{: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in Europe locations" caption-side="bottom"}
+{: caption="Table 3. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs in the Europe locations" caption-side="bottom"}
 
-| Location for Global | Platform services logs available |
-|---------------------|----------------------------------|
+| Location for Global | Are platform services logs available? |
+|---------------------|---------------------------------------|
 | `Global` | Yes |
 {: caption="Table 4. The automatic collection of {{site.data.keyword.registryshort_notm}} service logs for Global" caption-side="bottom"}
 

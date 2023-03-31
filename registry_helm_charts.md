@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2023-02-10"
+lastupdated: "2023-03-31"
 
 keywords: helm, charts, private repository, trash, recycle bin, restoring charts, helm chart, registry, namespace, cli, tags, images, helm repository
 
@@ -54,7 +54,7 @@ Before you begin, complete the following tasks.
 
 1. Download the Helm chart to your local computer.
 
-    - From the OCI registry:
+    - Download the Helm chart from the OCI registry:
 
         ```txt
         helm pull oci://<registry/<my_namespace>/<chart_name> --version <chart_version>
@@ -68,7 +68,7 @@ Before you begin, complete the following tasks.
         ```
         {: pre}
 
-    - From a Helm repository:
+    - Download the Helm chart from a Helm repository:
 
         ```txt
         helm pull <chart URL | repo/chartname> --version <chart_version>
@@ -322,7 +322,7 @@ To restore a chart by digest from the trash, complete the following steps:
     ```
     {: pre}
 
-    If some tags aren't restored, see [Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest).
+    If some tags aren't restored, see [Why aren't all the tags restored when I restore by digest](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest).
     {: tip}
 
     In your live repository, you can pull the chart by digest. If you run the [`ibmcloud cr image-digests`](/docs/Registry?topic=Registry-containerregcli#bx_cr_image_digests) command, the chart shows in the output.

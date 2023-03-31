@@ -187,7 +187,7 @@ subcollection: Registry
 
 * [Understanding if you are impacted by this change](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_impact)
 
-* [What actions you need to take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
+* [What actions you must take](/docs/Registry?topic=Registry-registry_notices_vpe#registry_notices_vpe_actions)
 
 [Changes to private IP addresses from 15 December 2022](/docs/Registry?topic=Registry-registry_notices_ip_address#registry_notices_ip_address)
 
@@ -1605,7 +1605,7 @@ subcollection: Registry
 
 [Why do I get an error when I'm restoring an image?](/docs/Registry?topic=Registry-troubleshoot-image-restore#troubleshoot-image-restore)
 
-[Why aren't all tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
+[Why aren't all the tags restored when I restore by digest?](/docs/Registry?topic=Registry-troubleshoot-image-restore-digest#troubleshoot-image-restore-digest)
 
 [Why do I get a manifest unknown error?](/docs/Registry?topic=Registry-troubleshoot-manifest-unknown#troubleshoot-manifest-unknown)
 
